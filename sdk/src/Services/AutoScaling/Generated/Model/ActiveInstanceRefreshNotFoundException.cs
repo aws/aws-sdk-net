@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// The request failed because an active instance refresh for the specified Auto Scaling
-    /// group was not found.
+    /// The request failed because an active instance refresh or rollback for the specified
+    /// Auto Scaling group was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

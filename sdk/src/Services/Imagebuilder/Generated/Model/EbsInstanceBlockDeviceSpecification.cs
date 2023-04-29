@@ -138,7 +138,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Throughput. 
         /// <para>
-        ///  <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports. 
+        ///  <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume supports.
         /// </para>
         /// </summary>
         [AWSProperty(Min=125, Max=1000)]

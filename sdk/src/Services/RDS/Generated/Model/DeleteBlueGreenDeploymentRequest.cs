@@ -78,7 +78,9 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property DeleteTarget. 
         /// <para>
-        /// A value that indicates whether to delete the resources in the green environment.
+        /// A value that indicates whether to delete the resources in the green environment. You
+        /// can't specify this option if the blue/green deployment <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_BlueGreenDeployment.html">status</a>
+        /// is <code>SWITCHOVER_COMPLETED</code>.
         /// </para>
         /// </summary>
         public bool DeleteTarget

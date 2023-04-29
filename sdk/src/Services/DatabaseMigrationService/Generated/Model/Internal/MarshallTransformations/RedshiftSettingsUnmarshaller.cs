@@ -148,6 +148,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.LoadTimeout = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MapBooleanAsBoolean", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.MapBooleanAsBoolean = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxFileSize", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

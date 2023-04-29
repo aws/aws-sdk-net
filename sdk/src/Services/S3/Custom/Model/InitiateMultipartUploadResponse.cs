@@ -124,12 +124,12 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
-        /// you provide the Outposts bucket ARN in place of the bucket name. For more information
-        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts access point ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -199,8 +199,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The Server-side encryption algorithm used when storing this object in S3.
-        ///  
+        /// <para>
+        /// The server-side encryption algorithm used when storing this object in Amazon S3 (for
+        /// example, AES256, <code>aws:kms</code>).
+        /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {
@@ -231,7 +233,8 @@ namespace Amazon.S3.Model
         /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
         /// <para>
         /// If present, specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric customer managed key that was used for the object.
+        /// Web Services KMS) symmetric encryption customer managed key that was used for the
+        /// object.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

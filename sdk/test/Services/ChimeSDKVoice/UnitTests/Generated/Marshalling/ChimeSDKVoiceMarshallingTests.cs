@@ -3159,6 +3159,706 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateVoiceProfileResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateVoiceProfileResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfile_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfile_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfile_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfile_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfile_GoneExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GoneException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","GoneException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfile_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfile_ResourceLimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceLimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceLimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfile_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfile_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfile_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfile_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileRequest>();
+            var marshaller = new CreateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfileDomainMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileDomainRequest>();
+            var marshaller = new CreateVoiceProfileDomainRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateVoiceProfileDomainResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateVoiceProfileDomainResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfileDomain_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileDomainRequest>();
+            var marshaller = new CreateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfileDomain_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileDomainRequest>();
+            var marshaller = new CreateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfileDomain_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileDomainRequest>();
+            var marshaller = new CreateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfileDomain_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileDomainRequest>();
+            var marshaller = new CreateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfileDomain_ResourceLimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileDomainRequest>();
+            var marshaller = new CreateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceLimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceLimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfileDomain_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileDomainRequest>();
+            var marshaller = new CreateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfileDomain_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileDomainRequest>();
+            var marshaller = new CreateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfileDomain_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileDomainRequest>();
+            var marshaller = new CreateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void CreateVoiceProfileDomain_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<CreateVoiceProfileDomainRequest>();
+            var marshaller = new CreateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
         public void DeletePhoneNumberMarshallTest()
         {
             var operation = service_model.FindOperation("DeletePhoneNumber");
@@ -6167,6 +6867,614 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileRequest>();
+            var marshaller = new DeleteVoiceProfileRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteVoiceProfile", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfile_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileRequest>();
+            var marshaller = new DeleteVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfile_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileRequest>();
+            var marshaller = new DeleteVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfile_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileRequest>();
+            var marshaller = new DeleteVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfile_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileRequest>();
+            var marshaller = new DeleteVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfile_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileRequest>();
+            var marshaller = new DeleteVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfile_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileRequest>();
+            var marshaller = new DeleteVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfile_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileRequest>();
+            var marshaller = new DeleteVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfile_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileRequest>();
+            var marshaller = new DeleteVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfile_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileRequest>();
+            var marshaller = new DeleteVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfileDomainMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileDomainRequest>();
+            var marshaller = new DeleteVoiceProfileDomainRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteVoiceProfileDomain", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfileDomain_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileDomainRequest>();
+            var marshaller = new DeleteVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfileDomain_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileDomainRequest>();
+            var marshaller = new DeleteVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfileDomain_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileDomainRequest>();
+            var marshaller = new DeleteVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfileDomain_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileDomainRequest>();
+            var marshaller = new DeleteVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfileDomain_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileDomainRequest>();
+            var marshaller = new DeleteVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfileDomain_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileDomainRequest>();
+            var marshaller = new DeleteVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfileDomain_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileDomainRequest>();
+            var marshaller = new DeleteVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfileDomain_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileDomainRequest>();
+            var marshaller = new DeleteVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void DeleteVoiceProfileDomain_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVoiceProfileDomainRequest>();
+            var marshaller = new DeleteVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
         public void DisassociatePhoneNumbersFromVoiceConnectorMarshallTest()
         {
             var operation = service_model.FindOperation("DisassociatePhoneNumbersFromVoiceConnector");
@@ -8897,6 +10205,324 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ChimeSDKVoice")]
+        public void GetSpeakerSearchTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetSpeakerSearchTask", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetSpeakerSearchTaskResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetSpeakerSearchTaskResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetSpeakerSearchTask_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetSpeakerSearchTask_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetSpeakerSearchTask_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetSpeakerSearchTask_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetSpeakerSearchTask_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetSpeakerSearchTask_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetSpeakerSearchTask_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetSpeakerSearchTask_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetSpeakerSearchTask_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<GetSpeakerSearchTaskRequest>();
+            var marshaller = new GetSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
         public void GetVoiceConnectorMarshallTest()
         {
             var operation = service_model.FindOperation("GetVoiceConnector");
@@ -11183,6 +12809,896 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileRequest>();
+            var marshaller = new GetVoiceProfileRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetVoiceProfile", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetVoiceProfileResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetVoiceProfileResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfile_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileRequest>();
+            var marshaller = new GetVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfile_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileRequest>();
+            var marshaller = new GetVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfile_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileRequest>();
+            var marshaller = new GetVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfile_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileRequest>();
+            var marshaller = new GetVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfile_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileRequest>();
+            var marshaller = new GetVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfile_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileRequest>();
+            var marshaller = new GetVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfile_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileRequest>();
+            var marshaller = new GetVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfile_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileRequest>();
+            var marshaller = new GetVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfileDomainMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileDomainRequest>();
+            var marshaller = new GetVoiceProfileDomainRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetVoiceProfileDomain", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetVoiceProfileDomainResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetVoiceProfileDomainResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfileDomain_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileDomainRequest>();
+            var marshaller = new GetVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfileDomain_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileDomainRequest>();
+            var marshaller = new GetVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfileDomain_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileDomainRequest>();
+            var marshaller = new GetVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfileDomain_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileDomainRequest>();
+            var marshaller = new GetVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfileDomain_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileDomainRequest>();
+            var marshaller = new GetVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfileDomain_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileDomainRequest>();
+            var marshaller = new GetVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfileDomain_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileDomainRequest>();
+            var marshaller = new GetVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceProfileDomain_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceProfileDomainRequest>();
+            var marshaller = new GetVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceToneAnalysisTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetVoiceToneAnalysisTaskResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceToneAnalysisTask_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceToneAnalysisTask_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceToneAnalysisTask_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceToneAnalysisTask_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceToneAnalysisTask_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceToneAnalysisTask_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceToneAnalysisTask_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceToneAnalysisTask_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void GetVoiceToneAnalysisTask_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<GetVoiceToneAnalysisTaskRequest>();
+            var marshaller = new GetVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
         public void ListAvailableVoiceConnectorRegionsMarshallTest()
         {
             var operation = service_model.FindOperation("ListAvailableVoiceConnectorRegions");
@@ -12833,6 +15349,228 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ChimeSDKVoice")]
+        public void ListTagsForResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListTagsForResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListTagsForResource_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListTagsForResource_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListTagsForResource_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListTagsForResource_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListTagsForResource_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListTagsForResource_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListTagsForResource");
+
+            var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
+            var marshaller = new ListTagsForResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListTagsForResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListTagsForResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
         public void ListVoiceConnectorGroupsMarshallTest()
         {
             var operation = service_model.FindOperation("ListVoiceConnectorGroups");
@@ -13523,6 +16261,514 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = ListVoiceConnectorTerminationCredentialsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfileDomainsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfileDomains");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfileDomainsRequest>();
+            var marshaller = new ListVoiceProfileDomainsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListVoiceProfileDomains", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListVoiceProfileDomainsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListVoiceProfileDomainsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfileDomains_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfileDomains");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfileDomainsRequest>();
+            var marshaller = new ListVoiceProfileDomainsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfileDomains", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfileDomainsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfileDomains_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfileDomains");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfileDomainsRequest>();
+            var marshaller = new ListVoiceProfileDomainsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfileDomains", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfileDomainsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfileDomains_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfileDomains");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfileDomainsRequest>();
+            var marshaller = new ListVoiceProfileDomainsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfileDomains", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfileDomainsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfileDomains_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfileDomains");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfileDomainsRequest>();
+            var marshaller = new ListVoiceProfileDomainsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfileDomains", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfileDomainsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfileDomains_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfileDomains");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfileDomainsRequest>();
+            var marshaller = new ListVoiceProfileDomainsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfileDomains", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfileDomainsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfileDomains_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfileDomains");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfileDomainsRequest>();
+            var marshaller = new ListVoiceProfileDomainsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfileDomains", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfileDomainsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfileDomains_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfileDomains");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfileDomainsRequest>();
+            var marshaller = new ListVoiceProfileDomainsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfileDomains", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfileDomainsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfilesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfiles");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfilesRequest>();
+            var marshaller = new ListVoiceProfilesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListVoiceProfiles", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListVoiceProfilesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListVoiceProfilesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfiles_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfiles");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfilesRequest>();
+            var marshaller = new ListVoiceProfilesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfiles", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfilesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfiles_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfiles");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfilesRequest>();
+            var marshaller = new ListVoiceProfilesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfiles", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfilesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfiles_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfiles");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfilesRequest>();
+            var marshaller = new ListVoiceProfilesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfiles", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfilesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfiles_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfiles");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfilesRequest>();
+            var marshaller = new ListVoiceProfilesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfiles", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfilesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfiles_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfiles");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfilesRequest>();
+            var marshaller = new ListVoiceProfilesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfiles", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfilesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfiles_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfiles");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfilesRequest>();
+            var marshaller = new ListVoiceProfilesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfiles", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfilesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void ListVoiceProfiles_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVoiceProfiles");
+
+            var request = InstantiateClassGenerator.Execute<ListVoiceProfilesRequest>();
+            var marshaller = new ListVoiceProfilesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVoiceProfiles", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVoiceProfilesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -16407,6 +19653,1954 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartSpeakerSearchTaskResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as StartSpeakerSearchTaskResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_GoneExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GoneException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","GoneException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_ResourceLimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceLimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceLimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartSpeakerSearchTask_UnprocessableEntityExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StartSpeakerSearchTaskRequest>();
+            var marshaller = new StartSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnprocessableEntityException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnprocessableEntityException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as StartVoiceToneAnalysisTaskResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_GoneExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GoneException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","GoneException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_ResourceLimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceLimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceLimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StartVoiceToneAnalysisTask_UnprocessableEntityExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StartVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StartVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StartVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnprocessableEntityException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnprocessableEntityException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StartVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopSpeakerSearchTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StopSpeakerSearchTask", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopSpeakerSearchTask_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopSpeakerSearchTask_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopSpeakerSearchTask_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopSpeakerSearchTask_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopSpeakerSearchTask_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopSpeakerSearchTask_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopSpeakerSearchTask_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopSpeakerSearchTask_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopSpeakerSearchTask_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopSpeakerSearchTask_UnprocessableEntityExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopSpeakerSearchTask");
+
+            var request = InstantiateClassGenerator.Execute<StopSpeakerSearchTaskRequest>();
+            var marshaller = new StopSpeakerSearchTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopSpeakerSearchTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnprocessableEntityException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnprocessableEntityException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopSpeakerSearchTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopVoiceToneAnalysisTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("StopVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopVoiceToneAnalysisTask_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopVoiceToneAnalysisTask_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopVoiceToneAnalysisTask_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopVoiceToneAnalysisTask_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopVoiceToneAnalysisTask_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopVoiceToneAnalysisTask_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopVoiceToneAnalysisTask_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopVoiceToneAnalysisTask_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopVoiceToneAnalysisTask_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void StopVoiceToneAnalysisTask_UnprocessableEntityExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StopVoiceToneAnalysisTask");
+
+            var request = InstantiateClassGenerator.Execute<StopVoiceToneAnalysisTaskRequest>();
+            var marshaller = new StopVoiceToneAnalysisTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("StopVoiceToneAnalysisTask", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnprocessableEntityException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnprocessableEntityException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = StopVoiceToneAnalysisTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void TagResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var marshaller = new TagResourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void TagResource_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var marshaller = new TagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = TagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void TagResource_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var marshaller = new TagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = TagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void TagResource_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var marshaller = new TagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = TagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void TagResource_ResourceLimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var marshaller = new TagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceLimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceLimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = TagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void TagResource_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var marshaller = new TagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = TagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void TagResource_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var marshaller = new TagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = TagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void TagResource_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("TagResource");
+
+            var request = InstantiateClassGenerator.Execute<TagResourceRequest>();
+            var marshaller = new TagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("TagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = TagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UntagResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var marshaller = new UntagResourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UntagResource_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var marshaller = new UntagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UntagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UntagResource_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var marshaller = new UntagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UntagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UntagResource_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var marshaller = new UntagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UntagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UntagResource_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var marshaller = new UntagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UntagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UntagResource_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var marshaller = new UntagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UntagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UntagResource_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UntagResource");
+
+            var request = InstantiateClassGenerator.Execute<UntagResourceRequest>();
+            var marshaller = new UntagResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UntagResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UntagResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
         public void UpdateGlobalSettingsMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateGlobalSettings");
@@ -18785,6 +23979,642 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = UpdateVoiceConnectorGroupResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfileMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileRequest>();
+            var marshaller = new UpdateVoiceProfileRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateVoiceProfile", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateVoiceProfileResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateVoiceProfileResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfile_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileRequest>();
+            var marshaller = new UpdateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfile_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileRequest>();
+            var marshaller = new UpdateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfile_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileRequest>();
+            var marshaller = new UpdateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfile_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileRequest>();
+            var marshaller = new UpdateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfile_GoneExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileRequest>();
+            var marshaller = new UpdateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("GoneException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","GoneException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfile_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileRequest>();
+            var marshaller = new UpdateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfile_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileRequest>();
+            var marshaller = new UpdateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfile_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileRequest>();
+            var marshaller = new UpdateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfile_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileRequest>();
+            var marshaller = new UpdateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfile_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfile");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileRequest>();
+            var marshaller = new UpdateVoiceProfileRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfile", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfileDomainMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileDomainRequest>();
+            var marshaller = new UpdateVoiceProfileDomainRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateVoiceProfileDomainResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateVoiceProfileDomainResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfileDomain_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileDomainRequest>();
+            var marshaller = new UpdateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfileDomain_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileDomainRequest>();
+            var marshaller = new UpdateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfileDomain_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileDomainRequest>();
+            var marshaller = new UpdateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfileDomain_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileDomainRequest>();
+            var marshaller = new UpdateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfileDomain_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileDomainRequest>();
+            var marshaller = new UpdateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfileDomain_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileDomainRequest>();
+            var marshaller = new UpdateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfileDomain_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileDomainRequest>();
+            var marshaller = new UpdateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKVoice")]
+        public void UpdateVoiceProfileDomain_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateVoiceProfileDomain");
+
+            var request = InstantiateClassGenerator.Execute<UpdateVoiceProfileDomainRequest>();
+            var marshaller = new UpdateVoiceProfileDomainRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateVoiceProfileDomain", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateVoiceProfileDomainResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

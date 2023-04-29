@@ -1314,6 +1314,111 @@ namespace Amazon.Proton
 
         #endregion
         
+        #region  CreateServiceInstance
+
+        internal virtual CreateServiceInstanceResponse CreateServiceInstance(CreateServiceInstanceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceInstanceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceInstanceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create a service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceInstance service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateServiceInstance service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">REST API Reference for CreateServiceInstance Operation</seealso>
+        public virtual Task<CreateServiceInstanceResponse> CreateServiceInstanceAsync(CreateServiceInstanceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceInstanceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceInstanceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateServiceInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateServiceSyncConfig
+
+        internal virtual CreateServiceSyncConfigResponse CreateServiceSyncConfig(CreateServiceSyncConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return Invoke<CreateServiceSyncConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Create the Proton Ops configuration file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateServiceSyncConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ServiceQuotaExceededException">
+        /// A quota was exceeded. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-limits.html">Proton
+        /// Quotas</a> in the <i>Proton User Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">REST API Reference for CreateServiceSyncConfig Operation</seealso>
+        public virtual Task<CreateServiceSyncConfigResponse> CreateServiceSyncConfigAsync(CreateServiceSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateServiceSyncConfigResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateServiceTemplate
 
         internal virtual CreateServiceTemplateResponse CreateServiceTemplate(CreateServiceTemplateRequest request)
@@ -1900,6 +2005,58 @@ namespace Amazon.Proton
             options.ResponseUnmarshaller = DeleteServiceResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteServiceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteServiceSyncConfig
+
+        internal virtual DeleteServiceSyncConfigResponse DeleteServiceSyncConfig(DeleteServiceSyncConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteServiceSyncConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete the Proton Ops file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteServiceSyncConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">REST API Reference for DeleteServiceSyncConfig Operation</seealso>
+        public virtual Task<DeleteServiceSyncConfigResponse> DeleteServiceSyncConfigAsync(DeleteServiceSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteServiceSyncConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2520,8 +2677,9 @@ namespace Amazon.Proton
         /// The action returns staleness counts (counts of resources that are up-to-date, behind
         /// a template major version, or behind a template minor version), the total number of
         /// resources, and the number of resources that are in a failed state, grouped by resource
-        /// type. Components, environments, and service templates are exceptions—see the <code>components</code>,
-        /// <code>environments</code>, and <code>serviceTemplates</code> field descriptions.
+        /// type. Components, environments, and service templates return less information - see
+        /// the <code>components</code>, <code>environments</code>, and <code>serviceTemplates</code>
+        /// field descriptions.
         /// </para>
         ///  
         /// <para>
@@ -2659,6 +2817,153 @@ namespace Amazon.Proton
             options.ResponseUnmarshaller = GetServiceInstanceResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetServiceInstanceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetServiceInstanceSyncStatus
+
+        internal virtual GetServiceInstanceSyncStatusResponse GetServiceInstanceSyncStatus(GetServiceInstanceSyncStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceInstanceSyncStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceInstanceSyncStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceInstanceSyncStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the status of the synced service instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceInstanceSyncStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetServiceInstanceSyncStatus service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">REST API Reference for GetServiceInstanceSyncStatus Operation</seealso>
+        public virtual Task<GetServiceInstanceSyncStatusResponse> GetServiceInstanceSyncStatusAsync(GetServiceInstanceSyncStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceInstanceSyncStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceInstanceSyncStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetServiceInstanceSyncStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetServiceSyncBlockerSummary
+
+        internal virtual GetServiceSyncBlockerSummaryResponse GetServiceSyncBlockerSummary(GetServiceSyncBlockerSummaryRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSyncBlockerSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSyncBlockerSummaryResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceSyncBlockerSummaryResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get detailed data for the service sync blocker summary.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSyncBlockerSummary service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetServiceSyncBlockerSummary service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">REST API Reference for GetServiceSyncBlockerSummary Operation</seealso>
+        public virtual Task<GetServiceSyncBlockerSummaryResponse> GetServiceSyncBlockerSummaryAsync(GetServiceSyncBlockerSummaryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSyncBlockerSummaryRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSyncBlockerSummaryResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetServiceSyncBlockerSummaryResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetServiceSyncConfig
+
+        internal virtual GetServiceSyncConfigResponse GetServiceSyncConfig(GetServiceSyncConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return Invoke<GetServiceSyncConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get detailed information for the service sync configuration.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetServiceSyncConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">REST API Reference for GetServiceSyncConfig Operation</seealso>
+        public virtual Task<GetServiceSyncConfigResponse> GetServiceSyncConfigAsync(GetServiceSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetServiceSyncConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4767,6 +5072,110 @@ namespace Amazon.Proton
             options.ResponseUnmarshaller = UpdateServicePipelineResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateServicePipelineResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceSyncBlocker
+
+        internal virtual UpdateServiceSyncBlockerResponse UpdateServiceSyncBlocker(UpdateServiceSyncBlockerRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSyncBlockerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSyncBlockerResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceSyncBlockerResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update the service sync blocker by resolving it.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSyncBlocker service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateServiceSyncBlocker service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">REST API Reference for UpdateServiceSyncBlocker Operation</seealso>
+        public virtual Task<UpdateServiceSyncBlockerResponse> UpdateServiceSyncBlockerAsync(UpdateServiceSyncBlockerRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSyncBlockerRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSyncBlockerResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateServiceSyncBlockerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateServiceSyncConfig
+
+        internal virtual UpdateServiceSyncConfigResponse UpdateServiceSyncConfig(UpdateServiceSyncConfigRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateServiceSyncConfigResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update the Proton Ops config file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateServiceSyncConfig service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateServiceSyncConfig service method, as returned by Proton.</returns>
+        /// <exception cref="Amazon.Proton.Model.AccessDeniedException">
+        /// There <i>isn't</i> sufficient access for performing this action.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ConflictException">
+        /// The request <i>couldn't</i> be made due to a conflicting operation or resource.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.InternalServerException">
+        /// The request failed to register with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ResourceNotFoundException">
+        /// The requested resource <i>wasn't</i> found.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Proton.Model.ValidationException">
+        /// The input is invalid or an out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">REST API Reference for UpdateServiceSyncConfig Operation</seealso>
+        public virtual Task<UpdateServiceSyncConfigResponse> UpdateServiceSyncConfigAsync(UpdateServiceSyncConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateServiceSyncConfigRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateServiceSyncConfigResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateServiceSyncConfigResponse>(request, options, cancellationToken);
         }
 
         #endregion

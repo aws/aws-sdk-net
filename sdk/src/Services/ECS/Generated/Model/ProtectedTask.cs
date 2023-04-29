@@ -60,8 +60,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property ProtectionEnabled. 
         /// <para>
-        /// The protection status of the task. If scale-in protection is enabled for a task, the
-        /// value is <code>true</code>. Otherwise, it is <code>false</code>.
+        /// The protection status of the task. If scale-in protection is on for a task, the value
+        /// is <code>true</code>. Otherwise, it is <code>false</code>.
         /// </para>
         /// </summary>
         public bool ProtectionEnabled

@@ -76,6 +76,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Source = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("statusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -85,7 +85,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 writer.Write(sampleContent);
             }
-            bucketName = S3TestUtils.CreateBucketWithWait(s3EncryptionClientFileMode);
+            bucketName = S3TestUtils.CreateBucketWithWait(s3EncryptionClientFileMode, true);
         }
 
         [ClassCleanup]

@@ -55,12 +55,12 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An S3 location for the destination of the file copy.
+        /// An Amazon S3 location for the destination of the file copy.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A flag that indicates whether or not to overwrite an existing file of the same name.
-        /// The default is <code>FALSE</code>.
+        /// A flag that indicates whether to overwrite an existing file of the same name. The
+        /// default is <code>FALSE</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -79,11 +79,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property CustomStepDetails. 
         /// <para>
-        /// Details for a step that invokes a lambda function.
+        /// Details for a step that invokes an Lambda function.
         /// </para>
         ///  
         /// <para>
-        ///  Consists of the lambda function name, target, and timeout (in seconds). 
+        /// Consists of the Lambda function's name, target, and timeout (in seconds). 
         /// </para>
         /// </summary>
         public CustomStepDetails CustomStepDetails
@@ -99,7 +99,37 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DecryptStepDetails.
+        /// Gets and sets the property DecryptStepDetails. 
+        /// <para>
+        /// Details for a step that decrypts an encrypted file.
+        /// </para>
+        ///  
+        /// <para>
+        /// Consists of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A descriptive name
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An Amazon S3 or Amazon Elastic File System (Amazon EFS) location for the source file
+        /// to decrypt.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// An S3 or Amazon EFS location for the destination of the file decryption.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A flag that indicates whether to overwrite an existing file of the same name. The
+        /// default is <code>FALSE</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The type of encryption that's used. Currently, only PGP encryption is supported.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public DecryptStepDetails DecryptStepDetails
         {
@@ -138,7 +168,7 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// You specify one or more tags: each tag contains a key/value pair.
+        /// You specify one or more tags. Each tag contains a key-value pair.
         /// </para>
         /// </summary>
         public TagStepDetails TagStepDetails
@@ -160,19 +190,23 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <i>COPY</i>: Copy the file to another location.
+        ///  <b> <code>COPY</code> </b> - Copy the file to another location.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>CUSTOM</i>: Perform a custom step with an Lambda function target.
+        ///  <b> <code>CUSTOM</code> </b> - Perform a custom step with an Lambda function target.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>DELETE</i>: Delete the file.
+        ///  <b> <code>DECRYPT</code> </b> - Decrypt a file that was encrypted before it was uploaded.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <i>TAG</i>: Add a tag to the file.
+        ///  <b> <code>DELETE</code> </b> - Delete the file.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b> <code>TAG</code> </b> - Add a tag to the file.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -106,6 +106,12 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.TagsMap = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("updateStatus", targetDepth))
+                {
+                    var unmarshaller = UpdateStatusUnmarshaller.Instance;
+                    unmarshalledObject.UpdateStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -49,7 +49,9 @@ namespace Amazon.ConfigService.Model
         /// </para>
         ///  
         /// <para>
-        /// The allowed values are <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and <code>NOT_APPLICABLE</code>.
+        ///  <code>INSUFFICIENT_DATA</code> is a valid <code>ComplianceType</code> that is returned
+        /// when an Config rule cannot be evaluated. However, <code>INSUFFICIENT_DATA</code> cannot
+        /// be used as a <code>ComplianceType</code> for filtering results.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]

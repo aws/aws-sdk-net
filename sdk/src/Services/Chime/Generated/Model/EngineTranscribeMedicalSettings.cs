@@ -43,8 +43,12 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ContentIdentificationType. 
         /// <para>
-        /// Set this field to <code>PHI</code> to identify personal health information in the
-        /// transcription output.
+        /// Labels all personally identifiable information (PII) identified in your transcript.
+        /// If you don't include <code>PiiEntityTypes</code>, all PII is identified.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can’t set <code>ContentIdentificationType</code> and <code>ContentRedactionType</code>.
         /// </para>
         /// </summary>
         public TranscribeMedicalContentIdentificationType ContentIdentificationType

@@ -50,13 +50,6 @@ namespace Amazon.EC2.Model
     /// Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
     /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
     /// </para>
-    ///  <note> 
-    /// <para>
-    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-    /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class PurchaseReservedInstancesOfferingRequest : AmazonEC2Request
     {

@@ -286,8 +286,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property IamId. 
         /// <para>
-        ///  The unique identifier for the IAM user or role that's associated with the evidence.
-        /// 
+        ///  The unique identifier for the user or role that's associated with the evidence. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

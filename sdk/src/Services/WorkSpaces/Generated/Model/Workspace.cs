@@ -182,7 +182,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property RelatedWorkspaces. 
         /// <para>
-        /// The Standby WorkSpace or Primary WorkSpace related to the specified WorkSpace.
+        /// The standby WorkSpace or primary WorkSpace related to the specified WorkSpace.
         /// </para>
         /// </summary>
         public List<RelatedWorkspaceProperties> RelatedWorkspaces

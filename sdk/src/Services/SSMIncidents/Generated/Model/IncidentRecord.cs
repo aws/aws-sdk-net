@@ -282,7 +282,7 @@ namespace Amazon.SSMIncidents.Model
         /// currently happening, and context of the incident.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4000)]
+        [AWSProperty(Min=0, Max=8000)]
         public string Summary
         {
             get { return this._summary; }

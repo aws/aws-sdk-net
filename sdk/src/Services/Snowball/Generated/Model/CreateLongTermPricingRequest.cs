@@ -43,10 +43,6 @@ namespace Amazon.Snowball.Model
         /// <summary>
         /// Gets and sets the property IsLongTermPricingAutoRenew. 
         /// <para>
-        /// snowballty
-        /// </para>
-        ///  
-        /// <para>
         /// Specifies whether the current long-term pricing type for the device should be renewed.
         /// </para>
         /// </summary>

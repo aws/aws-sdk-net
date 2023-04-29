@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Summary information about a bot returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBots.html">ListBots</a>
+    /// Summary information about a bot returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBots.html">ListBots</a>
     /// operation.
     /// </summary>
     public partial class BotSummary
@@ -37,6 +37,7 @@ namespace Amazon.LexModelsV2.Model
         private string _botId;
         private string _botName;
         private BotStatus _botStatus;
+        private BotType _botType;
         private string _description;
         private DateTime? _lastUpdatedDateTime;
         private string _latestBotVersion;
@@ -45,7 +46,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property BotId. 
         /// <para>
         /// The unique identifier assigned to the bot. Use this ID to get detailed information
-        /// about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_DescribeBot.html">DescribeBot</a>
+        /// about the bot with the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeBot.html">DescribeBot</a>
         /// operation.
         /// </para>
         /// </summary>
@@ -98,6 +99,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetBotStatus()
         {
             return this._botStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BotType. 
+        /// <para>
+        /// The type of the bot.
+        /// </para>
+        /// </summary>
+        public BotType BotType
+        {
+            get { return this._botType; }
+            set { this._botType = value; }
+        }
+
+        // Check to see if BotType property is set
+        internal bool IsSetBotType()
+        {
+            return this._botType != null;
         }
 
         /// <summary>

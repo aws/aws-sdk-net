@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePlaceIndex operation.
-    /// Deletes a place index resource from your AWS account.
+    /// Deletes a place index resource from your Amazon Web Services account.
     /// 
     ///  <note> 
     /// <para>

@@ -52,6 +52,14 @@ namespace Amazon.VoiceID.Model
         }
 
         /// <summary>
+        /// Paginator for ListFraudsters operation
+        ///</summary>
+        public IListFraudstersPaginator ListFraudsters(ListFraudstersRequest request) 
+        {
+            return new ListFraudstersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSpeakerEnrollmentJobs operation
         ///</summary>
         public IListSpeakerEnrollmentJobsPaginator ListSpeakerEnrollmentJobs(ListSpeakerEnrollmentJobsRequest request) 
@@ -65,6 +73,14 @@ namespace Amazon.VoiceID.Model
         public IListSpeakersPaginator ListSpeakers(ListSpeakersRequest request) 
         {
             return new ListSpeakersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListWatchlists operation
+        ///</summary>
+        public IListWatchlistsPaginator ListWatchlists(ListWatchlistsRequest request) 
+        {
+            return new ListWatchlistsPaginator(this.client, request);
         }
     }
 }

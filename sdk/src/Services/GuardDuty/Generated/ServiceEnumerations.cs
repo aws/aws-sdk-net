@@ -75,6 +75,288 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type AutoEnableMembers.
+    /// </summary>
+    public class AutoEnableMembers : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for AutoEnableMembers
+        /// </summary>
+        public static readonly AutoEnableMembers ALL = new AutoEnableMembers("ALL");
+        /// <summary>
+        /// Constant NEW for AutoEnableMembers
+        /// </summary>
+        public static readonly AutoEnableMembers NEW = new AutoEnableMembers("NEW");
+        /// <summary>
+        /// Constant NONE for AutoEnableMembers
+        /// </summary>
+        public static readonly AutoEnableMembers NONE = new AutoEnableMembers("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoEnableMembers(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoEnableMembers FindValue(string value)
+        {
+            return FindValue<AutoEnableMembers>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoEnableMembers(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CoverageFilterCriterionKey.
+    /// </summary>
+    public class CoverageFilterCriterionKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for CoverageFilterCriterionKey
+        /// </summary>
+        public static readonly CoverageFilterCriterionKey ACCOUNT_ID = new CoverageFilterCriterionKey("ACCOUNT_ID");
+        /// <summary>
+        /// Constant ADDON_VERSION for CoverageFilterCriterionKey
+        /// </summary>
+        public static readonly CoverageFilterCriterionKey ADDON_VERSION = new CoverageFilterCriterionKey("ADDON_VERSION");
+        /// <summary>
+        /// Constant CLUSTER_NAME for CoverageFilterCriterionKey
+        /// </summary>
+        public static readonly CoverageFilterCriterionKey CLUSTER_NAME = new CoverageFilterCriterionKey("CLUSTER_NAME");
+        /// <summary>
+        /// Constant COVERAGE_STATUS for CoverageFilterCriterionKey
+        /// </summary>
+        public static readonly CoverageFilterCriterionKey COVERAGE_STATUS = new CoverageFilterCriterionKey("COVERAGE_STATUS");
+        /// <summary>
+        /// Constant RESOURCE_TYPE for CoverageFilterCriterionKey
+        /// </summary>
+        public static readonly CoverageFilterCriterionKey RESOURCE_TYPE = new CoverageFilterCriterionKey("RESOURCE_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CoverageFilterCriterionKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CoverageFilterCriterionKey FindValue(string value)
+        {
+            return FindValue<CoverageFilterCriterionKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CoverageFilterCriterionKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CoverageSortKey.
+    /// </summary>
+    public class CoverageSortKey : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_ID for CoverageSortKey
+        /// </summary>
+        public static readonly CoverageSortKey ACCOUNT_ID = new CoverageSortKey("ACCOUNT_ID");
+        /// <summary>
+        /// Constant ADDON_VERSION for CoverageSortKey
+        /// </summary>
+        public static readonly CoverageSortKey ADDON_VERSION = new CoverageSortKey("ADDON_VERSION");
+        /// <summary>
+        /// Constant CLUSTER_NAME for CoverageSortKey
+        /// </summary>
+        public static readonly CoverageSortKey CLUSTER_NAME = new CoverageSortKey("CLUSTER_NAME");
+        /// <summary>
+        /// Constant COVERAGE_STATUS for CoverageSortKey
+        /// </summary>
+        public static readonly CoverageSortKey COVERAGE_STATUS = new CoverageSortKey("COVERAGE_STATUS");
+        /// <summary>
+        /// Constant ISSUE for CoverageSortKey
+        /// </summary>
+        public static readonly CoverageSortKey ISSUE = new CoverageSortKey("ISSUE");
+        /// <summary>
+        /// Constant UPDATED_AT for CoverageSortKey
+        /// </summary>
+        public static readonly CoverageSortKey UPDATED_AT = new CoverageSortKey("UPDATED_AT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CoverageSortKey(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CoverageSortKey FindValue(string value)
+        {
+            return FindValue<CoverageSortKey>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CoverageSortKey(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CoverageStatisticsType.
+    /// </summary>
+    public class CoverageStatisticsType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COUNT_BY_COVERAGE_STATUS for CoverageStatisticsType
+        /// </summary>
+        public static readonly CoverageStatisticsType COUNT_BY_COVERAGE_STATUS = new CoverageStatisticsType("COUNT_BY_COVERAGE_STATUS");
+        /// <summary>
+        /// Constant COUNT_BY_RESOURCE_TYPE for CoverageStatisticsType
+        /// </summary>
+        public static readonly CoverageStatisticsType COUNT_BY_RESOURCE_TYPE = new CoverageStatisticsType("COUNT_BY_RESOURCE_TYPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CoverageStatisticsType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CoverageStatisticsType FindValue(string value)
+        {
+            return FindValue<CoverageStatisticsType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CoverageStatisticsType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type CoverageStatus.
+    /// </summary>
+    public class CoverageStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEALTHY for CoverageStatus
+        /// </summary>
+        public static readonly CoverageStatus HEALTHY = new CoverageStatus("HEALTHY");
+        /// <summary>
+        /// Constant UNHEALTHY for CoverageStatus
+        /// </summary>
+        public static readonly CoverageStatus UNHEALTHY = new CoverageStatus("UNHEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CoverageStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CoverageStatus FindValue(string value)
+        {
+            return FindValue<CoverageStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CoverageStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CriterionKey.
     /// </summary>
     public class CriterionKey : ConstantClass
@@ -104,6 +386,10 @@ namespace Amazon.GuardDuty
         /// Constant SCAN_STATUS for CriterionKey
         /// </summary>
         public static readonly CriterionKey SCAN_STATUS = new CriterionKey("SCAN_STATUS");
+        /// <summary>
+        /// Constant SCAN_TYPE for CriterionKey
+        /// </summary>
+        public static readonly CriterionKey SCAN_TYPE = new CriterionKey("SCAN_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -303,6 +589,150 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type DetectorFeature.
+    /// </summary>
+    public class DetectorFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EBS_MALWARE_PROTECTION for DetectorFeature
+        /// </summary>
+        public static readonly DetectorFeature EBS_MALWARE_PROTECTION = new DetectorFeature("EBS_MALWARE_PROTECTION");
+        /// <summary>
+        /// Constant EKS_AUDIT_LOGS for DetectorFeature
+        /// </summary>
+        public static readonly DetectorFeature EKS_AUDIT_LOGS = new DetectorFeature("EKS_AUDIT_LOGS");
+        /// <summary>
+        /// Constant EKS_RUNTIME_MONITORING for DetectorFeature
+        /// </summary>
+        public static readonly DetectorFeature EKS_RUNTIME_MONITORING = new DetectorFeature("EKS_RUNTIME_MONITORING");
+        /// <summary>
+        /// Constant LAMBDA_NETWORK_LOGS for DetectorFeature
+        /// </summary>
+        public static readonly DetectorFeature LAMBDA_NETWORK_LOGS = new DetectorFeature("LAMBDA_NETWORK_LOGS");
+        /// <summary>
+        /// Constant RDS_LOGIN_EVENTS for DetectorFeature
+        /// </summary>
+        public static readonly DetectorFeature RDS_LOGIN_EVENTS = new DetectorFeature("RDS_LOGIN_EVENTS");
+        /// <summary>
+        /// Constant S3_DATA_EVENTS for DetectorFeature
+        /// </summary>
+        public static readonly DetectorFeature S3_DATA_EVENTS = new DetectorFeature("S3_DATA_EVENTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetectorFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetectorFeature FindValue(string value)
+        {
+            return FindValue<DetectorFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetectorFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DetectorFeatureResult.
+    /// </summary>
+    public class DetectorFeatureResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUD_TRAIL for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult CLOUD_TRAIL = new DetectorFeatureResult("CLOUD_TRAIL");
+        /// <summary>
+        /// Constant DNS_LOGS for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult DNS_LOGS = new DetectorFeatureResult("DNS_LOGS");
+        /// <summary>
+        /// Constant EBS_MALWARE_PROTECTION for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult EBS_MALWARE_PROTECTION = new DetectorFeatureResult("EBS_MALWARE_PROTECTION");
+        /// <summary>
+        /// Constant EKS_AUDIT_LOGS for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult EKS_AUDIT_LOGS = new DetectorFeatureResult("EKS_AUDIT_LOGS");
+        /// <summary>
+        /// Constant EKS_RUNTIME_MONITORING for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult EKS_RUNTIME_MONITORING = new DetectorFeatureResult("EKS_RUNTIME_MONITORING");
+        /// <summary>
+        /// Constant FLOW_LOGS for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult FLOW_LOGS = new DetectorFeatureResult("FLOW_LOGS");
+        /// <summary>
+        /// Constant LAMBDA_NETWORK_LOGS for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult LAMBDA_NETWORK_LOGS = new DetectorFeatureResult("LAMBDA_NETWORK_LOGS");
+        /// <summary>
+        /// Constant RDS_LOGIN_EVENTS for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult RDS_LOGIN_EVENTS = new DetectorFeatureResult("RDS_LOGIN_EVENTS");
+        /// <summary>
+        /// Constant S3_DATA_EVENTS for DetectorFeatureResult
+        /// </summary>
+        public static readonly DetectorFeatureResult S3_DATA_EVENTS = new DetectorFeatureResult("S3_DATA_EVENTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DetectorFeatureResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DetectorFeatureResult FindValue(string value)
+        {
+            return FindValue<DetectorFeatureResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DetectorFeatureResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DetectorStatus.
     /// </summary>
     public class DetectorStatus : ConstantClass
@@ -396,6 +826,102 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator EbsSnapshotPreservation(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FeatureAdditionalConfiguration.
+    /// </summary>
+    public class FeatureAdditionalConfiguration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EKS_ADDON_MANAGEMENT for FeatureAdditionalConfiguration
+        /// </summary>
+        public static readonly FeatureAdditionalConfiguration EKS_ADDON_MANAGEMENT = new FeatureAdditionalConfiguration("EKS_ADDON_MANAGEMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeatureAdditionalConfiguration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureAdditionalConfiguration FindValue(string value)
+        {
+            return FindValue<FeatureAdditionalConfiguration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureAdditionalConfiguration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FeatureStatus.
+    /// </summary>
+    public class FeatureStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus DISABLED = new FeatureStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for FeatureStatus
+        /// </summary>
+        public static readonly FeatureStatus ENABLED = new FeatureStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeatureStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeatureStatus FindValue(string value)
+        {
+            return FindValue<FeatureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeatureStatus(string value)
         {
             return FindValue(value);
         }
@@ -603,6 +1129,84 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type FreeTrialFeatureResult.
+    /// </summary>
+    public class FreeTrialFeatureResult : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUD_TRAIL for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult CLOUD_TRAIL = new FreeTrialFeatureResult("CLOUD_TRAIL");
+        /// <summary>
+        /// Constant DNS_LOGS for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult DNS_LOGS = new FreeTrialFeatureResult("DNS_LOGS");
+        /// <summary>
+        /// Constant EBS_MALWARE_PROTECTION for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult EBS_MALWARE_PROTECTION = new FreeTrialFeatureResult("EBS_MALWARE_PROTECTION");
+        /// <summary>
+        /// Constant EKS_AUDIT_LOGS for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult EKS_AUDIT_LOGS = new FreeTrialFeatureResult("EKS_AUDIT_LOGS");
+        /// <summary>
+        /// Constant EKS_RUNTIME_MONITORING for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult EKS_RUNTIME_MONITORING = new FreeTrialFeatureResult("EKS_RUNTIME_MONITORING");
+        /// <summary>
+        /// Constant FLOW_LOGS for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult FLOW_LOGS = new FreeTrialFeatureResult("FLOW_LOGS");
+        /// <summary>
+        /// Constant LAMBDA_NETWORK_LOGS for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult LAMBDA_NETWORK_LOGS = new FreeTrialFeatureResult("LAMBDA_NETWORK_LOGS");
+        /// <summary>
+        /// Constant RDS_LOGIN_EVENTS for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult RDS_LOGIN_EVENTS = new FreeTrialFeatureResult("RDS_LOGIN_EVENTS");
+        /// <summary>
+        /// Constant S3_DATA_EVENTS for FreeTrialFeatureResult
+        /// </summary>
+        public static readonly FreeTrialFeatureResult S3_DATA_EVENTS = new FreeTrialFeatureResult("S3_DATA_EVENTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FreeTrialFeatureResult(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FreeTrialFeatureResult FindValue(string value)
+        {
+            return FindValue<FreeTrialFeatureResult>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FreeTrialFeatureResult(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type IpSetFormat.
     /// </summary>
     public class IpSetFormat : ConstantClass
@@ -789,6 +1393,168 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type OrgFeature.
+    /// </summary>
+    public class OrgFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EBS_MALWARE_PROTECTION for OrgFeature
+        /// </summary>
+        public static readonly OrgFeature EBS_MALWARE_PROTECTION = new OrgFeature("EBS_MALWARE_PROTECTION");
+        /// <summary>
+        /// Constant EKS_AUDIT_LOGS for OrgFeature
+        /// </summary>
+        public static readonly OrgFeature EKS_AUDIT_LOGS = new OrgFeature("EKS_AUDIT_LOGS");
+        /// <summary>
+        /// Constant EKS_RUNTIME_MONITORING for OrgFeature
+        /// </summary>
+        public static readonly OrgFeature EKS_RUNTIME_MONITORING = new OrgFeature("EKS_RUNTIME_MONITORING");
+        /// <summary>
+        /// Constant LAMBDA_NETWORK_LOGS for OrgFeature
+        /// </summary>
+        public static readonly OrgFeature LAMBDA_NETWORK_LOGS = new OrgFeature("LAMBDA_NETWORK_LOGS");
+        /// <summary>
+        /// Constant RDS_LOGIN_EVENTS for OrgFeature
+        /// </summary>
+        public static readonly OrgFeature RDS_LOGIN_EVENTS = new OrgFeature("RDS_LOGIN_EVENTS");
+        /// <summary>
+        /// Constant S3_DATA_EVENTS for OrgFeature
+        /// </summary>
+        public static readonly OrgFeature S3_DATA_EVENTS = new OrgFeature("S3_DATA_EVENTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrgFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrgFeature FindValue(string value)
+        {
+            return FindValue<OrgFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrgFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrgFeatureAdditionalConfiguration.
+    /// </summary>
+    public class OrgFeatureAdditionalConfiguration : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EKS_ADDON_MANAGEMENT for OrgFeatureAdditionalConfiguration
+        /// </summary>
+        public static readonly OrgFeatureAdditionalConfiguration EKS_ADDON_MANAGEMENT = new OrgFeatureAdditionalConfiguration("EKS_ADDON_MANAGEMENT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrgFeatureAdditionalConfiguration(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrgFeatureAdditionalConfiguration FindValue(string value)
+        {
+            return FindValue<OrgFeatureAdditionalConfiguration>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrgFeatureAdditionalConfiguration(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type OrgFeatureStatus.
+    /// </summary>
+    public class OrgFeatureStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NEW for OrgFeatureStatus
+        /// </summary>
+        public static readonly OrgFeatureStatus NEW = new OrgFeatureStatus("NEW");
+        /// <summary>
+        /// Constant NONE for OrgFeatureStatus
+        /// </summary>
+        public static readonly OrgFeatureStatus NONE = new OrgFeatureStatus("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrgFeatureStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrgFeatureStatus FindValue(string value)
+        {
+            return FindValue<OrgFeatureStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrgFeatureStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PublishingStatus.
     /// </summary>
     public class PublishingStatus : ConstantClass
@@ -840,6 +1606,52 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PublishingStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceType.
+    /// </summary>
+    public class ResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EKS for ResourceType
+        /// </summary>
+        public static readonly ResourceType EKS = new ResourceType("EKS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceType FindValue(string value)
+        {
+            return FindValue<ResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceType(string value)
         {
             return FindValue(value);
         }
@@ -960,6 +1772,10 @@ namespace Amazon.GuardDuty
         /// Constant RUNNING for ScanStatus
         /// </summary>
         public static readonly ScanStatus RUNNING = new ScanStatus("RUNNING");
+        /// <summary>
+        /// Constant SKIPPED for ScanStatus
+        /// </summary>
+        public static readonly ScanStatus SKIPPED = new ScanStatus("SKIPPED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -990,6 +1806,56 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScanStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScanType.
+    /// </summary>
+    public class ScanType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GUARDDUTY_INITIATED for ScanType
+        /// </summary>
+        public static readonly ScanType GUARDDUTY_INITIATED = new ScanType("GUARDDUTY_INITIATED");
+        /// <summary>
+        /// Constant ON_DEMAND for ScanType
+        /// </summary>
+        public static readonly ScanType ON_DEMAND = new ScanType("ON_DEMAND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanType FindValue(string value)
+        {
+            return FindValue<ScanType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanType(string value)
         {
             return FindValue(value);
         }
@@ -1133,6 +1999,84 @@ namespace Amazon.GuardDuty
 
 
     /// <summary>
+    /// Constants used for properties of type UsageFeature.
+    /// </summary>
+    public class UsageFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUD_TRAIL for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature CLOUD_TRAIL = new UsageFeature("CLOUD_TRAIL");
+        /// <summary>
+        /// Constant DNS_LOGS for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature DNS_LOGS = new UsageFeature("DNS_LOGS");
+        /// <summary>
+        /// Constant EBS_MALWARE_PROTECTION for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature EBS_MALWARE_PROTECTION = new UsageFeature("EBS_MALWARE_PROTECTION");
+        /// <summary>
+        /// Constant EKS_AUDIT_LOGS for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature EKS_AUDIT_LOGS = new UsageFeature("EKS_AUDIT_LOGS");
+        /// <summary>
+        /// Constant EKS_RUNTIME_MONITORING for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature EKS_RUNTIME_MONITORING = new UsageFeature("EKS_RUNTIME_MONITORING");
+        /// <summary>
+        /// Constant FLOW_LOGS for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature FLOW_LOGS = new UsageFeature("FLOW_LOGS");
+        /// <summary>
+        /// Constant LAMBDA_NETWORK_LOGS for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature LAMBDA_NETWORK_LOGS = new UsageFeature("LAMBDA_NETWORK_LOGS");
+        /// <summary>
+        /// Constant RDS_LOGIN_EVENTS for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature RDS_LOGIN_EVENTS = new UsageFeature("RDS_LOGIN_EVENTS");
+        /// <summary>
+        /// Constant S3_DATA_EVENTS for UsageFeature
+        /// </summary>
+        public static readonly UsageFeature S3_DATA_EVENTS = new UsageFeature("S3_DATA_EVENTS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UsageFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UsageFeature FindValue(string value)
+        {
+            return FindValue<UsageFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UsageFeature(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type UsageStatisticType.
     /// </summary>
     public class UsageStatisticType : ConstantClass
@@ -1146,6 +2090,10 @@ namespace Amazon.GuardDuty
         /// Constant SUM_BY_DATA_SOURCE for UsageStatisticType
         /// </summary>
         public static readonly UsageStatisticType SUM_BY_DATA_SOURCE = new UsageStatisticType("SUM_BY_DATA_SOURCE");
+        /// <summary>
+        /// Constant SUM_BY_FEATURES for UsageStatisticType
+        /// </summary>
+        public static readonly UsageStatisticType SUM_BY_FEATURES = new UsageStatisticType("SUM_BY_FEATURES");
         /// <summary>
         /// Constant SUM_BY_RESOURCE for UsageStatisticType
         /// </summary>

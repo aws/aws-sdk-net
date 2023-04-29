@@ -64,10 +64,22 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("additionalInfo", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.AdditionalInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("appComponents", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AppComponent, AppComponentUnmarshaller>(AppComponentUnmarshaller.Instance);
                     unmarshalledObject.AppComponents = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("excluded", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Excluded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("logicalResourceId", targetDepth))

@@ -38,7 +38,7 @@ namespace Amazon.IdentityManagement.Model
     /// 
     ///  
     /// <para>
-    /// You cannot set the boundary for a service-linked role. 
+    /// You cannot set the boundary for a service-linked role.
     /// </para>
     ///  <important> 
     /// <para>

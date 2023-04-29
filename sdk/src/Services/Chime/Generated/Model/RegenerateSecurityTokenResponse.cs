@@ -36,7 +36,11 @@ namespace Amazon.Chime.Model
         private Bot _bot;
 
         /// <summary>
-        /// Gets and sets the property Bot.
+        /// Gets and sets the property Bot. 
+        /// <para>
+        /// A resource that allows Enterprise account administrators to configure an interface
+        /// that receives events from Amazon Chime.
+        /// </para>
         /// </summary>
         public Bot Bot
         {

@@ -35,7 +35,7 @@ namespace Amazon.CloudFront.Model
     /// 
     ///  
     /// <para>
-    /// The headers, cookies, and query strings that are included in the cache key are automatically
+    /// The headers, cookies, and query strings that are included in the cache key are also
     /// included in requests that CloudFront sends to the origin. CloudFront sends a request
     /// when it can't find an object in its cache that matches the request's cache key. If
     /// you want to send values to the origin but <i>not</i> include them in the cache key,
@@ -54,8 +54,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property CookiesConfig. 
         /// <para>
         /// An object that determines whether any cookies in viewer requests (and if so, which
-        /// cookies) are included in the cache key and automatically included in requests that
-        /// CloudFront sends to the origin.
+        /// cookies) are included in the cache key and in requests that CloudFront sends to the
+        /// origin.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -192,8 +192,7 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property HeadersConfig. 
         /// <para>
         /// An object that determines whether any HTTP headers (and if so, which headers) are
-        /// included in the cache key and automatically included in requests that CloudFront sends
-        /// to the origin.
+        /// included in the cache key and in requests that CloudFront sends to the origin.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -213,8 +212,8 @@ namespace Amazon.CloudFront.Model
         /// Gets and sets the property QueryStringsConfig. 
         /// <para>
         /// An object that determines whether any URL query strings in viewer requests (and if
-        /// so, which query strings) are included in the cache key and automatically included
-        /// in requests that CloudFront sends to the origin.
+        /// so, which query strings) are included in the cache key and in requests that CloudFront
+        /// sends to the origin.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

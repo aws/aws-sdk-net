@@ -114,10 +114,14 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value. This value
-        /// can be between 1 and 200. You cannot specify this parameter and the <code>ImageIDs</code>
-        /// parameter in the same call.
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify this parameter and the <code>ImageIDs</code> parameter in the same
+        /// call.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]
@@ -136,7 +140,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next page of results.
+        /// The token returned from a previous paginated request. Pagination continues from the
+        /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
         public string NextToken

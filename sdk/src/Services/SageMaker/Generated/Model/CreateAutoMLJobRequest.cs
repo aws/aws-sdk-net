@@ -34,7 +34,7 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// Find the best-performing model after you run an Autopilot job by calling .
+    /// Find the best-performing model after you run an Autopilot job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.
     /// </para>
     ///  
     /// <para>
@@ -76,7 +76,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobName. 
         /// <para>
-        /// Identifies an Autopilot job. The name must be unique to your account and is case-insensitive.
+        /// Identifies an Autopilot job. The name must be unique to your account and is case insensitive.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -96,8 +96,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property AutoMLJobObjective. 
         /// <para>
         /// Defines the objective metric used to measure the predictive quality of an AutoML job.
-        /// You provide an <a>AutoMLJobObjective$MetricName</a> and Autopilot infers whether to
-        /// minimize or maximize it.
+        /// You provide an <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
+        /// and Autopilot infers whether to minimize or maximize it. For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
+        /// only <code>Accuracy</code> is supported.
         /// </para>
         /// </summary>
         public AutoMLJobObjective AutoMLJobObjective
@@ -135,9 +136,9 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// An array of channel objects that describes the input data and its location. Each channel
-        /// is a named input source. Similar to <code>InputDataConfig</code> supported by . Format(s)
-        /// supported: CSV, Parquet. A minimum of 500 rows is required for the training dataset.
-        /// There is not a minimum number of rows required for the validation dataset.
+        /// is a named input source. Similar to <code>InputDataConfig</code> supported by <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+        /// Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the training
+        /// dataset. There is not a minimum number of rows required for the validation dataset.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2)]
@@ -195,9 +196,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ProblemType. 
         /// <para>
-        /// Defines the type of supervised learning available for the candidates. For more information,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-problem-types.html">
-        /// Amazon SageMaker Autopilot problem types and algorithm support</a>.
+        /// Defines the type of supervised learning problem available for the candidates. For
+        /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
+        /// Amazon SageMaker Autopilot problem types</a>.
         /// </para>
         /// </summary>
         public ProblemType ProblemType
@@ -234,7 +235,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Each tag consists of a key and an optional value. Tag keys must be unique per resource.
+        /// An array of key-value pairs. You can use tags to categorize your Amazon Web Services
+        /// resources in different ways, for example, by purpose, owner, or environment. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web ServicesResources</a>. Tag keys must be unique per resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

@@ -367,6 +367,10 @@ namespace Amazon.FSx.Model
         ///  <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon File
         /// Cache resource.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]

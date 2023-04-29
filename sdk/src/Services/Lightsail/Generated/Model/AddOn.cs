@@ -33,10 +33,36 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class AddOn
     {
+        private string _duration;
         private string _name;
         private string _nextSnapshotTimeOfDay;
         private string _snapshotTimeOfDay;
         private string _status;
+        private string _threshold;
+
+        /// <summary>
+        /// Gets and sets the property Duration. 
+        /// <para>
+        /// The amount of idle time in minutes after which your virtual computer will automatically
+        /// stop.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This add-on only applies to Lightsail for Research resources.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public string Duration
+        {
+            get { return this._duration; }
+            set { this._duration = value; }
+        }
+
+        // Check to see if Duration property is set
+        internal bool IsSetDuration()
+        {
+            return this._duration != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
@@ -128,6 +154,29 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Threshold. 
+        /// <para>
+        /// The trigger threshold of the action.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This add-on only applies to Lightsail for Research resources.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public string Threshold
+        {
+            get { return this._threshold; }
+            set { this._threshold = value; }
+        }
+
+        // Check to see if Threshold property is set
+        internal bool IsSetThreshold()
+        {
+            return this._threshold != null;
         }
 
     }

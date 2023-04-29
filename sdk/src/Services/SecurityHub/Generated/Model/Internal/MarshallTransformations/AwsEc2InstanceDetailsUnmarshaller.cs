@@ -106,6 +106,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.MetadataOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Monitoring", targetDepth))
+                {
+                    var unmarshaller = AwsEc2InstanceMonitoringDetailsUnmarshaller.Instance;
+                    unmarshalledObject.Monitoring = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NetworkInterfaces", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AwsEc2InstanceNetworkInterfacesDetails, AwsEc2InstanceNetworkInterfacesDetailsUnmarshaller>(AwsEc2InstanceNetworkInterfacesDetailsUnmarshaller.Instance);

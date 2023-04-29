@@ -571,20 +571,69 @@ namespace Amazon.LocationService
 
         #endregion
                 
+        #region  CreateKey
+
+
+
+        /// <summary>
+        /// Creates an API key resource in your Amazon Web Services account, which lets you grant
+        /// <code>geo:GetMap*</code> actions for Amazon Location Map resources to the API key
+        /// bearer.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The API keys feature is in preview. We may add, change, or remove features before
+        /// announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+        /// API keys</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateKey service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ConflictException">
+        /// The request was unsuccessful because of a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/CreateKey">REST API Reference for CreateKey Operation</seealso>
+        Task<CreateKeyResponse> CreateKeyAsync(CreateKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  CreateMap
 
 
 
         /// <summary>
-        /// Creates a map resource in your AWS account, which provides map tiles of different
-        /// styles sourced from global location data providers.
+        /// Creates a map resource in your Amazon Web Services account, which provides map tiles
+        /// of different styles sourced from global location data providers.
         /// 
         ///  <note> 
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
         /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
-        /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
-        /// for more details.
+        /// See section 82 of the <a href="http://aws.amazon.com/service-terms">Amazon Web Services
+        /// service terms</a> for more details.
         /// </para>
         ///  </note>
         /// </summary>
@@ -625,8 +674,8 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Creates a place index resource in your AWS account. Use a place index resource to
-        /// geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code>
+        /// Creates a place index resource in your Amazon Web Services account. Use a place index
+        /// resource to geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code>
         /// operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code>
         /// operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code>
         /// operation.
@@ -635,8 +684,8 @@ namespace Amazon.LocationService
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
         /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
-        /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
-        /// for more details.
+        /// See section 82 of the <a href="http://aws.amazon.com/service-terms">Amazon Web Services
+        /// service terms</a> for more details.
         /// </para>
         ///  </note>
         /// </summary>
@@ -677,7 +726,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Creates a route calculator resource in your AWS account.
+        /// Creates a route calculator resource in your Amazon Web Services account.
         /// 
         ///  
         /// <para>
@@ -689,8 +738,8 @@ namespace Amazon.LocationService
         /// <para>
         /// If your application is tracking or routing assets you use in your business, such as
         /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
-        /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
-        /// for more details.
+        /// See section 82 of the <a href="http://aws.amazon.com/service-terms">Amazon Web Services
+        /// service terms</a> for more details.
         /// </para>
         ///  </note>
         /// </summary>
@@ -731,8 +780,8 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Creates a tracker resource in your AWS account, which lets you retrieve current and
-        /// historical location of devices.
+        /// Creates a tracker resource in your Amazon Web Services account, which lets you retrieve
+        /// current and historical location of devices.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTracker service method.</param>
         /// <param name="cancellationToken">
@@ -767,7 +816,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a geofence collection from your AWS account.
+        /// Deletes a geofence collection from your Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>
@@ -804,12 +853,48 @@ namespace Amazon.LocationService
 
         #endregion
                 
+        #region  DeleteKey
+
+
+
+        /// <summary>
+        /// Deletes the specified API key. The API key must have been deactivated more than 90
+        /// days previously.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteKey service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DeleteKey">REST API Reference for DeleteKey Operation</seealso>
+        Task<DeleteKeyResponse> DeleteKeyAsync(DeleteKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteMap
 
 
 
         /// <summary>
-        /// Deletes a map resource from your AWS account.
+        /// Deletes a map resource from your Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>
@@ -851,7 +936,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a place index resource from your AWS account.
+        /// Deletes a place index resource from your Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>
@@ -892,7 +977,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a route calculator resource from your AWS account.
+        /// Deletes a route calculator resource from your Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>
@@ -933,7 +1018,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Deletes a tracker resource from your AWS account.
+        /// Deletes a tracker resource from your Amazon Web Services account.
         /// 
         ///  <note> 
         /// <para>
@@ -1003,6 +1088,49 @@ namespace Amazon.LocationService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeGeofenceCollection">REST API Reference for DescribeGeofenceCollection Operation</seealso>
         Task<DescribeGeofenceCollectionResponse> DescribeGeofenceCollectionAsync(DescribeGeofenceCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeKey
+
+
+
+        /// <summary>
+        /// Retrieves the API key resource details.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The API keys feature is in preview. We may add, change, or remove features before
+        /// announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+        /// API keys</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeKey service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/DescribeKey">REST API Reference for DescribeKey Operation</seealso>
+        Task<DescribeKeyResponse> DescribeKeyAsync(DescribeKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1479,11 +1607,11 @@ namespace Amazon.LocationService
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Customer AWS account
+        /// Customer Amazon Web Services account
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// AWS Region
+        /// Amazon Web Services Region
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1556,7 +1684,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Lists geofence collections in your AWS account.
+        /// Lists geofence collections in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListGeofenceCollections service method.</param>
         /// <param name="cancellationToken">
@@ -1618,12 +1746,52 @@ namespace Amazon.LocationService
 
         #endregion
                 
+        #region  ListKeys
+
+
+
+        /// <summary>
+        /// Lists API key resources in your Amazon Web Services account.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The API keys feature is in preview. We may add, change, or remove features before
+        /// announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+        /// API keys</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListKeys service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/ListKeys">REST API Reference for ListKeys Operation</seealso>
+        Task<ListKeysResponse> ListKeysAsync(ListKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListMaps
 
 
 
         /// <summary>
-        /// Lists map resources in your AWS account.
+        /// Lists map resources in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMaps service method.</param>
         /// <param name="cancellationToken">
@@ -1655,7 +1823,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Lists place index resources in your AWS account.
+        /// Lists place index resources in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPlaceIndexes service method.</param>
         /// <param name="cancellationToken">
@@ -1687,7 +1855,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Lists route calculator resources in your AWS account.
+        /// Lists route calculator resources in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListRouteCalculators service method.</param>
         /// <param name="cancellationToken">
@@ -1789,7 +1957,7 @@ namespace Amazon.LocationService
 
 
         /// <summary>
-        /// Lists tracker resources in your AWS account.
+        /// Lists tracker resources in your Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrackers service method.</param>
         /// <param name="cancellationToken">
@@ -2116,6 +2284,49 @@ namespace Amazon.LocationService
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateGeofenceCollection">REST API Reference for UpdateGeofenceCollection Operation</seealso>
         Task<UpdateGeofenceCollectionResponse> UpdateGeofenceCollectionAsync(UpdateGeofenceCollectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateKey
+
+
+
+        /// <summary>
+        /// Updates the specified properties of a given API key resource.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// The API keys feature is in preview. We may add, change, or remove features before
+        /// announcing general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">Using
+        /// API keys</a>.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateKey service method, as returned by LocationService.</returns>
+        /// <exception cref="Amazon.LocationService.Model.AccessDeniedException">
+        /// The request was denied because of insufficient access or permissions. Check with an
+        /// administrator to verify your permissions.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.InternalServerException">
+        /// The request has failed to process because of an unknown server error, exception, or
+        /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ResourceNotFoundException">
+        /// The resource that you've entered was not found in your AWS account.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
+        /// The request was denied because of request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ValidationException">
+        /// The input failed to meet the constraints specified by the AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/location-2020-11-19/UpdateKey">REST API Reference for UpdateKey Operation</seealso>
+        Task<UpdateKeyResponse> UpdateKeyAsync(UpdateKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

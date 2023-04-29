@@ -37,6 +37,7 @@ namespace Amazon.IoTWireless.Model
         private string _id;
         private LoRaWANDeviceProfile _loRaWAN;
         private string _name;
+        private SidewalkGetDeviceProfile _sidewalk;
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -110,6 +111,24 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sidewalk. 
+        /// <para>
+        /// Information about the Sidewalk parameters in the device profile.
+        /// </para>
+        /// </summary>
+        public SidewalkGetDeviceProfile Sidewalk
+        {
+            get { return this._sidewalk; }
+            set { this._sidewalk = value; }
+        }
+
+        // Check to see if Sidewalk property is set
+        internal bool IsSetSidewalk()
+        {
+            return this._sidewalk != null;
         }
 
     }

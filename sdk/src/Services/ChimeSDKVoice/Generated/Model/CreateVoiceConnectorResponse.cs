@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private VoiceConnector _voiceConnector;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnector.
+        /// Gets and sets the property VoiceConnector. 
+        /// <para>
+        /// The details of the Voice Connector.
+        /// </para>
         /// </summary>
         public VoiceConnector VoiceConnector
         {

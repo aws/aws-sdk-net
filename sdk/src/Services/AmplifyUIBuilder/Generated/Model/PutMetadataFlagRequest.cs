@@ -30,7 +30,7 @@ namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
     /// Container for the parameters to the PutMetadataFlag operation.
-    /// Stores the metadata information about a feature on a form or view.
+    /// Stores the metadata information about a feature on a form.
     /// </summary>
     public partial class PutMetadataFlagRequest : AmazonAmplifyUIBuilderRequest
     {

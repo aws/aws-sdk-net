@@ -34,6 +34,7 @@ namespace Amazon.Proton.Model
     public partial class RepositorySummary
     {
         private string _arn;
+        private string _connectionArn;
         private string _name;
         private RepositoryProvider _provider;
 
@@ -54,6 +55,26 @@ namespace Amazon.Proton.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConnectionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the of your connection that connects Proton to your
+        /// repository.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=200)]
+        public string ConnectionArn
+        {
+            get { return this._connectionArn; }
+            set { this._connectionArn = value; }
+        }
+
+        // Check to see if ConnectionArn property is set
+        internal bool IsSetConnectionArn()
+        {
+            return this._connectionArn != null;
         }
 
         /// <summary>

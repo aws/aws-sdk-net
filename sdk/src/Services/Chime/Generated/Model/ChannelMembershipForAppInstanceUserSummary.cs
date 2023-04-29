@@ -37,7 +37,10 @@ namespace Amazon.Chime.Model
         private ChannelSummary _channelSummary;
 
         /// <summary>
-        /// Gets and sets the property AppInstanceUserMembershipSummary.
+        /// Gets and sets the property AppInstanceUserMembershipSummary. 
+        /// <para>
+        /// Summary of the membership details of an <code>AppInstanceUser</code>.
+        /// </para>
         /// </summary>
         public AppInstanceUserMembershipSummary AppInstanceUserMembershipSummary
         {
@@ -52,7 +55,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ChannelSummary.
+        /// Gets and sets the property ChannelSummary. 
+        /// <para>
+        /// Summary of the details of a <code>Channel</code>.
+        /// </para>
         /// </summary>
         public ChannelSummary ChannelSummary
         {

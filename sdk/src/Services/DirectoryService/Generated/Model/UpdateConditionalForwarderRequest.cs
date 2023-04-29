@@ -86,7 +86,7 @@ namespace Amazon.DirectoryService.Model
         /// up a trust relationship.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=1024)]
         public string RemoteDomainName
         {
             get { return this._remoteDomainName; }

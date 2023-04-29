@@ -85,7 +85,8 @@ namespace Amazon.WAFV2.Model
         /// rule type, to reflect the relative cost of each rule. Simple rules that cost little
         /// to run use fewer WCUs than more complex rules that use more processing power. Rule
         /// group capacity is fixed at creation, which helps users plan their web ACL WCU usage
-        /// when they use a rule group. The WCU limit for web ACLs is 1,500. 
+        /// when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF
+        /// web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

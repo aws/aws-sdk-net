@@ -73,6 +73,15 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <para>
         /// The external meeting ID.
         /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Values that begin with <code>aws:</code> are reserved. You can't configure a value
+        /// that uses this prefix. Case insensitive.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=64)]
         public string ExternalMeetingId
@@ -235,7 +244,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// </para>
         ///  
         /// <para>
-        ///  In addition to the <code>tag:TagResources </code>permission required by this operation,
+        /// In addition to the <code>tag:TagResources</code> permission required by this operation,
         /// you must also have the tagging permission defined by the service that created the
         /// resource. For example, to tag a <code>ChimeSDKMeetings</code> instance using the <code>TagResources</code>
         /// operation, you must have both of the following permissions:

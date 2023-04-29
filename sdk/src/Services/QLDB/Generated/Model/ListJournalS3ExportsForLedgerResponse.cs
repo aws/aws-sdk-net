@@ -39,8 +39,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property JournalS3Exports. 
         /// <para>
-        /// The array of journal export job descriptions that are associated with the specified
-        /// ledger.
+        /// The journal export jobs that are currently associated with the specified ledger.
         /// </para>
         /// </summary>
         public List<JournalS3ExportDescription> JournalS3Exports

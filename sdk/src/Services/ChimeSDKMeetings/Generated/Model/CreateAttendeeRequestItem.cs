@@ -61,6 +61,15 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to
         /// an identity managed by a builder application.
         /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Values that begin with <code>aws:</code> are reserved. You can't configure a value
+        /// that uses this prefix. Case insensitive.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=2, Max=64)]
         public string ExternalUserId

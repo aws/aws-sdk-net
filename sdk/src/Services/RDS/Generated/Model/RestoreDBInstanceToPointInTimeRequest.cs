@@ -116,8 +116,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Be sure to allocate enough memory for your new DB instance so that the restore operation
-        /// can succeed. You can also allocate additional memory for future growth.
+        /// Be sure to allocate enough storage for your new DB instance so that the restore operation
+        /// can succeed. You can also allocate additional storage for future growth.
         /// </para>
         ///  </note>
         /// </summary>

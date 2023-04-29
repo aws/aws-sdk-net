@@ -39,8 +39,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// Contains tracker resources in your AWS account. Details include tracker name, description
-        /// and timestamps for when the tracker was created and last updated.
+        /// Contains tracker resources in your Amazon Web Services account. Details include tracker
+        /// name, description and timestamps for when the tracker was created and last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

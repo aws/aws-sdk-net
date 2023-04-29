@@ -30,8 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSearchSuggestions operation.
-    /// An auto-complete API for the search functionality in the Amazon SageMaker console.
-    /// It returns suggestions of possible matches for the property name to use in <code>Search</code>
+    /// An auto-complete API for the search functionality in the SageMaker console. It returns
+    /// suggestions of possible matches for the property name to use in <code>Search</code>
     /// queries. Provides suggestions for <code>HyperParameters</code>, <code>Tags</code>,
     /// and <code>Metrics</code>.
     /// </summary>
@@ -43,7 +43,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Resource. 
         /// <para>
-        /// The name of the Amazon SageMaker resource to search for.
+        /// The name of the SageMaker resource to search for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

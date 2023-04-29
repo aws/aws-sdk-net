@@ -36,8 +36,11 @@ namespace Amazon.Mgn.Model
         private string _actionid;
         private string _actionName;
         private bool? _active;
+        private ActionCategory _category;
+        private string _description;
         private string _documentIdentifier;
         private string _documentVersion;
+        private Dictionary<string, SsmExternalParameter> _externalParameters = new Dictionary<string, SsmExternalParameter>();
         private bool? _mustSucceedForCutover;
         private int? _order;
         private Dictionary<string, List<SsmParameterStoreParameter>> _parameters = new Dictionary<string, List<SsmParameterStoreParameter>>();
@@ -100,6 +103,43 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// Source server post migration custom action category.
+        /// </para>
+        /// </summary>
+        public ActionCategory Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Description. 
+        /// <para>
+        /// Source server post migration custom action description.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=256)]
+        public string Description
+        {
+            get { return this._description; }
+            set { this._description = value; }
+        }
+
+        // Check to see if Description property is set
+        internal bool IsSetDescription()
+        {
+            return this._description != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DocumentIdentifier. 
         /// <para>
         /// Source server post migration custom action document identifier.
@@ -134,6 +174,25 @@ namespace Amazon.Mgn.Model
         internal bool IsSetDocumentVersion()
         {
             return this._documentVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalParameters. 
+        /// <para>
+        /// Source server post migration custom action external parameters.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=20)]
+        public Dictionary<string, SsmExternalParameter> ExternalParameters
+        {
+            get { return this._externalParameters; }
+            set { this._externalParameters = value; }
+        }
+
+        // Check to see if ExternalParameters property is set
+        internal bool IsSetExternalParameters()
+        {
+            return this._externalParameters != null && this._externalParameters.Count > 0; 
         }
 
         /// <summary>

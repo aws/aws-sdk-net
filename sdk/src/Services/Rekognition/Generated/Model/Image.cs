@@ -76,7 +76,8 @@ namespace Amazon.Rekognition.Model
         /// <summary>
         /// Gets and sets the property Bytes. 
         /// <para>
-        /// Blob of image bytes up to 5 MBs.
+        /// Blob of image bytes up to 5 MBs. Note that the maximum image size you can pass to
+        /// <code>DetectCustomLabels</code> is 4MB. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5242880)]

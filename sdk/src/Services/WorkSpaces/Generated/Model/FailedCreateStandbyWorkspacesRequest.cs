@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the Standby WorkSpace that could not be created.
+    /// Describes the standby WorkSpace that could not be created.
     /// </summary>
     public partial class FailedCreateStandbyWorkspacesRequest
     {
@@ -40,7 +40,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The error code that is returned if the Standby WorkSpace could not be created.
+        /// The error code that is returned if the standby WorkSpace could not be created.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -58,7 +58,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// The text of the error message that is returned if the Standby WorkSpace could not
+        /// The text of the error message that is returned if the standby WorkSpace could not
         /// be created.
         /// </para>
         /// </summary>
@@ -77,7 +77,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property StandbyWorkspaceRequest. 
         /// <para>
-        /// Information about the Standby WorkSpace that could not be created.
+        /// Information about the standby WorkSpace that could not be created.
         /// </para>
         /// </summary>
         public StandbyWorkspace StandbyWorkspaceRequest

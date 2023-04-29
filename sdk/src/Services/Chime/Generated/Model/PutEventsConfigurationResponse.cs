@@ -36,7 +36,11 @@ namespace Amazon.Chime.Model
         private EventsConfiguration _eventsConfiguration;
 
         /// <summary>
-        /// Gets and sets the property EventsConfiguration.
+        /// Gets and sets the property EventsConfiguration. 
+        /// <para>
+        /// The configuration that allows a bot to receive outgoing events. Can be an HTTPS endpoint
+        /// or an AWS Lambda function ARN.
+        /// </para>
         /// </summary>
         public EventsConfiguration EventsConfiguration
         {

@@ -65,7 +65,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LastClearTime. 
         /// <para>
-        /// The date-time query suggestions for an index was last cleared.
+        /// The Unix timestamp when query suggestions for an index was last cleared.
         /// </para>
         ///  
         /// <para>
@@ -89,7 +89,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LastSuggestionsBuildTime. 
         /// <para>
-        /// The date-time query suggestions for an index was last updated.
+        /// The Unix timestamp when query suggestions for an index was last updated.
         /// </para>
         /// </summary>
         public DateTime LastSuggestionsBuildTime

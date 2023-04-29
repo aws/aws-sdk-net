@@ -76,6 +76,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maintenanceWindows", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MaintenanceWindow, MaintenanceWindowUnmarshaller>(MaintenanceWindowUnmarshaller.Instance);
+                    unmarshalledObject.MaintenanceWindows = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("startTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

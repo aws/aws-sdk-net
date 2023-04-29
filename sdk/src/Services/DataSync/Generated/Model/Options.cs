@@ -267,7 +267,7 @@ namespace Amazon.DataSync.Model
         /// <para>
         /// Some storage classes have specific behaviors that can affect your Amazon S3 storage
         /// cost. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-        /// when working with Amazon S3 storage classes in DataSync </a>.
+        /// when working with Amazon S3 storage classes in DataSync</a>.
         /// </para>
         /// </summary>
         public OverwriteMode OverwriteMode
@@ -330,7 +330,7 @@ namespace Amazon.DataSync.Model
         /// should be preserved. This option can affect your Amazon S3 storage cost. If your task
         /// deletes objects, you might incur minimum storage duration charges for certain storage
         /// classes. For detailed information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-s3-location.html#using-storage-classes">Considerations
-        /// when working with Amazon S3 storage classes in DataSync </a>.
+        /// when working with Amazon S3 storage classes in DataSync</a>.
         /// </para>
         ///  
         /// <para>
@@ -344,6 +344,13 @@ namespace Amazon.DataSync.Model
         /// <para>
         ///  <code>REMOVE</code>: Delete destination files that aren’t present in the source.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you set this parameter to <code>REMOVE</code>, you can't set <code>TransferMode</code>
+        /// to <code>ALL</code>. When you transfer all data, DataSync doesn't scan your destination
+        /// location and doesn't know what to delete.
+        /// </para>
+        ///  </note>
         /// </summary>
         public PreserveDeletedFiles PreserveDeletedFiles
         {

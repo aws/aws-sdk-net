@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The requested state transition is not valid.
+    /// The operation failed because the requested operation isn't valid for the resource
+    /// share in its current state.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

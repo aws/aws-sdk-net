@@ -65,6 +65,22 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetBotMembers())
+                {
+                    context.Writer.WritePropertyName("botMembers");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestBotMembersListValue in publicRequest.BotMembers)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = BotMemberMarshaller.Instance;
+                        marshaller.Marshall(publicRequestBotMembersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetBotName())
                 {
                     context.Writer.WritePropertyName("botName");
@@ -83,6 +99,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestBotTagsValue);
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetBotType())
+                {
+                    context.Writer.WritePropertyName("botType");
+                    context.Writer.Write(publicRequest.BotType);
                 }
 
                 if(publicRequest.IsSetDataPrivacy())

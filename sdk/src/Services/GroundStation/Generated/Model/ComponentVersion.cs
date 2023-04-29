@@ -33,7 +33,7 @@ namespace Amazon.GroundStation.Model
     /// </summary>
     public partial class ComponentVersion
     {
-        private ComponentType _componentType;
+        private string _componentType;
         private List<string> _versions = new List<string>();
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace Amazon.GroundStation.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public ComponentType ComponentType
+        public string ComponentType
         {
             get { return this._componentType; }
             set { this._componentType = value; }

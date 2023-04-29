@@ -127,8 +127,7 @@ namespace Amazon.SecretsManager.Model
         /// </para>
         ///  
         /// <para>
-        /// If you don't specify this value, then by default, Secrets Manager rotates the secret
-        /// immediately.
+        /// By default, Secrets Manager rotates the secret immediately.
         /// </para>
         /// </summary>
         public bool RotateImmediately

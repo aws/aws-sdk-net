@@ -38,9 +38,32 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class ModifyVpnTunnelOptionsRequest : AmazonEC2Request
     {
+        private bool? _skipTunnelReplacement;
         private ModifyVpnTunnelOptionsSpecification _tunnelOptions;
         private string _vpnConnectionId;
         private string _vpnTunnelOutsideIpAddress;
+
+        /// <summary>
+        /// Gets and sets the property SkipTunnelReplacement. 
+        /// <para>
+        /// Choose whether or not to trigger immediate tunnel replacement.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>True</code> | <code>False</code> 
+        /// </para>
+        /// </summary>
+        public bool SkipTunnelReplacement
+        {
+            get { return this._skipTunnelReplacement.GetValueOrDefault(); }
+            set { this._skipTunnelReplacement = value; }
+        }
+
+        // Check to see if SkipTunnelReplacement property is set
+        internal bool IsSetSkipTunnelReplacement()
+        {
+            return this._skipTunnelReplacement.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property TunnelOptions. 

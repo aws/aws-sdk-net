@@ -51,6 +51,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DocumentClassifierArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DocumentClassifierArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("JobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -103,6 +109,10 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                 if (errorResponse.Code != null && errorResponse.Code.Equals("KmsKeyValidationException"))
                 {
                     return KmsKeyValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceInUseException"))
+                {
+                    return ResourceInUseExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {

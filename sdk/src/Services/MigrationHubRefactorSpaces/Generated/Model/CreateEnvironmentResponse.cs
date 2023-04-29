@@ -122,7 +122,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// A timestamp that indicates when the environment was last updated. 
+        /// A timestamp that indicates when the environment was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime

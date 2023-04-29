@@ -44,7 +44,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private ZonalStatisticsConfigInput _zonalStatisticsConfig;
 
         /// <summary>
-        /// Gets and sets the property BandMathConfig.
+        /// Gets and sets the property BandMathConfig. 
+        /// <para>
+        /// An object containing information about the job configuration for BandMath.
+        /// </para>
         /// </summary>
         public BandMathConfigInput BandMathConfig
         {
@@ -149,7 +152,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StackConfig.
+        /// Gets and sets the property StackConfig. 
+        /// <para>
+        /// An object containing information about the job configuration for a Stacking Earth
+        /// Observation job.
+        /// </para>
         /// </summary>
         public StackConfigInput StackConfig
         {

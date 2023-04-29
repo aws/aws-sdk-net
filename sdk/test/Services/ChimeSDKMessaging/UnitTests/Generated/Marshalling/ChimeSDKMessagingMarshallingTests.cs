@@ -2367,6 +2367,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ChimeSDKMessaging")]
+        public void DeleteChannel_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteChannel");
+
+            var request = InstantiateClassGenerator.Execute<DeleteChannelRequest>();
+            var marshaller = new DeleteChannelRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteChannel", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteChannelResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
         public void DeleteChannel_ForbiddenExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteChannel");
@@ -3623,6 +3655,214 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = DeleteChannelModeratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void DeleteMessagingStreamingConfigurationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessagingStreamingConfigurationsRequest>();
+            var marshaller = new DeleteMessagingStreamingConfigurationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void DeleteMessagingStreamingConfigurations_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessagingStreamingConfigurationsRequest>();
+            var marshaller = new DeleteMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void DeleteMessagingStreamingConfigurations_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessagingStreamingConfigurationsRequest>();
+            var marshaller = new DeleteMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void DeleteMessagingStreamingConfigurations_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessagingStreamingConfigurationsRequest>();
+            var marshaller = new DeleteMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void DeleteMessagingStreamingConfigurations_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessagingStreamingConfigurationsRequest>();
+            var marshaller = new DeleteMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void DeleteMessagingStreamingConfigurations_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessagingStreamingConfigurationsRequest>();
+            var marshaller = new DeleteMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void DeleteMessagingStreamingConfigurations_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessagingStreamingConfigurationsRequest>();
+            var marshaller = new DeleteMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -6441,6 +6681,260 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ChimeSDKMessaging")]
+        public void GetMessagingStreamingConfigurationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<GetMessagingStreamingConfigurationsRequest>();
+            var marshaller = new GetMessagingStreamingConfigurationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetMessagingStreamingConfigurationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetMessagingStreamingConfigurationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void GetMessagingStreamingConfigurations_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<GetMessagingStreamingConfigurationsRequest>();
+            var marshaller = new GetMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void GetMessagingStreamingConfigurations_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<GetMessagingStreamingConfigurationsRequest>();
+            var marshaller = new GetMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void GetMessagingStreamingConfigurations_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<GetMessagingStreamingConfigurationsRequest>();
+            var marshaller = new GetMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void GetMessagingStreamingConfigurations_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<GetMessagingStreamingConfigurationsRequest>();
+            var marshaller = new GetMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void GetMessagingStreamingConfigurations_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<GetMessagingStreamingConfigurationsRequest>();
+            var marshaller = new GetMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void GetMessagingStreamingConfigurations_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<GetMessagingStreamingConfigurationsRequest>();
+            var marshaller = new GetMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void GetMessagingStreamingConfigurations_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<GetMessagingStreamingConfigurationsRequest>();
+            var marshaller = new GetMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
         public void ListChannelBansMarshallTest()
         {
             var operation = service_model.FindOperation("ListChannelBans");
@@ -8883,6 +9377,260 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ChimeSDKMessaging")]
+        public void PutChannelExpirationSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutChannelExpirationSettings");
+
+            var request = InstantiateClassGenerator.Execute<PutChannelExpirationSettingsRequest>();
+            var marshaller = new PutChannelExpirationSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutChannelExpirationSettings", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutChannelExpirationSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as PutChannelExpirationSettingsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutChannelExpirationSettings_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutChannelExpirationSettings");
+
+            var request = InstantiateClassGenerator.Execute<PutChannelExpirationSettingsRequest>();
+            var marshaller = new PutChannelExpirationSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutChannelExpirationSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutChannelExpirationSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutChannelExpirationSettings_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutChannelExpirationSettings");
+
+            var request = InstantiateClassGenerator.Execute<PutChannelExpirationSettingsRequest>();
+            var marshaller = new PutChannelExpirationSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutChannelExpirationSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutChannelExpirationSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutChannelExpirationSettings_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutChannelExpirationSettings");
+
+            var request = InstantiateClassGenerator.Execute<PutChannelExpirationSettingsRequest>();
+            var marshaller = new PutChannelExpirationSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutChannelExpirationSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutChannelExpirationSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutChannelExpirationSettings_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutChannelExpirationSettings");
+
+            var request = InstantiateClassGenerator.Execute<PutChannelExpirationSettingsRequest>();
+            var marshaller = new PutChannelExpirationSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutChannelExpirationSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutChannelExpirationSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutChannelExpirationSettings_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutChannelExpirationSettings");
+
+            var request = InstantiateClassGenerator.Execute<PutChannelExpirationSettingsRequest>();
+            var marshaller = new PutChannelExpirationSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutChannelExpirationSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutChannelExpirationSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutChannelExpirationSettings_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutChannelExpirationSettings");
+
+            var request = InstantiateClassGenerator.Execute<PutChannelExpirationSettingsRequest>();
+            var marshaller = new PutChannelExpirationSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutChannelExpirationSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutChannelExpirationSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutChannelExpirationSettings_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutChannelExpirationSettings");
+
+            var request = InstantiateClassGenerator.Execute<PutChannelExpirationSettingsRequest>();
+            var marshaller = new PutChannelExpirationSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutChannelExpirationSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutChannelExpirationSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
         public void PutChannelMembershipPreferencesMarshallTest()
         {
             var operation = service_model.FindOperation("PutChannelMembershipPreferences");
@@ -9129,6 +9877,292 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = PutChannelMembershipPreferencesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutMessagingStreamingConfigurationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<PutMessagingStreamingConfigurationsRequest>();
+            var marshaller = new PutMessagingStreamingConfigurationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutMessagingStreamingConfigurationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as PutMessagingStreamingConfigurationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutMessagingStreamingConfigurations_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<PutMessagingStreamingConfigurationsRequest>();
+            var marshaller = new PutMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutMessagingStreamingConfigurations_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<PutMessagingStreamingConfigurationsRequest>();
+            var marshaller = new PutMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutMessagingStreamingConfigurations_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<PutMessagingStreamingConfigurationsRequest>();
+            var marshaller = new PutMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutMessagingStreamingConfigurations_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<PutMessagingStreamingConfigurationsRequest>();
+            var marshaller = new PutMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutMessagingStreamingConfigurations_ServiceFailureExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<PutMessagingStreamingConfigurationsRequest>();
+            var marshaller = new PutMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceFailureException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceFailureException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutMessagingStreamingConfigurations_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<PutMessagingStreamingConfigurationsRequest>();
+            var marshaller = new PutMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutMessagingStreamingConfigurations_ThrottledClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<PutMessagingStreamingConfigurationsRequest>();
+            var marshaller = new PutMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottledClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottledClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ChimeSDKMessaging")]
+        public void PutMessagingStreamingConfigurations_UnauthorizedClientExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutMessagingStreamingConfigurations");
+
+            var request = InstantiateClassGenerator.Execute<PutMessagingStreamingConfigurationsRequest>();
+            var marshaller = new PutMessagingStreamingConfigurationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutMessagingStreamingConfigurations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedClientException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedClientException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutMessagingStreamingConfigurationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

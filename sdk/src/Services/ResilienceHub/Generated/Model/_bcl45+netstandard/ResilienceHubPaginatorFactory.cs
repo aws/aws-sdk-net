@@ -68,11 +68,27 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Paginator for ListAppInputSources operation
+        ///</summary>
+        public IListAppInputSourcesPaginator ListAppInputSources(ListAppInputSourcesRequest request) 
+        {
+            return new ListAppInputSourcesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListApps operation
         ///</summary>
         public IListAppsPaginator ListApps(ListAppsRequest request) 
         {
             return new ListAppsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAppVersionAppComponents operation
+        ///</summary>
+        public IListAppVersionAppComponentsPaginator ListAppVersionAppComponents(ListAppVersionAppComponentsRequest request) 
+        {
+            return new ListAppVersionAppComponentsPaginator(this.client, request);
         }
 
         /// <summary>

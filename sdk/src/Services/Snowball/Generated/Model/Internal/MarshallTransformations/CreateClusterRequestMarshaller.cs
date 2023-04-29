@@ -79,10 +79,22 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetForceCreateJobs())
+                {
+                    context.Writer.WritePropertyName("ForceCreateJobs");
+                    context.Writer.Write(publicRequest.ForceCreateJobs);
+                }
+
                 if(publicRequest.IsSetForwardingAddressId())
                 {
                     context.Writer.WritePropertyName("ForwardingAddressId");
                     context.Writer.Write(publicRequest.ForwardingAddressId);
+                }
+
+                if(publicRequest.IsSetInitialClusterSize())
+                {
+                    context.Writer.WritePropertyName("InitialClusterSize");
+                    context.Writer.Write(publicRequest.InitialClusterSize);
                 }
 
                 if(publicRequest.IsSetJobType())
@@ -95,6 +107,17 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("KmsKeyARN");
                     context.Writer.Write(publicRequest.KmsKeyARN);
+                }
+
+                if(publicRequest.IsSetLongTermPricingIds())
+                {
+                    context.Writer.WritePropertyName("LongTermPricingIds");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestLongTermPricingIdsListValue in publicRequest.LongTermPricingIds)
+                    {
+                            context.Writer.Write(publicRequestLongTermPricingIdsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetNotification())
@@ -146,6 +169,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("ShippingOption");
                     context.Writer.Write(publicRequest.ShippingOption);
+                }
+
+                if(publicRequest.IsSetSnowballCapacityPreference())
+                {
+                    context.Writer.WritePropertyName("SnowballCapacityPreference");
+                    context.Writer.Write(publicRequest.SnowballCapacityPreference);
                 }
 
                 if(publicRequest.IsSetSnowballType())

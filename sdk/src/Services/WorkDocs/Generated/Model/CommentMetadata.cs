@@ -36,6 +36,7 @@ namespace Amazon.WorkDocs.Model
         private string _commentId;
         private CommentStatusType _commentStatus;
         private User _contributor;
+        private string _contributorId;
         private DateTime? _createdTimestamp;
         private string _recipientId;
 
@@ -92,6 +93,25 @@ namespace Amazon.WorkDocs.Model
         internal bool IsSetContributor()
         {
             return this._contributor != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContributorId. 
+        /// <para>
+        /// The ID of the user who made the comment.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ContributorId
+        {
+            get { return this._contributorId; }
+            set { this._contributorId = value; }
+        }
+
+        // Check to see if ContributorId property is set
+        internal bool IsSetContributorId()
+        {
+            return this._contributorId != null;
         }
 
         /// <summary>

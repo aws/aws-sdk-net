@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The structure containing the asset properties.
     /// </summary>
     public partial class AssetValue
     {
         private string _href;
 
         /// <summary>
-        /// Gets and sets the property Href.
+        /// Gets and sets the property Href. 
+        /// <para>
+        /// Link to the asset object.
+        /// </para>
         /// </summary>
         public string Href
         {

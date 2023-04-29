@@ -136,7 +136,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaChangePolicy.
+        /// Gets and sets the property SchemaChangePolicy. 
+        /// <para>
+        /// A policy that specifies update behavior for the crawler.
+        /// </para>
         /// </summary>
         public CatalogSchemaChangePolicy SchemaChangePolicy
         {

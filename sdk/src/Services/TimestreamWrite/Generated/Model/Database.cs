@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// A top level container for a table. Databases and tables are the fundamental management
+    /// A top-level container for a table. Databases and tables are the fundamental management
     /// concepts in Amazon Timestream. All tables in a database are encrypted with the same
     /// KMS key.
     /// </summary>

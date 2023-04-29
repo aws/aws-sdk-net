@@ -29,5 +29,10 @@ namespace Amazon.Pricing.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<GetAttributeValuesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the AttributeValues
+        /// </summary>
+        IPaginatedEnumerable<AttributeValue> AttributeValues { get; }
     }
 }

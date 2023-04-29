@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object representing the network configuration for a task or service.
+    /// The network configuration for a task or service.
     /// </summary>
     public partial class NetworkConfiguration
     {

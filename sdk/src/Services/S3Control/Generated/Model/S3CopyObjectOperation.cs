@@ -30,9 +30,8 @@ namespace Amazon.S3Control.Model
 {
     /// <summary>
     /// Contains the configuration parameters for a PUT Copy object operation. S3 Batch Operations
-    /// passes every object to the underlying PUT Copy object API. For more information about
-    /// the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">PUT
-    /// Object - Copy</a>.
+    /// passes every object to the underlying <code>CopyObject</code> API operation. For more
+    /// information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectCOPY.html">CopyObject</a>.
     /// </summary>
     public partial class S3CopyObjectOperation
     {
@@ -114,8 +113,8 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property ChecksumAlgorithm. 
         /// <para>
-        /// Indicates the algorithm you want Amazon S3 to use to create the checksum. For more
-        /// information see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
+        /// Indicates the algorithm that you want Amazon S3 to use to create the checksum. For
+        /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/CheckingObjectIntegrity.xml">
         /// Checking object integrity</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
@@ -320,9 +319,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property TargetKeyPrefix. 
         /// <para>
-        /// Specifies the folder prefix into which you would like the objects to be copied. For
-        /// example, to copy objects into a folder named <code>Folder1</code> in the destination
-        /// bucket, set the TargetKeyPrefix to <code>Folder1</code>.
+        /// Specifies the folder prefix that you want the objects to be copied into. For example,
+        /// to copy objects into a folder named <code>Folder1</code> in the destination bucket,
+        /// set the <code>TargetKeyPrefix</code> property to <code>Folder1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -341,9 +340,9 @@ namespace Amazon.S3Control.Model
         /// <summary>
         /// Gets and sets the property TargetResource. 
         /// <para>
-        /// Specifies the destination bucket ARN for the batch copy operation. For example, to
-        /// copy objects to a bucket named <code>destinationBucket</code>, set the <code>TargetResource</code>
-        /// property to <code>arn:aws:s3:::destinationBucket</code>.
+        /// Specifies the destination bucket Amazon Resource Name (ARN) for the batch copy operation.
+        /// For example, to copy objects to a bucket named <code>destinationBucket</code>, set
+        /// the <code>TargetResource</code> property to <code>arn:aws:s3:::destinationBucket</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

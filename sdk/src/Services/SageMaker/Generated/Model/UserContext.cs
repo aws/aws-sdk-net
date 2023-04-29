@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     public partial class UserContext
     {
         private string _domainId;
+        private IamIdentity _iamIdentity;
         private string _userProfileArn;
         private string _userProfileName;
 
@@ -54,6 +55,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDomainId()
         {
             return this._domainId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IamIdentity. 
+        /// <para>
+        /// The IAM Identity details associated with the user. These details are associated with
+        /// model package groups, model packages, and project entities only.
+        /// </para>
+        /// </summary>
+        public IamIdentity IamIdentity
+        {
+            get { return this._iamIdentity; }
+            set { this._iamIdentity = value; }
+        }
+
+        // Check to see if IamIdentity property is set
+        internal bool IsSetIamIdentity()
+        {
+            return this._iamIdentity != null;
         }
 
         /// <summary>

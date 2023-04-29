@@ -41,7 +41,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.htm">Using
+    /// For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Using
     /// Amazon ECS Exec for debugging</a> in the <i>Amazon ECS Developer Guide</i>. 
     /// </para>
     /// </summary>

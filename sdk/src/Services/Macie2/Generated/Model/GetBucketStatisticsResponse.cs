@@ -69,8 +69,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountByEffectivePermission. 
         /// <para>
-        /// The total number of buckets that are publicly accessible based on a combination of
-        /// permissions settings for each bucket.
+        /// The total number of buckets that are publicly accessible due to a combination of permissions
+        /// settings for each bucket.
         /// </para>
         /// </summary>
         public BucketCountByEffectivePermission BucketCountByEffectivePermission
@@ -88,9 +88,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountByEncryptionType. 
         /// <para>
-        /// The total number of buckets that use certain types of server-side encryption to encrypt
-        /// new objects by default. This object also reports the total number of buckets that
-        /// don't encrypt new objects by default.
+        /// The total number of buckets whose settings do or don't specify default server-side
+        /// encryption behavior for objects that are added to the buckets.
         /// </para>
         /// </summary>
         public BucketCountByEncryptionType BucketCountByEncryptionType
@@ -109,7 +108,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property BucketCountByObjectEncryptionRequirement. 
         /// <para>
         /// The total number of buckets whose bucket policies do or don't require server-side
-        /// encryption of objects when objects are uploaded to the buckets.
+        /// encryption of objects when objects are added to the buckets.
         /// </para>
         /// </summary>
         public BucketCountPolicyAllowsUnencryptedObjectUploads BucketCountByObjectEncryptionRequirement
@@ -127,8 +126,9 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property BucketCountBySharedAccessType. 
         /// <para>
-        /// The total number of buckets that are or aren't shared with another Amazon Web Services
-        /// account.
+        /// The total number of buckets that are or aren't shared with other Amazon Web Services
+        /// accounts, Amazon CloudFront origin access identities (OAIs), or CloudFront origin
+        /// access controls (OACs).
         /// </para>
         /// </summary>
         public BucketCountBySharedAccessType BucketCountBySharedAccessType
@@ -213,7 +213,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property LastUpdated. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when Amazon Macie most recently
-        /// retrieved both bucket and object metadata from Amazon S3 for the buckets.
+        /// retrieved bucket or object metadata from Amazon S3 for the buckets.
         /// </para>
         /// </summary>
         public DateTime LastUpdated

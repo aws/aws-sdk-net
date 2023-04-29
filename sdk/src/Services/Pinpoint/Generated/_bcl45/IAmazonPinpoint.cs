@@ -4730,6 +4730,220 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetJourneyRunExecutionActivityMetrics
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard run execution metric that applies
+        /// to a journey activity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRunExecutionActivityMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyRunExecutionActivityMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics">REST API Reference for GetJourneyRunExecutionActivityMetrics Operation</seealso>
+        GetJourneyRunExecutionActivityMetricsResponse GetJourneyRunExecutionActivityMetrics(GetJourneyRunExecutionActivityMetricsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard run execution metric that applies
+        /// to a journey activity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRunExecutionActivityMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJourneyRunExecutionActivityMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics">REST API Reference for GetJourneyRunExecutionActivityMetrics Operation</seealso>
+        Task<GetJourneyRunExecutionActivityMetricsResponse> GetJourneyRunExecutionActivityMetricsAsync(GetJourneyRunExecutionActivityMetricsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetJourneyRunExecutionMetrics
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard run execution metric that applies
+        /// to a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRunExecutionMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyRunExecutionMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics">REST API Reference for GetJourneyRunExecutionMetrics Operation</seealso>
+        GetJourneyRunExecutionMetricsResponse GetJourneyRunExecutionMetrics(GetJourneyRunExecutionMetricsRequest request);
+
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard run execution metric that applies
+        /// to a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRunExecutionMetrics service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJourneyRunExecutionMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics">REST API Reference for GetJourneyRunExecutionMetrics Operation</seealso>
+        Task<GetJourneyRunExecutionMetricsResponse> GetJourneyRunExecutionMetricsAsync(GetJourneyRunExecutionMetricsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetJourneyRuns
+
+
+        /// <summary>
+        /// Provides information about the runs of a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRuns service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyRuns service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns">REST API Reference for GetJourneyRuns Operation</seealso>
+        GetJourneyRunsResponse GetJourneyRuns(GetJourneyRunsRequest request);
+
+
+
+        /// <summary>
+        /// Provides information about the runs of a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRuns service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetJourneyRuns service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns">REST API Reference for GetJourneyRuns Operation</seealso>
+        Task<GetJourneyRunsResponse> GetJourneyRunsAsync(GetJourneyRunsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetPushTemplate
 
 

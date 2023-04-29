@@ -355,8 +355,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Determines whether execute command functionality is enabled for this task. If <code>true</code>,
-        /// execute command functionality is enabled on all the containers in the task.
+        /// Determines whether execute command functionality is turned on for this task. If <code>true</code>,
+        /// execute command functionality is turned on all the containers in the task.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand

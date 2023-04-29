@@ -31,9 +31,9 @@ namespace Amazon.SSMIncidents.Model
     /// <summary>
     /// Container for the parameters to the CreateTimelineEvent operation.
     /// Creates a custom timeline event on the incident details page of an incident record.
-    /// Timeline events are automatically created by Incident Manager, marking key moment
-    /// during an incident. You can create custom timeline events to mark important events
-    /// that are automatically detected by Incident Manager.
+    /// Incident Manager automatically creates timeline events that mark key moments during
+    /// an incident. You can create custom timeline events to mark important events that Incident
+    /// Manager can detect automatically.
     /// </summary>
     public partial class CreateTimelineEventRequest : AmazonSSMIncidentsRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token ensuring that the action is called only once with the specified details.
+        /// A token that ensures that a client calls the action only once with the specified details.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -85,13 +85,12 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventReferences. 
         /// <para>
-        /// Adds one or more references to the <code>TimelineEvent</code>. A reference can be
-        /// an Amazon Web Services resource involved in the incident or in some way associated
-        /// with it. When you specify a reference, you enter the Amazon Resource Name (ARN) of
-        /// the resource. You can also specify a related item. As an example, you could specify
-        /// the ARN of an Amazon DynamoDB (DynamoDB) table. The table for this example is the
-        /// resource. You could also specify a Amazon CloudWatch metric for that table. The metric
-        /// is the related item.
+        /// Adds one or more references to the <code>TimelineEvent</code>. A reference is an Amazon
+        /// Web Services resource involved or associated with the incident. To specify a reference,
+        /// enter its Amazon Resource Name (ARN). You can also specify a related item associated
+        /// with a resource. For example, to specify an Amazon DynamoDB (DynamoDB) table as a
+        /// resource, use the table's ARN. You can also specify an Amazon CloudWatch metric associated
+        /// with the DynamoDB table as a related item.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10)]
@@ -129,7 +128,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property EventType. 
         /// <para>
-        /// The type of the event. You can create timeline events of type <code>Custom Event</code>.
+        /// The type of event. You can create timeline events of type <code>Custom Event</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]
@@ -148,7 +147,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentRecordArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the incident record to which the event will be added.
+        /// The Amazon Resource Name (ARN) of the incident record that the action adds the incident
+        /// to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]

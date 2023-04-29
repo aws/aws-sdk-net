@@ -197,8 +197,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For
-        /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+        /// A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+        /// object that specifies the VPC that this model has access to. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
         /// Endpoints by Using an Amazon Virtual Private Cloud</a> 
         /// </para>
         /// </summary>

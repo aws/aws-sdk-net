@@ -81,6 +81,11 @@ namespace Amazon.OpenSearchService.Model
         IListPackagesForDomainPaginator ListPackagesForDomain(ListPackagesForDomainRequest request);
 
         /// <summary>
+        /// Paginator for ListScheduledActions operation
+        ///</summary>
+        IListScheduledActionsPaginator ListScheduledActions(ListScheduledActionsRequest request);
+
+        /// <summary>
         /// Paginator for ListVersions operation
         ///</summary>
         IListVersionsPaginator ListVersions(ListVersionsRequest request);

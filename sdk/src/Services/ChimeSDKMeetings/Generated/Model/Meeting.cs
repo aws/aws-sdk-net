@@ -48,6 +48,15 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <para>
         /// The external meeting ID.
         /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Values that begin with <code>aws:</code> are reserved. You can't configure a value
+        /// that uses this prefix. Case insensitive.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ExternalMeetingId
@@ -130,7 +139,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <summary>
         /// Gets and sets the property MeetingFeatures. 
         /// <para>
-        /// The features available to a meeting, such as Amazon Voice Focus.
+        /// The features available to a meeting, such as echo reduction.
         /// </para>
         /// </summary>
         public MeetingFeaturesConfiguration MeetingFeatures

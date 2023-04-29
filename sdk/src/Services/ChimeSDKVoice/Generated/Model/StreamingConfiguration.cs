@@ -29,16 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The streaming configuration associated with an Amazon Chime SDK Voice Connector. Specifies
+    /// whether media streaming is enabled for sending to Amazon Kinesis, and shows the retention
+    /// period for the Amazon Kinesis data, in hours.
     /// </summary>
     public partial class StreamingConfiguration
     {
         private int? _dataRetentionInHours;
         private bool? _disabled;
+        private MediaInsightsConfiguration _mediaInsightsConfiguration;
         private List<StreamingNotificationTarget> _streamingNotificationTargets = new List<StreamingNotificationTarget>();
 
         /// <summary>
-        /// Gets and sets the property DataRetentionInHours.
+        /// Gets and sets the property DataRetentionInHours. 
+        /// <para>
+        /// The amount of time, in hours, to the Kinesis data.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
         public int DataRetentionInHours
@@ -54,7 +60,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Disabled.
+        /// Gets and sets the property Disabled. 
+        /// <para>
+        /// When true, streaming to Kinesis is off.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool Disabled
@@ -70,7 +79,28 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreamingNotificationTargets.
+        /// Gets and sets the property MediaInsightsConfiguration. 
+        /// <para>
+        /// The call analytics configuration.
+        /// </para>
+        /// </summary>
+        public MediaInsightsConfiguration MediaInsightsConfiguration
+        {
+            get { return this._mediaInsightsConfiguration; }
+            set { this._mediaInsightsConfiguration = value; }
+        }
+
+        // Check to see if MediaInsightsConfiguration property is set
+        internal bool IsSetMediaInsightsConfiguration()
+        {
+            return this._mediaInsightsConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StreamingNotificationTargets. 
+        /// <para>
+        /// The streaming notification targets.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=3)]
         public List<StreamingNotificationTarget> StreamingNotificationTargets

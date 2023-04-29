@@ -45,6 +45,7 @@ namespace Amazon.GuardDuty.Model
         private ScanResultDetails _scanResultDetails;
         private DateTime? _scanStartTime;
         private ScanStatus _scanStatus;
+        private ScanType _scanType;
         private long? _totalBytes;
         private TriggerDetails _triggerDetails;
 
@@ -270,6 +271,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetScanStatus()
         {
             return this._scanStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanType. 
+        /// <para>
+        /// Specifies the scan type that invoked the malware scan.
+        /// </para>
+        /// </summary>
+        public ScanType ScanType
+        {
+            get { return this._scanType; }
+            set { this._scanType = value; }
+        }
+
+        // Check to see if ScanType property is set
+        internal bool IsSetScanType()
+        {
+            return this._scanType != null;
         }
 
         /// <summary>

@@ -31,7 +31,8 @@ namespace Amazon.OpenSearchServerless.Model
     /// <summary>
     /// Container for the parameters to the UpdateAccountSettings operation.
     /// Update the OpenSearch Serverless settings for the current Amazon Web Services account.
-    /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html#serverless-scaling">Autoscaling</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing
+    /// capacity limits for Amazon OpenSearch Serverless</a>.
     /// </summary>
     public partial class UpdateAccountSettingsRequest : AmazonOpenSearchServerlessRequest
     {

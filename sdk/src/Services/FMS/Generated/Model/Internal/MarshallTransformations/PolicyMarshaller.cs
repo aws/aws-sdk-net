@@ -113,6 +113,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PolicyName);
             }
 
+            if(requestObject.IsSetPolicyStatus())
+            {
+                context.Writer.WritePropertyName("PolicyStatus");
+                context.Writer.Write(requestObject.PolicyStatus);
+            }
+
             if(requestObject.IsSetPolicyUpdateToken())
             {
                 context.Writer.WritePropertyName("PolicyUpdateToken");

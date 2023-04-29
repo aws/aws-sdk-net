@@ -30,11 +30,12 @@ namespace Amazon.Drs.Model
 {
     /// <summary>
     /// Container for the parameters to the RetryDataReplication operation.
-    /// Causes the data replication initiation sequence to begin immediately upon next Handshake
-    /// for the specified Source Server ID, regardless of when the previous initiation started.
-    /// This command will work only if the Source Server is stalled or is in a DISCONNECTED
-    /// or STOPPED state.
+    /// WARNING: RetryDataReplication is deprecated. Causes the data replication initiation
+    /// sequence to begin immediately upon next Handshake for the specified Source Server
+    /// ID, regardless of when the previous initiation started. This command will work only
+    /// if the Source Server is stalled or is in a DISCONNECTED or STOPPED state.
     /// </summary>
+    [Obsolete("WARNING: RetryDataReplication is deprecated")]
     public partial class RetryDataReplicationRequest : AmazonDrsRequest
     {
         private string _sourceServerID;

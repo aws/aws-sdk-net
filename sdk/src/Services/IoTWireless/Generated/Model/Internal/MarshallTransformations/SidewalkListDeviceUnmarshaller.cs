@@ -76,6 +76,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.DeviceCertificates = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeviceProfileId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeviceProfileId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SidewalkId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SidewalkManufacturingSn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

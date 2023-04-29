@@ -51,7 +51,7 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     /// To restrict access to all the workers in public internet, add the <code>SourceIpConfig</code>
-    /// CIDR value as "0.0.0.0/0".
+    /// CIDR value as "10.0.0.0/16".
     /// </para>
     ///  <important> 
     /// <para>
@@ -65,12 +65,15 @@ namespace Amazon.SageMaker.Model
     ///  <important> 
     /// <para>
     /// You can only update your OIDC IdP configuration when there are no work teams associated
-    /// with your workforce. You can delete work teams using the operation.
+    /// with your workforce. You can delete work teams using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html">DeleteWorkteam</a>
+    /// operation.
     /// </para>
     ///  </important> 
     /// <para>
     /// After restricting access to a range of IP addresses or updating your OIDC IdP configuration
-    /// with this operation, you can view details about your update workforce using the operation.
+    /// with this operation, you can view details about your update workforce using the <a
+    /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeWorkforce.html">DescribeWorkforce</a>
+    /// operation.
     /// </para>
     ///  <important> 
     /// <para>
@@ -131,7 +134,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property WorkforceName. 
         /// <para>
         /// The name of the private workforce that you want to update. You can find your workforce
-        /// name by using the operation.
+        /// name by using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
+        /// operation.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=63)]

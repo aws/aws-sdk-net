@@ -76,6 +76,12 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                     unmarshalledObject.MetricName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Metrics", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<TargetTrackingMetricDataQuery, TargetTrackingMetricDataQueryUnmarshaller>(TargetTrackingMetricDataQueryUnmarshaller.Instance);
+                    unmarshalledObject.Metrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Namespace", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

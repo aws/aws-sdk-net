@@ -230,7 +230,7 @@ namespace Amazon.Auth.AccessControlPolicy
         {
             foreach (var action in actions)
             {
-                if (statement.Actions.FirstOrDefault(x => string.Equals(x.ActionName, action.ActionName)) == null)
+                if (statement.Actions.FirstOrDefault(x => string.Equals(x.ActionName, action.ActionName, StringComparison.InvariantCultureIgnoreCase)) == null)
                     return false;
             }
 

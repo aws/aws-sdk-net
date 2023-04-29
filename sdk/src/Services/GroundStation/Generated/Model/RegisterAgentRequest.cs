@@ -30,7 +30,14 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the RegisterAgent operation.
-    /// Registers a new agent with AWS Groundstation.
+    /// <note> 
+    /// <para>
+    ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    ///  Registers a new agent with AWS Ground Station. 
+    /// </para>
     /// </summary>
     public partial class RegisterAgentRequest : AmazonGroundStationRequest
     {
@@ -59,7 +66,7 @@ namespace Amazon.GroundStation.Model
         /// <summary>
         /// Gets and sets the property DiscoveryData. 
         /// <para>
-        /// Data for associating and agent with the capabilities it is managing.
+        /// Data for associating an agent with the capabilities it is managing.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

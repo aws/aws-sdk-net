@@ -42,7 +42,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property ExternalId. 
         /// <para>
-        /// The external Id.
+        /// The external ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -61,7 +61,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
-        /// The resource Id.
+        /// The resource ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -39,7 +39,7 @@ namespace Amazon.CodeCatalyst.Model
         /// <summary>
         /// Gets and sets the property Items. 
         /// <para>
-        /// Information about the space. 
+        /// Information about the spaces. 
         /// </para>
         /// </summary>
         public List<SpaceSummary> Items

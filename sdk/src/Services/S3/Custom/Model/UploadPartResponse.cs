@@ -37,8 +37,10 @@ namespace Amazon.S3.Model
         private string _checksumSHA256;
 
         /// <summary>
-        /// The Server-side encryption algorithm used when storing this object in S3.
-        ///  
+        /// <para>
+        /// The server-side encryption algorithm used when storing this object in Amazon S3 (for
+        /// example, AES256, <code>aws:kms</code>).
+        /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
         {

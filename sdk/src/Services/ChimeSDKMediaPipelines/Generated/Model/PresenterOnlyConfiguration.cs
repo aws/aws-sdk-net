@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// Defines the configuration for a presenter only video tile.
+    /// Defines the configuration for a presenter-only video tile.
     /// </summary>
     public partial class PresenterOnlyConfiguration
     {

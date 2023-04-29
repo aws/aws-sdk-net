@@ -63,7 +63,8 @@ namespace Amazon.Util.Internal
 
         public async Task WriteAllTextAsync(string path, string contents, CancellationToken token = default)
         {
-            using (var fs = new FileStream(path, FileMode.OpenOrCreate))
+            //we use  FileMode.Create because we want to truncate the file first if the file exists then write to it.
+            using (var fs = new FileStream(path, FileMode.Create))
             using (var writer = new StreamWriter(fs))
                 await writer.WriteAsync(contents).ConfigureAwait(false);
 

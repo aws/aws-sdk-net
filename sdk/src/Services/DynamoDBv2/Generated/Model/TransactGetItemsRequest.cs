@@ -57,7 +57,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// The aggregate size of the items in the transaction cannot exceed 4 MB.
+    /// The aggregate size of the items in the transaction exceeded 4 MB.
     /// </para>
     ///  </li> </ul>
     /// </summary>

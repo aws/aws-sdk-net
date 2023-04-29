@@ -666,6 +666,97 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("SageMaker")]
+        public void CreateAutoMLJobV2MarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<CreateAutoMLJobV2Request>();
+            var marshaller = new CreateAutoMLJobV2RequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<CreateAutoMLJobV2Request>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateAutoMLJobV2").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = CreateAutoMLJobV2ResponseUnmarshaller.Instance.Unmarshall(context) as CreateAutoMLJobV2Response;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SageMaker")]
+        public void CreateAutoMLJobV2_ResourceInUseExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateAutoMLJobV2");
+
+            var request = InstantiateClassGenerator.Execute<CreateAutoMLJobV2Request>();
+            var marshaller = new CreateAutoMLJobV2RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateAutoMLJobV2Request>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceInUseException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceInUseException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateAutoMLJobV2ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SageMaker")]
+        public void CreateAutoMLJobV2_ResourceLimitExceededExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateAutoMLJobV2");
+
+            var request = InstantiateClassGenerator.Execute<CreateAutoMLJobV2Request>();
+            var marshaller = new CreateAutoMLJobV2RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateAutoMLJobV2Request>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceLimitExceededException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceLimitExceededException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateAutoMLJobV2ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SageMaker")]
         public void CreateCodeRepositoryMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CreateCodeRepositoryRequest>();
@@ -7095,6 +7186,65 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             };
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = DescribeAutoMLJobResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SageMaker")]
+        public void DescribeAutoMLJobV2MarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeAutoMLJobV2Request>();
+            var marshaller = new DescribeAutoMLJobV2RequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<DescribeAutoMLJobV2Request>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeAutoMLJobV2").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeAutoMLJobV2ResponseUnmarshaller.Instance.Unmarshall(context) as DescribeAutoMLJobV2Response;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SageMaker")]
+        public void DescribeAutoMLJobV2_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeAutoMLJobV2");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAutoMLJobV2Request>();
+            var marshaller = new DescribeAutoMLJobV2RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeAutoMLJobV2Request>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeAutoMLJobV2ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The phone number associations, such as an Amazon Chime SDK account ID, user ID, Voice
+    /// Connector ID, or Voice Connector group ID.
     /// </summary>
     public partial class PhoneNumberAssociation
     {
@@ -38,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property AssociatedTimestamp.
+        /// Gets and sets the property AssociatedTimestamp. 
+        /// <para>
+        /// The timestamp of the phone number association, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime AssociatedTimestamp
         {
@@ -53,7 +57,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// Defines the association with an Amazon Chime SDK account ID, user ID, Voice Connector
+        /// ID, or Voice Connector group ID.
+        /// </para>
         /// </summary>
         public PhoneNumberAssociationName Name
         {
@@ -68,7 +76,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Value.
+        /// Gets and sets the property Value. 
+        /// <para>
+        /// Contains the ID for the entity specified in Name.
+        /// </para>
         /// </summary>
         public string Value
         {

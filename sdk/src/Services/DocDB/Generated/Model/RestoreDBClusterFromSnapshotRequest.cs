@@ -48,6 +48,7 @@ namespace Amazon.DocDB.Model
     {
         private List<string> _availabilityZones = new List<string>();
         private string _dbClusterIdentifier;
+        private string _dbClusterParameterGroupName;
         private string _dbSubnetGroupName;
         private bool? _deletionProtection;
         private List<string> _enableCloudwatchLogsExports = new List<string>();
@@ -116,6 +117,35 @@ namespace Amazon.DocDB.Model
         internal bool IsSetDBClusterIdentifier()
         {
             return this._dbClusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DBClusterParameterGroupName. 
+        /// <para>
+        /// The name of the DB cluster parameter group to associate with this DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <i>Type:</i> String.       <i>Required:</i> No.
+        /// </para>
+        ///  
+        /// <para>
+        /// If this argument is omitted, the default DB cluster parameter group is used. If supplied,
+        /// must match the name of an existing default DB cluster parameter group. The string
+        /// must consist of from 1 to 255 letters, numbers or hyphens. Its first character must
+        /// be a letter, and it cannot end with a hyphen or contain two consecutive hyphens.
+        /// </para>
+        /// </summary>
+        public string DBClusterParameterGroupName
+        {
+            get { return this._dbClusterParameterGroupName; }
+            set { this._dbClusterParameterGroupName = value; }
+        }
+
+        // Check to see if DBClusterParameterGroupName property is set
+        internal bool IsSetDBClusterParameterGroupName()
+        {
+            return this._dbClusterParameterGroupName != null;
         }
 
         /// <summary>

@@ -119,6 +119,12 @@
     <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.PutRumEventsRequest.BatchId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.PutRumEventsRequest.Id</property>
     <min>36</min>
     <max>36</max>
@@ -263,6 +269,12 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.MetricDefinition.Namespace</property>
+    <min>1</min>
+    <max>237</max>
+    <pattern>[a-zA-Z0-9-._/#:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.MetricDefinition.UnitLabel</property>
     <min>1</min>
     <max>256</max>
@@ -283,6 +295,12 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.MetricDefinitionRequest.Namespace</property>
+    <min>1</min>
+    <max>237</max>
+    <pattern>[a-zA-Z0-9-._/#:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.MetricDefinitionRequest.UnitLabel</property>
     <min>1</min>
     <max>256</max>
@@ -301,5 +319,23 @@
   <property-value-rule>
     <property>Amazon.CloudWatchRUM.Model.MetricDestinationSummary.IamRoleArn</property>
     <pattern>arn:[^:]*:[^:]*:[^:]*:[^:]*:.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.RumEvent.Id</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.UserDetails.SessionId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudWatchRUM.Model.UserDetails.UserId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Gets the Amazon EC2 Container Registry path of the docker image of the model that
-    /// is hosted in this <a>ProductionVariant</a>.
+    /// is hosted in this <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariant.html">ProductionVariant</a>.
     /// 
     ///  
     /// <para>

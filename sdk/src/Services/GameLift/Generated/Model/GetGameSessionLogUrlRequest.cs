@@ -31,8 +31,8 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the GetGameSessionLogUrl operation.
     /// Retrieves the location of stored game session logs for a specified game session. When
-    /// a game session is terminated, GameLift automatically stores the logs in Amazon S3
-    /// and retains them for 14 days. Use this URL to download the logs.
+    /// a game session is terminated, Amazon GameLift automatically stores the logs in Amazon
+    /// S3 and retains them for 14 days. Use this URL to download the logs.
     /// 
     ///  <note> 
     /// <para>

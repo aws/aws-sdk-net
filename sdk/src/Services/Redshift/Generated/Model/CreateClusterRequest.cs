@@ -737,8 +737,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUsername. 
         /// <para>
-        /// The user name associated with the admin user account for the cluster that is being
-        /// created.
+        /// The user name associated with the admin user for the cluster that is being created.
         /// </para>
         ///  
         /// <para>
@@ -784,8 +783,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property MasterUserPassword. 
         /// <para>
-        /// The password associated with the admin user account for the cluster that is being
-        /// created.
+        /// The password associated with the admin user for the cluster that is being created.
         /// </para>
         ///  
         /// <para>

@@ -201,7 +201,7 @@ namespace ServiceClientGenerator
 
             private static readonly char[] CapitalizingSeparators =
             {
-                '-', '/', '.', ' ',':',','
+                '-', '/', '.', ' ', ':', ',', '+'
             };
 
             public string CustomPropertyName { get; set; }

@@ -61,6 +61,12 @@
     <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.GetAdminScopeRequest.AdminAccount</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.GetAppsListRequest.ListId</property>
     <min>36</min>
     <max>36</max>
@@ -189,6 +195,40 @@
     <property>Amazon.FMS.Model.GetViolationDetailsRequest.ResourceType</property>
     <min>1</min>
     <max>128</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ListAdminAccountsForOrganizationRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ListAdminAccountsForOrganizationRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ListAdminAccountsForOrganizationResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ListAdminsManagingAccountRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ListAdminsManagingAccountRequest.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.ListAdminsManagingAccountResponse.NextToken</property>
+    <min>1</min>
+    <max>4096</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -369,6 +409,12 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.FMS.Model.PutAdminAccountRequest.AdminAccount</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.FMS.Model.PutAppsListResponse.AppsListArn</property>
     <min>1</min>
     <max>1024</max>
@@ -426,6 +472,12 @@
     <min>1</min>
     <max>1024</max>
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.FMS.Model.AdminAccountSummary.AdminAccount</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.FMS.Model.App.AppName</property>
@@ -769,7 +821,7 @@
   <property-value-rule>
     <property>Amazon.FMS.Model.FMSPolicyUpdateFirewallCreationConfigAction.FirewallCreationConfig</property>
     <min>1</min>
-    <max>8192</max>
+    <max>10000</max>
     <pattern>^((?!\\[nr]).)+</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -1350,7 +1402,7 @@
   <property-value-rule>
     <property>Amazon.FMS.Model.SecurityServicePolicyData.ManagedServiceData</property>
     <min>1</min>
-    <max>8192</max>
+    <max>10000</max>
     <pattern>^((?!\\[nr]).)+</pattern>
   </property-value-rule>
   <property-value-rule>

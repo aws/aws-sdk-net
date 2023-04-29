@@ -36,6 +36,14 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
+        /// Paginator for ListBridges operation
+        ///</summary>
+        public IListBridgesPaginator ListBridges(ListBridgesRequest request) 
+        {
+            return new ListBridgesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEntitlements operation
         ///</summary>
         public IListEntitlementsPaginator ListEntitlements(ListEntitlementsRequest request) 
@@ -49,6 +57,22 @@ namespace Amazon.MediaConnect.Model
         public IListFlowsPaginator ListFlows(ListFlowsRequest request) 
         {
             return new ListFlowsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGatewayInstances operation
+        ///</summary>
+        public IListGatewayInstancesPaginator ListGatewayInstances(ListGatewayInstancesRequest request) 
+        {
+            return new ListGatewayInstancesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListGateways operation
+        ///</summary>
+        public IListGatewaysPaginator ListGateways(ListGatewaysRequest request) 
+        {
+            return new ListGatewaysPaginator(this.client, request);
         }
 
         /// <summary>

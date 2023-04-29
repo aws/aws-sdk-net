@@ -75,10 +75,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property CleanSourceMetadataOnMismatch. 
         /// <para>
-        /// Adjusts the behavior of DMS when migrating from an SQL Server source database that
-        /// is hosted as part of an Always On availability group cluster. If you need DMS to poll
-        /// all the nodes in the Always On cluster for transaction backups, set this attribute
-        /// to <code>false</code>. 
+        /// Cleans and recreates table metadata information on the replication instance when a
+        /// mismatch occurs. For example, in a situation where running an alter DDL on the table
+        /// could result in different information about the table cached in the replication instance.
+        /// 
         /// </para>
         /// </summary>
         public bool CleanSourceMetadataOnMismatch
@@ -212,7 +212,10 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Port.
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// Endpoint TCP port.
+        /// </para>
         /// </summary>
         public int Port
         {
@@ -282,7 +285,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
-        /// Endpoint TCP port.
+        /// The MySQL host name.
         /// </para>
         /// </summary>
         public string ServerName

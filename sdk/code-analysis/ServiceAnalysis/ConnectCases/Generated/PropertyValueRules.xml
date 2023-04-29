@@ -150,6 +150,11 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ConnectCases.Model.DeleteDomainRequest.DomainId</property>
+    <min>1</min>
+    <max>500</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ConnectCases.Model.GetCaseRequest.CaseId</property>
     <min>1</min>
     <max>500</max>

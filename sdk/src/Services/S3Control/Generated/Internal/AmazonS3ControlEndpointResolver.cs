@@ -154,6 +154,13 @@ namespace Amazon.S3Control.Internal
                 result.Bucket = request.Bucket;
                 return result;
             }
+            if (requestContext.RequestName == "DeleteBucketReplicationRequest") {
+                result.RequiresAccountId = true;
+                var request = (DeleteBucketReplicationRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                result.Bucket = request.Bucket;
+                return result;
+            }
             if (requestContext.RequestName == "DeleteBucketTaggingRequest") {
                 result.RequiresAccountId = true;
                 var request = (DeleteBucketTaggingRequest)requestContext.OriginalRequest;
@@ -265,6 +272,13 @@ namespace Amazon.S3Control.Internal
             if (requestContext.RequestName == "GetBucketPolicyRequest") {
                 result.RequiresAccountId = true;
                 var request = (GetBucketPolicyRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                result.Bucket = request.Bucket;
+                return result;
+            }
+            if (requestContext.RequestName == "GetBucketReplicationRequest") {
+                result.RequiresAccountId = true;
+                var request = (GetBucketReplicationRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 result.Bucket = request.Bucket;
                 return result;
@@ -398,6 +412,13 @@ namespace Amazon.S3Control.Internal
             if (requestContext.RequestName == "PutBucketPolicyRequest") {
                 result.RequiresAccountId = true;
                 var request = (PutBucketPolicyRequest)requestContext.OriginalRequest;
+                result.AccountId = request.AccountId;
+                result.Bucket = request.Bucket;
+                return result;
+            }
+            if (requestContext.RequestName == "PutBucketReplicationRequest") {
+                result.RequiresAccountId = true;
+                var request = (PutBucketReplicationRequest)requestContext.OriginalRequest;
                 result.AccountId = request.AccountId;
                 result.Bucket = request.Bucket;
                 return result;

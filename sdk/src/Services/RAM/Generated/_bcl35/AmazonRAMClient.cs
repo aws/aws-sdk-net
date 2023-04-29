@@ -37,12 +37,11 @@ namespace Amazon.RAM
     ///
     /// This is the <i>Resource Access Manager API Reference</i>. This documentation provides
     /// descriptions and syntax for each of the actions and data types in RAM. RAM is a service
-    /// that helps you securely share your Amazon Web Services resources across Amazon Web
-    /// Services accounts. If you have multiple Amazon Web Services accounts, you can use
-    /// RAM to share those resources with other accounts. If you use Organizations to manage
-    /// your accounts, then you share your resources with your organization or organizational
-    /// units (OUs). For supported resource types, you can also share resources with individual
-    /// Identity and Access Management (IAM) roles an users. 
+    /// that helps you securely share your Amazon Web Services resources to other Amazon Web
+    /// Services accounts. If you use Organizations to manage your accounts, then you can
+    /// share your resources with your entire organization or to organizational units (OUs).
+    /// For supported resource types, you can also share resources with individual Identity
+    /// and Access Management (IAM) roles and users. 
     /// 
     ///  
     /// <para>
@@ -298,36 +297,40 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the AcceptResourceShareInvitation service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// The client token input parameter was matched one used with a previous call to the
-        /// operation, but at least one of the other input parameters is different from the previous
-        /// call.
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// The client token is not valid.
+        /// The operation failed because the specified client token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyAcceptedException">
-        /// The specified invitation was already accepted.
+        /// The operation failed because the specified invitation was already accepted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyRejectedException">
-        /// The specified invitation was already rejected.
+        /// The operation failed because the specified invitation was already rejected.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
-        /// The specified Amazon Resource Name (ARN) for an invitation was not found.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> for an invitation was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationExpiredException">
-        /// The specified invitation is expired.
+        /// The operation failed because the specified invitation is past its expiration date
+        /// and time.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AcceptResourceShareInvitation">REST API Reference for AcceptResourceShareInvitation Operation</seealso>
         public virtual AcceptResourceShareInvitationResponse AcceptResourceShareInvitation(AcceptResourceShareInvitationRequest request)
@@ -387,40 +390,45 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the AssociateResourceShare service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// The client token input parameter was matched one used with a previous call to the
-        /// operation, but at least one of the other input parameters is different from the previous
-        /// call.
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// The client token is not valid.
+        /// The operation failed because the specified client token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
-        /// The requested state transition is not valid.
+        /// The operation failed because the requested operation isn't valid for the resource
+        /// share in its current state.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
-        /// This request would exceed the limit for resource shares for your account.
+        /// The operation failed because it would exceed the limit for resource shares for your
+        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ThrottlingException">
-        /// You exceeded the rate at which you are allowed to perform this operation. Please try
-        /// again later.
+        /// The operation failed because it exceeded the rate at which you are allowed to perform
+        /// this operation. Please try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceShare">REST API Reference for AssociateResourceShare Operation</seealso>
         public virtual AssociateResourceShareResponse AssociateResourceShare(AssociateResourceShareRequest request)
@@ -480,25 +488,27 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the AssociateResourceSharePermission service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// The client token is not valid.
+        /// The operation failed because the specified client token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/AssociateResourceSharePermission">REST API Reference for AssociateResourceSharePermission Operation</seealso>
         public virtual AssociateResourceSharePermissionResponse AssociateResourceSharePermission(AssociateResourceSharePermissionRequest request)
@@ -546,6 +556,200 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  CreatePermission
+
+        /// <summary>
+        /// Creates a customer managed permission for a specified resource type that you can attach
+        /// to resource shares. It is created in the Amazon Web Services Region in which you call
+        /// the operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePermission service method.</param>
+        /// 
+        /// <returns>The response from the CreatePermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// The operation failed because the specified client token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidPolicyException">
+        /// The operation failed because a policy you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedPolicyTemplateException">
+        /// The operation failed because the policy template that you provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The operation failed because the requested operation isn't permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.PermissionAlreadyExistsException">
+        /// The operation failed because a permission with the specified name already exists in
+        /// the requested Amazon Web Services Region. Choose a different name.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.PermissionLimitExceededException">
+        /// The operation failed because it would exceed the maximum number of permissions you
+        /// can create in each Amazon Web Services Region. To view the limits for your Amazon
+        /// Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// page in the Service Quotas console</a>.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermission">REST API Reference for CreatePermission Operation</seealso>
+        public virtual CreatePermissionResponse CreatePermission(CreatePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePermissionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePermission operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermission">REST API Reference for CreatePermission Operation</seealso>
+        public virtual IAsyncResult BeginCreatePermission(CreatePermissionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePermissionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePermission.</param>
+        /// 
+        /// <returns>Returns a  CreatePermissionResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermission">REST API Reference for CreatePermission Operation</seealso>
+        public virtual CreatePermissionResponse EndCreatePermission(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePermissionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreatePermissionVersion
+
+        /// <summary>
+        /// Creates a new version of the specified customer managed permission. The new version
+        /// is automatically set as the default version of the customer managed permission. New
+        /// resource shares automatically use the default permission. Existing resource shares
+        /// continue to use their original permission versions, but you can use <a>ReplacePermissionAssociations</a>
+        /// to update them.
+        /// 
+        ///  
+        /// <para>
+        /// If the specified customer managed permission already has the maximum of 5 versions,
+        /// then you must delete one of the existing versions before you can create a new one.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePermissionVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreatePermissionVersion service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// The operation failed because the specified client token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidPolicyException">
+        /// The operation failed because a policy you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedPolicyTemplateException">
+        /// The operation failed because the policy template that you provided isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.PermissionVersionsLimitExceededException">
+        /// The operation failed because it would exceed the limit for the number of versions
+        /// you can have for a permission. To view the limits for your Amazon Web Services account,
+        /// see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// page in the Service Quotas console</a>.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// The operation failed because a specified resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermissionVersion">REST API Reference for CreatePermissionVersion Operation</seealso>
+        public virtual CreatePermissionVersionResponse CreatePermissionVersion(CreatePermissionVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePermissionVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePermissionVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePermissionVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePermissionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePermissionVersion operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePermissionVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermissionVersion">REST API Reference for CreatePermissionVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreatePermissionVersion(CreatePermissionVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePermissionVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePermissionVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePermissionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePermissionVersion.</param>
+        /// 
+        /// <returns>Returns a  CreatePermissionVersionResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreatePermissionVersion">REST API Reference for CreatePermissionVersion Operation</seealso>
+        public virtual CreatePermissionVersionResponse EndCreatePermissionVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePermissionVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateResourceShare
 
         /// <summary>
@@ -565,39 +769,45 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the CreateResourceShare service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// The client token input parameter was matched one used with a previous call to the
-        /// operation, but at least one of the other input parameters is different from the previous
-        /// call.
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// The client token is not valid.
+        /// The operation failed because the specified client token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
-        /// The requested state transition is not valid.
+        /// The operation failed because the requested operation isn't valid for the resource
+        /// share in its current state.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
-        /// This request would exceed the limit for resource shares for your account.
+        /// The operation failed because it would exceed the limit for resource shares for your
+        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.TagPolicyViolationException">
-        /// The specified tag key is a reserved word and can't be used.
+        /// The operation failed because the specified tag key is a reserved word and can't be
+        /// used.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/CreateResourceShare">REST API Reference for CreateResourceShare Operation</seealso>
         public virtual CreateResourceShareResponse CreateResourceShare(CreateResourceShareRequest request)
@@ -645,44 +855,224 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  DeletePermission
+
+        /// <summary>
+        /// Deletes the specified customer managed permission in the Amazon Web Services Region
+        /// in which you call this operation. You can delete a customer managed permission only
+        /// if it isn't attached to any resource share. The operation deletes all versions associated
+        /// with the customer managed permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermission service method.</param>
+        /// 
+        /// <returns>The response from the DeletePermission service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// The operation failed because the specified client token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The operation failed because the requested operation isn't permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// The operation failed because a specified resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermission">REST API Reference for DeletePermission Operation</seealso>
+        public virtual DeletePermissionResponse DeletePermission(DeletePermissionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePermissionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermission operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePermission
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermission">REST API Reference for DeletePermission Operation</seealso>
+        public virtual IAsyncResult BeginDeletePermission(DeletePermissionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePermission operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePermission.</param>
+        /// 
+        /// <returns>Returns a  DeletePermissionResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermission">REST API Reference for DeletePermission Operation</seealso>
+        public virtual DeletePermissionResponse EndDeletePermission(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePermissionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePermissionVersion
+
+        /// <summary>
+        /// Deletes one version of a customer managed permission. The version you specify must
+        /// not be attached to any resource share and must not be the default version for the
+        /// permission.
+        /// 
+        ///  
+        /// <para>
+        /// If a customer managed permission has the maximum of 5 versions, then you must delete
+        /// at least one version before you can create another.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeletePermissionVersion service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// The operation failed because the specified client token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The operation failed because the requested operation isn't permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// The operation failed because a specified resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermissionVersion">REST API Reference for DeletePermissionVersion Operation</seealso>
+        public virtual DeletePermissionVersionResponse DeletePermissionVersion(DeletePermissionVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePermissionVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePermissionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePermissionVersion operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePermissionVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermissionVersion">REST API Reference for DeletePermissionVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeletePermissionVersion(DeletePermissionVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePermissionVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePermissionVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePermissionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePermissionVersion.</param>
+        /// 
+        /// <returns>Returns a  DeletePermissionVersionResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeletePermissionVersion">REST API Reference for DeletePermissionVersion Operation</seealso>
+        public virtual DeletePermissionVersionResponse EndDeletePermissionVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePermissionVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteResourceShare
 
         /// <summary>
-        /// Deletes the specified resource share. This doesn't delete any of the resources that
-        /// were associated with the resource share; it only stops the sharing of those resources
-        /// outside of the Amazon Web Services account that created them.
+        /// Deletes the specified resource share.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// This doesn't delete any of the resources that were associated with the resource share;
+        /// it only stops the sharing of those resources through this resource share.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteResourceShare service method.</param>
         /// 
         /// <returns>The response from the DeleteResourceShare service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// The client token input parameter was matched one used with a previous call to the
-        /// operation, but at least one of the other input parameters is different from the previous
-        /// call.
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// The client token is not valid.
+        /// The operation failed because the specified client token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
-        /// The requested state transition is not valid.
+        /// The operation failed because the requested operation isn't valid for the resource
+        /// share in its current state.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DeleteResourceShare">REST API Reference for DeleteResourceShare Operation</seealso>
         public virtual DeleteResourceShareResponse DeleteResourceShare(DeleteResourceShareRequest request)
@@ -733,42 +1123,48 @@ namespace Amazon.RAM
         #region  DisassociateResourceShare
 
         /// <summary>
-        /// Disassociates the specified principals or resources from the specified resource share.
+        /// Removes the specified principals or resources from participating in the specified
+        /// resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceShare service method.</param>
         /// 
         /// <returns>The response from the DisassociateResourceShare service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// The client token input parameter was matched one used with a previous call to the
-        /// operation, but at least one of the other input parameters is different from the previous
-        /// call.
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// The client token is not valid.
+        /// The operation failed because the specified client token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
-        /// The requested state transition is not valid.
+        /// The operation failed because the requested operation isn't valid for the resource
+        /// share in its current state.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
-        /// This request would exceed the limit for resource shares for your account.
+        /// The operation failed because it would exceed the limit for resource shares for your
+        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceShare">REST API Reference for DisassociateResourceShare Operation</seealso>
         public virtual DisassociateResourceShareResponse DisassociateResourceShare(DisassociateResourceShareRequest request)
@@ -819,37 +1215,40 @@ namespace Amazon.RAM
         #region  DisassociateResourceSharePermission
 
         /// <summary>
-        /// Disassociates an RAM permission from a resource share. Permission changes take effect
-        /// immediately. You can remove a RAM permission from a resource share only if there are
-        /// currently no resources of the relevant resource type currently attached to the resource
-        /// share.
+        /// Removes a managed permission from a resource share. Permission changes take effect
+        /// immediately. You can remove a managed permission from a resource share only if there
+        /// are currently no resources of the relevant resource type currently attached to the
+        /// resource share.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateResourceSharePermission service method.</param>
         /// 
         /// <returns>The response from the DisassociateResourceSharePermission service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// The client token is not valid.
+        /// The operation failed because the specified client token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
-        /// The requested state transition is not valid.
+        /// The operation failed because the requested operation isn't valid for the resource
+        /// share in its current state.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/DisassociateResourceSharePermission">REST API Reference for DisassociateResourceSharePermission Operation</seealso>
         public virtual DisassociateResourceSharePermissionResponse DisassociateResourceSharePermission(DisassociateResourceSharePermissionRequest request)
@@ -900,17 +1299,19 @@ namespace Amazon.RAM
         #region  EnableSharingWithAwsOrganization
 
         /// <summary>
-        /// Enables resource sharing within your organization in Organizations. Calling this operation
-        /// enables RAM to retrieve information about the organization and its structure. This
-        /// lets you share resources with all of the accounts in an organization by specifying
-        /// the organization's ID, or all of the accounts in an organizational unit (OU) by specifying
-        /// the OU's ID. Until you enable sharing within the organization, you can specify only
-        /// individual Amazon Web Services accounts, or for supported resource types, IAM users
-        /// and roles.
+        /// Enables resource sharing within your organization in Organizations. This operation
+        /// creates a service-linked role called <code>AWSServiceRoleForResourceAccessManager</code>
+        /// that has the IAM managed policy named AWSResourceAccessManagerServiceRolePolicy attached.
+        /// This role permits RAM to retrieve information about the organization and its structure.
+        /// This lets you share resources with all of the accounts in the calling account's organization
+        /// by specifying the organization ID, or all of the accounts in an organizational unit
+        /// (OU) by specifying the OU ID. Until you enable sharing within the organization, you
+        /// can specify only individual Amazon Web Services accounts, or for supported resource
+        /// types, IAM roles and users.
         /// 
         ///  
         /// <para>
-        /// You must call this operation from an IAM user or role in the organization's management
+        /// You must call this operation from an IAM role or user in the organization's management
         /// account.
         /// </para>
         /// </summary>
@@ -918,13 +1319,14 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the EnableSharingWithAwsOrganization service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/EnableSharingWithAwsOrganization">REST API Reference for EnableSharingWithAwsOrganization Operation</seealso>
         public virtual EnableSharingWithAwsOrganizationResponse EnableSharingWithAwsOrganization(EnableSharingWithAwsOrganizationRequest request)
@@ -975,28 +1377,30 @@ namespace Amazon.RAM
         #region  GetPermission
 
         /// <summary>
-        /// Gets the contents of an RAM permission in JSON format.
+        /// Retrieves the contents of a managed permission in JSON format.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPermission service method.</param>
         /// 
         /// <returns>The response from the GetPermission service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetPermission">REST API Reference for GetPermission Operation</seealso>
         public virtual GetPermissionResponse GetPermission(GetPermissionRequest request)
@@ -1054,22 +1458,27 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the GetResourcePolicies service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for <code>NextToken</code> is not valid.
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceArnNotFoundException">
-        /// The specified Amazon Resource Name (ARN) was not found.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourcePolicies">REST API Reference for GetResourcePolicies Operation</seealso>
         public virtual GetResourcePoliciesResponse GetResourcePolicies(GetResourcePoliciesRequest request)
@@ -1120,31 +1529,36 @@ namespace Amazon.RAM
         #region  GetResourceShareAssociations
 
         /// <summary>
-        /// Retrieves the resource and principal associations for resource shares that you own.
+        /// Retrieves the lists of resources and principals that associated for resource shares
+        /// that you own.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetResourceShareAssociations service method.</param>
         /// 
         /// <returns>The response from the GetResourceShareAssociations service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for <code>NextToken</code> is not valid.
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareAssociations">REST API Reference for GetResourceShareAssociations Operation</seealso>
         public virtual GetResourceShareAssociationsResponse GetResourceShareAssociations(GetResourceShareAssociationsRequest request)
@@ -1201,28 +1615,34 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the GetResourceShareInvitations service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidMaxResultsException">
-        /// The specified value for <code>MaxResults</code> is not valid.
+        /// The operation failed because the specified value for <code>MaxResults</code> isn't
+        /// valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for <code>NextToken</code> is not valid.
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
-        /// The specified Amazon Resource Name (ARN) for an invitation was not found.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> for an invitation was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShareInvitations">REST API Reference for GetResourceShareInvitations Operation</seealso>
         public virtual GetResourceShareInvitationsResponse GetResourceShareInvitations(GetResourceShareInvitationsRequest request)
@@ -1279,22 +1699,26 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the GetResourceShares service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for <code>NextToken</code> is not valid.
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/GetResourceShares">REST API Reference for GetResourceShares Operation</seealso>
         public virtual GetResourceSharesResponse GetResourceShares(GetResourceSharesRequest request)
@@ -1353,31 +1777,37 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPendingInvitationResources service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for <code>NextToken</code> is not valid.
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MissingRequiredParameterException">
-        /// A required input parameter is missing.
+        /// The operation failed because a required input parameter is missing.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyRejectedException">
-        /// The specified invitation was already rejected.
+        /// The operation failed because the specified invitation was already rejected.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
-        /// The specified Amazon Resource Name (ARN) for an invitation was not found.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> for an invitation was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationExpiredException">
-        /// The specified invitation is expired.
+        /// The operation failed because the specified invitation is past its expiration date
+        /// and time.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPendingInvitationResources">REST API Reference for ListPendingInvitationResources Operation</seealso>
         public virtual ListPendingInvitationResourcesResponse ListPendingInvitationResources(ListPendingInvitationResourcesRequest request)
@@ -1425,6 +1855,81 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  ListPermissionAssociations
+
+        /// <summary>
+        /// Lists information about the managed permission and its associations to any resource
+        /// shares that use this managed permission. This lets you see which resource shares use
+        /// which versions of the specified managed permission.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListPermissionAssociations service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionAssociations">REST API Reference for ListPermissionAssociations Operation</seealso>
+        public virtual ListPermissionAssociationsResponse ListPermissionAssociations(ListPermissionAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPermissionAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPermissionAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPermissionAssociations operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPermissionAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionAssociations">REST API Reference for ListPermissionAssociations Operation</seealso>
+        public virtual IAsyncResult BeginListPermissionAssociations(ListPermissionAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPermissionAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPermissionAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPermissionAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPermissionAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListPermissionAssociationsResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionAssociations">REST API Reference for ListPermissionAssociations Operation</seealso>
+        public virtual ListPermissionAssociationsResponse EndListPermissionAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPermissionAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListPermissions
 
         /// <summary>
@@ -1435,19 +1940,22 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPermissions service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for <code>NextToken</code> is not valid.
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissions">REST API Reference for ListPermissions Operation</seealso>
         public virtual ListPermissionsResponse ListPermissions(ListPermissionsRequest request)
@@ -1504,25 +2012,29 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPermissionVersions service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for <code>NextToken</code> is not valid.
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPermissionVersions">REST API Reference for ListPermissionVersions Operation</seealso>
         public virtual ListPermissionVersionsResponse ListPermissionVersions(ListPermissionVersionsRequest request)
@@ -1580,22 +2092,26 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListPrincipals service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for <code>NextToken</code> is not valid.
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListPrincipals">REST API Reference for ListPrincipals Operation</seealso>
         public virtual ListPrincipalsResponse ListPrincipals(ListPrincipalsRequest request)
@@ -1643,6 +2159,76 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  ListReplacePermissionAssociationsWork
+
+        /// <summary>
+        /// Retrieves the current status of the asynchronous tasks performed by RAM when you perform
+        /// the <a>ReplacePermissionAssociationsWork</a> operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReplacePermissionAssociationsWork service method.</param>
+        /// 
+        /// <returns>The response from the ListReplacePermissionAssociationsWork service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListReplacePermissionAssociationsWork">REST API Reference for ListReplacePermissionAssociationsWork Operation</seealso>
+        public virtual ListReplacePermissionAssociationsWorkResponse ListReplacePermissionAssociationsWork(ListReplacePermissionAssociationsWorkRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReplacePermissionAssociationsWorkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplacePermissionAssociationsWorkResponseUnmarshaller.Instance;
+
+            return Invoke<ListReplacePermissionAssociationsWorkResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReplacePermissionAssociationsWork operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReplacePermissionAssociationsWork operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReplacePermissionAssociationsWork
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListReplacePermissionAssociationsWork">REST API Reference for ListReplacePermissionAssociationsWork Operation</seealso>
+        public virtual IAsyncResult BeginListReplacePermissionAssociationsWork(ListReplacePermissionAssociationsWorkRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReplacePermissionAssociationsWorkRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReplacePermissionAssociationsWorkResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReplacePermissionAssociationsWork operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReplacePermissionAssociationsWork.</param>
+        /// 
+        /// <returns>Returns a  ListReplacePermissionAssociationsWorkResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListReplacePermissionAssociationsWork">REST API Reference for ListReplacePermissionAssociationsWork Operation</seealso>
+        public virtual ListReplacePermissionAssociationsWorkResponse EndListReplacePermissionAssociationsWork(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListReplacePermissionAssociationsWorkResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListResources
 
         /// <summary>
@@ -1653,25 +2239,29 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListResources service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for <code>NextToken</code> is not valid.
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidResourceTypeException">
-        /// The specified resource type is not valid.
+        /// The operation failed because the specified resource type isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResources">REST API Reference for ListResources Operation</seealso>
         public virtual ListResourcesResponse ListResources(ListResourcesRequest request)
@@ -1728,25 +2318,29 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListResourceSharePermissions service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for <code>NextToken</code> is not valid.
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceSharePermissions">REST API Reference for ListResourceSharePermissions Operation</seealso>
         public virtual ListResourceSharePermissionsResponse ListResourceSharePermissions(ListResourceSharePermissionsRequest request)
@@ -1803,16 +2397,19 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the ListResourceTypes service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidNextTokenException">
-        /// The specified value for <code>NextToken</code> is not valid.
+        /// The operation failed because the specified value for <code>NextToken</code> isn't
+        /// valid. You must specify a value you received in the <code>NextToken</code> response
+        /// of a previous call to this operation.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ListResourceTypes">REST API Reference for ListResourceTypes Operation</seealso>
         public virtual ListResourceTypesResponse ListResourceTypes(ListResourceTypesRequest request)
@@ -1860,46 +2457,185 @@ namespace Amazon.RAM
 
         #endregion
         
-        #region  PromoteResourceShareCreatedFromPolicy
+        #region  PromotePermissionCreatedFromPolicy
 
         /// <summary>
-        /// When you attach a resource-based permission policy to a resource, it automatically
-        /// creates a resource share. However, resource shares created this way are visible only
-        /// to the resource share owner, and the resource share can't be modified in RAM.
+        /// When you attach a resource-based policy to a resource, RAM automatically creates a
+        /// resource share of <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a
+        /// managed permission that has the same IAM permissions as the original resource-based
+        /// policy. However, this type of managed permission is visible to only the resource share
+        /// owner, and the associated resource share can't be modified by using RAM.
         /// 
         ///  
         /// <para>
-        /// You can use this operation to promote the resource share to a full RAM resource share.
-        /// When you promote a resource share, you can then manage the resource share in RAM and
-        /// it becomes visible to all of the principals you shared it with.
+        /// This operation creates a separate, fully manageable customer managed permission that
+        /// has the same IAM permissions as the original resource-based policy. You can associate
+        /// this customer managed permission to any resource shares.
         /// </para>
+        ///  
+        /// <para>
+        /// Before you use <a>PromoteResourceShareCreatedFromPolicy</a>, you should first run
+        /// this operation to ensure that you have an appropriate customer managed permission
+        /// that can be associated with the promoted resource share.
+        /// </para>
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// The original <code>CREATED_FROM_POLICY</code> policy isn't deleted, and resource shares
+        /// using that original policy aren't automatically updated.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't modify a <code>CREATED_FROM_POLICY</code> resource share so you can't associate
+        /// the new customer managed permission by using <code>ReplacePermsissionAssociations</code>.
+        /// However, if you use <a>PromoteResourceShareCreatedFromPolicy</a>, that operation automatically
+        /// associates the fully manageable customer managed permission to the newly promoted
+        /// <code>STANDARD</code> resource share.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// After you promote a resource share, if the original <code>CREATED_FROM_POLICY</code>
+        /// managed permission has no other associations to A resource share, then RAM automatically
+        /// deletes it.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PromotePermissionCreatedFromPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PromotePermissionCreatedFromPolicy service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MissingRequiredParameterException">
+        /// The operation failed because a required input parameter is missing.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The operation failed because the requested operation isn't permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// The operation failed because a specified resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromotePermissionCreatedFromPolicy">REST API Reference for PromotePermissionCreatedFromPolicy Operation</seealso>
+        public virtual PromotePermissionCreatedFromPolicyResponse PromotePermissionCreatedFromPolicy(PromotePermissionCreatedFromPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PromotePermissionCreatedFromPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PromotePermissionCreatedFromPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PromotePermissionCreatedFromPolicyResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PromotePermissionCreatedFromPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PromotePermissionCreatedFromPolicy operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPromotePermissionCreatedFromPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromotePermissionCreatedFromPolicy">REST API Reference for PromotePermissionCreatedFromPolicy Operation</seealso>
+        public virtual IAsyncResult BeginPromotePermissionCreatedFromPolicy(PromotePermissionCreatedFromPolicyRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PromotePermissionCreatedFromPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PromotePermissionCreatedFromPolicyResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PromotePermissionCreatedFromPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPromotePermissionCreatedFromPolicy.</param>
+        /// 
+        /// <returns>Returns a  PromotePermissionCreatedFromPolicyResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromotePermissionCreatedFromPolicy">REST API Reference for PromotePermissionCreatedFromPolicy Operation</seealso>
+        public virtual PromotePermissionCreatedFromPolicyResponse EndPromotePermissionCreatedFromPolicy(IAsyncResult asyncResult)
+        {
+            return EndInvoke<PromotePermissionCreatedFromPolicyResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  PromoteResourceShareCreatedFromPolicy
+
+        /// <summary>
+        /// When you attach a resource-based policy to a resource, RAM automatically creates a
+        /// resource share of <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a
+        /// managed permission that has the same IAM permissions as the original resource-based
+        /// policy. However, this type of managed permission is visible to only the resource share
+        /// owner, and the associated resource share can't be modified by using RAM.
+        /// 
+        ///  
+        /// <para>
+        /// This operation promotes the resource share to a <code>STANDARD</code> resource share
+        /// that is fully manageable in RAM. When you promote a resource share, you can then manage
+        /// the resource share in RAM and it becomes visible to all of the principals you shared
+        /// it with.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Before you perform this operation, you should first run <a>PromotePermissionCreatedFromPolicy</a>to
+        /// ensure that you have an appropriate customer managed permission that can be associated
+        /// with this resource share after its is promoted. If this operation can't find a managed
+        /// permission that exactly matches the existing <code>CREATED_FROM_POLICY</code> permission,
+        /// then this operation fails.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PromoteResourceShareCreatedFromPolicy service method.</param>
         /// 
         /// <returns>The response from the PromoteResourceShareCreatedFromPolicy service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidStateTransitionException">
+        /// The operation failed because the requested operation isn't valid for the resource
+        /// share in its current state.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MissingRequiredParameterException">
-        /// A required input parameter is missing.
+        /// The operation failed because a required input parameter is missing.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareLimitExceededException">
-        /// This request would exceed the limit for resource shares for your account.
+        /// The operation failed because it would exceed the limit for resource shares for your
+        /// account. To view the limits for your Amazon Web Services account, see the <a href="https://console.aws.amazon.com/servicequotas/home/services/ram/quotas">RAM
+        /// page in the Service Quotas console</a>.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnmatchedPolicyPermissionException">
+        /// There isn't an existing managed permission defined in RAM that has the same IAM permissions
+        /// as the resource-based policy attached to the resource. You should first run <a>PromotePermissionCreatedFromPolicy</a>
+        /// to create that managed permission.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/PromoteResourceShareCreatedFromPolicy">REST API Reference for PromoteResourceShareCreatedFromPolicy Operation</seealso>
         public virtual PromoteResourceShareCreatedFromPolicyResponse PromoteResourceShareCreatedFromPolicy(PromoteResourceShareCreatedFromPolicyRequest request)
@@ -1956,36 +2692,40 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the RejectResourceShareInvitation service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// The client token input parameter was matched one used with a previous call to the
-        /// operation, but at least one of the other input parameters is different from the previous
-        /// call.
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// The client token is not valid.
+        /// The operation failed because the specified client token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyAcceptedException">
-        /// The specified invitation was already accepted.
+        /// The operation failed because the specified invitation was already accepted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationAlreadyRejectedException">
-        /// The specified invitation was already rejected.
+        /// The operation failed because the specified invitation was already rejected.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationArnNotFoundException">
-        /// The specified Amazon Resource Name (ARN) for an invitation was not found.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> for an invitation was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceShareInvitationExpiredException">
-        /// The specified invitation is expired.
+        /// The operation failed because the specified invitation is past its expiration date
+        /// and time.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/RejectResourceShareInvitation">REST API Reference for RejectResourceShareInvitation Operation</seealso>
         public virtual RejectResourceShareInvitationResponse RejectResourceShareInvitation(RejectResourceShareInvitationRequest request)
@@ -2033,39 +2773,236 @@ namespace Amazon.RAM
 
         #endregion
         
+        #region  ReplacePermissionAssociations
+
+        /// <summary>
+        /// Updates all resource shares that use a managed permission to a different managed permission.
+        /// This operation always applies the default version of the target managed permission.
+        /// You can optionally specify that the update applies to only resource shares that currently
+        /// use a specified version. This enables you to update to the latest version, without
+        /// changing the which managed permission is used.
+        /// 
+        ///  
+        /// <para>
+        /// You can use this operation to update all of your resource shares to use the current
+        /// default version of the permission by specifying the same value for the <code>fromPermissionArn</code>
+        /// and <code>toPermissionArn</code> parameters.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use the optional <code>fromPermissionVersion</code> parameter to update only
+        /// those resources that use a specified version of the managed permission to the new
+        /// managed permission.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// To successfully perform this operation, you must have permission to update the resource-based
+        /// policy on all affected resource types.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplacePermissionAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ReplacePermissionAssociations service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// The operation failed because the specified client token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
+        /// The operation failed because the requested operation isn't permitted.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// The operation failed because a specified resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ReplacePermissionAssociations">REST API Reference for ReplacePermissionAssociations Operation</seealso>
+        public virtual ReplacePermissionAssociationsResponse ReplacePermissionAssociations(ReplacePermissionAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReplacePermissionAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReplacePermissionAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ReplacePermissionAssociationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ReplacePermissionAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ReplacePermissionAssociations operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndReplacePermissionAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ReplacePermissionAssociations">REST API Reference for ReplacePermissionAssociations Operation</seealso>
+        public virtual IAsyncResult BeginReplacePermissionAssociations(ReplacePermissionAssociationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ReplacePermissionAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ReplacePermissionAssociationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ReplacePermissionAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginReplacePermissionAssociations.</param>
+        /// 
+        /// <returns>Returns a  ReplacePermissionAssociationsResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ReplacePermissionAssociations">REST API Reference for ReplacePermissionAssociations Operation</seealso>
+        public virtual ReplacePermissionAssociationsResponse EndReplacePermissionAssociations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ReplacePermissionAssociationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SetDefaultPermissionVersion
+
+        /// <summary>
+        /// Designates the specified version number as the default version for the specified customer
+        /// managed permission. New resource shares automatically use this new default permission.
+        /// Existing resource shares continue to use their original permission version, but you
+        /// can use <a>ReplacePermissionAssociations</a> to update them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SetDefaultPermissionVersion service method.</param>
+        /// 
+        /// <returns>The response from the SetDefaultPermissionVersion service method, as returned by RAM.</returns>
+        /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
+        /// The operation failed because the specified client token isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServerInternalException">
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// The operation failed because a specified resource couldn't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/SetDefaultPermissionVersion">REST API Reference for SetDefaultPermissionVersion Operation</seealso>
+        public virtual SetDefaultPermissionVersionResponse SetDefaultPermissionVersion(SetDefaultPermissionVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDefaultPermissionVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDefaultPermissionVersionResponseUnmarshaller.Instance;
+
+            return Invoke<SetDefaultPermissionVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SetDefaultPermissionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SetDefaultPermissionVersion operation on AmazonRAMClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSetDefaultPermissionVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/SetDefaultPermissionVersion">REST API Reference for SetDefaultPermissionVersion Operation</seealso>
+        public virtual IAsyncResult BeginSetDefaultPermissionVersion(SetDefaultPermissionVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SetDefaultPermissionVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SetDefaultPermissionVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SetDefaultPermissionVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSetDefaultPermissionVersion.</param>
+        /// 
+        /// <returns>Returns a  SetDefaultPermissionVersionResult from RAM.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/SetDefaultPermissionVersion">REST API Reference for SetDefaultPermissionVersion Operation</seealso>
+        public virtual SetDefaultPermissionVersionResponse EndSetDefaultPermissionVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SetDefaultPermissionVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         /// <summary>
-        /// Adds the specified tag keys and values to the specified resource share. The tags are
-        /// attached only to the resource share, not to the resources that are in the resource
-        /// share.
+        /// Adds the specified tag keys and values to a resource share or managed permission.
+        /// If you choose a resource share, the tags are attached to only the resource share,
+        /// not to the resources that are in the resource share.
+        /// 
+        ///  
+        /// <para>
+        /// The tags on a managed permission are the same for all versions of the managed permission.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ResourceArnNotFoundException">
-        /// The specified Amazon Resource Name (ARN) was not found.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> was not found.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.TagLimitExceededException">
-        /// This request would exceed the limit for tags for your account.
+        /// The operation failed because it would exceed the limit for tags for your Amazon Web
+        /// Services account.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.TagPolicyViolationException">
-        /// The specified tag key is a reserved word and can't be used.
+        /// The operation failed because the specified tag key is a reserved word and can't be
+        /// used.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -2116,19 +3053,28 @@ namespace Amazon.RAM
         #region  UntagResource
 
         /// <summary>
-        /// Removes the specified tag key and value pairs from the specified resource share.
+        /// Removes the specified tag key and value pairs from the specified resource share or
+        /// managed permission.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.MalformedArnException">
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual UntagResourceResponse UntagResource(UntagResourceRequest request)
@@ -2185,33 +3131,35 @@ namespace Amazon.RAM
         /// 
         /// <returns>The response from the UpdateResourceShare service method, as returned by RAM.</returns>
         /// <exception cref="Amazon.RAM.Model.IdempotentParameterMismatchException">
-        /// The client token input parameter was matched one used with a previous call to the
-        /// operation, but at least one of the other input parameters is different from the previous
-        /// call.
+        /// The operation failed because the client token input parameter matched one that was
+        /// used with a previous call to the operation, but at least one of the other input parameters
+        /// is different from the previous call.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidClientTokenException">
-        /// The client token is not valid.
+        /// The operation failed because the specified client token isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.InvalidParameterException">
-        /// A parameter is not valid.
+        /// The operation failed because a parameter you specified isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MalformedArnException">
-        /// The format of an Amazon Resource Name (ARN) is not valid.
+        /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> has a format that isn't valid.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.MissingRequiredParameterException">
-        /// A required input parameter is missing.
+        /// The operation failed because a required input parameter is missing.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.OperationNotPermittedException">
-        /// The requested operation is not permitted.
+        /// The operation failed because the requested operation isn't permitted.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServerInternalException">
-        /// The service could not respond to the request due to an internal problem.
+        /// The operation failed because the service could not respond to the request due to an
+        /// internal problem. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.ServiceUnavailableException">
-        /// The service is not available.
+        /// The operation failed because the service isn't available. Try again later.
         /// </exception>
         /// <exception cref="Amazon.RAM.Model.UnknownResourceException">
-        /// A specified resource was not found.
+        /// The operation failed because a specified resource couldn't be found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/UpdateResourceShare">REST API Reference for UpdateResourceShare Operation</seealso>
         public virtual UpdateResourceShareResponse UpdateResourceShare(UpdateResourceShareRequest request)

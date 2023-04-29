@@ -147,7 +147,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property CreatedBy. 
         /// <para>
-        ///  The IAM user or role that created the framework. 
+        ///  The user or role that created the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -222,7 +222,7 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedBy. 
         /// <para>
-        ///  The IAM user or role that most recently updated the framework. 
+        ///  The user or role that most recently updated the framework. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

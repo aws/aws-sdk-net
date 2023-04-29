@@ -64,6 +64,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AddRecordTimestamp", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AddRecordTimestamp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Assign", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -94,10 +100,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Delimiter = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EmitConsumerLagMetrics", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EmitConsumerLagMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EndingOffsets", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.EndingOffsets = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("IncludeHeaders", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.IncludeHeaders = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("MaxOffsetsPerTrigger", targetDepth))

@@ -226,8 +226,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by Snowball.</returns>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
-        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-        /// action.
+        /// Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
@@ -259,8 +258,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>The response from the CreateCluster service method, as returned by Snowball.</returns>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
-        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-        /// action.
+        /// Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
@@ -308,7 +306,7 @@ namespace Amazon.Snowball
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Snow Family device type: <b>SNC1_SSD</b> 
+        /// Device type: <b>SNC1_SSD</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -320,7 +318,7 @@ namespace Amazon.Snowball
         /// </para>
         ///  </li> </ul>  </li> <li> 
         /// <para>
-        /// Snow Family device type: <b>SNC1_HDD</b> 
+        /// Device type: <b>SNC1_HDD</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -380,18 +378,6 @@ namespace Amazon.Snowball
         /// </para>
         ///  </li> </ul>  </li> <li> 
         /// <para>
-        /// Device type: <b>V3_5C</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Capacity: T32
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Description: Snowball Edge Compute Optimized without GPU
-        /// </para>
-        ///  </li> </ul>  </li> <li> 
-        /// <para>
         /// Device type: <b>STANDARD</b> 
         /// </para>
         ///  <ul> <li> 
@@ -424,7 +410,31 @@ namespace Amazon.Snowball
         /// This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services
         /// Region. 
         /// </para>
-        ///  </note> </li> </ul>  </li> </ul>
+        ///  </note> </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>V3_5C</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T32
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Compute Optimized without GPU
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>V3_5S</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T240
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Storage Optimized 210TB
+        /// </para>
+        ///  </li> </ul>  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// 
@@ -435,8 +445,7 @@ namespace Amazon.Snowball
         /// again and create jobs until your cluster has exactly five nodes.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
-        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-        /// action.
+        /// Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
@@ -481,7 +490,7 @@ namespace Amazon.Snowball
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Snow Family device type: <b>SNC1_SSD</b> 
+        /// Device type: <b>SNC1_SSD</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -493,7 +502,7 @@ namespace Amazon.Snowball
         /// </para>
         ///  </li> </ul>  </li> <li> 
         /// <para>
-        /// Snow Family device type: <b>SNC1_HDD</b> 
+        /// Device type: <b>SNC1_HDD</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -553,18 +562,6 @@ namespace Amazon.Snowball
         /// </para>
         ///  </li> </ul>  </li> <li> 
         /// <para>
-        /// Device type: <b>V3_5C</b> 
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// Capacity: T32
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Description: Snowball Edge Compute Optimized without GPU
-        /// </para>
-        ///  </li> </ul>  </li> <li> 
-        /// <para>
         /// Device type: <b>STANDARD</b> 
         /// </para>
         ///  <ul> <li> 
@@ -597,7 +594,31 @@ namespace Amazon.Snowball
         /// This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services
         /// Region. 
         /// </para>
-        ///  </note> </li> </ul>  </li> </ul>
+        ///  </note> </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>V3_5C</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T32
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Compute Optimized without GPU
+        /// </para>
+        ///  </li> </ul>  </li> <li> 
+        /// <para>
+        /// Device type: <b>V3_5S</b> 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Capacity: T240
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Description: Snowball Edge Storage Optimized 210TB
+        /// </para>
+        ///  </li> </ul>  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateJob service method.</param>
         /// <param name="cancellationToken">
@@ -611,8 +632,7 @@ namespace Amazon.Snowball
         /// again and create jobs until your cluster has exactly five nodes.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
-        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-        /// action.
+        /// Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
@@ -1332,16 +1352,17 @@ namespace Amazon.Snowball
         /// <summary>
         /// This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs)
         /// that are owned by your Amazon Web Services accountthat would be supported for use
-        /// on a Snow device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with
-        /// Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
-        /// available on the Amazon Web Services Marketplace.
+        /// on a Snow device. Currently, supported AMIs are based on the Amazon Linux-2, Ubuntu
+        /// 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the Amazon Web
+        /// Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported
+        /// in the Market, but still supported for use on devices through Amazon EC2 VM Import/Export
+        /// and running locally in AMIs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCompatibleImages service method.</param>
         /// 
         /// <returns>The response from the ListCompatibleImages service method, as returned by Snowball.</returns>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
-        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-        /// action.
+        /// Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
@@ -1356,9 +1377,11 @@ namespace Amazon.Snowball
         /// <summary>
         /// This action returns a list of the different Amazon EC2 Amazon Machine Images (AMIs)
         /// that are owned by your Amazon Web Services accountthat would be supported for use
-        /// on a Snow device. Currently, supported AMIs are based on the CentOS 7 (x86_64) - with
-        /// Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS - Xenial (HVM) images,
-        /// available on the Amazon Web Services Marketplace.
+        /// on a Snow device. Currently, supported AMIs are based on the Amazon Linux-2, Ubuntu
+        /// 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the Amazon Web
+        /// Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported
+        /// in the Market, but still supported for use on devices through Amazon EC2 VM Import/Export
+        /// and running locally in AMIs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCompatibleImages service method.</param>
         /// <param name="cancellationToken">
@@ -1367,8 +1390,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>The response from the ListCompatibleImages service method, as returned by Snowball.</returns>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
-        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-        /// action.
+        /// Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
         /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
@@ -1472,6 +1494,54 @@ namespace Amazon.Snowball
 
         #endregion
         
+        #region  ListServiceVersions
+
+
+        /// <summary>
+        /// Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code>
+        /// object containing the supported versions for a particular service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListServiceVersions service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions">REST API Reference for ListServiceVersions Operation</seealso>
+        ListServiceVersionsResponse ListServiceVersions(ListServiceVersionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all supported versions for Snow on-device services. Returns an array of <code>ServiceVersion</code>
+        /// object containing the supported versions for a particular service.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListServiceVersions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListServiceVersions service method, as returned by Snowball.</returns>
+        /// <exception cref="Amazon.Snowball.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> string was altered unexpectedly, and the operation has
+        /// stopped. Run the operation without changing the <code>NextToken</code> string, and
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.Snowball.Model.InvalidResourceException">
+        /// The specified resource can't be found. Check the information you provided in your
+        /// last request, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListServiceVersions">REST API Reference for ListServiceVersions Operation</seealso>
+        Task<ListServiceVersionsResponse> ListServiceVersionsAsync(ListServiceVersionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  UpdateCluster
 
 
@@ -1485,8 +1555,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>The response from the UpdateCluster service method, as returned by Snowball.</returns>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
-        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-        /// action.
+        /// Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
@@ -1523,8 +1592,7 @@ namespace Amazon.Snowball
         /// 
         /// <returns>The response from the UpdateCluster service method, as returned by Snowball.</returns>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
-        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-        /// action.
+        /// Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
@@ -1566,8 +1634,7 @@ namespace Amazon.Snowball
         /// again and create jobs until your cluster has exactly five nodes.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
-        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-        /// action.
+        /// Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the
@@ -1609,8 +1676,7 @@ namespace Amazon.Snowball
         /// again and create jobs until your cluster has exactly five nodes.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.Ec2RequestFailedException">
-        /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-        /// action.
+        /// Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
         /// </exception>
         /// <exception cref="Amazon.Snowball.Model.InvalidInputCombinationException">
         /// Job or cluster creation failed. One or more inputs were invalid. Confirm that the

@@ -42,13 +42,13 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide</i>.
+    /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class ModifyDBClusterRequest : AmazonRDSRequest
     {
         private int? _allocatedStorage;
+        private bool? _allowEngineModeChange;
         private bool? _allowMajorVersionUpgrade;
         private bool? _applyImmediately;
         private bool? _autoMinorVersionUpgrade;
@@ -67,6 +67,7 @@ namespace Amazon.RDS.Model
         private bool? _enableHttpEndpoint;
         private bool? _enableIAMDatabaseAuthentication;
         private bool? _enablePerformanceInsights;
+        private string _engineMode;
         private string _engineVersion;
         private int? _iops;
         private bool? _manageMasterUserPassword;
@@ -96,10 +97,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Type: Integer
-        /// </para>
-        ///  
-        /// <para>
         /// Valid for: Multi-AZ DB clusters only
         /// </para>
         /// </summary>
@@ -113,6 +110,34 @@ namespace Amazon.RDS.Model
         internal bool IsSetAllocatedStorage()
         {
             return this._allocatedStorage.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AllowEngineModeChange. 
+        /// <para>
+        /// A value that indicates whether engine mode changes from <code>serverless</code> to
+        /// <code>provisioned</code> are allowed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Constraints: You must allow engine mode changes when specifying a different value
+        /// for the <code>EngineMode</code> parameter from the DB cluster's current engine mode.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora Serverless v1 DB clusters only
+        /// </para>
+        /// </summary>
+        public bool AllowEngineModeChange
+        {
+            get { return this._allowEngineModeChange.GetValueOrDefault(); }
+            set { this._allowEngineModeChange = value; }
+        }
+
+        // Check to see if AllowEngineModeChange property is set
+        internal bool IsSetAllowEngineModeChange()
+        {
+            return this._allowEngineModeChange.HasValue; 
         }
 
         /// <summary>
@@ -153,12 +178,9 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>ApplyImmediately</code> parameter only affects the <code>EnableIAMDatabaseAuthentication</code>,
-        /// <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values. If
-        /// the <code>ApplyImmediately</code> parameter is disabled, then changes to the <code>EnableIAMDatabaseAuthentication</code>,
-        /// <code>MasterUserPassword</code>, and <code>NewDBClusterIdentifier</code> values are
-        /// applied during the next maintenance window. All other changes are applied immediately,
-        /// regardless of the value of the <code>ApplyImmediately</code> parameter.
+        /// Most modifications can be applied immediately or during the next scheduled maintenance
+        /// window. Some modifications, such as turning on deletion protection and changing the
+        /// master password, are applied immediately—regardless of when you choose to apply them.
         /// </para>
         ///  
         /// <para>
@@ -689,6 +711,37 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EngineMode. 
+        /// <para>
+        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The DB engine mode can be modified only from <code>serverless</code> to <code>provisioned</code>.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+        /// CreateDBCluster</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        public string EngineMode
+        {
+            get { return this._engineMode; }
+            set { this._engineMode = value; }
+        }
+
+        // Check to see if EngineMode property is set
+        internal bool IsSetEngineMode()
+        {
+            return this._engineMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The version number of the database engine to which you want to upgrade. Changing this
@@ -697,18 +750,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for MySQL 5.6-compatible Aurora, use
-        /// the following command:
+        /// If the cluster that you're modifying has one or more read replicas, all replicas must
+        /// be running an engine version that's the same or later than the version you specify.
         /// </para>
         ///  
         /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
-        /// Aurora, use the following command:
+        /// To list all of the available engine versions for Aurora MySQL, use the following command:
         /// </para>
         ///  
         /// <para>

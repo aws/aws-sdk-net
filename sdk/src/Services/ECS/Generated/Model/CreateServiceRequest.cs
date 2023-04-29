@@ -35,7 +35,17 @@ namespace Amazon.ECS.Model
     /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
     /// service, see the <a>UpdateService</a> action.
     /// 
-    ///  
+    ///  <note> 
+    /// <para>
+    /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+    /// Elastic Inference (EI), and will help current customers migrate their workloads to
+    /// options that offer better price and performance. After April 15, 2023, new customers
+    /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+    /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+    /// during the past 30-day period are considered current customers and will be able to
+    /// continue using the service. 
+    /// </para>
+    ///  </note> 
     /// <para>
     /// In addition to maintaining the desired count of tasks in your service, you can optionally
     /// run your service behind one or more load balancers. The load balancers distribute
@@ -318,9 +328,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Determines whether the execute command functionality is enabled for the service. If
-        /// <code>true</code>, this enables execute command functionality on all containers in
-        /// the service tasks.
+        /// Determines whether the execute command functionality is turned on for the service.
+        /// If <code>true</code>, this enables execute command functionality on all containers
+        /// in the service tasks.
         /// </para>
         /// </summary>
         public bool EnableExecuteCommand
@@ -575,7 +585,7 @@ namespace Amazon.ECS.Model
         /// <para>
         /// Specifies whether to propagate the tags from the task definition to the task. If no
         /// value is specified, the tags aren't propagated. Tags can only be propagated to the
-        /// task during task creation. To add tags to a task after task creation, use the <a>TagResource</a>
+        /// task during task creation. To add tags to a task after task creation, use the <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
         /// API action.
         /// </para>
         /// </summary>
@@ -826,6 +836,11 @@ namespace Amazon.ECS.Model
         /// <para>
         /// A task definition must be specified if the service uses either the <code>ECS</code>
         /// or <code>CODE_DEPLOY</code> deployment controllers.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about deployment types, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+        /// ECS deployment types</a>.
         /// </para>
         /// </summary>
         public string TaskDefinition

@@ -16,7 +16,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+    #line 1 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class DefaultConfigurationModeGenerator : DefaultConfigurationModeGeneratorBase
     {
@@ -60,87 +60,48 @@ namespace Amazon.Runtime
     {
 ");
             
-            #line 36 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
- foreach (var mode in defaultConfigurationModel.Modes) 
+            #line 35 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+ foreach (var mode in DefaultConfigurationModel.Modes) 
 { 
-    var trailingComma = defaultConfigurationModel.Modes.Last() == mode ? "" : ",";
+    var trailingComma = DefaultConfigurationModel.Modes.Last() == mode ? "" : ",";
 
             
             #line default
             #line hidden
             this.Write("        /// <summary>\r\n        /// ");
             
-            #line 41 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+            #line 40 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.Documentation));
             
             #line default
             #line hidden
             this.Write("\r\n        /// </summary>\r\n        ");
             
-            #line 43 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+            #line 42 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(mode.Name));
             
             #line default
             #line hidden
             
-            #line 43 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+            #line 42 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(trailingComma));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+            #line 43 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("    }\r\n}");
+            this.Write("    }\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
+        #line 47 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\DefaultConfigurationModeGenerator.tt"
 
-private global::ServiceClientGenerator.DefaultConfiguration.DefaultConfigurationModel _defaultConfigurationModelField;
-
-/// <summary>
-/// Access the defaultConfigurationModel parameter of the template.
-/// </summary>
-private global::ServiceClientGenerator.DefaultConfiguration.DefaultConfigurationModel defaultConfigurationModel
-{
-    get
-    {
-        return this._defaultConfigurationModelField;
-    }
-}
-
-
-/// <summary>
-/// Initialize the template
-/// </summary>
-public virtual void Initialize()
-{
-    if ((this.Errors.HasErrors == false))
-    {
-bool defaultConfigurationModelValueAcquired = false;
-if (this.Session.ContainsKey("defaultConfigurationModel"))
-{
-    this._defaultConfigurationModelField = ((global::ServiceClientGenerator.DefaultConfiguration.DefaultConfigurationModel)(this.Session["defaultConfigurationModel"]));
-    defaultConfigurationModelValueAcquired = true;
-}
-if ((defaultConfigurationModelValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("defaultConfigurationModel");
-    if ((data != null))
-    {
-        this._defaultConfigurationModelField = ((global::ServiceClientGenerator.DefaultConfiguration.DefaultConfigurationModel)(data));
-    }
-}
-
-
-    }
-}
-
+public ServiceClientGenerator.DefaultConfiguration.DefaultConfigurationModel DefaultConfigurationModel { get; set; }
 
         
         #line default

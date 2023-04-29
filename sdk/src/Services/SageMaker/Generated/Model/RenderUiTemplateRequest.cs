@@ -47,7 +47,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// See a list of available Human Ui Amazon Resource Names (ARNs) in <a>UiConfig</a>.
+        /// See a list of available Human Ui Amazon Resource Names (ARNs) in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

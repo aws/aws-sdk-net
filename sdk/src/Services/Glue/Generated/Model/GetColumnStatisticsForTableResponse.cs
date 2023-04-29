@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property ColumnStatisticsList. 
         /// <para>
-        /// List of ColumnStatistics that failed to be retrieved.
+        /// List of ColumnStatistics.
         /// </para>
         /// </summary>
         public List<ColumnStatistics> ColumnStatisticsList

@@ -40,6 +40,7 @@ namespace Amazon.SecurityLake.Model
         private string _s3BucketArn;
         private SettingsStatus _status;
         private Dictionary<string, string> _tagsMap = new Dictionary<string, string>();
+        private UpdateStatus _updateStatus;
 
         /// <summary>
         /// Gets and sets the property EncryptionKey. 
@@ -182,6 +183,25 @@ namespace Amazon.SecurityLake.Model
         internal bool IsSetTagsMap()
         {
             return this._tagsMap != null && this._tagsMap.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UpdateStatus. 
+        /// <para>
+        /// The status of the last <code>UpdateDatalake </code>or <code>DeleteDatalake</code>
+        /// API request. 
+        /// </para>
+        /// </summary>
+        public UpdateStatus UpdateStatus
+        {
+            get { return this._updateStatus; }
+            set { this._updateStatus = value; }
+        }
+
+        // Check to see if UpdateStatus property is set
+        internal bool IsSetUpdateStatus()
+        {
+            return this._updateStatus != null;
         }
 
     }

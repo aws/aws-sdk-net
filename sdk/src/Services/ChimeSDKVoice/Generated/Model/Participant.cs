@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The phone number and proxy phone number for a participant in an Amazon Chime SDK Voice
+    /// Connector proxy session.
     /// </summary>
     public partial class Participant
     {
@@ -37,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _proxyPhoneNumber;
 
         /// <summary>
-        /// Gets and sets the property PhoneNumber.
+        /// Gets and sets the property PhoneNumber. 
+        /// <para>
+        /// The participant's phone number.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string PhoneNumber
@@ -53,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProxyPhoneNumber.
+        /// Gets and sets the property ProxyPhoneNumber. 
+        /// <para>
+        /// The participant's proxy phone number.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string ProxyPhoneNumber

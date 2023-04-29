@@ -39,6 +39,8 @@ namespace Amazon.SecurityLake.Model
         private string _accountId;
         private DateTime? _createdAt;
         private string _externalId;
+        private string _resourceShareArn;
+        private string _resourceShareName;
         private string _roleArn;
         private string _s3BucketArn;
         private string _snsArn;
@@ -133,6 +135,49 @@ namespace Amazon.SecurityLake.Model
         internal bool IsSetExternalId()
         {
             return this._externalId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share.
+        /// Before accepting the RAM resource share invitation, you can view details related to
+        /// the RAM resource share.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is available only for Lake Formation subscribers created after March 8,
+        /// 2023.
+        /// </para>
+        /// </summary>
+        public string ResourceShareArn
+        {
+            get { return this._resourceShareArn; }
+            set { this._resourceShareArn = value; }
+        }
+
+        // Check to see if ResourceShareArn property is set
+        internal bool IsSetResourceShareArn()
+        {
+            return this._resourceShareArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareName. 
+        /// <para>
+        /// The name of the resource share.
+        /// </para>
+        /// </summary>
+        public string ResourceShareName
+        {
+            get { return this._resourceShareName; }
+            set { this._resourceShareName = value; }
+        }
+
+        // Check to see if ResourceShareName property is set
+        internal bool IsSetResourceShareName()
+        {
+            return this._resourceShareName != null;
         }
 
         /// <summary>

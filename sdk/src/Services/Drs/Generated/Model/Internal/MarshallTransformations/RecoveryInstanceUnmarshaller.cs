@@ -106,6 +106,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.JobID = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("originAvailabilityZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OriginAvailabilityZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("originEnvironment", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

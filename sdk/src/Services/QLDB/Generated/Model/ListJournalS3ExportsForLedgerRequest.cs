@@ -30,7 +30,7 @@ namespace Amazon.QLDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ListJournalS3ExportsForLedger operation.
-    /// Returns an array of journal export job descriptions for a specified ledger.
+    /// Returns all journal export jobs for a specified ledger.
     /// 
     ///  
     /// <para>

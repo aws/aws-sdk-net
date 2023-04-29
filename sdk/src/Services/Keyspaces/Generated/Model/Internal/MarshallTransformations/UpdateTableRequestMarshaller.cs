@@ -94,6 +94,17 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetClientSideTimestamps())
+                {
+                    context.Writer.WritePropertyName("clientSideTimestamps");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClientSideTimestampsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ClientSideTimestamps, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDefaultTimeToLive())
                 {
                     context.Writer.WritePropertyName("defaultTimeToLive");

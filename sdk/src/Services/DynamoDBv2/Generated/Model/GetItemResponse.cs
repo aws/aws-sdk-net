@@ -43,8 +43,8 @@ namespace Amazon.DynamoDBv2.Model
         /// includes the total provisioned throughput consumed, along with statistics for the
         /// table and any indexes involved in the operation. <code>ConsumedCapacity</code> is
         /// only returned if the <code>ReturnConsumedCapacity</code> parameter was specified.
-        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughputIntro.html">Read/Write
-        /// Capacity Mode</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/ProvisionedThroughput.html#ItemSizeCalculations.Reads">Provisioned
+        /// Throughput</a> in the <i>Amazon DynamoDB Developer Guide</i>.
         /// </para>
         /// </summary>
         public ConsumedCapacity ConsumedCapacity

@@ -53,8 +53,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide.</i> 
+    /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class RestoreDBClusterToPointInTimeRequest : AmazonRDSRequest
@@ -806,11 +805,6 @@ namespace Amazon.RDS.Model
         /// DB cluster.
         /// </para>
         ///  </li> </ul> 
-        /// <para>
-        /// Constraints: You can't specify <code>copy-on-write</code> if the engine version of
-        /// the source DB cluster is earlier than 1.11.
-        /// </para>
-        ///  
         /// <para>
         /// If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
         /// restored as a full copy of the source DB cluster.

@@ -36,6 +36,7 @@ namespace Amazon.Batch.Model
     {
         private List<string> _command = new List<string>();
         private List<KeyValuePair> _environment = new List<KeyValuePair>();
+        private EphemeralStorage _ephemeralStorage;
         private string _executionRoleArn;
         private FargatePlatformConfiguration _fargatePlatformConfiguration;
         private string _image;
@@ -108,6 +109,26 @@ namespace Amazon.Batch.Model
         internal bool IsSetEnvironment()
         {
             return this._environment != null && this._environment.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EphemeralStorage. 
+        /// <para>
+        /// The amount of ephemeral storage to allocate for the task. This parameter is used to
+        /// expand the total amount of ephemeral storage available, beyond the default amount,
+        /// for tasks hosted on Fargate.
+        /// </para>
+        /// </summary>
+        public EphemeralStorage EphemeralStorage
+        {
+            get { return this._ephemeralStorage; }
+            set { this._ephemeralStorage = value; }
+        }
+
+        // Check to see if EphemeralStorage property is set
+        internal bool IsSetEphemeralStorage()
+        {
+            return this._ephemeralStorage != null;
         }
 
         /// <summary>

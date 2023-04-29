@@ -38,7 +38,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property ApproximateResultCount.
+        /// Gets and sets the property ApproximateResultCount. 
+        /// <para>
+        /// Approximate number of results in the response.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int ApproximateResultCount
@@ -54,7 +57,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Items.
+        /// Gets and sets the property Items. 
+        /// <para>
+        /// List of items matching the Raster DataCollectionQuery.
+        /// </para>
         /// </summary>
         public List<ItemSource> Items
         {

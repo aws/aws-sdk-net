@@ -34,7 +34,8 @@ namespace Amazon.ECS.Model
     /// the task definition is marked as <code>INACTIVE</code>. Existing tasks and services
     /// that reference an <code>INACTIVE</code> task definition continue to run without disruption.
     /// Existing services that reference an <code>INACTIVE</code> task definition can still
-    /// scale up or down by modifying the service's desired count.
+    /// scale up or down by modifying the service's desired count. If you want to delete a
+    /// task definition revision, you must first deregister the task definition revision.
     /// 
     ///  
     /// <para>
@@ -50,7 +51,11 @@ namespace Amazon.ECS.Model
     /// recommend that you rely on <code>INACTIVE</code> task definitions persisting beyond
     /// the lifecycle of any associated tasks and services.
     /// </para>
-    ///  </note>
+    ///  </note> 
+    /// <para>
+    /// You must deregister a task definition revision before you delete it. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DeleteTaskDefinitions.html">DeleteTaskDefinitions</a>.
+    /// </para>
     /// </summary>
     public partial class DeregisterTaskDefinitionRequest : AmazonECSRequest
     {

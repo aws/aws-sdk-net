@@ -81,7 +81,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property ServiceArn. 
         /// <para>
-        ///  The ARN that identifies the ECS service. 
+        ///  The ARN that identifies the Amazon ECS service. 
         /// </para>
         ///  
         /// <para>

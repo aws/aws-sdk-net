@@ -44,7 +44,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property AcceptCode. 
         /// <para>
-        /// The accept code is a 6-digit code used to acknowledge the page.
+        /// A 6-digit code used to acknowledge the page.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=6, Max=10)]

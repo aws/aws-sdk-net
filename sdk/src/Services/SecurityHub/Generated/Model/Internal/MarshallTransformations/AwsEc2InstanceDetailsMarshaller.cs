@@ -102,6 +102,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMonitoring())
+            {
+                context.Writer.WritePropertyName("Monitoring");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2InstanceMonitoringDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Monitoring, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetNetworkInterfaces())
             {
                 context.Writer.WritePropertyName("NetworkInterfaces");

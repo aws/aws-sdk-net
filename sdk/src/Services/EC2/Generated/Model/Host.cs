@@ -41,6 +41,7 @@ namespace Amazon.EC2.Model
         private AvailableCapacity _availableCapacity;
         private string _clientToken;
         private string _hostId;
+        private HostMaintenance _hostMaintenance;
         private HostProperties _hostProperties;
         private HostRecovery _hostRecovery;
         private string _hostReservationId;
@@ -199,6 +200,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetHostId()
         {
             return this._hostId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HostMaintenance. 
+        /// <para>
+        /// Indicates whether host maintenance is enabled or disabled for the Dedicated Host.
+        /// </para>
+        /// </summary>
+        public HostMaintenance HostMaintenance
+        {
+            get { return this._hostMaintenance; }
+            set { this._hostMaintenance = value; }
+        }
+
+        // Check to see if HostMaintenance property is set
+        internal bool IsSetHostMaintenance()
+        {
+            return this._hostMaintenance != null;
         }
 
         /// <summary>

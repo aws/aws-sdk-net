@@ -1315,6 +1315,228 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Kafka")]
+        public void CreateVpcConnectionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<CreateVpcConnectionRequest>();
+            var marshaller = new CreateVpcConnectionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateVpcConnection", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateVpcConnectionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateVpcConnectionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void CreateVpcConnection_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<CreateVpcConnectionRequest>();
+            var marshaller = new CreateVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void CreateVpcConnection_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<CreateVpcConnectionRequest>();
+            var marshaller = new CreateVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void CreateVpcConnection_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<CreateVpcConnectionRequest>();
+            var marshaller = new CreateVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void CreateVpcConnection_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<CreateVpcConnectionRequest>();
+            var marshaller = new CreateVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void CreateVpcConnection_TooManyRequestsExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<CreateVpcConnectionRequest>();
+            var marshaller = new CreateVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyRequestsException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyRequestsException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void CreateVpcConnection_UnauthorizedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<CreateVpcConnectionRequest>();
+            var marshaller = new CreateVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
         public void DeleteClusterMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteCluster");
@@ -1473,6 +1695,164 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Kafka")]
+        public void DeleteClusterPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteClusterPolicyRequest>();
+            var marshaller = new DeleteClusterPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteClusterPolicy", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteClusterPolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteClusterPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DeleteClusterPolicy_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteClusterPolicyRequest>();
+            var marshaller = new DeleteClusterPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteClusterPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteClusterPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DeleteClusterPolicy_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteClusterPolicyRequest>();
+            var marshaller = new DeleteClusterPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteClusterPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteClusterPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DeleteClusterPolicy_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteClusterPolicyRequest>();
+            var marshaller = new DeleteClusterPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteClusterPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteClusterPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DeleteClusterPolicy_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<DeleteClusterPolicyRequest>();
+            var marshaller = new DeleteClusterPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteClusterPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteClusterPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
         public void DeleteConfigurationMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteConfiguration");
@@ -1623,6 +2003,164 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = DeleteConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DeleteVpcConnectionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVpcConnectionRequest>();
+            var marshaller = new DeleteVpcConnectionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteVpcConnection", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteVpcConnectionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteVpcConnectionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DeleteVpcConnection_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVpcConnectionRequest>();
+            var marshaller = new DeleteVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DeleteVpcConnection_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVpcConnectionRequest>();
+            var marshaller = new DeleteVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DeleteVpcConnection_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVpcConnectionRequest>();
+            var marshaller = new DeleteVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DeleteVpcConnection_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DeleteVpcConnectionRequest>();
+            var marshaller = new DeleteVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2645,6 +3183,228 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Kafka")]
+        public void DescribeVpcConnectionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DescribeVpcConnectionRequest>();
+            var marshaller = new DescribeVpcConnectionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeVpcConnection", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeVpcConnectionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DescribeVpcConnectionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DescribeVpcConnection_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DescribeVpcConnectionRequest>();
+            var marshaller = new DescribeVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DescribeVpcConnection_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DescribeVpcConnectionRequest>();
+            var marshaller = new DescribeVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DescribeVpcConnection_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DescribeVpcConnectionRequest>();
+            var marshaller = new DescribeVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DescribeVpcConnection_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DescribeVpcConnectionRequest>();
+            var marshaller = new DescribeVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DescribeVpcConnection_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DescribeVpcConnectionRequest>();
+            var marshaller = new DescribeVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void DescribeVpcConnection_UnauthorizedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<DescribeVpcConnectionRequest>();
+            var marshaller = new DescribeVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
         public void GetBootstrapBrokersMarshallTest()
         {
             var operation = service_model.FindOperation("GetBootstrapBrokers");
@@ -2827,6 +3587,164 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = GetBootstrapBrokersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void GetClusterPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetClusterPolicyRequest>();
+            var marshaller = new GetClusterPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetClusterPolicy", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetClusterPolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetClusterPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void GetClusterPolicy_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetClusterPolicyRequest>();
+            var marshaller = new GetClusterPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetClusterPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetClusterPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void GetClusterPolicy_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetClusterPolicyRequest>();
+            var marshaller = new GetClusterPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetClusterPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetClusterPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void GetClusterPolicy_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetClusterPolicyRequest>();
+            var marshaller = new GetClusterPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetClusterPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetClusterPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void GetClusterPolicy_NotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<GetClusterPolicyRequest>();
+            var marshaller = new GetClusterPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetClusterPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetClusterPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3081,6 +3999,196 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = GetCompatibleKafkaVersionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListClientVpcConnectionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListClientVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListClientVpcConnectionsRequest>();
+            var marshaller = new ListClientVpcConnectionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListClientVpcConnections", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListClientVpcConnectionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListClientVpcConnectionsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListClientVpcConnections_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListClientVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListClientVpcConnectionsRequest>();
+            var marshaller = new ListClientVpcConnectionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListClientVpcConnections", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListClientVpcConnectionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListClientVpcConnections_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListClientVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListClientVpcConnectionsRequest>();
+            var marshaller = new ListClientVpcConnectionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListClientVpcConnections", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListClientVpcConnectionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListClientVpcConnections_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListClientVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListClientVpcConnectionsRequest>();
+            var marshaller = new ListClientVpcConnectionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListClientVpcConnections", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListClientVpcConnectionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListClientVpcConnections_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListClientVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListClientVpcConnectionsRequest>();
+            var marshaller = new ListClientVpcConnectionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListClientVpcConnections", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListClientVpcConnectionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListClientVpcConnections_UnauthorizedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListClientVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListClientVpcConnectionsRequest>();
+            var marshaller = new ListClientVpcConnectionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListClientVpcConnections", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListClientVpcConnectionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4671,6 +5779,322 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("Kafka")]
+        public void ListVpcConnectionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListVpcConnectionsRequest>();
+            var marshaller = new ListVpcConnectionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListVpcConnections", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListVpcConnectionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListVpcConnectionsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListVpcConnections_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListVpcConnectionsRequest>();
+            var marshaller = new ListVpcConnectionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVpcConnections", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVpcConnectionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListVpcConnections_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListVpcConnectionsRequest>();
+            var marshaller = new ListVpcConnectionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVpcConnections", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVpcConnectionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListVpcConnections_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListVpcConnectionsRequest>();
+            var marshaller = new ListVpcConnectionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVpcConnections", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVpcConnectionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListVpcConnections_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListVpcConnectionsRequest>();
+            var marshaller = new ListVpcConnectionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVpcConnections", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVpcConnectionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void ListVpcConnections_UnauthorizedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListVpcConnections");
+
+            var request = InstantiateClassGenerator.Execute<ListVpcConnectionsRequest>();
+            var marshaller = new ListVpcConnectionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListVpcConnections", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListVpcConnectionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void PutClusterPolicyMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutClusterPolicyRequest>();
+            var marshaller = new PutClusterPolicyRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutClusterPolicy", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = PutClusterPolicyResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as PutClusterPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void PutClusterPolicy_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutClusterPolicyRequest>();
+            var marshaller = new PutClusterPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutClusterPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutClusterPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void PutClusterPolicy_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutClusterPolicyRequest>();
+            var marshaller = new PutClusterPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutClusterPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutClusterPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void PutClusterPolicy_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutClusterPolicy");
+
+            var request = InstantiateClassGenerator.Execute<PutClusterPolicyRequest>();
+            var marshaller = new PutClusterPolicyRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("PutClusterPolicy", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = PutClusterPolicyResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
         public void RebootBrokerMarshallTest()
         {
             var operation = service_model.FindOperation("RebootBroker");
@@ -4917,6 +6341,196 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = RebootBrokerResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void RejectClientVpcConnectionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RejectClientVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<RejectClientVpcConnectionRequest>();
+            var marshaller = new RejectClientVpcConnectionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("RejectClientVpcConnection", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = RejectClientVpcConnectionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as RejectClientVpcConnectionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void RejectClientVpcConnection_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RejectClientVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<RejectClientVpcConnectionRequest>();
+            var marshaller = new RejectClientVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RejectClientVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RejectClientVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void RejectClientVpcConnection_ForbiddenExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RejectClientVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<RejectClientVpcConnectionRequest>();
+            var marshaller = new RejectClientVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RejectClientVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ForbiddenException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ForbiddenException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RejectClientVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void RejectClientVpcConnection_InternalServerErrorExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RejectClientVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<RejectClientVpcConnectionRequest>();
+            var marshaller = new RejectClientVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RejectClientVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerErrorException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerErrorException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RejectClientVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void RejectClientVpcConnection_ServiceUnavailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RejectClientVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<RejectClientVpcConnectionRequest>();
+            var marshaller = new RejectClientVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RejectClientVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceUnavailableException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceUnavailableException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RejectClientVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("Kafka")]
+        public void RejectClientVpcConnection_UnauthorizedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RejectClientVpcConnection");
+
+            var request = InstantiateClassGenerator.Execute<RejectClientVpcConnectionRequest>();
+            var marshaller = new RejectClientVpcConnectionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RejectClientVpcConnection", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthorizedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthorizedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RejectClientVpcConnectionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

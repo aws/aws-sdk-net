@@ -110,8 +110,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedDate. 
         /// <para>
-        /// The most recent date that was used to successfully add one or more IP address ranges
-        /// (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
+        /// The most recent date that <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a>
+        /// was used to successfully add one or more IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
         /// to a private workforce's allow list.
         /// </para>
         /// </summary>

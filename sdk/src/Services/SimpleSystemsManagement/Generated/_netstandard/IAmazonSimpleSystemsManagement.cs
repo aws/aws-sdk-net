@@ -438,7 +438,7 @@ namespace Amazon.SimpleSystemsManagement
         /// isn't running, then the association might instruct State Manager to start the service.
         /// </summary>
         /// <param name="instanceId">The managed node ID. <note>  <code>InstanceId</code> has been deprecated. To specify a managed node ID for an association, use the <code>Targets</code> parameter. Requests that include the parameter <code>InstanceID</code> with Systems Manager documents (SSM documents) that use schema version 2.0 or later will fail. In addition, if you use the parameter <code>InstanceId</code>, you can't use the parameters <code>AssociationName</code>, <code>DocumentVersion</code>, <code>MaxErrors</code>, <code>MaxConcurrency</code>, <code>OutputLocation</code>, or <code>ScheduleExpression</code>. To use these parameters, you must use the <code>Targets</code> parameter. </note></param>
-        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
+        /// <param name="name">The name of the SSM Command document or Automation runbook that contains the configuration information for the managed node. You can specify Amazon Web Services-predefined documents, documents you created, or a document that is shared with you from another Amazon Web Services account. For Systems Manager documents (SSM documents) that are shared with you from other Amazon Web Services accounts, you must specify the complete SSM document ARN, in the following format:  <code>arn:<i>partition</i>:ssm:<i>region</i>:<i>account-id</i>:document/<i>document-name</i> </code>  For example:  <code>arn:aws:ssm:us-east-2:12345678912:document/My-Shared-Document</code>  For Amazon Web Services-predefined documents and SSM documents you created in your account, you only need to specify the document name. For example, <code>AWS-ApplyPatchBaseline</code> or <code>My-Document</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -703,7 +703,7 @@ namespace Amazon.SimpleSystemsManagement
         /// Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager
         /// User Guide</i>.
         /// </summary>
-        /// <param name="content">The content for the new SSM document in JSON or YAML format. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
+        /// <param name="content">The content for the new SSM document in JSON or YAML format. The content of the document must not exceed 64KB. This quota also includes the content specified for input parameters at runtime. We recommend storing the contents for your new document in an external JSON or YAML file and referencing the file in a command. For examples, see the following topics in the <i>Amazon Web Services Systems Manager User Guide</i>. <ul> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (Amazon Web Services API)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-cli.html">Create an SSM document (Amazon Web Services CLI)</a>  </li> <li>  <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/create-ssm-document-api.html">Create an SSM document (API)</a>  </li> </ul></param>
         /// <param name="name">A name for the SSM document. <important> You can't use the following strings as document name prefixes. These are reserved by Amazon Web Services for use as document name prefixes: <ul> <li>  <code>aws</code>  </li> <li>  <code>amazon</code>  </li> <li>  <code>amzn</code>  </li> </ul> </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -4681,9 +4681,9 @@ namespace Amazon.SimpleSystemsManagement
 
         /// <summary>
         /// Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately.
-        /// If you share a document privately, you must specify the Amazon Web Services user account
-        /// IDs for those people who can use the document. If you share a document publicly, you
-        /// must specify <i>All</i> as the account ID.
+        /// If you share a document privately, you must specify the Amazon Web Services user IDs
+        /// for those people who can use the document. If you share a document publicly, you must
+        /// specify <i>All</i> as the account ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyDocumentPermission service method.</param>
         /// <param name="cancellationToken">
@@ -4695,8 +4695,8 @@ namespace Amazon.SimpleSystemsManagement
         /// You can have at most 500 active SSM documents.
         /// </exception>
         /// <exception cref="Amazon.SimpleSystemsManagement.Model.DocumentPermissionLimitException">
-        /// The document can't be shared with more Amazon Web Services user accounts. You can
-        /// specify a maximum of 20 accounts per API operation to share a private document.
+        /// The document can't be shared with more Amazon Web Services accounts. You can specify
+        /// a maximum of 20 accounts per API operation to share a private document.
         /// 
         ///  
         /// <para>
@@ -5809,12 +5809,12 @@ namespace Amazon.SimpleSystemsManagement
         /// 
         ///  
         /// <para>
-        /// In order to call this API operation, your Identity and Access Management (IAM) user
-        /// account, group, or role must be configured with permission to call the <a>DescribeAssociation</a>
-        /// API operation. If you don't have permission to call <code>DescribeAssociation</code>,
-        /// then you receive the following error: <code>An error occurred (AccessDeniedException)
-        /// when calling the UpdateAssociation operation: User: &lt;user_arn&gt; isn't authorized
-        /// to perform: ssm:DescribeAssociation on resource: &lt;resource_arn&gt;</code> 
+        /// In order to call this API operation, a user, group, or role must be granted permission
+        /// to call the <a>DescribeAssociation</a> API operation. If you don't have permission
+        /// to call <code>DescribeAssociation</code>, then you receive the following error: <code>An
+        /// error occurred (AccessDeniedException) when calling the UpdateAssociation operation:
+        /// User: &lt;user_arn&gt; isn't authorized to perform: ssm:DescribeAssociation on resource:
+        /// &lt;resource_arn&gt;</code> 
         /// </para>
         ///  <important> 
         /// <para>

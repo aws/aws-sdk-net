@@ -540,7 +540,7 @@
     },
     "AuthCode":{
       "type":"string",
-      "max":2048,
+      "max":4096,
       "pattern":"\\S+"
     },
     "AuthCodeUrl":{
@@ -687,6 +687,12 @@
       "max":512,
       "pattern":"\\S+",
       "sensitive":true
+    },
+    "ClientToken":{
+      "type":"string",
+      "max":256,
+      "min":1,
+      "pattern":"[ -~]+"
     },
     "ClusterIdentifier":{
       "type":"string",
@@ -1571,6 +1577,11 @@
         "connectorProfileConfig":{
           "shape":"ConnectorProfileConfig",
           "documentation":"<p> Defines the connector-specific configuration and credentials. </p>"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "documentation":"<p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>CreateConnectorProfile</code>. The token is active for 8 hours.</p>",
+          "idempotencyToken":true
         }
       }
     },
@@ -1628,6 +1639,11 @@
         "metadataCatalogConfig":{
           "shape":"MetadataCatalogConfig",
           "documentation":"<p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "documentation":"<p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>CreateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>CreateFlow</code>. The token is active for 8 hours.</p>",
+          "idempotencyToken":true
         }
       }
     },
@@ -2989,6 +3005,12 @@
       "exception":true
     },
     "JavaBoolean":{"type":"boolean"},
+    "JwtToken":{
+      "type":"string",
+      "max":8000,
+      "pattern":"^([a-zA-Z0-9_=]+)\\.([a-zA-Z0-9_=]+)\\.([a-zA-Z0-9_\\-\\+\\/=]*)",
+      "sensitive":true
+    },
     "KMSArn":{
       "type":"string",
       "max":2048,
@@ -3395,7 +3417,8 @@
       "type":"string",
       "enum":[
         "CLIENT_CREDENTIALS",
-        "AUTHORIZATION_CODE"
+        "AUTHORIZATION_CODE",
+        "JWT_BEARER"
       ]
     },
     "OAuth2GrantTypeSupportedList":{
@@ -3883,7 +3906,7 @@
     },
     "RefreshToken":{
       "type":"string",
-      "max":2048,
+      "max":4096,
       "pattern":"\\S+"
     },
     "Region":{
@@ -3913,6 +3936,11 @@
         "connectorProvisioningConfig":{
           "shape":"ConnectorProvisioningConfig",
           "documentation":"<p>The provisioning type of the connector. Currently the only supported value is LAMBDA.</p>"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "documentation":"<p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>RegisterConnector</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>RegisterConnector</code>. The token is active for 8 hours.</p>",
+          "idempotencyToken":true
         }
       }
     },
@@ -4220,6 +4248,14 @@
         "clientCredentialsArn":{
           "shape":"ClientCredentialsArn",
           "documentation":"<p> The secret manager ARN, which contains the client ID and client secret of the connected app. </p>"
+        },
+        "oAuth2GrantType":{
+          "shape":"OAuth2GrantType",
+          "documentation":"<p>Specifies the OAuth 2.0 grant type that Amazon AppFlow uses when it requests an access token from Salesforce. Amazon AppFlow requires an access token each time it attempts to access your Salesforce records.</p> <p>You can specify one of the following values:</p> <dl> <dt>AUTHORIZATION_CODE</dt> <dd> <p>Amazon AppFlow passes an authorization code when it requests the access token from Salesforce. Amazon AppFlow receives the authorization code from Salesforce after you log in to your Salesforce account and authorize Amazon AppFlow to access your records.</p> </dd> <dt>CLIENT_CREDENTIALS</dt> <dd> <p>Amazon AppFlow passes client credentials (a client ID and client secret) when it requests the access token from Salesforce. You provide these credentials to Amazon AppFlow when you define the connection to your Salesforce account.</p> </dd> <dt>JWT_BEARER</dt> <dd> <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p> </dd> </dl>"
+        },
+        "jwtToken":{
+          "shape":"JwtToken",
+          "documentation":"<p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your Salesforce records.</p>"
         }
       },
       "documentation":"<p> The connector-specific profile credentials required when using Salesforce. </p>"
@@ -4234,6 +4270,10 @@
         "isSandboxEnvironment":{
           "shape":"Boolean",
           "documentation":"<p> Indicates whether the connector profile applies to a sandbox or production environment. </p>"
+        },
+        "usePrivateLinkForMetadataAndAuthorization":{
+          "shape":"Boolean",
+          "documentation":"<p>If the connection mode for the connector profile is private, this parameter sets whether Amazon AppFlow uses the private network to send metadata and authorization calls to Salesforce. Amazon AppFlow sends private calls through Amazon Web Services PrivateLink. These calls travel through Amazon Web Services infrastructure without being exposed to the public internet.</p> <p>Set either of the following values:</p> <dl> <dt>true</dt> <dd> <p>Amazon AppFlow sends all calls to Salesforce over the private network.</p> <p>These private calls are:</p> <ul> <li> <p>Calls to get metadata about your Salesforce records. This metadata describes your Salesforce objects and their fields.</p> </li> <li> <p>Calls to get or refresh access tokens that allow Amazon AppFlow to access your Salesforce records.</p> </li> <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> </ul> </dd> <dt>false</dt> <dd> <p>The default value. Amazon AppFlow sends some calls to Salesforce privately and other calls over the public internet.</p> <p>The public calls are: </p> <ul> <li> <p>Calls to get metadata about your Salesforce records.</p> </li> <li> <p>Calls to get or refresh access tokens.</p> </li> </ul> <p>The private calls are:</p> <ul> <li> <p>Calls to transfer your Salesforce records as part of a flow run.</p> </li> </ul> </dd> </dl>"
         }
       },
       "documentation":"<p> The connector-specific profile properties required when using Salesforce. </p>"
@@ -4287,6 +4327,10 @@
         "dataTransferApis":{
           "shape":"SalesforceDataTransferApiList",
           "documentation":"<p>The Salesforce APIs that you can have Amazon AppFlow use when your flows transfers data to or from Salesforce.</p>"
+        },
+        "oauth2GrantTypesSupported":{
+          "shape":"OAuth2GrantTypeSupportedList",
+          "documentation":"<p>The OAuth 2.0 grant types that Amazon AppFlow can use when it requests an access token from Salesforce. Amazon AppFlow requires an access token each time it attempts to access your Salesforce records.</p> <dl> <dt>AUTHORIZATION_CODE</dt> <dd> <p>Amazon AppFlow passes an authorization code when it requests the access token from Salesforce. Amazon AppFlow receives the authorization code from Salesforce after you log in to your Salesforce account and authorize Amazon AppFlow to access your records.</p> </dd> <dt>CLIENT_CREDENTIALS</dt> <dd> <p>Amazon AppFlow passes client credentials (a client ID and client secret) when it requests the access token from Salesforce. You provide these credentials to Amazon AppFlow when you define the connection to your Salesforce account.</p> </dd> <dt>JWT_BEARER</dt> <dd> <p>Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to your Salesforce account. When you use this grant type, you don't need to log in to your Salesforce account to authorize Amazon AppFlow to access your records.</p> </dd> </dl>"
         }
       },
       "documentation":"<p> The connector metadata specific to Salesforce. </p>"
@@ -4827,6 +4871,11 @@
         "flowName":{
           "shape":"FlowName",
           "documentation":"<p> The specified name of the flow. Spaces are not allowed. Use underscores (_) or hyphens (-) only. </p>"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "documentation":"<p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>StartFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs for flows that run on a schedule or based on an event. However, the error doesn't occur for flows that run on demand. You set the conditions that initiate your flow for the <code>triggerConfig</code> parameter.</p> <p>If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>StartFlow</code>. The token is active for 8 hours.</p>",
+          "idempotencyToken":true
         }
       }
     },
@@ -5216,6 +5265,11 @@
         "connectorProfileConfig":{
           "shape":"ConnectorProfileConfig",
           "documentation":"<p> Defines the connector-specific profile configuration and credentials. </p>"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "documentation":"<p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorProfile</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorProfile</code>. The token is active for 8 hours.</p>",
+          "idempotencyToken":true
         }
       }
     },
@@ -5240,7 +5294,12 @@
           "shape":"Description",
           "documentation":"<p>A description about the update that you're applying to the connector.</p>"
         },
-        "connectorProvisioningConfig":{"shape":"ConnectorProvisioningConfig"}
+        "connectorProvisioningConfig":{"shape":"ConnectorProvisioningConfig"},
+        "clientToken":{
+          "shape":"ClientToken",
+          "documentation":"<p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateConnectorRegistration</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateConnectorRegistration</code>. The token is active for 8 hours.</p>",
+          "idempotencyToken":true
+        }
       }
     },
     "UpdateConnectorRegistrationResponse":{
@@ -5286,6 +5345,11 @@
         "metadataCatalogConfig":{
           "shape":"MetadataCatalogConfig",
           "documentation":"<p>Specifies the configuration that Amazon AppFlow uses when it catalogs the data that's transferred by the associated flow. When Amazon AppFlow catalogs the data from a flow, it stores metadata in a data catalog.</p>"
+        },
+        "clientToken":{
+          "shape":"ClientToken",
+          "documentation":"<p>The <code>clientToken</code> parameter is an idempotency token. It ensures that your <code>UpdateFlow</code> request completes only once. You choose the value to pass. For example, if you don't receive a response from your request, you can safely retry the request with the same <code>clientToken</code> parameter value.</p> <p>If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you are using inserts a value for you. This way, the SDK can safely retry requests multiple times after a network error. You must provide your own value for other use cases.</p> <p>If you specify input parameters that differ from your first request, an error occurs. If you use a different value for <code>clientToken</code>, Amazon AppFlow considers it a new call to <code>UpdateFlow</code>. The token is active for 8 hours.</p>",
+          "idempotencyToken":true
         }
       }
     },

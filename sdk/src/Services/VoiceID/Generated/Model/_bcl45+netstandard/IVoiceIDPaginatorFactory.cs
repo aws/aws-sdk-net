@@ -36,6 +36,11 @@ namespace Amazon.VoiceID.Model
         IListFraudsterRegistrationJobsPaginator ListFraudsterRegistrationJobs(ListFraudsterRegistrationJobsRequest request);
 
         /// <summary>
+        /// Paginator for ListFraudsters operation
+        ///</summary>
+        IListFraudstersPaginator ListFraudsters(ListFraudstersRequest request);
+
+        /// <summary>
         /// Paginator for ListSpeakerEnrollmentJobs operation
         ///</summary>
         IListSpeakerEnrollmentJobsPaginator ListSpeakerEnrollmentJobs(ListSpeakerEnrollmentJobsRequest request);
@@ -44,5 +49,10 @@ namespace Amazon.VoiceID.Model
         /// Paginator for ListSpeakers operation
         ///</summary>
         IListSpeakersPaginator ListSpeakers(ListSpeakersRequest request);
+
+        /// <summary>
+        /// Paginator for ListWatchlists operation
+        ///</summary>
+        IListWatchlistsPaginator ListWatchlists(ListWatchlistsRequest request);
     }
 }

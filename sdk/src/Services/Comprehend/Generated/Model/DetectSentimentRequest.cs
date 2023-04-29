@@ -63,12 +63,6 @@ namespace Amazon.Comprehend.Model
         /// <para>
         /// A UTF-8 text string. The maximum string size is 5 KB.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// Amazon Comprehend performs real-time sentiment analysis on the first 500 characters
-        /// of the input text and ignores any additional text in the input.
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Text

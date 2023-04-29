@@ -64,6 +64,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("FlywheelStatsS3Prefix", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FlywheelStatsS3Prefix = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("KmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

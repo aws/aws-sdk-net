@@ -162,6 +162,129 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DatabaseMigrationService")]
+        public void BatchStartRecommendationsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<BatchStartRecommendationsRequest>();
+            var marshaller = new BatchStartRecommendationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<BatchStartRecommendationsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("BatchStartRecommendations").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = BatchStartRecommendationsResponseUnmarshaller.Instance.Unmarshall(context) as BatchStartRecommendationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void BatchStartRecommendations_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("BatchStartRecommendations");
+
+            var request = InstantiateClassGenerator.Execute<BatchStartRecommendationsRequest>();
+            var marshaller = new BatchStartRecommendationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<BatchStartRecommendationsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = BatchStartRecommendationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void BatchStartRecommendations_InvalidResourceStateExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("BatchStartRecommendations");
+
+            var request = InstantiateClassGenerator.Execute<BatchStartRecommendationsRequest>();
+            var marshaller = new BatchStartRecommendationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<BatchStartRecommendationsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidResourceStateException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidResourceStateException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = BatchStartRecommendationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void BatchStartRecommendations_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("BatchStartRecommendations");
+
+            var request = InstantiateClassGenerator.Execute<BatchStartRecommendationsRequest>();
+            var marshaller = new BatchStartRecommendationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<BatchStartRecommendationsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = BatchStartRecommendationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
         public void CancelReplicationTaskAssessmentRunMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CancelReplicationTaskAssessmentRunRequest>();
@@ -3692,6 +3815,188 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("DatabaseMigrationService")]
+        public void DescribeRecommendationLimitationsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeRecommendationLimitationsRequest>();
+            var marshaller = new DescribeRecommendationLimitationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<DescribeRecommendationLimitationsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeRecommendationLimitations").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeRecommendationLimitationsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeRecommendationLimitationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void DescribeRecommendationLimitations_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeRecommendationLimitations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeRecommendationLimitationsRequest>();
+            var marshaller = new DescribeRecommendationLimitationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeRecommendationLimitationsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeRecommendationLimitationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void DescribeRecommendationLimitations_InvalidResourceStateExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeRecommendationLimitations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeRecommendationLimitationsRequest>();
+            var marshaller = new DescribeRecommendationLimitationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeRecommendationLimitationsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidResourceStateException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidResourceStateException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeRecommendationLimitationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void DescribeRecommendationsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeRecommendationsRequest>();
+            var marshaller = new DescribeRecommendationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<DescribeRecommendationsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeRecommendations").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeRecommendationsResponseUnmarshaller.Instance.Unmarshall(context) as DescribeRecommendationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void DescribeRecommendations_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeRecommendations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeRecommendationsRequest>();
+            var marshaller = new DescribeRecommendationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeRecommendationsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeRecommendationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void DescribeRecommendations_InvalidResourceStateExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeRecommendations");
+
+            var request = InstantiateClassGenerator.Execute<DescribeRecommendationsRequest>();
+            var marshaller = new DescribeRecommendationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeRecommendationsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidResourceStateException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidResourceStateException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeRecommendationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
         public void DescribeRefreshSchemasStatusMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeRefreshSchemasStatusRequest>();
@@ -6382,6 +6687,117 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             };
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = RunFleetAdvisorLsaAnalysisResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void StartRecommendationsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StartRecommendationsRequest>();
+            var marshaller = new StartRecommendationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<StartRecommendationsRequest>(request,jsonRequest);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void StartRecommendations_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StartRecommendations");
+
+            var request = InstantiateClassGenerator.Execute<StartRecommendationsRequest>();
+            var marshaller = new StartRecommendationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StartRecommendationsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StartRecommendationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void StartRecommendations_InvalidResourceStateExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StartRecommendations");
+
+            var request = InstantiateClassGenerator.Execute<StartRecommendationsRequest>();
+            var marshaller = new StartRecommendationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StartRecommendationsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidResourceStateException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidResourceStateException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StartRecommendationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("DatabaseMigrationService")]
+        public void StartRecommendations_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StartRecommendations");
+
+            var request = InstantiateClassGenerator.Execute<StartRecommendationsRequest>();
+            var marshaller = new StartRecommendationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StartRecommendationsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StartRecommendationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

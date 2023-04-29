@@ -254,6 +254,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionRequest.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.ApplicationId</property>
     <pattern>[a-z0-9]{4,7}</pattern>
   </property-value-rule>
@@ -270,6 +276,12 @@
     <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.Description</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.CreateHostedConfigurationVersionResponse.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.DeleteApplicationRequest.ApplicationId</property>
@@ -614,6 +626,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppConfig.Model.GetHostedConfigurationVersionResponse.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppConfig.Model.ListApplicationsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -771,6 +789,11 @@
     <property>Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest.NextToken</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.ListHostedConfigurationVersionsRequest.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.ListHostedConfigurationVersionsResponse.NextToken</property>
@@ -1377,6 +1400,12 @@
     <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.Description</property>
     <min>0</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppConfig.Model.HostedConfigurationVersionSummary.VersionLabel</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*[^0-9].*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppConfig.Model.Monitor.AlarmArn</property>

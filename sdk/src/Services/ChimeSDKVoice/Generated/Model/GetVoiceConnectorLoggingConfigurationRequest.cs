@@ -30,14 +30,18 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVoiceConnectorLoggingConfiguration operation.
-    /// 
+    /// Retrieves the logging configuration settings for the specified Voice Connector. Shows
+    /// whether SIP message logs are enabled for sending to Amazon CloudWatch Logs.
     /// </summary>
     public partial class GetVoiceConnectorLoggingConfigurationRequest : AmazonChimeSDKVoiceRequest
     {
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

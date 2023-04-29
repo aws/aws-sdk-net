@@ -33,17 +33,57 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class CreateSubscriberResponse : AmazonWebServiceResponse
     {
+        private string _resourceShareArn;
+        private string _resourceShareName;
         private string _roleArn;
         private string _s3BucketArn;
         private string _snsArn;
         private string _subscriptionId;
 
         /// <summary>
+        /// Gets and sets the property ResourceShareArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share.
+        /// Before accepting the RAM resource share invitation, you can view details related to
+        /// the RAM resource share.
+        /// </para>
+        /// </summary>
+        public string ResourceShareArn
+        {
+            get { return this._resourceShareArn; }
+            set { this._resourceShareArn = value; }
+        }
+
+        // Check to see if ResourceShareArn property is set
+        internal bool IsSetResourceShareArn()
+        {
+            return this._resourceShareArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareName. 
+        /// <para>
+        /// The name of the resource share.
+        /// </para>
+        /// </summary>
+        public string ResourceShareName
+        {
+            get { return this._resourceShareName; }
+            set { this._resourceShareName = value; }
+        }
+
+        // Check to see if ResourceShareName property is set
+        internal bool IsSetResourceShareName()
+        {
+            return this._resourceShareName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more
-        /// information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// identifiers in the Identity and Access Management (IAM) User Guide</a>. .
+        /// information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/subscriber-management.html">Amazon
+        /// Security Lake User Guide</a>.
         /// </para>
         /// </summary>
         public string RoleArn

@@ -51,6 +51,17 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceFleetId);
             }
 
+            if(requestObject.IsSetResizeSpecifications())
+            {
+                context.Writer.WritePropertyName("ResizeSpecifications");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = InstanceFleetResizingSpecificationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ResizeSpecifications, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTargetOnDemandCapacity())
             {
                 context.Writer.WritePropertyName("TargetOnDemandCapacity");

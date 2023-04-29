@@ -59,7 +59,11 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RuleGroups.
+        /// Gets and sets the property RuleGroups. 
+        /// <para>
+        /// Array of rule groups. If you specified a <code>Limit</code> in your request, this
+        /// might not be the full list. 
+        /// </para>
         /// </summary>
         public List<RuleGroupSummary> RuleGroups
         {

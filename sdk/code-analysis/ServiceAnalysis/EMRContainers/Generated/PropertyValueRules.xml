@@ -241,6 +241,48 @@
     <pattern>[0-9a-z]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.CredentialType</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^.*\S.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.EndpointIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.LogContext</property>
+    <min>3</min>
+    <max>63</max>
+    <pattern>^((?!.*-s3alias)(?!xn--.*)[a-z0-9][-a-z0-9.]*)?[a-z0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsRequest.VirtualClusterIdentifier</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.GetManagedEndpointSessionCredentialsResponse.Id</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>[0-9a-z]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EMRContainers.Model.ListJobRunsRequest.Name</property>
     <min>1</min>
     <max>64</max>
@@ -424,6 +466,11 @@
     <min>1</min>
     <max>100</max>
     <pattern>^[0-9A-Za-z][A-Za-z0-9\-_]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EMRContainers.Model.Credentials.Token</property>
+    <min>1</min>
+    <pattern>^.*\S.*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EMRContainers.Model.EksInfo.Namespace</property>

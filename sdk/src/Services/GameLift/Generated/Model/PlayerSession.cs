@@ -174,8 +174,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address of the game session. To connect to a GameLift game server, an app needs
-        /// both the IP address and port number.
+        /// The IP address of the game session. To connect to a Amazon GameLift game server, an
+        /// app needs both the IP address and port number.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -194,8 +194,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property PlayerData. 
         /// <para>
-        /// Developer-defined information related to a player. GameLift does not use this data,
-        /// so it can be formatted as needed for use in the game. 
+        /// Developer-defined information related to a player. Amazon GameLift does not use this
+        /// data, so it can be formatted as needed for use in the game. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

@@ -409,6 +409,9 @@ namespace Amazon.Private5G
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetwork service method.</param>
         /// 
         /// <returns>The response from the DeleteNetwork service method, as returned by Private5G.</returns>
+        /// <exception cref="Amazon.Private5G.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Private5G.Model.InternalServerException">
         /// Information about an internal error.
         /// </exception>
@@ -460,6 +463,9 @@ namespace Amazon.Private5G
         /// <param name="request">Container for the necessary parameters to execute the DeleteNetworkSite service method.</param>
         /// 
         /// <returns>The response from the DeleteNetworkSite service method, as returned by Private5G.</returns>
+        /// <exception cref="Amazon.Private5G.Model.AccessDeniedException">
+        /// You do not have permission to perform this operation.
+        /// </exception>
         /// <exception cref="Amazon.Private5G.Model.InternalServerException">
         /// Information about an internal error.
         /// </exception>
@@ -753,12 +759,10 @@ namespace Amazon.Private5G
         /// of results. Use filters to match the Amazon Resource Name (ARN) of an order, the status
         /// of device identifiers, or the ARN of the traffic group.
         /// 
-        ///  <pre><code> &lt;p&gt;If you specify multiple filters, filters are joined with an
-        /// OR, and the request </code></pre> 
+        ///  
         /// <para>
-        /// returns results that match all of the specified filters.
-        /// </para>
-        /// 
+        /// If you specify multiple filters, filters are joined with an OR, and the request returns
+        /// results that match all of the specified filters.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDeviceIdentifiers service method.</param>
@@ -1113,6 +1117,65 @@ namespace Amazon.Private5G
         /// <returns>Returns a  PingResult from Private5G.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/Ping">REST API Reference for Ping Operation</seealso>
         PingResponse EndPing(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartNetworkResourceUpdate
+
+
+        /// <summary>
+        /// Starts an update of the specified network resource.
+        /// 
+        ///  
+        /// <para>
+        /// After you submit a request to replace or return a network resource, the status of
+        /// the network resource is <code>CREATING_SHIPPING_LABEL</code>. The shipping label is
+        /// available when the status of the network resource is <code>PENDING_RETURN</code>.
+        /// After the network resource is successfully returned, its status is <code>DELETED</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/radio-units.html#return-radio-unit">Return
+        /// a radio unit</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkResourceUpdate service method.</param>
+        /// 
+        /// <returns>The response from the StartNetworkResourceUpdate service method, as returned by Private5G.</returns>
+        /// <exception cref="Amazon.Private5G.Model.InternalServerException">
+        /// Information about an internal error.
+        /// </exception>
+        /// <exception cref="Amazon.Private5G.Model.ResourceNotFoundException">
+        /// The resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Private5G.Model.ValidationException">
+        /// The request failed validation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/StartNetworkResourceUpdate">REST API Reference for StartNetworkResourceUpdate Operation</seealso>
+        StartNetworkResourceUpdateResponse StartNetworkResourceUpdate(StartNetworkResourceUpdateRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartNetworkResourceUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartNetworkResourceUpdate operation on AmazonPrivate5GClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartNetworkResourceUpdate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/StartNetworkResourceUpdate">REST API Reference for StartNetworkResourceUpdate Operation</seealso>
+        IAsyncResult BeginStartNetworkResourceUpdate(StartNetworkResourceUpdateRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartNetworkResourceUpdate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartNetworkResourceUpdate.</param>
+        /// 
+        /// <returns>Returns a  StartNetworkResourceUpdateResult from Private5G.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/privatenetworks-2021-12-03/StartNetworkResourceUpdate">REST API Reference for StartNetworkResourceUpdate Operation</seealso>
+        StartNetworkResourceUpdateResponse EndStartNetworkResourceUpdate(IAsyncResult asyncResult);
 
         #endregion
         

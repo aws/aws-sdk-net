@@ -62,6 +62,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("AllocatedStorage", StringUtils.FromInt(publicRequest.AllocatedStorage));
                 }
+                if(publicRequest.IsSetAllowEngineModeChange())
+                {
+                    request.Parameters.Add("AllowEngineModeChange", StringUtils.FromBool(publicRequest.AllowEngineModeChange));
+                }
                 if(publicRequest.IsSetAllowMajorVersionUpgrade())
                 {
                     request.Parameters.Add("AllowMajorVersionUpgrade", StringUtils.FromBool(publicRequest.AllowMajorVersionUpgrade));
@@ -150,6 +154,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetEnablePerformanceInsights())
                 {
                     request.Parameters.Add("EnablePerformanceInsights", StringUtils.FromBool(publicRequest.EnablePerformanceInsights));
+                }
+                if(publicRequest.IsSetEngineMode())
+                {
+                    request.Parameters.Add("EngineMode", StringUtils.FromString(publicRequest.EngineMode));
                 }
                 if(publicRequest.IsSetEngineVersion())
                 {

@@ -521,6 +521,514 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ResilienceHub")]
+        public void CreateAppVersionAppComponentMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionAppComponentRequest>();
+            var marshaller = new CreateAppVersionAppComponentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateAppVersionAppComponentResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateAppVersionAppComponentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionAppComponent_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionAppComponentRequest>();
+            var marshaller = new CreateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionAppComponent_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionAppComponentRequest>();
+            var marshaller = new CreateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionAppComponent_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionAppComponentRequest>();
+            var marshaller = new CreateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionAppComponent_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionAppComponentRequest>();
+            var marshaller = new CreateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionAppComponent_ServiceQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionAppComponentRequest>();
+            var marshaller = new CreateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceQuotaExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionAppComponent_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionAppComponentRequest>();
+            var marshaller = new CreateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionAppComponent_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionAppComponentRequest>();
+            var marshaller = new CreateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionResourceRequest>();
+            var marshaller = new CreateAppVersionResourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateAppVersionResource", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateAppVersionResourceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateAppVersionResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionResource_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionResourceRequest>();
+            var marshaller = new CreateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionResource_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionResourceRequest>();
+            var marshaller = new CreateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionResource_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionResourceRequest>();
+            var marshaller = new CreateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionResource_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionResourceRequest>();
+            var marshaller = new CreateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionResource_ServiceQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionResourceRequest>();
+            var marshaller = new CreateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceQuotaExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionResource_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionResourceRequest>();
+            var marshaller = new CreateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateAppVersionResource_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<CreateAppVersionResourceRequest>();
+            var marshaller = new CreateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
         public void CreateRecommendationTemplateMarshallTest()
         {
             var operation = service_model.FindOperation("CreateRecommendationTemplate");
@@ -664,6 +1172,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateRecommendationTemplateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void CreateRecommendationTemplate_ServiceQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateRecommendationTemplate");
+
+            var request = InstantiateClassGenerator.Execute<CreateRecommendationTemplateRequest>();
+            var marshaller = new CreateRecommendationTemplateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateRecommendationTemplate", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceQuotaExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
                 }
             };
 
@@ -1369,6 +1909,672 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = DeleteAppAssessmentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppInputSourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppInputSource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppInputSourceRequest>();
+            var marshaller = new DeleteAppInputSourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteAppInputSource", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteAppInputSourceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteAppInputSourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppInputSource_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppInputSource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppInputSourceRequest>();
+            var marshaller = new DeleteAppInputSourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppInputSource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppInputSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppInputSource_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppInputSource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppInputSourceRequest>();
+            var marshaller = new DeleteAppInputSourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppInputSource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppInputSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppInputSource_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppInputSource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppInputSourceRequest>();
+            var marshaller = new DeleteAppInputSourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppInputSource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppInputSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppInputSource_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppInputSource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppInputSourceRequest>();
+            var marshaller = new DeleteAppInputSourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppInputSource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppInputSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppInputSource_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppInputSource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppInputSourceRequest>();
+            var marshaller = new DeleteAppInputSourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppInputSource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppInputSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppInputSource_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppInputSource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppInputSourceRequest>();
+            var marshaller = new DeleteAppInputSourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppInputSource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppInputSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionAppComponentMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionAppComponentRequest>();
+            var marshaller = new DeleteAppVersionAppComponentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteAppVersionAppComponent", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteAppVersionAppComponentResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteAppVersionAppComponentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionAppComponent_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionAppComponentRequest>();
+            var marshaller = new DeleteAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionAppComponent_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionAppComponentRequest>();
+            var marshaller = new DeleteAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionAppComponent_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionAppComponentRequest>();
+            var marshaller = new DeleteAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionAppComponent_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionAppComponentRequest>();
+            var marshaller = new DeleteAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionAppComponent_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionAppComponentRequest>();
+            var marshaller = new DeleteAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionAppComponent_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionAppComponentRequest>();
+            var marshaller = new DeleteAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionResourceRequest>();
+            var marshaller = new DeleteAppVersionResourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteAppVersionResource", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteAppVersionResourceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteAppVersionResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionResource_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionResourceRequest>();
+            var marshaller = new DeleteAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionResource_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionResourceRequest>();
+            var marshaller = new DeleteAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionResource_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionResourceRequest>();
+            var marshaller = new DeleteAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionResource_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionResourceRequest>();
+            var marshaller = new DeleteAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionResource_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionResourceRequest>();
+            var marshaller = new DeleteAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DeleteAppVersionResource_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAppVersionResourceRequest>();
+            var marshaller = new DeleteAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2161,6 +3367,640 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = DescribeAppAssessmentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionRequest>();
+            var marshaller = new DescribeAppVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeAppVersion", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeAppVersionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DescribeAppVersionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersion_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionRequest>();
+            var marshaller = new DescribeAppVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersion", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersion_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionRequest>();
+            var marshaller = new DescribeAppVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersion", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersion_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionRequest>();
+            var marshaller = new DescribeAppVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersion", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersion_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionRequest>();
+            var marshaller = new DescribeAppVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersion", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersion_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionRequest>();
+            var marshaller = new DescribeAppVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersion", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionAppComponentMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionAppComponentRequest>();
+            var marshaller = new DescribeAppVersionAppComponentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeAppVersionAppComponent", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeAppVersionAppComponentResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DescribeAppVersionAppComponentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionAppComponent_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionAppComponentRequest>();
+            var marshaller = new DescribeAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionAppComponent_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionAppComponentRequest>();
+            var marshaller = new DescribeAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionAppComponent_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionAppComponentRequest>();
+            var marshaller = new DescribeAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionAppComponent_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionAppComponentRequest>();
+            var marshaller = new DescribeAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionAppComponent_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionAppComponentRequest>();
+            var marshaller = new DescribeAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionAppComponent_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionAppComponentRequest>();
+            var marshaller = new DescribeAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionResourceRequest>();
+            var marshaller = new DescribeAppVersionResourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DescribeAppVersionResource", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DescribeAppVersionResourceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DescribeAppVersionResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionResource_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionResourceRequest>();
+            var marshaller = new DescribeAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionResource_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionResourceRequest>();
+            var marshaller = new DescribeAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionResource_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionResourceRequest>();
+            var marshaller = new DescribeAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionResource_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionResourceRequest>();
+            var marshaller = new DescribeAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionResource_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionResourceRequest>();
+            var marshaller = new DescribeAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void DescribeAppVersionResource_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<DescribeAppVersionResourceRequest>();
+            var marshaller = new DescribeAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DescribeAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DescribeAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3911,6 +5751,196 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("ResilienceHub")]
+        public void ListAppInputSourcesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppInputSources");
+
+            var request = InstantiateClassGenerator.Execute<ListAppInputSourcesRequest>();
+            var marshaller = new ListAppInputSourcesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListAppInputSources", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListAppInputSourcesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListAppInputSourcesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppInputSources_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppInputSources");
+
+            var request = InstantiateClassGenerator.Execute<ListAppInputSourcesRequest>();
+            var marshaller = new ListAppInputSourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAppInputSources", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAppInputSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppInputSources_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppInputSources");
+
+            var request = InstantiateClassGenerator.Execute<ListAppInputSourcesRequest>();
+            var marshaller = new ListAppInputSourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAppInputSources", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAppInputSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppInputSources_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppInputSources");
+
+            var request = InstantiateClassGenerator.Execute<ListAppInputSourcesRequest>();
+            var marshaller = new ListAppInputSourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAppInputSources", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAppInputSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppInputSources_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppInputSources");
+
+            var request = InstantiateClassGenerator.Execute<ListAppInputSourcesRequest>();
+            var marshaller = new ListAppInputSourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAppInputSources", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAppInputSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppInputSources_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppInputSources");
+
+            var request = InstantiateClassGenerator.Execute<ListAppInputSourcesRequest>();
+            var marshaller = new ListAppInputSourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAppInputSources", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAppInputSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
         public void ListAppsMarshallTest()
         {
             var operation = service_model.FindOperation("ListApps");
@@ -4061,6 +6091,228 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = ListAppsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppVersionAppComponentsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppVersionAppComponents");
+
+            var request = InstantiateClassGenerator.Execute<ListAppVersionAppComponentsRequest>();
+            var marshaller = new ListAppVersionAppComponentsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListAppVersionAppComponents", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListAppVersionAppComponentsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListAppVersionAppComponentsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppVersionAppComponents_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppVersionAppComponents");
+
+            var request = InstantiateClassGenerator.Execute<ListAppVersionAppComponentsRequest>();
+            var marshaller = new ListAppVersionAppComponentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAppVersionAppComponents", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAppVersionAppComponentsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppVersionAppComponents_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppVersionAppComponents");
+
+            var request = InstantiateClassGenerator.Execute<ListAppVersionAppComponentsRequest>();
+            var marshaller = new ListAppVersionAppComponentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAppVersionAppComponents", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAppVersionAppComponentsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppVersionAppComponents_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppVersionAppComponents");
+
+            var request = InstantiateClassGenerator.Execute<ListAppVersionAppComponentsRequest>();
+            var marshaller = new ListAppVersionAppComponentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAppVersionAppComponents", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAppVersionAppComponentsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppVersionAppComponents_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppVersionAppComponents");
+
+            var request = InstantiateClassGenerator.Execute<ListAppVersionAppComponentsRequest>();
+            var marshaller = new ListAppVersionAppComponentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAppVersionAppComponents", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAppVersionAppComponentsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppVersionAppComponents_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppVersionAppComponents");
+
+            var request = InstantiateClassGenerator.Execute<ListAppVersionAppComponentsRequest>();
+            var marshaller = new ListAppVersionAppComponentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAppVersionAppComponents", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAppVersionAppComponentsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void ListAppVersionAppComponents_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListAppVersionAppComponents");
+
+            var request = InstantiateClassGenerator.Execute<ListAppVersionAppComponentsRequest>();
+            var marshaller = new ListAppVersionAppComponentsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListAppVersionAppComponents", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListAppVersionAppComponentsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -7769,6 +10021,704 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = UpdateAppResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionRequest>();
+            var marshaller = new UpdateAppVersionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateAppVersion", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateAppVersionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateAppVersionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersion_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionRequest>();
+            var marshaller = new UpdateAppVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersion", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersion_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionRequest>();
+            var marshaller = new UpdateAppVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersion", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersion_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionRequest>();
+            var marshaller = new UpdateAppVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersion", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersion_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionRequest>();
+            var marshaller = new UpdateAppVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersion", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersion_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionRequest>();
+            var marshaller = new UpdateAppVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersion", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersion_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersion");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionRequest>();
+            var marshaller = new UpdateAppVersionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersion", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionAppComponentMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionAppComponentRequest>();
+            var marshaller = new UpdateAppVersionAppComponentRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateAppVersionAppComponentResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateAppVersionAppComponentResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionAppComponent_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionAppComponentRequest>();
+            var marshaller = new UpdateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionAppComponent_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionAppComponentRequest>();
+            var marshaller = new UpdateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionAppComponent_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionAppComponentRequest>();
+            var marshaller = new UpdateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionAppComponent_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionAppComponentRequest>();
+            var marshaller = new UpdateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionAppComponent_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionAppComponentRequest>();
+            var marshaller = new UpdateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionAppComponent_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionAppComponent");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionAppComponentRequest>();
+            var marshaller = new UpdateAppVersionAppComponentRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionAppComponent", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionAppComponentResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionResourceMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionResourceRequest>();
+            var marshaller = new UpdateAppVersionResourceRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateAppVersionResource", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateAppVersionResourceResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateAppVersionResourceResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionResource_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionResourceRequest>();
+            var marshaller = new UpdateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionResource_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionResourceRequest>();
+            var marshaller = new UpdateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionResource_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionResourceRequest>();
+            var marshaller = new UpdateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionResource_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionResourceRequest>();
+            var marshaller = new UpdateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionResource_ServiceQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionResourceRequest>();
+            var marshaller = new UpdateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceQuotaExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionResource_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionResourceRequest>();
+            var marshaller = new UpdateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("ResilienceHub")]
+        public void UpdateAppVersionResource_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateAppVersionResource");
+
+            var request = InstantiateClassGenerator.Execute<UpdateAppVersionResourceRequest>();
+            var marshaller = new UpdateAppVersionResourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateAppVersionResource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateAppVersionResourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

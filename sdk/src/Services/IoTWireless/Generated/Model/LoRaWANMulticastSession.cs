@@ -35,6 +35,7 @@ namespace Amazon.IoTWireless.Model
     {
         private int? _dlDr;
         private int? _dlFreq;
+        private int? _pingSlotPeriod;
         private DateTime? _sessionStartTime;
         private int? _sessionTimeout;
 
@@ -68,6 +69,25 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDlFreq()
         {
             return this._dlFreq.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PingSlotPeriod. 
+        /// <para>
+        /// The PingSlotPeriod value.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=32, Max=4096)]
+        public int PingSlotPeriod
+        {
+            get { return this._pingSlotPeriod.GetValueOrDefault(); }
+            set { this._pingSlotPeriod = value; }
+        }
+
+        // Check to see if PingSlotPeriod property is set
+        internal bool IsSetPingSlotPeriod()
+        {
+            return this._pingSlotPeriod.HasValue; 
         }
 
         /// <summary>

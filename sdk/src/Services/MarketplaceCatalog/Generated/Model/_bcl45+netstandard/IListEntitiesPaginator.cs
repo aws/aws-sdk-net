@@ -29,5 +29,10 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListEntitiesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the EntitySummaryList
+        /// </summary>
+        IPaginatedEnumerable<EntitySummary> EntitySummaryList { get; }
     }
 }

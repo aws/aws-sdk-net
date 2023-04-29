@@ -39,9 +39,9 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// When using FlexMatch with GameLift managed hosting, you can request a backfill match
-    /// from a client service by calling this operation with a <code>GameSessions</code> ID.
-    /// You also have the option of making backfill requests directly from your game server.
+    /// When using FlexMatch with Amazon GameLift managed hosting, you can request a backfill
+    /// match from a client service by calling this operation with a <code>GameSessions</code>
+    /// ID. You also have the option of making backfill requests directly from your game server.
     /// In response to a request, FlexMatch creates player sessions for the new players, updates
     /// the <code>GameSession</code> resource, and sends updated matchmaking data to the game
     /// server. You can request a backfill match at any point after a game session is started.
@@ -84,7 +84,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/gamelift-match.html">
-    /// How GameLift FlexMatch works</a> 
+    /// How Amazon GameLift FlexMatch works</a> 
     /// </para>
     /// </summary>
     public partial class StartMatchBackfillRequest : AmazonGameLiftRequest

@@ -131,6 +131,14 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateGUISessionAccessDetailsRequest.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CreateGUISessionAccessDetailsResponse.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.CreateInstancesRequest.BlueprintId</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
@@ -410,6 +418,10 @@
     <pattern>^[a-z0-9]{1,2}|[a-z0-9][a-z0-9-]+[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.GetCostEstimateRequest.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.GetDiskRequest.DiskName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
@@ -596,11 +608,19 @@
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.StartGUISessionRequest.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.StartInstanceRequest.InstanceName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.StartRelationalDatabaseRequest.RelationalDatabaseName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.StopGUISessionRequest.ResourceName</property>
     <pattern>\w[\w\-]*\w</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -866,6 +886,10 @@
     <property>Amazon.Lightsail.Model.ContainerService.Scale</property>
     <min>1</min>
     <max>20</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.CostEstimate.UsageType</property>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.DestinationInfo.Id</property>
@@ -1278,11 +1302,23 @@
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Lightsail.Model.ResourceBudgetEstimate.ResourceName</property>
+    <pattern>\w[\w\-]*\w</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Lightsail.Model.ResourceReceivingAccess.Name</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Lightsail.Model.ResourceReceivingAccess.ResourceType</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Session.Name</property>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Lightsail.Model.Session.Url</property>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

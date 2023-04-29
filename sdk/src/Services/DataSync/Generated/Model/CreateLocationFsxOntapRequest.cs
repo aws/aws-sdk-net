@@ -98,8 +98,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property StorageVirtualMachineArn. 
         /// <para>
-        /// Specifies the ARN of the storage virtual machine (SVM) on your file system where you're
-        /// copying data to or from.
+        /// Specifies the ARN of the storage virtual machine (SVM) in your file system where you
+        /// want to copy data to or from.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=162)]
@@ -118,8 +118,13 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Subdirectory. 
         /// <para>
-        /// Specifies the junction path (also known as a mount point) in the SVM volume where
-        /// you're copying data to or from (for example, <code>/vol1</code>).
+        /// Specifies a path to the file share in the SVM where you'll copy your data.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify a junction path (also known as a mount point), qtree path (for NFS
+        /// file shares), or share name (for SMB file shares). For example, your mount path might
+        /// be <code>/vol1</code>, <code>/vol1/tree1</code>, or <code>/share1</code>.
         /// </para>
         ///  <note> 
         /// <para>

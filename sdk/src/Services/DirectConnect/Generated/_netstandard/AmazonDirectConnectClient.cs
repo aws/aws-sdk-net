@@ -1074,7 +1074,16 @@ namespace Amazon.DirectConnect
         /// addresses are automatically assigned from the Amazon pool of IPv6 addresses; you cannot
         /// specify custom IPv6 addresses.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// If you let Amazon Web Services auto-assign IPv4 addresses, a /30 CIDR will be allocated
+        /// from 169.254.0.0/16. Amazon Web Services does not recommend this option if you intend
+        /// to use the customer router peer IP address as the source and destination for traffic.
+        /// Instead you should use RFC 1918 or other addressing, and specify the address yourself.
+        /// For more information about RFC 1918 see <a href="https://datatracker.ietf.org/doc/html/rfc1918">
+        /// Address Allocation for Private Internets</a>.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// For a public virtual interface, the Autonomous System Number (ASN) must be private
         /// or already on the allow list for the virtual interface.
@@ -1600,12 +1609,13 @@ namespace Amazon.DirectConnect
         /// </para>
         ///  </important> 
         /// <para>
-        /// Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update
-        /// to the underlying physical connection if it wasn't updated to support jumbo frames.
-        /// Updating the connection disrupts network connectivity for all virtual interfaces associated
-        /// with the connection for up to 30 seconds. To check whether your connection supports
-        /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface
-        /// supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.
+        /// A jumbo MTU value must be either 1500 or 8500. No other values will be accepted. Setting
+        /// the MTU of a virtual interface to 8500 (jumbo frames) can cause an update to the underlying
+        /// physical connection if it wasn't updated to support jumbo frames. Updating the connection
+        /// disrupts network connectivity for all virtual interfaces associated with the connection
+        /// for up to 30 seconds. To check whether your connection supports jumbo frames, call
+        /// <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+        /// frames, call <a>DescribeVirtualInterfaces</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTransitVirtualInterface service method.</param>

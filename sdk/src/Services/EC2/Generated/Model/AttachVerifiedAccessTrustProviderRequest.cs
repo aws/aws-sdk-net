@@ -30,9 +30,8 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the AttachVerifiedAccessTrustProvider operation.
-    /// A trust provider is a third-party entity that creates, maintains, and manages identity
-    /// information for users and devices. One or more trust providers can be attached to
-    /// an Amazon Web Services Verified Access instance.
+    /// Attaches the specified Amazon Web Services Verified Access trust provider to the specified
+    /// Amazon Web Services Verified Access instance.
     /// </summary>
     public partial class AttachVerifiedAccessTrustProviderRequest : AmazonEC2Request
     {
@@ -63,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessInstanceId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access instance.
+        /// The ID of the Verified Access instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -82,7 +81,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessTrustProviderId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access trust provider.
+        /// The ID of the Verified Access trust provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

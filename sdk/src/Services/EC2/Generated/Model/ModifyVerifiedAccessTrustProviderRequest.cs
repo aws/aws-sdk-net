@@ -63,7 +63,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Web Services Verified Access trust provider.
+        /// A description for the Verified Access trust provider.
         /// </para>
         /// </summary>
         public string Description
@@ -81,8 +81,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OidcOptions. 
         /// <para>
-        /// The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust
-        /// provider.
+        /// The options for an OpenID Connect-compatible user-identity trust provider.
         /// </para>
         /// </summary>
         public ModifyVerifiedAccessTrustProviderOidcOptions OidcOptions
@@ -100,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessTrustProviderId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access trust provider.
+        /// The ID of the Verified Access trust provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

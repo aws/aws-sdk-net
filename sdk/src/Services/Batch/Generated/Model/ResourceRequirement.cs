@@ -127,7 +127,7 @@ namespace Amazon.Batch.Model
         /// </para>
         ///  </dd> <dt>value = 8192</dt> <dd> 
         /// <para>
-        ///  <code>VCPU</code> = 1, 2, 4, or 8
+        ///  <code>VCPU</code> = 1, 2, or 4
         /// </para>
         ///  </dd> <dt>value = 9216, 10240, 11264, 12288, 13312, 14336, or 15360</dt> <dd> 
         /// <para>

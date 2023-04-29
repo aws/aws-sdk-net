@@ -109,6 +109,10 @@ namespace Amazon.EC2.Model
         /// <para>
         /// The instance type.
         /// </para>
+        ///  
+        /// <para>
+        ///  <code>mac1.metal</code> is not supported as a launch template override.
+        /// </para>
         ///  <note> 
         /// <para>
         /// If you specify <code>InstanceType</code>, you can't specify <code>InstanceRequirements</code>.

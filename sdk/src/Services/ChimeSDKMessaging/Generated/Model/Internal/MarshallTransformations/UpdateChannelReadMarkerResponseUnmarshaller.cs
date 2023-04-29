@@ -57,12 +57,6 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     response.ChannelArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SubChannelId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SubChannelId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
 
             return response;

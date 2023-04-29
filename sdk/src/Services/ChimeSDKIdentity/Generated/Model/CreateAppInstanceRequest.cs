@@ -49,10 +49,10 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The <code>ClientRequestToken</code> of the <code>AppInstance</code>.
+        /// The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=2, Max=64)]
+        [AWSProperty(Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -106,7 +106,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags assigned to the <code>AppInstanceUser</code>.
+        /// Tags assigned to the <code>AppInstance</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

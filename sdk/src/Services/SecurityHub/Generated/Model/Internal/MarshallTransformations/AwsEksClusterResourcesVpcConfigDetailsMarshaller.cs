@@ -45,6 +45,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AwsEksClusterResourcesVpcConfigDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEndpointPublicAccess())
+            {
+                context.Writer.WritePropertyName("EndpointPublicAccess");
+                context.Writer.Write(requestObject.EndpointPublicAccess);
+            }
+
             if(requestObject.IsSetSecurityGroupIds())
             {
                 context.Writer.WritePropertyName("SecurityGroupIds");

@@ -70,6 +70,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClientToken", StringUtils.FromString(publicRequest.ClientToken));
                 }
+                if(publicRequest.IsSetHostMaintenance())
+                {
+                    request.Parameters.Add("HostMaintenance", StringUtils.FromString(publicRequest.HostMaintenance));
+                }
                 if(publicRequest.IsSetHostRecovery())
                 {
                     request.Parameters.Add("HostRecovery", StringUtils.FromString(publicRequest.HostRecovery));

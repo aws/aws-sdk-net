@@ -30,12 +30,18 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportLens operation.
-    /// Import a new lens.
+    /// Import a new custom lens or update an existing custom lens.
     /// 
     ///  
     /// <para>
-    /// The lens cannot be applied to workloads or shared with other Amazon Web Services accounts
-    /// until it's published with <a>CreateLensVersion</a> 
+    /// To update an existing custom lens, specify its ARN as the <code>LensAlias</code>.
+    /// If no ARN is specified, a new custom lens is created.
+    /// </para>
+    ///  
+    /// <para>
+    /// The new or updated lens will have a status of <code>DRAFT</code>. The lens cannot
+    /// be applied to workloads or shared with other Amazon Web Services accounts until it's
+    /// published with <a>CreateLensVersion</a>.
     /// </para>
     ///  
     /// <para>

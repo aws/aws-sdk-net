@@ -276,13 +276,13 @@ namespace Amazon.SageMakerGeospatial
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -348,13 +348,13 @@ namespace Amazon.SageMakerGeospatial
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -412,7 +412,7 @@ namespace Amazon.SageMakerGeospatial
 
         /// <summary>
         /// Use this operation to export results of an Earth Observation job and optionally source
-        /// images used as input to the EOJ to an S3 location.
+        /// images used as input to the EOJ to an Amazon S3 location.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportEarthObservationJob service method.</param>
         /// 
@@ -421,13 +421,13 @@ namespace Amazon.SageMakerGeospatial
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ServiceQuotaExceededException">
         /// You have exceeded the service quota.
@@ -487,7 +487,7 @@ namespace Amazon.SageMakerGeospatial
         #region  ExportVectorEnrichmentJob
 
         /// <summary>
-        /// Use this operation to copy results of a Vector Enrichment job to an S3 location.
+        /// Use this operation to copy results of a Vector Enrichment job to an Amazon S3 location.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ExportVectorEnrichmentJob service method.</param>
         /// 
@@ -496,13 +496,13 @@ namespace Amazon.SageMakerGeospatial
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ServiceQuotaExceededException">
         /// You have exceeded the service quota.
@@ -574,7 +574,7 @@ namespace Amazon.SageMakerGeospatial
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -643,7 +643,7 @@ namespace Amazon.SageMakerGeospatial
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -712,7 +712,7 @@ namespace Amazon.SageMakerGeospatial
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -782,7 +782,7 @@ namespace Amazon.SageMakerGeospatial
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -852,7 +852,7 @@ namespace Amazon.SageMakerGeospatial
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -921,7 +921,7 @@ namespace Amazon.SageMakerGeospatial
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -990,7 +990,7 @@ namespace Amazon.SageMakerGeospatial
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1059,7 +1059,7 @@ namespace Amazon.SageMakerGeospatial
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1129,7 +1129,7 @@ namespace Amazon.SageMakerGeospatial
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1195,13 +1195,13 @@ namespace Amazon.SageMakerGeospatial
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ServiceQuotaExceededException">
         /// You have exceeded the service quota.
@@ -1271,13 +1271,13 @@ namespace Amazon.SageMakerGeospatial
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ServiceQuotaExceededException">
         /// You have exceeded the service quota.
@@ -1346,13 +1346,13 @@ namespace Amazon.SageMakerGeospatial
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1418,13 +1418,13 @@ namespace Amazon.SageMakerGeospatial
         /// You do not have sufficient access to perform this action.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ConflictException">
-        /// 
+        /// Updating or deleting a resource can cause an inconsistent state.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.InternalServerException">
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1493,7 +1493,7 @@ namespace Amazon.SageMakerGeospatial
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.
@@ -1562,7 +1562,7 @@ namespace Amazon.SageMakerGeospatial
         /// The request processing has failed because of an unknown error, exception, or failure.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ResourceNotFoundException">
-        /// 
+        /// The request references a resource which does not exist.
         /// </exception>
         /// <exception cref="Amazon.SageMakerGeospatial.Model.ThrottlingException">
         /// The request was denied due to request throttling.

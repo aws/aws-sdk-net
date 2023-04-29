@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// Instance quota of resource exceeded for this account.
+    /// The instance quota of resource exceeded for this account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

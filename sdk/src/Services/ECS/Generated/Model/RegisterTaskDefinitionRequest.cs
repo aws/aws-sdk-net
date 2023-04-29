@@ -38,11 +38,11 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// You can specify an IAM role for your task with the <code>taskRoleArn</code> parameter.
-    /// When you specify an IAM role for a task, its containers can then use the latest versions
+    /// You can specify a role for your task with the <code>taskRoleArn</code> parameter.
+    /// When you specify a role for a task, its containers can then use the latest versions
     /// of the CLI or SDKs to make API requests to the Amazon Web Services services that are
-    /// specified in the IAM policy that's associated with the role. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+    /// specified in the policy that's associated with the role. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
     /// Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
@@ -192,12 +192,15 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// This parameter is only supported for tasks hosted on Fargate using the following platform
-        /// versions:
+        /// For tasks using the Fargate launch type, the task requires the following platforms:
         /// </para>
         ///  <ul> <li> 
         /// <para>
         /// Linux platform version <code>1.4.0</code> or later.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Windows platform version <code>1.0.0</code> or later.
         /// </para>
         ///  </li> </ul> </note>
         /// </summary>

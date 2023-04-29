@@ -64,6 +64,18 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("additionalInfo", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.AdditionalInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("id", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

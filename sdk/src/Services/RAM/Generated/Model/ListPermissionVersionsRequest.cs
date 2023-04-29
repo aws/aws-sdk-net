@@ -89,7 +89,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property PermissionArn. 
         /// <para>
         /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the RAM permission whose versions you want to list. You
+        /// Resource Name (ARN)</a> of the RAM permission whose versions you want to list. You
         /// can use the <code>permissionVersion</code> parameter on the <a>AssociateResourceSharePermission</a>
         /// operation to specify a non-default version to attach.
         /// </para>

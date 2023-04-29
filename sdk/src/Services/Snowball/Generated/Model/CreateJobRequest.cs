@@ -54,7 +54,7 @@ namespace Amazon.Snowball.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Snow Family device type: <b>SNC1_SSD</b> 
+    /// Device type: <b>SNC1_SSD</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -66,7 +66,7 @@ namespace Amazon.Snowball.Model
     /// </para>
     ///  </li> </ul>  </li> <li> 
     /// <para>
-    /// Snow Family device type: <b>SNC1_HDD</b> 
+    /// Device type: <b>SNC1_HDD</b> 
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -126,18 +126,6 @@ namespace Amazon.Snowball.Model
     /// </para>
     ///  </li> </ul>  </li> <li> 
     /// <para>
-    /// Device type: <b>V3_5C</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    /// Capacity: T32
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// Description: Snowball Edge Compute Optimized without GPU
-    /// </para>
-    ///  </li> </ul>  </li> <li> 
-    /// <para>
     /// Device type: <b>STANDARD</b> 
     /// </para>
     ///  <ul> <li> 
@@ -170,7 +158,31 @@ namespace Amazon.Snowball.Model
     /// This device is only available in the Ningxia, Beijing, and Singapore Amazon Web Services
     /// Region. 
     /// </para>
-    ///  </note> </li> </ul>  </li> </ul>
+    ///  </note> </li> </ul>  </li> <li> 
+    /// <para>
+    /// Device type: <b>V3_5C</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Capacity: T32
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Description: Snowball Edge Compute Optimized without GPU
+    /// </para>
+    ///  </li> </ul>  </li> <li> 
+    /// <para>
+    /// Device type: <b>V3_5S</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Capacity: T240
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Description: Snowball Edge Storage Optimized 210TB
+    /// </para>
+    ///  </li> </ul>  </li> </ul>
     /// </summary>
     public partial class CreateJobRequest : AmazonSnowballRequest
     {

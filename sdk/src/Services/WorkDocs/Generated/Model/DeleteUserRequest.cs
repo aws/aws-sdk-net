@@ -31,6 +31,13 @@ namespace Amazon.WorkDocs.Model
     /// <summary>
     /// Container for the parameters to the DeleteUser operation.
     /// Deletes the specified user from a Simple AD or Microsoft AD directory.
+    /// 
+    ///  <important> 
+    /// <para>
+    /// Deleting a user immediately and permanently deletes all content in that user's folder
+    /// structure. Site retention policies do NOT apply to this type of deletion.
+    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteUserRequest : AmazonWorkDocsRequest
     {
@@ -41,7 +48,7 @@ namespace Amazon.WorkDocs.Model
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
         /// Amazon WorkDocs authentication token. Do not set this field when using administrative
-        /// API actions, as in accessing the API using AWS credentials.
+        /// API actions, as in accessing the API using Amazon Web Services credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=8199)]

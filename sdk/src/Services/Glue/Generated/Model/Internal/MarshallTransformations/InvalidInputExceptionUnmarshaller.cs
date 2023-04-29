@@ -64,6 +64,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("FromFederationSource", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.FromFederationSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

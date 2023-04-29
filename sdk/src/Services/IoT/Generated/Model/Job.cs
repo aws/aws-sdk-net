@@ -51,6 +51,7 @@ namespace Amazon.IoT.Model
         private string _namespaceId;
         private PresignedUrlConfig _presignedUrlConfig;
         private string _reasonCode;
+        private List<ScheduledJobRollout> _scheduledJobRollouts = new List<ScheduledJobRollout>();
         private SchedulingConfig _schedulingConfig;
         private JobStatus _status;
         private List<string> _targets = new List<string>();
@@ -410,6 +411,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetReasonCode()
         {
             return this._reasonCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledJobRollouts. 
+        /// <para>
+        /// Displays the next seven maintenance window occurrences and their start times.
+        /// </para>
+        /// </summary>
+        public List<ScheduledJobRollout> ScheduledJobRollouts
+        {
+            get { return this._scheduledJobRollouts; }
+            set { this._scheduledJobRollouts = value; }
+        }
+
+        // Check to see if ScheduledJobRollouts property is set
+        internal bool IsSetScheduledJobRollouts()
+        {
+            return this._scheduledJobRollouts != null && this._scheduledJobRollouts.Count > 0; 
         }
 
         /// <summary>

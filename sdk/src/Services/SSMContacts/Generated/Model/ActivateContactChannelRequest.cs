@@ -41,7 +41,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property ActivationCode. 
         /// <para>
-        /// The code sent to the contact channel when it was created in the contact. 
+        /// The code sent to the contact channel when it was created in the contact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=6, Max=10)]

@@ -31,7 +31,7 @@ namespace Amazon.TimestreamWrite.Model
     /// <summary>
     /// Container for the parameters to the DeleteDatabase operation.
     /// Deletes a given Timestream database. <i>This is an irreversible operation. After a
-    /// database is deleted, the time series data from its tables cannot be recovered.</i>
+    /// database is deleted, the time-series data from its tables cannot be recovered.</i>
     /// 
     /// 
     ///  <note> 

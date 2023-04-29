@@ -61,6 +61,16 @@ namespace Amazon.ChimeSDKVoice.Model
         IListVoiceConnectorsPaginator ListVoiceConnectors(ListVoiceConnectorsRequest request);
 
         /// <summary>
+        /// Paginator for ListVoiceProfileDomains operation
+        ///</summary>
+        IListVoiceProfileDomainsPaginator ListVoiceProfileDomains(ListVoiceProfileDomainsRequest request);
+
+        /// <summary>
+        /// Paginator for ListVoiceProfiles operation
+        ///</summary>
+        IListVoiceProfilesPaginator ListVoiceProfiles(ListVoiceProfilesRequest request);
+
+        /// <summary>
         /// Paginator for SearchAvailablePhoneNumbers operation
         ///</summary>
         ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);

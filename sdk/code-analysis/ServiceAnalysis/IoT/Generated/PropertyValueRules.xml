@@ -3303,6 +3303,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.MaintenanceWindow.DurationInMinutes</property>
+    <min>30</min>
+    <max>1430</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.MaintenanceWindow.StartTime</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.ManagedJobTemplateSummary.Description</property>
     <max>2028</max>
     <pattern>[^\p{C}]+</pattern>
@@ -3619,6 +3629,11 @@
     <pattern>[a-zA-Z0-9_-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoT.Model.ScheduledJobRollout.StartTime</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoT.Model.SchedulingConfig.EndTime</property>
     <min>1</min>
     <max>64</max>
@@ -3772,6 +3787,11 @@
   <property-value-rule>
     <property>Amazon.IoT.Model.ThingTypeProperties.ThingTypeDescription</property>
     <max>2028</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoT.Model.TlsConfig.SecurityPolicy</property>
+    <max>128</max>
+    <pattern>[\s\S]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoT.Model.TlsContext.ServerName</property>

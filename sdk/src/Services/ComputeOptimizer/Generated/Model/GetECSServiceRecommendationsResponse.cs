@@ -40,7 +40,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property EcsServiceRecommendations. 
         /// <para>
-        ///  An array of objects that describe the ECS service recommendations. 
+        ///  An array of objects that describe the Amazon ECS service recommendations. 
         /// </para>
         /// </summary>
         public List<ECSServiceRecommendation> EcsServiceRecommendations
@@ -76,7 +76,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        ///  The token to advance to the next page of ECS service recommendations. 
+        ///  The token to advance to the next page of Amazon ECS service recommendations. 
         /// </para>
         /// </summary>
         public string NextToken

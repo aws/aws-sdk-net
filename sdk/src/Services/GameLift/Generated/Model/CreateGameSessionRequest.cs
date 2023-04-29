@@ -33,7 +33,7 @@ namespace Amazon.GameLift.Model
     /// Creates a multiplayer game session for players in a specific fleet location. This
     /// operation prompts an available server process to start a game session and retrieves
     /// connection information for the new game session. As an alternative, consider using
-    /// the GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
+    /// the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a>
     /// , which uses FleetIQ algorithms and queues to optimize the placement process.
     /// 
     ///  
@@ -126,11 +126,25 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property CreatorId. 
         /// <para>
-        /// A unique identifier for a player or entity creating the game session. This parameter
-        /// is required when requesting a new game session on a fleet with a resource creation
-        /// limit policy. This type of policy limits the number of concurrent active game sessions
-        /// that one player can create within a certain time span. GameLift uses the CreatorId
-        /// to evaluate the new request against the policy.
+        /// A unique identifier for a player or entity creating the game session. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you add a resource creation limit policy to a fleet, the <code>CreateGameSession</code>
+        /// operation requires a <code>CreatorId</code>. Amazon GameLift limits the number of
+        /// game session creation requests with the same <code>CreatorId</code> in a specified
+        /// time period.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you your fleet doesn't have a resource creation limit policy and you provide a
+        /// <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon GameLift
+        /// limits requests to one request per <code>CreatorId</code> per second.
+        /// </para>
+        ///  
+        /// <para>
+        /// To not limit <code>CreateGameSession</code> requests with the same <code>CreatorId</code>,
+        /// don't provide a <code>CreatorId</code> in your <code>CreateGameSession</code> request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]

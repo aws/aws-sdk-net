@@ -101,8 +101,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Platform. 
         /// <para>
-        /// The network platform of the modified Reserved Instances, which is either EC2-Classic
-        /// or EC2-VPC.
+        /// The network platform of the modified Reserved Instances.
         /// </para>
         /// </summary>
         public string Platform

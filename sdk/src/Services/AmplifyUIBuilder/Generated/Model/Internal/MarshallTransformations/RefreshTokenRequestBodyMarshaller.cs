@@ -45,6 +45,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RefreshTokenRequestBody requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetClientId())
+            {
+                context.Writer.WritePropertyName("clientId");
+                context.Writer.Write(requestObject.ClientId);
+            }
+
             if(requestObject.IsSetToken())
             {
                 context.Writer.WritePropertyName("token");

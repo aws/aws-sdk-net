@@ -37,14 +37,6 @@ namespace Amazon.QLDB.Model
     /// 
     ///  
     /// <para>
-    /// In JSON Lines format, each journal block in the exported data object is a valid JSON
-    /// object that is delimited by a newline. You can use this format to easily integrate
-    /// JSON exports with analytics tools such as Glue and Amazon Athena because these services
-    /// can parse newline-delimited JSON automatically. For more information about the format,
-    /// see <a href="https://jsonlines.org/">JSON Lines</a>.
-    /// </para>
-    ///  
-    /// <para>
     /// If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
     /// </para>
     ///  
@@ -151,8 +143,20 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property OutputFormat. 
         /// <para>
-        /// The output format of your exported journal data. If this parameter is not specified,
-        /// the exported data defaults to <code>ION_TEXT</code> format.
+        /// The output format of your exported journal data. A journal export job can write the
+        /// data objects in either the text or binary representation of <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+        /// Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text format.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>ION_TEXT</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In JSON Lines format, each journal block in an exported data object is a valid JSON
+        /// object that is delimited by a newline. You can use this format to directly integrate
+        /// JSON exports with analytics tools such as Amazon Athena and Glue because these services
+        /// can parse newline-delimited JSON automatically.
         /// </para>
         /// </summary>
         public OutputFormat OutputFormat
@@ -175,7 +179,7 @@ namespace Amazon.QLDB.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Write objects into your Amazon Simple Storage Service (Amazon S3) bucket.
+        /// Write objects into your Amazon S3 bucket.
         /// </para>
         ///  </li> <li> 
         /// <para>

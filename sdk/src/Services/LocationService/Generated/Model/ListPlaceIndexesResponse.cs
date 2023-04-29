@@ -39,7 +39,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// Lists the place index resources that exist in your AWS account
+        /// Lists the place index resources that exist in your Amazon Web Services account
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

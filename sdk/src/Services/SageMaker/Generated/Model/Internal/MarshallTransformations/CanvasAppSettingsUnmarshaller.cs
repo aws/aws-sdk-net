@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("ModelRegisterSettings", targetDepth))
+                {
+                    var unmarshaller = ModelRegisterSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ModelRegisterSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TimeSeriesForecastingSettings", targetDepth))
                 {
                     var unmarshaller = TimeSeriesForecastingSettingsUnmarshaller.Instance;

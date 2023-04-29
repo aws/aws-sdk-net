@@ -91,6 +91,52 @@ namespace Amazon.WAFV2
 
 
     /// <summary>
+    /// Constants used for properties of type AssociatedResourceType.
+    /// </summary>
+    public class AssociatedResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUDFRONT for AssociatedResourceType
+        /// </summary>
+        public static readonly AssociatedResourceType CLOUDFRONT = new AssociatedResourceType("CLOUDFRONT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssociatedResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssociatedResourceType FindValue(string value)
+        {
+            return FindValue<AssociatedResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssociatedResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BodyParsingFallbackBehavior.
     /// </summary>
     public class BodyParsingFallbackBehavior : ConstantClass
@@ -1841,6 +1887,14 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField ASSOCIABLE_RESOURCE = new ParameterExceptionField("ASSOCIABLE_RESOURCE");
         /// <summary>
+        /// Constant ASSOCIATED_RESOURCE_TYPE for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField ASSOCIATED_RESOURCE_TYPE = new ParameterExceptionField("ASSOCIATED_RESOURCE_TYPE");
+        /// <summary>
+        /// Constant ATP_RULE_SET_RESPONSE_INSPECTION for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField ATP_RULE_SET_RESPONSE_INSPECTION = new ParameterExceptionField("ATP_RULE_SET_RESPONSE_INSPECTION");
+        /// <summary>
         /// Constant BODY_PARSING_FALLBACK_BEHAVIOR for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField BODY_PARSING_FALLBACK_BEHAVIOR = new ParameterExceptionField("BODY_PARSING_FALLBACK_BEHAVIOR");
@@ -2351,6 +2405,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ResourceType API_GATEWAY = new ResourceType("API_GATEWAY");
         /// <summary>
+        /// Constant APP_RUNNER_SERVICE for ResourceType
+        /// </summary>
+        public static readonly ResourceType APP_RUNNER_SERVICE = new ResourceType("APP_RUNNER_SERVICE");
+        /// <summary>
         /// Constant APPLICATION_LOAD_BALANCER for ResourceType
         /// </summary>
         public static readonly ResourceType APPLICATION_LOAD_BALANCER = new ResourceType("APPLICATION_LOAD_BALANCER");
@@ -2362,6 +2420,10 @@ namespace Amazon.WAFV2
         /// Constant COGNITO_USER_POOL for ResourceType
         /// </summary>
         public static readonly ResourceType COGNITO_USER_POOL = new ResourceType("COGNITO_USER_POOL");
+        /// <summary>
+        /// Constant VERIFIED_ACCESS_INSTANCE for ResourceType
+        /// </summary>
+        public static readonly ResourceType VERIFIED_ACCESS_INSTANCE = new ResourceType("VERIFIED_ACCESS_INSTANCE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2546,6 +2608,64 @@ namespace Amazon.WAFV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SensitivityLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SizeInspectionLimit.
+    /// </summary>
+    public class SizeInspectionLimit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant KB_16 for SizeInspectionLimit
+        /// </summary>
+        public static readonly SizeInspectionLimit KB_16 = new SizeInspectionLimit("KB_16");
+        /// <summary>
+        /// Constant KB_32 for SizeInspectionLimit
+        /// </summary>
+        public static readonly SizeInspectionLimit KB_32 = new SizeInspectionLimit("KB_32");
+        /// <summary>
+        /// Constant KB_48 for SizeInspectionLimit
+        /// </summary>
+        public static readonly SizeInspectionLimit KB_48 = new SizeInspectionLimit("KB_48");
+        /// <summary>
+        /// Constant KB_64 for SizeInspectionLimit
+        /// </summary>
+        public static readonly SizeInspectionLimit KB_64 = new SizeInspectionLimit("KB_64");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SizeInspectionLimit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SizeInspectionLimit FindValue(string value)
+        {
+            return FindValue<SizeInspectionLimit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SizeInspectionLimit(string value)
         {
             return FindValue(value);
         }

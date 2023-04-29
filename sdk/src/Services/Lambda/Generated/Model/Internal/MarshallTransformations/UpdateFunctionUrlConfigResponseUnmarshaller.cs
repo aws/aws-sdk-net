@@ -81,6 +81,12 @@ namespace Amazon.Lambda.Model.Internal.MarshallTransformations
                     response.FunctionUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InvokeMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.InvokeMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModifiedTime", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

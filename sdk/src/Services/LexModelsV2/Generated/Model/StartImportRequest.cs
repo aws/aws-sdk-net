@@ -64,7 +64,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ImportId. 
         /// <para>
-        /// The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateUploadUrl.html">CreateUploadUrl</a>
+        /// The unique identifier for the import. It is included in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateUploadUrl.html">CreateUploadUrl</a>
         /// operation.
         /// </para>
         /// </summary>

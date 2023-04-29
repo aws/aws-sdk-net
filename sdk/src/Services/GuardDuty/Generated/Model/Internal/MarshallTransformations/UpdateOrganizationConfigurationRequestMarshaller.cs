@@ -74,6 +74,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AutoEnable);
                 }
 
+                if(publicRequest.IsSetAutoEnableOrganizationMembers())
+                {
+                    context.Writer.WritePropertyName("autoEnableOrganizationMembers");
+                    context.Writer.Write(publicRequest.AutoEnableOrganizationMembers);
+                }
+
                 if(publicRequest.IsSetDataSources())
                 {
                     context.Writer.WritePropertyName("dataSources");
@@ -83,6 +89,22 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.DataSources, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetFeatures())
+                {
+                    context.Writer.WritePropertyName("features");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFeaturesListValue in publicRequest.Features)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = OrganizationFeatureConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestFeaturesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();

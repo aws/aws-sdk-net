@@ -46,7 +46,7 @@ namespace Amazon.IdentityStore
     /// &lt;a href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM
     /// Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This reference
     /// guide describes the identity store operations that you can call programatically and
-    /// includes detailed information on data types and errors.&lt;/p&gt; </code></pre>
+    /// includes detailed information about data types and errors.&lt;/p&gt; </code></pre>
     /// </summary>
     public partial class AmazonIdentityStoreClient : AmazonServiceClient, IAmazonIdentityStore
     {
@@ -455,7 +455,7 @@ namespace Amazon.IdentityStore
         #region  CreateUser
 
         /// <summary>
-        /// Creates a new user within the specified identity store.
+        /// Creates a user within the specified identity store.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateUser service method.</param>
         /// 

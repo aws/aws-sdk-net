@@ -275,6 +275,10 @@ namespace Amazon.Omics
         /// </summary>
         public static readonly JobStatus COMPLETED = new JobStatus("COMPLETED");
         /// <summary>
+        /// Constant COMPLETED_WITH_FAILURES for JobStatus
+        /// </summary>
+        public static readonly JobStatus COMPLETED_WITH_FAILURES = new JobStatus("COMPLETED_WITH_FAILURES");
+        /// <summary>
         /// Constant FAILED for JobStatus
         /// </summary>
         public static readonly JobStatus FAILED = new JobStatus("FAILED");

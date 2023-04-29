@@ -58,7 +58,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the job template parameter. Allowed values are: ‘String’, ‘Number’.
+        /// The type of the job template parameter. Allowed values are: ‘STRING’, ‘NUMBER’.
         /// </para>
         /// </summary>
         public TemplateParameterDataType Type

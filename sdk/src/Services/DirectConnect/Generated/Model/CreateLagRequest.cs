@@ -174,7 +174,8 @@ namespace Amazon.DirectConnect.Model
         /// Gets and sets the property NumberOfConnections. 
         /// <para>
         /// The number of physical dedicated connections initially provisioned and bundled by
-        /// the LAG.
+        /// the LAG. You can have a maximum of four connections when the port speed is 1G or 10G,
+        /// or two when the port speed is 100G. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

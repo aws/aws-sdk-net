@@ -36,6 +36,8 @@ namespace Amazon.MediaConvert.Model
     /// </summary>
     public partial class Input
     {
+        private AdvancedInputFilter _advancedInputFilter;
+        private AdvancedInputFilterSettings _advancedInputFilterSettings;
         private Dictionary<string, AudioSelectorGroup> _audioSelectorGroups = new Dictionary<string, AudioSelectorGroup>();
         private Dictionary<string, AudioSelector> _audioSelectors = new Dictionary<string, AudioSelector>();
         private Dictionary<string, CaptionSelector> _captionSelectors = new Dictionary<string, CaptionSelector>();
@@ -58,6 +60,47 @@ namespace Amazon.MediaConvert.Model
         private string _timecodeStart;
         private InputVideoGenerator _videoGenerator;
         private VideoSelector _videoSelector;
+
+        /// <summary>
+        /// Gets and sets the property AdvancedInputFilter. Use to remove noise, blocking, blurriness,
+        /// or ringing from your input as a pre-filter step before encoding. The Advanced input
+        /// filter removes more types of compression artifacts and is an improvement when compared
+        /// to basic Deblock and Denoise filters. To remove video compression artifacts from your
+        /// input and improve the video quality: Choose Enabled. Additionally, this filter can
+        /// help increase the video quality of your output relative to its bitrate, since noisy
+        /// inputs are more complex and require more bits to encode. To help restore loss of detail
+        /// after applying the filter, you can optionally add texture or sharpening as an additional
+        /// step.Jobs that use this feature incur pro-tier pricing. To not apply advanced input
+        /// filtering: Choose Disabled. Note that you can still apply basic filtering with Deblock
+        /// and Denoise.
+        /// </summary>
+        public AdvancedInputFilter AdvancedInputFilter
+        {
+            get { return this._advancedInputFilter; }
+            set { this._advancedInputFilter = value; }
+        }
+
+        // Check to see if AdvancedInputFilter property is set
+        internal bool IsSetAdvancedInputFilter()
+        {
+            return this._advancedInputFilter != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AdvancedInputFilterSettings. Optional settings for Advanced
+        /// input filter when you set Advanced input filter to Enabled.
+        /// </summary>
+        public AdvancedInputFilterSettings AdvancedInputFilterSettings
+        {
+            get { return this._advancedInputFilterSettings; }
+            set { this._advancedInputFilterSettings = value; }
+        }
+
+        // Check to see if AdvancedInputFilterSettings property is set
+        internal bool IsSetAdvancedInputFilterSettings()
+        {
+            return this._advancedInputFilterSettings != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AudioSelectorGroups. Use audio selector groups to combine
@@ -167,7 +210,7 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property DenoiseFilter. Enable Denoise (InputDenoiseFilter) to filter
-        /// noise from the input.  Default is disabled. Only applicable to MPEG2, H.264, H.265,
+        /// noise from the input. Default is disabled. Only applicable to MPEG2, H.264, H.265,
         /// and uncompressed video inputs.
         /// </summary>
         public InputDenoiseFilter DenoiseFilter
@@ -227,13 +270,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterEnable. Specify how the transcoding service applies
-        /// the denoise and deblock filters. You must also enable the filters separately, with
-        /// Denoise (InputDenoiseFilter) and Deblock (InputDeblockFilter). * Auto - The transcoding
-        /// service determines whether to apply filtering, depending on input type and quality.
-        /// * Disable - The input is not filtered. This is true even if you use the API to enable
-        /// them in (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
-        /// regardless of input type.
+        /// Gets and sets the property FilterEnable. Specify whether to apply input filtering
+        /// to improve the video quality of your input. To apply filtering depending on your input
+        /// type and quality: Choose Auto. To apply no filtering: Choose Disable. To apply filtering
+        /// regardless of your input type and quality: Choose Force. When you do, you must also
+        /// specify a value for Filter strength.
         /// </summary>
         public InputFilterEnable FilterEnable
         {
@@ -248,11 +289,14 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterStrength. Use Filter strength (FilterStrength) to
-        /// adjust the magnitude the input filter settings (Deblock and Denoise). The range is
-        /// -5 to 5. Default is 0.
+        /// Gets and sets the property FilterStrength. Specify the strength of the input filter.
+        /// To apply an automatic amount of filtering based the compression artifacts measured
+        /// in your input: We recommend that you leave Filter strength blank and set Filter enable
+        /// to Auto. To manually apply filtering: Enter a value from 1 to 5, where 1 is the least
+        /// amount of filtering and 5 is the most. The value that you enter applies to the strength
+        /// of the Deblock or Denoise filters, or to the strength of the Advanced input filter.
         /// </summary>
-        [AWSProperty(Min=-5, Max=5)]
+        [AWSProperty(Min=0, Max=5)]
         public int FilterStrength
         {
             get { return this._filterStrength.GetValueOrDefault(); }

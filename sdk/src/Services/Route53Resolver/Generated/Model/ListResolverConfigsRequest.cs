@@ -30,7 +30,7 @@ namespace Amazon.Route53Resolver.Model
 {
     /// <summary>
     /// Container for the parameters to the ListResolverConfigs operation.
-    /// Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses
+    /// Retrieves the Resolver configurations that you have defined. Route 53 Resolver uses
     /// the configurations to manage DNS resolution behavior for your VPCs.
     /// </summary>
     public partial class ListResolverConfigsRequest : AmazonRoute53ResolverRequest

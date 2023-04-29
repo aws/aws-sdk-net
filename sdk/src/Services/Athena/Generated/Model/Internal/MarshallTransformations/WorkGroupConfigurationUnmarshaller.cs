@@ -82,6 +82,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomerContentEncryptionConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnableMinimumEncryptionConfiguration", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EnableMinimumEncryptionConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnforceWorkGroupConfiguration", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

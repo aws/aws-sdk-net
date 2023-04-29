@@ -134,7 +134,7 @@ namespace Amazon.AppRunner.Model
         /// Default: <code>25</code> 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1)]
         public int MaxSize
         {
             get { return this._maxSize.GetValueOrDefault(); }

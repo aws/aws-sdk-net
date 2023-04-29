@@ -35,7 +35,7 @@ namespace Amazon.CloudWatchRUM.Model
     /// 
     ///  
     /// <para>
-    /// For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrics.html">AddRumMetrics</a>.
+    /// For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricDefinitions.html">BatchCreateRumMetricDefinitions</a>.
     /// </para>
     /// </summary>
     public partial class PutRumMetricsDestinationRequest : AmazonCloudWatchRUMRequest

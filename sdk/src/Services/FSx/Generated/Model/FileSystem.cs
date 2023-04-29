@@ -365,8 +365,8 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property OwnerId. 
         /// <para>
         /// The Amazon Web Services account that created the file system. If the file system was
-        /// created by an Identity and Access Management (IAM) user, the Amazon Web Services account
-        /// to which the IAM user belongs is the owner.
+        /// created by a user in IAM Identity Center, the Amazon Web Services account to which
+        /// the IAM user belongs is the owner.
         /// </para>
         /// </summary>
         [AWSProperty(Min=12, Max=12)]

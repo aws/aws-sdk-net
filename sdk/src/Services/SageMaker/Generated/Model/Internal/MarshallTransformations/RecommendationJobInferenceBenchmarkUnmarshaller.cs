@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndpointConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EndpointMetrics", targetDepth))
+                {
+                    var unmarshaller = InferenceMetricsUnmarshaller.Instance;
+                    unmarshalledObject.EndpointMetrics = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FailureReason", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

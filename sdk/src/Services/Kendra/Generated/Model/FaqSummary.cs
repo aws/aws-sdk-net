@@ -44,7 +44,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The UNIX datetime that the FAQ was added to the index.
+        /// The Unix timestamp when the FAQ was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -159,7 +159,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The UNIX datetime that the FAQ was last updated.
+        /// The Unix timestamp when the FAQ was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

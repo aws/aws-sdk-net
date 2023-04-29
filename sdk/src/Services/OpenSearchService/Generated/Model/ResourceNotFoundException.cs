@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// An exception for accessing or deleting a resource that doesn't exist.
+    /// An exception for accessing or deleting a resource that does not exist..
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

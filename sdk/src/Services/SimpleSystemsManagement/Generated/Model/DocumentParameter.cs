@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// Parameters specified in a System Manager document that run on the server when the
+    /// Parameters specified in a Systems Manager document that run on the server when the
     /// command is run.
     /// </summary>
     public partial class DocumentParameter

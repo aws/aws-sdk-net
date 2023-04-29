@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// The details of an <code>AppInstanceAdmin</code>.
+    /// The name and ARN of the admin for the <code>AppInstance</code>.
     /// </summary>
     public partial class AppInstanceAdmin
     {

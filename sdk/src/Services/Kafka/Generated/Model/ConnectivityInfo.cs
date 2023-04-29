@@ -34,6 +34,7 @@ namespace Amazon.Kafka.Model
     public partial class ConnectivityInfo
     {
         private PublicAccess _publicAccess;
+        private VpcConnectivity _vpcConnectivity;
 
         /// <summary>
         /// Gets and sets the property PublicAccess.             
@@ -51,6 +52,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetPublicAccess()
         {
             return this._publicAccess != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConnectivity.             
+        /// <para>
+        /// VPC connectivity access control for brokers.
+        /// </para>
+        /// </summary>
+        public VpcConnectivity VpcConnectivity
+        {
+            get { return this._vpcConnectivity; }
+            set { this._vpcConnectivity = value; }
+        }
+
+        // Check to see if VpcConnectivity property is set
+        internal bool IsSetVpcConnectivity()
+        {
+            return this._vpcConnectivity != null;
         }
 
     }

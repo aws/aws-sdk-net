@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// The operation timed out.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

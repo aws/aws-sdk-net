@@ -77,6 +77,7 @@ namespace Amazon.SecretsManager.Model
         /// Gets and sets the property ForceOverwriteReplicaSecret. 
         /// <para>
         /// Specifies whether to overwrite a secret with the same name in the destination Region.
+        /// By default, secrets aren't overwritten.
         /// </para>
         /// </summary>
         public bool ForceOverwriteReplicaSecret

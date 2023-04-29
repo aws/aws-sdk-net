@@ -63,7 +63,7 @@ namespace Amazon.IoTWireless.Model
         /// Gets and sets the property AssistPosition. 
         /// <para>
         /// Optional assistance position information, specified using latitude and longitude values
-        /// in degrees. The co-ordinates are inside the WGS84 reference frame.
+        /// in degrees. The coordinates are inside the WGS84 reference frame.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=2)]

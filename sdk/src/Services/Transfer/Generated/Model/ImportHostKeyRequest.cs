@@ -61,7 +61,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property HostKeyBody. 
         /// <para>
-        /// The public key portion of an SSH key pair.
+        /// The private key portion of an SSH key pair.
         /// </para>
         ///  
         /// <para>

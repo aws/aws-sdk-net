@@ -103,7 +103,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The tags associated with the media concatenation pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

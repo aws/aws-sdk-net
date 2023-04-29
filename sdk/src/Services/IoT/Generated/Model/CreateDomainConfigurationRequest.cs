@@ -46,6 +46,7 @@ namespace Amazon.IoT.Model
         private List<string> _serverCertificateArns = new List<string>();
         private ServiceType _serviceType;
         private List<Tag> _tags = new List<Tag>();
+        private TlsConfig _tlsConfig;
         private string _validationCertificateArn;
 
         /// <summary>
@@ -178,6 +179,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsConfig. 
+        /// <para>
+        /// An object that specifies the TLS configuration for a domain.
+        /// </para>
+        /// </summary>
+        public TlsConfig TlsConfig
+        {
+            get { return this._tlsConfig; }
+            set { this._tlsConfig = value; }
+        }
+
+        // Check to see if TlsConfig property is set
+        internal bool IsSetTlsConfig()
+        {
+            return this._tlsConfig != null;
         }
 
         /// <summary>

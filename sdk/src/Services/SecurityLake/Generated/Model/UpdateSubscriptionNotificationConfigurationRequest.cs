@@ -30,8 +30,8 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSubscriptionNotificationConfiguration operation.
-    /// Creates a new subscription notification or adds the existing subscription notification
-    /// setting for the specified subscription ID.
+    /// Updates an existing notification method for the subscription (SQS or HTTPs endpoint)
+    /// or switches the notification subscription endpoint for a subscriber.
     /// </summary>
     public partial class UpdateSubscriptionNotificationConfigurationRequest : AmazonSecurityLakeRequest
     {
@@ -119,7 +119,10 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) specifying the role of the subscriber. 
+        /// The Amazon Resource Name (ARN) specifying the role of the subscriber. For more information
+        /// about ARNs and how to use them in policies, see, see the <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
+        /// data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
+        /// Web Services Managed Policies</a>in the Amazon Security Lake User Guide.
         /// </para>
         /// </summary>
         public string RoleArn

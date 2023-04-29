@@ -232,7 +232,7 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property TargetId. 
         /// <para>
-        /// Target ID is the name of the public document.
+        /// Target ID is the name of the SSM document.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

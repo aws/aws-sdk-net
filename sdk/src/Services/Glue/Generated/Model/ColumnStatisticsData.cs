@@ -100,7 +100,9 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property DecimalColumnStatisticsData. 
         /// <para>
-        /// Decimal column statistics data.
+        ///  Decimal column statistics data. UnscaledValues within are Base64-encoded binary objects
+        /// storing big-endian, two's complement representations of the decimal's unscaled value.
+        /// 
         /// </para>
         /// </summary>
         public DecimalColumnStatisticsData DecimalColumnStatisticsData

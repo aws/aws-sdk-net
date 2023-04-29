@@ -30,7 +30,7 @@ namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the StartReadSetExportJob operation.
-    /// Starts a read set export job.
+    /// Exports a read set to Amazon S3.
     /// </summary>
     public partial class StartReadSetExportJobRequest : AmazonOmicsRequest
     {
@@ -119,7 +119,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// Sources for the job.
+        /// The job's source files.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

@@ -226,6 +226,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.ExternalTableDefinition = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GlueCatalogGeneration", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.GlueCatalogGeneration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IgnoreHeaderRows", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

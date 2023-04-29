@@ -31,7 +31,8 @@ namespace Amazon.SecurityLake.Model
     /// <summary>
     /// Container for the parameters to the CreateSubscriptionNotificationConfiguration operation.
     /// Notifies the subscriber when new data is written to the data lake for the sources
-    /// that the subscriber consumes in Security Lake.
+    /// that the subscriber consumes in Security Lake. You can create only one subscriber
+    /// notification per subscriber.
     /// </summary>
     public partial class CreateSubscriptionNotificationConfigurationRequest : AmazonSecurityLakeRequest
     {
@@ -119,7 +120,9 @@ namespace Amazon.SecurityLake.Model
         /// Gets and sets the property RoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the EventBridge API destinations IAM role that you
-        /// created.
+        /// created. For more information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com//security-lake/latest/userguide/subscriber-data-access.html">Managing
+        /// data access</a> and <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/security-iam-awsmanpol.html">Amazon
+        /// Web Services Managed Policies</a> in the Amazon Security Lake User Guide.
         /// </para>
         /// </summary>
         public string RoleArn
@@ -156,7 +159,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property SubscriptionId. 
         /// <para>
-        /// The subscription ID for the notification subscription/
+        /// The subscription ID for the notification subscription.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

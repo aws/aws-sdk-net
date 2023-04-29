@@ -57,6 +57,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     response.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

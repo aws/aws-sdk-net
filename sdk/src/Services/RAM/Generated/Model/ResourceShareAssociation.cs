@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Describes an association with a resource share and either a principal or a resource.
+    /// Describes an association between a resource share and either a principal or a resource.
     /// </summary>
     public partial class ResourceShareAssociation
     {
@@ -51,7 +51,7 @@ namespace Amazon.RAM.Model
         ///  <ul> <li> 
         /// <para>
         /// For a resource association, this is the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource.
+        /// Resource Name (ARN)</a> of the resource.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.RAM.Model
         ///  </li> <li> 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of an organization in Organizations
+        /// Resource Name (ARN)</a> of an organization in Organizations
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -169,7 +169,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource share.
+        /// Resource Name (ARN)</a> of the resource share.
         /// </para>
         /// </summary>
         public string ResourceShareArn

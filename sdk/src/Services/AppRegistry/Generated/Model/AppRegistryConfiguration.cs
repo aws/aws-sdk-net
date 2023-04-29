@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppRegistry.Model
 {
     /// <summary>
-    /// Includes all of the Service Catalog AppRegistry settings.
+    /// Includes all of the AppRegistry settings.
     /// </summary>
     public partial class AppRegistryConfiguration
     {

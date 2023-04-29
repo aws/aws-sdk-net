@@ -31,6 +31,13 @@ namespace Amazon.ServiceCatalog.Model
     /// <summary>
     /// Container for the parameters to the DescribeProduct operation.
     /// Gets information about the specified product.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  Running this operation with administrator access results in a failure. <a>DescribeProductAsAdmin</a>
+    /// should be used instead. 
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeProductRequest : AmazonServiceCatalogRequest
     {
@@ -44,10 +51,6 @@ namespace Amazon.ServiceCatalog.Model
         /// The language code.
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <code>en</code> - English (default)
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <code>jp</code> - Japanese
         /// </para>

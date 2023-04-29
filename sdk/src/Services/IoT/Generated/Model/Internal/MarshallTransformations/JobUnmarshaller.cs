@@ -172,6 +172,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReasonCode = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scheduledJobRollouts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ScheduledJobRollout, ScheduledJobRolloutUnmarshaller>(ScheduledJobRolloutUnmarshaller.Instance);
+                    unmarshalledObject.ScheduledJobRollouts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("schedulingConfig", targetDepth))
                 {
                     var unmarshaller = SchedulingConfigUnmarshaller.Instance;

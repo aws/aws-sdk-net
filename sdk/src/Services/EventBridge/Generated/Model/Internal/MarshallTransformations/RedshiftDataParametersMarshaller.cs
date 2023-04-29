@@ -69,6 +69,17 @@ namespace Amazon.EventBridge.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Sql);
             }
 
+            if(requestObject.IsSetSqls())
+            {
+                context.Writer.WritePropertyName("Sqls");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSqlsListValue in requestObject.Sqls)
+                {
+                        context.Writer.Write(requestObjectSqlsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetStatementName())
             {
                 context.Writer.WritePropertyName("StatementName");

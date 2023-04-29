@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// Contains summary information about a notebook session.
+    /// Contains summary information about a session.
     /// </summary>
     public partial class SessionSummary
     {

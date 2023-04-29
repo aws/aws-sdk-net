@@ -76,6 +76,12 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
                     unmarshalledObject.RiskThreshold = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WatchlistIds", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.WatchlistIds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

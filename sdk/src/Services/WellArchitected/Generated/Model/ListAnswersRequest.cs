@@ -30,7 +30,7 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAnswers operation.
-    /// List of answers.
+    /// List of answers for a particular workload and lens.
     /// </summary>
     public partial class ListAnswersRequest : AmazonWellArchitectedRequest
     {

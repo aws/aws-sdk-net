@@ -88,6 +88,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceSetStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceSetStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

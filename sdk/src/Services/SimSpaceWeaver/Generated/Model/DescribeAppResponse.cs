@@ -120,7 +120,7 @@ namespace Amazon.SimSpaceWeaver.Model
         /// The name of the app.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

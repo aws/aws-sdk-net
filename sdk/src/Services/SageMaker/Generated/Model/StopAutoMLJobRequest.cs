@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the StopAutoMLJob operation.
-    /// A method for forcing the termination of a running job.
+    /// A method for forcing a running job to shut down.
     /// </summary>
     public partial class StopAutoMLJobRequest : AmazonSageMakerRequest
     {

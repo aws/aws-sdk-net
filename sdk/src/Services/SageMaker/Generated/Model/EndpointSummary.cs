@@ -107,11 +107,13 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Creating</code>: <a>CreateEndpoint</a> is executing.
+        ///  <code>Creating</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+        /// is executing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Updating</code>: <a>UpdateEndpoint</a> or <a>UpdateEndpointWeightsAndCapacities</a>
+        ///  <code>Updating</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
+        /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
         /// is executing.
         /// </para>
         ///  </li> <li> 
@@ -127,8 +129,9 @@ namespace Amazon.SageMaker.Model
         /// weight and is in the process of rolling back to its previous configuration. Once the
         /// rollback completes, endpoint returns to an <code>InService</code> status. This transitional
         /// status only applies to an endpoint that has autoscaling enabled and is undergoing
-        /// variant weight or capacity changes as part of an <a>UpdateEndpointWeightsAndCapacities</a>
-        /// call or when the <a>UpdateEndpointWeightsAndCapacities</a> operation is called explicitly.
+        /// variant weight or capacity changes as part of an <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+        /// call or when the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html">UpdateEndpointWeightsAndCapacities</a>
+        /// operation is called explicitly.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -136,18 +139,19 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Deleting</code>: <a>DeleteEndpoint</a> is executing.
+        ///  <code>Deleting</code>: <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+        /// is executing.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use <a>DescribeEndpointOutput$FailureReason</a>
-        /// for information about the failure. <a>DeleteEndpoint</a> is the only operation that
-        /// can be performed on a failed endpoint.
+        ///  <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use <code>DescribeEndpointOutput$FailureReason</code>
+        /// for information about the failure. <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html">DeleteEndpoint</a>
+        /// is the only operation that can be performed on a failed endpoint.
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To get a list of endpoints with a specified status, use the <a>ListEndpointsInput$StatusEquals</a>
-        /// filter.
+        /// To get a list of endpoints with a specified status, use the <code>StatusEquals</code>
+        /// filter with a call to <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListEndpoints.html">ListEndpoints</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

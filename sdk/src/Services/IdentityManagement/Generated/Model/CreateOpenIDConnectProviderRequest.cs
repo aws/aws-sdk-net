@@ -63,6 +63,10 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// A list of tags that are attached to the specified IAM OIDC provider
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// A list of thumbprints of one or more server certificates that the IdP uses
     /// </para>
     ///  </li> </ul> 
@@ -178,7 +182,7 @@ namespace Amazon.IdentityManagement.Model
         ///  
         /// <para>
         /// For more information about obtaining the OIDC provider thumbprint, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/identity-providers-oidc-obtain-thumbprint.html">Obtaining
-        /// the thumbprint for an OpenID Connect provider</a> in the <i>IAM User Guide</i>.
+        /// the thumbprint for an OpenID Connect provider</a> in the <i>IAM user Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

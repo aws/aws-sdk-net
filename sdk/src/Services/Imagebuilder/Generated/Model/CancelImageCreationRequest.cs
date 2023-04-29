@@ -62,7 +62,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image whose creation you want to cancel.
+        /// The Amazon Resource Name (ARN) of the image that you want to cancel creation for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

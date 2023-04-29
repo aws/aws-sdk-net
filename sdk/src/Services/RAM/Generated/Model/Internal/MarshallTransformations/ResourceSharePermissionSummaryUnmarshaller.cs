@@ -82,6 +82,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("featureSet", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FeatureSet = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("isResourceTypeDefault", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
@@ -100,6 +106,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("permissionType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PermissionType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -110,6 +122,12 @@ namespace Amazon.RAM.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("version", targetDepth))

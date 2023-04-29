@@ -140,7 +140,7 @@ namespace Amazon.Connect.Model
         /// The alias of the instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=1, Max=62)]
+        [AWSProperty(Sensitive=true, Min=1, Max=45)]
         public string InstanceAlias
         {
             get { return this._instanceAlias; }

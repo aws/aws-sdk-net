@@ -244,7 +244,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// <summary>
         /// Gets and sets the property VotingPolicy. 
         /// <para>
-        /// The voting rules for the network to decide if a proposal is accepted.
+        /// The voting rules that the network uses to decide if a proposal is accepted.
         /// </para>
         /// </summary>
         public VotingPolicy VotingPolicy

@@ -84,7 +84,11 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property HelpfulResourceDisplayText. 
         /// <para>
-        /// The helpful resource text to be displayed.
+        /// The helpful resource text to be displayed for a custom lens.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field does not apply to Amazon Web Services official lenses.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]

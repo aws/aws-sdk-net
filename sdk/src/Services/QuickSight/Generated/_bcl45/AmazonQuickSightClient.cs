@@ -282,7 +282,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -323,7 +323,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -390,7 +390,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -462,7 +462,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -548,7 +548,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -636,7 +636,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -902,7 +902,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -956,7 +956,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -1010,7 +1010,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -1057,7 +1057,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -1105,7 +1105,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -1158,7 +1158,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -1212,7 +1212,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1262,7 +1262,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1325,7 +1325,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1387,7 +1387,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1438,7 +1438,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1482,7 +1482,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1530,7 +1530,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
         /// A resource is already in a state that indicates an operation is happening that must
@@ -1578,7 +1578,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
         /// A resource is already in a state that indicates an operation is happening that must
@@ -1636,7 +1636,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1692,7 +1692,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -1749,7 +1749,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -1814,7 +1814,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -1855,6 +1855,103 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  CreateRefreshSchedule
+
+
+        /// <summary>
+        /// Creates a refresh schedule for a dataset. You can create up to 5 different schedules
+        /// for a single dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRefreshSchedule service method.</param>
+        /// 
+        /// <returns>The response from the CreateRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule">REST API Reference for CreateRefreshSchedule Operation</seealso>
+        public virtual CreateRefreshScheduleResponse CreateRefreshSchedule(CreateRefreshScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRefreshScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRefreshScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRefreshScheduleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a refresh schedule for a dataset. You can create up to 5 different schedules
+        /// for a single dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRefreshSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceExistsException">
+        /// The resource specified already exists.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule">REST API Reference for CreateRefreshSchedule Operation</seealso>
+        public virtual Task<CreateRefreshScheduleResponse> CreateRefreshScheduleAsync(CreateRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRefreshScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRefreshScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateRefreshScheduleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateTemplate
 
 
@@ -1880,7 +1977,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -1945,7 +2042,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -2095,7 +2192,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -2152,7 +2249,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -2299,7 +2396,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -2344,7 +2441,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -2394,7 +2491,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -2443,7 +2540,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -2690,7 +2787,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -2728,7 +2825,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -2754,6 +2851,95 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DeleteDataSetRefreshProperties
+
+
+        /// <summary>
+        /// Deletes the dataset refresh properties of the dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataSetRefreshProperties service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataSetRefreshProperties service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSetRefreshProperties">REST API Reference for DeleteDataSetRefreshProperties Operation</seealso>
+        public virtual DeleteDataSetRefreshPropertiesResponse DeleteDataSetRefreshProperties(DeleteDataSetRefreshPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataSetRefreshPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataSetRefreshPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataSetRefreshPropertiesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes the dataset refresh properties of the dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataSetRefreshProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataSetRefreshProperties service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSetRefreshProperties">REST API Reference for DeleteDataSetRefreshProperties Operation</seealso>
+        public virtual Task<DeleteDataSetRefreshPropertiesResponse> DeleteDataSetRefreshPropertiesAsync(DeleteDataSetRefreshPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataSetRefreshPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataSetRefreshPropertiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteDataSetRefreshPropertiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteDataSource
 
 
@@ -2768,7 +2954,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -2807,7 +2993,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -2846,7 +3032,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -2896,7 +3082,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -2947,7 +3133,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -2991,7 +3177,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3036,7 +3222,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3080,7 +3266,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3125,7 +3311,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3169,7 +3355,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3214,7 +3400,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
         /// A resource is already in a state that indicates an operation is happening that must
@@ -3259,7 +3445,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
         /// A resource is already in a state that indicates an operation is happening that must
@@ -3308,7 +3494,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3355,7 +3541,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3383,6 +3569,89 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = DeleteNamespaceResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteNamespaceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRefreshSchedule
+
+
+        /// <summary>
+        /// Deletes a refresh schedule from a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRefreshSchedule service method.</param>
+        /// 
+        /// <returns>The response from the DeleteRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRefreshSchedule">REST API Reference for DeleteRefreshSchedule Operation</seealso>
+        public virtual DeleteRefreshScheduleResponse DeleteRefreshSchedule(DeleteRefreshScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRefreshScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRefreshScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRefreshScheduleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a refresh schedule from a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRefreshSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRefreshSchedule">REST API Reference for DeleteRefreshSchedule Operation</seealso>
+        public virtual Task<DeleteRefreshScheduleResponse> DeleteRefreshScheduleAsync(DeleteRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRefreshScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRefreshScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteRefreshScheduleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3568,7 +3837,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -3615,7 +3884,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -3741,9 +4010,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Deletes the Amazon QuickSight user that is associated with the identity of the Identity
-        /// and Access Management (IAM) user or role that's making the call. The IAM user isn't
-        /// deleted as a result of this call.
+        /// Deletes the Amazon QuickSight user that is associated with the identity of the IAM
+        /// user or role that's making the call. The IAM user isn't deleted as a result of this
+        /// call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// 
@@ -3752,7 +4021,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3784,9 +4053,9 @@ namespace Amazon.QuickSight
 
 
         /// <summary>
-        /// Deletes the Amazon QuickSight user that is associated with the identity of the Identity
-        /// and Access Management (IAM) user or role that's making the call. The IAM user isn't
-        /// deleted as a result of this call.
+        /// Deletes the Amazon QuickSight user that is associated with the identity of the IAM
+        /// user or role that's making the call. The IAM user isn't deleted as a result of this
+        /// call.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteUser service method.</param>
         /// <param name="cancellationToken">
@@ -3798,7 +4067,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3843,7 +4112,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -3887,7 +4156,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4000,7 +4269,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4109,7 +4378,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4152,7 +4421,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4194,7 +4463,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4239,7 +4508,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4283,7 +4552,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4325,7 +4594,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4369,7 +4638,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4423,7 +4692,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -4482,7 +4751,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -4610,7 +4879,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4654,7 +4923,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4708,7 +4977,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -4767,7 +5036,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -4896,7 +5165,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4935,7 +5204,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -4979,7 +5248,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5022,7 +5291,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5048,6 +5317,95 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DescribeDataSetRefreshProperties
+
+
+        /// <summary>
+        /// Describes the refresh properties of a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataSetRefreshProperties service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDataSetRefreshProperties service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetRefreshProperties">REST API Reference for DescribeDataSetRefreshProperties Operation</seealso>
+        public virtual DescribeDataSetRefreshPropertiesResponse DescribeDataSetRefreshProperties(DescribeDataSetRefreshPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDataSetRefreshPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataSetRefreshPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDataSetRefreshPropertiesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the refresh properties of a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDataSetRefreshProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDataSetRefreshProperties service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetRefreshProperties">REST API Reference for DescribeDataSetRefreshProperties Operation</seealso>
+        public virtual Task<DescribeDataSetRefreshPropertiesResponse> DescribeDataSetRefreshPropertiesAsync(DescribeDataSetRefreshPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDataSetRefreshPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDataSetRefreshPropertiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeDataSetRefreshPropertiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeDataSource
 
 
@@ -5061,7 +5419,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5099,7 +5457,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5138,7 +5496,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5176,7 +5534,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5215,7 +5573,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5259,7 +5617,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5304,7 +5662,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5348,7 +5706,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5394,7 +5752,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5439,7 +5797,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5484,7 +5842,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5528,7 +5886,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5575,7 +5933,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5621,7 +5979,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5666,7 +6024,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5707,7 +6065,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5749,7 +6107,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5790,7 +6148,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5832,7 +6190,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5870,7 +6228,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5909,7 +6267,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5950,7 +6308,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -5979,6 +6337,89 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DescribeRefreshSchedule
+
+
+        /// <summary>
+        /// Provides a summary of a refresh schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRefreshSchedule service method.</param>
+        /// 
+        /// <returns>The response from the DescribeRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule">REST API Reference for DescribeRefreshSchedule Operation</seealso>
+        public virtual DescribeRefreshScheduleResponse DescribeRefreshSchedule(DescribeRefreshScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRefreshScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRefreshScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeRefreshScheduleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides a summary of a refresh schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeRefreshSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule">REST API Reference for DescribeRefreshSchedule Operation</seealso>
+        public virtual Task<DescribeRefreshScheduleResponse> DescribeRefreshScheduleAsync(DescribeRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeRefreshScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeRefreshScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeRefreshScheduleResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DescribeTemplate
 
 
@@ -5992,7 +6433,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -6042,7 +6483,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -6173,7 +6614,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -6232,7 +6673,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -6366,7 +6807,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -6413,7 +6854,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -6544,7 +6985,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -6588,7 +7029,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -6633,7 +7074,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -6677,7 +7118,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -6756,7 +7197,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -6851,7 +7292,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -6952,7 +7393,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -7057,7 +7498,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -7166,7 +7607,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.DomainNotWhitelistedException">
         /// The domain specified isn't on the allow list. All domains for embedded dashboards
@@ -7285,7 +7726,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.DomainNotWhitelistedException">
         /// The domain specified isn't on the allow list. All domains for embedded dashboards
@@ -7385,7 +7826,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -7463,7 +7904,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -7751,7 +8192,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -7795,7 +8236,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -7835,7 +8276,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -7874,7 +8315,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -7914,7 +8355,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -7962,7 +8403,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8010,7 +8451,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8057,7 +8498,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8105,7 +8546,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8152,7 +8593,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8200,7 +8641,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8247,7 +8688,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8295,7 +8736,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8336,7 +8777,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8380,7 +8821,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
         /// A resource is already in a state that indicates an operation is happening that must
@@ -8427,7 +8868,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
         /// A resource is already in a state that indicates an operation is happening that must
@@ -8473,7 +8914,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8517,7 +8958,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8563,7 +9004,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8611,7 +9052,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8646,6 +9087,89 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  ListRefreshSchedules
+
+
+        /// <summary>
+        /// Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRefreshSchedules service method.</param>
+        /// 
+        /// <returns>The response from the ListRefreshSchedules service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRefreshSchedules">REST API Reference for ListRefreshSchedules Operation</seealso>
+        public virtual ListRefreshSchedulesResponse ListRefreshSchedules(ListRefreshSchedulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRefreshSchedulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRefreshSchedulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRefreshSchedulesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRefreshSchedules service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRefreshSchedules service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRefreshSchedules">REST API Reference for ListRefreshSchedules Operation</seealso>
+        public virtual Task<ListRefreshSchedulesResponse> ListRefreshSchedulesAsync(ListRefreshSchedulesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRefreshSchedulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRefreshSchedulesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRefreshSchedulesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -8659,7 +9183,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -8697,7 +9221,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9068,7 +9592,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9115,7 +9639,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9163,7 +9687,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9210,7 +9734,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9258,7 +9782,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9302,7 +9826,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9347,7 +9871,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9394,7 +9918,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9429,6 +9953,101 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  PutDataSetRefreshProperties
+
+
+        /// <summary>
+        /// Creates or updates the dataset refresh properties for the dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataSetRefreshProperties service method.</param>
+        /// 
+        /// <returns>The response from the PutDataSetRefreshProperties service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties">REST API Reference for PutDataSetRefreshProperties Operation</seealso>
+        public virtual PutDataSetRefreshPropertiesResponse PutDataSetRefreshProperties(PutDataSetRefreshPropertiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDataSetRefreshPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataSetRefreshPropertiesResponseUnmarshaller.Instance;
+
+            return Invoke<PutDataSetRefreshPropertiesResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates or updates the dataset refresh properties for the dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDataSetRefreshProperties service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutDataSetRefreshProperties service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties">REST API Reference for PutDataSetRefreshProperties Operation</seealso>
+        public virtual Task<PutDataSetRefreshPropertiesResponse> PutDataSetRefreshPropertiesAsync(PutDataSetRefreshPropertiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutDataSetRefreshPropertiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutDataSetRefreshPropertiesResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<PutDataSetRefreshPropertiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RegisterUser
 
 
@@ -9450,7 +10069,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9508,7 +10127,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9837,7 +10456,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9879,7 +10498,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9922,7 +10541,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -9964,7 +10583,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -10006,7 +10625,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -10057,7 +10676,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -10110,7 +10729,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -10158,7 +10777,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -10240,7 +10859,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -10315,7 +10934,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -10357,7 +10976,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -10395,7 +11014,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -10444,7 +11063,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -10498,7 +11117,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -10543,7 +11162,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -10584,7 +11203,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -11084,7 +11703,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -11135,7 +11754,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -11191,7 +11810,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -11237,7 +11856,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -11279,7 +11898,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -11320,7 +11939,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -11362,7 +11981,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -11403,7 +12022,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -11445,7 +12064,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -11495,7 +12114,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConflictException">
         /// Updating or deleting a resource can cause an inconsistent state.
@@ -11546,7 +12165,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -11593,7 +12212,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -11641,7 +12260,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -11685,7 +12304,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -11732,7 +12351,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
         /// A resource is already in a state that indicates an operation is happening that must
@@ -11779,7 +12398,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.ConcurrentUpdatingException">
         /// A resource is already in a state that indicates an operation is happening that must
@@ -11827,7 +12446,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -11870,7 +12489,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -11926,7 +12545,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -11991,7 +12610,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -12026,6 +12645,95 @@ namespace Amazon.QuickSight
             options.ResponseUnmarshaller = UpdatePublicSharingSettingsResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdatePublicSharingSettingsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRefreshSchedule
+
+
+        /// <summary>
+        /// Updates a refresh schedule for a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRefreshSchedule service method.</param>
+        /// 
+        /// <returns>The response from the UpdateRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRefreshSchedule">REST API Reference for UpdateRefreshSchedule Operation</seealso>
+        public virtual UpdateRefreshScheduleResponse UpdateRefreshSchedule(UpdateRefreshScheduleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRefreshScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRefreshScheduleResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRefreshScheduleResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a refresh schedule for a dataset.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRefreshSchedule service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRefreshSchedule service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
+        /// An internal failure occurred.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.PreconditionNotMetException">
+        /// One or more preconditions aren't met.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRefreshSchedule">REST API Reference for UpdateRefreshSchedule Operation</seealso>
+        public virtual Task<UpdateRefreshScheduleResponse> UpdateRefreshScheduleAsync(UpdateRefreshScheduleRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRefreshScheduleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRefreshScheduleResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateRefreshScheduleResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -12304,7 +13012,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -12354,7 +13062,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -12574,7 +13282,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -12701,7 +13409,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -12749,7 +13457,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.
@@ -12793,7 +13501,7 @@ namespace Amazon.QuickSight
         /// You don't have access to this item. The provided credentials couldn't be validated.
         /// You might not be authorized to carry out the request. Make sure that your account
         /// is authorized to use the Amazon QuickSight service, that your policies have the correct
-        /// permissions, and that you are using the correct access keys.
+        /// permissions, and that you are using the correct credentials.
         /// </exception>
         /// <exception cref="Amazon.QuickSight.Model.InternalFailureException">
         /// An internal failure occurred.

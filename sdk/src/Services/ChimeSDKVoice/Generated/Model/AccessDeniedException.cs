@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// You don't have the permissions needed to run this action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

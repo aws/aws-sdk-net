@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ca-central-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.ca-central-1.api.aws", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ca-central-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ca-central-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.ca-central-1.api.aws", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ca-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ca-central-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.eu-central-1.api.aws", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -126,8 +126,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.eu-central-1.api.aws", endpoint.URL);
         }
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-central-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.us-west-2.api.aws", endpoint.URL);
         }
@@ -171,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -186,8 +186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.us-west-2.api.aws", endpoint.URL);
         }
@@ -201,8 +201,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -216,8 +216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "af-south-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.af-south-1.api.aws", endpoint.URL);
         }
@@ -231,8 +231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "af-south-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -246,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "af-south-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.af-south-1.api.aws", endpoint.URL);
         }
@@ -261,8 +261,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "af-south-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "af-south-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.af-south-1.amazonaws.com", endpoint.URL);
         }
@@ -276,8 +276,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.eu-west-2.api.aws", endpoint.URL);
         }
@@ -291,8 +291,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -306,8 +306,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.eu-west-2.api.aws", endpoint.URL);
         }
@@ -321,8 +321,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -336,8 +336,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.eu-west-1.api.aws", endpoint.URL);
         }
@@ -351,8 +351,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -366,8 +366,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.eu-west-1.api.aws", endpoint.URL);
         }
@@ -381,8 +381,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "eu-west-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -396,8 +396,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-northeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.ap-northeast-2.api.aws", endpoint.URL);
         }
@@ -411,8 +411,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-northeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -426,8 +426,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-northeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.ap-northeast-2.api.aws", endpoint.URL);
         }
@@ -441,8 +441,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-northeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
@@ -456,8 +456,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -471,8 +471,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -486,8 +486,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.ap-northeast-1.api.aws", endpoint.URL);
         }
@@ -501,8 +501,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-northeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -516,8 +516,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -531,8 +531,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -546,8 +546,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.ap-southeast-1.api.aws", endpoint.URL);
         }
@@ -561,8 +561,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -576,8 +576,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -591,8 +591,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -606,8 +606,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.ap-southeast-2.api.aws", endpoint.URL);
         }
@@ -621,8 +621,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "ap-southeast-2";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -636,8 +636,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -651,8 +651,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -666,8 +666,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.us-east-1.api.aws", endpoint.URL);
         }
@@ -681,8 +681,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://models-v2-lex.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -696,8 +696,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -713,8 +713,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = true;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
         }
@@ -729,8 +729,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new LexModelsV2EndpointParameters();
             parameters["UseFIPS"] = false;
-            parameters["Region"] = "us-east-1";
             parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonLexModelsV2EndpointProvider().ResolveEndpoint(parameters);
         }

@@ -26,6 +26,11 @@ namespace Amazon.Kafka.Model
     {
 
         /// <summary>
+        /// Paginator for ListClientVpcConnections operation
+        ///</summary>
+        IListClientVpcConnectionsPaginator ListClientVpcConnections(ListClientVpcConnectionsRequest request);
+
+        /// <summary>
         /// Paginator for ListClusterOperations operation
         ///</summary>
         IListClusterOperationsPaginator ListClusterOperations(ListClusterOperationsRequest request);
@@ -64,5 +69,10 @@ namespace Amazon.Kafka.Model
         /// Paginator for ListScramSecrets operation
         ///</summary>
         IListScramSecretsPaginator ListScramSecrets(ListScramSecretsRequest request);
+
+        /// <summary>
+        /// Paginator for ListVpcConnections operation
+        ///</summary>
+        IListVpcConnectionsPaginator ListVpcConnections(ListVpcConnectionsRequest request);
     }
 }

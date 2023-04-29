@@ -106,6 +106,17 @@ namespace Amazon.Imagebuilder.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ImageRecipeArn);
                 }
 
+                if(publicRequest.IsSetImageScanningConfiguration())
+                {
+                    context.Writer.WritePropertyName("imageScanningConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ImageScanningConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ImageScanningConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetImageTestsConfiguration())
                 {
                     context.Writer.WritePropertyName("imageTestsConfiguration");

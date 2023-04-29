@@ -125,7 +125,7 @@ namespace Amazon.Omics.Model
         /// The job's items.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1)]
         public List<VariantImportItemDetail> Items
         {
             get { return this._items; }

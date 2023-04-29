@@ -62,6 +62,17 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetStopInstanceOnIdleRequest())
+            {
+                context.Writer.WritePropertyName("stopInstanceOnIdleRequest");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = StopInstanceOnIdleRequestMarshaller.Instance;
+                marshaller.Marshall(requestObject.StopInstanceOnIdleRequest, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

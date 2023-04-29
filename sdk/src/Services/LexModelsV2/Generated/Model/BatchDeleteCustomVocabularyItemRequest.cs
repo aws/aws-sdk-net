@@ -30,7 +30,7 @@ namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchDeleteCustomVocabularyItem operation.
-    /// Batch delete custom vocabulary item for the specified locale in the specified bot.
+    /// Delete a batch of custom vocabulary items for a given bot locale's custom vocabulary.
     /// </summary>
     public partial class BatchDeleteCustomVocabularyItemRequest : AmazonLexModelsV2Request
     {
@@ -42,8 +42,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotId. 
         /// <para>
-        /// The unique identifier of the bot to batch delete request for the custom vocabulary
-        /// item.
+        /// The identifier of the bot associated with this custom vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=10)]
@@ -62,7 +61,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The version of the bot to batch delete request for the custom vocabulary item.
+        /// The identifier of the version of the bot associated with this custom vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -81,7 +80,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property CustomVocabularyItemList. 
         /// <para>
-        /// The custom vocabulary list to batch delete request for the custom vocabulary item.
+        /// A list of custom vocabulary items requested to be deleted. Each entry must contain
+        /// the unique custom vocabulary entry identifier.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=10)]
@@ -100,8 +100,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property LocaleId. 
         /// <para>
-        /// The locale identifier of the bot to batch delete request for the custom vocabulary
-        /// item.
+        /// The identifier of the language and locale where this custom vocabulary is used. The
+        /// string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">
+        /// Supported Languages </a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

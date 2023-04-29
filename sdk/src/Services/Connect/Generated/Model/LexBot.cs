@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// The Amazon Web Services Region where the Amazon Lex bot was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=60)]
+        [AWSProperty(Required=true, Max=60)]
         public string LexRegion
         {
             get { return this._lexRegion; }
@@ -61,7 +61,7 @@ namespace Amazon.Connect.Model
         /// The name of the Amazon Lex bot.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=50)]
+        [AWSProperty(Required=true, Max=50)]
         public string Name
         {
             get { return this._name; }

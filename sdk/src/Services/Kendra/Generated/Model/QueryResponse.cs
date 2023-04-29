@@ -34,6 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class QueryResponse : AmazonWebServiceResponse
     {
         private List<FacetResult> _facetResults = new List<FacetResult>();
+        private List<FeaturedResultsItem> _featuredResultsItems = new List<FeaturedResultsItem>();
         private string _queryId;
         private List<QueryResultItem> _resultItems = new List<QueryResultItem>();
         private List<SpellCorrectedQuery> _spellCorrectedQueries = new List<SpellCorrectedQuery>();
@@ -57,6 +58,26 @@ namespace Amazon.Kendra.Model
         internal bool IsSetFacetResults()
         {
             return this._facetResults != null && this._facetResults.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FeaturedResultsItems. 
+        /// <para>
+        /// The list of featured result items. Featured results are displayed at the top of the
+        /// search results page, placed above all other results for certain queries. If there's
+        /// an exact match of a query, then certain documents are featured in the search results.
+        /// </para>
+        /// </summary>
+        public List<FeaturedResultsItem> FeaturedResultsItems
+        {
+            get { return this._featuredResultsItems; }
+            set { this._featuredResultsItems = value; }
+        }
+
+        // Check to see if FeaturedResultsItems property is set
+        internal bool IsSetFeaturedResultsItems()
+        {
+            return this._featuredResultsItems != null && this._featuredResultsItems.Count > 0; 
         }
 
         /// <summary>

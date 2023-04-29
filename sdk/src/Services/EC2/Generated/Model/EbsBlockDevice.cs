@@ -85,16 +85,42 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// This parameter is not returned by <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeImageAttribute.html">DescribeImageAttribute</a>.
+        /// This parameter is not returned by <a>DescribeImageAttribute</a>.
         /// </para>
         ///  
         /// <para>
-        /// For <a>CreateImage</a> and <a>RegisterImage</a>, you can specify this parameter only
-        /// for block device mappings that result in new, empty volumes when instances are launched
-        /// from the image. Omit this parameter on block device mappings that include an existing
-        /// volume or snapshot. If you include this parameter, and specify an encryption setting
-        /// that is different from the existing volume or snapshot, the request will fail.
+        /// For <a>CreateImage</a> and <a>RegisterImage</a>, whether you can include this parameter,
+        /// and the allowed values differ depending on the type of block device mapping you are
+        /// creating.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If you are creating a block device mapping for a <b>new (empty) volume</b>, you can
+        /// include this parameter, and specify either <code>true</code> for an encrypted volume,
+        /// or <code>false</code> for an unencrypted volume. If you omit this parameter, it defaults
+        /// to <code>false</code> (unencrypted).
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are creating a block device mapping from an <b>existing encrypted or unencrypted
+        /// snapshot</b>, you must omit this parameter. If you include this parameter, the request
+        /// will fail, regardless of the value that you specify.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are creating a block device mapping from an <b>existing unencrypted volume</b>,
+        /// you can include this parameter, but you must specify <code>false</code>. If you specify
+        /// <code>true</code>, the request will fail. In this case, we recommend that you omit
+        /// the parameter.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you are creating a block device mapping from an <b>existing encrypted volume</b>,
+        /// you can include this parameter, and specify either <code>true</code> or <code>false</code>.
+        /// However, if you specify <code>false</code>, the parameter is ignored and the block
+        /// device mapping is always encrypted. In this case, we recommend that you omit the parameter.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public bool Encrypted
         {

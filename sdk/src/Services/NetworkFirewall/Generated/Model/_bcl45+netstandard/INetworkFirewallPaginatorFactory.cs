@@ -44,5 +44,10 @@ namespace Amazon.NetworkFirewall.Model
         /// Paginator for ListTagsForResource operation
         ///</summary>
         IListTagsForResourcePaginator ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Paginator for ListTLSInspectionConfigurations operation
+        ///</summary>
+        IListTLSInspectionConfigurationsPaginator ListTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request);
     }
 }

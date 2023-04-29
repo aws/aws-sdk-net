@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The input structure for specifying ViewSunElevation angle property filter.
     /// </summary>
     public partial class ViewSunElevationInput
     {

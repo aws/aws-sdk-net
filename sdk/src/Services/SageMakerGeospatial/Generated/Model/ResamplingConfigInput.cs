@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The structure representing input for resampling operation.
     /// </summary>
     public partial class ResamplingConfigInput
     {
@@ -56,7 +56,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutputResolution.
+        /// Gets and sets the property OutputResolution. 
+        /// <para>
+        /// The structure representing output resolution (in target georeferenced units) of the
+        /// result of resampling operation.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public OutputResolutionResamplingInput OutputResolution
@@ -72,7 +76,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetBands.
+        /// Gets and sets the property TargetBands. 
+        /// <para>
+        /// Bands used in the operation. If no target bands are specified, it uses all bands available
+        /// in the input.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> TargetBands

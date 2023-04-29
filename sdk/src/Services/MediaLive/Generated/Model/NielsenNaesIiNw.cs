@@ -35,6 +35,7 @@ namespace Amazon.MediaLive.Model
     {
         private string _checkDigitString;
         private double? _sid;
+        private NielsenWatermarkTimezones _timezone;
 
         /// <summary>
         /// Gets and sets the property CheckDigitString. Enter the check digit string for the
@@ -68,6 +69,22 @@ namespace Amazon.MediaLive.Model
         internal bool IsSetSid()
         {
             return this._sid.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Timezone. Choose the timezone for the time stamps in the
+        /// watermark. If not provided,the timestamps will be in Coordinated Universal Time (UTC)
+        /// </summary>
+        public NielsenWatermarkTimezones Timezone
+        {
+            get { return this._timezone; }
+            set { this._timezone = value; }
+        }
+
+        // Check to see if Timezone property is set
+        internal bool IsSetTimezone()
+        {
+            return this._timezone != null;
         }
 
     }

@@ -70,6 +70,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DomainId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IamIdentity", targetDepth))
+                {
+                    var unmarshaller = IamIdentityUnmarshaller.Instance;
+                    unmarshalledObject.IamIdentity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UserProfileArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

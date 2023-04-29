@@ -38,6 +38,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private Identity _createdBy;
         private DateTime? _createdTimestamp;
         private ElasticChannelConfiguration _elasticChannelConfiguration;
+        private ExpirationSettings _expirationSettings;
         private DateTime? _lastMessageTimestamp;
         private DateTime? _lastUpdatedTimestamp;
         private string _metadata;
@@ -136,6 +137,24 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetElasticChannelConfiguration()
         {
             return this._elasticChannelConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExpirationSettings. 
+        /// <para>
+        /// Settings that control when a channel expires.
+        /// </para>
+        /// </summary>
+        public ExpirationSettings ExpirationSettings
+        {
+            get { return this._expirationSettings; }
+            set { this._expirationSettings = value; }
+        }
+
+        // Check to see if ExpirationSettings property is set
+        internal bool IsSetExpirationSettings()
+        {
+            return this._expirationSettings != null;
         }
 
         /// <summary>

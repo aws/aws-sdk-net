@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes a Standby WorkSpace.
+    /// Describes a standby WorkSpace.
     /// </summary>
     public partial class StandbyWorkspace
     {
@@ -41,7 +41,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory for the Standby WorkSpace.
+        /// The identifier of the directory for the standby WorkSpace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=10, Max=65)]
@@ -60,7 +60,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property PrimaryWorkspaceId. 
         /// <para>
-        /// The identifier of the Standby WorkSpace.
+        /// The identifier of the standby WorkSpace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -79,7 +79,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags associated with the Standby WorkSpace.
+        /// The tags associated with the standby WorkSpace.
         /// </para>
         /// </summary>
         public List<Tag> Tags
@@ -97,7 +97,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property VolumeEncryptionKey. 
         /// <para>
-        /// The volume encryption key of the Standby WorkSpace.
+        /// The volume encryption key of the standby WorkSpace.
         /// </para>
         /// </summary>
         public string VolumeEncryptionKey

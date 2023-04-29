@@ -57,6 +57,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Sid);
             }
 
+            if(requestObject.IsSetTimezone())
+            {
+                context.Writer.WritePropertyName("timezone");
+                context.Writer.Write(requestObject.Timezone);
+            }
+
         }
 
         /// <summary>

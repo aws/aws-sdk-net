@@ -81,10 +81,22 @@ namespace Amazon.IoTTwinMaker.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("generatedSceneMetadata", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.GeneratedSceneMetadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sceneId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.SceneId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sceneMetadata", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.SceneMetadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("updateDateTime", targetDepth))

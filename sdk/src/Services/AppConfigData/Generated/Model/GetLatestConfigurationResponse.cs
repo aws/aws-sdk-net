@@ -37,6 +37,7 @@ namespace Amazon.AppConfigData.Model
         private string _contentType;
         private string _nextPollConfigurationToken;
         private int? _nextPollIntervalInSeconds;
+        private string _versionLabel;
 
         /// <summary>
         /// Gets and sets the property Configuration. 
@@ -79,9 +80,16 @@ namespace Amazon.AppConfigData.Model
         /// <summary>
         /// Gets and sets the property NextPollConfigurationToken. 
         /// <para>
-        /// The latest token describing the current state of the configuration session. This MUST
+        /// The latest token describing the current state of the configuration session. This <i>must</i>
         /// be provided to the next call to <code>GetLatestConfiguration.</code> 
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This token should only be used once. To support long poll use cases, the token is
+        /// valid for up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired
+        /// token, the system returns <code>BadRequestException</code>.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string NextPollConfigurationToken
         {
@@ -113,6 +121,27 @@ namespace Amazon.AppConfigData.Model
         internal bool IsSetNextPollIntervalInSeconds()
         {
             return this._nextPollIntervalInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionLabel. 
+        /// <para>
+        /// The user-defined label for the AppConfig hosted configuration version. This attribute
+        /// doesn't apply if the configuration is not from an AppConfig hosted configuration version.
+        /// If the client already has the latest version of the configuration data, this value
+        /// is empty.
+        /// </para>
+        /// </summary>
+        public string VersionLabel
+        {
+            get { return this._versionLabel; }
+            set { this._versionLabel = value; }
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this._versionLabel != null;
         }
 
     }

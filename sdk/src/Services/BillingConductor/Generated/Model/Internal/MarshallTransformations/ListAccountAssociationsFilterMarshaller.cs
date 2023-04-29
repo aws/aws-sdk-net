@@ -51,6 +51,17 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AccountId);
             }
 
+            if(requestObject.IsSetAccountIds())
+            {
+                context.Writer.WritePropertyName("AccountIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAccountIdsListValue in requestObject.AccountIds)
+                {
+                        context.Writer.Write(requestObjectAccountIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetAssociation())
             {
                 context.Writer.WritePropertyName("Association");

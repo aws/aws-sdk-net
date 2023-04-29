@@ -82,6 +82,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.JoinEuiFilters = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxEirp", targetDepth))
+                {
+                    var unmarshaller = FloatUnmarshaller.Instance;
+                    unmarshalledObject.MaxEirp = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NetIdFilters", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

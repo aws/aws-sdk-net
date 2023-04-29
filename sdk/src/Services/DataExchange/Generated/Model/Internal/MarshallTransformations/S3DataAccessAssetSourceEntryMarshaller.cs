@@ -73,6 +73,22 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetKmsKeysToGrant())
+            {
+                context.Writer.WritePropertyName("KmsKeysToGrant");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectKmsKeysToGrantListValue in requestObject.KmsKeysToGrant)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KmsKeyToGrantMarshaller.Instance;
+                    marshaller.Marshall(requestObjectKmsKeysToGrantListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

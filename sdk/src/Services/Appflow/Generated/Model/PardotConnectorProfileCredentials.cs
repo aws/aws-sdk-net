@@ -98,7 +98,7 @@ namespace Amazon.Appflow.Model
         /// The credentials used to acquire new access tokens.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Max=4096)]
         public string RefreshToken
         {
             get { return this._refreshToken; }

@@ -3656,6 +3656,120 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("AutoScaling")]
+        public void RollbackInstanceRefreshMarshallTest()
+        {
+            var operation = service_model.FindOperation("RollbackInstanceRefresh");
+
+            var request = InstantiateClassGenerator.Execute<RollbackInstanceRefreshRequest>();
+            var marshaller = new RollbackInstanceRefreshRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = RollbackInstanceRefreshResponseUnmarshaller.Instance.Unmarshall(context)
+                as RollbackInstanceRefreshResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void RollbackInstanceRefresh_ActiveInstanceRefreshNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RollbackInstanceRefresh");
+
+            var request = InstantiateClassGenerator.Execute<RollbackInstanceRefreshRequest>();
+            var marshaller = new RollbackInstanceRefreshRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ActiveInstanceRefreshNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RollbackInstanceRefreshResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void RollbackInstanceRefresh_IrreversibleInstanceRefreshExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RollbackInstanceRefresh");
+
+            var request = InstantiateClassGenerator.Execute<RollbackInstanceRefreshRequest>();
+            var marshaller = new RollbackInstanceRefreshRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("IrreversibleInstanceRefreshException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RollbackInstanceRefreshResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void RollbackInstanceRefresh_LimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RollbackInstanceRefresh");
+
+            var request = InstantiateClassGenerator.Execute<RollbackInstanceRefreshRequest>();
+            var marshaller = new RollbackInstanceRefreshRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("LimitExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RollbackInstanceRefreshResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
+        public void RollbackInstanceRefresh_ResourceContentionExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RollbackInstanceRefresh");
+
+            var request = InstantiateClassGenerator.Execute<RollbackInstanceRefreshRequest>();
+            var marshaller = new RollbackInstanceRefreshRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceContentionException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RollbackInstanceRefreshResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("AutoScaling")]
         public void SetDesiredCapacityMarshallTest()
         {
             var operation = service_model.FindOperation("SetDesiredCapacity");

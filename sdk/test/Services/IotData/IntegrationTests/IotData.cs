@@ -28,7 +28,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         [ClassInitialize]
         public static void ClassInitialize(TestContext testContext)
         {
-            Client = new AmazonIotDataClient("https://data.iot.us-east-1.amazonaws.com/");
+            Client = new AmazonIotDataClient("https://data-ats.iot.us-east-1.amazonaws.com/");
 
             using (var iotClient = new AmazonIoTClient())
             {

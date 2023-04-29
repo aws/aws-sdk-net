@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Filters the response form the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListExports.html">ListExports</a>
+    /// Filters the response form the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListExports.html">ListExports</a>
     /// operation
     /// </summary>
     public partial class ExportFilter

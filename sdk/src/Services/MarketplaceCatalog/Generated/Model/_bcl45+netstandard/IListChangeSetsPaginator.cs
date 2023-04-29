@@ -29,5 +29,10 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListChangeSetsResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the ChangeSetSummaryList
+        /// </summary>
+        IPaginatedEnumerable<ChangeSetSummaryListItem> ChangeSetSummaryList { get; }
     }
 }

@@ -34,6 +34,7 @@ namespace Amazon.FraudDetector.Model
     public partial class OFIModelPerformance
     {
         private float? _auc;
+        private UncertaintyRange _uncertaintyRange;
 
         /// <summary>
         /// Gets and sets the property Auc. 
@@ -52,6 +53,25 @@ namespace Amazon.FraudDetector.Model
         internal bool IsSetAuc()
         {
             return this._auc.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property UncertaintyRange. 
+        /// <para>
+        ///  Indicates the range of area under curve (auc) expected from the OFI model. A range
+        /// greater than 0.1 indicates higher model uncertainity. 
+        /// </para>
+        /// </summary>
+        public UncertaintyRange UncertaintyRange
+        {
+            get { return this._uncertaintyRange; }
+            set { this._uncertaintyRange = value; }
+        }
+
+        // Check to see if UncertaintyRange property is set
+        internal bool IsSetUncertaintyRange()
+        {
+            return this._uncertaintyRange != null;
         }
 
     }

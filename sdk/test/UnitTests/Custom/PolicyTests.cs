@@ -79,5 +79,29 @@ namespace AWSSDK_DotNet35.UnitTests
 
             Assert.AreEqual(Principal.Anonymous, roundTripPolicy.Statements[0].Principals[0]);
         }
+        
+        [TestMethod]
+        public void CheckIfStatementExists_DoesCaseInsensitiveComparisonOnActions()
+        {
+            var action = "GetBucketAcl";
+
+            var policy = new Policy()
+            {
+                Statements =
+                {
+                    new Statement(Statement.StatementEffect.Allow)
+                    {
+                        Actions = { new ActionIdentifier(action.ToLower()) }
+                    }
+                }
+            };
+
+            var statementToCheck = new Statement(Statement.StatementEffect.Allow);
+            statementToCheck.Actions.Add(new ActionIdentifier(action));
+
+            var result = policy.CheckIfStatementExists(statementToCheck);
+
+            Assert.IsTrue(result);
+        }
     }
 }

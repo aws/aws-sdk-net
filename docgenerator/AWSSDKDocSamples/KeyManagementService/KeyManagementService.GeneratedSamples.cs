@@ -1024,7 +1024,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceSign()
         {
-            #region to-digitally-sign-a-message-with-an-asymmetric-kms-key-1628631433832
+            #region to-digitally-sign-a-message-with-an-asymmetric-kms-key-1
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.Sign(new SignRequest 
@@ -1033,6 +1033,26 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 Message = new MemoryStream(<message to be signed>), // Message to be signed. Use Base-64 for the CLI.
                 MessageType = "RAW", // Indicates whether the message is RAW or a DIGEST.
                 SigningAlgorithm = "ECDSA_SHA_384" // The requested signing algorithm. This must be an algorithm that the KMS key supports.
+            });
+
+            string keyId = response.KeyId; // The key ARN of the asymmetric KMS key that was used to sign the message.
+            MemoryStream signature = response.Signature; // The digital signature of the message.
+            string signingAlgorithm = response.SigningAlgorithm; // The actual signing algorithm that was used to generate the signature.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceSign()
+        {
+            #region to-digitally-sign-a-message-digest-with-an-asymmetric-kms-key-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.Sign(new SignRequest 
+            {
+                KeyId = "alias/RSA_signing_key", // The asymmetric KMS key to be used to generate the digital signature. This example uses an alias of the KMS key.
+                Message = new MemoryStream(<message digest to be signed>), // Message to be signed. Use Base-64 for the CLI.
+                MessageType = "DIGEST", // Indicates whether the message is RAW or a DIGEST. When it is RAW, KMS hashes the message before signing. When it is DIGEST, KMS skips the hashing step and signs the Message value.
+                SigningAlgorithm = "RSASSA_PKCS1_V1_5_SHA_256" // The requested signing algorithm. This must be an algorithm that the KMS key supports.
             });
 
             string keyId = response.KeyId; // The key ARN of the asymmetric KMS key that was used to sign the message.
@@ -1222,7 +1242,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceVerify()
         {
-            #region to-use-an-asymmetric-kms-key-to-verify-a-digital-signature-1628633365663
+            #region to-use-an-asymmetric-kms-key-to-verify-a-digital-signature-1
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.Verify(new VerifyRequest 
@@ -1232,6 +1252,27 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 MessageType = "RAW", // Indicates whether the message is RAW or a DIGEST.
                 Signature = new MemoryStream(<binary data>), // The signature to be verified.
                 SigningAlgorithm = "ECDSA_SHA_384" // The signing algorithm to be used to verify the signature.
+            });
+
+            string keyId = response.KeyId; // The key ARN of the asymmetric KMS key that was used to verify the digital signature.
+            bool signatureValid = response.SignatureValid; // A value of 'true' Indicates that the signature was verified. If verification fails, the call to Verify fails.
+            string signingAlgorithm = response.SigningAlgorithm; // The signing algorithm that was used to verify the signature.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceVerify()
+        {
+            #region to-use-an-asymmetric-kms-key-to-verify-a-digital-signature-on-a-message-digest-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.Verify(new VerifyRequest 
+            {
+                KeyId = "arn:aws:kms:us-east-2:111122223333:key/0987dcba-09fe-87dc-65ba-ab0987654321", // The asymmetric KMS key to be used to verify the digital signature. This example uses an alias to identify the KMS key.
+                Message = new MemoryStream(<message digest to be verified>), // The message that was signed.
+                MessageType = "DIGEST", // Indicates whether the message is RAW or a DIGEST. When it is RAW, KMS hashes the message before signing. When it is DIGEST, KMS skips the hashing step and signs the Message value.
+                Signature = new MemoryStream(<binary data>), // The signature to be verified.
+                SigningAlgorithm = "RSASSA_PSS_SHA_512" // The signing algorithm to be used to verify the signature.
             });
 
             string keyId = response.KeyId; // The key ARN of the asymmetric KMS key that was used to verify the digital signature.

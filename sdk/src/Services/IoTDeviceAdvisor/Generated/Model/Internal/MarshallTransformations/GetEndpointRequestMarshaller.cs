@@ -59,8 +59,14 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetAuthenticationMethod())
+                request.Parameters.Add("authenticationMethod", StringUtils.FromString(publicRequest.AuthenticationMethod));
+            
             if (publicRequest.IsSetCertificateArn())
                 request.Parameters.Add("certificateArn", StringUtils.FromString(publicRequest.CertificateArn));
+            
+            if (publicRequest.IsSetDeviceRoleArn())
+                request.Parameters.Add("deviceRoleArn", StringUtils.FromString(publicRequest.DeviceRoleArn));
             
             if (publicRequest.IsSetThingArn())
                 request.Parameters.Add("thingArn", StringUtils.FromString(publicRequest.ThingArn));

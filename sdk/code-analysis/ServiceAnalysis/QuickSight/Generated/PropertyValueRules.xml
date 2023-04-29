@@ -259,6 +259,12 @@
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.CreateRefreshScheduleRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.CreateTemplateRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -433,6 +439,12 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteDataSetRefreshPropertiesRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteDataSourceRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -543,6 +555,12 @@
     <property>Amazon.QuickSight.Model.DeleteNamespaceRequest.Namespace</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DeleteRefreshScheduleRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DeleteTemplateRequest.AwsAccountId</property>
@@ -848,6 +866,12 @@
     <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeDataSetRefreshPropertiesRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeDataSourceRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -995,6 +1019,12 @@
     <property>Amazon.QuickSight.Model.DescribeNamespaceRequest.Namespace</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.DescribeRefreshScheduleRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.DescribeTemplateRequest.AliasName</property>
@@ -1410,6 +1440,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.ListRefreshSchedulesRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ListTemplateAliasesRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
@@ -1535,6 +1571,12 @@
     <property>Amazon.QuickSight.Model.ListUsersRequest.Namespace</property>
     <max>64</max>
     <pattern>^[a-zA-Z0-9._-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.PutDataSetRefreshPropertiesRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.RegisterUserRequest.AwsAccountId</property>
@@ -1926,6 +1968,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.UpdatePublicSharingSettingsRequest.AwsAccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.UpdateRefreshScheduleRequest.AwsAccountId</property>
     <min>12</min>
     <max>12</max>
     <pattern>^[0-9]{12}$</pattern>
@@ -3182,6 +3230,10 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.LookbackWindow.Size</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.ManifestFileLocation.Bucket</property>
     <min>1</min>
     <max>1024</max>
@@ -3703,6 +3755,11 @@
     <max>10</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.QuickSight.Model.S3Parameters.RoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.QuickSight.Model.SankeyDiagramVisual.VisualId</property>
     <min>1</min>
     <max>512</max>
@@ -3713,6 +3770,12 @@
     <min>1</min>
     <max>512</max>
     <pattern>[\w\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.QuickSight.Model.ScheduleRefreshOnEntity.DayOfMonth</property>
+    <min>1</min>
+    <max>17</max>
+    <pattern>^(?:LAST_DAY_OF_MONTH|1[0-9]|2[0-8]|[12]|[3-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.QuickSight.Model.ServiceNowParameters.SiteBaseUrl</property>

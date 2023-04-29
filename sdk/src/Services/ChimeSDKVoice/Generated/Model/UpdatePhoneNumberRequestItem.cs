@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The phone number ID, product type, or calling name fields to update, used with the
+    /// <a>BatchUpdatePhoneNumber</a> and <a>UpdatePhoneNumber</a> actions.
     /// </summary>
     public partial class UpdatePhoneNumberRequestItem
     {
@@ -38,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private PhoneNumberProductType _productType;
 
         /// <summary>
-        /// Gets and sets the property CallingName.
+        /// Gets and sets the property CallingName. 
+        /// <para>
+        /// The outbound calling name to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string CallingName
@@ -54,7 +58,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberId.
+        /// Gets and sets the property PhoneNumberId. 
+        /// <para>
+        /// The phone number ID to update.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public string PhoneNumberId
@@ -70,7 +77,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductType.
+        /// Gets and sets the property ProductType. 
+        /// <para>
+        /// The product type to update.
+        /// </para>
         /// </summary>
         public PhoneNumberProductType ProductType
         {

@@ -33,18 +33,17 @@ namespace Amazon.Keyspaces.Model
     /// with Key Management Service for storing and managing the encryption key. You can choose
     /// one of the following KMS keys (KMS keys):
     /// 
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// • Amazon Web Services owned key - This is the default encryption type. The key is
-    /// owned by Amazon Keyspaces (no additional charge). 
+    /// Amazon Web Services owned key - This is the default encryption type. The key is owned
+    /// by Amazon Keyspaces (no additional charge). 
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// • Customer managed key - This key is stored in your account and is created, owned,
-    /// and managed by you. You have full control over the customer managed key (KMS charges
-    /// apply).
+    /// Customer managed key - This key is stored in your account and is created, owned, and
+    /// managed by you. You have full control over the customer managed key (KMS charges apply).
     /// </para>
-    ///  
+    ///  </li> </ul> 
     /// <para>
     /// For more information about encryption at rest in Amazon Keyspaces, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/EncryptionAtRest.html">Encryption
     /// at rest</a> in the <i>Amazon Keyspaces Developer Guide</i>.
@@ -85,17 +84,17 @@ namespace Amazon.Keyspaces.Model
         /// The encryption option specified for the table. You can choose one of the following
         /// KMS keys (KMS keys):
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
+        ///  <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
-        /// and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
+        ///  <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and
+        /// is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
         /// of the KMS key in Amazon Resource Name (ARN) format as input. 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// The default is <code>type:AWS_OWNED_KMS_KEY</code>. 
         /// </para>

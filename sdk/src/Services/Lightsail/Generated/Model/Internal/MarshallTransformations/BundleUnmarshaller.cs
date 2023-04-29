@@ -118,6 +118,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     unmarshalledObject.RamSizeInGb = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("supportedAppCategories", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedAppCategories = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("supportedPlatforms", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

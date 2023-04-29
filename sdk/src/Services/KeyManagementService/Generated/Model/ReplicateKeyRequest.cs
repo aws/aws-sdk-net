@@ -159,7 +159,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property BypassPolicyLockoutSafetyCheck. 
         /// <para>
-        /// A flag to indicate whether to bypass the key policy lockout safety check.
+        /// Skips ("bypasses") the key policy lockout safety check. The default value is false.
         /// </para>
         ///  <important> 
         /// <para>
@@ -168,17 +168,13 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
-        /// Key Policy</a> section in the <i>Key Management Service Developer Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
+        /// key policy</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
         /// Use this parameter only when you intend to prevent the principal that is making the
-        /// request from making a subsequent <code>PutKeyPolicy</code> request on the KMS key.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default value is false.
+        /// request from making a subsequent <a>PutKeyPolicy</a> request on the KMS key.
         /// </para>
         /// </summary>
         public bool BypassPolicyLockoutSafetyCheck
@@ -279,21 +275,21 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
-        /// must give the caller <code>kms:PutKeyPolicy</code> permission on the replica key.
-        /// This reduces the risk that the KMS key becomes unmanageable. For more information,
-        /// refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
-        /// Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code>
+        /// request on the KMS key. This reduces the risk that the KMS key becomes unmanageable.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
+        /// key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this
+        /// condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.)
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Each statement in the key policy must contain one or more principals. The principals
         /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web
-        /// Services principal (for example, an IAM user or role), you might need to enforce a
-        /// delay before including the new principal in a key policy because the new principal
-        /// might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
-        /// that I make are not always immediately visible</a> in the <i> <i>Identity and Access
-        /// Management User Guide</i> </i>.
+        /// Services principal, you might need to enforce a delay before including the new principal
+        /// in a key policy because the new principal might not be immediately visible to KMS.
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+        /// that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity
+        /// and Access Management User Guide</i>.
         /// </para>
         ///  </li> </ul> 
         /// <para>

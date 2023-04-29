@@ -64,6 +64,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("id3", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Id3 = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tag", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

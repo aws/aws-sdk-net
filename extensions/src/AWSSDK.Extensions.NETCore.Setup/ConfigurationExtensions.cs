@@ -20,6 +20,7 @@ using Amazon.Runtime;
 using Amazon.Util;
 
 using Amazon.Extensions.NETCore.Setup;
+using System.Linq;
 
 namespace Microsoft.Extensions.Configuration
 {
@@ -68,7 +69,7 @@ namespace Microsoft.Extensions.Configuration
             {
                 try
                 {
-                    var property = clientConfigTypeInfo.GetDeclaredProperty(element.Key);
+                    var property = clientConfigTypeInfo.DeclaredProperties.SingleOrDefault(p => p.Name.Equals(element.Key, StringComparison.OrdinalIgnoreCase));
                     if (property == null || property.SetMethod == null)
                         continue;
 
@@ -82,6 +83,15 @@ namespace Microsoft.Extensions.Configuration
                         var milliSeconds = Convert.ToInt64(element.Value);
                         var timespan = TimeSpan.FromMilliseconds(milliSeconds);
                         property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { timespan });
+                    }
+                    else if (property.PropertyType.IsEnum)
+                    {
+
+                        var value = Enum.Parse(property.PropertyType, element.Value);
+                        if ( value != null )
+                        {
+                            property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { value });
+                        }
                     }
                 }
                 catch(Exception e)
@@ -131,6 +141,16 @@ namespace Microsoft.Extensions.Configuration
                     throw new ArgumentException($"Invalid value for DefaultConfiguration. Valid values are: {string.Join(", ", Enum.GetNames(typeof(DefaultConfigurationMode)))} ");
                 }
                 options.DefaultConfigurationMode = mode;
+            }
+
+            if (!string.IsNullOrEmpty(section["SessionRoleArn"]))
+            {
+                options.SessionRoleArn = section["SessionRoleArn"];
+            }
+
+            if (!string.IsNullOrEmpty(section["SessionName"]))
+            {
+                options.SessionName = section["SessionName"];
             }
 
             var loggingSection = section.GetSection("Logging");

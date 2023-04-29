@@ -63,7 +63,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property MaxDuration. 
         /// <para>
-        /// A max duration for the group.
+        /// A maximum run time for the group in minutes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100000)]
@@ -120,7 +120,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// A request ID for the group.
+        /// To ensure that requests don't run multiple times, specify a unique ID for each request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

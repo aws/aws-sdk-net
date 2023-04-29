@@ -45,6 +45,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ManagedRuleGroupConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAWSManagedRulesATPRuleSet())
+            {
+                context.Writer.WritePropertyName("AWSManagedRulesATPRuleSet");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AWSManagedRulesATPRuleSetMarshaller.Instance;
+                marshaller.Marshall(requestObject.AWSManagedRulesATPRuleSet, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAWSManagedRulesBotControlRuleSet())
             {
                 context.Writer.WritePropertyName("AWSManagedRulesBotControlRuleSet");

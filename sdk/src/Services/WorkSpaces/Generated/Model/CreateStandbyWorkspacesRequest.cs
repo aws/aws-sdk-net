@@ -30,7 +30,7 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateStandbyWorkspaces operation.
-    /// Creates a Standby WorkSpace in a secondary region.
+    /// Creates a standby WorkSpace in a secondary Region.
     /// </summary>
     public partial class CreateStandbyWorkspacesRequest : AmazonWorkSpacesRequest
     {
@@ -59,7 +59,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property StandbyWorkspaces. 
         /// <para>
-        /// Information about the Standby WorkSpace to be created.
+        /// Information about the standby WorkSpace to be created.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

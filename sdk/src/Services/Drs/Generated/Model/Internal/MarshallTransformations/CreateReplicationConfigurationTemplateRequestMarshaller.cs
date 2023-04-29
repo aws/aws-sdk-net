@@ -71,6 +71,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AssociateDefaultSecurityGroup);
                 }
 
+                if(publicRequest.IsSetAutoReplicateNewDisks())
+                {
+                    context.Writer.WritePropertyName("autoReplicateNewDisks");
+                    context.Writer.Write(publicRequest.AutoReplicateNewDisks);
+                }
+
                 if(publicRequest.IsSetBandwidthThrottling())
                 {
                     context.Writer.WritePropertyName("bandwidthThrottling");

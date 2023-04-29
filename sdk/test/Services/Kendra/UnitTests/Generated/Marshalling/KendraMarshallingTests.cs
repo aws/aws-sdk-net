@@ -701,6 +701,193 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Kendra")]
+        public void BatchDeleteFeaturedResultsSetMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<BatchDeleteFeaturedResultsSetRequest>();
+            var marshaller = new BatchDeleteFeaturedResultsSetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<BatchDeleteFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("BatchDeleteFeaturedResultsSet").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = BatchDeleteFeaturedResultsSetResponseUnmarshaller.Instance.Unmarshall(context) as BatchDeleteFeaturedResultsSetResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void BatchDeleteFeaturedResultsSet_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("BatchDeleteFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<BatchDeleteFeaturedResultsSetRequest>();
+            var marshaller = new BatchDeleteFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<BatchDeleteFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = BatchDeleteFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void BatchDeleteFeaturedResultsSet_InternalServerExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("BatchDeleteFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<BatchDeleteFeaturedResultsSetRequest>();
+            var marshaller = new BatchDeleteFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<BatchDeleteFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = BatchDeleteFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void BatchDeleteFeaturedResultsSet_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("BatchDeleteFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<BatchDeleteFeaturedResultsSetRequest>();
+            var marshaller = new BatchDeleteFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<BatchDeleteFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = BatchDeleteFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void BatchDeleteFeaturedResultsSet_ThrottlingExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("BatchDeleteFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<BatchDeleteFeaturedResultsSetRequest>();
+            var marshaller = new BatchDeleteFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<BatchDeleteFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = BatchDeleteFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void BatchDeleteFeaturedResultsSet_ValidationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("BatchDeleteFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<BatchDeleteFeaturedResultsSetRequest>();
+            var marshaller = new BatchDeleteFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<BatchDeleteFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = BatchDeleteFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
         public void BatchGetDocumentStatusMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<BatchGetDocumentStatusRequest>();
@@ -2406,6 +2593,257 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             };
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = CreateFaqResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void CreateFeaturedResultsSetMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<CreateFeaturedResultsSetRequest>();
+            var marshaller = new CreateFeaturedResultsSetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<CreateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateFeaturedResultsSet").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = CreateFeaturedResultsSetResponseUnmarshaller.Instance.Unmarshall(context) as CreateFeaturedResultsSetResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void CreateFeaturedResultsSet_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateFeaturedResultsSetRequest>();
+            var marshaller = new CreateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void CreateFeaturedResultsSet_ConflictExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateFeaturedResultsSetRequest>();
+            var marshaller = new CreateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void CreateFeaturedResultsSet_FeaturedResultsConflictExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateFeaturedResultsSetRequest>();
+            var marshaller = new CreateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("FeaturedResultsConflictException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","FeaturedResultsConflictException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void CreateFeaturedResultsSet_InternalServerExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateFeaturedResultsSetRequest>();
+            var marshaller = new CreateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void CreateFeaturedResultsSet_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateFeaturedResultsSetRequest>();
+            var marshaller = new CreateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void CreateFeaturedResultsSet_ThrottlingExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateFeaturedResultsSetRequest>();
+            var marshaller = new CreateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void CreateFeaturedResultsSet_ValidationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<CreateFeaturedResultsSetRequest>();
+            var marshaller = new CreateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5595,6 +6033,193 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Kendra")]
+        public void DescribeFeaturedResultsSetMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<DescribeFeaturedResultsSetRequest>();
+            var marshaller = new DescribeFeaturedResultsSetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<DescribeFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DescribeFeaturedResultsSet").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DescribeFeaturedResultsSetResponseUnmarshaller.Instance.Unmarshall(context) as DescribeFeaturedResultsSetResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void DescribeFeaturedResultsSet_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFeaturedResultsSetRequest>();
+            var marshaller = new DescribeFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void DescribeFeaturedResultsSet_InternalServerExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFeaturedResultsSetRequest>();
+            var marshaller = new DescribeFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void DescribeFeaturedResultsSet_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFeaturedResultsSetRequest>();
+            var marshaller = new DescribeFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void DescribeFeaturedResultsSet_ThrottlingExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFeaturedResultsSetRequest>();
+            var marshaller = new DescribeFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void DescribeFeaturedResultsSet_ValidationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DescribeFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<DescribeFeaturedResultsSetRequest>();
+            var marshaller = new DescribeFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DescribeFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DescribeFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
         public void DescribeIndexMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<DescribeIndexRequest>();
@@ -8643,6 +9268,193 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             };
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = ListFaqsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void ListFeaturedResultsSetsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListFeaturedResultsSetsRequest>();
+            var marshaller = new ListFeaturedResultsSetsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<ListFeaturedResultsSetsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListFeaturedResultsSets").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListFeaturedResultsSetsResponseUnmarshaller.Instance.Unmarshall(context) as ListFeaturedResultsSetsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void ListFeaturedResultsSets_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListFeaturedResultsSets");
+
+            var request = InstantiateClassGenerator.Execute<ListFeaturedResultsSetsRequest>();
+            var marshaller = new ListFeaturedResultsSetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListFeaturedResultsSetsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListFeaturedResultsSetsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void ListFeaturedResultsSets_InternalServerExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListFeaturedResultsSets");
+
+            var request = InstantiateClassGenerator.Execute<ListFeaturedResultsSetsRequest>();
+            var marshaller = new ListFeaturedResultsSetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListFeaturedResultsSetsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListFeaturedResultsSetsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void ListFeaturedResultsSets_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListFeaturedResultsSets");
+
+            var request = InstantiateClassGenerator.Execute<ListFeaturedResultsSetsRequest>();
+            var marshaller = new ListFeaturedResultsSetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListFeaturedResultsSetsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListFeaturedResultsSetsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void ListFeaturedResultsSets_ThrottlingExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListFeaturedResultsSets");
+
+            var request = InstantiateClassGenerator.Execute<ListFeaturedResultsSetsRequest>();
+            var marshaller = new ListFeaturedResultsSetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListFeaturedResultsSetsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListFeaturedResultsSetsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void ListFeaturedResultsSets_ValidationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListFeaturedResultsSets");
+
+            var request = InstantiateClassGenerator.Execute<ListFeaturedResultsSetsRequest>();
+            var marshaller = new ListFeaturedResultsSetsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListFeaturedResultsSetsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListFeaturedResultsSetsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -11740,6 +12552,225 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             };
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = UpdateExperienceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void UpdateFeaturedResultsSetMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<UpdateFeaturedResultsSetRequest>();
+            var marshaller = new UpdateFeaturedResultsSetRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<UpdateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("UpdateFeaturedResultsSet").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = UpdateFeaturedResultsSetResponseUnmarshaller.Instance.Unmarshall(context) as UpdateFeaturedResultsSetResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void UpdateFeaturedResultsSet_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("UpdateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateFeaturedResultsSetRequest>();
+            var marshaller = new UpdateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<UpdateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = UpdateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void UpdateFeaturedResultsSet_FeaturedResultsConflictExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("UpdateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateFeaturedResultsSetRequest>();
+            var marshaller = new UpdateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<UpdateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("FeaturedResultsConflictException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","FeaturedResultsConflictException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = UpdateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void UpdateFeaturedResultsSet_InternalServerExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("UpdateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateFeaturedResultsSetRequest>();
+            var marshaller = new UpdateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<UpdateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = UpdateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void UpdateFeaturedResultsSet_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("UpdateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateFeaturedResultsSetRequest>();
+            var marshaller = new UpdateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<UpdateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = UpdateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void UpdateFeaturedResultsSet_ThrottlingExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("UpdateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateFeaturedResultsSetRequest>();
+            var marshaller = new UpdateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<UpdateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = UpdateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Kendra")]
+        public void UpdateFeaturedResultsSet_ValidationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("UpdateFeaturedResultsSet");
+
+            var request = InstantiateClassGenerator.Execute<UpdateFeaturedResultsSetRequest>();
+            var marshaller = new UpdateFeaturedResultsSetRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<UpdateFeaturedResultsSetRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = UpdateFeaturedResultsSetResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

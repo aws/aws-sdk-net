@@ -43,7 +43,10 @@ namespace Amazon.Glue.Model
         private DirectSchemaChangePolicy _schemaChangePolicy;
 
         /// <summary>
-        /// Gets and sets the property AdditionalOptions.
+        /// Gets and sets the property AdditionalOptions. 
+        /// <para>
+        /// Specifies additional connection options for the connector.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Dictionary<string, string> AdditionalOptions
@@ -173,7 +176,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SchemaChangePolicy.
+        /// Gets and sets the property SchemaChangePolicy. 
+        /// <para>
+        /// A policy that specifies update behavior for the crawler.
+        /// </para>
         /// </summary>
         public DirectSchemaChangePolicy SchemaChangePolicy
         {

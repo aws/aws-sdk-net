@@ -44,6 +44,7 @@ namespace Amazon.Kafka.Model
         private string _operationType;
         private MutableClusterInfo _sourceClusterInfo;
         private MutableClusterInfo _targetClusterInfo;
+        private VpcConnectionInfo _vpcConnectionInfo;
 
         /// <summary>
         /// Gets and sets the property ClientRequestId.             
@@ -241,6 +242,25 @@ namespace Amazon.Kafka.Model
         internal bool IsSetTargetClusterInfo()
         {
             return this._targetClusterInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcConnectionInfo.             
+        /// <para>
+        /// Description of the VPC connection for CreateVpcConnection and DeleteVpcConnection
+        /// operations.
+        /// </para>
+        /// </summary>
+        public VpcConnectionInfo VpcConnectionInfo
+        {
+            get { return this._vpcConnectionInfo; }
+            set { this._vpcConnectionInfo = value; }
+        }
+
+        // Check to see if VpcConnectionInfo property is set
+        internal bool IsSetVpcConnectionInfo()
+        {
+            return this._vpcConnectionInfo != null;
         }
 
     }

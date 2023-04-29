@@ -253,7 +253,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property TransitGatewayId. 
         /// <para>
-        /// The ID of the transit gateway set up by the environment. 
+        /// The ID of the Transit Gateway set up by the environment. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=21, Max=21)]

@@ -189,8 +189,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property FlexMatchMode. 
         /// <para>
-        /// Indicates whether this matchmaking configuration is being used with GameLift hosting
-        /// or as a standalone matchmaking solution. 
+        /// Indicates whether this matchmaking configuration is being used with Amazon GameLift
+        /// hosting or as a standalone matchmaking solution. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -200,8 +200,8 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified GameLift queue
-        /// to start a game session for the match. 
+        ///  <b>WITH_QUEUE</b> - FlexMatch forms matches and uses the specified Amazon GameLift
+        /// queue to start a game session for the match. 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -269,11 +269,12 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property GameSessionQueueArns. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a GameLift game session queue resource and uniquely identifies
+        /// that is assigned to a Amazon GameLift game session queue resource and uniquely identifies
         /// it. ARNs are unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
         /// name&gt;</code>. Queues can be located in any Region. Queues are used to start new
-        /// GameLift-hosted game sessions for matches that are created with this matchmaking configuration.
-        /// If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do not set this parameter.
+        /// Amazon GameLift-hosted game sessions for matches that are created with this matchmaking
+        /// configuration. If <code>FlexMatchMode</code> is set to <code>STANDALONE</code>, do
+        /// not set this parameter.
         /// </para>
         /// </summary>
         public List<string> GameSessionQueueArns

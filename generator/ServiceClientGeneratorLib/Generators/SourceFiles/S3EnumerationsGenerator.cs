@@ -16,7 +16,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+    #line 1 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class S3EnumerationsGenerator : S3EnumerationsGeneratorBase
     {
@@ -52,85 +52,46 @@ namespace Amazon.S3
     {
 ");
             
-            #line 28 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
- foreach(var endpoint in endpoints) { 
+            #line 27 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+ foreach (var endpoint in Endpoints) { 
             
             #line default
             #line hidden
             this.Write("        /// <summary>\r\n        /// Specifies that the S3 Bucket should use the ");
             
-            #line 30 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+            #line 29 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.RegionCode));
             
             #line default
             #line hidden
             this.Write(" locality.\r\n        /// </summary>\r\n        public static readonly S3Region ");
             
-            #line 32 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+            #line 31 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.Name));
             
             #line default
             #line hidden
             this.Write(" = new S3Region(\"");
             
-            #line 32 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+            #line 31 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.ConvertedRegionCode));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n");
             
-            #line 34 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+            #line 33 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("    }\r\n}");
+            this.Write("    }\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
+        #line 37 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\S3EnumerationsGenerator.tt"
 
-private global::System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant> _endpointsField;
-
-/// <summary>
-/// Access the endpoints parameter of the template.
-/// </summary>
-private global::System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant> endpoints
-{
-    get
-    {
-        return this._endpointsField;
-    }
-}
-
-
-/// <summary>
-/// Initialize the template
-/// </summary>
-public virtual void Initialize()
-{
-    if ((this.Errors.HasErrors == false))
-    {
-bool endpointsValueAcquired = false;
-if (this.Session.ContainsKey("endpoints"))
-{
-    this._endpointsField = ((global::System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant>)(this.Session["endpoints"]));
-    endpointsValueAcquired = true;
-}
-if ((endpointsValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("endpoints");
-    if ((data != null))
-    {
-        this._endpointsField = ((global::System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant>)(data));
-    }
-}
-
-
-    }
-}
-
+public System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant> Endpoints { get; set; }
 
         
         #line default

@@ -44,7 +44,7 @@ namespace Amazon.Appflow.Model
         /// app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Max=4096)]
         public string AuthCode
         {
             get { return this._authCode; }

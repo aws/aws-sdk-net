@@ -39,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private int? _validationResult;
 
         /// <summary>
-        /// Gets and sets the property Address.
+        /// Gets and sets the property Address. 
+        /// <para>
+        /// The validated address.
+        /// </para>
         /// </summary>
         public Address Address
         {
@@ -54,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AddressExternalId.
+        /// Gets and sets the property AddressExternalId. 
+        /// <para>
+        /// The ID that represents the address.
+        /// </para>
         /// </summary>
         public string AddressExternalId
         {
@@ -69,7 +75,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CandidateAddressList.
+        /// Gets and sets the property CandidateAddressList. 
+        /// <para>
+        /// The list of address suggestions..
+        /// </para>
         /// </summary>
         public List<CandidateAddress> CandidateAddressList
         {
@@ -84,7 +93,13 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ValidationResult.
+        /// Gets and sets the property ValidationResult. 
+        /// <para>
+        /// Number indicating the result of address validation. <code>0</code> means the address
+        /// was perfect as-is and successfully validated. <code>1</code> means the address was
+        /// corrected. <code>2</code> means the address sent was not close enough and was not
+        /// validated.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2)]
         public int ValidationResult

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Output groups for this Live Event. Output groups contain information about where streams
-    /// should be distributed.
+    /// Caption Selector
     /// </summary>
     public partial class CaptionSelector
     {

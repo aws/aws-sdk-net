@@ -30,7 +30,15 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVoiceConnectorGroup operation.
+    /// Creates an Amazon Chime SDK Voice Connector group under the administrator's AWS account.
+    /// You can associate Amazon Chime SDK Voice Connectors with the Voice Connector group
+    /// by including <code>VoiceConnectorItems</code> in the request. 
     /// 
+    ///  
+    /// <para>
+    /// You can include Voice Connectors from different AWS Regions in your group. This creates
+    /// a fault tolerant mechanism for fallback in case of availability events.
+    /// </para>
     /// </summary>
     public partial class CreateVoiceConnectorGroupRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +46,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<VoiceConnectorItem> _voiceConnectorItems = new List<VoiceConnectorItem>();
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the Voice Connector group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
@@ -54,7 +65,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorItems.
+        /// Gets and sets the property VoiceConnectorItems. 
+        /// <para>
+        /// Lists the Voice Connectors that inbound calls are routed to.
+        /// </para>
         /// </summary>
         public List<VoiceConnectorItem> VoiceConnectorItems
         {

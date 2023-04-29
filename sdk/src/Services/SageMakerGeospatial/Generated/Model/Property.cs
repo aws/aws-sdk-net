@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// Represents a single searchable property to search on.
     /// </summary>
     public partial class Property
     {
@@ -41,7 +41,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private ViewSunElevationInput _viewSunElevation;
 
         /// <summary>
-        /// Gets and sets the property EoCloudCover.
+        /// Gets and sets the property EoCloudCover. 
+        /// <para>
+        /// The structure representing EoCloudCover property filter containing a lower bound and
+        /// upper bound.
+        /// </para>
         /// </summary>
         public EoCloudCoverInput EoCloudCover
         {
@@ -56,7 +60,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LandsatCloudCoverLand.
+        /// Gets and sets the property LandsatCloudCoverLand. 
+        /// <para>
+        /// The structure representing Land Cloud Cover property filter for Landsat collection
+        /// containing a lower bound and upper bound.
+        /// </para>
         /// </summary>
         public LandsatCloudCoverLandInput LandsatCloudCoverLand
         {
@@ -71,7 +79,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform.
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// The structure representing Platform property filter consisting of value and comparison
+        /// operator.
+        /// </para>
         /// </summary>
         public PlatformInput Platform
         {
@@ -86,7 +98,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViewOffNadir.
+        /// Gets and sets the property ViewOffNadir. 
+        /// <para>
+        /// The structure representing ViewOffNadir property filter containing a lower bound and
+        /// upper bound.
+        /// </para>
         /// </summary>
         public ViewOffNadirInput ViewOffNadir
         {
@@ -101,7 +117,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViewSunAzimuth.
+        /// Gets and sets the property ViewSunAzimuth. 
+        /// <para>
+        /// The structure representing ViewSunAzimuth property filter containing a lower bound
+        /// and upper bound.
+        /// </para>
         /// </summary>
         public ViewSunAzimuthInput ViewSunAzimuth
         {
@@ -116,7 +136,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViewSunElevation.
+        /// Gets and sets the property ViewSunElevation. 
+        /// <para>
+        /// The structure representing ViewSunElevation property filter containing a lower bound
+        /// and upper bound.
+        /// </para>
         /// </summary>
         public ViewSunElevationInput ViewSunElevation
         {

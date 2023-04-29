@@ -106,6 +106,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                     unmarshalledObject.RecoveryPointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ResourceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

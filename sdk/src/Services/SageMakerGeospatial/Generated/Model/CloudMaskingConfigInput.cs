@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// Input structure for CloudMasking operation type.
     /// </summary>
     public partial class CloudMaskingConfigInput
     {

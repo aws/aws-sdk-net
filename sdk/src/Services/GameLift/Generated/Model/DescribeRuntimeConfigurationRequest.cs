@@ -31,7 +31,7 @@ namespace Amazon.GameLift.Model
     /// <summary>
     /// Container for the parameters to the DescribeRuntimeConfiguration operation.
     /// Retrieves a fleet's runtime configuration settings. The runtime configuration tells
-    /// GameLift which server processes to run (and how) on each instance in the fleet.
+    /// Amazon GameLift which server processes to run (and how) on each instance in the fleet.
     /// 
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift fleets</a> 
+    /// up Amazon GameLift fleets</a> 
     /// </para>
     ///  
     /// <para>

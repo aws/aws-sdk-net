@@ -88,6 +88,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScanStartedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scanType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScanType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sources", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

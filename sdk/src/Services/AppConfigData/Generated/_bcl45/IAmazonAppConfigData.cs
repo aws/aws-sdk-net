@@ -62,7 +62,13 @@ namespace Amazon.AppConfigData
     /// to the session's client and used the first time it calls <code>GetLatestConfiguration</code>
     /// for that session.
     /// </para>
-    ///  
+    ///  <important> 
+    /// <para>
+    /// This token should only be used once in your first call to <code>GetLatestConfiguration</code>.
+    /// You <i>must</i> use the new token in the <code>GetLatestConfiguration</code> response
+    /// (<code>NextPollConfigurationToken</code>) in each subsequent call to <code>GetLatestConfiguration</code>.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// When calling <code>GetLatestConfiguration</code>, your client code sends the most
     /// recent <code>ConfigurationToken</code> value it has and receives in response:
@@ -84,11 +90,18 @@ namespace Amazon.AppConfigData
     /// The configuration: the latest data intended for the session. This may be empty if
     /// the client already has the latest version of the configuration.
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> <important> 
+    /// <para>
+    /// The <code>InitialConfigurationToken</code> and <code>NextPollConfigurationToken</code>
+    /// should only be used once. To support long poll use cases, the tokens are valid for
+    /// up to 24 hours. If a <code>GetLatestConfiguration</code> call uses an expired token,
+    /// the system returns <code>BadRequestException</code>.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// For more information and to view example CLI commands that show how to retrieve a
     /// configuration using the AppConfig Data <code>StartConfigurationSession</code> and
-    /// <code>GetLatestConfiguration</code> API actions, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
+    /// <code>GetLatestConfiguration</code> API actions, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
     /// the configuration</a> in the <i>AppConfig User Guide</i>.
     /// </para>
     /// </summary>
@@ -104,7 +117,7 @@ namespace Amazon.AppConfigData
         /// Retrieves the latest deployed configuration. This API may return empty configuration
         /// data if the client already has the latest version. For more information about this
         /// API action and to view example CLI commands that show how to use it with the <a>StartConfigurationSession</a>
-        /// API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
+        /// API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
         /// the configuration</a> in the <i>AppConfig User Guide</i>. 
         /// 
         ///  <important> 
@@ -149,7 +162,7 @@ namespace Amazon.AppConfigData
         /// Retrieves the latest deployed configuration. This API may return empty configuration
         /// data if the client already has the latest version. For more information about this
         /// API action and to view example CLI commands that show how to use it with the <a>StartConfigurationSession</a>
-        /// API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
+        /// API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
         /// the configuration</a> in the <i>AppConfig User Guide</i>. 
         /// 
         ///  <important> 
@@ -199,7 +212,7 @@ namespace Amazon.AppConfigData
         /// <summary>
         /// Starts a configuration session used to retrieve a deployed configuration. For more
         /// information about this API action and to view example CLI commands that show how to
-        /// use it with the <a>GetLatestConfiguration</a> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
+        /// use it with the <a>GetLatestConfiguration</a> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
         /// the configuration</a> in the <i>AppConfig User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartConfigurationSession service method.</param>
@@ -225,7 +238,7 @@ namespace Amazon.AppConfigData
         /// <summary>
         /// Starts a configuration session used to retrieve a deployed configuration. For more
         /// information about this API action and to view example CLI commands that show how to
-        /// use it with the <a>GetLatestConfiguration</a> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Receiving
+        /// use it with the <a>GetLatestConfiguration</a> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving
         /// the configuration</a> in the <i>AppConfig User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartConfigurationSession service method.</param>

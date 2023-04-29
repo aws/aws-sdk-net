@@ -43,6 +43,7 @@ namespace Amazon.Connect.Model
         private string _previousContactId;
         private string _quickConnectId;
         private Dictionary<string, Reference> _references = new Dictionary<string, Reference>();
+        private string _relatedContactId;
         private DateTime? _scheduledTime;
         private string _taskTemplateId;
 
@@ -142,8 +143,8 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property InstanceId. 
         /// <para>
-        /// The identifier of the Amazon Connect instance. You can find the instanceId in the
-        /// ARN of the instance.
+        /// The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -231,6 +232,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetReferences()
         {
             return this._references != null && this._references.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RelatedContactId. 
+        /// <para>
+        /// The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a>
+        /// to this contact.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string RelatedContactId
+        {
+            get { return this._relatedContactId; }
+            set { this._relatedContactId = value; }
+        }
+
+        // Check to see if RelatedContactId property is set
+        internal bool IsSetRelatedContactId()
+        {
+            return this._relatedContactId != null;
         }
 
         /// <summary>

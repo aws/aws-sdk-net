@@ -34,13 +34,34 @@ namespace Amazon.LexModelsV2.Model
     /// </summary>
     public partial class CreateBotRequest : AmazonLexModelsV2Request
     {
+        private List<BotMember> _botMembers = new List<BotMember>();
         private string _botName;
         private Dictionary<string, string> _botTags = new Dictionary<string, string>();
+        private BotType _botType;
         private DataPrivacy _dataPrivacy;
         private string _description;
         private int? _idleSessionTTLInSeconds;
         private string _roleArn;
         private Dictionary<string, string> _testBotAliasTags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property BotMembers. 
+        /// <para>
+        /// The list of bot members in a network to be created.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<BotMember> BotMembers
+        {
+            get { return this._botMembers; }
+            set { this._botMembers = value; }
+        }
+
+        // Check to see if BotMembers property is set
+        internal bool IsSetBotMembers()
+        {
+            return this._botMembers != null && this._botMembers.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property BotName. 
@@ -80,6 +101,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetBotTags()
         {
             return this._botTags != null && this._botTags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property BotType. 
+        /// <para>
+        /// The type of a bot to create.
+        /// </para>
+        /// </summary>
+        public BotType BotType
+        {
+            get { return this._botType; }
+            set { this._botType = value; }
+        }
+
+        // Check to see if BotType property is set
+        internal bool IsSetBotType()
+        {
+            return this._botType != null;
         }
 
         /// <summary>

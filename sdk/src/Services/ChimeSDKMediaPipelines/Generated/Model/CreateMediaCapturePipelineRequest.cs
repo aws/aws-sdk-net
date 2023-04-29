@@ -164,7 +164,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The tag key-value pairs.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

@@ -101,6 +101,17 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetZoneIds())
+            {
+                context.Writer.WritePropertyName("zoneIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectZoneIdsListValue in requestObject.ZoneIds)
+                {
+                        context.Writer.Write(requestObjectZoneIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

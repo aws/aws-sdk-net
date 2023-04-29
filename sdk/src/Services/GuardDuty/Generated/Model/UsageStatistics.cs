@@ -36,6 +36,7 @@ namespace Amazon.GuardDuty.Model
     {
         private List<UsageAccountResult> _sumByAccount = new List<UsageAccountResult>();
         private List<UsageDataSourceResult> _sumByDataSource = new List<UsageDataSourceResult>();
+        private List<UsageFeatureResult> _sumByFeature = new List<UsageFeatureResult>();
         private List<UsageResourceResult> _sumByResource = new List<UsageResourceResult>();
         private List<UsageResourceResult> _topResources = new List<UsageResourceResult>();
 
@@ -73,6 +74,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetSumByDataSource()
         {
             return this._sumByDataSource != null && this._sumByDataSource.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SumByFeature. 
+        /// <para>
+        /// The usage statistic sum organized by feature.
+        /// </para>
+        /// </summary>
+        public List<UsageFeatureResult> SumByFeature
+        {
+            get { return this._sumByFeature; }
+            set { this._sumByFeature = value; }
+        }
+
+        // Check to see if SumByFeature property is set
+        internal bool IsSetSumByFeature()
+        {
+            return this._sumByFeature != null && this._sumByFeature.Count > 0; 
         }
 
         /// <summary>

@@ -39,7 +39,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// The Amazon Web Services Verified Access policy document.
+        /// The Verified Access policy document.
         /// </para>
         /// </summary>
         public string PolicyDocument

@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the PutVoiceConnectorLoggingConfiguration operation.
-    /// 
+    /// Updates a Voice Connector's logging configuration.
     /// </summary>
     public partial class PutVoiceConnectorLoggingConfigurationRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property LoggingConfiguration.
+        /// Gets and sets the property LoggingConfiguration. 
+        /// <para>
+        /// The logging configuration being updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public LoggingConfiguration LoggingConfiguration
@@ -54,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

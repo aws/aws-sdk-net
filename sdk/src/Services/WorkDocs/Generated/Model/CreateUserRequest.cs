@@ -48,8 +48,8 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property AuthenticationToken. 
         /// <para>
-        /// Amazon WorkDocs authentication token. Not required when using AWS administrator credentials
-        /// to access the API.
+        /// Amazon WorkDocs authentication token. Not required when using Amazon Web Services
+        /// administrator credentials to access the API.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=8199)]
@@ -90,7 +90,7 @@ namespace Amazon.WorkDocs.Model
         /// The given name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string GivenName
         {
             get { return this._givenName; }
@@ -165,7 +165,7 @@ namespace Amazon.WorkDocs.Model
         /// The surname of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string Surname
         {
             get { return this._surname; }
@@ -203,7 +203,7 @@ namespace Amazon.WorkDocs.Model
         /// The login name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Username
         {
             get { return this._username; }

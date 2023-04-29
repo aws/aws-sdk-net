@@ -43,11 +43,11 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to
-    /// limit the number of results returned. This paginates the output, which makes the list
-    /// more manageable and returns the results faster. If the list of results exceeds your
-    /// <code>MaxResults</code> value, then that number of results is returned along with
-    /// a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code>
-    /// request to retrieve the remaining results.
+    /// limit the number of items returned. This paginates the output, which makes the list
+    /// more manageable and returns the items faster. If the list of items exceeds your <code>MaxResults</code>
+    /// value, then that number of items is returned along with a <code>NextToken</code> value
+    /// that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code> request
+    /// to retrieve the remaining items.
     /// </para>
     ///  
     /// <para>
@@ -65,7 +65,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// One or more filters.
+        /// The filters.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -267,9 +267,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. Specify a value between
-        /// 5 and 1000. To retrieve the remaining results, make another call with the returned
-        /// <code>NextToken</code> value.
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -287,8 +287,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to request the next set of results. This value is <code>null</code> when
-        /// there are no more results to return.
+        /// The token returned from a previous paginated request. Pagination continues from the
+        /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
         public string NextToken
@@ -306,7 +306,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotInstanceRequestIds. 
         /// <para>
-        /// One or more Spot Instance request IDs.
+        /// The IDs of the Spot Instance requests.
         /// </para>
         /// </summary>
         public List<string> SpotInstanceRequestIds

@@ -62,8 +62,11 @@ namespace Amazon.Lightsail.Model
         /// Gets and sets the property IsAlias. 
         /// <para>
         /// When <code>true</code>, specifies whether the domain entry is an alias used by the
-        /// Lightsail load balancer. You can include an alias (A type) record in your request,
-        /// which points to a load balancer DNS name and routes traffic to your load balancer.
+        /// Lightsail load balancer, Lightsail container service, Lightsail content delivery network
+        /// (CDN) distribution, or another Amazon Web Services resource. You can include an alias
+        /// (A type) record in your request, which points to the DNS name of a load balancer,
+        /// container service, CDN distribution, or other Amazon Web Services resource and routes
+        /// traffic to that resource.
         /// </para>
         /// </summary>
         public bool IsAlias

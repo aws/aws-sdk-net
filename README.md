@@ -25,7 +25,7 @@ The [GitHub issues][sdk-issues] are intended for bug reports and feature request
 
 ## SDK Change Log
 
-The change log for the SDK can be found in the [SDK.CHANGELOG.md](https://github.com/aws/aws-sdk-net/blob/master/SDK.CHANGELOG.md) file.
+The change log for the SDK can be found in the [SDK.CHANGELOG.ALL.md](https://github.com/aws/aws-sdk-net/blob/master/SDK.CHANGELOG.ALL.md) file. Change logs divided up by year can be found in the [changelogs folder](https://github.com/aws/aws-sdk-net/tree/master/changelogs).
 
 ## Maintenance and support for SDK major versions
 
@@ -410,6 +410,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Amazon Inspector identifies security issues in your application deployments.
 * [AWSSDK.Inspector2](https://www.nuget.org/packages/AWSSDK.Inspector2/)
 	* This release adds support for the new Amazon Inspector API. The new Amazon Inspector can automatically discover and scan Amazon EC2 instances and Amazon ECR container images for software vulnerabilities and unintended network exposure, and report centralized findings across multiple AWS accounts.
+* [AWSSDK.InternetMonitor](https://www.nuget.org/packages/AWSSDK.InternetMonitor/)
+	* CloudWatch Internet Monitor is a a new service within CloudWatch that will help application developers and network engineers continuously monitor internet performance metrics such as availability and performance between their AWS-hosted applications and end-users of these applications
 * [AWSSDK.IoT](https://www.nuget.org/packages/AWSSDK.IoT/)
 	* AWS IoT allows you to leverage AWS to build your Internet of Things.
 * [AWSSDK.IoT1ClickDevicesService](https://www.nuget.org/packages/AWSSDK.IoT1ClickDevicesService/)
@@ -448,6 +450,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Introducing Amazon Interactive Video Service - a managed live streaming solution that is quick and easy to set up, and ideal for creating interactive video experiences.
 * [AWSSDK.Ivschat](https://www.nuget.org/packages/AWSSDK.Ivschat/)
 	* Adds new APIs for IVS Chat, a feature for building interactive chat experiences alongside an IVS broadcast.
+* [AWSSDK.IVSRealTime](https://www.nuget.org/packages/AWSSDK.IVSRealTime/)
+	* Initial release of the Amazon Interactive Video Service RealTime API.
 * [AWSSDK.Kafka](https://www.nuget.org/packages/AWSSDK.Kafka/)
 	* Amazon Managed Streaming for Kafka (Amazon MSK). Amazon MSK is a service that you can use to easily build, monitor, and manage Apache Kafka clusters in the cloud.
 * [AWSSDK.KafkaConnect](https://www.nuget.org/packages/AWSSDK.KafkaConnect/)
@@ -584,6 +588,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations.
 * [AWSSDK.Organizations](https://www.nuget.org/packages/AWSSDK.Organizations/)
 	* AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.
+* [AWSSDK.OSIS](https://www.nuget.org/packages/AWSSDK.OSIS/)
+	* Initial release for OpenSearch Ingestion
 * [AWSSDK.Outposts](https://www.nuget.org/packages/AWSSDK.Outposts/)
 	* This is the initial release for AWS Outposts, a fully managed service that extends AWS infrastructure, services, APIs, and tools to customer sites. AWS Outposts enables you to launch and run EC2 instances and EBS volumes locally at your on-premises location. This release introduces new APIs for creating and viewing Outposts. 
 * [AWSSDK.Panorama](https://www.nuget.org/packages/AWSSDK.Panorama/)
@@ -752,6 +758,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* (New Service) Amazon Timestream is a fast, scalable, fully managed, purpose-built time series database that makes it easy to store and analyze trillions of time series data points per day.
 * [AWSSDK.TimestreamWrite](https://www.nuget.org/packages/AWSSDK.TimestreamWrite/)
 	* (New Service) Amazon Timestream is a fast, scalable, fully managed, purpose-built time series database that makes it easy to store and analyze trillions of time series data points per day.
+* [AWSSDK.Tnb](https://www.nuget.org/packages/AWSSDK.Tnb/)
+	* This is the initial SDK release for AWS Telco Network Builder (TNB). AWS Telco Network Builder is a network automation service that helps you deploy and manage telecom networks.
 * [AWSSDK.TranscribeService](https://www.nuget.org/packages/AWSSDK.TranscribeService/)
 	* Amazon Transcribe Public Preview Release
 * [AWSSDK.Transfer](https://www.nuget.org/packages/AWSSDK.Transfer/)
@@ -760,6 +768,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* Public preview release of Amazon Translate and the Amazon Translate Developer Guide. For more information, see the Amazon Translate Developer Guide.
 * [AWSSDK.VoiceID](https://www.nuget.org/packages/AWSSDK.VoiceID/)
 	* Released the Amazon Voice ID SDK, for usage with the Amazon Connect Voice ID feature released for Amazon Connect.
+* [AWSSDK.VPCLattice](https://www.nuget.org/packages/AWSSDK.VPCLattice/)
+	* General Availability (GA) release of Amazon VPC Lattice
 * [AWSSDK.WAF](https://www.nuget.org/packages/AWSSDK.WAF/)
 	* AWS WAF (Web Application Firewall) protects web applications from attack by allowing customers to block bad actors and provides filters against common web exploits like SQL injection.
 * [AWSSDK.WAFRegional](https://www.nuget.org/packages/AWSSDK.WAFRegional/)

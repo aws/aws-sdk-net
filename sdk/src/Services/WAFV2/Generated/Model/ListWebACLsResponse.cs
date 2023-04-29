@@ -59,7 +59,11 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property WebACLs.
+        /// Gets and sets the property WebACLs. 
+        /// <para>
+        /// Array of web ACLs. If you specified a <code>Limit</code> in your request, this might
+        /// not be the full list. 
+        /// </para>
         /// </summary>
         public List<WebACLSummary> WebACLs
         {

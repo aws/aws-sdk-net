@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<PhoneNumber> _phoneNumbers = new List<PhoneNumber>();
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to return the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -52,7 +55,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneNumbers.
+        /// Gets and sets the property PhoneNumbers. 
+        /// <para>
+        /// The phone number details.
+        /// </para>
         /// </summary>
         public List<PhoneNumber> PhoneNumbers
         {

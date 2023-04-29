@@ -7,6 +7,7 @@ using Amazon;
 using Amazon.S3;
 using Amazon.Extensions.NETCore.Setup;
 using Moq;
+using System;
 
 namespace DependencyInjectionTests
 {
@@ -29,6 +30,19 @@ namespace DependencyInjectionTests
             var controller = ActivatorUtilities.CreateInstance<TestController>(serviceProvider);
             Assert.NotNull(controller.S3Client);
             Assert.Equal(RegionEndpoint.USWest2, controller.S3Client.Config.RegionEndpoint);
+        }
+
+        [Fact]
+        public void InjectS3ClientWithoutDefaultConfig()
+        {
+            ServiceCollection services = new ServiceCollection();
+            services.AddAWSService<IAmazonS3>(new AWSOptions {Region = RegionEndpoint.USEast1 });
+
+            var serviceProvider = services.BuildServiceProvider();
+
+            var controller = ActivatorUtilities.CreateInstance<TestController>(serviceProvider);
+            Assert.NotNull(controller.S3Client);
+            Assert.Equal(RegionEndpoint.USEast1, controller.S3Client.Config.RegionEndpoint);
         }
 
         [Fact]

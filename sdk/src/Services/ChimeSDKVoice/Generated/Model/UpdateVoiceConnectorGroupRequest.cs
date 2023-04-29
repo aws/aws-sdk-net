@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateVoiceConnectorGroup operation.
-    /// 
+    /// Updates the settings for the specified Amazon Chime SDK Voice Connector group.
     /// </summary>
     public partial class UpdateVoiceConnectorGroupRequest : AmazonChimeSDKVoiceRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<VoiceConnectorItem> _voiceConnectorItems = new List<VoiceConnectorItem>();
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the Voice Connector group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
@@ -55,7 +58,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorGroupId.
+        /// Gets and sets the property VoiceConnectorGroupId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorGroupId
@@ -71,7 +77,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorItems.
+        /// Gets and sets the property VoiceConnectorItems. 
+        /// <para>
+        /// The <code>VoiceConnectorItems</code> to associate with the Voice Connector group.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<VoiceConnectorItem> VoiceConnectorItems

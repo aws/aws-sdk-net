@@ -34,14 +34,17 @@ namespace Amazon.LexModelsV2.Model
     public partial class DescribeBotVersionResponse : AmazonWebServiceResponse
     {
         private string _botId;
+        private List<BotMember> _botMembers = new List<BotMember>();
         private string _botName;
         private BotStatus _botStatus;
+        private BotType _botType;
         private string _botVersion;
         private DateTime? _creationDateTime;
         private DataPrivacy _dataPrivacy;
         private string _description;
         private List<string> _failureReasons = new List<string>();
         private int? _idleSessionTTLInSeconds;
+        private List<ParentBotNetwork> _parentBotNetworks = new List<ParentBotNetwork>();
         private string _roleArn;
 
         /// <summary>
@@ -61,6 +64,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetBotId()
         {
             return this._botId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BotMembers. 
+        /// <para>
+        /// The members of bot network in the version that was described.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<BotMember> BotMembers
+        {
+            get { return this._botMembers; }
+            set { this._botMembers = value; }
+        }
+
+        // Check to see if BotMembers property is set
+        internal bool IsSetBotMembers()
+        {
+            return this._botMembers != null && this._botMembers.Count > 0; 
         }
 
         /// <summary>
@@ -102,9 +124,27 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property BotType. 
+        /// <para>
+        /// The type of the bot in the version that was described.
+        /// </para>
+        /// </summary>
+        public BotType BotType
+        {
+            get { return this._botType; }
+            set { this._botType = value; }
+        }
+
+        // Check to see if BotType property is set
+        internal bool IsSetBotType()
+        {
+            return this._botType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The version of the bot to describe.
+        /// The version of the bot that was described.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -212,6 +252,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetIdleSessionTTLInSeconds()
         {
             return this._idleSessionTTLInSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParentBotNetworks. 
+        /// <para>
+        /// A list of the networks to which the bot version you described belongs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=30)]
+        public List<ParentBotNetwork> ParentBotNetworks
+        {
+            get { return this._parentBotNetworks; }
+            set { this._parentBotNetworks = value; }
+        }
+
+        // Check to see if ParentBotNetworks property is set
+        internal bool IsSetParentBotNetworks()
+        {
+            return this._parentBotNetworks != null && this._parentBotNetworks.Count > 0; 
         }
 
         /// <summary>

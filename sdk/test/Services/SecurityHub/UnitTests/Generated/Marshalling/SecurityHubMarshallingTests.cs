@@ -741,6 +741,322 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityHub")]
+        public void BatchGetSecurityControlsMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchGetSecurityControls");
+
+            var request = InstantiateClassGenerator.Execute<BatchGetSecurityControlsRequest>();
+            var marshaller = new BatchGetSecurityControlsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("BatchGetSecurityControls", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = BatchGetSecurityControlsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as BatchGetSecurityControlsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchGetSecurityControls_InternalExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchGetSecurityControls");
+
+            var request = InstantiateClassGenerator.Execute<BatchGetSecurityControlsRequest>();
+            var marshaller = new BatchGetSecurityControlsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchGetSecurityControls", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchGetSecurityControlsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchGetSecurityControls_InvalidAccessExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchGetSecurityControls");
+
+            var request = InstantiateClassGenerator.Execute<BatchGetSecurityControlsRequest>();
+            var marshaller = new BatchGetSecurityControlsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchGetSecurityControls", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAccessException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAccessException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchGetSecurityControlsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchGetSecurityControls_InvalidInputExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchGetSecurityControls");
+
+            var request = InstantiateClassGenerator.Execute<BatchGetSecurityControlsRequest>();
+            var marshaller = new BatchGetSecurityControlsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchGetSecurityControls", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidInputException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchGetSecurityControlsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchGetSecurityControls_LimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchGetSecurityControls");
+
+            var request = InstantiateClassGenerator.Execute<BatchGetSecurityControlsRequest>();
+            var marshaller = new BatchGetSecurityControlsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchGetSecurityControls", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("LimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","LimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchGetSecurityControlsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchGetStandardsControlAssociationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchGetStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<BatchGetStandardsControlAssociationsRequest>();
+            var marshaller = new BatchGetStandardsControlAssociationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("BatchGetStandardsControlAssociations", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = BatchGetStandardsControlAssociationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as BatchGetStandardsControlAssociationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchGetStandardsControlAssociations_InternalExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchGetStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<BatchGetStandardsControlAssociationsRequest>();
+            var marshaller = new BatchGetStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchGetStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchGetStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchGetStandardsControlAssociations_InvalidAccessExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchGetStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<BatchGetStandardsControlAssociationsRequest>();
+            var marshaller = new BatchGetStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchGetStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAccessException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAccessException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchGetStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchGetStandardsControlAssociations_InvalidInputExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchGetStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<BatchGetStandardsControlAssociationsRequest>();
+            var marshaller = new BatchGetStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchGetStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidInputException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchGetStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchGetStandardsControlAssociations_LimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchGetStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<BatchGetStandardsControlAssociationsRequest>();
+            var marshaller = new BatchGetStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchGetStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("LimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","LimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchGetStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
         public void BatchImportFindingsMarshallTest()
         {
             var operation = service_model.FindOperation("BatchImportFindings");
@@ -1049,6 +1365,164 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = BatchUpdateFindingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchUpdateStandardsControlAssociationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchUpdateStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<BatchUpdateStandardsControlAssociationsRequest>();
+            var marshaller = new BatchUpdateStandardsControlAssociationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("BatchUpdateStandardsControlAssociations", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = BatchUpdateStandardsControlAssociationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as BatchUpdateStandardsControlAssociationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchUpdateStandardsControlAssociations_InternalExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchUpdateStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<BatchUpdateStandardsControlAssociationsRequest>();
+            var marshaller = new BatchUpdateStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchUpdateStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchUpdateStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchUpdateStandardsControlAssociations_InvalidAccessExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchUpdateStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<BatchUpdateStandardsControlAssociationsRequest>();
+            var marshaller = new BatchUpdateStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchUpdateStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAccessException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAccessException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchUpdateStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchUpdateStandardsControlAssociations_InvalidInputExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchUpdateStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<BatchUpdateStandardsControlAssociationsRequest>();
+            var marshaller = new BatchUpdateStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchUpdateStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidInputException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchUpdateStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void BatchUpdateStandardsControlAssociations_LimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("BatchUpdateStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<BatchUpdateStandardsControlAssociationsRequest>();
+            var marshaller = new BatchUpdateStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("BatchUpdateStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("LimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","LimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = BatchUpdateStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -8105,6 +8579,322 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = ListOrganizationAdminAccountsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void ListSecurityControlDefinitionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSecurityControlDefinitions");
+
+            var request = InstantiateClassGenerator.Execute<ListSecurityControlDefinitionsRequest>();
+            var marshaller = new ListSecurityControlDefinitionsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListSecurityControlDefinitions", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListSecurityControlDefinitionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListSecurityControlDefinitionsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void ListSecurityControlDefinitions_InternalExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSecurityControlDefinitions");
+
+            var request = InstantiateClassGenerator.Execute<ListSecurityControlDefinitionsRequest>();
+            var marshaller = new ListSecurityControlDefinitionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListSecurityControlDefinitions", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListSecurityControlDefinitionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void ListSecurityControlDefinitions_InvalidAccessExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSecurityControlDefinitions");
+
+            var request = InstantiateClassGenerator.Execute<ListSecurityControlDefinitionsRequest>();
+            var marshaller = new ListSecurityControlDefinitionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListSecurityControlDefinitions", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAccessException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAccessException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListSecurityControlDefinitionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void ListSecurityControlDefinitions_InvalidInputExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSecurityControlDefinitions");
+
+            var request = InstantiateClassGenerator.Execute<ListSecurityControlDefinitionsRequest>();
+            var marshaller = new ListSecurityControlDefinitionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListSecurityControlDefinitions", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidInputException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListSecurityControlDefinitionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void ListSecurityControlDefinitions_LimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSecurityControlDefinitions");
+
+            var request = InstantiateClassGenerator.Execute<ListSecurityControlDefinitionsRequest>();
+            var marshaller = new ListSecurityControlDefinitionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListSecurityControlDefinitions", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("LimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","LimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListSecurityControlDefinitionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void ListStandardsControlAssociationsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<ListStandardsControlAssociationsRequest>();
+            var marshaller = new ListStandardsControlAssociationsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListStandardsControlAssociations", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListStandardsControlAssociationsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListStandardsControlAssociationsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void ListStandardsControlAssociations_InternalExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<ListStandardsControlAssociationsRequest>();
+            var marshaller = new ListStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void ListStandardsControlAssociations_InvalidAccessExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<ListStandardsControlAssociationsRequest>();
+            var marshaller = new ListStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAccessException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAccessException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void ListStandardsControlAssociations_InvalidInputExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<ListStandardsControlAssociationsRequest>();
+            var marshaller = new ListStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidInputException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityHub")]
+        public void ListStandardsControlAssociations_LimitExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListStandardsControlAssociations");
+
+            var request = InstantiateClassGenerator.Execute<ListStandardsControlAssociationsRequest>();
+            var marshaller = new ListStandardsControlAssociationsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListStandardsControlAssociations", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("LimitExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","LimitExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListStandardsControlAssociationsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

@@ -70,9 +70,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// To stop a model compilation job, use <a>StopCompilationJob</a>. To get information
-    /// about a particular model compilation job, use <a>DescribeCompilationJob</a>. To get
-    /// information about multiple model compilation jobs, use <a>ListCompilationJobs</a>.
+    /// To stop a model compilation job, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopCompilationJob.html">StopCompilationJob</a>.
+    /// To get information about a particular model compilation job, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCompilationJob.html">DescribeCompilationJob</a>.
+    /// To get information about multiple model compilation jobs, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListCompilationJobs.html">ListCompilationJobs</a>.
     /// </para>
     /// </summary>
     public partial class CreateCompilationJobRequest : AmazonSageMakerRequest
@@ -259,9 +259,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job
-        /// to connect to. Control access to your models by configuring the VPC. For more information,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+        /// A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+        /// object that specifies the VPC that you want your compilation job to connect to. Control
+        /// access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
         /// Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>

@@ -32,7 +32,7 @@ namespace Amazon.DNXCore.IntegrationTests.S3
         {
             filePath = Path.Combine(Path.GetTempPath(), "PutObjectFile.txt");
             File.WriteAllText(filePath, "This is some sample text.!!");
-            bucketName = UtilityMethods.CreateBucketAsync(Client, "PutObjectTest").Result;
+            bucketName = UtilityMethods.CreateBucketAsync(Client, "PutObjectTest", true).Result;
         }
         
         protected override void Dispose(bool disposing)

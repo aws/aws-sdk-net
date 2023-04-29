@@ -36,6 +36,7 @@ namespace Amazon.LocationService.Model
     {
         private string _fontStack;
         private string _fontUnicodeRange;
+        private string _key;
         private string _mapName;
 
         /// <summary>
@@ -105,11 +106,12 @@ namespace Amazon.LocationService.Model
         ///  </li> </ul> 
         /// <para>
         /// Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
-        /// Data (Preview)</a> styles:
+        /// Data</a> styles:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// VectorOpenDataStandardLight – <code>Amazon Ember Regular,Noto Sans Regular</code>
+        /// VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight,
+        /// VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code>
         /// | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans
         /// Medium</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic</code> | <code>Amazon
         /// Ember Condensed RC Regular,Noto Sans Regular</code> | <code>Amazon Ember Condensed
@@ -117,9 +119,9 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> </ul> <note> 
         /// <para>
-        /// The fonts used by <code>VectorOpenDataStandardLight</code> are combined fonts that
-        /// use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs
-        /// unsupported by <code>Amazon Ember</code>.
+        /// The fonts used by the Open Data map styles are combined fonts that use <code>Amazon
+        /// Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by
+        /// <code>Amazon Ember</code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -155,6 +157,26 @@ namespace Amazon.LocationService.Model
         internal bool IsSetFontUnicodeRange()
         {
             return this._fontUnicodeRange != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// key</a> to authorize the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=1000)]
+        public string Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
+        }
+
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this._key != null;
         }
 
         /// <summary>

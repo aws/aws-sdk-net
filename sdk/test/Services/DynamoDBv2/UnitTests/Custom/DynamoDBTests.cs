@@ -217,6 +217,49 @@ namespace AWSSDK_DotNet35.UnitTests
             }
         }
 
+        public class DateTestObject
+        {
+            public DateTime DateFromString { get; set; }
+        }
+        //This test is based off issue #2020 where user reported datetime with no decimals not being converted properly. 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestDateTimeDeserializationWithDdbContext()
+        {
+            //Arrange
+            var dateWithNoDecimals = "2022-05-05T11:56:11Z";
+            var expectedDateNoDecimal = DateTime.Parse(dateWithNoDecimals);
+
+            var dateWithDecimals = "2022-05-05T11:56:11.000Z";
+            var expectedDateDecimal = DateTime.Parse(dateWithDecimals);
+
+            var jsonDateWithNoDecimals = JsonMapper.ToJson(new
+            {
+                DateFromString = dateWithNoDecimals
+            });
+            var jsonDateWithDecimals = JsonMapper.ToJson(new
+            {
+                DateFromString = dateWithDecimals
+            });
+
+            using (var dynamoDBContext = new DynamoDBContext())
+            {
+                var noDecimalDoc = Document.FromJson(jsonDateWithNoDecimals);
+                var decimalDoc = Document.FromJson(jsonDateWithDecimals);
+
+                var noDecimalContext = dynamoDBContext.FromDocument<DateTestObject>(noDecimalDoc);
+                var decimalContext = dynamoDBContext.FromDocument<DateTestObject>(decimalDoc);
+
+                Assert.IsNotNull(noDecimalContext);
+                Assert.IsNotNull(decimalContext);
+                //Assert that the two different formatted json dates get converted to the same date
+                Assert.AreEqual(noDecimalContext.DateFromString, decimalContext.DateFromString);
+                //Assert that the conversion itself works
+                Assert.AreEqual(expectedDateNoDecimal, noDecimalContext.DateFromString);
+                Assert.AreEqual(expectedDateDecimal, decimalContext.DateFromString);
+            }
+        }
+
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public void TestEmptyPropertyFromObjectOnDocument()

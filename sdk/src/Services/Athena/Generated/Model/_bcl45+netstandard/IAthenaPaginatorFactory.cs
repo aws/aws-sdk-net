@@ -41,6 +41,11 @@ namespace Amazon.Athena.Model
         IListCalculationExecutionsPaginator ListCalculationExecutions(ListCalculationExecutionsRequest request);
 
         /// <summary>
+        /// Paginator for ListCapacityReservations operation
+        ///</summary>
+        IListCapacityReservationsPaginator ListCapacityReservations(ListCapacityReservationsRequest request);
+
+        /// <summary>
         /// Paginator for ListDatabases operation
         ///</summary>
         IListDatabasesPaginator ListDatabases(ListDatabasesRequest request);

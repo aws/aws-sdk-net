@@ -37,6 +37,7 @@ namespace Amazon.FMS.Model
         private string _id;
         private DateTime? _lastUpdateTime;
         private string _name;
+        private ResourceSetStatus _resourceSetStatus;
         private List<string> _resourceTypeList = new List<string>();
         private string _updateToken;
 
@@ -115,6 +116,35 @@ namespace Amazon.FMS.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceSetStatus. 
+        /// <para>
+        /// Indicates whether the resource set is in or out of an admin's Region scope.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>ACTIVE</code> - The administrator can manage and delete the resource set.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OUT_OF_ADMIN_SCOPE</code> - The administrator can view the resource set, but
+        /// they can't edit or delete the resource set. Existing protections stay in place. Any
+        /// new resource that come into scope of the resource set won't be protected.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ResourceSetStatus ResourceSetStatus
+        {
+            get { return this._resourceSetStatus; }
+            set { this._resourceSetStatus = value; }
+        }
+
+        // Check to see if ResourceSetStatus property is set
+        internal bool IsSetResourceSetStatus()
+        {
+            return this._resourceSetStatus != null;
         }
 
         /// <summary>

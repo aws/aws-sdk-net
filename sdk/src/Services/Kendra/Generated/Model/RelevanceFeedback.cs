@@ -40,7 +40,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RelevanceValue. 
         /// <para>
-        /// Whether to document was relevant or not relevant to the search.
+        /// Whether the document was relevant or not relevant to the search.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

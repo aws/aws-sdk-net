@@ -36,6 +36,14 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Paginator for ListDatasets operation
+        ///</summary>
+        public IListDatasetsPaginator ListDatasets(ListDatasetsRequest request) 
+        {
+            return new ListDatasetsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDocumentClassificationJobs operation
         ///</summary>
         public IListDocumentClassificationJobsPaginator ListDocumentClassificationJobs(ListDocumentClassificationJobsRequest request) 
@@ -105,6 +113,22 @@ namespace Amazon.Comprehend.Model
         public IListEventsDetectionJobsPaginator ListEventsDetectionJobs(ListEventsDetectionJobsRequest request) 
         {
             return new ListEventsDetectionJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFlywheelIterationHistory operation
+        ///</summary>
+        public IListFlywheelIterationHistoryPaginator ListFlywheelIterationHistory(ListFlywheelIterationHistoryRequest request) 
+        {
+            return new ListFlywheelIterationHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListFlywheels operation
+        ///</summary>
+        public IListFlywheelsPaginator ListFlywheels(ListFlywheelsRequest request) 
+        {
+            return new ListFlywheelsPaginator(this.client, request);
         }
 
         /// <summary>

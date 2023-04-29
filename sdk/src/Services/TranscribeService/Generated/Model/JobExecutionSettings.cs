@@ -56,10 +56,6 @@ namespace Amazon.TranscribeService.Model
         /// </para>
         ///  
         /// <para>
-        /// Note that job queuing is enabled by default for Call Analytics jobs.
-        /// </para>
-        ///  
-        /// <para>
         /// If you include <code>AllowDeferredExecution</code> in your request, you must also
         /// include <code>DataAccessRoleArn</code>.
         /// </para>

@@ -5054,6 +5054,193 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Lightsail")]
+        public void CreateGUISessionAccessDetailsMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<CreateGUISessionAccessDetailsRequest>();
+            var marshaller = new CreateGUISessionAccessDetailsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<CreateGUISessionAccessDetailsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateGUISessionAccessDetails").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = CreateGUISessionAccessDetailsResponseUnmarshaller.Instance.Unmarshall(context) as CreateGUISessionAccessDetailsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void CreateGUISessionAccessDetails_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateGUISessionAccessDetails");
+
+            var request = InstantiateClassGenerator.Execute<CreateGUISessionAccessDetailsRequest>();
+            var marshaller = new CreateGUISessionAccessDetailsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateGUISessionAccessDetailsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateGUISessionAccessDetailsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void CreateGUISessionAccessDetails_InvalidInputExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateGUISessionAccessDetails");
+
+            var request = InstantiateClassGenerator.Execute<CreateGUISessionAccessDetailsRequest>();
+            var marshaller = new CreateGUISessionAccessDetailsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateGUISessionAccessDetailsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidInputException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateGUISessionAccessDetailsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void CreateGUISessionAccessDetails_NotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateGUISessionAccessDetails");
+
+            var request = InstantiateClassGenerator.Execute<CreateGUISessionAccessDetailsRequest>();
+            var marshaller = new CreateGUISessionAccessDetailsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateGUISessionAccessDetailsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateGUISessionAccessDetailsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void CreateGUISessionAccessDetails_ServiceExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateGUISessionAccessDetails");
+
+            var request = InstantiateClassGenerator.Execute<CreateGUISessionAccessDetailsRequest>();
+            var marshaller = new CreateGUISessionAccessDetailsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateGUISessionAccessDetailsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateGUISessionAccessDetailsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void CreateGUISessionAccessDetails_UnauthenticatedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateGUISessionAccessDetails");
+
+            var request = InstantiateClassGenerator.Execute<CreateGUISessionAccessDetailsRequest>();
+            var marshaller = new CreateGUISessionAccessDetailsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateGUISessionAccessDetailsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthenticatedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthenticatedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateGUISessionAccessDetailsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
         public void CreateInstancesMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<CreateInstancesRequest>();
@@ -17849,6 +18036,193 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             };
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = GetContainerServicesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void GetCostEstimateMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetCostEstimateRequest>();
+            var marshaller = new GetCostEstimateRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<GetCostEstimateRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetCostEstimate").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetCostEstimateResponseUnmarshaller.Instance.Unmarshall(context) as GetCostEstimateResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void GetCostEstimate_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetCostEstimate");
+
+            var request = InstantiateClassGenerator.Execute<GetCostEstimateRequest>();
+            var marshaller = new GetCostEstimateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetCostEstimateRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetCostEstimateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void GetCostEstimate_InvalidInputExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetCostEstimate");
+
+            var request = InstantiateClassGenerator.Execute<GetCostEstimateRequest>();
+            var marshaller = new GetCostEstimateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetCostEstimateRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidInputException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetCostEstimateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void GetCostEstimate_NotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetCostEstimate");
+
+            var request = InstantiateClassGenerator.Execute<GetCostEstimateRequest>();
+            var marshaller = new GetCostEstimateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetCostEstimateRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetCostEstimateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void GetCostEstimate_ServiceExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetCostEstimate");
+
+            var request = InstantiateClassGenerator.Execute<GetCostEstimateRequest>();
+            var marshaller = new GetCostEstimateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetCostEstimateRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetCostEstimateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void GetCostEstimate_UnauthenticatedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetCostEstimate");
+
+            var request = InstantiateClassGenerator.Execute<GetCostEstimateRequest>();
+            var marshaller = new GetCostEstimateRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetCostEstimateRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthenticatedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthenticatedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetCostEstimateResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -31999,6 +32373,193 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("Lightsail")]
+        public void StartGUISessionMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StartGUISessionRequest>();
+            var marshaller = new StartGUISessionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<StartGUISessionRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StartGUISession").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = StartGUISessionResponseUnmarshaller.Instance.Unmarshall(context) as StartGUISessionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void StartGUISession_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StartGUISession");
+
+            var request = InstantiateClassGenerator.Execute<StartGUISessionRequest>();
+            var marshaller = new StartGUISessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StartGUISessionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StartGUISessionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void StartGUISession_InvalidInputExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StartGUISession");
+
+            var request = InstantiateClassGenerator.Execute<StartGUISessionRequest>();
+            var marshaller = new StartGUISessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StartGUISessionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidInputException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StartGUISessionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void StartGUISession_NotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StartGUISession");
+
+            var request = InstantiateClassGenerator.Execute<StartGUISessionRequest>();
+            var marshaller = new StartGUISessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StartGUISessionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StartGUISessionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void StartGUISession_ServiceExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StartGUISession");
+
+            var request = InstantiateClassGenerator.Execute<StartGUISessionRequest>();
+            var marshaller = new StartGUISessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StartGUISessionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StartGUISessionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void StartGUISession_UnauthenticatedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StartGUISession");
+
+            var request = InstantiateClassGenerator.Execute<StartGUISessionRequest>();
+            var marshaller = new StartGUISessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StartGUISessionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthenticatedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthenticatedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StartGUISessionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
         public void StartInstanceMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<StartInstanceRequest>();
@@ -32493,6 +33054,193 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             };
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = StartRelationalDatabaseResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void StopGUISessionMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<StopGUISessionRequest>();
+            var marshaller = new StopGUISessionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<StopGUISessionRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("StopGUISession").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = StopGUISessionResponseUnmarshaller.Instance.Unmarshall(context) as StopGUISessionResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void StopGUISession_AccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StopGUISession");
+
+            var request = InstantiateClassGenerator.Execute<StopGUISessionRequest>();
+            var marshaller = new StopGUISessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StopGUISessionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StopGUISessionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void StopGUISession_InvalidInputExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StopGUISession");
+
+            var request = InstantiateClassGenerator.Execute<StopGUISessionRequest>();
+            var marshaller = new StopGUISessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StopGUISessionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidInputException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StopGUISessionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void StopGUISession_NotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StopGUISession");
+
+            var request = InstantiateClassGenerator.Execute<StopGUISessionRequest>();
+            var marshaller = new StopGUISessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StopGUISessionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("NotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","NotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StopGUISessionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void StopGUISession_ServiceExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StopGUISession");
+
+            var request = InstantiateClassGenerator.Execute<StopGUISessionRequest>();
+            var marshaller = new StopGUISessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StopGUISessionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StopGUISessionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("Lightsail")]
+        public void StopGUISession_UnauthenticatedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("StopGUISession");
+
+            var request = InstantiateClassGenerator.Execute<StopGUISessionRequest>();
+            var marshaller = new StopGUISessionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<StopGUISessionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnauthenticatedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnauthenticatedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = StopGUISessionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

@@ -39,7 +39,10 @@ namespace Amazon.Glue.Model
         private Table _table;
 
         /// <summary>
-        /// Gets and sets the property AuthorizedColumns.
+        /// Gets and sets the property AuthorizedColumns. 
+        /// <para>
+        /// A list of column names that the user has been granted access to.
+        /// </para>
         /// </summary>
         public List<string> AuthorizedColumns
         {
@@ -54,7 +57,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CellFilters.
+        /// Gets and sets the property CellFilters. 
+        /// <para>
+        /// A list of column row filters.
+        /// </para>
         /// </summary>
         public List<ColumnRowFilter> CellFilters
         {
@@ -69,7 +75,11 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsRegisteredWithLakeFormation.
+        /// Gets and sets the property IsRegisteredWithLakeFormation. 
+        /// <para>
+        /// A Boolean value that indicates whether the partition location is registered with Lake
+        /// Formation.
+        /// </para>
         /// </summary>
         public bool IsRegisteredWithLakeFormation
         {
@@ -84,7 +94,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Table.
+        /// Gets and sets the property Table. 
+        /// <para>
+        /// A Table object containing the table metadata.
+        /// </para>
         /// </summary>
         public Table Table
         {

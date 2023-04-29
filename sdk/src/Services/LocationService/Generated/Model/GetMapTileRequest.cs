@@ -43,10 +43,31 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class GetMapTileRequest : AmazonLocationServiceRequest
     {
+        private string _key;
         private string _mapName;
         private string _x;
         private string _y;
         private string _z;
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API
+        /// key</a> to authorize the request.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=1000)]
+        public string Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
+        }
+
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this._key != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MapName. 

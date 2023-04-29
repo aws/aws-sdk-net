@@ -84,8 +84,8 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  
     /// <para>
-    /// In order to minimize response latency, <code>BatchGetItem</code> retrieves items in
-    /// parallel.
+    /// In order to minimize response latency, <code>BatchGetItem</code> may retrieve items
+    /// in parallel.
     /// </para>
     ///  
     /// <para>

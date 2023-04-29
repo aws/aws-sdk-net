@@ -70,6 +70,12 @@ namespace Amazon.AppRegistry.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("createdBy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreatedBy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

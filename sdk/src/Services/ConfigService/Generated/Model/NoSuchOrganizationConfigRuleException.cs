@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The Config rule in the request is invalid. Verify that the rule is an organization
-    /// Config Custom Policy rule, that the rule name is correct, and that valid Amazon Resouce
+    /// The Config rule in the request is not valid. Verify that the rule is an organization
+    /// Config Process Check rule, that the rule name is correct, and that valid Amazon Resouce
     /// Names (ARNs) are used before trying again.
     /// </summary>
     #if !NETSTANDARD

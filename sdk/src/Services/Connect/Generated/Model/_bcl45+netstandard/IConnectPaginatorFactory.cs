@@ -41,6 +41,11 @@ namespace Amazon.Connect.Model
         IGetMetricDataPaginator GetMetricData(GetMetricDataRequest request);
 
         /// <summary>
+        /// Paginator for GetMetricDataV2 operation
+        ///</summary>
+        IGetMetricDataV2Paginator GetMetricDataV2(GetMetricDataV2Request request);
+
+        /// <summary>
         /// Paginator for ListAgentStatuses operation
         ///</summary>
         IListAgentStatusesPaginator ListAgentStatuses(ListAgentStatusesRequest request);
@@ -54,6 +59,11 @@ namespace Amazon.Connect.Model
         /// Paginator for ListBots operation
         ///</summary>
         IListBotsPaginator ListBots(ListBotsRequest request);
+
+        /// <summary>
+        /// Paginator for ListContactEvaluations operation
+        ///</summary>
+        IListContactEvaluationsPaginator ListContactEvaluations(ListContactEvaluationsRequest request);
 
         /// <summary>
         /// Paginator for ListContactFlowModules operation
@@ -74,6 +84,16 @@ namespace Amazon.Connect.Model
         /// Paginator for ListDefaultVocabularies operation
         ///</summary>
         IListDefaultVocabulariesPaginator ListDefaultVocabularies(ListDefaultVocabulariesRequest request);
+
+        /// <summary>
+        /// Paginator for ListEvaluationForms operation
+        ///</summary>
+        IListEvaluationFormsPaginator ListEvaluationForms(ListEvaluationFormsRequest request);
+
+        /// <summary>
+        /// Paginator for ListEvaluationFormVersions operation
+        ///</summary>
+        IListEvaluationFormVersionsPaginator ListEvaluationFormVersions(ListEvaluationFormVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListHoursOfOperations operation

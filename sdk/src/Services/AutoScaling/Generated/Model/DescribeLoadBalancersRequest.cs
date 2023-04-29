@@ -30,12 +30,22 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancers operation.
+    /// <note> 
+    /// <para>
+    /// This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe
+    /// multiple traffic sources types. We recommend using <code>DescribeTrafficSources</code>
+    /// to simplify how you manage traffic sources. However, we continue to support <code>DescribeLoadBalancers</code>.
+    /// You can use both the original <code>DescribeLoadBalancers</code> API operation and
+    /// <code>DescribeTrafficSources</code> on the same Auto Scaling group.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Gets information about the load balancers for the specified Auto Scaling group.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation describes only Classic Load Balancers. If you have Application Load
-    /// Balancers, Network Load Balancers, or Gateway Load Balancer, use the <a>DescribeLoadBalancerTargetGroups</a>
+    /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a>
     /// API instead.
     /// </para>
     ///  

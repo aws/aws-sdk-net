@@ -63,6 +63,18 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DrMin);
             }
 
+            if(requestObject.IsSetPrAllowed())
+            {
+                context.Writer.WritePropertyName("PrAllowed");
+                context.Writer.Write(requestObject.PrAllowed);
+            }
+
+            if(requestObject.IsSetRaAllowed())
+            {
+                context.Writer.WritePropertyName("RaAllowed");
+                context.Writer.Write(requestObject.RaAllowed);
+            }
+
         }
 
         /// <summary>

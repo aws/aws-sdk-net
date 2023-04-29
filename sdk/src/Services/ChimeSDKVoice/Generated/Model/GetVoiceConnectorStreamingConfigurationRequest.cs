@@ -30,14 +30,19 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVoiceConnectorStreamingConfiguration operation.
-    /// 
+    /// Retrieves the streaming configuration details for the specified Amazon Chime SDK Voice
+    /// Connector. Shows whether media streaming is enabled for sending to Amazon Kinesis.
+    /// It also shows the retention period, in hours, for the Amazon Kinesis data.
     /// </summary>
     public partial class GetVoiceConnectorStreamingConfigurationRequest : AmazonChimeSDKVoiceRequest
     {
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

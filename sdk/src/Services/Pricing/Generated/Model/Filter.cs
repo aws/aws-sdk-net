@@ -95,9 +95,9 @@ namespace Amazon.Pricing.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The service code or attribute value that you want to filter by. If you are filtering
+        /// The service code or attribute value that you want to filter by. If you're filtering
         /// by service code this is the actual service code, such as <code>AmazonEC2</code>. If
-        /// you are filtering by attribute name, this is the attribute value that you want the
+        /// you're filtering by attribute name, this is the attribute value that you want the
         /// returned products to match, such as a <code>Provisioned IOPS</code> volume.
         /// </para>
         /// </summary>

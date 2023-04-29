@@ -75,10 +75,6 @@ namespace Amazon.ConfigService.Model
         /// <para>
         /// Filters the results by compliance.
         /// </para>
-        ///  
-        /// <para>
-        /// The allowed values are <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>.
-        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3)]
         public List<string> ComplianceTypes

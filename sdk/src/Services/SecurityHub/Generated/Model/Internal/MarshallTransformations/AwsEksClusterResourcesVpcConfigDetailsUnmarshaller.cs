@@ -64,6 +64,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("EndpointPublicAccess", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.EndpointPublicAccess = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SecurityGroupIds", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

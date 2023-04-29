@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The termination health details, including the source IP address and timestamp of the
+    /// last successful <code>SIP OPTIONS</code> message from your SIP infrastructure.
     /// </summary>
     public partial class TerminationHealth
     {
@@ -37,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private DateTime? _timestamp;
 
         /// <summary>
-        /// Gets and sets the property Source.
+        /// Gets and sets the property Source. 
+        /// <para>
+        /// The source IP address.
+        /// </para>
         /// </summary>
         public string Source
         {
@@ -52,7 +56,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Timestamp.
+        /// Gets and sets the property Timestamp. 
+        /// <para>
+        /// The timestamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime Timestamp
         {

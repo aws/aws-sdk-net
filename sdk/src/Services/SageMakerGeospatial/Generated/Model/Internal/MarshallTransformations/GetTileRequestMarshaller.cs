@@ -71,6 +71,9 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetArn())
                 request.Parameters.Add("Arn", StringUtils.FromString(publicRequest.Arn));
             
+            if (publicRequest.IsSetExecutionRoleArn())
+                request.Parameters.Add("ExecutionRoleArn", StringUtils.FromString(publicRequest.ExecutionRoleArn));
+            
             if (publicRequest.IsSetImageAssets())
                 request.ParameterCollection.Add("ImageAssets", publicRequest.ImageAssets);
             

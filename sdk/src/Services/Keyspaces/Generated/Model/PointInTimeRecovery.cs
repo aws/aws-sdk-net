@@ -47,14 +47,15 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// The options are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>ENABLED</code> 
+        ///  <code>status=ENABLED</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>DISABLED</code> 
+        ///  <code>status=DISABLED</code> 
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public PointInTimeRecoveryStatus Status

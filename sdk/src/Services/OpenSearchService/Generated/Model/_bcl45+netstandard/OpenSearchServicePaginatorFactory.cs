@@ -124,6 +124,14 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Paginator for ListScheduledActions operation
+        ///</summary>
+        public IListScheduledActionsPaginator ListScheduledActions(ListScheduledActionsRequest request) 
+        {
+            return new ListScheduledActionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListVersions operation
         ///</summary>
         public IListVersionsPaginator ListVersions(ListVersionsRequest request) 

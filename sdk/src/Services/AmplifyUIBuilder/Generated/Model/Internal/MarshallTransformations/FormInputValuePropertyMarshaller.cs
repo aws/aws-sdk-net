@@ -45,6 +45,33 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FormInputValueProperty requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBindingProperties())
+            {
+                context.Writer.WritePropertyName("bindingProperties");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = FormInputValuePropertyBindingPropertiesMarshaller.Instance;
+                marshaller.Marshall(requestObject.BindingProperties, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetConcat())
+            {
+                context.Writer.WritePropertyName("concat");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectConcatListValue in requestObject.Concat)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = FormInputValuePropertyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectConcatListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetValue())
             {
                 context.Writer.WritePropertyName("value");

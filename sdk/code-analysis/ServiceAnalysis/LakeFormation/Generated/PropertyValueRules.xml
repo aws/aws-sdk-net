@@ -121,6 +121,26 @@
     <pattern>[\p{L}\p{N}\p{P}]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetDataCellsFilterRequest.DatabaseName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetDataCellsFilterRequest.Name</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetDataCellsFilterRequest.TableCatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.GetDataCellsFilterRequest.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.LakeFormation.Model.GetDataLakeSettingsRequest.CatalogId</property>
     <min>1</min>
     <max>255</max>
@@ -470,6 +490,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.LakeFormation.Model.DataCellsFilter.TableName</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.LakeFormation.Model.DataCellsFilter.VersionId</property>
     <min>1</min>
     <max>255</max>
   </property-value-rule>

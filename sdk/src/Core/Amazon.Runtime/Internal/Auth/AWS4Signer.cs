@@ -664,6 +664,11 @@ namespace Amazon.Runtime.Internal.Auth
             }
 
             string authenticationRegion = clientConfig.AuthenticationRegion;
+            // We always have request.AuthenticationRegion defined, as per 
+            // Amazon.Runtime.Internal.BaseEndpointResolver implementation.
+            // request.AuthenticationRegion value is set either based on endpoint rules or
+            // overriden by clientConfig.AuthenticationRegion if defined.
+            // Normally, users should only override clientConfig.AuthenticationRegion value for non-AWS services
             if (request != null && request.AuthenticationRegion != null)
                 authenticationRegion = request.AuthenticationRegion;
 

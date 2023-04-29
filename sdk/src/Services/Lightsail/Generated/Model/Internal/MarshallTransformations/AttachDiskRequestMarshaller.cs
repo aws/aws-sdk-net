@@ -67,6 +67,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutoMounting())
+                {
+                    context.Writer.WritePropertyName("autoMounting");
+                    context.Writer.Write(publicRequest.AutoMounting);
+                }
+
                 if(publicRequest.IsSetDiskName())
                 {
                     context.Writer.WritePropertyName("diskName");

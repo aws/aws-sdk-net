@@ -29,26 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// Information about an RAM permission that is associated with a resource share and any
-    /// of its resources of a specified type.
+    /// Information about an RAM permission.
     /// </summary>
     public partial class ResourceSharePermissionSummary
     {
         private string _arn;
         private DateTime? _creationTime;
         private bool? _defaultVersion;
+        private PermissionFeatureSet _featureSet;
         private bool? _isResourceTypeDefault;
         private DateTime? _lastUpdatedTime;
         private string _name;
+        private PermissionType _permissionType;
         private string _resourceType;
         private string _status;
+        private List<Tag> _tags = new List<Tag>();
         private string _version;
 
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the permission you want information about.
+        /// Resource Name (ARN)</a> of the permission you want information about.
         /// </para>
         /// </summary>
         public string Arn
@@ -84,8 +86,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property DefaultVersion. 
         /// <para>
-        /// Specifies whether the version of the permission represented in this structure is the
-        /// default version for this permission.
+        /// Specifies whether the version of the managed permission used by this resource share
+        /// is the default version for this managed permission.
         /// </para>
         /// </summary>
         public bool DefaultVersion
@@ -101,10 +103,53 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FeatureSet. 
+        /// <para>
+        /// Indicates what features are available for this resource share. This parameter can
+        /// have one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>STANDARD</b> – A resource share that supports all functionality. These resource
+        /// shares are visible to all principals you share the resource share with. You can modify
+        /// these resource shares in RAM using the console or APIs. This resource share might
+        /// have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b> and then
+        /// promoted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>CREATED_FROM_POLICY</b> – The customer manually shared a resource by attaching
+        /// a resource-based policy. That policy did not match any existing managed permissions,
+        /// so RAM created this customer managed permission automatically on the customer's behalf
+        /// based on the attached policy document. This type of resource share is visible only
+        /// to the Amazon Web Services account that created it. You can't modify it in RAM unless
+        /// you promote it. For more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>PROMOTING_TO_STANDARD</b> – This resource share was originally <code>CREATED_FROM_POLICY</code>,
+        /// but the customer ran the <a>PromoteResourceShareCreatedFromPolicy</a> and that operation
+        /// is still in progress. This value changes to <code>STANDARD</code> when complete.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PermissionFeatureSet FeatureSet
+        {
+            get { return this._featureSet; }
+            set { this._featureSet = value; }
+        }
+
+        // Check to see if FeatureSet property is set
+        internal bool IsSetFeatureSet()
+        {
+            return this._featureSet != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property IsResourceTypeDefault. 
         /// <para>
-        /// Specifies whether the version of the permission represented in this structure is the
-        /// default version for all resources of this resource type.
+        /// Specifies whether the managed permission associated with this resource share is the
+        /// default managed permission for all resources of this resource type.
         /// </para>
         /// </summary>
         public bool IsResourceTypeDefault
@@ -140,7 +185,7 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of this permission.
+        /// The name of this managed permission.
         /// </para>
         /// </summary>
         public string Name
@@ -156,9 +201,41 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property PermissionType. 
+        /// <para>
+        /// The type of managed permission. This can be one of the following values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>AWS_MANAGED</code> – Amazon Web Services created and manages this managed permission.
+        /// You can associate it with your resource shares, but you can't modify it.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CUSTOMER_MANAGED</code> – You, or another principal in your account created
+        /// this managed permission. You can associate it with your resource shares and create
+        /// new versions that have different permissions.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public PermissionType PermissionType
+        {
+            get { return this._permissionType; }
+            set { this._permissionType = value; }
+        }
+
+        // Check to see if PermissionType property is set
+        internal bool IsSetPermissionType()
+        {
+            return this._permissionType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
-        /// The type of resource to which this permission applies.
+        /// The type of resource to which this permission applies. This takes the form of: <code>service-code</code>:<code>resource-code</code>,
+        /// and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by
+        /// the string <code>ec2:subnet</code>.
         /// </para>
         /// </summary>
         public string ResourceType
@@ -192,9 +269,27 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of the tag key value pairs currently attached to the permission.
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// The version of the permission represented in this structure.
+        /// The version of the permission associated with this resource share.
         /// </para>
         /// </summary>
         public string Version

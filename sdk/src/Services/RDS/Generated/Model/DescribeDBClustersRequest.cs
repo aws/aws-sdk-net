@@ -41,8 +41,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide</i>.
+    /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
     /// </para>
     ///  
     /// <para>
@@ -106,6 +105,12 @@ namespace Amazon.RDS.Model
         ///  <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster Amazon
         /// Resource Names (ARNs). The results list only includes information about the DB clusters
         /// identified by these ARNs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The
+        /// results list will only include information about the DB clusters identified by these
+        /// DB cluster resource identifiers.
         /// </para>
         ///  </li> <li> 
         /// <para>

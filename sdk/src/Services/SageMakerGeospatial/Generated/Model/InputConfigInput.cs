@@ -74,7 +74,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RasterDataCollectionQuery.
+        /// Gets and sets the property RasterDataCollectionQuery. 
+        /// <para>
+        /// The structure representing the RasterDataCollection Query consisting of the Area of
+        /// Interest, RasterDataCollectionArn,TimeRange and Property Filters.
+        /// </para>
         /// </summary>
         public RasterDataCollectionQueryInput RasterDataCollectionQuery
         {

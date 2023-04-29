@@ -57,6 +57,11 @@ namespace Amazon.Rekognition.Model
     /// <para>
     /// You copy a model version by calling <a>CopyProjectVersion</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>rekognition:PutProjectPolicy</code>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class PutProjectPolicyRequest : AmazonRekognitionRequest
     {

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// A label that can be assigned to a GameLift resource. 
+    /// A label that you can assign to a Amazon GameLift resource. 
     /// 
     ///  
     /// <para>
@@ -64,7 +64,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key for a developer-defined key:value pair for tagging an Amazon Web Services
+        /// The key for a developer-defined key value pair for tagging an Amazon Web Services
         /// resource. 
         /// </para>
         /// </summary>
@@ -84,7 +84,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value for a developer-defined key:value pair for tagging an Amazon Web Services
+        /// The value for a developer-defined key value pair for tagging an Amazon Web Services
         /// resource. 
         /// </para>
         /// </summary>

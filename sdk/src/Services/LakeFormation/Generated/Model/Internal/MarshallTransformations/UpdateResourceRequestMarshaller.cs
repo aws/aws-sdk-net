@@ -77,6 +77,12 @@ namespace Amazon.LakeFormation.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RoleArn);
                 }
 
+                if(publicRequest.IsSetWithFederation())
+                {
+                    context.Writer.WritePropertyName("WithFederation");
+                    context.Writer.Write(publicRequest.WithFederation);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

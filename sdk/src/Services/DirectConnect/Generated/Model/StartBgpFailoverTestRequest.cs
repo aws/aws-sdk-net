@@ -79,7 +79,7 @@ namespace Amazon.DirectConnect.Model
         /// </para>
         ///  
         /// <para>
-        /// Maximum value: 180 minutes (3 hours).
+        /// Maximum value: 4,320 minutes (72 hours).
         /// </para>
         ///  
         /// <para>

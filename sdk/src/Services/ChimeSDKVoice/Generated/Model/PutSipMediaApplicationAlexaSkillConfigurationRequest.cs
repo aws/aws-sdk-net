@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the PutSipMediaApplicationAlexaSkillConfiguration operation.
-    /// 
+    /// Updates the Alexa Skill configuration for the SIP media application.
     /// </summary>
     public partial class PutSipMediaApplicationAlexaSkillConfigurationRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _sipMediaApplicationId;
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationAlexaSkillConfiguration.
+        /// Gets and sets the property SipMediaApplicationAlexaSkillConfiguration. 
+        /// <para>
+        /// The Alexa Skill configuration.
+        /// </para>
         /// </summary>
         public SipMediaApplicationAlexaSkillConfiguration SipMediaApplicationAlexaSkillConfiguration
         {
@@ -53,7 +56,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationId.
+        /// Gets and sets the property SipMediaApplicationId. 
+        /// <para>
+        /// The SIP media application ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SipMediaApplicationId

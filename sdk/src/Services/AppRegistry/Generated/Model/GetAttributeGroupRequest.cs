@@ -30,8 +30,8 @@ namespace Amazon.AppRegistry.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAttributeGroup operation.
-    /// Retrieves an attribute group, either by its name or its ID. The attribute group can
-    /// be specified either by its unique ID or by its name.
+    /// Retrieves an attribute group by its ARN, ID, or name. The attribute group can be
+    /// specified by its ARN, ID, or name.
     /// </summary>
     public partial class GetAttributeGroupRequest : AmazonAppRegistryRequest
     {
@@ -40,10 +40,11 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property AttributeGroup. 
         /// <para>
-        /// The name or ID of the attribute group that holds the attributes to describe the application.
+        ///  The name, ID, or ARN of the attribute group that holds the attributes to describe
+        /// the application. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string AttributeGroup
         {
             get { return this._attributeGroup; }

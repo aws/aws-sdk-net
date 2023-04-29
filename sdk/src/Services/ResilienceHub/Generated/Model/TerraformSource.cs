@@ -38,7 +38,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property S3StateFileUrl. 
         /// <para>
-        ///  The Terraform s3 state file you need to import. 
+        ///  The URL of the Terraform s3 state file you need to import. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2000)]

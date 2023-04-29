@@ -47,6 +47,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private bool? _explicitIds;
         private int? _fileTransferUploadStreams;
         private int? _loadTimeout;
+        private bool? _mapBooleanAsBoolean;
         private int? _maxFileSize;
         private string _password;
         private int? _port;
@@ -385,6 +386,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetLoadTimeout()
         {
             return this._loadTimeout.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MapBooleanAsBoolean. 
+        /// <para>
+        /// When true, lets Redshift migrate the boolean type as boolean. By default, Redshift
+        /// migrates booleans as <code>varchar(1)</code>.
+        /// </para>
+        /// </summary>
+        public bool MapBooleanAsBoolean
+        {
+            get { return this._mapBooleanAsBoolean.GetValueOrDefault(); }
+            set { this._mapBooleanAsBoolean = value; }
+        }
+
+        // Check to see if MapBooleanAsBoolean property is set
+        internal bool IsSetMapBooleanAsBoolean()
+        {
+            return this._mapBooleanAsBoolean.HasValue; 
         }
 
         /// <summary>

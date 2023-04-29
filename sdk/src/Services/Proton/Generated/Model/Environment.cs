@@ -339,7 +339,7 @@ namespace Amazon.Proton.Model
         /// <para>
         /// The linked repository that you use to host your rendered infrastructure templates
         /// for self-managed provisioning. A linked repository is a repository that has been registered
-        /// with Proton. For more information, see <a>CreateRepository</a>.
+        /// with Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.
         /// </para>
         /// </summary>
         public RepositoryBranch ProvisioningRepository

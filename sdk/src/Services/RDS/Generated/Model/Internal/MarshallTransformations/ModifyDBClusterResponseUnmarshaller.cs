@@ -124,6 +124,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     return DBClusterParameterGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("DBInstanceAlreadyExists"))
+                {
+                    return DBInstanceAlreadyExistsExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DBSubnetGroupNotFoundFault"))
                 {
                     return DBSubnetGroupNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

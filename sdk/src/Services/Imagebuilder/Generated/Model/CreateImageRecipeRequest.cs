@@ -123,7 +123,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        ///  The description of the image recipe.
+        /// The description of the image recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -142,7 +142,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the image recipe.
+        /// The name of the image recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -222,7 +222,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        ///  The tags of the image recipe.
+        /// The tags of the image recipe.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

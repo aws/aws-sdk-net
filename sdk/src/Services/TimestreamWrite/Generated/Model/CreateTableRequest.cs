@@ -30,11 +30,11 @@ namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTable operation.
-    /// The CreateTable operation adds a new table to an existing database in your account.
-    /// In an Amazon Web Services account, table names must be at least unique within each
-    /// Region if they are in the same database. You may have identical table names in the
-    /// same Region if the tables are in separate databases. While creating the table, you
-    /// must specify the table name, database name, and the retention properties. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
+    /// Adds a new table to an existing database in your account. In an Amazon Web Services
+    /// account, table names must be at least unique within each Region if they are in the
+    /// same database. You might have identical table names in the same Region if the tables
+    /// are in separate databases. While creating the table, you must specify the table name,
+    /// database name, and the retention properties. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service
     /// quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-table.html">code
     /// sample</a> for details.
     /// </summary>
@@ -86,7 +86,7 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property RetentionProperties. 
         /// <para>
-        /// The duration for which your time series data must be stored in the memory store and
+        /// The duration for which your time-series data must be stored in the memory store and
         /// the magnetic store.
         /// </para>
         /// </summary>

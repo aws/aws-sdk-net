@@ -34,6 +34,7 @@ namespace Amazon.Drs.Model
     public partial class LifeCycleLastLaunch
     {
         private LifeCycleLastLaunchInitiated _initiated;
+        private LaunchStatus _status;
 
         /// <summary>
         /// Gets and sets the property Initiated. 
@@ -52,6 +53,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetInitiated()
         {
             return this._initiated != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// Status of Source Server's last launch.
+        /// </para>
+        /// </summary>
+        public LaunchStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

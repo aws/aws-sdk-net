@@ -153,7 +153,8 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The recommendation type, with values like <code>DKIM</code>, <code>SPF</code> or <code>DMARC</code>.
+        /// The recommendation type, with values like <code>DKIM</code>, <code>SPF</code>, <code>DMARC</code>
+        /// or <code>BIMI</code>.
         /// </para>
         /// </summary>
         public RecommendationType Type

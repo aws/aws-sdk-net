@@ -1,0 +1,7 @@
+﻿{
+  "AWS": {
+    "SessionRoleArn": "arn:aws:iam::123456789012:role/fake_role",
+    "SessionName": "TestSessionName",
+    "Region": "us-west-2"
+  }
+}

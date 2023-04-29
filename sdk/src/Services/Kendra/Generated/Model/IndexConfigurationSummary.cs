@@ -141,8 +141,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix timestamp when the index was last updated by the <code>UpdateIndex</code>
-        /// API.
+        /// The Unix timestamp when the index was last updated.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

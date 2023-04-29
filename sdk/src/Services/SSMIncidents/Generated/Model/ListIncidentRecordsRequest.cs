@@ -42,8 +42,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        /// Filters the list of incident records through which you are searching. You can filter
-        /// on the following keys:
+        /// Filters the list of incident records you want to search through. You can filter on
+        /// the following keys:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -63,7 +63,7 @@ namespace Amazon.SSMIncidents.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Note the following when deciding how to use Filters:
+        /// Note the following when when you use Filters:
         /// </para>
         ///  <ul> <li> 
         /// <para>

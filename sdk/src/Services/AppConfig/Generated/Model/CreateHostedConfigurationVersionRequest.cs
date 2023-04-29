@@ -40,6 +40,7 @@ namespace Amazon.AppConfig.Model
         private string _contentType;
         private string _description;
         private int? _latestVersionNumber;
+        private string _versionLabel;
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -156,6 +157,26 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetLatestVersionNumber()
         {
             return this._latestVersionNumber.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionLabel. 
+        /// <para>
+        /// An optional, user-defined label for the AppConfig hosted configuration version. This
+        /// value must contain at least one non-numeric character. For example, "v2.2.0".
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string VersionLabel
+        {
+            get { return this._versionLabel; }
+            set { this._versionLabel = value; }
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this._versionLabel != null;
         }
 
     }

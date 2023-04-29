@@ -34,6 +34,7 @@ namespace Amazon.ChimeSDKMessaging.Model
     public partial class ChannelMessageSummary
     {
         private string _content;
+        private string _contentType;
         private DateTime? _createdTimestamp;
         private DateTime? _lastEditedTimestamp;
         private DateTime? _lastUpdatedTimestamp;
@@ -62,6 +63,25 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// The content type of the channel messsage listed in the summary.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=45)]
+        public string ContentType
+        {
+            get { return this._contentType; }
+            set { this._contentType = value; }
+        }
+
+        // Check to see if ContentType property is set
+        internal bool IsSetContentType()
+        {
+            return this._contentType != null;
         }
 
         /// <summary>

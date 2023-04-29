@@ -136,7 +136,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// You are billed for the time between this timestamp and the timestamp in the <a>DescribeCompilationJobResponse$CompilationEndTime</a>
+        /// You are billed for the time between this timestamp and the timestamp in the <code>CompilationEndTime</code>
         /// field. In Amazon CloudWatch Logs, the start time might be later than this time. That's
         /// because it takes time to download the compilation job, which depends on the size of
         /// the compilation job container. 
@@ -374,9 +374,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// A <a>VpcConfig</a> object that specifies the VPC that you want your compilation job
-        /// to connect to. Control access to your models by configuring the VPC. For more information,
-        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+        /// A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+        /// object that specifies the VPC that you want your compilation job to connect to. Control
+        /// access to your models by configuring the VPC. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
         /// Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>

@@ -100,7 +100,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ImageSourceBands.
+        /// Gets and sets the property ImageSourceBands. 
+        /// <para>
+        /// The list of image source bands in the raster data collection.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> ImageSourceBands

@@ -36,7 +36,10 @@ namespace Amazon.MediaLive.Model
         private AvailSettings _availSettings;
 
         /// <summary>
-        /// Gets and sets the property AvailSettings. Ad avail settings.
+        /// Gets and sets the property AvailSettings. Controls how SCTE-35 messages create cues.
+        /// Splice Insert mode treats all segmentation signals traditionally. With Time Signal
+        /// APOS mode only Time Signal Placement Opportunity and Break messages create segment
+        /// breaks. With ESAM mode, signals are forwarded to an ESAM server for possible update.
         /// </summary>
         public AvailSettings AvailSettings
         {

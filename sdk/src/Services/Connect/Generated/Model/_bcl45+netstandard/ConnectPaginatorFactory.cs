@@ -60,6 +60,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for GetMetricDataV2 operation
+        ///</summary>
+        public IGetMetricDataV2Paginator GetMetricDataV2(GetMetricDataV2Request request) 
+        {
+            return new GetMetricDataV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAgentStatuses operation
         ///</summary>
         public IListAgentStatusesPaginator ListAgentStatuses(ListAgentStatusesRequest request) 
@@ -81,6 +89,14 @@ namespace Amazon.Connect.Model
         public IListBotsPaginator ListBots(ListBotsRequest request) 
         {
             return new ListBotsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContactEvaluations operation
+        ///</summary>
+        public IListContactEvaluationsPaginator ListContactEvaluations(ListContactEvaluationsRequest request) 
+        {
+            return new ListContactEvaluationsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -113,6 +129,22 @@ namespace Amazon.Connect.Model
         public IListDefaultVocabulariesPaginator ListDefaultVocabularies(ListDefaultVocabulariesRequest request) 
         {
             return new ListDefaultVocabulariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEvaluationForms operation
+        ///</summary>
+        public IListEvaluationFormsPaginator ListEvaluationForms(ListEvaluationFormsRequest request) 
+        {
+            return new ListEvaluationFormsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEvaluationFormVersions operation
+        ///</summary>
+        public IListEvaluationFormVersionsPaginator ListEvaluationFormVersions(ListEvaluationFormVersionsRequest request) 
+        {
+            return new ListEvaluationFormVersionsPaginator(this.client, request);
         }
 
         /// <summary>

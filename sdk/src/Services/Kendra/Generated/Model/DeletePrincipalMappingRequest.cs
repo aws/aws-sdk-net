@@ -138,7 +138,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// The ordering ID can be the UNIX time of the last update you made to a group members
+        /// The ordering ID can be the Unix time of the last update you made to a group members
         /// list. You would then provide this list when calling <code>PutPrincipalMapping</code>.
         /// This ensures your <code>DELETE</code> action for that updated group with the latest
         /// members list doesn't get overwritten by earlier <code>DELETE</code> actions for the
@@ -146,7 +146,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// The default ordering ID is the current UNIX time in milliseconds that the action was
+        /// The default ordering ID is the current Unix time in milliseconds that the action was
         /// received by Amazon Kendra. 
         /// </para>
         /// </summary>

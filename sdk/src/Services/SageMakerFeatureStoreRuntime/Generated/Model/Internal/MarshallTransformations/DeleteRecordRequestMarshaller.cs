@@ -62,6 +62,9 @@ namespace Amazon.SageMakerFeatureStoreRuntime.Model.Internal.MarshallTransformat
                 throw new AmazonSageMakerFeatureStoreRuntimeException("Request object does not have required field FeatureGroupName set");
             request.AddPathResource("{FeatureGroupName}", StringUtils.FromString(publicRequest.FeatureGroupName));
             
+            if (publicRequest.IsSetDeletionMode())
+                request.Parameters.Add("DeletionMode", StringUtils.FromString(publicRequest.DeletionMode));
+            
             if (publicRequest.IsSetEventTime())
                 request.Parameters.Add("EventTime", StringUtils.FromString(publicRequest.EventTime));
             

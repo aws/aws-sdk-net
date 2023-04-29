@@ -435,7 +435,7 @@ namespace Amazon.Textract
         /// <summary>
         /// Analyzes identity documents for relevant information. This information is extracted
         /// and returned as <code>IdentityDocumentFields</code>, which records both the normalized
-        /// field and value of the extracted text.Unlike other Amazon Textract operations, <code>AnalyzeID</code>
+        /// field and value of the extracted text. Unlike other Amazon Textract operations, <code>AnalyzeID</code>
         /// doesn't return any Geometry data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AnalyzeID service method.</param>
@@ -488,7 +488,7 @@ namespace Amazon.Textract
         /// <summary>
         /// Analyzes identity documents for relevant information. This information is extracted
         /// and returned as <code>IdentityDocumentFields</code>, which records both the normalized
-        /// field and value of the extracted text.Unlike other Amazon Textract operations, <code>AnalyzeID</code>
+        /// field and value of the extracted text. Unlike other Amazon Textract operations, <code>AnalyzeID</code>
         /// doesn't return any Geometry data.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AnalyzeID service method.</param>

@@ -34,7 +34,6 @@ namespace Amazon.Keyspaces.Model
     /// and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window">
     /// Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.
     /// 
-    /// 
     ///  
     /// <para>
     /// Any number of users can execute up to 4 concurrent restores (any type of restore)
@@ -59,23 +58,23 @@ namespace Amazon.Keyspaces.Model
     /// <para>
     /// You can also overwrite these settings during restore:
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// • Read/write capacity mode
+    /// Read/write capacity mode
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// • Provisioned throughput capacity settings
+    /// Provisioned throughput capacity settings
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// • Point-in-time (PITR) settings
+    /// Point-in-time (PITR) settings
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// • Tags
+    /// Tags
     /// </para>
-    ///  
+    ///  </li> </ul> 
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_settings">PITR
     /// restore settings</a> in the <i>Amazon Keyspaces Developer Guide</i>.
@@ -85,18 +84,19 @@ namespace Amazon.Keyspaces.Model
     /// Note that the following settings are not restored, and you must configure them manually
     /// for the new table:
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// • Automatic scaling policies (for tables that use provisioned capacity mode)
+    /// Automatic scaling policies (for tables that use provisioned capacity mode)
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// • Identity and Access Management (IAM) policies
+    /// Identity and Access Management (IAM) policies
     /// </para>
-    ///  
+    ///  </li> <li> 
     /// <para>
-    /// • Amazon CloudWatch metrics and alarms
+    /// Amazon CloudWatch metrics and alarms
     /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class RestoreTableRequest : AmazonKeyspacesRequest
     {
@@ -116,16 +116,16 @@ namespace Amazon.Keyspaces.Model
         /// Specifies the read/write throughput capacity mode for the target table. The options
         /// are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>throughputMode:PAY_PER_REQUEST</code> 
+        ///  <code>throughputMode:PAY_PER_REQUEST</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
+        ///  <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
         /// and <code>writeCapacityUnits</code> as input.
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
         /// </para>
@@ -153,17 +153,17 @@ namespace Amazon.Keyspaces.Model
         /// Specifies the encryption settings for the target table. You can choose one of the
         /// following KMS key (KMS key):
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
+        ///  <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
-        /// and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
+        ///  <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and
+        /// is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
         /// of the KMS key in Amazon Resource Name (ARN) format as input. 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// The default is <code>type:AWS_OWNED_KMS_KEY</code>.
         /// </para>
@@ -191,17 +191,17 @@ namespace Amazon.Keyspaces.Model
         /// Specifies the <code>pointInTimeRecovery</code> settings for the target table. The
         /// options are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>ENABLED</code> 
+        ///  <code>status=ENABLED</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>DISABLED</code> 
+        ///  <code>status=DISABLED</code> 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
-        /// If it's not specified, the default is <code>DISABLED</code>.
+        /// If it's not specified, the default is <code>status=DISABLED</code>.
         /// </para>
         ///  
         /// <para>

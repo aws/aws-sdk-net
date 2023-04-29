@@ -57,6 +57,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     response.BotId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("botMembers", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<BotMember, BotMemberUnmarshaller>(BotMemberUnmarshaller.Instance);
+                    response.BotMembers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("botName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -67,6 +73,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.BotStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("botType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.BotType = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("botVersion", targetDepth))
@@ -103,6 +115,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
                     response.IdleSessionTTLInSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("parentBotNetworks", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ParentBotNetwork, ParentBotNetworkUnmarshaller>(ParentBotNetworkUnmarshaller.Instance);
+                    response.ParentBotNetworks = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))

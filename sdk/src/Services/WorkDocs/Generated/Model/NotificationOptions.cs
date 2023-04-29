@@ -58,7 +58,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property SendEmail. 
         /// <para>
-        /// Boolean value to indicate an email notification should be sent to the receipients.
+        /// Boolean value to indicate an email notification should be sent to the recipients.
         /// </para>
         /// </summary>
         public bool SendEmail

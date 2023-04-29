@@ -334,6 +334,10 @@ namespace Amazon.LexModelsV2
         /// Constant BotName for BotFilterName
         /// </summary>
         public static readonly BotFilterName BotName = new BotFilterName("BotName");
+        /// <summary>
+        /// Constant BotType for BotFilterName
+        /// </summary>
+        public static readonly BotFilterName BotType = new BotFilterName("BotType");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -384,6 +388,10 @@ namespace Amazon.LexModelsV2
         /// Constant EQ for BotFilterOperator
         /// </summary>
         public static readonly BotFilterOperator EQ = new BotFilterOperator("EQ");
+        /// <summary>
+        /// Constant NE for BotFilterOperator
+        /// </summary>
+        public static readonly BotFilterOperator NE = new BotFilterOperator("NE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -795,6 +803,10 @@ namespace Amazon.LexModelsV2
         /// </summary>
         public static readonly BotStatus Inactive = new BotStatus("Inactive");
         /// <summary>
+        /// Constant Updating for BotStatus
+        /// </summary>
+        public static readonly BotStatus Updating = new BotStatus("Updating");
+        /// <summary>
         /// Constant Versioning for BotStatus
         /// </summary>
         public static readonly BotStatus Versioning = new BotStatus("Versioning");
@@ -828,6 +840,56 @@ namespace Amazon.LexModelsV2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator BotStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BotType.
+    /// </summary>
+    public class BotType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bot for BotType
+        /// </summary>
+        public static readonly BotType Bot = new BotType("Bot");
+        /// <summary>
+        /// Constant BotNetwork for BotType
+        /// </summary>
+        public static readonly BotType BotNetwork = new BotType("BotNetwork");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BotType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BotType FindValue(string value)
+        {
+            return FindValue<BotType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BotType(string value)
         {
             return FindValue(value);
         }

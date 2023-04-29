@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// This structure defines the CloudWatch metric to return, along with the statistic,
-    /// period, and unit.
+    /// This structure defines the CloudWatch metric to return, along with the statistic and
+    /// unit.
     /// 
     ///  
     /// <para>
@@ -45,7 +45,10 @@ namespace Amazon.AutoScaling.Model
         private string _unit;
 
         /// <summary>
-        /// Gets and sets the property Metric.
+        /// Gets and sets the property Metric. 
+        /// <para>
+        /// The metric to use.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Metric Metric
@@ -69,7 +72,7 @@ namespace Amazon.AutoScaling.Model
         /// </para>
         ///  
         /// <para>
-        /// The most commonly used metrics for scaling is <code>Average</code> 
+        /// The most commonly used metric for scaling is <code>Average</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

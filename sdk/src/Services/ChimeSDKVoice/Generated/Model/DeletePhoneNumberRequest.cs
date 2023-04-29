@@ -30,14 +30,25 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the DeletePhoneNumber operation.
+    /// Moves the specified phone number into the <b>Deletion queue</b>. A phone number must
+    /// be disassociated from any users or Amazon Chime SDK Voice Connectors before it can
+    /// be deleted.
     /// 
+    ///  
+    /// <para>
+    /// Deleted phone numbers remain in the <b>Deletion queue</b> queue for 7 days before
+    /// they are deleted permanently.
+    /// </para>
     /// </summary>
     public partial class DeletePhoneNumberRequest : AmazonChimeSDKVoiceRequest
     {
         private string _phoneNumberId;
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberId.
+        /// Gets and sets the property PhoneNumberId. 
+        /// <para>
+        /// The phone number ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public string PhoneNumberId

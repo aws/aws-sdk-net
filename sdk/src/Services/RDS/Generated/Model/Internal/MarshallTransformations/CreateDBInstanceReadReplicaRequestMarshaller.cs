@@ -199,6 +199,10 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ReplicaMode", StringUtils.FromString(publicRequest.ReplicaMode));
                 }
+                if(publicRequest.IsSetSourceDBClusterIdentifier())
+                {
+                    request.Parameters.Add("SourceDBClusterIdentifier", StringUtils.FromString(publicRequest.SourceDBClusterIdentifier));
+                }
                 if(publicRequest.IsSetSourceDBInstanceIdentifier())
                 {
                     request.Parameters.Add("SourceDBInstanceIdentifier", StringUtils.FromString(publicRequest.SourceDBInstanceIdentifier));

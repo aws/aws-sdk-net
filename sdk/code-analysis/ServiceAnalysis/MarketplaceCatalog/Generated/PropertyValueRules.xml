@@ -25,6 +25,12 @@
     <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.DeleteResourcePolicyRequest.ResourceArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.DescribeChangeSetRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
@@ -115,6 +121,18 @@
     <pattern>^([\d]{4})\-(1[0-2]|0[1-9])\-(3[01]|0[1-9]|[12][\d])T(2[0-3]|[01][\d]):([0-5][\d]):([0-5][\d])Z$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.GetResourcePolicyRequest.ResourceArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.GetResourcePolicyResponse.Policy</property>
+    <min>1</min>
+    <max>10240</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListChangeSetsRequest.Catalog</property>
     <min>1</min>
     <max>64</max>
@@ -152,7 +170,7 @@
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListEntitiesRequest.MaxResults</property>
     <min>1</min>
-    <max>20</max>
+    <max>50</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListEntitiesRequest.NextToken</property>
@@ -174,6 +192,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MarketplaceCatalog.Model.ListTagsForResourceResponse.ResourceArn</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.PutResourcePolicyRequest.Policy</property>
+    <min>1</min>
+    <max>10240</max>
+    <pattern>^[\u0009\u000A\u000D\u0020-\u00FF]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MarketplaceCatalog.Model.PutResourcePolicyRequest.ResourceArn</property>
     <min>1</min>
     <max>255</max>
     <pattern>^arn:[\w+=/,.@-]+:aws-marketplace:[\w+=/,.@-]*:[0-9]+:[\w+=,.@-]+(/[\w+=,.@-]+)*$</pattern>

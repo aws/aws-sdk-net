@@ -199,6 +199,52 @@ namespace Amazon.WorkDocs
 
 
     /// <summary>
+    /// Constants used for properties of type AdditionalResponseFieldType.
+    /// </summary>
+    public class AdditionalResponseFieldType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant WEBURL for AdditionalResponseFieldType
+        /// </summary>
+        public static readonly AdditionalResponseFieldType WEBURL = new AdditionalResponseFieldType("WEBURL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdditionalResponseFieldType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdditionalResponseFieldType FindValue(string value)
+        {
+            return FindValue<AdditionalResponseFieldType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdditionalResponseFieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type BooleanEnumType.
     /// </summary>
     public class BooleanEnumType : ConstantClass
@@ -346,6 +392,84 @@ namespace Amazon.WorkDocs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator CommentVisibilityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentCategoryType.
+    /// </summary>
+    public class ContentCategoryType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUDIO for ContentCategoryType
+        /// </summary>
+        public static readonly ContentCategoryType AUDIO = new ContentCategoryType("AUDIO");
+        /// <summary>
+        /// Constant DOCUMENT for ContentCategoryType
+        /// </summary>
+        public static readonly ContentCategoryType DOCUMENT = new ContentCategoryType("DOCUMENT");
+        /// <summary>
+        /// Constant IMAGE for ContentCategoryType
+        /// </summary>
+        public static readonly ContentCategoryType IMAGE = new ContentCategoryType("IMAGE");
+        /// <summary>
+        /// Constant OTHER for ContentCategoryType
+        /// </summary>
+        public static readonly ContentCategoryType OTHER = new ContentCategoryType("OTHER");
+        /// <summary>
+        /// Constant PDF for ContentCategoryType
+        /// </summary>
+        public static readonly ContentCategoryType PDF = new ContentCategoryType("PDF");
+        /// <summary>
+        /// Constant PRESENTATION for ContentCategoryType
+        /// </summary>
+        public static readonly ContentCategoryType PRESENTATION = new ContentCategoryType("PRESENTATION");
+        /// <summary>
+        /// Constant SOURCE_CODE for ContentCategoryType
+        /// </summary>
+        public static readonly ContentCategoryType SOURCE_CODE = new ContentCategoryType("SOURCE_CODE");
+        /// <summary>
+        /// Constant SPREADSHEET for ContentCategoryType
+        /// </summary>
+        public static readonly ContentCategoryType SPREADSHEET = new ContentCategoryType("SPREADSHEET");
+        /// <summary>
+        /// Constant VIDEO for ContentCategoryType
+        /// </summary>
+        public static readonly ContentCategoryType VIDEO = new ContentCategoryType("VIDEO");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentCategoryType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentCategoryType FindValue(string value)
+        {
+            return FindValue<ContentCategoryType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentCategoryType(string value)
         {
             return FindValue(value);
         }
@@ -607,6 +731,172 @@ namespace Amazon.WorkDocs
 
 
     /// <summary>
+    /// Constants used for properties of type LanguageCodeType.
+    /// </summary>
+    public class LanguageCodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AR for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType AR = new LanguageCodeType("AR");
+        /// <summary>
+        /// Constant BG for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType BG = new LanguageCodeType("BG");
+        /// <summary>
+        /// Constant BN for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType BN = new LanguageCodeType("BN");
+        /// <summary>
+        /// Constant CS for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType CS = new LanguageCodeType("CS");
+        /// <summary>
+        /// Constant DA for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType DA = new LanguageCodeType("DA");
+        /// <summary>
+        /// Constant DE for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType DE = new LanguageCodeType("DE");
+        /// <summary>
+        /// Constant DEFAULT for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType DEFAULT = new LanguageCodeType("DEFAULT");
+        /// <summary>
+        /// Constant EL for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType EL = new LanguageCodeType("EL");
+        /// <summary>
+        /// Constant EN for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType EN = new LanguageCodeType("EN");
+        /// <summary>
+        /// Constant ES for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType ES = new LanguageCodeType("ES");
+        /// <summary>
+        /// Constant FA for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType FA = new LanguageCodeType("FA");
+        /// <summary>
+        /// Constant FI for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType FI = new LanguageCodeType("FI");
+        /// <summary>
+        /// Constant FR for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType FR = new LanguageCodeType("FR");
+        /// <summary>
+        /// Constant HI for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType HI = new LanguageCodeType("HI");
+        /// <summary>
+        /// Constant HU for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType HU = new LanguageCodeType("HU");
+        /// <summary>
+        /// Constant ID for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType ID = new LanguageCodeType("ID");
+        /// <summary>
+        /// Constant IT for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType IT = new LanguageCodeType("IT");
+        /// <summary>
+        /// Constant JA for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType JA = new LanguageCodeType("JA");
+        /// <summary>
+        /// Constant KO for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType KO = new LanguageCodeType("KO");
+        /// <summary>
+        /// Constant LT for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType LT = new LanguageCodeType("LT");
+        /// <summary>
+        /// Constant LV for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType LV = new LanguageCodeType("LV");
+        /// <summary>
+        /// Constant NL for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType NL = new LanguageCodeType("NL");
+        /// <summary>
+        /// Constant NO for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType NO = new LanguageCodeType("NO");
+        /// <summary>
+        /// Constant PT for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType PT = new LanguageCodeType("PT");
+        /// <summary>
+        /// Constant RO for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType RO = new LanguageCodeType("RO");
+        /// <summary>
+        /// Constant RU for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType RU = new LanguageCodeType("RU");
+        /// <summary>
+        /// Constant SV for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType SV = new LanguageCodeType("SV");
+        /// <summary>
+        /// Constant SW for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType SW = new LanguageCodeType("SW");
+        /// <summary>
+        /// Constant TH for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType TH = new LanguageCodeType("TH");
+        /// <summary>
+        /// Constant TR for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType TR = new LanguageCodeType("TR");
+        /// <summary>
+        /// Constant ZH for LanguageCodeType
+        /// </summary>
+        public static readonly LanguageCodeType ZH = new LanguageCodeType("ZH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LanguageCodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LanguageCodeType FindValue(string value)
+        {
+            return FindValue<LanguageCodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LanguageCodeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type LocaleType.
     /// </summary>
     public class LocaleType : ConstantClass
@@ -693,6 +983,68 @@ namespace Amazon.WorkDocs
 
 
     /// <summary>
+    /// Constants used for properties of type OrderByFieldType.
+    /// </summary>
+    public class OrderByFieldType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED_TIMESTAMP for OrderByFieldType
+        /// </summary>
+        public static readonly OrderByFieldType CREATED_TIMESTAMP = new OrderByFieldType("CREATED_TIMESTAMP");
+        /// <summary>
+        /// Constant MODIFIED_TIMESTAMP for OrderByFieldType
+        /// </summary>
+        public static readonly OrderByFieldType MODIFIED_TIMESTAMP = new OrderByFieldType("MODIFIED_TIMESTAMP");
+        /// <summary>
+        /// Constant NAME for OrderByFieldType
+        /// </summary>
+        public static readonly OrderByFieldType NAME = new OrderByFieldType("NAME");
+        /// <summary>
+        /// Constant RELEVANCE for OrderByFieldType
+        /// </summary>
+        public static readonly OrderByFieldType RELEVANCE = new OrderByFieldType("RELEVANCE");
+        /// <summary>
+        /// Constant SIZE for OrderByFieldType
+        /// </summary>
+        public static readonly OrderByFieldType SIZE = new OrderByFieldType("SIZE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrderByFieldType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrderByFieldType FindValue(string value)
+        {
+            return FindValue<OrderByFieldType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrderByFieldType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrderType.
     /// </summary>
     public class OrderType : ConstantClass
@@ -736,6 +1088,64 @@ namespace Amazon.WorkDocs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrderType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PrincipalRoleType.
+    /// </summary>
+    public class PrincipalRoleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTRIBUTOR for PrincipalRoleType
+        /// </summary>
+        public static readonly PrincipalRoleType CONTRIBUTOR = new PrincipalRoleType("CONTRIBUTOR");
+        /// <summary>
+        /// Constant COOWNER for PrincipalRoleType
+        /// </summary>
+        public static readonly PrincipalRoleType COOWNER = new PrincipalRoleType("COOWNER");
+        /// <summary>
+        /// Constant OWNER for PrincipalRoleType
+        /// </summary>
+        public static readonly PrincipalRoleType OWNER = new PrincipalRoleType("OWNER");
+        /// <summary>
+        /// Constant VIEWER for PrincipalRoleType
+        /// </summary>
+        public static readonly PrincipalRoleType VIEWER = new PrincipalRoleType("VIEWER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PrincipalRoleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PrincipalRoleType FindValue(string value)
+        {
+            return FindValue<PrincipalRoleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PrincipalRoleType(string value)
         {
             return FindValue(value);
         }
@@ -1009,6 +1419,64 @@ namespace Amazon.WorkDocs
 
 
     /// <summary>
+    /// Constants used for properties of type ResponseItemType.
+    /// </summary>
+    public class ResponseItemType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMMENT for ResponseItemType
+        /// </summary>
+        public static readonly ResponseItemType COMMENT = new ResponseItemType("COMMENT");
+        /// <summary>
+        /// Constant DOCUMENT for ResponseItemType
+        /// </summary>
+        public static readonly ResponseItemType DOCUMENT = new ResponseItemType("DOCUMENT");
+        /// <summary>
+        /// Constant DOCUMENT_VERSION for ResponseItemType
+        /// </summary>
+        public static readonly ResponseItemType DOCUMENT_VERSION = new ResponseItemType("DOCUMENT_VERSION");
+        /// <summary>
+        /// Constant FOLDER for ResponseItemType
+        /// </summary>
+        public static readonly ResponseItemType FOLDER = new ResponseItemType("FOLDER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResponseItemType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponseItemType FindValue(string value)
+        {
+            return FindValue<ResponseItemType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponseItemType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RolePermissionType.
     /// </summary>
     public class RolePermissionType : ConstantClass
@@ -1117,6 +1585,164 @@ namespace Amazon.WorkDocs
 
 
     /// <summary>
+    /// Constants used for properties of type SearchCollectionType.
+    /// </summary>
+    public class SearchCollectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OWNED for SearchCollectionType
+        /// </summary>
+        public static readonly SearchCollectionType OWNED = new SearchCollectionType("OWNED");
+        /// <summary>
+        /// Constant SHARED_WITH_ME for SearchCollectionType
+        /// </summary>
+        public static readonly SearchCollectionType SHARED_WITH_ME = new SearchCollectionType("SHARED_WITH_ME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchCollectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchCollectionType FindValue(string value)
+        {
+            return FindValue<SearchCollectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchCollectionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchQueryScopeType.
+    /// </summary>
+    public class SearchQueryScopeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONTENT for SearchQueryScopeType
+        /// </summary>
+        public static readonly SearchQueryScopeType CONTENT = new SearchQueryScopeType("CONTENT");
+        /// <summary>
+        /// Constant NAME for SearchQueryScopeType
+        /// </summary>
+        public static readonly SearchQueryScopeType NAME = new SearchQueryScopeType("NAME");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchQueryScopeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchQueryScopeType FindValue(string value)
+        {
+            return FindValue<SearchQueryScopeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchQueryScopeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SearchResourceType.
+    /// </summary>
+    public class SearchResourceType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMMENT for SearchResourceType
+        /// </summary>
+        public static readonly SearchResourceType COMMENT = new SearchResourceType("COMMENT");
+        /// <summary>
+        /// Constant DOCUMENT for SearchResourceType
+        /// </summary>
+        public static readonly SearchResourceType DOCUMENT = new SearchResourceType("DOCUMENT");
+        /// <summary>
+        /// Constant DOCUMENT_VERSION for SearchResourceType
+        /// </summary>
+        public static readonly SearchResourceType DOCUMENT_VERSION = new SearchResourceType("DOCUMENT_VERSION");
+        /// <summary>
+        /// Constant FOLDER for SearchResourceType
+        /// </summary>
+        public static readonly SearchResourceType FOLDER = new SearchResourceType("FOLDER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SearchResourceType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SearchResourceType FindValue(string value)
+        {
+            return FindValue<SearchResourceType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SearchResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ShareStatusType.
     /// </summary>
     public class ShareStatusType : ConstantClass
@@ -1160,6 +1786,56 @@ namespace Amazon.WorkDocs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ShareStatusType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SortOrder.
+    /// </summary>
+    public class SortOrder : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASC for SortOrder
+        /// </summary>
+        public static readonly SortOrder ASC = new SortOrder("ASC");
+        /// <summary>
+        /// Constant DESC for SortOrder
+        /// </summary>
+        public static readonly SortOrder DESC = new SortOrder("DESC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SortOrder(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SortOrder FindValue(string value)
+        {
+            return FindValue<SortOrder>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SortOrder(string value)
         {
             return FindValue(value);
         }

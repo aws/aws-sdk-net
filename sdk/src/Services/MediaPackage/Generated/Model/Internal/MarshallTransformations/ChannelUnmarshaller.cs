@@ -70,6 +70,12 @@ namespace Amazon.MediaPackage.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("description", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

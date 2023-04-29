@@ -50,7 +50,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Application. 
         /// <para>
-        /// The name or ID of the application.
+        ///  The name, ID, or ARN of the application. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

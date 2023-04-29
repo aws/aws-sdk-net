@@ -92,6 +92,38 @@ namespace Amazon.Mgn.Model
         }
 
         /// <summary>
+        /// Paginator for ListExportErrors operation
+        ///</summary>
+        public IListExportErrorsPaginator ListExportErrors(ListExportErrorsRequest request) 
+        {
+            return new ListExportErrorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListExports operation
+        ///</summary>
+        public IListExportsPaginator ListExports(ListExportsRequest request) 
+        {
+            return new ListExportsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImportErrors operation
+        ///</summary>
+        public IListImportErrorsPaginator ListImportErrors(ListImportErrorsRequest request) 
+        {
+            return new ListImportErrorsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListImports operation
+        ///</summary>
+        public IListImportsPaginator ListImports(ListImportsRequest request) 
+        {
+            return new ListImportsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListSourceServerActions operation
         ///</summary>
         public IListSourceServerActionsPaginator ListSourceServerActions(ListSourceServerActionsRequest request) 
