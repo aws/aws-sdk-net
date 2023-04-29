@@ -387,7 +387,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public MultiTableDocumentTransactWrite(params DocumentTransactWrite[] transactionParts)
         {
             if (transactionParts == null)
-                throw new ArgumentNullException("transactionParts");
+                throw new ArgumentNullException(nameof(transactionParts));
 
             TransactionParts = new List<DocumentTransactWrite>(transactionParts);
         }
