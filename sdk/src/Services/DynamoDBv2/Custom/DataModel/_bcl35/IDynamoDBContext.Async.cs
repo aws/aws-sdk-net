@@ -254,8 +254,9 @@ namespace Amazon.DynamoDBv2.DataModel
         #region BatchGet async
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ExecuteBatchGet operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.ExecuteBatchGet"/>
+        /// Issues a batch-get request with multiple batches.
+        ///
+        /// Results are stored in the individual batches.
         /// </summary>
         /// <param name="batches">Configured BatchGet objects</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -277,8 +278,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region BatchWrite async
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ExecuteBatchWrite operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.ExecuteBatchWrite"/>
+        /// Issues a batch-write request with multiple batches.
         /// </summary>
         /// <param name="batches">Configured BatchWrite objects</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -300,8 +300,8 @@ namespace Amazon.DynamoDBv2.DataModel
         #region TransactGet async
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ExecuteTransactGet operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.ExecuteTransactGet"/>
+        /// Issues a transactional get request with multiple TransactGet objects.
+        /// Results are stored in the individual TransactGet objects.
         /// </summary>
         /// <param name="transactionParts">Configured TransactGet objects.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -327,8 +327,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region TransactWrite async
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ExecuteTransactWrite operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.ExecuteTransactWrite"/>
+        /// Issues a transactional write request with multiple TransactWrite objects.
         /// </summary>
         /// <param name="transactionParts">Configured TransactWrite objects.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>

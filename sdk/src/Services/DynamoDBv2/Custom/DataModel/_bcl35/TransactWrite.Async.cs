@@ -26,8 +26,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.TransactWrite.Execute"/>
+        /// Executes a server call to write/delete/version-check the items requested in a transaction.
         /// </summary>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">
@@ -65,8 +64,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.MultiTableTransactWrite.Execute"/>
+        /// Executes a multi-table transaction request against all configured TransactWrite objects.
         /// </summary>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">

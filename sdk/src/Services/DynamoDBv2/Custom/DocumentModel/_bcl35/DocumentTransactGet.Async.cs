@@ -25,8 +25,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.DocumentTransactGet.Execute"/>
+        /// Executes a server call to get the documents requested in a transaction.
+        /// Populates Results with the retrieved items.
         /// </summary>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">
@@ -63,8 +63,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.MultiTableDocumentTransactGet.Execute"/>
+        /// Executes a multi-table transaction request against all configured DocumentTransactGet objects.
+        /// Results are stored in the respective DocumentTransactGet objects.
         /// </summary>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">
