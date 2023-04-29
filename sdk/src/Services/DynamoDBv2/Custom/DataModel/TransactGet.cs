@@ -156,7 +156,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="otherTransactionParts">Other TransactGet objects.</param>
         /// <returns>
         /// MultiTableTransactGet consisting of the multiple TransactGet objects:
-        /// the current transaction part and the passed-in transaction parts.
+        /// the current TransactGet object and the passed-in TransactGet objects.
         /// </returns>
         public MultiTableTransactGet Combine(params TransactGet[] otherTransactionParts)
         {
