@@ -43,7 +43,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <summary>
-        /// Executes a multi-table transactional condition-check/put/update/delete against all configured transaction parts.
+        /// Executes a multi-table transactional condition-check/put/update/delete against all configured DocumentTransactWrite objects.
         /// </summary>
         public void Execute()
         {

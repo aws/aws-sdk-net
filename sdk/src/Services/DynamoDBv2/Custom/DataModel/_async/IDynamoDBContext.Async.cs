@@ -225,8 +225,8 @@ namespace Amazon.DynamoDBv2.DataModel
         #region TransactGet async
 
         /// <summary>
-        /// Issues a transactional get request with multiple transaction parts.
-        /// Results are stored in the individual transaction parts.
+        /// Issues a transactional get request with multiple TransactGet objects.
+        /// Results are stored in the individual TransactGet objects.
         /// </summary>
         /// <param name="transactionParts">Configured TransactGet objects.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
@@ -238,7 +238,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region TransactWrite async
 
         /// <summary>
-        /// Issues a transactional write request with multiple transaction parts.
+        /// Issues a transactional write request with multiple TransactWrite objects.
         /// </summary>
         /// <param name="transactionParts">Configured TransactWrite objects.</param>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>

@@ -88,7 +88,7 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="otherTransactionParts">Other TransactWrite objects.</param>
         /// <returns>
         /// MultiTableTransactWrite consisting of the multiple TransactWrite objects:
-        /// the current transaction part and the passed-in transaction parts.
+        /// the current TransactWrite object and the passed-in TransactWrite objects.
         /// </returns>
         public MultiTableTransactWrite Combine(params TransactWrite[] otherTransactionParts)
         {

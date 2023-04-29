@@ -42,7 +42,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <summary>
-        /// Executes a multi-table transaction request against all configured transaction parts.
+        /// Executes a multi-table transaction request against all configured DocumentTransactGet objects.
         /// Results are stored in the respective DocumentTransactGet objects.
         /// </summary>
         public void Execute()

@@ -43,7 +43,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Public methods
 
         /// <summary>
-        /// Executes a multi-table transaction request against all configured transaction parts.
+        /// Executes a multi-table transaction request against all configured TransactGet objects.
         /// Results are stored in the respective TransactGet objects.
         /// </summary>
         public void Execute()
