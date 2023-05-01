@@ -126,6 +126,12 @@ namespace Amazon.KeyManagementService.Model
         /// followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use
         /// <code>UpdateAlias</code> to change the alias name.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string AliasName

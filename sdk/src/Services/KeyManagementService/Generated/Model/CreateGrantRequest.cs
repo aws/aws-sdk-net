@@ -125,24 +125,20 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Constraints. 
         /// <para>
-        /// Specifies a grant constraint. 
+        /// Specifies a grant constraint.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// KMS supports the <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
-        /// grant constraints. Each constraint value can include up to 8 encryption context pairs.
-        /// The encryption context value in each constraint cannot exceed 384 characters. For
-        /// information about grant constraints, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
-        /// grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For more
-        /// information about encryption context, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-        /// context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// The encryption context grant constraints allow the permissions in the grant only when
-        /// the encryption context in the request matches (<code>EncryptionContextEquals</code>)
-        /// or includes (<code>EncryptionContextSubset</code>) the encryption context specified
-        /// in this structure. 
+        /// grant constraints, which allow the permissions in the grant only when the encryption
+        /// context in the request matches (<code>EncryptionContextEquals</code>) or includes
+        /// (<code>EncryptionContextSubset</code>) the encryption context specified in the constraint.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -157,8 +153,17 @@ namespace Amazon.KeyManagementService.Model
         ///  
         /// <para>
         /// You cannot use an encryption context grant constraint for cryptographic operations
-        /// with asymmetric KMS keys or HMAC KMS keys. These keys don't support an encryption
-        /// context. 
+        /// with asymmetric KMS keys or HMAC KMS keys. Operations with these keys don't support
+        /// an encryption context.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each constraint value can include up to 8 encryption context pairs. The encryption
+        /// context value in each constraint cannot exceed 384 characters. For information about
+        /// grant constraints, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+        /// grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For more
+        /// information about encryption context, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+        /// context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. 
         /// </para>
         /// </summary>
         public GrantConstraints Constraints
@@ -275,7 +280,12 @@ namespace Amazon.KeyManagementService.Model
         /// A friendly name for the grant. Use this value to prevent the unintended creation of
         /// duplicate grants when retrying this request.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// When this value is absent, all <code>CreateGrant</code> requests result in a new grant
         /// with a unique <code>GrantId</code> even if all the supplied parameters are identical.

@@ -212,7 +212,12 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Specifies that encryption context to use when the reencrypting the data.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// A destination encryption context is valid only when the destination KMS key is a symmetric
         /// encryption KMS key. The standard ciphertext format for asymmetric KMS keys does not

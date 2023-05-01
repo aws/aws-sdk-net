@@ -969,7 +969,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.  The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
         /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by KeyManagementService.</returns>
@@ -2228,12 +2228,16 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        ///  <code>Decrypt</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>Decrypt</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of the plaintext
+        /// data, the response includes the plaintext data encrypted with the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
         /// </para>
         ///  
         /// <para>
@@ -4903,12 +4907,19 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
+        ///  <code>GenerateDataKey</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateDataKey</code> for an Amazon Web Services Nitro
+        /// enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. <code>GenerateDataKey</code>
+        /// returns a copy of the data key encrypted under the specified KMS key, as usual. But
+        /// instead of a plaintext copy of the data key, the response includes a copy of the data
+        /// key encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
         /// </para>
         ///  
         /// <para>
@@ -5169,6 +5180,23 @@ namespace Amazon.KeyManagementService
         /// as specified in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private
         /// key is a DER-encoded PKCS8 PrivateKeyInfo, as specified in <a href="https://tools.ietf.org/html/rfc5958">RFC
         /// 5958</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>GenerateDataKeyPair</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateDataKeyPair</code> for an Amazon Web Services Nitro
+        /// enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. <code>GenerateDataKeyPair</code>
+        /// returns the public data key and a copy of the private data key encrypted under the
+        /// specified KMS key, as usual. But instead of a plaintext copy of the private data key
+        /// (<code>PrivateKeyPlaintext</code>), the response includes a copy of the private data
+        /// key encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
         /// </para>
         ///  
         /// <para>
@@ -5613,7 +5641,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value
-        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>. The
+        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>16</code>. The
         /// symmetric encryption key used in China Regions to encrypt your data key is an SM4
         /// encryption key.
         /// </para>
@@ -5979,11 +6007,15 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
+        ///  <code>GenerateRandom</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateRandom</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of plaintext
+        /// bytes, the response includes the plaintext bytes encrypted under the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
         /// Guide</i>.
         /// </para>
         ///  
@@ -6088,11 +6120,15 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
+        ///  <code>GenerateRandom</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateRandom</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of plaintext
+        /// bytes, the response includes the plaintext bytes encrypted under the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
         /// Guide</i>.
         /// </para>
         ///  
@@ -10454,7 +10490,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</param>
+        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
         /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
@@ -11085,7 +11121,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul>
         /// </summary>
         /// <param name="keyId">Updates the description of the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="description">New description for the KMS key.</param>
+        /// <param name="description">New description for the KMS key. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
         /// 
         /// <returns>The response from the UpdateKeyDescription service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">

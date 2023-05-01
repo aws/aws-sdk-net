@@ -30,6 +30,7 @@
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
+    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CreateCustomKeyStoreRequest.CustomKeyStoreName</property>
@@ -133,6 +134,11 @@
     <property>Amazon.KeyManagementService.Model.DecryptRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.DecryptResponse.CiphertextForRecipient</property>
+    <min>1</min>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.DecryptResponse.KeyId</property>
@@ -253,6 +259,11 @@
     <max>6144</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyResponse.CiphertextForRecipient</property>
+    <min>1</min>
+    <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyResponse.KeyId</property>
     <min>1</min>
     <max>2048</max>
@@ -266,6 +277,11 @@
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairRequest.KeyId</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse.CiphertextForRecipient</property>
+    <min>1</min>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse.KeyId</property>
@@ -356,6 +372,11 @@
     <property>Amazon.KeyManagementService.Model.GenerateRandomRequest.NumberOfBytes</property>
     <min>1</min>
     <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.GenerateRandomResponse.CiphertextForRecipient</property>
+    <min>1</min>
+    <max>6144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.GenerateRandomResponse.Plaintext</property>
@@ -738,6 +759,7 @@
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
+    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.UpdateCustomKeyStoreRequest.CustomKeyStoreId</property>
@@ -853,6 +875,7 @@
     <property>Amazon.KeyManagementService.Model.CustomKeyStoresListEntry.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
+    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.CustomKeyStoresListEntry.CustomKeyStoreId</property>
@@ -922,6 +945,7 @@
     <property>Amazon.KeyManagementService.Model.KeyMetadata.CloudHsmClusterId</property>
     <min>19</min>
     <max>24</max>
+    <pattern>cluster-[2-7a-zA-Z]{11,16}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.KeyMetadata.CustomKeyStoreId</property>
@@ -953,6 +977,11 @@
     <min>1</min>
     <max>32</max>
     <pattern>^([a-z]+-){2,3}\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.KeyManagementService.Model.RecipientInfo.AttestationDocument</property>
+    <min>1</min>
+    <max>262144</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.KeyManagementService.Model.Tag.TagKey</property>
