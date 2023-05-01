@@ -1,3 +1,12 @@
+### 3.7.537.0 (2023-05-01 18:22 UTC)
+* ComputeOptimizer (3.7.105.0)
+	* support for tag filtering within compute optimizer. ability to filter recommendation results by tag and tag key value pairs. ability to filter by inferred workload type added.
+* KeyManagementService (3.7.102.0)
+	* This release makes the NitroEnclave request parameter Recipient and the response field for CiphertextForRecipient available in AWS SDKs. It also adds the regex pattern for CloudHsmClusterId validation.
+* Core 3.7.106.30
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.536.0 (2023-04-28 21:17 UTC)
 * Appflow (3.7.109.0)
 	* Adds Jwt Support for Salesforce Credentials.
