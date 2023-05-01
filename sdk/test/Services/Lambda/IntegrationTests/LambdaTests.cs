@@ -171,6 +171,7 @@ export const handler = awslambda.streamifyResponse(async (event, responseStream,
                     iamClient.DeleteRole(new DeleteRoleRequest { RoleName = iamRoleName });
             }
         }
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
         [TestCategory("Lambda")]
         public async Task StreamifyLambdaResponseTest()

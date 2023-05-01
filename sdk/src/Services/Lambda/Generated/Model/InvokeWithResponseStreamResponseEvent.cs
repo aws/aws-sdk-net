@@ -95,8 +95,7 @@ namespace Amazon.Lambda.Model
                 }
                 catch(UnknownEventStreamException)
                 {
-                    //Silence to ensure backwards compatability with future EventStream specification
-                    return;
+                    throw new UnknownEventStreamException("Received an unknown event stream type");
                 }
                 EventReceived?.Invoke(this, new EventStreamEventReceivedArgs<IEventStreamEvent>(ev));
 
