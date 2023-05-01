@@ -1143,6 +1143,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableECSServiceField ServiceArn = new ExportableECSServiceField("ServiceArn");
         /// <summary>
+        /// Constant Tags for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField Tags = new ExportableECSServiceField("Tags");
+        /// <summary>
         /// Constant UtilizationMetricsCpuMaximum for ExportableECSServiceField
         /// </summary>
         public static readonly ExportableECSServiceField UtilizationMetricsCpuMaximum = new ExportableECSServiceField("UtilizationMetricsCpuMaximum");
@@ -1353,6 +1357,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField RecommendationsSourcesRecommendationSourceType = new ExportableInstanceField("RecommendationsSourcesRecommendationSourceType");
         /// <summary>
+        /// Constant Tags for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField Tags = new ExportableInstanceField("Tags");
+        /// <summary>
         /// Constant UtilizationMetricsCpuMaximum for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField UtilizationMetricsCpuMaximum = new ExportableInstanceField("UtilizationMetricsCpuMaximum");
@@ -1539,6 +1547,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableLambdaFunctionField RecommendationOptionsSavingsOpportunityPercentage = new ExportableLambdaFunctionField("RecommendationOptionsSavingsOpportunityPercentage");
         /// <summary>
+        /// Constant Tags for ExportableLambdaFunctionField
+        /// </summary>
+        public static readonly ExportableLambdaFunctionField Tags = new ExportableLambdaFunctionField("Tags");
+        /// <summary>
         /// Constant UtilizationMetricsDurationAverage for ExportableLambdaFunctionField
         /// </summary>
         public static readonly ExportableLambdaFunctionField UtilizationMetricsDurationAverage = new ExportableLambdaFunctionField("UtilizationMetricsDurationAverage");
@@ -1692,6 +1704,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant RootVolume for ExportableVolumeField
         /// </summary>
         public static readonly ExportableVolumeField RootVolume = new ExportableVolumeField("RootVolume");
+        /// <summary>
+        /// Constant Tags for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField Tags = new ExportableVolumeField("Tags");
         /// <summary>
         /// Constant UtilizationMetricsVolumeReadBytesPerSecondMaximum for ExportableVolumeField
         /// </summary>
@@ -1866,6 +1882,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant FindingReasonCodes for FilterName
         /// </summary>
         public static readonly FilterName FindingReasonCodes = new FilterName("FindingReasonCodes");
+        /// <summary>
+        /// Constant InferredWorkloadTypes for FilterName
+        /// </summary>
+        public static readonly FilterName InferredWorkloadTypes = new FilterName("InferredWorkloadTypes");
         /// <summary>
         /// Constant RecommendationSourceType for FilterName
         /// </summary>
@@ -2052,6 +2072,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant Redis for InferredWorkloadType
         /// </summary>
         public static readonly InferredWorkloadType Redis = new InferredWorkloadType("Redis");
+        /// <summary>
+        /// Constant SQLServer for InferredWorkloadType
+        /// </summary>
+        public static readonly InferredWorkloadType SQLServer = new InferredWorkloadType("SQLServer");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

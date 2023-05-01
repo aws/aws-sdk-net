@@ -60,6 +60,27 @@ namespace Amazon.ComputeOptimizer.Model
         /// Specify <code>FindingReasonCode</code> to return recommendations with a specific finding
         /// reason code (for example, <code>MemoryUnderprovisioned</code>).
         /// </para>
+        ///  
+        /// <para>
+        /// You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code>
+        /// tags.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda
+        /// function recommendations. Use the tag key in the filter name and the tag value as
+        /// the filter value. For example, to find all Lambda function recommendations that have
+        /// a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify
+        /// <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.
+        /// </para>
+        ///  
+        /// <para>
+        /// A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations.
+        /// Use this filter to find all of your Lambda function recommendations that have a tag
+        /// with a specific key. This doesn’t consider the tag value. For example, you can find
+        /// your Lambda function recommendations with a tag key value of <code>Owner</code> or
+        /// without any tag keys assigned.
+        /// </para>
         /// </summary>
         public LambdaFunctionRecommendationFilterName Name
         {

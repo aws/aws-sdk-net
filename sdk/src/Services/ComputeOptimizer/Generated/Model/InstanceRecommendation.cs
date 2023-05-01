@@ -47,6 +47,7 @@ namespace Amazon.ComputeOptimizer.Model
         private double? _lookBackPeriodInDays;
         private List<InstanceRecommendationOption> _recommendationOptions = new List<InstanceRecommendationOption>();
         private List<RecommendationSource> _recommendationSources = new List<RecommendationSource>();
+        private List<Tag> _tags = new List<Tag>();
         private List<UtilizationMetric> _utilizationMetrics = new List<UtilizationMetric>();
 
         /// <summary>
@@ -229,7 +230,7 @@ namespace Amazon.ComputeOptimizer.Model
         ///  <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
         /// configuration doesn't meet the performance requirements of your workload and there
         /// is an alternative instance type that provides better EBS throughput performance. This
-        /// is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt;
+        /// is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>
         /// metrics of EBS volumes attached to the current instance during the look-back period.
         /// </para>
         ///  </li> <li> 
@@ -375,6 +376,10 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  <code>Kafka</code> - Infers that Kafka might be running on the instance.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<string> InferredWorkloadTypes
@@ -513,6 +518,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetRecommendationSources()
         {
             return this._recommendationSources != null && this._recommendationSources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A list of tags assigned to your Amazon EC2 instance recommendations. 
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>
