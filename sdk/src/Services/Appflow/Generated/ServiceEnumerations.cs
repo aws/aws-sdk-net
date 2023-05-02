@@ -719,6 +719,14 @@ namespace Amazon.Appflow
     {
 
         /// <summary>
+        /// Constant Canceled for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Canceled = new ExecutionStatus("Canceled");
+        /// <summary>
+        /// Constant CancelStarted for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus CancelStarted = new ExecutionStatus("CancelStarted");
+        /// <summary>
         /// Constant Error for ExecutionStatus
         /// </summary>
         public static readonly ExecutionStatus Error = new ExecutionStatus("Error");
