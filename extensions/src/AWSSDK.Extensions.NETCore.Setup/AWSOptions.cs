@@ -81,6 +81,10 @@ namespace Amazon.Extensions.NETCore.Setup
 
                 return this._defaultClientConfig;
             }
+            internal set
+            {
+                this._defaultClientConfig = value;
+            }
         }
 
         /// <summary>
@@ -88,14 +92,6 @@ namespace Amazon.Extensions.NETCore.Setup
         /// the service client through this package.
         /// </summary>
         public LoggingSetting Logging { get; set; }
-
-        internal bool IsDefaultClientConfigSet
-        {
-            get
-            {
-                return this._defaultClientConfig != null;
-            }
-        }
 
         /// <summary>
         /// Create a service client for the specified service interface using the options set in this instance.

@@ -26,7 +26,7 @@ namespace Amazon.Extensions.NETCore.Setup
     /// </summary>
     internal class DefaultClientConfig : ClientConfig
     {
-        internal DefaultClientConfig()
+        public DefaultClientConfig()
         {
 
         }
