@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Suggestion Object
+    /// Response Unmarshaller for SourceDocument Object
     /// </summary>  
-    public class SuggestionUnmarshaller : IUnmarshaller<Suggestion, XmlUnmarshallerContext>, IUnmarshaller<Suggestion, JsonUnmarshallerContext>
+    public class SourceDocumentUnmarshaller : IUnmarshaller<SourceDocument, XmlUnmarshallerContext>, IUnmarshaller<SourceDocument, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Suggestion IUnmarshaller<Suggestion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SourceDocument IUnmarshaller<SourceDocument, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Suggestion Unmarshall(JsonUnmarshallerContext context)
+        public SourceDocument Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Suggestion unmarshalledObject = new Suggestion();
+            SourceDocument unmarshalledObject = new SourceDocument();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("AdditionalAttributes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DocumentAttribute, DocumentAttributeUnmarshaller>(DocumentAttributeUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalAttributes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DocumentId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DocumentId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SourceDocuments", targetDepth))
+                if (context.TestExpression("SuggestionAttributes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SourceDocument, SourceDocumentUnmarshaller>(SourceDocumentUnmarshaller.Instance);
-                    unmarshalledObject.SourceDocuments = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Value", targetDepth))
-                {
-                    var unmarshaller = SuggestionValueUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SuggestionAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         }
 
 
-        private static SuggestionUnmarshaller _instance = new SuggestionUnmarshaller();        
+        private static SourceDocumentUnmarshaller _instance = new SourceDocumentUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SuggestionUnmarshaller Instance
+        public static SourceDocumentUnmarshaller Instance
         {
             get
             {

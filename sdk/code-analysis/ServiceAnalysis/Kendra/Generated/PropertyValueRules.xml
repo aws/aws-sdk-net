@@ -2542,6 +2542,11 @@
     <pattern>[a-zA-Z0-9_][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Kendra.Model.SourceDocument.DocumentId</property>
+    <min>1</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Kendra.Model.SpellCorrectedQuery.SuggestedQueryText</property>
     <min>1</min>
     <max>1000</max>
@@ -2560,6 +2565,12 @@
     <property>Amazon.Kendra.Model.Status.FailureReason</property>
     <min>1</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Kendra.Model.SuggestableConfig.AttributeName</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>[a-zA-Z0-9_][a-zA-Z0-9_-]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Kendra.Model.Suggestion.Id</property>

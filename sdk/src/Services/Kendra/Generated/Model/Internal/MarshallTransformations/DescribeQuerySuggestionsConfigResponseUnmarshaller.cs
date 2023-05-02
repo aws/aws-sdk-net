@@ -51,6 +51,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AttributeSuggestionsConfig", targetDepth))
+                {
+                    var unmarshaller = AttributeSuggestionsDescribeConfigUnmarshaller.Instance;
+                    response.AttributeSuggestionsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IncludeQueriesWithoutUserInformation", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

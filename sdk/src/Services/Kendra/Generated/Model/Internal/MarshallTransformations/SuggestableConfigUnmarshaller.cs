@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Kendra.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Suggestion Object
+    /// Response Unmarshaller for SuggestableConfig Object
     /// </summary>  
-    public class SuggestionUnmarshaller : IUnmarshaller<Suggestion, XmlUnmarshallerContext>, IUnmarshaller<Suggestion, JsonUnmarshallerContext>
+    public class SuggestableConfigUnmarshaller : IUnmarshaller<SuggestableConfig, XmlUnmarshallerContext>, IUnmarshaller<SuggestableConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Suggestion IUnmarshaller<Suggestion, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        SuggestableConfig IUnmarshaller<SuggestableConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Suggestion Unmarshall(JsonUnmarshallerContext context)
+        public SuggestableConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Suggestion unmarshalledObject = new Suggestion();
+            SuggestableConfig unmarshalledObject = new SuggestableConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("AttributeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AttributeName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("SourceDocuments", targetDepth))
+                if (context.TestExpression("Suggestable", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SourceDocument, SourceDocumentUnmarshaller>(SourceDocumentUnmarshaller.Instance);
-                    unmarshalledObject.SourceDocuments = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Value", targetDepth))
-                {
-                    var unmarshaller = SuggestionValueUnmarshaller.Instance;
-                    unmarshalledObject.Value = unmarshaller.Unmarshall(context);
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.Suggestable = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
         }
 
 
-        private static SuggestionUnmarshaller _instance = new SuggestionUnmarshaller();        
+        private static SuggestableConfigUnmarshaller _instance = new SuggestableConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static SuggestionUnmarshaller Instance
+        public static SuggestableConfigUnmarshaller Instance
         {
             get
             {

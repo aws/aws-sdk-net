@@ -815,7 +815,7 @@ namespace Amazon.Kendra
         ///  
         /// <para>
         /// For an example of creating a block list for query suggestions using the Python SDK,
-        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#suggestions-block-list">Query
+        /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">Query
         /// suggestions block list</a>.
         /// </para>
         /// </summary>
@@ -3149,8 +3149,8 @@ namespace Amazon.Kendra
         /// </para>
         ///  
         /// <para>
-        /// If an update is currently processing (i.e. 'happening'), you need to wait for the
-        /// update to finish before making another update.
+        /// If an update is currently processing, you need to wait for the update to finish before
+        /// making another update.
         /// </para>
         ///  
         /// <para>

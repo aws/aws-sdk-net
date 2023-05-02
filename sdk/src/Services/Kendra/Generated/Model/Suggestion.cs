@@ -34,6 +34,7 @@ namespace Amazon.Kendra.Model
     public partial class Suggestion
     {
         private string _id;
+        private List<SourceDocument> _sourceDocuments = new List<SourceDocument>();
         private SuggestionValue _value;
 
         /// <summary>
@@ -53,6 +54,25 @@ namespace Amazon.Kendra.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceDocuments. 
+        /// <para>
+        /// The list of document IDs and their fields/attributes that are used for a single query
+        /// suggestion, if document fields set to use for query suggestions.
+        /// </para>
+        /// </summary>
+        public List<SourceDocument> SourceDocuments
+        {
+            get { return this._sourceDocuments; }
+            set { this._sourceDocuments = value; }
+        }
+
+        // Check to see if SourceDocuments property is set
+        internal bool IsSetSourceDocuments()
+        {
+            return this._sourceDocuments != null && this._sourceDocuments.Count > 0; 
         }
 
         /// <summary>
