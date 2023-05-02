@@ -39,9 +39,11 @@ namespace Amazon.ResilienceHub.Model
         private List<AppComponent> _appComponents = new List<AppComponent>();
         private bool? _excluded;
         private LogicalResourceId _logicalResourceId;
+        private string _parentResourceName;
         private PhysicalResourceId _physicalResourceId;
         private string _resourceName;
         private string _resourceType;
+        private ResourceSourceType _sourceType;
 
         /// <summary>
         /// Gets and sets the property AdditionalInfo. 
@@ -135,6 +137,24 @@ namespace Amazon.ResilienceHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ParentResourceName. 
+        /// <para>
+        /// The name of the parent resource.
+        /// </para>
+        /// </summary>
+        public string ParentResourceName
+        {
+            get { return this._parentResourceName; }
+            set { this._parentResourceName = value; }
+        }
+
+        // Check to see if ParentResourceName property is set
+        internal bool IsSetParentResourceName()
+        {
+            return this._parentResourceName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property PhysicalResourceId. 
         /// <para>
         /// The physical identifier of the resource.
@@ -188,6 +208,24 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetResourceType()
         {
             return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceType. 
+        /// <para>
+        /// The type of input source.
+        /// </para>
+        /// </summary>
+        public ResourceSourceType SourceType
+        {
+            get { return this._sourceType; }
+            set { this._sourceType = value; }
+        }
+
+        // Check to see if SourceType property is set
+        internal bool IsSetSourceType()
+        {
+            return this._sourceType != null;
         }
 
     }

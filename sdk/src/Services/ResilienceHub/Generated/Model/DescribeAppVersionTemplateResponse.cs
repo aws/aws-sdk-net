@@ -456,7 +456,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </note> </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=204800)]
+        [AWSProperty(Required=true, Min=0, Max=409600)]
         public string AppTemplateBody
         {
             get { return this._appTemplateBody; }

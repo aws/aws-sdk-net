@@ -97,9 +97,12 @@ namespace Amazon.ResilienceHub
         /// <summary>
         /// Creates an Resilience Hub application. An Resilience Hub application is a collection
         /// of Amazon Web Services resources structured to prevent and recover Amazon Web Services
-        /// application disruptions. To describe a Resilience Hub application, you provide an
-        /// application name, resources from one or more–up to 20–CloudFormation stacks, and an
-        /// appropriate resiliency policy.
+        /// application disruptions. To describe an Resilience Hub application, you provide an
+        /// application name, resources from one or more CloudFormation stacks, Resource Groups,
+        /// Terraform state files, AppRegistry applications, and an appropriate resiliency policy.
+        /// For more information about the number of resources supported per application, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service
+        /// Quotas</a>.
         /// 
         ///  
         /// <para>

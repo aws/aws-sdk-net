@@ -225,7 +225,6 @@ namespace Amazon.ResilienceHub.Model
         /// The name of the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ResourceName
         {
             get { return this._resourceName; }
