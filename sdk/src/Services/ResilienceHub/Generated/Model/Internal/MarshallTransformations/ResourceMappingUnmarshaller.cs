@@ -70,6 +70,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AppRegistryAppName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eksSourceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.EksSourceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("logicalStackName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

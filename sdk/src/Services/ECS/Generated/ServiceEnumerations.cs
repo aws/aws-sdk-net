@@ -2433,9 +2433,17 @@ namespace Amazon.ECS
         /// </summary>
         public static readonly SettingName ContainerInstanceLongArnFormat = new SettingName("containerInstanceLongArnFormat");
         /// <summary>
+        /// Constant FargateFIPSMode for SettingName
+        /// </summary>
+        public static readonly SettingName FargateFIPSMode = new SettingName("fargateFIPSMode");
+        /// <summary>
         /// Constant ServiceLongArnFormat for SettingName
         /// </summary>
         public static readonly SettingName ServiceLongArnFormat = new SettingName("serviceLongArnFormat");
+        /// <summary>
+        /// Constant TagResourceAuthorization for SettingName
+        /// </summary>
+        public static readonly SettingName TagResourceAuthorization = new SettingName("tagResourceAuthorization");
         /// <summary>
         /// Constant TaskLongArnFormat for SettingName
         /// </summary>

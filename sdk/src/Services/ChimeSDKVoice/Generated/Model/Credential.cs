@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The SIP credentials used to authenticate requests to an Amazon Chime SDK Voice Connector.
     /// </summary>
     public partial class Credential
     {
@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _username;
 
         /// <summary>
-        /// Gets and sets the property Password.
+        /// Gets and sets the property Password. 
+        /// <para>
+        /// The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Password
@@ -53,7 +56,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Username.
+        /// Gets and sets the property Username. 
+        /// <para>
+        /// The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Username

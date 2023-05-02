@@ -54,9 +54,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-        /// How Internet Monitor calculates performance and availability scores</a> in the Amazon
-        /// CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+        /// Internet Monitor calculates performance and availability scores</a> in the Amazon
+        /// CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
         public AvailabilityMeasurement Availability
@@ -81,9 +81,9 @@ namespace Amazon.InternetMonitor.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-        /// How Internet Monitor calculates performance and availability scores</a> in the Amazon
-        /// CloudWatch Internet Monitor section of the Amazon CloudWatch User Guide.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+        /// Internet Monitor calculates performance and availability scores</a> in the Amazon
+        /// CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.
         /// </para>
         /// </summary>
         public PerformanceMeasurement Performance

@@ -38,8 +38,9 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     /// If you want to create a new workforce in an Amazon Web Services Region where a workforce
-    /// already exists, use the API operation to delete the existing workforce and then use
-    /// <code>CreateWorkforce</code> to create a new workforce.
+    /// already exists, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkforce.html">DeleteWorkforce</a>
+    /// API operation to delete the existing workforce and then use <code>CreateWorkforce</code>
+    /// to create a new workforce.
     /// </para>
     ///  
     /// <para>

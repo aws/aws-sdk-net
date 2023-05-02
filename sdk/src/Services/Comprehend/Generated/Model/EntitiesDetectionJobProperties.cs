@@ -36,6 +36,7 @@ namespace Amazon.Comprehend.Model
         private string _dataAccessRoleArn;
         private DateTime? _endTime;
         private string _entityRecognizerArn;
+        private string _flywheelArn;
         private InputDataConfig _inputDataConfig;
         private string _jobArn;
         private string _jobId;
@@ -51,8 +52,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your input data.
+        /// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read
+        /// access to your input data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -106,6 +107,25 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FlywheelArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the flywheel associated with this job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FlywheelArn
+        {
+            get { return this._flywheelArn; }
+            set { this._flywheelArn = value; }
+        }
+
+        // Check to see if FlywheelArn property is set
+        internal bool IsSetFlywheelArn()
+        {
+            return this._flywheelArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property InputDataConfig. 
         /// <para>
         /// The input data configuration that you supplied when you created the entities detection
@@ -128,8 +148,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property JobArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the entities detection job. It is a unique, fully
-        /// qualified identifier for the job. It includes the AWS account, Region, and the job
-        /// ID. The format of the ARN is as follows:
+        /// qualified identifier for the job. It includes the Amazon Web Services account, Amazon
+        /// Web Services Region, and the job ID. The format of the ARN is as follows:
         /// </para>
         ///  
         /// <para>
@@ -292,9 +312,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the
-        /// analysis job. The VolumeKmsKeyId can be either of the following formats:
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt data on the storage volume attached to the ML compute instance(s)
+        /// that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -46,7 +46,7 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// GameLift doesn't support uploading from Amazon S3 buckets with names that contain
+        /// Amazon GameLift doesn't support uploading from Amazon S3 buckets with names that contain
         /// a dot (.).
         /// </para>
         ///  </note>

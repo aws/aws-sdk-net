@@ -120,7 +120,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// The data sources being concatnated.
+        /// The data sources being concatenated.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]

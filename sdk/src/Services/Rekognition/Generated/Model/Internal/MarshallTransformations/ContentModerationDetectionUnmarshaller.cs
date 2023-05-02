@@ -64,10 +64,28 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("DurationMillis", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.DurationMillis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EndTimestampMillis", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.EndTimestampMillis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ModerationLabel", targetDepth))
                 {
                     var unmarshaller = ModerationLabelUnmarshaller.Instance;
                     unmarshalledObject.ModerationLabel = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartTimestampMillis", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.StartTimestampMillis = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Timestamp", targetDepth))

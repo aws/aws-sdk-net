@@ -64,9 +64,9 @@ namespace Amazon.S3.Model
         /// </para>
         ///  </li> </ul> <important> 
         /// <para>
-        /// Amazon S3 only supports symmetric KMS keys and not asymmetric KMS keys. For more information,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-        /// symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management Service
+        /// Amazon S3 only supports symmetric encryption KMS keys. For more information, see <a
+        /// href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+        /// keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management Service
         /// Developer Guide</i>.
         /// </para>
         ///  </important>

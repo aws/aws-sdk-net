@@ -77,7 +77,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property Engine. 
         /// <para>
-        /// The DB engine. The only supported value is <code>custom-oracle-ee</code>.
+        /// The DB engine. The only supported values are <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]

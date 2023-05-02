@@ -60,7 +60,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property Reason. 
         /// <para>
-        /// The reason that you're stopping the engagement. 
+        /// The reason that you're stopping the engagement.
         /// </para>
         /// </summary>
         [AWSProperty(Max=255)]

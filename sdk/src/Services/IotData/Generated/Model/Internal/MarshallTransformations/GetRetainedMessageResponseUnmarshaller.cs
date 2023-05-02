@@ -75,6 +75,12 @@ namespace Amazon.IotData.Model.Internal.MarshallTransformations
                     response.Topic = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("userProperties", targetDepth))
+                {
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    response.UserProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

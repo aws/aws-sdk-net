@@ -35,9 +35,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apnortheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "ap-northeast-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.ap-northeast-1.amazonaws.com", endpoint.URL);
         }
@@ -50,9 +50,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "ap-south-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-south-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.ap-south-1.amazonaws.com", endpoint.URL);
         }
@@ -65,9 +65,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -80,9 +80,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-2";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -95,9 +95,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eucentral1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-central-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -110,9 +110,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-north-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.eu-north-1.amazonaws.com", endpoint.URL);
         }
@@ -125,9 +125,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_eusouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "eu-south-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-south-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.eu-south-1.amazonaws.com", endpoint.URL);
         }
@@ -140,9 +140,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -155,9 +155,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "eu-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-2";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.eu-west-2.amazonaws.com", endpoint.URL);
         }
@@ -170,9 +170,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_euwest3_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "eu-west-3";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-west-3";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.eu-west-3.amazonaws.com", endpoint.URL);
         }
@@ -185,9 +185,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -200,9 +200,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-2";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -215,9 +215,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-west-2";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -230,9 +230,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -245,9 +245,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -260,9 +260,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_useast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.us-east-1.api.aws", endpoint.URL);
         }
@@ -275,9 +275,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -290,9 +290,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -305,9 +305,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -320,9 +320,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "cn-north-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -335,9 +335,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_enabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -350,9 +350,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -365,9 +365,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_enabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -380,11 +380,26 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usgoveast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-gov-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CodeArtifact")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new CodeArtifactEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-iso-east-1";
+            var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -395,11 +410,26 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CodeArtifact")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new CodeArtifactEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-iso-east-1";
+            var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -410,11 +440,26 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-iso-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CodeArtifact")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new CodeArtifactEndpointParameters();
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-isob-east-1";
+            var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -425,11 +470,26 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-isob-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CodeArtifact")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new CodeArtifactEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-isob-east-1";
+            var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -440,9 +500,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-isob-east-1";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://codeartifact.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -455,9 +515,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -471,8 +531,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -487,9 +547,9 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_enabled_and_dualstack_disabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -503,10 +563,22 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_fips_disabled_and_dualstack_enabled_Test()
         {
             var parameters = new CodeArtifactEndpointParameters();
-            parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Region"] = "us-east-1";
             parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("CodeArtifact")]
+        [Description("Missing region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
+        public void Missing_region_Test()
+        {
+            var parameters = new CodeArtifactEndpointParameters();
             var endpoint = new AmazonCodeArtifactEndpointProvider().ResolveEndpoint(parameters);
         }
 

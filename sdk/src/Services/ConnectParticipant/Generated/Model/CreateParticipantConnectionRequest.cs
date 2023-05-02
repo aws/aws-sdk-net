@@ -91,8 +91,9 @@ namespace Amazon.ConnectParticipant.Model
         /// <summary>
         /// Gets and sets the property ConnectParticipant. 
         /// <para>
-        /// Amazon Connect Participant is used to mark the participant as connected for message
-        /// streaming.
+        /// Amazon Connect Participant is used to mark the participant as connected for customer
+        /// participant in message streaming, as well as for agent or manager participant in non-streaming
+        /// chats.
         /// </para>
         /// </summary>
         public bool ConnectParticipant

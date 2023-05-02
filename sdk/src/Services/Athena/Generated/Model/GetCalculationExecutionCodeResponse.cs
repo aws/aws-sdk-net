@@ -38,7 +38,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property CodeBlock. 
         /// <para>
-        /// A pre-signed URL to the code that executed the calculation.
+        /// The unencrypted code that was executed for the calculation.
         /// </para>
         /// </summary>
         [AWSProperty(Max=68000)]

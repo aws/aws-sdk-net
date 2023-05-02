@@ -36,6 +36,7 @@ namespace Amazon.ResilienceHub.Model
     {
         private string _appArn;
         private List<string> _appRegistryAppNames = new List<string>();
+        private List<string> _eksSourceNames = new List<string>();
         private List<string> _logicalStackNames = new List<string>();
         private List<string> _resourceGroupNames = new List<string>();
         private List<string> _resourceNames = new List<string>();
@@ -44,8 +45,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The format for
-        /// this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
@@ -79,6 +80,30 @@ namespace Amazon.ResilienceHub.Model
         internal bool IsSetAppRegistryAppNames()
         {
             return this._appRegistryAppNames != null && this._appRegistryAppNames.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EksSourceNames. 
+        /// <para>
+        /// The names of the Amazon Elastic Kubernetes Service clusters and namespaces you want
+        /// to remove from the resource mappings.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter accepts values in "eks-cluster/namespace" format.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public List<string> EksSourceNames
+        {
+            get { return this._eksSourceNames; }
+            set { this._eksSourceNames = value; }
+        }
+
+        // Check to see if EksSourceNames property is set
+        internal bool IsSetEksSourceNames()
+        {
+            return this._eksSourceNames != null && this._eksSourceNames.Count > 0; 
         }
 
         /// <summary>

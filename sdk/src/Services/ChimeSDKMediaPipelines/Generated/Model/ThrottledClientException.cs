@@ -144,7 +144,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// The request id associated with the call responsible for the exception.
+        /// The request ID associated with the call responsible for the exception.
         /// </para>
         /// </summary>
         [AWSProperty(Max=4096)]

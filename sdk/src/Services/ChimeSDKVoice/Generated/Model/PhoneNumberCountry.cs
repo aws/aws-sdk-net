@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The phone number's country.
     /// </summary>
     public partial class PhoneNumberCountry
     {
@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<string> _supportedPhoneNumberTypes = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property CountryCode.
+        /// Gets and sets the property CountryCode. 
+        /// <para>
+        /// The phone number country code. Format: ISO 3166-1 alpha-2.
+        /// </para>
         /// </summary>
         public string CountryCode
         {
@@ -52,7 +55,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SupportedPhoneNumberTypes.
+        /// Gets and sets the property SupportedPhoneNumberTypes. 
+        /// <para>
+        /// The supported phone number types.
+        /// </para>
         /// </summary>
         public List<string> SupportedPhoneNumberTypes
         {

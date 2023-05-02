@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeAppAssessment operation.
-    /// Describes an assessment for an AWS Resilience Hub application.
+    /// Describes an assessment for an Resilience Hub application.
     /// </summary>
     public partial class DescribeAppAssessmentRequest : AmazonResilienceHubRequest
     {

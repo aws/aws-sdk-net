@@ -194,7 +194,12 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// A description of the KMS key. The default value is an empty string (no description).
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// The description is not a shared property of multi-Region keys. You can specify the
         /// same description or a different description for each key in a set of related multi-Region
@@ -383,7 +388,12 @@ namespace Amazon.KeyManagementService.Model
         /// Assigns one or more tags to the replica key. Use this parameter to tag the KMS key
         /// when it is created. To tag an existing KMS key, use the <a>TagResource</a> operation.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC

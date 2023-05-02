@@ -36,7 +36,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private VectorEnrichmentJobS3Data _s3Data;
 
         /// <summary>
-        /// Gets and sets the property S3Data.
+        /// Gets and sets the property S3Data. 
+        /// <para>
+        /// The input structure for Amazon S3 data; representing the Amazon S3 location of the
+        /// input data objects.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public VectorEnrichmentJobS3Data S3Data

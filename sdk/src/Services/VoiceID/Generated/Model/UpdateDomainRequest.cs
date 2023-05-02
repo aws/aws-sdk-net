@@ -44,7 +44,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A brief description of the domain.
+        /// A brief description about this domain.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]

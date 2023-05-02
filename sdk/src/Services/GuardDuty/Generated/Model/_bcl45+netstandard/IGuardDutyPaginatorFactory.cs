@@ -41,6 +41,11 @@ namespace Amazon.GuardDuty.Model
         IGetUsageStatisticsPaginator GetUsageStatistics(GetUsageStatisticsRequest request);
 
         /// <summary>
+        /// Paginator for ListCoverage operation
+        ///</summary>
+        IListCoveragePaginator ListCoverage(ListCoverageRequest request);
+
+        /// <summary>
         /// Paginator for ListDetectors operation
         ///</summary>
         IListDetectorsPaginator ListDetectors(ListDetectorsRequest request);

@@ -1465,6 +1465,56 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type FeaturedResultsSetStatus.
+    /// </summary>
+    public class FeaturedResultsSetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for FeaturedResultsSetStatus
+        /// </summary>
+        public static readonly FeaturedResultsSetStatus ACTIVE = new FeaturedResultsSetStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for FeaturedResultsSetStatus
+        /// </summary>
+        public static readonly FeaturedResultsSetStatus INACTIVE = new FeaturedResultsSetStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeaturedResultsSetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeaturedResultsSetStatus FindValue(string value)
+        {
+            return FindValue<FeaturedResultsSetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeaturedResultsSetStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FsxFileSystemType.
     /// </summary>
     public class FsxFileSystemType : ConstantClass

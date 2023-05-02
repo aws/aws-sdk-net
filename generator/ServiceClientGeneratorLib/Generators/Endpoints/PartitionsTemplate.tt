@@ -1,6 +1,5 @@
 ﻿<#@ template language="C#" #>
 <#@ import namespace="System.Linq" #>
-<#@ parameter name="partitions" type="ServiceClientGenerator.Endpoints.Partitions.Partitions" #>
 /*******************************************************************************
  *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
@@ -31,7 +30,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
     {
         static Partition()
         {
-<# foreach(var partition in partitions.partitions) { #>
+<# foreach(var partition in Partitions.partitions) { #>
             var <#=partition.id.ToVariableName()#> = new PartitionAttributesShape
             {
                 name = "<#=partition.outputs.name#>",
@@ -50,3 +49,7 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         }
     }
 }
+
+<#+
+public ServiceClientGenerator.Endpoints.Partitions.Partitions Partitions { get; set; }
+#>

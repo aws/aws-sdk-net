@@ -45,6 +45,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CanvasAppSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetModelRegisterSettings())
+            {
+                context.Writer.WritePropertyName("ModelRegisterSettings");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ModelRegisterSettingsMarshaller.Instance;
+                marshaller.Marshall(requestObject.ModelRegisterSettings, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTimeSeriesForecastingSettings())
             {
                 context.Writer.WritePropertyName("TimeSeriesForecastingSettings");

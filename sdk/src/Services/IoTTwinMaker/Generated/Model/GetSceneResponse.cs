@@ -38,7 +38,9 @@ namespace Amazon.IoTTwinMaker.Model
         private string _contentLocation;
         private DateTime? _creationDateTime;
         private string _description;
+        private Dictionary<string, string> _generatedSceneMetadata = new Dictionary<string, string>();
         private string _sceneId;
+        private Dictionary<string, string> _sceneMetadata = new Dictionary<string, string>();
         private DateTime? _updateDateTime;
         private string _workspaceId;
 
@@ -138,6 +140,25 @@ namespace Amazon.IoTTwinMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GeneratedSceneMetadata. 
+        /// <para>
+        /// The generated scene metadata.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> GeneratedSceneMetadata
+        {
+            get { return this._generatedSceneMetadata; }
+            set { this._generatedSceneMetadata = value; }
+        }
+
+        // Check to see if GeneratedSceneMetadata property is set
+        internal bool IsSetGeneratedSceneMetadata()
+        {
+            return this._generatedSceneMetadata != null && this._generatedSceneMetadata.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property SceneId. 
         /// <para>
         /// The ID of the scene.
@@ -154,6 +175,25 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetSceneId()
         {
             return this._sceneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SceneMetadata. 
+        /// <para>
+        /// The response metadata.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> SceneMetadata
+        {
+            get { return this._sceneMetadata; }
+            set { this._sceneMetadata = value; }
+        }
+
+        // Check to see if SceneMetadata property is set
+        internal bool IsSetSceneMetadata()
+        {
+            return this._sceneMetadata != null && this._sceneMetadata.Count > 0; 
         }
 
         /// <summary>

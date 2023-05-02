@@ -108,6 +108,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>db-cluster-resource-id</code> - Accepts DB cluster resource identifiers. The
+        /// results list will only include information about the DB clusters identified by these
+        /// DB cluster resource identifiers.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>domain</code> - Accepts Active Directory directory IDs. The results list only
         /// includes information about the DB clusters associated with these domains.
         /// </para>

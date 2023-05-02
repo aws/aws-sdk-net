@@ -57,6 +57,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     response.AutoEnable = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("autoEnableOrganizationMembers", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AutoEnableOrganizationMembers = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dataSources", targetDepth))
                 {
                     var unmarshaller = OrganizationDataSourceConfigurationsResultUnmarshaller.Instance;

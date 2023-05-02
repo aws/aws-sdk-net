@@ -31,7 +31,8 @@ namespace Amazon.VoiceID.Model
     /// <summary>
     /// Container for the parameters to the CreateDomain operation.
     /// Creates a domain that contains all Amazon Connect Voice ID data, such as speakers,
-    /// fraudsters, customer audio, and voiceprints.
+    /// fraudsters, customer audio, and voiceprints. Every domain is created with a default
+    /// watchlist that fraudsters can be a part of.
     /// </summary>
     public partial class CreateDomainRequest : AmazonVoiceIDRequest
     {
@@ -44,8 +45,10 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotency token for creating a new domain. If not provided, Amazon Web Services
-        /// SDK populates this field.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -64,7 +67,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A brief description of the domain.
+        /// A brief description of this domain.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=1, Max=1024)]

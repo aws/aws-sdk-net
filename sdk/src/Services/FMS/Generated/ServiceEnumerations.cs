@@ -137,6 +137,56 @@ namespace Amazon.FMS
 
 
     /// <summary>
+    /// Constants used for properties of type CustomerPolicyStatus.
+    /// </summary>
+    public class CustomerPolicyStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for CustomerPolicyStatus
+        /// </summary>
+        public static readonly CustomerPolicyStatus ACTIVE = new CustomerPolicyStatus("ACTIVE");
+        /// <summary>
+        /// Constant OUT_OF_ADMIN_SCOPE for CustomerPolicyStatus
+        /// </summary>
+        public static readonly CustomerPolicyStatus OUT_OF_ADMIN_SCOPE = new CustomerPolicyStatus("OUT_OF_ADMIN_SCOPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CustomerPolicyStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CustomerPolicyStatus FindValue(string value)
+        {
+            return FindValue<CustomerPolicyStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CustomerPolicyStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DependentServiceName.
     /// </summary>
     public class DependentServiceName : ConstantClass
@@ -465,6 +515,64 @@ namespace Amazon.FMS
 
 
     /// <summary>
+    /// Constants used for properties of type OrganizationStatus.
+    /// </summary>
+    public class OrganizationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OFFBOARDING for OrganizationStatus
+        /// </summary>
+        public static readonly OrganizationStatus OFFBOARDING = new OrganizationStatus("OFFBOARDING");
+        /// <summary>
+        /// Constant OFFBOARDING_COMPLETE for OrganizationStatus
+        /// </summary>
+        public static readonly OrganizationStatus OFFBOARDING_COMPLETE = new OrganizationStatus("OFFBOARDING_COMPLETE");
+        /// <summary>
+        /// Constant ONBOARDING for OrganizationStatus
+        /// </summary>
+        public static readonly OrganizationStatus ONBOARDING = new OrganizationStatus("ONBOARDING");
+        /// <summary>
+        /// Constant ONBOARDING_COMPLETE for OrganizationStatus
+        /// </summary>
+        public static readonly OrganizationStatus ONBOARDING_COMPLETE = new OrganizationStatus("ONBOARDING_COMPLETE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OrganizationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OrganizationStatus FindValue(string value)
+        {
+            return FindValue<OrganizationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OrganizationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PolicyComplianceStatusType.
     /// </summary>
     public class PolicyComplianceStatusType : ConstantClass
@@ -558,6 +666,56 @@ namespace Amazon.FMS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RemediationActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResourceSetStatus.
+    /// </summary>
+    public class ResourceSetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for ResourceSetStatus
+        /// </summary>
+        public static readonly ResourceSetStatus ACTIVE = new ResourceSetStatus("ACTIVE");
+        /// <summary>
+        /// Constant OUT_OF_ADMIN_SCOPE for ResourceSetStatus
+        /// </summary>
+        public static readonly ResourceSetStatus OUT_OF_ADMIN_SCOPE = new ResourceSetStatus("OUT_OF_ADMIN_SCOPE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResourceSetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResourceSetStatus FindValue(string value)
+        {
+            return FindValue<ResourceSetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResourceSetStatus(string value)
         {
             return FindValue(value);
         }

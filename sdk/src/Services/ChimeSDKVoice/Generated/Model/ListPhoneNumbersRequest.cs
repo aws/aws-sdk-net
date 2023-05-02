@@ -30,7 +30,8 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPhoneNumbers operation.
-    /// 
+    /// Lists the phone numbers for the specified Amazon Chime SDK account, Amazon Chime SDK
+    /// user, Amazon Chime SDK Voice Connector, or Amazon Chime SDK Voice Connector group.
     /// </summary>
     public partial class ListPhoneNumbersRequest : AmazonChimeSDKVoiceRequest
     {
@@ -42,7 +43,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _status;
 
         /// <summary>
-        /// Gets and sets the property FilterName.
+        /// Gets and sets the property FilterName. 
+        /// <para>
+        /// The filter to limit the number of results.
+        /// </para>
         /// </summary>
         public PhoneNumberAssociationName FilterName
         {
@@ -57,7 +61,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FilterValue.
+        /// Gets and sets the property FilterValue. 
+        /// <para>
+        /// The filter value.
+        /// </para>
         /// </summary>
         public string FilterValue
         {
@@ -72,7 +79,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -88,7 +98,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to return the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -103,7 +116,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductType.
+        /// Gets and sets the property ProductType. 
+        /// <para>
+        /// The phone number product types.
+        /// </para>
         /// </summary>
         public PhoneNumberProductType ProductType
         {
@@ -118,7 +134,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of your organization's phone numbers.
+        /// </para>
         /// </summary>
         public string Status
         {

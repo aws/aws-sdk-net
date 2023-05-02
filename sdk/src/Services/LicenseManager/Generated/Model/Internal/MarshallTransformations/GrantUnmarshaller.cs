@@ -106,6 +106,12 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.LicenseArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Options", targetDepth))
+                {
+                    var unmarshaller = OptionsUnmarshaller.Instance;
+                    unmarshalledObject.Options = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ParentArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

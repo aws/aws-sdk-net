@@ -108,8 +108,9 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property RelatedItems. 
         /// <para>
-        /// Add related items to the incident for other responders to use. Related items are AWS
-        /// resources, external links, or files uploaded to an Amazon S3 bucket. 
+        /// Add related items to the incident for other responders to use. Related items are Amazon
+        /// Web Services resources, external links, or files uploaded to an Amazon S3 bucket.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]

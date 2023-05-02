@@ -40,7 +40,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier of the domain containing the fraudster.
+        /// The identifier of the domain that contains the fraudster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]

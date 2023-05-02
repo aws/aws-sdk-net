@@ -17,6 +17,12 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.CreateAPIKeyResponse.APIKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.CreateIPSetRequest.Description</property>
     <min>1</min>
     <max>256</max>
@@ -223,6 +229,12 @@
     <pattern>^[\w#:\.\-/]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.GetDecryptedAPIKeyRequest.APIKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.GetIPSetRequest.Id</property>
     <min>1</min>
     <max>36</max>
@@ -387,6 +399,23 @@
     <property>Amazon.WAFV2.Model.GetWebACLForResourceRequest.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAPIKeysRequest.Limit</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAPIKeysRequest.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ListAPIKeysResponse.NextMarker</property>
+    <min>1</min>
+    <max>256</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -798,6 +827,16 @@
     <min>1</min>
     <max>36</max>
     <pattern>^[0-9a-f]{8}-(?:[0-9a-f]{4}-){3}[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.APIKeySummary.APIKey</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.APIKeySummary.Version</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WAFV2.Model.CustomHTTPHeader.Name</property>

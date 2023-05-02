@@ -40,6 +40,7 @@ namespace Amazon.SecurityHub.Model
         private string _keyName;
         private string _launchedAt;
         private AwsEc2InstanceMetadataOptions _metadataOptions;
+        private AwsEc2InstanceMonitoringDetails _monitoring;
         private List<AwsEc2InstanceNetworkInterfacesDetails> _networkInterfaces = new List<AwsEc2InstanceNetworkInterfacesDetails>();
         private string _subnetId;
         private string _type;
@@ -176,6 +177,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetMetadataOptions()
         {
             return this._metadataOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Monitoring. 
+        /// <para>
+        ///  Describes the type of monitoring that’s turned on for an instance. 
+        /// </para>
+        /// </summary>
+        public AwsEc2InstanceMonitoringDetails Monitoring
+        {
+            get { return this._monitoring; }
+            set { this._monitoring = value; }
+        }
+
+        // Check to see if Monitoring property is set
+        internal bool IsSetMonitoring()
+        {
+            return this._monitoring != null;
         }
 
         /// <summary>

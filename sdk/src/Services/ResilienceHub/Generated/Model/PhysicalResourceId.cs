@@ -104,7 +104,7 @@ namespace Amazon.ResilienceHub.Model
         /// </para>
         ///  </dd> <dt>Native</dt> <dd> 
         /// <para>
-        /// The resource identifier is an AWS Resilience Hub-native identifier.
+        /// The resource identifier is an Resilience Hub-native identifier.
         /// </para>
         ///  </dd> </dl>
         /// </summary>

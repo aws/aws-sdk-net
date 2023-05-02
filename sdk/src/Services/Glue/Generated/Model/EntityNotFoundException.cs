@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
     #endif
     public partial class EntityNotFoundException : AmazonGlueException
     {
+        private bool? _fromFederationSource;
 
         /// <summary>
         /// Constructs a new EntityNotFoundException with the specified error
@@ -97,6 +98,7 @@ namespace Amazon.Glue.Model
         protected EntityNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.FromFederationSource = (bool)info.GetValue("FromFederationSource", typeof(bool));
         }
 
         /// <summary>
@@ -117,8 +119,27 @@ namespace Amazon.Glue.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("FromFederationSource", this.FromFederationSource);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property FromFederationSource. 
+        /// <para>
+        /// Indicates whether or not the exception relates to a federated source.
+        /// </para>
+        /// </summary>
+        public bool FromFederationSource
+        {
+            get { return this._fromFederationSource.GetValueOrDefault(); }
+            set { this._fromFederationSource = value; }
+        }
+
+        // Check to see if FromFederationSource property is set
+        internal bool IsSetFromFederationSource()
+        {
+            return this._fromFederationSource.HasValue; 
+        }
 
     }
 }

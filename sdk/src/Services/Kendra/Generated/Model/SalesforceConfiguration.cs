@@ -181,8 +181,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// securityToken - The token associated with the user account logging in to the Salesforce
-        /// instance.
+        /// securityToken - The token associated with the user logging in to the Salesforce instance.
         /// </para>
         ///  </li> <li> 
         /// <para>

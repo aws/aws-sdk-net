@@ -41,7 +41,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token ensuring that the operation is called only once with the specified details.
+        /// A token that ensures that a client calls the operation only once with the specified
+        /// details.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -60,8 +61,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property IncidentRecordArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the incident record containing the related items
-        /// you are updating.
+        /// The Amazon Resource Name (ARN) of the incident record that contains the related items
+        /// that you update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1000)]
@@ -80,7 +81,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property RelatedItemsUpdate. 
         /// <para>
-        /// Details about the item you are adding or deleting.
+        /// Details about the item that you are add to, or delete from, an incident.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

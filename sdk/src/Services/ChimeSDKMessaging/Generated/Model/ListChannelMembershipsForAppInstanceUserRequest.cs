@@ -30,14 +30,15 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the ListChannelMembershipsForAppInstanceUser operation.
-    /// Lists all channels that a particular <code>AppInstanceUser</code> is a part of. Only
-    /// an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their
-    /// own. 
+    /// Lists all channels that anr <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+    /// is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN
+    /// that is not their own. 
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -51,7 +52,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code>s
+        /// The ARN of the user or bot.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -70,7 +71,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

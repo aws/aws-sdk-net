@@ -167,7 +167,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  The Amazon Web Services Key Management Service (Amazon Web Services KMS) key that
         /// Amazon SageMaker uses to encrypt data on the storage volume attached to the ML compute
-        /// instance that hosts the endpoint. For more information, see <a>CreateInferenceExperimentRequest$KmsKey</a>.
+        /// instance that hosts the endpoint. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
         /// 
         /// </para>
         /// </summary>
@@ -342,7 +342,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Cancelled</code> - When you conclude your experiment early using the <a>StopInferenceExperiment</a>
+        ///  <code>Cancelled</code> - When you conclude your experiment early using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
         /// API, or if any operation fails with an unexpected error, it shows as cancelled. 
         /// </para>
         ///  </li> </ul>
@@ -363,7 +363,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property StatusReason. 
         /// <para>
-        ///  The error message or client-specified <code>Reason</code> from the <a>StopInferenceExperiment</a>
+        ///  The error message or client-specified <code>Reason</code> from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
         /// API, that explains the status of the inference experiment. 
         /// </para>
         /// </summary>

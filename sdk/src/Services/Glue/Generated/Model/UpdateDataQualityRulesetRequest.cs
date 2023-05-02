@@ -37,7 +37,6 @@ namespace Amazon.Glue.Model
         private string _description;
         private string _name;
         private string _ruleset;
-        private string _updatedName;
 
         /// <summary>
         /// Gets and sets the property Description. 
@@ -95,25 +94,6 @@ namespace Amazon.Glue.Model
         internal bool IsSetRuleset()
         {
             return this._ruleset != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property UpdatedName. 
-        /// <para>
-        /// The new name of the ruleset, if you are renaming it.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string UpdatedName
-        {
-            get { return this._updatedName; }
-            set { this._updatedName = value; }
-        }
-
-        // Check to see if UpdatedName property is set
-        internal bool IsSetUpdatedName()
-        {
-            return this._updatedName != null;
         }
 
     }

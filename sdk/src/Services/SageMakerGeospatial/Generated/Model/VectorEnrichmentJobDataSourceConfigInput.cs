@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The input structure for the data source that represents the storage type of the input
+    /// data objects.
     /// </summary>
     public partial class VectorEnrichmentJobDataSourceConfigInput
     {
         private VectorEnrichmentJobS3Data _s3Data;
 
         /// <summary>
-        /// Gets and sets the property S3Data.
+        /// Gets and sets the property S3Data. 
+        /// <para>
+        /// The input structure for the Amazon S3 data that represents the Amazon S3 location
+        /// of the input data objects.
+        /// </para>
         /// </summary>
         public VectorEnrichmentJobS3Data S3Data
         {

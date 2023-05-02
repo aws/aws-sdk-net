@@ -34,8 +34,8 @@ namespace Amazon.FSx.Model
     /// 
     ///  
     /// <para>
-    /// This data type is not supported for file systems with the <code>Persistent_2</code>
-    /// deployment type. Instead, use .
+    /// This data type is not supported on file systems with a data repository association.
+    /// For file systems with a data repository association, see .
     /// </para>
     /// </summary>
     public partial class DataRepositoryConfiguration

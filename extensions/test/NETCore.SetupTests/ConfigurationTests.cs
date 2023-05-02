@@ -104,6 +104,7 @@ namespace NETCore.SetupTests
             Assert.Equal(TimeSpan.FromMilliseconds(1000), options.DefaultClientConfig.Timeout);
             Assert.Equal("us-east-1", options.DefaultClientConfig.AuthenticationRegion);
             Assert.Equal(DefaultConfigurationMode.Standard, options.DefaultConfigurationMode);
+            Assert.Equal(RequestRetryMode.Standard, options.DefaultClientConfig.RetryMode);
 
             IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
             Assert.NotNull(client);

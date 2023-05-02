@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSipRule operation.
-    /// 
+    /// Deletes a SIP rule.
     /// </summary>
     public partial class DeleteSipRuleRequest : AmazonChimeSDKVoiceRequest
     {
         private string _sipRuleId;
 
         /// <summary>
-        /// Gets and sets the property SipRuleId.
+        /// Gets and sets the property SipRuleId. 
+        /// <para>
+        /// The SIP rule ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SipRuleId

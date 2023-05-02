@@ -54,6 +54,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("Identifier", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("State", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -64,6 +70,12 @@ namespace Amazon.AutoScaling.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.TrafficSource = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("Type", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

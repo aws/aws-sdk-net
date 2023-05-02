@@ -952,6 +952,12 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
+        /// If the instance that you're modifying is acting as a read replica, the engine version
+        /// that you specify must be the same or later than the version that the source DB instance
+        /// or cluster is running.
+        /// </para>
+        ///  
+        /// <para>
         /// In RDS Custom for Oracle, this parameter is supported for read replicas only if they
         /// are in the <code>PATCH_DB_FAILURE</code> lifecycle.
         /// </para>

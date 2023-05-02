@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private Origination _origination;
 
         /// <summary>
-        /// Gets and sets the property Origination.
+        /// Gets and sets the property Origination. 
+        /// <para>
+        /// The updated origination settings.
+        /// </para>
         /// </summary>
         public Origination Origination
         {

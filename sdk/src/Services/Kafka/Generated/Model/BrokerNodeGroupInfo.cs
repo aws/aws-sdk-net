@@ -39,6 +39,7 @@ namespace Amazon.Kafka.Model
         private string _instanceType;
         private List<string> _securityGroups = new List<string>();
         private StorageInfo _storageInfo;
+        private List<string> _zoneIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property BrokerAZDistribution.             
@@ -163,6 +164,24 @@ namespace Amazon.Kafka.Model
         internal bool IsSetStorageInfo()
         {
             return this._storageInfo != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ZoneIds.             
+        /// <para>
+        /// The list of zoneIds for the cluster in the virtual private cloud (VPC).
+        /// </para>
+        /// </summary>
+        public List<string> ZoneIds
+        {
+            get { return this._zoneIds; }
+            set { this._zoneIds = value; }
+        }
+
+        // Check to see if ZoneIds property is set
+        internal bool IsSetZoneIds()
+        {
+            return this._zoneIds != null && this._zoneIds.Count > 0; 
         }
 
     }

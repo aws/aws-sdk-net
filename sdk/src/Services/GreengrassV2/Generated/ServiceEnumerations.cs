@@ -479,6 +479,10 @@ namespace Amazon.GreengrassV2
         /// </summary>
         public static readonly EffectiveDeploymentExecutionStatus REJECTED = new EffectiveDeploymentExecutionStatus("REJECTED");
         /// <summary>
+        /// Constant SUCCEEDED for EffectiveDeploymentExecutionStatus
+        /// </summary>
+        public static readonly EffectiveDeploymentExecutionStatus SUCCEEDED = new EffectiveDeploymentExecutionStatus("SUCCEEDED");
+        /// <summary>
         /// Constant TIMED_OUT for EffectiveDeploymentExecutionStatus
         /// </summary>
         public static readonly EffectiveDeploymentExecutionStatus TIMED_OUT = new EffectiveDeploymentExecutionStatus("TIMED_OUT");

@@ -33,11 +33,34 @@ namespace Amazon.Rekognition.Model
     /// </summary>
     public partial class GetFaceSearchResponse : AmazonWebServiceResponse
     {
+        private string _jobId;
         private VideoJobStatus _jobStatus;
+        private string _jobTag;
         private string _nextToken;
         private List<PersonMatch> _persons = new List<PersonMatch>();
         private string _statusMessage;
+        private Video _video;
         private VideoMetadata _videoMetadata;
+
+        /// <summary>
+        /// Gets and sets the property JobId. 
+        /// <para>
+        /// Job identifier for the face search operation for which you want to obtain results.
+        /// The job identifer is returned by an initial call to StartFaceSearch.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string JobId
+        {
+            get { return this._jobId; }
+            set { this._jobId = value; }
+        }
+
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
+        {
+            return this._jobId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property JobStatus. 
@@ -55,6 +78,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetJobStatus()
         {
             return this._jobStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobTag. 
+        /// <para>
+        /// A job identifier specified in the call to StartFaceSearch and returned in the job
+        /// completion notification sent to your Amazon Simple Notification Service topic.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string JobTag
+        {
+            get { return this._jobTag; }
+            set { this._jobTag = value; }
+        }
+
+        // Check to see if JobTag property is set
+        internal bool IsSetJobTag()
+        {
+            return this._jobTag != null;
         }
 
         /// <summary>
@@ -116,6 +159,21 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetStatusMessage()
         {
             return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Video.
+        /// </summary>
+        public Video Video
+        {
+            get { return this._video; }
+            set { this._video = value; }
+        }
+
+        // Check to see if Video property is set
+        internal bool IsSetVideo()
+        {
+            return this._video != null;
         }
 
         /// <summary>

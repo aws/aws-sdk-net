@@ -39,7 +39,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property RTMPConfiguration. 
         /// <para>
-        /// The sink configuration's RTMP configuration setttings.
+        /// The sink configuration's RTMP configuration settings.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

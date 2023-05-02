@@ -26,6 +26,16 @@ namespace Amazon.FMS.Model
     {
 
         /// <summary>
+        /// Paginator for ListAdminAccountsForOrganization operation
+        ///</summary>
+        IListAdminAccountsForOrganizationPaginator ListAdminAccountsForOrganization(ListAdminAccountsForOrganizationRequest request);
+
+        /// <summary>
+        /// Paginator for ListAdminsManagingAccount operation
+        ///</summary>
+        IListAdminsManagingAccountPaginator ListAdminsManagingAccount(ListAdminsManagingAccountRequest request);
+
+        /// <summary>
         /// Paginator for ListAppsLists operation
         ///</summary>
         IListAppsListsPaginator ListAppsLists(ListAppsListsRequest request);

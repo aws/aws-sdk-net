@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.VoiceID.Model.AssociateFraudsterRequest.DomainId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.AssociateFraudsterRequest.FraudsterId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^id#[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.AssociateFraudsterRequest.WatchlistId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VoiceID.Model.CreateDomainRequest.ClientToken</property>
     <min>1</min>
     <max>64</max>
@@ -14,6 +32,30 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VoiceID.Model.CreateDomainRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.CreateWatchlistRequest.ClientToken</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9-_]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.CreateWatchlistRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.CreateWatchlistRequest.DomainId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.CreateWatchlistRequest.Name</property>
     <min>1</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
@@ -47,6 +89,18 @@
     <min>1</min>
     <max>256</max>
     <pattern>^(id#[a-zA-Z0-9]{22}|[a-zA-Z0-9][a-zA-Z0-9_-]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.DeleteWatchlistRequest.DomainId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.DeleteWatchlistRequest.WatchlistId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VoiceID.Model.DescribeDomainRequest.DomainId</property>
@@ -98,6 +152,36 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VoiceID.Model.DescribeSpeakerEnrollmentJobRequest.JobId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.DescribeWatchlistRequest.DomainId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.DescribeWatchlistRequest.WatchlistId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.DisassociateFraudsterRequest.DomainId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.DisassociateFraudsterRequest.FraudsterId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^id#[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.DisassociateFraudsterRequest.WatchlistId</property>
     <min>22</min>
     <max>22</max>
     <pattern>^[a-zA-Z0-9]{22}$</pattern>
@@ -167,6 +251,32 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VoiceID.Model.ListFraudstersRequest.DomainId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.ListFraudstersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.ListFraudstersRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.ListFraudstersRequest.WatchlistId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.ListFraudstersResponse.NextToken</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VoiceID.Model.ListSpeakerEnrollmentJobsRequest.DomainId</property>
     <min>22</min>
     <max>22</max>
@@ -211,6 +321,26 @@
     <min>1</min>
     <max>1011</max>
     <pattern>^arn:aws(-[^:]+)?:voiceid.+:[0-9]{12}:domain/[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.ListWatchlistsRequest.DomainId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.ListWatchlistsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.ListWatchlistsRequest.NextToken</property>
+    <min>0</min>
+    <max>8192</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.ListWatchlistsResponse.NextToken</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VoiceID.Model.OptOutSpeakerRequest.DomainId</property>
@@ -303,6 +433,30 @@
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VoiceID.Model.UpdateWatchlistRequest.Description</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.UpdateWatchlistRequest.DomainId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.UpdateWatchlistRequest.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.UpdateWatchlistRequest.WatchlistId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VoiceID.Model.AuthenticationConfiguration.AcceptanceThreshold</property>
     <min>0</min>
     <max>100</max>
@@ -389,6 +543,12 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.VoiceID.Model.FraudDetectionConfiguration.WatchlistId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.VoiceID.Model.FraudDetectionResult.FraudDetectionResultId</property>
     <min>22</min>
     <max>22</max>
@@ -447,6 +607,18 @@
     <min>1</min>
     <max>256</max>
     <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.FraudsterSummary.DomainId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.FraudsterSummary.GeneratedFraudsterId</property>
+    <min>25</min>
+    <max>25</max>
+    <pattern>^id#[a-zA-Z0-9]{22}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.VoiceID.Model.InputDataConfig.S3Uri</property>
@@ -594,5 +766,59 @@
     <property>Amazon.VoiceID.Model.VoiceSpoofingRisk.RiskScore</property>
     <min>0</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.Watchlist.Description</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.Watchlist.DomainId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.Watchlist.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.Watchlist.WatchlistId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.WatchlistDetails.DefaultWatchlistId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.WatchlistSummary.Description</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.WatchlistSummary.DomainId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.WatchlistSummary.Name</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9][a-zA-Z0-9_-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.VoiceID.Model.WatchlistSummary.WatchlistId</property>
+    <min>22</min>
+    <max>22</max>
+    <pattern>^[a-zA-Z0-9]{22}$</pattern>
   </property-value-rule>
 </property-value-rules>

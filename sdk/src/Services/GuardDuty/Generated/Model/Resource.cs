@@ -41,6 +41,7 @@ namespace Amazon.GuardDuty.Model
         private EksClusterDetails _eksClusterDetails;
         private InstanceDetails _instanceDetails;
         private KubernetesDetails _kubernetesDetails;
+        private LambdaDetails _lambdaDetails;
         private RdsDbInstanceDetails _rdsDbInstanceDetails;
         private RdsDbUserDetails _rdsDbUserDetails;
         private string _resourceType;
@@ -169,6 +170,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetKubernetesDetails()
         {
             return this._kubernetesDetails != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LambdaDetails. 
+        /// <para>
+        /// Contains information about the Lambda function that was involved in a finding.
+        /// </para>
+        /// </summary>
+        public LambdaDetails LambdaDetails
+        {
+            get { return this._lambdaDetails; }
+            set { this._lambdaDetails = value; }
+        }
+
+        // Check to see if LambdaDetails property is set
+        internal bool IsSetLambdaDetails()
+        {
+            return this._lambdaDetails != null;
         }
 
         /// <summary>

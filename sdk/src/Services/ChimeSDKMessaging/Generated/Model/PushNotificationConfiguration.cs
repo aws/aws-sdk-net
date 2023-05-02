@@ -43,7 +43,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The body of the push notification.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=150)]
+        [AWSProperty(Sensitive=true, Min=1, Max=150)]
         public string Body
         {
             get { return this._body; }
@@ -62,7 +62,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The title of the push notification.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public string Title
         {
             get { return this._title; }

@@ -83,7 +83,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ReceiverArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the IAM user or role that received the invitation.
+        /// Resource Name (ARN)</a> of the IAM user or role that received the invitation.
         /// </para>
         /// </summary>
         public string ReceiverArn
@@ -102,7 +102,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource share
+        /// Resource Name (ARN)</a> of the resource share
         /// </para>
         /// </summary>
         public string ResourceShareArn
@@ -140,7 +140,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareInvitationArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the invitation.
+        /// Resource Name (ARN)</a> of the invitation.
         /// </para>
         /// </summary>
         public string ResourceShareInvitationArn

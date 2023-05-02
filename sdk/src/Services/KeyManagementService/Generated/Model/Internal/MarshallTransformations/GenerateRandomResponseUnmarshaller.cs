@@ -51,6 +51,12 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CiphertextForRecipient", targetDepth))
+                {
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    response.CiphertextForRecipient = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Plaintext", targetDepth))
                 {
                     var unmarshaller = MemoryStreamUnmarshaller.Instance;

@@ -34,15 +34,18 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    ///  <a>CreateProcessingJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateProcessingJob.html">CreateProcessingJob</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateTrainingJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrainingJob.html">CreateTrainingJob</a>
+    /// 
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>CreateTransformJob</a> 
+    ///  <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTransformJob.html">CreateTransformJob</a>
+    /// 
     /// </para>
     ///  </li> </ul>
     /// </summary>

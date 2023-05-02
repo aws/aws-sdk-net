@@ -50,8 +50,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your job data. 
+        /// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read
+        /// access to your job data. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -107,8 +107,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property JobArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the topics detection job. It is a unique, fully
-        /// qualified identifier for the job. It includes the AWS account, Region, and the job
-        /// ID. The format of the ARN is as follows:
+        /// qualified identifier for the job. It includes the Amazon Web Services account, Amazon
+        /// Web Services Region, and the job ID. The format of the ARN is as follows:
         /// </para>
         ///  
         /// <para>
@@ -271,9 +271,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the
-        /// analysis job. The VolumeKmsKeyId can be either of the following formats:
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt data on the storage volume attached to the ML compute instance(s)
+        /// that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>

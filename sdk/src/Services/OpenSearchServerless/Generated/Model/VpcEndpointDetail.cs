@@ -157,7 +157,7 @@ namespace Amazon.OpenSearchServerless.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// The ID of the VPC from which you access OpenSearch Serverless
+        /// The ID of the VPC from which you access OpenSearch Serverless.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

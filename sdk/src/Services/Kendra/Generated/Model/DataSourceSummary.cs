@@ -44,7 +44,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The UNIX datetime that the data source was created.
+        /// The Unix timestamp when the data source connector was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -159,7 +159,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The UNIX datetime that the data source was lasted updated. 
+        /// The Unix timestamp when the data source connector was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

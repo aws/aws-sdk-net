@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The Dialed Number Identification Service (DNIS) emergency calling configuration details
+    /// associated with an Amazon Chime SDK Voice Connector's emergency calling configuration.
     /// </summary>
     public partial class DNISEmergencyCallingConfiguration
     {
@@ -38,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _testPhoneNumber;
 
         /// <summary>
-        /// Gets and sets the property CallingCountry.
+        /// Gets and sets the property CallingCountry. 
+        /// <para>
+        /// The country from which emergency calls are allowed, in ISO 3166-1 alpha-2 format.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string CallingCountry
@@ -54,7 +58,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EmergencyPhoneNumber.
+        /// Gets and sets the property EmergencyPhoneNumber. 
+        /// <para>
+        /// The DNIS phone number that you route emergency calls to, in E.164 format.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public string EmergencyPhoneNumber
@@ -70,7 +77,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TestPhoneNumber.
+        /// Gets and sets the property TestPhoneNumber. 
+        /// <para>
+        /// The DNIS phone number for routing test emergency calls to, in E.164 format.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string TestPhoneNumber

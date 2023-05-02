@@ -39,8 +39,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// the output results from an analysis job.
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt the output results from an analysis job.
         /// </para>
         /// </summary>
         [AWSProperty(Max=2048)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// Details on a service within a cluster
+    /// Details on a service within a cluster.
     /// </summary>
     public partial class Service
     {
@@ -237,8 +237,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property EnableExecuteCommand. 
         /// <para>
-        /// Determines whether the execute command functionality is enabled for the service. If
-        /// <code>true</code>, the execute command functionality is enabled for all containers
+        /// Determines whether the execute command functionality is turned on for the service.
+        /// If <code>true</code>, the execute command functionality is turned on for all containers
         /// in tasks as part of the service.
         /// </para>
         /// </summary>

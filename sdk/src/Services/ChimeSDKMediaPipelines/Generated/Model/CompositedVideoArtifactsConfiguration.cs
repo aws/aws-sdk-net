@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// Describes the configuration for the composited video artifacts.
+    /// Specifies the configuration for compositing video artifacts.
     /// </summary>
     public partial class CompositedVideoArtifactsConfiguration
     {

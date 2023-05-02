@@ -51,6 +51,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AppRegistryAppName);
             }
 
+            if(requestObject.IsSetEksSourceName())
+            {
+                context.Writer.WritePropertyName("eksSourceName");
+                context.Writer.Write(requestObject.EksSourceName);
+            }
+
             if(requestObject.IsSetLogicalStackName())
             {
                 context.Writer.WritePropertyName("logicalStackName");

@@ -233,6 +233,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  <code>Redis</code> - Infers that Redis might be running on the instances.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Kafka</code> - Infers that Kafka might be running on the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<string> InferredWorkloadTypes

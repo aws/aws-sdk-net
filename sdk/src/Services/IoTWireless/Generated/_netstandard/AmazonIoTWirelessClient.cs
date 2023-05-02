@@ -1619,6 +1619,58 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  DeleteWirelessDeviceImportTask
+
+        internal virtual DeleteWirelessDeviceImportTaskResponse DeleteWirelessDeviceImportTask(DeleteWirelessDeviceImportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteWirelessDeviceImportTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Delete an import task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteWirelessDeviceImportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDeviceImportTask">REST API Reference for DeleteWirelessDeviceImportTask Operation</seealso>
+        public virtual Task<DeleteWirelessDeviceImportTaskResponse> DeleteWirelessDeviceImportTaskAsync(DeleteWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteWirelessGateway
 
         internal virtual DeleteWirelessGatewayResponse DeleteWirelessGateway(DeleteWirelessGatewayRequest request)
@@ -1763,6 +1815,52 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = DeleteWirelessGatewayTaskDefinitionResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteWirelessGatewayTaskDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeregisterWirelessDevice
+
+        internal virtual DeregisterWirelessDeviceResponse DeregisterWirelessDevice(DeregisterWirelessDeviceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterWirelessDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterWirelessDeviceResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterWirelessDeviceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deregister a wireless device from AWS IoT Wireless.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterWirelessDevice service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeregisterWirelessDevice service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeregisterWirelessDevice">REST API Reference for DeregisterWirelessDevice Operation</seealso>
+        public virtual Task<DeregisterWirelessDeviceResponse> DeregisterWirelessDeviceAsync(DeregisterWirelessDeviceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterWirelessDeviceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterWirelessDeviceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeregisterWirelessDeviceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3015,6 +3113,59 @@ namespace Amazon.IoTWireless
 
         #endregion
         
+        #region  GetWirelessDeviceImportTask
+
+        internal virtual GetWirelessDeviceImportTaskResponse GetWirelessDeviceImportTask(GetWirelessDeviceImportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<GetWirelessDeviceImportTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get information about an import task and count of device onboarding summary information
+        /// for the import task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetWirelessDeviceImportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceImportTask">REST API Reference for GetWirelessDeviceImportTask Operation</seealso>
+        public virtual Task<GetWirelessDeviceImportTaskResponse> GetWirelessDeviceImportTaskAsync(GetWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetWirelessDeviceStatistics
 
         internal virtual GetWirelessDeviceStatisticsResponse GetWirelessDeviceStatistics(GetWirelessDeviceStatisticsRequest request)
@@ -3446,6 +3597,58 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = ListDeviceProfilesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDeviceProfilesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListDevicesForWirelessDeviceImportTask
+
+        internal virtual ListDevicesForWirelessDeviceImportTaskResponse ListDevicesForWirelessDeviceImportTask(ListDevicesForWirelessDeviceImportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDevicesForWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDevicesForWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<ListDevicesForWirelessDeviceImportTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List the Sidewalk devices in an import task and their onboarding status.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDevicesForWirelessDeviceImportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDevicesForWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask">REST API Reference for ListDevicesForWirelessDeviceImportTask Operation</seealso>
+        public virtual Task<ListDevicesForWirelessDeviceImportTaskResponse> ListDevicesForWirelessDeviceImportTaskAsync(ListDevicesForWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDevicesForWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDevicesForWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListDevicesForWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3925,6 +4128,58 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = ListTagsForResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListTagsForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListWirelessDeviceImportTasks
+
+        internal virtual ListWirelessDeviceImportTasksResponse ListWirelessDeviceImportTasks(ListWirelessDeviceImportTasksRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWirelessDeviceImportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWirelessDeviceImportTasksResponseUnmarshaller.Instance;
+
+            return Invoke<ListWirelessDeviceImportTasksResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List wireless devices that have been added to an import task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListWirelessDeviceImportTasks service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListWirelessDeviceImportTasks service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks">REST API Reference for ListWirelessDeviceImportTasks Operation</seealso>
+        public virtual Task<ListWirelessDeviceImportTasksResponse> ListWirelessDeviceImportTasksAsync(ListWirelessDeviceImportTasksRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListWirelessDeviceImportTasksRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListWirelessDeviceImportTasksResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListWirelessDeviceImportTasksResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4573,6 +4828,110 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = StartMulticastGroupSessionResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartMulticastGroupSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartSingleWirelessDeviceImportTask
+
+        internal virtual StartSingleWirelessDeviceImportTaskResponse StartSingleWirelessDeviceImportTask(StartSingleWirelessDeviceImportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSingleWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSingleWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartSingleWirelessDeviceImportTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Start import task for a single wireless device.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSingleWirelessDeviceImportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSingleWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartSingleWirelessDeviceImportTask">REST API Reference for StartSingleWirelessDeviceImportTask Operation</seealso>
+        public virtual Task<StartSingleWirelessDeviceImportTaskResponse> StartSingleWirelessDeviceImportTaskAsync(StartSingleWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSingleWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSingleWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartSingleWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartWirelessDeviceImportTask
+
+        internal virtual StartWirelessDeviceImportTaskResponse StartWirelessDeviceImportTask(StartWirelessDeviceImportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<StartWirelessDeviceImportTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Start import task for provisioning Sidewalk devices in bulk using an S3 CSV file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartWirelessDeviceImportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartWirelessDeviceImportTask">REST API Reference for StartWirelessDeviceImportTask Operation</seealso>
+        public virtual Task<StartWirelessDeviceImportTaskResponse> StartWirelessDeviceImportTaskAsync(StartWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5279,6 +5638,58 @@ namespace Amazon.IoTWireless
             options.ResponseUnmarshaller = UpdateWirelessDeviceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateWirelessDeviceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateWirelessDeviceImportTask
+
+        internal virtual UpdateWirelessDeviceImportTaskResponse UpdateWirelessDeviceImportTask(UpdateWirelessDeviceImportTaskRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateWirelessDeviceImportTaskResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Update an import task to add more devices to the task.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateWirelessDeviceImportTask service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateWirelessDeviceImportTask service method, as returned by IoTWireless.</returns>
+        /// <exception cref="Amazon.IoTWireless.Model.AccessDeniedException">
+        /// User does not have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ConflictException">
+        /// Adding, updating, or deleting the resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.InternalServerException">
+        /// An unexpected error occurred while processing a request.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ResourceNotFoundException">
+        /// Resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ThrottlingException">
+        /// The request was denied because it exceeded the allowed API request rate.
+        /// </exception>
+        /// <exception cref="Amazon.IoTWireless.Model.ValidationException">
+        /// The input did not meet the specified constraints.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDeviceImportTask">REST API Reference for UpdateWirelessDeviceImportTask Operation</seealso>
+        public virtual Task<UpdateWirelessDeviceImportTaskResponse> UpdateWirelessDeviceImportTaskAsync(UpdateWirelessDeviceImportTaskRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateWirelessDeviceImportTaskRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateWirelessDeviceImportTaskResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateWirelessDeviceImportTaskResponse>(request, options, cancellationToken);
         }
 
         #endregion

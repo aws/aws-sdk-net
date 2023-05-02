@@ -60,6 +60,14 @@ namespace Amazon.GuardDuty.Model
         }
 
         /// <summary>
+        /// Paginator for ListCoverage operation
+        ///</summary>
+        public IListCoveragePaginator ListCoverage(ListCoverageRequest request) 
+        {
+            return new ListCoveragePaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDetectors operation
         ///</summary>
         public IListDetectorsPaginator ListDetectors(ListDetectorsRequest request) 

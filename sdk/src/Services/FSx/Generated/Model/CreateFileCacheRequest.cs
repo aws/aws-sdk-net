@@ -77,7 +77,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// An idempotency token for resource creation, in a string of up to 64 ASCII characters.
+        /// An idempotency token for resource creation, in a string of up to 63 ASCII characters.
         /// This token is automatically filled on your behalf when you use the Command Line Interface
         /// (CLI) or an Amazon Web Services SDK.
         /// </para>

@@ -35,6 +35,7 @@ namespace Amazon.ComputeOptimizer.Model
     {
         private string _accountId;
         private CurrentPerformanceRiskRatings _currentPerformanceRiskRatings;
+        private List<InferredWorkloadSaving> _inferredWorkloadSavings = new List<InferredWorkloadSaving>();
         private RecommendationSourceType _recommendationResourceType;
         private SavingsOpportunity _savingsOpportunity;
         private List<Summary> _summaries = new List<Summary>();
@@ -73,6 +74,27 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetCurrentPerformanceRiskRatings()
         {
             return this._currentPerformanceRiskRatings != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InferredWorkloadSavings. 
+        /// <para>
+        ///  An array of objects that describes the estimated monthly saving amounts for the instances
+        /// running on the specified <code>inferredWorkloadTypes</code>. The array contains the
+        /// top three savings opportunites for the instances running inferred workload types.
+        /// 
+        /// </para>
+        /// </summary>
+        public List<InferredWorkloadSaving> InferredWorkloadSavings
+        {
+            get { return this._inferredWorkloadSavings; }
+            set { this._inferredWorkloadSavings = value; }
+        }
+
+        // Check to see if InferredWorkloadSavings property is set
+        internal bool IsSetInferredWorkloadSavings()
+        {
+            return this._inferredWorkloadSavings != null && this._inferredWorkloadSavings.Count > 0; 
         }
 
         /// <summary>

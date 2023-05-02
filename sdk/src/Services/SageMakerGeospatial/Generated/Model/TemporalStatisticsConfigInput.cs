@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The structure representing the configuration for Temporal Statistics operation.
     /// </summary>
     public partial class TemporalStatisticsConfigInput
     {
@@ -38,7 +38,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private List<string> _targetBands = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property GroupBy.
+        /// Gets and sets the property GroupBy. 
+        /// <para>
+        /// The input for the temporal statistics grouping by time frequency option.
+        /// </para>
         /// </summary>
         public GroupBy GroupBy
         {
@@ -53,7 +56,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Statistics.
+        /// Gets and sets the property Statistics. 
+        /// <para>
+        /// The list of the statistics method options.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<string> Statistics
@@ -69,7 +75,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetBands.
+        /// Gets and sets the property TargetBands. 
+        /// <para>
+        /// The list of target band names for the temporal statistic to calculate.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> TargetBands

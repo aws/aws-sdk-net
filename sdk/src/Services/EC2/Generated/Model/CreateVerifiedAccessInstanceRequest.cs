@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Web Services Verified Access instance.
+        /// A description for the Verified Access instance.
         /// </para>
         /// </summary>
         public string Description
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to assign to the Amazon Web Services Verified Access instance.
+        /// The tags to assign to the Verified Access instance.
         /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications

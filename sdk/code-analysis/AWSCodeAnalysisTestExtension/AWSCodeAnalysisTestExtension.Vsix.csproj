@@ -744,6 +744,10 @@
       <Project>{708C1DF5-2E31-45B3-AE8D-9B95058C4A15}</Project>
       <Name>AWSSDK.Ivschat.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/IVSRealTime/AWSSDK.IVSRealTime.CodeAnalysis.csproj">
+      <Project>{97901FD4-D22D-479A-BEC2-96FD6D948734}</Project>
+      <Name>AWSSDK.IVSRealTime.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Kafka/AWSSDK.Kafka.CodeAnalysis.csproj">
       <Project>{EAAA00EB-81EC-4E9B-9246-D6801277824E}</Project>
       <Name>AWSSDK.Kafka.CodeAnalysis</Name>
@@ -1015,6 +1019,10 @@
     <ProjectReference Include="../ServiceAnalysis/Organizations/AWSSDK.Organizations.CodeAnalysis.csproj">
       <Project>{10373FAB-3A59-4888-A86E-8134207FE450}</Project>
       <Name>AWSSDK.Organizations.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/OSIS/AWSSDK.OSIS.CodeAnalysis.csproj">
+      <Project>{3A87651B-3584-4B4E-99B3-7188AA432427}</Project>
+      <Name>AWSSDK.OSIS.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Outposts/AWSSDK.Outposts.CodeAnalysis.csproj">
       <Project>{1F501A21-5AB1-453C-BC7D-67B56F5EB3F1}</Project>
@@ -1371,6 +1379,10 @@
     <ProjectReference Include="../ServiceAnalysis/VoiceID/AWSSDK.VoiceID.CodeAnalysis.csproj">
       <Project>{0C6BDFBF-3A9E-4E72-8D52-0484B38DC018}</Project>
       <Name>AWSSDK.VoiceID.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/VPCLattice/AWSSDK.VPCLattice.CodeAnalysis.csproj">
+      <Project>{2600959F-04B1-4D4E-9C77-E1F5BF8C39FC}</Project>
+      <Name>AWSSDK.VPCLattice.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/WAF/AWSSDK.WAF.CodeAnalysis.csproj">
       <Project>{010849C1-799E-42A7-B108-984159C002E6}</Project>

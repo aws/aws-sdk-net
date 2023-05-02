@@ -55,6 +55,11 @@ namespace Amazon.RAM.Model
         /// If you don't provide this value, then Amazon Web Services generates a random one for
         /// you.
         /// </para>
+        ///  
+        /// <para>
+        /// If you retry the operation with the same <code>ClientToken</code>, but with different
+        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// </para>
         /// </summary>
         public string ClientToken
         {
@@ -72,7 +77,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareInvitationArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the invitation that you want to accept.
+        /// Resource Name (ARN)</a> of the invitation that you want to accept.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -57,6 +57,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     response.FacetResults = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FeaturedResultsItems", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<FeaturedResultsItem, FeaturedResultsItemUnmarshaller>(FeaturedResultsItemUnmarshaller.Instance);
+                    response.FeaturedResultsItems = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("QueryId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

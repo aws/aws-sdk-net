@@ -23,7 +23,9 @@ namespace Amazon.S3.Model
     public class ExistingObjectReplication
     {
         /// <summary>
-        /// Specifies whether existing object replication is enabled.
+        /// <para>
+        /// Specifies whether Amazon S3 replicates existing source bucket objects.
+        /// </para>
         /// </summary>
         public ExistingObjectReplicationStatus Status { get; set; }
 

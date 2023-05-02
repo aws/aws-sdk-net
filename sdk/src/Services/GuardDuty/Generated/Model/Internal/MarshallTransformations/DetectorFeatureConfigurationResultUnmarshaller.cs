@@ -64,6 +64,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("additionalConfiguration", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DetectorAdditionalConfigurationResult, DetectorAdditionalConfigurationResultUnmarshaller>(DetectorAdditionalConfigurationResultUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

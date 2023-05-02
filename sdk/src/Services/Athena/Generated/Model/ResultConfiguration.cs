@@ -29,9 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// The location in Amazon S3 where query results are stored and the encryption option,
-    /// if any, used for query results. These are known as "client-side settings". If workgroup
-    /// settings override client-side settings, then the query uses the workgroup settings.
+    /// The location in Amazon S3 where query and calculation results are stored and the encryption
+    /// option, if any, used for query and calculation results. These are known as "client-side
+    /// settings". If workgroup settings override client-side settings, then the query uses
+    /// the workgroup settings.
     /// </summary>
     public partial class ResultConfiguration
     {
@@ -68,12 +69,12 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property EncryptionConfiguration. 
         /// <para>
-        /// If query results are encrypted in Amazon S3, indicates the encryption option used
-        /// (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information. This
-        /// is a client-side setting. If workgroup settings override client-side settings, then
-        /// the query uses the encryption configuration that is specified for the workgroup, and
-        /// also uses the location for storing query results specified in the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>
-        /// and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
+        /// If query and calculation results are encrypted in Amazon S3, indicates the encryption
+        /// option used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key information.
+        /// This is a client-side setting. If workgroup settings override client-side settings,
+        /// then the query uses the encryption configuration that is specified for the workgroup,
+        /// and also uses the location for storing query results specified in the workgroup. See
+        /// <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a> and <a href="https://docs.aws.amazon.com/athena/latest/ug/workgroups-settings-override.html">Workgroup
         /// Settings Override Client-Side Settings</a>.
         /// </para>
         /// </summary>
@@ -125,13 +126,15 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property OutputLocation. 
         /// <para>
-        /// The location in Amazon S3 where your query results are stored, such as <code>s3://path/to/query/bucket/</code>.
-        /// To run the query, you must specify the query results location using one of the ways:
-        /// either for individual queries using either this setting (client-side), or in the workgroup,
-        /// using <a>WorkGroupConfiguration</a>. If none of them is set, Athena issues an error
-        /// that no output location is provided. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-        /// Results</a>. If workgroup settings override client-side settings, then the query uses
-        /// the settings specified for the workgroup. See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
+        /// The location in Amazon S3 where your query and calculation results are stored, such
+        /// as <code>s3://path/to/query/bucket/</code>. To run the query, you must specify the
+        /// query results location using one of the ways: either for individual queries using
+        /// either this setting (client-side), or in the workgroup, using <a>WorkGroupConfiguration</a>.
+        /// If none of them is set, Athena issues an error that no output location is provided.
+        /// For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
+        /// with query results, recent queries, and output files</a>. If workgroup settings override
+        /// client-side settings, then the query uses the settings specified for the workgroup.
+        /// See <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.
         /// </para>
         /// </summary>
         public string OutputLocation

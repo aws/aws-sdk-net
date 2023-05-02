@@ -73,7 +73,10 @@ namespace Amazon.CloudWatch
         /// 
         ///  
         /// <para>
-        ///  In the event of an error, no alarms are deleted.
+        ///  If you specify an incorrect alarm name or make any other error in the operation,
+        /// no alarms are deleted. To confirm that alarms were deleted successfully, you can use
+        /// the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
+        /// operation after using <code>DeleteAlarms</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -2061,12 +2064,12 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The <code>iam:CreateServiceLinkedRole</code> for all alarms with EC2 actions
+        /// The <code>iam:CreateServiceLinkedRole</code> permission for all alarms with EC2 actions
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The <code>iam:CreateServiceLinkedRole</code> to create an alarm with Systems Manager
-        /// OpsItem actions.
+        /// The <code>iam:CreateServiceLinkedRole</code> permissions to create an alarm with Systems
+        /// Manager OpsItem or response plan actions.
         /// </para>
         ///  </li> </ul> 
         /// <para>

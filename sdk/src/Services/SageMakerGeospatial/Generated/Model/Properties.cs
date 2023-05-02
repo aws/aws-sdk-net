@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// Properties associated with the Item.
     /// </summary>
     public partial class Properties
     {
@@ -41,7 +41,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private float? _viewSunElevation;
 
         /// <summary>
-        /// Gets and sets the property EoCloudCover.
+        /// Gets and sets the property EoCloudCover. 
+        /// <para>
+        /// Estimate of cloud cover.
+        /// </para>
         /// </summary>
         public float EoCloudCover
         {
@@ -56,7 +59,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LandsatCloudCoverLand.
+        /// Gets and sets the property LandsatCloudCoverLand. 
+        /// <para>
+        /// Land cloud cover for Landsat Data Collection.
+        /// </para>
         /// </summary>
         public float LandsatCloudCoverLand
         {
@@ -71,7 +77,12 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Platform.
+        /// Gets and sets the property Platform. 
+        /// <para>
+        /// Platform property. Platform refers to the unique name of the specific platform the
+        /// instrument is attached to. For satellites it is the name of the satellite, eg. landsat-8
+        /// (Landsat-8), sentinel-2a.
+        /// </para>
         /// </summary>
         public string Platform
         {
@@ -86,7 +97,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViewOffNadir.
+        /// Gets and sets the property ViewOffNadir. 
+        /// <para>
+        /// The angle from the sensor between nadir (straight down) and the scene center. Measured
+        /// in degrees (0-90).
+        /// </para>
         /// </summary>
         public float ViewOffNadir
         {
@@ -101,7 +116,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViewSunAzimuth.
+        /// Gets and sets the property ViewSunAzimuth. 
+        /// <para>
+        /// The sun azimuth angle. From the scene center point on the ground, this is the angle
+        /// between truth north and the sun. Measured clockwise in degrees (0-360).
+        /// </para>
         /// </summary>
         public float ViewSunAzimuth
         {
@@ -116,7 +135,14 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ViewSunElevation.
+        /// Gets and sets the property ViewSunElevation. 
+        /// <para>
+        /// The sun elevation angle. The angle from the tangent of the scene center point to the
+        /// sun. Measured from the horizon in degrees (-90-90). Negative values indicate the sun
+        /// is below the horizon, e.g. sun elevation of -10° means the data was captured during
+        /// <a href="https://www.timeanddate.com/astronomy/different-types-twilight.html">nautical
+        /// twilight</a>.
+        /// </para>
         /// </summary>
         public float ViewSunElevation
         {

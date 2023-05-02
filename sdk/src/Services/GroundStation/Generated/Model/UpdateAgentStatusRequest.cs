@@ -30,7 +30,14 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateAgentStatus operation.
+    /// <note> 
+    /// <para>
+    ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Update the status of the agent.
+    /// </para>
     /// </summary>
     public partial class UpdateAgentStatusRequest : AmazonGroundStationRequest
     {
@@ -83,7 +90,7 @@ namespace Amazon.GroundStation.Model
         /// List of component statuses for agent.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Min=0, Max=20)]
         public List<ComponentStatusData> ComponentStatuses
         {
             get { return this._componentStatuses; }

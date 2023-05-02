@@ -233,6 +233,56 @@ namespace Amazon.Rekognition
 
 
     /// <summary>
+    /// Constants used for properties of type ContentModerationAggregateBy.
+    /// </summary>
+    public class ContentModerationAggregateBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SEGMENTS for ContentModerationAggregateBy
+        /// </summary>
+        public static readonly ContentModerationAggregateBy SEGMENTS = new ContentModerationAggregateBy("SEGMENTS");
+        /// <summary>
+        /// Constant TIMESTAMPS for ContentModerationAggregateBy
+        /// </summary>
+        public static readonly ContentModerationAggregateBy TIMESTAMPS = new ContentModerationAggregateBy("TIMESTAMPS");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentModerationAggregateBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentModerationAggregateBy FindValue(string value)
+        {
+            return FindValue<ContentModerationAggregateBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentModerationAggregateBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentModerationSortBy.
     /// </summary>
     public class ContentModerationSortBy : ConstantClass
@@ -1094,6 +1144,68 @@ namespace Amazon.Rekognition
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LandmarkType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LivenessSessionStatus.
+    /// </summary>
+    public class LivenessSessionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CREATED for LivenessSessionStatus
+        /// </summary>
+        public static readonly LivenessSessionStatus CREATED = new LivenessSessionStatus("CREATED");
+        /// <summary>
+        /// Constant EXPIRED for LivenessSessionStatus
+        /// </summary>
+        public static readonly LivenessSessionStatus EXPIRED = new LivenessSessionStatus("EXPIRED");
+        /// <summary>
+        /// Constant FAILED for LivenessSessionStatus
+        /// </summary>
+        public static readonly LivenessSessionStatus FAILED = new LivenessSessionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for LivenessSessionStatus
+        /// </summary>
+        public static readonly LivenessSessionStatus IN_PROGRESS = new LivenessSessionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant SUCCEEDED for LivenessSessionStatus
+        /// </summary>
+        public static readonly LivenessSessionStatus SUCCEEDED = new LivenessSessionStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LivenessSessionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LivenessSessionStatus FindValue(string value)
+        {
+            return FindValue<LivenessSessionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LivenessSessionStatus(string value)
         {
             return FindValue(value);
         }

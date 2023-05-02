@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// Union representing different data sources to be used as input for an Earth Observation
+    /// job.
     /// </summary>
     public partial class EojDataSourceConfigInput
     {
         private S3DataInput _s3Data;
 
         /// <summary>
-        /// Gets and sets the property S3Data.
+        /// Gets and sets the property S3Data. 
+        /// <para>
+        /// The input structure for S3Data; representing the Amazon S3 location of the input data
+        /// objects.
+        /// </para>
         /// </summary>
         public S3DataInput S3Data
         {

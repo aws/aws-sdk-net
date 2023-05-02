@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private SipMediaApplicationLoggingConfiguration _sipMediaApplicationLoggingConfiguration;
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationLoggingConfiguration.
+        /// Gets and sets the property SipMediaApplicationLoggingConfiguration. 
+        /// <para>
+        /// The updated logging configuration for the specified SIP media application.
+        /// </para>
         /// </summary>
         public SipMediaApplicationLoggingConfiguration SipMediaApplicationLoggingConfiguration
         {

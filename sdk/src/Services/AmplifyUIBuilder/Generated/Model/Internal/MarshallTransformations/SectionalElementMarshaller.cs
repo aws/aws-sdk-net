@@ -45,6 +45,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(SectionalElement requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetExcluded())
+            {
+                context.Writer.WritePropertyName("excluded");
+                context.Writer.Write(requestObject.Excluded);
+            }
+
             if(requestObject.IsSetLevel())
             {
                 context.Writer.WritePropertyName("level");

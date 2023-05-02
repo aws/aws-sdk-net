@@ -923,7 +923,9 @@ namespace Amazon.Runtime
                     return _httpClientCacheSize.Value;
                 }
 
-#if NETCOREAPP3_1_OR_GREATER
+// Use both NETCOREAPP3_1 and NETCOREAPP3_1_OR_GREATER because currently the build server only has .NET Core 3.1 SDK installed
+// which predates the OR_GREATER preprocessor statements. The NETCOREAPP3_1_OR_GREATER is used for future proofing.
+#if NETCOREAPP3_1 || NETCOREAPP3_1_OR_GREATER
                 return 1;
 #else
                 return RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? 1 : Environment.ProcessorCount;

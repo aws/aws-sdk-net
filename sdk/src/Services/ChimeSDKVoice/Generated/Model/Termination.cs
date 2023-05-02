@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// Termination settings enable SIP hosts to make outbound calls using an Amazon Chime
+    /// SDK Voice Connector.
     /// </summary>
     public partial class Termination
     {
@@ -40,7 +41,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private bool? _disabled;
 
         /// <summary>
-        /// Gets and sets the property CallingRegions.
+        /// Gets and sets the property CallingRegions. 
+        /// <para>
+        /// The countries to which calls are allowed, in ISO 3166-1 alpha-2 format. Required.
+        /// </para>
         /// </summary>
         public List<string> CallingRegions
         {
@@ -55,7 +59,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CidrAllowedList.
+        /// Gets and sets the property CidrAllowedList. 
+        /// <para>
+        /// The IP addresses allowed to make calls, in CIDR format.
+        /// </para>
         /// </summary>
         public List<string> CidrAllowedList
         {
@@ -70,7 +77,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CpsLimit.
+        /// Gets and sets the property CpsLimit. 
+        /// <para>
+        /// The limit on calls per second. Max value based on account service quota. Default value
+        /// of 1.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public int CpsLimit
@@ -86,7 +97,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DefaultPhoneNumber.
+        /// Gets and sets the property DefaultPhoneNumber. 
+        /// <para>
+        /// The default outbound calling number.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string DefaultPhoneNumber
@@ -102,7 +116,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Disabled.
+        /// Gets and sets the property Disabled. 
+        /// <para>
+        /// When termination is disabled, outbound calls cannot be made.
+        /// </para>
         /// </summary>
         public bool Disabled
         {

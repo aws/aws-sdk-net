@@ -165,7 +165,17 @@ namespace Amazon.ECS
         /// Amazon ECS runs another copy of the task in the specified cluster. To update an existing
         /// service, see the <a>UpdateService</a> action.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+        /// Elastic Inference (EI), and will help current customers migrate their workloads to
+        /// options that offer better price and performance. After April 15, 2023, new customers
+        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+        /// during the past 30-day period are considered current customers and will be able to
+        /// continue using the service. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// In addition to maintaining the desired count of tasks in your service, you can optionally
         /// run your service behind one or more load balancers. The load balancers distribute
@@ -1085,7 +1095,7 @@ namespace Amazon.ECS
         /// </para>
         ///  
         /// <para>
-        /// For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.htm">Using
+        /// For information about required permissions and considerations, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Using
         /// Amazon ECS Exec for debugging</a> in the <i>Amazon ECS Developer Guide</i>. 
         /// </para>
         /// </summary>
@@ -1128,7 +1138,7 @@ namespace Amazon.ECS
         ///  </li> <li> 
         /// <para>
         ///  There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for
-        /// for Systems Manager Session Manager
+        /// Systems Manager Session Manager
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1535,9 +1545,9 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// If you change the account setting for the root user, the default settings for all
-        /// of the users and roles that no individual account setting was specified are reset
-        /// for. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+        /// If you change the root user account setting, the default settings are reset for users
+        /// and roles that do not have specified individual account settings. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
         /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         ///  
@@ -1554,7 +1564,7 @@ namespace Amazon.ECS
         /// <para>
         /// When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
         /// limit for any new container instances that support the feature is changed. If <code>awsvpcTrunking</code>
-        /// is enabled, any new container instances that support the feature are launched have
+        /// is turned on, any new container instances that support the feature are launched have
         /// the increased ENI limits available to them. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
         /// Network Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
@@ -1562,10 +1572,21 @@ namespace Amazon.ECS
         ///  
         /// <para>
         /// When <code>containerInsights</code> is specified, the default setting indicating whether
-        /// CloudWatch Container Insights is enabled for your clusters is changed. If <code>containerInsights</code>
-        /// is enabled, any new clusters that are created will have Container Insights enabled
-        /// unless you disable it during cluster creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
+        /// Amazon Web Services CloudWatch Container Insights is turned on for your clusters is
+        /// changed. If <code>containerInsights</code> is turned on, any new clusters that are
+        /// created will have Container Insights turned on unless you disable it during cluster
+        /// creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
         /// Container Insights</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon ECS is introducing tagging authorization for resource creation. Users must
+        /// have permissions for actions that create the resource, such as <code>ecsCreateCluster</code>.
+        /// If tags are specified when you create a resource, Amazon Web Services performs additional
+        /// authorization to verify if users or roles have permissions to create tags. Therefore,
+        /// you must grant explicit permissions to use the <code>ecs:TagResource</code> action.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/supported-iam-actions-tagging.html">Grant
+        /// permission to tag resources on creation</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAccountSetting service method.</param>
@@ -1795,7 +1816,17 @@ namespace Amazon.ECS
         /// Alternatively, you can use <a>StartTask</a> to use your own scheduler or place tasks
         /// manually on specific container instances.
         /// </para>
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+        /// Elastic Inference (EI), and will help current customers migrate their workloads to
+        /// options that offer better price and performance. After April 15, 2023, new customers
+        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+        /// during the past 30-day period are considered current customers and will be able to
+        /// continue using the service. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// The Amazon ECS API follows an eventual consistency model. This is because of the distributed
         /// nature of the system supporting the API. This means that the result of an API command
@@ -1874,7 +1905,17 @@ namespace Amazon.ECS
         /// Starts a new task from the specified task definition on the specified container instance
         /// or instances.
         /// 
-        ///  
+        ///  <note> 
+        /// <para>
+        /// Starting April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+        /// Elastic Inference (EI), and will help current customers migrate their workloads to
+        /// options that offer better price and performance. After April 15, 2023, new customers
+        /// will not be able to launch instances with Amazon EI accelerators in Amazon SageMaker,
+        /// Amazon ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+        /// during the past 30-day period are considered current customers and will be able to
+        /// continue using the service. 
+        /// </para>
+        ///  </note> 
         /// <para>
         /// Alternatively, you can use <a>RunTask</a> to place tasks for you. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
@@ -2613,7 +2654,7 @@ namespace Amazon.ECS
         /// 
         ///  
         /// <para>
-        /// Task-protection, by default, expires after 2 hours at which point Amazon ECS unsets
+        /// Task-protection, by default, expires after 2 hours at which point Amazon ECS clears
         /// the <code>protectionEnabled</code> property making the task eligible for termination
         /// by a subsequent scale-in event.
         /// </para>

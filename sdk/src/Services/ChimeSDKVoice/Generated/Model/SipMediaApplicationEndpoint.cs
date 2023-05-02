@@ -29,14 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The endpoint assigned to a SIP media application.
     /// </summary>
     public partial class SipMediaApplicationEndpoint
     {
         private string _lambdaArn;
 
         /// <summary>
-        /// Gets and sets the property LambdaArn.
+        /// Gets and sets the property LambdaArn. 
+        /// <para>
+        /// Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias. The function
+        /// must be created in the same AWS Region as the SIP media application.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Max=10000)]
         public string LambdaArn

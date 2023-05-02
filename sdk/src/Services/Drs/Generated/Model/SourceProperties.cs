@@ -41,6 +41,7 @@ namespace Amazon.Drs.Model
         private OS _os;
         private long? _ramBytes;
         private string _recommendedInstanceType;
+        private bool? _supportsNitroInstances;
 
         /// <summary>
         /// Gets and sets the property Cpus. 
@@ -190,6 +191,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetRecommendedInstanceType()
         {
             return this._recommendedInstanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportsNitroInstances. 
+        /// <para>
+        /// Are EC2 nitro instance types supported when recovering the Source Server.
+        /// </para>
+        /// </summary>
+        public bool SupportsNitroInstances
+        {
+            get { return this._supportsNitroInstances.GetValueOrDefault(); }
+            set { this._supportsNitroInstances = value; }
+        }
+
+        // Check to see if SupportsNitroInstances property is set
+        internal bool IsSetSupportsNitroInstances()
+        {
+            return this._supportsNitroInstances.HasValue; 
         }
 
     }

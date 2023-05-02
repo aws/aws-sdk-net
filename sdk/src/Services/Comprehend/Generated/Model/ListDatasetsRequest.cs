@@ -30,7 +30,7 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDatasets operation.
-    /// List the datasets that you have configured in this region. For more information about
+    /// List the datasets that you have configured in this Region. For more information about
     /// datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
     /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
     /// </summary>

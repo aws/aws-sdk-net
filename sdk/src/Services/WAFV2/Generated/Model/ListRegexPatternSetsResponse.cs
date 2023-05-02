@@ -59,7 +59,11 @@ namespace Amazon.WAFV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegexPatternSets.
+        /// Gets and sets the property RegexPatternSets. 
+        /// <para>
+        /// Array of regex pattern sets. If you specified a <code>Limit</code> in your request,
+        /// this might not be the full list. 
+        /// </para>
         /// </summary>
         public List<RegexPatternSetSummary> RegexPatternSets
         {

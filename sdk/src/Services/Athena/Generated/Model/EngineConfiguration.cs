@@ -43,10 +43,10 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property AdditionalConfigs. 
         /// <para>
         /// Contains additional notebook engine <code>MAP&lt;string, string&gt;</code> parameter
-        /// mappings in the form of key-value pairs. To specify an Amazon S3 URI that the Jupyter
+        /// mappings in the form of key-value pairs. To specify an Athena notebook that the Jupyter
         /// server will download and serve, specify a value for the <a>StartSessionRequest$NotebookVersion</a>
-        /// field, and then add a key named <code>NotebookFileURI</code> to <code>AdditionalConfigs</code>
-        /// that has value of the Amazon S3 URI.
+        /// field, and then add a key named <code>NotebookId</code> to <code>AdditionalConfigs</code>
+        /// that has the value of the Athena notebook ID.
         /// </para>
         /// </summary>
         public Dictionary<string, string> AdditionalConfigs
@@ -66,9 +66,10 @@ namespace Amazon.Athena.Model
         /// <para>
         /// The number of DPUs to use for the coordinator. A coordinator is a special executor
         /// that orchestrates processing work and manages other executors in a notebook session.
+        /// The default is 1.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5000)]
+        [AWSProperty(Min=1, Max=1)]
         public int CoordinatorDpuSize
         {
             get { return this._coordinatorDpuSize.GetValueOrDefault(); }
@@ -85,10 +86,10 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property DefaultExecutorDpuSize. 
         /// <para>
         /// The default number of DPUs to use for executors. An executor is the smallest unit
-        /// of compute that a notebook session can request from Athena.
+        /// of compute that a notebook session can request from Athena. The default is 1.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5000)]
+        [AWSProperty(Min=1, Max=1)]
         public int DefaultExecutorDpuSize
         {
             get { return this._defaultExecutorDpuSize.GetValueOrDefault(); }

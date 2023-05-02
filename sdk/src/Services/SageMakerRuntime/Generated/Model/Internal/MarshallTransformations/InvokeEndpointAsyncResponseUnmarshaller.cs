@@ -58,6 +58,8 @@ namespace Amazon.SageMakerRuntime.Model.Internal.MarshallTransformations
                     continue;
                 }
             }
+            if (context.ResponseData.IsHeaderPresent("X-Amzn-SageMaker-FailureLocation"))
+                response.FailureLocation = context.ResponseData.GetHeaderValue("X-Amzn-SageMaker-FailureLocation");
             if (context.ResponseData.IsHeaderPresent("X-Amzn-SageMaker-OutputLocation"))
                 response.OutputLocation = context.ResponseData.GetHeaderValue("X-Amzn-SageMaker-OutputLocation");
 

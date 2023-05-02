@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The request exceeds the resource limit.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -76,6 +76,12 @@ namespace Amazon.ChimeSDKIdentity.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedTimestamp = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExpirationSettings", targetDepth))
+                {
+                    var unmarshaller = ExpirationSettingsUnmarshaller.Instance;
+                    unmarshalledObject.ExpirationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastUpdatedTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

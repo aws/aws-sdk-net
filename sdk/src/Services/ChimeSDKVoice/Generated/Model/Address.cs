@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// A validated address.
     /// </summary>
     public partial class Address
     {
@@ -45,7 +45,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _streetSuffix;
 
         /// <summary>
-        /// Gets and sets the property City.
+        /// Gets and sets the property City. 
+        /// <para>
+        /// The city of an address.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string City
@@ -61,7 +64,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Country.
+        /// Gets and sets the property Country. 
+        /// <para>
+        /// The country of an address.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string Country
@@ -77,7 +83,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PostalCode.
+        /// Gets and sets the property PostalCode. 
+        /// <para>
+        /// The postal code of an address.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string PostalCode
@@ -93,7 +102,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PostalCodePlus4.
+        /// Gets and sets the property PostalCodePlus4. 
+        /// <para>
+        /// The zip + 4 or postal code + 4 of an address.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string PostalCodePlus4
@@ -109,7 +121,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PostDirectional.
+        /// Gets and sets the property PostDirectional. 
+        /// <para>
+        /// An address suffix location, such as the <code>S. Unit A</code> in <code>Central Park
+        /// S. Unit A</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string PostDirectional
@@ -125,7 +141,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PreDirectional.
+        /// Gets and sets the property PreDirectional. 
+        /// <para>
+        /// An address prefix location, such as the <code>N</code> in <code>N. Third St.</code>
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string PreDirectional
@@ -141,7 +161,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of an address.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string State
@@ -157,7 +180,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreetName.
+        /// Gets and sets the property StreetName. 
+        /// <para>
+        /// The address street, such as <code>8th Avenue</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string StreetName
@@ -173,7 +199,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreetNumber.
+        /// Gets and sets the property StreetNumber. 
+        /// <para>
+        /// The numeric portion of an address.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string StreetNumber
@@ -189,7 +218,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreetSuffix.
+        /// Gets and sets the property StreetSuffix. 
+        /// <para>
+        /// The address suffix, such as the <code>N</code> in <code>8th Avenue N</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string StreetSuffix

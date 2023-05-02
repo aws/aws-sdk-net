@@ -31,24 +31,33 @@ namespace Amazon.InternetMonitor.Model
     /// <summary>
     /// Container for the parameters to the CreateMonitor operation.
     /// Creates a monitor in Amazon CloudWatch Internet Monitor. A monitor is built based
-    /// on information from the application resources that you add: Virtual Private Clouds
-    /// (VPCs), Amazon CloudFront distributions, and WorkSpaces directories. 
+    /// on information from the application resources that you add: Amazon Virtual Private
+    /// Clouds (VPCs), Amazon CloudFront distributions, and WorkSpaces directories. Internet
+    /// Monitor then publishes internet measurements from Amazon Web Services that are specific
+    /// to the <i>city-networks</i>, that is, the locations and ASNs (typically internet service
+    /// providers or ISPs), where clients access your application. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-InternetMonitor.html">Using
+    /// Amazon CloudWatch Internet Monitor</a> in the <i>Amazon CloudWatch User Guide</i>.
     /// 
     ///  
     /// <para>
-    /// After you create a monitor, you can view the internet performance for your application,
-    /// scoped to a location, as well as any health events that are impairing traffic. Internet
-    /// Monitor can also diagnose whether the impairment is on the Amazon Web Services network
-    /// or is an issue with an internet service provider (ISP).
+    /// When you create a monitor, you set a maximum limit for the number of city-networks
+    /// where client traffic is monitored. The city-network maximum that you choose is the
+    /// limit, but you only pay for the number of city-networks that are actually monitored.
+    /// You can change the maximum at any time by updating your monitor. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
+    /// a city-network maximum value</a> in the <i>Amazon CloudWatch User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateMonitorRequest : AmazonInternetMonitorRequest
     {
         private string _clientToken;
+        private InternetMeasurementsLogDelivery _internetMeasurementsLogDelivery;
         private int? _maxCityNetworksToMonitor;
         private string _monitorName;
         private List<string> _resources = new List<string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+        private int? _trafficPercentageToMonitor;
 
         /// <summary>
         /// Gets and sets the property ClientToken. 
@@ -70,13 +79,40 @@ namespace Amazon.InternetMonitor.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxCityNetworksToMonitor. 
+        /// Gets and sets the property InternetMeasurementsLogDelivery. 
         /// <para>
-        /// The maximum number of city-network combinations (that is, combinations of a city location
-        /// and network, such as an ISP) to be monitored for your resources.
+        /// Publish internet measurements for Internet Monitor to an Amazon S3 bucket in addition
+        /// to CloudWatch Logs.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=500000)]
+        public InternetMeasurementsLogDelivery InternetMeasurementsLogDelivery
+        {
+            get { return this._internetMeasurementsLogDelivery; }
+            set { this._internetMeasurementsLogDelivery = value; }
+        }
+
+        // Check to see if InternetMeasurementsLogDelivery property is set
+        internal bool IsSetInternetMeasurementsLogDelivery()
+        {
+            return this._internetMeasurementsLogDelivery != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxCityNetworksToMonitor. 
+        /// <para>
+        /// The maximum number of city-networks to monitor for your resources. A city-network
+        /// is the location (city) where clients access your application resources from and the
+        /// network or ASN, such as an internet service provider (ISP), that clients access the
+        /// resources through. This limit helps control billing costs.
+        /// </para>
+        ///  
+        /// <para>
+        /// To learn more, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
+        /// a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor section
+        /// of the <i>CloudWatch User Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=500000)]
         public int MaxCityNetworksToMonitor
         {
             get { return this._maxCityNetworksToMonitor.GetValueOrDefault(); }
@@ -156,6 +192,26 @@ namespace Amazon.InternetMonitor.Model
         internal bool IsSetTags()
         {
             return this._tags != null && this._tags.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrafficPercentageToMonitor. 
+        /// <para>
+        /// The percentage of the internet-facing traffic for your application that you want to
+        /// monitor with this monitor.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int TrafficPercentageToMonitor
+        {
+            get { return this._trafficPercentageToMonitor.GetValueOrDefault(); }
+            set { this._trafficPercentageToMonitor = value; }
+        }
+
+        // Check to see if TrafficPercentageToMonitor property is set
+        internal bool IsSetTrafficPercentageToMonitor()
+        {
+            return this._trafficPercentageToMonitor.HasValue; 
         }
 
     }

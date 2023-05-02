@@ -31,13 +31,12 @@ namespace Amazon.SimSpaceWeaver
     /// <summary>
     /// Interface for accessing SimSpaceWeaver
     ///
-    /// Amazon Web Services SimSpace Weaver (SimSpace Weaver) is a managed service that you
-    /// can use to build and operate large-scale spatial simulations in the Amazon Web Services
-    /// Cloud. For example, you can create a digital twin of a city, crowd simulations with
-    /// millions of people and objects, and massilvely-multiplayer games with hundreds of
-    /// thousands of connected players. For more information about SimSpace Weaver, see the
-    /// <i> <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/">Amazon
-    /// Web Services SimSpace Weaver User Guide</a> </i>.
+    /// SimSpace Weaver (SimSpace Weaver) is a managed service that you can use to build and
+    /// operate large-scale spatial simulations in the Amazon Web Services Cloud. For example,
+    /// you can create a digital twin of a city, crowd simulations with millions of people
+    /// and objects, and massively multiplayer games with hundreds of thousands of connected
+    /// players. For more information about SimSpace Weaver, see the <i> <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/">SimSpace
+    /// Weaver User Guide</a> </i>.
     /// 
     ///  
     /// <para>
@@ -48,7 +47,8 @@ namespace Amazon.SimSpaceWeaver
     /// <para>
     /// SimSpace Weaver also provides the SimSpace Weaver app SDK, which you use for app development.
     /// The SimSpace Weaver app SDK API reference is included in the SimSpace Weaver app SDK
-    /// documentation, which is part of the SimSpace Weaver app SDK distributable package.
+    /// documentation. This documentation is part of the SimSpace Weaver app SDK distributable
+    /// package.
     /// </para>
     /// </summary>
     public partial interface IAmazonSimSpaceWeaver : IAmazonService, IDisposable
@@ -59,6 +59,154 @@ namespace Amazon.SimSpaceWeaver
         /// </summary>
         ISimSpaceWeaverPaginatorFactory Paginators { get; }
 
+        
+        #region  CreateSnapshot
+
+
+        /// <summary>
+        /// Creates a snapshot of the specified simulation. A snapshot is a file that contains
+        /// simulation state data at a specific time. The state data saved in a snapshot includes
+        /// entity data from the State Fabric, the simulation configuration specified in the schema,
+        /// and the clock tick number. You can use the snapshot to initialize a new simulation.
+        /// For more information about snapshots, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/working-with_snapshots.html">Snapshots</a>
+        /// in the <i>SimSpace Weaver User Guide</i>. 
+        /// 
+        ///  
+        /// <para>
+        /// You specify a <code>Destination</code> when you create a snapshot. The <code>Destination</code>
+        /// is the name of an Amazon S3 bucket and an optional <code>ObjectKeyPrefix</code>. The
+        /// <code>ObjectKeyPrefix</code> is usually the name of a folder in the bucket. SimSpace
+        /// Weaver creates a <code>snapshot</code> folder inside the <code>Destination</code>
+        /// and places the snapshot file there.
+        /// </para>
+        ///  
+        /// <para>
+        /// The snapshot file is an Amazon S3 object. It has an object key with the form: <code>
+        /// <i>object-key-prefix</i>/snapshot/<i>simulation-name</i>-<i>YYMMdd</i>-<i>HHmm</i>-<i>ss</i>.zip</code>,
+        /// where: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code> <i>YY</i> </code> is the 2-digit year
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> <i>MM</i> </code> is the 2-digit month
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> <i>dd</i> </code> is the 2-digit day of the month
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> <i>HH</i> </code> is the 2-digit hour (24-hour clock)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> <i>mm</i> </code> is the 2-digit minutes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> <i>ss</i> </code> is the 2-digit seconds
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
+        /// 
+        /// <returns>The response from the CreateSnapshot service method, as returned by SimSpaceWeaver.</returns>
+        /// <exception cref="Amazon.SimSpaceWeaver.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimSpaceWeaver.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimSpaceWeaver.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimSpaceWeaver.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimSpaceWeaver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
+        CreateSnapshotResponse CreateSnapshot(CreateSnapshotRequest request);
+
+
+
+        /// <summary>
+        /// Creates a snapshot of the specified simulation. A snapshot is a file that contains
+        /// simulation state data at a specific time. The state data saved in a snapshot includes
+        /// entity data from the State Fabric, the simulation configuration specified in the schema,
+        /// and the clock tick number. You can use the snapshot to initialize a new simulation.
+        /// For more information about snapshots, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/working-with_snapshots.html">Snapshots</a>
+        /// in the <i>SimSpace Weaver User Guide</i>. 
+        /// 
+        ///  
+        /// <para>
+        /// You specify a <code>Destination</code> when you create a snapshot. The <code>Destination</code>
+        /// is the name of an Amazon S3 bucket and an optional <code>ObjectKeyPrefix</code>. The
+        /// <code>ObjectKeyPrefix</code> is usually the name of a folder in the bucket. SimSpace
+        /// Weaver creates a <code>snapshot</code> folder inside the <code>Destination</code>
+        /// and places the snapshot file there.
+        /// </para>
+        ///  
+        /// <para>
+        /// The snapshot file is an Amazon S3 object. It has an object key with the form: <code>
+        /// <i>object-key-prefix</i>/snapshot/<i>simulation-name</i>-<i>YYMMdd</i>-<i>HHmm</i>-<i>ss</i>.zip</code>,
+        /// where: 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code> <i>YY</i> </code> is the 2-digit year
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> <i>MM</i> </code> is the 2-digit month
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> <i>dd</i> </code> is the 2-digit day of the month
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> <i>HH</i> </code> is the 2-digit hour (24-hour clock)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> <i>mm</i> </code> is the 2-digit minutes
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code> <i>ss</i> </code> is the 2-digit seconds
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSnapshot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateSnapshot service method, as returned by SimSpaceWeaver.</returns>
+        /// <exception cref="Amazon.SimSpaceWeaver.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimSpaceWeaver.Model.ConflictException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimSpaceWeaver.Model.InternalServerException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimSpaceWeaver.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.SimSpaceWeaver.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/CreateSnapshot">REST API Reference for CreateSnapshot Operation</seealso>
+        Task<CreateSnapshotResponse> CreateSnapshotAsync(CreateSnapshotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
         
         #region  DeleteApp
 
@@ -126,8 +274,8 @@ namespace Amazon.SimSpaceWeaver
         /// 
         ///  <note> 
         /// <para>
-        /// Your simulation uses resources in other Amazon Web Services services. This API operation
-        /// doesn't delete resources in other Amazon Web Services services.
+        /// Your simulation uses resources in other Amazon Web Services. This API operation doesn't
+        /// delete resources in other Amazon Web Services.
         /// </para>
         ///  </note>
         /// </summary>
@@ -159,8 +307,8 @@ namespace Amazon.SimSpaceWeaver
         /// 
         ///  <note> 
         /// <para>
-        /// Your simulation uses resources in other Amazon Web Services services. This API operation
-        /// doesn't delete resources in other Amazon Web Services services.
+        /// Your simulation uses resources in other Amazon Web Services. This API operation doesn't
+        /// delete resources in other Amazon Web Services.
         /// </para>
         ///  </note>
         /// </summary>
@@ -554,7 +702,12 @@ namespace Amazon.SimSpaceWeaver
 
 
         /// <summary>
-        /// Starts a simulation with the given name and schema.
+        /// Starts a simulation with the given name. You must choose to start your simulation
+        /// from a schema or from a snapshot. For more information about the schema, see the <a
+        /// href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/schema-reference.html">schema
+        /// reference</a> in the <i>SimSpace Weaver User Guide</i>. For more information about
+        /// snapshots, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/working-with_snapshots.html">Snapshots</a>
+        /// in the <i>SimSpace Weaver User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSimulation service method.</param>
         /// 
@@ -580,7 +733,12 @@ namespace Amazon.SimSpaceWeaver
 
 
         /// <summary>
-        /// Starts a simulation with the given name and schema.
+        /// Starts a simulation with the given name. You must choose to start your simulation
+        /// from a schema or from a snapshot. For more information about the schema, see the <a
+        /// href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/schema-reference.html">schema
+        /// reference</a> in the <i>SimSpace Weaver User Guide</i>. For more information about
+        /// snapshots, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/working-with_snapshots.html">Snapshots</a>
+        /// in the <i>SimSpace Weaver User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartSimulation service method.</param>
         /// <param name="cancellationToken">
@@ -732,8 +890,8 @@ namespace Amazon.SimSpaceWeaver
         /// 
         ///  <important> 
         /// <para>
-        /// You can't restart a simulation after you stop it. If you need to restart a simulation,
-        /// you must stop it, delete it, and start a new instance of it.
+        /// You can't restart a simulation after you stop it. If you want to restart a simulation,
+        /// then you must stop it, delete it, and start a new instance of it.
         /// </para>
         ///  </important>
         /// </summary>
@@ -765,8 +923,8 @@ namespace Amazon.SimSpaceWeaver
         /// 
         ///  <important> 
         /// <para>
-        /// You can't restart a simulation after you stop it. If you need to restart a simulation,
-        /// you must stop it, delete it, and start a new instance of it.
+        /// You can't restart a simulation after you stop it. If you want to restart a simulation,
+        /// then you must stop it, delete it, and start a new instance of it.
         /// </para>
         ///  </important>
         /// </summary>

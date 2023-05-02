@@ -106,6 +106,12 @@ namespace Amazon.FMS.Model.Internal.MarshallTransformations
                     unmarshalledObject.PolicyName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PolicyStatus", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PolicyStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PolicyUpdateToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

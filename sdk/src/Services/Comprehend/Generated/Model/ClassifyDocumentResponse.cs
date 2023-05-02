@@ -38,6 +38,7 @@ namespace Amazon.Comprehend.Model
         private List<DocumentTypeListItem> _documentType = new List<DocumentTypeListItem>();
         private List<ErrorsListItem> _errors = new List<ErrorsListItem>();
         private List<DocumentLabel> _labels = new List<DocumentLabel>();
+        private List<WarningsListItem> _warnings = new List<WarningsListItem>();
 
         /// <summary>
         /// Gets and sets the property Classes. 
@@ -137,6 +138,31 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetLabels()
         {
             return this._labels != null && this._labels.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Warnings. 
+        /// <para>
+        /// Warnings detected while processing the input document. The response includes a warning
+        /// if there is a mismatch between the input document type and the model type associated
+        /// with the endpoint that you specified. The response can also include warnings for individual
+        /// pages that have a mismatch. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The field is empty if the system generated no warnings.
+        /// </para>
+        /// </summary>
+        public List<WarningsListItem> Warnings
+        {
+            get { return this._warnings; }
+            set { this._warnings = value; }
+        }
+
+        // Check to see if Warnings property is set
+        internal bool IsSetWarnings()
+        {
+            return this._warnings != null && this._warnings.Count > 0; 
         }
 
     }

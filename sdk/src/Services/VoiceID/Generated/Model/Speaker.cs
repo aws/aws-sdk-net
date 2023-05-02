@@ -44,7 +44,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// A timestamp showing when the speaker is created. 
+        /// A timestamp of when the speaker was created. 
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -119,8 +119,8 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property LastAccessedAt. 
         /// <para>
-        /// The timestamp when the speaker was last accessed for enrollment, re-enrollment or
-        /// a successful authentication. This timestamp is accurate to one hour.
+        /// The timestamp of when the speaker was last accessed for enrollment, re-enrollment
+        /// or a successful authentication. This timestamp is accurate to one hour.
         /// </para>
         /// </summary>
         public DateTime LastAccessedAt
@@ -156,7 +156,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// A timestamp showing the speaker's last update.
+        /// A timestamp of the speaker's last update.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

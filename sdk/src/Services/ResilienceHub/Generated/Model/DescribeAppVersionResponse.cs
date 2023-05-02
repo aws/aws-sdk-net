@@ -40,7 +40,10 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AdditionalInfo. 
         /// <para>
-        /// Additional configuration parameters for an AWS Resilience Hub application.
+        /// Additional configuration parameters for an Resilience Hub application. If you want
+        /// to implement <code>additionalInfo</code> through the Resilience Hub console rather
+        /// than using an API call, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/app-config-param.html">Configure
+        /// the application configuration parameters</a>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -63,8 +66,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The format for
-        /// this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
@@ -85,7 +88,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppVersion. 
         /// <para>
-        /// The AWS Resilience Hub application version.
+        /// The Resilience Hub application version.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

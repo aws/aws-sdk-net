@@ -54,6 +54,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("amdSevSnp", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AmdSevSnp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("coreCount", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

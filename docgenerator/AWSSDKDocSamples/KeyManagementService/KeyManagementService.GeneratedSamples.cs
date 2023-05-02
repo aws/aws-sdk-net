@@ -62,7 +62,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             var client = new AmazonKeyManagementServiceClient();
             var response = client.CreateCustomKeyStore(new CreateCustomKeyStoreRequest 
             {
-                CloudHsmClusterId = "cluster-1a23b4cdefg", // The ID of the CloudHSM cluster.
+                CloudHsmClusterId = "cluster-234abcdefABC", // The ID of the CloudHSM cluster.
                 CustomKeyStoreName = "ExampleKeyStore", // A friendly name for the custom key store.
                 KeyStorePassword = "kmsPswd", // The password for the kmsuser CU account in the specified cluster.
                 TrustAnchorCertificate = "<certificate-goes-here>" // The content of the customerCA.crt file that you created when you initialized the cluster.
@@ -268,7 +268,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceDecrypt()
         {
-            #region to-decrypt-data-1478281622886
+            #region to-decrypt-data-1
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.Decrypt(new DecryptRequest 
@@ -277,8 +277,50 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab" // A key identifier for the KMS key to use to decrypt the data.
             });
 
+            string encryptionAlgorithm = response.EncryptionAlgorithm; // The encryption algorithm that was used to decrypt the ciphertext. SYMMETRIC_DEFAULT is the only valid value for symmetric encryption in AWS KMS.
             string keyId = response.KeyId; // The Amazon Resource Name (ARN) of the KMS key that was used to decrypt the data.
             MemoryStream plaintext = response.Plaintext; // The decrypted (plaintext) data.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceDecrypt()
+        {
+            #region to-decrypt-data-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.Decrypt(new DecryptRequest 
+            {
+                CiphertextBlob = new MemoryStream(<binary data>), // The encrypted data (ciphertext).
+                EncryptionAlgorithm = "RSAES_OAEP_SHA_256", // The encryption algorithm that was used to encrypt the data. This parameter is required to decrypt with an asymmetric KMS key.
+                KeyId = "0987dcba-09fe-87dc-65ba-ab0987654321" // A key identifier for the KMS key to use to decrypt the data. This parameter is required to decrypt with an asymmetric KMS key.
+            });
+
+            string encryptionAlgorithm = response.EncryptionAlgorithm; // The encryption algorithm that was used to decrypt the ciphertext.
+            string keyId = response.KeyId; // The Amazon Resource Name (ARN) of the KMS key that was used to decrypt the data.
+            MemoryStream plaintext = response.Plaintext; // The decrypted (plaintext) data.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceDecrypt()
+        {
+            #region to-decrypt-data-for-a-nitro-enclave-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.Decrypt(new DecryptRequest 
+            {
+                CiphertextBlob = new MemoryStream(<binary data>), // The encrypted data. This ciphertext was encrypted with the KMS key
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The KMS key to use to decrypt the ciphertext
+                Recipient = new RecipientInfo {
+                    AttestationDocument = new MemoryStream(<attestation document>),
+                    KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
+                } // Specifies the attestation document from the Nitro enclave and the encryption algorithm to use with the public key from the attestation document
+            });
+
+            MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The decrypted CiphertextBlob encrypted with the public key from the attestation document
+            string keyId = response.KeyId; // The KMS key that was used to decrypt the encrypted data (CiphertextBlob)
+            MemoryStream plaintext = response.Plaintext; // This field is null or empty
 
             #endregion
         }
@@ -504,7 +546,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceDisconnectCustomKeyStore()
         {
-            #region to-disconnect-a-custom-key-store-from-its-cloudhsm-cluster-1628627955156
+            #region to-disconnect-a-custom-key-store-from-its-cloudhsm-cluster-234abcdefABC
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.DisconnectCustomKeyStore(new DisconnectCustomKeyStoreRequest 
@@ -546,7 +588,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceEncrypt()
         {
-            #region to-encrypt-data-1478906026012
+            #region to-encrypt-data-1
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.Encrypt(new EncryptRequest 
@@ -556,6 +598,26 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             });
 
             MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data (ciphertext).
+            string encryptionAlgorithm = response.EncryptionAlgorithm; // The encryption algorithm that was used in the operation. For symmetric encryption keys, the encryption algorithm is always SYMMETRIC_DEFAULT.
+            string keyId = response.KeyId; // The ARN of the KMS key that was used to encrypt the data.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceEncrypt()
+        {
+            #region to-encrypt-data-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.Encrypt(new EncryptRequest 
+            {
+                EncryptionAlgorithm = "RSAES_OAEP_SHA_256", // The encryption algorithm to use in the operation.
+                KeyId = "0987dcba-09fe-87dc-65ba-ab0987654321", // The identifier of the KMS key to use for encryption. You can use the key ID or Amazon Resource Name (ARN) of the KMS key, or the name or ARN of an alias that refers to the KMS key.
+                Plaintext = new MemoryStream(<binary data>) // The data to encrypt.
+            });
+
+            MemoryStream ciphertextBlob = response.CiphertextBlob; // The encrypted data (ciphertext).
+            string encryptionAlgorithm = response.EncryptionAlgorithm; // The encryption algorithm that was used in the operation.
             string keyId = response.KeyId; // The ARN of the KMS key that was used to encrypt the data.
 
             #endregion
@@ -563,7 +625,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceGenerateDataKey()
         {
-            #region to-generate-a-data-key-1478912956062
+            #region to-generate-a-data-key-1
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.GenerateDataKey(new GenerateDataKeyRequest 
@@ -579,9 +641,32 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             #endregion
         }
 
+        public void KeyManagementServiceGenerateDataKey()
+        {
+            #region to-generate-a-data-key-for-a-nitro-enclave-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GenerateDataKey(new GenerateDataKeyRequest 
+            {
+                KeyId = "arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // Identifies the KMS key used to encrypt the encrypted data key (CiphertextBlob)
+                KeySpec = "AES_256", // Specifies the type of data key to return
+                Recipient = new RecipientInfo {
+                    AttestationDocument = new MemoryStream(<attestation document>),
+                    KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
+                } // Specifies the attestation document from the Nitro enclave and the encryption algorithm to use with the public key from the attestation document
+            });
+
+            MemoryStream ciphertextBlob = response.CiphertextBlob; // The data key encrypted by the specified KMS key
+            MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The plaintext data key encrypted by the public key from the attestation document
+            string keyId = response.KeyId; // The KMS key used to encrypt the CiphertextBlob (encrypted data key)
+            MemoryStream plaintext = response.Plaintext; // This field is null or empty
+
+            #endregion
+        }
+
         public void KeyManagementServiceGenerateDataKeyPair()
         {
-            #region to-generate-an-rsa-key-pair-for-encryption-and-decryption-1628619376878
+            #region to-generate-an-rsa-key-pair-for-encryption-and-decryption-1
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.GenerateDataKeyPair(new GenerateDataKeyPairRequest 
@@ -594,6 +679,31 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             string keyPairSpec = response.KeyPairSpec; // The actual key spec of the RSA data key pair.
             MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The encrypted private key of the RSA data key pair.
             MemoryStream privateKeyPlaintext = response.PrivateKeyPlaintext; // The plaintext private key of the RSA data key pair.
+            MemoryStream publicKey = response.PublicKey; // The public key (plaintext) of the RSA data key pair.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceGenerateDataKeyPair()
+        {
+            #region to-generate-a-data-key-pair-for-a-nitro-enclave-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GenerateDataKeyPair(new GenerateDataKeyPairRequest 
+            {
+                KeyId = "arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The key ID of the symmetric encryption KMS key that encrypts the private RSA key in the data key pair.
+                KeyPairSpec = "RSA_3072", // The requested key spec of the RSA data key pair.
+                Recipient = new RecipientInfo {
+                    AttestationDocument = new MemoryStream(<attestation document>),
+                    KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
+                } // Specifies the attestation document from the Nitro enclave and the encryption algorithm to use with the public key from the attestation document.
+            });
+
+            MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The private key of the RSA data key pair encrypted by the public key from the attestation document
+            string keyId = response.KeyId; // The key ARN of the symmetric encryption KMS key that was used to encrypt the PrivateKeyCiphertextBlob.
+            string keyPairSpec = response.KeyPairSpec; // The actual key spec of the RSA data key pair.
+            MemoryStream privateKeyCiphertextBlob = response.PrivateKeyCiphertextBlob; // The private key of the RSA data key pair encrypted by the KMS key.
+            MemoryStream privateKeyPlaintext = response.PrivateKeyPlaintext; // This field is null or empty
             MemoryStream publicKey = response.PublicKey; // The public key (plaintext) of the RSA data key pair.
 
             #endregion
@@ -656,7 +766,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceGenerateRandom()
         {
-            #region to-generate-random-data-1479163645600
+            #region to-generate-random-data-1
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.GenerateRandom(new GenerateRandomRequest 
@@ -665,6 +775,26 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             });
 
             MemoryStream plaintext = response.Plaintext; // The random data.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceGenerateRandom()
+        {
+            #region to-generate-random-data-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GenerateRandom(new GenerateRandomRequest 
+            {
+                NumberOfBytes = 1024, // The length of the random byte string
+                Recipient = new RecipientInfo {
+                    AttestationDocument = new MemoryStream(<attestation document>),
+                    KeyEncryptionAlgorithm = "RSAES_OAEP_SHA_256"
+                } // Specifies the attestation document from the Nitro enclave and the encryption algorithm to use with the public key from the attestation document
+            });
+
+            MemoryStream ciphertextForRecipient = response.CiphertextForRecipient; // The random data encrypted under the public key from the attestation document
+            MemoryStream plaintext = response.Plaintext; // This field is null or empty
 
             #endregion
         }
@@ -1152,7 +1282,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
             var client = new AmazonKeyManagementServiceClient();
             var response = client.UpdateCustomKeyStore(new UpdateCustomKeyStoreRequest 
             {
-                CloudHsmClusterId = "cluster-1a23b4cdefg", // The ID of the AWS CloudHSM cluster that you want to associate with the custom key store. This cluster must be related to the original CloudHSM cluster for this key store.
+                CloudHsmClusterId = "cluster-234abcdefABC", // The ID of the AWS CloudHSM cluster that you want to associate with the custom key store. This cluster must be related to the original CloudHSM cluster for this key store.
                 CustomKeyStoreId = "cks-1234567890abcdef0" // The ID of the custom key store that you are updating.
             });
 

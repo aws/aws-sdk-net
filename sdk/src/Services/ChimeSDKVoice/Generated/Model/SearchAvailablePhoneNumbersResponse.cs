@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property E164PhoneNumbers.
+        /// Gets and sets the property E164PhoneNumbers. 
+        /// <para>
+        /// Confines a search to just the phone numbers in the E.164 format.
+        /// </para>
         /// </summary>
         public List<string> E164PhoneNumbers
         {
@@ -52,7 +55,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to return the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

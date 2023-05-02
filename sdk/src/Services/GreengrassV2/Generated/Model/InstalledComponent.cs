@@ -106,6 +106,12 @@ namespace Amazon.GreengrassV2.Model
         /// device. For a thing group deployment or thing deployment, the source will be the The
         /// ID of the deployment. and for local deployments it will be <code>LOCAL</code>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Any deployment will attempt to reinstall currently broken components on the device,
+        /// which will update the last installation source.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1)]
         public string LastInstallationSource
@@ -123,7 +129,7 @@ namespace Amazon.GreengrassV2.Model
         /// <summary>
         /// Gets and sets the property LastReportedTimestamp. 
         /// <para>
-        /// The last time the Greengrass core device sent a message containing a certain component
+        /// The last time the Greengrass core device sent a message containing a component's state
         /// to the Amazon Web Services Cloud.
         /// </para>
         ///  

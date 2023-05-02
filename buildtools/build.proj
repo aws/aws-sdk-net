@@ -3,6 +3,7 @@
     xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <InternalBuildTools Condition="'$(InternalBuildTools)'==''">..\..\AWSDotNetBuildTools</InternalBuildTools>
+        <InternalBuildScripts Condition="'$(InternalBuildScripts)'==''">$(InternalBuildTools)\BuildScripts</InternalBuildScripts>
         <DisableValidateRepo Condition="'$(DisableValidateRepo)'==''">false</DisableValidateRepo>
         <TestBackwardCompatibility Condition="'$(TestBackwardCompatibility)'==''">true</TestBackwardCompatibility>
         <ServiceList Condition="'$(ServiceList)'==''"></ServiceList>
@@ -23,8 +24,12 @@
 
         <CodeSigning Condition="'$(CodeSigning)'==''">false</CodeSigning>
     </PropertyGroup>
+    <PropertyGroup>
+        <SignSdkArtifacts-DependsOnTargets>build-tools;build-buildtools;build-extensions</SignSdkArtifacts-DependsOnTargets>
+    </PropertyGroup>
 
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
+    <Import Project="$(InternalBuildTools)\CodeSign.props" Condition="Exists('$(InternalBuildTools)\CodeSign.props')" />
     <Import Project="common.targets" />
 
     <!-- properties used in documentation generation -->
@@ -206,14 +211,14 @@
 
     <Target Name="verify-signed-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="sign-sdk-artifacts">
         <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildTools)\BuildScripts\Test-Signature.ps1 -folder ..\sdk\code-analysis\NuGetInstallScripts\ -pattern *.ps1"/>
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)\Test-Signature.ps1 -folder ..\sdk\code-analysis\NuGetInstallScripts\ -pattern *.ps1"/>
         <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildTools)\BuildScripts\Test-Signature.ps1 -folder ..\sdk\nuget-content\ -pattern *.ps1"/>
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)\Test-Signature.ps1 -folder ..\sdk\nuget-content\ -pattern *.ps1"/>
         <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildTools)\BuildScripts\Test-Signature.ps1 -folder ..\Deployment\ -pattern AWSSDK*.dll"/>
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)\Test-Signature.ps1 -folder ..\Deployment\ -pattern AWSSDK*.dll"/>
     </Target>
 
-    <Target Name="sign-sdk-artifacts" Condition="Exists('$(InternalBuildTools)\references.targets') And $(CodeSigning)" DependsOnTargets="build-tools;build-buildtools;build-extensions">
+    <Target Name="sign-sdk-artifacts" Condition="Exists('$(InternalBuildTools)\references.targets') And $(CodeSigning)" DependsOnTargets="$(SignSdkArtifacts-DependsOnTargets)">
         <!-- Configure project specfic code sign properties -->
         <ItemGroup>
             <!-- SDK items -->
@@ -643,5 +648,29 @@
              NameSpacePortion1.*.NameSpacePortion2.*
              NameSpace.ClassNamePrefix* -->
         <Exec Command='$(InternalBuildTools)\AssemblyComparer\AssemblyComparer\bin\Release\net46\AssemblyComparer.exe package-comparer --package-name AWSSDK.Core --download-folder ..\NuGetDownloads\ --nuspec ..\sdk\src\Core\AWSSDK.Core.nuspec -cf BinaryIncompatibility,SourceIncompatibility,Warning -ig "$(BackwardIncompatibilitiesToIgnore)"'/>
+    </Target>
+
+    <Target Name="build-unit-tests">
+        <Exec Command="dotnet restore -f $(UnitTestsProjectFile)" WorkingDirectory="$(UnitTestsWorkingDirectory)" />
+        <Exec Command="dotnet clean -c $(Configuration) $(UnitTestsProjectFile)" WorkingDirectory="$(UnitTestsWorkingDirectory)" />
+        <Exec Command="dotnet build -c $(Configuration) $(UnitTestsProjectFile) /p:AWSKeyFile=$(CustomSnkFileLocation);SignAssembly=true;RunAnalyzersDuringBuild=$(RunAnalyzersDuringBuild);RuleSetFileForBuild=$(RuleSetFileForBuild)" WorkingDirectory="$(UnitTestsWorkingDirectory)" />
+    </Target>
+
+    <Target Name="run-unit-tests-mstest" DependsOnTargets="build-test-wrapper;build-unit-tests">
+        <MsTestWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="$(UnitTestsWorkingDirectory)\$(UnitTestsProjectFile)"
+            Configuration="$(Configuration)"
+            TestExecutionProfile="$(UnitTestsRunnerProfile)"
+            KeepTestResults="true" />
+    </Target>
+
+    <Target Name="run-unit-tests-xunit" DependsOnTargets="build-test-wrapper;build-unit-tests">
+        <XUnitWrapperTask
+            TestSuiteRunner="dotnet"
+            TestContainer="$(UnitTestsWorkingDirectory)\$(UnitTestsProjectFile)"
+            Configuration="$(Configuration)"
+            TestExecutionProfile="$(UnitTestsRunnerProfile)"
+            KeepTestResults="true" />
     </Target>
 </Project>

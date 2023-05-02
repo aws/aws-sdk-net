@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<PhoneNumberCountry> _phoneNumberCountries = new List<PhoneNumberCountry>();
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberCountries.
+        /// Gets and sets the property PhoneNumberCountries. 
+        /// <para>
+        /// The supported phone number countries.
+        /// </para>
         /// </summary>
         public List<PhoneNumberCountry> PhoneNumberCountries
         {

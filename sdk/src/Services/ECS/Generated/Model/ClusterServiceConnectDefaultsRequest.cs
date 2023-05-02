@@ -81,7 +81,7 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/">Working
+        /// For more information about Cloud Map, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working
         /// with Services</a> in the <i>Cloud Map Developer Guide</i>.
         /// </para>
         /// </summary>

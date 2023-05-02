@@ -44,13 +44,7 @@ namespace Amazon.EC2.Model
     /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
     /// Instances</i>.
     /// </para>
-    ///  </important> <note> 
-    /// <para>
-    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-    /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-    /// </para>
-    ///  </note>
+    ///  </important>
     /// </summary>
     public partial class RequestSpotInstancesRequest : AmazonEC2Request
     {

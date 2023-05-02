@@ -36,6 +36,7 @@ namespace Amazon.Pinpoint.Model
         private string _applicationId;
         private string _campaignId;
         private string _end;
+        private Dictionary<string, string> _executionMetrics = new Dictionary<string, string>();
         private string _id;
         private string _result;
         private string _scheduledStart;
@@ -101,6 +102,27 @@ namespace Amazon.Pinpoint.Model
         internal bool IsSetEnd()
         {
             return this._end != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionMetrics. 
+        /// <para>
+        /// A JSON object that contains metrics relating to the campaign execution for this campaign
+        /// activity. For information about the structure and contents of the results, see <a
+        /// href="https://docs.aws.amazon.com//pinpoint/latest/developerguide/analytics-standard-metrics.html">Standard
+        /// Amazon Pinpoint analytics metrics</a> in the <i>Amazon Pinpoint Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> ExecutionMetrics
+        {
+            get { return this._executionMetrics; }
+            set { this._executionMetrics = value; }
+        }
+
+        // Check to see if ExecutionMetrics property is set
+        internal bool IsSetExecutionMetrics()
+        {
+            return this._executionMetrics != null && this._executionMetrics.Count > 0; 
         }
 
         /// <summary>

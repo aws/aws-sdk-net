@@ -22,6 +22,7 @@ namespace TestWrapper
                 TestRunner.TestConfiguration.Release :
                 (TestRunner.TestConfiguration)Enum.Parse(typeof(TestRunner.TestConfiguration), Configuration.ItemSpec);
             xunitRunner.TestExecutionProfile = TestExecutionProfile.ItemSpec;
+            xunitRunner.KeepTestResults = KeepTestResultsFile;
             Runner = xunitRunner;
         }
     }

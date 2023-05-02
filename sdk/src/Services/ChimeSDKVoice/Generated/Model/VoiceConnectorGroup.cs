@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The Amazon Chime SDK Voice Connector group configuration, including associated Voice
+    /// Connectors. You can include Voice Connectors from different AWS Regions in a group.
+    /// This creates a fault tolerant mechanism for fallback in case of availability events.
     /// </summary>
     public partial class VoiceConnectorGroup
     {
@@ -41,7 +43,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private List<VoiceConnectorItem> _voiceConnectorItems = new List<VoiceConnectorItem>();
 
         /// <summary>
-        /// Gets and sets the property CreatedTimestamp.
+        /// Gets and sets the property CreatedTimestamp. 
+        /// <para>
+        /// The Voice Connector group's creation time stamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
         {
@@ -56,7 +61,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of a Voice Connector group.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string Name
@@ -72,7 +80,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedTimestamp.
+        /// Gets and sets the property UpdatedTimestamp. 
+        /// <para>
+        /// The Voice Connector group's creation time stamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp
         {
@@ -87,7 +98,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorGroupArn.
+        /// Gets and sets the property VoiceConnectorGroupArn. 
+        /// <para>
+        /// The ARN of the Voice Connector group.
+        /// </para>
         /// </summary>
         public string VoiceConnectorGroupArn
         {
@@ -102,7 +116,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorGroupId.
+        /// Gets and sets the property VoiceConnectorGroupId. 
+        /// <para>
+        /// The ID of a Voice Connector group.
+        /// </para>
         /// </summary>
         public string VoiceConnectorGroupId
         {
@@ -117,7 +134,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorItems.
+        /// Gets and sets the property VoiceConnectorItems. 
+        /// <para>
+        /// The Voice Connectors to which you route inbound calls.
+        /// </para>
         /// </summary>
         public List<VoiceConnectorItem> VoiceConnectorItems
         {

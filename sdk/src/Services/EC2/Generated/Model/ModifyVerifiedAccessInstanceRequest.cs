@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVerifiedAccessInstance operation.
-    /// Modifies the configuration of the specified Verified Access instance.
+    /// Modifies the configuration of the specified Amazon Web Services Verified Access instance.
     /// </summary>
     public partial class ModifyVerifiedAccessInstanceRequest : AmazonEC2Request
     {
@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Web Services Verified Access instance.
+        /// A description for the Verified Access instance.
         /// </para>
         /// </summary>
         public string Description
@@ -79,7 +79,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessInstanceId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access instance.
+        /// The ID of the Verified Access instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

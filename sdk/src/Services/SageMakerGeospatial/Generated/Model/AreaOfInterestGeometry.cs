@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// A GeoJSON object representing the geographic extent in the coordinate space.
     /// </summary>
     public partial class AreaOfInterestGeometry
     {
@@ -37,7 +37,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private PolygonGeometryInput _polygonGeometry;
 
         /// <summary>
-        /// Gets and sets the property MultiPolygonGeometry.
+        /// Gets and sets the property MultiPolygonGeometry. 
+        /// <para>
+        /// The structure representing the MultiPolygon Geometry.
+        /// </para>
         /// </summary>
         public MultiPolygonGeometryInput MultiPolygonGeometry
         {
@@ -52,7 +55,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PolygonGeometry.
+        /// Gets and sets the property PolygonGeometry. 
+        /// <para>
+        /// The structure representing Polygon Geometry.
+        /// </para>
         /// </summary>
         public PolygonGeometryInput PolygonGeometry
         {

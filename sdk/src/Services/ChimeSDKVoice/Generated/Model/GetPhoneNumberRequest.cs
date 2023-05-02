@@ -30,14 +30,18 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetPhoneNumber operation.
-    /// 
+    /// Retrieves details for the specified phone number ID, such as associations, capabilities,
+    /// and product type.
     /// </summary>
     public partial class GetPhoneNumberRequest : AmazonChimeSDKVoiceRequest
     {
         private string _phoneNumberId;
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberId.
+        /// Gets and sets the property PhoneNumberId. 
+        /// <para>
+        /// The phone number ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Sensitive=true)]
         public string PhoneNumberId

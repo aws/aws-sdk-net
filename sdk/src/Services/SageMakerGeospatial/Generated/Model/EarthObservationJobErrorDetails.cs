@@ -37,7 +37,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private EarthObservationJobErrorType _type;
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// A detailed message describing the error in an Earth Observation job.
+        /// </para>
         /// </summary>
         public string Message
         {
@@ -52,7 +55,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of error in an Earth Observation job.
+        /// </para>
         /// </summary>
         public EarthObservationJobErrorType Type
         {

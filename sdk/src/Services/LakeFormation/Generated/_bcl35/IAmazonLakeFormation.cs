@@ -63,7 +63,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -133,7 +133,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -281,7 +281,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -345,7 +345,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -407,7 +407,7 @@ namespace Amazon.LakeFormation
         /// A resource to be created or added already exists.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -465,7 +465,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -523,7 +523,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -582,7 +582,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -648,7 +648,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -716,7 +716,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the DeregisterResource service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -768,7 +768,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the DescribeResource service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -820,7 +820,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the DescribeTransaction service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -879,7 +879,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the ExtendTransaction service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -944,7 +944,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -997,7 +997,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the GetDataLakeSettings service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1048,7 +1048,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the GetEffectivePermissionsForPath service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1103,7 +1103,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1267,7 +1267,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -1323,7 +1323,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the GetTableObjects service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1391,7 +1391,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1455,7 +1455,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1634,7 +1634,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
         /// The input provided was not valid.
@@ -1735,7 +1735,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -1900,7 +1900,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -2095,7 +2095,7 @@ namespace Amazon.LakeFormation
         /// A resource to be created or added already exists.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -2158,7 +2158,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -2217,7 +2217,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InvalidInputException">
         /// The input provided was not valid.
@@ -2270,7 +2270,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -2332,7 +2332,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.GlueEncryptionException">
         /// An encryption operation failed.
@@ -2498,7 +2498,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -2560,7 +2560,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -2613,7 +2613,7 @@ namespace Amazon.LakeFormation
         /// 
         /// <returns>The response from the UpdateResource service method, as returned by LakeFormation.</returns>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -2668,7 +2668,7 @@ namespace Amazon.LakeFormation
         /// Two processes are trying to modify a resource simultaneously.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.
@@ -2736,7 +2736,7 @@ namespace Amazon.LakeFormation
         /// Access to a resource was denied.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.EntityNotFoundException">
-        /// A specified entity does not exist
+        /// A specified entity does not exist.
         /// </exception>
         /// <exception cref="Amazon.LakeFormation.Model.InternalServiceException">
         /// An internal service error occurred.

@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The structure representing a single PropertyFilter.
     /// </summary>
     public partial class PropertyFilter
     {
         private Property _property;
 
         /// <summary>
-        /// Gets and sets the property Property.
+        /// Gets and sets the property Property. 
+        /// <para>
+        /// Represents a single property to match with when searching a raster data collection.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Property Property

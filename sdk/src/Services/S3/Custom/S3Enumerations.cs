@@ -662,7 +662,13 @@ namespace Amazon.S3
         /// Durability 99.999999999%; Availability 99.9% over a given year.
         /// </summary>
         public static readonly S3StorageClass StandardInfrequentAccess = new S3StorageClass("STANDARD_IA");
-        
+
+        /// <summary>
+        /// The SNOW storage is for objects stored in Amazon S3 compatible object storage
+        /// for Snow family devices.
+        /// </summary>
+        public static readonly S3StorageClass Snow = new S3StorageClass("SNOW");
+
         /// <summary>
         /// Construct an instance of S3StorageClass.
         /// </summary>

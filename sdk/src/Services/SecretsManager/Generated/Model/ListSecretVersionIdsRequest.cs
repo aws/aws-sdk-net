@@ -65,7 +65,8 @@ namespace Amazon.SecretsManager.Model
         /// <para>
         /// Specifies whether to include versions of secrets that don't have any staging labels
         /// attached to them. Versions without staging labels are considered deprecated and are
-        /// subject to deletion by Secrets Manager.
+        /// subject to deletion by Secrets Manager. By default, versions without staging labels
+        /// aren't included.
         /// </para>
         /// </summary>
         public bool IncludeDeprecated

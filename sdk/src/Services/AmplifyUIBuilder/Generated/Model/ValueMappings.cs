@@ -33,7 +33,26 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class ValueMappings
     {
+        private Dictionary<string, FormInputBindingPropertiesValue> _bindingProperties = new Dictionary<string, FormInputBindingPropertiesValue>();
         private List<ValueMapping> _values = new List<ValueMapping>();
+
+        /// <summary>
+        /// Gets and sets the property BindingProperties. 
+        /// <para>
+        /// The information to bind fields to data at runtime.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, FormInputBindingPropertiesValue> BindingProperties
+        {
+            get { return this._bindingProperties; }
+            set { this._bindingProperties = value; }
+        }
+
+        // Check to see if BindingProperties property is set
+        internal bool IsSetBindingProperties()
+        {
+            return this._bindingProperties != null && this._bindingProperties.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Values. 

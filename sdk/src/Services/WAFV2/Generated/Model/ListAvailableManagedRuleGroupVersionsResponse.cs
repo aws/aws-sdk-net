@@ -81,7 +81,9 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Versions. 
         /// <para>
-        /// The versions that are currently available for the specified managed rule group. 
+        /// The versions that are currently available for the specified managed rule group. If
+        /// you specified a <code>Limit</code> in your request, this might not be the full list.
+        /// 
         /// </para>
         /// </summary>
         public List<ManagedRuleGroupVersion> Versions

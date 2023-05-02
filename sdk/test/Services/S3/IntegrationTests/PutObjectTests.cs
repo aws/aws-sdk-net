@@ -41,7 +41,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             writer.Write("This is some sample text.!!");
             writer.Close();
 
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client, true);
         }
 
 
@@ -1067,7 +1067,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public void PutBucketWithCannedACL()
         {
             string aclBucketName = "dotnet-integtests-cannedacl" + DateTime.Now.Ticks;
-            PutBucketRequest request = new PutBucketRequest() { BucketName = aclBucketName, CannedACL = S3CannedACL.LogDeliveryWrite };
+            PutBucketRequest request = new PutBucketRequest() { BucketName = aclBucketName, CannedACL = S3CannedACL.LogDeliveryWrite, ObjectOwnership = ObjectOwnership.ObjectWriter };
 
             Client.PutBucket(request);
             S3TestUtils.WaitForBucket(Client, aclBucketName);

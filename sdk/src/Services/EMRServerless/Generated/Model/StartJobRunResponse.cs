@@ -59,7 +59,7 @@ namespace Amazon.EMRServerless.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The output lists the execution role ARN of the job run.
+        /// This output displays the ARN of the job run..
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=60, Max=1024)]

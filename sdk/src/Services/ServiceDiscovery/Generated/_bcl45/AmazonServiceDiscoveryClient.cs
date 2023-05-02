@@ -300,11 +300,6 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceAlreadyExistsException">
         /// The namespace that you're trying to create already exists.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
         /// The resource can't be created because you've reached the quota on the number of resources.
         /// </exception>
@@ -351,11 +346,6 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceAlreadyExistsException">
         /// The namespace that you're trying to create already exists.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
         /// The resource can't be created because you've reached the quota on the number of resources.
@@ -404,11 +394,6 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceAlreadyExistsException">
         /// The namespace that you're trying to create already exists.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
         /// The resource can't be created because you've reached the quota on the number of resources.
         /// </exception>
@@ -454,11 +439,6 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceAlreadyExistsException">
         /// The namespace that you're trying to create already exists.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
         /// The resource can't be created because you've reached the quota on the number of resources.
@@ -513,11 +493,6 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceAlreadyExistsException">
         /// The namespace that you're trying to create already exists.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
         /// The resource can't be created because you've reached the quota on the number of resources.
         /// </exception>
@@ -569,11 +544,6 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceAlreadyExistsException">
         /// The namespace that you're trying to create already exists.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
         /// The resource can't be created because you've reached the quota on the number of resources.
@@ -652,11 +622,6 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
         /// The resource can't be created because you've reached the quota on the number of resources.
@@ -738,11 +703,6 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceLimitExceededException">
         /// The resource can't be created because you've reached the quota on the number of resources.
         /// </exception>
@@ -786,11 +746,6 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
         /// you can't delete a service that contains any instances.
@@ -827,11 +782,6 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
         /// you can't delete a service that contains any instances.
@@ -862,11 +812,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
@@ -900,11 +845,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
@@ -947,11 +887,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
         /// you can't delete a service that contains any instances.
@@ -991,11 +926,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
@@ -1111,11 +1041,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
         /// </exception>
@@ -1147,11 +1072,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
@@ -1194,11 +1114,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
         /// </exception>
@@ -1238,11 +1153,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
@@ -1340,11 +1250,6 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.OperationNotFoundException">
         /// No operation exists with the specified ID.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual GetOperationResponse GetOperation(GetOperationRequest request)
         {
@@ -1380,11 +1285,6 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.OperationNotFoundException">
         /// No operation exists with the specified ID.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/GetOperation">REST API Reference for GetOperation Operation</seealso>
         public virtual Task<GetOperationResponse> GetOperationAsync(GetOperationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1410,11 +1310,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
@@ -1443,11 +1338,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
@@ -1479,11 +1369,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
         /// </exception>
@@ -1512,11 +1397,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
@@ -1548,11 +1428,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">REST API Reference for ListNamespaces Operation</seealso>
         public virtual ListNamespacesResponse ListNamespaces(ListNamespacesRequest request)
         {
@@ -1578,11 +1453,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListNamespaces">REST API Reference for ListNamespaces Operation</seealso>
         public virtual Task<ListNamespacesResponse> ListNamespacesAsync(ListNamespacesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1610,11 +1480,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListOperations">REST API Reference for ListOperations Operation</seealso>
         public virtual ListOperationsResponse ListOperations(ListOperationsRequest request)
         {
@@ -1639,11 +1504,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListOperations">REST API Reference for ListOperations Operation</seealso>
         public virtual Task<ListOperationsResponse> ListOperationsAsync(ListOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1672,11 +1532,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual ListServicesResponse ListServices(ListServicesRequest request)
         {
@@ -1703,11 +1558,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/servicediscovery-2017-03-14/ListServices">REST API Reference for ListServices Operation</seealso>
         public virtual Task<ListServicesResponse> ListServicesAsync(ListServicesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
         {
@@ -1733,11 +1583,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
         /// The operation can't be completed because the resource was not found.
@@ -1766,11 +1611,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
         /// The operation can't be completed because the resource was not found.
@@ -1854,11 +1694,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
@@ -1949,11 +1784,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
         /// you can't delete a service that contains any instances.
@@ -1990,11 +1820,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
         /// The operation can't be completed because the resource was not found.
         /// </exception>
@@ -2026,11 +1851,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
         /// The operation can't be completed because the resource was not found.
@@ -2065,11 +1885,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
         /// The operation can't be completed because the resource was not found.
         /// </exception>
@@ -2097,11 +1912,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceNotFoundException">
         /// The operation can't be completed because the resource was not found.
@@ -2138,11 +1948,6 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
         /// you can't delete a service that contains any instances.
@@ -2177,11 +1982,6 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
@@ -2234,11 +2034,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
         /// </exception>
@@ -2288,11 +2083,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
         /// </exception>
@@ -2328,11 +2118,6 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
         /// you can't delete a service that contains any instances.
@@ -2367,11 +2152,6 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
@@ -2409,11 +2189,6 @@ namespace Amazon.ServiceDiscovery
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
         /// you can't delete a service that contains any instances.
@@ -2448,11 +2223,6 @@ namespace Amazon.ServiceDiscovery
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.NamespaceNotFoundException">
         /// No namespace exists with the specified ID.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ResourceInUseException">
         /// The specified resource can't be deleted because it contains other resources. For example,
@@ -2520,11 +2290,6 @@ namespace Amazon.ServiceDiscovery
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
         /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
-        /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.
         /// </exception>
@@ -2588,11 +2353,6 @@ namespace Amazon.ServiceDiscovery
         /// One or more specified values aren't valid. For example, a required value might be
         /// missing, a numeric value might be outside the allowed range, or a string value might
         /// exceed length constraints.
-        /// </exception>
-        /// <exception cref="Amazon.ServiceDiscovery.Model.RequestLimitExceededException">
-        /// The operation can't be completed because you've reached the quota for the number of
-        /// requests. For more information, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/throttling.html">Cloud
-        /// Map API request throttling quota</a> in the <i>Cloud Map Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ServiceDiscovery.Model.ServiceNotFoundException">
         /// No service exists with the specified ID.

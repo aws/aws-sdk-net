@@ -59,8 +59,9 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property EstimatedMonthlySavings. 
         /// <para>
-        /// An object that describes the estimated monthly savings amount possible, based on On-Demand
-        /// instance pricing, by adopting Compute Optimizer recommendations for a given resource.
+        /// An object that describes the estimated monthly savings amount possible by adopting
+        /// Compute Optimizer recommendations for a given resource. This is based on the On-Demand
+        /// instance pricing..
         /// </para>
         /// </summary>
         public EstimatedMonthlySavings EstimatedMonthlySavings

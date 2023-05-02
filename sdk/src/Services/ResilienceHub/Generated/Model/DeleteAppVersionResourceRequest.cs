@@ -30,7 +30,7 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAppVersionResource operation.
-    /// Deletes a resource from the AWS Resilience Hub application.
+    /// Deletes a resource from the Resilience Hub application.
     /// 
     ///  <note> <ul> <li> 
     /// <para>
@@ -39,12 +39,12 @@ namespace Amazon.ResilienceHub.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// This action has no effect outside AWS Resilience Hub.
+    /// This action has no effect outside Resilience Hub.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// This API updates the AWS Resilience Hub application draft version. To use this resource
-    /// for running resiliency assessments, you must publish the AWS Resilience Hub application
+    /// This API updates the Resilience Hub application draft version. To use this resource
+    /// for running resiliency assessments, you must publish the Resilience Hub application
     /// using the <code>PublishAppVersion</code> API.
     /// </para>
     ///  </li> </ul> </note>
@@ -62,8 +62,8 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The format for
-        /// this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
+        /// The Amazon Resource Name (ARN) of the Resilience Hub application. The format for this
+        /// ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
         /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>

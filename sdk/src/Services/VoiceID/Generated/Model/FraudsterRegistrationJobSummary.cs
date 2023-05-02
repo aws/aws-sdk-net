@@ -45,7 +45,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// A timestamp showing when the fraudster registration job is created. 
+        /// A timestamp of when the fraudster registration job was created. 
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -63,7 +63,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier of the domain containing the fraudster registration job.
+        /// The identifier of the domain that contains the fraudster registration job.
         /// </para>
         /// </summary>
         [AWSProperty(Min=22, Max=22)]
@@ -82,7 +82,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property EndedAt. 
         /// <para>
-        /// A timestamp showing when the fraudster registration job ended.
+        /// A timestamp of when the fraudster registration job ended.
         /// </para>
         /// </summary>
         public DateTime EndedAt

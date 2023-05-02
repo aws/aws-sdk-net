@@ -275,6 +275,84 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
     /// <summary>
+    /// Constants used for properties of type CallAnalyticsLanguageCode.
+    /// </summary>
+    public class CallAnalyticsLanguageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DeDE for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode DeDE = new CallAnalyticsLanguageCode("de-DE");
+        /// <summary>
+        /// Constant EnAU for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode EnAU = new CallAnalyticsLanguageCode("en-AU");
+        /// <summary>
+        /// Constant EnGB for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode EnGB = new CallAnalyticsLanguageCode("en-GB");
+        /// <summary>
+        /// Constant EnUS for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode EnUS = new CallAnalyticsLanguageCode("en-US");
+        /// <summary>
+        /// Constant EsUS for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode EsUS = new CallAnalyticsLanguageCode("es-US");
+        /// <summary>
+        /// Constant FrCA for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode FrCA = new CallAnalyticsLanguageCode("fr-CA");
+        /// <summary>
+        /// Constant FrFR for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode FrFR = new CallAnalyticsLanguageCode("fr-FR");
+        /// <summary>
+        /// Constant ItIT for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode ItIT = new CallAnalyticsLanguageCode("it-IT");
+        /// <summary>
+        /// Constant PtBR for CallAnalyticsLanguageCode
+        /// </summary>
+        public static readonly CallAnalyticsLanguageCode PtBR = new CallAnalyticsLanguageCode("pt-BR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CallAnalyticsLanguageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CallAnalyticsLanguageCode FindValue(string value)
+        {
+            return FindValue<CallAnalyticsLanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CallAnalyticsLanguageCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConcatenationSinkType.
     /// </summary>
     public class ConcatenationSinkType : ConstantClass
@@ -413,6 +491,56 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
     /// <summary>
+    /// Constants used for properties of type ContentRedactionOutput.
+    /// </summary>
+    public class ContentRedactionOutput : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Redacted for ContentRedactionOutput
+        /// </summary>
+        public static readonly ContentRedactionOutput Redacted = new ContentRedactionOutput("redacted");
+        /// <summary>
+        /// Constant Redacted_and_unredacted for ContentRedactionOutput
+        /// </summary>
+        public static readonly ContentRedactionOutput Redacted_and_unredacted = new ContentRedactionOutput("redacted_and_unredacted");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentRedactionOutput(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentRedactionOutput FindValue(string value)
+        {
+            return FindValue<ContentRedactionOutput>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentRedactionOutput(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ContentShareLayoutOption.
     /// </summary>
     public class ContentShareLayoutOption : ConstantClass
@@ -460,6 +588,52 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContentShareLayoutOption(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ContentType.
+    /// </summary>
+    public class ContentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PII for ContentType
+        /// </summary>
+        public static readonly ContentType PII = new ContentType("PII");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ContentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ContentType FindValue(string value)
+        {
+            return FindValue<ContentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ContentType(string value)
         {
             return FindValue(value);
         }
@@ -530,6 +704,56 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FragmentSelectorType.
+    /// </summary>
+    public class FragmentSelectorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ProducerTimestamp for FragmentSelectorType
+        /// </summary>
+        public static readonly FragmentSelectorType ProducerTimestamp = new FragmentSelectorType("ProducerTimestamp");
+        /// <summary>
+        /// Constant ServerTimestamp for FragmentSelectorType
+        /// </summary>
+        public static readonly FragmentSelectorType ServerTimestamp = new FragmentSelectorType("ServerTimestamp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FragmentSelectorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FragmentSelectorType FindValue(string value)
+        {
+            return FindValue<FragmentSelectorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FragmentSelectorType(string value)
         {
             return FindValue(value);
         }
@@ -725,6 +949,126 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
     /// <summary>
+    /// Constants used for properties of type MediaEncoding.
+    /// </summary>
+    public class MediaEncoding : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Pcm for MediaEncoding
+        /// </summary>
+        public static readonly MediaEncoding Pcm = new MediaEncoding("pcm");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaEncoding(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaEncoding FindValue(string value)
+        {
+            return FindValue<MediaEncoding>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaEncoding(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaInsightsPipelineConfigurationElementType.
+    /// </summary>
+    public class MediaInsightsPipelineConfigurationElementType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AmazonTranscribeCallAnalyticsProcessor for MediaInsightsPipelineConfigurationElementType
+        /// </summary>
+        public static readonly MediaInsightsPipelineConfigurationElementType AmazonTranscribeCallAnalyticsProcessor = new MediaInsightsPipelineConfigurationElementType("AmazonTranscribeCallAnalyticsProcessor");
+        /// <summary>
+        /// Constant AmazonTranscribeProcessor for MediaInsightsPipelineConfigurationElementType
+        /// </summary>
+        public static readonly MediaInsightsPipelineConfigurationElementType AmazonTranscribeProcessor = new MediaInsightsPipelineConfigurationElementType("AmazonTranscribeProcessor");
+        /// <summary>
+        /// Constant KinesisDataStreamSink for MediaInsightsPipelineConfigurationElementType
+        /// </summary>
+        public static readonly MediaInsightsPipelineConfigurationElementType KinesisDataStreamSink = new MediaInsightsPipelineConfigurationElementType("KinesisDataStreamSink");
+        /// <summary>
+        /// Constant LambdaFunctionSink for MediaInsightsPipelineConfigurationElementType
+        /// </summary>
+        public static readonly MediaInsightsPipelineConfigurationElementType LambdaFunctionSink = new MediaInsightsPipelineConfigurationElementType("LambdaFunctionSink");
+        /// <summary>
+        /// Constant S3RecordingSink for MediaInsightsPipelineConfigurationElementType
+        /// </summary>
+        public static readonly MediaInsightsPipelineConfigurationElementType S3RecordingSink = new MediaInsightsPipelineConfigurationElementType("S3RecordingSink");
+        /// <summary>
+        /// Constant SnsTopicSink for MediaInsightsPipelineConfigurationElementType
+        /// </summary>
+        public static readonly MediaInsightsPipelineConfigurationElementType SnsTopicSink = new MediaInsightsPipelineConfigurationElementType("SnsTopicSink");
+        /// <summary>
+        /// Constant SqsQueueSink for MediaInsightsPipelineConfigurationElementType
+        /// </summary>
+        public static readonly MediaInsightsPipelineConfigurationElementType SqsQueueSink = new MediaInsightsPipelineConfigurationElementType("SqsQueueSink");
+        /// <summary>
+        /// Constant VoiceAnalyticsProcessor for MediaInsightsPipelineConfigurationElementType
+        /// </summary>
+        public static readonly MediaInsightsPipelineConfigurationElementType VoiceAnalyticsProcessor = new MediaInsightsPipelineConfigurationElementType("VoiceAnalyticsProcessor");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaInsightsPipelineConfigurationElementType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaInsightsPipelineConfigurationElementType FindValue(string value)
+        {
+            return FindValue<MediaInsightsPipelineConfigurationElementType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaInsightsPipelineConfigurationElementType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type MediaPipelineSinkType.
     /// </summary>
     public class MediaPipelineSinkType : ConstantClass
@@ -835,6 +1179,10 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// </summary>
         public static readonly MediaPipelineStatus InProgress = new MediaPipelineStatus("InProgress");
         /// <summary>
+        /// Constant Paused for MediaPipelineStatus
+        /// </summary>
+        public static readonly MediaPipelineStatus Paused = new MediaPipelineStatus("Paused");
+        /// <summary>
         /// Constant Stopped for MediaPipelineStatus
         /// </summary>
         public static readonly MediaPipelineStatus Stopped = new MediaPipelineStatus("Stopped");
@@ -872,6 +1220,160 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator MediaPipelineStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MediaPipelineStatusUpdate.
+    /// </summary>
+    public class MediaPipelineStatusUpdate : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Pause for MediaPipelineStatusUpdate
+        /// </summary>
+        public static readonly MediaPipelineStatusUpdate Pause = new MediaPipelineStatusUpdate("Pause");
+        /// <summary>
+        /// Constant Resume for MediaPipelineStatusUpdate
+        /// </summary>
+        public static readonly MediaPipelineStatusUpdate Resume = new MediaPipelineStatusUpdate("Resume");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MediaPipelineStatusUpdate(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MediaPipelineStatusUpdate FindValue(string value)
+        {
+            return FindValue<MediaPipelineStatusUpdate>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MediaPipelineStatusUpdate(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PartialResultsStability.
+    /// </summary>
+    public class PartialResultsStability : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant High for PartialResultsStability
+        /// </summary>
+        public static readonly PartialResultsStability High = new PartialResultsStability("high");
+        /// <summary>
+        /// Constant Low for PartialResultsStability
+        /// </summary>
+        public static readonly PartialResultsStability Low = new PartialResultsStability("low");
+        /// <summary>
+        /// Constant Medium for PartialResultsStability
+        /// </summary>
+        public static readonly PartialResultsStability Medium = new PartialResultsStability("medium");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PartialResultsStability(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PartialResultsStability FindValue(string value)
+        {
+            return FindValue<PartialResultsStability>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PartialResultsStability(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ParticipantRole.
+    /// </summary>
+    public class ParticipantRole : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AGENT for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole AGENT = new ParticipantRole("AGENT");
+        /// <summary>
+        /// Constant CUSTOMER for ParticipantRole
+        /// </summary>
+        public static readonly ParticipantRole CUSTOMER = new ParticipantRole("CUSTOMER");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ParticipantRole(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ParticipantRole FindValue(string value)
+        {
+            return FindValue<ParticipantRole>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ParticipantRole(string value)
         {
             return FindValue(value);
         }
@@ -937,6 +1439,110 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
     /// <summary>
+    /// Constants used for properties of type RealTimeAlertRuleType.
+    /// </summary>
+    public class RealTimeAlertRuleType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant IssueDetection for RealTimeAlertRuleType
+        /// </summary>
+        public static readonly RealTimeAlertRuleType IssueDetection = new RealTimeAlertRuleType("IssueDetection");
+        /// <summary>
+        /// Constant KeywordMatch for RealTimeAlertRuleType
+        /// </summary>
+        public static readonly RealTimeAlertRuleType KeywordMatch = new RealTimeAlertRuleType("KeywordMatch");
+        /// <summary>
+        /// Constant Sentiment for RealTimeAlertRuleType
+        /// </summary>
+        public static readonly RealTimeAlertRuleType Sentiment = new RealTimeAlertRuleType("Sentiment");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RealTimeAlertRuleType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RealTimeAlertRuleType FindValue(string value)
+        {
+            return FindValue<RealTimeAlertRuleType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RealTimeAlertRuleType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecordingFileFormat.
+    /// </summary>
+    public class RecordingFileFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Opus for RecordingFileFormat
+        /// </summary>
+        public static readonly RecordingFileFormat Opus = new RecordingFileFormat("Opus");
+        /// <summary>
+        /// Constant Wav for RecordingFileFormat
+        /// </summary>
+        public static readonly RecordingFileFormat Wav = new RecordingFileFormat("Wav");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecordingFileFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordingFileFormat FindValue(string value)
+        {
+            return FindValue<RecordingFileFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordingFileFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ResolutionOption.
     /// </summary>
     public class ResolutionOption : ConstantClass
@@ -987,6 +1593,52 @@ namespace Amazon.ChimeSDKMediaPipelines
 
 
     /// <summary>
+    /// Constants used for properties of type SentimentType.
+    /// </summary>
+    public class SentimentType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NEGATIVE for SentimentType
+        /// </summary>
+        public static readonly SentimentType NEGATIVE = new SentimentType("NEGATIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SentimentType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SentimentType FindValue(string value)
+        {
+            return FindValue<SentimentType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SentimentType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type VideoMuxType.
     /// </summary>
     public class VideoMuxType : ConstantClass
@@ -1026,6 +1678,110 @@ namespace Amazon.ChimeSDKMediaPipelines
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VideoMuxType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VocabularyFilterMethod.
+    /// </summary>
+    public class VocabularyFilterMethod : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mask for VocabularyFilterMethod
+        /// </summary>
+        public static readonly VocabularyFilterMethod Mask = new VocabularyFilterMethod("mask");
+        /// <summary>
+        /// Constant Remove for VocabularyFilterMethod
+        /// </summary>
+        public static readonly VocabularyFilterMethod Remove = new VocabularyFilterMethod("remove");
+        /// <summary>
+        /// Constant Tag for VocabularyFilterMethod
+        /// </summary>
+        public static readonly VocabularyFilterMethod Tag = new VocabularyFilterMethod("tag");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VocabularyFilterMethod(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VocabularyFilterMethod FindValue(string value)
+        {
+            return FindValue<VocabularyFilterMethod>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VocabularyFilterMethod(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VoiceAnalyticsConfigurationStatus.
+    /// </summary>
+    public class VoiceAnalyticsConfigurationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for VoiceAnalyticsConfigurationStatus
+        /// </summary>
+        public static readonly VoiceAnalyticsConfigurationStatus Disabled = new VoiceAnalyticsConfigurationStatus("Disabled");
+        /// <summary>
+        /// Constant Enabled for VoiceAnalyticsConfigurationStatus
+        /// </summary>
+        public static readonly VoiceAnalyticsConfigurationStatus Enabled = new VoiceAnalyticsConfigurationStatus("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VoiceAnalyticsConfigurationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VoiceAnalyticsConfigurationStatus FindValue(string value)
+        {
+            return FindValue<VoiceAnalyticsConfigurationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VoiceAnalyticsConfigurationStatus(string value)
         {
             return FindValue(value);
         }

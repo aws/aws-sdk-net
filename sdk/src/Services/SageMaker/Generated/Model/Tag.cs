@@ -36,7 +36,8 @@ namespace Amazon.SageMaker.Model
     /// <para>
     /// You can add tags to notebook instances, training jobs, hyperparameter tuning jobs,
     /// batch transform jobs, models, labeling jobs, work teams, endpoint configurations,
-    /// and endpoints. For more information on adding tags to SageMaker resources, see <a>AddTags</a>.
+    /// and endpoints. For more information on adding tags to SageMaker resources, see <a
+    /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html">AddTags</a>.
     /// </para>
     ///  
     /// <para>

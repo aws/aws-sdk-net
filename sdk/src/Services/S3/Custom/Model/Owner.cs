@@ -26,7 +26,43 @@ namespace Amazon.S3.Model
     public class Owner
     {
         /// <summary>
-        /// The display name of the owner.
+        /// <para>
+        /// Container for the display name of the owner. This value is only supported in the following
+        /// Amazon Web Services Regions:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// US East (N. Virginia)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (N. California)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// US West (Oregon)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Singapore)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Sydney)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Asia Pacific (Tokyo)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Europe (Ireland)
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// South America (São Paulo)
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public string DisplayName { set; get; }
 

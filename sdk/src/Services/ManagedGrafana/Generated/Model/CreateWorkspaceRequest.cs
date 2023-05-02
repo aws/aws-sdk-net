@@ -46,6 +46,7 @@ namespace Amazon.ManagedGrafana.Model
         private List<string> _authenticationProviders = new List<string>();
         private string _clientToken;
         private string _configuration;
+        private string _grafanaVersion;
         private NetworkAccessConfiguration _networkAccessControl;
         private string _organizationRoleName;
         private PermissionType _permissionType;
@@ -142,6 +143,29 @@ namespace Amazon.ManagedGrafana.Model
         internal bool IsSetConfiguration()
         {
             return this._configuration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GrafanaVersion. 
+        /// <para>
+        /// Specifies the version of Grafana to support in the new workspace.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported values are <code>8.4</code> and <code>9.4</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GrafanaVersion
+        {
+            get { return this._grafanaVersion; }
+            set { this._grafanaVersion = value; }
+        }
+
+        // Check to see if GrafanaVersion property is set
+        internal bool IsSetGrafanaVersion()
+        {
+            return this._grafanaVersion != null;
         }
 
         /// <summary>

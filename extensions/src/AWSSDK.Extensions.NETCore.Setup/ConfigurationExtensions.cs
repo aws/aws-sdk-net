@@ -111,6 +111,15 @@ namespace Microsoft.Extensions.Configuration
                         var timespan = TimeSpan.FromMilliseconds(milliSeconds);
                         property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { timespan });
                     }
+                    else if (property.PropertyType.IsEnum)
+                    {
+
+                        var value = Enum.Parse(property.PropertyType, element.Value);
+                        if ( value != null )
+                        {
+                            property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { value });
+                        }
+                    }
                 }
                 catch(Exception e)
                 {

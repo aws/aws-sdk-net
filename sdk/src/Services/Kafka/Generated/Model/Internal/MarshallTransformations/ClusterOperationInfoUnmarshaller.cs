@@ -130,6 +130,12 @@ namespace Amazon.Kafka.Model.Internal.MarshallTransformations
                     unmarshalledObject.TargetClusterInfo = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("vpcConnectionInfo", targetDepth))
+                {
+                    var unmarshaller = VpcConnectionInfoUnmarshaller.Instance;
+                    unmarshalledObject.VpcConnectionInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

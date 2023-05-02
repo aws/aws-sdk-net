@@ -13,6 +13,7 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 using Amazon.Util;
 using System.Globalization;
 using System.Threading;
+using System.Collections.Generic;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -68,7 +69,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 
             using (var client = new AmazonS3Client(region))
             {
-                var bucketName = S3TestUtils.CreateBucketWithWait(client);
+                var bucketName = S3TestUtils.CreateBucketWithWait(client, true);
+
                 client.PutACL(new PutACLRequest
                 {
                     BucketName = bucketName,

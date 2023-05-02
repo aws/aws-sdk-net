@@ -57,6 +57,12 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                     response.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InternetMeasurementsLogDelivery", targetDepth))
+                {
+                    var unmarshaller = InternetMeasurementsLogDeliveryUnmarshaller.Instance;
+                    response.InternetMeasurementsLogDelivery = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("MaxCityNetworksToMonitor", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;
@@ -109,6 +115,12 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     response.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("TrafficPercentageToMonitor", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    response.TrafficPercentageToMonitor = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

@@ -42,6 +42,7 @@ namespace Amazon.Imagebuilder.Model
         private DistributionConfiguration _distributionConfiguration;
         private bool? _enhancedImageMetadataEnabled;
         private ImageRecipe _imageRecipe;
+        private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageSource _imageSource;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private InfrastructureConfiguration _infrastructureConfiguration;
@@ -49,6 +50,7 @@ namespace Amazon.Imagebuilder.Model
         private string _osVersion;
         private OutputResources _outputResources;
         private Platform _platform;
+        private ImageScanState _scanState;
         private string _sourcePipelineArn;
         private string _sourcePipelineName;
         private ImageState _state;
@@ -222,6 +224,24 @@ namespace Amazon.Imagebuilder.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ImageScanningConfiguration. 
+        /// <para>
+        /// Contains settings for vulnerability scans.
+        /// </para>
+        /// </summary>
+        public ImageScanningConfiguration ImageScanningConfiguration
+        {
+            get { return this._imageScanningConfiguration; }
+            set { this._imageScanningConfiguration = value; }
+        }
+
+        // Check to see if ImageScanningConfiguration property is set
+        internal bool IsSetImageScanningConfiguration()
+        {
+            return this._imageScanningConfiguration != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ImageSource. 
         /// <para>
         /// The origin of the base image that Image Builder used to build this image.
@@ -347,6 +367,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetPlatform()
         {
             return this._platform != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanState. 
+        /// <para>
+        /// Contains information about the current state of scans for this image.
+        /// </para>
+        /// </summary>
+        public ImageScanState ScanState
+        {
+            get { return this._scanState; }
+            set { this._scanState = value; }
+        }
+
+        // Check to see if ScanState property is set
+        internal bool IsSetScanState()
+        {
+            return this._scanState != null;
         }
 
         /// <summary>

@@ -7,7 +7,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateAccessPolicyRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -61,7 +61,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.CreateSecurityPolicyRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -211,7 +211,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateAccessPolicyRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -276,7 +276,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.UpdateSecurityPolicyRequest.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -310,7 +310,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.AccessPolicyDetail.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -327,7 +327,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.AccessPolicySummary.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -497,7 +497,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.SecurityPolicyDetail.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
@@ -514,7 +514,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchServerless.Model.SecurityPolicySummary.Description</property>
-    <min>1</min>
+    <min>0</min>
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>

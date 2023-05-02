@@ -309,7 +309,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ElasticInferenceAcceleratorAssociations. 
         /// <para>
-        ///  The elastic inference accelerator associated with the instance.
+        /// The elastic inference accelerator associated with the instance.
         /// </para>
         /// </summary>
         public List<ElasticInferenceAcceleratorAssociation> ElasticInferenceAcceleratorAssociations
@@ -634,7 +634,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// [EC2-VPC] The network interfaces for the instance.
+        /// The network interfaces for the instance.
         /// </para>
         /// </summary>
         public List<InstanceNetworkInterface> NetworkInterfaces
@@ -725,16 +725,16 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PrivateDnsName. 
         /// <para>
-        /// (IPv4 only) The private DNS hostname name assigned to the instance. This DNS hostname
+        /// [IPv4 only] The private DNS hostname name assigned to the instance. This DNS hostname
         /// can only be used inside the Amazon EC2 network. This name is not available until the
         /// instance enters the <code>running</code> state. 
         /// </para>
         ///  
         /// <para>
-        /// [EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames
-        /// if you've enabled DNS resolution and DNS hostnames in your VPC. If you are not using
-        /// the Amazon-provided DNS server in your VPC, your custom domain name servers must resolve
-        /// the hostname as appropriate.
+        /// The Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if you've
+        /// enabled DNS resolution and DNS hostnames in your VPC. If you are not using the Amazon-provided
+        /// DNS server in your VPC, your custom domain name servers must resolve the hostname
+        /// as appropriate.
         /// </para>
         /// </summary>
         public string PrivateDnsName
@@ -806,9 +806,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PublicDnsName. 
         /// <para>
-        /// (IPv4 only) The public DNS name assigned to the instance. This name is not available
-        /// until the instance enters the <code>running</code> state. For EC2-VPC, this name is
-        /// only available if you've enabled DNS hostnames for your VPC.
+        /// [IPv4 only] The public DNS name assigned to the instance. This name is not available
+        /// until the instance enters the <code>running</code> state. This name is only available
+        /// if you've enabled DNS hostnames for your VPC.
         /// </para>
         /// </summary>
         public string PublicDnsName
@@ -1031,7 +1031,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SubnetId. 
         /// <para>
-        /// [EC2-VPC] The ID of the subnet in which the instance is running.
+        /// The ID of the subnet in which the instance is running.
         /// </para>
         /// </summary>
         public string SubnetId
@@ -1142,7 +1142,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VpcId. 
         /// <para>
-        /// [EC2-VPC] The ID of the VPC in which the instance is running.
+        /// The ID of the VPC in which the instance is running.
         /// </para>
         /// </summary>
         public string VpcId

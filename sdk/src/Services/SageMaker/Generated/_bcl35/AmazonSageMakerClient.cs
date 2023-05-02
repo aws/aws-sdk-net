@@ -366,7 +366,8 @@ namespace Amazon.SageMaker
         /// called this API. To make sure that the tags associated with a hyperparameter tuning
         /// job are also added to all training jobs that the hyperparameter tuning job launches,
         /// add the tags when you first create the tuning job by specifying them in the <code>Tags</code>
-        /// parameter of <a>CreateHyperParameterTuningJob</a> 
+        /// parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
+        /// 
         /// </para>
         ///  </note> <note> 
         /// <para>
@@ -376,7 +377,8 @@ namespace Amazon.SageMaker
         /// this API. To make sure that the tags associated with a Domain or User Profile are
         /// also added to all Apps that the Domain or User Profile launches, add the tags when
         /// you first create the Domain or User Profile by specifying them in the <code>Tags</code>
-        /// parameter of <a>CreateDomain</a> or <a>CreateUserProfile</a>.
+        /// parameter of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
+        /// or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -433,7 +435,7 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Associates a trial component with a trial. A trial component can be associated with
-        /// multiple trials. To disassociate a trial component from a trial, call the <a>DisassociateTrialComponent</a>
+        /// multiple trials. To disassociate a trial component from a trial, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisassociateTrialComponent.html">DisassociateTrialComponent</a>
         /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateTrialComponent service method.</param>
@@ -853,7 +855,7 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// Find the best-performing model after you run an Autopilot job by calling .
+        /// Find the best-performing model after you run an Autopilot job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.
         /// </para>
         ///  
         /// <para>
@@ -913,6 +915,83 @@ namespace Amazon.SageMaker
         public virtual CreateAutoMLJobResponse EndCreateAutoMLJob(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAutoMLJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAutoMLJobV2
+
+        /// <summary>
+        /// Creates an Amazon SageMaker AutoML job that uses non-tabular data such as images or
+        /// text for Computer Vision or Natural Language Processing problems.
+        /// 
+        ///  
+        /// <para>
+        /// Find the resulting model after you run an AutoML job V2 by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To create an <code>AutoMLJob</code> using tabular data, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// This API action is callable through SageMaker Canvas only. Calling it directly from
+        /// the CLI or an SDK results in an error.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutoMLJobV2 service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutoMLJobV2 service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceInUseException">
+        /// Resource being accessed is in use.
+        /// </exception>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceLimitExceededException">
+        /// You have exceeded an SageMaker resource limit. For example, you might have too many
+        /// training jobs created.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJobV2">REST API Reference for CreateAutoMLJobV2 Operation</seealso>
+        public virtual CreateAutoMLJobV2Response CreateAutoMLJobV2(CreateAutoMLJobV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAutoMLJobV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAutoMLJobV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutoMLJobV2 operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAutoMLJobV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJobV2">REST API Reference for CreateAutoMLJobV2 Operation</seealso>
+        public virtual IAsyncResult BeginCreateAutoMLJobV2(CreateAutoMLJobV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAutoMLJobV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAutoMLJobV2.</param>
+        /// 
+        /// <returns>Returns a  CreateAutoMLJobV2Result from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateAutoMLJobV2">REST API Reference for CreateAutoMLJobV2 Operation</seealso>
+        public virtual CreateAutoMLJobV2Response EndCreateAutoMLJobV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAutoMLJobV2Response>(asyncResult);
         }
 
         #endregion
@@ -1024,9 +1103,9 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// To stop a model compilation job, use <a>StopCompilationJob</a>. To get information
-        /// about a particular model compilation job, use <a>DescribeCompilationJob</a>. To get
-        /// information about multiple model compilation jobs, use <a>ListCompilationJobs</a>.
+        /// To stop a model compilation job, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopCompilationJob.html">StopCompilationJob</a>.
+        /// To get information about a particular model compilation job, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCompilationJob.html">DescribeCompilationJob</a>.
+        /// To get information about multiple model compilation jobs, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListCompilationJobs.html">ListCompilationJobs</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCompilationJob service method.</param>
@@ -1575,7 +1654,8 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Creates an endpoint using the endpoint configuration specified in the request. SageMaker
         /// uses the endpoint to provision resources and deploy models. You create the endpoint
-        /// configuration with the <a>CreateEndpointConfig</a> API. 
+        /// configuration with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+        /// API. 
         /// 
         ///  
         /// <para>
@@ -1606,15 +1686,16 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB to verify that
-        /// your endpoint configuration exists. When you read data from a DynamoDB table supporting
-        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+        /// When you call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>,
+        /// a load call is made to DynamoDB to verify that your endpoint configuration exists.
+        /// When you read data from a DynamoDB table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
         /// <code>Eventually Consistent Reads</code> </a>, the response might not reflect the
         /// results of a recently completed write operation. The response might include some stale
         /// data. If the dependent entities are not yet in DynamoDB, this causes a validation
         /// error. If you repeat your read request after a short time, the response should return
         /// the latest data. So retry logic is recommended to handle these possible issues. We
-        /// also recommend that customers call <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a>
+        /// also recommend that customers call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html">DescribeEndpointConfig</a>
+        /// before calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
         /// to minimize the potential impact of a DynamoDB eventually consistent read.
         /// </para>
         ///  </note> 
@@ -1622,7 +1703,8 @@ namespace Amazon.SageMaker
         /// When SageMaker receives the request, it sets the endpoint status to <code>Creating</code>.
         /// After it creates the endpoint, it sets the status to <code>InService</code>. SageMaker
         /// can then process incoming requests for inferences. To check the status of an endpoint,
-        /// use the <a>DescribeEndpoint</a> API.
+        /// use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+        /// API.
         /// </para>
         ///  
         /// <para>
@@ -1639,7 +1721,8 @@ namespace Amazon.SageMaker
         /// <para>
         ///  To add the IAM role policies for using this API operation, go to the <a href="https://console.aws.amazon.com/iam/">IAM
         /// console</a>, and choose Roles in the left navigation pane. Search the IAM role that
-        /// you want to grant access to use the <a>CreateEndpoint</a> and <a>CreateEndpointConfig</a>
+        /// you want to grant access to use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+        /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
         /// API operations, add the following policies to the role. 
         /// </para>
         ///  <ul> <li> 
@@ -1740,7 +1823,8 @@ namespace Amazon.SageMaker
         /// Creates an endpoint configuration that SageMaker hosting services uses to deploy models.
         /// In the configuration, you identify one or more models, created using the <code>CreateModel</code>
         /// API, to deploy and the resources that you want SageMaker to provision. Then you call
-        /// the <a>CreateEndpoint</a> API.
+        /// the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+        /// API.
         /// 
         ///  <note> 
         /// <para>
@@ -1764,15 +1848,16 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <note> 
         /// <para>
-        /// When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB to verify that
-        /// your endpoint configuration exists. When you read data from a DynamoDB table supporting
-        /// <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
+        /// When you call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>,
+        /// a load call is made to DynamoDB to verify that your endpoint configuration exists.
+        /// When you read data from a DynamoDB table supporting <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
         /// <code>Eventually Consistent Reads</code> </a>, the response might not reflect the
         /// results of a recently completed write operation. The response might include some stale
         /// data. If the dependent entities are not yet in DynamoDB, this causes a validation
         /// error. If you repeat your read request after a short time, the response should return
         /// the latest data. So retry logic is recommended to handle these possible issues. We
-        /// also recommend that customers call <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a>
+        /// also recommend that customers call <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html">DescribeEndpointConfig</a>
+        /// before calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
         /// to minimize the potential impact of a DynamoDB eventually consistent read.
         /// </para>
         ///  </note>
@@ -1857,21 +1942,22 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// You can add tags to experiments, trials, trial components and then use the <a>Search</a>
+        /// You can add tags to experiments, trials, trial components and then use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
         /// API to search for the tags.
         /// </para>
         ///  
         /// <para>
         /// To add a description to an experiment, specify the optional <code>Description</code>
-        /// parameter. To add a description later, or to change the description, call the <a>UpdateExperiment</a>
+        /// parameter. To add a description later, or to change the description, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>
         /// API.
         /// </para>
         ///  
         /// <para>
-        /// To get a list of all your experiments, call the <a>ListExperiments</a> API. To view
-        /// an experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
-        /// of all the trials associated with an experiment, call the <a>ListTrials</a> API. To
-        /// create a trial call the <a>CreateTrial</a> API.
+        /// To get a list of all your experiments, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListExperiments.html">ListExperiments</a>
+        /// API. To view an experiment's properties, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeExperiment.html">DescribeExperiment</a>
+        /// API. To get a list of all the trials associated with an experiment, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a>
+        /// API. To create a trial call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrial.html">CreateTrial</a>
+        /// API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateExperiment service method.</param>
@@ -3655,9 +3741,9 @@ namespace Amazon.SageMaker
         /// </para>
         ///  <note> 
         /// <para>
-        /// The URL that you get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid
-        /// only for 5 minutes. If you try to use the URL after the 5-minute limit expires, you
-        /// are directed to the Amazon Web Services console sign-in page.
+        /// The URL that you get from a call to <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePresignedNotebookInstanceUrl.html">CreatePresignedNotebookInstanceUrl</a>
+        /// is valid only for 5 minutes. If you try to use the URL after the 5-minute limit expires,
+        /// you are directed to the Amazon Web Services console sign-in page.
         /// </para>
         ///  </note>
         /// </summary>
@@ -4218,13 +4304,15 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// You can add tags to a trial and then use the <a>Search</a> API to search for the tags.
+        /// You can add tags to a trial and then use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+        /// API to search for the tags.
         /// </para>
         ///  
         /// <para>
-        /// To get a list of all your trials, call the <a>ListTrials</a> API. To view a trial's
-        /// properties, call the <a>DescribeTrial</a> API. To create a trial component, call the
-        /// <a>CreateTrialComponent</a> API.
+        /// To get a list of all your trials, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a>
+        /// API. To view a trial's properties, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrial.html">DescribeTrial</a>
+        /// API. To create a trial component, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html">CreateTrialComponent</a>
+        /// API.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrial service method.</param>
@@ -4303,8 +4391,8 @@ namespace Amazon.SageMaker
         /// </para>
         ///  
         /// <para>
-        /// You can add tags to a trial component and then use the <a>Search</a> API to search
-        /// for the tags.
+        /// You can add tags to a trial component and then use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+        /// API to search for the tags.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateTrialComponent service method.</param>
@@ -4438,8 +4526,9 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// If you want to create a new workforce in an Amazon Web Services Region where a workforce
-        /// already exists, use the API operation to delete the existing workforce and then use
-        /// <code>CreateWorkforce</code> to create a new workforce.
+        /// already exists, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkforce.html">DeleteWorkforce</a>
+        /// API operation to delete the existing workforce and then use <code>CreateWorkforce</code>
+        /// to create a new workforce.
         /// </para>
         ///  
         /// <para>
@@ -5460,8 +5549,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Deletes an SageMaker experiment. All trials associated with the experiment must be
-        /// deleted first. Use the <a>ListTrials</a> API to get a list of the trials associated
-        /// with the experiment.
+        /// deleted first. Use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a>
+        /// API to get a list of the trials associated with the experiment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteExperiment service method.</param>
         /// 
@@ -5781,7 +5870,8 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         ///  To see a list of human task user interfaces (work task templates) in your account,
-        /// use . When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.
+        /// use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListHumanTaskUis.html">ListHumanTaskUis</a>.
+        /// When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHumanTaskUi service method.</param>
@@ -6982,7 +7072,8 @@ namespace Amazon.SageMaker
 
         /// <summary>
         /// Deletes the specified trial. All trial components that make up the trial must be deleted
-        /// first. Use the <a>DescribeTrialComponent</a> API to get the list of trial components.
+        /// first. Use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrialComponent.html">DescribeTrialComponent</a>
+        /// API to get the list of trial components.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrial service method.</param>
         /// 
@@ -7041,7 +7132,8 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Deletes the specified trial component. A trial component must be disassociated from
         /// all trials before the trial component can be deleted. To disassociate a trial component
-        /// from a trial, call the <a>DisassociateTrialComponent</a> API.
+        /// from a trial, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisassociateTrialComponent.html">DisassociateTrialComponent</a>
+        /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrialComponent service method.</param>
         /// 
@@ -7164,14 +7256,15 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// If you want to create a new workforce in an Amazon Web Services Region where a workforce
-        /// already exists, use this operation to delete the existing workforce and then use to
-        /// create a new workforce.
+        /// already exists, use this operation to delete the existing workforce and then use <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateWorkforce.html">CreateWorkforce</a>
+        /// to create a new workforce.
         /// </para>
         ///  <important> 
         /// <para>
-        /// If a private workforce contains one or more work teams, you must use the operation
-        /// to delete all work teams before you delete the workforce. If you try to delete a workforce
-        /// that contains one or more work teams, you will recieve a <code>ResourceInUse</code>
+        /// If a private workforce contains one or more work teams, you must use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html">DeleteWorkteam</a>
+        /// operation to delete all work teams before you delete the workforce. If you try to
+        /// delete a workforce that contains one or more work teams, you will recieve a <code>ResourceInUse</code>
         /// error.
         /// </para>
         ///  </important>
@@ -7677,6 +7770,70 @@ namespace Amazon.SageMaker
 
         #endregion
         
+        #region  DescribeAutoMLJobV2
+
+        /// <summary>
+        /// Returns information about an Amazon SageMaker AutoML V2 job.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API action is callable through SageMaker Canvas only. Calling it directly from
+        /// the CLI or an SDK results in an error.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutoMLJobV2 service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAutoMLJobV2 service method, as returned by SageMaker.</returns>
+        /// <exception cref="Amazon.SageMaker.Model.ResourceNotFoundException">
+        /// Resource being access is not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJobV2">REST API Reference for DescribeAutoMLJobV2 Operation</seealso>
+        public virtual DescribeAutoMLJobV2Response DescribeAutoMLJobV2(DescribeAutoMLJobV2Request request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAutoMLJobV2Response>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAutoMLJobV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAutoMLJobV2 operation on AmazonSageMakerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAutoMLJobV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJobV2">REST API Reference for DescribeAutoMLJobV2 Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAutoMLJobV2(DescribeAutoMLJobV2Request request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAutoMLJobV2RequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAutoMLJobV2ResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAutoMLJobV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAutoMLJobV2.</param>
+        /// 
+        /// <returns>Returns a  DescribeAutoMLJobV2Result from SageMaker.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeAutoMLJobV2">REST API Reference for DescribeAutoMLJobV2 Operation</seealso>
+        public virtual DescribeAutoMLJobV2Response EndDescribeAutoMLJobV2(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAutoMLJobV2Response>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeCodeRepository
 
         /// <summary>
@@ -7738,8 +7895,8 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// To create a model compilation job, use <a>CreateCompilationJob</a>. To get information
-        /// about multiple model compilation jobs, use <a>ListCompilationJobs</a>.
+        /// To create a model compilation job, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCompilationJob.html">CreateCompilationJob</a>.
+        /// To get information about multiple model compilation jobs, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListCompilationJobs.html">ListCompilationJobs</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeCompilationJob service method.</param>
@@ -10668,11 +10825,12 @@ namespace Amazon.SageMaker
         /// Disassociates a trial component from a trial. This doesn't effect other trials the
         /// component is associated with. Before you can delete a component, you must disassociate
         /// the component from all trials it is associated with. To associate a trial component
-        /// with a trial, call the <a>AssociateTrialComponent</a> API.
+        /// with a trial, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AssociateTrialComponent.html">AssociateTrialComponent</a>
+        /// API.
         /// 
         ///  
         /// <para>
-        /// To get a list of the trials a component is associated with, use the <a>Search</a>
+        /// To get a list of the trials a component is associated with, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
         /// API. Specify <code>ExperimentTrialComponent</code> for the <code>Resource</code> parameter.
         /// The list appears in the response under <code>Results.TrialComponent.Parents</code>.
         /// </para>
@@ -11698,8 +11856,9 @@ namespace Amazon.SageMaker
         /// 
         ///  
         /// <para>
-        /// To create a model compilation job, use <a>CreateCompilationJob</a>. To get information
-        /// about a particular model compilation job you have created, use <a>DescribeCompilationJob</a>.
+        /// To create a model compilation job, use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCompilationJob.html">CreateCompilationJob</a>.
+        /// To get information about a particular model compilation job you have created, use
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCompilationJob.html">DescribeCompilationJob</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListCompilationJobs service method.</param>
@@ -12647,8 +12806,8 @@ namespace Amazon.SageMaker
         #region  ListHyperParameterTuningJobs
 
         /// <summary>
-        /// Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe the hyperparameter
-        /// tuning jobs launched in your account.
+        /// Gets a list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a>
+        /// objects that describe the hyperparameter tuning jobs launched in your account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListHyperParameterTuningJobs service method.</param>
         /// 
@@ -13919,7 +14078,7 @@ namespace Amazon.SageMaker
         #region  ListNotebookInstanceLifecycleConfigs
 
         /// <summary>
-        /// Lists notebook instance lifestyle configurations created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+        /// Lists notebook instance lifestyle configurations created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html">CreateNotebookInstanceLifecycleConfig</a>
         /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotebookInstanceLifecycleConfigs service method.</param>
@@ -14724,8 +14883,8 @@ namespace Amazon.SageMaker
         #region  ListTrainingJobsForHyperParameterTuningJob
 
         /// <summary>
-        /// Gets a list of <a>TrainingJobSummary</a> objects that describe the training jobs that
-        /// a hyperparameter tuning job launched.
+        /// Gets a list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+        /// objects that describe the training jobs that a hyperparameter tuning job launched.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTrainingJobsForHyperParameterTuningJob service method.</param>
         /// 
@@ -15995,9 +16154,9 @@ namespace Amazon.SageMaker
         ///  
         /// <para>
         /// When it receives a <code>StopCompilationJob</code> request, Amazon SageMaker changes
-        /// the <a>CompilationJobSummary$CompilationJobStatus</a> of the job to <code>Stopping</code>.
-        /// After Amazon SageMaker stops the job, it sets the <a>CompilationJobSummary$CompilationJobStatus</a>
-        /// to <code>Stopped</code>. 
+        /// the <code>CompilationJobStatus</code> of the job to <code>Stopping</code>. After Amazon
+        /// SageMaker stops the job, it sets the <code>CompilationJobStatus</code> to <code>Stopped</code>.
+        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopCompilationJob service method.</param>
@@ -17284,7 +17443,8 @@ namespace Amazon.SageMaker
         /// <para>
         /// When SageMaker receives the request, it sets the endpoint status to <code>Updating</code>.
         /// After updating the endpoint, it sets the status to <code>InService</code>. To check
-        /// the status of an endpoint, use the <a>DescribeEndpoint</a> API. 
+        /// the status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+        /// API. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -17361,7 +17521,8 @@ namespace Amazon.SageMaker
         /// or capacity of one variant associated with an existing endpoint. When it receives
         /// the request, SageMaker sets the endpoint status to <code>Updating</code>. After updating
         /// the endpoint, it sets the status to <code>InService</code>. To check the status of
-        /// an endpoint, use the <a>DescribeEndpoint</a> API.
+        /// an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+        /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateEndpointWeightsAndCapacities service method.</param>
         /// 
@@ -17658,8 +17819,10 @@ namespace Amazon.SageMaker
         #region  UpdateImage
 
         /// <summary>
-        /// Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a>
-        /// and <a>DeleteTags</a> APIs.
+        /// Updates the properties of a SageMaker image. To change the image's tags, use the <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html">AddTags</a>
+        /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTags.html">DeleteTags</a>
+        /// APIs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateImage service method.</param>
         /// 
@@ -17781,7 +17944,7 @@ namespace Amazon.SageMaker
         /// <summary>
         /// Updates an inference experiment that you created. The status of the inference experiment
         /// has to be either <code>Created</code>, <code>Running</code>. For more information
-        /// on the status of an inference experiment, see <a>DescribeInferenceExperimentResponse$Status</a>.
+        /// on the status of an inference experiment, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateInferenceExperiment service method.</param>
         /// 
@@ -18149,7 +18312,7 @@ namespace Amazon.SageMaker
         #region  UpdateNotebookInstanceLifecycleConfig
 
         /// <summary>
-        /// Updates a notebook instance lifecycle configuration created with the <a>CreateNotebookInstanceLifecycleConfig</a>
+        /// Updates a notebook instance lifecycle configuration created with the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html">CreateNotebookInstanceLifecycleConfig</a>
         /// API.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateNotebookInstanceLifecycleConfig service method.</param>
@@ -18728,12 +18891,15 @@ namespace Amazon.SageMaker
         ///  <important> 
         /// <para>
         /// You can only update your OIDC IdP configuration when there are no work teams associated
-        /// with your workforce. You can delete work teams using the operation.
+        /// with your workforce. You can delete work teams using the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html">DeleteWorkteam</a>
+        /// operation.
         /// </para>
         ///  </important> 
         /// <para>
         /// After restricting access to a range of IP addresses or updating your OIDC IdP configuration
-        /// with this operation, you can view details about your update workforce using the operation.
+        /// with this operation, you can view details about your update workforce using the <a
+        /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeWorkforce.html">DescribeWorkforce</a>
+        /// operation.
         /// </para>
         ///  <important> 
         /// <para>

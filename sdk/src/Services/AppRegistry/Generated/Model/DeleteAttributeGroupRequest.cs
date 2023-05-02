@@ -30,7 +30,7 @@ namespace Amazon.AppRegistry.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAttributeGroup operation.
-    /// Deletes an attribute group, specified either by its attribute group ID or name.
+    /// Deletes an attribute group, specified either by its attribute group ID, name, or ARN.
     /// </summary>
     public partial class DeleteAttributeGroupRequest : AmazonAppRegistryRequest
     {
@@ -39,10 +39,11 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property AttributeGroup. 
         /// <para>
-        /// The name or ID of the attribute group that holds the attributes to describe the application.
+        ///  The name, ID, or ARN of the attribute group that holds the attributes to describe
+        /// the application. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Min=1, Max=512)]
         public string AttributeGroup
         {
             get { return this._attributeGroup; }

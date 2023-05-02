@@ -35,6 +35,8 @@ namespace Amazon.GroundStation.Model
     {
         private AwsGroundStationAgentEndpoint _awsGroundStationAgentEndpoint;
         private DataflowEndpoint _endpoint;
+        private List<string> _healthReasons = new List<string>();
+        private CapabilityHealth _healthStatus;
         private SecurityDetails _securityDetails;
 
         /// <summary>
@@ -71,6 +73,43 @@ namespace Amazon.GroundStation.Model
         internal bool IsSetEndpoint()
         {
             return this._endpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthReasons. 
+        /// <para>
+        /// Health reasons for a dataflow endpoint. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=500)]
+        public List<string> HealthReasons
+        {
+            get { return this._healthReasons; }
+            set { this._healthReasons = value; }
+        }
+
+        // Check to see if HealthReasons property is set
+        internal bool IsSetHealthReasons()
+        {
+            return this._healthReasons != null && this._healthReasons.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property HealthStatus. 
+        /// <para>
+        /// A dataflow endpoint health status. This field is ignored when calling <code>CreateDataflowEndpointGroup</code>.
+        /// </para>
+        /// </summary>
+        public CapabilityHealth HealthStatus
+        {
+            get { return this._healthStatus; }
+            set { this._healthStatus = value; }
+        }
+
+        // Check to see if HealthStatus property is set
+        internal bool IsSetHealthStatus()
+        {
+            return this._healthStatus != null;
         }
 
         /// <summary>

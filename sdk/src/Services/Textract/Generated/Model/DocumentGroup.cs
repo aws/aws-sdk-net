@@ -78,8 +78,8 @@ namespace Amazon.Textract.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of document that Amazon Textract has detected. See LINK for a list of all
-        /// types returned by Textract.
+        /// The type of document that Amazon Textract has detected. See <a href="https://docs.aws.amazon.com/textract/latest/dg/lending-response-objects.html">Analyze
+        /// Lending Response Objects</a> for a list of all types returned by Textract.
         /// </para>
         /// </summary>
         public string Type

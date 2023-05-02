@@ -31,9 +31,9 @@ namespace Amazon.AppRegistry.Model
     /// <summary>
     /// Container for the parameters to the GetApplication operation.
     /// Retrieves metadata information about one of your applications. The application can
-    /// be specified either by its unique ID or by its name (which is unique within one account
-    /// in one region at a given point in time). Specify by ID in automated workflows if you
-    /// want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code>
+    /// be specified by its ARN, ID, or name (which is unique within one account in one region
+    /// at a given point in time). Specify by ARN or ID in automated workflows if you want
+    /// to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code>
     /// is thrown, avoiding the ABA addressing problem.
     /// </summary>
     public partial class GetApplicationRequest : AmazonAppRegistryRequest
@@ -43,7 +43,7 @@ namespace Amazon.AppRegistry.Model
         /// <summary>
         /// Gets and sets the property Application. 
         /// <para>
-        /// The name or ID of the application.
+        ///  The name, ID, or ARN of the application. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

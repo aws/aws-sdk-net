@@ -39,7 +39,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppInputSources. 
         /// <para>
-        /// The list of AWS Resilience Hub application input sources.
+        /// The list of Resilience Hub application input sources.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

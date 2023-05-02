@@ -57,6 +57,17 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Disabled);
             }
 
+            if(requestObject.IsSetMediaInsightsConfiguration())
+            {
+                context.Writer.WritePropertyName("MediaInsightsConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = MediaInsightsConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.MediaInsightsConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStreamingNotificationTargets())
             {
                 context.Writer.WritePropertyName("StreamingNotificationTargets");

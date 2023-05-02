@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
-    /// The details of a user.
+    /// The details of a user or bot.
     /// </summary>
     public partial class Identity
     {

@@ -30,10 +30,10 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the GetComputeAuthToken operation.
-    /// Requests an authorization token from GameLift. The authorization token is used by
-    /// your game server to authenticate with GameLift. Each authentication token has an expiration
-    /// token. To continue using the compute resource to host your game server, regularly
-    /// retrieve a new authorization token.
+    /// Requests an authentication token from Amazon GameLift. The authentication token is
+    /// used by your game server to authenticate with Amazon GameLift. Each authentication
+    /// token has an expiration time. To continue using the compute resource to host your
+    /// game server, regularly retrieve a new authorization token.
     /// </summary>
     public partial class GetComputeAuthTokenRequest : AmazonGameLiftRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ComputeName. 
         /// <para>
-        /// The name of the compute resource you are requesting the authorization token for.
+        /// The name of the compute resource you are requesting the authentication token for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]

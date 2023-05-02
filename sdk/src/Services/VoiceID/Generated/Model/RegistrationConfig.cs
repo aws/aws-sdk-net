@@ -29,14 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
-    /// The configuration defining the action to take when a duplicate fraudster is detected,
-    /// and the similarity threshold to use for detecting a duplicate fraudster during a batch
-    /// fraudster registration job.
+    /// The registration configuration to be used during the batch fraudster registration
+    /// job.
     /// </summary>
     public partial class RegistrationConfig
     {
         private DuplicateRegistrationAction _duplicateRegistrationAction;
         private int? _fraudsterSimilarityThreshold;
+        private List<string> _watchlistIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property DuplicateRegistrationAction. 
@@ -77,6 +77,26 @@ namespace Amazon.VoiceID.Model
         internal bool IsSetFraudsterSimilarityThreshold()
         {
             return this._fraudsterSimilarityThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WatchlistIds. 
+        /// <para>
+        /// The identifiers of watchlists that a fraudster is registered to. If a watchlist isn't
+        /// provided, the fraudsters are registered to the default watchlist. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> WatchlistIds
+        {
+            get { return this._watchlistIds; }
+            set { this._watchlistIds = value; }
+        }
+
+        // Check to see if WatchlistIds property is set
+        internal bool IsSetWatchlistIds()
+        {
+            return this._watchlistIds != null && this._watchlistIds.Count > 0; 
         }
 
     }

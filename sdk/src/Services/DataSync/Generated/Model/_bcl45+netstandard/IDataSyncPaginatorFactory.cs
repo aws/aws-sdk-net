@@ -26,14 +26,34 @@ namespace Amazon.DataSync.Model
     {
 
         /// <summary>
+        /// Paginator for DescribeStorageSystemResourceMetrics operation
+        ///</summary>
+        IDescribeStorageSystemResourceMetricsPaginator DescribeStorageSystemResourceMetrics(DescribeStorageSystemResourceMetricsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeStorageSystemResources operation
+        ///</summary>
+        IDescribeStorageSystemResourcesPaginator DescribeStorageSystemResources(DescribeStorageSystemResourcesRequest request);
+
+        /// <summary>
         /// Paginator for ListAgents operation
         ///</summary>
         IListAgentsPaginator ListAgents(ListAgentsRequest request);
 
         /// <summary>
+        /// Paginator for ListDiscoveryJobs operation
+        ///</summary>
+        IListDiscoveryJobsPaginator ListDiscoveryJobs(ListDiscoveryJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListLocations operation
         ///</summary>
         IListLocationsPaginator ListLocations(ListLocationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListStorageSystems operation
+        ///</summary>
+        IListStorageSystemsPaginator ListStorageSystems(ListStorageSystemsRequest request);
 
         /// <summary>
         /// Paginator for ListTagsForResource operation

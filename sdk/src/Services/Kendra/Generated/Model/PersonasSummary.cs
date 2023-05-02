@@ -46,7 +46,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date-time the summary information was created.
+        /// The Unix timestamp when the summary information was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -105,7 +105,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The date-time the summary information was last updated.
+        /// The Unix timestamp when the summary information was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

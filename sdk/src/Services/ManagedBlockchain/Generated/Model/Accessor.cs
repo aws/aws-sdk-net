@@ -171,7 +171,7 @@ namespace Amazon.ManagedBlockchain.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently accessor type is restricted to <code>BILLING_TOKEN</code>.
+        /// Currently, accessor type is restricted to <code>BILLING_TOKEN</code>.
         /// </para>
         ///  </note>
         /// </summary>

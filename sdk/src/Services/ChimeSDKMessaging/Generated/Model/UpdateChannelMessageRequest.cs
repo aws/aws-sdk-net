@@ -34,8 +34,9 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -44,6 +45,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _channelArn;
         private string _chimeBearer;
         private string _content;
+        private string _contentType;
         private string _messageId;
         private string _metadata;
         private string _subChannelId;
@@ -70,7 +72,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -92,7 +95,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The content of the message being updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Sensitive=true, Min=0, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Content
         {
             get { return this._content; }
@@ -103,6 +106,25 @@ namespace Amazon.ChimeSDKMessaging.Model
         internal bool IsSetContent()
         {
             return this._content != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ContentType. 
+        /// <para>
+        /// The content type of the channel message.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=45)]
+        public string ContentType
+        {
+            get { return this._contentType; }
+            set { this._contentType = value; }
+        }
+
+        // Check to see if ContentType property is set
+        internal bool IsSetContentType()
+        {
+            return this._contentType != null;
         }
 
         /// <summary>

@@ -122,7 +122,7 @@ namespace Amazon.Appflow.Model
         ///  The refresh token used to refresh expired access token. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Max=4096)]
         public string RefreshToken
         {
             get { return this._refreshToken; }

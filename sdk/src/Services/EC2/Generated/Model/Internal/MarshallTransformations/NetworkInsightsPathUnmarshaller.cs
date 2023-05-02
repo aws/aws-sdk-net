@@ -84,6 +84,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DestinationPort = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("filterAtDestination", targetDepth))
+                    {
+                        var unmarshaller = PathFilterUnmarshaller.Instance;
+                        unmarshalledObject.FilterAtDestination = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("filterAtSource", targetDepth))
+                    {
+                        var unmarshaller = PathFilterUnmarshaller.Instance;
+                        unmarshalledObject.FilterAtSource = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("networkInsightsPathArn", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

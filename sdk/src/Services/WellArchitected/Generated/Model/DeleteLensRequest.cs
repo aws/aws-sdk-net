@@ -35,7 +35,7 @@ namespace Amazon.WellArchitected.Model
     ///  
     /// <para>
     /// Only the owner of a lens can delete it. After the lens is deleted, Amazon Web Services
-    /// accounts and IAM users that you shared the lens with can continue to use it, but they
+    /// accounts and users that you shared the lens with can continue to use it, but they
     /// will no longer be able to apply it to new workloads. 
     /// </para>
     ///  <note> 

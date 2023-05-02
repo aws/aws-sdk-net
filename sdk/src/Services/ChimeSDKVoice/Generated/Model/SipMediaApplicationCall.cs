@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// A <code>Call</code> instance for a SIP media application.
     /// </summary>
     public partial class SipMediaApplicationCall
     {
         private string _transactionId;
 
         /// <summary>
-        /// Gets and sets the property TransactionId.
+        /// Gets and sets the property TransactionId. 
+        /// <para>
+        /// The call's transaction ID.
+        /// </para>
         /// </summary>
         public string TransactionId
         {

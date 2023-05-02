@@ -42,6 +42,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _endTime;
         private string _failureReason;
         private FinalAutoMLJobObjectiveMetric _finalAutoMLJobObjectiveMetric;
+        private Dictionary<string, List<AutoMLContainerDefinition>> _inferenceContainerDefinitions = new Dictionary<string, List<AutoMLContainerDefinition>>();
         private List<AutoMLContainerDefinition> _inferenceContainers = new List<AutoMLContainerDefinition>();
         private DateTime? _lastModifiedTime;
         private ObjectiveStatus _objectiveStatus;
@@ -193,9 +194,30 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property InferenceContainerDefinitions. 
+        /// <para>
+        /// The mapping of all supported processing unit (CPU, GPU, etc...) to inference container
+        /// definitions for the candidate. This field is populated for the V2 API only (for example,
+        /// for jobs created by calling <code>CreateAutoMLJobV2</code>).
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2)]
+        public Dictionary<string, List<AutoMLContainerDefinition>> InferenceContainerDefinitions
+        {
+            get { return this._inferenceContainerDefinitions; }
+            set { this._inferenceContainerDefinitions = value; }
+        }
+
+        // Check to see if InferenceContainerDefinitions property is set
+        internal bool IsSetInferenceContainerDefinitions()
+        {
+            return this._inferenceContainerDefinitions != null && this._inferenceContainerDefinitions.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property InferenceContainers. 
         /// <para>
-        /// Information about the inference container definitions.
+        /// Information about the recommended inference container definitions.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

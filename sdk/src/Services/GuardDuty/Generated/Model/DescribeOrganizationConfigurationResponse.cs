@@ -34,6 +34,7 @@ namespace Amazon.GuardDuty.Model
     public partial class DescribeOrganizationConfigurationResponse : AmazonWebServiceResponse
     {
         private bool? _autoEnable;
+        private AutoEnableMembers _autoEnableOrganizationMembers;
         private OrganizationDataSourceConfigurationsResult _dataSources;
         private List<OrganizationFeatureConfigurationResult> _features = new List<OrganizationFeatureConfigurationResult>();
         private bool? _memberAccountLimitReached;
@@ -44,8 +45,13 @@ namespace Amazon.GuardDuty.Model
         /// <para>
         /// Indicates whether GuardDuty is automatically enabled for accounts added to the organization.
         /// </para>
+        ///  
+        /// <para>
+        /// Even though this is still supported, we recommend using <code>AutoEnableOrganizationMembers</code>
+        /// to achieve the similar results.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This field is deprecated, use AutoEnableOrganizationMembers instead")]
         public bool AutoEnable
         {
             get { return this._autoEnable.GetValueOrDefault(); }
@@ -56,6 +62,44 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetAutoEnable()
         {
             return this._autoEnable.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoEnableOrganizationMembers. 
+        /// <para>
+        /// Indicates the auto-enablement configuration of GuardDuty for the member accounts in
+        /// the organization.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NEW</code>: Indicates that when a new account joins the organization, they
+        /// will have GuardDuty enabled automatically. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ALL</code>: Indicates that all accounts in the Amazon Web Services Organization
+        /// have GuardDuty enabled automatically. This includes <code>NEW</code> accounts that
+        /// join the organization and accounts that may have been suspended or removed from the
+        /// organization in GuardDuty.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NONE</code>: Indicates that GuardDuty will not be automatically enabled for
+        /// any accounts in the organization. GuardDuty must be managed for each account individually
+        /// by the administrator.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public AutoEnableMembers AutoEnableOrganizationMembers
+        {
+            get { return this._autoEnableOrganizationMembers; }
+            set { this._autoEnableOrganizationMembers = value; }
+        }
+
+        // Check to see if AutoEnableOrganizationMembers property is set
+        internal bool IsSetAutoEnableOrganizationMembers()
+        {
+            return this._autoEnableOrganizationMembers != null;
         }
 
         /// <summary>

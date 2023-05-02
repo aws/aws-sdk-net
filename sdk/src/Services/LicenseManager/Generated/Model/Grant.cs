@@ -40,6 +40,7 @@ namespace Amazon.LicenseManager.Model
         private GrantStatus _grantStatus;
         private string _homeRegion;
         private string _licenseArn;
+        private Options _options;
         private string _parentArn;
         private string _statusReason;
         private string _version;
@@ -175,6 +176,24 @@ namespace Amazon.LicenseManager.Model
         internal bool IsSetLicenseArn()
         {
             return this._licenseArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Options. 
+        /// <para>
+        /// The options specified for the grant.
+        /// </para>
+        /// </summary>
+        public Options Options
+        {
+            get { return this._options; }
+            set { this._options = value; }
+        }
+
+        // Check to see if Options property is set
+        internal bool IsSetOptions()
+        {
+            return this._options != null;
         }
 
         /// <summary>

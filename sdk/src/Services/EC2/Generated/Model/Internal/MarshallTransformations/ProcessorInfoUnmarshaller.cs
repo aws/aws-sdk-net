@@ -61,6 +61,13 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.SupportedArchitectures.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("supportedFeatures/item", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.SupportedFeatures.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("sustainedClockSpeedInGhz", targetDepth))
                     {
                         var unmarshaller = DoubleUnmarshaller.Instance;

@@ -60,10 +60,6 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>en</code> - English (default)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>jp</code> - Japanese
         /// </para>
         ///  </li> <li> 
@@ -107,8 +103,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PrincipalARN. 
         /// <para>
-        /// The ARN of the principal (IAM user, role, or group). This field allows an ARN with
-        /// no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+        /// The ARN of the principal (user, role, or group). This field allows an ARN with no
+        /// <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]

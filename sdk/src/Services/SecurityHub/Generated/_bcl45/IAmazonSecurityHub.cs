@@ -1436,8 +1436,13 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// This operation is only used by accounts that are not part of an organization. Organization
-        /// accounts do not receive invitations.
+        /// A prospective member account uses this operation to decline an invitation to become
+        /// a member.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only called by member accounts that aren't part of an organization.
+        /// Organization accounts don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeclineInvitations service method.</param>
@@ -1466,8 +1471,13 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// This operation is only used by accounts that are not part of an organization. Organization
-        /// accounts do not receive invitations.
+        /// A prospective member account uses this operation to decline an invitation to become
+        /// a member.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only called by member accounts that aren't part of an organization.
+        /// Organization accounts don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeclineInvitations service method.</param>
@@ -1719,8 +1729,13 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// This operation is only used by accounts that are not part of an organization. Organization
-        /// accounts do not receive invitations.
+        /// A Security Hub administrator account can use this operation to delete invitations
+        /// sent to one or more member accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only used to delete invitations that are sent to member accounts
+        /// that aren't part of an organization. Organization accounts don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInvitations service method.</param>
@@ -1755,8 +1770,13 @@ namespace Amazon.SecurityHub
         /// 
         ///  
         /// <para>
-        /// This operation is only used by accounts that are not part of an organization. Organization
-        /// accounts do not receive invitations.
+        /// A Security Hub administrator account can use this operation to delete invitations
+        /// sent to one or more member accounts.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation is only used to delete invitations that are sent to member accounts
+        /// that aren't part of an organization. Organization accounts don't receive invitations.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteInvitations service method.</param>

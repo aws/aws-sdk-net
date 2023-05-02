@@ -30,6 +30,11 @@ namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
     /// Access is denied.
+    /// 
+    ///  
+    /// <para>
+    /// HTTP status code: 403
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

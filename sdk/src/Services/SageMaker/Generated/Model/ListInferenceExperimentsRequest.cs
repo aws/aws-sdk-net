@@ -216,7 +216,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property StatusEquals. 
         /// <para>
         ///  Selects inference experiments which are in this status. For the possible statuses,
-        /// see <a>DescribeInferenceExperimentResponse$Status</a>. 
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.
+        /// 
         /// </para>
         /// </summary>
         public InferenceExperimentStatus StatusEquals
@@ -235,7 +236,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Type. 
         /// <para>
         ///  Selects inference experiments of this type. For the possible types of inference experiments,
-        /// see <a>CreateInferenceExperimentRequest$Type</a>. 
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+        /// 
         /// </para>
         /// </summary>
         public InferenceExperimentType Type

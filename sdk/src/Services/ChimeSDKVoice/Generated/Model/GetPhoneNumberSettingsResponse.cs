@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private DateTime? _callingNameUpdatedTimestamp;
 
         /// <summary>
-        /// Gets and sets the property CallingName.
+        /// Gets and sets the property CallingName. 
+        /// <para>
+        /// The default outbound calling name for the account.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string CallingName
@@ -53,7 +56,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CallingNameUpdatedTimestamp.
+        /// Gets and sets the property CallingNameUpdatedTimestamp. 
+        /// <para>
+        /// The updated outbound calling name timestamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime CallingNameUpdatedTimestamp
         {

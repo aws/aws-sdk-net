@@ -98,6 +98,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Explanations.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("firewallStatefulRule", targetDepth))
+                    {
+                        var unmarshaller = FirewallStatefulRuleUnmarshaller.Instance;
+                        unmarshalledObject.FirewallStatefulRule = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("firewallStatelessRule", targetDepth))
+                    {
+                        var unmarshaller = FirewallStatelessRuleUnmarshaller.Instance;
+                        unmarshalledObject.FirewallStatelessRule = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("inboundHeader", targetDepth))
                     {
                         var unmarshaller = AnalysisPacketHeaderUnmarshaller.Instance;
@@ -126,6 +138,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = IntUnmarshaller.Instance;
                         unmarshalledObject.SequenceNumber = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("serviceName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
                         continue;
                     }
                     if (context.TestExpression("sourceVpc", targetDepth))

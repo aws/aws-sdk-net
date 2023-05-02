@@ -137,6 +137,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetTLSInspectionConfigurationArn())
+            {
+                context.Writer.WritePropertyName("TLSInspectionConfigurationArn");
+                context.Writer.Write(requestObject.TLSInspectionConfigurationArn);
+            }
+
         }
 
         /// <summary>

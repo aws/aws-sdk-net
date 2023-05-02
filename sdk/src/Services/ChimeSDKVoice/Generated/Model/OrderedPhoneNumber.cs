@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// A phone number for which an order has been placed.
     /// </summary>
     public partial class OrderedPhoneNumber
     {
@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private OrderedPhoneNumberStatus _status;
 
         /// <summary>
-        /// Gets and sets the property E164PhoneNumber.
+        /// Gets and sets the property E164PhoneNumber. 
+        /// <para>
+        /// The phone number, in E.164 format.
+        /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
         public string E164PhoneNumber
@@ -53,7 +56,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The phone number status.
+        /// </para>
         /// </summary>
         public OrderedPhoneNumberStatus Status
         {

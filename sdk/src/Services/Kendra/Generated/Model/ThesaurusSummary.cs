@@ -42,7 +42,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix datetime that the thesaurus was created.
+        /// The Unix timestamp when the thesaurus was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -116,7 +116,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix datetime that the thesaurus was last updated.
+        /// The Unix timestamp when the thesaurus was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

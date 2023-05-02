@@ -1208,6 +1208,10 @@ namespace Amazon.Appflow
         /// Constant CLIENT_CREDENTIALS for OAuth2GrantType
         /// </summary>
         public static readonly OAuth2GrantType CLIENT_CREDENTIALS = new OAuth2GrantType("CLIENT_CREDENTIALS");
+        /// <summary>
+        /// Constant JWT_BEARER for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType JWT_BEARER = new OAuth2GrantType("JWT_BEARER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

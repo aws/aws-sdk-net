@@ -40,7 +40,7 @@ namespace Amazon.IotData.Model
     /// </para>
     ///  
     /// <para>
-    /// To get the message payload of a retained message, call <a href="https://docs.aws.amazon.com/iot/latest/developerguide/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a>
+    /// To get the message payload of a retained message, call <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a>
     /// with the topic name of the retained message.
     /// </para>
     ///  

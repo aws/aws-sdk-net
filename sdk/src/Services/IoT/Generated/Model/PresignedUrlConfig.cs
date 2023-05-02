@@ -60,9 +60,9 @@ namespace Amazon.IoT.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of an IAM role that grants grants permission to download files from the S3
-        /// bucket where the job data/updates are stored. The role must also grant permission
-        /// for IoT to download the files.
+        /// The ARN of an IAM role that grants permission to download files from the S3 bucket
+        /// where the job data/updates are stored. The role must also grant permission for IoT
+        /// to download the files.
         /// </para>
         ///  <important> 
         /// <para>

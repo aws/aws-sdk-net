@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private TerminationHealth _terminationHealth;
 
         /// <summary>
-        /// Gets and sets the property TerminationHealth.
+        /// Gets and sets the property TerminationHealth. 
+        /// <para>
+        /// The termination health details.
+        /// </para>
         /// </summary>
         public TerminationHealth TerminationHealth
         {

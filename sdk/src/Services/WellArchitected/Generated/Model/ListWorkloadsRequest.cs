@@ -30,7 +30,7 @@ namespace Amazon.WellArchitected.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWorkloads operation.
-    /// List workloads. Paginated.
+    /// Paginated list of workloads.
     /// </summary>
     public partial class ListWorkloadsRequest : AmazonWellArchitectedRequest
     {

@@ -2710,6 +2710,10 @@ namespace Amazon.GameLift
         /// Constant WINDOWS_2012 for OperatingSystem
         /// </summary>
         public static readonly OperatingSystem WINDOWS_2012 = new OperatingSystem("WINDOWS_2012");
+        /// <summary>
+        /// Constant WINDOWS_2016 for OperatingSystem
+        /// </summary>
+        public static readonly OperatingSystem WINDOWS_2016 = new OperatingSystem("WINDOWS_2016");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

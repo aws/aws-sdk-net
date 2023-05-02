@@ -41,7 +41,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property ContactId. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the contact. 
+        /// The Amazon Resource Name (ARN) of the contact.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

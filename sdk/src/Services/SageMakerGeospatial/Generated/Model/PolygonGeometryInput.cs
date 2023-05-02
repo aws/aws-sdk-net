@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The structure representing Polygon Geometry based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson
+    /// spec</a>.
     /// </summary>
     public partial class PolygonGeometryInput
     {
         private List<List<List<double>>> _coordinates = new List<List<List<double>>>();
 
         /// <summary>
-        /// Gets and sets the property Coordinates.
+        /// Gets and sets the property Coordinates. 
+        /// <para>
+        /// Coordinates representing a Polygon based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson
+        /// spec</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<List<List<double>>> Coordinates

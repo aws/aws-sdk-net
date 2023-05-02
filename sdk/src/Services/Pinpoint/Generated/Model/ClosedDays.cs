@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// The time when journey will stop sending messages.
+    /// The time when a journey will not send messages. QuietTime should be configured first
+    /// and SendingSchedule should be set to true.
     /// </summary>
     public partial class ClosedDays
     {
@@ -42,7 +43,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property CUSTOM. 
         /// <para>
-        /// Rules for Custom Channel.
+        /// Rules for the Custom channel.
         /// </para>
         /// </summary>
         public List<ClosedDaysRule> CUSTOM
@@ -60,7 +61,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EMAIL. 
         /// <para>
-        /// Rules for Email Channel.
+        /// Rules for the Email channel.
         /// </para>
         /// </summary>
         public List<ClosedDaysRule> EMAIL
@@ -78,7 +79,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property PUSH. 
         /// <para>
-        /// Rules for Push Channel.
+        /// Rules for the Push channel.
         /// </para>
         /// </summary>
         public List<ClosedDaysRule> PUSH
@@ -96,7 +97,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property SMS. 
         /// <para>
-        /// Rules for SMS Channel.
+        /// Rules for the SMS channel.
         /// </para>
         /// </summary>
         public List<ClosedDaysRule> SMS
@@ -114,7 +115,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property VOICE. 
         /// <para>
-        /// Rules for Voice Channel.
+        /// Rules for the Voice channel.
         /// </para>
         /// </summary>
         public List<ClosedDaysRule> VOICE

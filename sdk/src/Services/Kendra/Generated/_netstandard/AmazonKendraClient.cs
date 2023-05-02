@@ -299,8 +299,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
         /// The resource you want to use already exists. Please check you have provided the correct
@@ -362,8 +362,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
         /// The resource you want to use already exists. Please check you have provided the correct
@@ -433,8 +433,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -456,6 +456,63 @@ namespace Amazon.Kendra
             options.ResponseUnmarshaller = BatchDeleteDocumentResponseUnmarshaller.Instance;
 
             return InvokeAsync<BatchDeleteDocumentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchDeleteFeaturedResultsSet
+
+        internal virtual BatchDeleteFeaturedResultsSetResponse BatchDeleteFeaturedResultsSet(BatchDeleteFeaturedResultsSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteFeaturedResultsSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteFeaturedResultsSetResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteFeaturedResultsSetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Removes one or more sets of featured results. Features results are placed above all
+        /// other results for certain queries. If there's an exact match of a query, then one
+        /// or more specific documents are featured in the search results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteFeaturedResultsSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchDeleteFeaturedResultsSet service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteFeaturedResultsSet">REST API Reference for BatchDeleteFeaturedResultsSet Operation</seealso>
+        public virtual Task<BatchDeleteFeaturedResultsSetResponse> BatchDeleteFeaturedResultsSetAsync(BatchDeleteFeaturedResultsSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteFeaturedResultsSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteFeaturedResultsSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchDeleteFeaturedResultsSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -507,8 +564,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -585,17 +642,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -663,8 +720,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -747,17 +804,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -807,12 +864,6 @@ namespace Amazon.Kendra
         /// </para>
         ///  
         /// <para>
-        /// Amazon S3 and <a href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a>
-        /// data sources are the only supported data sources in the Amazon Web Services GovCloud
-        /// (US-West) region.
-        /// </para>
-        ///  
-        /// <para>
         /// For an example of creating an index and data source using the Python SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting
         /// started with Python SDK</a>. For an example of creating an index and data source using
         /// the Java SDK, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/gs-java.html">Getting
@@ -835,8 +886,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
         /// The resource you want to use already exists. Please check you have provided the correct
@@ -847,9 +898,9 @@ namespace Amazon.Kendra
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -906,17 +957,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -952,7 +1003,8 @@ namespace Amazon.Kendra
 
 
         /// <summary>
-        /// Creates an new set of frequently asked question (FAQ) questions and answers.
+        /// Creates a set of frequently ask questions (FAQs) using a specified FAQ file stored
+        /// in an Amazon S3 bucket.
         /// 
         ///  
         /// <para>
@@ -980,17 +1032,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -1008,6 +1060,80 @@ namespace Amazon.Kendra
             options.ResponseUnmarshaller = CreateFaqResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateFaqResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateFeaturedResultsSet
+
+        internal virtual CreateFeaturedResultsSetResponse CreateFeaturedResultsSet(CreateFeaturedResultsSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFeaturedResultsSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFeaturedResultsSetResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFeaturedResultsSetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a set of featured results to display at the top of the search results page.
+        /// Featured results are placed above all other results for certain queries. You map specific
+        /// queries to specific documents for featuring in the results. If a query contains an
+        /// exact match, then one or more specific documents are featured in the search results.
+        /// 
+        ///  
+        /// <para>
+        /// You can create up to 50 sets of featured results per index. You can request to increase
+        /// this limit by contacting <a href="http://aws.amazon.com/contact-us/">Support</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFeaturedResultsSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateFeaturedResultsSet service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ConflictException">
+        /// A conflict occurred with the request. Please fix any inconsistences with your resources
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.FeaturedResultsConflictException">
+        /// An error message with a list of conflicting queries used across different sets of
+        /// featured results. This occurred with the request for a new featured results set. Check
+        /// that the queries you specified for featured results are unique per featured results
+        /// set for each index.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFeaturedResultsSet">REST API Reference for CreateFeaturedResultsSet Operation</seealso>
+        public virtual Task<CreateFeaturedResultsSetResponse> CreateFeaturedResultsSetAsync(CreateFeaturedResultsSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFeaturedResultsSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFeaturedResultsSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateFeaturedResultsSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1060,17 +1186,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceAlreadyExistException">
         /// The resource you want to use already exists. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -1151,17 +1277,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -1222,17 +1348,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -1289,8 +1415,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1352,8 +1478,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1413,8 +1539,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1472,8 +1598,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1533,8 +1659,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1613,8 +1739,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1683,8 +1809,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1742,8 +1868,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1800,8 +1926,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1855,8 +1981,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1912,8 +2038,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1967,8 +2093,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -1990,6 +2116,63 @@ namespace Amazon.Kendra
             options.ResponseUnmarshaller = DescribeFaqResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeFaqResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeFeaturedResultsSet
+
+        internal virtual DescribeFeaturedResultsSetResponse DescribeFeaturedResultsSet(DescribeFeaturedResultsSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFeaturedResultsSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFeaturedResultsSetResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeFeaturedResultsSetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about a set of featured results. Features results are placed above
+        /// all other results for certain queries. If there's an exact match of a query, then
+        /// one or more specific documents are featured in the search results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeFeaturedResultsSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeFeaturedResultsSet service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeFeaturedResultsSet">REST API Reference for DescribeFeaturedResultsSet Operation</seealso>
+        public virtual Task<DescribeFeaturedResultsSetResponse> DescribeFeaturedResultsSetAsync(DescribeFeaturedResultsSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeFeaturedResultsSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeFeaturedResultsSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeFeaturedResultsSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2022,8 +2205,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2087,8 +2270,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2152,8 +2335,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2217,8 +2400,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2272,8 +2455,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2331,8 +2514,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2390,8 +2573,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2455,17 +2638,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -2516,8 +2699,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InvalidRequestException">
         /// The input to the request is not valid. Please provide the correct input and try again.
@@ -2568,8 +2751,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2623,8 +2806,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2682,8 +2865,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2737,8 +2920,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2796,8 +2979,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2854,8 +3037,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2909,8 +3092,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -2932,6 +3115,63 @@ namespace Amazon.Kendra
             options.ResponseUnmarshaller = ListFaqsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListFaqsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListFeaturedResultsSets
+
+        internal virtual ListFeaturedResultsSetsResponse ListFeaturedResultsSets(ListFeaturedResultsSetsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFeaturedResultsSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFeaturedResultsSetsResponseUnmarshaller.Instance;
+
+            return Invoke<ListFeaturedResultsSetsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all your sets of featured results for a given index. Features results are placed
+        /// above all other results for certain queries. If there's an exact match of a query,
+        /// then one or more specific documents are featured in the search results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListFeaturedResultsSets service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListFeaturedResultsSets service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFeaturedResultsSets">REST API Reference for ListFeaturedResultsSets Operation</seealso>
+        public virtual Task<ListFeaturedResultsSetsResponse> ListFeaturedResultsSetsAsync(ListFeaturedResultsSetsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListFeaturedResultsSetsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListFeaturedResultsSetsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListFeaturedResultsSetsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2975,8 +3215,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -3030,8 +3270,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -3092,8 +3332,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -3148,8 +3388,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceUnavailableException">
         /// The resource you want to use isn't available. Please check you have provided the correct
@@ -3203,8 +3443,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -3266,11 +3506,6 @@ namespace Amazon.Kendra
         /// If more than five <code>PUT</code> actions for a group are currently processing, a
         /// validation exception is thrown.
         /// </para>
-        ///  
-        /// <para>
-        ///  <code>PutPrincipalMapping</code> is currently not supported in the Amazon Web Services
-        /// GovCloud (US-West) region.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutPrincipalMapping service method.</param>
         /// <param name="cancellationToken">
@@ -3288,17 +3523,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -3385,17 +3620,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -3451,8 +3686,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceInUseException">
         /// The resource you want to use is currently in use. Please check you have provided the
@@ -3511,8 +3746,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -3573,8 +3808,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -3633,8 +3868,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceUnavailableException">
         /// The resource you want to use isn't available. Please check you have provided the correct
@@ -3688,8 +3923,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceUnavailableException">
         /// The resource you want to use isn't available. Please check you have provided the correct
@@ -3772,17 +4007,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -3836,8 +4071,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -3897,8 +4132,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -3920,6 +4155,70 @@ namespace Amazon.Kendra
             options.ResponseUnmarshaller = UpdateExperienceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateExperienceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateFeaturedResultsSet
+
+        internal virtual UpdateFeaturedResultsSetResponse UpdateFeaturedResultsSet(UpdateFeaturedResultsSetRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeaturedResultsSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeaturedResultsSetResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateFeaturedResultsSetResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a set of featured results. Features results are placed above all other results
+        /// for certain queries. You map specific queries to specific documents for featuring
+        /// in the results. If a query contains an exact match of a query, then one or more specific
+        /// documents are featured in the search results.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateFeaturedResultsSet service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateFeaturedResultsSet service method, as returned by Kendra.</returns>
+        /// <exception cref="Amazon.Kendra.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this action. Please ensure you have the
+        /// required permission policies and user accounts and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.FeaturedResultsConflictException">
+        /// An error message with a list of conflicting queries used across different sets of
+        /// featured results. This occurred with the request for a new featured results set. Check
+        /// that the queries you specified for featured results are unique per featured results
+        /// set for each index.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.InternalServerException">
+        /// An issue occurred with the internal server used for your Amazon Kendra service. Please
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
+        /// The resource you want to use doesn’t exist. Please check you have provided the correct
+        /// resource and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
+        /// The request was denied due to request throttling. Please reduce the number of requests
+        /// and try again.
+        /// </exception>
+        /// <exception cref="Amazon.Kendra.Model.ValidationException">
+        /// The input fails to satisfy the constraints set by the Amazon Kendra service. Please
+        /// provide the correct input and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateFeaturedResultsSet">REST API Reference for UpdateFeaturedResultsSet Operation</seealso>
+        public virtual Task<UpdateFeaturedResultsSetResponse> UpdateFeaturedResultsSetAsync(UpdateFeaturedResultsSetRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateFeaturedResultsSetRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateFeaturedResultsSetResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateFeaturedResultsSetResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3956,17 +4255,17 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
         /// resource and try again.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ServiceQuotaExceededException">
-        /// You have exceeded the set limits for your Amazon Kendra service. Please see Quotas[hyperlink
-        /// Kendra Quotas pg] for more information, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> to inquire about an increase of limits.
+        /// You have exceeded the set limits for your Amazon Kendra service. Please see <a href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>
+        /// for more information, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// to inquire about an increase of limits.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ThrottlingException">
         /// The request was denied due to request throttling. Please reduce the number of requests
@@ -4042,8 +4341,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -4127,8 +4426,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct
@@ -4186,8 +4485,8 @@ namespace Amazon.Kendra
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.InternalServerException">
         /// An issue occurred with the internal server used for your Amazon Kendra service. Please
-        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/aws.amazon.com/contact-us">
-        /// Support</a> for help.
+        /// wait a few minutes and try again, or contact <a href="http://aws.amazon.com/contact-us/">Support</a>
+        /// for help.
         /// </exception>
         /// <exception cref="Amazon.Kendra.Model.ResourceNotFoundException">
         /// The resource you want to use doesn’t exist. Please check you have provided the correct

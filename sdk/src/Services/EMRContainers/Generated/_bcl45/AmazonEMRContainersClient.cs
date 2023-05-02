@@ -975,6 +975,71 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  GetManagedEndpointSessionCredentials
+
+
+        /// <summary>
+        /// Generate a session token to connect to a managed endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedEndpointSessionCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedEndpointSessionCredentials service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.RequestThrottledException">
+        /// The request throttled.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">REST API Reference for GetManagedEndpointSessionCredentials Operation</seealso>
+        public virtual GetManagedEndpointSessionCredentialsResponse GetManagedEndpointSessionCredentials(GetManagedEndpointSessionCredentialsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedEndpointSessionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedEndpointSessionCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedEndpointSessionCredentialsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Generate a session token to connect to a managed endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedEndpointSessionCredentials service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetManagedEndpointSessionCredentials service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.RequestThrottledException">
+        /// The request throttled.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">REST API Reference for GetManagedEndpointSessionCredentials Operation</seealso>
+        public virtual Task<GetManagedEndpointSessionCredentialsResponse> GetManagedEndpointSessionCredentialsAsync(GetManagedEndpointSessionCredentialsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedEndpointSessionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedEndpointSessionCredentialsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetManagedEndpointSessionCredentialsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListJobRuns
 
 

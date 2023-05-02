@@ -952,7 +952,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProcessParentPid. 
         /// <para>
-        /// The parent process ID.
+        /// The parent process ID. This field accepts positive integers between <code>O</code>
+        /// and <code>2147483647</code>.
         /// </para>
         /// </summary>
         public List<NumberFilter> ProcessParentPid

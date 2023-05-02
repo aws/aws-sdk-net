@@ -69,8 +69,9 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property JunctionPath. 
         /// <para>
-        /// Specifies the location in the SVM's namespace where the volume is mounted. The <code>JunctionPath</code>
-        /// must have a leading forward slash, such as <code>/vol3</code>.
+        /// Specifies the location in the SVM's namespace where the volume is mounted. This parameter
+        /// is required. The <code>JunctionPath</code> must have a leading forward slash, such
+        /// as <code>/vol3</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -162,7 +163,8 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property SizeInMegabytes. 
         /// <para>
-        /// Specifies the size of the volume, in megabytes (MB), that you are creating.
+        /// Specifies the size of the volume, in megabytes (MB), that you are creating. Provide
+        /// any whole number in the range of 20–104857600 to specify the size of the volume.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=2147483647)]
@@ -228,7 +230,7 @@ namespace Amazon.FSx.Model
         /// Gets and sets the property StorageEfficiencyEnabled. 
         /// <para>
         /// Set to true to enable deduplication, compression, and compaction storage efficiency
-        /// features on the volume.
+        /// features on the volume, or set to false to disable them. This parameter is required.
         /// </para>
         /// </summary>
         public bool StorageEfficiencyEnabled

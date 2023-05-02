@@ -62,10 +62,8 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The Server-side encryption algorithm used when storing this object in S3.
         /// <para>
-        /// If you specified server-side encryption either with an Amazon Web Services KMS
-        /// key or Amazon S3-managed encryption key in your PUT request, the response
-        /// includes this header. It confirms the encryption algorithm that Amazon S3 used to
-        /// encrypt the object.
+        /// The server-side encryption algorithm used when storing this object in Amazon S3 (for
+        /// example, AES256, <code>aws:kms</code>).
         /// </para>
         /// </summary>
         public ServerSideEncryptionMethod ServerSideEncryptionMethod
@@ -110,9 +108,10 @@ namespace Amazon.S3.Model
         /// <summary>
         /// The id of the AWS Key Management Service key that Amazon S3 uses to encrypt and decrypt the object.
         /// <para>
-        /// If <code>x-amz-server-side-encryption</code> is present and has the value of <code>aws:kms</code>,
+        /// If <code>x-amz-server-side-encryption</code> is has a valid value of <code>aws:kms</code>,
         /// this header specifies the ID of the Amazon Web Services Key Management Service (Amazon
-        /// Web Services KMS) symmetric customer managed key that was used for the object. 
+        /// Web Services KMS) symmetric encryption customer managed key that was used for the
+        /// object. 
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -156,7 +155,9 @@ namespace Amazon.S3.Model
         /// <para>
         /// If present, specifies the Amazon Web Services KMS Encryption Context to use for object
         /// encryption. The value of this header is a base64-encoded UTF-8 string holding JSON
-        /// with the encryption context key-value pairs.
+        /// with the encryption context key-value pairs. This value is stored as object metadata
+        /// and automatically gets passed on to Amazon Web Services KMS for future <code>GetObject</code>
+        /// or <code>CopyObject</code> operations on this object.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]

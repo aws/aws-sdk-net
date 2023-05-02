@@ -59,7 +59,8 @@ namespace Amazon.LicenseManager.Model
         /// <summary>
         /// Gets and sets the property Values. 
         /// <para>
-        /// Filter values. Filter values are case-sensitive.
+        /// The value of the filter, which is case-sensitive. You can only specify one value for
+        /// the filter.
         /// </para>
         /// </summary>
         public List<string> Values

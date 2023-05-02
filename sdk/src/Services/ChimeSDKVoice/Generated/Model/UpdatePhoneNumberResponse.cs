@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private PhoneNumber _phoneNumber;
 
         /// <summary>
-        /// Gets and sets the property PhoneNumber.
+        /// Gets and sets the property PhoneNumber. 
+        /// <para>
+        /// The updated phone number details.
+        /// </para>
         /// </summary>
         public PhoneNumber PhoneNumber
         {

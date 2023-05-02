@@ -44,6 +44,7 @@ namespace Amazon.GuardDuty.Model
         private Evidence _evidence;
         private string _featureName;
         private string _resourceRole;
+        private RuntimeDetails _runtimeDetails;
         private string _serviceName;
         private string _userFeedback;
 
@@ -245,6 +246,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetResourceRole()
         {
             return this._resourceRole != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuntimeDetails. 
+        /// <para>
+        /// Information about the process and any required context values for a specific finding
+        /// </para>
+        /// </summary>
+        public RuntimeDetails RuntimeDetails
+        {
+            get { return this._runtimeDetails; }
+            set { this._runtimeDetails = value; }
+        }
+
+        // Check to see if RuntimeDetails property is set
+        internal bool IsSetRuntimeDetails()
+        {
+            return this._runtimeDetails != null;
         }
 
         /// <summary>

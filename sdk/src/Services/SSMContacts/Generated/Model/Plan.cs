@@ -29,12 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SSMContacts.Model
 {
     /// <summary>
-    /// The stages that an escalation plan or engagement plan engages contacts and contact
-    /// methods in.
+    /// Information about the stages and on-call rotation teams associated with an escalation
+    /// plan or engagement plan.
     /// </summary>
     public partial class Plan
     {
+        private List<string> _rotationIds = new List<string>();
         private List<Stage> _stages = new List<Stage>();
+
+        /// <summary>
+        /// Gets and sets the property RotationIds. 
+        /// <para>
+        /// The Amazon Resource Names (ARNs) of the on-call rotations associated with the plan.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=25)]
+        public List<string> RotationIds
+        {
+            get { return this._rotationIds; }
+            set { this._rotationIds = value; }
+        }
+
+        // Check to see if RotationIds property is set
+        internal bool IsSetRotationIds()
+        {
+            return this._rotationIds != null && this._rotationIds.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Stages. 
@@ -43,7 +64,6 @@ namespace Amazon.SSMContacts.Model
         /// and contact methods.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<Stage> Stages
         {
             get { return this._stages; }

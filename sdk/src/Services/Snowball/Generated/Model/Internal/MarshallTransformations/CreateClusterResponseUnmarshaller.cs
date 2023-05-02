@@ -57,6 +57,12 @@ namespace Amazon.Snowball.Model.Internal.MarshallTransformations
                     response.ClusterId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("JobListEntries", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<JobListEntry, JobListEntryUnmarshaller>(JobListEntryUnmarshaller.Instance);
+                    response.JobListEntries = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

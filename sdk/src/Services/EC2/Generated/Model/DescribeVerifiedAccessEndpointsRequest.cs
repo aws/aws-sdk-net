@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVerifiedAccessEndpoints operation.
-    /// Describe Amazon Web Services Verified Access endpoints.
+    /// Describes the specified Amazon Web Services Verified Access endpoints.
     /// </summary>
     public partial class DescribeVerifiedAccessEndpointsRequest : AmazonEC2Request
     {
@@ -100,7 +100,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessEndpointIds. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access endpoint.
+        /// The ID of the Verified Access endpoint.
         /// </para>
         /// </summary>
         public List<string> VerifiedAccessEndpointIds
@@ -118,7 +118,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessGroupId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access group.
+        /// The ID of the Verified Access group.
         /// </para>
         /// </summary>
         public string VerifiedAccessGroupId
@@ -136,7 +136,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessInstanceId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access instance.
+        /// The ID of the Verified Access instance.
         /// </para>
         /// </summary>
         public string VerifiedAccessInstanceId

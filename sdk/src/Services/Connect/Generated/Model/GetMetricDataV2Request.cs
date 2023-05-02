@@ -38,7 +38,7 @@ namespace Amazon.Connect.Model
     /// the previous version of this API. It has new metrics, offers filtering at a metric
     /// level, and offers the ability to filter and group data by channels, queues, routing
     /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-    /// last the 14 days, in 24-hour intervals.
+    /// the last 14 days, in 24-hour intervals.
     /// </para>
     ///  
     /// <para>
@@ -67,7 +67,7 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The timestamp, in UNIX Epoch time format, at which to end the reporting interval for
         /// the retrieval of historical metrics data. The time must be later than the start time
-        /// timestamp.
+        /// timestamp. It cannot be later than the current timestamp.
         /// </para>
         ///  
         /// <para>
@@ -450,6 +450,12 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile
         /// </para>
+        ///  
+        /// <para>
+        /// Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
+        /// (for "Less than"). 
+        /// </para>
         ///  </dd> <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> 
         /// <para>
         /// Unit: Count
@@ -457,6 +463,12 @@ namespace Amazon.Connect.Model
         ///  
         /// <para>
         /// Valid groupings and filters: Queue, Channel, Routing Profile
+        /// </para>
+        ///  
+        /// <para>
+        /// Threshold: For <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+        /// (inclusive), in seconds. For <code>Comparison</code>, you must enter <code>LT</code>
+        /// (for "Less than"). 
         /// </para>
         ///  </dd> <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> 
         /// <para>

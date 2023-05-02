@@ -785,6 +785,11 @@ namespace Amazon.Rekognition
         /// <a>DescribeProjectVersions</a> and check the value of <code>Status</code> in the <a>ProjectVersionDescription</a>
         /// object. The copy operation has finished when the value of <code>Status</code> is <code>COPYING_COMPLETED</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:CopyProjectVersion</code>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CopyProjectVersion service method.</param>
         /// 
@@ -1095,6 +1100,83 @@ namespace Amazon.Rekognition
 
         #endregion
         
+        #region  CreateFaceLivenessSession
+
+        /// <summary>
+        /// This API operation initiates a Face Liveness session. It returns a <code>SessionId</code>,
+        /// which you can use to start streaming Face Liveness video and get the results for a
+        /// Face Liveness session. You can use the <code>OutputConfig</code> option in the Settings
+        /// parameter to provide an Amazon S3 bucket location. The Amazon S3 bucket stores reference
+        /// images and audit images. You can use <code>AuditImagesLimit</code> to limit the number
+        /// of audit images returned. This number is between 0 and 4. By default, it is set to
+        /// 0. The limit is best effort and based on the duration of the selfie-video.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateFaceLivenessSession service method.</param>
+        /// 
+        /// <returns>The response from the CreateFaceLivenessSession service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">REST API Reference for CreateFaceLivenessSession Operation</seealso>
+        public virtual CreateFaceLivenessSessionResponse CreateFaceLivenessSession(CreateFaceLivenessSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFaceLivenessSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFaceLivenessSessionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateFaceLivenessSessionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateFaceLivenessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateFaceLivenessSession operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateFaceLivenessSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">REST API Reference for CreateFaceLivenessSession Operation</seealso>
+        public virtual IAsyncResult BeginCreateFaceLivenessSession(CreateFaceLivenessSessionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateFaceLivenessSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateFaceLivenessSessionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateFaceLivenessSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateFaceLivenessSession.</param>
+        /// 
+        /// <returns>Returns a  CreateFaceLivenessSessionResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">REST API Reference for CreateFaceLivenessSession Operation</seealso>
+        public virtual CreateFaceLivenessSessionResponse EndCreateFaceLivenessSession(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateFaceLivenessSessionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateProject
 
         /// <summary>
@@ -1341,9 +1423,10 @@ namespace Amazon.Rekognition
         /// <para>
         /// If you are creating a stream processor for detecting faces, you provide as input a
         /// Kinesis video stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>)
-        /// stream. You also specify the face recognition criteria in <code>Settings</code>. For
-        /// example, the collection containing faces that you want to recognize. After you have
-        /// finished analyzing a streaming video, use <a>StopStreamProcessor</a> to stop processing.
+        /// stream for receiving the output. You must use the <code>FaceSearch</code> option in
+        /// <code>Settings</code>, specifying the collection that contains the faces you want
+        /// to recognize. After you have finished analyzing a streaming video, use <a>StopStreamProcessor</a>
+        /// to stop processing.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1351,11 +1434,12 @@ namespace Amazon.Rekognition
         /// video stream (<code>Input</code>), Amazon S3 bucket information (<code>Output</code>),
         /// and an Amazon SNS topic ARN (<code>NotificationChannel</code>). You can also provide
         /// a KMS key ID to encrypt the data sent to your Amazon S3 bucket. You specify what you
-        /// want to detect in <code>ConnectedHomeSettings</code>, such as people, packages and
-        /// people, or pets, people, and packages. You can also specify where in the frame you
-        /// want Amazon Rekognition to monitor with <code>RegionsOfInterest</code>. When you run
-        /// the <a>StartStreamProcessor</a> operation on a label detection stream processor, you
-        /// input start and stop information to determine the length of the processing time.
+        /// want to detect by using the <code>ConnectedHome</code> option in settings, and selecting
+        /// one of the following: <code>PERSON</code>, <code>PET</code>, <code>PACKAGE</code>,
+        /// <code>ALL</code> You can also specify where in the frame you want Amazon Rekognition
+        /// to monitor with <code>RegionsOfInterest</code>. When you run the <a>StartStreamProcessor</a>
+        /// operation on a label detection stream processor, you input start and stop information
+        /// to determine the length of the processing time.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1812,6 +1896,11 @@ namespace Amazon.Rekognition
         /// <para>
         /// To get a list of project policies attached to a project, call <a>ListProjectPolicies</a>.
         /// To attach a project policy to a project, call <a>PutProjectPolicy</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:DeleteProjectPolicy</code>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteProjectPolicy service method.</param>
@@ -2780,7 +2869,7 @@ namespace Amazon.Rekognition
         ///  
         /// <para>
         ///  For each object, scene, and concept the API returns one or more labels. The API returns
-        /// the following types of information regarding labels:
+        /// the following types of information about labels:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -2889,7 +2978,7 @@ namespace Amazon.Rekognition
         /// </para>
         ///  </note> 
         /// <para>
-        /// This is a stateless API operation. That is, the operation does not persist any data.
+        /// This is a stateless API operation that doesn't return any data.
         /// </para>
         ///  
         /// <para>
@@ -3900,6 +3989,85 @@ namespace Amazon.Rekognition
         public virtual GetFaceDetectionResponse EndGetFaceDetection(IAsyncResult asyncResult)
         {
             return EndInvoke<GetFaceDetectionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetFaceLivenessSessionResults
+
+        /// <summary>
+        /// Retrieves the results of a specific Face Liveness session. It requires the <code>sessionId</code>
+        /// as input, which was created using <code>CreateFaceLivenessSession</code>. Returns
+        /// the corresponding Face Liveness confidence score, a reference image that includes
+        /// a face bounding box, and audit images that also contain face bounding boxes. The Face
+        /// Liveness confidence score ranges from 0 to 100. The reference image can optionally
+        /// be returned.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFaceLivenessSessionResults service method.</param>
+        /// 
+        /// <returns>The response from the GetFaceLivenessSessionResults service method, as returned by Rekognition.</returns>
+        /// <exception cref="Amazon.Rekognition.Model.AccessDeniedException">
+        /// You are not authorized to perform the action.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InternalServerErrorException">
+        /// Amazon Rekognition experienced a service issue. Try your call again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.InvalidParameterException">
+        /// Input parameter violated a constraint. Validate your parameter before calling the
+        /// API operation again.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
+        /// The number of requests exceeded your throughput limit. If you want to increase this
+        /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.SessionNotFoundException">
+        /// Occurs when a given sessionId is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ThrottlingException">
+        /// Amazon Rekognition is temporarily unable to process the request. Try your call again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceLivenessSessionResults">REST API Reference for GetFaceLivenessSessionResults Operation</seealso>
+        public virtual GetFaceLivenessSessionResultsResponse GetFaceLivenessSessionResults(GetFaceLivenessSessionResultsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFaceLivenessSessionResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFaceLivenessSessionResultsResponseUnmarshaller.Instance;
+
+            return Invoke<GetFaceLivenessSessionResultsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFaceLivenessSessionResults operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFaceLivenessSessionResults operation on AmazonRekognitionClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFaceLivenessSessionResults
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceLivenessSessionResults">REST API Reference for GetFaceLivenessSessionResults Operation</seealso>
+        public virtual IAsyncResult BeginGetFaceLivenessSessionResults(GetFaceLivenessSessionResultsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetFaceLivenessSessionResultsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetFaceLivenessSessionResultsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFaceLivenessSessionResults operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFaceLivenessSessionResults.</param>
+        /// 
+        /// <returns>Returns a  GetFaceLivenessSessionResultsResult from Rekognition.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceLivenessSessionResults">REST API Reference for GetFaceLivenessSessionResults Operation</seealso>
+        public virtual GetFaceLivenessSessionResultsResponse EndGetFaceLivenessSessionResults(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetFaceLivenessSessionResultsResponse>(asyncResult);
         }
 
         #endregion
@@ -5163,6 +5331,11 @@ namespace Amazon.Rekognition
         /// To attach a project policy to a project, call <a>PutProjectPolicy</a>. To remove a
         /// project policy from a project, call <a>DeleteProjectPolicy</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:ListProjectPolicies</code>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListProjectPolicies service method.</param>
         /// 
@@ -5420,6 +5593,11 @@ namespace Amazon.Rekognition
         ///  
         /// <para>
         /// You copy a model version by calling <a>CopyProjectVersion</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:PutProjectPolicy</code>
+        /// action.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutProjectPolicy service method.</param>
@@ -6978,7 +7156,13 @@ namespace Amazon.Rekognition
 
         /// <summary>
         /// Stops a running model. The operation might take a while to complete. To check the
-        /// current status, call <a>DescribeProjectVersions</a>.
+        /// current status, call <a>DescribeProjectVersions</a>. 
+        /// 
+        ///  
+        /// <para>
+        /// This operation requires permissions to perform the <code>rekognition:StopProjectVersion</code>
+        /// action.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopProjectVersion service method.</param>
         /// 
@@ -7442,6 +7626,9 @@ namespace Amazon.Rekognition
         /// <exception cref="Amazon.Rekognition.Model.ProvisionedThroughputExceededException">
         /// The number of requests exceeded your throughput limit. If you want to increase this
         /// limit, contact Amazon Rekognition.
+        /// </exception>
+        /// <exception cref="Amazon.Rekognition.Model.ResourceInUseException">
+        /// The specified resource is already being used.
         /// </exception>
         /// <exception cref="Amazon.Rekognition.Model.ResourceNotFoundException">
         /// The resource specified in the request cannot be found.

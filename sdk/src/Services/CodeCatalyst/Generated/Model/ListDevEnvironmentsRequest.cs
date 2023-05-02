@@ -30,7 +30,7 @@ namespace Amazon.CodeCatalyst.Model
 {
     /// <summary>
     /// Container for the parameters to the ListDevEnvironments operation.
-    /// Retrives a list of Dev Environments in a project.
+    /// Retrieves a list of Dev Environments in a project.
     /// </summary>
     public partial class ListDevEnvironmentsRequest : AmazonCodeCatalystRequest
     {

@@ -39,8 +39,8 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PrincipalARN. 
         /// <para>
-        /// The ARN of the principal (IAM user, role, or group). This field allows for an ARN
-        /// with no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
+        /// The ARN of the principal (user, role, or group). This field allows for an ARN with
+        /// no <code>accountID</code> if the <code>PrincipalType</code> is an <code>IAM_PATTERN</code>.
         /// 
         /// </para>
         /// </summary>

@@ -76,6 +76,17 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                     context.Writer.WritePropertyName("ClientToken");
                     context.Writer.Write(Guid.NewGuid().ToString());
                 }
+                if(publicRequest.IsSetInternetMeasurementsLogDelivery())
+                {
+                    context.Writer.WritePropertyName("InternetMeasurementsLogDelivery");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = InternetMeasurementsLogDeliveryMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.InternetMeasurementsLogDelivery, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxCityNetworksToMonitor())
                 {
                     context.Writer.WritePropertyName("MaxCityNetworksToMonitor");
@@ -111,6 +122,12 @@ namespace Amazon.InternetMonitor.Model.Internal.MarshallTransformations
                             context.Writer.Write(publicRequestTagsValue);
                     }
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetTrafficPercentageToMonitor())
+                {
+                    context.Writer.WritePropertyName("TrafficPercentageToMonitor");
+                    context.Writer.Write(publicRequest.TrafficPercentageToMonitor);
                 }
 
                 writer.WriteObjectEnd();

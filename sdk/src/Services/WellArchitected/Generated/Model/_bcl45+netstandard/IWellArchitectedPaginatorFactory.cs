@@ -26,6 +26,11 @@ namespace Amazon.WellArchitected.Model
     {
 
         /// <summary>
+        /// Paginator for GetConsolidatedReport operation
+        ///</summary>
+        IGetConsolidatedReportPaginator GetConsolidatedReport(GetConsolidatedReportRequest request);
+
+        /// <summary>
         /// Paginator for ListAnswers operation
         ///</summary>
         IListAnswersPaginator ListAnswers(ListAnswersRequest request);

@@ -696,7 +696,8 @@
         "finding":{"shape":"ECSServiceRecommendationFinding"},
         "findingReasonCodes":{"shape":"ECSServiceRecommendationFindingReasonCodes"},
         "serviceRecommendationOptions":{"shape":"ECSServiceRecommendationOptions"},
-        "currentPerformanceRisk":{"shape":"CurrentPerformanceRisk"}
+        "currentPerformanceRisk":{"shape":"CurrentPerformanceRisk"},
+        "tags":{"shape":"Tags"}
       }
     },
     "ECSServiceRecommendationFilter":{
@@ -1010,7 +1011,8 @@
         "RecommendationOptionsEstimatedMonthlySavingsValue",
         "RecommendationOptionsContainerRecommendations",
         "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
-        "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"
+        "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+        "Tags"
       ]
     },
     "ExportableECSServiceFields":{
@@ -1072,7 +1074,9 @@
         "EffectiveRecommendationPreferencesInferredWorkloadTypes",
         "InferredWorkloadTypes",
         "RecommendationOptionsMigrationEffort",
-        "EffectiveRecommendationPreferencesExternalMetricsSource"
+        "EffectiveRecommendationPreferencesExternalMetricsSource",
+        "InstanceState",
+        "Tags"
       ]
     },
     "ExportableInstanceFields":{
@@ -1107,7 +1111,8 @@
         "CurrentPerformanceRisk",
         "RecommendationOptionsSavingsOpportunityPercentage",
         "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-        "RecommendationOptionsEstimatedMonthlySavingsValue"
+        "RecommendationOptionsEstimatedMonthlySavingsValue",
+        "Tags"
       ]
     },
     "ExportableLambdaFunctionFields":{
@@ -1144,7 +1149,9 @@
         "CurrentPerformanceRisk",
         "RecommendationOptionsSavingsOpportunityPercentage",
         "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-        "RecommendationOptionsEstimatedMonthlySavingsValue"
+        "RecommendationOptionsEstimatedMonthlySavingsValue",
+        "RootVolume",
+        "Tags"
       ]
     },
     "ExportableVolumeFields":{
@@ -1183,7 +1190,8 @@
       "enum":[
         "Finding",
         "FindingReasonCodes",
-        "RecommendationSourceType"
+        "RecommendationSourceType",
+        "InferredWorkloadTypes"
       ]
     },
     "FilterValue":{"type":"string"},
@@ -1446,6 +1454,17 @@
     "High":{"type":"long"},
     "Identifier":{"type":"string"},
     "IncludeMemberAccounts":{"type":"boolean"},
+    "InferredWorkloadSaving":{
+      "type":"structure",
+      "members":{
+        "inferredWorkloadTypes":{"shape":"InferredWorkloadTypes"},
+        "estimatedMonthlySavings":{"shape":"EstimatedMonthlySavings"}
+      }
+    },
+    "InferredWorkloadSavings":{
+      "type":"list",
+      "member":{"shape":"InferredWorkloadSaving"}
+    },
     "InferredWorkloadType":{
       "type":"string",
       "enum":[
@@ -1456,7 +1475,8 @@
         "Nginx",
         "PostgreSql",
         "Redis",
-        "Kafka"
+        "Kafka",
+        "SQLServer"
       ]
     },
     "InferredWorkloadTypes":{
@@ -1492,7 +1512,9 @@
         "lastRefreshTimestamp":{"shape":"LastRefreshTimestamp"},
         "currentPerformanceRisk":{"shape":"CurrentPerformanceRisk"},
         "effectiveRecommendationPreferences":{"shape":"EffectiveRecommendationPreferences"},
-        "inferredWorkloadTypes":{"shape":"InferredWorkloadTypes"}
+        "inferredWorkloadTypes":{"shape":"InferredWorkloadTypes"},
+        "instanceState":{"shape":"InstanceState"},
+        "tags":{"shape":"Tags"}
       }
     },
     "InstanceRecommendationFindingReasonCode":{
@@ -1535,6 +1557,17 @@
     "InstanceRecommendations":{
       "type":"list",
       "member":{"shape":"InstanceRecommendation"}
+    },
+    "InstanceState":{
+      "type":"string",
+      "enum":[
+        "pending",
+        "running",
+        "shutting-down",
+        "terminated",
+        "stopping",
+        "stopped"
+      ]
     },
     "InstanceType":{"type":"string"},
     "InternalServerException":{
@@ -1650,7 +1683,8 @@
         "finding":{"shape":"LambdaFunctionRecommendationFinding"},
         "findingReasonCodes":{"shape":"LambdaFunctionRecommendationFindingReasonCodes"},
         "memorySizeRecommendationOptions":{"shape":"LambdaFunctionMemoryRecommendationOptions"},
-        "currentPerformanceRisk":{"shape":"CurrentPerformanceRisk"}
+        "currentPerformanceRisk":{"shape":"CurrentPerformanceRisk"},
+        "tags":{"shape":"Tags"}
       }
     },
     "LambdaFunctionRecommendationFilter":{
@@ -1953,7 +1987,8 @@
         "recommendationResourceType":{"shape":"RecommendationSourceType"},
         "accountId":{"shape":"AccountId"},
         "savingsOpportunity":{"shape":"SavingsOpportunity"},
-        "currentPerformanceRiskRatings":{"shape":"CurrentPerformanceRiskRatings"}
+        "currentPerformanceRiskRatings":{"shape":"CurrentPerformanceRiskRatings"},
+        "inferredWorkloadSavings":{"shape":"InferredWorkloadSavings"}
       }
     },
     "RecommendedInstanceType":{"type":"string"},
@@ -1989,6 +2024,7 @@
         "EcsService"
       ]
     },
+    "RootVolume":{"type":"boolean"},
     "S3Destination":{
       "type":"structure",
       "members":{
@@ -2074,6 +2110,19 @@
       }
     },
     "SummaryValue":{"type":"double"},
+    "Tag":{
+      "type":"structure",
+      "members":{
+        "key":{"shape":"TagKey"},
+        "value":{"shape":"TagValue"}
+      }
+    },
+    "TagKey":{"type":"string"},
+    "TagValue":{"type":"string"},
+    "Tags":{
+      "type":"list",
+      "member":{"shape":"Tag"}
+    },
     "TaskDefinitionArn":{"type":"string"},
     "ThrottlingException":{
       "type":"structure",
@@ -2136,7 +2185,8 @@
         "volumeBaselineIOPS":{"shape":"VolumeBaselineIOPS"},
         "volumeBurstIOPS":{"shape":"VolumeBurstIOPS"},
         "volumeBaselineThroughput":{"shape":"VolumeBaselineThroughput"},
-        "volumeBurstThroughput":{"shape":"VolumeBurstThroughput"}
+        "volumeBurstThroughput":{"shape":"VolumeBurstThroughput"},
+        "rootVolume":{"shape":"RootVolume"}
       }
     },
     "VolumeRecommendation":{
@@ -2150,7 +2200,8 @@
         "lookBackPeriodInDays":{"shape":"LookBackPeriodInDays"},
         "volumeRecommendationOptions":{"shape":"VolumeRecommendationOptions"},
         "lastRefreshTimestamp":{"shape":"LastRefreshTimestamp"},
-        "currentPerformanceRisk":{"shape":"CurrentPerformanceRisk"}
+        "currentPerformanceRisk":{"shape":"CurrentPerformanceRisk"},
+        "tags":{"shape":"Tags"}
       }
     },
     "VolumeRecommendationOption":{

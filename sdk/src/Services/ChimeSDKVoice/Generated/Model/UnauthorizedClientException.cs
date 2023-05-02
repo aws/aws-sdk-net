@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The client isn't authorized to request a resource.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

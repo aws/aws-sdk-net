@@ -35,10 +35,10 @@ namespace Amazon.Comprehend
     /// <summary>
     /// Implementation for accessing Comprehend
     ///
-    /// Amazon Comprehend is an AWS service for gaining insight into the content of documents.
-    /// Use these actions to determine the topics contained in your documents, the topics
-    /// they discuss, the predominant sentiment expressed in them, the predominant language
-    /// used, and more.
+    /// Amazon Comprehend is an Amazon Web Services service for gaining insight into the content
+    /// of documents. Use these actions to determine the topics contained in your documents,
+    /// the topics they discuss, the predominant sentiment expressed in them, the predominant
+    /// language used, and more.
     /// </summary>
     public partial class AmazonComprehendClient : AmazonServiceClient, IAmazonComprehend
     {
@@ -956,10 +956,9 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Creates a new document classifier that you can use to categorize documents. To create
-        /// a classifier, you provide a set of training documents that labeled with the categories
-        /// that you want to use. After the classifier is trained you can use it to categorize
-        /// a set of labeled documents into the categories. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-document-classification.html">Document
-        /// Classification</a> in the Comprehend Developer Guide.
+        /// a classifier, you provide a set of training documents that are labeled with the categories
+        /// that you want to use. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/training-classifier-model.html">Training
+        /// classifier models</a> in the Comprehend Developer Guide.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDocumentClassifier service method.</param>
         /// 
@@ -1217,9 +1216,10 @@ namespace Amazon.Comprehend
         #region  CreateFlywheel
 
         /// <summary>
-        /// A flywheel is an AWS resource that orchestrates the ongoing training of a model for
-        /// custom classification or custom entity recognition. You can create a flywheel to start
-        /// with an existing trained model, or Comprehend can create and train a new model.
+        /// A flywheel is an Amazon Web Services resource that orchestrates the ongoing training
+        /// of a model for custom classification or custom entity recognition. You can create
+        /// a flywheel to start with an existing trained model, or Comprehend can create and train
+        /// a new model.
         /// 
         ///  
         /// <para>
@@ -3311,17 +3311,17 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Creates a new custom model that replicates a source custom model that you import.
-        /// The source model can be in your AWS account or another one.
+        /// The source model can be in your Amazon Web Services account or another one.
         /// 
         ///  
         /// <para>
-        /// If the source model is in another AWS account, then it must have a resource-based
-        /// policy that authorizes you to import it.
+        /// If the source model is in another Amazon Web Services account, then it must have a
+        /// resource-based policy that authorizes you to import it.
         /// </para>
         ///  
         /// <para>
-        /// The source model must be in the same AWS region that you're using when you import.
-        /// You can't import a model that's in a different region.
+        /// The source model must be in the same Amazon Web Services Region that you're using
+        /// when you import. You can't import a model that's in a different Region.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportModel service method.</param>
@@ -3408,7 +3408,7 @@ namespace Amazon.Comprehend
         #region  ListDatasets
 
         /// <summary>
-        /// List the datasets that you have configured in this region. For more information about
+        /// List the datasets that you have configured in this Region. For more information about
         /// datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html">
         /// Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.
         /// </summary>
@@ -4606,8 +4606,8 @@ namespace Amazon.Comprehend
 
         /// <summary>
         /// Attaches a resource-based policy to a custom model. You can use this policy to authorize
-        /// an entity in another AWS account to import the custom model, which replicates it in
-        /// Amazon Comprehend in their account.
+        /// an entity in another Amazon Web Services account to import the custom model, which
+        /// replicates it in Amazon Comprehend in their account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutResourcePolicy service method.</param>
         /// 
@@ -4685,6 +4685,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
@@ -4764,6 +4768,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -4846,6 +4854,10 @@ namespace Amazon.Comprehend
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.ResourceNotFoundException">
         /// The specified resource ARN was not found. Check the ARN and try your request again.
         /// </exception>
@@ -4923,6 +4935,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -5069,6 +5085,10 @@ namespace Amazon.Comprehend
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
@@ -5140,6 +5160,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -5213,6 +5237,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
@@ -5288,6 +5316,10 @@ namespace Amazon.Comprehend
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
         /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
+        /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.
         /// </exception>
@@ -5360,6 +5392,10 @@ namespace Amazon.Comprehend
         /// <exception cref="Amazon.Comprehend.Model.KmsKeyValidationException">
         /// The KMS customer managed key (CMK) entered cannot be validated. Verify the key and
         /// re-enter it.
+        /// </exception>
+        /// <exception cref="Amazon.Comprehend.Model.ResourceInUseException">
+        /// The specified resource name is already in use. Use a different name and try your request
+        /// again.
         /// </exception>
         /// <exception cref="Amazon.Comprehend.Model.TooManyRequestsException">
         /// The number of requests exceeds the limit. Resubmit your request later.

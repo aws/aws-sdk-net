@@ -88,6 +88,17 @@
     <pattern>^arn:aws(-[a-z]+)?:s3:::[a-z0-9.\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.MWAA.Model.CreateEnvironmentRequest.StartupScriptS3ObjectVersion</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MWAA.Model.CreateEnvironmentRequest.StartupScriptS3Path</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.MWAA.Model.CreateEnvironmentRequest.WeeklyMaintenanceWindowStart</property>
     <min>1</min>
     <max>9</max>
@@ -230,6 +241,17 @@
     <min>1</min>
     <max>1224</max>
     <pattern>^arn:aws(-[a-z]+)?:s3:::[a-z0-9.\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.StartupScriptS3ObjectVersion</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.StartupScriptS3Path</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.MWAA.Model.UpdateEnvironmentRequest.WeeklyMaintenanceWindowStart</property>

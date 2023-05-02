@@ -31,7 +31,7 @@ namespace Amazon.QLDB
     /// <summary>
     /// Interface for accessing QLDB
     ///
-    /// The control plane for Amazon QLDB
+    /// The resource management API for Amazon QLDB
     /// </summary>
     public partial interface IAmazonQLDB : IAmazonService, IDisposable
     {
@@ -166,7 +166,7 @@ namespace Amazon.QLDB
         /// <para>
         /// If deletion protection is enabled, you must first disable it before you can delete
         /// the ledger. You can disable it by calling the <code>UpdateLedger</code> operation
-        /// to set the flag to <code>false</code>.
+        /// to set this parameter to <code>false</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLedger service method.</param>
@@ -196,7 +196,7 @@ namespace Amazon.QLDB
         /// <para>
         /// If deletion protection is enabled, you must first disable it before you can delete
         /// the ledger. You can disable it by calling the <code>UpdateLedger</code> operation
-        /// to set the flag to <code>false</code>.
+        /// to set this parameter to <code>false</code>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteLedger service method.</param>
@@ -409,14 +409,6 @@ namespace Amazon.QLDB
         /// 
         ///  
         /// <para>
-        /// In JSON Lines format, each journal block in the exported data object is a valid JSON
-        /// object that is delimited by a newline. You can use this format to easily integrate
-        /// JSON exports with analytics tools such as Glue and Amazon Athena because these services
-        /// can parse newline-delimited JSON automatically. For more information about the format,
-        /// see <a href="https://jsonlines.org/">JSON Lines</a>.
-        /// </para>
-        ///  
-        /// <para>
         /// If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
         /// </para>
         ///  
@@ -450,14 +442,6 @@ namespace Amazon.QLDB
         /// data objects in either the text or binary representation of Amazon Ion format, or
         /// in <i>JSON Lines</i> text format.
         /// 
-        ///  
-        /// <para>
-        /// In JSON Lines format, each journal block in the exported data object is a valid JSON
-        /// object that is delimited by a newline. You can use this format to easily integrate
-        /// JSON exports with analytics tools such as Glue and Amazon Athena because these services
-        /// can parse newline-delimited JSON automatically. For more information about the format,
-        /// see <a href="https://jsonlines.org/">JSON Lines</a>.
-        /// </para>
         ///  
         /// <para>
         /// If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.
@@ -678,9 +662,7 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns an array of all Amazon QLDB journal stream descriptors for a given ledger.
-        /// The output of each stream descriptor includes the same details that are returned by
-        /// <code>DescribeJournalKinesisStream</code>.
+        /// Returns all Amazon QLDB journal streams for a given ledger.
         /// 
         ///  
         /// <para>
@@ -713,9 +695,7 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns an array of all Amazon QLDB journal stream descriptors for a given ledger.
-        /// The output of each stream descriptor includes the same details that are returned by
-        /// <code>DescribeJournalKinesisStream</code>.
+        /// Returns all Amazon QLDB journal streams for a given ledger.
         /// 
         ///  
         /// <para>
@@ -754,8 +734,8 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns an array of journal export job descriptions for all ledgers that are associated
-        /// with the current Amazon Web Services account and Region.
+        /// Returns all journal export jobs for all ledgers that are associated with the current
+        /// Amazon Web Services account and Region.
         /// 
         ///  
         /// <para>
@@ -779,8 +759,8 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns an array of journal export job descriptions for all ledgers that are associated
-        /// with the current Amazon Web Services account and Region.
+        /// Returns all journal export jobs for all ledgers that are associated with the current
+        /// Amazon Web Services account and Region.
         /// 
         ///  
         /// <para>
@@ -810,7 +790,7 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns an array of journal export job descriptions for a specified ledger.
+        /// Returns all journal export jobs for a specified ledger.
         /// 
         ///  
         /// <para>
@@ -834,7 +814,7 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns an array of journal export job descriptions for a specified ledger.
+        /// Returns all journal export jobs for a specified ledger.
         /// 
         ///  
         /// <para>
@@ -864,13 +844,13 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns an array of ledger summaries that are associated with the current Amazon Web
-        /// Services account and Region.
+        /// Returns all ledgers that are associated with the current Amazon Web Services account
+        /// and Region.
         /// 
         ///  
         /// <para>
-        /// This action returns a maximum of 100 items and is paginated so that you can retrieve
-        /// all the items by calling <code>ListLedgers</code> multiple times.
+        /// This action returns a maximum of <code>MaxResults</code> items and is paginated so
+        /// that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLedgers service method.</param>
@@ -882,13 +862,13 @@ namespace Amazon.QLDB
 
 
         /// <summary>
-        /// Returns an array of ledger summaries that are associated with the current Amazon Web
-        /// Services account and Region.
+        /// Returns all ledgers that are associated with the current Amazon Web Services account
+        /// and Region.
         /// 
         ///  
         /// <para>
-        /// This action returns a maximum of 100 items and is paginated so that you can retrieve
-        /// all the items by calling <code>ListLedgers</code> multiple times.
+        /// This action returns a maximum of <code>MaxResults</code> items and is paginated so
+        /// that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListLedgers service method.</param>

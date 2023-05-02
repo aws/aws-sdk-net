@@ -25,6 +25,88 @@ namespace Amazon.Mgn
 {
 
     /// <summary>
+    /// Constants used for properties of type ActionCategory.
+    /// </summary>
+    public class ActionCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BACKUP for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory BACKUP = new ActionCategory("BACKUP");
+        /// <summary>
+        /// Constant CONFIGURATION for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory CONFIGURATION = new ActionCategory("CONFIGURATION");
+        /// <summary>
+        /// Constant DISASTER_RECOVERY for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory DISASTER_RECOVERY = new ActionCategory("DISASTER_RECOVERY");
+        /// <summary>
+        /// Constant LICENSE_AND_SUBSCRIPTION for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory LICENSE_AND_SUBSCRIPTION = new ActionCategory("LICENSE_AND_SUBSCRIPTION");
+        /// <summary>
+        /// Constant NETWORKING for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory NETWORKING = new ActionCategory("NETWORKING");
+        /// <summary>
+        /// Constant OBSERVABILITY for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory OBSERVABILITY = new ActionCategory("OBSERVABILITY");
+        /// <summary>
+        /// Constant OPERATING_SYSTEM for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory OPERATING_SYSTEM = new ActionCategory("OPERATING_SYSTEM");
+        /// <summary>
+        /// Constant OTHER for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory OTHER = new ActionCategory("OTHER");
+        /// <summary>
+        /// Constant SECURITY for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory SECURITY = new ActionCategory("SECURITY");
+        /// <summary>
+        /// Constant VALIDATION for ActionCategory
+        /// </summary>
+        public static readonly ActionCategory VALIDATION = new ActionCategory("VALIDATION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionCategory FindValue(string value)
+        {
+            return FindValue<ActionCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ApplicationHealthStatus.
     /// </summary>
     public class ApplicationHealthStatus : ConstantClass
@@ -581,6 +663,64 @@ namespace Amazon.Mgn
 
 
     /// <summary>
+    /// Constants used for properties of type ExportStatus.
+    /// </summary>
+    public class ExportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus FAILED = new ExportStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus PENDING = new ExportStatus("PENDING");
+        /// <summary>
+        /// Constant STARTED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus STARTED = new ExportStatus("STARTED");
+        /// <summary>
+        /// Constant SUCCEEDED for ExportStatus
+        /// </summary>
+        public static readonly ExportStatus SUCCEEDED = new ExportStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportStatus FindValue(string value)
+        {
+            return FindValue<ExportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FirstBoot.
     /// </summary>
     public class FirstBoot : ConstantClass
@@ -632,6 +772,114 @@ namespace Amazon.Mgn
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FirstBoot(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportErrorType.
+    /// </summary>
+    public class ImportErrorType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PROCESSING_ERROR for ImportErrorType
+        /// </summary>
+        public static readonly ImportErrorType PROCESSING_ERROR = new ImportErrorType("PROCESSING_ERROR");
+        /// <summary>
+        /// Constant VALIDATION_ERROR for ImportErrorType
+        /// </summary>
+        public static readonly ImportErrorType VALIDATION_ERROR = new ImportErrorType("VALIDATION_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportErrorType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportErrorType FindValue(string value)
+        {
+            return FindValue<ImportErrorType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportErrorType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ImportStatus.
+    /// </summary>
+    public class ImportStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus FAILED = new ImportStatus("FAILED");
+        /// <summary>
+        /// Constant PENDING for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus PENDING = new ImportStatus("PENDING");
+        /// <summary>
+        /// Constant STARTED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus STARTED = new ImportStatus("STARTED");
+        /// <summary>
+        /// Constant SUCCEEDED for ImportStatus
+        /// </summary>
+        public static readonly ImportStatus SUCCEEDED = new ImportStatus("SUCCEEDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ImportStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ImportStatus FindValue(string value)
+        {
+            return FindValue<ImportStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ImportStatus(string value)
         {
             return FindValue(value);
         }
@@ -1044,6 +1292,10 @@ namespace Amazon.Mgn
         /// Constant NOT_READY for LifeCycleState
         /// </summary>
         public static readonly LifeCycleState NOT_READY = new LifeCycleState("NOT_READY");
+        /// <summary>
+        /// Constant PENDING_INSTALLATION for LifeCycleState
+        /// </summary>
+        public static readonly LifeCycleState PENDING_INSTALLATION = new LifeCycleState("PENDING_INSTALLATION");
         /// <summary>
         /// Constant READY_FOR_CUTOVER for LifeCycleState
         /// </summary>
