@@ -29,22 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// Container for the parameters to the AssociateMember operation.
-    /// Associates an Amazon Web Services account with an Amazon Inspector delegated administrator.
-    /// An HTTP 200 response indicates the association was successfully started, but doesn’t
-    /// indicate whether it was completed. You can check if the association completed by using
-    /// <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a>
-    /// for multiple accounts or <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html">GetMembers</a>
-    /// for a single account.
+    /// An object that contains details about the state of Amazon Inspector deep inspection
+    /// for a member account.
     /// </summary>
-    public partial class AssociateMemberRequest : AmazonInspector2Request
+    public partial class MemberAccountEc2DeepInspectionStatusState
     {
         private string _accountId;
+        private string _errorMessage;
+        private Ec2DeepInspectionStatus _status;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID of the member account to be associated.
+        /// The unique identifier for the Amazon Web Services account of the organization member
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -58,6 +55,44 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ErrorMessage. 
+        /// <para>
+        /// The error message explaining why the account failed to activate Amazon Inspector deep
+        /// inspection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string ErrorMessage
+        {
+            get { return this._errorMessage; }
+            set { this._errorMessage = value; }
+        }
+
+        // Check to see if ErrorMessage property is set
+        internal bool IsSetErrorMessage()
+        {
+            return this._errorMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The state of Amazon Inspector deep inspection in the member account.
+        /// </para>
+        /// </summary>
+        public Ec2DeepInspectionStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
         }
 
     }

@@ -101,6 +101,10 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetEc2DeepInspectionConfigurationResponse.ErrorMessage</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.GetFindingsReportStatusRequest.ReportId</property>
     <pattern>\b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b</pattern>
   </property-value-rule>
@@ -256,6 +260,10 @@
     <property>Amazon.Inspector2.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateEc2DeepInspectionConfigurationResponse.ErrorMessage</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.UpdateFilterRequest.Description</property>
@@ -484,6 +492,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.FailedMemberAccountEc2DeepInspectionStatusState.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.FailedMemberAccountEc2DeepInspectionStatusState.ErrorMessage</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.Filter.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -523,7 +541,8 @@
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Finding.FindingArn</property>
     <min>1</min>
-    <max>1024</max>
+    <max>100</max>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:finding/[a-f0-9]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Finding.Title</property>
@@ -615,6 +634,22 @@
     <min>12</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.MemberAccountEc2DeepInspectionStatus.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.MemberAccountEc2DeepInspectionStatusState.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.MemberAccountEc2DeepInspectionStatusState.ErrorMessage</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.PackageAggregationResponse.AccountId</property>

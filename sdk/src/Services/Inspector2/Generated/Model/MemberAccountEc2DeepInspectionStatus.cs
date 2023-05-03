@@ -29,22 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Inspector2.Model
 {
     /// <summary>
-    /// Container for the parameters to the AssociateMember operation.
-    /// Associates an Amazon Web Services account with an Amazon Inspector delegated administrator.
-    /// An HTTP 200 response indicates the association was successfully started, but doesn’t
-    /// indicate whether it was completed. You can check if the association completed by using
-    /// <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a>
-    /// for multiple accounts or <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html">GetMembers</a>
-    /// for a single account.
+    /// An object that contains details about the status of Amazon Inspector deep inspection
+    /// for a member account in your organization.
     /// </summary>
-    public partial class AssociateMemberRequest : AmazonInspector2Request
+    public partial class MemberAccountEc2DeepInspectionStatus
     {
         private string _accountId;
+        private bool? _activateDeepInspection;
 
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The Amazon Web Services account ID of the member account to be associated.
+        /// The unique identifier for the Amazon Web Services account of the organization member.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=12, Max=12)]
@@ -58,6 +54,26 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ActivateDeepInspection. 
+        /// <para>
+        /// Whether Amazon Inspector deep inspection is active in the account. If <code>TRUE</code>
+        /// Amazon Inspector deep inspection is active, if <code>FALSE</code> it is not active.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public bool ActivateDeepInspection
+        {
+            get { return this._activateDeepInspection.GetValueOrDefault(); }
+            set { this._activateDeepInspection = value; }
+        }
+
+        // Check to see if ActivateDeepInspection property is set
+        internal bool IsSetActivateDeepInspection()
+        {
+            return this._activateDeepInspection.HasValue; 
         }
 
     }

@@ -81,8 +81,8 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Lambda. 
         /// <para>
-        /// Represents whether AWS Lambda scans are automatically enabled for new members of your
-        /// Amazon Inspector organization. 
+        /// Represents whether AWS Lambda standard scans are automatically enabled for new members
+        /// of your Amazon Inspector organization. 
         /// </para>
         /// </summary>
         public bool Lambda
