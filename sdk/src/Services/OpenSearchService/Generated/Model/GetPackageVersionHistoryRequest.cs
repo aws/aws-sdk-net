@@ -31,7 +31,8 @@ namespace Amazon.OpenSearchService.Model
     /// <summary>
     /// Container for the parameters to the GetPackageVersionHistory operation.
     /// Returns a list of Amazon OpenSearch Service package versions, along with their creation
-    /// time and commit message. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+    /// time, commit message, and plugin properties (if the package is a zip plugin package).
+    /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
     /// packages for Amazon OpenSearch Service</a>.
     /// </summary>
     public partial class GetPackageVersionHistoryRequest : AmazonOpenSearchServiceRequest

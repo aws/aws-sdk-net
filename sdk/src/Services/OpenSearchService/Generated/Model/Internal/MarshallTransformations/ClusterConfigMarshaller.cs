@@ -86,6 +86,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InstanceType);
             }
 
+            if(requestObject.IsSetMultiAZWithStandbyEnabled())
+            {
+                context.Writer.WritePropertyName("MultiAZWithStandbyEnabled");
+                context.Writer.Write(requestObject.MultiAZWithStandbyEnabled);
+            }
+
             if(requestObject.IsSetWarmCount())
             {
                 context.Writer.WritePropertyName("WarmCount");

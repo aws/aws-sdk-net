@@ -194,8 +194,8 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property ReferencePath. 
         /// <para>
-        /// Denotes the location of the package on the OpenSearch Service cluster nodes. It's
-        /// the same as <code>synonym_path</code> for dictionary files.
+        /// The relative path of the package on the OpenSearch Service cluster nodes. This is
+        /// <code>synonym_path</code> when the package is for synonym files.
         /// </para>
         /// </summary>
         public string ReferencePath

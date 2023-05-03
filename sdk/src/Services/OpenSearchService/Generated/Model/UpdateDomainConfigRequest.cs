@@ -99,13 +99,6 @@ namespace Amazon.OpenSearchService.Model
         /// boolean query. Default is 1,024. Queries with more than the permitted number of clauses
         /// result in a <code>TooManyClauses</code> error.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>"override_main_response_version": "true" | "false"</code> - Note the use of
-        /// a string rather than a boolean. Specifies whether the domain reports its version as
-        /// 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default
-        /// is false when creating a domain and true when upgrading a domain.
-        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-advanced-options">Advanced

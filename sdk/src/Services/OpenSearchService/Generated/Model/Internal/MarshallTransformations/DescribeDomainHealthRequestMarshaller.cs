@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListInstanceTypeDetails Request Marshaller
+    /// DescribeDomainHealth Request Marshaller
     /// </summary>       
-    public class ListInstanceTypeDetailsRequestMarshaller : IMarshaller<IRequest, ListInstanceTypeDetailsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeDomainHealthRequestMarshaller : IMarshaller<IRequest, DescribeDomainHealthRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListInstanceTypeDetailsRequest)input);
+            return this.Marshall((DescribeDomainHealthRequest)input);
         }
 
         /// <summary>
@@ -52,38 +52,22 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListInstanceTypeDetailsRequest publicRequest)
+        public IRequest Marshall(DescribeDomainHealthRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.OpenSearchService");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2021-01-01";
             request.HttpMethod = "GET";
 
-            if (!publicRequest.IsSetEngineVersion())
-                throw new AmazonOpenSearchServiceException("Request object does not have required field EngineVersion set");
-            request.AddPathResource("{EngineVersion}", StringUtils.FromString(publicRequest.EngineVersion));
-            
-            if (publicRequest.IsSetDomainName())
-                request.Parameters.Add("domainName", StringUtils.FromString(publicRequest.DomainName));
-            
-            if (publicRequest.IsSetInstanceType())
-                request.Parameters.Add("instanceType", StringUtils.FromString(publicRequest.InstanceType));
-            
-            if (publicRequest.IsSetMaxResults())
-                request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
-            
-            if (publicRequest.IsSetNextToken())
-                request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetRetrieveAZs())
-                request.Parameters.Add("retrieveAZs", StringUtils.FromBool(publicRequest.RetrieveAZs));
-            request.ResourcePath = "/2021-01-01/opensearch/instanceTypeDetails/{EngineVersion}";
-            request.UseQueryString = true;
+            if (!publicRequest.IsSetDomainName())
+                throw new AmazonOpenSearchServiceException("Request object does not have required field DomainName set");
+            request.AddPathResource("{DomainName}", StringUtils.FromString(publicRequest.DomainName));
+            request.ResourcePath = "/2021-01-01/opensearch/domain/{DomainName}/health";
 
             return request;
         }
-        private static ListInstanceTypeDetailsRequestMarshaller _instance = new ListInstanceTypeDetailsRequestMarshaller();        
+        private static DescribeDomainHealthRequestMarshaller _instance = new DescribeDomainHealthRequestMarshaller();        
 
-        internal static ListInstanceTypeDetailsRequestMarshaller GetInstance()
+        internal static DescribeDomainHealthRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -91,7 +75,7 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListInstanceTypeDetailsRequestMarshaller Instance
+        public static DescribeDomainHealthRequestMarshaller Instance
         {
             get
             {
