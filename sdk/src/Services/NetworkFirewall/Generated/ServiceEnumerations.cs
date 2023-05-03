@@ -39,6 +39,14 @@ namespace Amazon.NetworkFirewall
         /// </summary>
         public static readonly AttachmentStatus DELETING = new AttachmentStatus("DELETING");
         /// <summary>
+        /// Constant ERROR for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus ERROR = new AttachmentStatus("ERROR");
+        /// <summary>
+        /// Constant FAILED for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus FAILED = new AttachmentStatus("FAILED");
+        /// <summary>
         /// Constant READY for AttachmentStatus
         /// </summary>
         public static readonly AttachmentStatus READY = new AttachmentStatus("READY");

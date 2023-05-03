@@ -99,14 +99,6 @@ namespace Amazon.NetworkFirewall.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// network-firewall:CreateFirewall
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// network-firewall:UpdateFirewall
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         /// network-firewall:AssociateFirewallPolicy
         /// </para>
         ///  </li> <li> 

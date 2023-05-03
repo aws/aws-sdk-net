@@ -41,6 +41,7 @@ namespace Amazon.NetworkFirewall.Model
     /// </summary>
     public partial class FirewallPolicy
     {
+        private PolicyVariables _policyVariables;
         private List<string> _statefulDefaultActions = new List<string>();
         private StatefulEngineOptions _statefulEngineOptions;
         private List<StatefulRuleGroupReference> _statefulRuleGroupReferences = new List<StatefulRuleGroupReference>();
@@ -49,6 +50,25 @@ namespace Amazon.NetworkFirewall.Model
         private List<string> _statelessFragmentDefaultActions = new List<string>();
         private List<StatelessRuleGroupReference> _statelessRuleGroupReferences = new List<StatelessRuleGroupReference>();
         private string _tlsInspectionConfigurationArn;
+
+        /// <summary>
+        /// Gets and sets the property PolicyVariables. 
+        /// <para>
+        /// Contains variables that you can use to override default Suricata settings in your
+        /// firewall policy.
+        /// </para>
+        /// </summary>
+        public PolicyVariables PolicyVariables
+        {
+            get { return this._policyVariables; }
+            set { this._policyVariables = value; }
+        }
+
+        // Check to see if PolicyVariables property is set
+        internal bool IsSetPolicyVariables()
+        {
+            return this._policyVariables != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StatefulDefaultActions. 
