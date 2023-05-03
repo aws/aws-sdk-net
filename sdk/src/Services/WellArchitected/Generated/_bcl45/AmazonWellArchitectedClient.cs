@@ -3431,7 +3431,7 @@ namespace Amazon.WellArchitected
 
         /// <summary>
         /// Updates whether the Amazon Web Services account is opted into organization sharing
-        /// features.
+        /// and discovery integration features.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
         /// 
@@ -3464,7 +3464,7 @@ namespace Amazon.WellArchitected
 
         /// <summary>
         /// Updates whether the Amazon Web Services account is opted into organization sharing
-        /// features.
+        /// and discovery integration features.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateGlobalSettings service method.</param>
         /// <param name="cancellationToken">

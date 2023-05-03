@@ -51,6 +51,17 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TrustedAdvisorIntegrationStatus);
             }
 
+            if(requestObject.IsSetWorkloadResourceDefinition())
+            {
+                context.Writer.WritePropertyName("WorkloadResourceDefinition");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectWorkloadResourceDefinitionListValue in requestObject.WorkloadResourceDefinition)
+                {
+                        context.Writer.Write(requestObjectWorkloadResourceDefinitionListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>
