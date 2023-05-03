@@ -42,6 +42,7 @@ namespace Amazon.AppSync.Model
         private OpenIDConnectConfig _openidConnectConfig;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private UserPoolConfig _userPoolConfig;
+        private GraphQLApiVisibility _visibility;
         private bool? _xrayEnabled;
 
         /// <summary>
@@ -190,6 +191,26 @@ namespace Amazon.AppSync.Model
         internal bool IsSetUserPoolConfig()
         {
             return this._userPoolConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Visibility. 
+        /// <para>
+        /// Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>).
+        /// If no value is provided, the visibility will be set to <code>GLOBAL</code> by default.
+        /// This value cannot be changed once the API has been created.
+        /// </para>
+        /// </summary>
+        public GraphQLApiVisibility Visibility
+        {
+            get { return this._visibility; }
+            set { this._visibility = value; }
+        }
+
+        // Check to see if Visibility property is set
+        internal bool IsSetVisibility()
+        {
+            return this._visibility != null;
         }
 
         /// <summary>
