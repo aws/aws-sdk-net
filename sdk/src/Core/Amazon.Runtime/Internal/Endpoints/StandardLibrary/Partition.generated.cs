@@ -117,6 +117,16 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
             _partitionsByRegionName.Add("aws-iso-b-global", aws_iso_b);
             _partitionsByRegionName.Add("us-isob-east-1", aws_iso_b);
 
+            var aws_iso_e = new PartitionAttributesShape
+            {
+                name = "aws-iso-e",
+                dnsSuffix = "cloud.adc-e.uk",
+                dualStackDnsSuffix = "cloud.adc-e.uk",
+                supportsFIPS = true,
+                supportsDualStack = false
+            };
+            _partitionsByRegex.Add(@"^eu\-isoe\-\w+\-\d+$", aws_iso_e);
+
             _defaultPartition = aws;
         }
     }
