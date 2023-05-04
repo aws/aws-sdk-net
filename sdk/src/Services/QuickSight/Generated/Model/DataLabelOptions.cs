@@ -41,6 +41,7 @@ namespace Amazon.QuickSight.Model
         private Visibility _measureLabelVisibility;
         private DataLabelOverlap _overlap;
         private DataLabelPosition _position;
+        private Visibility _totalsVisibility;
         private Visibility _visibility;
 
         /// <summary>
@@ -186,6 +187,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetPosition()
         {
             return this._position != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TotalsVisibility. 
+        /// <para>
+        /// Determines the visibility of the total.
+        /// </para>
+        /// </summary>
+        public Visibility TotalsVisibility
+        {
+            get { return this._totalsVisibility; }
+            set { this._totalsVisibility = value; }
+        }
+
+        // Check to see if TotalsVisibility property is set
+        internal bool IsSetTotalsVisibility()
+        {
+            return this._totalsVisibility != null;
         }
 
         /// <summary>

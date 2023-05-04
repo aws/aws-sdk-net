@@ -33,9 +33,49 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class ScatterPlotUnaggregatedFieldWells
     {
+        private List<DimensionField> _category = new List<DimensionField>();
+        private List<DimensionField> _label = new List<DimensionField>();
         private List<MeasureField> _size = new List<MeasureField>();
         private List<DimensionField> _xAxis = new List<DimensionField>();
         private List<DimensionField> _yAxis = new List<DimensionField>();
+
+        /// <summary>
+        /// Gets and sets the property Category. 
+        /// <para>
+        /// The category field well of a scatter plot.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public List<DimensionField> Category
+        {
+            get { return this._category; }
+            set { this._category = value; }
+        }
+
+        // Check to see if Category property is set
+        internal bool IsSetCategory()
+        {
+            return this._category != null && this._category.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Label. 
+        /// <para>
+        /// The label field well of a scatter plot.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=200)]
+        public List<DimensionField> Label
+        {
+            get { return this._label; }
+            set { this._label = value; }
+        }
+
+        // Check to see if Label property is set
+        internal bool IsSetLabel()
+        {
+            return this._label != null && this._label.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Size. 

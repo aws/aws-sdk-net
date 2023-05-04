@@ -62,6 +62,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.SelectAllValueOptions);
             }
 
+            if(requestObject.IsSetSourceColumn())
+            {
+                context.Writer.WritePropertyName("SourceColumn");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ColumnIdentifierMarshaller.Instance;
+                marshaller.Marshall(requestObject.SourceColumn, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSourceField())
             {
                 context.Writer.WritePropertyName("SourceField");

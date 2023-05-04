@@ -132,6 +132,22 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListTopics operation
+        ///</summary>
+        public IListTopicsPaginator ListTopics(ListTopicsRequest request) 
+        {
+            return new ListTopicsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListVPCConnections operation
+        ///</summary>
+        public IListVPCConnectionsPaginator ListVPCConnections(ListVPCConnectionsRequest request) 
+        {
+            return new ListVPCConnectionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchAnalyses operation
         ///</summary>
         public ISearchAnalysesPaginator SearchAnalyses(SearchAnalysesRequest request) 

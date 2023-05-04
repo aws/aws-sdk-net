@@ -81,7 +81,6 @@ namespace Amazon.QuickSight.Model
         /// The aggregation function that is used in the dynamic data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public AggregationFunction MeasureAggregationFunction
         {
             get { return this._measureAggregationFunction; }

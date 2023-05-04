@@ -70,6 +70,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Category = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Label", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DimensionField, DimensionFieldUnmarshaller>(DimensionFieldUnmarshaller.Instance);
+                    unmarshalledObject.Label = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Size", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<MeasureField, MeasureFieldUnmarshaller>(MeasureFieldUnmarshaller.Instance);

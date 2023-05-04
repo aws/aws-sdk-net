@@ -82,6 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.FilterOperation = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OverrideDatasetParameterOperation", targetDepth))
+                {
+                    var unmarshaller = OverrideDatasetParameterOperationUnmarshaller.Instance;
+                    unmarshalledObject.OverrideDatasetParameterOperation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ProjectOperation", targetDepth))
                 {
                     var unmarshaller = ProjectOperationUnmarshaller.Instance;

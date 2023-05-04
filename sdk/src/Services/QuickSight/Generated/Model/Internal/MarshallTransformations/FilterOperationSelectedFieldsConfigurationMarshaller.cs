@@ -45,6 +45,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FilterOperationSelectedFieldsConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetSelectedColumns())
+            {
+                context.Writer.WritePropertyName("SelectedColumns");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectSelectedColumnsListValue in requestObject.SelectedColumns)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ColumnIdentifierMarshaller.Instance;
+                    marshaller.Marshall(requestObjectSelectedColumnsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSelectedFieldOptions())
             {
                 context.Writer.WritePropertyName("SelectedFieldOptions");

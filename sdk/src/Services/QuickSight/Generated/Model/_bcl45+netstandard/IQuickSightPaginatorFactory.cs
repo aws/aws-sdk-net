@@ -86,6 +86,16 @@ namespace Amazon.QuickSight.Model
         IListThemeVersionsPaginator ListThemeVersions(ListThemeVersionsRequest request);
 
         /// <summary>
+        /// Paginator for ListTopics operation
+        ///</summary>
+        IListTopicsPaginator ListTopics(ListTopicsRequest request);
+
+        /// <summary>
+        /// Paginator for ListVPCConnections operation
+        ///</summary>
+        IListVPCConnectionsPaginator ListVPCConnections(ListVPCConnectionsRequest request);
+
+        /// <summary>
         /// Paginator for SearchAnalyses operation
         ///</summary>
         ISearchAnalysesPaginator SearchAnalyses(SearchAnalysesRequest request);

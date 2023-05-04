@@ -64,6 +64,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("SelectedColumns", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ColumnIdentifier, ColumnIdentifierUnmarshaller>(ColumnIdentifierUnmarshaller.Instance);
+                    unmarshalledObject.SelectedColumns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SelectedFieldOptions", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

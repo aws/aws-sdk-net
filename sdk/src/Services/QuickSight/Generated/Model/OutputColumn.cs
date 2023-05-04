@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Type.
+        /// The type.
         /// </para>
         /// </summary>
         public ColumnDataType Type
