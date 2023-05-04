@@ -1046,6 +1046,10 @@ namespace Amazon.NetworkFirewall
         /// Constant DROP for StreamExceptionPolicy
         /// </summary>
         public static readonly StreamExceptionPolicy DROP = new StreamExceptionPolicy("DROP");
+        /// <summary>
+        /// Constant REJECT for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy REJECT = new StreamExceptionPolicy("REJECT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

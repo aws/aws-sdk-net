@@ -82,6 +82,13 @@ namespace Amazon.NetworkFirewall.Model
         /// using a <code>flow:stateless</code> rule would still match, as would the <code>aws:drop_strict</code>
         /// default action.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REJECT</code> - Network Firewall fails closed and drops all subsequent traffic
+        /// going to the firewall. Network Firewall also sends a TCP reject packet back to your
+        /// client so that the client can immediately establish a new session. Network Firewall
+        /// will have context about the new session and will apply rules to the subsequent traffic.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public StreamExceptionPolicy StreamExceptionPolicy
