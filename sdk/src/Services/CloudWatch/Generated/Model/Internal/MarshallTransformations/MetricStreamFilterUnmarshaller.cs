@@ -54,6 +54,13 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
+                    if (context.TestExpression("MetricNames/member", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.MetricNames.Add(item);
+                        continue;
+                    }
                     if (context.TestExpression("Namespace", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

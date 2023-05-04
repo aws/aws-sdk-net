@@ -2507,6 +2507,11 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
+        /// Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120
+        /// KB.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account alarms</b> 
         /// </para>
         ///  
@@ -2588,6 +2593,11 @@ namespace Amazon.CloudWatch
         /// and <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
         /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
         /// Web Services service-linked role</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120
+        /// KB.
         /// </para>
         ///  
         /// <para>

@@ -2082,6 +2082,11 @@ namespace Amazon.CloudWatch
         /// </para>
         ///  
         /// <para>
+        /// Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120
+        /// KB.
+        /// </para>
+        ///  
+        /// <para>
         ///  <b>Cross-account alarms</b> 
         /// </para>
         ///  
