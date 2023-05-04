@@ -1,3 +1,32 @@
+### 3.7.540.0 (2023-05-04 20:23 UTC)
+* CloudWatch (3.7.104.0)
+	* Adds support for filtering by metric names in CloudWatch Metric Streams.
+* ConfigService (3.7.104.0)
+	* Updated ResourceType enum with new resource types onboarded by AWS Config in April 2023.
+* Connect (3.7.123.1)
+	* Remove unused InvalidParameterException from CreateParticipant API
+* ECS (3.7.108.0)
+	* Documentation update for new error type NamespaceNotFoundException for CreateCluster and UpdateCluster
+* NetworkFirewall (3.7.107.0)
+	* This release adds support for the Suricata REJECT option in midstream exception configurations.
+* OpenSearchService (3.7.106.0)
+	* DescribeDomainNodes: A new API that provides configuration information for nodes part of the domain
+* QuickSight (3.7.108.0)
+	* Add support for Topic, Dataset parameters and VPC
+* Rekognition (3.7.106.0)
+	* This release adds a new attribute FaceOccluded. Additionally, you can now select attributes individually (e.g. ["DEFAULT", "FACE_OCCLUDED", "AGE_RANGE"] instead of ["ALL"]), which can reduce response time.
+* S3 (3.7.104.10)
+	* Documentation updates for Amazon S3
+* SageMaker (3.7.128.0)
+	* We added support for ml.inf2 and ml.trn1 family of instances on Amazon SageMaker for deploying machine learning (ML) models for Real-time and Asynchronous inference. You can use these instances to achieve high performance at a low cost for generative artificial intelligence (AI) models.
+* SecurityHub (3.7.107.0)
+	* Add support for Finding History.
+* SQS (3.7.101.0)
+	* This release enables customers to call SQS using AWS JSON-1.0 protocol.
+* Core 3.7.106.32
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.539.0 (2023-05-03 18:30 UTC)
 * AppSync (3.7.104.0)
 	* Private API support for AWS AppSync. With Private APIs, you can now create GraphQL APIs that can only be accessed from your Amazon Virtual Private Cloud ("VPC").
