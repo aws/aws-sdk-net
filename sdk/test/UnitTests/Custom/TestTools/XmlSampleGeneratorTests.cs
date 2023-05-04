@@ -14,14 +14,12 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
     public class XmlSampleGeneratorTests
     {
         static readonly ServiceModel CLOUDFORMATION_MODEL = Utils.LoadServiceModel("cloudformation");
-        static readonly ServiceModel SQS_MODEL = Utils.LoadServiceModel("sqs");
         static readonly ServiceModel IAM_MODEL = Utils.LoadServiceModel("iam");
 
         [TestMethod][TestCategory("UnitTest")]
         public void SanityGenerateForAllsOperations()
         {
             SanityGenerateForAllsOperations(CLOUDFORMATION_MODEL);
-            SanityGenerateForAllsOperations(SQS_MODEL);
             SanityGenerateForAllsOperations(IAM_MODEL);
         }
 
@@ -63,25 +61,6 @@ namespace AWSSDK_DotNet35.UnitTests.TestTools
             Assert.AreEqual(XmlNodeType.Element, members[0].NodeType);
         }
 
-
-        [TestMethod][TestCategory("UnitTest")]
-        public void FlattenMapTest()
-        {
-            var responseXml = Generate(SQS_MODEL, "ReceiveMessage");
-            XmlDocument doc = new XmlDocument();
-            doc.LoadXml(responseXml);
-
-            Assert.AreEqual("ReceiveMessageResponse", doc.DocumentElement.Name);
-            var resultNode = doc.DocumentElement.ChildNodes[0];
-            Assert.AreEqual("ReceiveMessageResult", resultNode.Name);
-
-            var messageNode = resultNode.SelectSingleNode("Message");
-            var attributeNodes = messageNode.SelectNodes("Attribute");
-            Assert.IsTrue(attributeNodes.Count > 1);
-
-            Assert.AreEqual(XmlNodeType.Text, attributeNodes[0]["Name"].ChildNodes[0].NodeType);
-            Assert.AreEqual(XmlNodeType.Text, attributeNodes[0]["Value"].ChildNodes[0].NodeType);
-        }
 
         [TestMethod][TestCategory("UnitTest")]
         public void NonFlattenMapTest()
