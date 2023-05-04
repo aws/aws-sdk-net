@@ -995,6 +995,114 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type NodeStatus.
+    /// </summary>
+    public class NodeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for NodeStatus
+        /// </summary>
+        public static readonly NodeStatus Active = new NodeStatus("Active");
+        /// <summary>
+        /// Constant NotAvailable for NodeStatus
+        /// </summary>
+        public static readonly NodeStatus NotAvailable = new NodeStatus("NotAvailable");
+        /// <summary>
+        /// Constant StandBy for NodeStatus
+        /// </summary>
+        public static readonly NodeStatus StandBy = new NodeStatus("StandBy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeStatus FindValue(string value)
+        {
+            return FindValue<NodeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeType.
+    /// </summary>
+    public class NodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Data for NodeType
+        /// </summary>
+        public static readonly NodeType Data = new NodeType("Data");
+        /// <summary>
+        /// Constant Master for NodeType
+        /// </summary>
+        public static readonly NodeType Master = new NodeType("Master");
+        /// <summary>
+        /// Constant Ultrawarm for NodeType
+        /// </summary>
+        public static readonly NodeType Ultrawarm = new NodeType("Ultrawarm");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeType FindValue(string value)
+        {
+            return FindValue<NodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OpenSearchPartitionInstanceType.
     /// </summary>
     public class OpenSearchPartitionInstanceType : ConstantClass

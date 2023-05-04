@@ -301,7 +301,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property LogPublishingOptions. 
         /// <para>
-        /// Key-value pairs to configure slow log publishing.
+        /// Key-value pairs to configure log publishing.
         /// </para>
         /// </summary>
         public Dictionary<string, LogPublishingOption> LogPublishingOptions

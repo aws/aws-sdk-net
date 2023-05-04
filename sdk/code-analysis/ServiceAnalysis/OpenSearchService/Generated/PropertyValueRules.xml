@@ -185,6 +185,12 @@
     <pattern>^((\d+)|(NotAvailable))$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainNodesRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DescribeDryRunProgressRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -566,6 +572,16 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DomainNodesStatus.AvailabilityZone</property>
+    <min>1</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DomainNodesStatus.NodeId</property>
+    <min>10</min>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DomainPackageDetails.DomainName</property>

@@ -29,47 +29,30 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// A filter to apply to the <code>DescribePackage</code> response.
+    /// The result of a <code>DescribeDomainNodes</code> request. Contains information about
+    /// the nodes on the requested domain.
     /// </summary>
-    public partial class DescribePackagesFilter
+    public partial class DescribeDomainNodesResponse : AmazonWebServiceResponse
     {
-        private DescribePackagesFilterName _name;
-        private List<string> _value = new List<string>();
+        private List<DomainNodesStatus> _domainNodesStatusList = new List<DomainNodesStatus>();
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property DomainNodesStatusList. 
         /// <para>
-        /// Any field from <code>PackageDetails</code>.
+        /// Contains nodes information list <code>DomainNodesStatusList</code> with details about
+        /// the all nodes on the requested domain.
         /// </para>
         /// </summary>
-        public DescribePackagesFilterName Name
+        public List<DomainNodesStatus> DomainNodesStatusList
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._domainNodesStatusList; }
+            set { this._domainNodesStatusList = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if DomainNodesStatusList property is set
+        internal bool IsSetDomainNodesStatusList()
         {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// A non-empty list of values for the specified filter field.
-        /// </para>
-        /// </summary>
-        public List<string> Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null && this._value.Count > 0; 
+            return this._domainNodesStatusList != null && this._domainNodesStatusList.Count > 0; 
         }
 
     }

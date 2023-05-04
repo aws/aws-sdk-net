@@ -30,7 +30,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDomainConfig operation.
-    /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
+    /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
     /// </summary>
     public partial class UpdateDomainConfigRequest : AmazonOpenSearchServiceRequest
     {

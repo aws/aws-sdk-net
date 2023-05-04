@@ -1594,6 +1594,80 @@ namespace Amazon.OpenSearchService
 
         #endregion
         
+        #region  DescribeDomainNodes
+
+        /// <summary>
+        /// Returns information about domain and nodes, including data nodes, master nodes, ultrawarm
+        /// nodes, Availability Zone(s), standby nodes, node configurations, and node states.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainNodes service method.</param>
+        /// 
+        /// <returns>The response from the DescribeDomainNodes service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DependencyFailureException">
+        /// An exception for when a failure in one of the dependencies results in the service
+        /// being unable to fetch details about the resource.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainNodes">REST API Reference for DescribeDomainNodes Operation</seealso>
+        public virtual DescribeDomainNodesResponse DescribeDomainNodes(DescribeDomainNodesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainNodesResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeDomainNodesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeDomainNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainNodes operation on AmazonOpenSearchServiceClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeDomainNodes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainNodes">REST API Reference for DescribeDomainNodes Operation</seealso>
+        public virtual IAsyncResult BeginDescribeDomainNodes(DescribeDomainNodesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeDomainNodesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeDomainNodesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeDomainNodes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeDomainNodes.</param>
+        /// 
+        /// <returns>Returns a  DescribeDomainNodesResult from OpenSearchService.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainNodes">REST API Reference for DescribeDomainNodes Operation</seealso>
+        public virtual DescribeDomainNodesResponse EndDescribeDomainNodes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeDomainNodesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDomains
 
         /// <summary>
@@ -3574,7 +3648,7 @@ namespace Amazon.OpenSearchService
         #region  UpdateDomainConfig
 
         /// <summary>
-        /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
+        /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateDomainConfig service method.</param>
         /// 
