@@ -610,6 +610,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetFindingHistory(Amazon.SecurityHub.Model.GetFindingHistoryRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetFindingHistory(Amazon.SecurityHub.Model.GetFindingHistoryRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.GetFindingHistoryRequest" />
+            <member name="T:Amazon.SecurityHub.Model.GetFindingHistoryResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the history of the specified finding during the specified time frame. If the time frame permits, Security Hub returns finding history for the last 90 days.
+                </para>
+                <code
+                    title="To get finding history"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-finding-history-1680270012186" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.GetFindings(Amazon.SecurityHub.Model.GetFindingsRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.GetFindings(Amazon.SecurityHub.Model.GetFindingsRequest)" />
             <member name="T:Amazon.SecurityHub.Model.GetFindingsRequest" />
