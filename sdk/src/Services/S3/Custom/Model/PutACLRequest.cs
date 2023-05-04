@@ -61,10 +61,7 @@ namespace Amazon.S3.Model
     /// ACLs are still supported. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
     /// object ownership</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  </important> 
-    /// <para>
-    ///  <b>Access Permissions</b> 
-    /// </para>
+    ///  </important> <dl> <dt>Permissions</dt> <dd> 
     ///  
     /// <para>
     /// You can set access permissions using one of the following methods:

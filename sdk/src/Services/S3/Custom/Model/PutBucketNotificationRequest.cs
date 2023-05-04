@@ -84,10 +84,6 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </note> 
     /// <para>
-    ///  <b>Responses</b> 
-    /// </para>
-    ///  
-    /// <para>
     /// If the configuration in the request body includes only one <code>TopicConfiguration</code>
     /// specifying only the <code>s3:ReducedRedundancyLostObject</code> event type, the response
     /// will also include the <code>x-amz-sns-test-message-id</code> header containing the

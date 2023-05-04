@@ -50,7 +50,9 @@ namespace Amazon.S3.Model
     /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
     /// Access Permissions to Your Amazon S3 Resources</a> in the Amazon S3 User Guide. 
     /// </para>
-    ///  <p class="title"> <b>Related Resources</b>
+    ///  
+    /// <para>
+    /// The following operations are related to <code>PutBucketEncryption</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

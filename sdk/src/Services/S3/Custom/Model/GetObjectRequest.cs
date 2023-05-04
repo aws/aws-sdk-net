@@ -101,11 +101,7 @@ namespace Amazon.S3.Model
     /// associated with the object. You can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
     /// to retrieve the tag set associated with an object.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Permissions</b> 
-    /// </para>
-    ///  
+    ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// You need the relevant read object (or version) permission for this operation. For
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
@@ -122,11 +118,7 @@ namespace Amazon.S3.Model
     /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 will return
     /// an HTTP status code 403 ("access denied") error.
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Versioning</b> 
-    /// </para>
-    ///  
+    ///  </li> </ul> </dd> <dt>Versioning</dt> <dd>  
     /// <para>
     /// By default, the GET action returns the current version of an object. To return a different
     /// version, use the <code>versionId</code> subresource.
@@ -146,11 +138,7 @@ namespace Amazon.S3.Model
     /// For more information about versioning, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
     /// 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Overriding Response Header Values</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>Overriding Response Header Values</dt> <dd> 
     /// <para>
     /// There are times when you want to override certain response header values in a GET
     /// response. For example, you might override the Content-Disposition response header
@@ -196,11 +184,7 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <code>response-content-encoding</code> 
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Additional Considerations about Request Headers</b> 
-    /// </para>
-    ///  
+    ///  </li> </ul> </dd> <dt>Overriding Response Header Values</dt> <dd> 
     /// <para>
     /// If both of the <code>If-Match</code> and <code>If-Unmodified-Since</code> headers
     /// are present in the request as follows: <code>If-Match</code> condition evaluates to
@@ -219,7 +203,7 @@ namespace Amazon.S3.Model
     /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC
     /// 7232</a>.
     /// </para>
-    ///  
+    ///  </dd> </dl> 
     /// <para>
     /// The following operations are related to <code>GetObject</code>:
     /// </para>

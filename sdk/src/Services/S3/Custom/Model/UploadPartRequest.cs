@@ -122,7 +122,9 @@ namespace Amazon.S3.Model
     /// <para>
     /// x-amz-server-side-encryption-customer-key-MD5
     /// </para>
-    ///  </li> </ul> <para class="title"> <b>Special Errors</b> 
+    ///  </li> </ul> 
+    /// <para>
+    ///  <code>UploadPart</code> has the following special errors:
     /// </para>
     ///  <ul> <li> <ul> <li> 
     /// <para>
@@ -141,7 +143,9 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <i>SOAP Fault Code Prefix: Client</i> 
     /// </para>
-    ///  </li> </ul> </li> </ul> <para class="title"> <b>Related Resources</b> 
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    /// The following operations are related to <code>UploadPart</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

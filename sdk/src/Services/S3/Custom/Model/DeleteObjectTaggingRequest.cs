@@ -38,7 +38,7 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    /// The following operations are related to <code>DeleteBucketMetricsConfiguration</code>:
+    /// The following operations are related to <code>DeleteObjectTagging</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

@@ -50,7 +50,13 @@ namespace Amazon.S3.Model
     /// you receive a standard Amazon S3 error. If the error occurs during the copy operation,
     /// the error response is embedded in the <code>200 OK</code> response. This means that
     /// a <code>200 OK</code> response can contain either a success or an error. Design your
-    /// application to parse the contents of the response and handle it appropriately.
+    /// application to parse the contents of the response and handle it appropriately. If you call
+    /// the S3 API directly, make sure to design your application to parse the contents of
+    /// the response and handle it appropriately. If you use Amazon Web Services SDKs, SDKs
+    /// handle this condition. The SDKs detect the embedded error and apply error handling
+    /// per your configuration settings (including automatically retrying the request as appropriate).
+    /// If the condition persists, the SDKs throws an exception (or, for the SDKs that don't
+    /// use exceptions, they return the error).
     /// </para>
     ///  
     /// <para>
@@ -75,10 +81,7 @@ namespace Amazon.S3.Model
     /// Request</code> error. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
     /// Acceleration</a>.
     /// </para>
-    ///  </important> 
-    /// <para>
-    ///  <b>Metadata</b> 
-    /// </para>
+    ///  </important> <dl> <dt>Metadata</dt> <dd> 
     ///  
     /// <para>
     /// When copying an object, you can preserve all metadata (default) or specify new metadata.
@@ -98,11 +101,12 @@ namespace Amazon.S3.Model
     /// of Amazon S3-specific condition keys, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
     /// Resources, and Condition Keys for Amazon S3</a>.
     /// </para>
-    ///  
+    ///  <note> 
     /// <para>
-    ///  <b> <code>x-amz-copy-source-if</code> Headers</b> 
+    ///  <code>x-amz-website-redirect-location</code> is unique to each object and must be
+    /// specified in the request headers to copy the value.
     /// </para>
-    ///  
+    ///  </note> </dd> <dt>x-amz-copy-source-if Headers</dt> <dd> 
     /// <para>
     /// To only copy an object under certain conditions, such as whether the <code>Etag</code>
     /// matches or whether the object was modified before or after a specified date, use the
@@ -157,9 +161,17 @@ namespace Amazon.S3.Model
     /// All headers with the <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>,
     /// must be signed.
     /// </para>
-    ///  </note> 
+    ///  </note> </dd> <dt>Server-side encryption</dt> <dd> 
     /// <para>
-    ///  <b>Server-side encryption</b> 
+    /// Amazon S3 automatically encrypts all new objects that are copied to an S3 bucket.
+    /// When copying an object, if you don't specify encryption information in your copy request,
+    /// the encryption setting of the target object is set to the default encryption configuration
+    /// of the destination bucket. By default, all buckets have a base level of encryption
+    /// configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3).
+    /// If the destination bucket has a default encryption configuration that uses server-side
+    /// encryption with an Key Management Service (KMS) key (SSE-KMS), or a customer-provided
+    /// encryption key (SSE-C), Amazon S3 uses the corresponding KMS key, or a customer-provided
+    /// key to encrypt the target object copy.
     /// </para>
     ///  
     /// <para>
@@ -177,11 +189,7 @@ namespace Amazon.S3.Model
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
     /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Access Control List (ACL)-Specific Request Headers</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>Access Control List (ACL)-Specific Request Headers</dt> <dd> 
     /// <para>
     /// When copying an object, you can optionally use headers to grant ACL-based permissions.
     /// By default, all objects are private. Only the owner has full access control. When
@@ -210,10 +218,7 @@ namespace Amazon.S3.Model
     /// written to the bucket by any account will be owned by the bucket owner.
     /// </para>
     ///  </note> 
-    /// <para>
-    ///  <b>Storage Class Options</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>Storage Class Options</dt> <dd> 
     /// <para>
     /// You can use the <code>CopyObject</code> action to change the storage class of an object
     /// that is already stored in Amazon S3 using the <code>StorageClass</code> parameter.
@@ -222,9 +227,13 @@ namespace Amazon.S3.Model
     /// </para>
     ///  
     /// <para>
-    ///  <b>Versioning</b> 
+    /// If the source object's storage class is GLACIER, you must restore a copy of this object
+    /// before you can use it as a source object for the copy operation. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
+    /// Objects</a>.
     /// </para>
-    ///  
+    ///  </dd> <dt>Versioning</dt> <dd> 
     /// <para>
     /// By default, <code>x-amz-copy-source</code> identifies the current version of an object
     /// to copy. If the current version is a delete marker, Amazon S3 behaves as if the object
@@ -242,13 +251,7 @@ namespace Amazon.S3.Model
     /// If you do not enable versioning or suspend it on the target bucket, the version ID
     /// that Amazon S3 generates is always null.
     /// </para>
-    ///  
-    /// <para>
-    /// If the source object's storage class is GLACIER, you must restore a copy of this object
-    /// before you can use it as a source object for the copy operation. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
-    /// </para>
-    ///  
+    ///  </dd> </dl> 
     /// <para>
     /// The following operations are related to <code>CopyObject</code>:
     /// </para>
@@ -263,10 +266,6 @@ namespace Amazon.S3.Model
     /// 
     /// </para>
     ///  </li> </ul> 
-    /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
-    /// Objects</a>.
-    /// </para>
     /// </summary>
     public partial class CopyObjectRequest : PutWithACLRequest
     {
