@@ -29,6 +29,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -41,69 +43,60 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MessageAttributeValue Unmarshall(XmlUnmarshallerContext context)
+        MessageAttributeValue IUnmarshaller<MessageAttributeValue, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
-            MessageAttributeValue unmarshalledObject = new MessageAttributeValue();
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-                    if (context.TestExpression("BinaryListValue/BinaryListValue", targetDepth))
-                    {
-                        var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.BinaryListValues.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("BinaryValue", targetDepth))
-                    {
-                        var unmarshaller = MemoryStreamUnmarshaller.Instance;
-                        unmarshalledObject.BinaryValue = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("DataType", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.DataType = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                    if (context.TestExpression("StringListValue/StringListValue", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        var item = unmarshaller.Unmarshall(context);
-                        unmarshalledObject.StringListValues.Add(item);
-                        continue;
-                    }
-                    if (context.TestExpression("StringValue", targetDepth))
-                    {
-                        var unmarshaller = StringUnmarshaller.Instance;
-                        unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
-                        continue;
-                    }
-                }
-                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
-                {
-                    return unmarshalledObject;
-                }
-            }
-
-            return unmarshalledObject;
+            throw new NotImplementedException();
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
         public MessageAttributeValue Unmarshall(JsonUnmarshallerContext context)
         {
-            return null;
+            context.Read();
+            if (context.CurrentTokenType == JsonToken.Null) 
+                return null;
+
+            MessageAttributeValue unmarshalledObject = new MessageAttributeValue();
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("BinaryListValues", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MemoryStream, MemoryStreamUnmarshaller>(MemoryStreamUnmarshaller.Instance);
+                    unmarshalledObject.BinaryListValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("BinaryValue", targetDepth))
+                {
+                    var unmarshaller = MemoryStreamUnmarshaller.Instance;
+                    unmarshalledObject.BinaryValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DataType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DataType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StringListValues", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.StringListValues = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StringValue", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StringValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
+          
+            return unmarshalledObject;
         }
 
 

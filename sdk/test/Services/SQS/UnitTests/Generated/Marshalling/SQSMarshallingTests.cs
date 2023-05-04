@@ -42,39 +42,46 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void AddPermissionMarshallTest()
         {
-            var operation = service_model.FindOperation("AddPermission");
-
             var request = InstantiateClassGenerator.Execute<AddPermissionRequest>();
             var marshaller = new AddPermissionRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
 
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<AddPermissionRequest>(request,jsonRequest);
 
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
-        public void AddPermission_OverLimitExceptionMarshallTest()
+        public void AddPermission_InvalidAddressExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("AddPermission");
+            var operation =  service_model.FindOperation("AddPermission");
 
             var request = InstantiateClassGenerator.Execute<AddPermissionRequest>();
             var marshaller = new AddPermissionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<AddPermissionRequest>(request,jsonRequest);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("OverLimitException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = AddPermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -82,39 +89,206 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void AddPermission_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("AddPermission");
+
+            var request = InstantiateClassGenerator.Execute<AddPermissionRequest>();
+            var marshaller = new AddPermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<AddPermissionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = AddPermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void AddPermission_OverLimitExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("AddPermission");
+
+            var request = InstantiateClassGenerator.Execute<AddPermissionRequest>();
+            var marshaller = new AddPermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<AddPermissionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OverLimitException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","OverLimitException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = AddPermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void AddPermission_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("AddPermission");
+
+            var request = InstantiateClassGenerator.Execute<AddPermissionRequest>();
+            var marshaller = new AddPermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<AddPermissionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = AddPermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void AddPermission_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("AddPermission");
+
+            var request = InstantiateClassGenerator.Execute<AddPermissionRequest>();
+            var marshaller = new AddPermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<AddPermissionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = AddPermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void AddPermission_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("AddPermission");
+
+            var request = InstantiateClassGenerator.Execute<AddPermissionRequest>();
+            var marshaller = new AddPermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<AddPermissionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = AddPermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void ChangeMessageVisibilityMarshallTest()
         {
-            var operation = service_model.FindOperation("ChangeMessageVisibility");
-
             var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityRequest>();
             var marshaller = new ChangeMessageVisibilityRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
 
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityRequest>(request,jsonRequest);
 
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void ChangeMessageVisibility_MessageNotInflightExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ChangeMessageVisibility");
+            var operation =  service_model.FindOperation("ChangeMessageVisibility");
 
             var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityRequest>();
             var marshaller = new ChangeMessageVisibilityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("MessageNotInflightException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","MessageNotInflightException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = ChangeMessageVisibilityResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -122,22 +296,63 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ChangeMessageVisibility_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ChangeMessageVisibility");
+
+            var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityRequest>();
+            var marshaller = new ChangeMessageVisibilityRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ChangeMessageVisibilityResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void ChangeMessageVisibility_ReceiptHandleIsInvalidExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ChangeMessageVisibility");
+            var operation =  service_model.FindOperation("ChangeMessageVisibility");
 
             var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityRequest>();
             var marshaller = new ChangeMessageVisibilityRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ReceiptHandleIsInvalidException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ReceiptHandleIsInvalidException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = ChangeMessageVisibilityResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -145,44 +360,122 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ChangeMessageVisibility_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ChangeMessageVisibility");
+
+            var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityRequest>();
+            var marshaller = new ChangeMessageVisibilityRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ChangeMessageVisibilityResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ChangeMessageVisibility_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ChangeMessageVisibility");
+
+            var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityRequest>();
+            var marshaller = new ChangeMessageVisibilityRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ChangeMessageVisibilityResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void ChangeMessageVisibilityBatchMarshallTest()
         {
-            var operation = service_model.FindOperation("ChangeMessageVisibilityBatch");
-
             var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityBatchRequest>();
             var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
+
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityBatchRequest>(request,jsonRequest);
 
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance.Unmarshall(context)
-                as ChangeMessageVisibilityBatchResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ChangeMessageVisibilityBatch").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance.Unmarshall(context) as ChangeMessageVisibilityBatchResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void ChangeMessageVisibilityBatch_BatchEntryIdsNotDistinctExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ChangeMessageVisibilityBatch");
+            var operation =  service_model.FindOperation("ChangeMessageVisibilityBatch");
 
             var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityBatchRequest>();
             var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("BatchEntryIdsNotDistinctException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BatchEntryIdsNotDistinctException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -190,22 +483,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void ChangeMessageVisibilityBatch_EmptyBatchRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ChangeMessageVisibilityBatch");
+            var operation =  service_model.FindOperation("ChangeMessageVisibilityBatch");
 
             var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityBatchRequest>();
             var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("EmptyBatchRequestException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EmptyBatchRequestException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -213,22 +515,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void ChangeMessageVisibilityBatch_InvalidBatchEntryIdExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ChangeMessageVisibilityBatch");
+            var operation =  service_model.FindOperation("ChangeMessageVisibilityBatch");
 
             var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityBatchRequest>();
             var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidBatchEntryIdException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidBatchEntryIdException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -236,22 +547,95 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ChangeMessageVisibilityBatch_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ChangeMessageVisibilityBatch");
+
+            var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityBatchRequest>();
+            var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ChangeMessageVisibilityBatch_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ChangeMessageVisibilityBatch");
+
+            var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityBatchRequest>();
+            var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void ChangeMessageVisibilityBatch_TooManyEntriesInBatchRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ChangeMessageVisibilityBatch");
+            var operation =  service_model.FindOperation("ChangeMessageVisibilityBatch");
 
             var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityBatchRequest>();
             var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyEntriesInBatchRequestException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyEntriesInBatchRequestException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -259,44 +643,218 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ChangeMessageVisibilityBatch_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ChangeMessageVisibilityBatch");
+
+            var request = InstantiateClassGenerator.Execute<ChangeMessageVisibilityBatchRequest>();
+            var marshaller = new ChangeMessageVisibilityBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ChangeMessageVisibilityBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ChangeMessageVisibilityBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void CreateQueueMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateQueue");
-
             var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
             var marshaller = new CreateQueueRequestMarshaller();
+
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<CreateQueueRequest>(request,jsonRequest);
 
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = CreateQueueResponseUnmarshaller.Instance.Unmarshall(context)
-                as CreateQueueResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("CreateQueue").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = CreateQueueResponseUnmarshaller.Instance.Unmarshall(context) as CreateQueueResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void CreateQueue_InvalidAddressExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateQueue");
+
+            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
+            var marshaller = new CreateQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void CreateQueue_InvalidAttributeNameExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateQueue");
+
+            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
+            var marshaller = new CreateQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAttributeNameException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAttributeNameException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void CreateQueue_InvalidAttributeValueExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateQueue");
+
+            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
+            var marshaller = new CreateQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAttributeValueException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAttributeValueException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void CreateQueue_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateQueue");
+
+            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
+            var marshaller = new CreateQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void CreateQueue_QueueDeletedRecentlyExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateQueue");
+            var operation =  service_model.FindOperation("CreateQueue");
 
             var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
             var marshaller = new CreateQueueRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<CreateQueueRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDeletedRecentlyException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDeletedRecentlyException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = CreateQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -304,22 +862,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void CreateQueue_QueueNameExistsExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateQueue");
+            var operation =  service_model.FindOperation("CreateQueue");
 
             var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
             var marshaller = new CreateQueueRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<CreateQueueRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("QueueNameExistsException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueNameExistsException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = CreateQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -327,39 +894,110 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void CreateQueue_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateQueue");
+
+            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
+            var marshaller = new CreateQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void CreateQueue_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("CreateQueue");
+
+            var request = InstantiateClassGenerator.Execute<CreateQueueRequest>();
+            var marshaller = new CreateQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<CreateQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = CreateQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void DeleteMessageMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteMessage");
-
             var request = InstantiateClassGenerator.Execute<DeleteMessageRequest>();
             var marshaller = new DeleteMessageRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
 
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<DeleteMessageRequest>(request,jsonRequest);
 
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void DeleteMessage_InvalidIdFormatExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteMessage");
+            var operation =  service_model.FindOperation("DeleteMessage");
 
             var request = InstantiateClassGenerator.Execute<DeleteMessageRequest>();
             var marshaller = new DeleteMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<DeleteMessageRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidIdFormatException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidIdFormatException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = DeleteMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -367,22 +1005,95 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteMessage_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteMessage");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessageRequest>();
+            var marshaller = new DeleteMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteMessage_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteMessage");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessageRequest>();
+            var marshaller = new DeleteMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void DeleteMessage_ReceiptHandleIsInvalidExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteMessage");
+            var operation =  service_model.FindOperation("DeleteMessage");
 
             var request = InstantiateClassGenerator.Execute<DeleteMessageRequest>();
             var marshaller = new DeleteMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<DeleteMessageRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ReceiptHandleIsInvalidException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ReceiptHandleIsInvalidException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = DeleteMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -390,44 +1101,122 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteMessage_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteMessage");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessageRequest>();
+            var marshaller = new DeleteMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteMessage_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteMessage");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessageRequest>();
+            var marshaller = new DeleteMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void DeleteMessageBatchMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteMessageBatch");
-
             var request = InstantiateClassGenerator.Execute<DeleteMessageBatchRequest>();
             var marshaller = new DeleteMessageBatchRequestMarshaller();
+
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<DeleteMessageBatchRequest>(request,jsonRequest);
 
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = DeleteMessageBatchResponseUnmarshaller.Instance.Unmarshall(context)
-                as DeleteMessageBatchResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("DeleteMessageBatch").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = DeleteMessageBatchResponseUnmarshaller.Instance.Unmarshall(context) as DeleteMessageBatchResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void DeleteMessageBatch_BatchEntryIdsNotDistinctExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteMessageBatch");
+            var operation =  service_model.FindOperation("DeleteMessageBatch");
 
             var request = InstantiateClassGenerator.Execute<DeleteMessageBatchRequest>();
             var marshaller = new DeleteMessageBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<DeleteMessageBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("BatchEntryIdsNotDistinctException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BatchEntryIdsNotDistinctException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = DeleteMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -435,22 +1224,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void DeleteMessageBatch_EmptyBatchRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteMessageBatch");
+            var operation =  service_model.FindOperation("DeleteMessageBatch");
 
             var request = InstantiateClassGenerator.Execute<DeleteMessageBatchRequest>();
             var marshaller = new DeleteMessageBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<DeleteMessageBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("EmptyBatchRequestException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EmptyBatchRequestException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = DeleteMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -458,22 +1256,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void DeleteMessageBatch_InvalidBatchEntryIdExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteMessageBatch");
+            var operation =  service_model.FindOperation("DeleteMessageBatch");
 
             var request = InstantiateClassGenerator.Execute<DeleteMessageBatchRequest>();
             var marshaller = new DeleteMessageBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<DeleteMessageBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidBatchEntryIdException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidBatchEntryIdException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = DeleteMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -481,22 +1288,95 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteMessageBatch_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessageBatchRequest>();
+            var marshaller = new DeleteMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteMessageBatch_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessageBatchRequest>();
+            var marshaller = new DeleteMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void DeleteMessageBatch_TooManyEntriesInBatchRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteMessageBatch");
+            var operation =  service_model.FindOperation("DeleteMessageBatch");
 
             var request = InstantiateClassGenerator.Execute<DeleteMessageBatchRequest>();
             var marshaller = new DeleteMessageBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<DeleteMessageBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyEntriesInBatchRequestException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyEntriesInBatchRequestException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = DeleteMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -504,61 +1384,265 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteMessageBatch_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<DeleteMessageBatchRequest>();
+            var marshaller = new DeleteMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void DeleteQueueMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteQueue");
+            var request = InstantiateClassGenerator.Execute<DeleteQueueRequest>();
+            var marshaller = new DeleteQueueRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<DeleteQueueRequest>(request,jsonRequest);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteQueue_InvalidAddressExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteQueue");
 
             var request = InstantiateClassGenerator.Execute<DeleteQueueRequest>();
             var marshaller = new DeleteQueueRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
+            Comparer.CompareObjectToJson<DeleteQueueRequest>(request,jsonRequest);
 
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteQueue_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteQueue");
+
+            var request = InstantiateClassGenerator.Execute<DeleteQueueRequest>();
+            var marshaller = new DeleteQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteQueue_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteQueue");
+
+            var request = InstantiateClassGenerator.Execute<DeleteQueueRequest>();
+            var marshaller = new DeleteQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteQueue_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteQueue");
+
+            var request = InstantiateClassGenerator.Execute<DeleteQueueRequest>();
+            var marshaller = new DeleteQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void DeleteQueue_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("DeleteQueue");
+
+            var request = InstantiateClassGenerator.Execute<DeleteQueueRequest>();
+            var marshaller = new DeleteQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<DeleteQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = DeleteQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void GetQueueAttributesMarshallTest()
         {
-            var operation = service_model.FindOperation("GetQueueAttributes");
-
             var request = InstantiateClassGenerator.Execute<GetQueueAttributesRequest>();
             var marshaller = new GetQueueAttributesRequestMarshaller();
+
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<GetQueueAttributesRequest>(request,jsonRequest);
 
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = GetQueueAttributesResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetQueueAttributesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetQueueAttributes").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetQueueAttributesResponseUnmarshaller.Instance.Unmarshall(context) as GetQueueAttributesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void GetQueueAttributes_InvalidAttributeNameExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetQueueAttributes");
+            var operation =  service_model.FindOperation("GetQueueAttributes");
 
             var request = InstantiateClassGenerator.Execute<GetQueueAttributesRequest>();
             var marshaller = new GetQueueAttributesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<GetQueueAttributesRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAttributeNameException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAttributeNameException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = GetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -566,44 +1650,186 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
-        public void GetQueueUrlMarshallTest()
+        public void GetQueueAttributes_InvalidSecurityExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetQueueUrl");
+            var operation =  service_model.FindOperation("GetQueueAttributes");
 
-            var request = InstantiateClassGenerator.Execute<GetQueueUrlRequest>();
-            var marshaller = new GetQueueUrlRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetQueueAttributesRequest>();
+            var marshaller = new GetQueueAttributesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
+            Comparer.CompareObjectToJson<GetQueueAttributesRequest>(request,jsonRequest);
 
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = GetQueueUrlResponseUnmarshaller.Instance.Unmarshall(context)
-                as GetQueueUrlResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
-        public void GetQueueUrl_QueueDoesNotExistExceptionMarshallTest()
+        public void GetQueueAttributes_QueueDoesNotExistExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetQueueUrl");
+            var operation =  service_model.FindOperation("GetQueueAttributes");
+
+            var request = InstantiateClassGenerator.Execute<GetQueueAttributesRequest>();
+            var marshaller = new GetQueueAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetQueueAttributesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void GetQueueAttributes_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetQueueAttributes");
+
+            var request = InstantiateClassGenerator.Execute<GetQueueAttributesRequest>();
+            var marshaller = new GetQueueAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetQueueAttributesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void GetQueueAttributes_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetQueueAttributes");
+
+            var request = InstantiateClassGenerator.Execute<GetQueueAttributesRequest>();
+            var marshaller = new GetQueueAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetQueueAttributesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void GetQueueUrlMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<GetQueueUrlRequest>();
+            var marshaller = new GetQueueUrlRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<GetQueueUrlRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("GetQueueUrl").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = GetQueueUrlResponseUnmarshaller.Instance.Unmarshall(context) as GetQueueUrlResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void GetQueueUrl_InvalidAddressExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetQueueUrl");
 
             var request = InstantiateClassGenerator.Execute<GetQueueUrlRequest>();
             var marshaller = new GetQueueUrlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<GetQueueUrlRequest>(request,jsonRequest);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = GetQueueUrlResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -611,44 +1837,186 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
-        public void ListDeadLetterSourceQueuesMarshallTest()
+        public void GetQueueUrl_InvalidSecurityExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ListDeadLetterSourceQueues");
+            var operation =  service_model.FindOperation("GetQueueUrl");
 
-            var request = InstantiateClassGenerator.Execute<ListDeadLetterSourceQueuesRequest>();
-            var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetQueueUrlRequest>();
+            var marshaller = new GetQueueUrlRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
+            Comparer.CompareObjectToJson<GetQueueUrlRequest>(request,jsonRequest);
 
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListDeadLetterSourceQueuesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetQueueUrlResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
-        public void ListDeadLetterSourceQueues_QueueDoesNotExistExceptionMarshallTest()
+        public void GetQueueUrl_QueueDoesNotExistExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ListDeadLetterSourceQueues");
+            var operation =  service_model.FindOperation("GetQueueUrl");
+
+            var request = InstantiateClassGenerator.Execute<GetQueueUrlRequest>();
+            var marshaller = new GetQueueUrlRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetQueueUrlRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetQueueUrlResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void GetQueueUrl_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetQueueUrl");
+
+            var request = InstantiateClassGenerator.Execute<GetQueueUrlRequest>();
+            var marshaller = new GetQueueUrlRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetQueueUrlRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetQueueUrlResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void GetQueueUrl_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetQueueUrl");
+
+            var request = InstantiateClassGenerator.Execute<GetQueueUrlRequest>();
+            var marshaller = new GetQueueUrlRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetQueueUrlRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetQueueUrlResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListDeadLetterSourceQueuesMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ListDeadLetterSourceQueuesRequest>();
+            var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<ListDeadLetterSourceQueuesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListDeadLetterSourceQueues").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance.Unmarshall(context) as ListDeadLetterSourceQueuesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListDeadLetterSourceQueues_InvalidAddressExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListDeadLetterSourceQueues");
 
             var request = InstantiateClassGenerator.Execute<ListDeadLetterSourceQueuesRequest>();
             var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<ListDeadLetterSourceQueuesRequest>(request,jsonRequest);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -656,83 +2024,580 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListDeadLetterSourceQueues_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListDeadLetterSourceQueues");
+
+            var request = InstantiateClassGenerator.Execute<ListDeadLetterSourceQueuesRequest>();
+            var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListDeadLetterSourceQueuesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListDeadLetterSourceQueues_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListDeadLetterSourceQueues");
+
+            var request = InstantiateClassGenerator.Execute<ListDeadLetterSourceQueuesRequest>();
+            var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListDeadLetterSourceQueuesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListDeadLetterSourceQueues_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListDeadLetterSourceQueues");
+
+            var request = InstantiateClassGenerator.Execute<ListDeadLetterSourceQueuesRequest>();
+            var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListDeadLetterSourceQueuesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListDeadLetterSourceQueues_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListDeadLetterSourceQueues");
+
+            var request = InstantiateClassGenerator.Execute<ListDeadLetterSourceQueuesRequest>();
+            var marshaller = new ListDeadLetterSourceQueuesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListDeadLetterSourceQueuesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListDeadLetterSourceQueuesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void ListQueuesMarshallTest()
         {
-            var operation = service_model.FindOperation("ListQueues");
+            var request = InstantiateClassGenerator.Execute<ListQueuesRequest>();
+            var marshaller = new ListQueuesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<ListQueuesRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListQueues").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListQueuesResponseUnmarshaller.Instance.Unmarshall(context) as ListQueuesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListQueues_InvalidAddressExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListQueues");
 
             var request = InstantiateClassGenerator.Execute<ListQueuesRequest>();
             var marshaller = new ListQueuesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
+            Comparer.CompareObjectToJson<ListQueuesRequest>(request,jsonRequest);
 
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = ListQueuesResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListQueuesResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListQueuesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListQueues_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListQueues");
+
+            var request = InstantiateClassGenerator.Execute<ListQueuesRequest>();
+            var marshaller = new ListQueuesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListQueuesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListQueuesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListQueues_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListQueues");
+
+            var request = InstantiateClassGenerator.Execute<ListQueuesRequest>();
+            var marshaller = new ListQueuesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListQueuesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListQueuesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListQueues_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListQueues");
+
+            var request = InstantiateClassGenerator.Execute<ListQueuesRequest>();
+            var marshaller = new ListQueuesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListQueuesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListQueuesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void ListQueueTagsMarshallTest()
         {
-            var operation = service_model.FindOperation("ListQueueTags");
+            var request = InstantiateClassGenerator.Execute<ListQueueTagsRequest>();
+            var marshaller = new ListQueueTagsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<ListQueueTagsRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ListQueueTags").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ListQueueTagsResponseUnmarshaller.Instance.Unmarshall(context) as ListQueueTagsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListQueueTags_InvalidAddressExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListQueueTags");
 
             var request = InstantiateClassGenerator.Execute<ListQueueTagsRequest>();
             var marshaller = new ListQueueTagsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
+            Comparer.CompareObjectToJson<ListQueueTagsRequest>(request,jsonRequest);
 
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = ListQueueTagsResponseUnmarshaller.Instance.Unmarshall(context)
-                as ListQueueTagsResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListQueueTagsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListQueueTags_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListQueueTags");
+
+            var request = InstantiateClassGenerator.Execute<ListQueueTagsRequest>();
+            var marshaller = new ListQueueTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListQueueTagsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListQueueTagsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListQueueTags_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListQueueTags");
+
+            var request = InstantiateClassGenerator.Execute<ListQueueTagsRequest>();
+            var marshaller = new ListQueueTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListQueueTagsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListQueueTagsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListQueueTags_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListQueueTags");
+
+            var request = InstantiateClassGenerator.Execute<ListQueueTagsRequest>();
+            var marshaller = new ListQueueTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListQueueTagsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListQueueTagsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ListQueueTags_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ListQueueTags");
+
+            var request = InstantiateClassGenerator.Execute<ListQueueTagsRequest>();
+            var marshaller = new ListQueueTagsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ListQueueTagsRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ListQueueTagsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void PurgeQueueMarshallTest()
         {
-            var operation = service_model.FindOperation("PurgeQueue");
-
             var request = InstantiateClassGenerator.Execute<PurgeQueueRequest>();
             var marshaller = new PurgeQueueRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
 
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<PurgeQueueRequest>(request,jsonRequest);
 
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void PurgeQueue_InvalidAddressExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("PurgeQueue");
+
+            var request = InstantiateClassGenerator.Execute<PurgeQueueRequest>();
+            var marshaller = new PurgeQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<PurgeQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = PurgeQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void PurgeQueue_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("PurgeQueue");
+
+            var request = InstantiateClassGenerator.Execute<PurgeQueueRequest>();
+            var marshaller = new PurgeQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<PurgeQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = PurgeQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void PurgeQueue_PurgeQueueInProgressExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("PurgeQueue");
+            var operation =  service_model.FindOperation("PurgeQueue");
 
             var request = InstantiateClassGenerator.Execute<PurgeQueueRequest>();
             var marshaller = new PurgeQueueRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<PurgeQueueRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("PurgeQueueInProgressException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","PurgeQueueInProgressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = PurgeQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -740,22 +2605,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void PurgeQueue_QueueDoesNotExistExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("PurgeQueue");
+            var operation =  service_model.FindOperation("PurgeQueue");
 
             var request = InstantiateClassGenerator.Execute<PurgeQueueRequest>();
             var marshaller = new PurgeQueueRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<PurgeQueueRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = PurgeQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -763,44 +2637,122 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
-        public void ReceiveMessageMarshallTest()
+        public void PurgeQueue_RequestThrottledExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ReceiveMessage");
+            var operation =  service_model.FindOperation("PurgeQueue");
 
-            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
-            var marshaller = new ReceiveMessageRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<PurgeQueueRequest>();
+            var marshaller = new PurgeQueueRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
+            Comparer.CompareObjectToJson<PurgeQueueRequest>(request,jsonRequest);
 
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = ReceiveMessageResponseUnmarshaller.Instance.Unmarshall(context)
-                as ReceiveMessageResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = PurgeQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
-        public void ReceiveMessage_OverLimitExceptionMarshallTest()
+        public void PurgeQueue_UnsupportedOperationExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ReceiveMessage");
+            var operation =  service_model.FindOperation("PurgeQueue");
+
+            var request = InstantiateClassGenerator.Execute<PurgeQueueRequest>();
+            var marshaller = new PurgeQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<PurgeQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = PurgeQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessageMarshallTest()
+        {
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("ReceiveMessage").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.Unmarshall(context) as ReceiveMessageResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
 
             var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
             var marshaller = new ReceiveMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("OverLimitException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -808,61 +2760,585 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_KmsAccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
+
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsAccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsAccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_KmsDisabledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
+
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsDisabledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsDisabledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_KmsInvalidKeyUsageExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
+
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsInvalidKeyUsageException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsInvalidKeyUsageException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_KmsInvalidStateExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
+
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsInvalidStateException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsInvalidStateException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_KmsNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
+
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_KmsOptInRequiredExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
+
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsOptInRequiredException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsOptInRequiredException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_KmsThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
+
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_OverLimitExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
+
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OverLimitException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","OverLimitException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
+
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
+
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void ReceiveMessage_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("ReceiveMessage");
+
+            var request = InstantiateClassGenerator.Execute<ReceiveMessageRequest>();
+            var marshaller = new ReceiveMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<ReceiveMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = ReceiveMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void RemovePermissionMarshallTest()
         {
-            var operation = service_model.FindOperation("RemovePermission");
+            var request = InstantiateClassGenerator.Execute<RemovePermissionRequest>();
+            var marshaller = new RemovePermissionRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<RemovePermissionRequest>(request,jsonRequest);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void RemovePermission_InvalidAddressExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("RemovePermission");
 
             var request = InstantiateClassGenerator.Execute<RemovePermissionRequest>();
             var marshaller = new RemovePermissionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
+            Comparer.CompareObjectToJson<RemovePermissionRequest>(request,jsonRequest);
 
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = RemovePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void RemovePermission_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("RemovePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemovePermissionRequest>();
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<RemovePermissionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = RemovePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void RemovePermission_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("RemovePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemovePermissionRequest>();
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<RemovePermissionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = RemovePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void RemovePermission_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("RemovePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemovePermissionRequest>();
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<RemovePermissionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = RemovePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void RemovePermission_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("RemovePermission");
+
+            var request = InstantiateClassGenerator.Execute<RemovePermissionRequest>();
+            var marshaller = new RemovePermissionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<RemovePermissionRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = RemovePermissionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void SendMessageMarshallTest()
         {
-            var operation = service_model.FindOperation("SendMessage");
-
             var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
             var marshaller = new SendMessageRequestMarshaller();
+
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
 
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = SendMessageResponseUnmarshaller.Instance.Unmarshall(context)
-                as SendMessageResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SendMessage").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = SendMessageResponseUnmarshaller.Instance.Unmarshall(context) as SendMessageResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void SendMessage_InvalidMessageContentsExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("SendMessage");
+            var operation =  service_model.FindOperation("SendMessage");
 
             var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
             var marshaller = new SendMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidMessageContentsException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidMessageContentsException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -870,22 +3346,351 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessage_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessage");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
+            var marshaller = new SendMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessage_KmsAccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessage");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
+            var marshaller = new SendMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsAccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsAccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessage_KmsDisabledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessage");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
+            var marshaller = new SendMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsDisabledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsDisabledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessage_KmsInvalidKeyUsageExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessage");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
+            var marshaller = new SendMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsInvalidKeyUsageException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsInvalidKeyUsageException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessage_KmsInvalidStateExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessage");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
+            var marshaller = new SendMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsInvalidStateException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsInvalidStateException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessage_KmsNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessage");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
+            var marshaller = new SendMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessage_KmsOptInRequiredExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessage");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
+            var marshaller = new SendMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsOptInRequiredException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsOptInRequiredException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessage_KmsThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessage");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
+            var marshaller = new SendMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessage_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessage");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
+            var marshaller = new SendMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessage_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessage");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
+            var marshaller = new SendMessageRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void SendMessage_UnsupportedOperationExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("SendMessage");
+            var operation =  service_model.FindOperation("SendMessage");
 
             var request = InstantiateClassGenerator.Execute<SendMessageRequest>();
             var marshaller = new SendMessageRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<SendMessageRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = SendMessageResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -893,44 +3698,58 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void SendMessageBatchMarshallTest()
         {
-            var operation = service_model.FindOperation("SendMessageBatch");
-
             var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
             var marshaller = new SendMessageBatchRequestMarshaller();
+
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
 
-
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
-            var response = SendMessageBatchResponseUnmarshaller.Instance.Unmarshall(context)
-                as SendMessageBatchResponse;   
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            var jsonResponse = new JsonSampleGenerator(service_model, service_model.FindOperation("SendMessageBatch").ResponseStructure).Execute();
+            webResponse.Headers.Add("Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString());
+            UnmarshallerContext context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), false, webResponse);
+            var response = SendMessageBatchResponseUnmarshaller.Instance.Unmarshall(context) as SendMessageBatchResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void SendMessageBatch_BatchEntryIdsNotDistinctExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("SendMessageBatch");
+            var operation =  service_model.FindOperation("SendMessageBatch");
 
             var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
             var marshaller = new SendMessageBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("BatchEntryIdsNotDistinctException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BatchEntryIdsNotDistinctException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -938,22 +3757,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void SendMessageBatch_BatchRequestTooLongExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("SendMessageBatch");
+            var operation =  service_model.FindOperation("SendMessageBatch");
 
             var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
             var marshaller = new SendMessageBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("BatchRequestTooLongException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BatchRequestTooLongException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -961,22 +3789,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void SendMessageBatch_EmptyBatchRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("SendMessageBatch");
+            var operation =  service_model.FindOperation("SendMessageBatch");
 
             var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
             var marshaller = new SendMessageBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("EmptyBatchRequestException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","EmptyBatchRequestException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -984,22 +3821,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void SendMessageBatch_InvalidBatchEntryIdExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("SendMessageBatch");
+            var operation =  service_model.FindOperation("SendMessageBatch");
 
             var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
             var marshaller = new SendMessageBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidBatchEntryIdException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidBatchEntryIdException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -1007,22 +3853,351 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessageBatch_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessageBatch_KmsAccessDeniedExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsAccessDeniedException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsAccessDeniedException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessageBatch_KmsDisabledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsDisabledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsDisabledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessageBatch_KmsInvalidKeyUsageExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsInvalidKeyUsageException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsInvalidKeyUsageException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessageBatch_KmsInvalidStateExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsInvalidStateException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsInvalidStateException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessageBatch_KmsNotFoundExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsNotFoundException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsNotFoundException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessageBatch_KmsOptInRequiredExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsOptInRequiredException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsOptInRequiredException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessageBatch_KmsThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("KmsThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","KmsThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessageBatch_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SendMessageBatch_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SendMessageBatch");
+
+            var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
+            var marshaller = new SendMessageBatchRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void SendMessageBatch_TooManyEntriesInBatchRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("SendMessageBatch");
+            var operation =  service_model.FindOperation("SendMessageBatch");
 
             var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
             var marshaller = new SendMessageBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("TooManyEntriesInBatchRequestException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","TooManyEntriesInBatchRequestException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -1030,22 +4205,31 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void SendMessageBatch_UnsupportedOperationExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("SendMessageBatch");
+            var operation =  service_model.FindOperation("SendMessageBatch");
 
             var request = InstantiateClassGenerator.Execute<SendMessageBatchRequest>();
             var marshaller = new SendMessageBatchRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<SendMessageBatchRequest>(request,jsonRequest);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = SendMessageBatchResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -1053,39 +4237,46 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void SetQueueAttributesMarshallTest()
         {
-            var operation = service_model.FindOperation("SetQueueAttributes");
-
             var request = InstantiateClassGenerator.Execute<SetQueueAttributesRequest>();
             var marshaller = new SetQueueAttributesRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
 
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<SetQueueAttributesRequest>(request,jsonRequest);
 
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
-        public void SetQueueAttributes_InvalidAttributeNameExceptionMarshallTest()
+        public void SetQueueAttributes_InvalidAddressExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("SetQueueAttributes");
+            var operation =  service_model.FindOperation("SetQueueAttributes");
 
             var request = InstantiateClassGenerator.Execute<SetQueueAttributesRequest>();
             var marshaller = new SetQueueAttributesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            Comparer.CompareObjectToJson<SetQueueAttributesRequest>(request,jsonRequest);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAttributeNameException"));
-            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
-            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
             var response = SetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
@@ -1093,36 +4284,576 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SetQueueAttributes_InvalidAttributeNameExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SetQueueAttributes");
+
+            var request = InstantiateClassGenerator.Execute<SetQueueAttributesRequest>();
+            var marshaller = new SetQueueAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SetQueueAttributesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAttributeNameException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAttributeNameException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SetQueueAttributes_InvalidAttributeValueExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SetQueueAttributes");
+
+            var request = InstantiateClassGenerator.Execute<SetQueueAttributesRequest>();
+            var marshaller = new SetQueueAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SetQueueAttributesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAttributeValueException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAttributeValueException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SetQueueAttributes_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SetQueueAttributes");
+
+            var request = InstantiateClassGenerator.Execute<SetQueueAttributesRequest>();
+            var marshaller = new SetQueueAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SetQueueAttributesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SetQueueAttributes_OverLimitExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SetQueueAttributes");
+
+            var request = InstantiateClassGenerator.Execute<SetQueueAttributesRequest>();
+            var marshaller = new SetQueueAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SetQueueAttributesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("OverLimitException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","OverLimitException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SetQueueAttributes_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SetQueueAttributes");
+
+            var request = InstantiateClassGenerator.Execute<SetQueueAttributesRequest>();
+            var marshaller = new SetQueueAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SetQueueAttributesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SetQueueAttributes_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SetQueueAttributes");
+
+            var request = InstantiateClassGenerator.Execute<SetQueueAttributesRequest>();
+            var marshaller = new SetQueueAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SetQueueAttributesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void SetQueueAttributes_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("SetQueueAttributes");
+
+            var request = InstantiateClassGenerator.Execute<SetQueueAttributesRequest>();
+            var marshaller = new SetQueueAttributesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<SetQueueAttributesRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = SetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void TagQueueMarshallTest()
         {
-            var operation = service_model.FindOperation("TagQueue");
-
             var request = InstantiateClassGenerator.Execute<TagQueueRequest>();
             var marshaller = new TagQueueRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
 
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<TagQueueRequest>(request,jsonRequest);
 
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
-        [TestCategory("Query")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void TagQueue_InvalidAddressExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("TagQueue");
+
+            var request = InstantiateClassGenerator.Execute<TagQueueRequest>();
+            var marshaller = new TagQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<TagQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = TagQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void TagQueue_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("TagQueue");
+
+            var request = InstantiateClassGenerator.Execute<TagQueueRequest>();
+            var marshaller = new TagQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<TagQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = TagQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void TagQueue_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("TagQueue");
+
+            var request = InstantiateClassGenerator.Execute<TagQueueRequest>();
+            var marshaller = new TagQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<TagQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = TagQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void TagQueue_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("TagQueue");
+
+            var request = InstantiateClassGenerator.Execute<TagQueueRequest>();
+            var marshaller = new TagQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<TagQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = TagQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void TagQueue_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("TagQueue");
+
+            var request = InstantiateClassGenerator.Execute<TagQueueRequest>();
+            var marshaller = new TagQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<TagQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = TagQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
         [TestCategory("SQS")]
         public void UntagQueueMarshallTest()
         {
-            var operation = service_model.FindOperation("UntagQueue");
+            var request = InstantiateClassGenerator.Execute<UntagQueueRequest>();
+            var marshaller = new UntagQueueRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+            Comparer.CompareObjectToJson<UntagQueueRequest>(request,jsonRequest);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void UntagQueue_InvalidAddressExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("UntagQueue");
 
             var request = InstantiateClassGenerator.Execute<UntagQueueRequest>();
             var marshaller = new UntagQueueRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
-            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
-            validator.Validate();
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
 
+            Comparer.CompareObjectToJson<UntagQueueRequest>(request,jsonRequest);
 
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidAddressException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidAddressException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = UntagQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void UntagQueue_InvalidSecurityExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("UntagQueue");
+
+            var request = InstantiateClassGenerator.Execute<UntagQueueRequest>();
+            var marshaller = new UntagQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<UntagQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidSecurityException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InvalidSecurityException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = UntagQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void UntagQueue_QueueDoesNotExistExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("UntagQueue");
+
+            var request = InstantiateClassGenerator.Execute<UntagQueueRequest>();
+            var marshaller = new UntagQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<UntagQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("QueueDoesNotExistException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","QueueDoesNotExistException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = UntagQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void UntagQueue_RequestThrottledExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("UntagQueue");
+
+            var request = InstantiateClassGenerator.Execute<UntagQueueRequest>();
+            var marshaller = new UntagQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<UntagQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("RequestThrottledException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","RequestThrottledException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = UntagQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("SQS")]
+        public void UntagQueue_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("UntagQueue");
+
+            var request = InstantiateClassGenerator.Execute<UntagQueueRequest>();
+            var marshaller = new UntagQueueRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<UntagQueueRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","UnsupportedOperationException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = UntagQueueResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
     }
 }

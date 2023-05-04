@@ -28,6 +28,8 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -44,7 +46,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((ReceiveMessageRequest)input);
         }
-    
+
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -53,53 +55,79 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(ReceiveMessageRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            request.Parameters.Add("Action", "ReceiveMessage");
-            request.Parameters.Add("Version", "2012-11-05");
+            string target = "AmazonSQS.ReceiveMessage";
+            request.Headers["X-Amz-Target"] = target;
+            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
+            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
+            request.HttpMethod = "POST";
 
-            if(publicRequest != null)
+            request.ResourcePath = "/";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttributeNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.AttributeNames)
+                    context.Writer.WritePropertyName("AttributeNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestAttributeNamesListValue in publicRequest.AttributeNames)
                     {
-                        request.Parameters.Add("AttributeName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestAttributeNamesListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetMaxNumberOfMessages())
                 {
-                    request.Parameters.Add("MaxNumberOfMessages", StringUtils.FromInt(publicRequest.MaxNumberOfMessages));
+                    context.Writer.WritePropertyName("MaxNumberOfMessages");
+                    context.Writer.Write(publicRequest.MaxNumberOfMessages);
                 }
+
                 if(publicRequest.IsSetMessageAttributeNames())
                 {
-                    int publicRequestlistValueIndex = 1;
-                    foreach(var publicRequestlistValue in publicRequest.MessageAttributeNames)
+                    context.Writer.WritePropertyName("MessageAttributeNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMessageAttributeNamesListValue in publicRequest.MessageAttributeNames)
                     {
-                        request.Parameters.Add("MessageAttributeName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
-                        publicRequestlistValueIndex++;
+                            context.Writer.Write(publicRequestMessageAttributeNamesListValue);
                     }
+                    context.Writer.WriteArrayEnd();
                 }
+
                 if(publicRequest.IsSetQueueUrl())
                 {
-                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
+                    context.Writer.WritePropertyName("QueueUrl");
+                    context.Writer.Write(publicRequest.QueueUrl);
                 }
+
                 if(publicRequest.IsSetReceiveRequestAttemptId())
                 {
-                    request.Parameters.Add("ReceiveRequestAttemptId", StringUtils.FromString(publicRequest.ReceiveRequestAttemptId));
+                    context.Writer.WritePropertyName("ReceiveRequestAttemptId");
+                    context.Writer.Write(publicRequest.ReceiveRequestAttemptId);
                 }
+
                 if(publicRequest.IsSetVisibilityTimeout())
                 {
-                    request.Parameters.Add("VisibilityTimeout", StringUtils.FromInt(publicRequest.VisibilityTimeout));
+                    context.Writer.WritePropertyName("VisibilityTimeout");
+                    context.Writer.Write(publicRequest.VisibilityTimeout);
                 }
+
                 if(publicRequest.IsSetWaitTimeSeconds())
                 {
-                    request.Parameters.Add("WaitTimeSeconds", StringUtils.FromInt(publicRequest.WaitTimeSeconds));
+                    context.Writer.WritePropertyName("WaitTimeSeconds");
+                    context.Writer.Write(publicRequest.WaitTimeSeconds);
                 }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
+
+
             return request;
         }
-                    private static ReceiveMessageRequestMarshaller _instance = new ReceiveMessageRequestMarshaller();        
+        private static ReceiveMessageRequestMarshaller _instance = new ReceiveMessageRequestMarshaller();        
 
         internal static ReceiveMessageRequestMarshaller GetInstance()
         {

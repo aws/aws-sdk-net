@@ -29,65 +29,27 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
     /// Response Unmarshaller for PurgeQueue operation
     /// </summary>  
-    public class PurgeQueueResponseUnmarshaller : XmlResponseUnmarshaller
+    public class PurgeQueueResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public override AmazonWebServiceResponse Unmarshall(XmlUnmarshallerContext context)
+        public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
             PurgeQueueResponse response = new PurgeQueueResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.IsStartElement)
-                {                    
-                    if(context.TestExpression("PurgeQueueResult", 2))
-                    {
-                        UnmarshallResult(context, response);                        
-                        continue;
-                    }
-                    
-                    if (context.TestExpression("ResponseMetadata", 2))
-                    {
-                        response.ResponseMetadata = ResponseMetadataUnmarshaller.Instance.Unmarshall(context);
-                    }
-                }
-            }
 
             return response;
         }
-
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA1801:ReviewUnusedParameters", MessageId="response")]
-        private static void UnmarshallResult(XmlUnmarshallerContext context, PurgeQueueResponse response)
-        {
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
-            {
-                if (context.IsStartElement || context.IsAttribute)
-                {
-
-                } 
-           }
-
-            return;
-        }
-
 
         /// <summary>
         /// Unmarshaller error response to exception.
@@ -96,28 +58,66 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         /// <param name="innerException"></param>
         /// <param name="statusCode"></param>
         /// <returns></returns>
-        public override AmazonServiceException UnmarshallException(XmlUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
+        public override AmazonServiceException UnmarshallException(JsonUnmarshallerContext context, Exception innerException, HttpStatusCode statusCode)
         {
-            ErrorResponse errorResponse = ErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
+            var errorResponse = JsonErrorResponseUnmarshaller.GetInstance().Unmarshall(context);
             errorResponse.InnerException = innerException;
             errorResponse.StatusCode = statusCode;
 
             var responseBodyBytes = context.GetResponseBodyBytes();
 
             using (var streamCopy = new MemoryStream(responseBodyBytes))
-            using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
+
+            using (var contextCopy = new JsonUnmarshallerContext(streamCopy, true, context.ResponseData))
             {
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AWS.SimpleQueueService.PurgeQueueInProgress"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidAddress"))
+                {
+                    return InvalidAddressExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidSecurity"))
+                {
+                    return InvalidSecurityExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("PurgeQueueInProgress"))
                 {
                     return PurgeQueueInProgressExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AWS.SimpleQueueService.NonExistentQueue"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("QueueDoesNotExist"))
                 {
                     return QueueDoesNotExistExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("RequestThrottled"))
+                {
+                    return RequestThrottledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("UnsupportedOperation"))
+                {
+                    return UnsupportedOperationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
             }
-            return new AmazonSQSException(errorResponse.Message, innerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, statusCode);
+            var errorCode = errorResponse.Code;
+            var errorType = errorResponse.Type;
+            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
+            {
+                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                {
+                    var queryErrorParts = queryError.Split(';');
+                    if (queryErrorParts.Length == 2)
+                    {
+                        errorCode = queryErrorParts[0];
+                        var errorTypeString = queryErrorParts[1];
+                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                        {
+                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                        }
+                    }
+                }
+            }
+            return new AmazonSQSException(errorResponse.Message, errorResponse.InnerException, errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
         }
+
         private static PurgeQueueResponseUnmarshaller _instance = new PurgeQueueResponseUnmarshaller();        
 
         internal static PurgeQueueResponseUnmarshaller GetInstance()

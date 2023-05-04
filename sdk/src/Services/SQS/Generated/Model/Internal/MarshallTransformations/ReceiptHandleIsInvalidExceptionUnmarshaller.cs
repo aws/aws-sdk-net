@@ -29,47 +29,64 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
+using ThirdParty.Json.LitJson;
+
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ReceiptHandleIsInvalidException operation
+    /// Response Unmarshaller for ReceiptHandleIsInvalidException Object
     /// </summary>  
-    public class ReceiptHandleIsInvalidExceptionUnmarshaller : IErrorResponseUnmarshaller<ReceiptHandleIsInvalidException, XmlUnmarshallerContext>
+    public class ReceiptHandleIsInvalidExceptionUnmarshaller : IErrorResponseUnmarshaller<ReceiptHandleIsInvalidException, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ReceiptHandleIsInvalidException Unmarshall(XmlUnmarshallerContext context)
+        public ReceiptHandleIsInvalidException Unmarshall(JsonUnmarshallerContext context)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
-        /// Unmarshaller error response to exception.
+        /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public ReceiptHandleIsInvalidException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public ReceiptHandleIsInvalidException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            ReceiptHandleIsInvalidException response = new ReceiptHandleIsInvalidException(errorResponse.Message, errorResponse.InnerException, 
-                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
-            
-            int originalDepth = context.CurrentDepth;
-            int targetDepth = originalDepth + 1;
-            
-            if (context.IsStartOfDocument) 
-               targetDepth += 2;
-            
-            while (context.ReadAtDepth(originalDepth))
+            context.Read();
+
+            var errorCode = errorResponse.Code;
+            var errorType = errorResponse.Type;
+            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
+            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
             {
-                if (context.IsStartElement || context.IsAttribute)
+                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
+                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
                 {
+                    var queryErrorParts = queryError.Split(';');
+                    if (queryErrorParts.Length == 2)
+                    {
+                        errorCode = queryErrorParts[0];
+                        var errorTypeString = queryErrorParts[1];
+                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
+                        {
+                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
+                        }
+                    }
                 }
             }
-            return response;
+            ReceiptHandleIsInvalidException unmarshalledObject = new ReceiptHandleIsInvalidException(errorResponse.Message, errorResponse.InnerException,
+                errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
+        
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+            }
+          
+            return unmarshalledObject;
         }
 
         private static ReceiptHandleIsInvalidExceptionUnmarshaller _instance = new ReceiptHandleIsInvalidExceptionUnmarshaller();        
