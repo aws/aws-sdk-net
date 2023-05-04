@@ -65,11 +65,17 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
             if (publicRequest.IsSetDomainName())
                 request.Parameters.Add("domainName", StringUtils.FromString(publicRequest.DomainName));
             
+            if (publicRequest.IsSetInstanceType())
+                request.Parameters.Add("instanceType", StringUtils.FromString(publicRequest.InstanceType));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetRetrieveAZs())
+                request.Parameters.Add("retrieveAZs", StringUtils.FromBool(publicRequest.RetrieveAZs));
             request.ResourcePath = "/2021-01-01/opensearch/instanceTypeDetails/{EngineVersion}";
             request.UseQueryString = true;
 

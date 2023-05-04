@@ -133,7 +133,7 @@ namespace Amazon.Inspector2.Model
         /// The Amazon Resource Number (ARN) of the finding.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public string FindingArn
         {
             get { return this._findingArn; }

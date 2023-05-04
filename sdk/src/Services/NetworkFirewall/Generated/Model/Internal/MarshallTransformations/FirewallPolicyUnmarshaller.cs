@@ -64,6 +64,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("PolicyVariables", targetDepth))
+                {
+                    var unmarshaller = PolicyVariablesUnmarshaller.Instance;
+                    unmarshalledObject.PolicyVariables = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StatefulDefaultActions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

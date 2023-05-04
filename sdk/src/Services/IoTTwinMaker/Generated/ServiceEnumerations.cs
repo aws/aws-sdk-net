@@ -657,6 +657,52 @@ namespace Amazon.IoTTwinMaker
 
 
     /// <summary>
+    /// Constants used for properties of type SceneErrorCode.
+    /// </summary>
+    public class SceneErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant MATTERPORT_ERROR for SceneErrorCode
+        /// </summary>
+        public static readonly SceneErrorCode MATTERPORT_ERROR = new SceneErrorCode("MATTERPORT_ERROR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SceneErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SceneErrorCode FindValue(string value)
+        {
+            return FindValue<SceneErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SceneErrorCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Scope.
     /// </summary>
     public class Scope : ConstantClass

@@ -1012,6 +1012,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for GetNetworkInsightsAccessScopeAnalysisFindings operation
+        ///</summary>
+        public IGetNetworkInsightsAccessScopeAnalysisFindingsPaginator GetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request) 
+        {
+            return new GetNetworkInsightsAccessScopeAnalysisFindingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetSpotPlacementScores operation
         ///</summary>
         public IGetSpotPlacementScoresPaginator GetSpotPlacementScores(GetSpotPlacementScoresRequest request) 

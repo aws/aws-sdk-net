@@ -636,6 +636,11 @@ namespace Amazon.EC2.Model
         IGetManagedPrefixListEntriesPaginator GetManagedPrefixListEntries(GetManagedPrefixListEntriesRequest request);
 
         /// <summary>
+        /// Paginator for GetNetworkInsightsAccessScopeAnalysisFindings operation
+        ///</summary>
+        IGetNetworkInsightsAccessScopeAnalysisFindingsPaginator GetNetworkInsightsAccessScopeAnalysisFindings(GetNetworkInsightsAccessScopeAnalysisFindingsRequest request);
+
+        /// <summary>
         /// Paginator for GetSpotPlacementScores operation
         ///</summary>
         IGetSpotPlacementScoresPaginator GetSpotPlacementScores(GetSpotPlacementScoresRequest request);

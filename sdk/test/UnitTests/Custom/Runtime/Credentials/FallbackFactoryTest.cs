@@ -108,7 +108,13 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestOtherProfile()
         {
-            using (new FallbackFactoryTestFixture(ProfileText, "other"))
+            var newEnvVariables = new Dictionary<string, string>()
+            {
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, string.Empty },
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_DEFAULT_REGION, string.Empty },
+            };
+
+            using (new FallbackFactoryTestFixture(ProfileText, "other", newEnvVariables))
             {
                 var creds = FallbackCredentialsFactory.GetCredentials();
                 Assert.AreEqual("other_aws_access_key_id", creds.GetCredentials().AccessKey);
@@ -144,7 +150,13 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestProcessCredentialProfile()
         {
-            using (new FallbackFactoryTestFixture(ProfileText, "processCredential"))
+            var newEnvVariables = new Dictionary<string, string>()
+            {
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, string.Empty },
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_DEFAULT_REGION, string.Empty },
+            };
+
+            using (new FallbackFactoryTestFixture(ProfileText, "processCredential", newEnvVariables))
             {
                 var credentials = FallbackCredentialsFactory.GetCredentials().GetCredentials();
                 Assert.AreEqual(ProcessAWSCredentialsTest.ActualAccessKey, credentials.AccessKey);
@@ -158,7 +170,13 @@ namespace AWSSDK.UnitTests
         [TestMethod]
         public void TestAwsConfigsAwsProfileNameProfile()
         {
-            using (new FallbackFactoryTestFixture(ProfileText, "awsConfigsAwsProfileName", null, true))
+            var newEnvVariables = new Dictionary<string, string>()
+            {
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_REGION, string.Empty },
+                { EnvironmentVariableAWSRegion.ENVIRONMENT_VARIABLE_DEFAULT_REGION, string.Empty },
+            };
+
+            using (new FallbackFactoryTestFixture(ProfileText, "awsConfigsAwsProfileName", newEnvVariables, true))
             {
                 var creds = FallbackCredentialsFactory.GetCredentials();
                 Assert.AreEqual("awsprofilename_aws_access_key_id", creds.GetCredentials().AccessKey);

@@ -71,13 +71,13 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the AcceptInboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.LimitExceededException">
         /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/AcceptInboundConnection">REST API Reference for AcceptInboundConnection Operation</seealso>
         Task<AcceptInboundConnectionResponse> AcceptInboundConnectionAsync(AcceptInboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -145,7 +145,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -173,7 +173,7 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
@@ -182,7 +182,7 @@ namespace Amazon.OpenSearchService
         /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -216,7 +216,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -244,7 +244,7 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
@@ -283,7 +283,7 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the CreateOutboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
@@ -362,7 +362,7 @@ namespace Amazon.OpenSearchService
         /// in use.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
@@ -399,7 +399,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -425,10 +425,10 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DeleteInboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteInboundConnection">REST API Reference for DeleteInboundConnection Operation</seealso>
         Task<DeleteInboundConnectionResponse> DeleteInboundConnectionAsync(DeleteInboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -451,10 +451,10 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DeleteOutboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteOutboundConnection">REST API Reference for DeleteOutboundConnection Operation</seealso>
         Task<DeleteOutboundConnectionResponse> DeleteOutboundConnectionAsync(DeleteOutboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -489,7 +489,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -516,13 +516,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DeleteVpcEndpoint">REST API Reference for DeleteVpcEndpoint Operation</seealso>
         Task<DeleteVpcEndpointResponse> DeleteVpcEndpointAsync(DeleteVpcEndpointRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -550,7 +550,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -582,7 +582,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -614,7 +614,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -644,13 +644,47 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainConfig">REST API Reference for DescribeDomainConfig Operation</seealso>
         Task<DescribeDomainConfigResponse> DescribeDomainConfigAsync(DescribeDomainConfigRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeDomainHealth
+
+
+
+        /// <summary>
+        /// Returns information about domain and node health, the standby Availability Zone, number
+        /// of nodes per Availability Zone, and shard count per node.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeDomainHealth service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeDomainHealth service method, as returned by OpenSearchService.</returns>
+        /// <exception cref="Amazon.OpenSearchService.Model.BaseException">
+        /// An error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
+        /// An error occured because the client wanted to access an unsupported operation.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
+        /// Request processing failed because of an unknown error, exception, or internal failure.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
+        /// An exception for accessing or deleting a resource that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainHealth">REST API Reference for DescribeDomainHealth Operation</seealso>
+        Task<DescribeDomainHealthResponse> DescribeDomainHealthAsync(DescribeDomainHealthRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -701,13 +735,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -733,10 +767,10 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DescribeInboundConnections service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidPaginationTokenException">
-        /// The request processing has failed because you provided an invalid pagination token.
+        /// Request processing failed because you provided an invalid pagination token.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeInboundConnections">REST API Reference for DescribeInboundConnections Operation</seealso>
         Task<DescribeInboundConnectionsResponse> DescribeInboundConnectionsAsync(DescribeInboundConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -771,7 +805,7 @@ namespace Amazon.OpenSearchService
         /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -797,10 +831,10 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DescribeOutboundConnections service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidPaginationTokenException">
-        /// The request processing has failed because you provided an invalid pagination token.
+        /// Request processing failed because you provided an invalid pagination token.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeOutboundConnections">REST API Reference for DescribeOutboundConnections Operation</seealso>
         Task<DescribeOutboundConnectionsResponse> DescribeOutboundConnectionsAsync(DescribeOutboundConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -832,7 +866,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -858,13 +892,13 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DescribeReservedInstanceOfferings service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -890,13 +924,13 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the DescribeReservedInstances service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -923,7 +957,7 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
@@ -967,7 +1001,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -995,13 +1029,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1017,7 +1051,8 @@ namespace Amazon.OpenSearchService
 
         /// <summary>
         /// Returns a list of Amazon OpenSearch Service package versions, along with their creation
-        /// time and commit message. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
+        /// time, commit message, and plugin properties (if the package is a zip plugin package).
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
         /// packages for Amazon OpenSearch Service</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetPackageVersionHistory service method.</param>
@@ -1036,7 +1071,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1064,13 +1099,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1098,13 +1133,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1164,7 +1199,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1195,7 +1230,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1230,7 +1265,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1263,10 +1298,10 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InvalidPaginationTokenException">
-        /// The request processing has failed because you provided an invalid pagination token.
+        /// Request processing failed because you provided an invalid pagination token.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1298,7 +1333,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1329,7 +1364,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1358,13 +1393,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointAccess">REST API Reference for ListVpcEndpointAccess Operation</seealso>
         Task<ListVpcEndpointAccessResponse> ListVpcEndpointAccessAsync(ListVpcEndpointAccessRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1389,7 +1424,7 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
@@ -1417,13 +1452,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/ListVpcEndpointsForDomain">REST API Reference for ListVpcEndpointsForDomain Operation</seealso>
         Task<ListVpcEndpointsForDomainResponse> ListVpcEndpointsForDomainAsync(ListVpcEndpointsForDomainRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1444,7 +1479,7 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the PurchaseReservedInstanceOffering service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
@@ -1456,7 +1491,7 @@ namespace Amazon.OpenSearchService
         /// An exception for creating a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1481,10 +1516,10 @@ namespace Amazon.OpenSearchService
         /// 
         /// <returns>The response from the RejectInboundConnection service method, as returned by OpenSearchService.</returns>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RejectInboundConnection">REST API Reference for RejectInboundConnection Operation</seealso>
         Task<RejectInboundConnectionResponse> RejectInboundConnectionAsync(RejectInboundConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1538,13 +1573,13 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1576,7 +1611,7 @@ namespace Amazon.OpenSearchService
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1613,7 +1648,7 @@ namespace Amazon.OpenSearchService
         /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1651,7 +1686,7 @@ namespace Amazon.OpenSearchService
         /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1691,7 +1726,7 @@ namespace Amazon.OpenSearchService
         /// An exception for trying to create more than the allowed number of resources or sub-resources.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.SlotNotAvailableException">
         /// An exception for attempting to schedule a domain action during an unavailable time
@@ -1726,13 +1761,13 @@ namespace Amazon.OpenSearchService
         /// in use.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
@@ -1760,7 +1795,7 @@ namespace Amazon.OpenSearchService
         /// An error occurred while processing the request.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.DisabledOperationException">
-        /// An error occured because the client wanted to access a not supported operation.
+        /// An error occured because the client wanted to access an unsupported operation.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.InternalException">
         /// Request processing failed because of an unknown error, exception, or internal failure.
@@ -1769,7 +1804,7 @@ namespace Amazon.OpenSearchService
         /// An exception for creating a resource that already exists.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ResourceNotFoundException">
-        /// An exception for accessing or deleting a resource that does not exist..
+        /// An exception for accessing or deleting a resource that doesn't exist.
         /// </exception>
         /// <exception cref="Amazon.OpenSearchService.Model.ValidationException">
         /// An exception for accessing or deleting a resource that doesn't exist.
