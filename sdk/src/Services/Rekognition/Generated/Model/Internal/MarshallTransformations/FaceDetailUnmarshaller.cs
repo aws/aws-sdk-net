@@ -106,6 +106,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.EyesOpen = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FaceOccluded", targetDepth))
+                {
+                    var unmarshaller = FaceOccludedUnmarshaller.Instance;
+                    unmarshalledObject.FaceOccluded = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Gender", targetDepth))
                 {
                     var unmarshaller = GenderUnmarshaller.Instance;

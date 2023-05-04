@@ -2927,7 +2927,7 @@ namespace Amazon.Rekognition
         /// detected, the operation returns face details. These details include a bounding box
         /// of the face, a confidence value (that the bounding box contains a face), and a fixed
         /// set of attributes such as facial landmarks (for example, coordinates of eye and mouth),
-        /// presence of beard, sunglasses, and so on. 
+        /// pose, presence of facial occlusion, and so on.
         /// </para>
         ///  
         /// <para>
@@ -2997,7 +2997,7 @@ namespace Amazon.Rekognition
         /// detected, the operation returns face details. These details include a bounding box
         /// of the face, a confidence value (that the bounding box contains a face), and a fixed
         /// set of attributes such as facial landmarks (for example, coordinates of eye and mouth),
-        /// presence of beard, sunglasses, and so on. 
+        /// pose, presence of facial occlusion, and so on.
         /// </para>
         ///  
         /// <para>
@@ -5789,10 +5789,14 @@ namespace Amazon.Rekognition
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you request all facial attributes (by using the <code>detectionAttributes</code>
-        /// parameter), Amazon Rekognition returns detailed facial attributes, such as facial
-        /// landmarks (for example, location of eye and mouth) and other facial attributes. If
-        /// you provide the same image, specify the same collection, and use the same external
+        /// If you request <code>ALL</code> or specific facial attributes (e.g., <code>FACE_OCCLUDED</code>)
+        /// by using the detectionAttributes parameter, Amazon Rekognition returns detailed facial
+        /// attributes, such as facial landmarks (for example, location of eye and mouth), facial
+        /// occlusion, and other facial attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide the same image, specify the same collection, and use the same external
         /// ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
         /// face metadata.
         /// </para>
@@ -5979,10 +5983,14 @@ namespace Amazon.Rekognition
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// If you request all facial attributes (by using the <code>detectionAttributes</code>
-        /// parameter), Amazon Rekognition returns detailed facial attributes, such as facial
-        /// landmarks (for example, location of eye and mouth) and other facial attributes. If
-        /// you provide the same image, specify the same collection, and use the same external
+        /// If you request <code>ALL</code> or specific facial attributes (e.g., <code>FACE_OCCLUDED</code>)
+        /// by using the detectionAttributes parameter, Amazon Rekognition returns detailed facial
+        /// attributes, such as facial landmarks (for example, location of eye and mouth), facial
+        /// occlusion, and other facial attributes.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you provide the same image, specify the same collection, and use the same external
         /// ID in the <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
         /// face metadata.
         /// </para>

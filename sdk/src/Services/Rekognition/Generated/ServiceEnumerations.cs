@@ -31,13 +31,57 @@ namespace Amazon.Rekognition
     {
 
         /// <summary>
+        /// Constant AGE_RANGE for Attribute
+        /// </summary>
+        public static readonly Attribute AGE_RANGE = new Attribute("AGE_RANGE");
+        /// <summary>
         /// Constant ALL for Attribute
         /// </summary>
         public static readonly Attribute ALL = new Attribute("ALL");
         /// <summary>
+        /// Constant BEARD for Attribute
+        /// </summary>
+        public static readonly Attribute BEARD = new Attribute("BEARD");
+        /// <summary>
         /// Constant DEFAULT for Attribute
         /// </summary>
         public static readonly Attribute DEFAULT = new Attribute("DEFAULT");
+        /// <summary>
+        /// Constant EMOTIONS for Attribute
+        /// </summary>
+        public static readonly Attribute EMOTIONS = new Attribute("EMOTIONS");
+        /// <summary>
+        /// Constant EYEGLASSES for Attribute
+        /// </summary>
+        public static readonly Attribute EYEGLASSES = new Attribute("EYEGLASSES");
+        /// <summary>
+        /// Constant EYES_OPEN for Attribute
+        /// </summary>
+        public static readonly Attribute EYES_OPEN = new Attribute("EYES_OPEN");
+        /// <summary>
+        /// Constant FACE_OCCLUDED for Attribute
+        /// </summary>
+        public static readonly Attribute FACE_OCCLUDED = new Attribute("FACE_OCCLUDED");
+        /// <summary>
+        /// Constant GENDER for Attribute
+        /// </summary>
+        public static readonly Attribute GENDER = new Attribute("GENDER");
+        /// <summary>
+        /// Constant MOUTH_OPEN for Attribute
+        /// </summary>
+        public static readonly Attribute MOUTH_OPEN = new Attribute("MOUTH_OPEN");
+        /// <summary>
+        /// Constant MUSTACHE for Attribute
+        /// </summary>
+        public static readonly Attribute MUSTACHE = new Attribute("MUSTACHE");
+        /// <summary>
+        /// Constant SMILE for Attribute
+        /// </summary>
+        public static readonly Attribute SMILE = new Attribute("SMILE");
+        /// <summary>
+        /// Constant SUNGLASSES for Attribute
+        /// </summary>
+        public static readonly Attribute SUNGLASSES = new Attribute("SUNGLASSES");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
