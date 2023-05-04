@@ -1054,8 +1054,8 @@ namespace Amazon.Connect
         /// <summary>
         /// Creates an evaluation form in the specified Amazon Connect instance. The form can
         /// be used to define questions related to agent performance, and create sections to organize
-        /// such questions. An evaluation form must have a unique title within an instance. Question
-        /// and section identifiers cannot be duplicated within the same evaluation form.
+        /// such questions. Question and section identifiers cannot be duplicated within the same
+        /// evaluation form.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationForm service method.</param>
         /// 
@@ -1314,9 +1314,6 @@ namespace Amazon.Connect
         /// <returns>The response from the CreateParticipant service method, as returned by Connect.</returns>
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
-        /// </exception>
-        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
-        /// One or more of the specified parameters are not valid.
         /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
@@ -9712,8 +9709,8 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates details about a specific evaluation form version in the specified Amazon Connect
-        /// instance. An evaluation form must have a unique title within an instance. Question
-        /// and section identifiers cannot be duplicated within the same evaluation form.
+        /// instance. Question and section identifiers cannot be duplicated within the same evaluation
+        /// form.
         /// 
         ///  
         /// <para>

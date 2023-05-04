@@ -299,7 +299,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// A unique title of the evaluation form.
+        /// A title of the evaluation form.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]
