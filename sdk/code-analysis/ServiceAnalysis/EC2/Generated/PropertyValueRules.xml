@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.AssignPrivateNatGatewayAddressRequest.PrivateIpAddressCount</property>
     <min>1</min>
-    <max>7</max>
+    <max>31</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateCapacityReservationRequest.OutpostArn</property>
@@ -53,7 +53,7 @@
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateNatGatewayRequest.SecondaryPrivateIpAddressCount</property>
     <min>1</min>
-    <max>7</max>
+    <max>31</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.CreateNetworkInsightsPathRequest.DestinationIp</property>

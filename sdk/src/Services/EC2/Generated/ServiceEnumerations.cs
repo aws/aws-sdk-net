@@ -8289,6 +8289,22 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType Inf1Xlarge = new InstanceType("inf1.xlarge");
         /// <summary>
+        /// Constant Inf224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Inf224xlarge = new InstanceType("inf2.24xlarge");
+        /// <summary>
+        /// Constant Inf248xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Inf248xlarge = new InstanceType("inf2.48xlarge");
+        /// <summary>
+        /// Constant Inf28xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Inf28xlarge = new InstanceType("inf2.8xlarge");
+        /// <summary>
+        /// Constant Inf2Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Inf2Xlarge = new InstanceType("inf2.xlarge");
+        /// <summary>
         /// Constant Is4gen2xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Is4gen2xlarge = new InstanceType("is4gen.2xlarge");
@@ -9696,6 +9712,10 @@ namespace Amazon.EC2
         /// Constant Trn132xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Trn132xlarge = new InstanceType("trn1.32xlarge");
+        /// <summary>
+        /// Constant Trn1n32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Trn1n32xlarge = new InstanceType("trn1n.32xlarge");
         /// <summary>
         /// Constant U12tb1112xlarge for InstanceType
         /// </summary>

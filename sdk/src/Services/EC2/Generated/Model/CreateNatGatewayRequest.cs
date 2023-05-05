@@ -176,7 +176,7 @@ namespace Amazon.EC2.Model
         /// a NAT gateway</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=7)]
+        [AWSProperty(Min=1, Max=31)]
         public int SecondaryPrivateIpAddressCount
         {
             get { return this._secondaryPrivateIpAddressCount.GetValueOrDefault(); }
