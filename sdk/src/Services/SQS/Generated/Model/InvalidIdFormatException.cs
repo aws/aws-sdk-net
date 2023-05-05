@@ -31,7 +31,6 @@ namespace Amazon.SQS.Model
     /// <summary>
     /// The specified receipt handle isn't valid for the current version.
     /// </summary>
-    [Obsolete("exception has been included in ReceiptHandleIsInvalid")]
     #if !NETSTANDARD
     [Serializable]
     #endif

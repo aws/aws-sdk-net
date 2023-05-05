@@ -138,7 +138,7 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An Amazon SQS policy can have a maximum of seven actions per statement.
+        /// An Amazon SQS policy can have a maximum of 7 actions.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -146,15 +146,25 @@ namespace Amazon.SQS
         /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
         /// actions in your IAM policy.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </note> 
         /// <para>
-        /// Amazon SQS <code>AddPermission</code> does not support adding a non-account principal.
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
         /// </para>
-        ///  </li> </ul> </note> <note> 
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -165,44 +175,10 @@ namespace Amazon.SQS
         /// <param name="actions">The action the client wants to allow for the specified principal. Valid values: the name of any action or <code>*</code>. For more information about these actions, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-overview-of-managing-access.html">Overview of Managing Access Permissions to Your Amazon Simple Queue Service Resource</a> in the <i>Amazon SQS Developer Guide</i>. Specifying <code>SendMessage</code>, <code>DeleteMessage</code>, or <code>ChangeMessageVisibility</code> for <code>ActionName.n</code> also grants permissions for the corresponding batch versions of those actions: <code>SendMessageBatch</code>, <code>DeleteMessageBatch</code>, and <code>ChangeMessageVisibilityBatch</code>.</param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// this error if the maximum number of inflight messages is reached and <code>AddPermission</code>
         /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         AddPermissionResponse AddPermission(string queueUrl, string label, List<string> awsAccountIds, List<string> actions);
@@ -228,7 +204,7 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An Amazon SQS policy can have a maximum of seven actions per statement.
+        /// An Amazon SQS policy can have a maximum of 7 actions.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -236,15 +212,25 @@ namespace Amazon.SQS
         /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
         /// actions in your IAM policy.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </note> 
         /// <para>
-        /// Amazon SQS <code>AddPermission</code> does not support adding a non-account principal.
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
         /// </para>
-        ///  </li> </ul> </note> <note> 
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -252,44 +238,10 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the AddPermission service method.</param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// this error if the maximum number of inflight messages is reached and <code>AddPermission</code>
         /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         AddPermissionResponse AddPermission(AddPermissionRequest request);
@@ -316,7 +268,7 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An Amazon SQS policy can have a maximum of seven actions per statement.
+        /// An Amazon SQS policy can have a maximum of 7 actions.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -324,15 +276,25 @@ namespace Amazon.SQS
         /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
         /// actions in your IAM policy.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </note> 
         /// <para>
-        /// Amazon SQS <code>AddPermission</code> does not support adding a non-account principal.
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
         /// </para>
-        ///  </li> </ul> </note> <note> 
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -346,44 +308,10 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// this error if the maximum number of inflight messages is reached and <code>AddPermission</code>
         /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         Task<AddPermissionResponse> AddPermissionAsync(string queueUrl, string label, List<string> awsAccountIds, List<string> actions, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -410,7 +338,7 @@ namespace Amazon.SQS
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// An Amazon SQS policy can have a maximum of seven actions per statement.
+        /// An Amazon SQS policy can have a maximum of 7 actions.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -418,15 +346,25 @@ namespace Amazon.SQS
         /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
         /// actions in your IAM policy.
         /// </para>
-        ///  </li> <li> 
+        ///  </li> </ul> </note> 
         /// <para>
-        /// Amazon SQS <code>AddPermission</code> does not support adding a non-account principal.
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
         /// </para>
-        ///  </li> </ul> </note> <note> 
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -437,44 +375,10 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the AddPermission service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// this error if the maximum number of inflight messages is reached and <code>AddPermission</code>
         /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/AddPermission">REST API Reference for AddPermission Operation</seealso>
         Task<AddPermissionResponse> AddPermissionAsync(AddPermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -492,12 +396,11 @@ namespace Amazon.SQS
         /// 
         ///  
         /// <para>
-        /// For example, if the default timeout for a queue is 60 seconds, 15 seconds have elapsed
-        /// since you received the message, and you send a ChangeMessageVisibility call with <code>VisibilityTimeout</code>
-        /// set to 10 seconds, the 10 seconds begin to count from the time that you make the <code>ChangeMessageVisibility</code>
-        /// call. Thus, any attempt to change the visibility timeout or to delete that message
-        /// 10 seconds after you initially change the visibility timeout (a total of 25 seconds)
-        /// might result in an error.
+        /// For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes,
+        /// you call <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can
+        /// continue to call <code>ChangeMessageVisibility</code> to extend the visibility timeout
+        /// to the maximum allowed time. If you try to extend the visibility timeout beyond the
+        /// maximum, your request is rejected.
         /// </para>
         ///  
         /// <para>
@@ -522,17 +425,17 @@ namespace Amazon.SQS
         /// There is no limit to the number of stored messages. A message is considered to be
         /// <i>in flight</i> after it is received from a queue by a consumer, but not yet deleted
         /// from the queue (that is, between states 2 and 3). There is a limit to the number of
-        /// in flight messages.
+        /// inflight messages.
         /// </para>
         ///  
         /// <para>
-        /// Limits that apply to in flight messages are unrelated to the <i>unlimited</i> number
+        /// Limits that apply to inflight messages are unrelated to the <i>unlimited</i> number
         /// of stored messages.
         /// </para>
         ///  
         /// <para>
         /// For most standard queues (depending on queue traffic and message backlog), there can
-        /// be a maximum of approximately 120,000 in flight messages (received from a queue by
+        /// be a maximum of approximately 120,000 inflight messages (received from a queue by
         /// a consumer, but not yet deleted from the queue). If you reach this limit, Amazon SQS
         /// returns the <code>OverLimit</code> error message. To avoid reaching the limit, you
         /// should delete messages from the queue after they're processed. You can also increase
@@ -542,7 +445,7 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// For FIFO queues, there can be a maximum of 20,000 in flight messages (received from
+        /// For FIFO queues, there can be a maximum of 20,000 inflight messages (received from
         /// a queue by a consumer, but not yet deleted from the queue). If you reach this limit,
         /// Amazon SQS returns no error messages.
         /// </para>
@@ -570,36 +473,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.MessageNotInflightException">
         /// The specified message isn't in flight.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The specified receipt handle isn't valid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         ChangeMessageVisibilityResponse ChangeMessageVisibility(string queueUrl, string receiptHandle, int visibilityTimeout);
@@ -612,12 +487,11 @@ namespace Amazon.SQS
         /// 
         ///  
         /// <para>
-        /// For example, if the default timeout for a queue is 60 seconds, 15 seconds have elapsed
-        /// since you received the message, and you send a ChangeMessageVisibility call with <code>VisibilityTimeout</code>
-        /// set to 10 seconds, the 10 seconds begin to count from the time that you make the <code>ChangeMessageVisibility</code>
-        /// call. Thus, any attempt to change the visibility timeout or to delete that message
-        /// 10 seconds after you initially change the visibility timeout (a total of 25 seconds)
-        /// might result in an error.
+        /// For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes,
+        /// you call <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can
+        /// continue to call <code>ChangeMessageVisibility</code> to extend the visibility timeout
+        /// to the maximum allowed time. If you try to extend the visibility timeout beyond the
+        /// maximum, your request is rejected.
         /// </para>
         ///  
         /// <para>
@@ -642,17 +516,17 @@ namespace Amazon.SQS
         /// There is no limit to the number of stored messages. A message is considered to be
         /// <i>in flight</i> after it is received from a queue by a consumer, but not yet deleted
         /// from the queue (that is, between states 2 and 3). There is a limit to the number of
-        /// in flight messages.
+        /// inflight messages.
         /// </para>
         ///  
         /// <para>
-        /// Limits that apply to in flight messages are unrelated to the <i>unlimited</i> number
+        /// Limits that apply to inflight messages are unrelated to the <i>unlimited</i> number
         /// of stored messages.
         /// </para>
         ///  
         /// <para>
         /// For most standard queues (depending on queue traffic and message backlog), there can
-        /// be a maximum of approximately 120,000 in flight messages (received from a queue by
+        /// be a maximum of approximately 120,000 inflight messages (received from a queue by
         /// a consumer, but not yet deleted from the queue). If you reach this limit, Amazon SQS
         /// returns the <code>OverLimit</code> error message. To avoid reaching the limit, you
         /// should delete messages from the queue after they're processed. You can also increase
@@ -662,7 +536,7 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// For FIFO queues, there can be a maximum of 20,000 in flight messages (received from
+        /// For FIFO queues, there can be a maximum of 20,000 inflight messages (received from
         /// a queue by a consumer, but not yet deleted from the queue). If you reach this limit,
         /// Amazon SQS returns no error messages.
         /// </para>
@@ -688,36 +562,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.MessageNotInflightException">
         /// The specified message isn't in flight.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The specified receipt handle isn't valid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         ChangeMessageVisibilityResponse ChangeMessageVisibility(ChangeMessageVisibilityRequest request);
@@ -731,12 +577,11 @@ namespace Amazon.SQS
         /// 
         ///  
         /// <para>
-        /// For example, if the default timeout for a queue is 60 seconds, 15 seconds have elapsed
-        /// since you received the message, and you send a ChangeMessageVisibility call with <code>VisibilityTimeout</code>
-        /// set to 10 seconds, the 10 seconds begin to count from the time that you make the <code>ChangeMessageVisibility</code>
-        /// call. Thus, any attempt to change the visibility timeout or to delete that message
-        /// 10 seconds after you initially change the visibility timeout (a total of 25 seconds)
-        /// might result in an error.
+        /// For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes,
+        /// you call <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can
+        /// continue to call <code>ChangeMessageVisibility</code> to extend the visibility timeout
+        /// to the maximum allowed time. If you try to extend the visibility timeout beyond the
+        /// maximum, your request is rejected.
         /// </para>
         ///  
         /// <para>
@@ -761,17 +606,17 @@ namespace Amazon.SQS
         /// There is no limit to the number of stored messages. A message is considered to be
         /// <i>in flight</i> after it is received from a queue by a consumer, but not yet deleted
         /// from the queue (that is, between states 2 and 3). There is a limit to the number of
-        /// in flight messages.
+        /// inflight messages.
         /// </para>
         ///  
         /// <para>
-        /// Limits that apply to in flight messages are unrelated to the <i>unlimited</i> number
+        /// Limits that apply to inflight messages are unrelated to the <i>unlimited</i> number
         /// of stored messages.
         /// </para>
         ///  
         /// <para>
         /// For most standard queues (depending on queue traffic and message backlog), there can
-        /// be a maximum of approximately 120,000 in flight messages (received from a queue by
+        /// be a maximum of approximately 120,000 inflight messages (received from a queue by
         /// a consumer, but not yet deleted from the queue). If you reach this limit, Amazon SQS
         /// returns the <code>OverLimit</code> error message. To avoid reaching the limit, you
         /// should delete messages from the queue after they're processed. You can also increase
@@ -781,7 +626,7 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// For FIFO queues, there can be a maximum of 20,000 in flight messages (received from
+        /// For FIFO queues, there can be a maximum of 20,000 inflight messages (received from
         /// a queue by a consumer, but not yet deleted from the queue). If you reach this limit,
         /// Amazon SQS returns no error messages.
         /// </para>
@@ -812,36 +657,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.MessageNotInflightException">
         /// The specified message isn't in flight.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The specified receipt handle isn't valid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         Task<ChangeMessageVisibilityResponse> ChangeMessageVisibilityAsync(string queueUrl, string receiptHandle, int visibilityTimeout, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -855,12 +672,11 @@ namespace Amazon.SQS
         /// 
         ///  
         /// <para>
-        /// For example, if the default timeout for a queue is 60 seconds, 15 seconds have elapsed
-        /// since you received the message, and you send a ChangeMessageVisibility call with <code>VisibilityTimeout</code>
-        /// set to 10 seconds, the 10 seconds begin to count from the time that you make the <code>ChangeMessageVisibility</code>
-        /// call. Thus, any attempt to change the visibility timeout or to delete that message
-        /// 10 seconds after you initially change the visibility timeout (a total of 25 seconds)
-        /// might result in an error.
+        /// For example, you have a message with a visibility timeout of 5 minutes. After 3 minutes,
+        /// you call <code>ChangeMessageVisibility</code> with a timeout of 10 minutes. You can
+        /// continue to call <code>ChangeMessageVisibility</code> to extend the visibility timeout
+        /// to the maximum allowed time. If you try to extend the visibility timeout beyond the
+        /// maximum, your request is rejected.
         /// </para>
         ///  
         /// <para>
@@ -885,17 +701,17 @@ namespace Amazon.SQS
         /// There is no limit to the number of stored messages. A message is considered to be
         /// <i>in flight</i> after it is received from a queue by a consumer, but not yet deleted
         /// from the queue (that is, between states 2 and 3). There is a limit to the number of
-        /// in flight messages.
+        /// inflight messages.
         /// </para>
         ///  
         /// <para>
-        /// Limits that apply to in flight messages are unrelated to the <i>unlimited</i> number
+        /// Limits that apply to inflight messages are unrelated to the <i>unlimited</i> number
         /// of stored messages.
         /// </para>
         ///  
         /// <para>
         /// For most standard queues (depending on queue traffic and message backlog), there can
-        /// be a maximum of approximately 120,000 in flight messages (received from a queue by
+        /// be a maximum of approximately 120,000 inflight messages (received from a queue by
         /// a consumer, but not yet deleted from the queue). If you reach this limit, Amazon SQS
         /// returns the <code>OverLimit</code> error message. To avoid reaching the limit, you
         /// should delete messages from the queue after they're processed. You can also increase
@@ -905,7 +721,7 @@ namespace Amazon.SQS
         /// </para>
         ///  
         /// <para>
-        /// For FIFO queues, there can be a maximum of 20,000 in flight messages (received from
+        /// For FIFO queues, there can be a maximum of 20,000 inflight messages (received from
         /// a queue by a consumer, but not yet deleted from the queue). If you reach this limit,
         /// Amazon SQS returns no error messages.
         /// </para>
@@ -934,36 +750,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.MessageNotInflightException">
         /// The specified message isn't in flight.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The specified receipt handle isn't valid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibility">REST API Reference for ChangeMessageVisibility Operation</seealso>
         Task<ChangeMessageVisibilityResponse> ChangeMessageVisibilityAsync(ChangeMessageVisibilityRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -985,7 +773,20 @@ namespace Amazon.SQS
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of <code>200</code>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue whose messages' visibility is changed. Queue URLs and names are case-sensitive.</param>
         /// <param name="entries">A list of receipt handles of the messages for which the visibility timeout must be changed.</param>
@@ -1000,36 +801,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries);
@@ -1046,7 +819,20 @@ namespace Amazon.SQS
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of <code>200</code>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangeMessageVisibilityBatch service method.</param>
         /// 
@@ -1060,36 +846,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         ChangeMessageVisibilityBatchResponse ChangeMessageVisibilityBatch(ChangeMessageVisibilityBatchRequest request);
@@ -1107,7 +865,20 @@ namespace Amazon.SQS
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of <code>200</code>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue whose messages' visibility is changed. Queue URLs and names are case-sensitive.</param>
         /// <param name="entries">A list of receipt handles of the messages for which the visibility timeout must be changed.</param>
@@ -1125,36 +896,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         Task<ChangeMessageVisibilityBatchResponse> ChangeMessageVisibilityBatchAsync(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1172,7 +915,20 @@ namespace Amazon.SQS
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of <code>200</code>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ChangeMessageVisibilityBatch service method.</param>
         /// <param name="cancellationToken">
@@ -1189,36 +945,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatch">REST API Reference for ChangeMessageVisibilityBatch Operation</seealso>
         Task<ChangeMessageVisibilityBatchResponse> ChangeMessageVisibilityBatchAsync(ChangeMessageVisibilityBatchRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1284,11 +1012,25 @@ namespace Amazon.SQS
         /// If the queue name, attribute names, or attribute values don't match an existing queue,
         /// <code>CreateQueue</code> returns an error.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -1296,18 +1038,6 @@ namespace Amazon.SQS
         /// <param name="queueName">The name of the new queue. The following limits apply to this name: <ul> <li> A queue name can have up to 80 characters. </li> <li> Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>). </li> <li> A FIFO queue name must end with the <code>.fifo</code> suffix. </li> </ul> Queue URLs and names are case-sensitive.</param>
         /// 
         /// <returns>The response from the CreateQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The specified attribute doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeValueException">
-        /// A queue attribute value is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDeletedRecentlyException">
         /// You must wait 60 seconds after deleting a queue before you can create another queue
         /// with the same name.
@@ -1315,31 +1045,6 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueNameExistsException">
         /// A queue with this name already exists. Amazon SQS returns this error only if the request
         /// includes attributes whose values differ from those of the existing queue.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         CreateQueueResponse CreateQueue(string queueName);
@@ -1400,11 +1105,25 @@ namespace Amazon.SQS
         /// If the queue name, attribute names, or attribute values don't match an existing queue,
         /// <code>CreateQueue</code> returns an error.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -1412,18 +1131,6 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the CreateQueue service method.</param>
         /// 
         /// <returns>The response from the CreateQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The specified attribute doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeValueException">
-        /// A queue attribute value is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDeletedRecentlyException">
         /// You must wait 60 seconds after deleting a queue before you can create another queue
         /// with the same name.
@@ -1431,31 +1138,6 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueNameExistsException">
         /// A queue with this name already exists. Amazon SQS returns this error only if the request
         /// includes attributes whose values differ from those of the existing queue.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         CreateQueueResponse CreateQueue(CreateQueueRequest request);
@@ -1517,11 +1199,25 @@ namespace Amazon.SQS
         /// If the queue name, attribute names, or attribute values don't match an existing queue,
         /// <code>CreateQueue</code> returns an error.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -1532,18 +1228,6 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the CreateQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The specified attribute doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeValueException">
-        /// A queue attribute value is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDeletedRecentlyException">
         /// You must wait 60 seconds after deleting a queue before you can create another queue
         /// with the same name.
@@ -1551,31 +1235,6 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueNameExistsException">
         /// A queue with this name already exists. Amazon SQS returns this error only if the request
         /// includes attributes whose values differ from those of the existing queue.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         Task<CreateQueueResponse> CreateQueueAsync(string queueName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1637,11 +1296,25 @@ namespace Amazon.SQS
         /// If the queue name, attribute names, or attribute values don't match an existing queue,
         /// <code>CreateQueue</code> returns an error.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> </ul> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
+        ///  <note> 
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -1652,18 +1325,6 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the CreateQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
-        /// The specified attribute doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeValueException">
-        /// A queue attribute value is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDeletedRecentlyException">
         /// You must wait 60 seconds after deleting a queue before you can create another queue
         /// with the same name.
@@ -1671,31 +1332,6 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.QueueNameExistsException">
         /// A queue with this name already exists. Amazon SQS returns this error only if the request
         /// includes attributes whose values differ from those of the existing queue.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/CreateQueue">REST API Reference for CreateQueue Operation</seealso>
         Task<CreateQueueResponse> CreateQueueAsync(CreateQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -1719,7 +1355,7 @@ namespace Amazon.SQS
         /// a message. If you receive a message more than once, the <code>ReceiptHandle</code>
         /// is different each time you receive a message. When you use the <code>DeleteMessage</code>
         /// action, you must provide the most recently received <code>ReceiptHandle</code> for
-        /// the message (otherwise, the request succeeds, but the message will not be deleted).
+        /// the message (otherwise, the request succeeds, but the message might not be deleted).
         /// </para>
         ///  
         /// <para>
@@ -1739,39 +1375,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidIdFormatException">
         /// The specified receipt handle isn't valid for the current version.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The specified receipt handle isn't valid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         DeleteMessageResponse DeleteMessage(string queueUrl, string receiptHandle);
@@ -1790,7 +1395,7 @@ namespace Amazon.SQS
         /// a message. If you receive a message more than once, the <code>ReceiptHandle</code>
         /// is different each time you receive a message. When you use the <code>DeleteMessage</code>
         /// action, you must provide the most recently received <code>ReceiptHandle</code> for
-        /// the message (otherwise, the request succeeds, but the message will not be deleted).
+        /// the message (otherwise, the request succeeds, but the message might not be deleted).
         /// </para>
         ///  
         /// <para>
@@ -1809,39 +1414,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidIdFormatException">
         /// The specified receipt handle isn't valid for the current version.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The specified receipt handle isn't valid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         DeleteMessageResponse DeleteMessage(DeleteMessageRequest request);
@@ -1861,7 +1435,7 @@ namespace Amazon.SQS
         /// a message. If you receive a message more than once, the <code>ReceiptHandle</code>
         /// is different each time you receive a message. When you use the <code>DeleteMessage</code>
         /// action, you must provide the most recently received <code>ReceiptHandle</code> for
-        /// the message (otherwise, the request succeeds, but the message will not be deleted).
+        /// the message (otherwise, the request succeeds, but the message might not be deleted).
         /// </para>
         ///  
         /// <para>
@@ -1884,39 +1458,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidIdFormatException">
         /// The specified receipt handle isn't valid for the current version.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The specified receipt handle isn't valid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         Task<DeleteMessageResponse> DeleteMessageAsync(string queueUrl, string receiptHandle, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1936,7 +1479,7 @@ namespace Amazon.SQS
         /// a message. If you receive a message more than once, the <code>ReceiptHandle</code>
         /// is different each time you receive a message. When you use the <code>DeleteMessage</code>
         /// action, you must provide the most recently received <code>ReceiptHandle</code> for
-        /// the message (otherwise, the request succeeds, but the message will not be deleted).
+        /// the message (otherwise, the request succeeds, but the message might not be deleted).
         /// </para>
         ///  
         /// <para>
@@ -1958,39 +1501,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidIdFormatException">
         /// The specified receipt handle isn't valid for the current version.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.ReceiptHandleIsInvalidException">
         /// The specified receipt handle isn't valid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessage">REST API Reference for DeleteMessage Operation</seealso>
         Task<DeleteMessageResponse> DeleteMessageAsync(DeleteMessageRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2011,7 +1523,20 @@ namespace Amazon.SQS
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of <code>200</code>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are deleted. Queue URLs and names are case-sensitive.</param>
         /// <param name="entries">A list of receipt handles for the messages to be deleted.</param>
@@ -2026,36 +1551,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         DeleteMessageBatchResponse DeleteMessageBatch(string queueUrl, List<DeleteMessageBatchRequestEntry> entries);
@@ -2071,7 +1568,20 @@ namespace Amazon.SQS
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of <code>200</code>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMessageBatch service method.</param>
         /// 
@@ -2085,36 +1595,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         DeleteMessageBatchResponse DeleteMessageBatch(DeleteMessageBatchRequest request);
@@ -2131,7 +1613,20 @@ namespace Amazon.SQS
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of <code>200</code>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are deleted. Queue URLs and names are case-sensitive.</param>
         /// <param name="entries">A list of receipt handles for the messages to be deleted.</param>
@@ -2149,36 +1644,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         Task<DeleteMessageBatchResponse> DeleteMessageBatchAsync(string queueUrl, List<DeleteMessageBatchRequestEntry> entries, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2195,7 +1662,20 @@ namespace Amazon.SQS
         /// actions, you should check for batch errors even when the call returns an HTTP status
         /// code of <code>200</code>.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteMessageBatch service method.</param>
         /// <param name="cancellationToken">
@@ -2212,36 +1692,8 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteMessageBatch">REST API Reference for DeleteMessageBatch Operation</seealso>
         Task<DeleteMessageBatchResponse> DeleteMessageBatchAsync(DeleteMessageBatchRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2276,52 +1728,14 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The delete operation uses the HTTP <code>GET</code> verb.
         /// </para>
         ///  </note>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to delete. Queue URLs and names are case-sensitive.</param>
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         DeleteQueueResponse DeleteQueue(string queueUrl);
 
@@ -2350,52 +1764,14 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The delete operation uses the HTTP <code>GET</code> verb.
         /// </para>
         ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteQueue service method.</param>
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         DeleteQueueResponse DeleteQueue(DeleteQueueRequest request);
 
@@ -2425,12 +1801,8 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The delete operation uses the HTTP <code>GET</code> verb.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2440,40 +1812,6 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         Task<DeleteQueueResponse> DeleteQueueAsync(string queueUrl, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -2503,12 +1841,8 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The delete operation uses the HTTP <code>GET</code> verb.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2518,40 +1852,6 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the DeleteQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/DeleteQueue">REST API Reference for DeleteQueue Operation</seealso>
         Task<DeleteQueueResponse> DeleteQueueAsync(DeleteQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -2571,42 +1871,11 @@ namespace Amazon.SQS
         ///  </note>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue whose attribute information is retrieved. Queue URLs and names are case-sensitive.</param>
-        /// <param name="attributeNames">A list of attributes for which to retrieve information. The <code>AttributeNames</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results. <note> In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully. </note> The following attributes are supported: <important> The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, and <code>ApproximateNumberOfMessages</code> metrics may not achieve consistency until at least 1 minute after the producers stop sending messages. This period is required for the queue metadata to reach eventual consistency.  </important> <ul> <li>  <code>All</code> – Returns all values.  </li> <li>  <code>ApproximateNumberOfMessages</code> – Returns the approximate number of messages available for retrieval from the queue. </li> <li>  <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number of messages in the queue that are delayed and not available for reading immediately. This can happen when the queue is configured as a delay queue or when a message has been sent with a delay parameter. </li> <li>  <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate number of messages that are in flight. Messages are considered to be <i>in flight</i> if they have been sent to a client but have not yet been deleted or have not yet reached the end of their visibility window.  </li> <li>  <code>CreatedTimestamp</code> – Returns the time when the queue was created in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>DelaySeconds</code> – Returns the default delay on the queue in seconds. </li> <li>  <code>LastModifiedTimestamp</code> – Returns the time when the queue was last changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message can contain before Amazon SQS rejects it. </li> <li>  <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds, for which Amazon SQS retains a message. When you change a queue's attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and will impact existing messages in the queue potentially causing them to be expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below the age of existing messages. </li> <li>  <code>Policy</code> – Returns the policy of the queue. </li> <li>  <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the queue. </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in seconds, for which the <code>ReceiveMessage</code> action waits for a message to arrive.  </li> <li>  <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>  <ul> <li>  <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. The parameters are as follows: <ul> <li>  <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. Default: 10. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> </li> <li>  <code>RedriveAllowPolicy</code> – The string that includes the parameters for the permissions for the dead-letter queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows: <ul> <li>  <code>redrivePermission</code> – The permission type that defines which source queues can specify the current queue as the dead-letter queue. Valid values are: <ul> <li>  <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services account in the same Region can specify this queue as the dead-letter queue. </li> <li>  <code>denyAll</code> – No source queues can specify this queue as the dead-letter queue. </li> <li>  <code>byQueue</code> – Only queues specified by the <code>sourceQueueArns</code> parameter can specify this queue as the dead-letter queue. </li> </ul> </li> <li>  <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source queues that can specify this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can specify up to 10 source queue ARNs. To allow more than 10 source queues to specify dead-letter queues, set the <code>redrivePermission</code> parameter to <code>allowAll</code>. </li> </ul> </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>. <note> To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix. </note> </li> <li>  <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>. </li> <li>  <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <code>DeduplicationScope</code> to <code>messageGroup</code>. </li> <li> Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
+        /// <param name="attributeNames">A list of attributes for which to retrieve information. The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results. <note> In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully. </note> The following attributes are supported: <important> The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency until at least 1 minute after the producers stop sending messages. This period is required for the queue metadata to reach eventual consistency.  </important> <ul> <li>  <code>All</code> – Returns all values.  </li> <li>  <code>ApproximateNumberOfMessages</code> – Returns the approximate number of messages available for retrieval from the queue. </li> <li>  <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number of messages in the queue that are delayed and not available for reading immediately. This can happen when the queue is configured as a delay queue or when a message has been sent with a delay parameter. </li> <li>  <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate number of messages that are in flight. Messages are considered to be <i>in flight</i> if they have been sent to a client but have not yet been deleted or have not yet reached the end of their visibility window.  </li> <li>  <code>CreatedTimestamp</code> – Returns the time when the queue was created in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>DelaySeconds</code> – Returns the default delay on the queue in seconds. </li> <li>  <code>LastModifiedTimestamp</code> – Returns the time when the queue was last changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message can contain before Amazon SQS rejects it. </li> <li>  <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds, for which Amazon SQS retains a message. </li> <li>  <code>Policy</code> – Returns the policy of the queue. </li> <li>  <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the queue. </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in seconds, for which the <code>ReceiveMessage</code> action waits for a message to arrive.  </li> <li>  <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. <ul> <li>  <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> </li> <li>  <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>. <note> To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix. </note> </li> <li>  <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>. </li> <li>  <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <code>DeduplicationScope</code> to <code>messageGroup</code>. </li> <li> Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the GetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         GetQueueAttributesResponse GetQueueAttributes(string queueUrl, List<string> attributeNames);
@@ -2627,37 +1896,6 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         GetQueueAttributesResponse GetQueueAttributes(GetQueueAttributesRequest request);
 
@@ -2673,7 +1911,7 @@ namespace Amazon.SQS
         ///  </note>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue whose attribute information is retrieved. Queue URLs and names are case-sensitive.</param>
-        /// <param name="attributeNames">A list of attributes for which to retrieve information. The <code>AttributeNames</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results. <note> In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully. </note> The following attributes are supported: <important> The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, and <code>ApproximateNumberOfMessages</code> metrics may not achieve consistency until at least 1 minute after the producers stop sending messages. This period is required for the queue metadata to reach eventual consistency.  </important> <ul> <li>  <code>All</code> – Returns all values.  </li> <li>  <code>ApproximateNumberOfMessages</code> – Returns the approximate number of messages available for retrieval from the queue. </li> <li>  <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number of messages in the queue that are delayed and not available for reading immediately. This can happen when the queue is configured as a delay queue or when a message has been sent with a delay parameter. </li> <li>  <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate number of messages that are in flight. Messages are considered to be <i>in flight</i> if they have been sent to a client but have not yet been deleted or have not yet reached the end of their visibility window.  </li> <li>  <code>CreatedTimestamp</code> – Returns the time when the queue was created in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>DelaySeconds</code> – Returns the default delay on the queue in seconds. </li> <li>  <code>LastModifiedTimestamp</code> – Returns the time when the queue was last changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message can contain before Amazon SQS rejects it. </li> <li>  <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds, for which Amazon SQS retains a message. When you change a queue's attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and will impact existing messages in the queue potentially causing them to be expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below the age of existing messages. </li> <li>  <code>Policy</code> – Returns the policy of the queue. </li> <li>  <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the queue. </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in seconds, for which the <code>ReceiveMessage</code> action waits for a message to arrive.  </li> <li>  <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>  <ul> <li>  <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. The parameters are as follows: <ul> <li>  <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. Default: 10. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> </li> <li>  <code>RedriveAllowPolicy</code> – The string that includes the parameters for the permissions for the dead-letter queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows: <ul> <li>  <code>redrivePermission</code> – The permission type that defines which source queues can specify the current queue as the dead-letter queue. Valid values are: <ul> <li>  <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services account in the same Region can specify this queue as the dead-letter queue. </li> <li>  <code>denyAll</code> – No source queues can specify this queue as the dead-letter queue. </li> <li>  <code>byQueue</code> – Only queues specified by the <code>sourceQueueArns</code> parameter can specify this queue as the dead-letter queue. </li> </ul> </li> <li>  <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source queues that can specify this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can specify up to 10 source queue ARNs. To allow more than 10 source queues to specify dead-letter queues, set the <code>redrivePermission</code> parameter to <code>allowAll</code>. </li> </ul> </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>. <note> To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix. </note> </li> <li>  <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>. </li> <li>  <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <code>DeduplicationScope</code> to <code>messageGroup</code>. </li> <li> Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
+        /// <param name="attributeNames">A list of attributes for which to retrieve information. The <code>AttributeName.N</code> parameter is optional, but if you don't specify values for this parameter, the request returns empty results. <note> In the future, new attributes might be added. If you write code that calls this action, we recommend that you structure your code so that it can handle new attributes gracefully. </note> The following attributes are supported: <important> The <code>ApproximateNumberOfMessagesDelayed</code>, <code>ApproximateNumberOfMessagesNotVisible</code>, and <code>ApproximateNumberOfMessagesVisible</code> metrics may not achieve consistency until at least 1 minute after the producers stop sending messages. This period is required for the queue metadata to reach eventual consistency.  </important> <ul> <li>  <code>All</code> – Returns all values.  </li> <li>  <code>ApproximateNumberOfMessages</code> – Returns the approximate number of messages available for retrieval from the queue. </li> <li>  <code>ApproximateNumberOfMessagesDelayed</code> – Returns the approximate number of messages in the queue that are delayed and not available for reading immediately. This can happen when the queue is configured as a delay queue or when a message has been sent with a delay parameter. </li> <li>  <code>ApproximateNumberOfMessagesNotVisible</code> – Returns the approximate number of messages that are in flight. Messages are considered to be <i>in flight</i> if they have been sent to a client but have not yet been deleted or have not yet reached the end of their visibility window.  </li> <li>  <code>CreatedTimestamp</code> – Returns the time when the queue was created in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>DelaySeconds</code> – Returns the default delay on the queue in seconds. </li> <li>  <code>LastModifiedTimestamp</code> – Returns the time when the queue was last changed in seconds (<a href="http://en.wikipedia.org/wiki/Unix_time">epoch time</a>). </li> <li>  <code>MaximumMessageSize</code> – Returns the limit of how many bytes a message can contain before Amazon SQS rejects it. </li> <li>  <code>MessageRetentionPeriod</code> – Returns the length of time, in seconds, for which Amazon SQS retains a message. </li> <li>  <code>Policy</code> – Returns the policy of the queue. </li> <li>  <code>QueueArn</code> – Returns the Amazon resource name (ARN) of the queue. </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> – Returns the length of time, in seconds, for which the <code>ReceiveMessage</code> action waits for a message to arrive.  </li> <li>  <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. <ul> <li>  <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> </li> <li>  <code>VisibilityTimeout</code> – Returns the visibility timeout for the queue. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – Returns the ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> – Returns the length of time, in seconds, for which Amazon SQS can reuse a data key to encrypt or decrypt messages before calling KMS again. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <code>SqsManagedSseEnabled</code> – Returns information about whether the queue is using SSE-SQS encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>FifoQueue</code> – Returns information about whether the queue is FIFO. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-understanding-logic.html">FIFO queue logic</a> in the <i>Amazon SQS Developer Guide</i>. <note> To determine whether a queue is <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO</a>, you can check whether <code>QueueName</code> ends with the <code>.fifo</code> suffix. </note> </li> <li>  <code>ContentBasedDeduplication</code> – Returns whether content-based deduplication is enabled for the queue. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>.  </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>. </li> <li>  <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <code>DeduplicationScope</code> to <code>messageGroup</code>. </li> <li> Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -2681,37 +1919,6 @@ namespace Amazon.SQS
         /// <returns>The response from the GetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         Task<GetQueueAttributesResponse> GetQueueAttributesAsync(string queueUrl, List<string> attributeNames, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2735,37 +1942,6 @@ namespace Amazon.SQS
         /// <returns>The response from the GetQueueAttributes service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueAttributes">REST API Reference for GetQueueAttributes Operation</seealso>
         Task<GetQueueAttributesResponse> GetQueueAttributesAsync(GetQueueAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -2791,39 +1967,8 @@ namespace Amazon.SQS
         /// <param name="queueName">The name of the queue whose URL must be fetched. Maximum 80 characters. Valid values: alphanumeric characters, hyphens (<code>-</code>), and underscores (<code>_</code>). Queue URLs and names are case-sensitive.</param>
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         GetQueueUrlResponse GetQueueUrl(string queueName);
@@ -2844,39 +1989,8 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the GetQueueUrl service method.</param>
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         GetQueueUrlResponse GetQueueUrl(GetQueueUrlRequest request);
@@ -2901,39 +2015,8 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         Task<GetQueueUrlResponse> GetQueueUrlAsync(string queueName, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -2958,39 +2041,8 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the GetQueueUrl service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/GetQueueUrl">REST API Reference for GetQueueUrl Operation</seealso>
         Task<GetQueueUrlResponse> GetQueueUrlAsync(GetQueueUrlRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3023,39 +2075,8 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the ListDeadLetterSourceQueues service method.</param>
         /// 
         /// <returns>The response from the ListDeadLetterSourceQueues service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         ListDeadLetterSourceQueuesResponse ListDeadLetterSourceQueues(ListDeadLetterSourceQueuesRequest request);
@@ -3088,39 +2109,8 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the ListDeadLetterSourceQueues service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListDeadLetterSourceQueues">REST API Reference for ListDeadLetterSourceQueues Operation</seealso>
         Task<ListDeadLetterSourceQueuesResponse> ListDeadLetterSourceQueuesAsync(ListDeadLetterSourceQueuesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3149,7 +2139,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -3157,37 +2147,6 @@ namespace Amazon.SQS
         /// <param name="queueNamePrefix">A string to use for filtering the list results. Only those queues whose name begins with the specified string are returned. Queue URLs and names are case-sensitive.</param>
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         ListQueuesResponse ListQueues(string queueNamePrefix);
 
@@ -3210,7 +2169,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -3218,37 +2177,6 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the ListQueues service method.</param>
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         ListQueuesResponse ListQueues(ListQueuesRequest request);
 
@@ -3272,7 +2200,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -3283,37 +2211,6 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         Task<ListQueuesResponse> ListQueuesAsync(string queueNamePrefix, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -3337,7 +2234,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -3348,37 +2245,6 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the ListQueues service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueues">REST API Reference for ListQueues Operation</seealso>
         Task<ListQueuesResponse> ListQueuesAsync(ListQueuesRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -3396,7 +2262,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -3404,40 +2270,6 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the ListQueueTags service method.</param>
         /// 
         /// <returns>The response from the ListQueueTags service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">REST API Reference for ListQueueTags Operation</seealso>
         ListQueueTagsResponse ListQueueTags(ListQueueTagsRequest request);
 
@@ -3452,7 +2284,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -3463,40 +2295,6 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the ListQueueTags service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ListQueueTags">REST API Reference for ListQueueTags Operation</seealso>
         Task<ListQueueTagsResponse> ListQueueTagsAsync(ListQueueTagsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -3532,43 +2330,12 @@ namespace Amazon.SQS
         /// <param name="queueUrl">The URL of the queue from which the <code>PurgeQueue</code> action deletes messages. Queue URLs and names are case-sensitive.</param>
         /// 
         /// <returns>The response from the PurgeQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.PurgeQueueInProgressException">
         /// Indicates that the specified queue previously received a <code>PurgeQueue</code> request
         /// within the last 60 seconds (the time it can take to delete the messages in the queue).
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         PurgeQueueResponse PurgeQueue(string queueUrl);
@@ -3600,43 +2367,12 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the PurgeQueue service method.</param>
         /// 
         /// <returns>The response from the PurgeQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.PurgeQueueInProgressException">
         /// Indicates that the specified queue previously received a <code>PurgeQueue</code> request
         /// within the last 60 seconds (the time it can take to delete the messages in the queue).
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         PurgeQueueResponse PurgeQueue(PurgeQueueRequest request);
@@ -3672,43 +2408,12 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the PurgeQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.PurgeQueueInProgressException">
         /// Indicates that the specified queue previously received a <code>PurgeQueue</code> request
         /// within the last 60 seconds (the time it can take to delete the messages in the queue).
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         Task<PurgeQueueResponse> PurgeQueueAsync(string queueUrl, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -3744,43 +2449,12 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the PurgeQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.PurgeQueueInProgressException">
         /// Indicates that the specified queue previously received a <code>PurgeQueue</code> request
         /// within the last 60 seconds (the time it can take to delete the messages in the queue).
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
         /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/PurgeQueue">REST API Reference for PurgeQueue Operation</seealso>
         Task<PurgeQueueResponse> PurgeQueueAsync(PurgeQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -3863,75 +2537,10 @@ namespace Amazon.SQS
         /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are received. Queue URLs and names are case-sensitive.</param>
         /// 
         /// <returns>The response from the ReceiveMessage service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// this error if the maximum number of inflight messages is reached and <code>AddPermission</code>
         /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         ReceiveMessageResponse ReceiveMessage(string queueUrl);
@@ -4009,75 +2618,10 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the ReceiveMessage service method.</param>
         /// 
         /// <returns>The response from the ReceiveMessage service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// this error if the maximum number of inflight messages is reached and <code>AddPermission</code>
         /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         ReceiveMessageResponse ReceiveMessage(ReceiveMessageRequest request);
@@ -4159,75 +2703,10 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the ReceiveMessage service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// this error if the maximum number of inflight messages is reached and <code>AddPermission</code>
         /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         Task<ReceiveMessageResponse> ReceiveMessageAsync(string queueUrl, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -4309,75 +2788,10 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the ReceiveMessage service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.OverLimitException">
         /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
+        /// this error if the maximum number of inflight messages is reached and <code>AddPermission</code>
         /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ReceiveMessage">REST API Reference for ReceiveMessage Operation</seealso>
         Task<ReceiveMessageResponse> ReceiveMessageAsync(ReceiveMessageRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -4399,7 +2813,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -4414,40 +2828,6 @@ namespace Amazon.SQS
         /// <param name="label">The identification of the permission to remove. This is the label added using the <code> <a>AddPermission</a> </code> action.</param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         RemovePermissionResponse RemovePermission(string queueUrl, string label);
 
@@ -4463,7 +2843,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -4477,40 +2857,6 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the RemovePermission service method.</param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         RemovePermissionResponse RemovePermission(RemovePermissionRequest request);
 
@@ -4527,7 +2873,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -4545,40 +2891,6 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         Task<RemovePermissionResponse> RemovePermissionAsync(string queueUrl, string label, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
@@ -4595,7 +2907,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -4612,40 +2924,6 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the RemovePermission service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/RemovePermission">REST API Reference for RemovePermission Operation</seealso>
         Task<RemovePermissionResponse> RemovePermissionAsync(RemovePermissionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -4676,73 +2954,11 @@ namespace Amazon.SQS
         ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs and names are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KiB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
+        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
         /// 
         /// <returns>The response from the SendMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidMessageContentsException">
         /// The message contains characters outside the allowed set.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
@@ -4777,68 +2993,6 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidMessageContentsException">
         /// The message contains characters outside the allowed set.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
@@ -4868,7 +3022,7 @@ namespace Amazon.SQS
         ///  </important>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs and names are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KiB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
+        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -4876,68 +3030,6 @@ namespace Amazon.SQS
         /// <returns>The response from the SendMessage service method, as returned by SQS.</returns>
         /// <exception cref="Amazon.SQS.Model.InvalidMessageContentsException">
         /// The message contains characters outside the allowed set.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
@@ -4976,68 +3068,6 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidMessageContentsException">
         /// The message contains characters outside the allowed set.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
         /// Error code 400. Unsupported operation.
         /// </exception>
@@ -5050,11 +3080,9 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// You can use <code>SendMessageBatch</code> to send up to 10 messages to the specified
-        /// queue by assigning either identical or different values to each message (or by not
-        /// assigning values at all). This is a batch version of <code> <a>SendMessage</a>.</code>
-        /// For a FIFO queue, multiple messages within a single batch are enqueued in the order
-        /// they are sent.
+        /// Delivers up to ten messages to the specified queue. This is a batch version of <code>
+        /// <a>SendMessage</a>.</code> For a FIFO queue, multiple messages within a single batch
+        /// are enqueued in the order they are sent.
         /// 
         ///  
         /// <para>
@@ -5066,7 +3094,7 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// The maximum allowed individual message size and the maximum total payload size (the
-        /// sum of the individual lengths of all of the batched messages) are both 256 KiB (262,144
+        /// sum of the individual lengths of all of the batched messages) are both 256 KB (262,144
         /// bytes).
         /// </para>
         ///  <important> 
@@ -5089,6 +3117,20 @@ namespace Amazon.SQS
         /// <para>
         /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
         /// SQS uses the default value for the queue.
+        /// </para>
+        ///  
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which batched messages are sent. Queue URLs and names are case-sensitive.</param>
@@ -5107,68 +3149,6 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
@@ -5179,11 +3159,9 @@ namespace Amazon.SQS
         SendMessageBatchResponse SendMessageBatch(string queueUrl, List<SendMessageBatchRequestEntry> entries);
 
         /// <summary>
-        /// You can use <code>SendMessageBatch</code> to send up to 10 messages to the specified
-        /// queue by assigning either identical or different values to each message (or by not
-        /// assigning values at all). This is a batch version of <code> <a>SendMessage</a>.</code>
-        /// For a FIFO queue, multiple messages within a single batch are enqueued in the order
-        /// they are sent.
+        /// Delivers up to ten messages to the specified queue. This is a batch version of <code>
+        /// <a>SendMessage</a>.</code> For a FIFO queue, multiple messages within a single batch
+        /// are enqueued in the order they are sent.
         /// 
         ///  
         /// <para>
@@ -5195,7 +3173,7 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// The maximum allowed individual message size and the maximum total payload size (the
-        /// sum of the individual lengths of all of the batched messages) are both 256 KiB (262,144
+        /// sum of the individual lengths of all of the batched messages) are both 256 KB (262,144
         /// bytes).
         /// </para>
         ///  <important> 
@@ -5219,6 +3197,20 @@ namespace Amazon.SQS
         /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
         /// SQS uses the default value for the queue.
         /// </para>
+        ///  
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendMessageBatch service method.</param>
         /// 
@@ -5234,68 +3226,6 @@ namespace Amazon.SQS
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
@@ -5308,11 +3238,9 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// You can use <code>SendMessageBatch</code> to send up to 10 messages to the specified
-        /// queue by assigning either identical or different values to each message (or by not
-        /// assigning values at all). This is a batch version of <code> <a>SendMessage</a>.</code>
-        /// For a FIFO queue, multiple messages within a single batch are enqueued in the order
-        /// they are sent.
+        /// Delivers up to ten messages to the specified queue. This is a batch version of <code>
+        /// <a>SendMessage</a>.</code> For a FIFO queue, multiple messages within a single batch
+        /// are enqueued in the order they are sent.
         /// 
         ///  
         /// <para>
@@ -5324,7 +3252,7 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// The maximum allowed individual message size and the maximum total payload size (the
-        /// sum of the individual lengths of all of the batched messages) are both 256 KiB (262,144
+        /// sum of the individual lengths of all of the batched messages) are both 256 KB (262,144
         /// bytes).
         /// </para>
         ///  <important> 
@@ -5347,6 +3275,20 @@ namespace Amazon.SQS
         /// <para>
         /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
         /// SQS uses the default value for the queue.
+        /// </para>
+        ///  
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
         /// </para>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which batched messages are sent. Queue URLs and names are case-sensitive.</param>
@@ -5368,68 +3310,6 @@ namespace Amazon.SQS
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
         /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
         /// </exception>
@@ -5441,11 +3321,9 @@ namespace Amazon.SQS
 
 
         /// <summary>
-        /// You can use <code>SendMessageBatch</code> to send up to 10 messages to the specified
-        /// queue by assigning either identical or different values to each message (or by not
-        /// assigning values at all). This is a batch version of <code> <a>SendMessage</a>.</code>
-        /// For a FIFO queue, multiple messages within a single batch are enqueued in the order
-        /// they are sent.
+        /// Delivers up to ten messages to the specified queue. This is a batch version of <code>
+        /// <a>SendMessage</a>.</code> For a FIFO queue, multiple messages within a single batch
+        /// are enqueued in the order they are sent.
         /// 
         ///  
         /// <para>
@@ -5457,7 +3335,7 @@ namespace Amazon.SQS
         ///  
         /// <para>
         /// The maximum allowed individual message size and the maximum total payload size (the
-        /// sum of the individual lengths of all of the batched messages) are both 256 KiB (262,144
+        /// sum of the individual lengths of all of the batched messages) are both 256 KB (262,144
         /// bytes).
         /// </para>
         ///  <important> 
@@ -5481,6 +3359,20 @@ namespace Amazon.SQS
         /// If you don't specify the <code>DelaySeconds</code> parameter for an entry, Amazon
         /// SQS uses the default value for the queue.
         /// </para>
+        ///  
+        /// <para>
+        /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
+        /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
+        /// list with two elements looks like this:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.1=first</code> 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>&amp;AttributeName.2=second</code> 
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SendMessageBatch service method.</param>
         /// <param name="cancellationToken">
@@ -5499,68 +3391,6 @@ namespace Amazon.SQS
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidBatchEntryIdException">
         /// The <code>Id</code> of a batch entry in a batch request doesn't abide by the specification.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsAccessDeniedException">
-        /// The caller doesn't have the required KMS access.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsDisabledException">
-        /// The request was denied due to request throttling.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidKeyUsageException">
-        /// The request was rejected for one of the following reasons:
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The KeyUsage value of the KMS key is incompatible with the API operation.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// The encryption algorithm or signing algorithm specified for the operation is incompatible
-        /// with the type of key material in the KMS key (KeySpec).
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsInvalidStateException">
-        /// The request was rejected because the state of the specified resource is not valid
-        /// for this request.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsNotFoundException">
-        /// The request was rejected because the specified entity or resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsOptInRequiredException">
-        /// The request was rejected because the specified key policy isn't syntactically or semantically
-        /// correct.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.KmsThrottledException">
-        /// Amazon Web Services KMS throttles requests for the following conditions.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.SQS.Model.TooManyEntriesInBatchRequestException">
         /// The batch request contains more entries than permissible.
@@ -5580,9 +3410,7 @@ namespace Amazon.SQS
         /// Sets the value of one or more queue attributes. When you change a queue's attributes,
         /// the change can take up to 60 seconds for most of the attributes to propagate throughout
         /// the Amazon SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute
-        /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <code>MessageRetentionPeriod</code>
-        /// is reduced below the age of existing messages.
+        /// can take up to 15 minutes.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -5593,7 +3421,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -5605,53 +3433,11 @@ namespace Amazon.SQS
         ///  </li> </ul> </note>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue whose attributes are set. Queue URLs and names are case-sensitive.</param>
-        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses: <ul> <li>  <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.  </li> <li>  <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).  </li> <li>  <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days). When you change a queue's attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and will impact existing messages in the queue potentially causing them to be expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below the age of existing messages. </li> <li>  <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>.  </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.  </li> <li>  <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>  <ul> <li>  <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. The parameters are as follows: <ul> <li>  <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. Default: 10. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> </li> <li>  <code>RedriveAllowPolicy</code> – The string that includes the parameters for the permissions for the dead-letter queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows: <ul> <li>  <code>redrivePermission</code> – The permission type that defines which source queues can specify the current queue as the dead-letter queue. Valid values are: <ul> <li>  <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services account in the same Region can specify this queue as the dead-letter queue. </li> <li>  <code>denyAll</code> – No source queues can specify this queue as the dead-letter queue. </li> <li>  <code>byQueue</code> – Only queues specified by the <code>sourceQueueArns</code> parameter can specify this queue as the dead-letter queue. </li> </ul> </li> <li>  <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source queues that can specify this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can specify up to 10 source queue ARNs. To allow more than 10 source queues to specify dead-letter queues, set the <code>redrivePermission</code> parameter to <code>allowAll</code>. </li> </ul> </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following:  <ul> <li> Every message must have a unique <code>MessageDeduplicationId</code>. <ul> <li> You may provide a <code>MessageDeduplicationId</code> explicitly. </li> <li> If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error. </li> <li> If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </li> </ul> </li> <li> When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>. </li> <li>  <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <code>DeduplicationScope</code> to <code>messageGroup</code>. </li> <li> Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
+        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses: <ul> <li>  <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.  </li> <li>  <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).  </li> <li>  <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).  </li> <li>  <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>.  </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.  </li> <li>  <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. <ul> <li>  <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> </li> <li>  <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following:  <ul> <li> Every message must have a unique <code>MessageDeduplicationId</code>. <ul> <li> You may provide a <code>MessageDeduplicationId</code> explicitly. </li> <li> If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error. </li> <li> If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </li> </ul> </li> <li> When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>. </li> <li>  <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <code>DeduplicationScope</code> to <code>messageGroup</code>. </li> <li> Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeValueException">
-        /// A queue attribute value is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
-        /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         SetQueueAttributesResponse SetQueueAttributes(string queueUrl, Dictionary<string, string> attributes);
@@ -5660,9 +3446,7 @@ namespace Amazon.SQS
         /// Sets the value of one or more queue attributes. When you change a queue's attributes,
         /// the change can take up to 60 seconds for most of the attributes to propagate throughout
         /// the Amazon SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute
-        /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <code>MessageRetentionPeriod</code>
-        /// is reduced below the age of existing messages.
+        /// can take up to 15 minutes.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -5673,7 +3457,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -5687,50 +3471,8 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the SetQueueAttributes service method.</param>
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeValueException">
-        /// A queue attribute value is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
-        /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         SetQueueAttributesResponse SetQueueAttributes(SetQueueAttributesRequest request);
@@ -5740,9 +3482,7 @@ namespace Amazon.SQS
         /// Sets the value of one or more queue attributes. When you change a queue's attributes,
         /// the change can take up to 60 seconds for most of the attributes to propagate throughout
         /// the Amazon SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute
-        /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <code>MessageRetentionPeriod</code>
-        /// is reduced below the age of existing messages.
+        /// can take up to 15 minutes.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -5753,7 +3493,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -5765,56 +3505,14 @@ namespace Amazon.SQS
         ///  </li> </ul> </note>
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue whose attributes are set. Queue URLs and names are case-sensitive.</param>
-        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses: <ul> <li>  <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.  </li> <li>  <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).  </li> <li>  <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days). When you change a queue's attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and will impact existing messages in the queue potentially causing them to be expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below the age of existing messages. </li> <li>  <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>.  </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.  </li> <li>  <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter queues:</a>  <ul> <li>  <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. The parameters are as follows: <ul> <li>  <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. Default: 10. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> </li> <li>  <code>RedriveAllowPolicy</code> – The string that includes the parameters for the permissions for the dead-letter queue redrive permission and which source queues can specify dead-letter queues as a JSON object. The parameters are as follows: <ul> <li>  <code>redrivePermission</code> – The permission type that defines which source queues can specify the current queue as the dead-letter queue. Valid values are: <ul> <li>  <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services account in the same Region can specify this queue as the dead-letter queue. </li> <li>  <code>denyAll</code> – No source queues can specify this queue as the dead-letter queue. </li> <li>  <code>byQueue</code> – Only queues specified by the <code>sourceQueueArns</code> parameter can specify this queue as the dead-letter queue. </li> </ul> </li> <li>  <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source queues that can specify this queue as the dead-letter queue and redrive messages. You can specify this parameter only when the <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can specify up to 10 source queue ARNs. To allow more than 10 source queues to specify dead-letter queues, set the <code>redrivePermission</code> parameter to <code>allowAll</code>. </li> </ul> </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following:  <ul> <li> Every message must have a unique <code>MessageDeduplicationId</code>. <ul> <li> You may provide a <code>MessageDeduplicationId</code> explicitly. </li> <li> If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error. </li> <li> If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </li> </ul> </li> <li> When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>. </li> <li>  <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <code>DeduplicationScope</code> to <code>messageGroup</code>. </li> <li> Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
+        /// <param name="attributes">A map of attributes to set. The following lists the names, descriptions, and values of the special request parameters that the <code>SetQueueAttributes</code> action uses: <ul> <li>  <code>DelaySeconds</code> – The length of time, in seconds, for which the delivery of all messages in the queue is delayed. Valid values: An integer from 0 to 900 (15 minutes). Default: 0.  </li> <li>  <code>MaximumMessageSize</code> – The limit of how many bytes a message can contain before Amazon SQS rejects it. Valid values: An integer from 1,024 bytes (1 KiB) up to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB).  </li> <li>  <code>MessageRetentionPeriod</code> – The length of time, in seconds, for which Amazon SQS retains a message. Valid values: An integer representing seconds, from 60 (1 minute) to 1,209,600 (14 days). Default: 345,600 (4 days).  </li> <li>  <code>Policy</code> – The queue's policy. A valid Amazon Web Services policy. For more information about policy structure, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview of Amazon Web Services IAM Policies</a> in the <i>Identity and Access Management User Guide</i>.  </li> <li>  <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.  </li> <li>  <code>RedrivePolicy</code> – The string that includes the parameters for the dead-letter queue functionality of the source queue as a JSON object. For more information about the redrive policy and dead-letter queues, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>. <ul> <li>  <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the dead-letter queue to which Amazon SQS moves messages after the value of <code>maxReceiveCount</code> is exceeded. </li> <li>  <code>maxReceiveCount</code> – The number of times a message is delivered to the source queue before being moved to the dead-letter queue. When the <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code> for a queue, Amazon SQS moves the message to the dead-letter-queue. </li> </ul> <note> The dead-letter queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter queue of a standard queue must also be a standard queue. </note> </li> <li>  <code>VisibilityTimeout</code> – The visibility timeout for the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours). Default: 30. For more information about the visibility timeout, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>. </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>: <ul> <li>  <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services managed customer master key (CMK) for Amazon SQS or a custom CMK. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-sse-key-terms">Key Terms</a>. While the alias of the AWS-managed CMK for Amazon SQS is always <code>alias/aws/sqs</code>, the alias of a custom CMK can, for example, be <code>alias/<i>MyAlias</i> </code>. For more examples, see <a href="https://docs.aws.amazon.com/kms/latest/APIReference/API_DescribeKey.html#API_DescribeKey_RequestParameters">KeyId</a> in the <i>Key Management Service API Reference</i>.  </li> <li>  <code>KmsDataKeyReusePeriodSeconds</code> – The length of time, in seconds, for which Amazon SQS can reuse a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#data-keys">data key</a> to encrypt or decrypt messages before calling KMS again. An integer representing seconds, between 60 seconds (1 minute) and 86,400 seconds (24 hours). Default: 300 (5 minutes). A shorter time period provides better security but results in more calls to KMS which might incur charges after Free Tier. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How Does the Data Key Reuse Period Work?</a>.  </li> <li>  <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS owned encryption keys. Only one server-side encryption option is supported per queue (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a> or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>). </li> </ul> The following attribute applies only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues.html">FIFO (first-in-first-out) queues</a>: <ul> <li>  <code>ContentBasedDeduplication</code> – Enables content-based deduplication. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/FIFO-queues-exactly-once-processing.html">Exactly-once processing</a> in the <i>Amazon SQS Developer Guide</i>. Note the following:  <ul> <li> Every message must have a unique <code>MessageDeduplicationId</code>. <ul> <li> You may provide a <code>MessageDeduplicationId</code> explicitly. </li> <li> If you aren't able to provide a <code>MessageDeduplicationId</code> and you enable <code>ContentBasedDeduplication</code> for your queue, Amazon SQS uses a SHA-256 hash to generate the <code>MessageDeduplicationId</code> using the body of the message (but not the attributes of the message).  </li> <li> If you don't provide a <code>MessageDeduplicationId</code> and the queue doesn't have <code>ContentBasedDeduplication</code> set, the action fails with an error. </li> <li> If the queue has <code>ContentBasedDeduplication</code> set, your <code>MessageDeduplicationId</code> overrides the generated one. </li> </ul> </li> <li> When <code>ContentBasedDeduplication</code> is in effect, messages with identical content sent within the deduplication interval are treated as duplicates and only one copy of the message is delivered. </li> <li> If you send one message with <code>ContentBasedDeduplication</code> enabled and then another message with a <code>MessageDeduplicationId</code> that is the same as the one generated for the first <code>MessageDeduplicationId</code>, the two messages are treated as duplicates and only one copy of the message is delivered.  </li> </ul> </li> </ul> The following attributes apply only to <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/high-throughput-fifo.html">high throughput for FIFO queues</a>: <ul> <li>  <code>DeduplicationScope</code> – Specifies whether message deduplication occurs at the message group or queue level. Valid values are <code>messageGroup</code> and <code>queue</code>. </li> <li>  <code>FifoThroughputLimit</code> – Specifies whether the FIFO queue throughput quota applies to the entire queue or per message group. Valid values are <code>perQueue</code> and <code>perMessageGroupId</code>. The <code>perMessageGroupId</code> value is allowed only when the value for <code>DeduplicationScope</code> is <code>messageGroup</code>. </li> </ul> To enable high throughput for FIFO queues, do the following: <ul> <li> Set <code>DeduplicationScope</code> to <code>messageGroup</code>. </li> <li> Set <code>FifoThroughputLimit</code> to <code>perMessageGroupId</code>. </li> </ul> If you set these attributes to anything other than the values shown for enabling high throughput, normal throughput is in effect and deduplication occurs as specified. For information on throughput quotas, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/quotas-messages.html">Quotas related to messages</a> in the <i>Amazon SQS Developer Guide</i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeValueException">
-        /// A queue attribute value is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
-        /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         Task<SetQueueAttributesResponse> SetQueueAttributesAsync(string queueUrl, Dictionary<string, string> attributes, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -5824,9 +3522,7 @@ namespace Amazon.SQS
         /// Sets the value of one or more queue attributes. When you change a queue's attributes,
         /// the change can take up to 60 seconds for most of the attributes to propagate throughout
         /// the Amazon SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute
-        /// can take up to 15 minutes and will impact existing messages in the queue potentially
-        /// causing them to be expired and deleted if the <code>MessageRetentionPeriod</code>
-        /// is reduced below the age of existing messages.
+        /// can take up to 15 minutes.
         /// 
         ///  <note> <ul> <li> 
         /// <para>
@@ -5837,7 +3533,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </li> <li> 
@@ -5854,50 +3550,8 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the SetQueueAttributes service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
         /// <exception cref="Amazon.SQS.Model.InvalidAttributeNameException">
         /// The specified attribute doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidAttributeValueException">
-        /// A queue attribute value is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.OverLimitException">
-        /// The specified action violates a limit. For example, <code>ReceiveMessage</code> returns
-        /// this error if the maximum number of in flight messages is reached and <code>AddPermission</code>
-        /// returns this error if the maximum number of permissions for the queue is reached.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/SetQueueAttributes">REST API Reference for SetQueueAttributes Operation</seealso>
         Task<SetQueueAttributesResponse> SetQueueAttributesAsync(SetQueueAttributesRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -5942,7 +3596,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -5950,40 +3604,6 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the TagQueue service method.</param>
         /// 
         /// <returns>The response from the TagQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">REST API Reference for TagQueue Operation</seealso>
         TagQueueResponse TagQueue(TagQueueRequest request);
 
@@ -6024,7 +3644,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -6035,40 +3655,6 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the TagQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/TagQueue">REST API Reference for TagQueue Operation</seealso>
         Task<TagQueueResponse> TagQueueAsync(TagQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
@@ -6086,7 +3672,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -6094,40 +3680,6 @@ namespace Amazon.SQS
         /// <param name="request">Container for the necessary parameters to execute the UntagQueue service method.</param>
         /// 
         /// <returns>The response from the UntagQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">REST API Reference for UntagQueue Operation</seealso>
         UntagQueueResponse UntagQueue(UntagQueueRequest request);
 
@@ -6142,7 +3694,7 @@ namespace Amazon.SQS
         /// <para>
         /// Cross-account permissions don't apply to this action. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-        /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
+        /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
         /// Guide</i>.
         /// </para>
         ///  </note>
@@ -6153,40 +3705,6 @@ namespace Amazon.SQS
         /// </param>
         /// 
         /// <returns>The response from the UntagQueue service method, as returned by SQS.</returns>
-        /// <exception cref="Amazon.SQS.Model.InvalidAddressException">
-        /// The <code>accountId</code> is invalid.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.InvalidSecurityException">
-        /// When the request to a queue is not HTTPS and SigV4.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.QueueDoesNotExistException">
-        /// The specified queue doesn't exist.
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.RequestThrottledException">
-        /// The request was denied due to request throttling.
-        /// 
-        ///  <ul> <li> 
-        /// <para>
-        /// The rate of requests per second exceeds the AWS KMS request quota for an account and
-        /// Region. 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// A burst or sustained high rate of requests to change the state of the same KMS key.
-        /// This condition is often known as a "hot key."
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Requests for operations on KMS keys in a Amazon Web Services CloudHSM key store might
-        /// be throttled at a lower-than-expected rate when the Amazon Web Services CloudHSM cluster
-        /// associated with the Amazon Web Services CloudHSM key store is processing numerous
-        /// commands, including those unrelated to the Amazon Web Services CloudHSM key store.
-        /// </para>
-        ///  </li> </ul>
-        /// </exception>
-        /// <exception cref="Amazon.SQS.Model.UnsupportedOperationException">
-        /// Error code 400. Unsupported operation.
-        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/UntagQueue">REST API Reference for UntagQueue Operation</seealso>
         Task<UntagQueueResponse> UntagQueueAsync(UntagQueueRequest request, CancellationToken cancellationToken = default(CancellationToken));
 

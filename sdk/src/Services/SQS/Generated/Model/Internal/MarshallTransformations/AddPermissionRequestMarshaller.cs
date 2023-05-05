@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -46,7 +44,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((AddPermissionRequest)input);
         }
-
+    
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -55,61 +53,41 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(AddPermissionRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            string target = "AmazonSQS.AddPermission";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
-            request.HttpMethod = "POST";
+            request.Parameters.Add("Action", "AddPermission");
+            request.Parameters.Add("Version", "2012-11-05");
 
-            request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            if(publicRequest != null)
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetActions())
                 {
-                    context.Writer.WritePropertyName("Actions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestActionsListValue in publicRequest.Actions)
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Actions)
                     {
-                            context.Writer.Write(publicRequestActionsListValue);
+                        request.Parameters.Add("ActionName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    context.Writer.WriteArrayEnd();
                 }
-
                 if(publicRequest.IsSetAWSAccountIds())
                 {
-                    context.Writer.WritePropertyName("AWSAccountIds");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAWSAccountIdsListValue in publicRequest.AWSAccountIds)
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AWSAccountIds)
                     {
-                            context.Writer.Write(publicRequestAWSAccountIdsListValue);
+                        request.Parameters.Add("AWSAccountId" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    context.Writer.WriteArrayEnd();
                 }
-
                 if(publicRequest.IsSetLabel())
                 {
-                    context.Writer.WritePropertyName("Label");
-                    context.Writer.Write(publicRequest.Label);
+                    request.Parameters.Add("Label", StringUtils.FromString(publicRequest.Label));
                 }
-
                 if(publicRequest.IsSetQueueUrl())
                 {
-                    context.Writer.WritePropertyName("QueueUrl");
-                    context.Writer.Write(publicRequest.QueueUrl);
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
                 }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-
-
             return request;
         }
-        private static AddPermissionRequestMarshaller _instance = new AddPermissionRequestMarshaller();        
+                    private static AddPermissionRequestMarshaller _instance = new AddPermissionRequestMarshaller();        
 
         internal static AddPermissionRequestMarshaller GetInstance()
         {

@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -46,7 +44,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((ListDeadLetterSourceQueuesRequest)input);
         }
-
+    
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -55,45 +53,27 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(ListDeadLetterSourceQueuesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            string target = "AmazonSQS.ListDeadLetterSourceQueues";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
-            request.HttpMethod = "POST";
+            request.Parameters.Add("Action", "ListDeadLetterSourceQueues");
+            request.Parameters.Add("Version", "2012-11-05");
 
-            request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            if(publicRequest != null)
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("MaxResults");
-                    context.Writer.Write(publicRequest.MaxResults);
+                    request.Parameters.Add("MaxResults", StringUtils.FromInt(publicRequest.MaxResults));
                 }
-
                 if(publicRequest.IsSetNextToken())
                 {
-                    context.Writer.WritePropertyName("NextToken");
-                    context.Writer.Write(publicRequest.NextToken);
+                    request.Parameters.Add("NextToken", StringUtils.FromString(publicRequest.NextToken));
                 }
-
                 if(publicRequest.IsSetQueueUrl())
                 {
-                    context.Writer.WritePropertyName("QueueUrl");
-                    context.Writer.Write(publicRequest.QueueUrl);
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
                 }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-
-
             return request;
         }
-        private static ListDeadLetterSourceQueuesRequestMarshaller _instance = new ListDeadLetterSourceQueuesRequestMarshaller();        
+                    private static ListDeadLetterSourceQueuesRequestMarshaller _instance = new ListDeadLetterSourceQueuesRequestMarshaller();        
 
         internal static ListDeadLetterSourceQueuesRequestMarshaller GetInstance()
         {

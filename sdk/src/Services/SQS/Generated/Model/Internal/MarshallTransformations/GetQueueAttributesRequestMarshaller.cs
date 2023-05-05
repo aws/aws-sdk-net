@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -46,7 +44,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((GetQueueAttributesRequest)input);
         }
-
+    
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -55,44 +53,28 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(GetQueueAttributesRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            string target = "AmazonSQS.GetQueueAttributes";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
-            request.HttpMethod = "POST";
+            request.Parameters.Add("Action", "GetQueueAttributes");
+            request.Parameters.Add("Version", "2012-11-05");
 
-            request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            if(publicRequest != null)
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttributeNames())
                 {
-                    context.Writer.WritePropertyName("AttributeNames");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestAttributeNamesListValue in publicRequest.AttributeNames)
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.AttributeNames)
                     {
-                            context.Writer.Write(publicRequestAttributeNamesListValue);
+                        request.Parameters.Add("AttributeName" + "." + publicRequestlistValueIndex, StringUtils.FromString(publicRequestlistValue));
+                        publicRequestlistValueIndex++;
                     }
-                    context.Writer.WriteArrayEnd();
                 }
-
                 if(publicRequest.IsSetQueueUrl())
                 {
-                    context.Writer.WritePropertyName("QueueUrl");
-                    context.Writer.Write(publicRequest.QueueUrl);
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
                 }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-
-
             return request;
         }
-        private static GetQueueAttributesRequestMarshaller _instance = new GetQueueAttributesRequestMarshaller();        
+                    private static GetQueueAttributesRequestMarshaller _instance = new GetQueueAttributesRequestMarshaller();        
 
         internal static GetQueueAttributesRequestMarshaller GetInstance()
         {

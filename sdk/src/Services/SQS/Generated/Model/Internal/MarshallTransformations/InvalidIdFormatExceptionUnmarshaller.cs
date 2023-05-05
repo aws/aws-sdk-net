@@ -29,64 +29,47 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for InvalidIdFormatException Object
+    /// Response Unmarshaller for InvalidIdFormatException operation
     /// </summary>  
-    public class InvalidIdFormatExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidIdFormatException, JsonUnmarshallerContext>
+    public class InvalidIdFormatExceptionUnmarshaller : IErrorResponseUnmarshaller<InvalidIdFormatException, XmlUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public InvalidIdFormatException Unmarshall(JsonUnmarshallerContext context)
+        public InvalidIdFormatException Unmarshall(XmlUnmarshallerContext context)
         {
             return this.Unmarshall(context, new Amazon.Runtime.Internal.ErrorResponse());
         }
 
         /// <summary>
-        /// Unmarshaller the response from the service to the response class.
+        /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
         /// <param name="errorResponse"></param>
         /// <returns></returns>
-        public InvalidIdFormatException Unmarshall(JsonUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
+        public InvalidIdFormatException Unmarshall(XmlUnmarshallerContext context, Amazon.Runtime.Internal.ErrorResponse errorResponse)
         {
-            context.Read();
-
-            var errorCode = errorResponse.Code;
-            var errorType = errorResponse.Type;
-            var queryHeaderKey = Amazon.Util.HeaderKeys.XAmzQueryError;
-            if (context.ResponseData.IsHeaderPresent(queryHeaderKey))
+            InvalidIdFormatException response = new InvalidIdFormatException(errorResponse.Message, errorResponse.InnerException, 
+                errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
+            
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
+            while (context.ReadAtDepth(originalDepth))
             {
-                var queryError = context.ResponseData.GetHeaderValue(queryHeaderKey);
-                if (!string.IsNullOrEmpty(queryError) && queryError.Contains(";"))
+                if (context.IsStartElement || context.IsAttribute)
                 {
-                    var queryErrorParts = queryError.Split(';');
-                    if (queryErrorParts.Length == 2)
-                    {
-                        errorCode = queryErrorParts[0];
-                        var errorTypeString = queryErrorParts[1];
-                        if (Enum.IsDefined(typeof(ErrorType), errorTypeString))
-                        {
-                            errorType = (ErrorType) Enum.Parse(typeof(ErrorType), errorTypeString);
-                        }
-                    }
                 }
             }
-            InvalidIdFormatException unmarshalledObject = new InvalidIdFormatException(errorResponse.Message, errorResponse.InnerException,
-                errorType, errorCode, errorResponse.RequestId, errorResponse.StatusCode);
-        
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-            }
-          
-            return unmarshalledObject;
+            return response;
         }
 
         private static InvalidIdFormatExceptionUnmarshaller _instance = new InvalidIdFormatExceptionUnmarshaller();        

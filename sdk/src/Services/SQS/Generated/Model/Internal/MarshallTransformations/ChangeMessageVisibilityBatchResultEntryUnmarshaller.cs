@@ -29,8 +29,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -43,36 +41,43 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ChangeMessageVisibilityBatchResultEntry IUnmarshaller<ChangeMessageVisibilityBatchResultEntry, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        public ChangeMessageVisibilityBatchResultEntry Unmarshall(XmlUnmarshallerContext context)
         {
-            throw new NotImplementedException();
+            ChangeMessageVisibilityBatchResultEntry unmarshalledObject = new ChangeMessageVisibilityBatchResultEntry();
+            int originalDepth = context.CurrentDepth;
+            int targetDepth = originalDepth + 1;
+            
+            if (context.IsStartOfDocument) 
+               targetDepth += 2;
+            
+            while (context.ReadAtDepth(originalDepth))
+            {
+                if (context.IsStartElement || context.IsAttribute)
+                {
+                    if (context.TestExpression("Id", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Id = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                }
+                else if (context.IsEndElement && context.CurrentDepth < originalDepth)
+                {
+                    return unmarshalledObject;
+                }
+            }
+
+            return unmarshalledObject;
         }
 
         /// <summary>
-        /// Unmarshaller the response from the service to the response class.
+        /// Unmarshaller error response to exception.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
         public ChangeMessageVisibilityBatchResultEntry Unmarshall(JsonUnmarshallerContext context)
         {
-            context.Read();
-            if (context.CurrentTokenType == JsonToken.Null) 
-                return null;
-
-            ChangeMessageVisibilityBatchResultEntry unmarshalledObject = new ChangeMessageVisibilityBatchResultEntry();
-        
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("Id", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
-          
-            return unmarshalledObject;
+            return null;
         }
 
 

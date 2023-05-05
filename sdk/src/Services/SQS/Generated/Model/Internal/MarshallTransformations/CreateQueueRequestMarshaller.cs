@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -46,7 +44,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((CreateQueueRequest)input);
         }
-
+    
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -55,61 +53,49 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(CreateQueueRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            string target = "AmazonSQS.CreateQueue";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
-            request.HttpMethod = "POST";
+            request.Parameters.Add("Action", "CreateQueue");
+            request.Parameters.Add("Version", "2012-11-05");
 
-            request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            if(publicRequest != null)
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetAttributes())
                 {
-                    context.Writer.WritePropertyName("Attributes");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestAttributesKvp in publicRequest.Attributes)
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.Attributes.Keys)
                     {
-                        context.Writer.WritePropertyName(publicRequestAttributesKvp.Key);
-                        var publicRequestAttributesValue = publicRequestAttributesKvp.Value;
-
-                            context.Writer.Write(publicRequestAttributesValue);
+                        String value;
+                        bool hasValue = publicRequest.Attributes.TryGetValue(key, out value);
+                        request.Parameters.Add("Attribute" + "." + mapIndex + "." + "Name", StringUtils.FromString(key));
+                        if (hasValue)
+                        {
+                            request.Parameters.Add("Attribute" + "." + mapIndex + "." + "Value", StringUtils.FromString(value));
+                        }
+                        mapIndex++;
                     }
-                    context.Writer.WriteObjectEnd();
                 }
-
                 if(publicRequest.IsSetQueueName())
                 {
-                    context.Writer.WritePropertyName("QueueName");
-                    context.Writer.Write(publicRequest.QueueName);
+                    request.Parameters.Add("QueueName", StringUtils.FromString(publicRequest.QueueName));
                 }
-
                 if(publicRequest.IsSetTags())
                 {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestTagsKvp in publicRequest.Tags)
+                    int mapIndex = 1;
+                    foreach(var key in publicRequest.Tags.Keys)
                     {
-                        context.Writer.WritePropertyName(publicRequestTagsKvp.Key);
-                        var publicRequestTagsValue = publicRequestTagsKvp.Value;
-
-                            context.Writer.Write(publicRequestTagsValue);
+                        String value;
+                        bool hasValue = publicRequest.Tags.TryGetValue(key, out value);
+                        request.Parameters.Add("Tag" + "." + mapIndex + "." + "Key", StringUtils.FromString(key));
+                        if (hasValue)
+                        {
+                            request.Parameters.Add("Tag" + "." + mapIndex + "." + "Value", StringUtils.FromString(value));
+                        }
+                        mapIndex++;
                     }
-                    context.Writer.WriteObjectEnd();
                 }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-
-
             return request;
         }
-        private static CreateQueueRequestMarshaller _instance = new CreateQueueRequestMarshaller();        
+                    private static CreateQueueRequestMarshaller _instance = new CreateQueueRequestMarshaller();        
 
         internal static CreateQueueRequestMarshaller GetInstance()
         {

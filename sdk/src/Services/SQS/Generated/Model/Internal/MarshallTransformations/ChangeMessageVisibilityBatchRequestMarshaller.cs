@@ -28,8 +28,6 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
-using ThirdParty.Json.LitJson;
-
 namespace Amazon.SQS.Model.Internal.MarshallTransformations
 {
     /// <summary>
@@ -46,7 +44,7 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         {
             return this.Marshall((ChangeMessageVisibilityBatchRequest)input);
         }
-
+    
         /// <summary>
         /// Marshaller the request object to the HTTP request.
         /// </summary>  
@@ -55,49 +53,39 @@ namespace Amazon.SQS.Model.Internal.MarshallTransformations
         public IRequest Marshall(ChangeMessageVisibilityBatchRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SQS");
-            string target = "AmazonSQS.ChangeMessageVisibilityBatch";
-            request.Headers["X-Amz-Target"] = target;
-            request.Headers["Content-Type"] = "application/x-amz-json-1.0";
-            request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2012-11-05";
-            request.HttpMethod = "POST";
+            request.Parameters.Add("Action", "ChangeMessageVisibilityBatch");
+            request.Parameters.Add("Version", "2012-11-05");
 
-            request.ResourcePath = "/";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            if(publicRequest != null)
             {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
                 if(publicRequest.IsSetEntries())
                 {
-                    context.Writer.WritePropertyName("Entries");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestEntriesListValue in publicRequest.Entries)
+                    int publicRequestlistValueIndex = 1;
+                    foreach(var publicRequestlistValue in publicRequest.Entries)
                     {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = ChangeMessageVisibilityBatchRequestEntryMarshaller.Instance;
-                        marshaller.Marshall(publicRequestEntriesListValue, context);
-
-                        context.Writer.WriteObjectEnd();
+                        if(publicRequestlistValue.IsSetId())
+                        {
+                            request.Parameters.Add("ChangeMessageVisibilityBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "Id", StringUtils.FromString(publicRequestlistValue.Id));
+                        }
+                        if(publicRequestlistValue.IsSetReceiptHandle())
+                        {
+                            request.Parameters.Add("ChangeMessageVisibilityBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "ReceiptHandle", StringUtils.FromString(publicRequestlistValue.ReceiptHandle));
+                        }
+                        if(publicRequestlistValue.IsSetVisibilityTimeout())
+                        {
+                            request.Parameters.Add("ChangeMessageVisibilityBatchRequestEntry" + "." + publicRequestlistValueIndex + "." + "VisibilityTimeout", StringUtils.FromInt(publicRequestlistValue.VisibilityTimeout));
+                        }
+                        publicRequestlistValueIndex++;
                     }
-                    context.Writer.WriteArrayEnd();
                 }
-
                 if(publicRequest.IsSetQueueUrl())
                 {
-                    context.Writer.WritePropertyName("QueueUrl");
-                    context.Writer.Write(publicRequest.QueueUrl);
+                    request.Parameters.Add("QueueUrl", StringUtils.FromString(publicRequest.QueueUrl));
                 }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
             }
-
-
             return request;
         }
-        private static ChangeMessageVisibilityBatchRequestMarshaller _instance = new ChangeMessageVisibilityBatchRequestMarshaller();        
+                    private static ChangeMessageVisibilityBatchRequestMarshaller _instance = new ChangeMessageVisibilityBatchRequestMarshaller();        
 
         internal static ChangeMessageVisibilityBatchRequestMarshaller GetInstance()
         {
