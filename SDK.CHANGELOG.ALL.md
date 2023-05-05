@@ -1,3 +1,13 @@
+### 3.7.542.0 (2023-05-05 19:50 UTC)
+* EC2 (3.7.134.0)
+	* This release adds support the inf2 and trn1n instances. inf2 instances are purpose built for deep learning inference while trn1n instances are powered by AWS Trainium accelerators and they build on the capabilities of Trainium-powered trn1 instances.
+* Inspector2 (3.7.104.0)
+	* Amazon Inspector now allows customers to search its vulnerability intelligence database if any of the Inspector scanning types are activated.
+* MediaTailor (3.7.105.0)
+	* This release adds support for AFTER_LIVE_EDGE mode configuration for avail suppression, and adding a fill-policy setting that sets the avail suppression to PARTIAL_AVAIL or FULL_AVAIL_ONLY when AFTER_LIVE_EDGE is enabled.
+* SQS (3.7.102.0)
+	* Revert previous SQS protocol change.
+
 ### 3.7.541.0 (2023-05-05 13:37 UTC)
 * CloudWatchLogs (3.7.104.69)
 	* Set FlexibleTimeWindow.MaximumWindowInMinutes as nullable type
