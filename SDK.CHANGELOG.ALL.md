@@ -1,3 +1,13 @@
+### 3.7.541.0 (2023-05-05 13:37 UTC)
+* CloudWatchLogs (3.7.104.69)
+	* Set FlexibleTimeWindow.MaximumWindowInMinutes as nullable type
+* DynamoDBv2 (3.7.103.0)
+	* Recognize inherited DynamoDBAttributes on properties. Add support for transactional operations in DynamoDB high level libraries.
+* S3 (3.7.104.11)
+	* Fixed an issue where GetObjectAttributes(Async) was not returning parts even when explicit ChecksumAlgorithm was provided during object upload.
+* Scheduler (3.7.101.84)
+	* Set FlexibleTimeWindow.MaximumWindowInMinutes as nullable type
+
 ### 3.7.540.0 (2023-05-04 20:23 UTC)
 * CloudWatch (3.7.104.0)
 	* Adds support for filtering by metric names in CloudWatch Metric Streams.
