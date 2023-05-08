@@ -3293,6 +3293,9 @@ namespace Amazon.GuardDuty
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -3321,6 +3324,9 @@ namespace Amazon.GuardDuty
         /// </param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -3592,6 +3598,9 @@ namespace Amazon.GuardDuty
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -3618,6 +3627,9 @@ namespace Amazon.GuardDuty
         /// </param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -3698,6 +3710,9 @@ namespace Amazon.GuardDuty
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -3724,6 +3739,9 @@ namespace Amazon.GuardDuty
         /// </param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
