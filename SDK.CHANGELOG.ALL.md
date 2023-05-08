@@ -1,6 +1,6 @@
 ### 3.7.543.0 (2023-05-08 18:50 UTC)
 * Glue (3.7.112.0)
-	* We don't do release notes https://w.amazon.com/bin/view/AWSDocs/common-tasks/release-notes
+	* Support large worker types G.4x and G.8x for Glue Spark
 * GuardDuty (3.7.106.0)
 	* Add AccessDeniedException 403 Error message code to support 3 Tagging related APIs
 * IoTSiteWise (3.7.103.0)
