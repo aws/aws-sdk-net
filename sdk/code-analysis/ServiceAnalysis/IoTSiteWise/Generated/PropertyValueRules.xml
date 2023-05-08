@@ -922,7 +922,6 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyAggregatesRequest.MaxResults</property>
     <min>1</min>
-    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyAggregatesRequest.NextToken</property>
@@ -945,8 +944,8 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyAggregatesRequest.Resolution</property>
     <min>2</min>
-    <max>2</max>
-    <pattern>1m|1h|1d</pattern>
+    <max>3</max>
+    <pattern>1m|15m|1h|1d</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyAggregatesResponse.NextToken</property>
@@ -981,7 +980,6 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyValueHistoryRequest.MaxResults</property>
     <min>1</min>
-    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyValueHistoryRequest.NextToken</property>
@@ -2028,8 +2026,8 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.BatchGetAssetPropertyAggregatesEntry.Resolution</property>
     <min>2</min>
-    <max>2</max>
-    <pattern>1m|1h|1d</pattern>
+    <max>3</max>
+    <pattern>1m|15m|1h|1d</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.BatchGetAssetPropertyAggregatesErrorEntry.EntryId</property>
