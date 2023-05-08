@@ -1,3 +1,16 @@
+### 3.7.543.0 (2023-05-08 18:50 UTC)
+* Glue (3.7.112.0)
+	* We don't do release notes https://w.amazon.com/bin/view/AWSDocs/common-tasks/release-notes
+* GuardDuty (3.7.106.0)
+	* Add AccessDeniedException 403 Error message code to support 3 Tagging related APIs
+* IoTSiteWise (3.7.103.0)
+	* Provide support for 20,000 max results for GetAssetPropertyValueHistory/BatchGetAssetPropertyValueHistory and 15 minute aggregate resolution for GetAssetPropertyAggregates/BatchGetAssetPropertyAggregates
+* SecurityToken (3.7.102.0)
+	* Documentation updates for AWS Security Token Service.
+* Core 3.7.106.33
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.542.0 (2023-05-05 19:50 UTC)
 * EC2 (3.7.134.0)
 	* This release adds support the inf2 and trn1n instances. inf2 instances are purpose built for deep learning inference while trn1n instances are powered by AWS Trainium accelerators and they build on the capabilities of Trainium-powered trn1 instances.
