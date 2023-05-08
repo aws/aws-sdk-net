@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.5.33414.496
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CustomTasks", "CustomTasks.csproj", "{D8985B30-CEAE-4C78-AF8A-27F18F845BA6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomTasks", "CustomTasks.csproj", "{D8985B30-CEAE-4C78-AF8A-27F18F845BA6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -18,8 +18,5 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {3E91B9D9-B0FB-4423-AD9B-A2869C303048}
 	EndGlobalSection
 EndGlobal
