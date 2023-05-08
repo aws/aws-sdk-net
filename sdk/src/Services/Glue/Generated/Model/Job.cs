@@ -340,7 +340,12 @@ namespace Amazon.Glue.Model
         /// </para>
         ///  
         /// <para>
-        /// Do not set <code>Max Capacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
+        /// For Glue version 2.0 or later jobs, you cannot specify a <code>Maximum capacity</code>.
+        /// Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Do not set <code>MaxCapacity</code> if using <code>WorkerType</code> and <code>NumberOfWorkers</code>.
         /// </para>
         ///  
         /// <para>
@@ -360,11 +365,7 @@ namespace Amazon.Glue.Model
         /// you can allocate from 2 to 100 DPUs. The default is 10 DPUs. This job type cannot
         /// have a fractional DPU allocation.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// For Glue version 2.0 jobs, you cannot instead specify a <code>Maximum capacity</code>.
-        /// Instead, you should specify a <code>Worker type</code> and the <code>Number of workers</code>.
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public double MaxCapacity
         {
@@ -563,13 +564,31 @@ namespace Amazon.Glue.Model
         /// <para>
         /// For the <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
         /// memory, 64 GB disk), and provides 1 executor per worker. We recommend this worker
-        /// type for memory-intensive jobs.
+        /// type for workloads such as data transforms, joins, and queries, to offers a scalable
+        /// and cost effective way to run most jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// For the <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
         /// memory, 128 GB disk), and provides 1 executor per worker. We recommend this worker
-        /// type for memory-intensive jobs.
+        /// type for workloads such as data transforms, joins, and queries, to offers a scalable
+        /// and cost effective way to run most jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of
+        /// memory, 256 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for jobs whose workloads contain your most demanding transforms, aggregations,
+        /// joins, and queries. This worker type is available only for Glue version 3.0 or later
+        /// jobs.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the <code>G.8X</code> worker type, each worker maps to 8 DPU (32 vCPU, 128 GB
+        /// of memory, 512 GB disk), and provides 1 executor per worker. We recommend this worker
+        /// type for jobs whose workloads contain your most demanding transforms, aggregations,
+        /// joins, and queries. This worker type is available only for Glue version 3.0 or later
+        /// jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
