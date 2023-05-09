@@ -13,7 +13,7 @@ namespace <#=this.Config.Namespace#>
     /// Modeled Exception that either comes over the stream from the service model, or wraps other exceptions for the purpose of raising events. If it is
     /// modelled, it will be a subclass.
     /// </summary>
-#if !PCL && !CORECLR
+#if !NETSTANDARD
 	[Serializable]
 #endif
 	public class <#=this.Config.ClassName#>EventStreamException : EventStreamException
@@ -42,12 +42,6 @@ namespace <#=this.Config.Namespace#>
 		public <#=this.Config.ClassName#>EventStreamException(string message, Exception innerException) : base(message, innerException)
 		{
 		}
-#if NETSTANDARD
-	 	protected <#=this.Config.ClassName#>EventStreamException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
-	 	{
-	 	}
-#endif
-	 
 #if !NETSTANDARD
         /// <summary>
         /// Constructs a new instance of the <#=this.Config.ClassName#>EventStreamException class with serialized data.
