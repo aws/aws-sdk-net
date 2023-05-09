@@ -29,21 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies the serverless configuration for an endpoint variant.
+    /// Specifies the serverless update concurrency configuration for an endpoint variant.
     /// </summary>
-    public partial class ProductionVariantServerlessConfig
+    public partial class ProductionVariantServerlessUpdateConfig
     {
         private int? _maxConcurrency;
-        private int? _memorySizeInMB;
         private int? _provisionedConcurrency;
 
         /// <summary>
         /// Gets and sets the property MaxConcurrency. 
         /// <para>
-        /// The maximum number of concurrent invocations your serverless endpoint can process.
+        /// The updated maximum number of concurrent invocations your serverless endpoint can
+        /// process.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
+        [AWSProperty(Min=1, Max=200)]
         public int MaxConcurrency
         {
             get { return this._maxConcurrency.GetValueOrDefault(); }
@@ -57,30 +57,10 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MemorySizeInMB. 
-        /// <para>
-        /// The memory size of your serverless endpoint. Valid values are in 1 GB increments:
-        /// 1024 MB, 2048 MB, 3072 MB, 4096 MB, 5120 MB, or 6144 MB.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1024, Max=6144)]
-        public int MemorySizeInMB
-        {
-            get { return this._memorySizeInMB.GetValueOrDefault(); }
-            set { this._memorySizeInMB = value; }
-        }
-
-        // Check to see if MemorySizeInMB property is set
-        internal bool IsSetMemorySizeInMB()
-        {
-            return this._memorySizeInMB.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property ProvisionedConcurrency. 
         /// <para>
-        /// The amount of provisioned concurrency to allocate for the serverless endpoint. Should
-        /// be less than or equal to <code>MaxConcurrency</code>.
+        /// The updated amount of provisioned concurrency to allocate for the serverless endpoint.
+        /// Should be less than or equal to <code>MaxConcurrency</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

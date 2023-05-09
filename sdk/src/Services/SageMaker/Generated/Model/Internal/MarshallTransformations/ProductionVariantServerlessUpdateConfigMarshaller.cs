@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ProductionVariantServerlessConfig Marshaller
+    /// ProductionVariantServerlessUpdateConfig Marshaller
     /// </summary>
-    public class ProductionVariantServerlessConfigMarshaller : IRequestMarshaller<ProductionVariantServerlessConfig, JsonMarshallerContext> 
+    public class ProductionVariantServerlessUpdateConfigMarshaller : IRequestMarshaller<ProductionVariantServerlessUpdateConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ProductionVariantServerlessConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(ProductionVariantServerlessUpdateConfig requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetMaxConcurrency())
             {
                 context.Writer.WritePropertyName("MaxConcurrency");
                 context.Writer.Write(requestObject.MaxConcurrency);
-            }
-
-            if(requestObject.IsSetMemorySizeInMB())
-            {
-                context.Writer.WritePropertyName("MemorySizeInMB");
-                context.Writer.Write(requestObject.MemorySizeInMB);
             }
 
             if(requestObject.IsSetProvisionedConcurrency())
@@ -68,7 +62,7 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ProductionVariantServerlessConfigMarshaller Instance = new ProductionVariantServerlessConfigMarshaller();
+        public readonly static ProductionVariantServerlessUpdateConfigMarshaller Instance = new ProductionVariantServerlessUpdateConfigMarshaller();
 
     }
 }

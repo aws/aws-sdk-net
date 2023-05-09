@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private int? _desiredInstanceCount;
         private float? _desiredWeight;
+        private ProductionVariantServerlessUpdateConfig _serverlessUpdateConfig;
         private string _variantName;
 
         /// <summary>
@@ -73,6 +74,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetDesiredWeight()
         {
             return this._desiredWeight.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServerlessUpdateConfig. 
+        /// <para>
+        /// Specifies the serverless update concurrency configuration for an endpoint variant.
+        /// </para>
+        /// </summary>
+        public ProductionVariantServerlessUpdateConfig ServerlessUpdateConfig
+        {
+            get { return this._serverlessUpdateConfig; }
+            set { this._serverlessUpdateConfig = value; }
+        }
+
+        // Check to see if ServerlessUpdateConfig property is set
+        internal bool IsSetServerlessUpdateConfig()
+        {
+            return this._serverlessUpdateConfig != null;
         }
 
         /// <summary>
