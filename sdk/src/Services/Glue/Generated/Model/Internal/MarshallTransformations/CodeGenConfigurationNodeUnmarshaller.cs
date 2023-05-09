@@ -70,6 +70,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Aggregate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AmazonRedshiftSource", targetDepth))
+                {
+                    var unmarshaller = AmazonRedshiftSourceUnmarshaller.Instance;
+                    unmarshalledObject.AmazonRedshiftSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AmazonRedshiftTarget", targetDepth))
+                {
+                    var unmarshaller = AmazonRedshiftTargetUnmarshaller.Instance;
+                    unmarshalledObject.AmazonRedshiftTarget = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ApplyMapping", targetDepth))
                 {
                     var unmarshaller = ApplyMappingUnmarshaller.Instance;

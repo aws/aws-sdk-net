@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DynamicTransform Object
+    /// Response Unmarshaller for AmazonRedshiftTarget Object
     /// </summary>  
-    public class DynamicTransformUnmarshaller : IUnmarshaller<DynamicTransform, XmlUnmarshallerContext>, IUnmarshaller<DynamicTransform, JsonUnmarshallerContext>
+    public class AmazonRedshiftTargetUnmarshaller : IUnmarshaller<AmazonRedshiftTarget, XmlUnmarshallerContext>, IUnmarshaller<AmazonRedshiftTarget, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DynamicTransform IUnmarshaller<DynamicTransform, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AmazonRedshiftTarget IUnmarshaller<AmazonRedshiftTarget, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,21 +53,21 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DynamicTransform Unmarshall(JsonUnmarshallerContext context)
+        public AmazonRedshiftTarget Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DynamicTransform unmarshalledObject = new DynamicTransform();
+            AmazonRedshiftTarget unmarshalledObject = new AmazonRedshiftTarget();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("FunctionName", targetDepth))
+                if (context.TestExpression("Data", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FunctionName = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AmazonRedshiftNodeDataUnmarshaller.Instance;
+                    unmarshalledObject.Data = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Inputs", targetDepth))
@@ -82,48 +82,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("OutputSchemas", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<GlueSchema, GlueSchemaUnmarshaller>(GlueSchemaUnmarshaller.Instance);
-                    unmarshalledObject.OutputSchemas = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Parameters", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<TransformConfigParameter, TransformConfigParameterUnmarshaller>(TransformConfigParameterUnmarshaller.Instance);
-                    unmarshalledObject.Parameters = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Path", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Path = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TransformName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TransformName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Version", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Version = unmarshaller.Unmarshall(context);
-                    continue;
-                }
             }
           
             return unmarshalledObject;
         }
 
 
-        private static DynamicTransformUnmarshaller _instance = new DynamicTransformUnmarshaller();        
+        private static AmazonRedshiftTargetUnmarshaller _instance = new AmazonRedshiftTargetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DynamicTransformUnmarshaller Instance
+        public static AmazonRedshiftTargetUnmarshaller Instance
         {
             get
             {

@@ -56,6 +56,28 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetAmazonRedshiftSource())
+            {
+                context.Writer.WritePropertyName("AmazonRedshiftSource");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AmazonRedshiftSourceMarshaller.Instance;
+                marshaller.Marshall(requestObject.AmazonRedshiftSource, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAmazonRedshiftTarget())
+            {
+                context.Writer.WritePropertyName("AmazonRedshiftTarget");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AmazonRedshiftTargetMarshaller.Instance;
+                marshaller.Marshall(requestObject.AmazonRedshiftTarget, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetApplyMapping())
             {
                 context.Writer.WritePropertyName("ApplyMapping");
