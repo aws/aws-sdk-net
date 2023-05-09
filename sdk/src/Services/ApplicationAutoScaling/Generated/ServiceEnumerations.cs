@@ -284,6 +284,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant SageMakerVariantInvocationsPerInstance for MetricType
         /// </summary>
         public static readonly MetricType SageMakerVariantInvocationsPerInstance = new MetricType("SageMakerVariantInvocationsPerInstance");
+        /// <summary>
+        /// Constant SageMakerVariantProvisionedConcurrencyUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType SageMakerVariantProvisionedConcurrencyUtilization = new MetricType("SageMakerVariantProvisionedConcurrencyUtilization");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -456,6 +460,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant SagemakerVariantDesiredInstanceCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension SagemakerVariantDesiredInstanceCount = new ScalableDimension("sagemaker:variant:DesiredInstanceCount");
+        /// <summary>
+        /// Constant SagemakerVariantDesiredProvisionedConcurrency for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension SagemakerVariantDesiredProvisionedConcurrency = new ScalableDimension("sagemaker:variant:DesiredProvisionedConcurrency");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -96,7 +96,8 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The tags assigned to the resource. A tag is a label that you assign to an AWS resource.
+        /// The tags assigned to the resource. A tag is a label that you assign to an Amazon Web
+        /// Services resource.
         /// </para>
         ///  
         /// <para>

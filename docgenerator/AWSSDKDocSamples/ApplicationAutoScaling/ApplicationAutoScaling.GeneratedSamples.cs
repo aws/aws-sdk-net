@@ -198,6 +198,7 @@ namespace AWSSDKDocSamples.Amazon.ApplicationAutoScaling.Generated
                 ServiceNamespace = "ecs"
             });
 
+            string scalableTargetARN = response.ScalableTargetARN;
 
             #endregion
         }
