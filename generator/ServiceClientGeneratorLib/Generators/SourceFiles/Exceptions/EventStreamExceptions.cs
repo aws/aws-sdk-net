@@ -35,47 +35,73 @@ namespace ServiceClientGenerator.Generators.SourceFiles.Exceptions
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n#if !PCL && !CORECLR\r\n\t[Serializable]\r\n#endif\r\n\tpublic class ");
+            this.Write(@"
+{
+    /// <summary>
+    /// Modeled Exception that either comes over the stream from the service model, or wraps other exceptions for the purpose of raising events. If it is
+    /// modelled, it will be a subclass.
+    /// </summary>
+#if !NETSTANDARD
+	[Serializable]
+#endif
+	public class ");
             
-            #line 15 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 19 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
-            this.Write("EventStreamException : EventStreamException\r\n\t{\r\n\t\tpublic ");
+            this.Write("EventStreamException : EventStreamException\r\n\t{\r\n\t\t/// <summary>\r\n        /// Cre" +
+                    "ates a new ");
             
-            #line 17 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 22 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
-            this.Write("EventStreamException()\r\n\t\t{\r\n\t\t}\r\n\r\n\t\tpublic ");
-            
-            #line 21 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
-            
-            #line default
-            #line hidden
-            this.Write("EventStreamException(string message) : base (message)\r\n\t\t{\r\n\t\t}\r\n\t\tpublic ");
+            this.Write("EventStreamException\r\n        /// </summary>\r\n\t\tpublic ");
             
             #line 24 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
-            this.Write("EventStreamException(string message, Exception innerException) : base(message, in" +
-                    "nerException)\r\n\t\t{\r\n\t\t}\r\n#if NETSTANDARD\r\n\t\tprotected ");
+            this.Write("EventStreamException()\r\n\t\t{\r\n\t\t}\r\n\r\n\t\t/// <summary>\r\n        /// Creates a new ");
             
-            #line 28 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 29 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
             #line hidden
-            this.Write("EventStreamException(System.Runtime.Serialization.SerializationInfo info, System." +
-                    "Runtime.Serialization.StreamingContext context)\r\n\t\t{\r\n\t\t}\r\n#endif\r\n\r\n#if !NETSTA" +
-                    "NDARD\r\n        /// <summary>\r\n        /// Constructs a new instance of the ");
+            this.Write("EventStreamException\r\n        /// </summary>\r\n        /// <param name=\"message\"><" +
+                    "/param>\r\n\r\n\t\tpublic ");
             
-            #line 35 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 33 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
+            
+            #line default
+            #line hidden
+            this.Write("EventStreamException(string message) : base (message)\r\n\t\t{\r\n\t\t}\r\n\r\n        /// <s" +
+                    "ummary>\r\n        /// Creates a new ");
+            
+            #line 38 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
+            
+            #line default
+            #line hidden
+            this.Write("EventStreamException\r\n        /// </summary>\r\n        /// <param name=\"message\"><" +
+                    "/param>\r\n        /// <param name=\"innerException\"></param>\r\n\t\tpublic ");
+            
+            #line 42 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
+            
+            #line default
+            #line hidden
+            this.Write("EventStreamException(string message, Exception innerException) : base(message, in" +
+                    "nerException)\r\n\t\t{\r\n\t\t}\r\n#if !NETSTANDARD\r\n        /// <summary>\r\n        /// Co" +
+                    "nstructs a new instance of the ");
+            
+            #line 47 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
@@ -88,7 +114,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles.Exceptions
         /// <exception cref=""T:System.Runtime.Serialization.SerializationException"">The class name is null or <see cref=""P:System.Exception.HResult"" /> is zero (0). </exception>
         protected ");
             
-            #line 41 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
+            #line 53 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\Exceptions\EventStreamExceptions.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Config.ClassName));
             
             #line default
