@@ -724,7 +724,7 @@ namespace ServiceClientGenerator
         {
             Console.WriteLine("Generating DefaultConfigurationMode Enum...");
 
-            var defaultConfigurationModeFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core", "Amazon.Runtime");
+            var defaultConfigurationModeFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core", "Amazon.Runtime");
             const string fileName = "DefaultConfigurationMode.generated.cs";
 
             var generator = new DefaultConfigurationModeGenerator
@@ -797,7 +797,7 @@ namespace ServiceClientGenerator
             GeneratorOptions options)
         {
             Console.WriteLine("Updating Core project files.");
-            string coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            string coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
             var creator = new ProjectFileCreator(options);
             creator.ExecuteCore(coreFilesRoot, generationManifest.ProjectFileConfigurations);
             foreach (var newProjectKey in creator.CreatedProjectFiles.Keys)
@@ -812,7 +812,7 @@ namespace ServiceClientGenerator
         public static void GeneratePartitions(GeneratorOptions options)
         {
             Console.WriteLine("Generate Partition class.");
-            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
             var writeToFolder = Path.Combine(coreFilesRoot, "Amazon.Runtime", "Internal", "Endpoints", "StandardLibrary");
             var partitionsFile = Path.Combine(coreFilesRoot, "partitions.json");
 
@@ -1200,10 +1200,12 @@ namespace ServiceClientGenerator
         {
             generator.Config = this.Configuration;
             var text = generator.TransformText();
-            var outputSubFolder = @"docgenerator\AWSSDKDocSamples";
+            var outputSubFolder = Path.Combine("docgenerator", "AWSSDKDocSamples");
             if (subNamespace != null)
                 outputSubFolder = Path.Combine(outputSubFolder, subNamespace);
-            WriteFile(Path.GetFullPath(TestFilesRoot + @"\..\..\"), outputSubFolder, fileName, text);
+            
+            WriteFile(Path.GetFullPath(TestFilesRoot + string.Format("{0}..{0}..{0}",
+                Path.DirectorySeparatorChar)), outputSubFolder, fileName, text);
         }
 
         /// <summary>
@@ -1480,7 +1482,7 @@ namespace ServiceClientGenerator
 
         public static List<EndpointConstant> ExtractEndpoints(GeneratorOptions options, Func<string, string> nameConverter, Func<string, string> codeConverter = null)
         {
-            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
             var endpointsJsonFile = Path.Combine(coreFilesRoot, "endpoints.json");
 
             var endpointsJson = JsonMapper.ToObject(File.ReadAllText(endpointsJsonFile));
@@ -1509,7 +1511,7 @@ namespace ServiceClientGenerator
         {
             Console.WriteLine("Generating endpoints constants...");
 
-            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "core");
+            var coreFilesRoot = Path.Combine(options.SdkRootFolder, "src", "Core");
             var endpointsFilesRoot = Path.Combine(coreFilesRoot, "RegionEndpoint");
             const string fileName = "RegionEndpoint.generated.cs";
 
@@ -1544,7 +1546,7 @@ namespace ServiceClientGenerator
             Console.WriteLine("Generating S3 enumerations constants...");
 
             var srcFilesRoot = Path.Combine(options.SdkRootFolder, "src");
-            var coreFilesRoot = Path.Combine(srcFilesRoot, "core");
+            var coreFilesRoot = Path.Combine(srcFilesRoot, "Core");
             var generatedFileRoot = Path.Combine(srcFilesRoot, "Services", "S3", "Generated");
             const string fileName = "S3Enumerations.cs";
 
