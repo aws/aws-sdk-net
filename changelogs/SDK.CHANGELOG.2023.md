@@ -1,3 +1,14 @@
+### 3.7.544.0 (2023-05-09 18:21 UTC)
+* ApplicationAutoScaling (3.7.105.0)
+	* With this release, Amazon SageMaker Serverless Inference customers can use Application Auto Scaling to auto scale the provisioned concurrency of their serverless endpoints.
+* Glue (3.7.113.0)
+	* This release adds AmazonRedshift Source and Target nodes in addition to DynamicTransform OutputSchemas
+* SageMaker (3.7.129.0)
+	* This release includes support for (1) Provisioned Concurrency for Amazon SageMaker Serverless Inference and (2) UpdateEndpointWeightsAndCapacities API for Serverless endpoints.
+* Core 3.7.106.34
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.543.0 (2023-05-08 18:50 UTC)
 * Glue (3.7.112.0)
 	* Support large worker types G.4x and G.8x for Glue Spark
