@@ -29,32 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Managed scaling policy for an Amazon EMR cluster. The policy specifies the limits
-    /// for resources that can be added or terminated from a cluster. The policy only applies
-    /// to the core and task nodes. The master node cannot be scaled after initial configuration.
+    /// The Amazon S3 location that stores the notebook execution input.
     /// </summary>
-    public partial class ManagedScalingPolicy
+    public partial class NotebookS3LocationFromInput
     {
-        private ComputeLimits _computeLimits;
+        private string _bucket;
+        private string _key;
 
         /// <summary>
-        /// Gets and sets the property ComputeLimits. 
+        /// Gets and sets the property Bucket. 
         /// <para>
-        /// The Amazon EC2 unit limits for a managed scaling policy. The managed scaling activity
-        /// of a cluster is not allowed to go above or below these limits. The limit only applies
-        /// to the core and task nodes. The master node cannot be scaled after initial configuration.
+        /// The Amazon S3 bucket that stores the notebook execution input.
         /// </para>
         /// </summary>
-        public ComputeLimits ComputeLimits
+        [AWSProperty(Min=0, Max=256)]
+        public string Bucket
         {
-            get { return this._computeLimits; }
-            set { this._computeLimits = value; }
+            get { return this._bucket; }
+            set { this._bucket = value; }
         }
 
-        // Check to see if ComputeLimits property is set
-        internal bool IsSetComputeLimits()
+        // Check to see if Bucket property is set
+        internal bool IsSetBucket()
         {
-            return this._computeLimits != null;
+            return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The key to the Amazon S3 location that stores the notebook execution input.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10280)]
+        public string Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
+        }
+
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this._key != null;
         }
 
     }

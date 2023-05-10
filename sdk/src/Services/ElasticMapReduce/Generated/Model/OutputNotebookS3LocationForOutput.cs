@@ -29,50 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// The list of supported product configurations that allow user-supplied arguments. Amazon
-    /// EMR accepts these arguments and forwards them to the corresponding installation script
-    /// as bootstrap action arguments.
+    /// The Amazon S3 location that stores the notebook execution output.
     /// </summary>
-    public partial class SupportedProductConfig
+    public partial class OutputNotebookS3LocationForOutput
     {
-        private List<string> _args = new List<string>();
-        private string _name;
+        private string _bucket;
+        private string _key;
 
         /// <summary>
-        /// Gets and sets the property Args. 
+        /// Gets and sets the property Bucket. 
         /// <para>
-        /// The list of user-supplied arguments.
-        /// </para>
-        /// </summary>
-        public List<string> Args
-        {
-            get { return this._args; }
-            set { this._args = value; }
-        }
-
-        // Check to see if Args property is set
-        internal bool IsSetArgs()
-        {
-            return this._args != null && this._args.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Name. 
-        /// <para>
-        /// The name of the product configuration.
+        /// The Amazon S3 bucket that stores the notebook execution output.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
-        public string Name
+        public string Bucket
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._bucket; }
+            set { this._bucket = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if Bucket property is set
+        internal bool IsSetBucket()
         {
-            return this._name != null;
+            return this._bucket != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Key. 
+        /// <para>
+        /// The key to the Amazon S3 location that stores the notebook execution output.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10280)]
+        public string Key
+        {
+            get { return this._key; }
+            set { this._key = value; }
+        }
+
+        // Check to see if Key property is set
+        internal bool IsSetKey()
+        {
+            return this._key != null;
         }
 
     }

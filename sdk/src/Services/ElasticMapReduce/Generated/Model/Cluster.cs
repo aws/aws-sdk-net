@@ -88,7 +88,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// An IAM role for automatic scaling policies. The default role is <code>EMR_AutoScaling_DefaultRole</code>.
         /// The IAM role provides permissions that the automatic scaling feature requires to launch
-        /// and terminate EC2 instances in an instance group.
+        /// and terminate Amazon EC2 instances in an instance group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]
@@ -144,8 +144,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Configurations. 
         /// <para>
-        /// Applies only to Amazon EMR releases 4.x and later. The list of Configurations supplied
-        /// to the EMR cluster.
+        /// Applies only to Amazon EMR releases 4.x and later. The list of configurations that
+        /// are supplied to the Amazon EMR cluster.
         /// </para>
         /// </summary>
         public List<Configuration> Configurations
@@ -163,7 +163,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property CustomAmiId. 
         /// <para>
-        /// Available only in Amazon EMR version 5.7.0 and later. The ID of a custom Amazon EBS-backed
+        /// Available only in Amazon EMR releases 5.7.0 and later. The ID of a custom Amazon EBS-backed
         /// Linux AMI if the cluster uses a custom AMI.
         /// </para>
         /// </summary>
@@ -184,7 +184,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property EbsRootVolumeSize. 
         /// <para>
         /// The size, in GiB, of the Amazon EBS root device volume of the Linux AMI that is used
-        /// for each EC2 instance. Available in Amazon EMR version 4.x and later.
+        /// for each Amazon EC2 instance. Available in Amazon EMR releases 4.x and later.
         /// </para>
         /// </summary>
         public int EbsRootVolumeSize
@@ -202,8 +202,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Ec2InstanceAttributes. 
         /// <para>
-        /// Provides information about the EC2 instances in a cluster grouped by category. For
-        /// example, key name, subnet ID, IAM instance profile, and so on.
+        /// Provides information about the Amazon EC2 instances in a cluster grouped by category.
+        /// For example, key name, subnet ID, IAM instance profile, and so on.
         /// </para>
         /// </summary>
         public Ec2InstanceAttributes Ec2InstanceAttributes
@@ -239,7 +239,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceCollectionType. <note> 
         /// <para>
-        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
         /// later, excluding 5.0.x versions.
         /// </para>
         ///  </note> 
@@ -285,7 +285,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property LogEncryptionKmsKeyId. 
         /// <para>
         ///  The KMS key used for encrypting log files. This attribute is only available with
-        /// EMR version 5.30.0 and later, excluding EMR 6.0.0. 
+        /// Amazon EMR 5.30.0 and later, excluding Amazon EMR 6.0.0. 
         /// </para>
         /// </summary>
         public string LogEncryptionKmsKeyId
@@ -360,9 +360,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// An approximation of the cost of the cluster, represented in m1.small/hours. This value
         /// is incremented one time for every hour an m1.small instance runs. Larger instances
-        /// are weighted more, so an EC2 instance that is roughly four times more expensive would
-        /// result in the normalized instance hours being incremented by four. This result is
-        /// only an approximation and does not reflect the actual billing rate.
+        /// are weighted more, so an Amazon EC2 instance that is roughly four times more expensive
+        /// would result in the normalized instance hours being incremented by four. This result
+        /// is only an approximation and does not reflect the actual billing rate.
         /// </para>
         /// </summary>
         public int NormalizedInstanceHours
@@ -461,8 +461,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property RepoUpgradeOnBoot. 
         /// <para>
         /// Applies only when <code>CustomAmiID</code> is used. Specifies the type of updates
-        /// that are applied from the Amazon Linux AMI package repositories when an instance boots
-        /// using the AMI.
+        /// that the Amazon Linux AMI package repositories apply when an instance boots using
+        /// the AMI.
         /// </para>
         /// </summary>
         public RepoUpgradeOnBoot RepoUpgradeOnBoot
@@ -526,8 +526,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// instances, regardless of the instance-hour boundary. With either behavior, Amazon
         /// EMR removes the least active nodes first and blocks instance termination if it could
         /// lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available only
-        /// in Amazon EMR version 4.1.0 and later, and is the default for versions of Amazon EMR
-        /// earlier than 5.1.0.
+        /// in Amazon EMR releases 4.1.0 and later, and is the default for versions of Amazon
+        /// EMR earlier than 5.1.0.
         /// </para>
         /// </summary>
         public ScaleDownBehavior ScaleDownBehavior
@@ -637,8 +637,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property TerminationProtected. 
         /// <para>
-        /// Indicates whether Amazon EMR will lock the cluster to prevent the EC2 instances from
-        /// being terminated by an API call or user intervention, or in the event of a cluster
+        /// Indicates whether Amazon EMR will lock the cluster to prevent the Amazon EC2 instances
+        /// from being terminated by an API call or user intervention, or in the event of a cluster
         /// error.
         /// </para>
         /// </summary>
@@ -659,15 +659,15 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// Indicates whether the cluster is visible to IAM principals in the Amazon Web Services
         /// account associated with the cluster. When <code>true</code>, IAM principals in the
-        /// Amazon Web Services account can perform EMR cluster actions on the cluster that their
-        /// IAM policies allow. When <code>false</code>, only the IAM principal that created the
-        /// cluster and the Amazon Web Services account root user can perform EMR actions, regardless
-        /// of IAM permissions policies attached to other IAM principals.
+        /// Amazon Web Services account can perform Amazon EMR cluster actions on the cluster
+        /// that their IAM policies allow. When <code>false</code>, only the IAM principal that
+        /// created the cluster and the Amazon Web Services account root user can perform Amazon
+        /// EMR actions, regardless of IAM permissions policies attached to other IAM principals.
         /// </para>
         ///  
         /// <para>
         /// The default value is <code>true</code> if a value is not provided when creating a
-        /// cluster using the EMR API <a>RunJobFlow</a> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
+        /// cluster using the Amazon EMR API <a>RunJobFlow</a> command, the CLI <a href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
         /// command, or the Amazon Web Services Management Console.
         /// </para>
         /// </summary>

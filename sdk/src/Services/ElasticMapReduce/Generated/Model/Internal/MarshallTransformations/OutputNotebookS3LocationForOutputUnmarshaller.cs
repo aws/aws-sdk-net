@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ExecutionEngineConfig Object
+    /// Response Unmarshaller for OutputNotebookS3LocationForOutput Object
     /// </summary>  
-    public class ExecutionEngineConfigUnmarshaller : IUnmarshaller<ExecutionEngineConfig, XmlUnmarshallerContext>, IUnmarshaller<ExecutionEngineConfig, JsonUnmarshallerContext>
+    public class OutputNotebookS3LocationForOutputUnmarshaller : IUnmarshaller<OutputNotebookS3LocationForOutput, XmlUnmarshallerContext>, IUnmarshaller<OutputNotebookS3LocationForOutput, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ExecutionEngineConfig IUnmarshaller<ExecutionEngineConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        OutputNotebookS3LocationForOutput IUnmarshaller<OutputNotebookS3LocationForOutput, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ExecutionEngineConfig Unmarshall(JsonUnmarshallerContext context)
+        public OutputNotebookS3LocationForOutput Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ExecutionEngineConfig unmarshalledObject = new ExecutionEngineConfig();
+            OutputNotebookS3LocationForOutput unmarshalledObject = new OutputNotebookS3LocationForOutput();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ExecutionRoleArn", targetDepth))
+                if (context.TestExpression("Bucket", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Bucket = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Id", targetDepth))
+                if (context.TestExpression("Key", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Id = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("MasterInstanceSecurityGroupId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.MasterInstanceSecurityGroupId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Type", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Key = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         }
 
 
-        private static ExecutionEngineConfigUnmarshaller _instance = new ExecutionEngineConfigUnmarshaller();        
+        private static OutputNotebookS3LocationForOutputUnmarshaller _instance = new OutputNotebookS3LocationForOutputUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ExecutionEngineConfigUnmarshaller Instance
+        public static OutputNotebookS3LocationForOutputUnmarshaller Instance
         {
             get
             {

@@ -115,7 +115,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// The Amazon Resource Name (ARN) for the session policy that will be applied to the
         /// user or group. You should specify the ARN for the session policy that you want to
         /// apply, not the ARN of your user role. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create
-        /// an EMR Studio User Role with Session Policies</a>.
+        /// an Amazon EMR Studio User Role with Session Policies</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

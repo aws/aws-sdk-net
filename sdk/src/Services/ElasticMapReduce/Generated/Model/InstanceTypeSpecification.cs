@@ -33,7 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+    /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
     /// later, excluding 5.0.x versions.
     /// </para>
     ///  </note>
@@ -52,7 +52,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPrice. 
         /// <para>
-        /// The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>.
+        /// The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>.
         /// Expressed in USD.
         /// </para>
         /// </summary>
@@ -72,8 +72,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPriceAsPercentageOfOnDemandPrice. 
         /// <para>
-        /// The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined
-        /// by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
+        /// The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance
+        /// as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies
+        /// 20%).
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]
@@ -167,7 +168,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The EC2 instance type, for example <code>m3.xlarge</code>.
+        /// The Amazon EC2 instance type, for example <code>m3.xlarge</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

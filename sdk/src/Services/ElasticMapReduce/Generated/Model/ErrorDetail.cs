@@ -40,7 +40,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ErrorCode. 
         /// <para>
-        /// The name or code that's associated with the error.
+        /// The name or code associated with the error.
         /// </para>
         /// </summary>
         public string ErrorCode
@@ -58,8 +58,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ErrorData. 
         /// <para>
-        /// A list of key value pairs that provide contextual information to explain why the error
-        /// may have occured.
+        /// A list of key value pairs that provides contextual information about why an error
+        /// occured.
         /// </para>
         /// </summary>
         public List<Dictionary<string, string>> ErrorData
@@ -77,7 +77,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
         /// <para>
-        /// A message describing the error that occured.
+        /// A message that describes the error.
         /// </para>
         /// </summary>
         public string ErrorMessage

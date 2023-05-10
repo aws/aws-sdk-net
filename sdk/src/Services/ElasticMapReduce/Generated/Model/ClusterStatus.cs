@@ -41,8 +41,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property ErrorDetails. 
         /// <para>
-        /// A list of tuples that provide information about the errors that caused a cluster termination.
-        /// This structure may have up to 10 different <code>ErrorDetail</code> tuples.
+        /// A list of tuples that provides information about the errors that caused a cluster
+        /// to terminate. This structure can contain up to 10 different <code>ErrorDetail</code>
+        /// tuples.
         /// </para>
         /// </summary>
         public List<ErrorDetail> ErrorDetails

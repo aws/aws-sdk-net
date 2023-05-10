@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ExecutionEngineConfig Marshaller
+    /// NotebookS3LocationFromInput Marshaller
     /// </summary>
-    public class ExecutionEngineConfigMarshaller : IRequestMarshaller<ExecutionEngineConfig, JsonMarshallerContext> 
+    public class NotebookS3LocationFromInputMarshaller : IRequestMarshaller<NotebookS3LocationFromInput, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,18 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ExecutionEngineConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(NotebookS3LocationFromInput requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetExecutionRoleArn())
+            if(requestObject.IsSetBucket())
             {
-                context.Writer.WritePropertyName("ExecutionRoleArn");
-                context.Writer.Write(requestObject.ExecutionRoleArn);
+                context.Writer.WritePropertyName("Bucket");
+                context.Writer.Write(requestObject.Bucket);
             }
 
-            if(requestObject.IsSetId())
+            if(requestObject.IsSetKey())
             {
-                context.Writer.WritePropertyName("Id");
-                context.Writer.Write(requestObject.Id);
-            }
-
-            if(requestObject.IsSetMasterInstanceSecurityGroupId())
-            {
-                context.Writer.WritePropertyName("MasterInstanceSecurityGroupId");
-                context.Writer.Write(requestObject.MasterInstanceSecurityGroupId);
-            }
-
-            if(requestObject.IsSetType())
-            {
-                context.Writer.WritePropertyName("Type");
-                context.Writer.Write(requestObject.Type);
+                context.Writer.WritePropertyName("Key");
+                context.Writer.Write(requestObject.Key);
             }
 
         }
@@ -74,7 +62,7 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ExecutionEngineConfigMarshaller Instance = new ExecutionEngineConfigMarshaller();
+        public readonly static NotebookS3LocationFromInputMarshaller Instance = new NotebookS3LocationFromInputMarshaller();
 
     }
 }

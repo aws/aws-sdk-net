@@ -33,7 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+    /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
     /// later, excluding 5.0.x versions.
     /// </para>
     ///  </note>
@@ -70,7 +70,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceTypeConfigs. 
         /// <para>
-        /// The instance type configurations that define the EC2 instances in the instance fleet.
+        /// The instance type configurations that define the Amazon EC2 instances in the instance
+        /// fleet.
         /// </para>
         /// </summary>
         public List<InstanceTypeConfig> InstanceTypeConfigs

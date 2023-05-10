@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Provides information about the EC2 instances in a cluster grouped by category. For
-    /// example, key name, subnet ID, IAM instance profile, and so on.
+    /// Provides information about the Amazon EC2 instances in a cluster grouped by category.
+    /// For example, key name, subnet ID, IAM instance profile, and so on.
     /// </summary>
     public partial class Ec2InstanceAttributes
     {
@@ -178,8 +178,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property IamInstanceProfile. 
         /// <para>
-        /// The IAM role that was specified when the cluster was launched. The EC2 instances of
-        /// the cluster assume this role.
+        /// The IAM role that was specified when the cluster was launched. The Amazon EC2 instances
+        /// of the cluster assume this role.
         /// </para>
         /// </summary>
         public string IamInstanceProfile
@@ -198,11 +198,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property RequestedEc2AvailabilityZones. 
         /// <para>
         /// Applies to clusters configured with the instance fleets option. Specifies one or more
-        /// Availability Zones in which to launch EC2 cluster instances when the EC2-Classic network
-        /// configuration is supported. Amazon EMR chooses the Availability Zone with the best
-        /// fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and then launches
-        /// all cluster instances within that Availability Zone. If you do not specify this value,
-        /// Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code>
+        /// Availability Zones in which to launch Amazon EC2 cluster instances when the EC2-Classic
+        /// network configuration is supported. Amazon EMR chooses the Availability Zone with
+        /// the best fit from among the list of <code>RequestedEc2AvailabilityZones</code>, and
+        /// then launches all cluster instances within that Availability Zone. If you do not specify
+        /// this value, Amazon EMR chooses the Availability Zone for you. <code>RequestedEc2SubnetIDs</code>
         /// and <code>RequestedEc2AvailabilityZones</code> cannot be specified together.
         /// </para>
         /// </summary>
@@ -222,12 +222,12 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property RequestedEc2SubnetIds. 
         /// <para>
         /// Applies to clusters configured with the instance fleets option. Specifies the unique
-        /// identifier of one or more Amazon EC2 subnets in which to launch EC2 cluster instances.
-        /// Subnets must exist within the same VPC. Amazon EMR chooses the EC2 subnet with the
-        /// best fit from among the list of <code>RequestedEc2SubnetIds</code>, and then launches
-        /// all cluster instances within that Subnet. If this value is not specified, and the
-        /// account and Region support EC2-Classic networks, the cluster launches instances in
-        /// the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead
+        /// identifier of one or more Amazon EC2 subnets in which to launch Amazon EC2 cluster
+        /// instances. Subnets must exist within the same VPC. Amazon EMR chooses the Amazon EC2
+        /// subnet with the best fit from among the list of <code>RequestedEc2SubnetIds</code>,
+        /// and then launches all cluster instances within that Subnet. If this value is not specified,
+        /// and the account and Region support EC2-Classic networks, the cluster launches instances
+        /// in the EC2-Classic network and uses <code>RequestedEc2AvailabilityZones</code> instead
         /// of this setting. If EC2-Classic is not supported, and no Subnet is specified, Amazon
         /// EMR chooses the subnet for you. <code>RequestedEc2SubnetIDs</code> and <code>RequestedEc2AvailabilityZones</code>
         /// cannot be specified together.
