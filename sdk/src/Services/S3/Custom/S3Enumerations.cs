@@ -782,6 +782,11 @@ namespace Amazon.S3
         public static readonly ServerSideEncryptionMethod AWSKMS = new ServerSideEncryptionMethod("aws:kms");
 
         /// <summary>
+        /// Use AWS Key Management Service for server side double encryption 
+        /// </summary>
+        public static readonly ServerSideEncryptionMethod AWSKMSDSSE = new ServerSideEncryptionMethod("aws:kms:dsse");
+
+        /// <summary>
         /// Construct instance of ServerSideEncryptionMethod.
         /// </summary>
         /// <param name="value"></param>

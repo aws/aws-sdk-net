@@ -214,7 +214,7 @@ namespace Amazon.S3.Transfer.Internal
 
             // If the InitiateMultipartUploadResponse indicates that this upload is
             // using KMS, force SigV4 for each UploadPart request
-            bool useSigV4 = initResponse.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMS;
+            bool useSigV4 = initResponse.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMS || initResponse.ServerSideEncryptionMethod == ServerSideEncryptionMethod.AWSKMSDSSE;
             if (useSigV4)
                 ((Amazon.Runtime.Internal.IAmazonWebServiceRequest)uploadRequest).SignatureVersion = SignatureVersion.SigV4;
 

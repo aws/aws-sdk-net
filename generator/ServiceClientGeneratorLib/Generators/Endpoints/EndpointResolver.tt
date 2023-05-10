@@ -49,7 +49,7 @@ namespace <#=Config.Namespace#>.Internal
             // Current operations that may set this header: CopyObject, CopyPart, InitiateMultipart, PutObject
             string sseHeaderValue;
             if (executionContext.RequestContext.Request.Headers.TryGetValue(HeaderKeys.XAmzServerSideEncryptionHeader, out sseHeaderValue) &&
-                string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMS.Value, StringComparison.Ordinal))
+                (string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMS.Value, StringComparison.Ordinal) || string.Equals(sseHeaderValue, ServerSideEncryptionMethod.AWSKMSDSSE.Value, StringComparison.Ordinal)))
             {
                 executionContext.RequestContext.Request.SignatureVersion = SignatureVersion.SigV4;
             }
