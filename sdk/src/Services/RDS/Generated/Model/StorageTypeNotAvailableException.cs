@@ -29,41 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RDS.Model
 {
     /// <summary>
-    /// The specified <code>StorageType</code> can't be associated with the DB instance.
+    /// The <code>aurora-iopt1</code> storage type isn't available, because you modified the
+    /// DB cluster to use this storage type less than one month ago.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]
     #endif
-    public partial class StorageTypeNotSupportedException : AmazonRDSException
+    public partial class StorageTypeNotAvailableException : AmazonRDSException
     {
 
         /// <summary>
-        /// Constructs a new StorageTypeNotSupportedException with the specified error
+        /// Constructs a new StorageTypeNotAvailableException with the specified error
         /// message.
         /// </summary>
         /// <param name="message">
         /// Describes the error encountered.
         /// </param>
-        public StorageTypeNotSupportedException(string message) 
+        public StorageTypeNotAvailableException(string message) 
             : base(message) {}
 
         /// <summary>
-        /// Construct instance of StorageTypeNotSupportedException
+        /// Construct instance of StorageTypeNotAvailableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
-        public StorageTypeNotSupportedException(string message, Exception innerException) 
+        public StorageTypeNotAvailableException(string message, Exception innerException) 
             : base(message, innerException) {}
 
         /// <summary>
-        /// Construct instance of StorageTypeNotSupportedException
+        /// Construct instance of StorageTypeNotAvailableException
         /// </summary>
         /// <param name="innerException"></param>
-        public StorageTypeNotSupportedException(Exception innerException) 
+        public StorageTypeNotAvailableException(Exception innerException) 
             : base(innerException) {}
 
         /// <summary>
-        /// Construct instance of StorageTypeNotSupportedException
+        /// Construct instance of StorageTypeNotAvailableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="innerException"></param>
@@ -71,30 +72,30 @@ namespace Amazon.RDS.Model
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public StorageTypeNotSupportedException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public StorageTypeNotAvailableException(string message, Exception innerException, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, innerException, errorType, errorCode, requestId, statusCode) {}
 
         /// <summary>
-        /// Construct instance of StorageTypeNotSupportedException
+        /// Construct instance of StorageTypeNotAvailableException
         /// </summary>
         /// <param name="message"></param>
         /// <param name="errorType"></param>
         /// <param name="errorCode"></param>
         /// <param name="requestId"></param>
         /// <param name="statusCode"></param>
-        public StorageTypeNotSupportedException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
+        public StorageTypeNotAvailableException(string message, ErrorType errorType, string errorCode, string requestId, HttpStatusCode statusCode) 
             : base(message, errorType, errorCode, requestId, statusCode) {}
 
 
 #if !NETSTANDARD
         /// <summary>
-        /// Constructs a new instance of the StorageTypeNotSupportedException class with serialized data.
+        /// Constructs a new instance of the StorageTypeNotAvailableException class with serialized data.
         /// </summary>
         /// <param name="info">The <see cref="T:System.Runtime.Serialization.SerializationInfo" /> that holds the serialized object data about the exception being thrown.</param>
         /// <param name="context">The <see cref="T:System.Runtime.Serialization.StreamingContext" /> that contains contextual information about the source or destination.</param>
         /// <exception cref="T:System.ArgumentNullException">The <paramref name="info" /> parameter is null. </exception>
         /// <exception cref="T:System.Runtime.Serialization.SerializationException">The class name is null or <see cref="P:System.Exception.HResult" /> is zero (0). </exception>
-        protected StorageTypeNotSupportedException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
+        protected StorageTypeNotAvailableException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
         }

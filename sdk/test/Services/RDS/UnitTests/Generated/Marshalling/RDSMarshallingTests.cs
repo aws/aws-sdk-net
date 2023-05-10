@@ -8901,6 +8901,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("RDS")]
+        public void ModifyDBCluster_StorageTypeNotAvailableExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ModifyDBCluster");
+
+            var request = InstantiateClassGenerator.Execute<ModifyDBClusterRequest>();
+            var marshaller = new ModifyDBClusterRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("StorageTypeNotAvailableException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ModifyDBClusterResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
         public void ModifyDBClusterEndpointMarshallTest()
         {
             var operation = service_model.FindOperation("ModifyDBClusterEndpoint");
@@ -12228,6 +12251,29 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             validator.Validate();
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("StorageQuotaExceededException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = RestoreDBClusterFromS3ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("RDS")]
+        public void RestoreDBClusterFromS3_StorageTypeNotSupportedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RestoreDBClusterFromS3");
+
+            var request = InstantiateClassGenerator.Execute<RestoreDBClusterFromS3Request>();
+            var marshaller = new RestoreDBClusterFromS3RequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("StorageTypeNotSupportedException"));
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = RestoreDBClusterFromS3ResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);

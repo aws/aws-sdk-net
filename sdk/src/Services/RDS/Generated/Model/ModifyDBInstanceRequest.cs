@@ -1060,13 +1060,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If the DB cluster doesn't manage the master user password with Amazon Web Services
+        /// If the DB instance doesn't manage the master user password with Amazon Web Services
         /// Secrets Manager, you can turn on this management. In this case, you can't specify
         /// <code>MasterUserPassword</code>.
         /// </para>
         ///  
         /// <para>
-        /// If the DB cluster already manages the master user password with Amazon Web Services
+        /// If the DB instance already manages the master user password with Amazon Web Services
         /// Secrets Manager, and you specify that the master user password is not managed with
         /// Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>.
         /// In this case, RDS deletes the secret and uses the new password for the master user

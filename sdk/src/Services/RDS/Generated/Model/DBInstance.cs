@@ -985,17 +985,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// IAM database authentication can be enabled for the following database engines:
+        /// For a list of engine versions that support IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM
+        /// database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM
+        /// database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For MySQL 5.7, minor version 5.7.16 or higher.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
         {

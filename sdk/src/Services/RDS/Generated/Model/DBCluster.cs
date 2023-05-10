@@ -103,6 +103,7 @@ namespace Amazon.RDS.Model
         private string _hostedZoneId;
         private bool? _httpEndpointEnabled;
         private bool? _iamDatabaseAuthenticationEnabled;
+        private DateTime? _ioOptimizedNextAllowedModificationTime;
         private int? _iops;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
@@ -828,8 +829,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
-        /// The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-        /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
+        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
         /// </para>
         ///  
         /// <para>
@@ -972,6 +972,29 @@ namespace Amazon.RDS.Model
         internal bool IsSetIAMDatabaseAuthenticationEnabled()
         {
             return this._iamDatabaseAuthenticationEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property IOOptimizedNextAllowedModificationTime. 
+        /// <para>
+        /// The next time you can modify the DB cluster to use the <code>aurora-iopt1</code> storage
+        /// type.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for Aurora DB clusters.
+        /// </para>
+        /// </summary>
+        public DateTime IOOptimizedNextAllowedModificationTime
+        {
+            get { return this._ioOptimizedNextAllowedModificationTime.GetValueOrDefault(); }
+            set { this._ioOptimizedNextAllowedModificationTime = value; }
+        }
+
+        // Check to see if IOOptimizedNextAllowedModificationTime property is set
+        internal bool IsSetIOOptimizedNextAllowedModificationTime()
+        {
+            return this._ioOptimizedNextAllowedModificationTime.HasValue; 
         }
 
         /// <summary>
@@ -1565,10 +1588,6 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property StorageType. 
         /// <para>
         /// The storage type associated with the DB cluster.
-        /// </para>
-        ///  
-        /// <para>
-        /// This setting is only for non-Aurora Multi-AZ DB clusters.
         /// </para>
         /// </summary>
         public string StorageType

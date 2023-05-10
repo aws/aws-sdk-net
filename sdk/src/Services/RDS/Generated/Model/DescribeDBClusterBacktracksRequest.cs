@@ -63,8 +63,8 @@ namespace Amazon.RDS.Model
         ///  <ul> <li> 
         /// <para>
         /// Must contain a valid universally unique identifier (UUID). For more information about
-        /// UUIDs, see <a href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier
-        /// (UUID) URN Namespace</a>.
+        /// UUIDs, see <a href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally
+        /// unique identifier</a>.
         /// </para>
         ///  </li> </ul> 
         /// <para>
