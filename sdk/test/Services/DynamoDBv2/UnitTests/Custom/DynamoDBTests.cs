@@ -308,10 +308,33 @@ namespace AWSSDK_DotNet35.UnitTests
             Assert.AreEqual(childDocument["actualPropertyName"].AsString(), child.Property1);
         }
 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestVersionAttributeRename()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var context = new DynamoDBContext(mockClient.Object);
+
+            var parent = new Parent
+            {
+                Property1 = "Value",
+                Version = 1
+            };
+
+            var document = context.ToDocument(parent);
+            var attributes = document.ToAttributeMap();
+
+            Assert.IsTrue(attributes.ContainsKey("V"));
+            Assert.AreEqual(document["V"].AsInt(), 1);
+        }
+
         public class Parent
         {
             [DynamoDBProperty("actualPropertyName")]
             public virtual string Property1 { get; set; }
+
+            [DynamoDBVersion(AttributeName = "V")]
+            public int? Version { get; set; }
         }
 
         public class Child : Parent
