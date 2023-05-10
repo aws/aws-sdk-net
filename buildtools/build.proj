@@ -23,9 +23,11 @@
         <RunIntegTests Condition="'$(RunIntegTests)'=='' And '$(IntegCategoriesToTest)' != ''">true</RunIntegTests>
 
         <CodeSigning Condition="'$(CodeSigning)'==''">false</CodeSigning>
+        <SignedArtifactsPath Condition="'$(SignedArtifactsPath)'==''">../Deployment/</SignedArtifactsPath>
     </PropertyGroup>
     <PropertyGroup>
-        <SignSdkArtifacts-DependsOnTargets>build-tools;build-buildtools;build-extensions</SignSdkArtifacts-DependsOnTargets>
+        <SignSdkArtifacts-DependsOnTargets Condition="'$(SignSdkArtifacts-DependsOnTargets)'==''">build-tools;build-buildtools;build-extensions</SignSdkArtifacts-DependsOnTargets>
+        <VerifySignedSdkArtifacts-DependsOnTargets Condition="'$(VerifySignedSdkArtifacts-DependsOnTargets)'==''">sign-sdk-artifacts</VerifySignedSdkArtifacts-DependsOnTargets>
     </PropertyGroup>
 
     <Import Project="$(InternalBuildTools)\references.targets" Condition="Exists('$(InternalBuildTools)\references.targets')" />
@@ -203,13 +205,13 @@
 
     <Target Name="test-sdk-service" DependsOnTargets="init;build-sdk-service;build-roslyn-anlyzer-test-and-run;run-unit-tests-service;run-integ-tests-service;test-backward-compatibility" />
 
-    <Target Name="verify-signed-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="sign-sdk-artifacts">
+    <Target Name="verify-signed-sdk-artifacts" Condition="'$(CodeSigning)'=='true'" DependsOnTargets="$(VerifySignedSdkArtifacts-DependsOnTargets)">
         <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)\Test-Signature.ps1 -folder ..\sdk\code-analysis\NuGetInstallScripts\ -pattern *.ps1"/>
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder ../sdk/code-analysis/NuGetInstallScripts/ -pattern *.ps1"/>
         <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)\Test-Signature.ps1 -folder ..\sdk\nuget-content\ -pattern *.ps1"/>
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder ../sdk/nuget-content/ -pattern *.ps1"/>
         <Exec LogStandardErrorAsError="true"
-            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)\Test-Signature.ps1 -folder ..\Deployment\ -pattern AWSSDK*.dll"/>
+            Command="$(powershell) -ExecutionPolicy Unrestricted -NoProfile -File $(InternalBuildScripts)/Test-Signature.ps1 -folder $(SignedArtifactsPath) -pattern AWSSDK*.dll"/>
     </Target>
 
     <Target Name="sign-sdk-artifacts" Condition="Exists('$(InternalBuildTools)\references.targets') And $(CodeSigning)" DependsOnTargets="$(SignSdkArtifacts-DependsOnTargets)">
