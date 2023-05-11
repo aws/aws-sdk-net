@@ -83,7 +83,8 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// Duration (in minutes), after which the participant token expires. Default: 60 (1 hour).
+        /// Duration (in minutes), after which the participant token expires. Default: 720 (12
+        /// hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20160)]
@@ -157,8 +158,9 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property UserId. 
         /// <para>
-        /// Name to help identify the token. This can be any UTF-8 encoded text. <i>This field
-        /// is exposed to all stage participants and should not be used for personally identifying,
+        /// Customer-assigned name to help identify the token; this can be used to link a participant
+        /// to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This
+        /// field is exposed to all stage participants and should not be used for personally identifying,
         /// confidential, or sensitive information.</i> 
         /// </para>
         /// </summary>

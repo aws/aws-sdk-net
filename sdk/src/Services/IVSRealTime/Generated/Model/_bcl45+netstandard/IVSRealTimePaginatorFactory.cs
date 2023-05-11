@@ -36,11 +36,35 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
+        /// Paginator for ListParticipantEvents operation
+        ///</summary>
+        public IListParticipantEventsPaginator ListParticipantEvents(ListParticipantEventsRequest request) 
+        {
+            return new ListParticipantEventsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListParticipants operation
+        ///</summary>
+        public IListParticipantsPaginator ListParticipants(ListParticipantsRequest request) 
+        {
+            return new ListParticipantsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListStages operation
         ///</summary>
         public IListStagesPaginator ListStages(ListStagesRequest request) 
         {
             return new ListStagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListStageSessions operation
+        ///</summary>
+        public IListStageSessionsPaginator ListStageSessions(ListStageSessionsRequest request) 
+        {
+            return new ListStageSessionsPaginator(this.client, request);
         }
     }
 }

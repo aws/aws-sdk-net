@@ -38,7 +38,7 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property Stage. 
         /// <para>
-        /// The updated stage. 
+        /// The updated stage.
         /// </para>
         /// </summary>
         public Stage Stage

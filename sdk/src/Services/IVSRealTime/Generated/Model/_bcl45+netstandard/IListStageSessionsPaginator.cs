@@ -16,42 +16,18 @@
 /*
  * Do not modify this file. This file is generated from the ivs-realtime-2020-07-14.normal.json service model.
  */
-using System;
-using System.Collections.Generic;
-using System.Xml.Serialization;
-using System.Text;
-using System.IO;
-using System.Net;
-
 using Amazon.Runtime;
-using Amazon.Runtime.Internal;
 
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// This is the response object from the GetStage operation.
-    /// </summary>
-    public partial class GetStageResponse : AmazonWebServiceResponse
+    /// Paginator for the ListStageSessions operation
+    ///</summary>
+    public interface IListStageSessionsPaginator
     {
-        private Stage _stage;
-
         /// <summary>
-        /// Gets and sets the property Stage. 
-        /// <para>
-        /// The stage that is returned.
-        /// </para>
+        /// Enumerable containing all full responses for the operation
         /// </summary>
-        public Stage Stage
-        {
-            get { return this._stage; }
-            set { this._stage = value; }
-        }
-
-        // Check to see if Stage property is set
-        internal bool IsSetStage()
-        {
-            return this._stage != null;
-        }
-
+        IPaginatedEnumerable<ListStageSessionsResponse> Responses { get; }
     }
 }

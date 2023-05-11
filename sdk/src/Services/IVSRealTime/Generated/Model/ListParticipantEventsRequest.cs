@@ -29,21 +29,60 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisconnectParticipant operation.
-    /// Disconnects a specified participant and revokes the participant permanently from a
-    /// specified stage.
+    /// Container for the parameters to the ListParticipantEvents operation.
+    /// Lists events for a specified participant that occurred during a specified stage session.
     /// </summary>
-    public partial class DisconnectParticipantRequest : AmazonIVSRealTimeRequest
+    public partial class ListParticipantEventsRequest : AmazonIVSRealTimeRequest
     {
+        private int? _maxResults;
+        private string _nextToken;
         private string _participantId;
-        private string _reason;
+        private string _sessionId;
         private string _stageArn;
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Maximum number of results to return. Default: 50.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The first participant to retrieve. This is used for pagination; see the <code>nextToken</code>
+        /// response field.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=1024)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ParticipantId. 
         /// <para>
-        /// Identifier of the participant to be disconnected. This is assigned by IVS and returned
-        /// by <a>CreateParticipantToken</a>.
+        /// Unique identifier for this participant. This is assigned by IVS and returned by <a>CreateParticipantToken</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -60,28 +99,28 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Reason. 
+        /// Gets and sets the property SessionId. 
         /// <para>
-        /// Description of why this participant is being disconnected.
+        /// ID of a session within the stage.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=128)]
-        public string Reason
+        [AWSProperty(Required=true, Min=16, Max=16)]
+        public string SessionId
         {
-            get { return this._reason; }
-            set { this._reason = value; }
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
         }
 
-        // Check to see if Reason property is set
-        internal bool IsSetReason()
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
         {
-            return this._reason != null;
+            return this._sessionId != null;
         }
 
         /// <summary>
         /// Gets and sets the property StageArn. 
         /// <para>
-        /// ARN of the stage to which the participant is attached.
+        /// Stage ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

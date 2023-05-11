@@ -29,23 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// Object specifying a participant token configuration in a stage.
+    /// Object describing a participant that has joined a stage.
     /// </summary>
-    public partial class ParticipantTokenConfiguration
+    public partial class Participant
     {
         private Dictionary<string, string> _attributes = new Dictionary<string, string>();
-        private List<string> _capabilities = new List<string>();
-        private int? _duration;
+        private DateTime? _firstJoinTime;
+        private string _participantId;
+        private bool? _published;
+        private ParticipantState _state;
         private string _userId;
 
         /// <summary>
         /// Gets and sets the property Attributes. 
         /// <para>
-        /// Application-provided attributes to encode into the corresponding participant token
-        /// and attach to a stage. Map keys and values can contain UTF-8 encoded text. The maximum
-        /// length of this field is 1 KB total. <i>This field is exposed to all stage participants
-        /// and should not be used for personally identifying, confidential, or sensitive information.</i>
-        /// 
+        /// Application-provided attributes to encode into the token and attach to a stage. Map
+        /// keys and values can contain UTF-8 encoded text. The maximum length of this field is
+        /// 1 KB total. <i>This field is exposed to all stage participants and should not be used
+        /// for personally identifying, confidential, or sensitive information</i>.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes
@@ -61,42 +62,76 @@ namespace Amazon.IVSRealTime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Capabilities. 
+        /// Gets and sets the property FirstJoinTime. 
         /// <para>
-        /// Set of capabilities that the user is allowed to perform in the stage.
+        /// ISO 8601 timestamp (returned as a string) when the participant first joined the stage
+        /// session.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2)]
-        public List<string> Capabilities
+        public DateTime FirstJoinTime
         {
-            get { return this._capabilities; }
-            set { this._capabilities = value; }
+            get { return this._firstJoinTime.GetValueOrDefault(); }
+            set { this._firstJoinTime = value; }
         }
 
-        // Check to see if Capabilities property is set
-        internal bool IsSetCapabilities()
+        // Check to see if FirstJoinTime property is set
+        internal bool IsSetFirstJoinTime()
         {
-            return this._capabilities != null && this._capabilities.Count > 0; 
+            return this._firstJoinTime.HasValue; 
         }
 
         /// <summary>
-        /// Gets and sets the property Duration. 
+        /// Gets and sets the property ParticipantId. 
         /// <para>
-        /// Duration (in minutes), after which the corresponding participant token expires. Default:
-        /// 720 (12 hours).
+        /// Unique identifier for this participant, assigned by IVS.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=20160)]
-        public int Duration
+        public string ParticipantId
         {
-            get { return this._duration.GetValueOrDefault(); }
-            set { this._duration = value; }
+            get { return this._participantId; }
+            set { this._participantId = value; }
         }
 
-        // Check to see if Duration property is set
-        internal bool IsSetDuration()
+        // Check to see if ParticipantId property is set
+        internal bool IsSetParticipantId()
         {
-            return this._duration.HasValue; 
+            return this._participantId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Published. 
+        /// <para>
+        /// Whether the participant ever published to the stage session.
+        /// </para>
+        /// </summary>
+        public bool Published
+        {
+            get { return this._published.GetValueOrDefault(); }
+            set { this._published = value; }
+        }
+
+        // Check to see if Published property is set
+        internal bool IsSetPublished()
+        {
+            return this._published.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Whether the participant is connected to or disconnected from the stage.
+        /// </para>
+        /// </summary>
+        public ParticipantState State
+        {
+            get { return this._state; }
+            set { this._state = value; }
+        }
+
+        // Check to see if State property is set
+        internal bool IsSetState()
+        {
+            return this._state != null;
         }
 
         /// <summary>
@@ -105,7 +140,7 @@ namespace Amazon.IVSRealTime.Model
         /// Customer-assigned name to help identify the token; this can be used to link a participant
         /// to a user in the customer’s own systems. This can be any UTF-8 encoded text. <i>This
         /// field is exposed to all stage participants and should not be used for personally identifying,
-        /// confidential, or sensitive information.</i> 
+        /// confidential, or sensitive information</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]

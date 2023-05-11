@@ -39,9 +39,25 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  
     /// <para>
-    /// Terminology: The IVS stage API sometimes is referred to as the IVS RealTime API.
+    /// Terminology:
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// The IVS stage API sometimes is referred to as the IVS <i>RealTime</i> API.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A <i>participant token</i> is an authorization token used to publish/subscribe to
+    /// a stage.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A <i>participant object</i> represents participants (people) in the stage and contains
+    /// information about them. When a token is created, it includes a participant ID; when
+    /// a participant uses that token to join a stage, the participant is associated with
+    /// that participant ID There is a 1:1 mapping between participant tokens and participants.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     ///  <b>Resources</b> 
     /// </para>
@@ -109,12 +125,33 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>GetParticipant</a> — Gets information about the specified participant token.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetStage</a> — Gets information for the specified stage.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetStageSession</a> — Gets information for the specified stage session.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListParticipantEvents</a> — Lists events for a specified participant that occurred
+    /// during a specified stage session.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListParticipants</a> — Lists all participants in a specified stage session.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>ListStages</a> — Gets summary information about all stages in your account, in
     /// the AWS region where the API request is processed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListStageSessions</a> — Gets all sessions for a specified stage.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -373,6 +410,55 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  GetParticipant
+
+
+        /// <summary>
+        /// Gets information about the specified participant token.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetParticipant service method.</param>
+        /// 
+        /// <returns>The response from the GetParticipant service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetParticipant">REST API Reference for GetParticipant Operation</seealso>
+        GetParticipantResponse GetParticipant(GetParticipantRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetParticipant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetParticipant operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetParticipant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetParticipant">REST API Reference for GetParticipant Operation</seealso>
+        IAsyncResult BeginGetParticipant(GetParticipantRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetParticipant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetParticipant.</param>
+        /// 
+        /// <returns>Returns a  GetParticipantResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetParticipant">REST API Reference for GetParticipant Operation</seealso>
+        GetParticipantResponse EndGetParticipant(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetStage
 
 
@@ -419,6 +505,147 @@ namespace Amazon.IVSRealTime
         /// <returns>Returns a  GetStageResult from IVSRealTime.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStage">REST API Reference for GetStage Operation</seealso>
         GetStageResponse EndGetStage(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetStageSession
+
+
+        /// <summary>
+        /// Gets information for the specified stage session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStageSession service method.</param>
+        /// 
+        /// <returns>The response from the GetStageSession service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession">REST API Reference for GetStageSession Operation</seealso>
+        GetStageSessionResponse GetStageSession(GetStageSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetStageSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetStageSession operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetStageSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession">REST API Reference for GetStageSession Operation</seealso>
+        IAsyncResult BeginGetStageSession(GetStageSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetStageSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetStageSession.</param>
+        /// 
+        /// <returns>Returns a  GetStageSessionResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession">REST API Reference for GetStageSession Operation</seealso>
+        GetStageSessionResponse EndGetStageSession(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListParticipantEvents
+
+
+        /// <summary>
+        /// Lists events for a specified participant that occurred during a specified stage session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParticipantEvents service method.</param>
+        /// 
+        /// <returns>The response from the ListParticipantEvents service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents">REST API Reference for ListParticipantEvents Operation</seealso>
+        ListParticipantEventsResponse ListParticipantEvents(ListParticipantEventsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListParticipantEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListParticipantEvents operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListParticipantEvents
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents">REST API Reference for ListParticipantEvents Operation</seealso>
+        IAsyncResult BeginListParticipantEvents(ListParticipantEventsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListParticipantEvents operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListParticipantEvents.</param>
+        /// 
+        /// <returns>Returns a  ListParticipantEventsResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents">REST API Reference for ListParticipantEvents Operation</seealso>
+        ListParticipantEventsResponse EndListParticipantEvents(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListParticipants
+
+
+        /// <summary>
+        /// Lists all participants in a specified stage session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParticipants service method.</param>
+        /// 
+        /// <returns>The response from the ListParticipants service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants">REST API Reference for ListParticipants Operation</seealso>
+        ListParticipantsResponse ListParticipants(ListParticipantsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListParticipants operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListParticipants operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListParticipants
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants">REST API Reference for ListParticipants Operation</seealso>
+        IAsyncResult BeginListParticipants(ListParticipantsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListParticipants operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListParticipants.</param>
+        /// 
+        /// <returns>Returns a  ListParticipantsResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants">REST API Reference for ListParticipants Operation</seealso>
+        ListParticipantsResponse EndListParticipants(IAsyncResult asyncResult);
 
         #endregion
         
@@ -469,6 +696,52 @@ namespace Amazon.IVSRealTime
         /// <returns>Returns a  ListStagesResult from IVSRealTime.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStages">REST API Reference for ListStages Operation</seealso>
         ListStagesResponse EndListStages(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListStageSessions
+
+
+        /// <summary>
+        /// Gets all sessions for a specified stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStageSessions service method.</param>
+        /// 
+        /// <returns>The response from the ListStageSessions service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStageSessions">REST API Reference for ListStageSessions Operation</seealso>
+        ListStageSessionsResponse ListStageSessions(ListStageSessionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListStageSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListStageSessions operation on AmazonIVSRealTimeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListStageSessions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStageSessions">REST API Reference for ListStageSessions Operation</seealso>
+        IAsyncResult BeginListStageSessions(ListStageSessionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListStageSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListStageSessions.</param>
+        /// 
+        /// <returns>Returns a  ListStageSessionsResult from IVSRealTime.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStageSessions">REST API Reference for ListStageSessions Operation</seealso>
+        ListStageSessionsResponse EndListStageSessions(IAsyncResult asyncResult);
 
         #endregion
         

@@ -29,59 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// Container for the parameters to the DisconnectParticipant operation.
-    /// Disconnects a specified participant and revokes the participant permanently from a
-    /// specified stage.
+    /// Container for the parameters to the GetStageSession operation.
+    /// Gets information for the specified stage session.
     /// </summary>
-    public partial class DisconnectParticipantRequest : AmazonIVSRealTimeRequest
+    public partial class GetStageSessionRequest : AmazonIVSRealTimeRequest
     {
-        private string _participantId;
-        private string _reason;
+        private string _sessionId;
         private string _stageArn;
 
         /// <summary>
-        /// Gets and sets the property ParticipantId. 
+        /// Gets and sets the property SessionId. 
         /// <para>
-        /// Identifier of the participant to be disconnected. This is assigned by IVS and returned
-        /// by <a>CreateParticipantToken</a>.
+        /// ID of a session within the stage.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ParticipantId
+        [AWSProperty(Required=true, Min=16, Max=16)]
+        public string SessionId
         {
-            get { return this._participantId; }
-            set { this._participantId = value; }
+            get { return this._sessionId; }
+            set { this._sessionId = value; }
         }
 
-        // Check to see if ParticipantId property is set
-        internal bool IsSetParticipantId()
+        // Check to see if SessionId property is set
+        internal bool IsSetSessionId()
         {
-            return this._participantId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Reason. 
-        /// <para>
-        /// Description of why this participant is being disconnected.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Min=0, Max=128)]
-        public string Reason
-        {
-            get { return this._reason; }
-            set { this._reason = value; }
-        }
-
-        // Check to see if Reason property is set
-        internal bool IsSetReason()
-        {
-            return this._reason != null;
+            return this._sessionId != null;
         }
 
         /// <summary>
         /// Gets and sets the property StageArn. 
         /// <para>
-        /// ARN of the stage to which the participant is attached.
+        /// ARN of the stage for which the information is to be retrieved.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

@@ -90,7 +90,7 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property Duration. 
         /// <para>
-        /// Duration (in minutes), after which the token expires. Default: 60 (1 hour).
+        /// Duration (in minutes), after which the token expires. Default: 720 (12 hours).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20160)]

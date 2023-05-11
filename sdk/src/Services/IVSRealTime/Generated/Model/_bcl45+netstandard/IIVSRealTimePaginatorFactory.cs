@@ -26,8 +26,23 @@ namespace Amazon.IVSRealTime.Model
     {
 
         /// <summary>
+        /// Paginator for ListParticipantEvents operation
+        ///</summary>
+        IListParticipantEventsPaginator ListParticipantEvents(ListParticipantEventsRequest request);
+
+        /// <summary>
+        /// Paginator for ListParticipants operation
+        ///</summary>
+        IListParticipantsPaginator ListParticipants(ListParticipantsRequest request);
+
+        /// <summary>
         /// Paginator for ListStages operation
         ///</summary>
         IListStagesPaginator ListStages(ListStagesRequest request);
+
+        /// <summary>
+        /// Paginator for ListStageSessions operation
+        ///</summary>
+        IListStageSessionsPaginator ListStageSessions(ListStageSessionsRequest request);
     }
 }

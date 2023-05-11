@@ -29,28 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IVSRealTime.Model
 {
     /// <summary>
-    /// This is the response object from the GetStage operation.
+    /// This is the response object from the GetParticipant operation.
     /// </summary>
-    public partial class GetStageResponse : AmazonWebServiceResponse
+    public partial class GetParticipantResponse : AmazonWebServiceResponse
     {
-        private Stage _stage;
+        private Participant _participant;
 
         /// <summary>
-        /// Gets and sets the property Stage. 
+        /// Gets and sets the property Participant. 
         /// <para>
-        /// The stage that is returned.
+        /// The participant that is returned.
         /// </para>
         /// </summary>
-        public Stage Stage
+        public Participant Participant
         {
-            get { return this._stage; }
-            set { this._stage = value; }
+            get { return this._participant; }
+            set { this._participant = value; }
         }
 
-        // Check to see if Stage property is set
-        internal bool IsSetStage()
+        // Check to see if Participant property is set
+        internal bool IsSetParticipant()
         {
-            return this._stage != null;
+            return this._participant != null;
         }
 
     }
