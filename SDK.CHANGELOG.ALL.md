@@ -1,3 +1,26 @@
+### 3.7.546.0 (2023-05-11 18:25 UTC)
+* AWSHealth (3.7.101.0)
+	* Add support for regional endpoints
+* AWSSupport (3.7.102.0)
+	* This release adds 2 new Support APIs, DescribeCreateCaseOptions and DescribeSupportedLanguages. You can use these new APIs to get available support languages.
+* Connect (3.7.123.4)
+	* This release updates GetMetricDataV2 API, to support metric data up-to last 35 days
+* ElastiCache (3.7.104.0)
+	* Added support to modify the cluster mode configuration for the existing ElastiCache ReplicationGroups. Customers can now modify the configuration from cluster mode disabled to cluster mode enabled.
+* Elasticsearch (3.7.102.0)
+	* This release fixes DescribePackages API error with null filter value parameter.
+* IVSRealTime (3.7.102.0)
+	* Add methods for inspecting and debugging stages: ListStageSessions, GetStageSession, ListParticipants, GetParticipant, and ListParticipantEvents.
+* Omics (3.7.103.0)
+	* This release provides support for Ready2Run and GPU workflows, an improved read set filter, the direct upload of read sets into Omics Storage, and annotation parsing for analytics stores.
+* OpenSearchService (3.7.107.0)
+	* This release fixes DescribePackages API error with null filter value parameter.
+* Route53Resolver (3.7.102.0)
+	* Update FIPS endpoints for GovCloud (US) regions in SDK.
+* Core 3.7.106.35
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.545.0 (2023-05-10 18:21 UTC)
 * ElasticMapReduce (3.7.104.0)
 	* EMR Studio now supports programmatically executing a Notebooks on an EMR on EKS cluster.  In addition, notebooks can now be executed by specifying its location in S3.
