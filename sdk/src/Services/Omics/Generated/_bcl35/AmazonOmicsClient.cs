@@ -37,7 +37,7 @@ namespace Amazon.Omics
     ///
     /// This is the <i>Amazon Omics API Reference</i>. For an introduction to the service,
     /// see <a href="https://docs.aws.amazon.com/omics/latest/dev/">What is Amazon Omics?</a>
-    /// in the <i>Amazon Omics Developer Guide</i>.
+    /// in the <i>Amazon Omics User Guide</i>.
     /// </summary>
     public partial class AmazonOmicsClient : AmazonServiceClient, IAmazonOmics
     {
@@ -266,6 +266,84 @@ namespace Amazon.Omics
         #endregion
 
 
+        #region  AbortMultipartReadSetUpload
+
+        /// <summary>
+        /// Stops a multipart upload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AbortMultipartReadSetUpload service method.</param>
+        /// 
+        /// <returns>The response from the AbortMultipartReadSetUpload service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AbortMultipartReadSetUpload">REST API Reference for AbortMultipartReadSetUpload Operation</seealso>
+        public virtual AbortMultipartReadSetUploadResponse AbortMultipartReadSetUpload(AbortMultipartReadSetUploadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AbortMultipartReadSetUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AbortMultipartReadSetUploadResponseUnmarshaller.Instance;
+
+            return Invoke<AbortMultipartReadSetUploadResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AbortMultipartReadSetUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AbortMultipartReadSetUpload operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAbortMultipartReadSetUpload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AbortMultipartReadSetUpload">REST API Reference for AbortMultipartReadSetUpload Operation</seealso>
+        public virtual IAsyncResult BeginAbortMultipartReadSetUpload(AbortMultipartReadSetUploadRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AbortMultipartReadSetUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AbortMultipartReadSetUploadResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AbortMultipartReadSetUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAbortMultipartReadSetUpload.</param>
+        /// 
+        /// <returns>Returns a  AbortMultipartReadSetUploadResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AbortMultipartReadSetUpload">REST API Reference for AbortMultipartReadSetUpload Operation</seealso>
+        public virtual AbortMultipartReadSetUploadResponse EndAbortMultipartReadSetUpload(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AbortMultipartReadSetUploadResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchDeleteReadSet
 
         /// <summary>
@@ -554,6 +632,84 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  CompleteMultipartReadSetUpload
+
+        /// <summary>
+        /// Concludes a multipart upload once you have uploaded all the components.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartReadSetUpload service method.</param>
+        /// 
+        /// <returns>The response from the CompleteMultipartReadSetUpload service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CompleteMultipartReadSetUpload">REST API Reference for CompleteMultipartReadSetUpload Operation</seealso>
+        public virtual CompleteMultipartReadSetUploadResponse CompleteMultipartReadSetUpload(CompleteMultipartReadSetUploadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteMultipartReadSetUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteMultipartReadSetUploadResponseUnmarshaller.Instance;
+
+            return Invoke<CompleteMultipartReadSetUploadResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CompleteMultipartReadSetUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CompleteMultipartReadSetUpload operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCompleteMultipartReadSetUpload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CompleteMultipartReadSetUpload">REST API Reference for CompleteMultipartReadSetUpload Operation</seealso>
+        public virtual IAsyncResult BeginCompleteMultipartReadSetUpload(CompleteMultipartReadSetUploadRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CompleteMultipartReadSetUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CompleteMultipartReadSetUploadResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CompleteMultipartReadSetUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCompleteMultipartReadSetUpload.</param>
+        /// 
+        /// <returns>Returns a  CompleteMultipartReadSetUploadResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CompleteMultipartReadSetUpload">REST API Reference for CompleteMultipartReadSetUpload Operation</seealso>
+        public virtual CompleteMultipartReadSetUploadResponse EndCompleteMultipartReadSetUpload(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CompleteMultipartReadSetUploadResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateAnnotationStore
 
         /// <summary>
@@ -625,6 +781,84 @@ namespace Amazon.Omics
         public virtual CreateAnnotationStoreResponse EndCreateAnnotationStore(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateAnnotationStoreResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateMultipartReadSetUpload
+
+        /// <summary>
+        /// Begins a multipart read set upload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateMultipartReadSetUpload service method.</param>
+        /// 
+        /// <returns>The response from the CreateMultipartReadSetUpload service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload">REST API Reference for CreateMultipartReadSetUpload Operation</seealso>
+        public virtual CreateMultipartReadSetUploadResponse CreateMultipartReadSetUpload(CreateMultipartReadSetUploadRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultipartReadSetUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultipartReadSetUploadResponseUnmarshaller.Instance;
+
+            return Invoke<CreateMultipartReadSetUploadResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateMultipartReadSetUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateMultipartReadSetUpload operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateMultipartReadSetUpload
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload">REST API Reference for CreateMultipartReadSetUpload Operation</seealso>
+        public virtual IAsyncResult BeginCreateMultipartReadSetUpload(CreateMultipartReadSetUploadRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateMultipartReadSetUploadRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateMultipartReadSetUploadResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateMultipartReadSetUpload operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateMultipartReadSetUpload.</param>
+        /// 
+        /// <returns>Returns a  CreateMultipartReadSetUploadResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload">REST API Reference for CreateMultipartReadSetUpload Operation</seealso>
+        public virtual CreateMultipartReadSetUploadResponse EndCreateMultipartReadSetUpload(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateMultipartReadSetUploadResponse>(asyncResult);
         }
 
         #endregion
@@ -3062,6 +3296,84 @@ namespace Amazon.Omics
 
         #endregion
         
+        #region  ListMultipartReadSetUploads
+
+        /// <summary>
+        /// Lists all multipart read set uploads and their statuses.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListMultipartReadSetUploads service method.</param>
+        /// 
+        /// <returns>The response from the ListMultipartReadSetUploads service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads">REST API Reference for ListMultipartReadSetUploads Operation</seealso>
+        public virtual ListMultipartReadSetUploadsResponse ListMultipartReadSetUploads(ListMultipartReadSetUploadsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultipartReadSetUploadsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultipartReadSetUploadsResponseUnmarshaller.Instance;
+
+            return Invoke<ListMultipartReadSetUploadsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListMultipartReadSetUploads operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListMultipartReadSetUploads operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListMultipartReadSetUploads
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads">REST API Reference for ListMultipartReadSetUploads Operation</seealso>
+        public virtual IAsyncResult BeginListMultipartReadSetUploads(ListMultipartReadSetUploadsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListMultipartReadSetUploadsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListMultipartReadSetUploadsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListMultipartReadSetUploads operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListMultipartReadSetUploads.</param>
+        /// 
+        /// <returns>Returns a  ListMultipartReadSetUploadsResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads">REST API Reference for ListMultipartReadSetUploads Operation</seealso>
+        public virtual ListMultipartReadSetUploadsResponse EndListMultipartReadSetUploads(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListMultipartReadSetUploadsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListReadSetActivationJobs
 
         /// <summary>
@@ -3346,6 +3658,85 @@ namespace Amazon.Omics
         public virtual ListReadSetsResponse EndListReadSets(IAsyncResult asyncResult)
         {
             return EndInvoke<ListReadSetsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListReadSetUploadParts
+
+        /// <summary>
+        /// This operation will list all parts in a requested multipart upload for a sequence
+        /// store.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListReadSetUploadParts service method.</param>
+        /// 
+        /// <returns>The response from the ListReadSetUploadParts service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetUploadParts">REST API Reference for ListReadSetUploadParts Operation</seealso>
+        public virtual ListReadSetUploadPartsResponse ListReadSetUploadParts(ListReadSetUploadPartsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReadSetUploadPartsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReadSetUploadPartsResponseUnmarshaller.Instance;
+
+            return Invoke<ListReadSetUploadPartsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListReadSetUploadParts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListReadSetUploadParts operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListReadSetUploadParts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetUploadParts">REST API Reference for ListReadSetUploadParts Operation</seealso>
+        public virtual IAsyncResult BeginListReadSetUploadParts(ListReadSetUploadPartsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListReadSetUploadPartsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListReadSetUploadPartsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListReadSetUploadParts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListReadSetUploadParts.</param>
+        /// 
+        /// <returns>Returns a  ListReadSetUploadPartsResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetUploadParts">REST API Reference for ListReadSetUploadParts Operation</seealso>
+        public virtual ListReadSetUploadPartsResponse EndListReadSetUploadParts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListReadSetUploadPartsResponse>(asyncResult);
         }
 
         #endregion
@@ -5129,6 +5520,85 @@ namespace Amazon.Omics
         public virtual UpdateWorkflowResponse EndUpdateWorkflow(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateWorkflowResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UploadReadSetPart
+
+        /// <summary>
+        /// This operation uploads a specific part of a read set. If you upload a new part using
+        /// a previously used part number, the previously uploaded part will be overwritten.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UploadReadSetPart service method.</param>
+        /// 
+        /// <returns>The response from the UploadReadSetPart service method, as returned by Omics.</returns>
+        /// <exception cref="Amazon.Omics.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.InternalServerException">
+        /// An unexpected error occurred. Try the request again.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.NotSupportedOperationException">
+        /// The operation is not supported by Amazon Omics, or the API does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.RequestTimeoutException">
+        /// The request timed out.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ResourceNotFoundException">
+        /// The target resource was not found in the current Region.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ServiceQuotaExceededException">
+        /// The request exceeds a service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.Omics.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an AWS service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UploadReadSetPart">REST API Reference for UploadReadSetPart Operation</seealso>
+        public virtual UploadReadSetPartResponse UploadReadSetPart(UploadReadSetPartRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UploadReadSetPartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UploadReadSetPartResponseUnmarshaller.Instance;
+
+            return Invoke<UploadReadSetPartResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UploadReadSetPart operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UploadReadSetPart operation on AmazonOmicsClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUploadReadSetPart
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UploadReadSetPart">REST API Reference for UploadReadSetPart Operation</seealso>
+        public virtual IAsyncResult BeginUploadReadSetPart(UploadReadSetPartRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UploadReadSetPartRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UploadReadSetPartResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UploadReadSetPart operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUploadReadSetPart.</param>
+        /// 
+        /// <returns>Returns a  UploadReadSetPartResult from Omics.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UploadReadSetPart">REST API Reference for UploadReadSetPart Operation</seealso>
+        public virtual UploadReadSetPartResponse EndUploadReadSetPart(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UploadReadSetPartResponse>(asyncResult);
         }
 
         #endregion

@@ -37,6 +37,7 @@ namespace Amazon.Omics.Model
         private DateTime? _creationTime;
         private string _digest;
         private string _id;
+        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
         private string _name;
         private WorkflowStatus _status;
         private WorkflowType _type;
@@ -114,6 +115,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetId()
         {
             return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        ///  Any metadata available for workflow. The information listed may vary depending on
+        /// the workflow, and there may also be no metadata to return. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && this._metadata.Count > 0; 
         }
 
         /// <summary>

@@ -44,6 +44,7 @@ namespace Amazon.Omics.Model
         private SequenceInformation _sequenceInformation;
         private string _sequenceStoreId;
         private ReadSetStatus _status;
+        private string _statusMessage;
         private string _subjectId;
 
         /// <summary>
@@ -249,6 +250,26 @@ namespace Amazon.Omics.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        ///  The status for a read set. It provides more detail as to why the read set has a status.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
         /// <summary>

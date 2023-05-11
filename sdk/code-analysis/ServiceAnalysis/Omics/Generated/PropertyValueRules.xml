@@ -1,24 +1,54 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.Omics.Model.AbortMultipartReadSetUploadRequest.SequenceStoreId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.AbortMultipartReadSetUploadRequest.UploadId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.BatchDeleteReadSetRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CancelAnnotationImportJobRequest.JobId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CancelRunRequest.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CancelVariantImportJobRequest.JobId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CompleteMultipartReadSetUploadRequest.SequenceStoreId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CompleteMultipartReadSetUploadRequest.UploadId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CompleteMultipartReadSetUploadResponse.ReadSetId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateAnnotationStoreRequest.Description</property>
@@ -27,53 +57,149 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateAnnotationStoreRequest.Name</property>
-    <pattern>^([a-z]){1}([a-z0-9_]){2,254}$</pattern>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateAnnotationStoreResponse.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadRequest.ClientToken</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadRequest.Description</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadRequest.GeneratedFrom</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadRequest.ReferenceArn</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadRequest.SampleId</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadRequest.SequenceStoreId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadRequest.SubjectId</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadResponse.Description</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadResponse.GeneratedFrom</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadResponse.Name</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadResponse.ReferenceArn</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadResponse.SampleId</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadResponse.SequenceStoreId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadResponse.SubjectId</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateMultipartReadSetUploadResponse.UploadId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateReferenceStoreRequest.ClientToken</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateReferenceStoreRequest.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateReferenceStoreRequest.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateReferenceStoreResponse.Arn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateReferenceStoreResponse.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateReferenceStoreResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateReferenceStoreResponse.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateRunGroupRequest.MaxCpus</property>
@@ -86,6 +212,11 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.CreateRunGroupRequest.MaxGpus</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.CreateRunGroupRequest.MaxRuns</property>
     <min>1</min>
     <max>100000</max>
@@ -94,67 +225,75 @@
     <property>Amazon.Omics.Model.CreateRunGroupRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateRunGroupRequest.RequestId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateRunGroupResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateRunGroupResponse.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateSequenceStoreRequest.ClientToken</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateSequenceStoreRequest.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateSequenceStoreRequest.FallbackLocation</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateSequenceStoreRequest.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateSequenceStoreResponse.Arn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateSequenceStoreResponse.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateSequenceStoreResponse.FallbackLocation</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateSequenceStoreResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateSequenceStoreResponse.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateVariantStoreRequest.Description</property>
@@ -163,23 +302,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateVariantStoreRequest.Name</property>
-    <pattern>^([a-z]){1}([a-z0-9_]){2,254}$</pattern>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateVariantStoreResponse.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CreateWorkflowRequest.Accelerators</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowRequest.DefinitionUri</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowRequest.Engine</property>
@@ -190,19 +334,19 @@
     <property>Amazon.Omics.Model.CreateWorkflowRequest.Main</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowRequest.RequestId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowRequest.StorageCapacity</property>
@@ -213,13 +357,13 @@
     <property>Amazon.Omics.Model.CreateWorkflowResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowResponse.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.CreateWorkflowResponse.Status</property>
@@ -230,63 +374,63 @@
     <property>Amazon.Omics.Model.DeleteReferenceRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DeleteReferenceRequest.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DeleteReferenceStoreRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DeleteRunRequest.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DeleteRunGroupRequest.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DeleteSequenceStoreRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.DeleteWorkflowRequest.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetAnnotationImportJobRequest.JobId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetAnnotationImportJobResponse.DestinationName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>^([a-z]){1}([a-z0-9_]){2,254}$</pattern>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetAnnotationImportJobResponse.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetAnnotationImportJobResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetAnnotationStoreResponse.Description</property>
@@ -295,7 +439,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetAnnotationStoreResponse.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetAnnotationStoreResponse.StatusMessage</property>
@@ -306,13 +450,13 @@
     <property>Amazon.Omics.Model.GetAnnotationStoreResponse.StoreArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetRequest.PartNumber</property>
@@ -323,173 +467,179 @@
     <property>Amazon.Omics.Model.GetReadSetRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetActivationJobRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetActivationJobRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetActivationJobResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetActivationJobResponse.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetActivationJobResponse.StatusMessage</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetExportJobRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetExportJobRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetExportJobResponse.Destination</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetExportJobResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetExportJobResponse.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetExportJobResponse.StatusMessage</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetImportJobRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetImportJobRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetImportJobResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetImportJobResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetImportJobResponse.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetImportJobResponse.StatusMessage</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetMetadataRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetMetadataRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetMetadataResponse.Arn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetMetadataResponse.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetMetadataResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetMetadataResponse.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetMetadataResponse.ReferenceArn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetMetadataResponse.SampleId</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetMetadataResponse.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetReadSetMetadataResponse.StatusMessage</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReadSetMetadataResponse.SubjectId</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceRequest.PartNumber</property>
@@ -500,145 +650,150 @@
     <property>Amazon.Omics.Model.GetReferenceRequest.Range</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceRequest.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceImportJobRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceImportJobRequest.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceImportJobResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceImportJobResponse.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceImportJobResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceImportJobResponse.StatusMessage</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceMetadataRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceMetadataRequest.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceMetadataResponse.Arn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceMetadataResponse.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceMetadataResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceMetadataResponse.Md5</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{N}]+$</pattern>
+    <pattern>[\p{L}||\p{N}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceMetadataResponse.Name</property>
     <min>3</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceMetadataResponse.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceStoreRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceStoreResponse.Arn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceStoreResponse.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceStoreResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetReferenceStoreResponse.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunRequest.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunResponse.Accelerators</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.Definition</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.Digest</property>
@@ -649,7 +804,7 @@
     <property>Amazon.Omics.Model.GetRunResponse.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.LogLevel</property>
@@ -660,13 +815,13 @@
     <property>Amazon.Omics.Model.GetRunResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.OutputUri</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.Priority</property>
@@ -677,19 +832,19 @@
     <property>Amazon.Omics.Model.GetRunResponse.RoleArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.RunGroupId</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.RunId</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.StartedBy</property>
@@ -703,7 +858,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.StatusMessage</property>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.StorageCapacity</property>
@@ -714,7 +869,7 @@
     <property>Amazon.Omics.Model.GetRunResponse.WorkflowId</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunResponse.WorkflowType</property>
@@ -725,19 +880,19 @@
     <property>Amazon.Omics.Model.GetRunGroupRequest.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunGroupResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunGroupResponse.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunGroupResponse.MaxCpus</property>
@@ -750,6 +905,11 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunGroupResponse.MaxGpus</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetRunGroupResponse.MaxRuns</property>
     <min>1</min>
     <max>100000</max>
@@ -758,27 +918,31 @@
     <property>Amazon.Omics.Model.GetRunGroupResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunTaskRequest.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunTaskRequest.TaskId</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunTaskResponse.Cpus</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetRunTaskResponse.Gpus</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetRunTaskResponse.LogStream</property>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunTaskResponse.Memory</property>
@@ -796,63 +960,67 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunTaskResponse.StatusMessage</property>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetRunTaskResponse.TaskId</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetSequenceStoreRequest.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetSequenceStoreResponse.Arn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetSequenceStoreResponse.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.GetSequenceStoreResponse.FallbackLocation</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetSequenceStoreResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetSequenceStoreResponse.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetVariantImportJobRequest.JobId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetVariantImportJobResponse.DestinationName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>^([a-z]){1}([a-z0-9_]){2,254}$</pattern>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetVariantImportJobResponse.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetVariantImportJobResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetVariantStoreResponse.Description</property>
@@ -861,7 +1029,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetVariantStoreResponse.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetVariantStoreResponse.StatusMessage</property>
@@ -872,13 +1040,13 @@
     <property>Amazon.Omics.Model.GetVariantStoreResponse.StoreArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowRequest.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowRequest.Type</property>
@@ -886,22 +1054,27 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.GetWorkflowResponse.Accelerators</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowResponse.Definition</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowResponse.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowResponse.Digest</property>
@@ -917,19 +1090,19 @@
     <property>Amazon.Omics.Model.GetWorkflowResponse.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowResponse.Main</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowResponse.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowResponse.Status</property>
@@ -938,7 +1111,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowResponse.StatusMessage</property>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.GetWorkflowResponse.StorageCapacity</property>
@@ -971,6 +1144,29 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.ListMultipartReadSetUploadsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListMultipartReadSetUploadsRequest.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListMultipartReadSetUploadsRequest.SequenceStoreId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListMultipartReadSetUploadsResponse.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetActivationJobsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -979,19 +1175,19 @@
     <property>Amazon.Omics.Model.ListReadSetActivationJobsRequest.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetActivationJobsRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetActivationJobsResponse.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetExportJobsRequest.MaxResults</property>
@@ -1002,19 +1198,19 @@
     <property>Amazon.Omics.Model.ListReadSetExportJobsRequest.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetExportJobsRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetExportJobsResponse.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetImportJobsRequest.MaxResults</property>
@@ -1025,19 +1221,19 @@
     <property>Amazon.Omics.Model.ListReadSetImportJobsRequest.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetImportJobsRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetImportJobsResponse.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetsRequest.MaxResults</property>
@@ -1048,19 +1244,48 @@
     <property>Amazon.Omics.Model.ListReadSetsRequest.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetsRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReadSetsResponse.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListReadSetUploadPartsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListReadSetUploadPartsRequest.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListReadSetUploadPartsRequest.SequenceStoreId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListReadSetUploadPartsRequest.UploadId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListReadSetUploadPartsResponse.NextToken</property>
+    <min>1</min>
+    <max>6144</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReferenceImportJobsRequest.MaxResults</property>
@@ -1071,19 +1296,19 @@
     <property>Amazon.Omics.Model.ListReferenceImportJobsRequest.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReferenceImportJobsRequest.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReferenceImportJobsResponse.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReferencesRequest.MaxResults</property>
@@ -1094,19 +1319,19 @@
     <property>Amazon.Omics.Model.ListReferencesRequest.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReferencesRequest.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReferencesResponse.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReferenceStoresRequest.MaxResults</property>
@@ -1117,13 +1342,13 @@
     <property>Amazon.Omics.Model.ListReferenceStoresRequest.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListReferenceStoresResponse.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListRunGroupsRequest.MaxResults</property>
@@ -1134,19 +1359,19 @@
     <property>Amazon.Omics.Model.ListRunGroupsRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListRunGroupsRequest.StartingToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListRunGroupsResponse.NextToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListRunsRequest.MaxResults</property>
@@ -1157,31 +1382,36 @@
     <property>Amazon.Omics.Model.ListRunsRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListRunsRequest.RunGroupId</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListRunsRequest.StartingToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ListRunsRequest.Status</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListRunsResponse.NextToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListRunTasksRequest.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListRunTasksRequest.MaxResults</property>
@@ -1192,7 +1422,7 @@
     <property>Amazon.Omics.Model.ListRunTasksRequest.StartingToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListRunTasksRequest.Status</property>
@@ -1203,7 +1433,7 @@
     <property>Amazon.Omics.Model.ListRunTasksResponse.NextToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListSequenceStoresRequest.MaxResults</property>
@@ -1214,19 +1444,19 @@
     <property>Amazon.Omics.Model.ListSequenceStoresRequest.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListSequenceStoresResponse.NextToken</property>
     <min>1</min>
     <max>6144</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListVariantImportJobsRequest.MaxResults</property>
@@ -1257,13 +1487,13 @@
     <property>Amazon.Omics.Model.ListWorkflowsRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListWorkflowsRequest.StartingToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ListWorkflowsRequest.Type</property>
@@ -1274,157 +1504,157 @@
     <property>Amazon.Omics.Model.ListWorkflowsResponse.NextToken</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartAnnotationImportJobRequest.DestinationName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>^([a-z]){1}([a-z0-9_]){2,254}$</pattern>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartAnnotationImportJobRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartAnnotationImportJobResponse.JobId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetActivationJobRequest.ClientToken</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetActivationJobRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetActivationJobResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetActivationJobResponse.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetExportJobRequest.ClientToken</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetExportJobRequest.Destination</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetExportJobRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetExportJobRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetExportJobResponse.Destination</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetExportJobResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetExportJobResponse.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobRequest.ClientToken</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobRequest.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobResponse.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReferenceImportJobRequest.ClientToken</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReferenceImportJobRequest.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReferenceImportJobRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReferenceImportJobResponse.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReferenceImportJobResponse.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReferenceImportJobResponse.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.LogLevel</property>
@@ -1435,13 +1665,13 @@
     <property>Amazon.Omics.Model.StartRunRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.OutputUri</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.Priority</property>
@@ -1452,25 +1682,25 @@
     <property>Amazon.Omics.Model.StartRunRequest.RequestId</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.RoleArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.RunGroupId</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.RunId</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.StorageCapacity</property>
@@ -1481,7 +1711,7 @@
     <property>Amazon.Omics.Model.StartRunRequest.WorkflowId</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunRequest.WorkflowType</property>
@@ -1492,13 +1722,13 @@
     <property>Amazon.Omics.Model.StartRunResponse.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunResponse.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartRunResponse.Status</property>
@@ -1509,29 +1739,29 @@
     <property>Amazon.Omics.Model.StartVariantImportJobRequest.DestinationName</property>
     <min>3</min>
     <max>255</max>
-    <pattern>^([a-z]){1}([a-z0-9_]){2,254}$</pattern>
+    <pattern>([a-z]){1}([a-z0-9_]){2,254}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartVariantImportJobRequest.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartVariantImportJobResponse.JobId</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UpdateAnnotationStoreRequest.Description</property>
@@ -1545,13 +1775,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UpdateAnnotationStoreResponse.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UpdateRunGroupRequest.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UpdateRunGroupRequest.MaxCpus</property>
@@ -1564,6 +1794,11 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.UpdateRunGroupRequest.MaxGpus</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.UpdateRunGroupRequest.MaxRuns</property>
     <min>1</min>
     <max>100000</max>
@@ -1572,7 +1807,7 @@
     <property>Amazon.Omics.Model.UpdateRunGroupRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UpdateVariantStoreRequest.Description</property>
@@ -1586,63 +1821,80 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UpdateVariantStoreResponse.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UpdateWorkflowRequest.Description</property>
     <min>1</min>
     <max>256</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UpdateWorkflowRequest.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.UpdateWorkflowRequest.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UploadReadSetPartRequest.PartNumber</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UploadReadSetPartRequest.SequenceStoreId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.UploadReadSetPartRequest.UploadId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ActivateReadSetJobItem.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ActivateReadSetJobItem.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ActivateReadSetSourceItem.ReadSetId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ActivateReadSetSourceItem.StatusMessage</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.AnnotationImportItemDetail.Source</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.AnnotationImportItemSource.Source</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.AnnotationImportJobItem.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.AnnotationStoreItem.Description</property>
@@ -1651,7 +1903,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.AnnotationStoreItem.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.AnnotationStoreItem.StatusMessage</property>
@@ -1662,41 +1914,46 @@
     <property>Amazon.Omics.Model.AnnotationStoreItem.StoreArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.CompleteReadSetUploadPartListItem.PartNumber</property>
+    <min>1</min>
+    <max>10000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ExportReadSet.ReadSetId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ExportReadSetDetail.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ExportReadSetDetail.StatusMessage</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ExportReadSetJobDetail.Destination</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ExportReadSetJobDetail.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ExportReadSetJobDetail.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.FileInformation.ContentLength</property>
@@ -1717,101 +1974,149 @@
     <property>Amazon.Omics.Model.ImportReadSetJobItem.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReadSetJobItem.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReadSetJobItem.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReadSetSourceItem.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReadSetSourceItem.GeneratedFrom</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReadSetSourceItem.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReadSetSourceItem.ReferenceArn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReadSetSourceItem.SampleId</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReadSetSourceItem.StatusMessage</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReadSetSourceItem.SubjectId</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReferenceJobItem.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReferenceJobItem.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReferenceJobItem.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:.*</pattern>
+    <pattern>arn:.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReferenceSourceItem.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReferenceSourceItem.Name</property>
     <min>3</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReferenceSourceItem.SourceFile</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ImportReferenceSourceItem.StatusMessage</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.MultipartReadSetUploadListItem.Description</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.MultipartReadSetUploadListItem.GeneratedFrom</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.MultipartReadSetUploadListItem.Name</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.MultipartReadSetUploadListItem.ReferenceArn</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.MultipartReadSetUploadListItem.SampleId</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.MultipartReadSetUploadListItem.SequenceStoreId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.MultipartReadSetUploadListItem.SubjectId</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.MultipartReadSetUploadListItem.UploadId</property>
+    <min>10</min>
+    <max>36</max>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadOptions.Comment</property>
@@ -1847,163 +2152,197 @@
     <property>Amazon.Omics.Model.ReadSetBatchError.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ReadSetFilter.GeneratedFrom</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetFilter.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetFilter.ReferenceArn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ReadSetFilter.SampleId</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ReadSetFilter.SubjectId</property>
+    <min>1</min>
+    <max>127</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetListItem.Arn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetListItem.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetListItem.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetListItem.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetListItem.ReferenceArn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetListItem.SampleId</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetListItem.SequenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ReadSetListItem.StatusMessage</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReadSetListItem.SubjectId</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ReadSetUploadPartListItem.PartNumber</property>
+    <min>1</min>
+    <max>10000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.ReadSetUploadPartListItem.PartSize</property>
+    <min>1</min>
+    <max>5368709120</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceFilter.Md5</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{N}]+$</pattern>
+    <pattern>[\p{L}||\p{N}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceFilter.Name</property>
     <min>3</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceItem.ReferenceArn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceListItem.Arn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceListItem.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceListItem.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceListItem.Md5</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{N}]+$</pattern>
+    <pattern>[\p{L}||\p{N}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceListItem.Name</property>
     <min>3</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceListItem.ReferenceStoreId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceStoreDetail.Arn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceStoreDetail.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceStoreDetail.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceStoreDetail.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.ReferenceStoreFilter.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.RunGroupListItem.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.RunGroupListItem.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.RunGroupListItem.MaxCpus</property>
@@ -2016,6 +2355,11 @@
     <max>100000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Omics.Model.RunGroupListItem.MaxGpus</property>
+    <min>1</min>
+    <max>100000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Omics.Model.RunGroupListItem.MaxRuns</property>
     <min>1</min>
     <max>100000</max>
@@ -2024,25 +2368,25 @@
     <property>Amazon.Omics.Model.RunGroupListItem.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.RunListItem.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.RunListItem.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.RunListItem.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.RunListItem.Priority</property>
@@ -2063,119 +2407,127 @@
     <property>Amazon.Omics.Model.RunListItem.WorkflowId</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.SequenceInformation.GeneratedFrom</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.SequenceStoreDetail.Arn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.SequenceStoreDetail.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.SequenceStoreDetail.FallbackLocation</property>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/?((.{1,1024})/)?</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.SequenceStoreDetail.Id</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.SequenceStoreDetail.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.SequenceStoreFilter.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.SourceFiles.Source1</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.SourceFiles.Source2</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.SseConfig.KeyArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
+    <pattern>.*arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*).*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetActivationJobSourceItem.ReadSetId</property>
     <min>10</min>
     <max>36</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobSourceItem.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobSourceItem.GeneratedFrom</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobSourceItem.Name</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobSourceItem.ReferenceArn</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobSourceItem.SampleId</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReadSetImportJobSourceItem.SubjectId</property>
     <min>1</min>
     <max>127</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReferenceImportJobSourceItem.Description</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReferenceImportJobSourceItem.Name</property>
     <min>3</min>
     <max>255</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.StartReferenceImportJobSourceItem.SourceFile</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.TaskListItem.Cpus</property>
     <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Omics.Model.TaskListItem.Gpus</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.TaskListItem.Memory</property>
@@ -2195,21 +2547,21 @@
     <property>Amazon.Omics.Model.TaskListItem.TaskId</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.VariantImportItemDetail.Source</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.VariantImportItemSource.Source</property>
-    <pattern>^s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})$</pattern>
+    <pattern>s3://([a-z0-9][a-z0-9-.]{1,61}[a-z0-9])/(.{1,1024})</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.VariantImportJobItem.RoleArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.VariantStoreItem.Description</property>
@@ -2218,7 +2570,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.VariantStoreItem.Id</property>
-    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.VariantStoreItem.StatusMessage</property>
@@ -2229,13 +2581,13 @@
     <property>Amazon.Omics.Model.VariantStoreItem.StoreArn</property>
     <min>20</min>
     <max>2048</max>
-    <pattern>^arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)$</pattern>
+    <pattern>arn:([^: ]*):([^: ]*):([^: ]*):([0-9]{12}):([^: ]*)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.WorkflowListItem.Arn</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^arn:.+$</pattern>
+    <pattern>arn:.+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.WorkflowListItem.Digest</property>
@@ -2246,13 +2598,13 @@
     <property>Amazon.Omics.Model.WorkflowListItem.Id</property>
     <min>1</min>
     <max>18</max>
-    <pattern>^[0-9]+$</pattern>
+    <pattern>[0-9]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.WorkflowListItem.Name</property>
     <min>1</min>
     <max>128</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Omics.Model.WorkflowListItem.Status</property>
@@ -2268,6 +2620,6 @@
     <property>Amazon.Omics.Model.WorkflowParameter.Description</property>
     <min>0</min>
     <max>256</max>
-    <pattern>^[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+$</pattern>
+    <pattern>[\p{L}||\p{M}||\p{Z}||\p{S}||\p{N}||\p{P}]+</pattern>
   </property-value-rule>
 </property-value-rules>

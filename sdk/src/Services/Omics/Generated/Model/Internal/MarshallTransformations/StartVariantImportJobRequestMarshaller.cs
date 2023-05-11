@@ -65,6 +65,20 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAnnotationFields())
+                {
+                    context.Writer.WritePropertyName("annotationFields");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestAnnotationFieldsKvp in publicRequest.AnnotationFields)
+                    {
+                        context.Writer.WritePropertyName(publicRequestAnnotationFieldsKvp.Key);
+                        var publicRequestAnnotationFieldsValue = publicRequestAnnotationFieldsKvp.Value;
+
+                            context.Writer.Write(publicRequestAnnotationFieldsValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDestinationName())
                 {
                     context.Writer.WritePropertyName("destinationName");

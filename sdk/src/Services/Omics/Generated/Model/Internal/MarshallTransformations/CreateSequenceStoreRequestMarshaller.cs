@@ -77,6 +77,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetFallbackLocation())
+                {
+                    context.Writer.WritePropertyName("fallbackLocation");
+                    context.Writer.Write(publicRequest.FallbackLocation);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");

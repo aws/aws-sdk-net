@@ -25,6 +25,52 @@ namespace Amazon.Omics
 {
 
     /// <summary>
+    /// Constants used for properties of type Accelerators.
+    /// </summary>
+    public class Accelerators : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GPU for Accelerators
+        /// </summary>
+        public static readonly Accelerators GPU = new Accelerators("GPU");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Accelerators(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Accelerators FindValue(string value)
+        {
+            return FindValue<Accelerators>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Accelerators(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnnotationType.
     /// </summary>
     public class AnnotationType : ConstantClass
@@ -765,6 +811,56 @@ namespace Amazon.Omics
 
 
     /// <summary>
+    /// Constants used for properties of type ReadSetPartSource.
+    /// </summary>
+    public class ReadSetPartSource : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant SOURCE1 for ReadSetPartSource
+        /// </summary>
+        public static readonly ReadSetPartSource SOURCE1 = new ReadSetPartSource("SOURCE1");
+        /// <summary>
+        /// Constant SOURCE2 for ReadSetPartSource
+        /// </summary>
+        public static readonly ReadSetPartSource SOURCE2 = new ReadSetPartSource("SOURCE2");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ReadSetPartSource(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ReadSetPartSource FindValue(string value)
+        {
+            return FindValue<ReadSetPartSource>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ReadSetPartSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ReadSetStatus.
     /// </summary>
     public class ReadSetStatus : ConstantClass
@@ -790,6 +886,14 @@ namespace Amazon.Omics
         /// Constant DELETING for ReadSetStatus
         /// </summary>
         public static readonly ReadSetStatus DELETING = new ReadSetStatus("DELETING");
+        /// <summary>
+        /// Constant PROCESSING_UPLOAD for ReadSetStatus
+        /// </summary>
+        public static readonly ReadSetStatus PROCESSING_UPLOAD = new ReadSetStatus("PROCESSING_UPLOAD");
+        /// <summary>
+        /// Constant UPLOAD_FAILED for ReadSetStatus
+        /// </summary>
+        public static readonly ReadSetStatus UPLOAD_FAILED = new ReadSetStatus("UPLOAD_FAILED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1607,6 +1711,10 @@ namespace Amazon.Omics
         /// </summary>
         public static readonly WorkflowStatus FAILED = new WorkflowStatus("FAILED");
         /// <summary>
+        /// Constant INACTIVE for WorkflowStatus
+        /// </summary>
+        public static readonly WorkflowStatus INACTIVE = new WorkflowStatus("INACTIVE");
+        /// <summary>
         /// Constant UPDATING for WorkflowStatus
         /// </summary>
         public static readonly WorkflowStatus UPDATING = new WorkflowStatus("UPDATING");
@@ -1656,6 +1764,10 @@ namespace Amazon.Omics
         /// Constant PRIVATE for WorkflowType
         /// </summary>
         public static readonly WorkflowType PRIVATE = new WorkflowType("PRIVATE");
+        /// <summary>
+        /// Constant READY2RUN for WorkflowType
+        /// </summary>
+        public static readonly WorkflowType READY2RUN = new WorkflowType("READY2RUN");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
