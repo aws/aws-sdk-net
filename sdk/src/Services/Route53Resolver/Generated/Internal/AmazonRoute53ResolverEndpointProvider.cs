@@ -80,6 +80,14 @@ namespace Amazon.Route53Resolver.Internal
                     {
                         if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                         {
+                            if (Equals(refs["Region"], "us-gov-east-1"))
+                            {
+                                return new Endpoint("https://route53resolver.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (Equals(refs["Region"], "us-gov-west-1"))
+                            {
+                                return new Endpoint("https://route53resolver.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
                             return new Endpoint(Interpolate(@"https://route53resolver-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                         }
                         throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
