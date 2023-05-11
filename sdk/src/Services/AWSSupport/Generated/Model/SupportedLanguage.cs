@@ -29,36 +29,56 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeSeverityLevels operation.
-    /// Returns the list of severity levels that you can assign to a support case. The severity
-    /// level for a case is also a field in the <a>CaseDetails</a> data type that you include
-    /// for a <a>CreateCase</a> request.
-    /// 
-    ///  <note> <ul> <li> 
-    /// <para>
-    /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
-    /// Amazon Web Services Support API. 
-    /// </para>
-    ///  </li> <li> 
-    /// <para>
-    /// If you call the Amazon Web Services Support API from an account that doesn't have
-    /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
-    /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
-    /// Web Services Support</a>.
-    /// </para>
-    ///  </li> </ul> </note>
+    /// A JSON-formatted object that contains the available ISO 639-1 language <code>code</code>,
+    /// <code>language</code> name and langauge <code>display</code> value. The language code
+    /// is what should be used in the <a>CreateCase</a> call.
     /// </summary>
-    public partial class DescribeSeverityLevelsRequest : AmazonAWSSupportRequest
+    public partial class SupportedLanguage
     {
+        private string _code;
+        private string _display;
         private string _language;
+
+        /// <summary>
+        /// Gets and sets the property Code. 
+        /// <para>
+        ///  2 digit ISO 639-1 code. e.g. <code>en</code> 
+        /// </para>
+        /// </summary>
+        public string Code
+        {
+            get { return this._code; }
+            set { this._code = value; }
+        }
+
+        // Check to see if Code property is set
+        internal bool IsSetCode()
+        {
+            return this._code != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Display. 
+        /// <para>
+        ///  Language display value e.g. <code>ENGLISH</code> 
+        /// </para>
+        /// </summary>
+        public string Display
+        {
+            get { return this._display; }
+            set { this._display = value; }
+        }
+
+        // Check to see if Display property is set
+        internal bool IsSetDisplay()
+        {
+            return this._display != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Language. 
         /// <para>
-        /// The language in which Amazon Web Services Support handles the case. Amazon Web Services
-        /// Support currently supports Chinese (“zh”), English ("en"), Japanese ("ja") and Korean
-        /// (“ko”). You must specify the ISO 639-1 code for the <code>language</code> parameter
-        /// if you want support in that language.
+        ///  Full language description e.g. <code>ENGLISH</code> 
         /// </para>
         /// </summary>
         public string Language

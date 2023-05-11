@@ -29,20 +29,11 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AWSSupport.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeServices operation.
-    /// Returns the current list of Amazon Web Services services and a list of service categories
-    /// for each service. You then use service names and categories in your <a>CreateCase</a>
-    /// requests. Each Amazon Web Services service has its own set of categories.
+    /// Container for the parameters to the DescribeCreateCaseOptions operation.
+    /// Returns a list of CreateCaseOption types along with the corresponding supported hours
+    /// and language availability. You can specify the <code>language</code> <code>categoryCode</code>,
+    /// <code>issueType</code> and <code>serviceCode</code> used to retrieve the CreateCaseOptions.
     /// 
-    ///  
-    /// <para>
-    /// The service codes and category codes correspond to the values that appear in the <b>Service</b>
-    /// and <b>Category</b> lists on the Amazon Web Services Support Center <a href="https://console.aws.amazon.com/support/home#/case/create">Create
-    /// Case</a> page. The values in those fields don't necessarily match the service codes
-    /// and categories returned by the <code>DescribeServices</code> operation. Always use
-    /// the service codes and categories that the <code>DescribeServices</code> operation
-    /// returns, so that you have the most recent set of service and category codes.
-    /// </para>
     ///  <note> <ul> <li> 
     /// <para>
     /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
@@ -57,10 +48,53 @@ namespace Amazon.AWSSupport.Model
     /// </para>
     ///  </li> </ul> </note>
     /// </summary>
-    public partial class DescribeServicesRequest : AmazonAWSSupportRequest
+    public partial class DescribeCreateCaseOptionsRequest : AmazonAWSSupportRequest
     {
+        private string _categoryCode;
+        private string _issueType;
         private string _language;
-        private List<string> _serviceCodeList = new List<string>();
+        private string _serviceCode;
+
+        /// <summary>
+        /// Gets and sets the property CategoryCode. 
+        /// <para>
+        /// The category of problem for the support case. You also use the <a>DescribeServices</a>
+        /// operation to get the category code for a service. Each Amazon Web Services service
+        /// defines its own set of category codes.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string CategoryCode
+        {
+            get { return this._categoryCode; }
+            set { this._categoryCode = value; }
+        }
+
+        // Check to see if CategoryCode property is set
+        internal bool IsSetCategoryCode()
+        {
+            return this._categoryCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IssueType. 
+        /// <para>
+        /// The type of issue for the case. You can specify <code>customer-service</code> or <code>technical</code>.
+        /// If you don't specify a value, the default is <code>technical</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string IssueType
+        {
+            get { return this._issueType; }
+            set { this._issueType = value; }
+        }
+
+        // Check to see if IssueType property is set
+        internal bool IsSetIssueType()
+        {
+            return this._issueType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Language. 
@@ -71,6 +105,7 @@ namespace Amazon.AWSSupport.Model
         /// if you want support in that language.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string Language
         {
             get { return this._language; }
@@ -84,22 +119,23 @@ namespace Amazon.AWSSupport.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ServiceCodeList. 
+        /// Gets and sets the property ServiceCode. 
         /// <para>
-        /// A JSON-formatted list of service codes available for Amazon Web Services services.
+        /// The code for the Amazon Web Services service. You can use the <a>DescribeServices</a>
+        /// operation to get the possible <code>serviceCode</code> values.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
-        public List<string> ServiceCodeList
+        [AWSProperty(Required=true)]
+        public string ServiceCode
         {
-            get { return this._serviceCodeList; }
-            set { this._serviceCodeList = value; }
+            get { return this._serviceCode; }
+            set { this._serviceCode = value; }
         }
 
-        // Check to see if ServiceCodeList property is set
-        internal bool IsSetServiceCodeList()
+        // Check to see if ServiceCode property is set
+        internal bool IsSetServiceCode()
         {
-            return this._serviceCodeList != null && this._serviceCodeList.Count > 0; 
+            return this._serviceCode != null;
         }
 
     }

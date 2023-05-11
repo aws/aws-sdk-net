@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeTrustedAdvisorChecks operation
+    /// Response Unmarshaller for DescribeSupportedLanguages operation
     /// </summary>  
-    public class DescribeTrustedAdvisorChecksResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeSupportedLanguagesResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeTrustedAdvisorChecksResponse response = new DescribeTrustedAdvisorChecksResponse();
+            DescribeSupportedLanguagesResponse response = new DescribeSupportedLanguagesResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("checks", targetDepth))
+                if (context.TestExpression("supportedLanguages", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TrustedAdvisorCheckDescription, TrustedAdvisorCheckDescriptionUnmarshaller>(TrustedAdvisorCheckDescriptionUnmarshaller.Instance);
-                    response.Checks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<SupportedLanguage, SupportedLanguageUnmarshaller>(SupportedLanguageUnmarshaller.Instance);
+                    response.SupportedLanguages = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,9 +92,9 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             return new AmazonAWSSupportException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeTrustedAdvisorChecksResponseUnmarshaller _instance = new DescribeTrustedAdvisorChecksResponseUnmarshaller();        
+        private static DescribeSupportedLanguagesResponseUnmarshaller _instance = new DescribeSupportedLanguagesResponseUnmarshaller();        
 
-        internal static DescribeTrustedAdvisorChecksResponseUnmarshaller GetInstance()
+        internal static DescribeSupportedLanguagesResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +102,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeTrustedAdvisorChecksResponseUnmarshaller Instance
+        public static DescribeSupportedLanguagesResponseUnmarshaller Instance
         {
             get
             {

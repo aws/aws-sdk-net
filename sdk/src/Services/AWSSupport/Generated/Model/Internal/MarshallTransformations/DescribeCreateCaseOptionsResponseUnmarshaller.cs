@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DescribeTrustedAdvisorChecks operation
+    /// Response Unmarshaller for DescribeCreateCaseOptions operation
     /// </summary>  
-    public class DescribeTrustedAdvisorChecksResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DescribeCreateCaseOptionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DescribeTrustedAdvisorChecksResponse response = new DescribeTrustedAdvisorChecksResponse();
+            DescribeCreateCaseOptionsResponse response = new DescribeCreateCaseOptionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("checks", targetDepth))
+                if (context.TestExpression("communicationTypes", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<TrustedAdvisorCheckDescription, TrustedAdvisorCheckDescriptionUnmarshaller>(TrustedAdvisorCheckDescriptionUnmarshaller.Instance);
-                    response.Checks = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<CommunicationTypeOptions, CommunicationTypeOptionsUnmarshaller>(CommunicationTypeOptionsUnmarshaller.Instance);
+                    response.CommunicationTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("languageAvailability", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.LanguageAvailability = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,9 +98,9 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
             return new AmazonAWSSupportException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DescribeTrustedAdvisorChecksResponseUnmarshaller _instance = new DescribeTrustedAdvisorChecksResponseUnmarshaller();        
+        private static DescribeCreateCaseOptionsResponseUnmarshaller _instance = new DescribeCreateCaseOptionsResponseUnmarshaller();        
 
-        internal static DescribeTrustedAdvisorChecksResponseUnmarshaller GetInstance()
+        internal static DescribeCreateCaseOptionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +108,7 @@ namespace Amazon.AWSSupport.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DescribeTrustedAdvisorChecksResponseUnmarshaller Instance
+        public static DescribeCreateCaseOptionsResponseUnmarshaller Instance
         {
             get
             {
