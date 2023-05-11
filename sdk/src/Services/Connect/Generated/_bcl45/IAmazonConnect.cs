@@ -5967,7 +5967,7 @@ namespace Amazon.Connect
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-        /// the last 14 days, in 24-hour intervals.
+        /// the last 35 days, in 24-hour intervals.
         /// </para>
         ///  
         /// <para>
@@ -6012,7 +6012,7 @@ namespace Amazon.Connect
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-        /// the last 14 days, in 24-hour intervals.
+        /// the last 35 days, in 24-hour intervals.
         /// </para>
         ///  
         /// <para>
@@ -11589,6 +11589,13 @@ namespace Amazon.Connect
         /// 
         ///  <important> 
         /// <para>
+        /// After using this API, you must verify that the phone number is attached to the correct
+        /// flow in the target instance or traffic distribution group. You need to do this because
+        /// the API switches only the phone number to a new instance or traffic distribution group.
+        /// It doesn't migrate the flow configuration of the phone number, too.
+        /// </para>
+        ///  
+        /// <para>
         /// You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
         /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
         /// operation.
@@ -11630,6 +11637,13 @@ namespace Amazon.Connect
         /// in the same Amazon Web Services Region.
         /// 
         ///  <important> 
+        /// <para>
+        /// After using this API, you must verify that the phone number is attached to the correct
+        /// flow in the target instance or traffic distribution group. You need to do this because
+        /// the API switches only the phone number to a new instance or traffic distribution group.
+        /// It doesn't migrate the flow configuration of the phone number, too.
+        /// </para>
+        ///  
         /// <para>
         /// You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
         /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
