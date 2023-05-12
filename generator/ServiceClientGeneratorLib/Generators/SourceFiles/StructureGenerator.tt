@@ -113,15 +113,13 @@ namespace <#=this.Config.Namespace#>.Model
         }
         public override event EventHandler<EventStreamEventReceivedArgs<IEventStreamEvent>> EventReceived;
         public override event EventHandler<EventStreamExceptionReceivedArgs<<#=this.Config.ClassName#>EventStreamException>> ExceptionReceived;
-        /// <summary>
-        /// Raised when an InvokeComplete event is received
-        /// </summary>
 <#
         foreach(var member in this.Structure.Members)
         {
 #>
         ///<summary>
         ///Raised when an <#=member.PropertyName#> event is received
+        ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<<#=member.DetermineType()#>>> <#=member.PropertyName#>Received;
 <#
         }

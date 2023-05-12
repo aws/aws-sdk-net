@@ -35,7 +35,8 @@ namespace Amazon.Lambda.Model
     /// Lambda includes a <code>InvokeComplete</code> object.
     /// </summary>
 
-    [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "<Pending>")]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Naming", "CA1710:Identifiers should have correct suffix", Justification = "InvokeWithResponseStreamResponseEventCollection is not descriptive")]
+    [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1063", Justification = "IDisposable is a transient interface from IEventStream. Users need to be able to call Dispose.")]
     public sealed class InvokeWithResponseStreamResponseEvent : EnumerableEventStream<IEventStreamEvent, LambdaEventStreamException>
     {
         ///summary>
@@ -68,14 +69,13 @@ namespace Amazon.Lambda.Model
         }
         public override event EventHandler<EventStreamEventReceivedArgs<IEventStreamEvent>> EventReceived;
         public override event EventHandler<EventStreamExceptionReceivedArgs<LambdaEventStreamException>> ExceptionReceived;
-        /// <summary>
-        /// Raised when an InvokeComplete event is received
-        /// </summary>
         ///<summary>
         ///Raised when an InvokeComplete event is received
+        ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<InvokeWithResponseStreamCompleteEvent>> InvokeCompleteReceived;
         ///<summary>
         ///Raised when an PayloadChunk event is received
+        ///</summary>
         public event EventHandler<EventStreamEventReceivedArgs<InvokeResponseStreamUpdate>> PayloadChunkReceived;
         public InvokeWithResponseStreamResponseEvent(Stream stream) : this (stream, null)
         {
