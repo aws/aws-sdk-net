@@ -44,8 +44,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             GetObjectAttributesResponse response = new GetObjectAttributesResponse();
             UnmarshallResult(context, response);
             if (context.ResponseData.IsHeaderPresent("x-amz-delete-marker"))
-                if (context.ResponseData.IsHeaderPresent("Last-Modified"))
-                    response.LastModified = DateTime.Parse(context.ResponseData.GetHeaderValue("Last-Modified"), CultureInfo.InvariantCulture);
+                response.DeleteMarker = S3Transforms.ToBool(context.ResponseData.GetHeaderValue("x-amz-delete-marker"));
+            if (context.ResponseData.IsHeaderPresent("Last-Modified"))
+                    response.LastModified = S3Transforms.ToDateTime(context.ResponseData.GetHeaderValue("Last-Modified"));
             if (context.ResponseData.IsHeaderPresent("x-amz-request-charged"))
                 response.RequestCharged = context.ResponseData.GetHeaderValue("x-amz-request-charged");
             if (context.ResponseData.IsHeaderPresent("x-amz-version-id"))
