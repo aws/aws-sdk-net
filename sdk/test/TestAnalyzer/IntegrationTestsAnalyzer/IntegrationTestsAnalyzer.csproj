@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1</TargetFrameworks>
+    <TargetFramework Condition="'$(OS)' != 'Windows_NT'">netstandard2.0</TargetFramework>
+    <TargetFramework Condition="'$(OS)' == 'Windows_NT'">net45</TargetFramework>
     <AssemblyName>IntegrationTestsAnalyzer</AssemblyName>
     <RootNamespace>IntegrationTestsAnalyzer</RootNamespace>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>true</AppendTargetFrameworkToOutputPath>
   </PropertyGroup> 
   
   <ItemGroup>

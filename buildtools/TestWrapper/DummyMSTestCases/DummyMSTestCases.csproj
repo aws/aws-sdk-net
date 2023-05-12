@@ -1,11 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netcoreapp3.1;net45</TargetFrameworks>
+    <TargetFramework Condition="'$(OS)' != 'Windows_NT'">netstandard2.0</TargetFramework>
+    <TargetFramework Condition="'$(OS)' == 'Windows_NT'">net45</TargetFramework>
     <OutputType>Library</OutputType>
     <RootNamespace>DummyMSTestCases</RootNamespace>
     <AssemblyName>DummyMSTestCases</AssemblyName>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
   </PropertyGroup>
 
   <ItemGroup>

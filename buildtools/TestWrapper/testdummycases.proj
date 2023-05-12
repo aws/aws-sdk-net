@@ -3,7 +3,7 @@
          xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
     <PropertyGroup>
         <Configuration Condition="'$(Configuration)'==''">Debug</Configuration>
-        <TestWrapperAssembly>.\TestRunners\bin\Debug\TestWrapper.dll</TestWrapperAssembly>
+        <TestWrapperAssembly>.\TestRunners\bin\$(Configuration)\TestWrapper.dll</TestWrapperAssembly>
     </PropertyGroup>
 
     <UsingTask TaskName="TestWrapper.MsTestWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
