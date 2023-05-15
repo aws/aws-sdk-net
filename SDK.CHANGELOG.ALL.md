@@ -1,3 +1,20 @@
+### 3.7.547.0 (2023-05-15 18:30 UTC)
+* Athena (3.7.108.0)
+	* You can now define custom spark properties at start of the session for use cases like cluster encryption, table formats, and general Spark tuning.
+* CodeCatalyst (3.7.102.0)
+	* With this release, the users can list the active sessions connected to their Dev Environment on AWS CodeCatalyst
+* IAMRolesAnywhere (3.7.101.0)
+	* Adds support for custom notification settings in a trust anchor. Introduces PutNotificationSettings and ResetNotificationSettings API's. Updates DurationSeconds max value to 3600.
+* Kafka (3.7.104.0)
+	* Added a fix to make clusterarn a required field in ListClientVpcConnections and RejectClientVpcConnection APIs
+* Rekognition (3.7.107.0)
+	* This release adds a new EyeDirection attribute in Amazon Rekognition DetectFaces and IndexFaces APIs which predicts the yaw and pitch angles of a person's eye gaze direction for each face detected in the image.
+* Transfer (3.7.105.0)
+	* This release introduces the ability to require both password and SSH key when users authenticate to your Transfer Family servers that use the SFTP protocol.
+* Core 3.7.106.36
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.546.0 (2023-05-11 18:25 UTC)
 * AWSHealth (3.7.101.0)
 	* Add support for regional endpoints
