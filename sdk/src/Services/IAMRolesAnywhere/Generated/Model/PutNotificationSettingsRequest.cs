@@ -29,59 +29,42 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateTrustAnchor operation.
-    /// Updates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate
-    /// authority (CA) by configuring a trust anchor. You can define a trust anchor as a reference
-    /// to an Private Certificate Authority (Private CA) or by uploading a CA certificate.
-    /// Your Amazon Web Services workloads can authenticate with the trust anchor using certificates
-    /// issued by the CA in exchange for temporary Amazon Web Services credentials.
+    /// Container for the parameters to the PutNotificationSettings operation.
+    /// Attaches a list of <i>notification settings</i> to a trust anchor.
     /// 
     ///  
     /// <para>
-    ///  <b>Required permissions: </b> <code>rolesanywhere:UpdateTrustAnchor</code>. 
+    /// A notification setting includes information such as event name, threshold, status
+    /// of the notification setting, and the channel to notify.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <b>Required permissions: </b> <code>rolesanywhere:PutNotificationSettings</code>.
+    /// 
     /// </para>
     /// </summary>
-    public partial class UpdateTrustAnchorRequest : AmazonIAMRolesAnywhereRequest
+    public partial class PutNotificationSettingsRequest : AmazonIAMRolesAnywhereRequest
     {
-        private string _name;
-        private Source _source;
+        private List<NotificationSetting> _notificationSettings = new List<NotificationSetting>();
         private string _trustAnchorId;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property NotificationSettings. 
         /// <para>
-        /// The name of the trust anchor.
+        /// A list of notification settings to be associated to the trust anchor.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
-        public string Name
+        [AWSProperty(Required=true, Min=0, Max=50)]
+        public List<NotificationSetting> NotificationSettings
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._notificationSettings; }
+            set { this._notificationSettings = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if NotificationSettings property is set
+        internal bool IsSetNotificationSettings()
         {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Source. 
-        /// <para>
-        /// The trust anchor type and its related certificate data.
-        /// </para>
-        /// </summary>
-        public Source Source
-        {
-            get { return this._source; }
-            set { this._source = value; }
-        }
-
-        // Check to see if Source property is set
-        internal bool IsSetSource()
-        {
-            return this._source != null;
+            return this._notificationSettings != null && this._notificationSettings.Count > 0; 
         }
 
         /// <summary>

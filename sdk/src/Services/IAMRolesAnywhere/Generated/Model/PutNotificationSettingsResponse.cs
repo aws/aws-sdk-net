@@ -29,29 +29,26 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
-    /// This is the response object from the ListTagsForResource operation.
+    /// This is the response object from the PutNotificationSettings operation.
     /// </summary>
-    public partial class ListTagsForResourceResponse : AmazonWebServiceResponse
+    public partial class PutNotificationSettingsResponse : AmazonWebServiceResponse
     {
-        private List<Tag> _tags = new List<Tag>();
+        private TrustAnchorDetail _trustAnchor;
 
         /// <summary>
-        /// Gets and sets the property Tags. 
-        /// <para>
-        /// A list of tags attached to the resource.
-        /// </para>
+        /// Gets and sets the property TrustAnchor.
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
-        public List<Tag> Tags
+        [AWSProperty(Required=true)]
+        public TrustAnchorDetail TrustAnchor
         {
-            get { return this._tags; }
-            set { this._tags = value; }
+            get { return this._trustAnchor; }
+            set { this._trustAnchor = value; }
         }
 
-        // Check to see if Tags property is set
-        internal bool IsSetTags()
+        // Check to see if TrustAnchor property is set
+        internal bool IsSetTrustAnchor()
         {
-            return this._tags != null && this._tags.Count > 0; 
+            return this._trustAnchor != null;
         }
 
     }

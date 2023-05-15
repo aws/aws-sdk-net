@@ -30,8 +30,7 @@ namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
     /// Container for the parameters to the EnableProfile operation.
-    /// Enables the roles in a profile to receive session credentials in <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>.
-    /// 
+    /// Enables temporary credential requests for a profile. 
     /// 
     ///  
     /// <para>

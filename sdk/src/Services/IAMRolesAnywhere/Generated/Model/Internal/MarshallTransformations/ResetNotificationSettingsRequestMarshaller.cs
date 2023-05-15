@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateTrustAnchor Request Marshaller
+    /// ResetNotificationSettings Request Marshaller
     /// </summary>       
-    public class CreateTrustAnchorRequestMarshaller : IMarshaller<IRequest, CreateTrustAnchorRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ResetNotificationSettingsRequestMarshaller : IMarshaller<IRequest, ResetNotificationSettingsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateTrustAnchorRequest)input);
+            return this.Marshall((ResetNotificationSettingsRequest)input);
         }
 
         /// <summary>
@@ -52,72 +52,39 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateTrustAnchorRequest publicRequest)
+        public IRequest Marshall(ResetNotificationSettingsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.IAMRolesAnywhere");
             request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
-            request.HttpMethod = "POST";
+            request.HttpMethod = "PATCH";
 
-            request.ResourcePath = "/trustanchors";
+            request.ResourcePath = "/reset-notifications-settings";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetEnabled())
+                if(publicRequest.IsSetNotificationSettingKeys())
                 {
-                    context.Writer.WritePropertyName("enabled");
-                    context.Writer.Write(publicRequest.Enabled);
-                }
-
-                if(publicRequest.IsSetName())
-                {
-                    context.Writer.WritePropertyName("name");
-                    context.Writer.Write(publicRequest.Name);
-                }
-
-                if(publicRequest.IsSetNotificationSettings())
-                {
-                    context.Writer.WritePropertyName("notificationSettings");
+                    context.Writer.WritePropertyName("notificationSettingKeys");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestNotificationSettingsListValue in publicRequest.NotificationSettings)
+                    foreach(var publicRequestNotificationSettingKeysListValue in publicRequest.NotificationSettingKeys)
                     {
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = NotificationSettingMarshaller.Instance;
-                        marshaller.Marshall(publicRequestNotificationSettingsListValue, context);
+                        var marshaller = NotificationSettingKeyMarshaller.Instance;
+                        marshaller.Marshall(publicRequestNotificationSettingKeysListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }
                     context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetSource())
+                if(publicRequest.IsSetTrustAnchorId())
                 {
-                    context.Writer.WritePropertyName("source");
-                    context.Writer.WriteObjectStart();
-
-                    var marshaller = SourceMarshaller.Instance;
-                    marshaller.Marshall(publicRequest.Source, context);
-
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetTags())
-                {
-                    context.Writer.WritePropertyName("tags");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestTagsListValue in publicRequest.Tags)
-                    {
-                        context.Writer.WriteObjectStart();
-
-                        var marshaller = TagMarshaller.Instance;
-                        marshaller.Marshall(publicRequestTagsListValue, context);
-
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteArrayEnd();
+                    context.Writer.WritePropertyName("trustAnchorId");
+                    context.Writer.Write(publicRequest.TrustAnchorId);
                 }
 
                 writer.WriteObjectEnd();
@@ -128,9 +95,9 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateTrustAnchorRequestMarshaller _instance = new CreateTrustAnchorRequestMarshaller();        
+        private static ResetNotificationSettingsRequestMarshaller _instance = new ResetNotificationSettingsRequestMarshaller();        
 
-        internal static CreateTrustAnchorRequestMarshaller GetInstance()
+        internal static ResetNotificationSettingsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -138,7 +105,7 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateTrustAnchorRequestMarshaller Instance
+        public static ResetNotificationSettingsRequestMarshaller Instance
         {
             get
             {

@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.CreateProfileRequest.DurationSeconds</property>
     <min>900</min>
-    <max>43200</max>
+    <max>3600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.CreateProfileRequest.Name</property>
@@ -138,6 +138,18 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IAMRolesAnywhere.Model.PutNotificationSettingsRequest.TrustAnchorId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IAMRolesAnywhere.Model.ResetNotificationSettingsRequest.TrustAnchorId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
@@ -167,7 +179,7 @@
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.DurationSeconds</property>
     <min>900</min>
-    <max>43200</max>
+    <max>3600</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.UpdateProfileRequest.Name</property>
@@ -205,6 +217,21 @@
     <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IAMRolesAnywhere.Model.NotificationSetting.Threshold</property>
+    <min>1</min>
+    <max>360</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IAMRolesAnywhere.Model.NotificationSettingDetail.ConfiguredBy</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IAMRolesAnywhere.Model.NotificationSettingDetail.Threshold</property>
+    <min>1</min>
+    <max>360</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.ProfileDetail.Name</property>
     <min>1</min>
     <max>255</max>
@@ -221,6 +248,11 @@
     <min>36</min>
     <max>36</max>
     <pattern>[a-f0-9]{8}-([a-z0-9]{4}-){3}[a-z0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IAMRolesAnywhere.Model.SourceData.X509CertificateData</property>
+    <min>1</min>
+    <max>8000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IAMRolesAnywhere.Model.SubjectDetail.SubjectId</property>

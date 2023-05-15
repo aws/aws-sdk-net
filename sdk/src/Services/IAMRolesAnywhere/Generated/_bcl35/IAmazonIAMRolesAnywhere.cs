@@ -29,27 +29,27 @@ namespace Amazon.IAMRolesAnywhere
     /// <summary>
     /// Interface for accessing IAMRolesAnywhere
     ///
-    /// AWS Identity and Access Management Roles Anywhere provides a secure way for your workloads
-    /// such as servers, containers, and applications running outside of AWS to obtain Temporary
-    /// AWS credentials. Your workloads can use the same IAM policies and roles that you have
-    /// configured with native AWS applications to access AWS resources. Using IAM Roles Anywhere
-    /// will eliminate the need to manage long term credentials for workloads running outside
-    /// of AWS.
+    /// Identity and Access Management Roles Anywhere provides a secure way for your workloads
+    /// such as servers, containers, and applications that run outside of Amazon Web Services
+    /// to obtain temporary Amazon Web Services credentials. Your workloads can use the same
+    /// IAM policies and roles you have for native Amazon Web Services applications to access
+    /// Amazon Web Services resources. Using IAM Roles Anywhere eliminates the need to manage
+    /// long-term credentials for workloads running outside of Amazon Web Services.
     /// 
     ///  
     /// <para>
-    /// To use IAM Roles Anywhere customer workloads will need to use X.509 certificates issued
-    /// by their Certificate Authority (CA) . The Certificate Authority (CA) needs to be registered
-    /// with IAM Roles Anywhere as a trust anchor to establish trust between customer PKI
-    /// and IAM Roles Anywhere. Customers who do not manage their own PKI system can use AWS
-    /// Certificate Manager Private Certificate Authority (ACM PCA) to create a Certificate
-    /// Authority and use that to establish trust with IAM Roles Anywhere
+    ///  To use IAM Roles Anywhere, your workloads must use X.509 certificates issued by their
+    /// certificate authority (CA). You register the CA with IAM Roles Anywhere as a trust
+    /// anchor to establish trust between your public key infrastructure (PKI) and IAM Roles
+    /// Anywhere. If you don't manage your own PKI system, you can use Private Certificate
+    /// Authority to create a CA and then use that to establish trust with IAM Roles Anywhere.
+    /// 
     /// </para>
     ///  
     /// <para>
-    /// This guide describes the IAM rolesanywhere operations that you can call programmatically.
-    /// For general information about IAM Roles Anywhere see <a href="https://docs.aws.amazon.com/">https://docs.aws.amazon.com/</a>
-    /// 
+    /// This guide describes the IAM Roles Anywhere operations that you can call programmatically.
+    /// For more information about IAM Roles Anywhere, see the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/userguide/introduction.html">IAM
+    /// Roles Anywhere User Guide</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonIAMRolesAnywhere : IAmazonService, IDisposable
@@ -69,9 +69,8 @@ namespace Amazon.IAMRolesAnywhere
 
 
         /// <summary>
-        /// Creates a profile. A profile is configuration resource to list the roles that RolesAnywhere
-        /// service is trusted to assume. In addition, by applying a profile you can intersect
-        /// permissions with IAM managed policies.
+        /// Creates a <i>profile</i>, a list of the roles that Roles Anywhere service is trusted
+        /// to assume. You use profiles to intersect permissions with IAM managed policies.
         /// 
         ///  
         /// <para>
@@ -122,12 +121,11 @@ namespace Amazon.IAMRolesAnywhere
 
 
         /// <summary>
-        /// Creates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate
-        /// authority (CA) by configuring a trust anchor. A Trust Anchor is defined either as
-        /// a reference to a AWS Certificate Manager Private Certificate Authority (ACM PCA),
-        /// or by uploading a Certificate Authority (CA) certificate. Your AWS workloads can authenticate
-        /// with the trust anchor using certificates issued by the trusted Certificate Authority
-        /// (CA) in exchange for temporary AWS credentials.
+        /// Creates a trust anchor to establish trust between IAM Roles Anywhere and your certificate
+        /// authority (CA). You can define a trust anchor as a reference to an Private Certificate
+        /// Authority (Private CA) or by uploading a CA certificate. Your Amazon Web Services
+        /// workloads can authenticate with the trust anchor using certificates issued by the
+        /// CA in exchange for temporary Amazon Web Services credentials.
         /// 
         ///  
         /// <para>
@@ -382,8 +380,8 @@ namespace Amazon.IAMRolesAnywhere
 
 
         /// <summary>
-        /// Disables a profile. When disabled, <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-        /// requests with this profile fail.
+        /// Disables a profile. When disabled, temporary credential requests with this profile
+        /// fail.
         /// 
         ///  
         /// <para>
@@ -434,8 +432,8 @@ namespace Amazon.IAMRolesAnywhere
 
 
         /// <summary>
-        /// Disables a trust anchor. When disabled, <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-        /// requests specifying this trust anchor are unauthorized.
+        /// Disables a trust anchor. When disabled, temporary credential requests specifying this
+        /// trust anchor are unauthorized.
         /// 
         ///  
         /// <para>
@@ -538,8 +536,7 @@ namespace Amazon.IAMRolesAnywhere
 
 
         /// <summary>
-        /// Enables the roles in a profile to receive session credentials in <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>.
-        /// 
+        /// Enables temporary credential requests for a profile. 
         /// 
         ///  
         /// <para>
@@ -741,10 +738,10 @@ namespace Amazon.IAMRolesAnywhere
 
 
         /// <summary>
-        /// Gets a Subject. A Subject associates a certificate identity with authentication attempts
-        /// by CreateSession. The Subject resources stores audit information such as status of
-        /// the last authentication attempt, the certificate data used in the attempt, and the
-        /// last time the associated identity attempted authentication. 
+        /// Gets a <i>subject</i>, which associates a certificate identity with authentication
+        /// attempts. The subject stores auditing information such as the status of the last authentication
+        /// attempt, the certificate data used in the attempt, and the last time the associated
+        /// identity attempted authentication. 
         /// 
         ///  
         /// <para>
@@ -849,9 +846,9 @@ namespace Amazon.IAMRolesAnywhere
 
 
         /// <summary>
-        /// Imports the certificate revocation list (CRL). CRl is a list of certificates that
+        /// Imports the certificate revocation list (CRL). A CRL is a list of certificates that
         /// have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates
-        /// against the crl list before issuing credentials. 
+        /// against the CRL before issuing credentials. 
         /// 
         ///  
         /// <para>
@@ -902,7 +899,8 @@ namespace Amazon.IAMRolesAnywhere
 
 
         /// <summary>
-        /// Lists all Crls in the authenticated account and Amazon Web Services Region.
+        /// Lists all certificate revocation lists (CRL) in the authenticated account and Amazon
+        /// Web Services Region.
         /// 
         ///  
         /// <para>
@@ -1156,6 +1154,122 @@ namespace Amazon.IAMRolesAnywhere
 
         #endregion
         
+        #region  PutNotificationSettings
+
+
+        /// <summary>
+        /// Attaches a list of <i>notification settings</i> to a trust anchor.
+        /// 
+        ///  
+        /// <para>
+        /// A notification setting includes information such as event name, threshold, status
+        /// of the notification setting, and the channel to notify.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>rolesanywhere:PutNotificationSettings</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutNotificationSettings service method.</param>
+        /// 
+        /// <returns>The response from the PutNotificationSettings service method, as returned by IAMRolesAnywhere.</returns>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutNotificationSettings">REST API Reference for PutNotificationSettings Operation</seealso>
+        PutNotificationSettingsResponse PutNotificationSettings(PutNotificationSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutNotificationSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutNotificationSettings operation on AmazonIAMRolesAnywhereClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutNotificationSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutNotificationSettings">REST API Reference for PutNotificationSettings Operation</seealso>
+        IAsyncResult BeginPutNotificationSettings(PutNotificationSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutNotificationSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutNotificationSettings.</param>
+        /// 
+        /// <returns>Returns a  PutNotificationSettingsResult from IAMRolesAnywhere.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/PutNotificationSettings">REST API Reference for PutNotificationSettings Operation</seealso>
+        PutNotificationSettingsResponse EndPutNotificationSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ResetNotificationSettings
+
+
+        /// <summary>
+        /// Resets the <i>custom notification setting</i> to IAM Roles Anywhere default setting.
+        /// 
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Required permissions: </b> <code>rolesanywhere:ResetNotificationSettings</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ResetNotificationSettings service method.</param>
+        /// 
+        /// <returns>The response from the ResetNotificationSettings service method, as returned by IAMRolesAnywhere.</returns>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.IAMRolesAnywhere.Model.ValidationException">
+        /// Validation exception error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ResetNotificationSettings">REST API Reference for ResetNotificationSettings Operation</seealso>
+        ResetNotificationSettingsResponse ResetNotificationSettings(ResetNotificationSettingsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ResetNotificationSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ResetNotificationSettings operation on AmazonIAMRolesAnywhereClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResetNotificationSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ResetNotificationSettings">REST API Reference for ResetNotificationSettings Operation</seealso>
+        IAsyncResult BeginResetNotificationSettings(ResetNotificationSettingsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ResetNotificationSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginResetNotificationSettings.</param>
+        /// 
+        /// <returns>Returns a  ResetNotificationSettingsResult from IAMRolesAnywhere.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/ResetNotificationSettings">REST API Reference for ResetNotificationSettings Operation</seealso>
+        ResetNotificationSettingsResponse EndResetNotificationSettings(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  TagResource
 
 
@@ -1271,9 +1385,9 @@ namespace Amazon.IAMRolesAnywhere
 
 
         /// <summary>
-        /// Updates the certificate revocation list (CRL). CRl is a list of certificates that
-        /// have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates
-        /// against the crl list before issuing credentials.
+        /// Updates the certificate revocation list (CRL). A CRL is a list of certificates that
+        /// have been revoked by the issuing certificate authority (CA). IAM Roles Anywhere validates
+        /// against the CRL before issuing credentials.
         /// 
         ///  
         /// <para>
@@ -1327,9 +1441,8 @@ namespace Amazon.IAMRolesAnywhere
 
 
         /// <summary>
-        /// Updates the profile. A profile is configuration resource to list the roles that RolesAnywhere
-        /// service is trusted to assume. In addition, by applying a profile you can scope-down
-        /// permissions with IAM managed policies.
+        /// Updates a <i>profile</i>, a list of the roles that IAM Roles Anywhere service is trusted
+        /// to assume. You use profiles to intersect permissions with IAM managed policies.
         /// 
         ///  
         /// <para>
@@ -1383,12 +1496,11 @@ namespace Amazon.IAMRolesAnywhere
 
 
         /// <summary>
-        /// Updates the trust anchor.You establish trust between IAM Roles Anywhere and your certificate
-        /// authority (CA) by configuring a trust anchor. A Trust Anchor is defined either as
-        /// a reference to a AWS Certificate Manager Private Certificate Authority (ACM PCA),
-        /// or by uploading a Certificate Authority (CA) certificate. Your AWS workloads can authenticate
-        /// with the trust anchor using certificates issued by the trusted Certificate Authority
-        /// (CA) in exchange for temporary AWS credentials.
+        /// Updates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate
+        /// authority (CA) by configuring a trust anchor. You can define a trust anchor as a reference
+        /// to an Private Certificate Authority (Private CA) or by uploading a CA certificate.
+        /// Your Amazon Web Services workloads can authenticate with the trust anchor using certificates
+        /// issued by the CA in exchange for temporary Amazon Web Services credentials.
         /// 
         ///  
         /// <para>

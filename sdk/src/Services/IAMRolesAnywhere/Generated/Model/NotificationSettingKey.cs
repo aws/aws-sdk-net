@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
-    /// This is the response object from the ListProfiles operation.
+    /// A notification setting key to reset. A notification setting key includes the event
+    /// and the channel.
     /// </summary>
-    public partial class ListProfilesResponse : AmazonWebServiceResponse
+    public partial class NotificationSettingKey
     {
-        private string _nextToken;
-        private List<ProfileDetail> _profiles = new List<ProfileDetail>();
+        private NotificationChannel _channel;
+        private NotificationEvent _event;
 
         /// <summary>
-        /// Gets and sets the property NextToken. 
+        /// Gets and sets the property Channel. 
         /// <para>
-        /// A token that indicates where the output should continue from, if a previous request
-        /// did not show all results. To get the next results, make the request again with this
-        /// value.
+        /// The specified channel of notification.
         /// </para>
         /// </summary>
-        public string NextToken
+        public NotificationChannel Channel
         {
-            get { return this._nextToken; }
-            set { this._nextToken = value; }
+            get { return this._channel; }
+            set { this._channel = value; }
         }
 
-        // Check to see if NextToken property is set
-        internal bool IsSetNextToken()
+        // Check to see if Channel property is set
+        internal bool IsSetChannel()
         {
-            return this._nextToken != null;
+            return this._channel != null;
         }
 
         /// <summary>
-        /// Gets and sets the property Profiles. 
+        /// Gets and sets the property Event. 
         /// <para>
-        /// A list of profiles.
+        /// The notification setting event to reset.
         /// </para>
         /// </summary>
-        public List<ProfileDetail> Profiles
+        [AWSProperty(Required=true)]
+        public NotificationEvent Event
         {
-            get { return this._profiles; }
-            set { this._profiles = value; }
+            get { return this._event; }
+            set { this._event = value; }
         }
 
-        // Check to see if Profiles property is set
-        internal bool IsSetProfiles()
+        // Check to see if Event property is set
+        internal bool IsSetEvent()
         {
-            return this._profiles != null && this._profiles.Count > 0; 
+            return this._event != null;
         }
 
     }
