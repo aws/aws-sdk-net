@@ -1185,6 +1185,21 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Rekognition.Model.EyeDirection.Confidence</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.EyeDirection.Pitch</property>
+    <min>-180</min>
+    <max>180</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Rekognition.Model.EyeDirection.Yaw</property>
+    <min>-180</min>
+    <max>180</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Rekognition.Model.Eyeglasses.Confidence</property>
     <min>0</min>
     <max>100</max>

@@ -94,6 +94,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.Emotions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EyeDirection", targetDepth))
+                {
+                    var unmarshaller = EyeDirectionUnmarshaller.Instance;
+                    unmarshalledObject.EyeDirection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Eyeglasses", targetDepth))
                 {
                     var unmarshaller = EyeglassesUnmarshaller.Instance;

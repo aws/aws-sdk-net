@@ -73,6 +73,7 @@ namespace Amazon.Rekognition.Model
         private BoundingBox _boundingBox;
         private float? _confidence;
         private List<Emotion> _emotions = new List<Emotion>();
+        private EyeDirection _eyeDirection;
         private Eyeglasses _eyeglasses;
         private EyeOpen _eyesOpen;
         private FaceOccluded _faceOccluded;
@@ -180,6 +181,24 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetEmotions()
         {
             return this._emotions != null && this._emotions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EyeDirection. 
+        /// <para>
+        /// Indicates the direction the eyes are gazing in, as defined by pitch and yaw.
+        /// </para>
+        /// </summary>
+        public EyeDirection EyeDirection
+        {
+            get { return this._eyeDirection; }
+            set { this._eyeDirection = value; }
+        }
+
+        // Check to see if EyeDirection property is set
+        internal bool IsSetEyeDirection()
+        {
+            return this._eyeDirection != null;
         }
 
         /// <summary>

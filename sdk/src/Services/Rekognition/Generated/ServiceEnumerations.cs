@@ -51,6 +51,10 @@ namespace Amazon.Rekognition
         /// </summary>
         public static readonly Attribute EMOTIONS = new Attribute("EMOTIONS");
         /// <summary>
+        /// Constant EYE_DIRECTION for Attribute
+        /// </summary>
+        public static readonly Attribute EYE_DIRECTION = new Attribute("EYE_DIRECTION");
+        /// <summary>
         /// Constant EYEGLASSES for Attribute
         /// </summary>
         public static readonly Attribute EYEGLASSES = new Attribute("EYEGLASSES");
