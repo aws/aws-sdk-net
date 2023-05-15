@@ -216,7 +216,7 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity
         /// provider. If you choose this value, you must specify the ARN for the Lambda function
-        /// in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code>
+        /// in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code>
         /// data type.
         /// </para>
         /// </summary>
@@ -533,7 +533,8 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code>
         /// can also contain a workflow ID (and execution role) for a workflow to execute on partial
-        /// upload. A partial upload occurs when a file is open when the session disconnects.
+        /// upload. A partial upload occurs when the server session disconnects while the file
+        /// is still being uploaded.
         /// </para>
         /// </summary>
         public WorkflowDetails WorkflowDetails

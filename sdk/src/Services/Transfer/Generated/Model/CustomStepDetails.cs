@@ -91,7 +91,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The ARN for the lambda function that is being called.
+        /// The ARN for the Lambda function that is being called.
         /// </para>
         /// </summary>
         [AWSProperty(Max=170)]

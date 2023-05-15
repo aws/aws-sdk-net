@@ -30,7 +30,14 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListExecutions operation.
-    /// Lists all executions for the specified workflow.
+    /// Lists all in-progress executions for the specified workflow.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// If the specified workflow ID cannot be found, <code>ListExecutions</code> returns
+    /// a <code>ResourceNotFound</code> exception.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListExecutionsRequest : AmazonTransferRequest
     {

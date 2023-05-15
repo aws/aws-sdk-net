@@ -282,11 +282,11 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property IdentityProviderDetails. 
         /// <para>
-        /// Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code>
-        /// or <code>API_GATEWAY</code>. Accepts an array containing all of the information required
-        /// to use a directory in <code>AWS_DIRECTORY_SERVICE</code> or invoke a customer-supplied
-        /// authentication API, including the API Gateway URL. Not required when <code>IdentityProviderType</code>
-        /// is set to <code>SERVICE_MANAGED</code>.
+        /// Required when <code>IdentityProviderType</code> is set to <code>AWS_DIRECTORY_SERVICE</code>,
+        /// <code>Amazon Web Services_LAMBDA</code> or <code>API_GATEWAY</code>. Accepts an array
+        /// containing all of the information required to use a directory in <code>AWS_DIRECTORY_SERVICE</code>
+        /// or invoke a customer-supplied authentication API, including the API Gateway URL. Not
+        /// required when <code>IdentityProviderType</code> is set to <code>SERVICE_MANAGED</code>.
         /// </para>
         /// </summary>
         public IdentityProviderDetails IdentityProviderDetails
@@ -326,7 +326,7 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity
         /// provider. If you choose this value, you must specify the ARN for the Lambda function
-        /// in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code>
+        /// in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code>
         /// data type.
         /// </para>
         /// </summary>
@@ -577,7 +577,8 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code>
         /// can also contain a workflow ID (and execution role) for a workflow to execute on partial
-        /// upload. A partial upload occurs when a file is open when the session disconnects.
+        /// upload. A partial upload occurs when the server session disconnects while the file
+        /// is still being uploaded.
         /// </para>
         /// </summary>
         public WorkflowDetails WorkflowDetails

@@ -40,7 +40,30 @@ namespace Amazon.Transfer.Model
         private EncryptionType _type;
 
         /// <summary>
-        /// Gets and sets the property DestinationFileLocation.
+        /// Gets and sets the property DestinationFileLocation. 
+        /// <para>
+        /// Specifies the location for the file being decrypted. Use <code>${Transfer:UserName}</code>
+        /// or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination
+        /// prefix by username or uploaded date.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UserName}</code>
+        /// to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the name of
+        /// the Transfer Family user that uploaded the file.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code>
+        /// to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the date of
+        /// the upload.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>,
+        /// based on the date the file is uploaded in UTC.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public InputFileLocation DestinationFileLocation
@@ -80,6 +103,22 @@ namespace Amazon.Transfer.Model
         /// A flag that indicates whether to overwrite an existing file of the same name. The
         /// default is <code>FALSE</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// If the workflow is processing a file that has the same name as an existing file, the
+        /// behavior is as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing file is replaced
+        /// with the file being processed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the
+        /// workflow processing stops.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public OverwriteExisting OverwriteExisting
         {
