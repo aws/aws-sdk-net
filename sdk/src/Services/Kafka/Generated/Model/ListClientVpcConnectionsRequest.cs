@@ -44,6 +44,7 @@ namespace Amazon.Kafka.Model
         /// The Amazon Resource Name (ARN) of the cluster.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string ClusterArn
         {
             get { return this._clusterArn; }
