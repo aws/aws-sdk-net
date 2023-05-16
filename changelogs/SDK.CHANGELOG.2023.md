@@ -1,3 +1,18 @@
+### 3.7.548.0 (2023-05-16 18:28 UTC)
+* Detective (3.7.102.0)
+	* Added and updated API operations in Detective to support the integration of ASFF Security Hub findings.
+* DirectConnect (3.7.100.130)
+	* This release includes an update to the mtu value for CreateTransitVirtualInterface from 9001 mtu to 8500 mtu.
+* Glue (3.7.114.0)
+	* Add Support for Tags for Custom Entity Types
+* SecretsManager (3.7.102.42)
+	* Documentation updates for Secrets Manager
+* WAFV2 (3.7.109.0)
+	* My AWS Service (placeholder) - You can now rate limit web requests based on aggregation keys other than IP addresses, and you can aggregate using combinations of keys. You can also rate limit all requests that match a scope-down statement, without further aggregation.
+* Core 3.7.106.37
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.547.0 (2023-05-15 18:30 UTC)
 * Athena (3.7.108.0)
 	* You can now define custom spark properties at start of the session for use cases like cluster encryption, table formats, and general Spark tuning.
