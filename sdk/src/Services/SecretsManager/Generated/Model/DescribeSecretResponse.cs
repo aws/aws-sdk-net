@@ -234,9 +234,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property NextRotationDate. 
         /// <para>
-        /// The next date and time that Secrets Manager will rotate the secret, rounded to the
-        /// nearest hour. If the secret isn't configured for rotation, Secrets Manager returns
-        /// null.
+        /// The next rotation is scheduled to occur on or before this date. If the secret isn't
+        /// configured for rotation, Secrets Manager returns null.
         /// </para>
         /// </summary>
         public DateTime NextRotationDate
