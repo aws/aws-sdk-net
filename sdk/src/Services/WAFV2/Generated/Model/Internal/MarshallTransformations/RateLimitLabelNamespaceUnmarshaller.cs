@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RateBasedStatement Object
+    /// Response Unmarshaller for RateLimitLabelNamespace Object
     /// </summary>  
-    public class RateBasedStatementUnmarshaller : IUnmarshaller<RateBasedStatement, XmlUnmarshallerContext>, IUnmarshaller<RateBasedStatement, JsonUnmarshallerContext>
+    public class RateLimitLabelNamespaceUnmarshaller : IUnmarshaller<RateLimitLabelNamespace, XmlUnmarshallerContext>, IUnmarshaller<RateLimitLabelNamespace, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RateBasedStatement IUnmarshaller<RateBasedStatement, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RateLimitLabelNamespace IUnmarshaller<RateLimitLabelNamespace, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RateBasedStatement Unmarshall(JsonUnmarshallerContext context)
+        public RateLimitLabelNamespace Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RateBasedStatement unmarshalledObject = new RateBasedStatement();
+            RateLimitLabelNamespace unmarshalledObject = new RateLimitLabelNamespace();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AggregateKeyType", targetDepth))
+                if (context.TestExpression("Namespace", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AggregateKeyType = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("CustomKeys", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<RateBasedStatementCustomKey, RateBasedStatementCustomKeyUnmarshaller>(RateBasedStatementCustomKeyUnmarshaller.Instance);
-                    unmarshalledObject.CustomKeys = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ForwardedIPConfig", targetDepth))
-                {
-                    var unmarshaller = ForwardedIPConfigUnmarshaller.Instance;
-                    unmarshalledObject.ForwardedIPConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Limit", targetDepth))
-                {
-                    var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.Limit = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ScopeDownStatement", targetDepth))
-                {
-                    var unmarshaller = StatementUnmarshaller.Instance;
-                    unmarshalledObject.ScopeDownStatement = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Namespace = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static RateBasedStatementUnmarshaller _instance = new RateBasedStatementUnmarshaller();        
+        private static RateLimitLabelNamespaceUnmarshaller _instance = new RateLimitLabelNamespaceUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RateBasedStatementUnmarshaller Instance
+        public static RateLimitLabelNamespaceUnmarshaller Instance
         {
             get
             {

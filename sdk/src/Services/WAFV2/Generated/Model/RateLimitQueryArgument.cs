@@ -29,62 +29,33 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// A rule statement used to search web request components for matches with regular expressions.
-    /// To use this, create a <a>RegexPatternSet</a> that specifies the expressions that you
-    /// want to detect, then use the ARN of that set in this statement. A web request matches
-    /// the pattern set rule statement if the request component matches any of the patterns
-    /// in the set. To create a regex pattern set, see <a>CreateRegexPatternSet</a>.
-    /// 
-    ///  
-    /// <para>
-    /// Each regex pattern set rule statement references a regex pattern set. You create and
-    /// maintain the set independent of your rules. This allows you to use the single set
-    /// in multiple rules. When you update the referenced set, WAF automatically updates all
-    /// rules that reference it.
-    /// </para>
+    /// Specifies a query argument in the request as an aggregate key for a rate-based rule.
+    /// Each distinct value for the named query argument contributes to the aggregation instance.
+    /// If you use a single query argument as your custom key, then each value fully defines
+    /// an aggregation instance.
     /// </summary>
-    public partial class RegexPatternSetReferenceStatement
+    public partial class RateLimitQueryArgument
     {
-        private string _arn;
-        private FieldToMatch _fieldToMatch;
+        private string _name;
         private List<TextTransformation> _textTransformations = new List<TextTransformation>();
 
         /// <summary>
-        /// Gets and sets the property ARN. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the <a>RegexPatternSet</a> that this statement references.
+        /// The name of the query argument to use. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
-        public string ARN
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string Name
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if ARN property is set
-        internal bool IsSetARN()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._arn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property FieldToMatch. 
-        /// <para>
-        /// The part of the web request that you want WAF to inspect. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public FieldToMatch FieldToMatch
-        {
-            get { return this._fieldToMatch; }
-            set { this._fieldToMatch = value; }
-        }
-
-        // Check to see if FieldToMatch property is set
-        internal bool IsSetFieldToMatch()
-        {
-            return this._fieldToMatch != null;
+            return this._name != null;
         }
 
         /// <summary>

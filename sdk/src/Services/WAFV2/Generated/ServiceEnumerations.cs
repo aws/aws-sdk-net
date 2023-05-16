@@ -1915,6 +1915,10 @@ namespace Amazon.WAFV2
         /// </summary>
         public static readonly ParameterExceptionField COOKIE_MATCH_PATTERN = new ParameterExceptionField("COOKIE_MATCH_PATTERN");
         /// <summary>
+        /// Constant CUSTOM_KEYS for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField CUSTOM_KEYS = new ParameterExceptionField("CUSTOM_KEYS");
+        /// <summary>
         /// Constant CUSTOM_REQUEST_HANDLING for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField CUSTOM_REQUEST_HANDLING = new ParameterExceptionField("CUSTOM_REQUEST_HANDLING");
@@ -2098,6 +2102,10 @@ namespace Amazon.WAFV2
         /// Constant RULE_GROUP_REFERENCE_STATEMENT for ParameterExceptionField
         /// </summary>
         public static readonly ParameterExceptionField RULE_GROUP_REFERENCE_STATEMENT = new ParameterExceptionField("RULE_GROUP_REFERENCE_STATEMENT");
+        /// <summary>
+        /// Constant SCOPE_DOWN for ParameterExceptionField
+        /// </summary>
+        public static readonly ParameterExceptionField SCOPE_DOWN = new ParameterExceptionField("SCOPE_DOWN");
         /// <summary>
         /// Constant SCOPE_VALUE for ParameterExceptionField
         /// </summary>
@@ -2350,6 +2358,14 @@ namespace Amazon.WAFV2
     public class RateBasedStatementAggregateKeyType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CONSTANT for RateBasedStatementAggregateKeyType
+        /// </summary>
+        public static readonly RateBasedStatementAggregateKeyType CONSTANT = new RateBasedStatementAggregateKeyType("CONSTANT");
+        /// <summary>
+        /// Constant CUSTOM_KEYS for RateBasedStatementAggregateKeyType
+        /// </summary>
+        public static readonly RateBasedStatementAggregateKeyType CUSTOM_KEYS = new RateBasedStatementAggregateKeyType("CUSTOM_KEYS");
         /// <summary>
         /// Constant FORWARDED_IP for RateBasedStatementAggregateKeyType
         /// </summary>

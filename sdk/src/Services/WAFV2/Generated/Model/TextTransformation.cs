@@ -40,10 +40,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// Sets the relative processing order for multiple transformations that are defined for
-        /// a rule statement. WAF processes all transformations, from lowest priority to highest,
-        /// before inspecting the transformed content. The priorities don't need to be consecutive,
-        /// but they must all be different. 
+        /// Sets the relative processing order for multiple transformations. WAF processes all
+        /// transformations, from lowest priority to highest, before inspecting the transformed
+        /// content. The priorities don't need to be consecutive, but they must all be different.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0)]
