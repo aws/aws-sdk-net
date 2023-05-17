@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -170,7 +171,7 @@ namespace Amazon.Runtime.Internal.Util
                 {
                     if (_hashAlgorithm != null)
                     {
-                        _hashAlgorithm.TransformFinalBlock(new byte[0], 0, 0);
+                        _hashAlgorithm.TransformFinalBlock(ArrayEx.Empty<byte>(), 0, 0);
                     }
                     _haveFinishedStream = true;
                     _suffix = GenerateTrailingHeaderChunk();

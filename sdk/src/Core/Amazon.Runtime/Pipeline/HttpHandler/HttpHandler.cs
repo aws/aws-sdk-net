@@ -17,6 +17,7 @@ using Amazon.Runtime.Internal.Auth;
 using Amazon.Runtime.Internal.Transform;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util;
+using Amazon.Util.Internal;
 using System;
 using System.Globalization;
 using System.Net;
@@ -488,7 +489,7 @@ namespace Amazon.Runtime.Internal
                     }
                     else
                     {
-                        request.Content = new Byte[0];
+                        request.Content = ArrayEx.Empty<byte>();
                     }
                 }
 

@@ -20,6 +20,7 @@
  *
  */
 
+using Amazon.Util.Internal;
 using System;
 using System.IO;
 #if AWS_ASYNC_API
@@ -310,10 +311,10 @@ namespace Amazon.Runtime.Internal.Util
             {
                 if (ExpectedLength < 0 || CurrentPosition == ExpectedLength)
                 {
-                    CalculatedHash = Algorithm.AppendLastBlock(new byte[0]);
+                    CalculatedHash = Algorithm.AppendLastBlock(ArrayEx.Empty<byte>());
                 }
                 else
-                    CalculatedHash = new byte[0];
+                    CalculatedHash = ArrayEx.Empty<byte>();
 
                 if (CalculatedHash.Length > 0 && ExpectedHash != null && ExpectedHash.Length > 0)
                 {
