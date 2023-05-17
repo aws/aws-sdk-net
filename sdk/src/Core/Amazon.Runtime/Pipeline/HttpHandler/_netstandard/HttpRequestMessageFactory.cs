@@ -376,7 +376,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Set of content header names.
         /// </summary>
-        private static HashSet<string> ContentHeaderNames = new HashSet<string>
+        private static HashSet<string> ContentHeaderNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             HeaderKeys.ContentLengthHeader,
             HeaderKeys.ContentTypeHeader,
@@ -461,7 +461,7 @@ namespace Amazon.Runtime
         {
             foreach (var kvp in headers)
             {
-                if (ContentHeaderNames.Contains(kvp.Key, StringComparer.OrdinalIgnoreCase))
+                if (ContentHeaderNames.Contains(kvp.Key))
                     continue;
 
                 _request.Headers.TryAddWithoutValidation(kvp.Key, kvp.Value);
