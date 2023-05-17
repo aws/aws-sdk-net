@@ -619,25 +619,24 @@ namespace Amazon.Runtime
             _request.Content.Headers.ContentType =
                 MediaTypeHeaderValue.Parse(contentHeaders[HeaderKeys.ContentTypeHeader]);
 
-            if (contentHeaders.ContainsKey(HeaderKeys.ContentRangeHeader))
+            if (contentHeaders.TryGetValue(HeaderKeys.ContentRangeHeader, out var contentRangeHeader))
                 _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentRangeHeader,
-                    contentHeaders[HeaderKeys.ContentRangeHeader]);
+                    contentRangeHeader);
 
-            if (contentHeaders.ContainsKey(HeaderKeys.ContentMD5Header))
+            if (contentHeaders.TryGetValue(HeaderKeys.ContentMD5Header, out var contentMd5Header))
                 _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentMD5Header,
-                    contentHeaders[HeaderKeys.ContentMD5Header]);
+                    contentMd5Header);
 
-            if (contentHeaders.ContainsKey(HeaderKeys.ContentEncodingHeader))
+            if (contentHeaders.TryGetValue(HeaderKeys.ContentEncodingHeader, out var contentEncodingHeader))
                 _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentEncodingHeader,
-                    contentHeaders[HeaderKeys.ContentEncodingHeader]);
+                    contentEncodingHeader);
 
-            if (contentHeaders.ContainsKey(HeaderKeys.ContentDispositionHeader))
+            if (contentHeaders.TryGetValue(HeaderKeys.ContentDispositionHeader, out var contentDispositionHeader))
                 _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentDispositionHeader,
-                    contentHeaders[HeaderKeys.ContentDispositionHeader]);
+                    contentDispositionHeader);
 
-            DateTime expires;
-            if (contentHeaders.ContainsKey(HeaderKeys.Expires) &&
-                DateTime.TryParse(contentHeaders[HeaderKeys.Expires], CultureInfo.InvariantCulture, DateTimeStyles.None, out expires))
+            if (contentHeaders.TryGetValue(HeaderKeys.Expires, out var expiresHeaderValue) &&
+                DateTime.TryParse(expiresHeaderValue, CultureInfo.InvariantCulture, DateTimeStyles.None, out var expires))
                 _request.Content.Headers.Expires = expires;
         }
 
