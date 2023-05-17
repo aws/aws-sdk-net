@@ -474,14 +474,7 @@ namespace Amazon.Runtime
         /// <returns>The request content.</returns>
         public HttpContent GetRequestContent()
         {
-            try
-            {
-                return this.GetRequestContentAsync().Result;
-            }
-            catch (AggregateException e)
-            {
-                throw e.InnerException;
-            }
+            return _request.Content;
         }
 
         /// <summary>
