@@ -13,6 +13,7 @@
  * permissions and limitations under the License.
  */
 
+using Amazon.Util.Internal;
 using Amazon.Runtime.Internal.Util;
 using System;
 using System.Collections.Generic;
@@ -64,7 +65,7 @@ namespace Amazon.Runtime.Internal.Transform
             }
             else
             {
-                return new byte[0];
+                return ArrayEx.Empty<byte>();
             }
         }
 

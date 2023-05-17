@@ -1196,7 +1196,7 @@ namespace Amazon.Util
 
             var hashed = content != null ?
                 CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(content) :
-                CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(new byte[0]);
+                CryptoUtilFactory.CryptoInstance.ComputeMD5Hash(ArrayEx.Empty<byte>());
 
             if (fBase64Encode)
             {
