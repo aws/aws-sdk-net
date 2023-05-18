@@ -37,6 +37,7 @@ namespace Amazon.ComputeOptimizer.Model
         private string _currentInstanceType;
         private CurrentPerformanceRisk _currentPerformanceRisk;
         private EffectiveRecommendationPreferences _effectiveRecommendationPreferences;
+        private ExternalMetricStatus _externalMetricStatus;
         private Finding _finding;
         private List<string> _findingReasonCodes = new List<string>();
         private List<string> _inferredWorkloadTypes = new List<string>();
@@ -122,6 +123,25 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetEffectiveRecommendationPreferences()
         {
             return this._effectiveRecommendationPreferences != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalMetricStatus. 
+        /// <para>
+        ///  An object that describes Compute Optimizer's integration status with your external
+        /// metrics provider. 
+        /// </para>
+        /// </summary>
+        public ExternalMetricStatus ExternalMetricStatus
+        {
+            get { return this._externalMetricStatus; }
+            set { this._externalMetricStatus = value; }
+        }
+
+        // Check to see if ExternalMetricStatus property is set
+        internal bool IsSetExternalMetricStatus()
+        {
+            return this._externalMetricStatus != null;
         }
 
         /// <summary>

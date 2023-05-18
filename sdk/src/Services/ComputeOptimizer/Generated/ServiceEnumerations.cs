@@ -1253,6 +1253,14 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField EffectiveRecommendationPreferencesInferredWorkloadTypes = new ExportableInstanceField("EffectiveRecommendationPreferencesInferredWorkloadTypes");
         /// <summary>
+        /// Constant ExternalMetricStatusCode for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField ExternalMetricStatusCode = new ExportableInstanceField("ExternalMetricStatusCode");
+        /// <summary>
+        /// Constant ExternalMetricStatusReason for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField ExternalMetricStatusReason = new ExportableInstanceField("ExternalMetricStatusReason");
+        /// <summary>
         /// Constant Finding for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField Finding = new ExportableInstanceField("Finding");
@@ -1816,6 +1824,88 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExternalMetricsSource(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ExternalMetricStatusCode.
+    /// </summary>
+    public class ExternalMetricStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATADOG_INTEGRATION_ERROR for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode DATADOG_INTEGRATION_ERROR = new ExternalMetricStatusCode("DATADOG_INTEGRATION_ERROR");
+        /// <summary>
+        /// Constant DYNATRACE_INTEGRATION_ERROR for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode DYNATRACE_INTEGRATION_ERROR = new ExternalMetricStatusCode("DYNATRACE_INTEGRATION_ERROR");
+        /// <summary>
+        /// Constant INSTANA_INTEGRATION_ERROR for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INSTANA_INTEGRATION_ERROR = new ExternalMetricStatusCode("INSTANA_INTEGRATION_ERROR");
+        /// <summary>
+        /// Constant INSUFFICIENT_DATADOG_METRICS for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INSUFFICIENT_DATADOG_METRICS = new ExternalMetricStatusCode("INSUFFICIENT_DATADOG_METRICS");
+        /// <summary>
+        /// Constant INSUFFICIENT_DYNATRACE_METRICS for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INSUFFICIENT_DYNATRACE_METRICS = new ExternalMetricStatusCode("INSUFFICIENT_DYNATRACE_METRICS");
+        /// <summary>
+        /// Constant INSUFFICIENT_INSTANA_METRICS for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INSUFFICIENT_INSTANA_METRICS = new ExternalMetricStatusCode("INSUFFICIENT_INSTANA_METRICS");
+        /// <summary>
+        /// Constant INSUFFICIENT_NEWRELIC_METRICS for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INSUFFICIENT_NEWRELIC_METRICS = new ExternalMetricStatusCode("INSUFFICIENT_NEWRELIC_METRICS");
+        /// <summary>
+        /// Constant INTEGRATION_SUCCESS for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INTEGRATION_SUCCESS = new ExternalMetricStatusCode("INTEGRATION_SUCCESS");
+        /// <summary>
+        /// Constant NEWRELIC_INTEGRATION_ERROR for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode NEWRELIC_INTEGRATION_ERROR = new ExternalMetricStatusCode("NEWRELIC_INTEGRATION_ERROR");
+        /// <summary>
+        /// Constant NO_EXTERNAL_METRIC_SET for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode NO_EXTERNAL_METRIC_SET = new ExternalMetricStatusCode("NO_EXTERNAL_METRIC_SET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExternalMetricStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExternalMetricStatusCode FindValue(string value)
+        {
+            return FindValue<ExternalMetricStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExternalMetricStatusCode(string value)
         {
             return FindValue(value);
         }

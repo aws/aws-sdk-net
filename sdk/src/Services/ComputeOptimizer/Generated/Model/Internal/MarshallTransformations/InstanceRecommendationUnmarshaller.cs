@@ -88,6 +88,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("externalMetricStatus", targetDepth))
+                {
+                    var unmarshaller = ExternalMetricStatusUnmarshaller.Instance;
+                    unmarshalledObject.ExternalMetricStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("finding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
