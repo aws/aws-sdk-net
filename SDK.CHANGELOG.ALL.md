@@ -1,3 +1,28 @@
+### 3.7.549.0 (2023-05-18 18:28 UTC)
+* Athena (3.7.109.0)
+	* Removing SparkProperties from EngineConfiguration object for StartSession API call
+* CloudTrail (3.7.105.0)
+	* Add ConflictException to PutEventSelectors, add (Channel/EDS)ARNInvalidException to Tag APIs. These exceptions provide customers with more specific error messages instead of internal errors.
+* ComputeOptimizer (3.7.106.0)
+	* In this launch, we add support for showing integration status with external metric providers such as Instana, Datadog ...etc in GetEC2InstanceRecommendations and ExportEC2InstanceRecommendations apis
+* Connect (3.7.124.0)
+	* You can programmatically create and manage prompts using APIs, for example, to extract prompts stored within Amazon Connect and add them to your Amazon S3 bucket. AWS CloudTrail, AWS CloudFormation and tagging are supported.
+* EC2 (3.7.135.0)
+	* Add support for i4g.large, i4g.xlarge, i4g.2xlarge, i4g.4xlarge, i4g.8xlarge and i4g.16xlarge instances powered by AWS Graviton2 processors that deliver up to 15% better compute performance than our other storage-optimized instances.
+* ECS (3.7.108.6)
+	* Documentation only release to address various tickets.
+* MediaConvert (3.7.111.0)
+	* This release introduces a new MXF Profile for XDCAM which is strictly compliant with the SMPTE RDD 9 standard and improved handling of output name modifiers.
+* RDS (3.7.118.4)
+	* RDS documentation update for the EngineVersion parameter of ModifyDBSnapshot
+* SageMakerGeospatial (3.7.102.0)
+	* This release makes ExecutionRoleArn a required field in the StartEarthObservationJob API.
+* SecurityToken (3.7.103.0)
+	* API updates for the AWS Security Token Service
+* Core 3.7.106.38
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.548.0 (2023-05-16 18:28 UTC)
 * Detective (3.7.102.0)
 	* Added and updated API operations in Detective to support the integration of ASFF Security Hub findings.
