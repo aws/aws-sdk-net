@@ -155,11 +155,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::CloudTrail::Channel</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AWS::S3::Object</code> 
+        ///  <code>AWS::DynamoDB::Table</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -167,27 +163,15 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::DynamoDB::Table</code> 
+        ///  <code>AWS::S3::Object</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::S3Outposts::Object</code> 
+        ///  <code>AWS::CloudTrail::Channel</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::ManagedBlockchain::Node</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AWS::S3ObjectLambda::AccessPoint</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AWS::EC2::Snapshot</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AWS::S3::AccessPoint</code> 
+        ///  <code>AWS::Cognito::IdentityPool</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -195,11 +179,27 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Glue::Table</code> 
+        ///  <code>AWS::EC2::Snapshot</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::FinSpace::Environment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Glue::Table</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::GuardDuty::Detector</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::KendraRanking::ExecutionPlan</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::ManagedBlockchain::Node</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -208,6 +208,18 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::SageMaker::FeatureGroup</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3::AccessPoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3ObjectLambda::AccessPoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3Outposts::Object</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -240,20 +252,13 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the
-        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be
-        /// in one of the following formats. To log events on all objects in an S3 access point,
-        /// we recommend that you use only the access point ARN, don’t include the object path,
-        /// and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.
+        /// When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is
+        /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-        /// 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+        ///  <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -269,17 +274,6 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When resources.type equals <code>AWS::DynamoDB::Table</code>, and the operator is
-        /// set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-        /// format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
         /// When resources.type equals <code>AWS::CloudTrail::Channel</code>, and the operator
         /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
         /// format:
@@ -291,46 +285,13 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and
-        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
-        /// be in the following format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
-        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
-        /// must be in the following format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>,
-        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
-        /// must be in the following format:
-        /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-        /// 
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator
+        /// When resources.type equals <code>AWS::Cognito::IdentityPool</code>, and the operator
         /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
         /// format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+        ///  <code>arn:&lt;partition&gt;:cognito-identity:&lt;region&gt;:&lt;account_ID&gt;:identitypool/&lt;identity_pool_ID&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -346,13 +307,13 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator
+        /// When <code>resources.type</code> equals <code>AWS::EC2::Snapshot</code>, and the operator
         /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
         /// format:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+        ///  <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -364,6 +325,50 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:&lt;partition&gt;:finspace:&lt;region&gt;:&lt;account_ID&gt;:environment/&lt;environment_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::Glue::Table</code>, and the operator
+        /// is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+        /// format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::GuardDuty::Detector</code>, and
+        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
+        /// be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::KendraRanking::ExecutionPlan</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::ManagedBlockchain::Node</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> 
@@ -386,6 +391,46 @@ namespace Amazon.CloudTrail.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:feature-group/&lt;feature_group_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::S3::AccessPoint</code>, and the
+        /// operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must be
+        /// in one of the following formats. To log events on all objects in an S3 access point,
+        /// we recommend that you use only the access point ARN, don’t include the object path,
+        /// and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::S3ObjectLambda::AccessPoint</code>,
+        /// and the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN
+        /// must be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// When <code>resources.type</code> equals <code>AWS::S3Outposts::Object</code>, and
+        /// the operator is set to <code>Equals</code> or <code>NotEquals</code>, the ARN must
+        /// be in the following format:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
         /// 
         /// </para>
         ///  </li> </ul> </li> </ul>

@@ -55,12 +55,12 @@ namespace Amazon.CloudTrail.Model
     ///  <ul> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-    /// management events for trails </a> 
+    /// management events</a> 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails </a> 
+    /// data events</a> 
     /// </para>
     ///  </li> </ul>
     /// </summary>

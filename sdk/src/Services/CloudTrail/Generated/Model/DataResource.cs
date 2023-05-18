@@ -113,7 +113,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>AWS::S3::Object</code> 
+        ///  <code>AWS::DynamoDB::Table</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -121,7 +121,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::DynamoDB::Table</code> 
+        ///  <code>AWS::S3::Object</code> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -136,23 +136,7 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::S3Outposts::Object</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AWS::ManagedBlockchain::Node</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AWS::S3ObjectLambda::AccessPoint</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AWS::EC2::Snapshot</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>AWS::S3::AccessPoint</code> 
+        ///  <code>AWS::Cognito::IdentityPool</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -160,11 +144,27 @@ namespace Amazon.CloudTrail.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>AWS::Glue::Table</code> 
+        ///  <code>AWS::EC2::Snapshot</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::FinSpace::Environment</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::Glue::Table</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::GuardDuty::Detector</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::KendraRanking::ExecutionPlan</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::ManagedBlockchain::Node</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -173,6 +173,18 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::SageMaker::FeatureGroup</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3::AccessPoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3ObjectLambda::AccessPoint</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::S3Outposts::Object</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
