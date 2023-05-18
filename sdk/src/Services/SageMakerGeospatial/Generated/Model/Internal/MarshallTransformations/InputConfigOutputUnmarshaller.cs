@@ -64,12 +64,6 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("DataSourceConfig", targetDepth))
-                {
-                    var unmarshaller = EojDataSourceConfigInputUnmarshaller.Instance;
-                    unmarshalledObject.DataSourceConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("PreviousEarthObservationJobArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
