@@ -442,7 +442,7 @@ namespace Amazon.SecurityToken.Model
         /// call. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=20000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=20000)]
         public string WebIdentityToken
         {
             get { return this._webIdentityToken; }
