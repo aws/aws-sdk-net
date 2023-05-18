@@ -166,12 +166,6 @@ namespace Amazon.ECS.Model
         /// <para>
         /// The container image manifest digest.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// The <code>imageDigest</code> is only returned if the container is using an image hosted
-        /// in Amazon ECR, otherwise it is omitted.
-        /// </para>
-        ///  </note>
         /// </summary>
         public string ImageDigest
         {
