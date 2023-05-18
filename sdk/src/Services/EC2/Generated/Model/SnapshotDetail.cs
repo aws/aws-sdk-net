@@ -194,6 +194,7 @@ namespace Amazon.EC2.Model
         /// The URL used to access the disk image.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Url
         {
             get { return this._url; }

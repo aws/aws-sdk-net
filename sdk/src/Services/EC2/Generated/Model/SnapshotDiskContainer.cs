@@ -85,6 +85,7 @@ namespace Amazon.EC2.Model
         /// URL (https://..) or an Amazon S3 URL (s3://..).
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Url
         {
             get { return this._url; }

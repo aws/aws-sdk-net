@@ -763,6 +763,7 @@ namespace Amazon.EC2.Model
         /// EC2 user data in launch templates</a> in the <i>Batch User Guide</i>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserData
         {
             get { return this._userData; }

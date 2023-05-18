@@ -8217,6 +8217,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType I3Xlarge = new InstanceType("i3.xlarge");
         /// <summary>
+        /// Constant I4g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4g16xlarge = new InstanceType("i4g.16xlarge");
+        /// <summary>
+        /// Constant I4g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4g2xlarge = new InstanceType("i4g.2xlarge");
+        /// <summary>
+        /// Constant I4g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4g4xlarge = new InstanceType("i4g.4xlarge");
+        /// <summary>
+        /// Constant I4g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4g8xlarge = new InstanceType("i4g.8xlarge");
+        /// <summary>
+        /// Constant I4gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4gLarge = new InstanceType("i4g.large");
+        /// <summary>
+        /// Constant I4gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4gXlarge = new InstanceType("i4g.xlarge");
+        /// <summary>
         /// Constant I4i16xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType I4i16xlarge = new InstanceType("i4i.16xlarge");
