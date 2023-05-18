@@ -2090,6 +2090,87 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreatePrompt
+
+
+        /// <summary>
+        /// Creates a prompt. For more information about prompts, such as supported file types
+        /// and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
+        /// prompts</a> in the <i>Amazon Connect Administrator's Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrompt service method.</param>
+        /// 
+        /// <returns>The response from the CreatePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePrompt">REST API Reference for CreatePrompt Operation</seealso>
+        public virtual CreatePromptResponse CreatePrompt(CreatePromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePromptResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePromptResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates a prompt. For more information about prompts, such as supported file types
+        /// and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
+        /// prompts</a> in the <i>Amazon Connect Administrator's Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePrompt">REST API Reference for CreatePrompt Operation</seealso>
+        public virtual Task<CreatePromptResponse> CreatePromptAsync(CreatePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePromptResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreatePromptResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateQueue
 
 
@@ -3709,6 +3790,77 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeletePrompt
+
+
+        /// <summary>
+        /// Deletes a prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrompt service method.</param>
+        /// 
+        /// <returns>The response from the DeletePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
+        public virtual DeletePromptResponse DeletePrompt(DeletePromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePromptResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePromptResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
+        public virtual Task<DeletePromptResponse> DeletePromptAsync(DeletePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePromptResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeletePromptResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteQuickConnect
 
 
@@ -5309,6 +5461,77 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = DescribePhoneNumberResponseUnmarshaller.Instance;
             
             return InvokeAsync<DescribePhoneNumberResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribePrompt
+
+
+        /// <summary>
+        /// Describes the prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrompt service method.</param>
+        /// 
+        /// <returns>The response from the DescribePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePrompt">REST API Reference for DescribePrompt Operation</seealso>
+        public virtual DescribePromptResponse DescribePrompt(DescribePromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePromptResponseUnmarshaller.Instance;
+
+            return Invoke<DescribePromptResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Describes the prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePrompt">REST API Reference for DescribePrompt Operation</seealso>
+        public virtual Task<DescribePromptResponse> DescribePromptAsync(DescribePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribePromptResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribePromptResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -7373,6 +7596,77 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = GetMetricDataV2ResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetMetricDataV2Response>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetPromptFile
+
+
+        /// <summary>
+        /// Gets the prompt file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPromptFile service method.</param>
+        /// 
+        /// <returns>The response from the GetPromptFile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetPromptFile">REST API Reference for GetPromptFile Operation</seealso>
+        public virtual GetPromptFileResponse GetPromptFile(GetPromptFileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPromptFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPromptFileResponseUnmarshaller.Instance;
+
+            return Invoke<GetPromptFileResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Gets the prompt file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPromptFile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPromptFile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetPromptFile">REST API Reference for GetPromptFile Operation</seealso>
+        public virtual Task<GetPromptFileResponse> GetPromptFileAsync(GetPromptFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPromptFileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPromptFileResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetPromptFileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -14019,6 +14313,77 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = UpdatePhoneNumberResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdatePhoneNumberResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdatePrompt
+
+
+        /// <summary>
+        /// Updates a prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePrompt service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
+        public virtual UpdatePromptResponse UpdatePrompt(UpdatePromptRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePromptResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePromptResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates a prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
+        public virtual Task<UpdatePromptResponse> UpdatePromptAsync(UpdatePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePromptRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePromptResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdatePromptResponse>(request, options, cancellationToken);
         }
 
         #endregion
