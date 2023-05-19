@@ -1,3 +1,16 @@
+### 3.7.551.0 (2023-05-19 18:24 UTC)
+* Backup (3.7.103.0)
+	* Add  ResourceArn, ResourceType, and BackupVaultName to ListRecoveryPointsByLegalHold API response.
+* ConnectCases (3.7.103.0)
+	* This release adds the ability to create fields with type Url through the CreateField API. For more information see https://docs.aws.amazon.com/cases/latest/APIReference/Welcome.html
+* MediaPackageV2 (3.7.100.0)
+	* Adds support for the MediaPackage Live v2 API
+* SimpleEmailV2 (3.7.103.0)
+	* This release allows customers to update scaling mode property of dedicated IP pools with PutDedicatedIpPoolScalingAttributes call.
+* Core 3.7.106.39
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.550.0 (2023-05-19 13:57 UTC)
 * DynamoDBv2 (3.7.103.7)
 	* Update DynamoDBVersion to consider AttributeName.
