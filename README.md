@@ -534,6 +534,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.
 * [AWSSDK.MediaPackage](https://www.nuget.org/packages/AWSSDK.MediaPackage/)
 	* AWS Elemental MediaPackage is a just-in-time video packaging and origination service that lets you format highly secure and reliable live outputs for a variety of devices.
+* [AWSSDK.MediaPackageV2](https://www.nuget.org/packages/AWSSDK.MediaPackageV2/)
+	* Adds support for the MediaPackage Live v2 API
 * [AWSSDK.MediaPackageVod](https://www.nuget.org/packages/AWSSDK.MediaPackageVod/)
 	* AWS Elemental MediaPackage now supports Video-on-Demand (VOD) workflows. These new features allow you to easily deliver a vast library of source video Assets stored in your own S3 buckets using a small set of simple to set up Packaging Configurations and Packaging Groups.
 * [AWSSDK.MediaStore](https://www.nuget.org/packages/AWSSDK.MediaStore/)
