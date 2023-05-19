@@ -1,3 +1,11 @@
+### 3.7.550.0 (2023-05-19 13:57 UTC)
+* DynamoDBv2 (3.7.103.7)
+	* Update DynamoDBVersion to consider AttributeName.
+* Lambda (3.7.110.0)
+	* Added support for InvokeWithResponseStream, which allows users to stream responses back from Lambda. Added generator support for event streams.
+* S3 (3.7.104.18)
+	* Fixed an issue where GetObjectAttributes(Async) was not returning the correct LastModified date for an S3 object.
+
 ### 3.7.549.0 (2023-05-18 18:28 UTC)
 * Athena (3.7.109.0)
 	* Removing SparkProperties from EngineConfiguration object for StartSession API call
