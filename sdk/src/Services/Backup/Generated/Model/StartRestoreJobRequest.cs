@@ -185,6 +185,10 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>CloudFormation</code> for CloudFormation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>DynamoDB</code> for Amazon DynamoDB
         /// </para>
         ///  </li> <li> 
@@ -213,11 +217,19 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Redshift</code> for Amazon Redshift
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Storage Gateway</code> for Storage Gateway
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>S3</code> for Amazon S3
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Timestream</code> for Amazon Timestream
         /// </para>
         ///  </li> <li> 
         /// <para>
