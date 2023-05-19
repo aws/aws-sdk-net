@@ -29,9 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleEmailV2.Model
 {
     /// <summary>
-    /// Contains information about a dedicated IP pool.
+    /// Container for the parameters to the PutDedicatedIpPoolScalingAttributes operation.
+    /// Used to convert a dedicated IP pool to a different scaling mode.
+    /// 
+    ///  <note> 
+    /// <para>
+    ///  <code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.
+    /// </para>
+    ///  </note>
     /// </summary>
-    public partial class DedicatedIpPool
+    public partial class PutDedicatedIpPoolScalingAttributesRequest : AmazonSimpleEmailServiceV2Request
     {
         private string _poolName;
         private ScalingMode _scalingMode;
@@ -58,19 +65,14 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property ScalingMode. 
         /// <para>
-        /// The type of the dedicated IP pool.
+        /// The scaling mode to apply to the dedicated IP pool.
         /// </para>
-        ///  <ul> <li> 
+        ///  <note> 
         /// <para>
-        ///  <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part
-        /// of the pool.
+        /// Changing the scaling mode from <code>MANAGED</code> to <code>STANDARD</code> is not
+        /// supported.
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs
-        /// are automatically managed by Amazon SES.
-        /// </para>
-        ///  </li> </ul>
+        ///  </note>
         /// </summary>
         [AWSProperty(Required=true)]
         public ScalingMode ScalingMode

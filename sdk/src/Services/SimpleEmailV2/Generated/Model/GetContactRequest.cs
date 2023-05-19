@@ -59,7 +59,7 @@ namespace Amazon.SimpleEmailV2.Model
         /// <summary>
         /// Gets and sets the property EmailAddress. 
         /// <para>
-        /// The contact's email addres.
+        /// The contact's email address.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
