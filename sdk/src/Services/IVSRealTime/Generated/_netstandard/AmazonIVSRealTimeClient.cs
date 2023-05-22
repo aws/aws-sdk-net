@@ -48,9 +48,25 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  
     /// <para>
-    /// Terminology: The IVS stage API sometimes is referred to as the IVS RealTime API.
+    /// Terminology:
     /// </para>
-    ///  
+    ///  <ul> <li> 
+    /// <para>
+    /// The IVS stage API sometimes is referred to as the IVS <i>RealTime</i> API.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A <i>participant token</i> is an authorization token used to publish/subscribe to
+    /// a stage.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A <i>participant object</i> represents participants (people) in the stage and contains
+    /// information about them. When a token is created, it includes a participant ID; when
+    /// a participant uses that token to join a stage, the participant is associated with
+    /// that participant ID There is a 1:1 mapping between participant tokens and participants.
+    /// </para>
+    ///  </li> </ul> 
     /// <para>
     ///  <b>Resources</b> 
     /// </para>
@@ -118,12 +134,33 @@ namespace Amazon.IVSRealTime
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>GetParticipant</a> — Gets information about the specified participant token.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetStage</a> — Gets information for the specified stage.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetStageSession</a> — Gets information for the specified stage session.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListParticipantEvents</a> — Lists events for a specified participant that occurred
+    /// during a specified stage session.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListParticipants</a> — Lists all participants in a specified stage session.
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <a>ListStages</a> — Gets summary information about all stages in your account, in
     /// the AWS region where the API request is processed.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListStageSessions</a> — Gets all sessions for a specified stage.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -572,6 +609,49 @@ namespace Amazon.IVSRealTime
 
         #endregion
         
+        #region  GetParticipant
+
+        internal virtual GetParticipantResponse GetParticipant(GetParticipantRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParticipantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParticipantResponseUnmarshaller.Instance;
+
+            return Invoke<GetParticipantResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information about the specified participant token.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetParticipant service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetParticipant service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetParticipant">REST API Reference for GetParticipant Operation</seealso>
+        public virtual Task<GetParticipantResponse> GetParticipantAsync(GetParticipantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetParticipantRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetParticipantResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetParticipantResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetStage
 
         internal virtual GetStageResponse GetStage(GetStageRequest request)
@@ -611,6 +691,129 @@ namespace Amazon.IVSRealTime
             options.ResponseUnmarshaller = GetStageResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetStageResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetStageSession
+
+        internal virtual GetStageSessionResponse GetStageSession(GetStageSessionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStageSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStageSessionResponseUnmarshaller.Instance;
+
+            return Invoke<GetStageSessionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets information for the specified stage session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetStageSession service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetStageSession service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ResourceNotFoundException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession">REST API Reference for GetStageSession Operation</seealso>
+        public virtual Task<GetStageSessionResponse> GetStageSessionAsync(GetStageSessionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetStageSessionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetStageSessionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetStageSessionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListParticipantEvents
+
+        internal virtual ListParticipantEventsResponse ListParticipantEvents(ListParticipantEventsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParticipantEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParticipantEventsResponseUnmarshaller.Instance;
+
+            return Invoke<ListParticipantEventsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists events for a specified participant that occurred during a specified stage session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParticipantEvents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListParticipantEvents service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents">REST API Reference for ListParticipantEvents Operation</seealso>
+        public virtual Task<ListParticipantEventsResponse> ListParticipantEventsAsync(ListParticipantEventsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParticipantEventsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParticipantEventsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListParticipantEventsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListParticipants
+
+        internal virtual ListParticipantsResponse ListParticipants(ListParticipantsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParticipantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParticipantsResponseUnmarshaller.Instance;
+
+            return Invoke<ListParticipantsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all participants in a specified stage session.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListParticipants service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListParticipants service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants">REST API Reference for ListParticipants Operation</seealso>
+        public virtual Task<ListParticipantsResponse> ListParticipantsAsync(ListParticipantsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListParticipantsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListParticipantsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListParticipantsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -655,6 +858,46 @@ namespace Amazon.IVSRealTime
             options.ResponseUnmarshaller = ListStagesResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListStagesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListStageSessions
+
+        internal virtual ListStageSessionsResponse ListStageSessions(ListStageSessionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStageSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStageSessionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListStageSessionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Gets all sessions for a specified stage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListStageSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListStageSessions service method, as returned by IVSRealTime.</returns>
+        /// <exception cref="Amazon.IVSRealTime.Model.AccessDeniedException">
+        /// 
+        /// </exception>
+        /// <exception cref="Amazon.IVSRealTime.Model.ValidationException">
+        /// 
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStageSessions">REST API Reference for ListStageSessions Operation</seealso>
+        public virtual Task<ListStageSessionsResponse> ListStageSessionsAsync(ListStageSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListStageSessionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListStageSessionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListStageSessionsResponse>(request, options, cancellationToken);
         }
 
         #endregion

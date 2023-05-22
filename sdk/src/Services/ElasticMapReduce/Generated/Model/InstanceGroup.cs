@@ -58,8 +58,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// An automatic scaling policy for a core instance group or task instance group in an
         /// Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically
-        /// adds and terminates EC2 instances in response to the value of a CloudWatch metric.
-        /// See PutAutoScalingPolicy.
+        /// adds and terminates Amazon EC2 instances in response to the value of a CloudWatch
+        /// metric. See PutAutoScalingPolicy.
         /// </para>
         /// </summary>
         public AutoScalingPolicyDescription AutoScalingPolicy
@@ -231,7 +231,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The EC2 instance type for all instances in the instance group.
+        /// The Amazon EC2 instance type for all instances in the instance group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

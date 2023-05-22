@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// EBS block device that's attached to an EC2 instance.
+    /// EBS block device that's attached to an Amazon EC2 instance.
     /// </summary>
     public partial class EbsVolume
     {

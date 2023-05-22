@@ -139,6 +139,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     }
                     if(publicRequest.LaunchTemplateData.IsSetCpuOptions())
                     {
+                        if(publicRequest.LaunchTemplateData.CpuOptions.IsSetAmdSevSnp())
+                        {
+                            request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "AmdSevSnp", StringUtils.FromString(publicRequest.LaunchTemplateData.CpuOptions.AmdSevSnp));
+                        }
                         if(publicRequest.LaunchTemplateData.CpuOptions.IsSetCoreCount())
                         {
                             request.Parameters.Add("LaunchTemplateData" + "." + "CpuOptions" + "." + "CoreCount", StringUtils.FromInt(publicRequest.LaunchTemplateData.CpuOptions.CoreCount));

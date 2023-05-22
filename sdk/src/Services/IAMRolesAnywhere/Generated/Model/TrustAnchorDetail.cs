@@ -36,6 +36,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         private DateTime? _createdAt;
         private bool? _enabled;
         private string _name;
+        private List<NotificationSettingDetail> _notificationSettings = new List<NotificationSettingDetail>();
         private Source _source;
         private string _trustAnchorArn;
         private string _trustAnchorId;
@@ -94,6 +95,25 @@ namespace Amazon.IAMRolesAnywhere.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotificationSettings. 
+        /// <para>
+        /// A list of notification settings to be associated to the trust anchor.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<NotificationSettingDetail> NotificationSettings
+        {
+            get { return this._notificationSettings; }
+            set { this._notificationSettings = value; }
+        }
+
+        // Check to see if NotificationSettings property is set
+        internal bool IsSetNotificationSettings()
+        {
+            return this._notificationSettings != null && this._notificationSettings.Count > 0; 
         }
 
         /// <summary>

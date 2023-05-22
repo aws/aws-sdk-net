@@ -47,10 +47,8 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// To learn more about Amazon Cognito, see <a href="https://docs.aws.amazon.com/mobile/sdkforandroid/developerguide/cognito-auth.html#d0e840">Amazon
-    /// Cognito Overview</a> in <i>Amazon Web Services SDK for Android Developer Guide</i>
-    /// and <a href="https://docs.aws.amazon.com/mobile/sdkforios/developerguide/cognito-auth.html#d0e664">Amazon
-    /// Cognito Overview</a> in the <i>Amazon Web Services SDK for iOS Developer Guide</i>.
+    /// To learn more about Amazon Cognito, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon
+    /// Cognito identity pools</a> in <i>Amazon Cognito Developer Guide</i>.
     /// </para>
     ///  </note> 
     /// <para>
@@ -444,7 +442,7 @@ namespace Amazon.SecurityToken.Model
         /// call. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=20000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=20000)]
         public string WebIdentityToken
         {
             get { return this._webIdentityToken; }

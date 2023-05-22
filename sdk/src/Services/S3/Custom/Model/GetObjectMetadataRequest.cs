@@ -120,11 +120,7 @@ namespace Amazon.S3.Model
     /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC
     /// 7232</a>.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Permissions</b> 
-    /// </para>
-    ///  
+    ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// You need the relevant read object (or version) permission for this operation. For
     /// more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
@@ -141,7 +137,7 @@ namespace Amazon.S3.Model
     /// If you don’t have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
     /// HTTP status code 403 ("access denied") error.
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> </dd> </dl> 
     /// <para>
     /// The following action is related to <code>HeadObject</code>:
     /// </para>

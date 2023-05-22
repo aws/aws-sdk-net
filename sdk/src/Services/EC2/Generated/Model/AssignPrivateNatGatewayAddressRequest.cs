@@ -66,7 +66,7 @@ namespace Amazon.EC2.Model
         /// this parameter when also specifying private IP addresses.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=7)]
+        [AWSProperty(Min=1, Max=31)]
         public int PrivateIpAddressCount
         {
             get { return this._privateIpAddressCount.GetValueOrDefault(); }

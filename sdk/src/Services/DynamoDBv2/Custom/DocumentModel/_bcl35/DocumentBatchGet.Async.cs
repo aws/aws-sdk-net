@@ -30,8 +30,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.DocumentBatchGet.Execute"/>
+        /// Executes a server call to batch-get the documents requested.
+        /// Populates Results with the retrieved items.
         /// </summary>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
@@ -65,8 +65,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.MultiTableDocumentBatchGet.Execute"/>
+        /// Executes a multi-table batch request against all configured batches.
+        /// Results are stored in the respective DocumentBatchGet objects.
         /// </summary>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback

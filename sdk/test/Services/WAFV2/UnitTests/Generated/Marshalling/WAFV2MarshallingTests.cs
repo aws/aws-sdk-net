@@ -5332,6 +5332,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("WAFV2")]
+        public void GetRateBasedStatementManagedKeys_WAFUnsupportedAggregateKeyTypeExceptionMarshallTest()
+        {
+            var operation =  service_model.FindOperation("GetRateBasedStatementManagedKeys");
+
+            var request = InstantiateClassGenerator.Execute<GetRateBasedStatementManagedKeysRequest>();
+            var marshaller = new GetRateBasedStatementManagedKeysRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var jsonRequest = UTF8Encoding.UTF8.GetString(internalRequest.Content);
+
+            Comparer.CompareObjectToJson<GetRateBasedStatementManagedKeysRequest>(request,jsonRequest);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("WAFUnsupportedAggregateKeyTypeException"));
+            var jsonResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","WAFUnsupportedAggregateKeyTypeException"},
+                    {"Content-Length", UTF8Encoding.UTF8.GetBytes(jsonResponse).Length.ToString()}
+                }
+            };
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(jsonResponse), true, webResponse, true);
+            var response = GetRateBasedStatementManagedKeysResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("WAFV2")]
         public void GetRegexPatternSetMarshallTest()
         {
             var request = InstantiateClassGenerator.Execute<GetRegexPatternSetRequest>();

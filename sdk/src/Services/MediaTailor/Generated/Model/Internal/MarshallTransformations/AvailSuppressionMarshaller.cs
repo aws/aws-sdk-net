@@ -45,6 +45,12 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AvailSuppression requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFillPolicy())
+            {
+                context.Writer.WritePropertyName("FillPolicy");
+                context.Writer.Write(requestObject.FillPolicy);
+            }
+
             if(requestObject.IsSetMode())
             {
                 context.Writer.WritePropertyName("Mode");

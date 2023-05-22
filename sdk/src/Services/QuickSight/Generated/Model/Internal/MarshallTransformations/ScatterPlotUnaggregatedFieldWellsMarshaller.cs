@@ -45,6 +45,38 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScatterPlotUnaggregatedFieldWells requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCategory())
+            {
+                context.Writer.WritePropertyName("Category");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCategoryListValue in requestObject.Category)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DimensionFieldMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCategoryListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetLabel())
+            {
+                context.Writer.WritePropertyName("Label");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLabelListValue in requestObject.Label)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DimensionFieldMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLabelListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSize())
             {
                 context.Writer.WritePropertyName("Size");

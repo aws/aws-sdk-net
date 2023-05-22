@@ -29,17 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTDeviceAdvisor.Model
 {
     /// <summary>
-    /// Information of a test device. A thing ARN or a certificate ARN is required.
+    /// Information of a test device. A thing ARN, certificate ARN or device role ARN is required.
     /// </summary>
     public partial class DeviceUnderTest
     {
         private string _certificateArn;
+        private string _deviceRoleArn;
         private string _thingArn;
 
         /// <summary>
         /// Gets and sets the property CertificateArn. 
         /// <para>
-        /// Lists devices certificate ARN.
+        /// Lists device's certificate ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -56,9 +57,28 @@ namespace Amazon.IoTDeviceAdvisor.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeviceRoleArn. 
+        /// <para>
+        /// Lists device's role ARN.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DeviceRoleArn
+        {
+            get { return this._deviceRoleArn; }
+            set { this._deviceRoleArn = value; }
+        }
+
+        // Check to see if DeviceRoleArn property is set
+        internal bool IsSetDeviceRoleArn()
+        {
+            return this._deviceRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ThingArn. 
         /// <para>
-        /// Lists devices thing ARN.
+        /// Lists device's thing ARN.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

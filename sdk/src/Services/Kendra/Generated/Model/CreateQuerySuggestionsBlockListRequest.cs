@@ -55,7 +55,7 @@ namespace Amazon.Kendra.Model
     ///  
     /// <para>
     /// For an example of creating a block list for query suggestions using the Python SDK,
-    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#suggestions-block-list">Query
+    /// see <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">Query
     /// suggestions block list</a>.
     /// </para>
     /// </summary>

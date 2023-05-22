@@ -36,6 +36,7 @@ namespace Amazon.ElastiCache.Model
     {
         private AuthTokenUpdateStatus _authTokenStatus;
         private PendingAutomaticFailoverStatus _automaticFailoverStatus;
+        private ClusterMode _clusterMode;
         private List<PendingLogDeliveryConfiguration> _logDeliveryConfigurations = new List<PendingLogDeliveryConfiguration>();
         private string _primaryClusterId;
         private ReshardingStatus _resharding;
@@ -77,6 +78,28 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetAutomaticFailoverStatus()
         {
             return this._automaticFailoverStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterMode. 
+        /// <para>
+        /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
+        /// set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect
+        /// using both cluster mode enabled and cluster mode disabled. After you migrate all Redis
+        /// clients to use cluster mode enabled, you can then complete cluster mode configuration
+        /// and set the cluster mode to Enabled.
+        /// </para>
+        /// </summary>
+        public ClusterMode ClusterMode
+        {
+            get { return this._clusterMode; }
+            set { this._clusterMode = value; }
+        }
+
+        // Check to see if ClusterMode property is set
+        internal bool IsSetClusterMode()
+        {
+            return this._clusterMode != null;
         }
 
         /// <summary>

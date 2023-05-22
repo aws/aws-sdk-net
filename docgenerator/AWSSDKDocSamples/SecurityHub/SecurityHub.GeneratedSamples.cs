@@ -603,6 +603,27 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubGetFindingHistory()
+        {
+            #region to-get-finding-history-1680270012186
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.GetFindingHistory(new GetFindingHistoryRequest 
+            {
+                EndTime = DateTime.UtcNow,
+                FindingIdentifier = new AwsSecurityFindingIdentifier {
+                    Id = "a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                    ProductArn = "arn:aws:securityhub:us-west-2:123456789012:product/123456789012/default"
+                },
+                MaxResults = 2,
+                StartTime = new DateTime(2021, 9, 30, 8, 53, 35, DateTimeKind.Utc)
+            });
+
+            List<FindingHistoryRecord> records = response.Records;
+
+            #endregion
+        }
+
         public void SecurityHubGetFindings()
         {
             #region to-get-a-list-of-findings-1677181069931

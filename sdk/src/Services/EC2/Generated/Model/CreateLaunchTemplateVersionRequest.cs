@@ -91,7 +91,7 @@ namespace Amazon.EC2.Model
         /// The information for the launch template.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Sensitive=true)]
+        [AWSProperty(Required=true)]
         public RequestLaunchTemplateData LaunchTemplateData
         {
             get { return this._launchTemplateData; }

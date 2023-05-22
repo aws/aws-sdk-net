@@ -42,7 +42,8 @@ namespace Amazon.IVSRealTime.Model
         /// <summary>
         /// Gets and sets the property ParticipantId. 
         /// <para>
-        /// Identifier of the participant to be disconnected. This is returned by <a>CreateParticipantToken</a>.
+        /// Identifier of the participant to be disconnected. This is assigned by IVS and returned
+        /// by <a>CreateParticipantToken</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

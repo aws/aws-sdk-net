@@ -30,7 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// An instance type configuration for each instance type in an instance fleet, which
-    /// determines the EC2 instances Amazon EMR attempts to provision to fulfill On-Demand
+    /// determines the Amazon EC2 instances Amazon EMR attempts to provision to fulfill On-Demand
     /// and Spot target capacities. When you use an allocation strategy, you can include a
     /// maximum of 30 instance type configurations for a fleet. For more information about
     /// how to use an allocation strategy, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html">Configure
@@ -39,7 +39,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+    /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
     /// later, excluding 5.0.x versions.
     /// </para>
     ///  </note>
@@ -57,7 +57,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPrice. 
         /// <para>
-        /// The bid price for each EC2 Spot Instance type as defined by <code>InstanceType</code>.
+        /// The bid price for each Amazon EC2 Spot Instance type as defined by <code>InstanceType</code>.
         /// Expressed in USD. If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code>
         /// is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. 
         /// </para>
@@ -78,9 +78,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property BidPriceAsPercentageOfOnDemandPrice. 
         /// <para>
-        /// The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance as defined
-        /// by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies 20%).
-        /// If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code>
+        /// The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot Instance
+        /// as defined by <code>InstanceType</code>. Expressed as a number (for example, 20 specifies
+        /// 20%). If neither <code>BidPrice</code> nor <code>BidPriceAsPercentageOfOnDemandPrice</code>
         /// is provided, <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.
         /// </para>
         /// </summary>
@@ -157,7 +157,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// An EC2 instance type, such as <code>m3.xlarge</code>. 
+        /// An Amazon EC2 instance type, such as <code>m3.xlarge</code>. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

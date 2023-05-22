@@ -39,6 +39,14 @@ namespace Amazon.NetworkFirewall
         /// </summary>
         public static readonly AttachmentStatus DELETING = new AttachmentStatus("DELETING");
         /// <summary>
+        /// Constant ERROR for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus ERROR = new AttachmentStatus("ERROR");
+        /// <summary>
+        /// Constant FAILED for AttachmentStatus
+        /// </summary>
+        public static readonly AttachmentStatus FAILED = new AttachmentStatus("FAILED");
+        /// <summary>
         /// Constant READY for AttachmentStatus
         /// </summary>
         public static readonly AttachmentStatus READY = new AttachmentStatus("READY");
@@ -1038,6 +1046,10 @@ namespace Amazon.NetworkFirewall
         /// Constant DROP for StreamExceptionPolicy
         /// </summary>
         public static readonly StreamExceptionPolicy DROP = new StreamExceptionPolicy("DROP");
+        /// <summary>
+        /// Constant REJECT for StreamExceptionPolicy
+        /// </summary>
+        public static readonly StreamExceptionPolicy REJECT = new StreamExceptionPolicy("REJECT");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

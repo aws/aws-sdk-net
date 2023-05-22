@@ -66,7 +66,7 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property Streams. 
         /// <para>
-        /// The array of QLDB journal stream descriptors that are associated with the given ledger.
+        /// The QLDB journal streams that are currently associated with the given ledger.
         /// </para>
         /// </summary>
         public List<JournalKinesisStreamDescription> Streams

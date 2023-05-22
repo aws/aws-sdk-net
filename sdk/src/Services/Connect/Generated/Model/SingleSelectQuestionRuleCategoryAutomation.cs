@@ -82,7 +82,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property OptionRefId. 
         /// <para>
-        /// The identifier of the answer option tha
+        /// The identifier of the answer option.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=40)]

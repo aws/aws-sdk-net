@@ -37,6 +37,7 @@ namespace Amazon.GuardDuty.Model
         private ScanDetections _scanDetections;
         private string _scanId;
         private DateTime? _scanStartedAt;
+        private ScanType _scanType;
         private List<string> _sources = new List<string>();
         private string _triggerFindingId;
 
@@ -110,6 +111,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetScanStartedAt()
         {
             return this._scanStartedAt.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScanType. 
+        /// <para>
+        /// Specifies the scan type that invoked the malware scan.
+        /// </para>
+        /// </summary>
+        public ScanType ScanType
+        {
+            get { return this._scanType; }
+            set { this._scanType = value; }
+        }
+
+        // Check to see if ScanType property is set
+        internal bool IsSetScanType()
+        {
+            return this._scanType != null;
         }
 
         /// <summary>

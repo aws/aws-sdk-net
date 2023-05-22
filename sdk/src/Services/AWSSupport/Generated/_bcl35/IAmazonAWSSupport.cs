@@ -578,6 +578,68 @@ namespace Amazon.AWSSupport
 
         #endregion
         
+        #region  DescribeCreateCaseOptions
+
+
+        /// <summary>
+        /// Returns a list of CreateCaseOption types along with the corresponding supported hours
+        /// and language availability. You can specify the <code>language</code> <code>categoryCode</code>,
+        /// <code>issueType</code> and <code>serviceCode</code> used to retrieve the CreateCaseOptions.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+        /// Amazon Web Services Support API. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you call the Amazon Web Services Support API from an account that doesn't have
+        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+        /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+        /// Web Services Support</a>.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCreateCaseOptions service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCreateCaseOptions service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.ThrottlingException">
+        /// You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCreateCaseOptions">REST API Reference for DescribeCreateCaseOptions Operation</seealso>
+        DescribeCreateCaseOptionsResponse DescribeCreateCaseOptions(DescribeCreateCaseOptionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCreateCaseOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCreateCaseOptions operation on AmazonAWSSupportClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCreateCaseOptions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCreateCaseOptions">REST API Reference for DescribeCreateCaseOptions Operation</seealso>
+        IAsyncResult BeginDescribeCreateCaseOptions(DescribeCreateCaseOptionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCreateCaseOptions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCreateCaseOptions.</param>
+        /// 
+        /// <returns>Returns a  DescribeCreateCaseOptionsResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCreateCaseOptions">REST API Reference for DescribeCreateCaseOptions Operation</seealso>
+        DescribeCreateCaseOptionsResponse EndDescribeCreateCaseOptions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeServices
 
 
@@ -768,6 +830,68 @@ namespace Amazon.AWSSupport
 
         #endregion
         
+        #region  DescribeSupportedLanguages
+
+
+        /// <summary>
+        /// Returns a list of supported languages for a specified <code>categoryCode</code>, <code>issueType</code>
+        /// and <code>serviceCode</code>. The returned supported languages will include a ISO
+        /// 639-1 code for the <code>language</code>, and the language display name.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to use the
+        /// Amazon Web Services Support API. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If you call the Amazon Web Services Support API from an account that doesn't have
+        /// a Business, Enterprise On-Ramp, or Enterprise Support plan, the <code>SubscriptionRequiredException</code>
+        /// error message appears. For information about changing your support plan, see <a href="http://aws.amazon.com/premiumsupport/">Amazon
+        /// Web Services Support</a>.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSupportedLanguages service method.</param>
+        /// 
+        /// <returns>The response from the DescribeSupportedLanguages service method, as returned by AWSSupport.</returns>
+        /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
+        /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.ThrottlingException">
+        /// You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSupportedLanguages">REST API Reference for DescribeSupportedLanguages Operation</seealso>
+        DescribeSupportedLanguagesResponse DescribeSupportedLanguages(DescribeSupportedLanguagesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeSupportedLanguages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeSupportedLanguages operation on AmazonAWSSupportClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeSupportedLanguages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSupportedLanguages">REST API Reference for DescribeSupportedLanguages Operation</seealso>
+        IAsyncResult BeginDescribeSupportedLanguages(DescribeSupportedLanguagesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeSupportedLanguages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeSupportedLanguages.</param>
+        /// 
+        /// <returns>Returns a  DescribeSupportedLanguagesResult from AWSSupport.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSupportedLanguages">REST API Reference for DescribeSupportedLanguages Operation</seealso>
+        DescribeSupportedLanguagesResponse EndDescribeSupportedLanguages(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeTrustedAdvisorCheckRefreshStatuses
 
 
@@ -810,6 +934,9 @@ namespace Amazon.AWSSupport
         /// <returns>The response from the DescribeTrustedAdvisorCheckRefreshStatuses service method, as returned by AWSSupport.</returns>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.ThrottlingException">
+        /// You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckRefreshStatuses">REST API Reference for DescribeTrustedAdvisorCheckRefreshStatuses Operation</seealso>
         DescribeTrustedAdvisorCheckRefreshStatusesResponse DescribeTrustedAdvisorCheckRefreshStatuses(DescribeTrustedAdvisorCheckRefreshStatusesRequest request);
@@ -911,6 +1038,9 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.ThrottlingException">
+        /// You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckResult">REST API Reference for DescribeTrustedAdvisorCheckResult Operation</seealso>
         DescribeTrustedAdvisorCheckResultResponse DescribeTrustedAdvisorCheckResult(DescribeTrustedAdvisorCheckResultRequest request);
 
@@ -987,6 +1117,9 @@ namespace Amazon.AWSSupport
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
         /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.ThrottlingException">
+        /// You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorChecks">REST API Reference for DescribeTrustedAdvisorChecks Operation</seealso>
         DescribeTrustedAdvisorChecksResponse DescribeTrustedAdvisorChecks(DescribeTrustedAdvisorChecksRequest request);
 
@@ -1057,6 +1190,9 @@ namespace Amazon.AWSSupport
         /// <returns>The response from the DescribeTrustedAdvisorCheckSummaries service method, as returned by AWSSupport.</returns>
         /// <exception cref="Amazon.AWSSupport.Model.InternalServerErrorException">
         /// An internal server error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.AWSSupport.Model.ThrottlingException">
+        /// You have exceeded the maximum allowed TPS (Transactions Per Second) for the operations.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeTrustedAdvisorCheckSummaries">REST API Reference for DescribeTrustedAdvisorCheckSummaries Operation</seealso>
         DescribeTrustedAdvisorCheckSummariesResponse DescribeTrustedAdvisorCheckSummaries(DescribeTrustedAdvisorCheckSummariesRequest request);

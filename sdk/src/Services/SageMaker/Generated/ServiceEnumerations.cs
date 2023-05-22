@@ -435,6 +435,14 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly AppInstanceType MlP3dn24xlarge = new AppInstanceType("ml.p3dn.24xlarge");
         /// <summary>
+        /// Constant MlP4d24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlP4d24xlarge = new AppInstanceType("ml.p4d.24xlarge");
+        /// <summary>
+        /// Constant MlP4de24xlarge for AppInstanceType
+        /// </summary>
+        public static readonly AppInstanceType MlP4de24xlarge = new AppInstanceType("ml.p4de.24xlarge");
+        /// <summary>
         /// Constant MlR512xlarge for AppInstanceType
         /// </summary>
         public static readonly AppInstanceType MlR512xlarge = new AppInstanceType("ml.r5.12xlarge");
@@ -10417,6 +10425,22 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly ProductionVariantInstanceType MlInf1Xlarge = new ProductionVariantInstanceType("ml.inf1.xlarge");
         /// <summary>
+        /// Constant MlInf224xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlInf224xlarge = new ProductionVariantInstanceType("ml.inf2.24xlarge");
+        /// <summary>
+        /// Constant MlInf248xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlInf248xlarge = new ProductionVariantInstanceType("ml.inf2.48xlarge");
+        /// <summary>
+        /// Constant MlInf28xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlInf28xlarge = new ProductionVariantInstanceType("ml.inf2.8xlarge");
+        /// <summary>
+        /// Constant MlInf2Xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlInf2Xlarge = new ProductionVariantInstanceType("ml.inf2.xlarge");
+        /// <summary>
         /// Constant MlM410xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlM410xlarge = new ProductionVariantInstanceType("ml.m4.10xlarge");
@@ -10692,6 +10716,14 @@ namespace Amazon.SageMaker
         /// Constant MlT2Xlarge for ProductionVariantInstanceType
         /// </summary>
         public static readonly ProductionVariantInstanceType MlT2Xlarge = new ProductionVariantInstanceType("ml.t2.xlarge");
+        /// <summary>
+        /// Constant MlTrn12xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlTrn12xlarge = new ProductionVariantInstanceType("ml.trn1.2xlarge");
+        /// <summary>
+        /// Constant MlTrn132xlarge for ProductionVariantInstanceType
+        /// </summary>
+        public static readonly ProductionVariantInstanceType MlTrn132xlarge = new ProductionVariantInstanceType("ml.trn1.32xlarge");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

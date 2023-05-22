@@ -30,9 +30,9 @@ namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateCrl operation.
-    /// Updates the certificate revocation list (CRL). CRl is a list of certificates that
-    /// have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates
-    /// against the crl list before issuing credentials.
+    /// Updates the certificate revocation list (CRL). A CRL is a list of certificates that
+    /// have been revoked by the issuing certificate authority (CA). IAM Roles Anywhere validates
+    /// against the CRL before issuing credentials.
     /// 
     ///  
     /// <para>
@@ -48,7 +48,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property CrlData. 
         /// <para>
-        /// The x509 v3 specified certificate revocation list
+        /// The x509 v3 specified certificate revocation list (CRL).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=300000)]

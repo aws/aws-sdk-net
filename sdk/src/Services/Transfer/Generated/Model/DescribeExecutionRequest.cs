@@ -32,6 +32,18 @@ namespace Amazon.Transfer.Model
     /// Container for the parameters to the DescribeExecution operation.
     /// You can use <code>DescribeExecution</code> to check the details of the execution of
     /// the specified workflow.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This API call only returns details for in-progress workflows.
+    /// </para>
+    ///  
+    /// <para>
+    ///  If you provide an ID for an execution that is not in progress, or if the execution
+    /// doesn't match the specified workflow ID, you receive a <code>ResourceNotFound</code>
+    /// exception.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DescribeExecutionRequest : AmazonTransferRequest
     {

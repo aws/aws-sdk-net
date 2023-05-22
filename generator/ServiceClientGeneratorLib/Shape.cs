@@ -38,6 +38,7 @@ namespace ServiceClientGenerator
         public const string DeprecatedMessageKey = "deprecatedMessage";
         public const string TimestampFormatKey = "timestampFormat";
         public const string DocumentKey = "document";
+        public const string EventKey = "event";
 
         public static readonly HashSet<string> NullableTypes = new HashSet<string> {
             "bool",
@@ -841,6 +842,17 @@ namespace ServiceClientGenerator
                 }
             }
             return false;
+        }
+        /// <summary>
+        /// Returns true if the structure contains the event trait,
+        /// not to be confused with the EventStream structure shape
+        /// </summary>
+        public bool IsEvent
+        {
+            get
+            {
+                return this.data.PropertyNames.Contains(EventKey);
+            }
         }
     }
 }

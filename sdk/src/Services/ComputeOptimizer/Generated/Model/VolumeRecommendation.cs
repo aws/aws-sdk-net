@@ -39,6 +39,7 @@ namespace Amazon.ComputeOptimizer.Model
         private EBSFinding _finding;
         private DateTime? _lastRefreshTimestamp;
         private double? _lookBackPeriodInDays;
+        private List<Tag> _tags = new List<Tag>();
         private List<EBSUtilizationMetric> _utilizationMetrics = new List<EBSUtilizationMetric>();
         private string _volumeArn;
         private List<VolumeRecommendationOption> _volumeRecommendationOptions = new List<VolumeRecommendationOption>();
@@ -169,6 +170,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetLookBackPeriodInDays()
         {
             return this._lookBackPeriodInDays.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A list of tags assigned to your Amazon EBS volume recommendations. 
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

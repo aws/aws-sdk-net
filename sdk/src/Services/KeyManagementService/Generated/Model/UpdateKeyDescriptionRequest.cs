@@ -73,6 +73,12 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// New description for the KMS key.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=8192)]
         public string Description

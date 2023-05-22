@@ -34,6 +34,7 @@ namespace Amazon.WellArchitected.Model
     public partial class WorkloadDiscoveryConfig
     {
         private TrustedAdvisorIntegrationStatus _trustedAdvisorIntegrationStatus;
+        private List<string> _workloadResourceDefinition = new List<string>();
 
         /// <summary>
         /// Gets and sets the property TrustedAdvisorIntegrationStatus. 
@@ -51,6 +52,28 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetTrustedAdvisorIntegrationStatus()
         {
             return this._trustedAdvisorIntegrationStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property WorkloadResourceDefinition. 
+        /// <para>
+        /// The mode to use for identifying resources associated with the workload.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or both.
+        /// </para>
+        /// </summary>
+        public List<string> WorkloadResourceDefinition
+        {
+            get { return this._workloadResourceDefinition; }
+            set { this._workloadResourceDefinition = value; }
+        }
+
+        // Check to see if WorkloadResourceDefinition property is set
+        internal bool IsSetWorkloadResourceDefinition()
+        {
+            return this._workloadResourceDefinition != null && this._workloadResourceDefinition.Count > 0; 
         }
 
     }

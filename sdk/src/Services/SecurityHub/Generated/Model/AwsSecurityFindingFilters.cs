@@ -262,7 +262,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// An ISO8601-formatted timestamp that indicates when the security findings provider
         /// captured the potential security issue that a finding captured.
         /// </para>
         ///  
@@ -475,7 +475,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FirstObservedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// An ISO8601-formatted timestamp that indicates when the security findings provider
         /// first observed the potential security issue that a finding captured.
         /// </para>
         ///  
@@ -502,7 +502,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property GeneratorId. 
         /// <para>
         /// The identifier for the solution-specific component (a discrete unit of logic) that
-        /// generated a finding. In various security-findings providers' solutions, this generator
+        /// generated a finding. In various security findings providers' solutions, this generator
         /// can be called a rule, a check, a detector, a plugin, etc.
         /// </para>
         /// </summary>
@@ -558,7 +558,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property LastObservedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// An ISO8601-formatted timestamp that indicates when the security findings provider
         /// most recently observed the potential security issue that a finding captured.
         /// </para>
         ///  
@@ -1052,7 +1052,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProductFields. 
         /// <para>
-        /// A data type where security-findings providers can include additional solution-specific
+        /// A data type where security findings providers can include additional solution-specific
         /// details that aren't part of the defined <code>AwsSecurityFinding</code> format.
         /// </para>
         /// </summary>
@@ -1712,7 +1712,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SeverityProduct. 
         /// <para>
-        /// The native severity as defined by the security-findings provider's solution that generated
+        /// The native severity as defined by the security findings provider's solution that generated
         /// the finding.
         /// </para>
         /// </summary>
@@ -1732,7 +1732,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SourceUrl. 
         /// <para>
-        /// A URL that links to a page about the current finding in the security-findings provider's
+        /// A URL that links to a page about the current finding in the security findings provider's
         /// solution.
         /// </para>
         /// </summary>
@@ -1896,7 +1896,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// An ISO8601-formatted timestamp that indicates when the security findings provider
         /// last updated the finding record. 
         /// </para>
         ///  

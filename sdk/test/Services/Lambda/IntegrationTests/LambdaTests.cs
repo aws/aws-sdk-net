@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.IO;
 using System.Linq;
 using System.Collections.Generic;
@@ -12,6 +12,12 @@ using Amazon.IdentityManagement.Model;
 using Amazon.Lambda;
 using Amazon.Lambda.Model;
 using Amazon.Runtime;
+using System.Threading.Tasks;
+using System.Net;
+using Amazon.Lambda.Model.Internal.MarshallTransformations;
+using System.Runtime.InteropServices.ComTypes;
+using System.Runtime.Remoting.Messaging;
+using System.ComponentModel.Composition;
 
 #if BCL45
 using System.IO.Compression;
@@ -44,7 +50,24 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
         static IAmazonIdentityManagementService iamClient = new AmazonIdentityManagementServiceClient();
         static List<string> createdFunctionNames = new List<string>();
         static List<string> createdRoleNames = new List<string>();
+        const string HELLO_SCRIPT =
+@"console.log('Loading event');
+exports.handler = function(event, context) {
+  console.log(""value = "" + event.Key);
+  context.done(null, ""Hello World:"" + event.Key + "", "" + context.System);  // SUCCESS with message
+}";
+        const string STREAMIFY_RESPONSE_SCRIPT =
+            @"
+import util from 'util'; 
+import stream from 'stream';
+const { Readable } = stream;
+const pipeline = util.promisify(stream.pipeline);
 
+export const handler = awslambda.streamifyResponse(async (event, responseStream, _context) => {
+  const requestStream = Readable.from(Buffer.from(new Array(1024*1024).join( '🚣' )));
+  await pipeline(requestStream, responseStream);
+});
+";
         [ClassCleanup]
         public static void Cleanup()
         {
@@ -107,7 +130,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 string iamRoleArn;
                 string functionArn;
-                CreateLambdaFunction(out functionName, out functionArn, out iamRoleName, out iamRoleArn);
+                CreateLambdaFunction(out functionName, out functionArn, out iamRoleName, out iamRoleArn, HELLO_SCRIPT, Runtime.Nodejs43);
 
                 var publishResponse = Client.PublishVersion(new PublishVersionRequest
                 {
@@ -148,6 +171,103 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     iamClient.DeleteRole(new DeleteRoleRequest { RoleName = iamRoleName });
             }
         }
+        [Ignore("Excluding tests that need IAM Write/Permissions management.")]
+        [TestMethod]
+        [TestCategory("Lambda")]
+        public async Task StreamifyLambdaResponseTest()
+        {
+            try
+            {
+                //Arrange
+                var functionName = "HelloWorld-" + DateTime.Now.Ticks;
+                var iamRoleName = "Lambda-" + DateTime.Now.Ticks;
+                var request = new CreateRoleRequest
+                {
+                    RoleName = iamRoleName,
+                    AssumeRolePolicyDocument = LAMBDA_ASSUME_ROLE_POLICY
+                };
+                var iamRoleResponse = UtilityMethods.WaitUntilSuccess(() => iamClient.CreateRole(request));
+                SetupPolicies(iamRoleName);
+                var iamRole = iamRoleResponse.Role;
+                MemoryStream stream = CreateScriptStream(STREAMIFY_RESPONSE_SCRIPT);
+                string handlerName = "helloworld.handler";
+                var uploadRequest = new CreateFunctionRequest
+                {
+                    FunctionName = functionName,
+                    Code = new FunctionCode
+                    {
+                        ZipFile = stream
+                    },
+                    Handler = handlerName,
+                    Runtime = Runtime.Nodejs14X,
+                    Role = iamRole.Arn
+                };
+                var uploadResponse = UtilityMethods.WaitUntilSuccess( () => Client.CreateFunction(uploadRequest));
+                GetFunctionRequest getFunctionRequest = new GetFunctionRequest
+                {
+                    FunctionName = functionName
+                };
+                int attempts = 0;
+                while(true || attempts < 5) // do not wait for longer than 10 seconds
+                {
+                    var responseState = Client.GetFunction(getFunctionRequest);
+                    if (responseState.Configuration.State == State.Active)
+                        break;
+                    Thread.Sleep(2000);
+                    attempts++;
+                }
+                Assert.IsTrue(uploadResponse.CodeSize > 0);
+                Assert.IsNotNull(uploadResponse.FunctionArn);
+                // Get the function with a presigned URL to the uploaded code
+                var getFunctionResponse = await Client.GetFunctionAsync(functionName);
+                Assert.AreEqual(handlerName, getFunctionResponse.Configuration.Handler);
+                Assert.IsNotNull(getFunctionResponse.Code.Location);
+
+                // Get the function's configuration only
+                var getFunctionConfiguration = await Client.GetFunctionConfigurationAsync(functionName);
+                Assert.AreEqual(handlerName, getFunctionConfiguration.Handler);
+                createdFunctionNames.Add(functionName);
+                var endWaitHandle = new AutoResetEvent(false);
+                InvokeWithResponseStreamResponse response;
+                try
+                {
+                    response = await Client.InvokeWithResponseStreamAsync(new InvokeWithResponseStreamRequest()
+                    {
+                        FunctionName = functionName,
+                        InvocationType = ResponseStreamingInvocationType.DryRun
+                    });
+                    using (var eventStream = response.EventStream)
+                    {
+                        // Since everything happens on a background thread, exceptions are raised as events.
+                        // Here, we are just throwing the exception received.
+                        eventStream.ExceptionReceived += (sender, args) =>
+                        {
+                            endWaitHandle.Set();
+                            throw args.EventStreamException;
+                        };
+
+                        eventStream.EventReceived += (sender, args) =>
+                            Console.WriteLine($"Received {args.EventStreamEvent.GetType().Name}!");
+                        eventStream.PayloadChunkReceived += (sender, args) =>
+                            Console.WriteLine($"Received {args.EventStreamEvent.GetType().Name}!");
+                        eventStream.InvokeCompleteReceived += (sender, args) => endWaitHandle.Set();
+
+                        eventStream.StartProcessing();
+                        endWaitHandle.WaitOne(TimeSpan.FromSeconds(10)); // if we get the data sooner it will exit and not wait.
+                        Assert.AreEqual(HttpStatusCode.OK, response.HttpStatusCode);
+                    }
+                }
+                catch (Exception ex)
+                {
+                    throw;
+                }
+
+            }
+            catch(Exception ex )
+            {
+                throw;
+            }
+        }
 
         [Ignore("Excluding tests that need IAM Write/Permissions management.")]
         [TestMethod]
@@ -161,7 +281,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             {
                 string iamRoleArn;
                 string functionArn;
-                CreateLambdaFunction(out functionName, out functionArn, out iamRoleName, out iamRoleArn);
+                CreateLambdaFunction(out functionName, out functionArn, out iamRoleName, out iamRoleArn, HELLO_SCRIPT, Runtime.Nodejs43);
 
                 // List all the functions and make sure the newly uploaded function is in the collection
                 UtilityMethods.WaitUntilSuccess(() =>
@@ -244,29 +364,21 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             }
         }
 
-        public static void CreateLambdaFunction(out string functionName, out string functionArn, out string iamRoleName, out string iamRoleArn)
+        public static void CreateLambdaFunction(out string functionName, out string functionArn, out string iamRoleName, out string iamRoleArn, string functionCode, Runtime runtime)
         {
             functionName = "HelloWorld-" + DateTime.Now.Ticks;
             iamRoleName = "Lambda-" + DateTime.Now.Ticks;
 
-            CreateLambdaFunction(functionName, iamRoleName, out iamRoleArn, out functionArn);
+            CreateLambdaFunction(functionName, iamRoleName, out iamRoleArn, out functionArn, functionCode, runtime);
         }
 
-        public static void CreateLambdaFunction(string functionName, string iamRoleName, out string iamRoleArn, out string functionArn)
+        private static void SetupPolicies(string iamRoleName)
         {
-            var iamCreateResponse = iamClient.CreateRole(new CreateRoleRequest
-            {
-                RoleName = iamRoleName,
-                AssumeRolePolicyDocument = LAMBDA_ASSUME_ROLE_POLICY
-            });
-            iamRoleArn = iamCreateResponse.Role.Arn;
-            
             var statement = new Amazon.Auth.AccessControlPolicy.Statement(
                 Amazon.Auth.AccessControlPolicy.Statement.StatementEffect.Allow);
             statement.Actions.Add(S3ActionIdentifiers.PutObject);
             statement.Actions.Add(S3ActionIdentifiers.GetObject);
             statement.Resources.Add(new Resource("*"));
-
 
             var policy = new Amazon.Auth.AccessControlPolicy.Policy();
             policy.Statements.Add(statement);
@@ -278,7 +390,19 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                 PolicyDocument = policy.ToJson()
             });
 
-            MemoryStream stream = CreateScriptStream();
+        }
+
+        public static void CreateLambdaFunction(string functionName, string iamRoleName, out string iamRoleArn, out string functionArn, string functionCode, Runtime runtime)
+        {
+            var iamCreateResponse = iamClient.CreateRole(new CreateRoleRequest
+            {
+                RoleName = iamRoleName,
+                AssumeRolePolicyDocument = LAMBDA_ASSUME_ROLE_POLICY
+            });
+            iamRoleArn = iamCreateResponse.Role.Arn;
+            SetupPolicies(iamRoleName);
+
+            MemoryStream stream = CreateScriptStream(functionCode);
             var uploadRequest = new CreateFunctionRequest
             {
                 FunctionName = functionName,
@@ -287,8 +411,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
                     ZipFile = stream
                 },
                 Handler = "helloworld.handler",
-                //Mode = Mode.Event,
-                Runtime = Runtime.Nodejs43,
+                Runtime = runtime,
                 Role = iamCreateResponse.Role.Arn
             };
 
@@ -301,14 +424,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             functionArn = uploadResponse.FunctionArn;
         }
 
-        private static MemoryStream CreateScriptStream()
+        private static MemoryStream CreateScriptStream(string functionCode)
         {
-            const string HELLO_SCRIPT =
-@"console.log('Loading event');
-exports.handler = function(event, context) {
-  console.log(""value = "" + event.Key);
-  context.done(null, ""Hello World:"" + event.Key + "", "" + context.System);  // SUCCESS with message
-}";
             MemoryStream stream = new MemoryStream();
             using (ZipArchive archive = new ZipArchive(stream, ZipArchiveMode.Create, true))
             {
@@ -316,7 +433,7 @@ exports.handler = function(event, context) {
                 using (var entryStream = entry.Open())
                 using (var writer = new StreamWriter(entryStream))
                 {
-                    writer.Write(HELLO_SCRIPT);
+                    writer.Write(functionCode);
                 }
             }
             stream.Position = 0;

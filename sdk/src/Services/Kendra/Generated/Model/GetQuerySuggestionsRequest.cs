@@ -40,9 +40,30 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class GetQuerySuggestionsRequest : AmazonKendraRequest
     {
+        private AttributeSuggestionsGetConfig _attributeSuggestionsConfig;
         private string _indexId;
         private int? _maxSuggestionsCount;
         private string _queryText;
+        private List<string> _suggestionTypes = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property AttributeSuggestionsConfig. 
+        /// <para>
+        /// Configuration information for the document fields/attributes that you want to base
+        /// query suggestions on.
+        /// </para>
+        /// </summary>
+        public AttributeSuggestionsGetConfig AttributeSuggestionsConfig
+        {
+            get { return this._attributeSuggestionsConfig; }
+            set { this._attributeSuggestionsConfig = value; }
+        }
+
+        // Check to see if AttributeSuggestionsConfig property is set
+        internal bool IsSetAttributeSuggestionsConfig()
+        {
+            return this._attributeSuggestionsConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IndexId. 
@@ -109,6 +130,35 @@ namespace Amazon.Kendra.Model
         internal bool IsSetQueryText()
         {
             return this._queryText != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SuggestionTypes. 
+        /// <para>
+        /// The suggestions type to base query suggestions on. The suggestion types are query
+        /// history or document fields/attributes. You can set one type or the other.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set query history as your suggestions type, Amazon Kendra suggests queries
+        /// relevant to your users based on popular queries in the query history.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set document fields/attributes as your suggestions type, Amazon Kendra suggests
+        /// queries relevant to your users based on the contents of document fields.
+        /// </para>
+        /// </summary>
+        public List<string> SuggestionTypes
+        {
+            get { return this._suggestionTypes; }
+            set { this._suggestionTypes = value; }
+        }
+
+        // Check to see if SuggestionTypes property is set
+        internal bool IsSetSuggestionTypes()
+        {
+            return this._suggestionTypes != null && this._suggestionTypes.Count > 0; 
         }
 
     }

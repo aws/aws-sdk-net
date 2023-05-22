@@ -74,6 +74,11 @@ namespace Amazon.CloudWatch.Model
     /// </para>
     ///  
     /// <para>
+    /// Each <code>PutMetricAlarm</code> action has a maximum uncompressed payload of 120
+    /// KB.
+    /// </para>
+    ///  
+    /// <para>
     ///  <b>Cross-account alarms</b> 
     /// </para>
     ///  
@@ -204,7 +209,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>SSN notification action:</b> 
+        ///  <b>SNS notification action:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -483,7 +488,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>SSN notification action:</b> 
+        ///  <b>SNS notification action:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -664,7 +669,7 @@ namespace Amazon.CloudWatch.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  <b>SSN notification action:</b> 
+        ///  <b>SNS notification action:</b> 
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -51,6 +51,12 @@ namespace Amazon.IoTDeviceAdvisor.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CertificateArn);
             }
 
+            if(requestObject.IsSetDeviceRoleArn())
+            {
+                context.Writer.WritePropertyName("deviceRoleArn");
+                context.Writer.Write(requestObject.DeviceRoleArn);
+            }
+
             if(requestObject.IsSetThingArn())
             {
                 context.Writer.WritePropertyName("thingArn");

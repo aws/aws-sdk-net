@@ -57,6 +57,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.Write(StringUtils.FromDateTimeToISO8601(requestObject.CreatedBefore));
             }
 
+            if(requestObject.IsSetGeneratedFrom())
+            {
+                context.Writer.WritePropertyName("generatedFrom");
+                context.Writer.Write(requestObject.GeneratedFrom);
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("name");
@@ -69,10 +75,22 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ReferenceArn);
             }
 
+            if(requestObject.IsSetSampleId())
+            {
+                context.Writer.WritePropertyName("sampleId");
+                context.Writer.Write(requestObject.SampleId);
+            }
+
             if(requestObject.IsSetStatus())
             {
                 context.Writer.WritePropertyName("status");
                 context.Writer.Write(requestObject.Status);
+            }
+
+            if(requestObject.IsSetSubjectId())
+            {
+                context.Writer.WritePropertyName("subjectId");
+                context.Writer.Write(requestObject.SubjectId);
             }
 
         }

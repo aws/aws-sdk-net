@@ -1221,6 +1221,10 @@ namespace Amazon.Connect
     {
 
         /// <summary>
+        /// Constant OnContactEvaluationSubmit for EventSourceName
+        /// </summary>
+        public static readonly EventSourceName OnContactEvaluationSubmit = new EventSourceName("OnContactEvaluationSubmit");
+        /// <summary>
         /// Constant OnPostCallAnalysisAvailable for EventSourceName
         /// </summary>
         public static readonly EventSourceName OnPostCallAnalysisAvailable = new EventSourceName("OnPostCallAnalysisAvailable");

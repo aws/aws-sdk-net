@@ -285,6 +285,32 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.CreatePromptRequest.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreatePromptRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreatePromptRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreatePromptRequest.S3Uri</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>s3://\S+/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.CreatePromptResponse.PromptId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.CreateQueueRequest.Description</property>
     <min>1</min>
     <max>250</max>
@@ -577,6 +603,16 @@
     <max>200</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.DeletePromptRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DeletePromptRequest.PromptId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.DeleteQuickConnectRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -732,6 +768,16 @@
     <property>Amazon.Connect.Model.DescribeInstanceStorageConfigRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribePromptRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.DescribePromptRequest.PromptId</property>
+    <min>1</min>
+    <max>256</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeQueueRequest.InstanceId</property>
@@ -938,6 +984,21 @@
     <property>Amazon.Connect.Model.GetMetricDataV2Response.NextToken</property>
     <min>1</min>
     <max>2500</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetPromptFileRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetPromptFileRequest.PromptId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.GetPromptFileResponse.PromptPresignedUrl</property>
+    <min>1</min>
+    <max>2000</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.GetTaskTemplateRequest.InstanceId</property>
@@ -2071,6 +2132,37 @@
     <max>500</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Connect.Model.UpdatePromptRequest.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdatePromptRequest.InstanceId</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdatePromptRequest.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdatePromptRequest.PromptId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdatePromptRequest.S3Uri</property>
+    <min>1</min>
+    <max>512</max>
+    <pattern>s3://\S+/.+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.UpdatePromptResponse.PromptId</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Connect.Model.UpdateQueueHoursOfOperationRequest.InstanceId</property>
     <min>1</min>
     <max>100</max>
@@ -2831,6 +2923,21 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ProblemDetail.Message</property>
+    <min>1</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Prompt.Description</property>
+    <min>1</min>
+    <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Prompt.Name</property>
+    <min>1</min>
+    <max>127</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Connect.Model.Prompt.PromptId</property>
     <min>1</min>
     <max>256</max>
   </property-value-rule>

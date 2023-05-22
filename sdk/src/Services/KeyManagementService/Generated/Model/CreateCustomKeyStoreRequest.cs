@@ -191,6 +191,12 @@ namespace Amazon.KeyManagementService.Model
         /// Amazon Web Services account and Region. This parameter is required for all custom
         /// key stores.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string CustomKeyStoreName

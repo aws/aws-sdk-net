@@ -32,8 +32,8 @@ namespace Amazon.Connect.Model
     /// Container for the parameters to the CreateEvaluationForm operation.
     /// Creates an evaluation form in the specified Amazon Connect instance. The form can
     /// be used to define questions related to agent performance, and create sections to organize
-    /// such questions. An evaluation form must have a unique title within an instance. Question
-    /// and section identifiers cannot be duplicated within the same evaluation form.
+    /// such questions. Question and section identifiers cannot be duplicated within the same
+    /// evaluation form.
     /// </summary>
     public partial class CreateEvaluationFormRequest : AmazonConnectRequest
     {
@@ -146,7 +146,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// A unique title of the evaluation form.
+        /// A title of the evaluation form.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]

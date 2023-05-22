@@ -17956,6 +17956,10 @@ namespace Amazon.MediaConvert
         /// Constant XDCAM for MxfProfile
         /// </summary>
         public static readonly MxfProfile XDCAM = new MxfProfile("XDCAM");
+        /// <summary>
+        /// Constant XDCAM_RDD9 for MxfProfile
+        /// </summary>
+        public static readonly MxfProfile XDCAM_RDD9 = new MxfProfile("XDCAM_RDD9");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

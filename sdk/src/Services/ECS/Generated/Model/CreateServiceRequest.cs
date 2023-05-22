@@ -283,7 +283,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property DesiredCount. 
         /// <para>
         /// The number of instantiations of the specified task definition to place and keep running
-        /// on your cluster.
+        /// in your service.
         /// </para>
         ///  
         /// <para>

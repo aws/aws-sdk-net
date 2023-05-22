@@ -145,7 +145,7 @@ namespace Amazon.SecurityToken.Model
         ///  </li> </ul> 
         /// <para>
         /// The combination of <code>NameQualifier</code> and <code>Subject</code> can be used
-        /// to uniquely identify a federated user.
+        /// to uniquely identify a user.
         /// </para>
         ///  
         /// <para>

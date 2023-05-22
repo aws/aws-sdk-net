@@ -63,6 +63,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.InvocationRole);
             }
 
+            if(requestObject.IsSetSftpAuthenticationMethods())
+            {
+                context.Writer.WritePropertyName("SftpAuthenticationMethods");
+                context.Writer.Write(requestObject.SftpAuthenticationMethods);
+            }
+
             if(requestObject.IsSetUrl())
             {
                 context.Writer.WritePropertyName("Url");

@@ -386,6 +386,10 @@ namespace Amazon.GuardDuty
         /// Constant SCAN_STATUS for CriterionKey
         /// </summary>
         public static readonly CriterionKey SCAN_STATUS = new CriterionKey("SCAN_STATUS");
+        /// <summary>
+        /// Constant SCAN_TYPE for CriterionKey
+        /// </summary>
+        public static readonly CriterionKey SCAN_TYPE = new CriterionKey("SCAN_TYPE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1768,6 +1772,10 @@ namespace Amazon.GuardDuty
         /// Constant RUNNING for ScanStatus
         /// </summary>
         public static readonly ScanStatus RUNNING = new ScanStatus("RUNNING");
+        /// <summary>
+        /// Constant SKIPPED for ScanStatus
+        /// </summary>
+        public static readonly ScanStatus SKIPPED = new ScanStatus("SKIPPED");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1798,6 +1806,56 @@ namespace Amazon.GuardDuty
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScanStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScanType.
+    /// </summary>
+    public class ScanType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GUARDDUTY_INITIATED for ScanType
+        /// </summary>
+        public static readonly ScanType GUARDDUTY_INITIATED = new ScanType("GUARDDUTY_INITIATED");
+        /// <summary>
+        /// Constant ON_DEMAND for ScanType
+        /// </summary>
+        public static readonly ScanType ON_DEMAND = new ScanType("ON_DEMAND");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScanType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScanType FindValue(string value)
+        {
+            return FindValue<ScanType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScanType(string value)
         {
             return FindValue(value);
         }

@@ -1464,19 +1464,21 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>io1</code> 
+        /// When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+        /// is required.
         /// </para>
         ///  
         /// <para>
-        /// When specified, a value for the <code>Iops</code> parameter is required.
+        /// Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters);
+        /// <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>io1</code> 
+        /// Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Multi-AZ DB clusters only
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public string StorageType

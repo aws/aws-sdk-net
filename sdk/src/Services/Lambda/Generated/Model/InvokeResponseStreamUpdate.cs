@@ -25,6 +25,8 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.EventStreams;
+using Amazon.Runtime.EventStreams.Internal;
 
 namespace Amazon.Lambda.Model
 {
@@ -32,7 +34,16 @@ namespace Amazon.Lambda.Model
     /// A chunk of the streamed response payload.
     /// </summary>
     public partial class InvokeResponseStreamUpdate
+        : IEventStreamEvent
     {
+    public InvokeResponseStreamUpdate()
+    {
+    }
+
+    public InvokeResponseStreamUpdate(IEventStreamMessage message)
+    {
+        Payload = new MemoryStream(message.Payload);
+    }
         private MemoryStream _payload;
 
         /// <summary>

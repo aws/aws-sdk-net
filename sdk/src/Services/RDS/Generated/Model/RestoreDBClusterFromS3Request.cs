@@ -90,6 +90,7 @@ namespace Amazon.RDS.Model
         private string _sourceEngine;
         private string _sourceEngineVersion;
         private bool? _storageEncrypted;
+        private string _storageType;
         private List<Tag> _tags = new List<Tag>();
         private List<string> _vpcSecurityGroupIds = new List<string>();
 
@@ -1003,6 +1004,36 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// Specifies the storage type to be associated with the DB cluster.
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid values: <code>aurora</code>, <code>aurora-iopt1</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Default: <code>aurora</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Valid for: Aurora DB clusters only
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

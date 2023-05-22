@@ -28,17 +28,19 @@ namespace Amazon.S3.Model
     /// Adds an object to a bucket. You must have WRITE permissions on a bucket to add an
     /// object to it.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
     /// Amazon S3 never adds partial objects; if you receive a success response, Amazon S3
-    /// added the entire object to the bucket.
+    /// added the entire object to the bucket. You cannot use <code>PutObject</code> to only
+    /// update a single piece of metadata for an existing object. You must put the entire
+    /// object with updated metadata if you want to update some values.
     /// </para>
-    ///  
+    ///  </note> 
     /// <para>
     /// Amazon S3 is a distributed system. If it receives multiple write requests for the
-    /// same object simultaneously, it overwrites all but the last object written. Amazon
-    /// S3 does not provide object locking; if you need this, make sure to build it into your
-    /// application layer or use versioning instead.
+    /// same object simultaneously, it overwrites all but the last object written. To prevent
+    /// objects from being deleted or overwritten, you can use <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Amazon
+    /// S3 Object Lock</a>.
     /// </para>
     ///  
     /// <para>
@@ -67,31 +69,18 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </li> </ul> </note> 
     /// <para>
-    ///  <b>Server-side Encryption</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// You can optionally request server-side encryption. With server-side encryption, Amazon
-    /// S3 encrypts your data as it writes it to disks in its data centers and decrypts the
-    /// data when you access it. You have the option to provide your own encryption key or
-    /// use Amazon Web Services managed encryption keys (SSE-S3 or SSE-KMS). For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
+    /// You have three mutually exclusive options to protect data using server-side encryption
+    /// in Amazon S3, depending on how you choose to manage the encryption keys. Specifically,
+    /// the encryption key options are Amazon S3 managed keys (SSE-S3), Amazon Web Services
+    /// KMS keys (SSE-KMS), and customer-provided keys (SSE-C). Amazon S3 encrypts data with
+    /// server-side encryption by using Amazon S3 managed keys (SSE-S3) by default. You can
+    /// optionally tell Amazon S3 to encrypt data at by rest using server-side encryption
+    /// with other key options. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
     /// Server-Side Encryption</a>.
     /// </para>
     ///  
     /// <para>
-    /// If you request server-side encryption using Amazon Web Services Key Management Service
-    /// (SSE-KMS), you can enable an S3 Bucket Key at the object-level. For more information,
-    /// see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon
-    /// S3 Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Access Control List (ACL)-Specific Request Headers</b> 
-    /// </para>
-    ///  
-    /// <para>
-    /// You can use headers to grant ACL- based permissions. By default, all objects are private.
+    /// When adding a new object, You can use headers to grant ACL- based permissions. By default, all objects are private.
     /// Only the owner has full access control. When adding a new object, you can grant permissions
     /// to individual Amazon Web Services accounts or to predefined groups defined by Amazon
     /// S3. These permissions are then added to the ACL on the object. For more information,
@@ -108,9 +97,6 @@ namespace Amazon.S3.Model
     /// canned ACL or an equivalent form of this ACL expressed in the XML format. PUT requests
     /// that contain other ACLs (for example, custom grants to certain Amazon Web Services
     /// accounts) fail and return a <code>400</code> error with the error code <code>AccessControlListNotSupported</code>.
-    /// </para>
-    ///  
-    /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
     /// Controlling ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
@@ -121,19 +107,11 @@ namespace Amazon.S3.Model
     /// </para>
     ///  </note> 
     /// <para>
-    ///  <b>Storage Class Options</b> 
-    /// </para>
-    ///  
-    /// <para>
     /// By default, Amazon S3 uses the STANDARD Storage Class to store newly created objects.
     /// The STANDARD storage class provides high durability and high availability. Depending
     /// on performance needs, you can specify a different Storage Class. Amazon S3 on Outposts
     /// only uses the OUTPOSTS Storage Class. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
     /// Classes</a> in the <i>Amazon S3 User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    ///  <b>Versioning</b> 
     /// </para>
     ///  
     /// <para>
@@ -149,7 +127,8 @@ namespace Amazon.S3.Model
     /// state of a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>.
     /// 
     /// </para>
-    ///  <p class="title"> <b>Related Resources</b> 
+    /// <para>
+    /// For more information about related Amazon S3 APIs, see the following:
     /// </para>
     ///  <ul> <li> 
     /// <para>

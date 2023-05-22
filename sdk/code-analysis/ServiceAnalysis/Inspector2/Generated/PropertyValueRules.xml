@@ -101,6 +101,10 @@
     <pattern>^\d{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.GetEc2DeepInspectionConfigurationResponse.ErrorMessage</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.GetFindingsReportStatusRequest.ReportId</property>
     <pattern>\b[a-f0-9]{8}\b-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-\b[a-f0-9]{12}\b</pattern>
   </property-value-rule>
@@ -248,6 +252,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.SearchVulnerabilitiesRequest.NextToken</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.SearchVulnerabilitiesResponse.NextToken</property>
+    <min>0</min>
+    <max>1000000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.TagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
@@ -256,6 +270,10 @@
     <property>Amazon.Inspector2.Model.UntagResourceRequest.ResourceArn</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.UpdateEc2DeepInspectionConfigurationResponse.ErrorMessage</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.UpdateFilterRequest.Description</property>
@@ -389,6 +407,10 @@
     <pattern>^\$LATEST|[0-9]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.CisaData.Action</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.CoverageMapFilter.Key</property>
     <min>1</min>
   </property-value-rule>
@@ -412,6 +434,14 @@
     <min>10</min>
     <max>341</max>
     <pattern>(^arn:.*:ecr:.*:\d{12}:repository\/(?:[a-z0-9]+(?:[._-][a-z0-9]+)*\/)*[a-z0-9]+(?:[._-][a-z0-9]+)*(\/sha256:[a-z0-9]{64})?$)|(^i-([a-z0-9]{8}|[a-z0-9]{17}|\\*)$|(^arn:(aws[a-zA-Z-]*)?:lambda:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9-_\.]+(:(\$LATEST|[a-zA-Z0-9-_]+))?$))</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.Cvss2.ScoringVector</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.Cvss3.ScoringVector</property>
+    <min>0</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.CvssScore.ScoringVector</property>
@@ -484,6 +514,16 @@
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Inspector2.Model.FailedMemberAccountEc2DeepInspectionStatusState.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.FailedMemberAccountEc2DeepInspectionStatusState.ErrorMessage</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Inspector2.Model.Filter.Arn</property>
     <min>1</min>
     <max>128</max>
@@ -523,7 +563,8 @@
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Finding.FindingArn</property>
     <min>1</min>
-    <max>1024</max>
+    <max>100</max>
+    <pattern>^arn:(aws[a-zA-Z-]*)?:inspector2:[a-z]{2}(-gov)?-[a-z]+-\d{1}:\d{12}:finding/[a-f0-9]{32}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.Finding.Title</property>
@@ -615,6 +656,22 @@
     <min>12</min>
     <max>12</max>
     <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.MemberAccountEc2DeepInspectionStatus.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.MemberAccountEc2DeepInspectionStatusState.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^\d{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.MemberAccountEc2DeepInspectionStatusState.ErrorMessage</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.PackageAggregationResponse.AccountId</property>
@@ -723,6 +780,19 @@
   <property-value-rule>
     <property>Amazon.Inspector2.Model.UsageTotal.AccountId</property>
     <pattern>[0-9]{12}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.Vulnerability.Id</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.Vulnerability.SourceUrl</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Inspector2.Model.Vulnerability.VendorSeverity</property>
+    <min>1</min>
+    <max>64</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Inspector2.Model.VulnerablePackage.Arch</property>

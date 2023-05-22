@@ -35,6 +35,8 @@ namespace Amazon.Glue.Model
     public partial class CodeGenConfigurationNode
     {
         private Aggregate _aggregate;
+        private AmazonRedshiftSource _amazonRedshiftSource;
+        private AmazonRedshiftTarget _amazonRedshiftTarget;
         private ApplyMapping _applyMapping;
         private AthenaConnectorSource _athenaConnectorSource;
         private CatalogDeltaSource _catalogDeltaSource;
@@ -115,6 +117,42 @@ namespace Amazon.Glue.Model
         internal bool IsSetAggregate()
         {
             return this._aggregate != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmazonRedshiftSource. 
+        /// <para>
+        /// Specifies a target that writes to a data source in Amazon Redshift.
+        /// </para>
+        /// </summary>
+        public AmazonRedshiftSource AmazonRedshiftSource
+        {
+            get { return this._amazonRedshiftSource; }
+            set { this._amazonRedshiftSource = value; }
+        }
+
+        // Check to see if AmazonRedshiftSource property is set
+        internal bool IsSetAmazonRedshiftSource()
+        {
+            return this._amazonRedshiftSource != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AmazonRedshiftTarget. 
+        /// <para>
+        /// Specifies a target that writes to a data target in Amazon Redshift.
+        /// </para>
+        /// </summary>
+        public AmazonRedshiftTarget AmazonRedshiftTarget
+        {
+            get { return this._amazonRedshiftTarget; }
+            set { this._amazonRedshiftTarget = value; }
+        }
+
+        // Check to see if AmazonRedshiftTarget property is set
+        internal bool IsSetAmazonRedshiftTarget()
+        {
+            return this._amazonRedshiftTarget != null;
         }
 
         /// <summary>

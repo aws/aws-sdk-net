@@ -165,6 +165,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>EndpointsGenerator.tt</DependentUpon>
     </Compile>
+    <Compile Update="Generators\SourceFiles\Exceptions\EventStreamExceptions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EventStreamExceptions.tt</DependentUpon>
+    </Compile>
     <Compile Update="Generators\SourceFiles\InternalSDKUtils.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -489,6 +494,14 @@
     <None Update="Generators\SourceFiles\DefaultConfigurationModeGenerator.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DefaultConfigurationModeGenerator.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\EventStreamInterfaces.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EventStreamInterfaces.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\Exceptions\EventStreamExceptions.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EventStreamExceptions.cs</LastGenOutput>
     </None>
     <None Update="Generators\SourceFiles\InternalSDKUtils.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>

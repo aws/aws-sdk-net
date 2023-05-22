@@ -32,7 +32,7 @@ namespace Amazon.SecretsManager
     public partial class AmazonSecretsManagerConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.31");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.44");
 
         private string _userAgent = UserAgentString;
 

@@ -2637,6 +2637,62 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  GetFindingHistory
+
+
+        /// <summary>
+        /// Returns history for a Security Hub finding in the last 90 days. The history includes
+        /// changes made to any fields in the Amazon Web Services Security Finding Format (ASFF).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingHistory service method.</param>
+        /// 
+        /// <returns>The response from the GetFindingHistory service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingHistory">REST API Reference for GetFindingHistory Operation</seealso>
+        GetFindingHistoryResponse GetFindingHistory(GetFindingHistoryRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetFindingHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetFindingHistory operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetFindingHistory
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingHistory">REST API Reference for GetFindingHistory Operation</seealso>
+        IAsyncResult BeginGetFindingHistory(GetFindingHistoryRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetFindingHistory operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetFindingHistory.</param>
+        /// 
+        /// <returns>Returns a  GetFindingHistoryResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingHistory">REST API Reference for GetFindingHistory Operation</seealso>
+        GetFindingHistoryResponse EndGetFindingHistory(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetFindings
 
 

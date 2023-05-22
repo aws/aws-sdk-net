@@ -68,7 +68,7 @@ namespace S3UnitTest
         [TestInitialize]
         public void Init()
         {
-            bucketName = S3TestUtils.CreateBucketWithWait(Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(Client, true);
         }
 
         [TestCleanup]

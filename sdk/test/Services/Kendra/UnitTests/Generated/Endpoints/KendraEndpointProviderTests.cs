@@ -36,8 +36,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "ap-southeast-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.ap-southeast-1.amazonaws.com", endpoint.URL);
         }
@@ -51,8 +51,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
@@ -66,8 +66,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "ca-central-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.ca-central-1.amazonaws.com", endpoint.URL);
         }
@@ -81,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -96,8 +96,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -111,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -126,8 +126,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -141,8 +141,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra-fips.us-east-2.amazonaws.com", endpoint.URL);
         }
@@ -156,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -171,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
@@ -186,8 +186,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -201,8 +201,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.us-east-1.api.aws", endpoint.URL);
         }
@@ -216,8 +216,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -231,8 +231,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -246,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
         }
@@ -261,8 +261,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
@@ -276,8 +276,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -291,8 +291,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-gov-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra-fips.us-gov-west-1.amazonaws.com", endpoint.URL);
         }
@@ -306,8 +306,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -321,8 +321,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -336,8 +336,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -351,8 +351,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -367,8 +367,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -381,8 +381,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -397,8 +397,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -411,8 +411,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.us-iso-east-1.c2s.ic.gov", endpoint.URL);
         }
@@ -427,8 +427,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -441,8 +441,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -457,8 +457,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
         }
 
@@ -471,8 +471,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://kendra.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -486,8 +486,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -501,8 +501,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new KendraEndpointParameters();
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -518,8 +518,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -534,8 +534,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new KendraEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonKendraEndpointProvider().ResolveEndpoint(parameters);
         }

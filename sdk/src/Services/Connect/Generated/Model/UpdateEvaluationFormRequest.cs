@@ -31,8 +31,8 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the UpdateEvaluationForm operation.
     /// Updates details about a specific evaluation form version in the specified Amazon Connect
-    /// instance. An evaluation form must have a unique title within an instance. Question
-    /// and section identifiers cannot be duplicated within the same evaluation form.
+    /// instance. Question and section identifiers cannot be duplicated within the same evaluation
+    /// form.
     /// 
     ///  
     /// <para>
@@ -210,7 +210,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// A unique title of the evaluation form.
+        /// A title of the evaluation form.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=128)]

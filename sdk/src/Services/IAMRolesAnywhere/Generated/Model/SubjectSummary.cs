@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
-    /// A summary representation of Subject resources returned in read operations; primarily
-    /// ListSubjects.
+    /// A summary representation of subjects.
     /// </summary>
     public partial class SubjectSummary
     {
@@ -45,8 +44,8 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The ISO-8601 time stamp of when the certificate was first used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-        /// operation.
+        /// The ISO-8601 time stamp of when the certificate was first used in a temporary credential
+        /// request.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -64,7 +63,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property Enabled. 
         /// <para>
-        /// The enabled status of the Subject. 
+        /// The enabled status of the subject. 
         /// </para>
         /// </summary>
         public bool Enabled
@@ -82,8 +81,8 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property LastSeenAt. 
         /// <para>
-        /// The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-        /// operation.
+        /// The ISO-8601 time stamp of when the certificate was last used in a temporary credential
+        /// request.
         /// </para>
         /// </summary>
         public DateTime LastSeenAt

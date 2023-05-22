@@ -31,11 +31,30 @@ namespace Amazon.WellArchitected.Model
     /// <summary>
     /// Container for the parameters to the UpdateGlobalSettings operation.
     /// Updates whether the Amazon Web Services account is opted into organization sharing
-    /// features.
+    /// and discovery integration features.
     /// </summary>
     public partial class UpdateGlobalSettingsRequest : AmazonWellArchitectedRequest
     {
+        private DiscoveryIntegrationStatus _discoveryIntegrationStatus;
         private OrganizationSharingStatus _organizationSharingStatus;
+
+        /// <summary>
+        /// Gets and sets the property DiscoveryIntegrationStatus. 
+        /// <para>
+        /// The status of discovery support settings.
+        /// </para>
+        /// </summary>
+        public DiscoveryIntegrationStatus DiscoveryIntegrationStatus
+        {
+            get { return this._discoveryIntegrationStatus; }
+            set { this._discoveryIntegrationStatus = value; }
+        }
+
+        // Check to see if DiscoveryIntegrationStatus property is set
+        internal bool IsSetDiscoveryIntegrationStatus()
+        {
+            return this._discoveryIntegrationStatus != null;
+        }
 
         /// <summary>
         /// Gets and sets the property OrganizationSharingStatus. 

@@ -63,6 +63,15 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.ExcludeFilters)
                     {
+                        if(publicRequestlistValue.IsSetMetricNames())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.MetricNames)
+                            {
+                                request.Parameters.Add("ExcludeFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricNames" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
                         if(publicRequestlistValue.IsSetNamespace())
                         {
                             request.Parameters.Add("ExcludeFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));
@@ -79,6 +88,15 @@ namespace Amazon.CloudWatch.Model.Internal.MarshallTransformations
                     int publicRequestlistValueIndex = 1;
                     foreach(var publicRequestlistValue in publicRequest.IncludeFilters)
                     {
+                        if(publicRequestlistValue.IsSetMetricNames())
+                        {
+                            int publicRequestlistValuelistValueIndex = 1;
+                            foreach(var publicRequestlistValuelistValue in publicRequestlistValue.MetricNames)
+                            {
+                                request.Parameters.Add("IncludeFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "MetricNames" + "." + "member" + "." + publicRequestlistValuelistValueIndex, StringUtils.FromString(publicRequestlistValuelistValue));
+                                publicRequestlistValuelistValueIndex++;
+                            }
+                        }
                         if(publicRequestlistValue.IsSetNamespace())
                         {
                             request.Parameters.Add("IncludeFilters" + "." + "member" + "." + publicRequestlistValueIndex + "." + "Namespace", StringUtils.FromString(publicRequestlistValue.Namespace));

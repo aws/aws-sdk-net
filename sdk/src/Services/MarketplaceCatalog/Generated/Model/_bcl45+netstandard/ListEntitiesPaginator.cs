@@ -41,6 +41,12 @@ namespace Amazon.MarketplaceCatalog.Model
         /// </summary>
         public IPaginatedEnumerable<ListEntitiesResponse> Responses => new PaginatedResponse<ListEntitiesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the EntitySummaryList
+        /// </summary>
+        public IPaginatedEnumerable<EntitySummary> EntitySummaryList => 
+            new PaginatedResultKeyResponse<ListEntitiesResponse, EntitySummary>(this, (i) => i.EntitySummaryList);
+
         internal ListEntitiesPaginator(IAmazonMarketplaceCatalog client, ListEntitiesRequest request)
         {
             this._client = client;

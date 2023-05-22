@@ -88,6 +88,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.AuthenticationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dns", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.Dns = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lambdaAuthorizerConfig", targetDepth))
                 {
                     var unmarshaller = LambdaAuthorizerConfigUnmarshaller.Instance;
@@ -128,6 +134,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = UserPoolConfigUnmarshaller.Instance;
                     unmarshalledObject.UserPoolConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("visibility", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Visibility = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("wafWebAclArn", targetDepth))

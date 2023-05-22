@@ -723,8 +723,8 @@ namespace Amazon.Connect
         /// <summary>
         /// Creates an evaluation form in the specified Amazon Connect instance. The form can
         /// be used to define questions related to agent performance, and create sections to organize
-        /// such questions. An evaluation form must have a unique title within an instance. Question
-        /// and section identifiers cannot be duplicated within the same evaluation form.
+        /// such questions. Question and section identifiers cannot be duplicated within the same
+        /// evaluation form.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationForm service method.</param>
         /// <param name="cancellationToken">
@@ -899,9 +899,6 @@ namespace Amazon.Connect
         /// <exception cref="Amazon.Connect.Model.InternalServiceException">
         /// Request processing failed because of an error or failure with the service.
         /// </exception>
-        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
-        /// One or more of the specified parameters are not valid.
-        /// </exception>
         /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
         /// The request is not valid.
         /// </exception>
@@ -916,6 +913,44 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">REST API Reference for CreateParticipant Operation</seealso>
         Task<CreateParticipantResponse> CreateParticipantAsync(CreateParticipantRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreatePrompt
+
+
+
+        /// <summary>
+        /// Creates a prompt. For more information about prompts, such as supported file types
+        /// and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
+        /// prompts</a> in the <i>Amazon Connect Administrator's Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreatePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePrompt">REST API Reference for CreatePrompt Operation</seealso>
+        Task<CreatePromptResponse> CreatePromptAsync(CreatePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1681,6 +1716,39 @@ namespace Amazon.Connect
 
         #endregion
                 
+        #region  DeletePrompt
+
+
+
+        /// <summary>
+        /// Deletes a prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
+        Task<DeletePromptResponse> DeletePromptAsync(DeletePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  DeleteQuickConnect
 
 
@@ -2430,6 +2498,39 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePhoneNumber">REST API Reference for DescribePhoneNumber Operation</seealso>
         Task<DescribePhoneNumberResponse> DescribePhoneNumberAsync(DescribePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribePrompt
+
+
+
+        /// <summary>
+        /// Describes the prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePrompt">REST API Reference for DescribePrompt Operation</seealso>
+        Task<DescribePromptResponse> DescribePromptAsync(DescribePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -3361,7 +3462,7 @@ namespace Amazon.Connect
         /// the previous version of this API. It has new metrics, offers filtering at a metric
         /// level, and offers the ability to filter and group data by channels, queues, routing
         /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-        /// the last 14 days, in 24-hour intervals.
+        /// the last 35 days, in 24-hour intervals.
         /// </para>
         ///  
         /// <para>
@@ -3397,6 +3498,39 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2">REST API Reference for GetMetricDataV2 Operation</seealso>
         Task<GetMetricDataV2Response> GetMetricDataV2Async(GetMetricDataV2Request request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetPromptFile
+
+
+
+        /// <summary>
+        /// Gets the prompt file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPromptFile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetPromptFile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetPromptFile">REST API Reference for GetPromptFile Operation</seealso>
+        Task<GetPromptFileResponse> GetPromptFileAsync(GetPromptFileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -6257,8 +6391,8 @@ namespace Amazon.Connect
 
         /// <summary>
         /// Updates details about a specific evaluation form version in the specified Amazon Connect
-        /// instance. An evaluation form must have a unique title within an instance. Question
-        /// and section identifiers cannot be duplicated within the same evaluation form.
+        /// instance. Question and section identifiers cannot be duplicated within the same evaluation
+        /// form.
         /// 
         ///  
         /// <para>
@@ -6483,6 +6617,13 @@ namespace Amazon.Connect
         /// 
         ///  <important> 
         /// <para>
+        /// After using this API, you must verify that the phone number is attached to the correct
+        /// flow in the target instance or traffic distribution group. You need to do this because
+        /// the API switches only the phone number to a new instance or traffic distribution group.
+        /// It doesn't migrate the flow configuration of the phone number, too.
+        /// </para>
+        ///  
+        /// <para>
         /// You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
         /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
         /// operation.
@@ -6518,6 +6659,39 @@ namespace Amazon.Connect
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePhoneNumber">REST API Reference for UpdatePhoneNumber Operation</seealso>
         Task<UpdatePhoneNumberResponse> UpdatePhoneNumberAsync(UpdatePhoneNumberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdatePrompt
+
+
+
+        /// <summary>
+        /// Updates a prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePrompt service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdatePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
+        Task<UpdatePromptResponse> UpdatePromptAsync(UpdatePromptRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

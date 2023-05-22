@@ -25,6 +25,7 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Omics.Model
 {
@@ -36,6 +37,7 @@ namespace Amazon.Omics.Model
     {
         private int? _maxCpus;
         private int? _maxDuration;
+        private int? _maxGpus;
         private int? _maxRuns;
         private string _name;
         private string _requestId;
@@ -77,6 +79,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetMaxDuration()
         {
             return this._maxDuration.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxGpus. 
+        /// <para>
+        ///  The maximum GPUs that can be used by a run group. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100000)]
+        public int MaxGpus
+        {
+            get { return this._maxGpus.GetValueOrDefault(); }
+            set { this._maxGpus = value; }
+        }
+
+        // Check to see if MaxGpus property is set
+        internal bool IsSetMaxGpus()
+        {
+            return this._maxGpus.HasValue; 
         }
 
         /// <summary>
@@ -154,5 +175,13 @@ namespace Amazon.Omics.Model
             return this._tags != null && this._tags.Count > 0; 
         }
 
+        /// <summary>
+        /// Get the signer to use for this request.
+        /// </summary>
+        /// <returns>A signer for this request.</returns>
+        override protected AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
     }
 }

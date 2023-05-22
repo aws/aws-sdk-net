@@ -204,7 +204,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The time interval over which to aggregate data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Min=2, Max=3)]
         public string Resolution
         {
             get { return this._resolution; }

@@ -2577,6 +2577,9 @@ namespace Amazon.GuardDuty
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
         /// 
         /// <returns>The response from the ListTagsForResource service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -2659,6 +2662,56 @@ namespace Amazon.GuardDuty
         /// <returns>Returns a  ListThreatIntelSetsResult from GuardDuty.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListThreatIntelSets">REST API Reference for ListThreatIntelSets Operation</seealso>
         ListThreatIntelSetsResponse EndListThreatIntelSets(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartMalwareScan
+
+
+        /// <summary>
+        /// Initiates the malware scan. Invoking this API will automatically create the <a href="https://docs.aws.amazon.com/guardduty/latest/ug/slr-permissions-malware-protection.html">Service-linked
+        /// role </a> in the corresponding account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartMalwareScan service method.</param>
+        /// 
+        /// <returns>The response from the StartMalwareScan service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
+        /// A bad request exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.ConflictException">
+        /// A request conflict exception object.
+        /// </exception>
+        /// <exception cref="Amazon.GuardDuty.Model.InternalServerErrorException">
+        /// An internal server error exception object.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMalwareScan">REST API Reference for StartMalwareScan Operation</seealso>
+        StartMalwareScanResponse StartMalwareScan(StartMalwareScanRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartMalwareScan operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartMalwareScan operation on AmazonGuardDutyClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartMalwareScan
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMalwareScan">REST API Reference for StartMalwareScan Operation</seealso>
+        IAsyncResult BeginStartMalwareScan(StartMalwareScanRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartMalwareScan operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartMalwareScan.</param>
+        /// 
+        /// <returns>Returns a  StartMalwareScanResult from GuardDuty.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/StartMalwareScan">REST API Reference for StartMalwareScan Operation</seealso>
+        StartMalwareScanResponse EndStartMalwareScan(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2773,6 +2826,9 @@ namespace Amazon.GuardDuty
         /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
         /// 
         /// <returns>The response from the TagResource service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>
@@ -2865,6 +2921,9 @@ namespace Amazon.GuardDuty
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
         /// 
         /// <returns>The response from the UntagResource service method, as returned by GuardDuty.</returns>
+        /// <exception cref="Amazon.GuardDuty.Model.AccessDeniedException">
+        /// An access denied exception object.
+        /// </exception>
         /// <exception cref="Amazon.GuardDuty.Model.BadRequestException">
         /// A bad request exception object.
         /// </exception>

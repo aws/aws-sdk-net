@@ -59,6 +59,7 @@ namespace Amazon.ElastiCache.Model
         private string _cacheNodeType;
         private string _cacheParameterGroupName;
         private List<string> _cacheSecurityGroupNames = new List<string>();
+        private ClusterMode _clusterMode;
         private string _engineVersion;
         private IpDiscovery _ipDiscovery;
         private List<LogDeliveryConfigurationRequest> _logDeliveryConfigurations = new List<LogDeliveryConfigurationRequest>();
@@ -292,6 +293,28 @@ namespace Amazon.ElastiCache.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClusterMode. 
+        /// <para>
+        /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
+        /// set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect
+        /// using both cluster mode enabled and cluster mode disabled. After you migrate all Redis
+        /// clients to use cluster mode enabled, you can then complete cluster mode configuration
+        /// and set the cluster mode to Enabled.
+        /// </para>
+        /// </summary>
+        public ClusterMode ClusterMode
+        {
+            get { return this._clusterMode; }
+            set { this._clusterMode = value; }
+        }
+
+        // Check to see if ClusterMode property is set
+        internal bool IsSetClusterMode()
+        {
+            return this._clusterMode != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The upgraded version of the cache engine to be run on the clusters in the replication
@@ -322,7 +345,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>.
         /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
-        /// engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>
         /// </summary>
@@ -704,8 +727,8 @@ namespace Amazon.ElastiCache.Model
         ///  
         /// <para>
         /// Setting <code>TransitEncryptionMode</code> to <code>required</code> is a two-step
-        /// process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>
-        /// first, after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.
+        /// process that requires you to first set the <code>TransitEncryptionMode</code> to <code>preferred</code>,
+        /// after that you can set <code>TransitEncryptionMode</code> to <code>required</code>.
         /// 
         /// </para>
         /// </summary>

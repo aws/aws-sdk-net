@@ -69,6 +69,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fallbackLocation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.FallbackLocation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

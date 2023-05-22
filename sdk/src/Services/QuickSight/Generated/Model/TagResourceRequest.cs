@@ -46,7 +46,7 @@ namespace Amazon.QuickSight.Model
     ///  
     /// <para>
     /// You can associate as many as 50 tags with a resource. Amazon QuickSight supports tagging
-    /// on data set, data source, dashboard, and template. 
+    /// on data set, data source, dashboard, template, and topic. 
     /// </para>
     ///  
     /// <para>

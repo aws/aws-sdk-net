@@ -29,20 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// A notebook execution. An execution is a specific instance that an EMR Notebook is
-    /// run using the <code>StartNotebookExecution</code> action.
+    /// A notebook execution. An execution is a specific instance that an Amazon EMR Notebook
+    /// is run using the <code>StartNotebookExecution</code> action.
     /// </summary>
     public partial class NotebookExecution
     {
         private string _arn;
         private string _editorId;
         private DateTime? _endTime;
+        private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private ExecutionEngineConfig _executionEngine;
         private string _lastStateChangeReason;
         private string _notebookExecutionId;
         private string _notebookExecutionName;
         private string _notebookInstanceSecurityGroupId;
         private string _notebookParams;
+        private NotebookS3LocationForOutput _notebookS3Location;
+        private OutputNotebookFormat _outputNotebookFormat;
+        private OutputNotebookS3LocationForOutput _outputNotebookS3Location;
         private string _outputNotebookURI;
         private DateTime? _startTime;
         private NotebookExecutionStatus _status;
@@ -70,7 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EditorId. 
         /// <para>
-        /// The unique identifier of the EMR Notebook that is used for the notebook execution.
+        /// The unique identifier of the Amazon EMR Notebook that is used for the notebook execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -105,10 +109,28 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EnvironmentVariables. 
+        /// <para>
+        /// The environment variables associated with the notebook execution.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> EnvironmentVariables
+        {
+            get { return this._environmentVariables; }
+            set { this._environmentVariables = value; }
+        }
+
+        // Check to see if EnvironmentVariables property is set
+        internal bool IsSetEnvironmentVariables()
+        {
+            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ExecutionEngine. 
         /// <para>
-        /// The execution engine, such as an EMR cluster, used to run the EMR notebook and perform
-        /// the notebook execution.
+        /// The execution engine, such as an Amazon EMR cluster, used to run the Amazon EMR notebook
+        /// and perform the notebook execution.
         /// </para>
         /// </summary>
         public ExecutionEngineConfig ExecutionEngine
@@ -183,9 +205,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property NotebookInstanceSecurityGroupId. 
         /// <para>
-        /// The unique identifier of the EC2 security group associated with the EMR Notebook instance.
-        /// For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying
-        /// EC2 Security Groups for EMR Notebooks</a> in the <i>EMR Management Guide</i>.
+        /// The unique identifier of the Amazon EC2 security group associated with the Amazon
+        /// EMR Notebook instance. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-managed-notebooks-security-groups.html">Specifying
+        /// Amazon EC2 Security Groups for Amazon EMR Notebooks</a> in the <i>Amazon EMR Management
+        /// Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -204,7 +227,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property NotebookParams. 
         /// <para>
-        /// Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+        /// Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]
@@ -218,6 +241,60 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetNotebookParams()
         {
             return this._notebookParams != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property NotebookS3Location. 
+        /// <para>
+        /// The Amazon S3 location that stores the notebook execution input.
+        /// </para>
+        /// </summary>
+        public NotebookS3LocationForOutput NotebookS3Location
+        {
+            get { return this._notebookS3Location; }
+            set { this._notebookS3Location = value; }
+        }
+
+        // Check to see if NotebookS3Location property is set
+        internal bool IsSetNotebookS3Location()
+        {
+            return this._notebookS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputNotebookFormat. 
+        /// <para>
+        /// The output format for the notebook execution.
+        /// </para>
+        /// </summary>
+        public OutputNotebookFormat OutputNotebookFormat
+        {
+            get { return this._outputNotebookFormat; }
+            set { this._outputNotebookFormat = value; }
+        }
+
+        // Check to see if OutputNotebookFormat property is set
+        internal bool IsSetOutputNotebookFormat()
+        {
+            return this._outputNotebookFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputNotebookS3Location. 
+        /// <para>
+        /// The Amazon S3 location for the notebook execution output.
+        /// </para>
+        /// </summary>
+        public OutputNotebookS3LocationForOutput OutputNotebookS3Location
+        {
+            get { return this._outputNotebookS3Location; }
+            set { this._outputNotebookS3Location = value; }
+        }
+
+        // Check to see if OutputNotebookS3Location property is set
+        internal bool IsSetOutputNotebookS3Location()
+        {
+            return this._outputNotebookS3Location != null;
         }
 
         /// <summary>

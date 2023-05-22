@@ -6206,6 +6206,12 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SageMaker.Model.AutoMLChannel.SampleWeightAttributeName</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SageMaker.Model.AutoMLChannel.TargetAttributeName</property>
     <min>1</min>
   </property-value-rule>
@@ -9356,6 +9362,21 @@
     <property>Amazon.SageMaker.Model.ProductionVariantServerlessConfig.MemorySizeInMB</property>
     <min>1024</min>
     <max>6144</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantServerlessConfig.ProvisionedConcurrency</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantServerlessUpdateConfig.MaxConcurrency</property>
+    <min>1</min>
+    <max>200</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SageMaker.Model.ProductionVariantServerlessUpdateConfig.ProvisionedConcurrency</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SageMaker.Model.ProductionVariantStatus.StatusMessage</property>

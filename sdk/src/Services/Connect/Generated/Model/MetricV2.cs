@@ -61,6 +61,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// The name of the metric.
         /// </para>
+        ///  <important> 
+        /// <para>
+        /// This parameter is required. The following Required = No is incorrect.
+        /// </para>
+        ///  </important>
         /// </summary>
         public string Name
         {

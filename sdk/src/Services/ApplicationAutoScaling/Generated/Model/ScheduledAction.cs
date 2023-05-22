@@ -173,6 +173,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Neptune cluster - The resource type is <code>cluster</code> and the unique identifier
         /// is the cluster name. Example: <code>cluster:mycluster</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SageMaker Serverless endpoint - The resource type is <code>variant</code> and the
+        /// unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -293,6 +298,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// <para>
         ///  <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
         /// Amazon Neptune DB cluster.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency
+        /// for a SageMaker Serverless endpoint.
         /// </para>
         ///  </li> </ul>
         /// </summary>

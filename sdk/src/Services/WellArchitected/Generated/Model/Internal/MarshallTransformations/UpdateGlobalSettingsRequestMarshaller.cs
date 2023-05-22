@@ -65,6 +65,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDiscoveryIntegrationStatus())
+                {
+                    context.Writer.WritePropertyName("DiscoveryIntegrationStatus");
+                    context.Writer.Write(publicRequest.DiscoveryIntegrationStatus);
+                }
+
                 if(publicRequest.IsSetOrganizationSharingStatus())
                 {
                     context.Writer.WritePropertyName("OrganizationSharingStatus");

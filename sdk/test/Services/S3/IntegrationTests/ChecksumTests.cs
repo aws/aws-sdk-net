@@ -24,6 +24,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 
 namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
 {
@@ -447,6 +448,44 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 // because it's actually the checksum-of-checksums
                 Assert.AreEqual(CoreChecksumAlgorithm.NONE, getResponse.ResponseMetadata.ChecksumAlgorithm);
                 Assert.AreEqual(ChecksumValidationStatus.NOT_VALIDATED, getResponse.ResponseMetadata.ChecksumValidationStatus);
+
+                // Get the object attributes. Parts collection in ObjectParts is only returned if ChecksumAlgorithm is set different from default value.
+                GetObjectAttributesRequest getObjectAttributesRequest = new GetObjectAttributesRequest()
+                {
+                    BucketName = _bucketName,
+                    Key = uploadRequest.Key,
+                    ObjectAttributes = new List<ObjectAttributes>()
+                    {
+                        new ObjectAttributes("Checksum"),
+                        new ObjectAttributes("ObjectParts"),
+                        new ObjectAttributes("ObjectSize")
+                    }
+                };
+                GetObjectAttributesResponse getObjectAttributesResponse = Client.GetObjectAttributes(getObjectAttributesRequest);
+                Assert.IsTrue(getObjectAttributesResponse.ObjectParts.Parts.Count > 0);
+                // Number of Parts returned is controlled by GetObjectAttributesRequest.MaxParts.
+                Assert.AreEqual(getObjectAttributesResponse.ObjectParts.Parts.Count, getObjectAttributesResponse.ObjectParts.TotalPartsCount);
+
+                var firstObjectPart = getObjectAttributesResponse.ObjectParts.Parts.First();
+                ChecksumAlgorithm expectedChecksumAlgorithm = ChecksumAlgorithm.FindValue(algorithm.ToString());
+                if (expectedChecksumAlgorithm == ChecksumAlgorithm.CRC32)
+                {
+                    Assert.IsNotNull(firstObjectPart.ChecksumCRC32);
+                }
+                if (expectedChecksumAlgorithm == ChecksumAlgorithm.CRC32C)
+                {
+                    Assert.IsNotNull(firstObjectPart.ChecksumCRC32C);
+                }
+                if (expectedChecksumAlgorithm == ChecksumAlgorithm.SHA1)
+                {
+                    Assert.IsNotNull(firstObjectPart.ChecksumSHA1);
+                }
+                if (expectedChecksumAlgorithm == ChecksumAlgorithm.SHA256)
+                {
+                    Assert.IsNotNull(firstObjectPart.ChecksumSHA256);
+                }
+                Assert.AreEqual(1, firstObjectPart.PartNumber);
+                Assert.IsTrue(firstObjectPart.Size > 0);
 
                 // Similarily we don't expect this to validate either,
                 // though it doesn't expose the reponse metadata

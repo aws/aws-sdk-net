@@ -37,11 +37,7 @@ namespace Amazon.S3.Model
     /// based only on an object key name prefix, which is supported for backward compatibility.
     /// For the related API description, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.
     /// </para>
-    ///  </note> 
-    /// <para>
-    ///  <b>Rules</b> 
-    /// </para>
-    ///  
+    ///  </note> <dl> <dt>Rules</dt> <dd>  
     /// <para>
     /// You specify the lifecycle configuration in your request body. The lifecycle configuration
     /// is specified as XML consisting of one or more rules. An Amazon S3 Lifecycle configuration
@@ -71,11 +67,7 @@ namespace Amazon.S3.Model
     /// Lifecycle Management</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
     /// Configuration Elements</a>.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Permissions</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>Permissions</dt> <dd> 
     /// <para>
     /// By default, all Amazon S3 resources are private, including buckets, objects, and related
     /// subresources (for example, lifecycle configuration and website configuration). Only
@@ -107,9 +99,9 @@ namespace Amazon.S3.Model
     /// For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
     /// Access Permissions to Your Amazon S3 Resources</a>.
     /// </para>
-    ///  
+    ///  </dd> </dl> 
     /// <para>
-    /// The following are related to <code>PutBucketLifecycleConfiguration</code>:
+    /// The following operations are related to <code>PutBucketLifecycleConfiguration</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

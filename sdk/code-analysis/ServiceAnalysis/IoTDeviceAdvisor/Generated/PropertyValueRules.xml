@@ -26,6 +26,11 @@
     <max>2048</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTDeviceAdvisor.Model.GetEndpointRequest.DeviceRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.GetEndpointRequest.ThingArn</property>
     <min>20</min>
     <max>2048</max>
@@ -218,6 +223,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTDeviceAdvisor.Model.DeviceUnderTest.CertificateArn</property>
+    <min>20</min>
+    <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTDeviceAdvisor.Model.DeviceUnderTest.DeviceRoleArn</property>
     <min>20</min>
     <max>2048</max>
   </property-value-rule>

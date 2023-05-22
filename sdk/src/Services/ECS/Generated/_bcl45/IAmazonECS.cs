@@ -184,6 +184,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
@@ -222,6 +225,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
@@ -3894,6 +3900,9 @@ namespace Amazon.ECS
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
         /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
+        /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.
         /// </exception>
@@ -3922,6 +3931,9 @@ namespace Amazon.ECS
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.InvalidParameterException">
         /// The specified parameter isn't valid. Review the available parameters for the API request.
+        /// </exception>
+        /// <exception cref="Amazon.ECS.Model.NamespaceNotFoundException">
+        /// The specified namespace wasn't found.
         /// </exception>
         /// <exception cref="Amazon.ECS.Model.ServerException">
         /// These errors are usually caused by a server issue.

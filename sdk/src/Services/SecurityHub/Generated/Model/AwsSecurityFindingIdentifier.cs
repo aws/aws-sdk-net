@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityHub.Model
 {
     /// <summary>
-    /// Identifies a finding to update using <code>BatchUpdateFindings</code>.
+    /// Identifies which finding to get the finding history for.
     /// </summary>
     public partial class AwsSecurityFindingIdentifier
     {

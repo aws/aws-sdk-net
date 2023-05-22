@@ -44,14 +44,15 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. However,
-        /// if you are using encryption with cross-account operations, you must use a fully qualified
-        /// KMS key ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using
-        /// encryption for cross-account operations</a>. 
+        /// You can specify the key ID or the Amazon Resource Name (ARN) of the KMS key. If you
+        /// use a key ID, you can run into a LogDestination undeliverable error when creating
+        /// a VPC flow log. 
         /// </para>
         ///  
         /// <para>
-        ///  <b>For example:</b> 
+        /// If you are using encryption with cross-account or Amazon Web Services service operations
+        /// you must use a fully qualified KMS key ARN. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html#bucket-encryption-update-bucket-policy">Using
+        /// encryption for cross-account operations</a>. 
         /// </para>
         ///  <ul> <li> 
         /// <para>

@@ -52,6 +52,14 @@ namespace Amazon.CodeCatalyst.Model
         }
 
         /// <summary>
+        /// Paginator for ListDevEnvironmentSessions operation
+        ///</summary>
+        public IListDevEnvironmentSessionsPaginator ListDevEnvironmentSessions(ListDevEnvironmentSessionsRequest request) 
+        {
+            return new ListDevEnvironmentSessionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListEventLogs operation
         ///</summary>
         public IListEventLogsPaginator ListEventLogs(ListEventLogsRequest request) 

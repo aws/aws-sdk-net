@@ -295,12 +295,50 @@
         <value>
             <example>
                 <para>
-                    The following example decrypts data that was encrypted with a KMS key.
+                    The following example decrypts data that was encrypted with a symmetric encryption KMS key. The KeyId is not required when decrypting with a symmetric encryption key, but it is a best practice.
                 </para>
                 <code
-                    title="To decrypt data"
+                    title="To decrypt data with a symmetric encryption KMS key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-decrypt-data-1478281622886" />
+                    region="to-decrypt-data-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.Decrypt(Amazon.KeyManagementService.Model.DecryptRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.Decrypt(Amazon.KeyManagementService.Model.DecryptRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DecryptRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DecryptResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example decrypts data that was encrypted with an asymmetric encryption KMS key. When the KMS encryption key is asymmetric, you must specify the KMS key ID and the encryption algorithm that was used to encrypt the data.
+                </para>
+                <code
+                    title="To decrypt data with an asymmetric encryption KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-decrypt-data-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.Decrypt(Amazon.KeyManagementService.Model.DecryptRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.Decrypt(Amazon.KeyManagementService.Model.DecryptRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.DecryptRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.DecryptResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following Decrypt example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave. Instead of returning the decrypted data in plaintext (Plaintext), the operation returns the decrypted data encrypted by the public key from the attestation document (CiphertextForRecipient).
+                </para>
+                <code
+                    title="To decrypt data for a Nitro enclave"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-decrypt-data-for-a-nitro-enclave-2" />
             </example>
         </value>
     </doc>
@@ -604,7 +642,7 @@
                 <code
                     title="To disconnect a custom key store from its CloudHSM cluster"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-disconnect-a-custom-key-store-from-its-cloudhsm-cluster-1628627955156" />
+                    region="to-disconnect-a-custom-key-store-from-its-cloudhsm-cluster-234abcdefABC" />
             </example>
         </value>
     </doc>
@@ -656,12 +694,31 @@
         <value>
             <example>
                 <para>
-                    The following example encrypts data with the specified KMS key.
+                    The following example encrypts data with the specified symmetric encryption KMS key.
                 </para>
                 <code
-                    title="To encrypt data"
+                    title="To encrypt data with a symmetric encryption KMS key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-encrypt-data-1478906026012" />
+                    region="to-encrypt-data-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.Encrypt(Amazon.KeyManagementService.Model.EncryptRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.Encrypt(Amazon.KeyManagementService.Model.EncryptRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.EncryptRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.EncryptResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example encrypts data with the specified RSA asymmetric KMS key. When you encrypt with an asymmetric key, you must specify the encryption algorithm.
+                </para>
+                <code
+                    title="To encrypt data with an asymmetric encryption KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-encrypt-data-2" />
             </example>
         </value>
     </doc>
@@ -680,7 +737,26 @@
                 <code
                     title="To generate a data key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-generate-a-data-key-1478912956062" />
+                    region="to-generate-a-data-key-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GenerateDataKey(Amazon.KeyManagementService.Model.GenerateDataKeyRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GenerateDataKey(Amazon.KeyManagementService.Model.GenerateDataKeyRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateDataKeyRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateDataKeyResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave. Instead of returning a copy of the data key encrypted by the KMS key and a plaintext copy of the data key, GenerateDataKey returns one copy of the data key encrypted by the KMS key (CiphertextBlob) and one copy of the data key encrypted by the public key from the attestation document (CiphertextForRecipient). The operation doesn't return a plaintext data key. 
+                </para>
+                <code
+                    title="To generate a data key pair for a Nitro enclave"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-generate-a-data-key-for-a-nitro-enclave-2" />
             </example>
         </value>
     </doc>
@@ -699,7 +775,26 @@
                 <code
                     title="To generate an RSA key pair for encryption and decryption"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-generate-an-rsa-key-pair-for-encryption-and-decryption-1628619376878" />
+                    region="to-generate-an-rsa-key-pair-for-encryption-and-decryption-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GenerateDataKeyPair(Amazon.KeyManagementService.Model.GenerateDataKeyPairRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GenerateDataKeyPair(Amazon.KeyManagementService.Model.GenerateDataKeyPairRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateDataKeyPairRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateDataKeyPairResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave. Instead of returning a plaintext copy of the private data key, GenerateDataKeyPair returns a copy of the private data key encrypted by the public key from the attestation document (CiphertextForRecipient). It returns the public data key (PublicKey) and a copy of private data key encrypted under the specified KMS key (PrivateKeyCiphertextBlob), as usual, but plaintext private data key field (PrivateKeyPlaintext) is null or empty. 
+                </para>
+                <code
+                    title="To generate a data key pair for a Nitro enclave"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-generate-a-data-key-pair-for-a-nitro-enclave-2" />
             </example>
         </value>
     </doc>
@@ -775,7 +870,26 @@
                 <code
                     title="To generate random data"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-generate-random-data-1479163645600" />
+                    region="to-generate-random-data-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GenerateRandom(Amazon.KeyManagementService.Model.GenerateRandomRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GenerateRandom(Amazon.KeyManagementService.Model.GenerateRandomRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateRandomRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GenerateRandomResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example includes the Recipient parameter with a signed attestation document from an AWS Nitro enclave. Instead of returning a plaintext (unencrypted) byte string, GenerateRandom returns the byte string encrypted by the public key from the enclave's attestation document.
+                </para>
+                <code
+                    title="To generate random data"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-generate-random-data-2" />
             </example>
         </value>
     </doc>

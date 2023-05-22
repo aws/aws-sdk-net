@@ -47,8 +47,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentName. 
         /// <para>
-        /// The name of the assignment, also called a rule. It must be unique within an Amazon
-        /// Web Services account.
+        /// The name of the assignment, also called a rule. The name must be unique within the
+        /// Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

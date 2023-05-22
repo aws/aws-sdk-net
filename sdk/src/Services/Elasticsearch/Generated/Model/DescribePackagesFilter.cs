@@ -57,9 +57,10 @@ namespace Amazon.Elasticsearch.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// A list of values for the specified field.
+        /// A non-empty list of values for the specified field.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1)]
         public List<string> Value
         {
             get { return this._value; }

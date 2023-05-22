@@ -62,9 +62,9 @@ namespace Amazon.S3.Model
         /// Gets and sets the property Code. 
         /// <para>
         /// The error code is a string that uniquely identifies an error condition. It is meant
-        /// to be read and understood by programs that detect and handle errors by type. 
-        /// </para>
-        ///  <p class="title"> <b>Amazon S3 error codes</b> 
+        /// to be read and understood by programs that detect and handle errors by type. The following
+        /// is a list of Amazon S3 error codes. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+        /// responses</a>.
         /// </para>
         ///  <ul> <li> <ul> <li> 
         /// <para>

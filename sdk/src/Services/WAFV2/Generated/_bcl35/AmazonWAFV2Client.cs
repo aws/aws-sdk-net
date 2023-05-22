@@ -60,12 +60,13 @@ namespace Amazon.WAFV2
     /// <para>
     /// WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
     /// that are forwarded to an Amazon CloudFront distribution, Amazon API Gateway REST API,
-    /// Application Load Balancer, AppSync GraphQL API, Amazon Cognito user pool, or App Runner
-    /// service. WAF also lets you control access to your content, to protect the Amazon Web
-    /// Services resource that WAF is monitoring. Based on conditions that you specify, such
-    /// as the IP addresses that requests originate from or the values of query strings, the
-    /// protected resource responds to requests with either the requested content, an HTTP
-    /// 403 status code (Forbidden), or with a custom response. 
+    /// Application Load Balancer, AppSync GraphQL API, Amazon Cognito user pool, App Runner
+    /// service, or Amazon Web Services Verified Access instance. WAF also lets you control
+    /// access to your content, to protect the Amazon Web Services resource that WAF is monitoring.
+    /// Based on conditions that you specify, such as the IP addresses that requests originate
+    /// from or the values of query strings, the protected resource responds to requests with
+    /// either the requested content, an HTTP 403 status code (Forbidden), or with a custom
+    /// response. 
     /// </para>
     ///  
     /// <para>
@@ -83,8 +84,8 @@ namespace Amazon.WAFV2
     /// <para>
     /// For regional applications, you can use any of the endpoints in the list. A regional
     /// application can be an Application Load Balancer (ALB), an Amazon API Gateway REST
-    /// API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service.
-    /// 
+    /// API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or
+    /// an Amazon Web Services Verified Access instance. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -337,8 +338,8 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Associates a web ACL with a regional application resource, to protect the resource.
         /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
-        /// REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service.
-        /// 
+        /// REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service,
+        /// or an Amazon Web Services Verified Access instance. 
         /// 
         ///  
         /// <para>
@@ -591,17 +592,20 @@ namespace Amazon.WAFV2
         #region  CreateAPIKey
 
         /// <summary>
-        /// Creates an API key for use in the integration of the CAPTCHA API in your JavaScript
-        /// client applications. The integration lets you customize the placement and characteristics
-        /// of the CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
-        /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// Creates an API key that contains a set of token domains.
         /// 
         ///  
         /// <para>
-        /// The CAPTCHA API requires a key that authorizes CAPTCHA use from the client application
-        /// domain. You can use a single key for up to 5 domains. After you generate a key, you
-        /// can copy it for use in your JavaScript integration. 
+        /// API keys are required for the integration of the CAPTCHA API in your JavaScript client
+        /// applications. The API lets you customize the placement and characteristics of the
+        /// CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
+        /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use a single key for up to 5 domains. After you generate a key, you can copy
+        /// it for use in your JavaScript integration. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAPIKey service method.</param>
@@ -1060,7 +1064,8 @@ namespace Amazon.WAFV2
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
         /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-        /// Cognito user pool, or an App Runner service. 
+        /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+        /// instance. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -2086,7 +2091,8 @@ namespace Amazon.WAFV2
         /// Disassociates the specified regional application resource from any existing web ACL
         /// association. A resource can have at most one web ACL association. A regional application
         /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
-        /// GraphQL API, an Amazon Cognito user pool, or an App Runner service. 
+        /// GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web
+        /// Services Verified Access instance. 
         /// 
         ///  
         /// <para>
@@ -2287,7 +2293,16 @@ namespace Amazon.WAFV2
 
         /// <summary>
         /// Returns your API key in decrypted form. Use this to check the token domains that you
-        /// have defined for the key.
+        /// have defined for the key. 
+        /// 
+        ///  
+        /// <para>
+        /// API keys are required for the integration of the CAPTCHA API in your JavaScript client
+        /// applications. The API lets you customize the placement and characteristics of the
+        /// CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
+        /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDecryptedAPIKey service method.</param>
         /// 
@@ -2861,11 +2876,16 @@ namespace Amazon.WAFV2
         #region  GetRateBasedStatementManagedKeys
 
         /// <summary>
-        /// Retrieves the keys that are currently blocked by a rate-based rule instance. The maximum
-        /// number of managed keys that can be blocked for a single rate-based rule instance is
-        /// 10,000. If more than 10,000 addresses exceed the rate limit, those with the highest
-        /// rates are blocked.
+        /// Retrieves the IP addresses that are currently blocked by a rate-based rule instance.
+        /// This is only available for rate-based rules that aggregate solely on the IP address
+        /// or on the forwarded IP address. 
         /// 
+        ///  
+        /// <para>
+        /// The maximum number of addresses that can be blocked for a single rate-based rule instance
+        /// is 10,000. If more than 10,000 addresses exceed the rate limit, those with the highest
+        /// rates are blocked.
+        /// </para>
         ///  
         /// <para>
         /// For a rate-based rule that you've defined inside a rule group, provide the name of
@@ -2923,6 +2943,11 @@ namespace Amazon.WAFV2
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
         /// to propagate.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFUnsupportedAggregateKeyTypeException">
+        /// The rule that you've named doesn't aggregate solely on the IP address or solely on
+        /// the forwarded IP address. This call is only available for rate-based rules with an
+        /// <code>AggregateKeyType</code> setting of <code>IP</code> or <code>FORWARDED_IP</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">REST API Reference for GetRateBasedStatementManagedKeys Operation</seealso>
         public virtual GetRateBasedStatementManagedKeysResponse GetRateBasedStatementManagedKeys(GetRateBasedStatementManagedKeysRequest request)
@@ -3449,7 +3474,16 @@ namespace Amazon.WAFV2
         #region  ListAPIKeys
 
         /// <summary>
-        /// Retrieves a list of the API keys that you've defined for the specified scope.
+        /// Retrieves a list of the API keys that you've defined for the specified scope. 
+        /// 
+        ///  
+        /// <para>
+        /// API keys are required for the integration of the CAPTCHA API in your JavaScript client
+        /// applications. The API lets you customize the placement and characteristics of the
+        /// CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
+        /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAPIKeys service method.</param>
         /// 
@@ -5853,7 +5887,8 @@ namespace Amazon.WAFV2
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
         /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
-        /// Cognito user pool, or an App Runner service. 
+        /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+        /// instance. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebACL service method.</param>

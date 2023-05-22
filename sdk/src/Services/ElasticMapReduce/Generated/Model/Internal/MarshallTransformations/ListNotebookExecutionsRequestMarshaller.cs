@@ -73,6 +73,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EditorId);
                 }
 
+                if(publicRequest.IsSetExecutionEngineId())
+                {
+                    context.Writer.WritePropertyName("ExecutionEngineId");
+                    context.Writer.Write(publicRequest.ExecutionEngineId);
+                }
+
                 if(publicRequest.IsSetFrom())
                 {
                     context.Writer.WritePropertyName("From");

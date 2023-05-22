@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimSpaceWeaver.Model
 {
     /// <summary>
-    /// Options that apply when the app starts. These optiAons override default behavior.
+    /// Options that apply when the app starts. These options override default behavior.
     /// </summary>
     public partial class LaunchOverrides
     {

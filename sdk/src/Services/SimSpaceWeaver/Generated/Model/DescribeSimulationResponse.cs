@@ -44,6 +44,8 @@ namespace Amazon.SimSpaceWeaver.Model
         private string _roleArn;
         private string _schemaError;
         private S3Location _schemaS3Location;
+        private S3Location _snapshotS3Location;
+        private string _startError;
         private SimulationStatus _status;
         private SimulationTargetStatus _targetStatus;
 
@@ -164,8 +166,11 @@ namespace Amazon.SimSpaceWeaver.Model
         /// <summary>
         /// Gets and sets the property MaximumDuration. 
         /// <para>
-        /// The maximum running time of the simulation, specified as a number of months (m or
+        /// The maximum running time of the simulation, specified as a number of minutes (m or
         /// M), hours (h or H), or days (d or D). The simulation stops when it reaches this limit.
+        /// The maximum value is <code>14D</code>, or its equivalent in the other units. The default
+        /// value is <code>14D</code>. A value equivalent to <code>0</code> makes the simulation
+        /// immediately transition to <code>Stopping</code> as soon as it reaches <code>Started</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=6)]
@@ -231,6 +236,7 @@ namespace Amazon.SimSpaceWeaver.Model
         /// simulation schema.
         /// </para>
         /// </summary>
+        [Obsolete("SchemaError is no longer used, check StartError instead.")]
         public string SchemaError
         {
             get { return this._schemaError; }
@@ -261,6 +267,40 @@ namespace Amazon.SimSpaceWeaver.Model
         internal bool IsSetSchemaS3Location()
         {
             return this._schemaS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SnapshotS3Location.
+        /// </summary>
+        public S3Location SnapshotS3Location
+        {
+            get { return this._snapshotS3Location; }
+            set { this._snapshotS3Location = value; }
+        }
+
+        // Check to see if SnapshotS3Location property is set
+        internal bool IsSetSnapshotS3Location()
+        {
+            return this._snapshotS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartError. 
+        /// <para>
+        /// An error message that SimSpace Weaver returns only if a problem occurs when the simulation
+        /// is in the <code>STARTING</code> state.
+        /// </para>
+        /// </summary>
+        public string StartError
+        {
+            get { return this._startError; }
+            set { this._startError = value; }
+        }
+
+        // Check to see if StartError property is set
+        internal bool IsSetStartError()
+        {
+            return this._startError != null;
         }
 
         /// <summary>

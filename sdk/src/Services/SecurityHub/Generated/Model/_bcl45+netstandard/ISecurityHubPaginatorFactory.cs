@@ -51,6 +51,11 @@ namespace Amazon.SecurityHub.Model
         IGetEnabledStandardsPaginator GetEnabledStandards(GetEnabledStandardsRequest request);
 
         /// <summary>
+        /// Paginator for GetFindingHistory operation
+        ///</summary>
+        IGetFindingHistoryPaginator GetFindingHistory(GetFindingHistoryRequest request);
+
+        /// <summary>
         /// Paginator for GetFindings operation
         ///</summary>
         IGetFindingsPaginator GetFindings(GetFindingsRequest request);

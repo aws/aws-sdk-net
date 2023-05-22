@@ -82,6 +82,12 @@ namespace Amazon.Transfer.Model.Internal.MarshallTransformations
                     unmarshalledObject.InvocationRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SftpAuthenticationMethods", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SftpAuthenticationMethods = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Url", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

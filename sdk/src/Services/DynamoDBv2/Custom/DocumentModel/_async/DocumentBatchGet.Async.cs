@@ -33,8 +33,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.DocumentBatchGet.Execute"/>
+        /// Executes a server call to batch-get the documents requested.
+        /// Populates Results with the retrieved items.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
@@ -54,8 +54,8 @@ namespace Amazon.DynamoDBv2.DocumentModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DocumentModel.MultiTableDocumentBatchGet.Execute"/>
+        /// Executes a multi-table batch request against all configured batches.
+        /// Results are stored in the respective DocumentBatchGet objects.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>

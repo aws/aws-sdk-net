@@ -48,7 +48,7 @@ namespace Amazon.Scheduler.Model.Internal.MarshallTransformations
             if(requestObject.IsSetMaximumWindowInMinutes())
             {
                 context.Writer.WritePropertyName("MaximumWindowInMinutes");
-                context.Writer.Write(requestObject.MaximumWindowInMinutes);
+                context.Writer.Write(requestObject.MaximumWindowInMinutes.Value);
             }
 
             if(requestObject.IsSetMode())

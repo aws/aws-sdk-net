@@ -94,6 +94,11 @@ namespace Amazon.CodeCatalyst
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>ListDevEnvironmentSessions</a>, which retrieves a list of active Dev Environment
+    /// sessions in a project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>ListProjects</a>, which retrieves a list of projects in a space.
     /// </para>
     ///  </li> <li> 
@@ -816,6 +821,50 @@ namespace Amazon.CodeCatalyst
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListDevEnvironments">REST API Reference for ListDevEnvironments Operation</seealso>
         Task<ListDevEnvironmentsResponse> ListDevEnvironmentsAsync(ListDevEnvironmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDevEnvironmentSessions
+
+
+
+        /// <summary>
+        /// Retrieves a list of active sessions for a Dev Environment in a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDevEnvironmentSessions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDevEnvironmentSessions service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListDevEnvironmentSessions">REST API Reference for ListDevEnvironmentSessions Operation</seealso>
+        Task<ListDevEnvironmentSessionsResponse> ListDevEnvironmentSessionsAsync(ListDevEnvironmentSessionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -70,6 +70,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.ClusterMarkerConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HeatmapConfiguration", targetDepth))
+                {
+                    var unmarshaller = GeospatialHeatmapConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.HeatmapConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SelectedPointStyle", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

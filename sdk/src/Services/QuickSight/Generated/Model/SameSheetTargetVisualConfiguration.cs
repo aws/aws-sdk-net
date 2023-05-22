@@ -76,7 +76,7 @@ namespace Amazon.QuickSight.Model
         /// A list of the target visual IDs that are located in the same sheet of the analysis.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=30)]
+        [AWSProperty(Min=1, Max=50)]
         public List<string> TargetVisuals
         {
             get { return this._targetVisuals; }

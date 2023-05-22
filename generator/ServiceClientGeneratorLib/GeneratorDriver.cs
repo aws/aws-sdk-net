@@ -14,7 +14,7 @@ using Json.LitJson;
 using System.Collections.Concurrent;
 using ServiceClientGenerator.Generators.Endpoints;
 using ServiceClientGenerator.Endpoints.Partitions;
-
+using EventStreamExceptionGenerator = ServiceClientGenerator.Generators.SourceFiles.Exceptions.EventStreamExceptions;
 namespace ServiceClientGenerator
 {
     public class GeneratorDriver
@@ -629,6 +629,23 @@ namespace ServiceClientGenerator
             {
                 var lookup = new NestedStructureLookup();
                 lookup.SearchForNestedStructures(operation.ResponseStructure);
+                //Do not generate an unmarshaller for the response's payload if it is of type EventStream
+                //This is because we attach the payload to the generic response and unmarshall it from there.
+                if (operation.IsEventStreamOutput)
+                {
+
+                    if (operation.ResponsePayloadMember.ModelShape.IsEventStream)
+                    {
+                        //If the file was already generated incorrectly delete it
+                        var unmarshallerName = operation.ResponsePayloadMember.ModelShape.Name + "Unmarshaller.cs";
+                        var unmarshallerPath = Path.Combine(GeneratedFilesRoot, "Model","Internal", "MarshallTransformations", unmarshallerName);
+                        if (File.Exists(unmarshallerPath))
+                        {
+                            File.Delete(unmarshallerPath);
+                        }
+                        return;
+                    }
+                }
 
                 foreach (var nestedStructure in lookup.NestedStructures)
                 {
@@ -740,6 +757,15 @@ namespace ServiceClientGenerator
 
         private void GenerateExceptions(Operation operation)
         {
+            //Generate a special EventStreamException class that extends EventStreamException
+            //We need a parameterless constructor to use it in EnumerableEventStream. Only once per service
+            if (operation.IsEventStreamOutput && !Configuration.GeneratedEventStreamException)
+            {
+                var eventStreamExceptionGenerator = new EventStreamExceptionGenerator();
+                this.ExecuteGenerator(eventStreamExceptionGenerator, this.Configuration.ClassName + "EventStreamException.cs","Model");
+                Configuration.GeneratedEventStreamException = true;
+            }
+
             foreach (var exceptionShape in operation.Exceptions)
             {
                 // Skip exceptions that have already been generated for the parent model

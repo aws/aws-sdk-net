@@ -3734,6 +3734,10 @@ namespace Amazon.Backup
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
         /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
+        /// </exception>
         /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
         /// Indicates that a required parameter is missing.
         /// </exception>
@@ -3760,6 +3764,10 @@ namespace Amazon.Backup
         /// <exception cref="Amazon.Backup.Model.InvalidParameterValueException">
         /// Indicates that something is wrong with a parameter's value. For example, the value
         /// is out of range.
+        /// </exception>
+        /// <exception cref="Amazon.Backup.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a parameter
+        /// is of the wrong type.
         /// </exception>
         /// <exception cref="Amazon.Backup.Model.MissingParameterValueException">
         /// Indicates that a required parameter is missing.

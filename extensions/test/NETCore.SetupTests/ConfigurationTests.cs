@@ -104,6 +104,7 @@ namespace NETCore.SetupTests
             Assert.Equal(TimeSpan.FromMilliseconds(1000), options.DefaultClientConfig.Timeout);
             Assert.Equal("us-east-1", options.DefaultClientConfig.AuthenticationRegion);
             Assert.Equal(DefaultConfigurationMode.Standard, options.DefaultConfigurationMode);
+            Assert.Equal(RequestRetryMode.Standard, options.DefaultClientConfig.RetryMode);
 
             IAmazonS3 client = options.CreateServiceClient<IAmazonS3>();
             Assert.NotNull(client);
@@ -120,6 +121,11 @@ namespace NETCore.SetupTests
             client = options.CreateServiceClient<IAmazonS3>();
             Assert.Equal(DefaultConfigurationMode.Standard, client.Config.DefaultConfigurationMode);
             Assert.Equal(RequestRetryMode.Adaptive, client.Config.RetryMode);
+
+            // verify S3 config specific settings are not configured
+            var clientConfig = client.Config as AmazonS3Config;
+            Assert.NotNull(clientConfig);
+            Assert.False(clientConfig.ForcePathStyle);
         }
 
         [Fact]
@@ -202,6 +208,44 @@ namespace NETCore.SetupTests
                 Environment.SetEnvironmentVariable("AWS_REGION", existingValue);
                 FallbackRegionFactory.Reset();
             }
+        }
+
+        [Fact]
+        public void ClientConfigTypeOverloadTest()
+        {
+            var config = new ConfigurationBuilder()
+                .AddJsonFile("./TestFiles/GetClientConfigSettingsTest.json")
+                .Build();
+
+            var options = config.GetAWSOptions<AmazonS3Config>();
+
+            Assert.Equal(RegionEndpoint.USWest2, options.Region);
+            Assert.True(options.DefaultClientConfig.UseHttp);
+            Assert.Equal(6, options.DefaultClientConfig.MaxErrorRetry);
+            Assert.Equal(TimeSpan.FromMilliseconds(1000), options.DefaultClientConfig.Timeout);
+            Assert.Equal("us-east-1", options.DefaultClientConfig.AuthenticationRegion);
+            Assert.Equal(DefaultConfigurationMode.Standard, options.DefaultConfigurationMode);
+
+            var client = options.CreateServiceClient<IAmazonS3>();
+            Assert.NotNull(client);
+            Assert.Equal(RegionEndpoint.USWest2, client.Config.RegionEndpoint);
+            Assert.True(client.Config.UseHttp);
+            Assert.Equal(6, client.Config.MaxErrorRetry);
+            Assert.Equal(TimeSpan.FromMilliseconds(1000), client.Config.Timeout);
+            Assert.Equal("us-east-1", client.Config.AuthenticationRegion);
+            Assert.Equal(DefaultConfigurationMode.Standard, client.Config.DefaultConfigurationMode);
+            Assert.Equal(RequestRetryMode.Standard, client.Config.RetryMode);
+
+            // Verify that setting the standard mode doesn't override explicit settings of retry mode to a non-legacy mode.
+            options.DefaultClientConfig.RetryMode = RequestRetryMode.Adaptive;
+            client = options.CreateServiceClient<IAmazonS3>();
+            Assert.Equal(DefaultConfigurationMode.Standard, client.Config.DefaultConfigurationMode);
+            Assert.Equal(RequestRetryMode.Adaptive, client.Config.RetryMode);
+
+            // verify S3 config specific settings are configured
+            var clientConfig = client.Config as AmazonS3Config;
+            Assert.NotNull(clientConfig);
+            Assert.True(clientConfig.ForcePathStyle);
         }
     }
 }

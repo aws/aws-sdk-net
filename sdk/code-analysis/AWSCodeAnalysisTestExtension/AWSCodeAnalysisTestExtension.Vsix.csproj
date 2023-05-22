@@ -912,6 +912,10 @@
       <Project>{A764C0FF-BF39-4035-8752-A86EEF61523E}</Project>
       <Name>AWSSDK.MediaPackage.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/MediaPackageV2/AWSSDK.MediaPackageV2.CodeAnalysis.csproj">
+      <Project>{7E88B285-6D88-4BE8-AF57-CC64AF03C04D}</Project>
+      <Name>AWSSDK.MediaPackageV2.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/MediaPackageVod/AWSSDK.MediaPackageVod.CodeAnalysis.csproj">
       <Project>{7145EAD5-BD68-4C29-868F-E561755068E5}</Project>
       <Name>AWSSDK.MediaPackageVod.CodeAnalysis</Name>
@@ -1019,6 +1023,10 @@
     <ProjectReference Include="../ServiceAnalysis/Organizations/AWSSDK.Organizations.CodeAnalysis.csproj">
       <Project>{10373FAB-3A59-4888-A86E-8134207FE450}</Project>
       <Name>AWSSDK.Organizations.CodeAnalysis</Name>
+    </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/OSIS/AWSSDK.OSIS.CodeAnalysis.csproj">
+      <Project>{3A87651B-3584-4B4E-99B3-7188AA432427}</Project>
+      <Name>AWSSDK.OSIS.CodeAnalysis</Name>
     </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/Outposts/AWSSDK.Outposts.CodeAnalysis.csproj">
       <Project>{1F501A21-5AB1-453C-BC7D-67B56F5EB3F1}</Project>

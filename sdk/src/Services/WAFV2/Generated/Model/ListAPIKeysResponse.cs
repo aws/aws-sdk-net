@@ -62,12 +62,6 @@ namespace Amazon.WAFV2.Model
         /// The CAPTCHA application integration URL, for use in your JavaScript implementation.
         /// 
         /// </para>
-        ///  
-        /// <para>
-        /// For information about how to use this in your CAPTCHA JavaScript integration, see
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-        /// client application integration</a> in the <i>WAF Developer Guide</i>.
-        /// </para>
         /// </summary>
         public string ApplicationIntegrationURL
         {

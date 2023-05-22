@@ -45,9 +45,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ScatterPlotCategoricallyAggregatedFieldWells. 
         /// <para>
-        /// The aggregated field wells of a scatter plot. Scatter plots that have a field in the
-        /// category (group/color) field will have aggregated field wells. The x and y-axes of
-        /// these scatter plots are aggregated by category.
+        /// The aggregated field wells of a scatter plot. The x and y-axes of scatter plots with
+        /// aggregated field wells are aggregated by category, label, or both.
         /// </para>
         /// </summary>
         public ScatterPlotCategoricallyAggregatedFieldWells ScatterPlotCategoricallyAggregatedFieldWells
@@ -65,8 +64,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ScatterPlotUnaggregatedFieldWells. 
         /// <para>
-        /// The unaggregated field wells of a scatter plot. Scatter plots without a category field
-        /// well have unaggregated field wells. The x and y-axes of these scatter plots are unaggregated.
+        /// The unaggregated field wells of a scatter plot. The x and y-axes of these scatter
+        /// plots are unaggregated.
         /// </para>
         /// </summary>
         public ScatterPlotUnaggregatedFieldWells ScatterPlotUnaggregatedFieldWells

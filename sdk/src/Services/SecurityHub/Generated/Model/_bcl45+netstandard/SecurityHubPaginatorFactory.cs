@@ -76,6 +76,14 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Paginator for GetFindingHistory operation
+        ///</summary>
+        public IGetFindingHistoryPaginator GetFindingHistory(GetFindingHistoryRequest request) 
+        {
+            return new GetFindingHistoryPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for GetFindings operation
         ///</summary>
         public IGetFindingsPaginator GetFindings(GetFindingsRequest request) 

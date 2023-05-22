@@ -98,8 +98,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Ec2KeyName. 
         /// <para>
-        /// The name of the EC2 key pair that can be used to connect to the master node using
-        /// SSH as the user called "hadoop."
+        /// The name of the Amazon EC2 key pair that can be used to connect to the master node
+        /// using SSH as the user called "hadoop."
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -140,13 +140,13 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Ec2SubnetIds. 
         /// <para>
-        /// Applies to clusters that use the instance fleet configuration. When multiple EC2 subnet
-        /// IDs are specified, Amazon EMR evaluates them and launches instances in the optimal
-        /// subnet.
+        /// Applies to clusters that use the instance fleet configuration. When multiple Amazon
+        /// EC2 subnet IDs are specified, Amazon EMR evaluates them and launches instances in
+        /// the optimal subnet.
         /// </para>
         ///  <note> 
         /// <para>
-        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
         /// later, excluding 5.0.x versions.
         /// </para>
         ///  </note>
@@ -230,7 +230,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceCount. 
         /// <para>
-        /// The number of EC2 instances in the cluster.
+        /// The number of Amazon EC2 instances in the cluster.
         /// </para>
         /// </summary>
         public int InstanceCount
@@ -248,13 +248,13 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceFleets. <note> 
         /// <para>
-        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
         /// later, excluding 5.0.x versions.
         /// </para>
         ///  </note> 
         /// <para>
-        /// Describes the EC2 instances and instance configurations for clusters that use the
-        /// instance fleet configuration.
+        /// Describes the Amazon EC2 instances and instance configurations for clusters that use
+        /// the instance fleet configuration.
         /// </para>
         /// </summary>
         public List<InstanceFleetConfig> InstanceFleets
@@ -311,7 +311,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property MasterInstanceType. 
         /// <para>
-        /// The EC2 instance type of the master node.
+        /// The Amazon EC2 instance type of the master node.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -368,7 +368,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property SlaveInstanceType. 
         /// <para>
-        /// The EC2 instance type of the core and task nodes.
+        /// The Amazon EC2 instance type of the core and task nodes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

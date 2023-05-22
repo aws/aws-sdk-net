@@ -45,6 +45,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(RegisteredUserDashboardFeatureConfigurations requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBookmarks())
+            {
+                context.Writer.WritePropertyName("Bookmarks");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BookmarksConfigurationsMarshaller.Instance;
+                marshaller.Marshall(requestObject.Bookmarks, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStatePersistence())
             {
                 context.Writer.WritePropertyName("StatePersistence");

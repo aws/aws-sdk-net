@@ -36,6 +36,7 @@ namespace Amazon.OpenSearchService.Model
     {
         private bool? _advancedSecurityEnabled;
         private bool? _appLogsEnabled;
+        private List<string> _availabilityZones = new List<string>();
         private bool? _cognitoEnabled;
         private bool? _encryptionEnabled;
         private List<string> _instanceRole = new List<string>();
@@ -76,6 +77,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetAppLogsEnabled()
         {
             return this._appLogsEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AvailabilityZones. 
+        /// <para>
+        /// The supported Availability Zones for the instance type.
+        /// </para>
+        /// </summary>
+        public List<string> AvailabilityZones
+        {
+            get { return this._availabilityZones; }
+            set { this._availabilityZones = value; }
+        }
+
+        // Check to see if AvailabilityZones property is set
+        internal bool IsSetAvailabilityZones()
+        {
+            return this._availabilityZones != null && this._availabilityZones.Count > 0; 
         }
 
         /// <summary>

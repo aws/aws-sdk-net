@@ -125,16 +125,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>group-id</code> - The ID of the security group for the instance. EC2-Classic
-        /// only.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>group-name</code> - The name of the security group for the instance. EC2-Classic
-        /// only.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>hibernation-options.configured</code> - A Boolean that indicates whether the
         /// instance is enabled for hibernation. A value of <code>true</code> means that the instance
         /// is enabled for hibernation. 

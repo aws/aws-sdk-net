@@ -39,8 +39,28 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class FilterOperationSelectedFieldsConfiguration
     {
+        private List<ColumnIdentifier> _selectedColumns = new List<ColumnIdentifier>();
         private SelectedFieldOptions _selectedFieldOptions;
         private List<string> _selectedFields = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property SelectedColumns. 
+        /// <para>
+        /// The selected columns of a dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=10)]
+        public List<ColumnIdentifier> SelectedColumns
+        {
+            get { return this._selectedColumns; }
+            set { this._selectedColumns = value; }
+        }
+
+        // Check to see if SelectedColumns property is set
+        internal bool IsSetSelectedColumns()
+        {
+            return this._selectedColumns != null && this._selectedColumns.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property SelectedFieldOptions. 

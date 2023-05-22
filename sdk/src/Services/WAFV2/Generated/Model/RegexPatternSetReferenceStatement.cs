@@ -91,10 +91,12 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property TextTransformations. 
         /// <para>
         /// Text transformations eliminate some of the unusual formatting that attackers use in
-        /// web requests in an effort to bypass detection. If you specify one or more transformations
-        /// in a rule statement, WAF performs all transformations on the content of the request
-        /// component identified by <code>FieldToMatch</code>, starting from the lowest priority
-        /// setting, before inspecting the content for a match.
+        /// web requests in an effort to bypass detection. Text transformations are used in rule
+        /// match statements, to transform the <code>FieldToMatch</code> request component before
+        /// inspecting it, and they're used in rate-based rule statements, to transform request
+        /// components before using them as custom aggregation keys. If you specify one or more
+        /// transformations to apply, WAF performs all transformations on the specified content,
+        /// starting from the lowest priority setting, and then uses the component contents. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

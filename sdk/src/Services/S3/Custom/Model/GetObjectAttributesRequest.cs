@@ -117,11 +117,7 @@ namespace Amazon.S3.Model
     /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC
     /// 7232</a>.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Permissions</b> 
-    /// </para>
-    ///  
+    ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// The permissions you need to use this operation depend on whether or not the bucket
     /// is versioned. If the bucket is versioned, you need both the <code>s3:GetObjectVersion</code>
@@ -141,7 +137,7 @@ namespace Amazon.S3.Model
     /// If you don't have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
     /// HTTP status code 403 ("access denied") error.
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> </dd> </dl> 
     /// <para>
     /// The following actions are related to <code>GetObjectAttributes</code>:
     /// </para>

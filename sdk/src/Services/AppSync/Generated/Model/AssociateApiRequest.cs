@@ -40,7 +40,7 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property ApiId. 
         /// <para>
-        /// The API ID.
+        /// The API ID. Private APIs can not be associated with custom domains.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

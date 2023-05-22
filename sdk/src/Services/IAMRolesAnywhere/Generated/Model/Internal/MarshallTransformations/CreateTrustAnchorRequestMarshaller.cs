@@ -77,6 +77,22 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetNotificationSettings())
+                {
+                    context.Writer.WritePropertyName("notificationSettings");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestNotificationSettingsListValue in publicRequest.NotificationSettings)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = NotificationSettingMarshaller.Instance;
+                        marshaller.Marshall(publicRequestNotificationSettingsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetSource())
                 {
                     context.Writer.WritePropertyName("source");

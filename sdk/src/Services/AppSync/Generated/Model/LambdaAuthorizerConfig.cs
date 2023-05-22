@@ -42,9 +42,10 @@ namespace Amazon.AppSync.Model
         /// <summary>
         /// Gets and sets the property AuthorizerResultTtlInSeconds. 
         /// <para>
-        /// The number of seconds a response should be cached for. The default is 5 minutes (300
-        /// seconds). The Lambda function can override this by returning a <code>ttlOverride</code>
-        /// key in its response. A value of 0 disables caching of responses.
+        /// The number of seconds a response should be cached for. The default is 0 seconds, which
+        /// disables caching. If you don't specify a value for <code>authorizerResultTtlInSeconds</code>,
+        /// the default value is used. The maximum value is one hour (3600 seconds). The Lambda
+        /// function can override this by returning a <code>ttlOverride</code> key in its response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=3600)]

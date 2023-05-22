@@ -88,6 +88,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogicalResourceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("parentResourceName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ParentResourceName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("physicalResourceId", targetDepth))
                 {
                     var unmarshaller = PhysicalResourceIdUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ResourceType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("sourceType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

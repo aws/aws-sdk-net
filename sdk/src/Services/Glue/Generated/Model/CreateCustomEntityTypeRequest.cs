@@ -44,6 +44,7 @@ namespace Amazon.Glue.Model
         private List<string> _contextWords = new List<string>();
         private string _name;
         private string _regexString;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property ContextWords. 
@@ -107,6 +108,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetRegexString()
         {
             return this._regexString != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A list of tags applied to the custom entity type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

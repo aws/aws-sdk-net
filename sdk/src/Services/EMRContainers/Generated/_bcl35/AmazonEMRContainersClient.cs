@@ -1003,6 +1003,72 @@ namespace Amazon.EMRContainers
 
         #endregion
         
+        #region  GetManagedEndpointSessionCredentials
+
+        /// <summary>
+        /// Generate a session token to connect to a managed endpoint.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedEndpointSessionCredentials service method.</param>
+        /// 
+        /// <returns>The response from the GetManagedEndpointSessionCredentials service method, as returned by EMRContainers.</returns>
+        /// <exception cref="Amazon.EMRContainers.Model.InternalServerException">
+        /// This is an internal server exception.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.RequestThrottledException">
+        /// The request throttled.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.EMRContainers.Model.ValidationException">
+        /// There are invalid parameters in the client request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">REST API Reference for GetManagedEndpointSessionCredentials Operation</seealso>
+        public virtual GetManagedEndpointSessionCredentialsResponse GetManagedEndpointSessionCredentials(GetManagedEndpointSessionCredentialsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedEndpointSessionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedEndpointSessionCredentialsResponseUnmarshaller.Instance;
+
+            return Invoke<GetManagedEndpointSessionCredentialsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetManagedEndpointSessionCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetManagedEndpointSessionCredentials operation on AmazonEMRContainersClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetManagedEndpointSessionCredentials
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">REST API Reference for GetManagedEndpointSessionCredentials Operation</seealso>
+        public virtual IAsyncResult BeginGetManagedEndpointSessionCredentials(GetManagedEndpointSessionCredentialsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetManagedEndpointSessionCredentialsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetManagedEndpointSessionCredentialsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetManagedEndpointSessionCredentials operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetManagedEndpointSessionCredentials.</param>
+        /// 
+        /// <returns>Returns a  GetManagedEndpointSessionCredentialsResult from EMRContainers.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">REST API Reference for GetManagedEndpointSessionCredentials Operation</seealso>
+        public virtual GetManagedEndpointSessionCredentialsResponse EndGetManagedEndpointSessionCredentials(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetManagedEndpointSessionCredentialsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListJobRuns
 
         /// <summary>

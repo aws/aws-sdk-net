@@ -147,6 +147,50 @@
     <pattern>[a-z][a-z0-9\-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.ActiveAvailabilityZoneCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.AvailabilityZoneCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.DataNodeCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.MasterEligibleNodeCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.StandByAvailabilityZoneCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.TotalShards</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.TotalUnAssignedShards</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainHealthResponse.WarmNodeCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DescribeDomainNodesRequest.DomainName</property>
+    <min>3</min>
+    <max>28</max>
+    <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DescribeDryRunProgressRequest.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -246,6 +290,12 @@
     <min>14</min>
     <max>18</max>
     <pattern>^Elasticsearch_[0-9]{1}\.[0-9]{1,2}$|^OpenSearch_[0-9]{1,2}\.[0-9]{1,2}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.ListInstanceTypeDetailsRequest.InstanceType</property>
+    <min>10</min>
+    <max>40</max>
+    <pattern>^.*\..*\.search$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.ListInstanceTypeDetailsRequest.MaxResults</property>
@@ -414,6 +464,27 @@
     <min>0</min>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AvailabilityZoneInfo.AvailabilityZoneName</property>
+    <min>1</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AvailabilityZoneInfo.AvailableDataNodeCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AvailabilityZoneInfo.ConfiguredDataNodeCount</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AvailabilityZoneInfo.TotalShards</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.AvailabilityZoneInfo.TotalUnAssignedShards</property>
+    <pattern>^((\d+)|(NotAvailable))$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.OpenSearchService.Model.AWSDomainInformation.DomainName</property>
     <min>3</min>
     <max>28</max>
@@ -501,6 +572,16 @@
     <min>3</min>
     <max>28</max>
     <pattern>[a-z][a-z0-9\-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DomainNodesStatus.AvailabilityZone</property>
+    <min>1</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.OpenSearchService.Model.DomainNodesStatus.NodeId</property>
+    <min>10</min>
+    <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.OpenSearchService.Model.DomainPackageDetails.DomainName</property>

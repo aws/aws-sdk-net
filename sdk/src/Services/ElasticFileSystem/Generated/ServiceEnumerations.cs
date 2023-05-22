@@ -162,6 +162,14 @@ namespace Amazon.ElasticFileSystem
         /// Constant ERROR for ReplicationStatus
         /// </summary>
         public static readonly ReplicationStatus ERROR = new ReplicationStatus("ERROR");
+        /// <summary>
+        /// Constant PAUSED for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus PAUSED = new ReplicationStatus("PAUSED");
+        /// <summary>
+        /// Constant PAUSING for ReplicationStatus
+        /// </summary>
+        public static readonly ReplicationStatus PAUSING = new ReplicationStatus("PAUSING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

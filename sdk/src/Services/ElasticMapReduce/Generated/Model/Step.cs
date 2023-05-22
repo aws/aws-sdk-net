@@ -104,7 +104,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+        /// For example, <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted
         /// runtime role ARN.
         /// </para>
         /// </summary>

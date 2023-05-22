@@ -38,6 +38,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _contentLocation;
         private DateTime? _creationDateTime;
         private string _description;
+        private SceneError _error;
         private Dictionary<string, string> _generatedSceneMetadata = new Dictionary<string, string>();
         private string _sceneId;
         private Dictionary<string, string> _sceneMetadata = new Dictionary<string, string>();
@@ -137,6 +138,24 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Error. 
+        /// <para>
+        /// The SceneResponse error.
+        /// </para>
+        /// </summary>
+        public SceneError Error
+        {
+            get { return this._error; }
+            set { this._error = value; }
+        }
+
+        // Check to see if Error property is set
+        internal bool IsSetError()
+        {
+            return this._error != null;
         }
 
         /// <summary>

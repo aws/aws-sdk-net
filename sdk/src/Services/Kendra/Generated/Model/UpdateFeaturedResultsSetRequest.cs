@@ -86,7 +86,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property FeaturedResultsSetId. 
         /// <para>
-        /// The identifier of the index used for featuring results.
+        /// The identifier of the set of featured results that you want to update.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=36, Max=36)]

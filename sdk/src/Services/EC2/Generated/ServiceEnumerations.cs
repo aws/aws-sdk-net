@@ -747,6 +747,56 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type AmdSevSnpSpecification.
+    /// </summary>
+    public class AmdSevSnpSpecification : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Disabled for AmdSevSnpSpecification
+        /// </summary>
+        public static readonly AmdSevSnpSpecification Disabled = new AmdSevSnpSpecification("disabled");
+        /// <summary>
+        /// Constant Enabled for AmdSevSnpSpecification
+        /// </summary>
+        public static readonly AmdSevSnpSpecification Enabled = new AmdSevSnpSpecification("enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AmdSevSnpSpecification(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AmdSevSnpSpecification FindValue(string value)
+        {
+            return FindValue<AmdSevSnpSpecification>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AmdSevSnpSpecification(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AnalysisStatus.
     /// </summary>
     public class AnalysisStatus : ConstantClass
@@ -8167,6 +8217,30 @@ namespace Amazon.EC2
         /// </summary>
         public static readonly InstanceType I3Xlarge = new InstanceType("i3.xlarge");
         /// <summary>
+        /// Constant I4g16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4g16xlarge = new InstanceType("i4g.16xlarge");
+        /// <summary>
+        /// Constant I4g2xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4g2xlarge = new InstanceType("i4g.2xlarge");
+        /// <summary>
+        /// Constant I4g4xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4g4xlarge = new InstanceType("i4g.4xlarge");
+        /// <summary>
+        /// Constant I4g8xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4g8xlarge = new InstanceType("i4g.8xlarge");
+        /// <summary>
+        /// Constant I4gLarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4gLarge = new InstanceType("i4g.large");
+        /// <summary>
+        /// Constant I4gXlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType I4gXlarge = new InstanceType("i4g.xlarge");
+        /// <summary>
         /// Constant I4i16xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType I4i16xlarge = new InstanceType("i4i.16xlarge");
@@ -8238,6 +8312,22 @@ namespace Amazon.EC2
         /// Constant Inf1Xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Inf1Xlarge = new InstanceType("inf1.xlarge");
+        /// <summary>
+        /// Constant Inf224xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Inf224xlarge = new InstanceType("inf2.24xlarge");
+        /// <summary>
+        /// Constant Inf248xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Inf248xlarge = new InstanceType("inf2.48xlarge");
+        /// <summary>
+        /// Constant Inf28xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Inf28xlarge = new InstanceType("inf2.8xlarge");
+        /// <summary>
+        /// Constant Inf2Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Inf2Xlarge = new InstanceType("inf2.xlarge");
         /// <summary>
         /// Constant Is4gen2xlarge for InstanceType
         /// </summary>
@@ -9646,6 +9736,10 @@ namespace Amazon.EC2
         /// Constant Trn132xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType Trn132xlarge = new InstanceType("trn1.32xlarge");
+        /// <summary>
+        /// Constant Trn1n32xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType Trn1n32xlarge = new InstanceType("trn1n.32xlarge");
         /// <summary>
         /// Constant U12tb1112xlarge for InstanceType
         /// </summary>
@@ -16618,6 +16712,52 @@ namespace Amazon.EC2
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SummaryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupportedAdditionalProcessorFeature.
+    /// </summary>
+    public class SupportedAdditionalProcessorFeature : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AmdSevSnp for SupportedAdditionalProcessorFeature
+        /// </summary>
+        public static readonly SupportedAdditionalProcessorFeature AmdSevSnp = new SupportedAdditionalProcessorFeature("amd-sev-snp");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportedAdditionalProcessorFeature(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportedAdditionalProcessorFeature FindValue(string value)
+        {
+            return FindValue<SupportedAdditionalProcessorFeature>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportedAdditionalProcessorFeature(string value)
         {
             return FindValue(value);
         }

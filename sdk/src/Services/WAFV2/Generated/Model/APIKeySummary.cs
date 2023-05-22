@@ -29,7 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Information for a single API key.
+    /// Information for a single API key. 
+    /// 
+    ///  
+    /// <para>
+    /// API keys are required for the integration of the CAPTCHA API in your JavaScript client
+    /// applications. The API lets you customize the placement and characteristics of the
+    /// CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
+    /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+    /// client application integration</a> in the <i>WAF Developer Guide</i>.
+    /// </para>
     /// </summary>
     public partial class APIKeySummary
     {
@@ -43,12 +52,6 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// The generated, encrypted API key. You can copy this for use in your JavaScript CAPTCHA
         /// integration. 
-        /// </para>
-        ///  
-        /// <para>
-        /// For information about how to use this in your CAPTCHA JavaScript integration, see
-        /// <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-        /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

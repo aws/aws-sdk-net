@@ -30,7 +30,7 @@ namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateDomainConfig operation.
-    /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.
+    /// Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
     /// </summary>
     public partial class UpdateDomainConfigRequest : AmazonOpenSearchServiceRequest
     {
@@ -98,13 +98,6 @@ namespace Amazon.OpenSearchService.Model
         /// rather than a boolean. Specifies the maximum number of clauses allowed in a Lucene
         /// boolean query. Default is 1,024. Queries with more than the permitted number of clauses
         /// result in a <code>TooManyClauses</code> error.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>"override_main_response_version": "true" | "false"</code> - Note the use of
-        /// a string rather than a boolean. Specifies whether the domain reports its version as
-        /// 7.10 to allow Elasticsearch OSS clients and plugins to continue working with it. Default
-        /// is false when creating a domain and true when upgrading a domain.
         /// </para>
         ///  </li> </ul> 
         /// <para>

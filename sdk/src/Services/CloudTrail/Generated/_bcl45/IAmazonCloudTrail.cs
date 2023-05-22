@@ -85,6 +85,10 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
         /// <returns>The response from the AddTags service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelARNInvalidException">
+        /// This exception is thrown when the specified value of <code>ChannelARN</code> is not
+        /// valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ChannelNotFoundException">
         /// This exception is thrown when CloudTrail cannot find the specified channel.
         /// </exception>
@@ -117,6 +121,10 @@ namespace Amazon.CloudTrail
         /// This can occur when you try to run an operation on a resource before CloudTrail has
         /// time to fully load the resource, or because another operation is modifying the resource.
         /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
         /// The specified event data store was not found.
@@ -203,6 +211,10 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the AddTags service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelARNInvalidException">
+        /// This exception is thrown when the specified value of <code>ChannelARN</code> is not
+        /// valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ChannelNotFoundException">
         /// This exception is thrown when CloudTrail cannot find the specified channel.
         /// </exception>
@@ -235,6 +247,10 @@ namespace Amazon.CloudTrail
         /// This can occur when you try to run an operation on a resource before CloudTrail has
         /// time to fully load the resource, or because another operation is modifying the resource.
         /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
         /// The specified event data store was not found.
@@ -554,7 +570,7 @@ namespace Amazon.CloudTrail
         /// Your account has used the maximum number of event data stores.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -678,7 +694,7 @@ namespace Amazon.CloudTrail
         /// Your account has used the maximum number of event data stores.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -805,7 +821,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -963,7 +979,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -1189,7 +1205,7 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -1263,7 +1279,7 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -1402,7 +1418,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -1505,7 +1521,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -1597,7 +1613,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -1660,7 +1676,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -2134,12 +2150,12 @@ namespace Amazon.CloudTrail
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-        /// management events for trails </a> 
+        /// management events</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails </a> 
+        /// data events</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -2242,12 +2258,12 @@ namespace Amazon.CloudTrail
         ///  <ul> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-        /// management events for trails </a> 
+        /// management events</a> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails </a> 
+        /// data events</a> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3468,6 +3484,10 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
         /// <returns>The response from the ListTags service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelARNInvalidException">
+        /// This exception is thrown when the specified value of <code>ChannelARN</code> is not
+        /// valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
         /// This exception is thrown when an operation is called with a trail ARN that is not
         /// valid. The following is the format of a trail ARN.
@@ -3491,6 +3511,10 @@ namespace Amazon.CloudTrail
         /// The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
         /// 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
         /// The specified event data store was not found.
@@ -3559,6 +3583,10 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the ListTags service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelARNInvalidException">
+        /// This exception is thrown when the specified value of <code>ChannelARN</code> is not
+        /// valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudTrailARNInvalidException">
         /// This exception is thrown when an operation is called with a trail ARN that is not
         /// valid. The following is the format of a trail ARN.
@@ -3582,6 +3610,10 @@ namespace Amazon.CloudTrail
         /// The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
         /// 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
         /// The specified event data store was not found.
@@ -3891,8 +3923,12 @@ namespace Amazon.CloudTrail
         /// <summary>
         /// Configures an event selector or advanced event selectors for your trail. Use event
         /// selectors or advanced event selectors to specify management and data event settings
-        /// for your trail. By default, trails created without specific event selectors are configured
-        /// to log all read and write management events, and no data events.
+        /// for your trail. If you want your trail to log Insights events, be sure the event selector
+        /// enables logging of the Insights event types you want configured for your trail. For
+        /// more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+        /// Insights events for trails</a> in the <i>CloudTrail User Guide</i>. By default, trails
+        /// created without specific event selectors are configured to log all read and write
+        /// management events, and no data events.
         /// 
         ///  
         /// <para>
@@ -3938,8 +3974,8 @@ namespace Amazon.CloudTrail
         /// <para>
         /// You can configure up to five event selectors for each trail. For more information,
         /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-        /// management events for trails </a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails </a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
+        /// management events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+        /// data events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
         /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         ///  
@@ -3950,7 +3986,7 @@ namespace Amazon.CloudTrail
         /// not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing
         /// <code>EventSelectors</code> are overwritten. For more information about advanced event
         /// selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
+        /// data events</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors service method.</param>
@@ -3980,8 +4016,14 @@ namespace Amazon.CloudTrail
         /// 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -4082,8 +4124,12 @@ namespace Amazon.CloudTrail
         /// <summary>
         /// Configures an event selector or advanced event selectors for your trail. Use event
         /// selectors or advanced event selectors to specify management and data event settings
-        /// for your trail. By default, trails created without specific event selectors are configured
-        /// to log all read and write management events, and no data events.
+        /// for your trail. If you want your trail to log Insights events, be sure the event selector
+        /// enables logging of the Insights event types you want configured for your trail. For
+        /// more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+        /// Insights events for trails</a> in the <i>CloudTrail User Guide</i>. By default, trails
+        /// created without specific event selectors are configured to log all read and write
+        /// management events, and no data events.
         /// 
         ///  
         /// <para>
@@ -4129,8 +4175,8 @@ namespace Amazon.CloudTrail
         /// <para>
         /// You can configure up to five event selectors for each trail. For more information,
         /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-        /// management events for trails </a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails </a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
+        /// management events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+        /// data events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
         /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         ///  
@@ -4141,7 +4187,7 @@ namespace Amazon.CloudTrail
         /// not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing
         /// <code>EventSelectors</code> are overwritten. For more information about advanced event
         /// selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
+        /// data events</a> in the <i>CloudTrail User Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutEventSelectors service method.</param>
@@ -4174,8 +4220,14 @@ namespace Amazon.CloudTrail
         /// 
         /// </para>
         /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
+        /// This exception is thrown when the specified resource is not ready for an operation.
+        /// This can occur when you try to run an operation on a resource before CloudTrail has
+        /// time to fully load the resource, or because another operation is modifying the resource.
+        /// If this exception occurs, wait a few minutes, and then try the operation again.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -4282,6 +4334,14 @@ namespace Amazon.CloudTrail
         /// to turn off Insights event logging, by passing an empty list of insight types. The
         /// valid Insights event types in this release are <code>ApiErrorRateInsight</code> and
         /// <code>ApiCallRateInsight</code>.
+        /// 
+        ///  
+        /// <para>
+        /// To log CloudTrail Insights events on API call volume, the trail must log <code>write</code>
+        /// management events. To log CloudTrail Insights events on API error rate, the trail
+        /// must log <code>read</code> or <code>write</code> management events. You can call <code>GetEventSelectors</code>
+        /// on a trail to check whether the trail logs management events.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInsightSelectors service method.</param>
         /// 
@@ -4393,6 +4453,14 @@ namespace Amazon.CloudTrail
         /// to turn off Insights event logging, by passing an empty list of insight types. The
         /// valid Insights event types in this release are <code>ApiErrorRateInsight</code> and
         /// <code>ApiCallRateInsight</code>.
+        /// 
+        ///  
+        /// <para>
+        /// To log CloudTrail Insights events on API call volume, the trail must log <code>write</code>
+        /// management events. To log CloudTrail Insights events on API error rate, the trail
+        /// must log <code>read</code> or <code>write</code> management events. You can call <code>GetEventSelectors</code>
+        /// on a trail to check whether the trail logs management events.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutInsightSelectors service method.</param>
         /// <param name="cancellationToken">
@@ -4655,7 +4723,7 @@ namespace Amazon.CloudTrail
         /// is reached.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -4725,7 +4793,7 @@ namespace Amazon.CloudTrail
         /// is reached.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -4766,6 +4834,10 @@ namespace Amazon.CloudTrail
         /// <param name="request">Container for the necessary parameters to execute the RemoveTags service method.</param>
         /// 
         /// <returns>The response from the RemoveTags service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelARNInvalidException">
+        /// This exception is thrown when the specified value of <code>ChannelARN</code> is not
+        /// valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ChannelNotFoundException">
         /// This exception is thrown when CloudTrail cannot find the specified channel.
         /// </exception>
@@ -4792,6 +4864,10 @@ namespace Amazon.CloudTrail
         /// The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
         /// 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
         /// The specified event data store was not found.
@@ -4868,6 +4944,10 @@ namespace Amazon.CloudTrail
         /// </param>
         /// 
         /// <returns>The response from the RemoveTags service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.ChannelARNInvalidException">
+        /// This exception is thrown when the specified value of <code>ChannelARN</code> is not
+        /// valid.
+        /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ChannelNotFoundException">
         /// This exception is thrown when CloudTrail cannot find the specified channel.
         /// </exception>
@@ -4894,6 +4974,10 @@ namespace Amazon.CloudTrail
         /// The following is the format of a channel ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:channel/01234567890</code>
         /// 
         /// </para>
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
         /// The specified event data store was not found.
@@ -4990,7 +5074,7 @@ namespace Amazon.CloudTrail
         /// The specified event data store was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -5061,7 +5145,7 @@ namespace Amazon.CloudTrail
         /// The specified event data store was not found.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -5309,7 +5393,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -5414,7 +5498,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -5701,7 +5785,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -5808,7 +5892,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -6011,7 +6095,7 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -6151,7 +6235,7 @@ namespace Amazon.CloudTrail
         /// The event data store is inactive.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -6302,7 +6386,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>
@@ -6521,7 +6605,7 @@ namespace Amazon.CloudTrail
         /// If this exception occurs, wait a few minutes, and then try the operation again.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
-        /// This exception is thrown when the IAM user or role that is used to create the organization
+        /// This exception is thrown when the IAM identity that is used to create the organization
         /// resource lacks one or more required permissions for creating an organization resource
         /// in a required service.
         /// </exception>

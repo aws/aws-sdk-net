@@ -87,7 +87,7 @@ namespace SDKDocGenerator.Writers
 
             writer.WriteLine("<div class=\"sectionbody\">");
                 writer.WriteLine("<div class=\"returnType\">");
-                    writer.WriteLine("<strong class=\"subHeading\">Return Value</strong><br />");
+                    writer.WriteLine("<h3><strong class=\"subHeading\">Return Value</strong></h3><br />");
                 writer.WriteLine("</div>");
 
                 writer.WriteLine("<div class=\"returnTypeName\">Type: {0}</div>", returnType.CreateReferenceHtml(fullTypeName: false));

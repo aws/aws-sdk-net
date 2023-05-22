@@ -44,12 +44,12 @@ namespace Amazon.Connect.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Percantages have a minimum value of 0 and maximum value of 100. 
+    /// Percentages have a minimum value of 0 and maximum value of 100. 
     /// </para>
     ///  </li> <li> 
     /// <para>
     ///  <code>NUMBER_OF_INTERRUPTIONS</code> has a minimum value of 0 and maximum value of
-    /// 100.
+    /// 1000.
     /// </para>
     ///  </li> </ul>
     /// </summary>

@@ -108,6 +108,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Position);
             }
 
+            if(requestObject.IsSetTotalsVisibility())
+            {
+                context.Writer.WritePropertyName("TotalsVisibility");
+                context.Writer.Write(requestObject.TotalsVisibility);
+            }
+
             if(requestObject.IsSetVisibility())
             {
                 context.Writer.WritePropertyName("Visibility");

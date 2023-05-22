@@ -534,6 +534,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Elemental MediaLive is a video service that lets you easily create live outputs for broadcast and streaming delivery.
 * [AWSSDK.MediaPackage](https://www.nuget.org/packages/AWSSDK.MediaPackage/)
 	* AWS Elemental MediaPackage is a just-in-time video packaging and origination service that lets you format highly secure and reliable live outputs for a variety of devices.
+* [AWSSDK.MediaPackageV2](https://www.nuget.org/packages/AWSSDK.MediaPackageV2/)
+	* Adds support for the MediaPackage Live v2 API
 * [AWSSDK.MediaPackageVod](https://www.nuget.org/packages/AWSSDK.MediaPackageVod/)
 	* AWS Elemental MediaPackage now supports Video-on-Demand (VOD) workflows. These new features allow you to easily deliver a vast library of source video Assets stored in your own S3 buckets using a small set of simple to set up Packaging Configurations and Packaging Groups.
 * [AWSSDK.MediaStore](https://www.nuget.org/packages/AWSSDK.MediaStore/)
@@ -588,6 +590,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS OpsWorks for Chef Automate gives customers a single tenant Chef Automate server. The Chef Automate server is fully managed by AWS and supports automatic backup, restore and upgrade operations.
 * [AWSSDK.Organizations](https://www.nuget.org/packages/AWSSDK.Organizations/)
 	* AWS Organizations is a web service that enables you to consolidate your multiple AWS accounts into an organization and centrally manage your accounts and their resources.
+* [AWSSDK.OSIS](https://www.nuget.org/packages/AWSSDK.OSIS/)
+	* Initial release for OpenSearch Ingestion
 * [AWSSDK.Outposts](https://www.nuget.org/packages/AWSSDK.Outposts/)
 	* This is the initial release for AWS Outposts, a fully managed service that extends AWS infrastructure, services, APIs, and tools to customer sites. AWS Outposts enables you to launch and run EC2 instances and EBS volumes locally at your on-premises location. This release introduces new APIs for creating and viewing Outposts. 
 * [AWSSDK.Panorama](https://www.nuget.org/packages/AWSSDK.Panorama/)

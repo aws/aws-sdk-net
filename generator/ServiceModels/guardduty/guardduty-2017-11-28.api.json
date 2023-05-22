@@ -743,6 +743,7 @@
       "output":{"shape":"ListTagsForResourceResponse"},
       "errors":[
         {"shape":"BadRequestException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerErrorException"}
       ]
     },
@@ -757,6 +758,21 @@
       "output":{"shape":"ListThreatIntelSetsResponse"},
       "errors":[
         {"shape":"BadRequestException"},
+        {"shape":"InternalServerErrorException"}
+      ]
+    },
+    "StartMalwareScan":{
+      "name":"StartMalwareScan",
+      "http":{
+        "method":"POST",
+        "requestUri":"/malware-scan/start",
+        "responseCode":200
+      },
+      "input":{"shape":"StartMalwareScanRequest"},
+      "output":{"shape":"StartMalwareScanResponse"},
+      "errors":[
+        {"shape":"BadRequestException"},
+        {"shape":"ConflictException"},
         {"shape":"InternalServerErrorException"}
       ]
     },
@@ -799,6 +815,7 @@
       "output":{"shape":"TagResourceResponse"},
       "errors":[
         {"shape":"BadRequestException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerErrorException"}
       ]
     },
@@ -827,6 +844,7 @@
       "output":{"shape":"UntagResourceResponse"},
       "errors":[
         {"shape":"BadRequestException"},
+        {"shape":"AccessDeniedException"},
         {"shape":"InternalServerErrorException"}
       ]
     },
@@ -1030,6 +1048,21 @@
           "locationName":"allowsPublicWriteAccess"
         }
       }
+    },
+    "AccessDeniedException":{
+      "type":"structure",
+      "members":{
+        "Message":{
+          "shape":"String",
+          "locationName":"message"
+        },
+        "Type":{
+          "shape":"String",
+          "locationName":"__type"
+        }
+      },
+      "error":{"httpStatusCode":403},
+      "exception":true
     },
     "AccessKeyDetails":{
       "type":"structure",
@@ -1439,6 +1472,21 @@
           "locationName":"lessThanOrEqual"
         }
       }
+    },
+    "ConflictException":{
+      "type":"structure",
+      "members":{
+        "Message":{
+          "shape":"String",
+          "locationName":"message"
+        },
+        "Type":{
+          "shape":"String",
+          "locationName":"__type"
+        }
+      },
+      "error":{"httpStatusCode":409},
+      "exception":true
     },
     "Container":{
       "type":"structure",
@@ -1985,7 +2033,8 @@
         "ACCOUNT_ID",
         "GUARDDUTY_FINDING_ID",
         "SCAN_START_TIME",
-        "SCAN_STATUS"
+        "SCAN_STATUS",
+        "SCAN_TYPE"
       ]
     },
     "DNSLogsConfigurationResult":{
@@ -2778,6 +2827,10 @@
         "ScanDetections":{
           "shape":"ScanDetections",
           "locationName":"scanDetections"
+        },
+        "ScanType":{
+          "shape":"ScanType",
+          "locationName":"scanType"
         }
       }
     },
@@ -5593,6 +5646,10 @@
         }
       }
     },
+    "ResourceArn":{
+      "type":"string",
+      "pattern":"^arn:[A-Za-z-]+:[A-Za-z0-9]+:[A-Za-z0-9-]+:\\d+:(([A-Za-z0-9-]+)[:\\/])?[A-Za-z0-9-]*$"
+    },
     "ResourceDetails":{
       "type":"structure",
       "members":{
@@ -5827,6 +5884,10 @@
         "AttachedVolumes":{
           "shape":"VolumeDetails",
           "locationName":"attachedVolumes"
+        },
+        "ScanType":{
+          "shape":"ScanType",
+          "locationName":"scanType"
         }
       }
     },
@@ -5957,7 +6018,8 @@
       "enum":[
         "RUNNING",
         "COMPLETED",
-        "FAILED"
+        "FAILED",
+        "SKIPPED"
       ]
     },
     "ScanThreatName":{
@@ -5984,6 +6046,13 @@
     "ScanThreatNames":{
       "type":"list",
       "member":{"shape":"ScanThreatName"}
+    },
+    "ScanType":{
+      "type":"string",
+      "enum":[
+        "GUARDDUTY_INITIATED",
+        "ON_DEMAND"
+      ]
     },
     "ScannedItemCount":{
       "type":"structure",
@@ -6126,6 +6195,25 @@
     "Sources":{
       "type":"list",
       "member":{"shape":"String"}
+    },
+    "StartMalwareScanRequest":{
+      "type":"structure",
+      "required":["ResourceArn"],
+      "members":{
+        "ResourceArn":{
+          "shape":"ResourceArn",
+          "locationName":"resourceArn"
+        }
+      }
+    },
+    "StartMalwareScanResponse":{
+      "type":"structure",
+      "members":{
+        "ScanId":{
+          "shape":"NonEmptyString",
+          "locationName":"scanId"
+        }
+      }
     },
     "StartMonitoringMembersRequest":{
       "type":"structure",

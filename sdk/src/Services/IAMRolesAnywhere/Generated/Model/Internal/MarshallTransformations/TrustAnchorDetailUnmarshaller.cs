@@ -82,6 +82,12 @@ namespace Amazon.IAMRolesAnywhere.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("notificationSettings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<NotificationSettingDetail, NotificationSettingDetailUnmarshaller>(NotificationSettingDetailUnmarshaller.Instance);
+                    unmarshalledObject.NotificationSettings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("source", targetDepth))
                 {
                     var unmarshaller = SourceUnmarshaller.Instance;

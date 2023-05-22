@@ -38,7 +38,7 @@ namespace Amazon.Connect.Model
     /// the previous version of this API. It has new metrics, offers filtering at a metric
     /// level, and offers the ability to filter and group data by channels, queues, routing
     /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
-    /// the last 14 days, in 24-hour intervals.
+    /// the last 35 days, in 24-hour intervals.
     /// </para>
     ///  
     /// <para>
@@ -551,8 +551,8 @@ namespace Amazon.Connect.Model
         /// The timestamp, in UNIX Epoch time format, at which to start the reporting interval
         /// for the retrieval of historical metrics data. The time must be before the end time
         /// timestamp. The time range between the start and end time must be less than 24 hours.
-        /// The start time cannot be earlier than 14 days before the time of the request. Historical
-        /// metrics are available for 14 days.
+        /// The start time cannot be earlier than 35 days before the time of the request. Historical
+        /// metrics are available for 35 days.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -69,8 +69,8 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// For custom steps, the lambda function needs to send <code>FAILURE</code> to the call
-        /// back API to kick off the exception steps. Additionally, if the lambda does not send
+        /// For custom steps, the Lambda function needs to send <code>FAILURE</code> to the call
+        /// back API to kick off the exception steps. Additionally, if the Lambda does not send
         /// <code>SUCCESS</code> before it times out, the exception steps are executed.
         /// </para>
         ///  </note>

@@ -95,6 +95,10 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("CacheSubnetGroupName", StringUtils.FromString(publicRequest.CacheSubnetGroupName));
                 }
+                if(publicRequest.IsSetClusterMode())
+                {
+                    request.Parameters.Add("ClusterMode", StringUtils.FromString(publicRequest.ClusterMode));
+                }
                 if(publicRequest.IsSetDataTieringEnabled())
                 {
                     request.Parameters.Add("DataTieringEnabled", StringUtils.FromBool(publicRequest.DataTieringEnabled));

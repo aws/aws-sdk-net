@@ -80,6 +80,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxDuration);
                 }
 
+                if(publicRequest.IsSetMaxGpus())
+                {
+                    context.Writer.WritePropertyName("maxGpus");
+                    context.Writer.Write(publicRequest.MaxGpus);
+                }
+
                 if(publicRequest.IsSetMaxRuns())
                 {
                     context.Writer.WritePropertyName("maxRuns");

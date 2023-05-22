@@ -84,6 +84,10 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Amazon SageMaker Serverless endpoint provisioned concurrency
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Amazon SageMaker endpoint variants
     /// </para>
     ///  </li> <li> 

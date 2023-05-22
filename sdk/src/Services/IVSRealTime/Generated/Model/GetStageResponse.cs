@@ -36,7 +36,10 @@ namespace Amazon.IVSRealTime.Model
         private Stage _stage;
 
         /// <summary>
-        /// Gets and sets the property Stage.
+        /// Gets and sets the property Stage. 
+        /// <para>
+        /// The stage that is returned.
+        /// </para>
         /// </summary>
         public Stage Stage
         {

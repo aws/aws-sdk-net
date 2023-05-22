@@ -349,6 +349,64 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  CreateVpcConnection
+
+
+        /// <summary>
+        /// Creates a new MSK VPC connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcConnection service method.</param>
+        /// 
+        /// <returns>The response from the CreateVpcConnection service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateVpcConnection">REST API Reference for CreateVpcConnection Operation</seealso>
+        CreateVpcConnectionResponse CreateVpcConnection(CreateVpcConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateVpcConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcConnection operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateVpcConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateVpcConnection">REST API Reference for CreateVpcConnection Operation</seealso>
+        IAsyncResult BeginCreateVpcConnection(CreateVpcConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateVpcConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateVpcConnection.</param>
+        /// 
+        /// <returns>Returns a  CreateVpcConnectionResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateVpcConnection">REST API Reference for CreateVpcConnection Operation</seealso>
+        CreateVpcConnectionResponse EndCreateVpcConnection(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteCluster
 
 
@@ -401,6 +459,59 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  DeleteClusterPolicy
+
+
+        /// <summary>
+        /// Deletes the MSK cluster policy specified by the Amazon Resource Name (ARN) in the
+        /// request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterPolicy service method.</param>
+        /// 
+        /// <returns>The response from the DeleteClusterPolicy service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteClusterPolicy">REST API Reference for DeleteClusterPolicy Operation</seealso>
+        DeleteClusterPolicyResponse DeleteClusterPolicy(DeleteClusterPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterPolicy operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteClusterPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteClusterPolicy">REST API Reference for DeleteClusterPolicy Operation</seealso>
+        IAsyncResult BeginDeleteClusterPolicy(DeleteClusterPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteClusterPolicy.</param>
+        /// 
+        /// <returns>Returns a  DeleteClusterPolicyResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteClusterPolicy">REST API Reference for DeleteClusterPolicy Operation</seealso>
+        DeleteClusterPolicyResponse EndDeleteClusterPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteConfiguration
 
 
@@ -450,6 +561,58 @@ namespace Amazon.Kafka
         /// <returns>Returns a  DeleteConfigurationResult from Kafka.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteConfiguration">REST API Reference for DeleteConfiguration Operation</seealso>
         DeleteConfigurationResponse EndDeleteConfiguration(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteVpcConnection
+
+
+        /// <summary>
+        /// Deletes a MSK VPC connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcConnection service method.</param>
+        /// 
+        /// <returns>The response from the DeleteVpcConnection service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteVpcConnection">REST API Reference for DeleteVpcConnection Operation</seealso>
+        DeleteVpcConnectionResponse DeleteVpcConnection(DeleteVpcConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteVpcConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcConnection operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteVpcConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteVpcConnection">REST API Reference for DeleteVpcConnection Operation</seealso>
+        IAsyncResult BeginDeleteVpcConnection(DeleteVpcConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteVpcConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteVpcConnection.</param>
+        /// 
+        /// <returns>Returns a  DeleteVpcConnectionResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteVpcConnection">REST API Reference for DeleteVpcConnection Operation</seealso>
+        DeleteVpcConnectionResponse EndDeleteVpcConnection(IAsyncResult asyncResult);
 
         #endregion
         
@@ -736,6 +899,64 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  DescribeVpcConnection
+
+
+        /// <summary>
+        /// Returns a description of this MSK VPC connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcConnection service method.</param>
+        /// 
+        /// <returns>The response from the DescribeVpcConnection service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeVpcConnection">REST API Reference for DescribeVpcConnection Operation</seealso>
+        DescribeVpcConnectionResponse DescribeVpcConnection(DescribeVpcConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeVpcConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcConnection operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeVpcConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeVpcConnection">REST API Reference for DescribeVpcConnection Operation</seealso>
+        IAsyncResult BeginDescribeVpcConnection(DescribeVpcConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeVpcConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeVpcConnection.</param>
+        /// 
+        /// <returns>Returns a  DescribeVpcConnectionResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeVpcConnection">REST API Reference for DescribeVpcConnection Operation</seealso>
+        DescribeVpcConnectionResponse EndDescribeVpcConnection(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetBootstrapBrokers
 
 
@@ -788,6 +1009,58 @@ namespace Amazon.Kafka
         /// <returns>Returns a  GetBootstrapBrokersResult from Kafka.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetBootstrapBrokers">REST API Reference for GetBootstrapBrokers Operation</seealso>
         GetBootstrapBrokersResponse EndGetBootstrapBrokers(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetClusterPolicy
+
+
+        /// <summary>
+        /// Get the MSK cluster policy specified by the Amazon Resource Name (ARN) in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterPolicy service method.</param>
+        /// 
+        /// <returns>The response from the GetClusterPolicy service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetClusterPolicy">REST API Reference for GetClusterPolicy Operation</seealso>
+        GetClusterPolicyResponse GetClusterPolicy(GetClusterPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterPolicy operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetClusterPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetClusterPolicy">REST API Reference for GetClusterPolicy Operation</seealso>
+        IAsyncResult BeginGetClusterPolicy(GetClusterPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetClusterPolicy.</param>
+        /// 
+        /// <returns>Returns a  GetClusterPolicyResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetClusterPolicy">REST API Reference for GetClusterPolicy Operation</seealso>
+        GetClusterPolicyResponse EndGetClusterPolicy(IAsyncResult asyncResult);
 
         #endregion
         
@@ -849,6 +1122,61 @@ namespace Amazon.Kafka
         /// <returns>Returns a  GetCompatibleKafkaVersionsResult from Kafka.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetCompatibleKafkaVersions">REST API Reference for GetCompatibleKafkaVersions Operation</seealso>
         GetCompatibleKafkaVersionsResponse EndGetCompatibleKafkaVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListClientVpcConnections
+
+
+        /// <summary>
+        /// Returns a list of all the VPC connections in this Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClientVpcConnections service method.</param>
+        /// 
+        /// <returns>The response from the ListClientVpcConnections service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClientVpcConnections">REST API Reference for ListClientVpcConnections Operation</seealso>
+        ListClientVpcConnectionsResponse ListClientVpcConnections(ListClientVpcConnectionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListClientVpcConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListClientVpcConnections operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListClientVpcConnections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClientVpcConnections">REST API Reference for ListClientVpcConnections Operation</seealso>
+        IAsyncResult BeginListClientVpcConnections(ListClientVpcConnectionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListClientVpcConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListClientVpcConnections.</param>
+        /// 
+        /// <returns>Returns a  ListClientVpcConnectionsResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClientVpcConnections">REST API Reference for ListClientVpcConnections Operation</seealso>
+        ListClientVpcConnectionsResponse EndListClientVpcConnections(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1336,6 +1664,111 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  ListVpcConnections
+
+
+        /// <summary>
+        /// Returns a list of all the VPC connections in this Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcConnections service method.</param>
+        /// 
+        /// <returns>The response from the ListVpcConnections service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListVpcConnections">REST API Reference for ListVpcConnections Operation</seealso>
+        ListVpcConnectionsResponse ListVpcConnections(ListVpcConnectionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListVpcConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcConnections operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListVpcConnections
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListVpcConnections">REST API Reference for ListVpcConnections Operation</seealso>
+        IAsyncResult BeginListVpcConnections(ListVpcConnectionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListVpcConnections operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListVpcConnections.</param>
+        /// 
+        /// <returns>Returns a  ListVpcConnectionsResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListVpcConnections">REST API Reference for ListVpcConnections Operation</seealso>
+        ListVpcConnectionsResponse EndListVpcConnections(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  PutClusterPolicy
+
+
+        /// <summary>
+        /// Creates or updates the MSK cluster policy specified by the cluster Amazon Resource
+        /// Name (ARN) in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutClusterPolicy service method.</param>
+        /// 
+        /// <returns>The response from the PutClusterPolicy service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/PutClusterPolicy">REST API Reference for PutClusterPolicy Operation</seealso>
+        PutClusterPolicyResponse PutClusterPolicy(PutClusterPolicyRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutClusterPolicy operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutClusterPolicy
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/PutClusterPolicy">REST API Reference for PutClusterPolicy Operation</seealso>
+        IAsyncResult BeginPutClusterPolicy(PutClusterPolicyRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutClusterPolicy operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutClusterPolicy.</param>
+        /// 
+        /// <returns>Returns a  PutClusterPolicyResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/PutClusterPolicy">REST API Reference for PutClusterPolicy Operation</seealso>
+        PutClusterPolicyResponse EndPutClusterPolicy(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  RebootBroker
 
 
@@ -1394,6 +1827,61 @@ namespace Amazon.Kafka
         /// <returns>Returns a  RebootBrokerResult from Kafka.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RebootBroker">REST API Reference for RebootBroker Operation</seealso>
         RebootBrokerResponse EndRebootBroker(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  RejectClientVpcConnection
+
+
+        /// <summary>
+        /// Returns empty response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectClientVpcConnection service method.</param>
+        /// 
+        /// <returns>The response from the RejectClientVpcConnection service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RejectClientVpcConnection">REST API Reference for RejectClientVpcConnection Operation</seealso>
+        RejectClientVpcConnectionResponse RejectClientVpcConnection(RejectClientVpcConnectionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the RejectClientVpcConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the RejectClientVpcConnection operation on AmazonKafkaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectClientVpcConnection
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RejectClientVpcConnection">REST API Reference for RejectClientVpcConnection Operation</seealso>
+        IAsyncResult BeginRejectClientVpcConnection(RejectClientVpcConnectionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  RejectClientVpcConnection operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRejectClientVpcConnection.</param>
+        /// 
+        /// <returns>Returns a  RejectClientVpcConnectionResult from Kafka.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RejectClientVpcConnection">REST API Reference for RejectClientVpcConnection Operation</seealso>
+        RejectClientVpcConnectionResponse EndRejectClientVpcConnection(IAsyncResult asyncResult);
 
         #endregion
         

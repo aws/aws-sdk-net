@@ -92,6 +92,96 @@ namespace Amazon.Appflow
 
 
         
+        #region  CancelFlowExecutions
+
+
+        /// <summary>
+        /// Cancels active runs for a flow.
+        /// 
+        ///  
+        /// <para>
+        /// You can cancel all of the active runs for a flow, or you can cancel specific runs
+        /// by providing their IDs.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can cancel a flow run only when the run is in progress. You can't cancel a run
+        /// that has already completed or failed. You also can't cancel a run that's scheduled
+        /// to occur but hasn't started yet. To prevent a scheduled run, you can deactivate the
+        /// flow with the <code>StopFlow</code> action.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot resume a run after you cancel it.
+        /// </para>
+        ///  
+        /// <para>
+        /// When you send your request, the status for each run becomes <code>CancelStarted</code>.
+        /// When the cancellation completes, the status becomes <code>Canceled</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// When you cancel a run, you still incur charges for any data that the run already processed
+        /// before the cancellation. If the run had already written some data to the flow destination,
+        /// then that data remains in the destination. If you configured the flow to use a batch
+        /// API (such as the Salesforce Bulk API 2.0), then the run will finish reading or writing
+        /// its entire batch of data after the cancellation. For these operations, the data processing
+        /// charges for Amazon AppFlow apply. For the pricing information, see <a href="http://aws.amazon.com/appflow/pricing/">Amazon
+        /// AppFlow pricing</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CancelFlowExecutions service method.</param>
+        /// 
+        /// <returns>The response from the CancelFlowExecutions service method, as returned by Appflow.</returns>
+        /// <exception cref="Amazon.Appflow.Model.AccessDeniedException">
+        /// AppFlow/Requester has invalid or missing permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ResourceNotFoundException">
+        /// The resource specified in the request (such as the source or destination connector
+        /// profile) is not found.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ThrottlingException">
+        /// API calls have exceeded the maximum allowed API request rate per account and per Region.
+        /// </exception>
+        /// <exception cref="Amazon.Appflow.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CancelFlowExecutions">REST API Reference for CancelFlowExecutions Operation</seealso>
+        CancelFlowExecutionsResponse CancelFlowExecutions(CancelFlowExecutionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CancelFlowExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CancelFlowExecutions operation on AmazonAppflowClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCancelFlowExecutions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CancelFlowExecutions">REST API Reference for CancelFlowExecutions Operation</seealso>
+        IAsyncResult BeginCancelFlowExecutions(CancelFlowExecutionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CancelFlowExecutions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCancelFlowExecutions.</param>
+        /// 
+        /// <returns>Returns a  CancelFlowExecutionsResult from Appflow.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CancelFlowExecutions">REST API Reference for CancelFlowExecutions Operation</seealso>
+        CancelFlowExecutionsResponse EndCancelFlowExecutions(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateConnectorProfile
 
 

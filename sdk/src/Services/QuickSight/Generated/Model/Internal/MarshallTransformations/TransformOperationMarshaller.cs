@@ -78,6 +78,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetOverrideDatasetParameterOperation())
+            {
+                context.Writer.WritePropertyName("OverrideDatasetParameterOperation");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = OverrideDatasetParameterOperationMarshaller.Instance;
+                marshaller.Marshall(requestObject.OverrideDatasetParameterOperation, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetProjectOperation())
             {
                 context.Writer.WritePropertyName("ProjectOperation");

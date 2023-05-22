@@ -123,14 +123,21 @@ namespace Amazon.IoTSiteWise.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return for each paginated request.
+        /// The maximum number of results to return for each paginated request. A result set is
+        /// returned in the two cases, whichever occurs first.
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// Default: 100
+        /// The size of the result set is equal to 1 MB.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The number of data points in the result set is equal to the value of <code>maxResults</code>.
+        /// The maximum value of <code>maxResults</code> is 250.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=250)]
+        [AWSProperty(Min=1)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -228,7 +235,7 @@ namespace Amazon.IoTSiteWise.Model
         /// The time interval over which to aggregate data.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Min=2, Max=3)]
         public string Resolution
         {
             get { return this._resolution; }

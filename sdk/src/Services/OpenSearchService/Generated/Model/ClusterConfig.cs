@@ -41,6 +41,7 @@ namespace Amazon.OpenSearchService.Model
         private OpenSearchPartitionInstanceType _dedicatedMasterType;
         private int? _instanceCount;
         private OpenSearchPartitionInstanceType _instanceType;
+        private bool? _multiAZWithStandbyEnabled;
         private int? _warmCount;
         private bool? _warmEnabled;
         private OpenSearchWarmPartitionInstanceType _warmType;
@@ -69,7 +70,7 @@ namespace Amazon.OpenSearchService.Model
         /// Gets and sets the property DedicatedMasterCount. 
         /// <para>
         /// Number of dedicated master nodes in the cluster. This number must be greater than
-        /// 1, otherwise you receive a validation exception.
+        /// 2 and not 4, otherwise you receive a validation exception.
         /// </para>
         /// </summary>
         public int DedicatedMasterCount
@@ -157,6 +158,26 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetInstanceType()
         {
             return this._instanceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MultiAZWithStandbyEnabled. 
+        /// <para>
+        /// A boolean that indicates whether a multi-AZ domain is turned on with a standby AZ.
+        /// For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring
+        /// a multi-AZ domain in Amazon OpenSearch Service</a>. 
+        /// </para>
+        /// </summary>
+        public bool MultiAZWithStandbyEnabled
+        {
+            get { return this._multiAZWithStandbyEnabled.GetValueOrDefault(); }
+            set { this._multiAZWithStandbyEnabled = value; }
+        }
+
+        // Check to see if MultiAZWithStandbyEnabled property is set
+        internal bool IsSetMultiAZWithStandbyEnabled()
+        {
+            return this._multiAZWithStandbyEnabled.HasValue; 
         }
 
         /// <summary>

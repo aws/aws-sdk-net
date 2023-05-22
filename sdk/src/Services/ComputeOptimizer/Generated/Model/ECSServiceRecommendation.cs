@@ -43,6 +43,7 @@ namespace Amazon.ComputeOptimizer.Model
         private double? _lookbackPeriodInDays;
         private string _serviceArn;
         private List<ECSServiceRecommendationOption> _serviceRecommendationOptions = new List<ECSServiceRecommendationOption>();
+        private List<Tag> _tags = new List<Tag>();
         private List<ECSServiceUtilizationMetric> _utilizationMetrics = new List<ECSServiceUtilizationMetric>();
 
         /// <summary>
@@ -296,6 +297,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetServiceRecommendationOptions()
         {
             return this._serviceRecommendationOptions != null && this._serviceRecommendationOptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A list of tags assigned to your Amazon ECS service recommendations. 
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

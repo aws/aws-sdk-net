@@ -2005,8 +2005,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstance">REST API Reference for CreateDBInstance Operation</seealso>
         public virtual CreateDBInstanceResponse CreateDBInstance(CreateDBInstanceRequest request)
@@ -2156,8 +2155,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">REST API Reference for CreateDBInstanceReadReplica Operation</seealso>
         public virtual CreateDBInstanceReadReplicaResponse CreateDBInstanceReadReplica(CreateDBInstanceReadReplicaRequest request)
@@ -7657,6 +7655,10 @@ namespace Amazon.RDS
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotAvailableException">
+        /// The <code>aurora-iopt1</code> storage type isn't available, because you modified the
+        /// DB cluster to use this storage type less than one month ago.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBCluster">REST API Reference for ModifyDBCluster Operation</seealso>
         public virtual ModifyDBClusterResponse ModifyDBCluster(ModifyDBClusterRequest request)
         {
@@ -8046,8 +8048,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ModifyDBInstance">REST API Reference for ModifyDBInstance Operation</seealso>
         public virtual ModifyDBInstanceResponse ModifyDBInstance(ModifyDBInstanceRequest request)
@@ -9851,6 +9852,9 @@ namespace Amazon.RDS
         /// The request would result in the user exceeding the allowed amount of storage available
         /// across all DB instances.
         /// </exception>
+        /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBClusterFromS3">REST API Reference for RestoreDBClusterFromS3 Operation</seealso>
         public virtual RestoreDBClusterFromS3Response RestoreDBClusterFromS3(RestoreDBClusterFromS3Request request)
         {
@@ -10289,8 +10293,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromDBSnapshot">REST API Reference for RestoreDBInstanceFromDBSnapshot Operation</seealso>
         public virtual RestoreDBInstanceFromDBSnapshotResponse RestoreDBInstanceFromDBSnapshot(RestoreDBInstanceFromDBSnapshotRequest request)
@@ -10421,8 +10424,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceFromS3">REST API Reference for RestoreDBInstanceFromS3 Operation</seealso>
         public virtual RestoreDBInstanceFromS3Response RestoreDBInstanceFromS3(RestoreDBInstanceFromS3Request request)
@@ -10575,8 +10577,7 @@ namespace Amazon.RDS
         /// across all DB instances.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/RestoreDBInstanceToPointInTime">REST API Reference for RestoreDBInstanceToPointInTime Operation</seealso>
         public virtual RestoreDBInstanceToPointInTimeResponse RestoreDBInstanceToPointInTime(RestoreDBInstanceToPointInTimeRequest request)
@@ -11002,8 +11003,7 @@ namespace Amazon.RDS
         /// An error occurred accessing an Amazon Web Services KMS key.
         /// </exception>
         /// <exception cref="Amazon.RDS.Model.StorageTypeNotSupportedException">
-        /// Storage of the <code>StorageType</code> specified can't be associated with the DB
-        /// instance.
+        /// The specified <code>StorageType</code> can't be associated with the DB instance.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/StartDBInstanceAutomatedBackupsReplication">REST API Reference for StartDBInstanceAutomatedBackupsReplication Operation</seealso>
         public virtual StartDBInstanceAutomatedBackupsReplicationResponse StartDBInstanceAutomatedBackupsReplication(StartDBInstanceAutomatedBackupsReplicationRequest request)

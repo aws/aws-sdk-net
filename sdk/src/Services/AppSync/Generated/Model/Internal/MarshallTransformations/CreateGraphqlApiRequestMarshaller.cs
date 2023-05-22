@@ -151,6 +151,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetVisibility())
+                {
+                    context.Writer.WritePropertyName("visibility");
+                    context.Writer.Write(publicRequest.Visibility);
+                }
+
                 if(publicRequest.IsSetXrayEnabled())
                 {
                     context.Writer.WritePropertyName("xrayEnabled");

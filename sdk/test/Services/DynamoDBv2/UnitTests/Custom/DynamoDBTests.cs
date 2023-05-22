@@ -8,6 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.Auth.AccessControlPolicy;
 using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
+using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.Model;
@@ -284,6 +285,61 @@ namespace AWSSDK_DotNet35.UnitTests
 
             Assert.IsTrue(doc["Name"] is Primitive);
             Assert.IsNull(doc["Name"].AsPrimitive().Value);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestPropertyAttributeInheritance()
+        {
+            // Use a mock client to skip credential checks.
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var context = new DynamoDBContext(mockClient.Object);
+
+            var parent = new Parent();
+            parent.Property1 = "Value";
+
+            var child = new Child();
+            child.Property1 = "Value";
+
+            var parentDocument = context.ToDocument(parent);
+            var childDocument = context.ToDocument(child);
+
+            Assert.AreEqual(parentDocument["actualPropertyName"].AsString(), parent.Property1);
+            Assert.AreEqual(childDocument["actualPropertyName"].AsString(), child.Property1);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestVersionAttributeRename()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var context = new DynamoDBContext(mockClient.Object);
+
+            var parent = new Parent
+            {
+                Property1 = "Value",
+                Version = 1
+            };
+
+            var document = context.ToDocument(parent);
+            var attributes = document.ToAttributeMap();
+
+            Assert.IsTrue(attributes.ContainsKey("V"));
+            Assert.AreEqual(document["V"].AsInt(), 1);
+        }
+
+        public class Parent
+        {
+            [DynamoDBProperty("actualPropertyName")]
+            public virtual string Property1 { get; set; }
+
+            [DynamoDBVersion(AttributeName = "V")]
+            public int? Version { get; set; }
+        }
+
+        public class Child : Parent
+        {
+            public override string Property1 { get; set; }
         }
 
 #if ASYNC_AWAIT

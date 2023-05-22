@@ -31,6 +31,10 @@ namespace Amazon.Detective
     {
 
         /// <summary>
+        /// Constant ASFF_SECURITYHUB_FINDING for DatasourcePackage
+        /// </summary>
+        public static readonly DatasourcePackage ASFF_SECURITYHUB_FINDING = new DatasourcePackage("ASFF_SECURITYHUB_FINDING");
+        /// <summary>
         /// Constant DETECTIVE_CORE for DatasourcePackage
         /// </summary>
         public static readonly DatasourcePackage DETECTIVE_CORE = new DatasourcePackage("DETECTIVE_CORE");

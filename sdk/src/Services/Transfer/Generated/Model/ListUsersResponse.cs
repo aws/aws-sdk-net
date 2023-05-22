@@ -80,8 +80,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Users. 
         /// <para>
-        /// Returns the user accounts and their properties for the <code>ServerId</code> value
-        /// that you specify.
+        /// Returns the Transfer Family users and their properties for the <code>ServerId</code>
+        /// value that you specify.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

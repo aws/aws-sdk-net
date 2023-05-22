@@ -39,8 +39,8 @@ namespace Amazon.Kendra.Model
     /// </para>
     ///  
     /// <para>
-    /// If an update is currently processing (i.e. 'happening'), you need to wait for the
-    /// update to finish before making another update.
+    /// If an update is currently processing, you need to wait for the update to finish before
+    /// making another update.
     /// </para>
     ///  
     /// <para>
@@ -60,12 +60,32 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class UpdateQuerySuggestionsConfigRequest : AmazonKendraRequest
     {
+        private AttributeSuggestionsUpdateConfig _attributeSuggestionsConfig;
         private bool? _includeQueriesWithoutUserInformation;
         private string _indexId;
         private int? _minimumNumberOfQueryingUsers;
         private int? _minimumQueryCount;
         private Mode _mode;
         private int? _queryLogLookBackWindowInDays;
+
+        /// <summary>
+        /// Gets and sets the property AttributeSuggestionsConfig. 
+        /// <para>
+        /// Configuration information for the document fields/attributes that you want to base
+        /// query suggestions on.
+        /// </para>
+        /// </summary>
+        public AttributeSuggestionsUpdateConfig AttributeSuggestionsConfig
+        {
+            get { return this._attributeSuggestionsConfig; }
+            set { this._attributeSuggestionsConfig = value; }
+        }
+
+        // Check to see if AttributeSuggestionsConfig property is set
+        internal bool IsSetAttributeSuggestionsConfig()
+        {
+            return this._attributeSuggestionsConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IncludeQueriesWithoutUserInformation. 

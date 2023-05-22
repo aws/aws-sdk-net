@@ -70,6 +70,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrustedAdvisorIntegrationStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("WorkloadResourceDefinition", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.WorkloadResourceDefinition = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

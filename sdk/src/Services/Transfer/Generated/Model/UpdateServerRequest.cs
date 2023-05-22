@@ -484,8 +484,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property ServerId. 
         /// <para>
-        /// A system-assigned unique identifier for a server instance that the user account is
-        /// assigned to.
+        /// A system-assigned unique identifier for a server instance that the Transfer Family
+        /// user is assigned to.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=19, Max=19)]
@@ -511,7 +511,8 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code>
         /// can also contain a workflow ID (and execution role) for a workflow to execute on partial
-        /// upload. A partial upload occurs when a file is open when the session disconnects.
+        /// upload. A partial upload occurs when the server session disconnects while the file
+        /// is still being uploaded.
         /// </para>
         ///  
         /// <para>

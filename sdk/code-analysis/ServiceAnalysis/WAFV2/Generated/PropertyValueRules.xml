@@ -1142,6 +1142,30 @@
     <max>2000000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.RateLimitCookie.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RateLimitHeader.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RateLimitLabelNamespace.Namespace</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^[0-9A-Za-z_\-:]+:$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.RateLimitQueryArgument.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.Regex.RegexString</property>
     <min>1</min>
     <max>512</max>

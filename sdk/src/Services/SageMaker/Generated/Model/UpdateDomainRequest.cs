@@ -46,7 +46,8 @@ namespace Amazon.SageMaker.Model
         /// The entity that creates and manages the required security groups for inter-app communication
         /// in <code>VPCOnly</code> mode. Required when <code>CreateDomain.AppNetworkAccessType</code>
         /// is <code>VPCOnly</code> and <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-        /// is provided.
+        /// is provided. If setting up the domain for use with RStudio, this value must be set
+        /// to <code>Service</code>.
         /// </para>
         /// </summary>
         public AppSecurityGroupManagement AppSecurityGroupManagement

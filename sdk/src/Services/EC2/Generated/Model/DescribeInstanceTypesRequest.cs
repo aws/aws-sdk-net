@@ -47,8 +47,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>auto-recovery-supported</code> - Indicates whether auto recovery is supported
-        /// (<code>true</code> | <code>false</code>).
+        ///  <code>auto-recovery-supported</code> - Indicates whether Amazon CloudWatch action
+        /// based recovery is supported (<code>true</code> | <code>false</code>).
         /// </para>
         ///  </li> <li> 
         /// <para>

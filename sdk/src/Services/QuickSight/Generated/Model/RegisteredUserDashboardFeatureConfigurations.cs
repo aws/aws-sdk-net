@@ -33,7 +33,26 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class RegisteredUserDashboardFeatureConfigurations
     {
+        private BookmarksConfigurations _bookmarks;
         private StatePersistenceConfigurations _statePersistence;
+
+        /// <summary>
+        /// Gets and sets the property Bookmarks. 
+        /// <para>
+        /// The bookmarks configuration for an embedded dashboard in Amazon QuickSight.
+        /// </para>
+        /// </summary>
+        public BookmarksConfigurations Bookmarks
+        {
+            get { return this._bookmarks; }
+            set { this._bookmarks = value; }
+        }
+
+        // Check to see if Bookmarks property is set
+        internal bool IsSetBookmarks()
+        {
+            return this._bookmarks != null;
+        }
 
         /// <summary>
         /// Gets and sets the property StatePersistence. 

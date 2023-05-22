@@ -70,6 +70,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultValues = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MappedDataSetParameters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<MappedDataSetParameter, MappedDataSetParameterUnmarshaller>(MappedDataSetParameterUnmarshaller.Instance);
+                    unmarshalledObject.MappedDataSetParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

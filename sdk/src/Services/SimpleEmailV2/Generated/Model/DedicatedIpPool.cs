@@ -62,13 +62,13 @@ namespace Amazon.SimpleEmailV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>STANDARD</code> – A dedicated IP pool where the customer can control which
-        /// IPs are part of the pool.
+        ///  <code>STANDARD</code> – A dedicated IP pool where you can control which IPs are part
+        /// of the pool.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>MANAGED</code> – A dedicated IP pool where the reputation and number of IPs
-        /// is automatically managed by Amazon SES.
+        /// are automatically managed by Amazon SES.
         /// </para>
         ///  </li> </ul>
         /// </summary>
