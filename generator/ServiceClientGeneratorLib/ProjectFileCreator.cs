@@ -273,7 +273,7 @@ namespace ServiceClientGenerator
             }
             projectProperties.FrameworkPathOverride = projectFileConfiguration.FrameworkPathOverride;
             projectProperties.ReferenceDependencies = projectFileConfiguration.DllReferences;
-            projectProperties.SupressWarnings       = projectFileConfiguration.NoWarn;
+            projectProperties.SupressWarnings       = "CA1822";
             projectProperties.SignBinaries          = true;
             projectProperties.PackageReferences = projectFileConfiguration.PackageReferences;
             projectProperties.FxcopAnalyzerRuleSetFilePath = @"..\..\..\AWSDotNetSDK.ruleset";
