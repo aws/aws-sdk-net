@@ -1,3 +1,11 @@
+### 3.7.552.0 (2023-05-22 18:24 UTC)
+* Backup (3.7.104.0)
+	* Added support for tags on restore.
+* Pinpoint (3.7.101.14)
+	* Amazon Pinpoint is deprecating the tags parameter in the UpdateSegment, UpdateCampaign, UpdateEmailTemplate, UpdateSmsTemplate, UpdatePushTemplate, UpdateInAppTemplate and UpdateVoiceTemplate. Amazon Pinpoint will end support tags parameter by May 22, 2023.
+* QuickSight (3.7.109.0)
+	* Add support for Asset Bundle, Geospatial Heatmaps.
+
 ### 3.7.551.0 (2023-05-19 18:24 UTC)
 * Backup (3.7.103.0)
 	* Add  ResourceArn, ResourceType, and BackupVaultName to ListRecoveryPointsByLegalHold API response.
