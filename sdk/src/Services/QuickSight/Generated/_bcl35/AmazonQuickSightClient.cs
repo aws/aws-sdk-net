@@ -4559,6 +4559,156 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  DescribeAssetBundleExportJob
+
+        /// <summary>
+        /// Describes an existing export job.
+        /// 
+        ///  
+        /// <para>
+        /// Poll job descriptions after a job starts to know the status of the job. When a job
+        /// succeeds, a URL is provided to download the exported assets' data from. Download URLs
+        /// are valid for five minutes after they are generated. You can call the <code>DescribeAssetBundleExportJob</code>
+        /// API for a new download URL as needed.
+        /// </para>
+        ///  
+        /// <para>
+        /// Job descriptions are available for 14 days after the job starts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssetBundleExportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAssetBundleExportJob service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleExportJob">REST API Reference for DescribeAssetBundleExportJob Operation</seealso>
+        public virtual DescribeAssetBundleExportJobResponse DescribeAssetBundleExportJob(DescribeAssetBundleExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssetBundleExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssetBundleExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssetBundleExportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAssetBundleExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssetBundleExportJob operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAssetBundleExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleExportJob">REST API Reference for DescribeAssetBundleExportJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAssetBundleExportJob(DescribeAssetBundleExportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssetBundleExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssetBundleExportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAssetBundleExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAssetBundleExportJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeAssetBundleExportJobResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleExportJob">REST API Reference for DescribeAssetBundleExportJob Operation</seealso>
+        public virtual DescribeAssetBundleExportJobResponse EndDescribeAssetBundleExportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAssetBundleExportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DescribeAssetBundleImportJob
+
+        /// <summary>
+        /// Describes an existing import job.
+        /// 
+        ///  
+        /// <para>
+        /// Poll job descriptions after starting a job to know when it has succeeded or failed.
+        /// Job descriptions are available for 14 days after job starts.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssetBundleImportJob service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAssetBundleImportJob service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleImportJob">REST API Reference for DescribeAssetBundleImportJob Operation</seealso>
+        public virtual DescribeAssetBundleImportJobResponse DescribeAssetBundleImportJob(DescribeAssetBundleImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssetBundleImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssetBundleImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAssetBundleImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeAssetBundleImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAssetBundleImportJob operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeAssetBundleImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleImportJob">REST API Reference for DescribeAssetBundleImportJob Operation</seealso>
+        public virtual IAsyncResult BeginDescribeAssetBundleImportJob(DescribeAssetBundleImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAssetBundleImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAssetBundleImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeAssetBundleImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeAssetBundleImportJob.</param>
+        /// 
+        /// <returns>Returns a  DescribeAssetBundleImportJobResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleImportJob">REST API Reference for DescribeAssetBundleImportJob Operation</seealso>
+        public virtual DescribeAssetBundleImportJobResponse EndDescribeAssetBundleImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeAssetBundleImportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribeDashboard
 
         /// <summary>
@@ -7549,6 +7699,162 @@ namespace Amazon.QuickSight
 
         #endregion
         
+        #region  ListAssetBundleExportJobs
+
+        /// <summary>
+        /// Lists all asset bundle export jobs that have been taken place in the last 14 days.
+        /// Jobs created more than 14 days ago are deleted forever and are not returned. If you
+        /// are using the same job ID for multiple jobs, <code>ListAssetBundleExportJobs</code>
+        /// only returns the most recent job that uses the repeated job ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetBundleExportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListAssetBundleExportJobs service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleExportJobs">REST API Reference for ListAssetBundleExportJobs Operation</seealso>
+        public virtual ListAssetBundleExportJobsResponse ListAssetBundleExportJobs(ListAssetBundleExportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetBundleExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetBundleExportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssetBundleExportJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssetBundleExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetBundleExportJobs operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssetBundleExportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleExportJobs">REST API Reference for ListAssetBundleExportJobs Operation</seealso>
+        public virtual IAsyncResult BeginListAssetBundleExportJobs(ListAssetBundleExportJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetBundleExportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetBundleExportJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssetBundleExportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssetBundleExportJobs.</param>
+        /// 
+        /// <returns>Returns a  ListAssetBundleExportJobsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleExportJobs">REST API Reference for ListAssetBundleExportJobs Operation</seealso>
+        public virtual ListAssetBundleExportJobsResponse EndListAssetBundleExportJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAssetBundleExportJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAssetBundleImportJobs
+
+        /// <summary>
+        /// Lists all asset bundle import jobs that have taken place in the last 14 days. Jobs
+        /// created more than 14 days ago are deleted forever and are not returned. If you are
+        /// using the same job ID for multiple jobs, <code>ListAssetBundleImportJobs</code> only
+        /// returns the most recent job that uses the repeated job ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetBundleImportJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListAssetBundleImportJobs service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidNextTokenException">
+        /// The <code>NextToken</code> value isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleImportJobs">REST API Reference for ListAssetBundleImportJobs Operation</seealso>
+        public virtual ListAssetBundleImportJobsResponse ListAssetBundleImportJobs(ListAssetBundleImportJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetBundleImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetBundleImportJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAssetBundleImportJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAssetBundleImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAssetBundleImportJobs operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAssetBundleImportJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleImportJobs">REST API Reference for ListAssetBundleImportJobs Operation</seealso>
+        public virtual IAsyncResult BeginListAssetBundleImportJobs(ListAssetBundleImportJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAssetBundleImportJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAssetBundleImportJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAssetBundleImportJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAssetBundleImportJobs.</param>
+        /// 
+        /// <returns>Returns a  ListAssetBundleImportJobsResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleImportJobs">REST API Reference for ListAssetBundleImportJobs Operation</seealso>
+        public virtual ListAssetBundleImportJobsResponse EndListAssetBundleImportJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAssetBundleImportJobsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListDashboards
 
         /// <summary>
@@ -10212,6 +10518,198 @@ namespace Amazon.QuickSight
         public virtual SearchGroupsResponse EndSearchGroups(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchGroupsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartAssetBundleExportJob
+
+        /// <summary>
+        /// Starts an Asset Bundle export job.
+        /// 
+        ///  
+        /// <para>
+        /// An Asset Bundle export job exports specified Amazon QuickSight assets. You can also
+        /// choose to export any asset dependencies in the same job. Export jobs run asynchronously
+        /// and can be polled with a <code>DescribeAssetBundleExportJob</code> API call. When
+        /// a job is successfully completed, a download URL that contains the exported assets
+        /// is returned. The URL is valid for 5 minutes and can be refreshed with a <code>DescribeAssetBundleExportJob</code>
+        /// API call. Each Amazon QuickSight account can run up to 10 export jobs concurrently.
+        /// </para>
+        ///  
+        /// <para>
+        /// The API caller must have the necessary permissions in their IAM role to access each
+        /// resource before the resources can be exported.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAssetBundleExportJob service method.</param>
+        /// 
+        /// <returns>The response from the StartAssetBundleExportJob service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleExportJob">REST API Reference for StartAssetBundleExportJob Operation</seealso>
+        public virtual StartAssetBundleExportJobResponse StartAssetBundleExportJob(StartAssetBundleExportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAssetBundleExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssetBundleExportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartAssetBundleExportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAssetBundleExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAssetBundleExportJob operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAssetBundleExportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleExportJob">REST API Reference for StartAssetBundleExportJob Operation</seealso>
+        public virtual IAsyncResult BeginStartAssetBundleExportJob(StartAssetBundleExportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAssetBundleExportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssetBundleExportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAssetBundleExportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAssetBundleExportJob.</param>
+        /// 
+        /// <returns>Returns a  StartAssetBundleExportJobResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleExportJob">REST API Reference for StartAssetBundleExportJob Operation</seealso>
+        public virtual StartAssetBundleExportJobResponse EndStartAssetBundleExportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartAssetBundleExportJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartAssetBundleImportJob
+
+        /// <summary>
+        /// Starts an Asset Bundle import job.
+        /// 
+        ///  
+        /// <para>
+        /// An Asset Bundle import job imports specified Amazon QuickSight assets into an Amazon
+        /// QuickSight account. You can also choose to import a naming prefix and specified configuration
+        /// overrides. The assets that are contained in the bundle file that you provide are used
+        /// to create or update a new or existing asset in your Amazon QuickSight account. Each
+        /// Amazon QuickSight account can run up to 10 import jobs concurrently.
+        /// </para>
+        ///  
+        /// <para>
+        /// The API caller must have the necessary <code>"create"</code>, <code>"describe"</code>,
+        /// and <code>"update"</code> permissions in their IAM role to access each resource type
+        /// that is contained in the bundle file before the resources can be imported.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartAssetBundleImportJob service method.</param>
+        /// 
+        /// <returns>The response from the StartAssetBundleImportJob service method, as returned by QuickSight.</returns>
+        /// <exception cref="Amazon.QuickSight.Model.AccessDeniedException">
+        /// You don't have access to this item. The provided credentials couldn't be validated.
+        /// You might not be authorized to carry out the request. Make sure that your account
+        /// is authorized to use the Amazon QuickSight service, that your policies have the correct
+        /// permissions, and that you are using the correct credentials.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ConflictException">
+        /// Updating or deleting a resource can cause an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.InvalidParameterValueException">
+        /// One or more parameters has a value that isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.LimitExceededException">
+        /// A limit is exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ResourceNotFoundException">
+        /// One or more resources can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.ThrottlingException">
+        /// Access is throttled.
+        /// </exception>
+        /// <exception cref="Amazon.QuickSight.Model.UnsupportedUserEditionException">
+        /// This error indicates that you are calling an operation on an Amazon QuickSight subscription
+        /// where the edition doesn't include support for that operation. Amazon Amazon QuickSight
+        /// currently has Standard Edition and Enterprise Edition. Not every operation and capability
+        /// is available in every edition.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleImportJob">REST API Reference for StartAssetBundleImportJob Operation</seealso>
+        public virtual StartAssetBundleImportJobResponse StartAssetBundleImportJob(StartAssetBundleImportJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAssetBundleImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssetBundleImportJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartAssetBundleImportJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartAssetBundleImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartAssetBundleImportJob operation on AmazonQuickSightClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartAssetBundleImportJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleImportJob">REST API Reference for StartAssetBundleImportJob Operation</seealso>
+        public virtual IAsyncResult BeginStartAssetBundleImportJob(StartAssetBundleImportJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartAssetBundleImportJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartAssetBundleImportJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartAssetBundleImportJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartAssetBundleImportJob.</param>
+        /// 
+        /// <returns>Returns a  StartAssetBundleImportJobResult from QuickSight.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleImportJob">REST API Reference for StartAssetBundleImportJob Operation</seealso>
+        public virtual StartAssetBundleImportJobResponse EndStartAssetBundleImportJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartAssetBundleImportJobResponse>(asyncResult);
         }
 
         #endregion

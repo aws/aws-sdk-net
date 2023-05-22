@@ -44,6 +44,22 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssetBundleExportJobs operation
+        ///</summary>
+        public IListAssetBundleExportJobsPaginator ListAssetBundleExportJobs(ListAssetBundleExportJobsRequest request) 
+        {
+            return new ListAssetBundleExportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssetBundleImportJobs operation
+        ///</summary>
+        public IListAssetBundleImportJobsPaginator ListAssetBundleImportJobs(ListAssetBundleImportJobsRequest request) 
+        {
+            return new ListAssetBundleImportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         public IListDashboardsPaginator ListDashboards(ListDashboardsRequest request) 

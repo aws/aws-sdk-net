@@ -335,6 +335,628 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type AssetBundleExportFormat.
+    /// </summary>
+    public class AssetBundleExportFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CLOUDFORMATION_JSON for AssetBundleExportFormat
+        /// </summary>
+        public static readonly AssetBundleExportFormat CLOUDFORMATION_JSON = new AssetBundleExportFormat("CLOUDFORMATION_JSON");
+        /// <summary>
+        /// Constant QUICKSIGHT_JSON for AssetBundleExportFormat
+        /// </summary>
+        public static readonly AssetBundleExportFormat QUICKSIGHT_JSON = new AssetBundleExportFormat("QUICKSIGHT_JSON");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportFormat FindValue(string value)
+        {
+            return FindValue<AssetBundleExportFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetBundleExportJobAnalysisPropertyToOverride.
+    /// </summary>
+    public class AssetBundleExportJobAnalysisPropertyToOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Name for AssetBundleExportJobAnalysisPropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobAnalysisPropertyToOverride Name = new AssetBundleExportJobAnalysisPropertyToOverride("Name");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportJobAnalysisPropertyToOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportJobAnalysisPropertyToOverride FindValue(string value)
+        {
+            return FindValue<AssetBundleExportJobAnalysisPropertyToOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportJobAnalysisPropertyToOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetBundleExportJobDashboardPropertyToOverride.
+    /// </summary>
+    public class AssetBundleExportJobDashboardPropertyToOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Name for AssetBundleExportJobDashboardPropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDashboardPropertyToOverride Name = new AssetBundleExportJobDashboardPropertyToOverride("Name");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportJobDashboardPropertyToOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportJobDashboardPropertyToOverride FindValue(string value)
+        {
+            return FindValue<AssetBundleExportJobDashboardPropertyToOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportJobDashboardPropertyToOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetBundleExportJobDataSetPropertyToOverride.
+    /// </summary>
+    public class AssetBundleExportJobDataSetPropertyToOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Name for AssetBundleExportJobDataSetPropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSetPropertyToOverride Name = new AssetBundleExportJobDataSetPropertyToOverride("Name");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportJobDataSetPropertyToOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportJobDataSetPropertyToOverride FindValue(string value)
+        {
+            return FindValue<AssetBundleExportJobDataSetPropertyToOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportJobDataSetPropertyToOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetBundleExportJobDataSourcePropertyToOverride.
+    /// </summary>
+    public class AssetBundleExportJobDataSourcePropertyToOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Catalog for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride Catalog = new AssetBundleExportJobDataSourcePropertyToOverride("Catalog");
+        /// <summary>
+        /// Constant ClusterId for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride ClusterId = new AssetBundleExportJobDataSourcePropertyToOverride("ClusterId");
+        /// <summary>
+        /// Constant Database for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride Database = new AssetBundleExportJobDataSourcePropertyToOverride("Database");
+        /// <summary>
+        /// Constant DataSetName for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride DataSetName = new AssetBundleExportJobDataSourcePropertyToOverride("DataSetName");
+        /// <summary>
+        /// Constant DisableSsl for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride DisableSsl = new AssetBundleExportJobDataSourcePropertyToOverride("DisableSsl");
+        /// <summary>
+        /// Constant Domain for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride Domain = new AssetBundleExportJobDataSourcePropertyToOverride("Domain");
+        /// <summary>
+        /// Constant Host for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride Host = new AssetBundleExportJobDataSourcePropertyToOverride("Host");
+        /// <summary>
+        /// Constant InstanceId for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride InstanceId = new AssetBundleExportJobDataSourcePropertyToOverride("InstanceId");
+        /// <summary>
+        /// Constant ManifestFileLocation for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride ManifestFileLocation = new AssetBundleExportJobDataSourcePropertyToOverride("ManifestFileLocation");
+        /// <summary>
+        /// Constant Name for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride Name = new AssetBundleExportJobDataSourcePropertyToOverride("Name");
+        /// <summary>
+        /// Constant Password for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride Password = new AssetBundleExportJobDataSourcePropertyToOverride("Password");
+        /// <summary>
+        /// Constant Port for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride Port = new AssetBundleExportJobDataSourcePropertyToOverride("Port");
+        /// <summary>
+        /// Constant RoleArn for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride RoleArn = new AssetBundleExportJobDataSourcePropertyToOverride("RoleArn");
+        /// <summary>
+        /// Constant SecretArn for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride SecretArn = new AssetBundleExportJobDataSourcePropertyToOverride("SecretArn");
+        /// <summary>
+        /// Constant Username for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride Username = new AssetBundleExportJobDataSourcePropertyToOverride("Username");
+        /// <summary>
+        /// Constant Warehouse for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride Warehouse = new AssetBundleExportJobDataSourcePropertyToOverride("Warehouse");
+        /// <summary>
+        /// Constant WorkGroup for AssetBundleExportJobDataSourcePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobDataSourcePropertyToOverride WorkGroup = new AssetBundleExportJobDataSourcePropertyToOverride("WorkGroup");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportJobDataSourcePropertyToOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportJobDataSourcePropertyToOverride FindValue(string value)
+        {
+            return FindValue<AssetBundleExportJobDataSourcePropertyToOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportJobDataSourcePropertyToOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetBundleExportJobRefreshSchedulePropertyToOverride.
+    /// </summary>
+    public class AssetBundleExportJobRefreshSchedulePropertyToOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant StartAfterDateTime for AssetBundleExportJobRefreshSchedulePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobRefreshSchedulePropertyToOverride StartAfterDateTime = new AssetBundleExportJobRefreshSchedulePropertyToOverride("StartAfterDateTime");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportJobRefreshSchedulePropertyToOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportJobRefreshSchedulePropertyToOverride FindValue(string value)
+        {
+            return FindValue<AssetBundleExportJobRefreshSchedulePropertyToOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportJobRefreshSchedulePropertyToOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetBundleExportJobStatus.
+    /// </summary>
+    public class AssetBundleExportJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AssetBundleExportJobStatus
+        /// </summary>
+        public static readonly AssetBundleExportJobStatus FAILED = new AssetBundleExportJobStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for AssetBundleExportJobStatus
+        /// </summary>
+        public static readonly AssetBundleExportJobStatus IN_PROGRESS = new AssetBundleExportJobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED_FOR_IMMEDIATE_EXECUTION for AssetBundleExportJobStatus
+        /// </summary>
+        public static readonly AssetBundleExportJobStatus QUEUED_FOR_IMMEDIATE_EXECUTION = new AssetBundleExportJobStatus("QUEUED_FOR_IMMEDIATE_EXECUTION");
+        /// <summary>
+        /// Constant SUCCESSFUL for AssetBundleExportJobStatus
+        /// </summary>
+        public static readonly AssetBundleExportJobStatus SUCCESSFUL = new AssetBundleExportJobStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportJobStatus FindValue(string value)
+        {
+            return FindValue<AssetBundleExportJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetBundleExportJobThemePropertyToOverride.
+    /// </summary>
+    public class AssetBundleExportJobThemePropertyToOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Name for AssetBundleExportJobThemePropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobThemePropertyToOverride Name = new AssetBundleExportJobThemePropertyToOverride("Name");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportJobThemePropertyToOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportJobThemePropertyToOverride FindValue(string value)
+        {
+            return FindValue<AssetBundleExportJobThemePropertyToOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportJobThemePropertyToOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetBundleExportJobVPCConnectionPropertyToOverride.
+    /// </summary>
+    public class AssetBundleExportJobVPCConnectionPropertyToOverride : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DnsResolvers for AssetBundleExportJobVPCConnectionPropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobVPCConnectionPropertyToOverride DnsResolvers = new AssetBundleExportJobVPCConnectionPropertyToOverride("DnsResolvers");
+        /// <summary>
+        /// Constant Name for AssetBundleExportJobVPCConnectionPropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobVPCConnectionPropertyToOverride Name = new AssetBundleExportJobVPCConnectionPropertyToOverride("Name");
+        /// <summary>
+        /// Constant RoleArn for AssetBundleExportJobVPCConnectionPropertyToOverride
+        /// </summary>
+        public static readonly AssetBundleExportJobVPCConnectionPropertyToOverride RoleArn = new AssetBundleExportJobVPCConnectionPropertyToOverride("RoleArn");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleExportJobVPCConnectionPropertyToOverride(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleExportJobVPCConnectionPropertyToOverride FindValue(string value)
+        {
+            return FindValue<AssetBundleExportJobVPCConnectionPropertyToOverride>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleExportJobVPCConnectionPropertyToOverride(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetBundleImportFailureAction.
+    /// </summary>
+    public class AssetBundleImportFailureAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DO_NOTHING for AssetBundleImportFailureAction
+        /// </summary>
+        public static readonly AssetBundleImportFailureAction DO_NOTHING = new AssetBundleImportFailureAction("DO_NOTHING");
+        /// <summary>
+        /// Constant ROLLBACK for AssetBundleImportFailureAction
+        /// </summary>
+        public static readonly AssetBundleImportFailureAction ROLLBACK = new AssetBundleImportFailureAction("ROLLBACK");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleImportFailureAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleImportFailureAction FindValue(string value)
+        {
+            return FindValue<AssetBundleImportFailureAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleImportFailureAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AssetBundleImportJobStatus.
+    /// </summary>
+    public class AssetBundleImportJobStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FAILED for AssetBundleImportJobStatus
+        /// </summary>
+        public static readonly AssetBundleImportJobStatus FAILED = new AssetBundleImportJobStatus("FAILED");
+        /// <summary>
+        /// Constant FAILED_ROLLBACK_COMPLETED for AssetBundleImportJobStatus
+        /// </summary>
+        public static readonly AssetBundleImportJobStatus FAILED_ROLLBACK_COMPLETED = new AssetBundleImportJobStatus("FAILED_ROLLBACK_COMPLETED");
+        /// <summary>
+        /// Constant FAILED_ROLLBACK_ERROR for AssetBundleImportJobStatus
+        /// </summary>
+        public static readonly AssetBundleImportJobStatus FAILED_ROLLBACK_ERROR = new AssetBundleImportJobStatus("FAILED_ROLLBACK_ERROR");
+        /// <summary>
+        /// Constant FAILED_ROLLBACK_IN_PROGRESS for AssetBundleImportJobStatus
+        /// </summary>
+        public static readonly AssetBundleImportJobStatus FAILED_ROLLBACK_IN_PROGRESS = new AssetBundleImportJobStatus("FAILED_ROLLBACK_IN_PROGRESS");
+        /// <summary>
+        /// Constant IN_PROGRESS for AssetBundleImportJobStatus
+        /// </summary>
+        public static readonly AssetBundleImportJobStatus IN_PROGRESS = new AssetBundleImportJobStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant QUEUED_FOR_IMMEDIATE_EXECUTION for AssetBundleImportJobStatus
+        /// </summary>
+        public static readonly AssetBundleImportJobStatus QUEUED_FOR_IMMEDIATE_EXECUTION = new AssetBundleImportJobStatus("QUEUED_FOR_IMMEDIATE_EXECUTION");
+        /// <summary>
+        /// Constant SUCCESSFUL for AssetBundleImportJobStatus
+        /// </summary>
+        public static readonly AssetBundleImportJobStatus SUCCESSFUL = new AssetBundleImportJobStatus("SUCCESSFUL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AssetBundleImportJobStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AssetBundleImportJobStatus FindValue(string value)
+        {
+            return FindValue<AssetBundleImportJobStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AssetBundleImportJobStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AssignmentStatus.
     /// </summary>
     public class AssignmentStatus : ConstantClass
@@ -3860,6 +4482,10 @@ namespace Amazon.QuickSight
         /// Constant CLUSTER for GeospatialSelectedPointStyle
         /// </summary>
         public static readonly GeospatialSelectedPointStyle CLUSTER = new GeospatialSelectedPointStyle("CLUSTER");
+        /// <summary>
+        /// Constant HEATMAP for GeospatialSelectedPointStyle
+        /// </summary>
+        public static readonly GeospatialSelectedPointStyle HEATMAP = new GeospatialSelectedPointStyle("HEATMAP");
         /// <summary>
         /// Constant POINT for GeospatialSelectedPointStyle
         /// </summary>
