@@ -494,6 +494,12 @@ namespace Amazon.Backup.Model
         /// met, the next instance of a backup rule running will result in a new continuous recovery
         /// point being created. The recovery points with STOPPED status do not need to be deleted.
         /// </para>
+        ///  
+        /// <para>
+        /// For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action,
+        /// application misconfiguration, or backup failure. To ensure that future continuous
+        /// backups succeed, refer to the recovery point status and check SAP HANA for details.
+        /// </para>
         /// </summary>
         public RecoveryPointStatus Status
         {
@@ -510,7 +516,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// A status message explaining the reason for the recovery point deletion failure.
+        /// A status message explaining the status of the recovery point.
         /// </para>
         /// </summary>
         public string StatusMessage

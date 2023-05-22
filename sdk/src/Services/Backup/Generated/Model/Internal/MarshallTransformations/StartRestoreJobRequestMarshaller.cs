@@ -65,6 +65,12 @@ namespace Amazon.Backup.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCopySourceTagsToRestoredResource())
+                {
+                    context.Writer.WritePropertyName("CopySourceTagsToRestoredResource");
+                    context.Writer.Write(publicRequest.CopySourceTagsToRestoredResource);
+                }
+
                 if(publicRequest.IsSetIamRoleArn())
                 {
                     context.Writer.WritePropertyName("IamRoleArn");
