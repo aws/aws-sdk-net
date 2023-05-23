@@ -29,21 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// This is the response object from the TranslateText operation.
+    /// This is the response object from the TranslateDocument operation.
     /// </summary>
-    public partial class TranslateTextResponse : AmazonWebServiceResponse
+    public partial class TranslateDocumentResponse : AmazonWebServiceResponse
     {
         private TranslationSettings _appliedSettings;
         private List<AppliedTerminology> _appliedTerminologies = new List<AppliedTerminology>();
         private string _sourceLanguageCode;
         private string _targetLanguageCode;
-        private string _translatedText;
+        private TranslatedDocument _translatedDocument;
 
         /// <summary>
-        /// Gets and sets the property AppliedSettings. 
-        /// <para>
-        /// Optional settings that modify the translation output.
-        /// </para>
+        /// Gets and sets the property AppliedSettings.
         /// </summary>
         public TranslationSettings AppliedSettings
         {
@@ -61,7 +58,7 @@ namespace Amazon.Translate.Model
         /// Gets and sets the property AppliedTerminologies. 
         /// <para>
         /// The names of the custom terminologies applied to the input text by Amazon Translate
-        /// for the translated text response.
+        /// to produce the translated text document.
         /// </para>
         /// </summary>
         public List<AppliedTerminology> AppliedTerminologies
@@ -79,7 +76,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property SourceLanguageCode. 
         /// <para>
-        /// The language code for the language of the source text.
+        /// The language code of the source document.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=5)]
@@ -98,7 +95,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TargetLanguageCode. 
         /// <para>
-        /// The language code for the language of the target text. 
+        /// The language code of the translated document. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=5)]
@@ -115,22 +112,23 @@ namespace Amazon.Translate.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TranslatedText. 
+        /// Gets and sets the property TranslatedDocument. 
         /// <para>
-        /// The translated text.
+        /// The document containing the translated content. The document format matches the source
+        /// document format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=20000)]
-        public string TranslatedText
+        [AWSProperty(Required=true)]
+        public TranslatedDocument TranslatedDocument
         {
-            get { return this._translatedText; }
-            set { this._translatedText = value; }
+            get { return this._translatedDocument; }
+            set { this._translatedDocument = value; }
         }
 
-        // Check to see if TranslatedText property is set
-        internal bool IsSetTranslatedText()
+        // Check to see if TranslatedDocument property is set
+        internal bool IsSetTranslatedDocument()
         {
-            return this._translatedText != null;
+            return this._translatedDocument != null;
         }
 
     }

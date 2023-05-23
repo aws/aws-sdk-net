@@ -29,25 +29,55 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// Container for the parameters to the TranslateText operation.
-    /// Translates input text from the source language to the target language. For a list
-    /// of available languages and language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
-    /// languages</a>.
+    /// Container for the parameters to the TranslateDocument operation.
+    /// Translates the input document from the source language to the target language. This
+    /// synchronous operation supports plain text or HTML for the input document. <code>TranslateDocument</code>
+    /// supports translations from English to any supported language, and from any supported
+    /// language to English. Therefore, specify either the source language code or the target
+    /// language code as “en” (English). 
+    /// 
+    ///  
+    /// <para>
+    ///  <code>TranslateDocument</code> does not support language auto-detection. 
+    /// </para>
+    ///  
+    /// <para>
+    ///  If you set the <code>Formality</code> parameter, the request will fail if the target
+    /// language does not support formality. For a list of target languages that support formality,
+    /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
+    /// formality</a>. 
+    /// </para>
     /// </summary>
-    public partial class TranslateTextRequest : AmazonTranslateRequest
+    public partial class TranslateDocumentRequest : AmazonTranslateRequest
     {
+        private Document _document;
         private TranslationSettings _settings;
         private string _sourceLanguageCode;
         private string _targetLanguageCode;
         private List<string> _terminologyNames = new List<string>();
-        private string _text;
 
         /// <summary>
-        /// Gets and sets the property Settings. 
+        /// Gets and sets the property Document. 
         /// <para>
-        /// Settings to configure your translation output, including the option to set the formality
-        /// level of the output text and the option to mask profane words and phrases.
+        /// The content and content type for the document to be translated. The document size
+        /// must not exceed 100 KB.
         /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public Document Document
+        {
+            get { return this._document; }
+            set { this._document = value; }
+        }
+
+        // Check to see if Document property is set
+        internal bool IsSetDocument()
+        {
+            return this._document != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Settings.
         /// </summary>
         public TranslationSettings Settings
         {
@@ -64,24 +94,11 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property SourceLanguageCode. 
         /// <para>
-        /// The language code for the language of the source text. For a list of language codes,
-        /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+        /// The language code for the language of the source text. Do not use <code>auto</code>,
+        /// because <code>TranslateDocument</code> does not support language auto-detection. For
+        /// a list of supported language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
         /// languages</a>.
         /// </para>
-        ///  
-        /// <para>
-        /// To have Amazon Translate determine the source language of your text, you can specify
-        /// <code>auto</code> in the <code>SourceLanguageCode</code> field. If you specify <code>auto</code>,
-        /// Amazon Translate will call <a href="https://docs.aws.amazon.com/comprehend/latest/dg/comprehend-general.html">Amazon
-        /// Comprehend</a> to determine the source language.
-        /// </para>
-        ///  <note> 
-        /// <para>
-        /// If you specify <code>auto</code>, you must send the <code>TranslateText</code> request
-        /// in a region that supports Amazon Comprehend. Otherwise, the request returns an error
-        /// indicating that autodetect is not supported. 
-        /// </para>
-        ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=5)]
         public string SourceLanguageCode
@@ -99,7 +116,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TargetLanguageCode. 
         /// <para>
-        /// The language code requested for the language of the target text. For a list of language
+        /// The language code requested for the translated document. For a list of supported language
         /// codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
         /// languages</a>.
         /// </para>
@@ -145,26 +162,6 @@ namespace Amazon.Translate.Model
         internal bool IsSetTerminologyNames()
         {
             return this._terminologyNames != null && this._terminologyNames.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Text. 
-        /// <para>
-        /// The text to translate. The text string can be a maximum of 10,000 bytes long. Depending
-        /// on your character set, this may be fewer than 10,000 characters.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10000)]
-        public string Text
-        {
-            get { return this._text; }
-            set { this._text = value; }
-        }
-
-        // Check to see if Text property is set
-        internal bool IsSetText()
-        {
-            return this._text != null;
         }
 
     }
