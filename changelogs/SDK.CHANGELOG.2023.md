@@ -1,3 +1,14 @@
+### 3.7.553.0 (2023-05-23 18:38 UTC)
+* FMS (3.7.105.0)
+	* Fixes issue that could cause calls to GetAdminScope and ListAdminAccountsForOrganization to return a 500 Internal Server error.
+* SageMaker (3.7.130.0)
+	* Added ModelNameEquals, ModelPackageVersionArnEquals in request and ModelName, SamplePayloadUrl, ModelPackageVersionArn in response of ListInferenceRecommendationsJobs API. Added Invocation timestamps in response of DescribeInferenceRecommendationsJob API & ListInferenceRecommendationsJobSteps API.
+* Translate (3.7.102.0)
+	* Added support for calling TranslateDocument API.
+* Core 3.7.106.40
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.552.0 (2023-05-22 18:24 UTC)
 * Backup (3.7.104.0)
 	* Added support for tags on restore.
