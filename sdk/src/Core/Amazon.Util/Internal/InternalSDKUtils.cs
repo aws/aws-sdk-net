@@ -114,20 +114,20 @@ namespace Amazon.Util.Internal
             if (propertyValues == null || propertyValues.Count == 0)
                 return;
 
-            var targetTypeInfo = TypeFactory.GetTypeInfo(target.GetType());
+            var targetType = target.GetType();
             
             foreach(var kvp in propertyValues)
             {
-                var property = targetTypeInfo.GetProperty(kvp.Key);
+                var property = targetType.GetProperty(kvp.Key);
                 if (property == null)
-                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Unable to find property {0} on type {1}.", kvp.Key, targetTypeInfo.FullName));
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Unable to find property {0} on type {1}.", kvp.Key, targetType.FullName));
 
                 try
                 {
-                    var propertyTypeInfo = TypeFactory.GetTypeInfo(property.PropertyType);
+                    var propertyTypeInfo = property.PropertyType;
                     if (propertyTypeInfo.IsEnum)
                     {
-                        var enumValue = Enum.Parse(property.PropertyType, kvp.Value.ToString(), true);
+                        var enumValue = Enum.Parse(propertyTypeInfo, kvp.Value.ToString(), true);
                         property.SetValue(target, enumValue, null);
                     }
                     else
@@ -137,7 +137,7 @@ namespace Amazon.Util.Internal
                 }
                 catch(Exception e)
                 {
-                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Unable to set property {0} on type {1}: {2}", kvp.Key, targetTypeInfo.FullName, e.Message));
+                    throw new ArgumentException(string.Format(CultureInfo.InvariantCulture, "Unable to set property {0} on type {1}: {2}", kvp.Key, targetType.FullName, e.Message));
                 }
             }
         }

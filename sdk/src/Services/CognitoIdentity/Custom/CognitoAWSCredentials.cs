@@ -32,6 +32,7 @@ namespace Amazon.CognitoIdentity
     {
         #region Private members
         private static object refreshIdLock = new object();
+        private readonly object identityChangeEventLock = new object();
         private string identityId;
         private static int DefaultDurationSeconds = (int)TimeSpan.FromHours(1).TotalSeconds;
         private IAmazonCognitoIdentity cib;
@@ -443,14 +444,14 @@ namespace Amazon.CognitoIdentity
         {
             add
             {
-                lock (this)
+                lock (identityChangeEventLock)
                 {
                     mIdentityChangedEvent += value;
                 }
             }
             remove
             {
-                lock (this)
+                lock (identityChangeEventLock)
                 {
                     mIdentityChangedEvent -= value;
                 }

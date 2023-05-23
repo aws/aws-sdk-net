@@ -35,12 +35,12 @@ namespace Amazon.Runtime.Internal
             var credentials = originalServiceClient.Credentials;
             var newConfig = originalServiceClient.CloneConfig<TConfig>();
 
-            var newServiceClientTypeInfo = TypeFactory.GetTypeInfo(typeof(TClient));
+            var newServiceClientTypeInfo = typeof(TClient);
 
-            var constructor = newServiceClientTypeInfo.GetConstructor(new ITypeInfo[]
+            var constructor = newServiceClientTypeInfo.GetConstructor(new Type[]
                 {
-                    TypeFactory.GetTypeInfo(typeof(AWSCredentials)),
-                    TypeFactory.GetTypeInfo(newConfig.GetType())
+                    typeof(AWSCredentials),
+                    newConfig.GetType()
                 });
 
             var newServiceClient = constructor.Invoke(new object[] { credentials, newConfig }) as TClient;
@@ -54,9 +54,9 @@ namespace Amazon.Runtime.Internal
         {
             var serviceClientTypeInfo = LoadServiceClientType(assemblyName, serviceClientClassName);
 
-            var constructor = serviceClientTypeInfo.GetConstructor(new ITypeInfo[]
+            var constructor = serviceClientTypeInfo.GetConstructor(new Type[]
                 {
-                    TypeFactory.GetTypeInfo(typeof(RegionEndpoint))
+                    typeof(RegionEndpoint)
                 });
 
             var newServiceClient = constructor.Invoke(new object[] { region }) as TClient;
@@ -70,10 +70,10 @@ namespace Amazon.Runtime.Internal
         {
             var serviceClientTypeInfo = LoadServiceClientType(assemblyName, serviceClientClassName);
 
-            var constructor = serviceClientTypeInfo.GetConstructor(new ITypeInfo[]
+            var constructor = serviceClientTypeInfo.GetConstructor(new Type[]
                 {
-                    TypeFactory.GetTypeInfo(typeof(AWSCredentials)),
-                    TypeFactory.GetTypeInfo(typeof(RegionEndpoint))
+                    typeof(AWSCredentials),
+                    typeof(RegionEndpoint)
                 });
 
             var newServiceClient = constructor.Invoke(new object[] { credentials, region }) as TClient;
@@ -87,10 +87,10 @@ namespace Amazon.Runtime.Internal
         {
             var serviceClientTypeInfo = LoadServiceClientType(assemblyName, serviceClientClassName);
         
-            var constructor = serviceClientTypeInfo.GetConstructor(new ITypeInfo[]
+            var constructor = serviceClientTypeInfo.GetConstructor(new Type[]
                 {
-                    TypeFactory.GetTypeInfo(typeof(AWSCredentials)),
-                    TypeFactory.GetTypeInfo(config.GetType())
+                    typeof(AWSCredentials),
+                    config.GetType()
                 });
 
             var newServiceClient = constructor.Invoke(new object[] { credentials, config }) as TClient;
@@ -106,10 +106,10 @@ namespace Amazon.Runtime.Internal
             var config = CreateServiceConfig(assemblyName, serviceClientClassName.Replace("Client", "Config"));
             originalServiceClient.CloneConfig(config);
 
-            var constructor = serviceClientTypeInfo.GetConstructor(new ITypeInfo[]
+            var constructor = serviceClientTypeInfo.GetConstructor(new Type[]
                 {
-                    TypeFactory.GetTypeInfo(typeof(AWSCredentials)),
-                    TypeFactory.GetTypeInfo(config.GetType())
+                    typeof(AWSCredentials),
+                    config.GetType()
                 });
 
             var newServiceClient = constructor.Invoke(new object[] { originalServiceClient.Credentials, config }) as TClient;
@@ -121,28 +121,28 @@ namespace Amazon.Runtime.Internal
         {
             var typeInfo = LoadServiceConfigType(assemblyName, serviceConfigClassName);
 
-            var ci = typeInfo.GetConstructor(new ITypeInfo[0]);
+            var ci = typeInfo.GetConstructor(new Type[0]);
             var config = ci.Invoke(new object[0]);
 
             return config as ClientConfig;
         }
 
-        private static ITypeInfo LoadServiceClientType(string assemblyName, string serviceClientClassName)
+        private static Type LoadServiceClientType(string assemblyName, string serviceClientClassName)
         {
             return LoadTypeFromAssembly(assemblyName, serviceClientClassName);
         }
 
-        private static ITypeInfo LoadServiceConfigType(string assemblyName, string serviceConfigClassName)
+        private static Type LoadServiceConfigType(string assemblyName, string serviceConfigClassName)
         {
             return LoadTypeFromAssembly(assemblyName, serviceConfigClassName);
         }
 
-        internal static ITypeInfo LoadTypeFromAssembly(string assemblyName, string className)
+        internal static Type LoadTypeFromAssembly(string assemblyName, string className)
         {
             var assembly = GetSDKAssembly(assemblyName);
             var type = assembly.GetType(className);
 
-            return TypeFactory.GetTypeInfo(type);
+            return type;
         }
 
         private static Assembly GetSDKAssembly(string assemblyName)

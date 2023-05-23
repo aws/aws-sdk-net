@@ -15,6 +15,7 @@
 using Amazon.Runtime.Internal.Util;
 using Amazon.Runtime.SharedInterfaces;
 using Amazon.Util.Internal;
+using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
@@ -54,10 +55,10 @@ namespace Amazon.Runtime.Internal.Auth
                     {
                         try
                         {
-                            var crtWrapperTypeInfo = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
-                            var constructor = crtWrapperTypeInfo.GetConstructor(new ITypeInfo[]
+                            var crtWrapperType = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
+                            var constructor = crtWrapperType.GetConstructor(new Type[]
                             {
-                                TypeFactory.GetTypeInfo(typeof(bool))
+                                typeof(bool)
                             });
 
                             _awsSigV4AProvider = constructor.Invoke(new object[] { signPayload }) as IAWSSigV4aProvider;

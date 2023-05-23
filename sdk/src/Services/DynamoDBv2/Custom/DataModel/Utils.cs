@@ -29,6 +29,8 @@ namespace Amazon.DynamoDBv2.DataModel
 {
     internal static class Utils
     {
+        private static readonly Type[] EmptyTypes = new Type[0];
+
         #region Type methods
 
         private static readonly Type[] primitiveTypesArray = new Type[]
@@ -55,13 +57,10 @@ namespace Amazon.DynamoDBv2.DataModel
         };
 
         public static readonly IEnumerable<Type> PrimitiveTypes = new HashSet<Type>(primitiveTypesArray);
-        private static readonly HashSet<ITypeInfo> PrimitiveTypeInfos = new HashSet<ITypeInfo>(primitiveTypesArray
-            .Select(p => TypeFactory.GetTypeInfo(p)));
 
         public static bool IsPrimitive(Type type)
         {
-            var typeWrapper = TypeFactory.GetTypeInfo(type);
-            return PrimitiveTypeInfos.Any(ti => typeWrapper.IsAssignableFrom(ti));
+            return PrimitiveTypes.Any(ti => type.IsAssignableFrom(ti));
         }
         public static bool IsPrimitive<T>()
         {
@@ -80,16 +79,15 @@ namespace Amazon.DynamoDBv2.DataModel
 
         public static void ValidateVersionType(Type memberType)
         {
-            var memberTypeWrapper = TypeFactory.GetTypeInfo(memberType);
-            if (memberTypeWrapper.IsGenericType && memberTypeWrapper.GetGenericTypeDefinition() == typeof(Nullable<>) &&
-                (memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(Byte))) ||
-                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(SByte))) ||
-                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(int))) ||
-                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(uint))) ||
-                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(long))) ||
-                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ulong))) ||
-                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(short))) ||
-                memberTypeWrapper.IsAssignableFrom(TypeFactory.GetTypeInfo(typeof(ushort)))))
+            if (memberType.IsGenericType && memberType.GetGenericTypeDefinition() == typeof(Nullable<>) &&
+                (memberType.IsAssignableFrom(typeof(Byte)) ||
+                memberType.IsAssignableFrom(typeof(SByte)) ||
+                memberType.IsAssignableFrom(typeof(int)) ||
+                memberType.IsAssignableFrom(typeof(uint)) ||
+                memberType.IsAssignableFrom(typeof(long)) ||
+                memberType.IsAssignableFrom(typeof(ulong)) ||
+                memberType.IsAssignableFrom(typeof(short)) ||
+                memberType.IsAssignableFrom(typeof(ushort))))
             {
                 return;
             }
@@ -114,8 +112,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             if (elementType == null)
             {
-                var collectionTypeInfo = TypeFactory.GetTypeInfo(collectionType);
-                var genericArguments = collectionTypeInfo.GetGenericArguments();
+                var genericArguments = collectionType.GetGenericArguments();
                 if (genericArguments != null && genericArguments.Length == 1)
                     elementType = genericArguments[0];
             }
@@ -143,8 +140,7 @@ namespace Amazon.DynamoDBv2.DataModel
                 return true;
             }
 
-            var targetTypeInfo = TypeFactory.GetTypeInfo(targetType);
-            var addMethod = targetTypeInfo.GetMethod("Add");
+            var addMethod = targetType.GetMethod("Add");
             if (addMethod != null)
             {
                 foreach (var item in items)
@@ -174,18 +170,18 @@ namespace Amazon.DynamoDBv2.DataModel
 
         #region Attribute methods
 
-        public static DynamoDBTableAttribute GetTableAttribute(ITypeInfo targetTypeInfo)
+        public static DynamoDBTableAttribute GetTableAttribute(Type targetType)
         {
-            DynamoDBTableAttribute tableAttribute = GetAttribute(targetTypeInfo) as DynamoDBTableAttribute;
+            DynamoDBTableAttribute tableAttribute = GetAttribute(targetType) as DynamoDBTableAttribute;
             if (tableAttribute == null)
                 return null;
             return tableAttribute;
         }
 
-        public static DynamoDBAttribute GetAttribute(ITypeInfo targetTypeInfo)
+        public static DynamoDBAttribute GetAttribute(Type targetType)
         {
-            if (targetTypeInfo == null) throw new ArgumentNullException("targetTypeInfo");
-            object[] attributes = targetTypeInfo.GetCustomAttributes(TypeFactory.GetTypeInfo(typeof(DynamoDBAttribute)), true);
+            if (targetType == null) throw new ArgumentNullException("targetType");
+            object[] attributes = targetType.GetCustomAttributes(typeof(DynamoDBAttribute), true);
             return GetSingleDDBAttribute(attributes);
         }
         public static DynamoDBAttribute GetAttribute(MemberInfo targetMemberInfo)
@@ -238,19 +234,19 @@ namespace Amazon.DynamoDBv2.DataModel
             return sb.ToString();
         }
 
-        private static ITypeInfo[][] validConstructorInputs = new ITypeInfo[][]
+        private static Type[][] validConstructorInputs = new Type[][]
         {
-            TypeFactory.EmptyTypes,
+            EmptyTypes,
         };
-        private static ITypeInfo[][] validArrayConstructorInputs = new ITypeInfo[][]
+        private static Type[][] validArrayConstructorInputs = new Type[][]
         {
             //supports one dimension Array only
-            new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(int)) } 
+            new Type[] { typeof(int) } 
         };
-        private static ITypeInfo[][] validConverterConstructorInputs = new ITypeInfo[][]
+        private static Type[][] validConverterConstructorInputs = new Type[][]
         {
-            TypeFactory.EmptyTypes,
-            new ITypeInfo[] { TypeFactory.GetTypeInfo(typeof(DynamoDBContext)) }
+            EmptyTypes,
+            new Type[] { typeof(DynamoDBContext) }
         };
 
         public static object InstantiateConverter(Type objectType, IDynamoDBContext context)
@@ -265,15 +261,14 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             return InstantiateHelper(objectType, validConstructorInputs, null);
         }
-        private static object InstantiateHelper(Type objectType, ITypeInfo[][] validConstructorInputs, object[] optionalInput = null)
+        private static object InstantiateHelper(Type objectType, Type[][] validConstructorInputs, object[] optionalInput = null)
         {
             if (objectType == null)
                 throw new ArgumentNullException("objectType");
             if (!CanInstantiateHelper(objectType, validConstructorInputs))
                 throw new InvalidOperationException("Cannot instantiate type " + objectType.FullName);
 
-            var objectTypeWrapper = TypeFactory.GetTypeInfo(objectType);
-            var constructors = GetConstructors(objectTypeWrapper, validConstructorInputs).ToList();
+            var constructors = GetConstructors(objectType, validConstructorInputs).ToList();
 
             if (constructors != null && constructors.Count > 0)
             {
@@ -289,7 +284,7 @@ namespace Amazon.DynamoDBv2.DataModel
 
             throw new InvalidOperationException("Unable to find valid constructor for type " + objectType.FullName);
         }
-        private static IEnumerable<ConstructorInfo> GetConstructors(ITypeInfo typeInfo, ITypeInfo[][] validConstructorInputs)
+        private static IEnumerable<ConstructorInfo> GetConstructors(Type typeInfo, Type[][] validConstructorInputs)
         {
             foreach(var inputTypes in validConstructorInputs)
             {
@@ -311,9 +306,9 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             return CanInstantiateHelper(objectType, validConverterConstructorInputs);
         }
-        private static bool CanInstantiateHelper(Type objectType, ITypeInfo[][] validConstructorInputs)
+        private static bool CanInstantiateHelper(Type objectType, Type[][] validConstructorInputs)
         {
-            var objectTypeWrapper = TypeFactory.GetTypeInfo(objectType);
+            var objectTypeWrapper = objectType;
 
             bool candidate =
                 //objectType.IsPublic &&
@@ -362,19 +357,16 @@ namespace Amazon.DynamoDBv2.DataModel
         }
         public static bool ImplementsInterface(Type targetType, Type interfaceType)
         {
-            var targetTypeWrapper = TypeFactory.GetTypeInfo(targetType);
-            var interfaceTypeWrapper = TypeFactory.GetTypeInfo(interfaceType);
-            if (!interfaceTypeWrapper.IsInterface)
+            if (!interfaceType.IsInterface)
                 throw new ArgumentOutOfRangeException("interfaceType", "Type is not an interface");
 
-            foreach (var inter in targetTypeWrapper.GetInterfaces())
+            foreach (var inter in targetType.GetInterfaces())
             {
-                var interWrapper = TypeFactory.GetTypeInfo(inter);
-                if (object.Equals(interWrapper, interfaceTypeWrapper))
+                if (object.Equals(inter, interfaceType))
                     return true;
-                if (interfaceTypeWrapper.IsGenericTypeDefinition && interWrapper.IsGenericType)
+                if (inter.IsGenericTypeDefinition && inter.IsGenericType)
                 {
-                    var generic = interWrapper.GetGenericTypeDefinition();
+                    var generic = inter.GetGenericTypeDefinition();
                     if (generic == interfaceType)
                         return true;
                 }

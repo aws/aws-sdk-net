@@ -103,14 +103,14 @@ namespace Amazon.CognitoSync.Internal
             /// </summary>
             private class CSRequest
             {
-                private ITypeInfo requestType;
+                private Type requestType;
                 private PropertyInfo identityPoolIdProperty;
                 private PropertyInfo identityIdProperty;
-                public static ITypeInfo SyncRequestType = TypeFactory.GetTypeInfo(typeof(AmazonCognitoSyncRequest));
+                public static Type SyncRequestType = typeof(AmazonCognitoSyncRequest);
 
                 public CSRequest(Type requestType)
                 {
-                    this.requestType = TypeFactory.GetTypeInfo(requestType);
+                    this.requestType = requestType;
 
                     if (!SyncRequestType.IsAssignableFrom(this.requestType))
                         throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture, "Unable to assign {0} from {1}",
@@ -143,7 +143,7 @@ namespace Amazon.CognitoSync.Internal
                 // Look up all CognitoSync request objects for caching.
                 foreach (var type in allTypes)
                 {
-                    var typeInfo = TypeFactory.GetTypeInfo(type);
+                    var typeInfo = type;
                     if (CSRequest.SyncRequestType.IsAssignableFrom(typeInfo) && !typeInfo.Equals(CSRequest.SyncRequestType))
                     {
                         var csRequest = new CSRequest(type);

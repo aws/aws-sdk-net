@@ -16,6 +16,7 @@ using Amazon.Runtime;
 using Amazon.Runtime.Internal;
 using Amazon.Runtime.SharedInterfaces.Internal;
 using Amazon.Util.Internal;
+using System;
 using System.Globalization;
 using System.IO;
 
@@ -46,8 +47,8 @@ namespace AWSSDK.Runtime.Internal.Util
                     {
                         try
                         {
-                            var crtWrapperTypeInfo = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
-                            var constructor = crtWrapperTypeInfo.GetConstructor(new ITypeInfo[] { });
+                            var crtWrapperType = ServiceClientHelpers.LoadTypeFromAssembly(CRT_WRAPPER_ASSEMBLY_NAME, CRT_WRAPPER_CLASS_NAME);
+                            var constructor = crtWrapperType.GetConstructor(new Type[] { });
 
                             _instance = constructor.Invoke(null) as IChecksumProvider;
                         }
