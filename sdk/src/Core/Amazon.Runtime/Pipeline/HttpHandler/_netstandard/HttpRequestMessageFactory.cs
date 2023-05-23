@@ -472,10 +472,12 @@ namespace Amazon.Runtime
         /// Gets a handle to the request content.
         /// </summary>
         /// <returns>The request content.</returns>
+#pragma warning disable CA1024
         public HttpContent GetRequestContent()
         {
             return _request.Content;
         }
+#pragma warning restore CA1024
 
         /// <summary>
         /// Returns the HTTP response.
