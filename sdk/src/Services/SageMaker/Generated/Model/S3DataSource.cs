@@ -30,6 +30,12 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Describes the S3 data source.
+    /// 
+    ///  
+    /// <para>
+    /// Your input bucket must be in the same Amazon Web Services region as your training
+    /// job.
+    /// </para>
     /// </summary>
     public partial class S3DataSource
     {
@@ -231,7 +237,11 @@ namespace Amazon.SageMaker.Model
         /// channel for this data source. The object that each <code>S3Uri</code> points to must
         /// be readable by the IAM role that SageMaker uses to perform tasks on your behalf. 
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> 
+        /// <para>
+        /// Your input bucket must be located in same Amazon Web Services region as your training
+        /// job.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=1024)]
         public string S3Uri

@@ -82,6 +82,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.FailureReason = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("InvocationEndTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.InvocationEndTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("InvocationStartTime", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.InvocationStartTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Metrics", targetDepth))
                 {
                     var unmarshaller = RecommendationMetricsUnmarshaller.Instance;
