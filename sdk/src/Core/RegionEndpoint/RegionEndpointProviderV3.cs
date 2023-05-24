@@ -455,7 +455,7 @@ namespace Amazon.Internal
             //
             // Default to endpoints.json file provided in the resource manifest:
             //
-            return Amazon.Util.Internal.TypeFactory.GetTypeInfo(typeof(RegionEndpointProviderV3)).Assembly.GetManifestResourceStream(ENDPOINT_JSON_RESOURCE);
+            return typeof(RegionEndpointProviderV3).Assembly.GetManifestResourceStream(ENDPOINT_JSON_RESOURCE);
         }
 
         private IEnumerable<IRegionEndpoint> _allRegionEndpoints;

@@ -322,11 +322,11 @@ namespace Amazon.Internal
 
             static void LoadEndpointDefinitionsFromEmbeddedResource()
             {
-                using (var stream = Amazon.Util.Internal.TypeFactory.GetTypeInfo(typeof(RegionEndpoint)).Assembly.GetManifestResourceStream(REGIONS_FILE))
+                using (var stream = typeof(RegionEndpoint).Assembly.GetManifestResourceStream(REGIONS_FILE))
                 {
                     ReadEndpointFile(stream);
                 }
-                using (var stream = Amazon.Util.Internal.TypeFactory.GetTypeInfo(typeof(RegionEndpoint)).Assembly.GetManifestResourceStream(REGIONS_CUSTOMIZATIONS_FILE))
+                using (var stream = typeof(RegionEndpoint).Assembly.GetManifestResourceStream(REGIONS_CUSTOMIZATIONS_FILE))
                 {
                     ReadEndpointFile(stream);
                 }

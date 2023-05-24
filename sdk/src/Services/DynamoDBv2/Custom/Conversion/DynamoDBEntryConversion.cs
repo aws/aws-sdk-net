@@ -378,16 +378,10 @@ namespace Amazon.DynamoDBv2
 
         private void AddConverters(string suffix)
         {
-            var typedConverterTypeInfo = TypeFactory.GetTypeInfo(typeof(Converter));
-            var assembly = TypeFactory.GetTypeInfo(typeof(DynamoDBEntryConversion)).Assembly;
-#if NETSTANDARD
-            var allTypeInfos = assembly.DefinedTypes;
-            var allTypes = new List<Type>();
-            foreach (var typeInfo in allTypeInfos)
-                allTypes.Add(typeInfo.AsType());
-#else
+            var typedConverterType = typeof(Converter);
+            var assembly = typeof(DynamoDBEntryConversion).Assembly;
+
             var allTypes = assembly.GetTypes();
-#endif
 
             foreach (var type in allTypes)
             {
@@ -396,14 +390,13 @@ namespace Amazon.DynamoDBv2
                 //if (type.Namespace != typedConverterType.Namespace)
                 //    continue;
 
-                var typeInfo = TypeFactory.GetTypeInfo(type);
-                if (typeInfo.IsAbstract)
+                if (type.IsAbstract)
                     continue;
 
                 if (!type.Name.EndsWith(suffix, StringComparison.Ordinal))
                     continue;
 
-                if (!typedConverterTypeInfo.IsAssignableFrom(typeInfo))
+                if (!typedConverterType.IsAssignableFrom(type))
                     continue;
 
                 AddConverter(type);
@@ -645,8 +638,7 @@ namespace Amazon.DynamoDBv2
             var type = typeof(T);
             yield return type;
 
-            var typeInfo = TypeFactory.GetTypeInfo(type);
-            if (typeInfo.IsValueType)
+            if (type.IsValueType)
             {
                 //yield return typeof(Nullable<T>);
                 var nullableType = typeof(Nullable<>).MakeGenericType(type);
@@ -806,9 +798,8 @@ namespace Amazon.DynamoDBv2
                 throw new ArgumentNullException("type");
 
             // all enums use the same converter, one for Enum
-            var ti = TypeFactory.GetTypeInfo(type);
-            if (ti.IsEnum)
-                type = EnumType;
+            if (type.IsEnum)
+                return Cache.TryGetValue(EnumType, out converter);
 
             return Cache.TryGetValue(type, out converter);
         }

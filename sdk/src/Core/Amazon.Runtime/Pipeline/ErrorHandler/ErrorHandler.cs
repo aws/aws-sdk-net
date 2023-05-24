@@ -194,7 +194,6 @@ namespace Amazon.Runtime.Internal
             // Start by checking if there is a matching handler for the specific exception type,
             // if not check for handlers for it's base type till we find a match.
             var exceptionType = exception.GetType();
-            var exceptionTypeInfo = TypeFactory.GetTypeInfo(exception.GetType());
             do
             {
                 IExceptionHandler exceptionHandler = null;
@@ -203,8 +202,7 @@ namespace Amazon.Runtime.Internal
                 {
                     return exceptionHandler.Handle(executionContext, exception);
                 }
-                exceptionType = exceptionTypeInfo.BaseType;
-                exceptionTypeInfo = TypeFactory.GetTypeInfo(exceptionTypeInfo.BaseType);
+                exceptionType = exceptionType.BaseType;
 
             } while (exceptionType != typeof(Exception));
 
@@ -236,7 +234,6 @@ namespace Amazon.Runtime.Internal
             // Start by checking if there is a matching handler for the specific exception type,
             // if not check for handlers for it's base type till we find a match.
             var exceptionType = exception.GetType();
-            var exceptionTypeInfo = TypeFactory.GetTypeInfo(exception.GetType());
             do
             {
                 IExceptionHandler exceptionHandler = null;
@@ -245,8 +242,7 @@ namespace Amazon.Runtime.Internal
                 {
                     return await exceptionHandler.HandleAsync(executionContext, exception).ConfigureAwait(false);
                 }
-                exceptionType = exceptionTypeInfo.BaseType;
-                exceptionTypeInfo = TypeFactory.GetTypeInfo(exceptionTypeInfo.BaseType);
+                exceptionType = exceptionType.BaseType;
 
             } while (exceptionType != typeof(Exception));
 
