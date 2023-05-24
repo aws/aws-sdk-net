@@ -112,7 +112,7 @@ namespace Amazon.Connect.Model
         /// must not exceed 100 each. Questions must be contained in a section.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<EvaluationFormItem> Items
         {
             get { return this._items; }
@@ -149,7 +149,7 @@ namespace Amazon.Connect.Model
         /// A title of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Title
         {
             get { return this._title; }

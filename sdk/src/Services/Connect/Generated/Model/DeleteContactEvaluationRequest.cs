@@ -43,7 +43,7 @@ namespace Amazon.Connect.Model
         /// A unique identifier for the contact evaluation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=500)]
         public string EvaluationId
         {
             get { return this._evaluationId; }

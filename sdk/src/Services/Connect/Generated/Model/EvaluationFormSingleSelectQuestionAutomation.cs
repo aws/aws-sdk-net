@@ -45,7 +45,7 @@ namespace Amazon.Connect.Model
         /// the criteria.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=40)]
+        [AWSProperty(Min=1, Max=40)]
         public string DefaultOptionRefId
         {
             get { return this._defaultOptionRefId; }

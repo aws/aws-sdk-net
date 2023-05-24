@@ -66,7 +66,7 @@ namespace Amazon.Connect.Model
         /// The items of the section.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<EvaluationFormItem> Items
         {
             get { return this._items; }
@@ -86,7 +86,7 @@ namespace Amazon.Connect.Model
         /// form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=40)]
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string RefId
         {
             get { return this._refId; }

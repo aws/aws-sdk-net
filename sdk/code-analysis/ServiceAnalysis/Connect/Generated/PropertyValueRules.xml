@@ -3,7 +3,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ActivateEvaluationFormRequest.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ActivateEvaluationFormRequest.EvaluationFormVersion</property>
@@ -17,7 +17,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ActivateEvaluationFormResponse.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ActivateEvaluationFormResponse.EvaluationFormVersion</property>
@@ -200,13 +200,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateEvaluationFormRequest.Title</property>
-    <min>0</min>
+    <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateEvaluationFormResponse.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.CreateHoursOfOperationRequest.Description</property>
@@ -519,7 +519,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DeactivateEvaluationFormRequest.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeactivateEvaluationFormRequest.EvaluationFormVersion</property>
@@ -533,7 +533,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DeactivateEvaluationFormResponse.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeactivateEvaluationFormResponse.EvaluationFormVersion</property>
@@ -542,7 +542,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteContactEvaluationRequest.EvaluationId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteContactEvaluationRequest.InstanceId</property>
@@ -571,7 +571,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteEvaluationFormRequest.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DeleteEvaluationFormRequest.EvaluationFormVersion</property>
@@ -704,7 +704,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeContactEvaluationRequest.EvaluationId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeContactEvaluationRequest.InstanceId</property>
@@ -733,7 +733,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeEvaluationFormRequest.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.DescribeEvaluationFormRequest.EvaluationFormVersion</property>
@@ -1156,7 +1156,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.ListEvaluationFormVersionsRequest.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.ListEvaluationFormVersionsRequest.InstanceId</property>
@@ -1680,7 +1680,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.StartContactEvaluationRequest.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartContactEvaluationRequest.InstanceId</property>
@@ -1690,7 +1690,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.StartContactEvaluationResponse.EvaluationId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.StartContactRecordingRequest.ContactId</property>
@@ -1843,7 +1843,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.SubmitContactEvaluationRequest.EvaluationId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SubmitContactEvaluationRequest.InstanceId</property>
@@ -1853,7 +1853,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.SubmitContactEvaluationResponse.EvaluationId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SuspendContactRecordingRequest.ContactId</property>
@@ -1951,7 +1951,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactEvaluationRequest.EvaluationId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactEvaluationRequest.InstanceId</property>
@@ -1961,7 +1961,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactEvaluationResponse.EvaluationId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateContactFlowContentRequest.ContactFlowId</property>
@@ -2057,7 +2057,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateEvaluationFormRequest.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateEvaluationFormRequest.EvaluationFormVersion</property>
@@ -2070,13 +2070,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateEvaluationFormRequest.Title</property>
-    <min>0</min>
+    <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateEvaluationFormResponse.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.UpdateEvaluationFormResponse.EvaluationFormVersion</property>
@@ -2581,7 +2581,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.Evaluation.EvaluationId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationAnswerData.StringValue</property>
@@ -2596,7 +2596,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationForm.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationForm.EvaluationFormVersion</property>
@@ -2604,7 +2604,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationForm.Title</property>
-    <min>0</min>
+    <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
@@ -2615,7 +2615,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormContent.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormContent.EvaluationFormVersion</property>
@@ -2623,7 +2623,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormContent.Title</property>
-    <min>0</min>
+    <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
@@ -2638,7 +2638,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormQuestion.RefId</property>
-    <min>0</min>
+    <min>1</min>
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
@@ -2658,7 +2658,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormSection.RefId</property>
-    <min>0</min>
+    <min>1</min>
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
@@ -2673,12 +2673,12 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormSingleSelectQuestionAutomation.DefaultOptionRefId</property>
-    <min>0</min>
+    <min>1</min>
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormSingleSelectQuestionOption.RefId</property>
-    <min>0</min>
+    <min>1</min>
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
@@ -2698,7 +2698,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormSummary.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormSummary.LatestVersion</property>
@@ -2706,13 +2706,13 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormSummary.Title</property>
-    <min>0</min>
+    <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormVersionSummary.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationFormVersionSummary.EvaluationFormVersion</property>
@@ -2721,7 +2721,7 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationMetadata.ContactAgentId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationMetadata.ContactId</property>
@@ -2741,17 +2741,17 @@
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationSummary.EvaluationFormId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationSummary.EvaluationFormTitle</property>
-    <min>0</min>
+    <min>1</min>
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EvaluationSummary.EvaluationId</property>
     <min>1</min>
-    <max>50</max>
+    <max>500</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.EventBridgeActionDefinition.Name</property>
@@ -3121,7 +3121,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Connect.Model.SingleSelectQuestionRuleCategoryAutomation.OptionRefId</property>
-    <min>0</min>
+    <min>1</min>
     <max>40</max>
   </property-value-rule>
   <property-value-rule>
