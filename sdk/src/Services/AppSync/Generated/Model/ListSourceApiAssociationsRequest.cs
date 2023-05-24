@@ -29,29 +29,51 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// This is the response object from the ListDomainNames operation.
+    /// Container for the parameters to the ListSourceApiAssociations operation.
+    /// Lists the <code>SourceApiAssociationSummary</code> data.
     /// </summary>
-    public partial class ListDomainNamesResponse : AmazonWebServiceResponse
+    public partial class ListSourceApiAssociationsRequest : AmazonAppSyncRequest
     {
-        private List<DomainNameConfig> _domainNameConfigs = new List<DomainNameConfig>();
+        private string _apiId;
+        private int? _maxResults;
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property DomainNameConfigs. 
+        /// Gets and sets the property ApiId. 
         /// <para>
-        /// Lists configurations for multiple domain names.
+        /// The API ID.
         /// </para>
         /// </summary>
-        public List<DomainNameConfig> DomainNameConfigs
+        [AWSProperty(Required=true)]
+        public string ApiId
         {
-            get { return this._domainNameConfigs; }
-            set { this._domainNameConfigs = value; }
+            get { return this._apiId; }
+            set { this._apiId = value; }
         }
 
-        // Check to see if DomainNameConfigs property is set
-        internal bool IsSetDomainNameConfigs()
+        // Check to see if ApiId property is set
+        internal bool IsSetApiId()
         {
-            return this._domainNameConfigs != null && this._domainNameConfigs.Count > 0; 
+            return this._apiId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results that you want the request to return.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=25)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
         }
 
         /// <summary>

@@ -29,30 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// This is the response object from the ListDomainNames operation.
+    /// This is the response object from the ListTypesByAssociation operation.
     /// </summary>
-    public partial class ListDomainNamesResponse : AmazonWebServiceResponse
+    public partial class ListTypesByAssociationResponse : AmazonWebServiceResponse
     {
-        private List<DomainNameConfig> _domainNameConfigs = new List<DomainNameConfig>();
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property DomainNameConfigs. 
-        /// <para>
-        /// Lists configurations for multiple domain names.
-        /// </para>
-        /// </summary>
-        public List<DomainNameConfig> DomainNameConfigs
-        {
-            get { return this._domainNameConfigs; }
-            set { this._domainNameConfigs = value; }
-        }
-
-        // Check to see if DomainNameConfigs property is set
-        internal bool IsSetDomainNameConfigs()
-        {
-            return this._domainNameConfigs != null && this._domainNameConfigs.Count > 0; 
-        }
+        private List<Type> _types = new List<Type>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,6 +54,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Types. 
+        /// <para>
+        /// The <code>Type</code> objects.
+        /// </para>
+        /// </summary>
+        public List<Type> Types
+        {
+            get { return this._types; }
+            set { this._types = value; }
+        }
+
+        // Check to see if Types property is set
+        internal bool IsSetTypes()
+        {
+            return this._types != null && this._types.Count > 0; 
         }
 
     }

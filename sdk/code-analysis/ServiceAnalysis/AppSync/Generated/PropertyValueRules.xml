@@ -343,6 +343,23 @@
     <pattern>[\\S]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AppSync.Model.ListSourceApiAssociationsRequest.MaxResults</property>
+    <min>0</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListSourceApiAssociationsRequest.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListSourceApiAssociationsResponse.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AppSync.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>70</min>
     <max>75</max>
@@ -361,6 +378,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppSync.Model.ListTypesResponse.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListTypesByAssociationRequest.MaxResults</property>
+    <min>0</min>
+    <max>25</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListTypesByAssociationRequest.NextToken</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>[\\S]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AppSync.Model.ListTypesByAssociationResponse.NextToken</property>
     <min>1</min>
     <max>65536</max>
     <pattern>[\\S]+</pattern>

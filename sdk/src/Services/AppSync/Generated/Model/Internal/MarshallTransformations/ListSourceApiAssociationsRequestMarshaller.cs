@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AppSync.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListGraphqlApis Request Marshaller
+    /// ListSourceApiAssociations Request Marshaller
     /// </summary>       
-    public class ListGraphqlApisRequestMarshaller : IMarshaller<IRequest, ListGraphqlApisRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListSourceApiAssociationsRequestMarshaller : IMarshaller<IRequest, ListSourceApiAssociationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListGraphqlApisRequest)input);
+            return this.Marshall((ListSourceApiAssociationsRequest)input);
         }
 
         /// <summary>
@@ -52,32 +52,29 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListGraphqlApisRequest publicRequest)
+        public IRequest Marshall(ListSourceApiAssociationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.AppSync");
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2017-07-25";
             request.HttpMethod = "GET";
 
-            
-            if (publicRequest.IsSetApiType())
-                request.Parameters.Add("apiType", StringUtils.FromString(publicRequest.ApiType));
+            if (!publicRequest.IsSetApiId())
+                throw new AmazonAppSyncException("Request object does not have required field ApiId set");
+            request.AddPathResource("{apiId}", StringUtils.FromString(publicRequest.ApiId));
             
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
-            
-            if (publicRequest.IsSetOwner())
-                request.Parameters.Add("owner", StringUtils.FromString(publicRequest.Owner));
-            request.ResourcePath = "/v1/apis";
+            request.ResourcePath = "/v1/apis/{apiId}/sourceApiAssociations";
             request.UseQueryString = true;
 
             return request;
         }
-        private static ListGraphqlApisRequestMarshaller _instance = new ListGraphqlApisRequestMarshaller();        
+        private static ListSourceApiAssociationsRequestMarshaller _instance = new ListSourceApiAssociationsRequestMarshaller();        
 
-        internal static ListGraphqlApisRequestMarshaller GetInstance()
+        internal static ListSourceApiAssociationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -85,7 +82,7 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListGraphqlApisRequestMarshaller Instance
+        public static ListSourceApiAssociationsRequestMarshaller Instance
         {
             get
             {

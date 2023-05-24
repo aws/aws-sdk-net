@@ -29,30 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppSync.Model
 {
     /// <summary>
-    /// This is the response object from the ListDomainNames operation.
+    /// This is the response object from the ListSourceApiAssociations operation.
     /// </summary>
-    public partial class ListDomainNamesResponse : AmazonWebServiceResponse
+    public partial class ListSourceApiAssociationsResponse : AmazonWebServiceResponse
     {
-        private List<DomainNameConfig> _domainNameConfigs = new List<DomainNameConfig>();
         private string _nextToken;
-
-        /// <summary>
-        /// Gets and sets the property DomainNameConfigs. 
-        /// <para>
-        /// Lists configurations for multiple domain names.
-        /// </para>
-        /// </summary>
-        public List<DomainNameConfig> DomainNameConfigs
-        {
-            get { return this._domainNameConfigs; }
-            set { this._domainNameConfigs = value; }
-        }
-
-        // Check to see if DomainNameConfigs property is set
-        internal bool IsSetDomainNameConfigs()
-        {
-            return this._domainNameConfigs != null && this._domainNameConfigs.Count > 0; 
-        }
+        private List<SourceApiAssociationSummary> _sourceApiAssociationSummaries = new List<SourceApiAssociationSummary>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -72,6 +54,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceApiAssociationSummaries. 
+        /// <para>
+        /// The <code>SourceApiAssociationSummary</code> object data.
+        /// </para>
+        /// </summary>
+        public List<SourceApiAssociationSummary> SourceApiAssociationSummaries
+        {
+            get { return this._sourceApiAssociationSummaries; }
+            set { this._sourceApiAssociationSummaries = value; }
+        }
+
+        // Check to see if SourceApiAssociationSummaries property is set
+        internal bool IsSetSourceApiAssociationSummaries()
+        {
+            return this._sourceApiAssociationSummaries != null && this._sourceApiAssociationSummaries.Count > 0; 
         }
 
     }
