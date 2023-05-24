@@ -1,3 +1,16 @@
+### 3.7.554.0 (2023-05-24 18:22 UTC)
+* AppSync (3.7.105.0)
+	* This release introduces AppSync Merged APIs, which provide the ability to compose multiple source APIs into a single federated/merged API.
+* Connect (3.7.125.0)
+	* Amazon Connect Evaluation Capabilities: validation improvements
+* CostAndUsageReport (3.7.101.0)
+	* Add support for split cost allocation data on a report.
+* SageMaker (3.7.131.0)
+	* SageMaker now provides an instantaneous deployment recommendation through the DescribeModel API
+* Core 3.7.106.41
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.553.0 (2023-05-23 18:38 UTC)
 * FMS (3.7.105.0)
 	* Fixes issue that could cause calls to GetAdminScope and ListAdminAccountsForOrganization to return a 500 Internal Server error.
