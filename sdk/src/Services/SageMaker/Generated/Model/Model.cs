@@ -36,6 +36,7 @@ namespace Amazon.SageMaker.Model
     {
         private List<ContainerDefinition> _containers = new List<ContainerDefinition>();
         private DateTime? _creationTime;
+        private DeploymentRecommendation _deploymentRecommendation;
         private bool? _enableNetworkIsolation;
         private string _executionRoleArn;
         private InferenceExecutionConfig _inferenceExecutionConfig;
@@ -80,6 +81,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentRecommendation. 
+        /// <para>
+        /// A set of recommended deployment configurations for the model.
+        /// </para>
+        /// </summary>
+        public DeploymentRecommendation DeploymentRecommendation
+        {
+            get { return this._deploymentRecommendation; }
+            set { this._deploymentRecommendation = value; }
+        }
+
+        // Check to see if DeploymentRecommendation property is set
+        internal bool IsSetDeploymentRecommendation()
+        {
+            return this._deploymentRecommendation != null;
         }
 
         /// <summary>
