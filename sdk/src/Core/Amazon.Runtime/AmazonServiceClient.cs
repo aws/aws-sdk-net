@@ -509,23 +509,23 @@ namespace Amazon.Runtime
 
             var amazonSecurityProtocolManager = new AmazonSecurityProtocolManager();
 
-            if (!amazonSecurityProtocolManager.IsSecurityProtocolSystemDefault())
+            try
             {
-                try
+                if (!amazonSecurityProtocolManager.IsSecurityProtocolSystemDefault())
                 {
                     amazonSecurityProtocolManager.UpdateProtocolsToSupported();
                 }
-                catch (Exception ex)
+            }
+            catch (Exception ex)
+            {
+                if (ex is NotSupportedException)
                 {
-                    if (ex is NotSupportedException)
-                    {
-                        _logger.InfoFormat(ex.Message);
-                    }
-                    else
-                    {
-                        _logger.InfoFormat("Unexpected error " + ex.GetType().Name +
-                                           " encountered when trying to set Security Protocol.\n" + ex);
-                    }
+                    _logger.InfoFormat(ex.Message);
+                }
+                else
+                {
+                    _logger.InfoFormat("Unexpected error " + ex.GetType().Name +
+                                       " encountered when trying to set Security Protocol.\n" + ex);
                 }
             }
             _isProtocolUpdated = true;
