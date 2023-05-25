@@ -32,7 +32,7 @@ namespace Amazon.IoT
     public partial class AmazonIoTConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.108.12");
+            InternalSDKUtils.BuildUserAgentString("3.7.108.13");
 
         private string _userAgent = UserAgentString;
 

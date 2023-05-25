@@ -1,3 +1,20 @@
+### 3.7.555.0 (2023-05-25 18:28 UTC)
+* ApplicationAutoScaling (3.7.106.0)
+	* With this release, ElastiCache customers will be able to use predefined metricType "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage" for their ElastiCache instances.
+* CodePipeline (3.7.101.0)
+	* Add PollingDisabledAt time information in PipelineMetadata object of GetPipeline API.
+* GameLift (3.7.104.0)
+	* GameLift FleetIQ users can now filter game server claim requests to exclude servers on instances that are draining.
+* Glue (3.7.115.0)
+	* Added ability to create data quality rulesets for shared, cross-account Glue Data Catalog tables. Added support for dataset comparison rules through a new parameter called AdditionalDataSources. Enhanced the data quality results with a map containing profiled metric values.
+* MigrationHubRefactorSpaces (3.7.103.0)
+	* This SDK update allows for path parameter syntax to be passed to the CreateRoute API. Path parameter syntax require parameters to be enclosed in {} characters. This update also includes a new AppendSourcePath field which lets users forward the source path to the Service URL endpoint.
+* SageMaker (3.7.132.0)
+	* Amazon SageMaker Automatic Model Tuning now supports enabling Autotune for tuning jobs which can choose tuning job configurations.
+* Core 3.7.106.42
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.554.0 (2023-05-24 18:22 UTC)
 * AppSync (3.7.105.0)
 	* This release introduces AppSync Merged APIs, which provide the ability to compose multiple source APIs into a single federated/merged API.
