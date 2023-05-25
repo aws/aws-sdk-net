@@ -35,9 +35,9 @@ namespace Amazon.CodePipeline.Model
     /// 
     ///  <important> 
     /// <para>
-    /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
-    /// bucket used to store artifacts for the pipeline, if the action requires access to
-    /// that S3 bucket for input or output artifacts.
+    /// When this API is called, CodePipeline returns temporary credentials for the S3 bucket
+    /// used to store artifacts for the pipeline, if the action requires access to that S3
+    /// bucket for input or output artifacts.
     /// </para>
     ///  </important>
     /// </summary>

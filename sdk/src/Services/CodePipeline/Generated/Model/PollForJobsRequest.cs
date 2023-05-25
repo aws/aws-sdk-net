@@ -30,17 +30,17 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the PollForJobs operation.
-    /// Returns information about any jobs for AWS CodePipeline to act on. <code>PollForJobs</code>
+    /// Returns information about any jobs for CodePipeline to act on. <code>PollForJobs</code>
     /// is valid only for action types with "Custom" in the owner field. If the action type
-    /// contains "AWS" or "ThirdParty" in the owner field, the <code>PollForJobs</code> action
-    /// returns an error.
+    /// contains <code>AWS</code> or <code>ThirdParty</code> in the owner field, the <code>PollForJobs</code>
+    /// action returns an error.
     /// 
     ///  <important> 
     /// <para>
-    /// When this API is called, AWS CodePipeline returns temporary credentials for the S3
-    /// bucket used to store artifacts for the pipeline, if the action requires access to
-    /// that S3 bucket for input or output artifacts. This API also returns any secret values
-    /// defined for the action.
+    /// When this API is called, CodePipeline returns temporary credentials for the S3 bucket
+    /// used to store artifacts for the pipeline, if the action requires access to that S3
+    /// bucket for input or output artifacts. This API also returns any secret values defined
+    /// for the action.
     /// </para>
     ///  </important>
     /// </summary>

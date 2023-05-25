@@ -115,7 +115,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Region. 
         /// <para>
-        /// The AWS Region for the action, such as us-east-1.
+        /// The Amazon Web Services Region for the action, such as us-east-1.
         /// </para>
         /// </summary>
         [AWSProperty(Min=4, Max=30)]
