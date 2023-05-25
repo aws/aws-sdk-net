@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Glue.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DataQualityRuleResult Object
+    /// Response Unmarshaller for EvaluateDataQualityMultiFrame Object
     /// </summary>  
-    public class DataQualityRuleResultUnmarshaller : IUnmarshaller<DataQualityRuleResult, XmlUnmarshallerContext>, IUnmarshaller<DataQualityRuleResult, JsonUnmarshallerContext>
+    public class EvaluateDataQualityMultiFrameUnmarshaller : IUnmarshaller<EvaluateDataQualityMultiFrame, XmlUnmarshallerContext>, IUnmarshaller<EvaluateDataQualityMultiFrame, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DataQualityRuleResult IUnmarshaller<DataQualityRuleResult, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        EvaluateDataQualityMultiFrame IUnmarshaller<EvaluateDataQualityMultiFrame, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DataQualityRuleResult Unmarshall(JsonUnmarshallerContext context)
+        public EvaluateDataQualityMultiFrame Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DataQualityRuleResult unmarshalledObject = new DataQualityRuleResult();
+            EvaluateDataQualityMultiFrame unmarshalledObject = new EvaluateDataQualityMultiFrame();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("Description", targetDepth))
+                if (context.TestExpression("AdditionalDataSources", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalDataSources = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EvaluatedMetrics", targetDepth))
+                if (context.TestExpression("AdditionalOptions", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, double, StringUnmarshaller, DoubleUnmarshaller>(StringUnmarshaller.Instance, DoubleUnmarshaller.Instance);
-                    unmarshalledObject.EvaluatedMetrics = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.AdditionalOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("EvaluationMessage", targetDepth))
+                if (context.TestExpression("Inputs", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EvaluationMessage = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.Inputs = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Name", targetDepth))
@@ -88,10 +88,22 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("Result", targetDepth))
+                if (context.TestExpression("PublishingOptions", targetDepth))
+                {
+                    var unmarshaller = DQResultsPublishingOptionsUnmarshaller.Instance;
+                    unmarshalledObject.PublishingOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Ruleset", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Result = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Ruleset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StopJobOnFailureOptions", targetDepth))
+                {
+                    var unmarshaller = DQStopJobOnFailureOptionsUnmarshaller.Instance;
+                    unmarshalledObject.StopJobOnFailureOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +112,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         }
 
 
-        private static DataQualityRuleResultUnmarshaller _instance = new DataQualityRuleResultUnmarshaller();        
+        private static EvaluateDataQualityMultiFrameUnmarshaller _instance = new EvaluateDataQualityMultiFrameUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DataQualityRuleResultUnmarshaller Instance
+        public static EvaluateDataQualityMultiFrameUnmarshaller Instance
         {
             get
             {

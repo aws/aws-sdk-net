@@ -276,6 +276,17 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetEvaluateDataQualityMultiFrame())
+            {
+                context.Writer.WritePropertyName("EvaluateDataQualityMultiFrame");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EvaluateDataQualityMultiFrameMarshaller.Instance;
+                marshaller.Marshall(requestObject.EvaluateDataQualityMultiFrame, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetFillMissingValues())
             {
                 context.Writer.WritePropertyName("FillMissingValues");

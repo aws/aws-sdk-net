@@ -45,6 +45,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DataQualityTargetTable requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCatalogId())
+            {
+                context.Writer.WritePropertyName("CatalogId");
+                context.Writer.Write(requestObject.CatalogId);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");

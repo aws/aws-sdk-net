@@ -190,6 +190,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.EvaluateDataQuality = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EvaluateDataQualityMultiFrame", targetDepth))
+                {
+                    var unmarshaller = EvaluateDataQualityMultiFrameUnmarshaller.Instance;
+                    unmarshalledObject.EvaluateDataQualityMultiFrame = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FillMissingValues", targetDepth))
                 {
                     var unmarshaller = FillMissingValuesUnmarshaller.Instance;

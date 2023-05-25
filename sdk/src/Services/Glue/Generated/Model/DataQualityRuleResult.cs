@@ -34,6 +34,7 @@ namespace Amazon.Glue.Model
     public partial class DataQualityRuleResult
     {
         private string _description;
+        private Dictionary<string, double> _evaluatedMetrics = new Dictionary<string, double>();
         private string _evaluationMessage;
         private string _name;
         private DataQualityRuleResultStatus _result;
@@ -55,6 +56,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluatedMetrics. 
+        /// <para>
+        /// A map of metrics associated with the evaluation of the rule.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, double> EvaluatedMetrics
+        {
+            get { return this._evaluatedMetrics; }
+            set { this._evaluatedMetrics = value; }
+        }
+
+        // Check to see if EvaluatedMetrics property is set
+        internal bool IsSetEvaluatedMetrics()
+        {
+            return this._evaluatedMetrics != null && this._evaluatedMetrics.Count > 0; 
         }
 
         /// <summary>

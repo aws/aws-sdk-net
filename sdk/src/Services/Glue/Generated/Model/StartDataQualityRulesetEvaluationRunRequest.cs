@@ -37,6 +37,7 @@ namespace Amazon.Glue.Model
     /// </summary>
     public partial class StartDataQualityRulesetEvaluationRunRequest : AmazonGlueRequest
     {
+        private Dictionary<string, DataSource> _additionalDataSources = new Dictionary<string, DataSource>();
         private DataQualityEvaluationRunAdditionalRunOptions _additionalRunOptions;
         private string _clientToken;
         private DataSource _dataSource;
@@ -44,6 +45,25 @@ namespace Amazon.Glue.Model
         private string _role;
         private List<string> _rulesetNames = new List<string>();
         private int? _timeout;
+
+        /// <summary>
+        /// Gets and sets the property AdditionalDataSources. 
+        /// <para>
+        /// A map of reference strings to additional data sources you can specify for an evaluation
+        /// run.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, DataSource> AdditionalDataSources
+        {
+            get { return this._additionalDataSources; }
+            set { this._additionalDataSources = value; }
+        }
+
+        // Check to see if AdditionalDataSources property is set
+        internal bool IsSetAdditionalDataSources()
+        {
+            return this._additionalDataSources != null && this._additionalDataSources.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property AdditionalRunOptions. 
