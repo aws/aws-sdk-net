@@ -6309,7 +6309,9 @@ namespace Amazon.SageMaker
 
 
         /// <summary>
-        /// Gets a description of a hyperparameter tuning job.
+        /// Returns a description of a hyperparameter tuning job, depending on the fields selected.
+        /// These fields can include the name, Amazon Resource Name (ARN), job status of your
+        /// tuning job and more.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeHyperParameterTuningJob service method.</param>
         /// <param name="cancellationToken">

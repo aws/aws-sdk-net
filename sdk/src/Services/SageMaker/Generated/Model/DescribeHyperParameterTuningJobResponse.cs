@@ -33,6 +33,7 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class DescribeHyperParameterTuningJobResponse : AmazonWebServiceResponse
     {
+        private Autotune _autotune;
         private HyperParameterTrainingJobSummary _bestTrainingJob;
         private HyperParameterTuningJobConsumedResources _consumedResources;
         private DateTime? _creationTime;
@@ -50,6 +51,24 @@ namespace Amazon.SageMaker.Model
         private TrainingJobStatusCounters _trainingJobStatusCounters;
         private HyperParameterTuningJobCompletionDetails _tuningJobCompletionDetails;
         private HyperParameterTuningJobWarmStartConfig _warmStartConfig;
+
+        /// <summary>
+        /// Gets and sets the property Autotune. 
+        /// <para>
+        /// A flag to indicate if autotune is enabled for the hyperparameter tuning job.
+        /// </para>
+        /// </summary>
+        public Autotune Autotune
+        {
+            get { return this._autotune; }
+            set { this._autotune = value; }
+        }
+
+        // Check to see if Autotune property is set
+        internal bool IsSetAutotune()
+        {
+            return this._autotune != null;
+        }
 
         /// <summary>
         /// Gets and sets the property BestTrainingJob. 
@@ -183,7 +202,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HyperParameterTuningJobName. 
         /// <para>
-        /// The name of the tuning job.
+        /// The name of the hyperparameter tuning job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

@@ -51,6 +51,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("Autotune", targetDepth))
+                {
+                    var unmarshaller = AutotuneUnmarshaller.Instance;
+                    response.Autotune = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BestTrainingJob", targetDepth))
                 {
                     var unmarshaller = HyperParameterTrainingJobSummaryUnmarshaller.Instance;

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ParameterRanges Object
+    /// Response Unmarshaller for AutoParameter Object
     /// </summary>  
-    public class ParameterRangesUnmarshaller : IUnmarshaller<ParameterRanges, XmlUnmarshallerContext>, IUnmarshaller<ParameterRanges, JsonUnmarshallerContext>
+    public class AutoParameterUnmarshaller : IUnmarshaller<AutoParameter, XmlUnmarshallerContext>, IUnmarshaller<AutoParameter, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ParameterRanges IUnmarshaller<ParameterRanges, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutoParameter IUnmarshaller<AutoParameter, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ParameterRanges Unmarshall(JsonUnmarshallerContext context)
+        public AutoParameter Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ParameterRanges unmarshalledObject = new ParameterRanges();
+            AutoParameter unmarshalledObject = new AutoParameter();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AutoParameters", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<AutoParameter, AutoParameterUnmarshaller>(AutoParameterUnmarshaller.Instance);
-                    unmarshalledObject.AutoParameters = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("CategoricalParameterRanges", targetDepth))
+                if (context.TestExpression("ValueHint", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<CategoricalParameterRange, CategoricalParameterRangeUnmarshaller>(CategoricalParameterRangeUnmarshaller.Instance);
-                    unmarshalledObject.CategoricalParameterRanges = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ContinuousParameterRanges", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<ContinuousParameterRange, ContinuousParameterRangeUnmarshaller>(ContinuousParameterRangeUnmarshaller.Instance);
-                    unmarshalledObject.ContinuousParameterRanges = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("IntegerParameterRanges", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<IntegerParameterRange, IntegerParameterRangeUnmarshaller>(IntegerParameterRangeUnmarshaller.Instance);
-                    unmarshalledObject.IntegerParameterRanges = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ValueHint = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static ParameterRangesUnmarshaller _instance = new ParameterRangesUnmarshaller();        
+        private static AutoParameterUnmarshaller _instance = new AutoParameterUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ParameterRangesUnmarshaller Instance
+        public static AutoParameterUnmarshaller Instance
         {
             get
             {
