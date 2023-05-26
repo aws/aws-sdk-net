@@ -51,6 +51,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.LogLevel);
             }
 
+            if(requestObject.IsSetMulticastFrameInfo())
+            {
+                context.Writer.WritePropertyName("MulticastFrameInfo");
+                context.Writer.Write(requestObject.MulticastFrameInfo);
+            }
+
             if(requestObject.IsSetWirelessDeviceFrameInfo())
             {
                 context.Writer.WritePropertyName("WirelessDeviceFrameInfo");
