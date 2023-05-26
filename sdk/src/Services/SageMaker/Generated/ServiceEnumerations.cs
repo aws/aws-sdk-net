@@ -6259,6 +6259,22 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly InstanceType MlG5Xlarge = new InstanceType("ml.g5.xlarge");
         /// <summary>
+        /// Constant MlInf124xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf124xlarge = new InstanceType("ml.inf1.24xlarge");
+        /// <summary>
+        /// Constant MlInf12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf12xlarge = new InstanceType("ml.inf1.2xlarge");
+        /// <summary>
+        /// Constant MlInf16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf16xlarge = new InstanceType("ml.inf1.6xlarge");
+        /// <summary>
+        /// Constant MlInf1Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf1Xlarge = new InstanceType("ml.inf1.xlarge");
+        /// <summary>
         /// Constant MlM410xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlM410xlarge = new InstanceType("ml.m4.10xlarge");
@@ -6358,6 +6374,14 @@ namespace Amazon.SageMaker
         /// Constant MlP3dn24xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlP3dn24xlarge = new InstanceType("ml.p3dn.24xlarge");
+        /// <summary>
+        /// Constant MlP4d24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlP4d24xlarge = new InstanceType("ml.p4d.24xlarge");
+        /// <summary>
+        /// Constant MlP4de24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlP4de24xlarge = new InstanceType("ml.p4de.24xlarge");
         /// <summary>
         /// Constant MlR512xlarge for InstanceType
         /// </summary>
