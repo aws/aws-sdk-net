@@ -583,6 +583,10 @@ namespace Amazon.Connect
         /// </summary>
         public static readonly ContactInitiationMethod DISCONNECT = new ContactInitiationMethod("DISCONNECT");
         /// <summary>
+        /// Constant EXTERNAL_OUTBOUND for ContactInitiationMethod
+        /// </summary>
+        public static readonly ContactInitiationMethod EXTERNAL_OUTBOUND = new ContactInitiationMethod("EXTERNAL_OUTBOUND");
+        /// <summary>
         /// Constant INBOUND for ContactInitiationMethod
         /// </summary>
         public static readonly ContactInitiationMethod INBOUND = new ContactInitiationMethod("INBOUND");
