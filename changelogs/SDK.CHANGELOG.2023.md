@@ -1,3 +1,14 @@
+### 3.7.556.0 (2023-05-26 18:22 UTC)
+* Connect (3.7.126.0)
+	* Documentation update for a new Initiation Method value in DescribeContact API
+* IoTWireless (3.7.105.0)
+	* Add Multicast Group support in Network Analyzer Configuration.
+* SageMaker (3.7.133.0)
+	* Added ml.p4d and ml.inf1 as supported instance type families for SageMaker Notebook Instances.
+* Core 3.7.106.43
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.555.0 (2023-05-25 18:28 UTC)
 * ApplicationAutoScaling (3.7.106.0)
 	* With this release, ElastiCache customers will be able to use predefined metricType "ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage" for their ElastiCache instances.
