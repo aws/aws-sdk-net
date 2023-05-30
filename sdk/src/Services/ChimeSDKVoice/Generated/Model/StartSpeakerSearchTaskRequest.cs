@@ -43,10 +43,29 @@ namespace Amazon.ChimeSDKVoice.Model
     /// </summary>
     public partial class StartSpeakerSearchTaskRequest : AmazonChimeSDKVoiceRequest
     {
+        private CallLegType _callLeg;
         private string _clientRequestToken;
         private string _transactionId;
         private string _voiceConnectorId;
         private string _voiceProfileDomainId;
+
+        /// <summary>
+        /// Gets and sets the property CallLeg. 
+        /// <para>
+        /// Specifies which call leg to stream for speaker search.
+        /// </para>
+        /// </summary>
+        public CallLegType CallLeg
+        {
+            get { return this._callLeg; }
+            set { this._callLeg = value; }
+        }
+
+        // Check to see if CallLeg property is set
+        internal bool IsSetCallLeg()
+        {
+            return this._callLeg != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 

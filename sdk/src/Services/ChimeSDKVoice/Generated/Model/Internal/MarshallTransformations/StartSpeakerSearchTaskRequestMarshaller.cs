@@ -68,6 +68,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetCallLeg())
+                {
+                    context.Writer.WritePropertyName("CallLeg");
+                    context.Writer.Write(publicRequest.CallLeg);
+                }
+
                 if(publicRequest.IsSetClientRequestToken())
                 {
                     context.Writer.WritePropertyName("ClientRequestToken");
