@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Branch Marshaller
+    /// DataDestinationConfig Marshaller
     /// </summary>
-    public class BranchMarshaller : IRequestMarshaller<Branch, JsonMarshallerContext> 
+    public class DataDestinationConfigMarshaller : IRequestMarshaller<DataDestinationConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,28 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Branch requestObject, JsonMarshallerContext context)
+        public void Marshall(DataDestinationConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetComment())
+            if(requestObject.IsSetS3Config())
             {
-                context.Writer.WritePropertyName("comment");
-                context.Writer.Write(requestObject.Comment);
+                context.Writer.WritePropertyName("s3Config");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = S3ConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.S3Config, context);
+
+                context.Writer.WriteObjectEnd();
             }
 
-            if(requestObject.IsSetDeprecationMessage())
+            if(requestObject.IsSetTimestreamConfig())
             {
-                context.Writer.WritePropertyName("deprecationMessage");
-                context.Writer.Write(requestObject.DeprecationMessage);
-            }
+                context.Writer.WritePropertyName("timestreamConfig");
+                context.Writer.WriteObjectStart();
 
-            if(requestObject.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
-            }
+                var marshaller = TimestreamConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TimestreamConfig, context);
 
-            if(requestObject.IsSetFullyQualifiedName())
-            {
-                context.Writer.WritePropertyName("fullyQualifiedName");
-                context.Writer.Write(requestObject.FullyQualifiedName);
+                context.Writer.WriteObjectEnd();
             }
 
         }
@@ -74,7 +72,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static BranchMarshaller Instance = new BranchMarshaller();
+        public readonly static DataDestinationConfigMarshaller Instance = new DataDestinationConfigMarshaller();
 
     }
 }

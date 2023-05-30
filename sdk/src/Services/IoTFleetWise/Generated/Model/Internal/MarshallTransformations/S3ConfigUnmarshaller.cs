@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Branch Object
+    /// Response Unmarshaller for S3Config Object
     /// </summary>  
-    public class BranchUnmarshaller : IUnmarshaller<Branch, XmlUnmarshallerContext>, IUnmarshaller<Branch, JsonUnmarshallerContext>
+    public class S3ConfigUnmarshaller : IUnmarshaller<S3Config, XmlUnmarshallerContext>, IUnmarshaller<S3Config, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Branch IUnmarshaller<Branch, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        S3Config IUnmarshaller<S3Config, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,39 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Branch Unmarshall(JsonUnmarshallerContext context)
+        public S3Config Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Branch unmarshalledObject = new Branch();
+            S3Config unmarshalledObject = new S3Config();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("comment", targetDepth))
+                if (context.TestExpression("bucketArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.BucketArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("deprecationMessage", targetDepth))
+                if (context.TestExpression("dataFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeprecationMessage = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DataFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("description", targetDepth))
+                if (context.TestExpression("prefix", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Prefix = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("fullyQualifiedName", targetDepth))
+                if (context.TestExpression("storageCompressionFormat", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FullyQualifiedName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.StorageCompressionFormat = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +94,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         }
 
 
-        private static BranchUnmarshaller _instance = new BranchUnmarshaller();        
+        private static S3ConfigUnmarshaller _instance = new S3ConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BranchUnmarshaller Instance
+        public static S3ConfigUnmarshaller Instance
         {
             get
             {

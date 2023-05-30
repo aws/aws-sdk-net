@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for Branch Object
+    /// Response Unmarshaller for TimestreamConfig Object
     /// </summary>  
-    public class BranchUnmarshaller : IUnmarshaller<Branch, XmlUnmarshallerContext>, IUnmarshaller<Branch, JsonUnmarshallerContext>
+    public class TimestreamConfigUnmarshaller : IUnmarshaller<TimestreamConfig, XmlUnmarshallerContext>, IUnmarshaller<TimestreamConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        Branch IUnmarshaller<Branch, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TimestreamConfig IUnmarshaller<TimestreamConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public Branch Unmarshall(JsonUnmarshallerContext context)
+        public TimestreamConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            Branch unmarshalledObject = new Branch();
+            TimestreamConfig unmarshalledObject = new TimestreamConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("comment", targetDepth))
+                if (context.TestExpression("executionRoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ExecutionRoleArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("deprecationMessage", targetDepth))
+                if (context.TestExpression("timestreamTableArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DeprecationMessage = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("description", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Description = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("fullyQualifiedName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.FullyQualifiedName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.TimestreamTableArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         }
 
 
-        private static BranchUnmarshaller _instance = new BranchUnmarshaller();        
+        private static TimestreamConfigUnmarshaller _instance = new TimestreamConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BranchUnmarshaller Instance
+        public static TimestreamConfigUnmarshaller Instance
         {
             get
             {

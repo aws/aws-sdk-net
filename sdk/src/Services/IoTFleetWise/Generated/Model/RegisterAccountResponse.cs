@@ -122,7 +122,6 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property TimestreamResources.
         /// </summary>
-        [AWSProperty(Required=true)]
         public TimestreamResources TimestreamResources
         {
             get { return this._timestreamResources; }

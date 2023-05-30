@@ -47,6 +47,7 @@ namespace Amazon.IoTFleetWise.Model
     {
         private CollectionScheme _collectionScheme;
         private Compression _compression;
+        private List<DataDestinationConfig> _dataDestinationConfigs = new List<DataDestinationConfig>();
         private List<string> _dataExtraDimensions = new List<string>();
         private string _description;
         private DiagnosticsMode _diagnosticsMode;
@@ -103,6 +104,37 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetCompression()
         {
             return this._compression != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataDestinationConfigs. 
+        /// <para>
+        /// The destination where the campaign sends data. You can choose to send data to be stored
+        /// in Amazon S3 or Amazon Timestream.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon S3 optimizes the cost of data storage and provides additional mechanisms to
+        /// use vehicle data, such as data lakes, centralized data storage, data processing pipelines,
+        /// and analytics. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use Amazon Timestream to access and analyze time series data, and Timestream
+        /// to query vehicle data so that you can identify trends and patterns.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<DataDestinationConfig> DataDestinationConfigs
+        {
+            get { return this._dataDestinationConfigs; }
+            set { this._dataDestinationConfigs = value; }
+        }
+
+        // Check to see if DataDestinationConfigs property is set
+        internal bool IsSetDataDestinationConfigs()
+        {
+            return this._dataDestinationConfigs != null && this._dataDestinationConfigs.Count > 0; 
         }
 
         /// <summary>
@@ -182,8 +214,7 @@ namespace Amazon.IoTFleetWise.Model
         /// Gets and sets the property ExpiryTime. 
         /// <para>
         ///  (Optional) The time the campaign expires, in seconds since epoch (January 1, 1970
-        /// at midnight UTC time). Vehicle data won't be collected after the campaign expires.
-        /// 
+        /// at midnight UTC time). Vehicle data isn't collected after the campaign expires. 
         /// </para>
         ///  
         /// <para>

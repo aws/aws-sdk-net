@@ -76,6 +76,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     unmarshalledObject.AssignedValue = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("comment", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Comment = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dataType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.DefaultValue = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("deprecationMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeprecationMessage = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("description", targetDepth))

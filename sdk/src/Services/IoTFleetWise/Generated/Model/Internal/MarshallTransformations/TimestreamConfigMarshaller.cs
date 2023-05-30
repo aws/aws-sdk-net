@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Branch Marshaller
+    /// TimestreamConfig Marshaller
     /// </summary>
-    public class BranchMarshaller : IRequestMarshaller<Branch, JsonMarshallerContext> 
+    public class TimestreamConfigMarshaller : IRequestMarshaller<TimestreamConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,18 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Branch requestObject, JsonMarshallerContext context)
+        public void Marshall(TimestreamConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetComment())
+            if(requestObject.IsSetExecutionRoleArn())
             {
-                context.Writer.WritePropertyName("comment");
-                context.Writer.Write(requestObject.Comment);
+                context.Writer.WritePropertyName("executionRoleArn");
+                context.Writer.Write(requestObject.ExecutionRoleArn);
             }
 
-            if(requestObject.IsSetDeprecationMessage())
+            if(requestObject.IsSetTimestreamTableArn())
             {
-                context.Writer.WritePropertyName("deprecationMessage");
-                context.Writer.Write(requestObject.DeprecationMessage);
-            }
-
-            if(requestObject.IsSetDescription())
-            {
-                context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
-            }
-
-            if(requestObject.IsSetFullyQualifiedName())
-            {
-                context.Writer.WritePropertyName("fullyQualifiedName");
-                context.Writer.Write(requestObject.FullyQualifiedName);
+                context.Writer.WritePropertyName("timestreamTableArn");
+                context.Writer.Write(requestObject.TimestreamTableArn);
             }
 
         }
@@ -74,7 +62,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static BranchMarshaller Instance = new BranchMarshaller();
+        public readonly static TimestreamConfigMarshaller Instance = new TimestreamConfigMarshaller();
 
     }
 }

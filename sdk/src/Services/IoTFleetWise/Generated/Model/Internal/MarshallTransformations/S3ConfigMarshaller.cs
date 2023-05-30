@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Branch Marshaller
+    /// S3Config Marshaller
     /// </summary>
-    public class BranchMarshaller : IRequestMarshaller<Branch, JsonMarshallerContext> 
+    public class S3ConfigMarshaller : IRequestMarshaller<S3Config, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,30 +43,30 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(Branch requestObject, JsonMarshallerContext context)
+        public void Marshall(S3Config requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetComment())
+            if(requestObject.IsSetBucketArn())
             {
-                context.Writer.WritePropertyName("comment");
-                context.Writer.Write(requestObject.Comment);
+                context.Writer.WritePropertyName("bucketArn");
+                context.Writer.Write(requestObject.BucketArn);
             }
 
-            if(requestObject.IsSetDeprecationMessage())
+            if(requestObject.IsSetDataFormat())
             {
-                context.Writer.WritePropertyName("deprecationMessage");
-                context.Writer.Write(requestObject.DeprecationMessage);
+                context.Writer.WritePropertyName("dataFormat");
+                context.Writer.Write(requestObject.DataFormat);
             }
 
-            if(requestObject.IsSetDescription())
+            if(requestObject.IsSetPrefix())
             {
-                context.Writer.WritePropertyName("description");
-                context.Writer.Write(requestObject.Description);
+                context.Writer.WritePropertyName("prefix");
+                context.Writer.Write(requestObject.Prefix);
             }
 
-            if(requestObject.IsSetFullyQualifiedName())
+            if(requestObject.IsSetStorageCompressionFormat())
             {
-                context.Writer.WritePropertyName("fullyQualifiedName");
-                context.Writer.Write(requestObject.FullyQualifiedName);
+                context.Writer.WritePropertyName("storageCompressionFormat");
+                context.Writer.Write(requestObject.StorageCompressionFormat);
             }
 
         }
@@ -74,7 +74,7 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static BranchMarshaller Instance = new BranchMarshaller();
+        public readonly static S3ConfigMarshaller Instance = new S3ConfigMarshaller();
 
     }
 }

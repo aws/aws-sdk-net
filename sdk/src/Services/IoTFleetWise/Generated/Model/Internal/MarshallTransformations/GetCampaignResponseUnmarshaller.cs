@@ -75,6 +75,12 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     response.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataDestinationConfigs", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataDestinationConfig, DataDestinationConfigUnmarshaller>(DataDestinationConfigUnmarshaller.Instance);
+                    response.DataDestinationConfigs = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dataExtraDimensions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
