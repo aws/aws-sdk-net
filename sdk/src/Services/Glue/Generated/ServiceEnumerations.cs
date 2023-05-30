@@ -5138,6 +5138,10 @@ namespace Amazon.Glue
         /// Constant Standard for WorkerType
         /// </summary>
         public static readonly WorkerType Standard = new WorkerType("Standard");
+        /// <summary>
+        /// Constant Z2X for WorkerType
+        /// </summary>
+        public static readonly WorkerType Z2X = new WorkerType("Z.2X");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

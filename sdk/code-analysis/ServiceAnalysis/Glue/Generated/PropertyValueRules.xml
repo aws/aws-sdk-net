@@ -3716,6 +3716,11 @@
     <pattern>^([2-3]|3[.]9)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.JobCommand.Runtime</property>
+    <max>64</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.JobCommand.ScriptLocation</property>
     <max>400000</max>
   </property-value-rule>
