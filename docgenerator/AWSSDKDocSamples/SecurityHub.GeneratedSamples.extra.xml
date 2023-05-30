@@ -48,12 +48,50 @@
         <value>
             <example>
                 <para>
-                    The following example imports findings from a third party provider to Security Hub.
+                    The following example enables the security standard specified by the StandardArn. You can use this operation to enable one or more Security Hub standards.
                 </para>
                 <code
-                    title="To import security findings from a third party provider to Security Hub"
+                    title="To enable security standards"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
-                    region="to-import-security-findings-from-a-third-party-provider-to-security-hub-1675090935260" />
+                    region="to-enable-security-standards-1683233792239" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchGetSecurityControls(Amazon.SecurityHub.Model.BatchGetSecurityControlsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchGetSecurityControls(Amazon.SecurityHub.Model.BatchGetSecurityControlsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetSecurityControlsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetSecurityControlsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets details for the specified controls in the current AWS account and AWS Region.
+                </para>
+                <code
+                    title="To get security control details "
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-security-control-details--1683234478355" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchGetStandardsControlAssociations(Amazon.SecurityHub.Model.BatchGetStandardsControlAssociationsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchGetStandardsControlAssociations(Amazon.SecurityHub.Model.BatchGetStandardsControlAssociationsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetStandardsControlAssociationsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetStandardsControlAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example retrieves the enablement status of the specified controls in the specified standards.
+                </para>
+                <code
+                    title="To get enablement status of a batch of controls"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-get-enablement-status-of-a-batch-of-controls-1683301618357" />
             </example>
         </value>
     </doc>
@@ -92,6 +130,25 @@
                     title="To update Security Hub findings"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
                     region="to-update-security-hub-findings-1675183938248" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchUpdateStandardsControlAssociations(Amazon.SecurityHub.Model.BatchUpdateStandardsControlAssociationsRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchUpdateStandardsControlAssociations(Amazon.SecurityHub.Model.BatchUpdateStandardsControlAssociationsRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchUpdateStandardsControlAssociationsRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchUpdateStandardsControlAssociationsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example disables CloudWatch.12 in CIS AWS Foundations Benchmark v1.2.0. The example returns an error for CloudTrail.1 because an invalid standard ARN is provided.
+                </para>
+                <code
+                    title="To update enablement status of a batch of controls"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-enablement-status-of-a-batch-of-controls-1683300378416" />
             </example>
         </value>
     </doc>

@@ -64,6 +64,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AwsAmazonMqBroker", targetDepth))
+                {
+                    var unmarshaller = AwsAmazonMqBrokerDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsAmazonMqBroker = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsApiGatewayRestApi", targetDepth))
                 {
                     var unmarshaller = AwsApiGatewayRestApiDetailsUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsApiGatewayV2StageDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsApiGatewayV2Stage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsAppSyncGraphQlApi", targetDepth))
+                {
+                    var unmarshaller = AwsAppSyncGraphQlApiDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsAppSyncGraphQlApi = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsAutoScalingAutoScalingGroup", targetDepth))
@@ -322,6 +334,18 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.AwsElbv2LoadBalancer = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AwsEventSchemasRegistry", targetDepth))
+                {
+                    var unmarshaller = AwsEventSchemasRegistryDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsEventSchemasRegistry = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsGuardDutyDetector", targetDepth))
+                {
+                    var unmarshaller = AwsGuardDutyDetectorDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsGuardDutyDetector = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AwsIamAccessKey", targetDepth))
                 {
                     var unmarshaller = AwsIamAccessKeyDetailsUnmarshaller.Instance;
@@ -488,6 +512,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AwsSsmPatchComplianceDetailsUnmarshaller.Instance;
                     unmarshalledObject.AwsSsmPatchCompliance = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AwsStepFunctionStateMachine", targetDepth))
+                {
+                    var unmarshaller = AwsStepFunctionStateMachineDetailsUnmarshaller.Instance;
+                    unmarshalledObject.AwsStepFunctionStateMachine = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("AwsWafRateBasedRule", targetDepth))

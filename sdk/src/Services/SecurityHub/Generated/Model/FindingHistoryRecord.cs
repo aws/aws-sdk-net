@@ -141,10 +141,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdateTime. 
         /// <para>
-        ///  An ISO 8601-formatted timestamp that indicates when the security findings provider
-        /// last updated the finding record. A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>.
-        /// The value cannot contain spaces, and date and time should be separated by <code>T</code>.
-        /// For more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        ///  An ISO 8601-formatted timestamp that indicates when Security Hub processed the updated
+        /// finding record.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
         /// 3339 section 5.6, Internet Date/Time Format</a>. 
         /// </para>
         /// </summary>
