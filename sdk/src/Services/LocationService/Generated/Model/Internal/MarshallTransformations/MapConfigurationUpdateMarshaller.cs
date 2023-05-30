@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.LocationService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// MapConfiguration Marshaller
+    /// MapConfigurationUpdate Marshaller
     /// </summary>
-    public class MapConfigurationMarshaller : IRequestMarshaller<MapConfiguration, JsonMarshallerContext> 
+    public class MapConfigurationUpdateMarshaller : IRequestMarshaller<MapConfigurationUpdate, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,7 +43,7 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(MapConfiguration requestObject, JsonMarshallerContext context)
+        public void Marshall(MapConfigurationUpdate requestObject, JsonMarshallerContext context)
         {
             if(requestObject.IsSetPoliticalView())
             {
@@ -51,18 +51,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PoliticalView);
             }
 
-            if(requestObject.IsSetStyle())
-            {
-                context.Writer.WritePropertyName("Style");
-                context.Writer.Write(requestObject.Style);
-            }
-
         }
 
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static MapConfigurationMarshaller Instance = new MapConfigurationMarshaller();
+        public readonly static MapConfigurationUpdateMarshaller Instance = new MapConfigurationUpdateMarshaller();
 
     }
 }

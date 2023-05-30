@@ -50,7 +50,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1)]
+        [AWSProperty(Required=true, Min=1, Max=5)]
         public List<string> AllowActions
         {
             get { return this._allowActions; }

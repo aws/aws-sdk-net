@@ -1820,6 +1820,10 @@ namespace Amazon.LocationService
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
         /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
+        /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
         /// The request was denied because of request throttling.
         /// </exception>
@@ -1857,6 +1861,10 @@ namespace Amazon.LocationService
         /// <exception cref="Amazon.LocationService.Model.InternalServerException">
         /// The request has failed to process because of an unknown server error, exception, or
         /// failure.
+        /// </exception>
+        /// <exception cref="Amazon.LocationService.Model.ServiceQuotaExceededException">
+        /// The operation was denied because the request would exceed the maximum <a href="https://docs.aws.amazon.com/location/latest/developerguide/location-quotas.html">quota</a>
+        /// set for Amazon Location Service.
         /// </exception>
         /// <exception cref="Amazon.LocationService.Model.ThrottlingException">
         /// The request was denied because of request throttling.
