@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ListDatalakeExceptions operation
+    /// Response Unmarshaller for ListDataLakeExceptions operation
     /// </summary>  
-    public class ListDatalakeExceptionsResponseUnmarshaller : JsonResponseUnmarshaller
+    public class ListDataLakeExceptionsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,22 +45,22 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            ListDatalakeExceptionsResponse response = new ListDatalakeExceptionsResponse();
+            ListDataLakeExceptionsResponse response = new ListDataLakeExceptionsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("exceptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataLakeException, DataLakeExceptionUnmarshaller>(DataLakeExceptionUnmarshaller.Instance);
+                    response.Exceptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("nextToken", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.NextToken = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("nonRetryableFailures", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<FailuresResponse, FailuresResponseUnmarshaller>(FailuresResponseUnmarshaller.Instance);
-                    response.NonRetryableFailures = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,25 +90,33 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccountNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
-                    return AccountNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
+                {
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSecurityLakeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static ListDatalakeExceptionsResponseUnmarshaller _instance = new ListDatalakeExceptionsResponseUnmarshaller();        
+        private static ListDataLakeExceptionsResponseUnmarshaller _instance = new ListDataLakeExceptionsResponseUnmarshaller();        
 
-        internal static ListDatalakeExceptionsResponseUnmarshaller GetInstance()
+        internal static ListDataLakeExceptionsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -116,7 +124,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListDatalakeExceptionsResponseUnmarshaller Instance
+        public static ListDataLakeExceptionsResponseUnmarshaller Instance
         {
             get
             {

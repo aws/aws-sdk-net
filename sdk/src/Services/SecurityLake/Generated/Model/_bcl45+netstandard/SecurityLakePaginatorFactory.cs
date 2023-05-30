@@ -36,19 +36,19 @@ namespace Amazon.SecurityLake.Model
         }
 
         /// <summary>
-        /// Paginator for GetDatalakeStatus operation
+        /// Paginator for GetDataLakeSources operation
         ///</summary>
-        public IGetDatalakeStatusPaginator GetDatalakeStatus(GetDatalakeStatusRequest request) 
+        public IGetDataLakeSourcesPaginator GetDataLakeSources(GetDataLakeSourcesRequest request) 
         {
-            return new GetDatalakeStatusPaginator(this.client, request);
+            return new GetDataLakeSourcesPaginator(this.client, request);
         }
 
         /// <summary>
-        /// Paginator for ListDatalakeExceptions operation
+        /// Paginator for ListDataLakeExceptions operation
         ///</summary>
-        public IListDatalakeExceptionsPaginator ListDatalakeExceptions(ListDatalakeExceptionsRequest request) 
+        public IListDataLakeExceptionsPaginator ListDataLakeExceptions(ListDataLakeExceptionsRequest request) 
         {
-            return new ListDatalakeExceptionsPaginator(this.client, request);
+            return new ListDataLakeExceptionsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -57,10 +57,10 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                     response.NextToken = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("regionSourceTypesAccountsList", targetDepth))
+                if (context.TestExpression("sources", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<Dictionary<string, Dictionary<string, List<string>>>, DictionaryUnmarshaller<string, Dictionary<string, List<string>>, StringUnmarshaller, DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>>>(new DictionaryUnmarshaller<string, Dictionary<string, List<string>>, StringUnmarshaller, DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance))));
-                    response.RegionSourceTypesAccountsList = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<LogSource, LogSourceUnmarshaller>(LogSourceUnmarshaller.Instance);
+                    response.Sources = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -90,9 +90,13 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccountNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
-                    return AccountNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
@@ -102,9 +106,9 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSecurityLakeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

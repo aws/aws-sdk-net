@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// This is the response object from the DeleteDatalake operation.
+    /// This is the response object from the DeleteDataLake operation.
     /// </summary>
-    public partial class DeleteDatalakeResponse : AmazonWebServiceResponse
+    public partial class DeleteDataLakeResponse : AmazonWebServiceResponse
     {
 
     }

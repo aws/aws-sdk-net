@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// CreateDatalake Request Marshaller
+    /// CreateDataLake Request Marshaller
     /// </summary>       
-    public class CreateDatalakeRequestMarshaller : IMarshaller<IRequest, CreateDatalakeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class CreateDataLakeRequestMarshaller : IMarshaller<IRequest, CreateDataLakeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((CreateDatalakeRequest)input);
+            return this.Marshall((CreateDataLakeRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(CreateDatalakeRequest publicRequest)
+        public IRequest Marshall(CreateDataLakeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityLake");
             request.Headers["Content-Type"] = "application/json";
@@ -68,43 +68,23 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetConfigurations())
                 {
                     context.Writer.WritePropertyName("configurations");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestConfigurationsKvp in publicRequest.Configurations)
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestConfigurationsListValue in publicRequest.Configurations)
                     {
-                        context.Writer.WritePropertyName(publicRequestConfigurationsKvp.Key);
-                        var publicRequestConfigurationsValue = publicRequestConfigurationsKvp.Value;
-
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = LakeConfigurationRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConfigurationsValue, context);
+                        var marshaller = DataLakeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestConfigurationsListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetEnableAll())
-                {
-                    context.Writer.WritePropertyName("enableAll");
-                    context.Writer.Write(publicRequest.EnableAll);
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetMetaStoreManagerRoleArn())
                 {
                     context.Writer.WritePropertyName("metaStoreManagerRoleArn");
                     context.Writer.Write(publicRequest.MetaStoreManagerRoleArn);
-                }
-
-                if(publicRequest.IsSetRegions())
-                {
-                    context.Writer.WritePropertyName("regions");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRegionsListValue in publicRequest.Regions)
-                    {
-                            context.Writer.Write(publicRequestRegionsListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -115,9 +95,9 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static CreateDatalakeRequestMarshaller _instance = new CreateDatalakeRequestMarshaller();        
+        private static CreateDataLakeRequestMarshaller _instance = new CreateDataLakeRequestMarshaller();        
 
-        internal static CreateDatalakeRequestMarshaller GetInstance()
+        internal static CreateDataLakeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -125,7 +105,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CreateDatalakeRequestMarshaller Instance
+        public static CreateDataLakeRequestMarshaller Instance
         {
             get
             {

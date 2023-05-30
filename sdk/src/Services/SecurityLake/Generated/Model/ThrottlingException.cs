@@ -153,7 +153,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property RetryAfterSeconds. 
         /// <para>
-        /// Retry the request after the specified time. 
+        /// Retry the request after the specified time.
         /// </para>
         /// </summary>
         public int RetryAfterSeconds

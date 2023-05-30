@@ -29,13 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Container for the parameters to the UpdateDatalake operation.
+    /// Container for the parameters to the UpdateDataLake operation.
     /// Specifies where to store your security data and for how long. You can add a rollup
     /// Region to consolidate data from multiple Amazon Web Services Regions.
     /// </summary>
-    public partial class UpdateDatalakeRequest : AmazonSecurityLakeRequest
+    public partial class UpdateDataLakeRequest : AmazonSecurityLakeRequest
     {
-        private Dictionary<string, LakeConfigurationRequest> _configurations = new Dictionary<string, LakeConfigurationRequest>();
+        private List<DataLakeConfiguration> _configurations = new List<DataLakeConfiguration>();
 
         /// <summary>
         /// Gets and sets the property Configurations. 
@@ -44,7 +44,7 @@ namespace Amazon.SecurityLake.Model
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public Dictionary<string, LakeConfigurationRequest> Configurations
+        public List<DataLakeConfiguration> Configurations
         {
             get { return this._configurations; }
             set { this._configurations = value; }

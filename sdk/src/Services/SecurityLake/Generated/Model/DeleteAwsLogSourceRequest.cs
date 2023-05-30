@@ -31,113 +31,39 @@ namespace Amazon.SecurityLake.Model
     /// <summary>
     /// Container for the parameters to the DeleteAwsLogSource operation.
     /// Removes a natively supported Amazon Web Service as an Amazon Security Lake source.
-    /// When you remove the source, Security Lake stops collecting data from that source,
-    /// and subscribers can no longer consume new data from the source. Subscribers can still
-    /// consume data that Security Lake collected from the source before disablement.
+    /// You can remove a source for one or more Regions. When you remove the source, Security
+    /// Lake stops collecting data from that source in the specified Regions and accounts,
+    /// and subscribers can no longer consume new data from the source. However, subscribers
+    /// can still consume data that Security Lake collected from the source before removal.
     /// 
     ///  
     /// <para>
     /// You can choose any source type in any Amazon Web Services Region for either accounts
-    /// that are part of a trusted organization or standalone accounts. At least one of the
-    /// three dimensions is a mandatory input to this API. However, you can supply any combination
-    /// of the three dimensions to this API. 
-    /// </para>
-    ///  
-    /// <para>
-    /// By default, a dimension refers to the entire set. This is overridden when you supply
-    /// any one of the inputs. For instance, when you do not specify members, the API disables
-    /// all Security Lake member accounts for sources. Similarly, when you do not specify
-    /// Regions, Security Lake is disabled for all the Regions where Security Lake is available
-    /// as a service.
-    /// </para>
-    ///  
-    /// <para>
-    /// When you don't provide a dimension, Security Lake assumes that the missing dimension
-    /// refers to the entire set. For example, if you don't provide specific accounts, the
-    /// API applies to the entire set of accounts in your organization.
+    /// that are part of a trusted organization or standalone accounts. 
     /// </para>
     /// </summary>
     public partial class DeleteAwsLogSourceRequest : AmazonSecurityLakeRequest
     {
-        private Dictionary<string, Dictionary<string, List<string>>> _disableAllDimensions = new Dictionary<string, Dictionary<string, List<string>>>();
-        private List<string> _disableSingleDimension = new List<string>();
-        private Dictionary<string, List<string>> _disableTwoDimensions = new Dictionary<string, List<string>>();
-        private List<string> _inputOrder = new List<string>();
+        private List<AwsLogSourceConfiguration> _sources = new List<AwsLogSourceConfiguration>();
 
         /// <summary>
-        /// Gets and sets the property DisableAllDimensions. 
+        /// Gets and sets the property Sources. 
         /// <para>
-        /// Removes the specific Amazon Web Services sources from specific accounts and specific
-        /// Regions.
+        /// Specify the natively-supported Amazon Web Services service to remove as a source in
+        /// Security Lake.
         /// </para>
         /// </summary>
-        public Dictionary<string, Dictionary<string, List<string>>> DisableAllDimensions
+        [AWSProperty(Required=true, Min=0, Max=50)]
+        public List<AwsLogSourceConfiguration> Sources
         {
-            get { return this._disableAllDimensions; }
-            set { this._disableAllDimensions = value; }
+            get { return this._sources; }
+            set { this._sources = value; }
         }
 
-        // Check to see if DisableAllDimensions property is set
-        internal bool IsSetDisableAllDimensions()
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
         {
-            return this._disableAllDimensions != null && this._disableAllDimensions.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property DisableSingleDimension. 
-        /// <para>
-        /// Removes all Amazon Web Services sources from specific accounts or Regions.
-        /// </para>
-        /// </summary>
-        public List<string> DisableSingleDimension
-        {
-            get { return this._disableSingleDimension; }
-            set { this._disableSingleDimension = value; }
-        }
-
-        // Check to see if DisableSingleDimension property is set
-        internal bool IsSetDisableSingleDimension()
-        {
-            return this._disableSingleDimension != null && this._disableSingleDimension.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property DisableTwoDimensions. 
-        /// <para>
-        /// Remove a specific Amazon Web Services source from specific accounts or Regions.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, List<string>> DisableTwoDimensions
-        {
-            get { return this._disableTwoDimensions; }
-            set { this._disableTwoDimensions = value; }
-        }
-
-        // Check to see if DisableTwoDimensions property is set
-        internal bool IsSetDisableTwoDimensions()
-        {
-            return this._disableTwoDimensions != null && this._disableTwoDimensions.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property InputOrder. 
-        /// <para>
-        /// This is a mandatory input. Specify the input order to disable dimensions in Security
-        /// Lake, namely Region (Amazon Web Services Region code, source type, and member (account
-        /// ID of a specific Amazon Web Services account). 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> InputOrder
-        {
-            get { return this._inputOrder; }
-            set { this._inputOrder = value; }
-        }
-
-        // Check to see if InputOrder property is set
-        internal bool IsSetInputOrder()
-        {
-            return this._inputOrder != null && this._inputOrder.Count > 0; 
+            return this._sources != null && this._sources.Count > 0; 
         }
 
     }

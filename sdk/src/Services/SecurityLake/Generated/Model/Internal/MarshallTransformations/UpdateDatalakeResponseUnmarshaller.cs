@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdateDatalake operation
+    /// Response Unmarshaller for UpdateDataLake operation
     /// </summary>  
-    public class UpdateDatalakeResponseUnmarshaller : JsonResponseUnmarshaller
+    public class UpdateDataLakeResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,8 +45,19 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdateDatalakeResponse response = new UpdateDatalakeResponse();
+            UpdateDataLakeResponse response = new UpdateDataLakeResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("dataLakes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataLakeResource, DataLakeResourceUnmarshaller>(DataLakeResourceUnmarshaller.Instance);
+                    response.DataLakes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }
@@ -73,9 +84,13 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("EventBridgeException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
-                    return EventBridgeExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
@@ -85,17 +100,17 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSecurityLakeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdateDatalakeResponseUnmarshaller _instance = new UpdateDatalakeResponseUnmarshaller();        
+        private static UpdateDataLakeResponseUnmarshaller _instance = new UpdateDataLakeResponseUnmarshaller();        
 
-        internal static UpdateDatalakeResponseUnmarshaller GetInstance()
+        internal static UpdateDataLakeResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -103,7 +118,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateDatalakeResponseUnmarshaller Instance
+        public static UpdateDataLakeResponseUnmarshaller Instance
         {
             get
             {

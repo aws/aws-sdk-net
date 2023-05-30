@@ -29,10 +29,29 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// This is the response object from the CreateDatalake operation.
+    /// This is the response object from the CreateDataLake operation.
     /// </summary>
-    public partial class CreateDatalakeResponse : AmazonWebServiceResponse
+    public partial class CreateDataLakeResponse : AmazonWebServiceResponse
     {
+        private List<DataLakeResource> _dataLakes = new List<DataLakeResource>();
+
+        /// <summary>
+        /// Gets and sets the property DataLakes. 
+        /// <para>
+        /// The created Security Lake configuration object.
+        /// </para>
+        /// </summary>
+        public List<DataLakeResource> DataLakes
+        {
+            get { return this._dataLakes; }
+            set { this._dataLakes = value; }
+        }
+
+        // Check to see if DataLakes property is set
+        internal bool IsSetDataLakes()
+        {
+            return this._dataLakes != null && this._dataLakes.Count > 0; 
+        }
 
     }
 }

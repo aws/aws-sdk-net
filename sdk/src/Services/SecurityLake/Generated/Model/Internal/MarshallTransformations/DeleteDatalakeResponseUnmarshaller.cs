@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DeleteDatalake operation
+    /// Response Unmarshaller for DeleteDataLake operation
     /// </summary>  
-    public class DeleteDatalakeResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteDataLakeResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,7 +45,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            DeleteDatalakeResponse response = new DeleteDatalakeResponse();
+            DeleteDataLakeResponse response = new DeleteDataLakeResponse();
 
 
             return response;
@@ -73,6 +73,10 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
+                {
+                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                 {
                     return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -85,25 +89,17 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
-                {
-                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
-                {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSecurityLakeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static DeleteDatalakeResponseUnmarshaller _instance = new DeleteDatalakeResponseUnmarshaller();        
+        private static DeleteDataLakeResponseUnmarshaller _instance = new DeleteDataLakeResponseUnmarshaller();        
 
-        internal static DeleteDatalakeResponseUnmarshaller GetInstance()
+        internal static DeleteDataLakeResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -111,7 +107,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteDatalakeResponseUnmarshaller Instance
+        public static DeleteDataLakeResponseUnmarshaller Instance
         {
             get
             {

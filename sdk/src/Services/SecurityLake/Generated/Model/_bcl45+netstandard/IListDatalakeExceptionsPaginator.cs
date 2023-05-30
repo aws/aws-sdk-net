@@ -21,18 +21,18 @@ using Amazon.Runtime;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Paginator for the ListDatalakeExceptions operation
+    /// Paginator for the ListDataLakeExceptions operation
     ///</summary>
-    public interface IListDatalakeExceptionsPaginator
+    public interface IListDataLakeExceptionsPaginator
     {
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        IPaginatedEnumerable<ListDatalakeExceptionsResponse> Responses { get; }
+        IPaginatedEnumerable<ListDataLakeExceptionsResponse> Responses { get; }
 
         /// <summary>
-        /// Enumerable containing all of the NonRetryableFailures
+        /// Enumerable containing all of the Exceptions
         /// </summary>
-        IPaginatedEnumerable<FailuresResponse> NonRetryableFailures { get; }
+        IPaginatedEnumerable<DataLakeException> Exceptions { get; }
     }
 }

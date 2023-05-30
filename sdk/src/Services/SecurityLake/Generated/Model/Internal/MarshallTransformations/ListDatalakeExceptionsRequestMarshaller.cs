@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ListDatalakeExceptions Request Marshaller
+    /// ListDataLakeExceptions Request Marshaller
     /// </summary>       
-    public class ListDatalakeExceptionsRequestMarshaller : IMarshaller<IRequest, ListDatalakeExceptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ListDataLakeExceptionsRequestMarshaller : IMarshaller<IRequest, ListDataLakeExceptionsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((ListDatalakeExceptionsRequest)input);
+            return this.Marshall((ListDataLakeExceptionsRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(ListDatalakeExceptionsRequest publicRequest)
+        public IRequest Marshall(ListDataLakeExceptionsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityLake");
             request.Headers["Content-Type"] = "application/json";
@@ -65,10 +65,10 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetMaxFailures())
+                if(publicRequest.IsSetMaxResults())
                 {
-                    context.Writer.WritePropertyName("maxFailures");
-                    context.Writer.Write(publicRequest.MaxFailures);
+                    context.Writer.WritePropertyName("maxResults");
+                    context.Writer.Write(publicRequest.MaxResults);
                 }
 
                 if(publicRequest.IsSetNextToken())
@@ -77,13 +77,13 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
-                if(publicRequest.IsSetRegionSet())
+                if(publicRequest.IsSetRegions())
                 {
-                    context.Writer.WritePropertyName("regionSet");
+                    context.Writer.WritePropertyName("regions");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestRegionSetListValue in publicRequest.RegionSet)
+                    foreach(var publicRequestRegionsListValue in publicRequest.Regions)
                     {
-                            context.Writer.Write(publicRequestRegionSetListValue);
+                            context.Writer.Write(publicRequestRegionsListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }
@@ -96,9 +96,9 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static ListDatalakeExceptionsRequestMarshaller _instance = new ListDatalakeExceptionsRequestMarshaller();        
+        private static ListDataLakeExceptionsRequestMarshaller _instance = new ListDataLakeExceptionsRequestMarshaller();        
 
-        internal static ListDatalakeExceptionsRequestMarshaller GetInstance()
+        internal static ListDataLakeExceptionsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -106,7 +106,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ListDatalakeExceptionsRequestMarshaller Instance
+        public static ListDataLakeExceptionsRequestMarshaller Instance
         {
             get
             {

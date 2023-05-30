@@ -29,24 +29,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteDatalake operation.
-    /// When you delete Amazon Security Lake from your account, Security Lake is disabled
-    /// in all Amazon Web Services Regions. Also, this API automatically takes steps to remove
-    /// the account from Security Lake . 
+    /// Container for the parameters to the DeleteDataLake operation.
+    /// When you disable Amazon Security Lake from your account, Security Lake is disabled
+    /// in all Amazon Web Services Regions and it stops collecting data from your sources.
+    /// Also, this API automatically takes steps to remove the account from Security Lake.
+    /// However, Security Lake retains all of your existing settings and the resources that
+    /// it created in your Amazon Web Services account in the current Amazon Web Services
+    /// Region.
     /// 
     ///  
     /// <para>
-    /// This operation disables security data collection from sources, deletes data stored,
-    /// and stops making data accessible to subscribers. Security Lake also deletes all the
-    /// existing settings and resources that it stores or maintains for your Amazon Web Services
-    /// account in the current Region, including security log and event data. The <code>DeleteDatalake</code>
-    /// operation does not delete the Amazon S3 bucket, which is owned by your Amazon Web
-    /// Services account. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon
+    /// The <code>DeleteDataLake</code> operation does not delete the data that is stored
+    /// in your Amazon S3 bucket, which is owned by your Amazon Web Services account. For
+    /// more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon
     /// Security Lake User Guide</a>.
     /// </para>
     /// </summary>
-    public partial class DeleteDatalakeRequest : AmazonSecurityLakeRequest
+    public partial class DeleteDataLakeRequest : AmazonSecurityLakeRequest
     {
+        private List<string> _regions = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        /// The list of Regions where Security Lake is enabled.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && this._regions.Count > 0; 
+        }
 
     }
 }

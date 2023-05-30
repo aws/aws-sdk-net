@@ -59,78 +59,21 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/v1/logsources/list";
+            request.ResourcePath = "/v1/datalake/logsources/list";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetInputOrder())
+                if(publicRequest.IsSetAccounts())
                 {
-                    context.Writer.WritePropertyName("inputOrder");
+                    context.Writer.WritePropertyName("accounts");
                     context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputOrderListValue in publicRequest.InputOrder)
+                    foreach(var publicRequestAccountsListValue in publicRequest.Accounts)
                     {
-                            context.Writer.Write(publicRequestInputOrderListValue);
+                            context.Writer.Write(publicRequestAccountsListValue);
                     }
                     context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetListAllDimensions())
-                {
-                    context.Writer.WritePropertyName("listAllDimensions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestListAllDimensionsKvp in publicRequest.ListAllDimensions)
-                    {
-                        context.Writer.WritePropertyName(publicRequestListAllDimensionsKvp.Key);
-                        var publicRequestListAllDimensionsValue = publicRequestListAllDimensionsKvp.Value;
-
-                        context.Writer.WriteObjectStart();
-                        foreach (var publicRequestListAllDimensionsValueKvp in publicRequestListAllDimensionsValue)
-                        {
-                            context.Writer.WritePropertyName(publicRequestListAllDimensionsValueKvp.Key);
-                            var publicRequestListAllDimensionsValueValue = publicRequestListAllDimensionsValueKvp.Value;
-
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestListAllDimensionsValueValueListValue in publicRequestListAllDimensionsValueValue)
-                            {
-                                    context.Writer.Write(publicRequestListAllDimensionsValueValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
-                        context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetListSingleDimension())
-                {
-                    context.Writer.WritePropertyName("listSingleDimension");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestListSingleDimensionListValue in publicRequest.ListSingleDimension)
-                    {
-                            context.Writer.Write(publicRequestListSingleDimensionListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetListTwoDimensions())
-                {
-                    context.Writer.WritePropertyName("listTwoDimensions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestListTwoDimensionsKvp in publicRequest.ListTwoDimensions)
-                    {
-                        context.Writer.WritePropertyName(publicRequestListTwoDimensionsKvp.Key);
-                        var publicRequestListTwoDimensionsValue = publicRequestListTwoDimensionsKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestListTwoDimensionsValueListValue in publicRequestListTwoDimensionsValue)
-                        {
-                                context.Writer.Write(publicRequestListTwoDimensionsValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetMaxResults())
@@ -143,6 +86,33 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("nextToken");
                     context.Writer.Write(publicRequest.NextToken);
+                }
+
+                if(publicRequest.IsSetRegions())
+                {
+                    context.Writer.WritePropertyName("regions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRegionsListValue in publicRequest.Regions)
+                    {
+                            context.Writer.Write(publicRequestRegionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetSources())
+                {
+                    context.Writer.WritePropertyName("sources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = LogSourceResourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSourcesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();

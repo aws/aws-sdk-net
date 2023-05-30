@@ -29,19 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// This is the response object from the ListDatalakeExceptions operation.
+    /// This is the response object from the ListDataLakeExceptions operation.
     /// </summary>
-    public partial class ListDatalakeExceptionsResponse : AmazonWebServiceResponse
+    public partial class ListDataLakeExceptionsResponse : AmazonWebServiceResponse
     {
+        private List<DataLakeException> _exceptions = new List<DataLakeException>();
         private string _nextToken;
-        private List<FailuresResponse> _nonRetryableFailures = new List<FailuresResponse>();
+
+        /// <summary>
+        /// Gets and sets the property Exceptions. 
+        /// <para>
+        /// Lists the failures that cannot be retried in the current Region.
+        /// </para>
+        /// </summary>
+        public List<DataLakeException> Exceptions
+        {
+            get { return this._exceptions; }
+            set { this._exceptions = value; }
+        }
+
+        // Check to see if Exceptions property is set
+        internal bool IsSetExceptions()
+        {
+            return this._exceptions != null && this._exceptions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
         /// List if there are more results available. The value of nextToken is a unique pagination
         /// token for each page. Repeat the call using the returned token to retrieve the next
-        /// page. Keep all other arguments unchanged. 
+        /// page. Keep all other arguments unchanged.
         /// </para>
         ///  
         /// <para>
@@ -59,25 +77,6 @@ namespace Amazon.SecurityLake.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property NonRetryableFailures. 
-        /// <para>
-        /// Lists the failures that cannot be retried in the current Region.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<FailuresResponse> NonRetryableFailures
-        {
-            get { return this._nonRetryableFailures; }
-            set { this._nonRetryableFailures = value; }
-        }
-
-        // Check to see if NonRetryableFailures property is set
-        internal bool IsSetNonRetryableFailures()
-        {
-            return this._nonRetryableFailures != null && this._nonRetryableFailures.Count > 0; 
         }
 
     }

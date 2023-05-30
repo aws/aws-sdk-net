@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// DeleteDatalake Request Marshaller
+    /// DeleteDataLake Request Marshaller
     /// </summary>       
-    public class DeleteDatalakeRequestMarshaller : IMarshaller<IRequest, DeleteDatalakeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DeleteDataLakeRequestMarshaller : IMarshaller<IRequest, DeleteDataLakeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((DeleteDatalakeRequest)input);
+            return this.Marshall((DeleteDataLakeRequest)input);
         }
 
         /// <summary>
@@ -52,19 +52,41 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(DeleteDatalakeRequest publicRequest)
+        public IRequest Marshall(DeleteDataLakeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityLake");
+            request.Headers["Content-Type"] = "application/json";
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
-            request.HttpMethod = "DELETE";
+            request.HttpMethod = "POST";
 
-            request.ResourcePath = "/v1/datalake";
+            request.ResourcePath = "/v1/datalake/delete";
+            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
+            {
+                JsonWriter writer = new JsonWriter(stringWriter);
+                writer.WriteObjectStart();
+                var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetRegions())
+                {
+                    context.Writer.WritePropertyName("regions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestRegionsListValue in publicRequest.Regions)
+                    {
+                            context.Writer.Write(publicRequestRegionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                writer.WriteObjectEnd();
+                string snippet = stringWriter.ToString();
+                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
+            }
+
 
             return request;
         }
-        private static DeleteDatalakeRequestMarshaller _instance = new DeleteDatalakeRequestMarshaller();        
+        private static DeleteDataLakeRequestMarshaller _instance = new DeleteDataLakeRequestMarshaller();        
 
-        internal static DeleteDatalakeRequestMarshaller GetInstance()
+        internal static DeleteDataLakeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -72,7 +94,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DeleteDatalakeRequestMarshaller Instance
+        public static DeleteDataLakeRequestMarshaller Instance
         {
             get
             {

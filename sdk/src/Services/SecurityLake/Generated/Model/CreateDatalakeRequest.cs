@@ -29,17 +29,16 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateDatalake operation.
+    /// Container for the parameters to the CreateDataLake operation.
     /// Initializes an Amazon Security Lake instance with the provided (or default) configuration.
     /// You can enable Security Lake in Amazon Web Services Regions with customized settings
-    /// before enabling log collection in Regions. You can either use the <code>enableAll</code>
-    /// parameter to specify all Regions or specify the Regions where you want to enable Security
-    /// Lake. To specify particular Regions, use the <code>Regions</code> parameter and then
-    /// configure these Regions using the <code>configurations</code> parameter. If you have
-    /// already enabled Security Lake in a Region when you call this command, the command
-    /// will update the Region if you provide new configuration parameters. If you have not
-    /// already enabled Security Lake in the Region when you call this API, it will set up
-    /// the data lake in the Region with the specified configurations.
+    /// before enabling log collection in Regions. By default, the <code>CreateDataLake</code>
+    /// Security Lake in all Regions. To specify particular Regions, configure these Regions
+    /// using the <code>configurations</code> parameter. If you have already enabled Security
+    /// Lake in a Region when you call this command, the command will update the Region if
+    /// you provide new configuration parameters. If you have not already enabled Security
+    /// Lake in the Region when you call this API, it will set up the data lake in the Region
+    /// with the specified configurations.
     /// 
     ///  
     /// <para>
@@ -52,12 +51,10 @@ namespace Amazon.SecurityLake.Model
     /// Security Lake User Guide</a>.
     /// </para>
     /// </summary>
-    public partial class CreateDatalakeRequest : AmazonSecurityLakeRequest
+    public partial class CreateDataLakeRequest : AmazonSecurityLakeRequest
     {
-        private Dictionary<string, LakeConfigurationRequest> _configurations = new Dictionary<string, LakeConfigurationRequest>();
-        private bool? _enableAll;
+        private List<DataLakeConfiguration> _configurations = new List<DataLakeConfiguration>();
         private string _metaStoreManagerRoleArn;
-        private List<string> _regions = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Configurations. 
@@ -65,7 +62,8 @@ namespace Amazon.SecurityLake.Model
         /// Specify the Region or Regions that will contribute data to the rollup region.
         /// </para>
         /// </summary>
-        public Dictionary<string, LakeConfigurationRequest> Configurations
+        [AWSProperty(Required=true)]
+        public List<DataLakeConfiguration> Configurations
         {
             get { return this._configurations; }
             set { this._configurations = value; }
@@ -78,24 +76,6 @@ namespace Amazon.SecurityLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property EnableAll. 
-        /// <para>
-        /// Enable Security Lake in all Regions.
-        /// </para>
-        /// </summary>
-        public bool EnableAll
-        {
-            get { return this._enableAll.GetValueOrDefault(); }
-            set { this._enableAll = value; }
-        }
-
-        // Check to see if EnableAll property is set
-        internal bool IsSetEnableAll()
-        {
-            return this._enableAll.HasValue; 
-        }
-
-        /// <summary>
         /// Gets and sets the property MetaStoreManagerRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) used to create and update the Glue table. This table
@@ -103,6 +83,7 @@ namespace Amazon.SecurityLake.Model
         /// log sources and custom sources.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string MetaStoreManagerRoleArn
         {
             get { return this._metaStoreManagerRoleArn; }
@@ -113,27 +94,6 @@ namespace Amazon.SecurityLake.Model
         internal bool IsSetMetaStoreManagerRoleArn()
         {
             return this._metaStoreManagerRoleArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Regions. 
-        /// <para>
-        /// Enable Security Lake in the specified Regions. To enable Security Lake in specific
-        /// Amazon Web Services Regions, such as us-east-1 or ap-northeast-3, provide the Region
-        /// codes. For a list of Region codes, see <a href="https://docs.aws.amazon.com/general/latest/gr/securitylake.html">Amazon
-        /// Security Lake endpoints</a> in the Amazon Web Services General Reference.
-        /// </para>
-        /// </summary>
-        public List<string> Regions
-        {
-            get { return this._regions; }
-            set { this._regions = value; }
-        }
-
-        // Check to see if Regions property is set
-        internal bool IsSetRegions()
-        {
-            return this._regions != null && this._regions.Count > 0; 
         }
 
     }

@@ -34,7 +34,6 @@ namespace Amazon.SecurityLake.Model
     public partial class CreateAwsLogSourceResponse : AmazonWebServiceResponse
     {
         private List<string> _failed = new List<string>();
-        private List<string> _processing = new List<string>();
 
         /// <summary>
         /// Gets and sets the property Failed. 
@@ -54,25 +53,6 @@ namespace Amazon.SecurityLake.Model
         internal bool IsSetFailed()
         {
             return this._failed != null && this._failed.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property Processing. 
-        /// <para>
-        /// Lists the accounts that are in the process of enabling a natively supported Amazon
-        /// Web Service as a Security Lake source.
-        /// </para>
-        /// </summary>
-        public List<string> Processing
-        {
-            get { return this._processing; }
-            set { this._processing = value; }
-        }
-
-        // Check to see if Processing property is set
-        internal bool IsSetProcessing()
-        {
-            return this._processing != null && this._processing.Count > 0; 
         }
 
     }

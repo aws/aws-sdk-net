@@ -31,33 +31,25 @@ namespace Amazon.SecurityLake
     /// <summary>
     /// Interface for accessing SecurityLake
     ///
-    /// <note> 
-    /// <para>
-    /// Amazon Security Lake is in preview release. Your use of the Security Lake preview
-    /// is subject to Section 2 of the <a href="http://aws.amazon.com/service-terms/">Amazon
-    /// Web Services Service Terms</a>("Betas and Previews").
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Amazon Security Lake is a fully managed security data lake service. You can use Security
     /// Lake to automatically centralize security data from cloud, on-premises, and custom
-    /// sources into a data lake that's stored in your Amazon Web Servicesaccount. Amazon
+    /// sources into a data lake that's stored in your Amazon Web Services account. Amazon
     /// Web Services Organizations is an account management service that lets you consolidate
     /// multiple Amazon Web Services accounts into an organization that you create and centrally
     /// manage. With Organizations, you can create member accounts and invite existing accounts
     /// to join your organization. Security Lake helps you analyze security data for a more
     /// complete understanding of your security posture across the entire organization. It
     /// can also help you improve the protection of your workloads, applications, and data.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// The data lake is backed by Amazon Simple Storage Service (Amazon S3) buckets, and
-    /// you retain ownership over your data. 
+    /// you retain ownership over your data.
     /// </para>
     ///  
     /// <para>
     /// Amazon Security Lake integrates with CloudTrail, a service that provides a record
-    /// of actions taken by a user, role, or an Amazon Web Services service in Security Lake
+    /// of actions taken by a user, role, or an Amazon Web Services service. In Security Lake,
     /// CloudTrail captures API calls for Security Lake as events. The calls captured include
     /// calls from the Security Lake console and code calls to the Security Lake API operations.
     /// If you create a trail, you can enable continuous delivery of CloudTrail events to
@@ -100,24 +92,14 @@ namespace Amazon.SecurityLake
         /// Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables
         /// source types for member accounts in required Amazon Web Services Regions, based on
         /// the parameters you specify. You can choose any source type in any Region for either
-        /// accounts that are part of a trusted organization or standalone accounts. At least
-        /// one of the three dimensions is a mandatory input to this API. However, you can supply
-        /// any combination of the three dimensions to this API. 
+        /// accounts that are part of a trusted organization or standalone accounts. Once you
+        /// add an Amazon Web Service as a source, Security Lake starts collecting logs and events
+        /// from it, 
         /// 
-        ///  
-        /// <para>
-        /// By default, a dimension refers to the entire set. When you don't provide a dimension,
-        /// Security Lake assumes that the missing dimension refers to the entire set. This is
-        /// overridden when you supply any one of the inputs. For instance, when you do not specify
-        /// members, the API enables all Security Lake member accounts for all sources. Similarly,
-        /// when you do not specify Regions, Security Lake is enabled for all the Regions where
-        /// Security Lake is available as a service.
-        /// </para>
         ///  
         /// <para>
         /// You can use this API only to enable natively supported Amazon Web Services as a source.
         /// Use <code>CreateCustomLogSource</code> to enable data collection from a custom source.
-        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAwsLogSource service method.</param>
@@ -133,10 +115,15 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
@@ -145,14 +132,8 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.S3Exception">
-        /// Provides an extension of the AmazonServiceException for errors reported by Amazon
-        /// S3 while processing a request. In particular, this class provides access to the Amazon
-        /// S3 extended request ID. If Amazon S3 is incorrectly handling a request and you need
-        /// to contact Amazon, this extended request ID may provide useful debugging information.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateAwsLogSource">REST API Reference for CreateAwsLogSource Operation</seealso>
         Task<CreateAwsLogSourceResponse> CreateAwsLogSourceAsync(CreateAwsLogSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -169,8 +150,8 @@ namespace Amazon.SecurityLake
         /// events from third-party custom sources. After creating the appropriate IAM role to
         /// invoke Glue crawler, use this API to add a custom source name in Security Lake. This
         /// operation creates a partition in the Amazon S3 bucket for Security Lake as the target
-        /// location for log files from the custom source in addition to an associated Glue table
-        /// and an Glue crawler.
+        /// location for log files from the custom source. In addition, this operation also creates
+        /// an associated Glue table and an Glue crawler.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomLogSource service method.</param>
         /// <param name="cancellationToken">
@@ -185,72 +166,9 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.BucketNotFoundException">
-        /// Amazon Security Lake generally returns 404 errors if the requested object is missing
-        /// from the bucket.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConflictSourceNamesException">
-        /// There was a conflict when you attempted to modify a Security Lake source name.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
-        /// The resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateCustomLogSource">REST API Reference for CreateCustomLogSource Operation</seealso>
-        Task<CreateCustomLogSourceResponse> CreateCustomLogSourceAsync(CreateCustomLogSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  CreateDatalake
-
-
-
-        /// <summary>
-        /// Initializes an Amazon Security Lake instance with the provided (or default) configuration.
-        /// You can enable Security Lake in Amazon Web Services Regions with customized settings
-        /// before enabling log collection in Regions. You can either use the <code>enableAll</code>
-        /// parameter to specify all Regions or specify the Regions where you want to enable Security
-        /// Lake. To specify particular Regions, use the <code>Regions</code> parameter and then
-        /// configure these Regions using the <code>configurations</code> parameter. If you have
-        /// already enabled Security Lake in a Region when you call this command, the command
-        /// will update the Region if you provide new configuration parameters. If you have not
-        /// already enabled Security Lake in the Region when you call this API, it will set up
-        /// the data lake in the Region with the specified configurations.
-        /// 
-        ///  
-        /// <para>
-        /// When you enable Security Lake, it starts ingesting security data after the <code>CreateAwsLogSource</code>
-        /// call. This includes ingesting security data from sources, storing data, and making
-        /// data accessible to subscribers. Security Lake also enables all the existing settings
-        /// and resources that it stores or maintains for your Amazon Web Services account in
-        /// the current Region, including security log and event data. For more information, see
-        /// the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html">Amazon
-        /// Security Lake User Guide</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalake service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the CreateDatalake service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
         /// Occurs when a conflict with a previous successful write is detected. This generally
@@ -265,22 +183,125 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ServiceQuotaExceededException">
-        /// You have exceeded your service quota. To perform the requested action, remove some
-        /// of the relevant resources, or use Service Quotas to request a service quota increase.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateCustomLogSource">REST API Reference for CreateCustomLogSource Operation</seealso>
+        Task<CreateCustomLogSourceResponse> CreateCustomLogSourceAsync(CreateCustomLogSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateDataLake
+
+
+
+        /// <summary>
+        /// Initializes an Amazon Security Lake instance with the provided (or default) configuration.
+        /// You can enable Security Lake in Amazon Web Services Regions with customized settings
+        /// before enabling log collection in Regions. By default, the <code>CreateDataLake</code>
+        /// Security Lake in all Regions. To specify particular Regions, configure these Regions
+        /// using the <code>configurations</code> parameter. If you have already enabled Security
+        /// Lake in a Region when you call this command, the command will update the Region if
+        /// you provide new configuration parameters. If you have not already enabled Security
+        /// Lake in the Region when you call this API, it will set up the data lake in the Region
+        /// with the specified configurations.
+        /// 
+        ///  
+        /// <para>
+        /// When you enable Security Lake, it starts ingesting security data after the <code>CreateAwsLogSource</code>
+        /// call. This includes ingesting security data from sources, storing data, and making
+        /// data accessible to subscribers. Security Lake also enables all the existing settings
+        /// and resources that it stores or maintains for your Amazon Web Services account in
+        /// the current Region, including security log and event data. For more information, see
+        /// the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/what-is-security-lake.html">Amazon
+        /// Security Lake User Guide</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLake service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataLake service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalake">REST API Reference for CreateDatalake Operation</seealso>
-        Task<CreateDatalakeResponse> CreateDatalakeAsync(CreateDatalakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLake">REST API Reference for CreateDataLake Operation</seealso>
+        Task<CreateDataLakeResponse> CreateDataLakeAsync(CreateDataLakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  CreateDatalakeAutoEnable
+        #region  CreateDataLakeExceptionSubscription
+
+
+
+        /// <summary>
+        /// Creates the specified notification subscription in Amazon Security Lake for the organization
+        /// you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeExceptionSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateDataLakeExceptionSubscription service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeExceptionSubscription">REST API Reference for CreateDataLakeExceptionSubscription Operation</seealso>
+        Task<CreateDataLakeExceptionSubscriptionResponse> CreateDataLakeExceptionSubscriptionAsync(CreateDataLakeExceptionSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  CreateDataLakeOrganizationConfiguration
 
 
 
@@ -289,12 +310,12 @@ namespace Amazon.SecurityLake
         /// Security Lake is not automatically enabled for any existing member accounts in your
         /// organization.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalakeAutoEnable service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the CreateDatalakeAutoEnable service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the CreateDataLakeOrganizationConfiguration service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -302,95 +323,28 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeAutoEnable">REST API Reference for CreateDatalakeAutoEnable Operation</seealso>
-        Task<CreateDatalakeAutoEnableResponse> CreateDatalakeAutoEnableAsync(CreateDatalakeAutoEnableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  CreateDatalakeDelegatedAdmin
-
-
-
-        /// <summary>
-        /// Designates the Amazon Security Lake delegated administrator account for the organization.
-        /// This API can only be called by the organization management account. The organization
-        /// management account cannot be the delegated administrator account.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalakeDelegatedAdmin service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the CreateDatalakeDelegatedAdmin service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeDelegatedAdmin">REST API Reference for CreateDatalakeDelegatedAdmin Operation</seealso>
-        Task<CreateDatalakeDelegatedAdminResponse> CreateDatalakeDelegatedAdminAsync(CreateDatalakeDelegatedAdminRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  CreateDatalakeExceptionsSubscription
-
-
-
-        /// <summary>
-        /// Creates the specified notification subscription in Amazon Security Lake for the organization
-        /// you specify.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalakeExceptionsSubscription service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the CreateDatalakeExceptionsSubscription service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeExceptionsSubscription">REST API Reference for CreateDatalakeExceptionsSubscription Operation</seealso>
-        Task<CreateDatalakeExceptionsSubscriptionResponse> CreateDatalakeExceptionsSubscriptionAsync(CreateDatalakeExceptionsSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeOrganizationConfiguration">REST API Reference for CreateDataLakeOrganizationConfiguration Operation</seealso>
+        Task<CreateDataLakeOrganizationConfigurationResponse> CreateDataLakeOrganizationConfigurationAsync(CreateDataLakeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -416,38 +370,32 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.BucketNotFoundException">
-        /// Amazon Security Lake generally returns 404 errors if the requested object is missing
-        /// from the bucket.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConflictSubscriptionException">
-        /// A conflicting subscription exception operation is in progress.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         Task<CreateSubscriberResponse> CreateSubscriberAsync(CreateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  CreateSubscriptionNotificationConfiguration
+        #region  CreateSubscriberNotification
 
 
 
@@ -456,12 +404,12 @@ namespace Amazon.SecurityLake
         /// that the subscriber consumes in Security Lake. You can create only one subscriber
         /// notification per subscriber.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateSubscriptionNotificationConfiguration service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubscriberNotification service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the CreateSubscriptionNotificationConfiguration service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the CreateSubscriberNotification service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -469,30 +417,28 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConcurrentModificationException">
-        /// More than one process tried to modify a resource at the same time.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriptionNotificationConfiguration">REST API Reference for CreateSubscriptionNotificationConfiguration Operation</seealso>
-        Task<CreateSubscriptionNotificationConfigurationResponse> CreateSubscriptionNotificationConfigurationAsync(CreateSubscriptionNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriberNotification">REST API Reference for CreateSubscriberNotification Operation</seealso>
+        Task<CreateSubscriberNotificationResponse> CreateSubscriberNotificationAsync(CreateSubscriberNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -502,30 +448,15 @@ namespace Amazon.SecurityLake
 
         /// <summary>
         /// Removes a natively supported Amazon Web Service as an Amazon Security Lake source.
-        /// When you remove the source, Security Lake stops collecting data from that source,
-        /// and subscribers can no longer consume new data from the source. Subscribers can still
-        /// consume data that Security Lake collected from the source before disablement.
+        /// You can remove a source for one or more Regions. When you remove the source, Security
+        /// Lake stops collecting data from that source in the specified Regions and accounts,
+        /// and subscribers can no longer consume new data from the source. However, subscribers
+        /// can still consume data that Security Lake collected from the source before removal.
         /// 
         ///  
         /// <para>
         /// You can choose any source type in any Amazon Web Services Region for either accounts
-        /// that are part of a trusted organization or standalone accounts. At least one of the
-        /// three dimensions is a mandatory input to this API. However, you can supply any combination
-        /// of the three dimensions to this API. 
-        /// </para>
-        ///  
-        /// <para>
-        /// By default, a dimension refers to the entire set. This is overridden when you supply
-        /// any one of the inputs. For instance, when you do not specify members, the API disables
-        /// all Security Lake member accounts for sources. Similarly, when you do not specify
-        /// Regions, Security Lake is disabled for all the Regions where Security Lake is available
-        /// as a service.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you don't provide a dimension, Security Lake assumes that the missing dimension
-        /// refers to the entire set. For example, if you don't provide specific accounts, the
-        /// API applies to the entire set of accounts in your organization.
+        /// that are part of a trusted organization or standalone accounts. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAwsLogSource service method.</param>
@@ -541,102 +472,9 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteAwsLogSource">REST API Reference for DeleteAwsLogSource Operation</seealso>
-        Task<DeleteAwsLogSourceResponse> DeleteAwsLogSourceAsync(DeleteAwsLogSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  DeleteCustomLogSource
-
-
-
-        /// <summary>
-        /// Removes a custom log source from Amazon Security Lake.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomLogSource service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DeleteCustomLogSource service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.BucketNotFoundException">
-        /// Amazon Security Lake generally returns 404 errors if the requested object is missing
-        /// from the bucket.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConflictSourceNamesException">
-        /// There was a conflict when you attempted to modify a Security Lake source name.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
-        /// The resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteCustomLogSource">REST API Reference for DeleteCustomLogSource Operation</seealso>
-        Task<DeleteCustomLogSourceResponse> DeleteCustomLogSourceAsync(DeleteCustomLogSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  DeleteDatalake
-
-
-
-        /// <summary>
-        /// When you delete Amazon Security Lake from your account, Security Lake is disabled
-        /// in all Amazon Web Services Regions. Also, this API automatically takes steps to remove
-        /// the account from Security Lake . 
-        /// 
-        ///  
-        /// <para>
-        /// This operation disables security data collection from sources, deletes data stored,
-        /// and stops making data accessible to subscribers. Security Lake also deletes all the
-        /// existing settings and resources that it stores or maintains for your Amazon Web Services
-        /// account in the current Region, including security log and event data. The <code>DeleteDatalake</code>
-        /// operation does not delete the Amazon S3 bucket, which is owned by your Amazon Web
-        /// Services account. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon
-        /// Security Lake User Guide</a>.
-        /// </para>
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalake service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the DeleteDatalake service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
         /// Occurs when a conflict with a previous successful write is detected. This generally
@@ -651,38 +489,28 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ServiceQuotaExceededException">
-        /// You have exceeded your service quota. To perform the requested action, remove some
-        /// of the relevant resources, or use Service Quotas to request a service quota increase.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalake">REST API Reference for DeleteDatalake Operation</seealso>
-        Task<DeleteDatalakeResponse> DeleteDatalakeAsync(DeleteDatalakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteAwsLogSource">REST API Reference for DeleteAwsLogSource Operation</seealso>
+        Task<DeleteAwsLogSourceResponse> DeleteAwsLogSourceAsync(DeleteAwsLogSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  DeleteDatalakeAutoEnable
+        #region  DeleteCustomLogSource
 
 
 
         /// <summary>
-        /// <code>DeleteDatalakeAutoEnable</code> removes automatic enablement of configuration
-        /// settings for new member accounts (but keeps settings for the delegated administrator)
-        /// from Amazon Security Lake. You must run this API using credentials of the delegated
-        /// administrator. When you run this API, new member accounts that are added after the
-        /// organization enables Security Lake won't contribute to the data lake.
+        /// Removes a custom log source from Amazon Security Lake, to stop sending data from the
+        /// custom source to Security Lake.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalakeAutoEnable service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomLogSource service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the DeleteDatalakeAutoEnable service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the DeleteCustomLogSource service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -690,38 +518,57 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeAutoEnable">REST API Reference for DeleteDatalakeAutoEnable Operation</seealso>
-        Task<DeleteDatalakeAutoEnableResponse> DeleteDatalakeAutoEnableAsync(DeleteDatalakeAutoEnableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteCustomLogSource">REST API Reference for DeleteCustomLogSource Operation</seealso>
+        Task<DeleteCustomLogSourceResponse> DeleteCustomLogSourceAsync(DeleteCustomLogSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  DeleteDatalakeDelegatedAdmin
+        #region  DeleteDataLake
 
 
 
         /// <summary>
-        /// Deletes the Amazon Security Lake delegated administrator account for the organization.
-        /// This API can only be called by the organization management account. The organization
-        /// management account cannot be the delegated administrator account.
+        /// When you disable Amazon Security Lake from your account, Security Lake is disabled
+        /// in all Amazon Web Services Regions and it stops collecting data from your sources.
+        /// Also, this API automatically takes steps to remove the account from Security Lake.
+        /// However, Security Lake retains all of your existing settings and the resources that
+        /// it created in your Amazon Web Services account in the current Amazon Web Services
+        /// Region.
+        /// 
+        ///  
+        /// <para>
+        /// The <code>DeleteDataLake</code> operation does not delete the data that is stored
+        /// in your Amazon S3 bucket, which is owned by your Amazon Web Services account. For
+        /// more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon
+        /// Security Lake User Guide</a>.
+        /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalakeDelegatedAdmin service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLake service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the DeleteDatalakeDelegatedAdmin service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the DeleteDataLake service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -729,22 +576,32 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeDelegatedAdmin">REST API Reference for DeleteDatalakeDelegatedAdmin Operation</seealso>
-        Task<DeleteDatalakeDelegatedAdminResponse> DeleteDatalakeDelegatedAdminAsync(DeleteDatalakeDelegatedAdminRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLake">REST API Reference for DeleteDataLake Operation</seealso>
+        Task<DeleteDataLakeResponse> DeleteDataLakeAsync(DeleteDataLakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  DeleteDatalakeExceptionsSubscription
+        #region  DeleteDataLakeExceptionSubscription
 
 
 
@@ -752,12 +609,12 @@ namespace Amazon.SecurityLake
         /// Deletes the specified notification subscription in Amazon Security Lake for the organization
         /// you specify.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalakeExceptionsSubscription service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeExceptionSubscription service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the DeleteDatalakeExceptionsSubscription service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the DeleteDataLakeExceptionSubscription service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -765,20 +622,77 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeExceptionsSubscription">REST API Reference for DeleteDatalakeExceptionsSubscription Operation</seealso>
-        Task<DeleteDatalakeExceptionsSubscriptionResponse> DeleteDatalakeExceptionsSubscriptionAsync(DeleteDatalakeExceptionsSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeExceptionSubscription">REST API Reference for DeleteDataLakeExceptionSubscription Operation</seealso>
+        Task<DeleteDataLakeExceptionSubscriptionResponse> DeleteDataLakeExceptionSubscriptionAsync(DeleteDataLakeExceptionSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteDataLakeOrganizationConfiguration
+
+
+
+        /// <summary>
+        /// Removes automatic the enablement of configuration settings for new member accounts
+        /// (but retains the settings for the delegated administrator) from Amazon Security Lake.
+        /// You must run this API using the credentials of the delegated administrator. When you
+        /// run this API, new member accounts that are added after the organization enables Security
+        /// Lake won't contribute to the data lake.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeOrganizationConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteDataLakeOrganizationConfiguration service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeOrganizationConfiguration">REST API Reference for DeleteDataLakeOrganizationConfiguration Operation</seealso>
+        Task<DeleteDataLakeOrganizationConfigurationResponse> DeleteDataLakeOrganizationConfigurationAsync(DeleteDataLakeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -787,8 +701,10 @@ namespace Amazon.SecurityLake
 
 
         /// <summary>
-        /// Deletes the subscription permission for accounts that are already enabled in Amazon
-        /// Security Lake. You can delete a subscriber and remove access to data in the current
+        /// Deletes the subscription permission and all notification settings for accounts that
+        /// are already enabled in Amazon Security Lake. When you run <code>DeleteSubscriber</code>,
+        /// the subscriber will no longer consume data from Security Lake and the subscriber is
+        /// removed. This operation deletes the subscriber and removes access to data in the current
         /// Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriber service method.</param>
@@ -804,38 +720,32 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.BucketNotFoundException">
-        /// Amazon Security Lake generally returns 404 errors if the requested object is missing
-        /// from the bucket.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConcurrentModificationException">
-        /// More than one process tried to modify a resource at the same time.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         Task<DeleteSubscriberResponse> DeleteSubscriberAsync(DeleteSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  DeleteSubscriptionNotificationConfiguration
+        #region  DeleteSubscriberNotification
 
 
 
@@ -843,12 +753,12 @@ namespace Amazon.SecurityLake
         /// Deletes the specified notification subscription in Amazon Security Lake for the organization
         /// you specify.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriptionNotificationConfiguration service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriberNotification service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the DeleteSubscriptionNotificationConfiguration service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the DeleteSubscriberNotification service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -856,48 +766,46 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConcurrentModificationException">
-        /// More than one process tried to modify a resource at the same time.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriptionNotificationConfiguration">REST API Reference for DeleteSubscriptionNotificationConfiguration Operation</seealso>
-        Task<DeleteSubscriptionNotificationConfigurationResponse> DeleteSubscriptionNotificationConfigurationAsync(DeleteSubscriptionNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriberNotification">REST API Reference for DeleteSubscriberNotification Operation</seealso>
+        Task<DeleteSubscriberNotificationResponse> DeleteSubscriberNotificationAsync(DeleteSubscriberNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  GetDatalake
+        #region  DeregisterDataLakeDelegatedAdministrator
 
 
 
         /// <summary>
-        /// Retrieves the Amazon Security Lake configuration object for the specified Amazon Web
-        /// Services account ID. You can use the <code>GetDatalake</code> API to know whether
-        /// Security Lake is enabled for the current Region. This API does not take input parameters.
+        /// Deletes the Amazon Security Lake delegated administrator account for the organization.
+        /// This API can only be called by the organization management account. The organization
+        /// management account cannot be the delegated administrator account.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalake service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDataLakeDelegatedAdministrator service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the GetDatalake service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the DeregisterDataLakeDelegatedAdministrator service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -905,10 +813,15 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
@@ -917,15 +830,61 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalake">REST API Reference for GetDatalake Operation</seealso>
-        Task<GetDatalakeResponse> GetDatalakeAsync(GetDatalakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeregisterDataLakeDelegatedAdministrator">REST API Reference for DeregisterDataLakeDelegatedAdministrator Operation</seealso>
+        Task<DeregisterDataLakeDelegatedAdministratorResponse> DeregisterDataLakeDelegatedAdministratorAsync(DeregisterDataLakeDelegatedAdministratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  GetDatalakeAutoEnable
+        #region  GetDataLakeExceptionSubscription
+
+
+
+        /// <summary>
+        /// Retrieves the details of exception notifications for the account in Amazon Security
+        /// Lake.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeExceptionSubscription service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDataLakeExceptionSubscription service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeExceptionSubscription">REST API Reference for GetDataLakeExceptionSubscription Operation</seealso>
+        Task<GetDataLakeExceptionSubscriptionResponse> GetDataLakeExceptionSubscriptionAsync(GetDataLakeExceptionSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  GetDataLakeOrganizationConfiguration
 
 
 
@@ -934,12 +893,12 @@ namespace Amazon.SecurityLake
         /// the organization after the organization has onboarded to Amazon Security Lake. This
         /// API does not take input parameters.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeAutoEnable service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeOrganizationConfiguration service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the GetDatalakeAutoEnable service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the GetDataLakeOrganizationConfiguration service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -947,101 +906,32 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeAutoEnable">REST API Reference for GetDatalakeAutoEnable Operation</seealso>
-        Task<GetDatalakeAutoEnableResponse> GetDatalakeAutoEnableAsync(GetDatalakeAutoEnableRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeOrganizationConfiguration">REST API Reference for GetDataLakeOrganizationConfiguration Operation</seealso>
+        Task<GetDataLakeOrganizationConfigurationResponse> GetDataLakeOrganizationConfigurationAsync(GetDataLakeOrganizationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  GetDatalakeExceptionsExpiry
-
-
-
-        /// <summary>
-        /// Retrieves the expiration period and time-to-live (TTL) for which the exception message
-        /// will remain. Exceptions are stored by default, for 2 weeks from when a record was
-        /// created in Amazon Security Lake. This API does not take input parameters.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeExceptionsExpiry service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetDatalakeExceptionsExpiry service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsExpiry">REST API Reference for GetDatalakeExceptionsExpiry Operation</seealso>
-        Task<GetDatalakeExceptionsExpiryResponse> GetDatalakeExceptionsExpiryAsync(GetDatalakeExceptionsExpiryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  GetDatalakeExceptionsSubscription
-
-
-
-        /// <summary>
-        /// Retrieves the details of exception notifications for the account in Amazon Security
-        /// Lake.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeExceptionsSubscription service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the GetDatalakeExceptionsSubscription service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsSubscription">REST API Reference for GetDatalakeExceptionsSubscription Operation</seealso>
-        Task<GetDatalakeExceptionsSubscriptionResponse> GetDatalakeExceptionsSubscriptionAsync(GetDatalakeExceptionsSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  GetDatalakeStatus
+        #region  GetDataLakeSources
 
 
 
@@ -1049,12 +939,12 @@ namespace Amazon.SecurityLake
         /// Retrieves a snapshot of the current Region, including whether Amazon Security Lake
         /// is enabled for those accounts and which sources Security Lake is collecting data from.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeStatus service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeSources service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the GetDatalakeStatus service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the GetDataLakeSources service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -1062,20 +952,28 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeStatus">REST API Reference for GetDatalakeStatus Operation</seealso>
-        Task<GetDatalakeStatusResponse> GetDatalakeStatusAsync(GetDatalakeStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeSources">REST API Reference for GetDataLakeSources Operation</seealso>
+        Task<GetDataLakeSourcesResponse> GetDataLakeSourcesAsync(GetDataLakeSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1100,28 +998,32 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetSubscriber">REST API Reference for GetSubscriber Operation</seealso>
         Task<GetSubscriberResponse> GetSubscriberAsync(GetSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  ListDatalakeExceptions
+        #region  ListDataLakeExceptions
 
 
 
@@ -1129,12 +1031,12 @@ namespace Amazon.SecurityLake
         /// Lists the Amazon Security Lake exceptions that you can use to find the source of problems
         /// and fix them.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListDatalakeExceptions service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakeExceptions service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the ListDatalakeExceptions service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the ListDataLakeExceptions service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -1142,20 +1044,75 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDatalakeExceptions">REST API Reference for ListDatalakeExceptions Operation</seealso>
-        Task<ListDatalakeExceptionsResponse> ListDatalakeExceptionsAsync(ListDatalakeExceptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakeExceptions">REST API Reference for ListDataLakeExceptions Operation</seealso>
+        Task<ListDataLakeExceptionsResponse> ListDataLakeExceptionsAsync(ListDataLakeExceptionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListDataLakes
+
+
+
+        /// <summary>
+        /// Retrieves the Amazon Security Lake configuration object for the specified Amazon Web
+        /// Services account ID. You can use the <code>ListDataLakes</code> API to know whether
+        /// Security Lake is enabled for any region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakes service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListDataLakes service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakes">REST API Reference for ListDataLakes Operation</seealso>
+        Task<ListDataLakesResponse> ListDataLakesAsync(ListDataLakesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1179,10 +1136,15 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
@@ -1191,8 +1153,8 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListLogSources">REST API Reference for ListLogSources Operation</seealso>
         Task<ListLogSourcesResponse> ListLogSourcesAsync(ListLogSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
@@ -1221,31 +1183,79 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListSubscribers">REST API Reference for ListSubscribers Operation</seealso>
         Task<ListSubscribersResponse> ListSubscribersAsync(ListSubscribersRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  UpdateDatalake
+        #region  RegisterDataLakeDelegatedAdministrator
+
+
+
+        /// <summary>
+        /// Designates the Amazon Security Lake delegated administrator account for the organization.
+        /// This API can only be called by the organization management account. The organization
+        /// management account cannot be the delegated administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDataLakeDelegatedAdministrator service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterDataLakeDelegatedAdministrator service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RegisterDataLakeDelegatedAdministrator">REST API Reference for RegisterDataLakeDelegatedAdministrator Operation</seealso>
+        Task<RegisterDataLakeDelegatedAdministratorResponse> RegisterDataLakeDelegatedAdministratorAsync(RegisterDataLakeDelegatedAdministratorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  UpdateDataLake
 
 
 
@@ -1253,12 +1263,12 @@ namespace Amazon.SecurityLake
         /// Specifies where to store your security data and for how long. You can add a rollup
         /// Region to consolidate data from multiple Amazon Web Services Regions.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDatalake service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLake service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the UpdateDatalake service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the UpdateDataLake service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -1266,8 +1276,15 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.EventBridgeException">
-        /// Represents an error interacting with the Amazon EventBridge service.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
@@ -1276,54 +1293,15 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalake">REST API Reference for UpdateDatalake Operation</seealso>
-        Task<UpdateDatalakeResponse> UpdateDatalakeAsync(UpdateDatalakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLake">REST API Reference for UpdateDataLake Operation</seealso>
+        Task<UpdateDataLakeResponse> UpdateDataLakeAsync(UpdateDataLakeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  UpdateDatalakeExceptionsExpiry
-
-
-
-        /// <summary>
-        /// Update the expiration period for the exception message to your preferred time, and
-        /// control the time-to-live (TTL) for the exception message to remain. Exceptions are
-        /// stored by default for 2 weeks from when a record was created in Amazon Security Lake.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDatalakeExceptionsExpiry service method.</param>
-        /// <param name="cancellationToken">
-        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
-        /// </param>
-        /// 
-        /// <returns>The response from the UpdateDatalakeExceptionsExpiry service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsExpiry">REST API Reference for UpdateDatalakeExceptionsExpiry Operation</seealso>
-        Task<UpdateDatalakeExceptionsExpiryResponse> UpdateDatalakeExceptionsExpiryAsync(UpdateDatalakeExceptionsExpiryRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
-
-        #endregion
-                
-        #region  UpdateDatalakeExceptionsSubscription
+        #region  UpdateDataLakeExceptionSubscription
 
 
 
@@ -1331,12 +1309,12 @@ namespace Amazon.SecurityLake
         /// Updates the specified notification subscription in Amazon Security Lake for the organization
         /// you specify.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDatalakeExceptionsSubscription service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLakeExceptionSubscription service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the UpdateDatalakeExceptionsSubscription service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the UpdateDataLakeExceptionSubscription service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -1344,20 +1322,28 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsSubscription">REST API Reference for UpdateDatalakeExceptionsSubscription Operation</seealso>
-        Task<UpdateDatalakeExceptionsSubscriptionResponse> UpdateDatalakeExceptionsSubscriptionAsync(UpdateDatalakeExceptionsSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLakeExceptionSubscription">REST API Reference for UpdateDataLakeExceptionSubscription Operation</seealso>
+        Task<UpdateDataLakeExceptionSubscriptionResponse> UpdateDataLakeExceptionSubscriptionAsync(UpdateDataLakeExceptionSubscriptionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1383,34 +1369,32 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConcurrentModificationException">
-        /// More than one process tried to modify a resource at the same time.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConflictSubscriptionException">
-        /// A conflicting subscription exception operation is in progress.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         Task<UpdateSubscriberResponse> UpdateSubscriberAsync(UpdateSubscriberRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
-        #region  UpdateSubscriptionNotificationConfiguration
+        #region  UpdateSubscriberNotification
 
 
 
@@ -1418,12 +1402,12 @@ namespace Amazon.SecurityLake
         /// Updates an existing notification method for the subscription (SQS or HTTPs endpoint)
         /// or switches the notification subscription endpoint for a subscriber.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscriptionNotificationConfiguration service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscriberNotification service method.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
         /// 
-        /// <returns>The response from the UpdateSubscriptionNotificationConfiguration service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the UpdateSubscriberNotification service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -1431,30 +1415,28 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConcurrentModificationException">
-        /// More than one process tried to modify a resource at the same time.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriptionNotificationConfiguration">REST API Reference for UpdateSubscriptionNotificationConfiguration Operation</seealso>
-        Task<UpdateSubscriptionNotificationConfigurationResponse> UpdateSubscriptionNotificationConfigurationAsync(UpdateSubscriptionNotificationConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriberNotification">REST API Reference for UpdateSubscriberNotification Operation</seealso>
+        Task<UpdateSubscriberNotificationResponse> UpdateSubscriberNotificationAsync(UpdateSubscriberNotificationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

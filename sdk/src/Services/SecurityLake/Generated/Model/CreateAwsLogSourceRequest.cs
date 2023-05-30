@@ -33,108 +33,38 @@ namespace Amazon.SecurityLake.Model
     /// Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables
     /// source types for member accounts in required Amazon Web Services Regions, based on
     /// the parameters you specify. You can choose any source type in any Region for either
-    /// accounts that are part of a trusted organization or standalone accounts. At least
-    /// one of the three dimensions is a mandatory input to this API. However, you can supply
-    /// any combination of the three dimensions to this API. 
+    /// accounts that are part of a trusted organization or standalone accounts. Once you
+    /// add an Amazon Web Service as a source, Security Lake starts collecting logs and events
+    /// from it, 
     /// 
-    ///  
-    /// <para>
-    /// By default, a dimension refers to the entire set. When you don't provide a dimension,
-    /// Security Lake assumes that the missing dimension refers to the entire set. This is
-    /// overridden when you supply any one of the inputs. For instance, when you do not specify
-    /// members, the API enables all Security Lake member accounts for all sources. Similarly,
-    /// when you do not specify Regions, Security Lake is enabled for all the Regions where
-    /// Security Lake is available as a service.
-    /// </para>
     ///  
     /// <para>
     /// You can use this API only to enable natively supported Amazon Web Services as a source.
     /// Use <code>CreateCustomLogSource</code> to enable data collection from a custom source.
-    /// 
     /// </para>
     /// </summary>
     public partial class CreateAwsLogSourceRequest : AmazonSecurityLakeRequest
     {
-        private Dictionary<string, Dictionary<string, List<string>>> _enableAllDimensions = new Dictionary<string, Dictionary<string, List<string>>>();
-        private List<string> _enableSingleDimension = new List<string>();
-        private Dictionary<string, List<string>> _enableTwoDimensions = new Dictionary<string, List<string>>();
-        private List<string> _inputOrder = new List<string>();
+        private List<AwsLogSourceConfiguration> _sources = new List<AwsLogSourceConfiguration>();
 
         /// <summary>
-        /// Gets and sets the property EnableAllDimensions. 
+        /// Gets and sets the property Sources. 
         /// <para>
-        /// Enables data collection from specific Amazon Web Services sources in all specific
-        /// accounts and specific Regions.
+        /// Specify the natively-supported Amazon Web Services service to add as a source in Security
+        /// Lake.
         /// </para>
         /// </summary>
-        public Dictionary<string, Dictionary<string, List<string>>> EnableAllDimensions
+        [AWSProperty(Required=true, Min=0, Max=50)]
+        public List<AwsLogSourceConfiguration> Sources
         {
-            get { return this._enableAllDimensions; }
-            set { this._enableAllDimensions = value; }
+            get { return this._sources; }
+            set { this._sources = value; }
         }
 
-        // Check to see if EnableAllDimensions property is set
-        internal bool IsSetEnableAllDimensions()
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
         {
-            return this._enableAllDimensions != null && this._enableAllDimensions.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property EnableSingleDimension. 
-        /// <para>
-        /// Enables data collection from all Amazon Web Services sources in specific accounts
-        /// or Regions.
-        /// </para>
-        /// </summary>
-        public List<string> EnableSingleDimension
-        {
-            get { return this._enableSingleDimension; }
-            set { this._enableSingleDimension = value; }
-        }
-
-        // Check to see if EnableSingleDimension property is set
-        internal bool IsSetEnableSingleDimension()
-        {
-            return this._enableSingleDimension != null && this._enableSingleDimension.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property EnableTwoDimensions. 
-        /// <para>
-        /// Enables data collection from specific Amazon Web Services sources in specific accounts
-        /// or Regions.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, List<string>> EnableTwoDimensions
-        {
-            get { return this._enableTwoDimensions; }
-            set { this._enableTwoDimensions = value; }
-        }
-
-        // Check to see if EnableTwoDimensions property is set
-        internal bool IsSetEnableTwoDimensions()
-        {
-            return this._enableTwoDimensions != null && this._enableTwoDimensions.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property InputOrder. 
-        /// <para>
-        /// Specifies the input order to enable dimensions in Security Lake, namely Region, source
-        /// type, and member account.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> InputOrder
-        {
-            get { return this._inputOrder; }
-            set { this._inputOrder = value; }
-        }
-
-        // Check to see if InputOrder property is set
-        internal bool IsSetInputOrder()
-        {
-            return this._inputOrder != null && this._inputOrder.Count > 0; 
+            return this._sources != null && this._sources.Count > 0; 
         }
 
     }

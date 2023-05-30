@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// UpdateDatalake Request Marshaller
+    /// UpdateDataLake Request Marshaller
     /// </summary>       
-    public class UpdateDatalakeRequestMarshaller : IMarshaller<IRequest, UpdateDatalakeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class UpdateDataLakeRequestMarshaller : IMarshaller<IRequest, UpdateDataLakeRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -44,7 +44,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((UpdateDatalakeRequest)input);
+            return this.Marshall((UpdateDataLakeRequest)input);
         }
 
         /// <summary>
@@ -52,7 +52,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(UpdateDatalakeRequest publicRequest)
+        public IRequest Marshall(UpdateDataLakeRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.SecurityLake");
             request.Headers["Content-Type"] = "application/json";
@@ -68,20 +68,17 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 if(publicRequest.IsSetConfigurations())
                 {
                     context.Writer.WritePropertyName("configurations");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestConfigurationsKvp in publicRequest.Configurations)
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestConfigurationsListValue in publicRequest.Configurations)
                     {
-                        context.Writer.WritePropertyName(publicRequestConfigurationsKvp.Key);
-                        var publicRequestConfigurationsValue = publicRequestConfigurationsKvp.Value;
-
                         context.Writer.WriteObjectStart();
 
-                        var marshaller = LakeConfigurationRequestMarshaller.Instance;
-                        marshaller.Marshall(publicRequestConfigurationsValue, context);
+                        var marshaller = DataLakeConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestConfigurationsListValue, context);
 
                         context.Writer.WriteObjectEnd();
                     }
-                    context.Writer.WriteObjectEnd();
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();
@@ -92,9 +89,9 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
 
             return request;
         }
-        private static UpdateDatalakeRequestMarshaller _instance = new UpdateDatalakeRequestMarshaller();        
+        private static UpdateDataLakeRequestMarshaller _instance = new UpdateDataLakeRequestMarshaller();        
 
-        internal static UpdateDatalakeRequestMarshaller GetInstance()
+        internal static UpdateDataLakeRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -102,7 +99,7 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdateDatalakeRequestMarshaller Instance
+        public static UpdateDataLakeRequestMarshaller Instance
         {
             get
             {

@@ -35,102 +35,209 @@ namespace Amazon.SecurityLake.Model
     /// events from third-party custom sources. After creating the appropriate IAM role to
     /// invoke Glue crawler, use this API to add a custom source name in Security Lake. This
     /// operation creates a partition in the Amazon S3 bucket for Security Lake as the target
-    /// location for log files from the custom source in addition to an associated Glue table
-    /// and an Glue crawler.
+    /// location for log files from the custom source. In addition, this operation also creates
+    /// an associated Glue table and an Glue crawler.
     /// </summary>
     public partial class CreateCustomLogSourceRequest : AmazonSecurityLakeRequest
     {
-        private string _customSourceName;
-        private OcsfEventClass _eventClass;
-        private string _glueInvocationRoleArn;
-        private string _logProviderAccountId;
+        private CustomLogSourceConfiguration _configuration;
+        private List<string> _eventClasses = new List<string>();
+        private string _sourceName;
+        private string _sourceVersion;
 
         /// <summary>
-        /// Gets and sets the property CustomSourceName. 
+        /// Gets and sets the property Configuration. 
         /// <para>
-        /// The name for a third-party custom source. This must be a Regionally unique value.
+        /// The configuration for the third-party custom source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string CustomSourceName
+        public CustomLogSourceConfiguration Configuration
         {
-            get { return this._customSourceName; }
-            set { this._customSourceName = value; }
+            get { return this._configuration; }
+            set { this._configuration = value; }
         }
 
-        // Check to see if CustomSourceName property is set
-        internal bool IsSetCustomSourceName()
+        // Check to see if Configuration property is set
+        internal bool IsSetConfiguration()
         {
-            return this._customSourceName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property EventClass. 
-        /// <para>
-        /// The Open Cybersecurity Schema Framework (OCSF) event class which describes the type
-        /// of data that the custom source will send to Security Lake.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public OcsfEventClass EventClass
-        {
-            get { return this._eventClass; }
-            set { this._eventClass = value; }
-        }
-
-        // Check to see if EventClass property is set
-        internal bool IsSetEventClass()
-        {
-            return this._eventClass != null;
+            return this._configuration != null;
         }
 
         /// <summary>
-        /// Gets and sets the property GlueInvocationRoleArn. 
+        /// Gets and sets the property EventClasses. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Identity and Access Management (IAM) role to
-        /// be used by the Glue crawler. The recommended IAM policies are:
+        /// The Open Cybersecurity Schema Framework (OCSF) event classes which describes the type
+        /// of data that the custom source will send to Security Lake. The supported event classes
+        /// are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The managed policy <code>AWSGlueServiceRole</code> 
+        ///  <code>ACCESS_ACTIVITY</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// A custom policy granting access to your Amazon S3 Data Lake
+        ///  <code>FILE_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KERNEL_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>KERNEL_EXTENSION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MEMORY_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MODULE_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>PROCESS_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REGISTRY_KEY_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>REGISTRY_VALUE_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RESOURCE_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SCHEDULED_JOB_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SECURITY_FINDING</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ACCOUNT_CHANGE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AUTHENTICATION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AUTHORIZATION</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ENTITY_MANAGEMENT_AUDIT</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DHCP_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>NETWORK_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DNS_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>FTP_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HTTP_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>RDP_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SMB_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SSH_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CONFIG_STATE</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>INVENTORY_INFO</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>EMAIL_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>API_ACTIVITY</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>CLOUD_API</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string GlueInvocationRoleArn
+        public List<string> EventClasses
         {
-            get { return this._glueInvocationRoleArn; }
-            set { this._glueInvocationRoleArn = value; }
+            get { return this._eventClasses; }
+            set { this._eventClasses = value; }
         }
 
-        // Check to see if GlueInvocationRoleArn property is set
-        internal bool IsSetGlueInvocationRoleArn()
+        // Check to see if EventClasses property is set
+        internal bool IsSetEventClasses()
         {
-            return this._glueInvocationRoleArn != null;
+            return this._eventClasses != null && this._eventClasses.Count > 0; 
         }
 
         /// <summary>
-        /// Gets and sets the property LogProviderAccountId. 
+        /// Gets and sets the property SourceName. 
         /// <para>
-        /// The Amazon Web Services account ID of the custom source that will write logs and events
-        /// into the Amazon S3 Data Lake.
+        /// Specify the name for a third-party custom source. This must be a Regionally unique
+        /// value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=12, Max=12)]
-        public string LogProviderAccountId
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string SourceName
         {
-            get { return this._logProviderAccountId; }
-            set { this._logProviderAccountId = value; }
+            get { return this._sourceName; }
+            set { this._sourceName = value; }
         }
 
-        // Check to see if LogProviderAccountId property is set
-        internal bool IsSetLogProviderAccountId()
+        // Check to see if SourceName property is set
+        internal bool IsSetSourceName()
         {
-            return this._logProviderAccountId != null;
+            return this._sourceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceVersion. 
+        /// <para>
+        /// Specify the source version for the third-party custom source, to limit log collection
+        /// to a specific version of custom data source.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public string SourceVersion
+        {
+            get { return this._sourceVersion; }
+            set { this._sourceVersion = value; }
+        }
+
+        // Check to see if SourceVersion property is set
+        internal bool IsSetSourceVersion()
+        {
+            return this._sourceVersion != null;
         }
 
     }

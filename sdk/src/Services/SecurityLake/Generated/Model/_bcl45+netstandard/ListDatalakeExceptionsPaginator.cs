@@ -28,32 +28,32 @@ using Amazon.Runtime;
 namespace Amazon.SecurityLake.Model
 {
     /// <summary>
-    /// Base class for ListDatalakeExceptions paginators.
+    /// Base class for ListDataLakeExceptions paginators.
     /// </summary>
-    internal sealed partial class ListDatalakeExceptionsPaginator : IPaginator<ListDatalakeExceptionsResponse>, IListDatalakeExceptionsPaginator
+    internal sealed partial class ListDataLakeExceptionsPaginator : IPaginator<ListDataLakeExceptionsResponse>, IListDataLakeExceptionsPaginator
     {
         private readonly IAmazonSecurityLake _client;
-        private readonly ListDatalakeExceptionsRequest _request;
+        private readonly ListDataLakeExceptionsRequest _request;
         private int _isPaginatorInUse = 0;
         
         /// <summary>
         /// Enumerable containing all full responses for the operation
         /// </summary>
-        public IPaginatedEnumerable<ListDatalakeExceptionsResponse> Responses => new PaginatedResponse<ListDatalakeExceptionsResponse>(this);
+        public IPaginatedEnumerable<ListDataLakeExceptionsResponse> Responses => new PaginatedResponse<ListDataLakeExceptionsResponse>(this);
 
         /// <summary>
-        /// Enumerable containing all of the NonRetryableFailures
+        /// Enumerable containing all of the Exceptions
         /// </summary>
-        public IPaginatedEnumerable<FailuresResponse> NonRetryableFailures => 
-            new PaginatedResultKeyResponse<ListDatalakeExceptionsResponse, FailuresResponse>(this, (i) => i.NonRetryableFailures);
+        public IPaginatedEnumerable<DataLakeException> Exceptions => 
+            new PaginatedResultKeyResponse<ListDataLakeExceptionsResponse, DataLakeException>(this, (i) => i.Exceptions);
 
-        internal ListDatalakeExceptionsPaginator(IAmazonSecurityLake client, ListDatalakeExceptionsRequest request)
+        internal ListDataLakeExceptionsPaginator(IAmazonSecurityLake client, ListDataLakeExceptionsRequest request)
         {
             this._client = client;
             this._request = request;
         }
 #if BCL
-        IEnumerable<ListDatalakeExceptionsResponse> IPaginator<ListDatalakeExceptionsResponse>.Paginate()
+        IEnumerable<ListDataLakeExceptionsResponse> IPaginator<ListDataLakeExceptionsResponse>.Paginate()
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -61,11 +61,11 @@ namespace Amazon.SecurityLake.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            ListDatalakeExceptionsResponse response;
+            ListDataLakeExceptionsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = _client.ListDatalakeExceptions(_request);
+                response = _client.ListDataLakeExceptions(_request);
                 nextToken = response.NextToken;
                 yield return response;
             }
@@ -73,7 +73,7 @@ namespace Amazon.SecurityLake.Model
         }
 #endif
 #if AWS_ASYNC_ENUMERABLES_API
-        async IAsyncEnumerable<ListDatalakeExceptionsResponse> IPaginator<ListDatalakeExceptionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
+        async IAsyncEnumerable<ListDataLakeExceptionsResponse> IPaginator<ListDataLakeExceptionsResponse>.PaginateAsync(CancellationToken cancellationToken = default)
         {
             if (Interlocked.Exchange(ref _isPaginatorInUse, 1) != 0)
             {
@@ -81,11 +81,11 @@ namespace Amazon.SecurityLake.Model
             }
             PaginatorUtils.SetUserAgentAdditionOnRequest(_request);
             var nextToken = _request.NextToken;
-            ListDatalakeExceptionsResponse response;
+            ListDataLakeExceptionsResponse response;
             do
             {
                 _request.NextToken = nextToken;
-                response = await _client.ListDatalakeExceptionsAsync(_request, cancellationToken).ConfigureAwait(false);
+                response = await _client.ListDataLakeExceptionsAsync(_request, cancellationToken).ConfigureAwait(false);
                 nextToken = response.NextToken;
                 cancellationToken.ThrowIfCancellationRequested();
                 yield return response;
