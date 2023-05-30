@@ -175,6 +175,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly LanguageCode EnGBWLS = new LanguageCode("en-GB-WLS");
         /// <summary>
+        /// Constant EnIE for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnIE = new LanguageCode("en-IE");
+        /// <summary>
         /// Constant EnIN for LanguageCode
         /// </summary>
         public static readonly LanguageCode EnIN = new LanguageCode("en-IN");
@@ -797,6 +801,10 @@ namespace Amazon.Polly
         /// </summary>
         public static readonly VoiceId Naja = new VoiceId("Naja");
         /// <summary>
+        /// Constant Niamh for VoiceId
+        /// </summary>
+        public static readonly VoiceId Niamh = new VoiceId("Niamh");
+        /// <summary>
         /// Constant Nicole for VoiceId
         /// </summary>
         public static readonly VoiceId Nicole = new VoiceId("Nicole");
@@ -852,6 +860,10 @@ namespace Amazon.Polly
         /// Constant Sergio for VoiceId
         /// </summary>
         public static readonly VoiceId Sergio = new VoiceId("Sergio");
+        /// <summary>
+        /// Constant Sofie for VoiceId
+        /// </summary>
+        public static readonly VoiceId Sofie = new VoiceId("Sofie");
         /// <summary>
         /// Constant Stephen for VoiceId
         /// </summary>
