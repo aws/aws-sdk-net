@@ -161,6 +161,12 @@ namespace Amazon.WAFV2.Model
         ///  <code>UriPath</code>: The value that you want WAF to search for in the URI path,
         /// for example, <code>/images/daily-ad.jpg</code>. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>HeaderOrder</code>: The comma-separated list of header names to match for.
+        /// WAF creates a string that contains the ordered list of header names, from the headers
+        /// in the web request, and then matches against that string. 
+        /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If <code>SearchString</code> includes alphabetic characters A-Z and a-z, note that

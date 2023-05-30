@@ -29,32 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Inspect the body of the web request. The body immediately follows the request headers.
+    /// Inspect a string containing the list of the request's header names, ordered as they
+    /// appear in the web request that WAF receives for inspection. WAF generates the string
+    /// and then uses that as the field to match component in its inspection. WAF separates
+    /// the header names in the string using commas and no added spaces.
     /// 
     ///  
     /// <para>
-    /// This is used to indicate the web request component to inspect, in the <a>FieldToMatch</a>
-    /// specification. 
+    /// Matches against the header order string are case insensitive.
     /// </para>
     /// </summary>
-    public partial class Body
+    public partial class HeaderOrder
     {
         private OversizeHandling _oversizeHandling;
 
         /// <summary>
         /// Gets and sets the property OversizeHandling. 
         /// <para>
-        /// What WAF should do if the body is larger than WAF can inspect. WAF does not support
-        /// inspecting the entire contents of the web request body if the body exceeds the limit
-        /// for the resource type. If the body is larger than the limit, the underlying host service
-        /// only forwards the contents that are below the limit to WAF for inspection. 
-        /// </para>
-        ///  
-        /// <para>
-        /// The default limit is 8 KB (8,192 kilobytes) for regional resources and 16 KB (16,384
-        /// kilobytes) for CloudFront distributions. For CloudFront distributions, you can increase
-        /// the limit in the web ACL <code>AssociationConfig</code>, for additional processing
-        /// fees. 
+        /// What WAF should do if the headers of the request are more numerous or larger than
+        /// WAF can inspect. WAF does not support inspecting the entire contents of request headers
+        /// when they exceed 8 KB (8192 bytes) or 200 total headers. The underlying host service
+        /// forwards a maximum of 200 headers and at most 8 KB of header contents to WAF. 
         /// </para>
         ///  
         /// <para>
@@ -62,8 +57,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CONTINUE</code> - Inspect the available body contents normally, according to
-        /// the rule inspection criteria. 
+        ///  <code>CONTINUE</code> - Inspect the available headers normally, according to the
+        /// rule inspection criteria. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -74,17 +69,9 @@ namespace Amazon.WAFV2.Model
         /// <para>
         ///  <code>NO_MATCH</code> - Treat the web request as not matching the rule statement.
         /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// You can combine the <code>MATCH</code> or <code>NO_MATCH</code> settings for oversize
-        /// handling with your rule and web ACL action settings, so that you block any request
-        /// whose body is over the limit. 
-        /// </para>
-        ///  
-        /// <para>
-        /// Default: <code>CONTINUE</code> 
-        /// </para>
+        ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Required=true)]
         public OversizeHandling OversizeHandling
         {
             get { return this._oversizeHandling; }

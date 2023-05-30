@@ -102,10 +102,10 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property OversizeHandling. 
         /// <para>
-        /// What WAF should do if the cookies of the request are larger than WAF can inspect.
-        /// WAF does not support inspecting the entire contents of request cookies when they exceed
-        /// 8 KB (8192 bytes) or 200 total cookies. The underlying host service forwards a maximum
-        /// of 200 cookies and at most 8 KB of cookie contents to WAF. 
+        /// What WAF should do if the cookies of the request are more numerous or larger than
+        /// WAF can inspect. WAF does not support inspecting the entire contents of request cookies
+        /// when they exceed 8 KB (8192 bytes) or 200 total cookies. The underlying host service
+        /// forwards a maximum of 200 cookies and at most 8 KB of cookie contents to WAF. 
         /// </para>
         ///  
         /// <para>
@@ -113,8 +113,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CONTINUE</code> - Inspect the cookies normally, according to the rule inspection
-        /// criteria. 
+        ///  <code>CONTINUE</code> - Inspect the available cookies normally, according to the
+        /// rule inspection criteria. 
         /// </para>
         ///  </li> <li> 
         /// <para>

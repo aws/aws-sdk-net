@@ -57,6 +57,7 @@ namespace Amazon.WAFV2.Model
         private AllQueryArguments _allQueryArguments;
         private Body _body;
         private Cookies _cookies;
+        private HeaderOrder _headerOrder;
         private Headers _headers;
         private JsonBody _jsonBody;
         private Method _method;
@@ -143,6 +144,31 @@ namespace Amazon.WAFV2.Model
         internal bool IsSetCookies()
         {
             return this._cookies != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HeaderOrder. 
+        /// <para>
+        /// Inspect a string containing the list of the request's header names, ordered as they
+        /// appear in the web request that WAF receives for inspection. WAF generates the string
+        /// and then uses that as the field to match component in its inspection. WAF separates
+        /// the header names in the string using commas and no added spaces.
+        /// </para>
+        ///  
+        /// <para>
+        /// Matches against the header order string are case insensitive.
+        /// </para>
+        /// </summary>
+        public HeaderOrder HeaderOrder
+        {
+            get { return this._headerOrder; }
+            set { this._headerOrder = value; }
+        }
+
+        // Check to see if HeaderOrder property is set
+        internal bool IsSetHeaderOrder()
+        {
+            return this._headerOrder != null;
         }
 
         /// <summary>
