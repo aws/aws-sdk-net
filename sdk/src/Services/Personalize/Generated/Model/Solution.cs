@@ -180,7 +180,13 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PerformAutoML. 
+        /// Gets and sets the property PerformAutoML. <important> 
+        /// <para>
+        /// We don't recommend enabling automated machine learning. Instead, match your use case
+        /// to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining
+        /// your use case.</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// When true, Amazon Personalize performs a search for the best USER_PERSONALIZATION
         /// recipe from the list specified in the solution configuration (<code>recipeArn</code>

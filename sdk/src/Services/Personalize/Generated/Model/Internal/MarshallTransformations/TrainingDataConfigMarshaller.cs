@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RecommenderConfig Marshaller
+    /// TrainingDataConfig Marshaller
     /// </summary>
-    public class RecommenderConfigMarshaller : IRequestMarshaller<RecommenderConfig, JsonMarshallerContext> 
+    public class TrainingDataConfigMarshaller : IRequestMarshaller<TrainingDataConfig, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,36 +43,24 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RecommenderConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(TrainingDataConfig requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetItemExplorationConfig())
+            if(requestObject.IsSetExcludedDatasetColumns())
             {
-                context.Writer.WritePropertyName("itemExplorationConfig");
+                context.Writer.WritePropertyName("excludedDatasetColumns");
                 context.Writer.WriteObjectStart();
-                foreach (var requestObjectItemExplorationConfigKvp in requestObject.ItemExplorationConfig)
+                foreach (var requestObjectExcludedDatasetColumnsKvp in requestObject.ExcludedDatasetColumns)
                 {
-                    context.Writer.WritePropertyName(requestObjectItemExplorationConfigKvp.Key);
-                    var requestObjectItemExplorationConfigValue = requestObjectItemExplorationConfigKvp.Value;
+                    context.Writer.WritePropertyName(requestObjectExcludedDatasetColumnsKvp.Key);
+                    var requestObjectExcludedDatasetColumnsValue = requestObjectExcludedDatasetColumnsKvp.Value;
 
-                        context.Writer.Write(requestObjectItemExplorationConfigValue);
+                    context.Writer.WriteArrayStart();
+                    foreach(var requestObjectExcludedDatasetColumnsValueListValue in requestObjectExcludedDatasetColumnsValue)
+                    {
+                            context.Writer.Write(requestObjectExcludedDatasetColumnsValueListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetMinRecommendationRequestsPerSecond())
-            {
-                context.Writer.WritePropertyName("minRecommendationRequestsPerSecond");
-                context.Writer.Write(requestObject.MinRecommendationRequestsPerSecond);
-            }
-
-            if(requestObject.IsSetTrainingDataConfig())
-            {
-                context.Writer.WritePropertyName("trainingDataConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TrainingDataConfigMarshaller.Instance;
-                marshaller.Marshall(requestObject.TrainingDataConfig, context);
-
                 context.Writer.WriteObjectEnd();
             }
 
@@ -81,7 +69,7 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RecommenderConfigMarshaller Instance = new RecommenderConfigMarshaller();
+        public readonly static TrainingDataConfigMarshaller Instance = new TrainingDataConfigMarshaller();
 
     }
 }

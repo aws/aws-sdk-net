@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Personalize.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for RecommenderConfig Object
+    /// Response Unmarshaller for TrainingDataConfig Object
     /// </summary>  
-    public class RecommenderConfigUnmarshaller : IUnmarshaller<RecommenderConfig, XmlUnmarshallerContext>, IUnmarshaller<RecommenderConfig, JsonUnmarshallerContext>
+    public class TrainingDataConfigUnmarshaller : IUnmarshaller<TrainingDataConfig, XmlUnmarshallerContext>, IUnmarshaller<TrainingDataConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        RecommenderConfig IUnmarshaller<RecommenderConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        TrainingDataConfig IUnmarshaller<TrainingDataConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public RecommenderConfig Unmarshall(JsonUnmarshallerContext context)
+        public TrainingDataConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            RecommenderConfig unmarshalledObject = new RecommenderConfig();
+            TrainingDataConfig unmarshalledObject = new TrainingDataConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("itemExplorationConfig", targetDepth))
+                if (context.TestExpression("excludedDatasetColumns", targetDepth))
                 {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.ItemExplorationConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("minRecommendationRequestsPerSecond", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MinRecommendationRequestsPerSecond = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("trainingDataConfig", targetDepth))
-                {
-                    var unmarshaller = TrainingDataConfigUnmarshaller.Instance;
-                    unmarshalledObject.TrainingDataConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance));
+                    unmarshalledObject.ExcludedDatasetColumns = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
         }
 
 
-        private static RecommenderConfigUnmarshaller _instance = new RecommenderConfigUnmarshaller();        
+        private static TrainingDataConfigUnmarshaller _instance = new TrainingDataConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static RecommenderConfigUnmarshaller Instance
+        public static TrainingDataConfigUnmarshaller Instance
         {
             get
             {

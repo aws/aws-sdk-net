@@ -30,9 +30,9 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateSolution operation.
-    /// Creates the configuration for training a model. A trained model is known as a solution.
-    /// After the configuration is created, you train the model (create a solution) by calling
-    /// the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
+    /// Creates the configuration for training a model. A trained model is known as a solution
+    /// version. After the configuration is created, you train the model (create a solution
+    /// version) by calling the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
     /// operation. Every time you call <code>CreateSolutionVersion</code>, a new version of
     /// the solution is created.
     /// 
@@ -48,9 +48,7 @@ namespace Amazon.Personalize.Model
     /// To train a model, Amazon Personalize requires training data and a recipe. The training
     /// data comes from the dataset group that you provide in the request. A recipe specifies
     /// the training algorithm and a feature transformation. You can specify one of the predefined
-    /// recipes provided by Amazon Personalize. Alternatively, you can specify <code>performAutoML</code>
-    /// and Amazon Personalize will analyze your data and select the optimum USER_PERSONALIZATION
-    /// recipe for you.
+    /// recipes provided by Amazon Personalize. 
     /// </para>
     ///  <note> 
     /// <para>
@@ -188,7 +186,13 @@ namespace Amazon.Personalize.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PerformAutoML. 
+        /// Gets and sets the property PerformAutoML. <important> 
+        /// <para>
+        /// We don't recommend enabling automated machine learning. Instead, match your use case
+        /// to the available Amazon Personalize recipes. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining
+        /// your use case.</a> 
+        /// </para>
+        ///  </important> 
         /// <para>
         /// Whether to perform automated machine learning (AutoML). The default is <code>false</code>.
         /// For this case, you must specify <code>recipeArn</code>.
@@ -287,7 +291,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
         /// to apply to the solution.
         /// </para>
         /// </summary>
