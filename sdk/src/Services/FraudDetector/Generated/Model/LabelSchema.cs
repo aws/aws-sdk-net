@@ -79,8 +79,8 @@ namespace Amazon.FraudDetector.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code>LEGIT</code> f you want to categorize all unlabeled events as “Legit”. This
-        /// is recommended when most of the events in your dataset are legitimate.
+        /// Use <code>LEGIT</code> if you want to categorize all unlabeled events as “Legit”.
+        /// This is recommended when most of the events in your dataset are legitimate.
         /// </para>
         ///  </li> <li> 
         /// <para>

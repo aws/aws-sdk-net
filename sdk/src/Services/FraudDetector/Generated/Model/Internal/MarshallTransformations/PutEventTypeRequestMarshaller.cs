@@ -90,6 +90,17 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EventIngestion);
                 }
 
+                if(publicRequest.IsSetEventOrchestration())
+                {
+                    context.Writer.WritePropertyName("eventOrchestration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EventOrchestrationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EventOrchestration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetEventVariables())
                 {
                     context.Writer.WritePropertyName("eventVariables");
