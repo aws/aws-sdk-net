@@ -1,3 +1,19 @@
+### 3.7.558.0 (2023-05-31 18:29 UTC)
+* ConfigService (3.7.105.0)
+	* Resource Types Exclusion feature launch by AWS Config
+* FraudDetector (3.7.103.0)
+	* This release enables publishing event predictions from Amazon Fraud Detector (AFD) to Amazon EventBridge. For example, after getting predictions from AFD, Amazon EventBridge rules can be configured to trigger notification through an SNS topic, send a message with SES, or trigger Lambda workflows.
+* HealthLake (3.7.101.0)
+	* This release adds a new request parameter to the CreateFHIRDatastore API operation. IdentityProviderConfiguration specifies how you want to authenticate incoming requests to your Healthlake Data Store.
+* MainframeModernization (3.7.103.0)
+	* Adds an optional create-only 'roleArn' property to Application resources.  Enables PS and PO data set org types.
+* RDS (3.7.119.0)
+	* This release adds support for changing the engine for Oracle using the ModifyDbInstance API
+* ServiceCatalog (3.7.103.33)
+	* Documentation updates for ServiceCatalog.
+* WorkSpacesWeb (3.7.102.0)
+	* WorkSpaces Web now allows you to control which IP addresses your WorkSpaces Web portal may be accessed from.
+
 ### 3.7.557.0 (2023-05-30 18:30 UTC)
 * ChimeSDKVoice (3.7.105.0)
 	* Added optional CallLeg field to StartSpeakerSearchTask API request
