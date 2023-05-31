@@ -90,6 +90,17 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DatastoreTypeVersion);
                 }
 
+                if(publicRequest.IsSetIdentityProviderConfiguration())
+                {
+                    context.Writer.WritePropertyName("IdentityProviderConfiguration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = IdentityProviderConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.IdentityProviderConfiguration, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetPreloadDataConfig())
                 {
                     context.Writer.WritePropertyName("PreloadDataConfig");

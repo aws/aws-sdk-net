@@ -291,6 +291,12 @@
     <pattern>^([\p{L}\p{Z}\p{N}_.:/=+\-%@]*)$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.HealthLake.Model.IdentityProviderConfiguration.IdpLambdaArn</property>
+    <min>49</min>
+    <max>256</max>
+    <pattern>arn:aws:lambda:[a-z]{2}-[a-z]+-\d{1}:\d{12}:function:[a-zA-Z0-9\-_\.]+(:(\$LATEST|[a-zA-Z0-9\-_]+))?</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.HealthLake.Model.ImportJobProperties.DataAccessRoleArn</property>
     <min>20</min>
     <max>2048</max>
