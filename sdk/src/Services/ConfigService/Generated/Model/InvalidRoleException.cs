@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// You have provided a null or empty role ARN.
+    /// You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed
+    /// by Config and used by the configuration recorder.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

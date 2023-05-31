@@ -38,7 +38,7 @@ namespace Amazon.ConfigService.Model
     ///  
     /// <para>
     /// For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-    /// <b>Query Components</b> </a> section in the Config Developer Guide.
+    /// <b>Query Components</b> </a> section in the <i>Config Developer Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>

@@ -30,21 +30,23 @@ namespace Amazon.ConfigService.Model
 {
     /// <summary>
     /// Container for the parameters to the PutConfigurationRecorder operation.
-    /// Creates a new configuration recorder to record the selected resource configurations.
+    /// Creates a new configuration recorder to record configuration changes for specified
+    /// resource types.
     /// 
     ///  
     /// <para>
-    /// You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code>
-    /// of an existing recorder. To change the role, call the action on the existing configuration
-    /// recorder and specify a role.
+    /// You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code>
+    /// of an existing recorder. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+    /// <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
     /// </para>
     ///  <note> 
     /// <para>
-    /// Currently, you can specify only one configuration recorder per region in your account.
+    /// You can specify only one configuration recorder for each Amazon Web Services Region
+    /// for each account.
     /// </para>
     ///  
     /// <para>
-    /// If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter
+    /// If the configuration recorder does not have the <code>recordingGroup</code> field
     /// specified, the default is to record all supported resource types.
     /// </para>
     ///  </note>
@@ -56,8 +58,8 @@ namespace Amazon.ConfigService.Model
         /// <summary>
         /// Gets and sets the property ConfigurationRecorder. 
         /// <para>
-        /// The configuration recorder object that records each configuration change made to the
-        /// resources.
+        /// An object for the configuration recorder to record configuration changes for specified
+        /// resource types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

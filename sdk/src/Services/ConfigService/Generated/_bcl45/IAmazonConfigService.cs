@@ -2561,7 +2561,8 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
+        /// You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2581,7 +2582,8 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
+        /// You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2602,7 +2604,8 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
+        /// You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2626,7 +2629,8 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
+        /// You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2655,9 +2659,9 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
-        /// For a detailed status of recording events over time, add your Config events to Amazon
-        /// CloudWatch metrics and use CloudWatch metrics.
+        /// &gt;You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account. For a detailed status of recording events over time, add your Config
+        /// events to Amazon CloudWatch metrics and use CloudWatch metrics.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2678,9 +2682,9 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
-        /// For a detailed status of recording events over time, add your Config events to Amazon
-        /// CloudWatch metrics and use CloudWatch metrics.
+        /// &gt;You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account. For a detailed status of recording events over time, add your Config
+        /// events to Amazon CloudWatch metrics and use CloudWatch metrics.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2702,9 +2706,9 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
-        /// For a detailed status of recording events over time, add your Config events to Amazon
-        /// CloudWatch metrics and use CloudWatch metrics.
+        /// &gt;You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account. For a detailed status of recording events over time, add your Config
+        /// events to Amazon CloudWatch metrics and use CloudWatch metrics.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2729,9 +2733,9 @@ namespace Amazon.ConfigService
         /// 
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
-        /// For a detailed status of recording events over time, add your Config events to Amazon
-        /// CloudWatch metrics and use CloudWatch metrics.
+        /// &gt;You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account. For a detailed status of recording events over time, add your Config
+        /// events to Amazon CloudWatch metrics and use CloudWatch metrics.
         /// </para>
         ///  </note>
         /// </summary>
@@ -6568,7 +6572,8 @@ namespace Amazon.ConfigService
         /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRoleException">
-        /// You have provided a null or empty role ARN.
+        /// You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed
+        /// by Config and used by the configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.LimitExceededException">
         /// For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation
@@ -6676,7 +6681,8 @@ namespace Amazon.ConfigService
         /// are valid and try again.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRoleException">
-        /// You have provided a null or empty role ARN.
+        /// You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed
+        /// by Config and used by the configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.LimitExceededException">
         /// For <code>StartConfigRulesEvaluation</code> API, this exception is thrown if an evaluation
@@ -6739,21 +6745,23 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Creates a new configuration recorder to record the selected resource configurations.
+        /// Creates a new configuration recorder to record configuration changes for specified
+        /// resource types.
         /// 
         ///  
         /// <para>
-        /// You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code>
-        /// of an existing recorder. To change the role, call the action on the existing configuration
-        /// recorder and specify a role.
+        /// You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code>
+        /// of an existing recorder. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+        /// <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
+        /// You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account.
         /// </para>
         ///  
         /// <para>
-        /// If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter
+        /// If the configuration recorder does not have the <code>recordingGroup</code> field
         /// specified, the default is to record all supported resource types.
         /// </para>
         ///  </note>
@@ -6762,17 +6770,48 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutConfigurationRecorder service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidConfigurationRecorderNameException">
-        /// You have provided a configuration recorder name that is not valid.
+        /// You have provided a name for the configuration recorder that is not valid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRecordingGroupException">
-        /// Config throws an exception if the recording group does not contain a valid list of
-        /// resource types. Values that are not valid might also be incorrectly formatted.
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided a combination of parameter values that is not valid. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+        /// to <code>true</code>, but providing a non-empty list for the <code>resourceTypes</code>field
+        /// of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+        /// to <code>true</code>, but also setting the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
+        /// to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Every parameter is either null, false, or empty.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have reached the limit of the number of resource types you can provide for the
+        /// recording group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided resource types or a recording strategy that are not valid.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRoleException">
-        /// You have provided a null or empty role ARN.
+        /// You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed
+        /// by Config and used by the configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigurationRecordersExceededException">
-        /// You have reached the limit of the number of recorders you can create.
+        /// You have reached the limit of the number of configuration recorders you can create.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         PutConfigurationRecorderResponse PutConfigurationRecorder(PutConfigurationRecorderRequest request);
@@ -6780,21 +6819,23 @@ namespace Amazon.ConfigService
 
 
         /// <summary>
-        /// Creates a new configuration recorder to record the selected resource configurations.
+        /// Creates a new configuration recorder to record configuration changes for specified
+        /// resource types.
         /// 
         ///  
         /// <para>
-        /// You can use this action to change the role <code>roleARN</code> or the <code>recordingGroup</code>
-        /// of an existing recorder. To change the role, call the action on the existing configuration
-        /// recorder and specify a role.
+        /// You can also use this action to change the <code>roleARN</code> or the <code>recordingGroup</code>
+        /// of an existing recorder. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+        /// <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently, you can specify only one configuration recorder per region in your account.
+        /// You can specify only one configuration recorder for each Amazon Web Services Region
+        /// for each account.
         /// </para>
         ///  
         /// <para>
-        /// If <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b> parameter
+        /// If the configuration recorder does not have the <code>recordingGroup</code> field
         /// specified, the default is to record all supported resource types.
         /// </para>
         ///  </note>
@@ -6806,17 +6847,48 @@ namespace Amazon.ConfigService
         /// 
         /// <returns>The response from the PutConfigurationRecorder service method, as returned by ConfigService.</returns>
         /// <exception cref="Amazon.ConfigService.Model.InvalidConfigurationRecorderNameException">
-        /// You have provided a configuration recorder name that is not valid.
+        /// You have provided a name for the configuration recorder that is not valid.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRecordingGroupException">
-        /// Config throws an exception if the recording group does not contain a valid list of
-        /// resource types. Values that are not valid might also be incorrectly formatted.
+        /// Indicates one of the following errors:
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You have provided a combination of parameter values that is not valid. For example:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+        /// to <code>true</code>, but providing a non-empty list for the <code>resourceTypes</code>field
+        /// of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+        /// to <code>true</code>, but also setting the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
+        /// to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Every parameter is either null, false, or empty.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have reached the limit of the number of resource types you can provide for the
+        /// recording group.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You have provided resource types or a recording strategy that are not valid.
+        /// </para>
+        ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.InvalidRoleException">
-        /// You have provided a null or empty role ARN.
+        /// You have provided a null or empty Amazon Resource Name (ARN) for the IAM role assumed
+        /// by Config and used by the configuration recorder.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConfigurationRecordersExceededException">
-        /// You have reached the limit of the number of recorders you can create.
+        /// You have reached the limit of the number of configuration recorders you can create.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">REST API Reference for PutConfigurationRecorder Operation</seealso>
         Task<PutConfigurationRecorderResponse> PutConfigurationRecorderAsync(PutConfigurationRecorderRequest request, CancellationToken cancellationToken = default(CancellationToken));
@@ -6830,7 +6902,7 @@ namespace Amazon.ConfigService
         /// Creates or updates a conformance pack. A conformance pack is a collection of Config
         /// rules that can be easily deployed in an account and a region and across an organization.
         /// For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// 
         ///  
         /// <para>
@@ -6893,7 +6965,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConformancePacksExceededException">
         /// You have reached the limit of the number of conformance packs you can create in an
         /// account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -6944,7 +7016,7 @@ namespace Amazon.ConfigService
         /// Creates or updates a conformance pack. A conformance pack is a collection of Config
         /// rules that can be easily deployed in an account and a region and across an organization.
         /// For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// 
         ///  
         /// <para>
@@ -7010,7 +7082,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfConformancePacksExceededException">
         /// You have reached the limit of the number of conformance packs you can create in an
         /// account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ResourceInUseException">
         /// You see this exception in the following cases: 
@@ -7394,7 +7466,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConfigRulesExceededException">
         /// You have reached the limit of the number of organization Config rules you can create.
         /// For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -7616,7 +7688,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConfigRulesExceededException">
         /// You have reached the limit of the number of organization Config rules you can create.
         /// For more information, see see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -7726,7 +7798,7 @@ namespace Amazon.ConfigService
         /// Deploys conformance packs across member accounts in an Amazon Web Services Organization.
         /// For information on how many organization conformance packs and how many Config rules
         /// you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// 
         ///  
         /// <para>
@@ -7804,7 +7876,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConformancePacksExceededException">
         /// You have reached the limit of the number of organization conformance packs you can
         /// create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -7914,7 +7986,7 @@ namespace Amazon.ConfigService
         /// Deploys conformance packs across member accounts in an Amazon Web Services Organization.
         /// For information on how many organization conformance packs and how many Config rules
         /// you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// 
         ///  
         /// <para>
@@ -7995,7 +8067,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.MaxNumberOfOrganizationConformancePacksExceededException">
         /// You have reached the limit of the number of organization conformance packs you can
         /// create in an account. For more information, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.NoAvailableOrganizationException">
         /// Organization is no longer available.
@@ -8295,7 +8367,7 @@ namespace Amazon.ConfigService
         /// If you use this API for <code>COMPLIANT</code> resources or resources that are <code>NOT_APPLICABLE</code>,
         /// a remediation exception will not be generated. For more information on the conditions
         /// that initiate the possible Config evaluation results, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts
-        /// | Config Rules</a> in the Config Developer Guide.
+        /// | Config Rules</a> in the <i>Config Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8373,7 +8445,7 @@ namespace Amazon.ConfigService
         /// If you use this API for <code>COMPLIANT</code> resources or resources that are <code>NOT_APPLICABLE</code>,
         /// a remediation exception will not be generated. For more information on the conditions
         /// that initiate the possible Config evaluation results, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts
-        /// | Config Rules</a> in the Config Developer Guide.
+        /// | Config Rules</a> in the <i>Config Developer Guide</i>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -8706,7 +8778,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
         /// You have reached the limit of the number of tags you can use. For more information,
         /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
@@ -8757,7 +8829,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
         /// You have reached the limit of the number of tags you can use. For more information,
         /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
@@ -8791,7 +8863,7 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         /// For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-        /// <b>Query Components</b> </a> section in the Config Developer Guide.
+        /// <b>Query Components</b> </a> section in the <i>Config Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -8840,7 +8912,7 @@ namespace Amazon.ConfigService
         ///  
         /// <para>
         /// For more information about query components, see the <a href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-        /// <b>Query Components</b> </a> section in the Config Developer Guide.
+        /// <b>Query Components</b> </a> section in the <i>Config Developer Guide</i>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -9597,7 +9669,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
         /// You have reached the limit of the number of tags you can use. For more information,
         /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.
@@ -9637,7 +9709,7 @@ namespace Amazon.ConfigService
         /// <exception cref="Amazon.ConfigService.Model.TooManyTagsException">
         /// You have reached the limit of the number of tags you can use. For more information,
         /// see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-        /// <b>Service Limits</b> </a> in the Config Developer Guide.
+        /// <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.ConfigService.Model.ValidationException">
         /// The requested action is not valid.

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// You have reached the limit of the number of recorders you can create.
+    /// You have reached the limit of the number of configuration recorders you can create.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

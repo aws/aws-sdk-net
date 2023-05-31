@@ -29,31 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Returns a filtered list of Detective or Proactive Config rules. By default, if the
-    /// filter is not defined, this API returns an unfiltered list. For more information on
-    /// Detective or Proactive Config rules, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/evaluate-config-rules.html">
-    /// <b>Evaluation Mode</b> </a> in the <i>Config Developer Guide</i>.
+    /// Specifies whether the configuration recorder excludes resource types from being recorded.
+    /// Use the <code>resourceTypes</code> field to enter a comma-separated list of resource
+    /// types to exclude as exemptions.
     /// </summary>
-    public partial class DescribeConfigRulesFilters
+    public partial class ExclusionByResourceTypes
     {
-        private EvaluationMode _evaluationMode;
+        private List<string> _resourceTypes = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property EvaluationMode. 
+        /// Gets and sets the property ResourceTypes. 
         /// <para>
-        /// The mode of an evaluation. The valid values are Detective or Proactive.
+        /// A comma-separated list of resource types to exclude from recording by the configuration
+        /// recorder.
         /// </para>
         /// </summary>
-        public EvaluationMode EvaluationMode
+        public List<string> ResourceTypes
         {
-            get { return this._evaluationMode; }
-            set { this._evaluationMode = value; }
+            get { return this._resourceTypes; }
+            set { this._resourceTypes = value; }
         }
 
-        // Check to see if EvaluationMode property is set
-        internal bool IsSetEvaluationMode()
+        // Check to see if ResourceTypes property is set
+        internal bool IsSetResourceTypes()
         {
-            return this._evaluationMode != null;
+            return this._resourceTypes != null && this._resourceTypes.Count > 0; 
         }
 
     }

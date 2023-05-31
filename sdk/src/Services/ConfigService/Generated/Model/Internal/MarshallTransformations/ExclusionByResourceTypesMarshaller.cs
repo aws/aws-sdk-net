@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// RecordingGroup Marshaller
+    /// ExclusionByResourceTypes Marshaller
     /// </summary>
-    public class RecordingGroupMarshaller : IRequestMarshaller<RecordingGroup, JsonMarshallerContext> 
+    public class ExclusionByResourceTypesMarshaller : IRequestMarshaller<ExclusionByResourceTypes, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,42 +43,8 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(RecordingGroup requestObject, JsonMarshallerContext context)
+        public void Marshall(ExclusionByResourceTypes requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAllSupported())
-            {
-                context.Writer.WritePropertyName("allSupported");
-                context.Writer.Write(requestObject.AllSupported);
-            }
-
-            if(requestObject.IsSetExclusionByResourceTypes())
-            {
-                context.Writer.WritePropertyName("exclusionByResourceTypes");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = ExclusionByResourceTypesMarshaller.Instance;
-                marshaller.Marshall(requestObject.ExclusionByResourceTypes, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetIncludeGlobalResourceTypes())
-            {
-                context.Writer.WritePropertyName("includeGlobalResourceTypes");
-                context.Writer.Write(requestObject.IncludeGlobalResourceTypes);
-            }
-
-            if(requestObject.IsSetRecordingStrategy())
-            {
-                context.Writer.WritePropertyName("recordingStrategy");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = RecordingStrategyMarshaller.Instance;
-                marshaller.Marshall(requestObject.RecordingStrategy, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetResourceTypes())
             {
                 context.Writer.WritePropertyName("resourceTypes");
@@ -95,7 +61,7 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static RecordingGroupMarshaller Instance = new RecordingGroupMarshaller();
+        public readonly static ExclusionByResourceTypesMarshaller Instance = new ExclusionByResourceTypesMarshaller();
 
     }
 }
