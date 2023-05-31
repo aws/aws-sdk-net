@@ -267,6 +267,228 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("WorkSpacesWeb")]
+        public void AssociateIpAccessSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<AssociateIpAccessSettingsRequest>();
+            var marshaller = new AssociateIpAccessSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("AssociateIpAccessSettings", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = AssociateIpAccessSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as AssociateIpAccessSettingsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void AssociateIpAccessSettings_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<AssociateIpAccessSettingsRequest>();
+            var marshaller = new AssociateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AssociateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AssociateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void AssociateIpAccessSettings_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<AssociateIpAccessSettingsRequest>();
+            var marshaller = new AssociateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AssociateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AssociateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void AssociateIpAccessSettings_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<AssociateIpAccessSettingsRequest>();
+            var marshaller = new AssociateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AssociateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AssociateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void AssociateIpAccessSettings_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<AssociateIpAccessSettingsRequest>();
+            var marshaller = new AssociateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AssociateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AssociateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void AssociateIpAccessSettings_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<AssociateIpAccessSettingsRequest>();
+            var marshaller = new AssociateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AssociateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AssociateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void AssociateIpAccessSettings_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("AssociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<AssociateIpAccessSettingsRequest>();
+            var marshaller = new AssociateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("AssociateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = AssociateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
         public void AssociateNetworkSettingsMarshallTest()
         {
             var operation = service_model.FindOperation("AssociateNetworkSettings");
@@ -1623,6 +1845,228 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = CreateIdentityProviderResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void CreateIpAccessSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<CreateIpAccessSettingsRequest>();
+            var marshaller = new CreateIpAccessSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("CreateIpAccessSettings", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = CreateIpAccessSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateIpAccessSettingsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void CreateIpAccessSettings_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<CreateIpAccessSettingsRequest>();
+            var marshaller = new CreateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void CreateIpAccessSettings_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<CreateIpAccessSettingsRequest>();
+            var marshaller = new CreateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void CreateIpAccessSettings_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<CreateIpAccessSettingsRequest>();
+            var marshaller = new CreateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void CreateIpAccessSettings_ServiceQuotaExceededExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<CreateIpAccessSettingsRequest>();
+            var marshaller = new CreateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceQuotaExceededException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void CreateIpAccessSettings_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<CreateIpAccessSettingsRequest>();
+            var marshaller = new CreateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void CreateIpAccessSettings_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<CreateIpAccessSettingsRequest>();
+            var marshaller = new CreateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3153,6 +3597,196 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("WorkSpacesWeb")]
+        public void DeleteIpAccessSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIpAccessSettingsRequest>();
+            var marshaller = new DeleteIpAccessSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteIpAccessSettings", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DeleteIpAccessSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteIpAccessSettingsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void DeleteIpAccessSettings_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIpAccessSettingsRequest>();
+            var marshaller = new DeleteIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void DeleteIpAccessSettings_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIpAccessSettingsRequest>();
+            var marshaller = new DeleteIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void DeleteIpAccessSettings_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIpAccessSettingsRequest>();
+            var marshaller = new DeleteIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void DeleteIpAccessSettings_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIpAccessSettingsRequest>();
+            var marshaller = new DeleteIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void DeleteIpAccessSettings_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DeleteIpAccessSettingsRequest>();
+            var marshaller = new DeleteIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
         public void DeleteNetworkSettingsMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteNetworkSettings");
@@ -4293,6 +4927,196 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("WorkSpacesWeb")]
+        public void DisassociateIpAccessSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateIpAccessSettingsRequest>();
+            var marshaller = new DisassociateIpAccessSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DisassociateIpAccessSettings", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = DisassociateIpAccessSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DisassociateIpAccessSettingsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void DisassociateIpAccessSettings_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateIpAccessSettingsRequest>();
+            var marshaller = new DisassociateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisassociateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisassociateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void DisassociateIpAccessSettings_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateIpAccessSettingsRequest>();
+            var marshaller = new DisassociateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisassociateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisassociateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void DisassociateIpAccessSettings_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateIpAccessSettingsRequest>();
+            var marshaller = new DisassociateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisassociateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisassociateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void DisassociateIpAccessSettings_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateIpAccessSettingsRequest>();
+            var marshaller = new DisassociateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisassociateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisassociateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void DisassociateIpAccessSettings_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DisassociateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<DisassociateIpAccessSettingsRequest>();
+            var marshaller = new DisassociateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DisassociateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DisassociateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
         public void DisassociateNetworkSettingsMarshallTest()
         {
             var operation = service_model.FindOperation("DisassociateNetworkSettings");
@@ -5425,6 +6249,196 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = GetIdentityProviderResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void GetIpAccessSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<GetIpAccessSettingsRequest>();
+            var marshaller = new GetIpAccessSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetIpAccessSettings", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetIpAccessSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetIpAccessSettingsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void GetIpAccessSettings_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<GetIpAccessSettingsRequest>();
+            var marshaller = new GetIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void GetIpAccessSettings_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<GetIpAccessSettingsRequest>();
+            var marshaller = new GetIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void GetIpAccessSettings_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<GetIpAccessSettingsRequest>();
+            var marshaller = new GetIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void GetIpAccessSettings_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<GetIpAccessSettingsRequest>();
+            var marshaller = new GetIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void GetIpAccessSettings_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<GetIpAccessSettingsRequest>();
+            var marshaller = new GetIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -7071,6 +8085,164 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
             var response = ListIdentityProvidersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void ListIpAccessSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<ListIpAccessSettingsRequest>();
+            var marshaller = new ListIpAccessSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListIpAccessSettings", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListIpAccessSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListIpAccessSettingsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void ListIpAccessSettings_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<ListIpAccessSettingsRequest>();
+            var marshaller = new ListIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void ListIpAccessSettings_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<ListIpAccessSettingsRequest>();
+            var marshaller = new ListIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void ListIpAccessSettings_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<ListIpAccessSettingsRequest>();
+            var marshaller = new ListIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void ListIpAccessSettings_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<ListIpAccessSettingsRequest>();
+            var marshaller = new ListIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -9041,6 +10213,196 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("WorkSpacesWeb")]
+        public void UpdateIpAccessSettingsMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIpAccessSettingsRequest>();
+            var marshaller = new UpdateIpAccessSettingsRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateIpAccessSettings", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateIpAccessSettingsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateIpAccessSettingsResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void UpdateIpAccessSettings_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIpAccessSettingsRequest>();
+            var marshaller = new UpdateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void UpdateIpAccessSettings_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIpAccessSettingsRequest>();
+            var marshaller = new UpdateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void UpdateIpAccessSettings_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIpAccessSettingsRequest>();
+            var marshaller = new UpdateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void UpdateIpAccessSettings_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIpAccessSettingsRequest>();
+            var marshaller = new UpdateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void UpdateIpAccessSettings_ValidationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateIpAccessSettings");
+
+            var request = InstantiateClassGenerator.Execute<UpdateIpAccessSettingsRequest>();
+            var marshaller = new UpdateIpAccessSettingsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateIpAccessSettings", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ValidationException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateIpAccessSettingsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
         public void UpdateNetworkSettingsMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateNetworkSettings");
@@ -9278,6 +10640,38 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
                     {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdatePortalResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("WorkSpacesWeb")]
+        public void UpdatePortal_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdatePortal");
+
+            var request = InstantiateClassGenerator.Execute<UpdatePortalRequest>();
+            var marshaller = new UpdatePortalRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdatePortal", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 

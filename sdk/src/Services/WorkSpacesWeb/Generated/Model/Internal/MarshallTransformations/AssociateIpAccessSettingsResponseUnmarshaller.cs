@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdatePortal operation
+    /// Response Unmarshaller for AssociateIpAccessSettings operation
     /// </summary>  
-    public class UpdatePortalResponseUnmarshaller : JsonResponseUnmarshaller
+    public class AssociateIpAccessSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdatePortalResponse response = new UpdatePortalResponse();
+            AssociateIpAccessSettingsResponse response = new AssociateIpAccessSettingsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("portal", targetDepth))
+                if (context.TestExpression("ipAccessSettingsArn", targetDepth))
                 {
-                    var unmarshaller = PortalUnmarshaller.Instance;
-                    response.Portal = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IpAccessSettingsArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("portalArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.PortalArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -108,9 +114,9 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             return new AmazonWorkSpacesWebException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdatePortalResponseUnmarshaller _instance = new UpdatePortalResponseUnmarshaller();        
+        private static AssociateIpAccessSettingsResponseUnmarshaller _instance = new AssociateIpAccessSettingsResponseUnmarshaller();        
 
-        internal static UpdatePortalResponseUnmarshaller GetInstance()
+        internal static AssociateIpAccessSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +124,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdatePortalResponseUnmarshaller Instance
+        public static AssociateIpAccessSettingsResponseUnmarshaller Instance
         {
             get
             {

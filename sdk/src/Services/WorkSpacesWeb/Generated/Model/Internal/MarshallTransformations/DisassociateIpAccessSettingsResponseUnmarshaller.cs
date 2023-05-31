@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdatePortal operation
+    /// Response Unmarshaller for DisassociateIpAccessSettings operation
     /// </summary>  
-    public class UpdatePortalResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DisassociateIpAccessSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,19 +45,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdatePortalResponse response = new UpdatePortalResponse();
+            DisassociateIpAccessSettingsResponse response = new DisassociateIpAccessSettingsResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("portal", targetDepth))
-                {
-                    var unmarshaller = PortalUnmarshaller.Instance;
-                    response.Portal = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -84,10 +73,6 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
-                {
-                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -108,9 +93,9 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             return new AmazonWorkSpacesWebException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdatePortalResponseUnmarshaller _instance = new UpdatePortalResponseUnmarshaller();        
+        private static DisassociateIpAccessSettingsResponseUnmarshaller _instance = new DisassociateIpAccessSettingsResponseUnmarshaller();        
 
-        internal static UpdatePortalResponseUnmarshaller GetInstance()
+        internal static DisassociateIpAccessSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +103,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdatePortalResponseUnmarshaller Instance
+        public static DisassociateIpAccessSettingsResponseUnmarshaller Instance
         {
             get
             {

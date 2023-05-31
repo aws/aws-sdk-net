@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdatePortal operation
+    /// Response Unmarshaller for DeleteIpAccessSettings operation
     /// </summary>  
-    public class UpdatePortalResponseUnmarshaller : JsonResponseUnmarshaller
+    public class DeleteIpAccessSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,19 +45,8 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdatePortalResponse response = new UpdatePortalResponse();
+            DeleteIpAccessSettingsResponse response = new DeleteIpAccessSettingsResponse();
 
-            context.Read();
-            int targetDepth = context.CurrentDepth;
-            while (context.ReadAtDepth(targetDepth))
-            {
-                if (context.TestExpression("portal", targetDepth))
-                {
-                    var unmarshaller = PortalUnmarshaller.Instance;
-                    response.Portal = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-            }
 
             return response;
         }
@@ -92,10 +81,6 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -108,9 +93,9 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             return new AmazonWorkSpacesWebException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdatePortalResponseUnmarshaller _instance = new UpdatePortalResponseUnmarshaller();        
+        private static DeleteIpAccessSettingsResponseUnmarshaller _instance = new DeleteIpAccessSettingsResponseUnmarshaller();        
 
-        internal static UpdatePortalResponseUnmarshaller GetInstance()
+        internal static DeleteIpAccessSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +103,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdatePortalResponseUnmarshaller Instance
+        public static DeleteIpAccessSettingsResponseUnmarshaller Instance
         {
             get
             {

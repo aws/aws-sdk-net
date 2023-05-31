@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for UpdatePortal operation
+    /// Response Unmarshaller for CreateIpAccessSettings operation
     /// </summary>  
-    public class UpdatePortalResponseUnmarshaller : JsonResponseUnmarshaller
+    public class CreateIpAccessSettingsResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,16 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            UpdatePortalResponse response = new UpdatePortalResponse();
+            CreateIpAccessSettingsResponse response = new CreateIpAccessSettingsResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("portal", targetDepth))
+                if (context.TestExpression("ipAccessSettingsArn", targetDepth))
                 {
-                    var unmarshaller = PortalUnmarshaller.Instance;
-                    response.Portal = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.IpAccessSettingsArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -92,9 +92,9 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ServiceQuotaExceededException"))
                 {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ServiceQuotaExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
@@ -108,9 +108,9 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
             return new AmazonWorkSpacesWebException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static UpdatePortalResponseUnmarshaller _instance = new UpdatePortalResponseUnmarshaller();        
+        private static CreateIpAccessSettingsResponseUnmarshaller _instance = new CreateIpAccessSettingsResponseUnmarshaller();        
 
-        internal static UpdatePortalResponseUnmarshaller GetInstance()
+        internal static CreateIpAccessSettingsResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -118,7 +118,7 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static UpdatePortalResponseUnmarshaller Instance
+        public static CreateIpAccessSettingsResponseUnmarshaller Instance
         {
             get
             {

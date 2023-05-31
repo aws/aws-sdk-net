@@ -52,6 +52,14 @@ namespace Amazon.WorkSpacesWeb.Model
         }
 
         /// <summary>
+        /// Paginator for ListIpAccessSettings operation
+        ///</summary>
+        public IListIpAccessSettingsPaginator ListIpAccessSettings(ListIpAccessSettingsRequest request) 
+        {
+            return new ListIpAccessSettingsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListNetworkSettings operation
         ///</summary>
         public IListNetworkSettingsPaginator ListNetworkSettings(ListNetworkSettingsRequest request) 
