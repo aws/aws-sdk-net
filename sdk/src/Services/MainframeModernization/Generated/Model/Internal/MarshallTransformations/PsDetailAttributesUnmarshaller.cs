@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for DatasetDetailOrgAttributes Object
+    /// Response Unmarshaller for PsDetailAttributes Object
     /// </summary>  
-    public class DatasetDetailOrgAttributesUnmarshaller : IUnmarshaller<DatasetDetailOrgAttributes, XmlUnmarshallerContext>, IUnmarshaller<DatasetDetailOrgAttributes, JsonUnmarshallerContext>
+    public class PsDetailAttributesUnmarshaller : IUnmarshaller<PsDetailAttributes, XmlUnmarshallerContext>, IUnmarshaller<PsDetailAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        DatasetDetailOrgAttributes IUnmarshaller<DatasetDetailOrgAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PsDetailAttributes IUnmarshaller<PsDetailAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public DatasetDetailOrgAttributes Unmarshall(JsonUnmarshallerContext context)
+        public PsDetailAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            DatasetDetailOrgAttributes unmarshalledObject = new DatasetDetailOrgAttributes();
+            PsDetailAttributes unmarshalledObject = new PsDetailAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("gdg", targetDepth))
+                if (context.TestExpression("encoding", targetDepth))
                 {
-                    var unmarshaller = GdgDetailAttributesUnmarshaller.Instance;
-                    unmarshalledObject.Gdg = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Encoding = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("po", targetDepth))
+                if (context.TestExpression("format", targetDepth))
                 {
-                    var unmarshaller = PoDetailAttributesUnmarshaller.Instance;
-                    unmarshalledObject.Po = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ps", targetDepth))
-                {
-                    var unmarshaller = PsDetailAttributesUnmarshaller.Instance;
-                    unmarshalledObject.Ps = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("vsam", targetDepth))
-                {
-                    var unmarshaller = VsamDetailAttributesUnmarshaller.Instance;
-                    unmarshalledObject.Vsam = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Format = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
         }
 
 
-        private static DatasetDetailOrgAttributesUnmarshaller _instance = new DatasetDetailOrgAttributesUnmarshaller();        
+        private static PsDetailAttributesUnmarshaller _instance = new PsDetailAttributesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static DatasetDetailOrgAttributesUnmarshaller Instance
+        public static PsDetailAttributesUnmarshaller Instance
         {
             get
             {

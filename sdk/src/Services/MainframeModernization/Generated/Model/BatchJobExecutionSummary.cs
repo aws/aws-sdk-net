@@ -64,7 +64,10 @@ namespace Amazon.MainframeModernization.Model
         }
 
         /// <summary>
-        /// Gets and sets the property BatchJobIdentifier.
+        /// Gets and sets the property BatchJobIdentifier. 
+        /// <para>
+        /// The unique identifier of this batch job.
+        /// </para>
         /// </summary>
         public BatchJobIdentifier BatchJobIdentifier
         {
@@ -170,7 +173,12 @@ namespace Amazon.MainframeModernization.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ReturnCode.
+        /// Gets and sets the property ReturnCode. 
+        /// <para>
+        /// The batch job return code from either the Blu Age or Micro Focus runtime engines.
+        /// For more information, see <a href="https://www.ibm.com/docs/en/was/8.5.5?topic=model-batch-return-codes">Batch
+        /// return codes</a> in the <i>IBM WebSphere Application Server</i> documentation.
+        /// </para>
         /// </summary>
         public string ReturnCode
         {

@@ -36,6 +36,8 @@ namespace Amazon.MainframeModernization.Model
     public partial class DatasetOrgAttributes
     {
         private GdgAttributes _gdg;
+        private PoAttributes _po;
+        private PsAttributes _ps;
         private VsamAttributes _vsam;
 
         /// <summary>
@@ -54,6 +56,42 @@ namespace Amazon.MainframeModernization.Model
         internal bool IsSetGdg()
         {
             return this._gdg != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Po. 
+        /// <para>
+        /// The details of a PO type data set.
+        /// </para>
+        /// </summary>
+        public PoAttributes Po
+        {
+            get { return this._po; }
+            set { this._po = value; }
+        }
+
+        // Check to see if Po property is set
+        internal bool IsSetPo()
+        {
+            return this._po != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Ps. 
+        /// <para>
+        /// The details of a PS type data set.
+        /// </para>
+        /// </summary>
+        public PsAttributes Ps
+        {
+            get { return this._ps; }
+            set { this._ps = value; }
+        }
+
+        // Check to see if Ps property is set
+        internal bool IsSetPs()
+        {
+            return this._ps != null;
         }
 
         /// <summary>
