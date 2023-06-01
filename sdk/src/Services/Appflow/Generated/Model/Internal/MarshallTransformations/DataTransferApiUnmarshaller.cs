@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.Appflow.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for CustomConnectorSourceProperties Object
+    /// Response Unmarshaller for DataTransferApi Object
     /// </summary>  
-    public class CustomConnectorSourcePropertiesUnmarshaller : IUnmarshaller<CustomConnectorSourceProperties, XmlUnmarshallerContext>, IUnmarshaller<CustomConnectorSourceProperties, JsonUnmarshallerContext>
+    public class DataTransferApiUnmarshaller : IUnmarshaller<DataTransferApi, XmlUnmarshallerContext>, IUnmarshaller<DataTransferApi, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        CustomConnectorSourceProperties IUnmarshaller<CustomConnectorSourceProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DataTransferApi IUnmarshaller<DataTransferApi, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public CustomConnectorSourceProperties Unmarshall(JsonUnmarshallerContext context)
+        public DataTransferApi Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            CustomConnectorSourceProperties unmarshalledObject = new CustomConnectorSourceProperties();
+            DataTransferApi unmarshalledObject = new DataTransferApi();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("customProperties", targetDepth))
-                {
-                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
-                    unmarshalledObject.CustomProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dataTransferApi", targetDepth))
-                {
-                    var unmarshaller = DataTransferApiUnmarshaller.Instance;
-                    unmarshalledObject.DataTransferApi = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("entityName", targetDepth))
+                if (context.TestExpression("Name", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EntityName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
         }
 
 
-        private static CustomConnectorSourcePropertiesUnmarshaller _instance = new CustomConnectorSourcePropertiesUnmarshaller();        
+        private static DataTransferApiUnmarshaller _instance = new DataTransferApiUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static CustomConnectorSourcePropertiesUnmarshaller Instance
+        public static DataTransferApiUnmarshaller Instance
         {
             get
             {

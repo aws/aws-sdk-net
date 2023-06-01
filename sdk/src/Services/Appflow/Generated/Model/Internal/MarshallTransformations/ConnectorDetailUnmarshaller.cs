@@ -130,6 +130,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.RegisteredBy = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("supportedDataTransferTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedDataTransferTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

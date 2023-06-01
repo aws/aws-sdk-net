@@ -44,6 +44,7 @@ namespace Amazon.Appflow.Model
         private string _connectorVersion;
         private DateTime? _registeredAt;
         private string _registeredBy;
+        private List<string> _supportedDataTransferTypes = new List<string>();
 
         /// <summary>
         /// Gets and sets the property ApplicationType. 
@@ -248,6 +249,33 @@ namespace Amazon.Appflow.Model
         internal bool IsSetRegisteredBy()
         {
             return this._registeredBy != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedDataTransferTypes. 
+        /// <para>
+        /// The data transfer types that the connector supports.
+        /// </para>
+        ///  <dl> <dt>RECORD</dt> <dd> 
+        /// <para>
+        /// Structured records.
+        /// </para>
+        ///  </dd> <dt>FILE</dt> <dd> 
+        /// <para>
+        /// Files or binary data.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public List<string> SupportedDataTransferTypes
+        {
+            get { return this._supportedDataTransferTypes; }
+            set { this._supportedDataTransferTypes = value; }
+        }
+
+        // Check to see if SupportedDataTransferTypes property is set
+        internal bool IsSetSupportedDataTransferTypes()
+        {
+            return this._supportedDataTransferTypes != null && this._supportedDataTransferTypes.Count > 0; 
         }
 
     }
