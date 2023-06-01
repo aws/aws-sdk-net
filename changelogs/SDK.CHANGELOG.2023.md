@@ -1,3 +1,20 @@
+### 3.7.559.0 (2023-06-01 18:29 UTC)
+* AlexaForBusiness (3.7.100.138)
+	* Alexa for Business has been deprecated and is no longer supported.
+* Appflow (3.7.111.0)
+	* Added ability to select DataTransferApiType for DescribeConnector and CreateFlow requests when using Async supported connectors. Added supportedDataTransferType to DescribeConnector/DescribeConnectors/ListConnector response.
+* CustomerProfiles (3.7.104.0)
+	* This release introduces calculated attribute related APIs.
+* IVS (3.7.103.0)
+	* API Update for IVS Advanced Channel type
+* SageMaker (3.7.133.2)
+	* Amazon Sagemaker Autopilot adds support for Parquet file input to NLP text classification jobs.
+* WAFV2 (3.7.110.1)
+	* Corrected the information for the header order FieldToMatch setting
+* Core 3.7.106.45
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.558.0 (2023-05-31 18:29 UTC)
 * ConfigService (3.7.105.0)
 	* Resource Types Exclusion feature launch by AWS Config
