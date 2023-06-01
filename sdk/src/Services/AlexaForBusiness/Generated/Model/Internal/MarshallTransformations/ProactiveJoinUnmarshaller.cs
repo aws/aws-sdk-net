@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MeetingRoomConfiguration Object
+    /// Response Unmarshaller for ProactiveJoin Object
     /// </summary>  
-    public class MeetingRoomConfigurationUnmarshaller : IUnmarshaller<MeetingRoomConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MeetingRoomConfiguration, JsonUnmarshallerContext>
+    public class ProactiveJoinUnmarshaller : IUnmarshaller<ProactiveJoin, XmlUnmarshallerContext>, IUnmarshaller<ProactiveJoin, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MeetingRoomConfiguration IUnmarshaller<MeetingRoomConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ProactiveJoin IUnmarshaller<ProactiveJoin, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,45 +53,21 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MeetingRoomConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ProactiveJoin Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MeetingRoomConfiguration unmarshalledObject = new MeetingRoomConfiguration();
+            ProactiveJoin unmarshalledObject = new ProactiveJoin();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EndOfMeetingReminder", targetDepth))
-                {
-                    var unmarshaller = EndOfMeetingReminderUnmarshaller.Instance;
-                    unmarshalledObject.EndOfMeetingReminder = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("InstantBooking", targetDepth))
-                {
-                    var unmarshaller = InstantBookingUnmarshaller.Instance;
-                    unmarshalledObject.InstantBooking = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ProactiveJoin", targetDepth))
-                {
-                    var unmarshaller = ProactiveJoinUnmarshaller.Instance;
-                    unmarshalledObject.ProactiveJoin = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RequireCheckIn", targetDepth))
-                {
-                    var unmarshaller = RequireCheckInUnmarshaller.Instance;
-                    unmarshalledObject.RequireCheckIn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RoomUtilizationMetricsEnabled", targetDepth))
+                if (context.TestExpression("EnabledByMotion", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.RoomUtilizationMetricsEnabled = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.EnabledByMotion = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -100,12 +76,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
         }
 
 
-        private static MeetingRoomConfigurationUnmarshaller _instance = new MeetingRoomConfigurationUnmarshaller();        
+        private static ProactiveJoinUnmarshaller _instance = new ProactiveJoinUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MeetingRoomConfigurationUnmarshaller Instance
+        public static ProactiveJoinUnmarshaller Instance
         {
             get
             {

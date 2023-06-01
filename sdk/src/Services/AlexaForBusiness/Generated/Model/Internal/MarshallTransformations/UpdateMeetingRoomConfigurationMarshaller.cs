@@ -67,6 +67,17 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetProactiveJoin())
+            {
+                context.Writer.WritePropertyName("ProactiveJoin");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = UpdateProactiveJoinMarshaller.Instance;
+                marshaller.Marshall(requestObject.ProactiveJoin, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetRequireCheckIn())
             {
                 context.Writer.WritePropertyName("RequireCheckIn");
