@@ -29,17 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// Container for the parameters to the ListProfileObjects operation.
-    /// Returns a list of objects associated with a profile of a given ProfileObjectType.
+    /// Container for the parameters to the ListCalculatedAttributeDefinitions operation.
+    /// Lists calculated attribute definitions for Customer Profiles
     /// </summary>
-    public partial class ListProfileObjectsRequest : AmazonCustomerProfilesRequest
+    public partial class ListCalculatedAttributeDefinitionsRequest : AmazonCustomerProfilesRequest
     {
         private string _domainName;
         private int? _maxResults;
         private string _nextToken;
-        private ObjectFilter _objectFilter;
-        private string _objectTypeName;
-        private string _profileId;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -63,7 +60,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of objects returned per page.
+        /// The maximum number of calculated attribute definitions returned per page.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
@@ -82,7 +79,7 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The pagination token from the previous call to ListProfileObjects.
+        /// The pagination token from the previous call to ListCalculatedAttributeDefinitions.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -96,63 +93,6 @@ namespace Amazon.CustomerProfiles.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectFilter. 
-        /// <para>
-        /// Applies a filter to the response to include profile objects with the specified index
-        /// values.
-        /// </para>
-        /// </summary>
-        public ObjectFilter ObjectFilter
-        {
-            get { return this._objectFilter; }
-            set { this._objectFilter = value; }
-        }
-
-        // Check to see if ObjectFilter property is set
-        internal bool IsSetObjectFilter()
-        {
-            return this._objectFilter != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ObjectTypeName. 
-        /// <para>
-        /// The name of the profile object type.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
-        public string ObjectTypeName
-        {
-            get { return this._objectTypeName; }
-            set { this._objectTypeName = value; }
-        }
-
-        // Check to see if ObjectTypeName property is set
-        internal bool IsSetObjectTypeName()
-        {
-            return this._objectTypeName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ProfileId. 
-        /// <para>
-        /// The unique identifier of a customer profile.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string ProfileId
-        {
-            get { return this._profileId; }
-            set { this._profileId = value; }
-        }
-
-        // Check to see if ProfileId property is set
-        internal bool IsSetProfileId()
-        {
-            return this._profileId != null;
         }
 
     }

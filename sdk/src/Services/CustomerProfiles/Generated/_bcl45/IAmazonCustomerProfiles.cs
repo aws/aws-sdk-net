@@ -117,6 +117,74 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateCalculatedAttributeDefinition
+
+
+        /// <summary>
+        /// Creates a new calculated attribute definition. After creation, new object data ingested
+        /// into Customer Profiles will be included in the calculated attribute, which can be
+        /// retrieved for a profile using the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html">GetCalculatedAttributeForProfile</a>
+        /// API. Defining a calculated attribute makes it available for all profiles within a
+        /// domain. Each calculated attribute can only reference one <code>ObjectType</code> and
+        /// at most, two fields from that <code>ObjectType</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCalculatedAttributeDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition">REST API Reference for CreateCalculatedAttributeDefinition Operation</seealso>
+        CreateCalculatedAttributeDefinitionResponse CreateCalculatedAttributeDefinition(CreateCalculatedAttributeDefinitionRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new calculated attribute definition. After creation, new object data ingested
+        /// into Customer Profiles will be included in the calculated attribute, which can be
+        /// retrieved for a profile using the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html">GetCalculatedAttributeForProfile</a>
+        /// API. Defining a calculated attribute makes it available for all profiles within a
+        /// domain. Each calculated attribute can only reference one <code>ObjectType</code> and
+        /// at most, two fields from that <code>ObjectType</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCalculatedAttributeDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition">REST API Reference for CreateCalculatedAttributeDefinition Operation</seealso>
+        Task<CreateCalculatedAttributeDefinitionResponse> CreateCalculatedAttributeDefinitionAsync(CreateCalculatedAttributeDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  CreateDomain
 
 
@@ -342,6 +410,70 @@ namespace Amazon.CustomerProfiles
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
         Task<CreateProfileResponse> CreateProfileAsync(CreateProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteCalculatedAttributeDefinition
+
+
+        /// <summary>
+        /// Deletes an existing calculated attribute definition. Note that deleting a default
+        /// calculated attribute is possible, however once deleted, you will be unable to undo
+        /// that action and will need to recreate it on your own using the CreateCalculatedAttributeDefinition
+        /// API if you want it back.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCalculatedAttributeDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition">REST API Reference for DeleteCalculatedAttributeDefinition Operation</seealso>
+        DeleteCalculatedAttributeDefinitionResponse DeleteCalculatedAttributeDefinition(DeleteCalculatedAttributeDefinitionRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an existing calculated attribute definition. Note that deleting a default
+        /// calculated attribute is possible, however once deleted, you will be unable to undo
+        /// that action and will need to recreate it on your own using the CreateCalculatedAttributeDefinition
+        /// API if you want it back.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCalculatedAttributeDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition">REST API Reference for DeleteCalculatedAttributeDefinition Operation</seealso>
+        Task<DeleteCalculatedAttributeDefinitionResponse> DeleteCalculatedAttributeDefinitionAsync(DeleteCalculatedAttributeDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -854,6 +986,122 @@ namespace Amazon.CustomerProfiles
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetAutoMergingPreview">REST API Reference for GetAutoMergingPreview Operation</seealso>
         Task<GetAutoMergingPreviewResponse> GetAutoMergingPreviewAsync(GetAutoMergingPreviewRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCalculatedAttributeDefinition
+
+
+        /// <summary>
+        /// Provides more information on a calculated attribute definition for Customer Profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculatedAttributeDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition">REST API Reference for GetCalculatedAttributeDefinition Operation</seealso>
+        GetCalculatedAttributeDefinitionResponse GetCalculatedAttributeDefinition(GetCalculatedAttributeDefinitionRequest request);
+
+
+
+        /// <summary>
+        /// Provides more information on a calculated attribute definition for Customer Profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculatedAttributeDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition">REST API Reference for GetCalculatedAttributeDefinition Operation</seealso>
+        Task<GetCalculatedAttributeDefinitionResponse> GetCalculatedAttributeDefinitionAsync(GetCalculatedAttributeDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  GetCalculatedAttributeForProfile
+
+
+        /// <summary>
+        /// Retrieve a calculated attribute for a customer profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculatedAttributeForProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetCalculatedAttributeForProfile service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile">REST API Reference for GetCalculatedAttributeForProfile Operation</seealso>
+        GetCalculatedAttributeForProfileResponse GetCalculatedAttributeForProfile(GetCalculatedAttributeForProfileRequest request);
+
+
+
+        /// <summary>
+        /// Retrieve a calculated attribute for a customer profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculatedAttributeForProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCalculatedAttributeForProfile service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile">REST API Reference for GetCalculatedAttributeForProfile Operation</seealso>
+        Task<GetCalculatedAttributeForProfileResponse> GetCalculatedAttributeForProfileAsync(GetCalculatedAttributeForProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1536,6 +1784,122 @@ namespace Amazon.CustomerProfiles
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListAccountIntegrations">REST API Reference for ListAccountIntegrations Operation</seealso>
         Task<ListAccountIntegrationsResponse> ListAccountIntegrationsAsync(ListAccountIntegrationsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCalculatedAttributeDefinitions
+
+
+        /// <summary>
+        /// Lists calculated attribute definitions for Customer Profiles
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculatedAttributeDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListCalculatedAttributeDefinitions service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions">REST API Reference for ListCalculatedAttributeDefinitions Operation</seealso>
+        ListCalculatedAttributeDefinitionsResponse ListCalculatedAttributeDefinitions(ListCalculatedAttributeDefinitionsRequest request);
+
+
+
+        /// <summary>
+        /// Lists calculated attribute definitions for Customer Profiles
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculatedAttributeDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCalculatedAttributeDefinitions service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions">REST API Reference for ListCalculatedAttributeDefinitions Operation</seealso>
+        Task<ListCalculatedAttributeDefinitionsResponse> ListCalculatedAttributeDefinitionsAsync(ListCalculatedAttributeDefinitionsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListCalculatedAttributesForProfile
+
+
+        /// <summary>
+        /// Retrieve a list of calculated attributes for a customer profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculatedAttributesForProfile service method.</param>
+        /// 
+        /// <returns>The response from the ListCalculatedAttributesForProfile service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile">REST API Reference for ListCalculatedAttributesForProfile Operation</seealso>
+        ListCalculatedAttributesForProfileResponse ListCalculatedAttributesForProfile(ListCalculatedAttributesForProfileRequest request);
+
+
+
+        /// <summary>
+        /// Retrieve a list of calculated attributes for a customer profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculatedAttributesForProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCalculatedAttributesForProfile service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile">REST API Reference for ListCalculatedAttributesForProfile Operation</seealso>
+        Task<ListCalculatedAttributesForProfileResponse> ListCalculatedAttributesForProfileAsync(ListCalculatedAttributesForProfileRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2600,6 +2964,68 @@ namespace Amazon.CustomerProfiles
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateCalculatedAttributeDefinition
+
+
+        /// <summary>
+        /// Updates an existing calculated attribute definition. When updating the Conditions,
+        /// note that increasing the date range of a calculated attribute will not trigger inclusion
+        /// of historical data greater than the current date range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCalculatedAttributeDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition">REST API Reference for UpdateCalculatedAttributeDefinition Operation</seealso>
+        UpdateCalculatedAttributeDefinitionResponse UpdateCalculatedAttributeDefinition(UpdateCalculatedAttributeDefinitionRequest request);
+
+
+
+        /// <summary>
+        /// Updates an existing calculated attribute definition. When updating the Conditions,
+        /// note that increasing the date range of a calculated attribute will not trigger inclusion
+        /// of historical data greater than the current date range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCalculatedAttributeDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition">REST API Reference for UpdateCalculatedAttributeDefinition Operation</seealso>
+        Task<UpdateCalculatedAttributeDefinitionResponse> UpdateCalculatedAttributeDefinitionAsync(UpdateCalculatedAttributeDefinitionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

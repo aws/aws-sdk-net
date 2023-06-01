@@ -330,6 +330,80 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateCalculatedAttributeDefinition
+
+        /// <summary>
+        /// Creates a new calculated attribute definition. After creation, new object data ingested
+        /// into Customer Profiles will be included in the calculated attribute, which can be
+        /// retrieved for a profile using the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html">GetCalculatedAttributeForProfile</a>
+        /// API. Defining a calculated attribute makes it available for all profiles within a
+        /// domain. Each calculated attribute can only reference one <code>ObjectType</code> and
+        /// at most, two fields from that <code>ObjectType</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCalculatedAttributeDefinition service method.</param>
+        /// 
+        /// <returns>The response from the CreateCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition">REST API Reference for CreateCalculatedAttributeDefinition Operation</seealso>
+        public virtual CreateCalculatedAttributeDefinitionResponse CreateCalculatedAttributeDefinition(CreateCalculatedAttributeDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCalculatedAttributeDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCalculatedAttributeDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCalculatedAttributeDefinition operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCalculatedAttributeDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition">REST API Reference for CreateCalculatedAttributeDefinition Operation</seealso>
+        public virtual IAsyncResult BeginCreateCalculatedAttributeDefinition(CreateCalculatedAttributeDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCalculatedAttributeDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCalculatedAttributeDefinition.</param>
+        /// 
+        /// <returns>Returns a  CreateCalculatedAttributeDefinitionResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition">REST API Reference for CreateCalculatedAttributeDefinition Operation</seealso>
+        public virtual CreateCalculatedAttributeDefinitionResponse EndCreateCalculatedAttributeDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateCalculatedAttributeDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateDomain
 
         /// <summary>
@@ -560,6 +634,78 @@ namespace Amazon.CustomerProfiles
         public virtual CreateProfileResponse EndCreateProfile(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCalculatedAttributeDefinition
+
+        /// <summary>
+        /// Deletes an existing calculated attribute definition. Note that deleting a default
+        /// calculated attribute is possible, however once deleted, you will be unable to undo
+        /// that action and will need to recreate it on your own using the CreateCalculatedAttributeDefinition
+        /// API if you want it back.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCalculatedAttributeDefinition service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition">REST API Reference for DeleteCalculatedAttributeDefinition Operation</seealso>
+        public virtual DeleteCalculatedAttributeDefinitionResponse DeleteCalculatedAttributeDefinition(DeleteCalculatedAttributeDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCalculatedAttributeDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCalculatedAttributeDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCalculatedAttributeDefinition operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCalculatedAttributeDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition">REST API Reference for DeleteCalculatedAttributeDefinition Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCalculatedAttributeDefinition(DeleteCalculatedAttributeDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCalculatedAttributeDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCalculatedAttributeDefinition.</param>
+        /// 
+        /// <returns>Returns a  DeleteCalculatedAttributeDefinitionResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition">REST API Reference for DeleteCalculatedAttributeDefinition Operation</seealso>
+        public virtual DeleteCalculatedAttributeDefinitionResponse EndDeleteCalculatedAttributeDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCalculatedAttributeDefinitionResponse>(asyncResult);
         }
 
         #endregion
@@ -1136,6 +1282,144 @@ namespace Amazon.CustomerProfiles
         public virtual GetAutoMergingPreviewResponse EndGetAutoMergingPreview(IAsyncResult asyncResult)
         {
             return EndInvoke<GetAutoMergingPreviewResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCalculatedAttributeDefinition
+
+        /// <summary>
+        /// Provides more information on a calculated attribute definition for Customer Profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculatedAttributeDefinition service method.</param>
+        /// 
+        /// <returns>The response from the GetCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition">REST API Reference for GetCalculatedAttributeDefinition Operation</seealso>
+        public virtual GetCalculatedAttributeDefinitionResponse GetCalculatedAttributeDefinition(GetCalculatedAttributeDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetCalculatedAttributeDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCalculatedAttributeDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculatedAttributeDefinition operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCalculatedAttributeDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition">REST API Reference for GetCalculatedAttributeDefinition Operation</seealso>
+        public virtual IAsyncResult BeginGetCalculatedAttributeDefinition(GetCalculatedAttributeDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCalculatedAttributeDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCalculatedAttributeDefinition.</param>
+        /// 
+        /// <returns>Returns a  GetCalculatedAttributeDefinitionResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition">REST API Reference for GetCalculatedAttributeDefinition Operation</seealso>
+        public virtual GetCalculatedAttributeDefinitionResponse EndGetCalculatedAttributeDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCalculatedAttributeDefinitionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetCalculatedAttributeForProfile
+
+        /// <summary>
+        /// Retrieve a calculated attribute for a customer profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculatedAttributeForProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetCalculatedAttributeForProfile service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile">REST API Reference for GetCalculatedAttributeForProfile Operation</seealso>
+        public virtual GetCalculatedAttributeForProfileResponse GetCalculatedAttributeForProfile(GetCalculatedAttributeForProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCalculatedAttributeForProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetCalculatedAttributeForProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCalculatedAttributeForProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculatedAttributeForProfile operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCalculatedAttributeForProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile">REST API Reference for GetCalculatedAttributeForProfile Operation</seealso>
+        public virtual IAsyncResult BeginGetCalculatedAttributeForProfile(GetCalculatedAttributeForProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCalculatedAttributeForProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCalculatedAttributeForProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCalculatedAttributeForProfile.</param>
+        /// 
+        /// <returns>Returns a  GetCalculatedAttributeForProfileResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile">REST API Reference for GetCalculatedAttributeForProfile Operation</seealso>
+        public virtual GetCalculatedAttributeForProfileResponse EndGetCalculatedAttributeForProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCalculatedAttributeForProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -1837,6 +2121,144 @@ namespace Amazon.CustomerProfiles
         public virtual ListAccountIntegrationsResponse EndListAccountIntegrations(IAsyncResult asyncResult)
         {
             return EndInvoke<ListAccountIntegrationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCalculatedAttributeDefinitions
+
+        /// <summary>
+        /// Lists calculated attribute definitions for Customer Profiles
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculatedAttributeDefinitions service method.</param>
+        /// 
+        /// <returns>The response from the ListCalculatedAttributeDefinitions service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions">REST API Reference for ListCalculatedAttributeDefinitions Operation</seealso>
+        public virtual ListCalculatedAttributeDefinitionsResponse ListCalculatedAttributeDefinitions(ListCalculatedAttributeDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCalculatedAttributeDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCalculatedAttributeDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCalculatedAttributeDefinitionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCalculatedAttributeDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculatedAttributeDefinitions operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCalculatedAttributeDefinitions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions">REST API Reference for ListCalculatedAttributeDefinitions Operation</seealso>
+        public virtual IAsyncResult BeginListCalculatedAttributeDefinitions(ListCalculatedAttributeDefinitionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCalculatedAttributeDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCalculatedAttributeDefinitionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCalculatedAttributeDefinitions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCalculatedAttributeDefinitions.</param>
+        /// 
+        /// <returns>Returns a  ListCalculatedAttributeDefinitionsResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions">REST API Reference for ListCalculatedAttributeDefinitions Operation</seealso>
+        public virtual ListCalculatedAttributeDefinitionsResponse EndListCalculatedAttributeDefinitions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCalculatedAttributeDefinitionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCalculatedAttributesForProfile
+
+        /// <summary>
+        /// Retrieve a list of calculated attributes for a customer profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculatedAttributesForProfile service method.</param>
+        /// 
+        /// <returns>The response from the ListCalculatedAttributesForProfile service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile">REST API Reference for ListCalculatedAttributesForProfile Operation</seealso>
+        public virtual ListCalculatedAttributesForProfileResponse ListCalculatedAttributesForProfile(ListCalculatedAttributesForProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCalculatedAttributesForProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCalculatedAttributesForProfileResponseUnmarshaller.Instance;
+
+            return Invoke<ListCalculatedAttributesForProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCalculatedAttributesForProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculatedAttributesForProfile operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCalculatedAttributesForProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile">REST API Reference for ListCalculatedAttributesForProfile Operation</seealso>
+        public virtual IAsyncResult BeginListCalculatedAttributesForProfile(ListCalculatedAttributesForProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCalculatedAttributesForProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCalculatedAttributesForProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCalculatedAttributesForProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCalculatedAttributesForProfile.</param>
+        /// 
+        /// <returns>Returns a  ListCalculatedAttributesForProfileResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile">REST API Reference for ListCalculatedAttributesForProfile Operation</seealso>
+        public virtual ListCalculatedAttributesForProfileResponse EndListCalculatedAttributesForProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCalculatedAttributesForProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -2969,6 +3391,77 @@ namespace Amazon.CustomerProfiles
         public virtual UntagResourceResponse EndUntagResource(IAsyncResult asyncResult)
         {
             return EndInvoke<UntagResourceResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateCalculatedAttributeDefinition
+
+        /// <summary>
+        /// Updates an existing calculated attribute definition. When updating the Conditions,
+        /// note that increasing the date range of a calculated attribute will not trigger inclusion
+        /// of historical data greater than the current date range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCalculatedAttributeDefinition service method.</param>
+        /// 
+        /// <returns>The response from the UpdateCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition">REST API Reference for UpdateCalculatedAttributeDefinition Operation</seealso>
+        public virtual UpdateCalculatedAttributeDefinitionResponse UpdateCalculatedAttributeDefinition(UpdateCalculatedAttributeDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCalculatedAttributeDefinitionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateCalculatedAttributeDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCalculatedAttributeDefinition operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateCalculatedAttributeDefinition
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition">REST API Reference for UpdateCalculatedAttributeDefinition Operation</seealso>
+        public virtual IAsyncResult BeginUpdateCalculatedAttributeDefinition(UpdateCalculatedAttributeDefinitionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateCalculatedAttributeDefinition operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateCalculatedAttributeDefinition.</param>
+        /// 
+        /// <returns>Returns a  UpdateCalculatedAttributeDefinitionResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition">REST API Reference for UpdateCalculatedAttributeDefinition Operation</seealso>
+        public virtual UpdateCalculatedAttributeDefinitionResponse EndUpdateCalculatedAttributeDefinition(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateCalculatedAttributeDefinitionResponse>(asyncResult);
         }
 
         #endregion

@@ -313,6 +313,60 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateCalculatedAttributeDefinition
+
+        internal virtual CreateCalculatedAttributeDefinitionResponse CreateCalculatedAttributeDefinition(CreateCalculatedAttributeDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCalculatedAttributeDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new calculated attribute definition. After creation, new object data ingested
+        /// into Customer Profiles will be included in the calculated attribute, which can be
+        /// retrieved for a profile using the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html">GetCalculatedAttributeForProfile</a>
+        /// API. Defining a calculated attribute makes it available for all profiles within a
+        /// domain. Each calculated attribute can only reference one <code>ObjectType</code> and
+        /// at most, two fields from that <code>ObjectType</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCalculatedAttributeDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateCalculatedAttributeDefinition">REST API Reference for CreateCalculatedAttributeDefinition Operation</seealso>
+        public virtual Task<CreateCalculatedAttributeDefinitionResponse> CreateCalculatedAttributeDefinitionAsync(CreateCalculatedAttributeDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCalculatedAttributeDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateDomain
 
         internal virtual CreateDomainResponse CreateDomain(CreateDomainRequest request)
@@ -483,6 +537,58 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateProfileResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCalculatedAttributeDefinition
+
+        internal virtual DeleteCalculatedAttributeDefinitionResponse DeleteCalculatedAttributeDefinition(DeleteCalculatedAttributeDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCalculatedAttributeDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing calculated attribute definition. Note that deleting a default
+        /// calculated attribute is possible, however once deleted, you will be unable to undo
+        /// that action and will need to recreate it on your own using the CreateCalculatedAttributeDefinition
+        /// API if you want it back.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCalculatedAttributeDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteCalculatedAttributeDefinition">REST API Reference for DeleteCalculatedAttributeDefinition Operation</seealso>
+        public virtual Task<DeleteCalculatedAttributeDefinitionResponse> DeleteCalculatedAttributeDefinitionAsync(DeleteCalculatedAttributeDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCalculatedAttributeDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -899,6 +1005,104 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = GetAutoMergingPreviewResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetAutoMergingPreviewResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCalculatedAttributeDefinition
+
+        internal virtual GetCalculatedAttributeDefinitionResponse GetCalculatedAttributeDefinition(GetCalculatedAttributeDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<GetCalculatedAttributeDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Provides more information on a calculated attribute definition for Customer Profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculatedAttributeDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeDefinition">REST API Reference for GetCalculatedAttributeDefinition Operation</seealso>
+        public virtual Task<GetCalculatedAttributeDefinitionResponse> GetCalculatedAttributeDefinitionAsync(GetCalculatedAttributeDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCalculatedAttributeDefinitionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetCalculatedAttributeForProfile
+
+        internal virtual GetCalculatedAttributeForProfileResponse GetCalculatedAttributeForProfile(GetCalculatedAttributeForProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCalculatedAttributeForProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetCalculatedAttributeForProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve a calculated attribute for a customer profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCalculatedAttributeForProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCalculatedAttributeForProfile service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetCalculatedAttributeForProfile">REST API Reference for GetCalculatedAttributeForProfile Operation</seealso>
+        public virtual Task<GetCalculatedAttributeForProfileResponse> GetCalculatedAttributeForProfileAsync(GetCalculatedAttributeForProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCalculatedAttributeForProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCalculatedAttributeForProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetCalculatedAttributeForProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1420,6 +1624,104 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = ListAccountIntegrationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAccountIntegrationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCalculatedAttributeDefinitions
+
+        internal virtual ListCalculatedAttributeDefinitionsResponse ListCalculatedAttributeDefinitions(ListCalculatedAttributeDefinitionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCalculatedAttributeDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCalculatedAttributeDefinitionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCalculatedAttributeDefinitionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists calculated attribute definitions for Customer Profiles
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculatedAttributeDefinitions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCalculatedAttributeDefinitions service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributeDefinitions">REST API Reference for ListCalculatedAttributeDefinitions Operation</seealso>
+        public virtual Task<ListCalculatedAttributeDefinitionsResponse> ListCalculatedAttributeDefinitionsAsync(ListCalculatedAttributeDefinitionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCalculatedAttributeDefinitionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCalculatedAttributeDefinitionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCalculatedAttributeDefinitionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCalculatedAttributesForProfile
+
+        internal virtual ListCalculatedAttributesForProfileResponse ListCalculatedAttributesForProfile(ListCalculatedAttributesForProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCalculatedAttributesForProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCalculatedAttributesForProfileResponseUnmarshaller.Instance;
+
+            return Invoke<ListCalculatedAttributesForProfileResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieve a list of calculated attributes for a customer profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCalculatedAttributesForProfile service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCalculatedAttributesForProfile service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListCalculatedAttributesForProfile">REST API Reference for ListCalculatedAttributesForProfile Operation</seealso>
+        public virtual Task<ListCalculatedAttributesForProfileResponse> ListCalculatedAttributesForProfileAsync(ListCalculatedAttributesForProfileRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCalculatedAttributesForProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCalculatedAttributesForProfileResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListCalculatedAttributesForProfileResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2252,6 +2554,57 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = UntagResourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UntagResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateCalculatedAttributeDefinition
+
+        internal virtual UpdateCalculatedAttributeDefinitionResponse UpdateCalculatedAttributeDefinition(UpdateCalculatedAttributeDefinitionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateCalculatedAttributeDefinitionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing calculated attribute definition. When updating the Conditions,
+        /// note that increasing the date range of a calculated attribute will not trigger inclusion
+        /// of historical data greater than the current date range.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateCalculatedAttributeDefinition service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateCalculatedAttributeDefinition service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/UpdateCalculatedAttributeDefinition">REST API Reference for UpdateCalculatedAttributeDefinition Operation</seealso>
+        public virtual Task<UpdateCalculatedAttributeDefinitionResponse> UpdateCalculatedAttributeDefinitionAsync(UpdateCalculatedAttributeDefinitionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateCalculatedAttributeDefinitionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateCalculatedAttributeDefinitionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateCalculatedAttributeDefinitionResponse>(request, options, cancellationToken);
         }
 
         #endregion
