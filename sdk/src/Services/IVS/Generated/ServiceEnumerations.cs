@@ -81,6 +81,14 @@ namespace Amazon.IVS
     {
 
         /// <summary>
+        /// Constant ADVANCED_HD for ChannelType
+        /// </summary>
+        public static readonly ChannelType ADVANCED_HD = new ChannelType("ADVANCED_HD");
+        /// <summary>
+        /// Constant ADVANCED_SD for ChannelType
+        /// </summary>
+        public static readonly ChannelType ADVANCED_SD = new ChannelType("ADVANCED_SD");
+        /// <summary>
         /// Constant BASIC for ChannelType
         /// </summary>
         public static readonly ChannelType BASIC = new ChannelType("BASIC");
@@ -326,6 +334,56 @@ namespace Amazon.IVS
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator StreamState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type TranscodePreset.
+    /// </summary>
+    public class TranscodePreset : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CONSTRAINED_BANDWIDTH_DELIVERY for TranscodePreset
+        /// </summary>
+        public static readonly TranscodePreset CONSTRAINED_BANDWIDTH_DELIVERY = new TranscodePreset("CONSTRAINED_BANDWIDTH_DELIVERY");
+        /// <summary>
+        /// Constant HIGHER_BANDWIDTH_DELIVERY for TranscodePreset
+        /// </summary>
+        public static readonly TranscodePreset HIGHER_BANDWIDTH_DELIVERY = new TranscodePreset("HIGHER_BANDWIDTH_DELIVERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public TranscodePreset(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static TranscodePreset FindValue(string value)
+        {
+            return FindValue<TranscodePreset>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator TranscodePreset(string value)
         {
             return FindValue(value);
         }

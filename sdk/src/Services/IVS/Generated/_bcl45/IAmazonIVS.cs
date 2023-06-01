@@ -1852,8 +1852,9 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Updates a channel's configuration. This does not affect an ongoing stream of this
-        /// channel. You must stop and restart the stream for the changes to take effect.
+        /// Updates a channel's configuration. Live channels cannot be updated. You must stop
+        /// the ongoing stream, update the channel, and restart the stream for the changes to
+        /// take effect.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
         /// 
@@ -1879,8 +1880,9 @@ namespace Amazon.IVS
 
 
         /// <summary>
-        /// Updates a channel's configuration. This does not affect an ongoing stream of this
-        /// channel. You must stop and restart the stream for the changes to take effect.
+        /// Updates a channel's configuration. Live channels cannot be updated. You must stop
+        /// the ongoing stream, update the channel, and restart the stream for the changes to
+        /// take effect.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateChannel service method.</param>
         /// <param name="cancellationToken">

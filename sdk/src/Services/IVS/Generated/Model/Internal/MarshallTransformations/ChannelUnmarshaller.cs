@@ -106,6 +106,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.PlaybackUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("preset", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Preset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("recordingConfigurationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
