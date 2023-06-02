@@ -483,7 +483,10 @@ namespace Amazon.Athena
         #region  CancelCapacityReservation
 
         /// <summary>
-        /// Cancels the capacity reservation with the specified name.
+        /// Cancels the capacity reservation with the specified name. Cancelled reservations remain
+        /// in your account and will be deleted 45 days after cancellation. During the 45 days,
+        /// you cannot re-purpose or reuse a reservation that has been cancelled, but you can
+        /// refer to its tags and view it for historical reference.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservation service method.</param>
         /// 
@@ -985,6 +988,71 @@ namespace Amazon.Athena
         public virtual CreateWorkGroupResponse EndCreateWorkGroup(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateWorkGroupResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteCapacityReservation
+
+        /// <summary>
+        /// Deletes a cancelled capacity reservation. A reservation must be cancelled before it
+        /// can be deleted. A deleted reservation is immediately removed from your account and
+        /// can no longer be referenced, including by its ARN. A deleted reservation cannot be
+        /// called by <code>GetCapacityReservation</code>, and deleted reservations do not appear
+        /// in the output of <code>ListCapacityReservations</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation">REST API Reference for DeleteCapacityReservation Operation</seealso>
+        public virtual DeleteCapacityReservationResponse DeleteCapacityReservation(DeleteCapacityReservationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityReservationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCapacityReservationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityReservation operation on AmazonAthenaClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCapacityReservation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation">REST API Reference for DeleteCapacityReservation Operation</seealso>
+        public virtual IAsyncResult BeginDeleteCapacityReservation(DeleteCapacityReservationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityReservationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCapacityReservation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCapacityReservation.</param>
+        /// 
+        /// <returns>Returns a  DeleteCapacityReservationResult from Athena.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation">REST API Reference for DeleteCapacityReservation Operation</seealso>
+        public virtual DeleteCapacityReservationResponse EndDeleteCapacityReservation(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteCapacityReservationResponse>(asyncResult);
         }
 
         #endregion

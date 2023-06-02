@@ -479,7 +479,10 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Cancels the capacity reservation with the specified name.
+        /// Cancels the capacity reservation with the specified name. Cancelled reservations remain
+        /// in your account and will be deleted 45 days after cancellation. During the 45 days,
+        /// you cannot re-purpose or reuse a reservation that has been cancelled, but you can
+        /// refer to its tags and view it for historical reference.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservation service method.</param>
         /// 
@@ -503,7 +506,10 @@ namespace Amazon.Athena
 
 
         /// <summary>
-        /// Cancels the capacity reservation with the specified name.
+        /// Cancels the capacity reservation with the specified name. Cancelled reservations remain
+        /// in your account and will be deleted 45 days after cancellation. During the 45 days,
+        /// you cannot re-purpose or reuse a reservation that has been cancelled, but you can
+        /// refer to its tags and view it for historical reference.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelCapacityReservation service method.</param>
         /// <param name="cancellationToken">
@@ -953,6 +959,69 @@ namespace Amazon.Athena
             options.ResponseUnmarshaller = CreateWorkGroupResponseUnmarshaller.Instance;
             
             return InvokeAsync<CreateWorkGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCapacityReservation
+
+
+        /// <summary>
+        /// Deletes a cancelled capacity reservation. A reservation must be cancelled before it
+        /// can be deleted. A deleted reservation is immediately removed from your account and
+        /// can no longer be referenced, including by its ARN. A deleted reservation cannot be
+        /// called by <code>GetCapacityReservation</code>, and deleted reservations do not appear
+        /// in the output of <code>ListCapacityReservations</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityReservation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation">REST API Reference for DeleteCapacityReservation Operation</seealso>
+        public virtual DeleteCapacityReservationResponse DeleteCapacityReservation(DeleteCapacityReservationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityReservationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCapacityReservationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes a cancelled capacity reservation. A reservation must be cancelled before it
+        /// can be deleted. A deleted reservation is immediately removed from your account and
+        /// can no longer be referenced, including by its ARN. A deleted reservation cannot be
+        /// called by <code>GetCapacityReservation</code>, and deleted reservations do not appear
+        /// in the output of <code>ListCapacityReservations</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCapacityReservation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCapacityReservation service method, as returned by Athena.</returns>
+        /// <exception cref="Amazon.Athena.Model.InternalServerException">
+        /// Indicates a platform issue, which may be due to a transient condition or outage.
+        /// </exception>
+        /// <exception cref="Amazon.Athena.Model.InvalidRequestException">
+        /// Indicates that something is wrong with the input to the request. For example, a required
+        /// parameter may be missing or out of range.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/DeleteCapacityReservation">REST API Reference for DeleteCapacityReservation Operation</seealso>
+        public virtual Task<DeleteCapacityReservationResponse> DeleteCapacityReservationAsync(DeleteCapacityReservationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCapacityReservationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCapacityReservationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DeleteCapacityReservationResponse>(request, options, cancellationToken);
         }
 
         #endregion

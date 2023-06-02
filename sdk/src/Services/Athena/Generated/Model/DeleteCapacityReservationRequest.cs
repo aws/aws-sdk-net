@@ -29,20 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// Container for the parameters to the CancelCapacityReservation operation.
-    /// Cancels the capacity reservation with the specified name. Cancelled reservations remain
-    /// in your account and will be deleted 45 days after cancellation. During the 45 days,
-    /// you cannot re-purpose or reuse a reservation that has been cancelled, but you can
-    /// refer to its tags and view it for historical reference.
+    /// Container for the parameters to the DeleteCapacityReservation operation.
+    /// Deletes a cancelled capacity reservation. A reservation must be cancelled before it
+    /// can be deleted. A deleted reservation is immediately removed from your account and
+    /// can no longer be referenced, including by its ARN. A deleted reservation cannot be
+    /// called by <code>GetCapacityReservation</code>, and deleted reservations do not appear
+    /// in the output of <code>ListCapacityReservations</code>.
     /// </summary>
-    public partial class CancelCapacityReservationRequest : AmazonAthenaRequest
+    public partial class DeleteCapacityReservationRequest : AmazonAthenaRequest
     {
         private string _name;
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the capacity reservation to cancel.
+        /// The name of the capacity reservation to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
