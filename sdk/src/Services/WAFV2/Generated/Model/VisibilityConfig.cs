@@ -40,8 +40,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property CloudWatchMetricsEnabled. 
         /// <para>
-        /// A boolean indicating whether the associated resource sends metrics to Amazon CloudWatch.
-        /// For the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
+        /// Indicates whether the associated resource sends metrics to Amazon CloudWatch. For
+        /// the list of available metrics, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/monitoring-cloudwatch.html#waf-metrics">WAF
         /// Metrics</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         ///  
@@ -91,8 +91,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property SampledRequestsEnabled. 
         /// <para>
-        /// A boolean indicating whether WAF should store a sampling of the web requests that
-        /// match the rules. You can view the sampled requests through the WAF console. 
+        /// Indicates whether WAF should store a sampling of the web requests that match the rules.
+        /// You can view the sampled requests through the WAF console. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
