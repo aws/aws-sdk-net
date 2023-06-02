@@ -1,3 +1,8 @@
+### 3.7.560.0 (2023-06-02 13:59 UTC)
+* Core 3.7.107.0
+	* Move UpdateSecurityProtocol from HttpWebRequestFactory to AmazonServiceClient. Small performance tweaks using the HttpClient with .NET Core. Updated UriEncode to match the specification to encode all characters except unreserved characters per RFC 3986
+	* All services packages updated to require new Core
+
 ### 3.7.559.0 (2023-06-01 18:29 UTC)
 * AlexaForBusiness (3.7.100.138)
 	* Alexa for Business has been deprecated and is no longer supported.
