@@ -1,3 +1,16 @@
+### 3.7.561.0 (2023-06-02 18:22 UTC)
+* Athena (3.7.110.0)
+	* This release introduces the DeleteCapacityReservation API and the ability to manage capacity reservations using CloudFormation
+* CloudTrail (3.7.106.0)
+	* This feature allows users to start and stop event ingestion on a CloudTrail Lake event data store.
+* SageMaker (3.7.134.0)
+	* This release adds Selective Execution feature that allows SageMaker Pipelines users to run selected steps in a pipeline.
+* WAFV2 (3.7.111.0)
+	* Added APIs to describe managed products. The APIs retrieve information about rule groups that are managed by AWS and by AWS Marketplace sellers.
+* Core 3.7.107.1
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.560.0 (2023-06-02 13:59 UTC)
 * Core 3.7.107.0
 	* Move UpdateSecurityProtocol from HttpWebRequestFactory to AmazonServiceClient. Small performance tweaks using the HttpClient with .NET Core. Updated UriEncode to match the specification to encode all characters except unreserved characters per RFC 3986
