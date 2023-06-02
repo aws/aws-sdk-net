@@ -123,6 +123,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetSelectiveExecutionConfig())
+                {
+                    context.Writer.WritePropertyName("SelectiveExecutionConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SelectiveExecutionConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.SelectiveExecutionConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

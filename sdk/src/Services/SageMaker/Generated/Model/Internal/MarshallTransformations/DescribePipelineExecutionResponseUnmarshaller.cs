@@ -123,6 +123,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.PipelineExperimentConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SelectiveExecutionConfig", targetDepth))
+                {
+                    var unmarshaller = SelectiveExecutionConfigUnmarshaller.Instance;
+                    response.SelectiveExecutionConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;
