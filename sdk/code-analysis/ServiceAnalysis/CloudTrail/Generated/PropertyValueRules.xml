@@ -430,6 +430,12 @@
     <max>2557</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StartEventDataStoreIngestionRequest.EventDataStore</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.StartImportRequest.ImportId</property>
     <min>36</min>
     <max>36</max>
@@ -457,6 +463,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[a-f0-9\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StopEventDataStoreIngestionRequest.EventDataStore</property>
+    <min>3</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.StopImportRequest.ImportId</property>

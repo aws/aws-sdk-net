@@ -40,6 +40,7 @@ namespace Amazon.CloudTrail.Model
         private string _name;
         private bool? _organizationEnabled;
         private int? _retentionPeriod;
+        private bool? _startIngestion;
         private List<Tag> _tagsList = new List<Tag>();
         private bool? _terminationProtectionEnabled;
 
@@ -142,8 +143,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property MultiRegionEnabled. 
         /// <para>
-        /// Specifies whether the event data store includes events from all regions, or only from
-        /// the region in which the event data store is created.
+        /// Specifies whether the event data store includes events from all Regions, or only from
+        /// the Region in which the event data store is created.
         /// </para>
         /// </summary>
         public bool MultiRegionEnabled
@@ -214,6 +215,25 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetRetentionPeriod()
         {
             return this._retentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartIngestion. 
+        /// <para>
+        /// Specifies whether the event data store should start ingesting live events. The default
+        /// is true.
+        /// </para>
+        /// </summary>
+        public bool StartIngestion
+        {
+            get { return this._startIngestion.GetValueOrDefault(); }
+            set { this._startIngestion = value; }
+        }
+
+        // Check to see if StartIngestion property is set
+        internal bool IsSetStartIngestion()
+        {
+            return this._startIngestion.HasValue; 
         }
 
         /// <summary>

@@ -67,6 +67,244 @@ namespace Amazon.CloudTrail
     /// User Guide</a> for information about the data that is included with each Amazon Web
     /// Services API call listed in the log files.
     /// </para>
+    ///  
+    /// <para>
+    ///  <b>Actions available for CloudTrail trails</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following actions are available for CloudTrail trails.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>AddTags</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateTrail</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteTrail</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeTrails</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetEventSelectors</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetInsightSelectors</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetTrail</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetTrailStatus</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListTags</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListTrails</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutEventSelectors</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutInsightSelectors</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RemoveTags</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartLogging</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopLogging</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateTrail</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Actions available for CloudTrail event data stores</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following actions are available for CloudTrail event data stores.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>AddTags</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CancelQuery</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateEventDataStore</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteEventDataStore</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DescribeQuery</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetEventDataStore</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetQueryResults</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListEventDataStores</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListTags</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListQueries</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RemoveTags</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RestoreEventDataStore</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartEventDataStoreIngestion</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartImport</a> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following additional actions are available for imports.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>GetImport</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListImportFailures</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListImports</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StopImport</a> 
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    ///  <a>StartQuery</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>StartEventDataStoreIngestion</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateEventDataStore</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Actions available for CloudTrail channels</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following actions are available for CloudTrail channels.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>AddTags</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>CreateChannel</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteChannel</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>DeleteResourcePolicy</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetChannel</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>GetResourcePolicy</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListChannels</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListTags</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>PutResourcePolicy</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RemoveTags</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>UpdateChannel</a> 
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    ///  <b>Actions available for managing delegated administrators</b> 
+    /// </para>
+    ///  
+    /// <para>
+    /// The following actions are available for adding or a removing a delegated administrator
+    /// to manage an Organizations organization’s CloudTrail resources.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a>DeregisterOrganizationDelegatedAdmin</a> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>RegisterOrganizationDelegatedAdmin</a> 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class AmazonCloudTrailClient : AmazonServiceClient, IAmazonCloudTrail
     {
@@ -301,7 +539,7 @@ namespace Amazon.CloudTrail
         /// different values. If you specify a key without a value, the tag will be created with
         /// the specified key and a value of null. You can tag a trail or event data store that
         /// applies to all Amazon Web Services Regions only from the Region in which the trail
-        /// or event data store was created (also known as its home region).
+        /// or event data store was created (also known as its home Region).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// 
@@ -328,7 +566,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -430,7 +668,7 @@ namespace Amazon.CloudTrail
         /// different values. If you specify a key without a value, the tag will be created with
         /// the specified key and a value of null. You can tag a trail or event data store that
         /// applies to all Amazon Web Services Regions only from the Region in which the trail
-        /// or event data store was created (also known as its home region).
+        /// or event data store was created (also known as its home Region).
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddTags service method.</param>
         /// <param name="cancellationToken">
@@ -460,7 +698,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -891,8 +1129,8 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
-        /// SNS topic either does not exist or is not in the same region.
+        /// KMS key are not in the same Region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked
@@ -1021,8 +1259,8 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
-        /// SNS topic either does not exist or is not in the same region.
+        /// KMS key are not in the same Region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked
@@ -1085,7 +1323,7 @@ namespace Amazon.CloudTrail
         /// to an Amazon SNS topic that is in a suspended Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
-        /// Cannot set a CloudWatch Logs delivery for this region.
+        /// Cannot set a CloudWatch Logs delivery for this Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
         /// This exception is thrown when the specified resource is not ready for an operation.
@@ -1170,8 +1408,8 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
-        /// SNS topic either does not exist or is not in the same region.
+        /// KMS key are not in the same Region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException">
         /// This exception is thrown when the maximum number of trails is reached.
@@ -1249,7 +1487,7 @@ namespace Amazon.CloudTrail
         /// to an Amazon SNS topic that is in a suspended Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
-        /// Cannot set a CloudWatch Logs delivery for this region.
+        /// Cannot set a CloudWatch Logs delivery for this Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
         /// This exception is thrown when the specified resource is not ready for an operation.
@@ -1334,8 +1572,8 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
-        /// SNS topic either does not exist or is not in the same region.
+        /// KMS key are not in the same Region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.MaximumNumberOfTrailsExceededException">
         /// This exception is thrown when the maximum number of trails is reached.
@@ -1705,9 +1943,9 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Deletes a trail. This operation must be called from the region in which the trail
+        /// Deletes a trail. This operation must be called from the Region in which the trail
         /// was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated
-        /// trails in other regions) of a trail that is enabled in all regions.
+        /// trails in other Regions) of a trail that is enabled in all Regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrail service method.</param>
         /// 
@@ -1727,7 +1965,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -1748,8 +1986,8 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
@@ -1811,9 +2049,9 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Deletes a trail. This operation must be called from the region in which the trail
+        /// Deletes a trail. This operation must be called from the Region in which the trail
         /// was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated
-        /// trails in other regions) of a trail that is enabled in all regions.
+        /// trails in other Regions) of a trail that is enabled in all Regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteTrail service method.</param>
         /// <param name="cancellationToken">
@@ -1836,7 +2074,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -1857,8 +2095,8 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
@@ -2160,7 +2398,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Retrieves settings for one or more trails associated with the current region for your
+        /// Retrieves settings for one or more trails associated with the current Region for your
         /// account.
         /// </summary>
         /// 
@@ -2211,7 +2449,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Retrieves settings for one or more trails associated with the current region for your
+        /// Retrieves settings for one or more trails associated with the current Region for your
         /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrails service method.</param>
@@ -2267,7 +2505,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Retrieves settings for one or more trails associated with the current region for your
+        /// Retrieves settings for one or more trails associated with the current Region for your
         /// account.
         /// </summary>
         /// <param name="cancellationToken">
@@ -2320,7 +2558,7 @@ namespace Amazon.CloudTrail
         }
 
         /// <summary>
-        /// Retrieves settings for one or more trails associated with the current region for your
+        /// Retrieves settings for one or more trails associated with the current Region for your
         /// account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTrails service method.</param>
@@ -2585,7 +2823,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -2702,7 +2940,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -2863,7 +3101,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -2962,7 +3200,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -3252,7 +3490,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -3333,7 +3571,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -3397,8 +3635,8 @@ namespace Amazon.CloudTrail
         /// <summary>
         /// Returns a JSON-formatted list of information about the specified trail. Fields include
         /// information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop
-        /// logging times for each trail. This operation returns trail status from a single region.
-        /// To return trail status from all regions, you must call the operation on each region.
+        /// logging times for each trail. This operation returns trail status from a single Region.
+        /// To return trail status from all Regions, you must call the operation on each Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTrailStatus service method.</param>
         /// 
@@ -3418,7 +3656,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -3478,8 +3716,8 @@ namespace Amazon.CloudTrail
         /// <summary>
         /// Returns a JSON-formatted list of information about the specified trail. Fields include
         /// information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop
-        /// logging times for each trail. This operation returns trail status from a single region.
-        /// To return trail status from all regions, you must call the operation on each region.
+        /// logging times for each trail. This operation returns trail status from a single Region.
+        /// To return trail status from all Regions, you must call the operation on each Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetTrailStatus service method.</param>
         /// <param name="cancellationToken">
@@ -3502,7 +3740,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -3625,7 +3863,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information about all event data stores in the account, in the current region.
+        /// Returns information about all event data stores in the account, in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventDataStores service method.</param>
         /// 
@@ -3659,7 +3897,7 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Returns information about all event data stores in the account, in the current region.
+        /// Returns information about all event data stores in the account, in the current Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListEventDataStores service method.</param>
         /// <param name="cancellationToken">
@@ -3844,9 +4082,9 @@ namespace Amazon.CloudTrail
         /// 
         ///  <note> 
         /// <para>
-        /// CloudTrail uses different private and public key pairs per region. Each digest file
-        /// is signed with a private key unique to its region. When you validate a digest file
-        /// from a specific region, you must look in the same region for its corresponding public
+        /// CloudTrail uses different private and public key pairs per Region. Each digest file
+        /// is signed with a private key unique to its Region. When you validate a digest file
+        /// from a specific Region, you must look in the same Region for its corresponding public
         /// key.
         /// </para>
         ///  </note>
@@ -3885,9 +4123,9 @@ namespace Amazon.CloudTrail
         /// 
         ///  <note> 
         /// <para>
-        /// CloudTrail uses different private and public key pairs per region. Each digest file
-        /// is signed with a private key unique to its region. When you validate a digest file
-        /// from a specific region, you must look in the same region for its corresponding public
+        /// CloudTrail uses different private and public key pairs per Region. Each digest file
+        /// is signed with a private key unique to its Region. When you validate a digest file
+        /// from a specific Region, you must look in the same Region for its corresponding public
         /// key.
         /// </para>
         ///  </note>
@@ -4056,7 +4294,8 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Lists the tags for the trail, event data store, or channel in the current region.
+        /// Lists the tags for the specified trails, event data stores, or channels in the current
+        /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// 
@@ -4080,7 +4319,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -4158,7 +4397,8 @@ namespace Amazon.CloudTrail
 
 
         /// <summary>
-        /// Lists the tags for the trail, event data store, or channel in the current region.
+        /// Lists the tags for the specified trails, event data stores, or channels in the current
+        /// Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTags service method.</param>
         /// <param name="cancellationToken">
@@ -4185,7 +4425,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -4323,7 +4563,7 @@ namespace Amazon.CloudTrail
         /// Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management
         /// events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
         /// Insights events</a> that are captured by CloudTrail. You can look up events that occurred
-        /// in a region within the last 90 days. Lookup supports the following attributes for
+        /// in a Region within the last 90 days. Lookup supports the following attributes for
         /// management events:
         /// 
         ///  <ul> <li> 
@@ -4382,7 +4622,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  <important> 
         /// <para>
-        /// The rate of lookup requests is limited to two per second, per account, per region.
+        /// The rate of lookup requests is limited to two per second, per account, per Region.
         /// If this limit is exceeded, a throttling error occurs.
         /// </para>
         ///  </important>
@@ -4428,7 +4668,7 @@ namespace Amazon.CloudTrail
         /// Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management
         /// events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
         /// Insights events</a> that are captured by CloudTrail. You can look up events that occurred
-        /// in a region within the last 90 days. Lookup supports the following attributes for
+        /// in a Region within the last 90 days. Lookup supports the following attributes for
         /// management events:
         /// 
         ///  <ul> <li> 
@@ -4487,7 +4727,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  <important> 
         /// <para>
-        /// The rate of lookup requests is limited to two per second, per account, per region.
+        /// The rate of lookup requests is limited to two per second, per account, per Region.
         /// If this limit is exceeded, a throttling error occurs.
         /// </para>
         ///  </important>
@@ -4582,7 +4822,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// The <code>PutEventSelectors</code> operation must be called from the region in which
+        /// The <code>PutEventSelectors</code> operation must be called from the Region in which
         /// the trail was created; otherwise, an <code>InvalidHomeRegionException</code> exception
         /// is thrown.
         /// </para>
@@ -4623,7 +4863,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -4681,8 +4921,8 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
@@ -4789,7 +5029,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  </li> </ol> 
         /// <para>
-        /// The <code>PutEventSelectors</code> operation must be called from the region in which
+        /// The <code>PutEventSelectors</code> operation must be called from the Region in which
         /// the trail was created; otherwise, an <code>InvalidHomeRegionException</code> exception
         /// is thrown.
         /// </para>
@@ -4833,7 +5073,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -4891,8 +5131,8 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
@@ -4990,7 +5230,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -5007,8 +5247,8 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidInsightSelectorsException">
         /// The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your
@@ -5118,7 +5358,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -5135,8 +5375,8 @@ namespace Amazon.CloudTrail
         /// This exception is thrown when the policy on the S3 bucket is not sufficient.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidInsightSelectorsException">
         /// The formatting or syntax of the <code>InsightSelectors</code> JSON statement in your
@@ -5524,7 +5764,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -5640,7 +5880,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -5881,6 +6121,131 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  StartEventDataStoreIngestion
+
+
+        /// <summary>
+        /// Starts the ingestion of live events on an event data store specified as either an
+        /// ARN or the ID portion of the ARN. To start ingestion, the event data store <code>Status</code>
+        /// must be <code>STOPPED_INGESTION</code> and the <code>eventCategory</code> must be
+        /// <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEventDataStoreIngestion service method.</param>
+        /// 
+        /// <returns>The response from the StartEventDataStoreIngestion service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM identity that is used to create the organization
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
+        /// This exception is thrown when event categories of specified event data stores are
+        /// not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
+        /// The event data store is not in a status that supports the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartEventDataStoreIngestion">REST API Reference for StartEventDataStoreIngestion Operation</seealso>
+        public virtual StartEventDataStoreIngestionResponse StartEventDataStoreIngestion(StartEventDataStoreIngestionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEventDataStoreIngestionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEventDataStoreIngestionResponseUnmarshaller.Instance;
+
+            return Invoke<StartEventDataStoreIngestionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts the ingestion of live events on an event data store specified as either an
+        /// ARN or the ID portion of the ARN. To start ingestion, the event data store <code>Status</code>
+        /// must be <code>STOPPED_INGESTION</code> and the <code>eventCategory</code> must be
+        /// <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartEventDataStoreIngestion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartEventDataStoreIngestion service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM identity that is used to create the organization
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
+        /// This exception is thrown when event categories of specified event data stores are
+        /// not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
+        /// The event data store is not in a status that supports the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StartEventDataStoreIngestion">REST API Reference for StartEventDataStoreIngestion Operation</seealso>
+        public virtual Task<StartEventDataStoreIngestionResponse> StartEventDataStoreIngestionAsync(StartEventDataStoreIngestionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartEventDataStoreIngestionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartEventDataStoreIngestionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartEventDataStoreIngestionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartImport
 
 
@@ -6061,10 +6426,10 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Starts the recording of Amazon Web Services API calls and log file delivery for a
-        /// trail. For a trail that is enabled in all regions, this operation must be called from
-        /// the region in which the trail was created. This operation cannot be called on the
-        /// shadow trails (replicated trails in other regions) of a trail that is enabled in all
-        /// regions.
+        /// trail. For a trail that is enabled in all Regions, this operation must be called from
+        /// the Region in which the trail was created. This operation cannot be called on the
+        /// shadow trails (replicated trails in other Regions) of a trail that is enabled in all
+        /// Regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartLogging service method.</param>
         /// 
@@ -6084,7 +6449,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -6105,8 +6470,8 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
@@ -6169,10 +6534,10 @@ namespace Amazon.CloudTrail
 
         /// <summary>
         /// Starts the recording of Amazon Web Services API calls and log file delivery for a
-        /// trail. For a trail that is enabled in all regions, this operation must be called from
-        /// the region in which the trail was created. This operation cannot be called on the
-        /// shadow trails (replicated trails in other regions) of a trail that is enabled in all
-        /// regions.
+        /// trail. For a trail that is enabled in all Regions, this operation must be called from
+        /// the Region in which the trail was created. This operation cannot be called on the
+        /// shadow trails (replicated trails in other Regions) of a trail that is enabled in all
+        /// Regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StartLogging service method.</param>
         /// <param name="cancellationToken">
@@ -6195,7 +6560,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -6216,8 +6581,8 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
@@ -6420,6 +6785,131 @@ namespace Amazon.CloudTrail
 
         #endregion
         
+        #region  StopEventDataStoreIngestion
+
+
+        /// <summary>
+        /// Stops the ingestion of live events on an event data store specified as either an ARN
+        /// or the ID portion of the ARN. To stop ingestion, the event data store <code>Status</code>
+        /// must be <code>ENABLED</code> and the <code>eventCategory</code> must be <code>Management</code>,
+        /// <code>Data</code>, or <code>ConfigurationItem</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopEventDataStoreIngestion service method.</param>
+        /// 
+        /// <returns>The response from the StopEventDataStoreIngestion service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM identity that is used to create the organization
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
+        /// This exception is thrown when event categories of specified event data stores are
+        /// not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
+        /// The event data store is not in a status that supports the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopEventDataStoreIngestion">REST API Reference for StopEventDataStoreIngestion Operation</seealso>
+        public virtual StopEventDataStoreIngestionResponse StopEventDataStoreIngestion(StopEventDataStoreIngestionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEventDataStoreIngestionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEventDataStoreIngestionResponseUnmarshaller.Instance;
+
+            return Invoke<StopEventDataStoreIngestionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Stops the ingestion of live events on an event data store specified as either an ARN
+        /// or the ID portion of the ARN. To stop ingestion, the event data store <code>Status</code>
+        /// must be <code>ENABLED</code> and the <code>eventCategory</code> must be <code>Management</code>,
+        /// <code>Data</code>, or <code>ConfigurationItem</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopEventDataStoreIngestion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StopEventDataStoreIngestion service method, as returned by CloudTrail.</returns>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreARNInvalidException">
+        /// The specified event data store ARN is not valid or does not map to an event data store
+        /// in your account.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.EventDataStoreNotFoundException">
+        /// The specified event data store was not found.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InsufficientDependencyServiceAccessPermissionException">
+        /// This exception is thrown when the IAM identity that is used to create the organization
+        /// resource lacks one or more required permissions for creating an organization resource
+        /// in a required service.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreCategoryException">
+        /// This exception is thrown when event categories of specified event data stores are
+        /// not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidEventDataStoreStatusException">
+        /// The event data store is not in a status that supports the operation.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.InvalidParameterException">
+        /// The request includes a parameter that is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
+        /// This exception is thrown when the management account does not have a service-linked
+        /// role.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.NotOrganizationMasterAccountException">
+        /// This exception is thrown when the Amazon Web Services account making the request to
+        /// create or update an organization trail or event data store is not the management account
+        /// for an organization in Organizations. For more information, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/creating-an-organizational-trail-prepare.html">Prepare
+        /// For Creating a Trail For Your Organization</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-event-data-store.html">Create
+        /// an event data store</a>.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.OperationNotPermittedException">
+        /// This exception is thrown when the requested operation is not permitted.
+        /// </exception>
+        /// <exception cref="Amazon.CloudTrail.Model.UnsupportedOperationException">
+        /// This exception is thrown when the requested operation is not supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/StopEventDataStoreIngestion">REST API Reference for StopEventDataStoreIngestion Operation</seealso>
+        public virtual Task<StopEventDataStoreIngestionResponse> StopEventDataStoreIngestionAsync(StopEventDataStoreIngestionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StopEventDataStoreIngestionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StopEventDataStoreIngestionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StopEventDataStoreIngestionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StopImport
 
 
@@ -6492,10 +6982,10 @@ namespace Amazon.CloudTrail
         /// Suspends the recording of Amazon Web Services API calls and log file delivery for
         /// the specified trail. Under most circumstances, there is no need to use this action.
         /// You can update a trail without stopping it first. This action is the only way to stop
-        /// recording. For a trail enabled in all regions, this operation must be called from
-        /// the region in which the trail was created, or an <code>InvalidHomeRegionException</code>
+        /// recording. For a trail enabled in all Regions, this operation must be called from
+        /// the Region in which the trail was created, or an <code>InvalidHomeRegionException</code>
         /// will occur. This operation cannot be called on the shadow trails (replicated trails
-        /// in other regions) of a trail enabled in all regions.
+        /// in other Regions) of a trail enabled in all Regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopLogging service method.</param>
         /// 
@@ -6515,7 +7005,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -6536,8 +7026,8 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
@@ -6602,10 +7092,10 @@ namespace Amazon.CloudTrail
         /// Suspends the recording of Amazon Web Services API calls and log file delivery for
         /// the specified trail. Under most circumstances, there is no need to use this action.
         /// You can update a trail without stopping it first. This action is the only way to stop
-        /// recording. For a trail enabled in all regions, this operation must be called from
-        /// the region in which the trail was created, or an <code>InvalidHomeRegionException</code>
+        /// recording. For a trail enabled in all Regions, this operation must be called from
+        /// the Region in which the trail was created, or an <code>InvalidHomeRegionException</code>
         /// will occur. This operation cannot be called on the shadow trails (replicated trails
-        /// in other regions) of a trail enabled in all regions.
+        /// in other Regions) of a trail enabled in all Regions.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the StopLogging service method.</param>
         /// <param name="cancellationToken">
@@ -6628,7 +7118,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -6649,8 +7139,8 @@ namespace Amazon.CloudTrail
         /// in a required service.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidTrailNameException">
         /// This exception is thrown when the provided trail name is not valid. Trail names must
@@ -6924,8 +7414,8 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
-        /// SNS topic either does not exist or is not in the same region.
+        /// KMS key are not in the same Region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked
@@ -7070,8 +7560,8 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
-        /// SNS topic either does not exist or is not in the same region.
+        /// KMS key are not in the same Region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked
@@ -7120,7 +7610,7 @@ namespace Amazon.CloudTrail
         /// log files. Changes to a trail do not require stopping the CloudTrail service. Use
         /// this action to designate an existing bucket for log delivery. If the existing bucket
         /// has previously been a target for CloudTrail log files, an IAM policy exists for the
-        /// bucket. <code>UpdateTrail</code> must be called from the region in which the trail
+        /// bucket. <code>UpdateTrail</code> must be called from the Region in which the trail
         /// was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrail service method.</param>
@@ -7147,7 +7637,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -7162,7 +7652,7 @@ namespace Amazon.CloudTrail
         /// to an Amazon SNS topic that is in a suspended Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
-        /// Cannot set a CloudWatch Logs delivery for this region.
+        /// Cannot set a CloudWatch Logs delivery for this Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
         /// This exception is thrown when the specified resource is not ready for an operation.
@@ -7229,8 +7719,8 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
         /// This exception is thrown when the KMS key ARN is not valid.
@@ -7287,8 +7777,8 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
-        /// SNS topic either does not exist or is not in the same region.
+        /// KMS key are not in the same Region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked
@@ -7342,7 +7832,7 @@ namespace Amazon.CloudTrail
         /// log files. Changes to a trail do not require stopping the CloudTrail service. Use
         /// this action to designate an existing bucket for log delivery. If the existing bucket
         /// has previously been a target for CloudTrail log files, an IAM policy exists for the
-        /// bucket. <code>UpdateTrail</code> must be called from the region in which the trail
+        /// bucket. <code>UpdateTrail</code> must be called from the Region in which the trail
         /// was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateTrail service method.</param>
@@ -7372,7 +7862,7 @@ namespace Amazon.CloudTrail
         /// </para>
         ///  
         /// <para>
-        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:12345678910:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
+        /// The following is the format of an event data store ARN: <code>arn:aws:cloudtrail:us-east-2:123456789012:eventdatastore/EXAMPLE-f852-4e8f-8bd1-bcf6cEXAMPLE</code>
         /// 
         /// </para>
         ///  
@@ -7387,7 +7877,7 @@ namespace Amazon.CloudTrail
         /// to an Amazon SNS topic that is in a suspended Amazon Web Services account.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.CloudWatchLogsDeliveryUnavailableException">
-        /// Cannot set a CloudWatch Logs delivery for this region.
+        /// Cannot set a CloudWatch Logs delivery for this Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.ConflictException">
         /// This exception is thrown when the specified resource is not ready for an operation.
@@ -7454,8 +7944,8 @@ namespace Amazon.CloudTrail
         ///  </li> </ul>
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidHomeRegionException">
-        /// This exception is thrown when an operation is called on a trail from a region other
-        /// than the region in which the trail was created.
+        /// This exception is thrown when an operation is called on a trail from a Region other
+        /// than the Region in which the trail was created.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.InvalidKmsKeyIdException">
         /// This exception is thrown when the KMS key ARN is not valid.
@@ -7512,8 +8002,8 @@ namespace Amazon.CloudTrail
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.KmsKeyNotFoundException">
         /// This exception is thrown when the KMS key does not exist, when the S3 bucket and the
-        /// KMS key are not in the same region, or when the KMS key associated with the Amazon
-        /// SNS topic either does not exist or is not in the same region.
+        /// KMS key are not in the same Region, or when the KMS key associated with the Amazon
+        /// SNS topic either does not exist or is not in the same Region.
         /// </exception>
         /// <exception cref="Amazon.CloudTrail.Model.NoManagementAccountSLRExistsException">
         /// This exception is thrown when the management account does not have a service-linked

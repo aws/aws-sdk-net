@@ -29,34 +29,34 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Container for the parameters to the DeleteTrail operation.
-    /// Deletes a trail. This operation must be called from the Region in which the trail
-    /// was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated
-    /// trails in other Regions) of a trail that is enabled in all Regions.
+    /// Container for the parameters to the StopEventDataStoreIngestion operation.
+    /// Stops the ingestion of live events on an event data store specified as either an ARN
+    /// or the ID portion of the ARN. To stop ingestion, the event data store <code>Status</code>
+    /// must be <code>ENABLED</code> and the <code>eventCategory</code> must be <code>Management</code>,
+    /// <code>Data</code>, or <code>ConfigurationItem</code>.
     /// </summary>
-    public partial class DeleteTrailRequest : AmazonCloudTrailRequest
+    public partial class StopEventDataStoreIngestionRequest : AmazonCloudTrailRequest
     {
-        private string _name;
+        private string _eventDataStore;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property EventDataStore. 
         /// <para>
-        /// Specifies the name or the CloudTrail ARN of the trail to be deleted. The following
-        /// is the format of a trail ARN. <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code>
-        /// 
+        /// The ARN (or ID suffix of the ARN) of the event data store for which you want to stop
+        /// ingestion.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string Name
+        [AWSProperty(Required=true, Min=3, Max=256)]
+        public string EventDataStore
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._eventDataStore; }
+            set { this._eventDataStore = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if EventDataStore property is set
+        internal bool IsSetEventDataStore()
         {
-            return this._name != null;
+            return this._eventDataStore != null;
         }
 
     }

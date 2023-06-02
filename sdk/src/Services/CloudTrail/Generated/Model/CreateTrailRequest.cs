@@ -142,9 +142,9 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property IsMultiRegionTrail. 
         /// <para>
-        /// Specifies whether the trail is created in the current region or in all regions. The
-        /// default is false, which creates a trail only in the region where you are signed in.
-        /// As a best practice, consider creating trails that log events in all regions.
+        /// Specifies whether the trail is created in the current Region or in all Regions. The
+        /// default is false, which creates a trail only in the Region where you are signed in.
+        /// As a best practice, consider creating trails that log events in all Regions.
         /// </para>
         /// </summary>
         public bool IsMultiRegionTrail

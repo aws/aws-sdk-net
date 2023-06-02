@@ -75,7 +75,7 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// The <code>PutEventSelectors</code> operation must be called from the region in which
+    /// The <code>PutEventSelectors</code> operation must be called from the Region in which
     /// the trail was created; otherwise, an <code>InvalidHomeRegionException</code> exception
     /// is thrown.
     /// </para>

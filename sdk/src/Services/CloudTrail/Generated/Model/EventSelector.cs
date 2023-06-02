@@ -89,7 +89,7 @@ namespace Amazon.CloudTrail.Model
         /// <code>kms.amazonaws.com</code> or <code>rdsdata.amazonaws.com</code>. By default,
         /// <code>ExcludeManagementEventSources</code> is empty, and KMS and Amazon RDS Data API
         /// events are logged to your trail. You can exclude management event sources only in
-        /// regions that support the event source.
+        /// Regions that support the event source.
         /// </para>
         /// </summary>
         public List<string> ExcludeManagementEventSources
@@ -121,7 +121,7 @@ namespace Amazon.CloudTrail.Model
         ///  
         /// <para>
         /// The first copy of management events is free. You are charged for additional copies
-        /// of management events that you are logging on any subsequent trail in the same region.
+        /// of management events that you are logging on any subsequent trail in the same Region.
         /// For more information about CloudTrail pricing, see <a href="http://aws.amazon.com/cloudtrail/pricing/">CloudTrail
         /// Pricing</a>.
         /// </para>

@@ -145,7 +145,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property SourceConfig. 
         /// <para>
         ///  Provides information about the advanced event selectors configured for the channel,
-        /// and whether the channel applies to all regions or a single region. 
+        /// and whether the channel applies to all Regions or a single Region. 
         /// </para>
         /// </summary>
         public SourceConfig SourceConfig
