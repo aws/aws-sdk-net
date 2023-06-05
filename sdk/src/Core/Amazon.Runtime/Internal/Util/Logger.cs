@@ -21,6 +21,7 @@ using System.Reflection;
 using System.Text;
 using System.ComponentModel;
 using Amazon.Runtime;
+using Amazon.Util.Internal;
 
 namespace Amazon.Runtime.Internal.Util
 {
@@ -42,8 +43,14 @@ namespace Amazon.Runtime.Internal.Util
         {
             loggers = new List<InternalLogger>();
 
-            InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
-            loggers.Add(log4netLogger);
+            if(!InternalSDKUtils.IsRunningNativeAot())
+            {
+#pragma warning disable
+                InternalLog4netLogger log4netLogger = new InternalLog4netLogger(type);
+                loggers.Add(log4netLogger);
+#pragma warning restore
+            }
+
             loggers.Add(new InternalConsoleLogger(type));
             InternalSystemDiagnosticsLogger sdLogger = new InternalSystemDiagnosticsLogger(type);
             loggers.Add(sdLogger);
