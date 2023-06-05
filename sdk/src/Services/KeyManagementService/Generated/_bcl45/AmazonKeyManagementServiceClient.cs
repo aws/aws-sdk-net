@@ -2804,14 +2804,6 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// HMAC KMS keys are not supported in all Amazon Web Services Regions. If you try to
-        /// create an HMAC KMS key in an Amazon Web Services Region in which HMAC keys are not
-        /// supported, the <code>CreateKey</code> operation returns an <code>UnsupportedOperationException</code>.
-        /// For a list of Regions in which HMAC KMS keys are supported, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
-        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
         ///  
         /// </para>
         ///  </dd> <dt>Multi-Region primary keys</dt> <dt>Imported key material</dt> <dd> 
@@ -2846,18 +2838,20 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </dd> <dd> 
         /// <para>
-        /// To import your own key material into a KMS key, begin by creating a symmetric encryption
-        /// KMS key with no key material. To do this, use the <code>Origin</code> parameter of
-        /// <code>CreateKey</code> with a value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a>
-        /// operation to get a public key and import token, and use the public key to encrypt
-        /// your key material. Then, use <a>ImportKeyMaterial</a> with your import token to import
+        /// To import your own key material into a KMS key, begin by creating a KMS key with no
+        /// key material. To do this, use the <code>Origin</code> parameter of <code>CreateKey</code>
+        /// with a value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a> operation
+        /// to get a public key and import token. Use the wrapping public key to encrypt your
+        /// key material. Then, use <a>ImportKeyMaterial</a> with your import token to import
         /// the key material. For step-by-step instructions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
         /// Key Material</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
-        /// This feature supports only symmetric encryption KMS keys, including multi-Region symmetric
-        /// encryption KMS keys. You cannot import key material into any other type of KMS key.
+        /// You can import key material into KMS keys of all supported KMS key types: symmetric
+        /// encryption KMS keys, HMAC KMS keys, asymmetric encryption KMS keys, and asymmetric
+        /// signing KMS keys. You can also create multi-Region keys with imported key material.
+        /// However, you can't import key material into a KMS key in a custom key store.
         /// </para>
         ///  
         /// <para>
@@ -3214,14 +3208,6 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// HMAC KMS keys are not supported in all Amazon Web Services Regions. If you try to
-        /// create an HMAC KMS key in an Amazon Web Services Region in which HMAC keys are not
-        /// supported, the <code>CreateKey</code> operation returns an <code>UnsupportedOperationException</code>.
-        /// For a list of Regions in which HMAC KMS keys are supported, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
-        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
         ///  
         /// </para>
         ///  </dd> <dt>Multi-Region primary keys</dt> <dt>Imported key material</dt> <dd> 
@@ -3256,18 +3242,20 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </dd> <dd> 
         /// <para>
-        /// To import your own key material into a KMS key, begin by creating a symmetric encryption
-        /// KMS key with no key material. To do this, use the <code>Origin</code> parameter of
-        /// <code>CreateKey</code> with a value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a>
-        /// operation to get a public key and import token, and use the public key to encrypt
-        /// your key material. Then, use <a>ImportKeyMaterial</a> with your import token to import
+        /// To import your own key material into a KMS key, begin by creating a KMS key with no
+        /// key material. To do this, use the <code>Origin</code> parameter of <code>CreateKey</code>
+        /// with a value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a> operation
+        /// to get a public key and import token. Use the wrapping public key to encrypt your
+        /// key material. Then, use <a>ImportKeyMaterial</a> with your import token to import
         /// the key material. For step-by-step instructions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
         /// Key Material</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
-        /// This feature supports only symmetric encryption KMS keys, including multi-Region symmetric
-        /// encryption KMS keys. You cannot import key material into any other type of KMS key.
+        /// You can import key material into KMS keys of all supported KMS key types: symmetric
+        /// encryption KMS keys, HMAC KMS keys, asymmetric encryption KMS keys, and asymmetric
+        /// signing KMS keys. You can also create multi-Region keys with imported key material.
+        /// However, you can't import key material into a KMS key in a custom key store.
         /// </para>
         ///  
         /// <para>
@@ -4752,21 +4740,17 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Deletes key material that you previously imported. This operation makes the specified
-        /// KMS key unusable. For more information about importing key material into KMS, see
+        /// Deletes key material that was previously imported. This operation makes the specified
+        /// KMS key temporarily unusable. To restore the usability of the KMS key, reimport the
+        /// same key material. For more information about importing key material into KMS, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
         /// 
         ///  
         /// <para>
         /// When the specified KMS key is in the <code>PendingDeletion</code> state, this operation
         /// does not change the KMS key's state. Otherwise, it changes the KMS key's state to
         /// <code>PendingImport</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// After you delete key material, you can use <a>ImportKeyMaterial</a> to reimport the
-        /// same key material into the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -4857,21 +4841,17 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Deletes key material that you previously imported. This operation makes the specified
-        /// KMS key unusable. For more information about importing key material into KMS, see
+        /// Deletes key material that was previously imported. This operation makes the specified
+        /// KMS key temporarily unusable. To restore the usability of the KMS key, reimport the
+        /// same key material. For more information about importing key material into KMS, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
         /// 
         ///  
         /// <para>
         /// When the specified KMS key is in the <code>PendingDeletion</code> state, this operation
         /// does not change the KMS key's state. Otherwise, it changes the KMS key's state to
         /// <code>PendingImport</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// After you delete key material, you can use <a>ImportKeyMaterial</a> to reimport the
-        /// same key material into the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -11395,32 +11375,80 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Returns the items you need to import key material into a symmetric encryption KMS
-        /// key. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// Returns the public key and an import token you need to import or reimport key material
+        /// for a KMS key. 
         /// 
         ///  
         /// <para>
-        /// This operation returns a public key and an import token. Use the public key to encrypt
-        /// the symmetric key material. Store the import token to send with a subsequent <a>ImportKeyMaterial</a>
+        /// By default, KMS keys are created with key material that KMS generates. This operation
+        /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a>, an advanced feature that lets you generate and import the cryptographic
+        /// key material for a KMS key. For more information about importing key material into
+        /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before calling <code>GetParametersForImport</code>, use the <a>CreateKey</a> operation
+        /// with an <code>Origin</code> value of <code>EXTERNAL</code> to create a KMS key with
+        /// no key material. You can import key material for a symmetric encryption KMS key, HMAC
+        /// KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also
+        /// import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// key</a> of any supported type. However, you can't import key material into a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>. You can also use <code>GetParametersForImport</code> to get a public key
+        /// and import token to <a href="kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// the original key material</a> into a KMS key whose key material expired or was deleted.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>GetParametersForImport</code> returns the items that you need to import your
+        /// key material.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The public key (or "wrapping key") of an RSA key pair that KMS generates.
+        /// </para>
+        ///  
+        /// <para>
+        /// You will use this public key to encrypt ("wrap") your key material while it's in transit
+        /// to KMS. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A import token that ensures that KMS can decrypt your key material and associate it
+        /// with the correct KMS key.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The public key and its import token are permanently linked and must be used together.
+        /// Each public key and import token set is valid for 24 hours. The expiration date and
+        /// time appear in the <code>ParametersValidTo</code> field in the <code>GetParametersForImport</code>
+        /// response. You cannot use an expired public key or import token in an <a>ImportKeyMaterial</a>
+        /// request. If your key and token expire, send another <code>GetParametersForImport</code>
         /// request.
         /// </para>
         ///  
         /// <para>
-        /// You must specify the key ID of the symmetric encryption KMS key into which you will
-        /// import key material. The KMS key <code>Origin</code> must be <code>EXTERNAL</code>.
-        /// You must also specify the wrapping algorithm and type of wrapping key (public key)
-        /// that you will use to encrypt the key material. You cannot perform this operation on
-        /// an asymmetric KMS key, an HMAC KMS key, or on any KMS key in a different Amazon Web
-        /// Services account.
+        ///  <code>GetParametersForImport</code> requires the following information:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// To import key material, you must use the public key and import token from the same
-        /// response. These items are valid for 24 hours. The expiration date and time appear
-        /// in the <code>GetParametersForImport</code> response. You cannot use an expired token
-        /// in an <a>ImportKeyMaterial</a> request. If your key and token expire, send another
-        /// <code>GetParametersForImport</code> request.
+        /// The key ID of the KMS key for which you are importing the key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The key spec of the public key ("wrapping key") that you will use to encrypt your
+        /// key material during import.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The wrapping algorithm that you will use with the public key to encrypt your key material.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can use the same or a different public key spec and wrapping algorithm each time
+        /// you import or reimport the same key material. 
         /// </para>
         ///  
         /// <para>
@@ -11511,32 +11539,80 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Returns the items you need to import key material into a symmetric encryption KMS
-        /// key. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// Returns the public key and an import token you need to import or reimport key material
+        /// for a KMS key. 
         /// 
         ///  
         /// <para>
-        /// This operation returns a public key and an import token. Use the public key to encrypt
-        /// the symmetric key material. Store the import token to send with a subsequent <a>ImportKeyMaterial</a>
+        /// By default, KMS keys are created with key material that KMS generates. This operation
+        /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a>, an advanced feature that lets you generate and import the cryptographic
+        /// key material for a KMS key. For more information about importing key material into
+        /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before calling <code>GetParametersForImport</code>, use the <a>CreateKey</a> operation
+        /// with an <code>Origin</code> value of <code>EXTERNAL</code> to create a KMS key with
+        /// no key material. You can import key material for a symmetric encryption KMS key, HMAC
+        /// KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also
+        /// import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// key</a> of any supported type. However, you can't import key material into a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>. You can also use <code>GetParametersForImport</code> to get a public key
+        /// and import token to <a href="kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// the original key material</a> into a KMS key whose key material expired or was deleted.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>GetParametersForImport</code> returns the items that you need to import your
+        /// key material.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The public key (or "wrapping key") of an RSA key pair that KMS generates.
+        /// </para>
+        ///  
+        /// <para>
+        /// You will use this public key to encrypt ("wrap") your key material while it's in transit
+        /// to KMS. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A import token that ensures that KMS can decrypt your key material and associate it
+        /// with the correct KMS key.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The public key and its import token are permanently linked and must be used together.
+        /// Each public key and import token set is valid for 24 hours. The expiration date and
+        /// time appear in the <code>ParametersValidTo</code> field in the <code>GetParametersForImport</code>
+        /// response. You cannot use an expired public key or import token in an <a>ImportKeyMaterial</a>
+        /// request. If your key and token expire, send another <code>GetParametersForImport</code>
         /// request.
         /// </para>
         ///  
         /// <para>
-        /// You must specify the key ID of the symmetric encryption KMS key into which you will
-        /// import key material. The KMS key <code>Origin</code> must be <code>EXTERNAL</code>.
-        /// You must also specify the wrapping algorithm and type of wrapping key (public key)
-        /// that you will use to encrypt the key material. You cannot perform this operation on
-        /// an asymmetric KMS key, an HMAC KMS key, or on any KMS key in a different Amazon Web
-        /// Services account.
+        ///  <code>GetParametersForImport</code> requires the following information:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// To import key material, you must use the public key and import token from the same
-        /// response. These items are valid for 24 hours. The expiration date and time appear
-        /// in the <code>GetParametersForImport</code> response. You cannot use an expired token
-        /// in an <a>ImportKeyMaterial</a> request. If your key and token expire, send another
-        /// <code>GetParametersForImport</code> request.
+        /// The key ID of the KMS key for which you are importing the key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The key spec of the public key ("wrapping key") that you will use to encrypt your
+        /// key material during import.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The wrapping algorithm that you will use with the public key to encrypt your key material.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can use the same or a different public key spec and wrapping algorithm each time
+        /// you import or reimport the same key material. 
         /// </para>
         ///  
         /// <para>
@@ -11981,44 +12057,96 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Imports key material into an existing symmetric encryption KMS key that was created
-        /// without key material. After you successfully import key material into a KMS key, you
-        /// can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// Imports or reimports key material into an existing KMS key that was created without
+        /// key material. <code>ImportKeyMaterial</code> also sets the expiration model and expiration
+        /// date of the imported key material.
+        /// 
+        ///  
+        /// <para>
+        /// By default, KMS keys are created with key material that KMS generates. This operation
+        /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a>, an advanced feature that lets you generate and import the cryptographic
+        /// key material for a KMS key. For more information about importing key material into
+        /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you successfully import key material into a KMS key, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
         /// the same key material</a> into that KMS key, but you cannot import different key material.
+        /// You might reimport key material to replace key material that expired or key material
+        /// that you deleted. You might also reimport key material to change the expiration model
+        /// or expiration date of the key material. Before reimporting key material, if necessary,
+        /// call <a>DeleteImportedKeyMaterial</a> to delete the current imported key material.
         /// 
-        /// 
-        ///  
-        /// <para>
-        /// You cannot perform this operation on an asymmetric KMS key, an HMAC KMS key, or on
-        /// any KMS key in a different Amazon Web Services account. For more information about
-        /// creating KMS keys with no key material and then importing key material, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Before using this operation, call <a>GetParametersForImport</a>. Its response includes
-        /// a public key and an import token. Use the public key to encrypt the key material.
-        /// Then, submit the import token from the same <code>GetParametersForImport</code> response.
+        /// Each time you import key material into KMS, you can determine whether (<code>ExpirationModel</code>)
+        /// and when (<code>ValidTo</code>) the key material expires. To change the expiration
+        /// of your key material, you must import it again, either by calling <code>ImportKeyMaterial</code>
+        /// or using the <a href="kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import
+        /// features</a> of the KMS console.
         /// </para>
         ///  
         /// <para>
-        /// When calling this operation, you must specify the following values:
+        /// Before calling <code>ImportKeyMaterial</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The key ID or key ARN of a KMS key with no key material. Its <code>Origin</code> must
-        /// be <code>EXTERNAL</code>.
+        /// Create or identify a KMS key with no key material. The KMS key must have an <code>Origin</code>
+        /// value of <code>EXTERNAL</code>, which indicates that the KMS key is designed for imported
+        /// key material. 
         /// </para>
         ///  
         /// <para>
-        /// To create a KMS key with no key material, call <a>CreateKey</a> and set the value
-        /// of its <code>Origin</code> parameter to <code>EXTERNAL</code>. To get the <code>Origin</code>
-        /// of a KMS key, call <a>DescribeKey</a>.)
+        /// To create an new KMS key for imported key material, call the <a>CreateKey</a> operation
+        /// with an <code>Origin</code> value of <code>EXTERNAL</code>. You can create a symmetric
+        /// encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing
+        /// KMS key. You can also import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// key</a> of any supported type. However, you can't import key material into a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The encrypted key material. To get the public key to encrypt the key material, call
-        /// <a>GetParametersForImport</a>.
+        /// Use the <a>DescribeKey</a> operation to verify that the <code>KeyState</code> of the
+        /// KMS key is <code>PendingImport</code>, which indicates that the KMS key has no key
+        /// material. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are reimporting the same key material into an existing KMS key, you might need
+        /// to call the <a>DeleteImportedKeyMaterial</a> to delete its existing key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call the <a>GetParametersForImport</a> operation to get a public key and import token
+        /// set for importing key material. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the public key in the <a>GetParametersForImport</a> response to encrypt your key
+        /// material.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  Then, in an <code>ImportKeyMaterial</code> request, you submit your encrypted key
+        /// material and import token. When calling this operation, you must specify the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key ID or key ARN of the KMS key to associate with the imported key material.
+        /// Its <code>Origin</code> must be <code>EXTERNAL</code> and its <code>KeyState</code>
+        /// must be <code>PendingImport</code>. You cannot perform this operation on a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>, or on a KMS key in a different Amazon Web Services account. To get the
+        /// <code>Origin</code> and <code>KeyState</code> of a KMS key, call <a>DescribeKey</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encrypted key material. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12028,16 +12156,21 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// Whether the key material expires (<code>ExpirationModel</code>) and, if so, when (<code>ValidTo</code>).
-        /// If you set an expiration date, on the specified date, KMS deletes the key material
-        /// from the KMS key, making the KMS key unusable. To use the KMS key in cryptographic
-        /// operations again, you must reimport the same key material. The only way to change
-        /// the expiration model or expiration date is by reimporting the same key material and
-        /// specifying a new expiration date. 
+        /// For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting
+        /// an expiration time</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set an expiration date, KMS deletes the key material from the KMS key on the
+        /// specified date, making the KMS key unusable. To use the KMS key in cryptographic operations
+        /// again, you must reimport the same key material. However, you can delete and reimport
+        /// the key material at any time, including before the key material expires. Each time
+        /// you reimport, you can eliminate or reset the expiration time.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When this operation is successful, the key state of the KMS key changes from <code>PendingImport</code>
-        /// to <code>Enabled</code>, and you can use the KMS key.
+        /// to <code>Enabled</code>, and you can use the KMS key in cryptographic operations.
         /// </para>
         ///  
         /// <para>
@@ -12160,44 +12293,96 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Imports key material into an existing symmetric encryption KMS key that was created
-        /// without key material. After you successfully import key material into a KMS key, you
-        /// can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// Imports or reimports key material into an existing KMS key that was created without
+        /// key material. <code>ImportKeyMaterial</code> also sets the expiration model and expiration
+        /// date of the imported key material.
+        /// 
+        ///  
+        /// <para>
+        /// By default, KMS keys are created with key material that KMS generates. This operation
+        /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a>, an advanced feature that lets you generate and import the cryptographic
+        /// key material for a KMS key. For more information about importing key material into
+        /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you successfully import key material into a KMS key, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
         /// the same key material</a> into that KMS key, but you cannot import different key material.
+        /// You might reimport key material to replace key material that expired or key material
+        /// that you deleted. You might also reimport key material to change the expiration model
+        /// or expiration date of the key material. Before reimporting key material, if necessary,
+        /// call <a>DeleteImportedKeyMaterial</a> to delete the current imported key material.
         /// 
-        /// 
-        ///  
-        /// <para>
-        /// You cannot perform this operation on an asymmetric KMS key, an HMAC KMS key, or on
-        /// any KMS key in a different Amazon Web Services account. For more information about
-        /// creating KMS keys with no key material and then importing key material, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Before using this operation, call <a>GetParametersForImport</a>. Its response includes
-        /// a public key and an import token. Use the public key to encrypt the key material.
-        /// Then, submit the import token from the same <code>GetParametersForImport</code> response.
+        /// Each time you import key material into KMS, you can determine whether (<code>ExpirationModel</code>)
+        /// and when (<code>ValidTo</code>) the key material expires. To change the expiration
+        /// of your key material, you must import it again, either by calling <code>ImportKeyMaterial</code>
+        /// or using the <a href="kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import
+        /// features</a> of the KMS console.
         /// </para>
         ///  
         /// <para>
-        /// When calling this operation, you must specify the following values:
+        /// Before calling <code>ImportKeyMaterial</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The key ID or key ARN of a KMS key with no key material. Its <code>Origin</code> must
-        /// be <code>EXTERNAL</code>.
+        /// Create or identify a KMS key with no key material. The KMS key must have an <code>Origin</code>
+        /// value of <code>EXTERNAL</code>, which indicates that the KMS key is designed for imported
+        /// key material. 
         /// </para>
         ///  
         /// <para>
-        /// To create a KMS key with no key material, call <a>CreateKey</a> and set the value
-        /// of its <code>Origin</code> parameter to <code>EXTERNAL</code>. To get the <code>Origin</code>
-        /// of a KMS key, call <a>DescribeKey</a>.)
+        /// To create an new KMS key for imported key material, call the <a>CreateKey</a> operation
+        /// with an <code>Origin</code> value of <code>EXTERNAL</code>. You can create a symmetric
+        /// encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing
+        /// KMS key. You can also import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// key</a> of any supported type. However, you can't import key material into a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The encrypted key material. To get the public key to encrypt the key material, call
-        /// <a>GetParametersForImport</a>.
+        /// Use the <a>DescribeKey</a> operation to verify that the <code>KeyState</code> of the
+        /// KMS key is <code>PendingImport</code>, which indicates that the KMS key has no key
+        /// material. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are reimporting the same key material into an existing KMS key, you might need
+        /// to call the <a>DeleteImportedKeyMaterial</a> to delete its existing key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call the <a>GetParametersForImport</a> operation to get a public key and import token
+        /// set for importing key material. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the public key in the <a>GetParametersForImport</a> response to encrypt your key
+        /// material.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  Then, in an <code>ImportKeyMaterial</code> request, you submit your encrypted key
+        /// material and import token. When calling this operation, you must specify the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key ID or key ARN of the KMS key to associate with the imported key material.
+        /// Its <code>Origin</code> must be <code>EXTERNAL</code> and its <code>KeyState</code>
+        /// must be <code>PendingImport</code>. You cannot perform this operation on a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>, or on a KMS key in a different Amazon Web Services account. To get the
+        /// <code>Origin</code> and <code>KeyState</code> of a KMS key, call <a>DescribeKey</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encrypted key material. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12207,16 +12392,21 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// Whether the key material expires (<code>ExpirationModel</code>) and, if so, when (<code>ValidTo</code>).
-        /// If you set an expiration date, on the specified date, KMS deletes the key material
-        /// from the KMS key, making the KMS key unusable. To use the KMS key in cryptographic
-        /// operations again, you must reimport the same key material. The only way to change
-        /// the expiration model or expiration date is by reimporting the same key material and
-        /// specifying a new expiration date. 
+        /// For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting
+        /// an expiration time</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set an expiration date, KMS deletes the key material from the KMS key on the
+        /// specified date, making the KMS key unusable. To use the KMS key in cryptographic operations
+        /// again, you must reimport the same key material. However, you can delete and reimport
+        /// the key material at any time, including before the key material expires. Each time
+        /// you reimport, you can eliminate or reset the expiration time.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When this operation is successful, the key state of the KMS key changes from <code>PendingImport</code>
-        /// to <code>Enabled</code>, and you can use the KMS key.
+        /// to <code>Enabled</code>, and you can use the KMS key in cryptographic operations.
         /// </para>
         ///  
         /// <para>
@@ -15897,8 +16087,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -16025,8 +16217,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -16088,7 +16282,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul>
         /// </summary>
         /// <param name="keyId">The unique identifier of the KMS key to delete. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30.</param>
+        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</param>
         /// 
         /// <returns>The response from the ScheduleKeyDeletion service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -16155,8 +16349,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -16285,8 +16481,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -16416,8 +16614,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -16479,7 +16679,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul>
         /// </summary>
         /// <param name="keyId">The unique identifier of the KMS key to delete. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30.</param>
+        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -16549,8 +16749,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>

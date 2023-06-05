@@ -238,7 +238,7 @@
         <value>
             <example>
                 <para>
-                    This example creates a KMS key with no key material. When the operation is complete, you can import your own key material into the KMS key. To create this KMS key, set the Origin parameter to EXTERNAL.
+                    This example creates a symmetric KMS key with no key material. When the operation is complete, you can import your own key material into the KMS key. To create this KMS key, set the Origin parameter to EXTERNAL.
                 </para>
                 <code
                     title="To create a KMS key for imported key material"
@@ -941,12 +941,69 @@
         <value>
             <example>
                 <para>
-                    The following example retrieves the public key and import token for the specified KMS key.
+                    The following example downloads a public key and import token to import symmetric encryption key material. It uses the default wrapping key spec and the RSAES_OAEP_SHA_256 wrapping algorithm.
                 </para>
                 <code
-                    title="To retrieve the public key and import token for a KMS key"
+                    title="To download the public key and import token for a symmetric encryption KMS key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-retrieve-the-public-key-and-import-token-for-a-cmk-1480626483211" />
+                    region="to-download-the-public-key-and-import-token-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GetParametersForImport(Amazon.KeyManagementService.Model.GetParametersForImportRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GetParametersForImport(Amazon.KeyManagementService.Model.GetParametersForImportRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GetParametersForImportRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GetParametersForImportResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example downloads a public key and import token to import an RSA private key. It uses a required RSA_AES wrapping algorithm and the largest supported private key.
+                </para>
+                <code
+                    title="To download the public key and import token for an RSA asymmetric KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-download-the-public-key-and-import-token-2" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GetParametersForImport(Amazon.KeyManagementService.Model.GetParametersForImportRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GetParametersForImport(Amazon.KeyManagementService.Model.GetParametersForImportRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GetParametersForImportRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GetParametersForImportResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example downloads a public key and import token to import an ECC_NIST_P521 (secp521r1) private key. You cannot directly wrap this ECC key under an RSA_2048 public key, although you can use an RSA_2048 public key with an RSA_AES wrapping algorithm to wrap any supported key material. This example requests an RSA_3072 public key for use with the RSAES_OAEP_SHA_256.
+                </para>
+                <code
+                    title="To download the public key and import token for an elliptic curve (ECC) asymmetric KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-download-the-public-key-and-import-token-3" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.GetParametersForImport(Amazon.KeyManagementService.Model.GetParametersForImportRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.GetParametersForImport(Amazon.KeyManagementService.Model.GetParametersForImportRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.GetParametersForImportRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.GetParametersForImportResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example downloads a public key and import token to import an HMAC key. It uses the RSAES_OAEP_SHA_256 wrapping algorithm and an RSA_4096 private key.
+                </para>
+                <code
+                    title="To download the public key and import token for an HMAC KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-download-the-public-key-and-import-token-4" />
             </example>
         </value>
     </doc>
@@ -984,7 +1041,26 @@
                 <code
                     title="To import key material into a KMS key"
                     source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
-                    region="to-import-key-material-into-a-cmk-1480630551969" />
+                    region="to-import-key-material-into-a-kms-key-1" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.KeyManagementService.IAmazonKeyManagementService.ImportKeyMaterial(Amazon.KeyManagementService.Model.ImportKeyMaterialRequest)" />
+            <member name="M:Amazon.KeyManagementService.AmazonKeyManagementServiceClient.ImportKeyMaterial(Amazon.KeyManagementService.Model.ImportKeyMaterialRequest)" />
+            <member name="T:Amazon.KeyManagementService.Model.ImportKeyMaterialRequest" />
+            <member name="T:Amazon.KeyManagementService.Model.ImportKeyMaterialResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example imports key material that expires in 3 days. It might be part of an application that frequently reimports the same key material to comply with business rules or regulations.
+                </para>
+                <code
+                    title="To import key material into a KMS key"
+                    source=".\AWSSDKDocSamples\KeyManagementService\KeyManagementService.GeneratedSamples.cs"
+                    region="to-import-key-material-into-a-kms-key-2" />
             </example>
         </value>
     </doc>
