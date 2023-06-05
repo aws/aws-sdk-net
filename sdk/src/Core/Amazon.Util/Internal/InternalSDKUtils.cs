@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Runtime.CompilerServices;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal.PlatformServices;
 
@@ -240,6 +241,20 @@ namespace Amazon.Util.Internal
 
             //Test if the target file is a child of directoryPath
             return fileInfo.FullName.StartsWith(dirInfo.FullName);
+        }
+
+        /// <summary>
+        /// Returns true if the SDK is being run in an NativeAOT environment.
+        /// </summary>
+        /// <returns></returns>
+        public static bool IsRunningNativeAot()
+        {
+#if NET6_0_OR_GREATER
+            // If dynamic code is not supported we are most likely running in an AOT environment. 
+            return !RuntimeFeature.IsDynamicCodeSupported;
+#else
+        return false;
+#endif
         }
 
         #region IsSet methods

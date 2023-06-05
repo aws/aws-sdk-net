@@ -21,6 +21,7 @@
  */
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -87,7 +88,11 @@ namespace Amazon.Runtime
             return map.TryGetValue(this.Value, out foundValue) ? foundValue : this;
         }
 
+#if NET6_0_OR_GREATER
+        protected static T FindValue<[DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicFields | DynamicallyAccessedMemberTypes.PublicConstructors)] T>(string value) where T : ConstantClass
+#else
         protected static T FindValue<T>(string value) where T : ConstantClass
+#endif
         {
             if (value == null)
                 return null;
@@ -107,7 +112,11 @@ namespace Amazon.Runtime
             return foundValue as T;
         }
 
+#if NET6_0_OR_GREATER
+        private static void LoadFields([DynamicallyAccessedMembers(DynamicallyAccessedMemberTypes.PublicFields)] Type type)
+#else
         private static void LoadFields(Type type)
+#endif
         {
             if (staticFields.ContainsKey(type))
                 return;
