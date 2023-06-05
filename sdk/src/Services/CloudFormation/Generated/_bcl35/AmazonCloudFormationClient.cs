@@ -292,6 +292,68 @@ namespace Amazon.CloudFormation
         #endregion
 
 
+        #region  ActivateOrganizationsAccess
+
+        /// <summary>
+        /// Activate trusted access with Organizations. With trusted access between StackSets
+        /// and Organizations activated, the management account has permissions to create and
+        /// manage StackSets for your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ActivateOrganizationsAccess service method.</param>
+        /// 
+        /// <returns>The response from the ActivateOrganizationsAccess service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidOperationException">
+        /// The specified operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationNotFoundException">
+        /// The specified ID refers to an operation that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateOrganizationsAccess">REST API Reference for ActivateOrganizationsAccess Operation</seealso>
+        public virtual ActivateOrganizationsAccessResponse ActivateOrganizationsAccess(ActivateOrganizationsAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ActivateOrganizationsAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ActivateOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return Invoke<ActivateOrganizationsAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ActivateOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ActivateOrganizationsAccess operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndActivateOrganizationsAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateOrganizationsAccess">REST API Reference for ActivateOrganizationsAccess Operation</seealso>
+        public virtual IAsyncResult BeginActivateOrganizationsAccess(ActivateOrganizationsAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ActivateOrganizationsAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ActivateOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ActivateOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginActivateOrganizationsAccess.</param>
+        /// 
+        /// <returns>Returns a  ActivateOrganizationsAccessResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/ActivateOrganizationsAccess">REST API Reference for ActivateOrganizationsAccess Operation</seealso>
+        public virtual ActivateOrganizationsAccessResponse EndActivateOrganizationsAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ActivateOrganizationsAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ActivateType
 
         /// <summary>
@@ -301,8 +363,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// Once you have activated a public third-party extension in your account and region,
-        /// use <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+        /// Once you have activated a public third-party extension in your account and Region,
+        /// use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
         /// to specify configuration properties for the extension. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
@@ -367,7 +429,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns configuration data for the specified CloudFormation extensions, from the CloudFormation
-        /// registry for the account and region.
+        /// registry for the account and Region.
         /// 
         ///  
         /// <para>
@@ -892,10 +954,72 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DeactivateOrganizationsAccess
+
+        /// <summary>
+        /// Deactivates trusted access with Organizations. If trusted access is deactivated, the
+        /// management account does not have permissions to create and manage service-managed
+        /// StackSets for your organization.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateOrganizationsAccess service method.</param>
+        /// 
+        /// <returns>The response from the DeactivateOrganizationsAccess service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidOperationException">
+        /// The specified operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationNotFoundException">
+        /// The specified ID refers to an operation that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateOrganizationsAccess">REST API Reference for DeactivateOrganizationsAccess Operation</seealso>
+        public virtual DeactivateOrganizationsAccessResponse DeactivateOrganizationsAccess(DeactivateOrganizationsAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeactivateOrganizationsAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeactivateOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return Invoke<DeactivateOrganizationsAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeactivateOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateOrganizationsAccess operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeactivateOrganizationsAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateOrganizationsAccess">REST API Reference for DeactivateOrganizationsAccess Operation</seealso>
+        public virtual IAsyncResult BeginDeactivateOrganizationsAccess(DeactivateOrganizationsAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeactivateOrganizationsAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeactivateOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeactivateOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeactivateOrganizationsAccess.</param>
+        /// 
+        /// <returns>Returns a  DeactivateOrganizationsAccessResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DeactivateOrganizationsAccess">REST API Reference for DeactivateOrganizationsAccess Operation</seealso>
+        public virtual DeactivateOrganizationsAccessResponse EndDeactivateOrganizationsAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeactivateOrganizationsAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeactivateType
 
         /// <summary>
-        /// Deactivates a public extension that was previously activated in this account and region.
+        /// Deactivates a public extension that was previously activated in this account and Region.
         /// 
         ///  
         /// <para>
@@ -1483,6 +1607,69 @@ namespace Amazon.CloudFormation
 
         #endregion
         
+        #region  DescribeOrganizationsAccess
+
+        /// <summary>
+        /// Retrieves information about the account's <code>OrganizationAccess</code> status.
+        /// This API can be called either by the management account or the delegated administrator
+        /// by using the <code>CallAs</code> parameter. This API can also be called without the
+        /// <code>CallAs</code> parameter by the management account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationsAccess service method.</param>
+        /// 
+        /// <returns>The response from the DescribeOrganizationsAccess service method, as returned by CloudFormation.</returns>
+        /// <exception cref="Amazon.CloudFormation.Model.InvalidOperationException">
+        /// The specified operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.CloudFormation.Model.OperationNotFoundException">
+        /// The specified ID refers to an operation that doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeOrganizationsAccess">REST API Reference for DescribeOrganizationsAccess Operation</seealso>
+        public virtual DescribeOrganizationsAccessResponse DescribeOrganizationsAccess(DescribeOrganizationsAccessRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationsAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeOrganizationsAccessResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeOrganizationsAccess operation on AmazonCloudFormationClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeOrganizationsAccess
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeOrganizationsAccess">REST API Reference for DescribeOrganizationsAccess Operation</seealso>
+        public virtual IAsyncResult BeginDescribeOrganizationsAccess(DescribeOrganizationsAccessRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeOrganizationsAccessRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeOrganizationsAccessResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeOrganizationsAccess operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeOrganizationsAccess.</param>
+        /// 
+        /// <returns>Returns a  DescribeOrganizationsAccessResult from CloudFormation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/cloudformation-2010-05-15/DescribeOrganizationsAccess">REST API Reference for DescribeOrganizationsAccess Operation</seealso>
+        public virtual DescribeOrganizationsAccessResponse EndDescribeOrganizationsAccess(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DescribeOrganizationsAccessResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DescribePublisher
 
         /// <summary>
@@ -1568,10 +1755,10 @@ namespace Amazon.CloudFormation
         /// <summary>
         /// Returns information about a stack drift detection operation. A stack drift detection
         /// operation detects whether a stack's actual configuration differs, or has <i>drifted</i>,
-        /// from it's expected configuration, as defined in the stack template and any values
-        /// specified as template parameters. A stack is considered to have drifted if one or
-        /// more of its resources have drifted. For more information about stack and resource
-        /// drift, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
+        /// from its expected configuration, as defined in the stack template and any values specified
+        /// as template parameters. A stack is considered to have drifted if one or more of its
+        /// resources have drifted. For more information about stack and resource drift, see <a
+        /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
         /// Unregulated Configuration Changes to Stacks and Resources</a>.
         /// 
         ///  
@@ -1698,12 +1885,12 @@ namespace Amazon.CloudFormation
         #region  DescribeStackInstance
 
         /// <summary>
-        /// Returns the stack instance that's associated with the specified stack set, Amazon
-        /// Web Services account, and Region.
+        /// Returns the stack instance that's associated with the specified StackSet, Amazon Web
+        /// Services account, and Amazon Web Services Region.
         /// 
         ///  
         /// <para>
-        /// For a list of stack instances that are associated with a specific stack set, use <a>ListStackInstances</a>.
+        /// For a list of stack instances that are associated with a specific StackSet, use <a>ListStackInstances</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackInstance service method.</param>
@@ -2056,7 +2243,7 @@ namespace Amazon.CloudFormation
         #region  DescribeStackSet
 
         /// <summary>
-        /// Returns the description of the specified stack set.
+        /// Returns the description of the specified StackSet.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackSet service method.</param>
         /// 
@@ -2113,7 +2300,7 @@ namespace Amazon.CloudFormation
         #region  DescribeStackSetOperation
 
         /// <summary>
-        /// Returns the description of the specified stack set operation.
+        /// Returns the description of the specified StackSet operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeStackSetOperation service method.</param>
         /// 
@@ -2311,7 +2498,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Detects whether a stack's actual configuration differs, or has <i>drifted</i>, from
-        /// it's expected configuration, as defined in the stack template and any values specified
+        /// its expected configuration, as defined in the stack template and any values specified
         /// as template parameters. For each resource in the stack that supports drift detection,
         /// CloudFormation compares the actual configuration of the resource with its expected
         /// template configuration. Only resource properties explicitly defined in the stack template
@@ -2398,7 +2585,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Returns information about whether a resource's actual configuration differs, or has
-        /// <i>drifted</i>, from it's expected configuration, as defined in the stack template
+        /// <i>drifted</i>, from its expected configuration, as defined in the stack template
         /// and any values specified as template parameters. This information includes actual
         /// and expected property values for resources in which CloudFormation detects drift.
         /// Only resource properties explicitly defined in the stack template are checked for
@@ -2927,12 +3114,6 @@ namespace Amazon.CloudFormation
         /// up to 10 stacks into a new stack set in the same account as the source stack or in
         /// a different administrator account and Region, by specifying the stack ID of the stack
         /// you intend to import.
-        /// 
-        ///  <note> 
-        /// <para>
-        ///  <code>ImportStacksToStackSet</code> is only supported by self-managed permissions.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportStacksToStackSet service method.</param>
         /// 
@@ -3750,7 +3931,7 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Publishes the specified extension to the CloudFormation registry as a public extension
-        /// in this region. Public extensions are available for use by all CloudFormation users.
+        /// in this Region. Public extensions are available for use by all CloudFormation users.
         /// For more information about publishing extensions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing
         /// extensions to make them available for public use</a> in the <i>CloudFormation CLI
         /// User Guide</i>.
@@ -3979,7 +4160,7 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// You can have a maximum of 50 resource extension versions registered at a time. This
-        /// maximum is per account and per region. Use <a href="AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
+        /// maximum is per account and per Region. Use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DeregisterType.html">DeregisterType</a>
         /// to deregister specific extension versions if necessary.
         /// </para>
         ///  
@@ -3990,7 +4171,7 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// Once you have registered a private extension in your account and region, use <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+        /// Once you have registered a private extension in your account and Region, use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
         /// to specify configuration properties for the extension. For more information, see <a
         /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
@@ -4198,12 +4379,12 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Specifies the configuration data for a registered CloudFormation extension, in the
-        /// given account and region.
+        /// given account and Region.
         /// 
         ///  
         /// <para>
         /// To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code>
-        /// element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+        /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
         /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
@@ -4478,12 +4659,12 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         /// If you don't specify a version, CloudFormation uses the default version of the extension
-        /// in your account and region for testing.
+        /// in your account and Region for testing.
         /// </para>
         ///  
         /// <para>
         /// To perform testing, CloudFormation assumes the execution role specified when the type
-        /// was registered. For more information, see <a href="AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
+        /// was registered. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">RegisterType</a>.
         /// </para>
         ///  
         /// <para>

@@ -45,12 +45,12 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>REGISTERED</code>: Private extensions that have been registered for this account
-        /// and region.
+        /// and Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>ACTIVATED</code>: Public extensions that have been activated for this account
-        /// and region.
+        /// and Region.
         /// </para>
         ///  </li> <li> 
         /// <para>

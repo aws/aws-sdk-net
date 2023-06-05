@@ -29,30 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// This is the response object from the ActivateType operation.
+    /// This is the response object from the ActivateOrganizationsAccess operation.
     /// </summary>
-    public partial class ActivateTypeResponse : AmazonWebServiceResponse
+    public partial class ActivateOrganizationsAccessResponse : AmazonWebServiceResponse
     {
-        private string _arn;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the activated extension, in this account and Region.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=1024)]
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
 
     }
 }

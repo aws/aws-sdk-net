@@ -255,7 +255,11 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Regions.
+        /// Gets and sets the property Regions. 
+        /// <para>
+        /// Returns a list of all Amazon Web Services Regions the given StackSet has stack instances
+        /// deployed in. The Amazon Web Services Regions list output is in no particular order.
+        /// </para>
         /// </summary>
         public List<string> Regions
         {

@@ -31,7 +31,7 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the BatchDescribeTypeConfigurations operation.
     /// Returns configuration data for the specified CloudFormation extensions, from the CloudFormation
-    /// registry for the account and region.
+    /// registry for the account and Region.
     /// 
     ///  
     /// <para>

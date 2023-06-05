@@ -29,29 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// This is the response object from the ActivateType operation.
+    /// This is the response object from the DescribeOrganizationsAccess operation.
     /// </summary>
-    public partial class ActivateTypeResponse : AmazonWebServiceResponse
+    public partial class DescribeOrganizationsAccessResponse : AmazonWebServiceResponse
     {
-        private string _arn;
+        private OrganizationStatus _status;
 
         /// <summary>
-        /// Gets and sets the property Arn. 
+        /// Gets and sets the property Status. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the activated extension, in this account and Region.
+        /// Presents the status of the <code>OrganizationAccess</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
-        public string Arn
+        public OrganizationStatus Status
         {
-            get { return this._arn; }
-            set { this._arn = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
 
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
         {
-            return this._arn != null;
+            return this._status != null;
         }
 
     }

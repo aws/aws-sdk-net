@@ -29,30 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// This is the response object from the ActivateType operation.
+    /// Container for the parameters to the ActivateOrganizationsAccess operation.
+    /// Activate trusted access with Organizations. With trusted access between StackSets
+    /// and Organizations activated, the management account has permissions to create and
+    /// manage StackSets for your organization.
     /// </summary>
-    public partial class ActivateTypeResponse : AmazonWebServiceResponse
+    public partial class ActivateOrganizationsAccessRequest : AmazonCloudFormationRequest
     {
-        private string _arn;
-
-        /// <summary>
-        /// Gets and sets the property Arn. 
-        /// <para>
-        /// The Amazon Resource Name (ARN) of the activated extension, in this account and Region.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Max=1024)]
-        public string Arn
-        {
-            get { return this._arn; }
-            set { this._arn = value; }
-        }
-
-        // Check to see if Arn property is set
-        internal bool IsSetArn()
-        {
-            return this._arn != null;
-        }
 
     }
 }

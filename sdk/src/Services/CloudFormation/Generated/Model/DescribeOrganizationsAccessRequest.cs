@@ -29,13 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudFormation.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeStackSet operation.
-    /// Returns the description of the specified StackSet.
+    /// Container for the parameters to the DescribeOrganizationsAccess operation.
+    /// Retrieves information about the account's <code>OrganizationAccess</code> status.
+    /// This API can be called either by the management account or the delegated administrator
+    /// by using the <code>CallAs</code> parameter. This API can also be called without the
+    /// <code>CallAs</code> parameter by the management account.
     /// </summary>
-    public partial class DescribeStackSetRequest : AmazonCloudFormationRequest
+    public partial class DescribeOrganizationsAccessRequest : AmazonCloudFormationRequest
     {
         private CallAs _callAs;
-        private string _stackSetName;
 
         /// <summary>
         /// Gets and sets the property CallAs. 
@@ -46,8 +48,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// By default, <code>SELF</code> is specified. Use <code>SELF</code> for stack sets with
-        /// self-managed permissions.
+        /// By default, <code>SELF</code> is specified.
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -75,25 +76,6 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetCallAs()
         {
             return this._callAs != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property StackSetName. 
-        /// <para>
-        /// The name or unique ID of the stack set whose description you want.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string StackSetName
-        {
-            get { return this._stackSetName; }
-            set { this._stackSetName = value; }
-        }
-
-        // Check to see if StackSetName property is set
-        internal bool IsSetStackSetName()
-        {
-            return this._stackSetName != null;
         }
 
     }
