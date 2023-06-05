@@ -87,7 +87,7 @@ namespace Amazon.MWAA.Model
         /// Gets and sets the property AirflowVersion. 
         /// <para>
         /// The Apache Airflow version on your environment. Valid values: <code>1.10.12</code>,
-        /// <code>2.0.2</code>, <code>2.2.2</code>, and <code>2.4.3</code>.
+        /// <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=32)]
@@ -585,6 +585,15 @@ namespace Amazon.MWAA.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>CREATING_SNAPSHOT</code> - Indicates the request to update environment details,
+        /// or upgrade the environment version, is in progress and Amazon MWAA is creating a storage
+        /// volume snapshot of the Amazon RDS database cluster associated with the environment.
+        /// A database snapshot is a backup created at a specific point in time. Amazon MWAA uses
+        /// snapshots to recover environment metadata if the process to update or upgrade an environment
+        /// fails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>CREATE_FAILED</code> - Indicates the request to create the environment failed,
         /// and the environment could not be created.
         /// </para>
@@ -596,6 +605,12 @@ namespace Amazon.MWAA.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>UPDATING</code> - Indicates the request to update the environment is in progress.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ROLLING_BACK</code> - Indicates the request to update environment details,
+        /// or upgrade the environment version, failed and Amazon MWAA is restoring the environment
+        /// using the latest storage volume snapshot.
         /// </para>
         ///  </li> <li> 
         /// <para>
