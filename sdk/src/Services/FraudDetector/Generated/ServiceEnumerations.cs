@@ -155,6 +155,10 @@ namespace Amazon.FraudDetector
         /// </summary>
         public static readonly DataType BOOLEAN = new DataType("BOOLEAN");
         /// <summary>
+        /// Constant DATETIME for DataType
+        /// </summary>
+        public static readonly DataType DATETIME = new DataType("DATETIME");
+        /// <summary>
         /// Constant FLOAT for DataType
         /// </summary>
         public static readonly DataType FLOAT = new DataType("FLOAT");
