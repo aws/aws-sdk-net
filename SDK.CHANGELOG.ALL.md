@@ -1,3 +1,24 @@
+### 3.7.562.0 (2023-06-05 18:28 UTC)
+* CloudFormation (3.7.106.0)
+	* AWS CloudFormation StackSets provides customers with three new APIs to activate, deactivate, and describe AWS Organizations trusted access which is needed to get started with service-managed StackSets.
+* EC2 (3.7.136.0)
+	* Making InstanceTagAttribute as the required parameter for the DeregisterInstanceEventNotificationAttributes and RegisterInstanceEventNotificationAttributes APIs.
+* Finspace (3.7.101.0)
+	* Releasing new Managed kdb Insights APIs
+* FraudDetector (3.7.104.0)
+	* Added new variable types, new DateTime data type, and new rules engine functions for interacting and working with DateTime data types.
+* KeyManagementService (3.7.103.0)
+	* This release includes feature to import customer's asymmetric (RSA and ECC) and HMAC keys into KMS.  It also includes feature to allow customers to specify number of days to schedule a KMS key deletion as a policy condition key.
+* Keyspaces (3.7.103.0)
+	* This release adds support for MRR GA launch, and includes multiregion support in create-keyspace, get-keyspace, and list-keyspace.
+* Lambda (3.7.111.0)
+	* Add Ruby 3.2 (ruby3.2) Runtime support to AWS Lambda.
+* MWAA (3.7.102.0)
+	* This release adds ROLLING_BACK and CREATING_SNAPSHOT environment statuses for Amazon MWAA environments.
+* Core 3.7.107.2
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.561.0 (2023-06-02 18:22 UTC)
 * Athena (3.7.110.0)
 	* This release introduces the DeleteCapacityReservation API and the ability to manage capacity reservations using CloudFormation

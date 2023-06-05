@@ -32,7 +32,7 @@ namespace Amazon.BackupGateway
     public partial class AmazonBackupGatewayConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.103");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.104");
 
         private string _userAgent = UserAgentString;
 
