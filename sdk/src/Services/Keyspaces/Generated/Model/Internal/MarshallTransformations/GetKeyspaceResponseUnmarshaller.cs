@@ -57,6 +57,18 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     response.KeyspaceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("replicationRegions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.ReplicationRegions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("replicationStrategy", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ReplicationStrategy = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("resourceArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
