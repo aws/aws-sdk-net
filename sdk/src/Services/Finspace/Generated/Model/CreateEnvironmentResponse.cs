@@ -78,7 +78,7 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property EnvironmentUrl. 
         /// <para>
-        /// The sign-in url for the web application of the FinSpace environment you created.
+        /// The sign-in URL for the web application of the FinSpace environment you created.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
