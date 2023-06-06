@@ -40,6 +40,7 @@ namespace Amazon.Inspector2.Model
         private List<CoverageStringFilter> _lambdaFunctionName = new List<CoverageStringFilter>();
         private List<CoverageStringFilter> _lambdaFunctionRuntime = new List<CoverageStringFilter>();
         private List<CoverageMapFilter> _lambdaFunctionTags = new List<CoverageMapFilter>();
+        private List<CoverageDateFilter> _lastScannedAt = new List<CoverageDateFilter>();
         private List<CoverageStringFilter> _resourceId = new List<CoverageStringFilter>();
         private List<CoverageStringFilter> _resourceType = new List<CoverageStringFilter>();
         private List<CoverageStringFilter> _scanStatusCode = new List<CoverageStringFilter>();
@@ -180,6 +181,26 @@ namespace Amazon.Inspector2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property LastScannedAt. 
+        /// <para>
+        /// Filters Amazon Web Services resources based on whether Amazon Inspector has checked
+        /// them for vulnerabilities within the specified time range.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<CoverageDateFilter> LastScannedAt
+        {
+            get { return this._lastScannedAt; }
+            set { this._lastScannedAt = value; }
+        }
+
+        // Check to see if LastScannedAt property is set
+        internal bool IsSetLastScannedAt()
+        {
+            return this._lastScannedAt != null && this._lastScannedAt.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceId. 
         /// <para>
         /// An array of Amazon Web Services resource IDs to return coverage statistics for.
@@ -202,7 +223,8 @@ namespace Amazon.Inspector2.Model
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// An array of Amazon Web Services resource types to return coverage statistics for.
-        /// The values can be <code>AWS_EC2_INSTANCE</code> or <code>AWS_ECR_REPOSITORY</code>.
+        /// The values can be <code>AWS_EC2_INSTANCE</code>, <code>AWS_LAMBDA_FUNCTION</code>
+        /// or <code>AWS_ECR_REPOSITORY</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
