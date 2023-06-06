@@ -119,7 +119,7 @@ namespace Amazon.Signer.Model
         /// <summary>
         /// Gets and sets the property PlatformId. 
         /// <para>
-        /// The ID of a code signing; platform.
+        /// The ID of a code signing platform.
         /// </para>
         /// </summary>
         public string PlatformId
