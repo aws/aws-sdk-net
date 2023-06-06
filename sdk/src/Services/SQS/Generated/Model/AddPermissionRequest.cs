@@ -50,7 +50,7 @@ namespace Amazon.SQS.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// An Amazon SQS policy can have a maximum of 7 actions.
+    /// An Amazon SQS policy can have a maximum of seven actions per statement.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -58,25 +58,15 @@ namespace Amazon.SQS.Model
     /// <code>AddPermission</code>, <code>RemovePermission</code>, and <code>SetQueueAttributes</code>
     /// actions in your IAM policy.
     /// </para>
-    ///  </li> </ul> </note> 
+    ///  </li> <li> 
     /// <para>
-    /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
-    /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
-    /// list with two elements looks like this:
+    /// Amazon SQS <code>AddPermission</code> does not support adding a non-account principal.
     /// </para>
-    ///  
-    /// <para>
-    ///  <code>&amp;AttributeName.1=first</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>&amp;AttributeName.2=second</code> 
-    /// </para>
-    ///  <note> 
+    ///  </li> </ul> </note> <note> 
     /// <para>
     /// Cross-account permissions don't apply to this action. For more information, see <a
     /// href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-    /// cross-account permissions to a role and a user name</a> in the <i>Amazon SQS Developer
+    /// cross-account permissions to a role and a username</a> in the <i>Amazon SQS Developer
     /// Guide</i>.
     /// </para>
     ///  </note>

@@ -29,30 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SQS.Model
 {
     /// <summary>
-    /// Encloses a receipt handle and an entry id for each message in <code> <a>ChangeMessageVisibilityBatch</a>.</code>
-    /// 
-    /// 
-    ///  <important> 
-    /// <para>
-    /// All of the following list parameters must be prefixed with <code>ChangeMessageVisibilityBatchRequestEntry.n</code>,
-    /// where <code>n</code> is an integer value starting with <code>1</code>. For example,
-    /// a parameter list for this action might look like this:
-    /// </para>
-    ///  </important> 
-    /// <para>
-    ///  <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code>
-    /// 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
-    /// 
-    /// </para>
+    /// Encloses a receipt handle and an entry ID for each message in <code> <a>ChangeMessageVisibilityBatch</a>.</code>
     /// </summary>
     public partial class ChangeMessageVisibilityBatchRequestEntry
     {

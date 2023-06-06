@@ -41,20 +41,7 @@ namespace Amazon.SQS.Model
     /// actions, you should check for batch errors even when the call returns an HTTP status
     /// code of <code>200</code>.
     /// </para>
-    ///  </important> 
-    /// <para>
-    /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
-    /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
-    /// list with two elements looks like this:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>&amp;AttributeName.1=first</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>&amp;AttributeName.2=second</code> 
-    /// </para>
+    ///  </important>
     /// </summary>
     public partial class ChangeMessageVisibilityBatchRequest : AmazonSQSRequest
     {
@@ -70,7 +57,7 @@ namespace Amazon.SQS.Model
         /// Instantiates ChangeMessageVisibilityBatchRequest with the parameterized properties
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue whose messages' visibility is changed. Queue URLs and names are case-sensitive.</param>
-        /// <param name="entries">A list of receipt handles of the messages for which the visibility timeout must be changed.</param>
+        /// <param name="entries">Lists the receipt handles of the messages for which the visibility timeout must be changed.</param>
         public ChangeMessageVisibilityBatchRequest(string queueUrl, List<ChangeMessageVisibilityBatchRequestEntry> entries)
         {
             _queueUrl = queueUrl;
@@ -80,7 +67,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of receipt handles of the messages for which the visibility timeout must be
+        /// Lists the receipt handles of the messages for which the visibility timeout must be
         /// changed.
         /// </para>
         /// </summary>
