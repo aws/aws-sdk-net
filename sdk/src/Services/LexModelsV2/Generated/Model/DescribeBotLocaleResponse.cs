@@ -110,7 +110,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The identifier of the version of the bot associated with the locale.
+        /// The version of the bot associated with the locale.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]

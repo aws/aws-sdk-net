@@ -193,7 +193,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property SlotTypeName. 
         /// <para>
-        /// The name for the slot. A slot type name must be unique within the account.
+        /// The name for the slot. A slot type name must be unique within the intent.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -238,18 +238,18 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>OriginalValue</code> - Returns the value entered by the user, if the user value
-        /// is similar to the slot value.
+        ///  <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the user
+        /// value is similar to the slot value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TopResolution</code> - If there is a resolution list for the slot, return the
-        /// first value in the resolution list. If there is no resolution list, return null.
+        ///  <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
+        /// the first value in the resolution list. If there is no resolution list, return null.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// If you don't specify the <code>valueSelectionSetting</code> parameter, the default
-        /// is <code>OriginalValue</code>.
+        /// is <code>ORIGINAL_VALUE</code>.
         /// </para>
         /// </summary>
         public SlotValueSelectionSetting ValueSelectionSetting
