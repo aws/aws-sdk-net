@@ -1219,12 +1219,17 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Creates an alias for your Amazon Web Services account. For information about using
-        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
+        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountAlias service method.</param>
         /// 
         /// <returns>The response from the CreateAccountAlias service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
@@ -1248,8 +1253,9 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Creates an alias for your Amazon Web Services account. For information about using
-        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
+        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccountAlias service method.</param>
         /// <param name="cancellationToken">
@@ -1257,6 +1263,10 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the CreateAccountAlias service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
@@ -2643,6 +2653,10 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeactivateMFADevice service method.</param>
         /// 
         /// <returns>The response from the DeactivateMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException">
         /// The request was rejected because it referenced an entity that is temporarily unmodifiable,
         /// such as a user name that was deleted and then recreated. The error indicates that
@@ -2687,6 +2701,10 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the DeactivateMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityTemporarilyUnmodifiableException">
         /// The request was rejected because it referenced an entity that is temporarily unmodifiable,
         /// such as a user name that was deleted and then recreated. The error indicates that
@@ -2802,12 +2820,17 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Deletes the specified Amazon Web Services account alias. For information about using
-        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
+        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAlias service method.</param>
         /// 
         /// <returns>The response from the DeleteAccountAlias service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Amazon Web Services account limits. The error message describes the limit exceeded.
@@ -2832,8 +2855,9 @@ namespace Amazon.IdentityManagement
 
         /// <summary>
         /// Deletes the specified Amazon Web Services account alias. For information about using
-        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
+        /// an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccountAlias service method.</param>
         /// <param name="cancellationToken">
@@ -2841,6 +2865,10 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the DeleteAccountAlias service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Amazon Web Services account limits. The error message describes the limit exceeded.
@@ -4383,6 +4411,10 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteSigningCertificate service method.</param>
         /// 
         /// <returns>The response from the DeleteSigningCertificate service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Amazon Web Services account limits. The error message describes the limit exceeded.
@@ -4423,6 +4455,10 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the DeleteSigningCertificate service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.LimitExceededException">
         /// The request was rejected because it attempted to create resources beyond the current
         /// Amazon Web Services account limits. The error message describes the limit exceeded.
@@ -4836,6 +4872,10 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the DeleteVirtualMFADevice service method.</param>
         /// 
         /// <returns>The response from the DeleteVirtualMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
         /// The request was rejected because it attempted to delete a resource that has attached
         /// subordinate entities. The error message describes these entities.
@@ -4878,6 +4918,10 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the DeleteVirtualMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.DeleteConflictException">
         /// The request was rejected because it attempted to delete a resource that has attached
         /// subordinate entities. The error message describes these entities.
@@ -5185,6 +5229,10 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the EnableMFADevice service method.</param>
         /// 
         /// <returns>The response from the EnableMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
@@ -5231,6 +5279,10 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the EnableMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.EntityAlreadyExistsException">
         /// The request was rejected because it attempted to create a resource that already exists.
         /// </exception>
@@ -8705,8 +8757,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// 
         /// <returns>The response from the ListAccountAliases service method, as returned by IdentityManagementService.</returns>
@@ -8723,8 +8776,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// 
@@ -8746,8 +8800,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -8766,8 +8821,9 @@ namespace Amazon.IdentityManagement
         /// <summary>
         /// Lists the account alias associated with the Amazon Web Services account (Note: you
         /// can have only one). For information about using an Amazon Web Services account alias,
-        /// see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html">Using
-        /// an alias for your Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.
+        /// see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating,
+        /// deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web
+        /// Services Sign-In User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccountAliases service method.</param>
         /// <param name="cancellationToken">
@@ -12865,6 +12921,10 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the ResyncMFADevice service method.</param>
         /// 
         /// <returns>The response from the ResyncMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidAuthenticationCodeException">
         /// The request was rejected because the authentication code was not recognized. The error
         /// message describes the specific error.
@@ -12907,6 +12967,10 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the ResyncMFADevice service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.InvalidAuthenticationCodeException">
         /// The request was rejected because the authentication code was not recognized. The error
         /// message describes the specific error.
@@ -16909,6 +16973,10 @@ namespace Amazon.IdentityManagement
         /// <param name="request">Container for the necessary parameters to execute the UploadSigningCertificate service method.</param>
         /// 
         /// <returns>The response from the UploadSigningCertificate service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.DuplicateCertificateException">
         /// The request was rejected because the same certificate is associated with an IAM user
         /// in the account.
@@ -16981,6 +17049,10 @@ namespace Amazon.IdentityManagement
         /// </param>
         /// 
         /// <returns>The response from the UploadSigningCertificate service method, as returned by IdentityManagementService.</returns>
+        /// <exception cref="Amazon.IdentityManagement.Model.ConcurrentModificationException">
+        /// The request was rejected because multiple requests to change this object were submitted
+        /// simultaneously. Wait a few minutes and submit your request again.
+        /// </exception>
         /// <exception cref="Amazon.IdentityManagement.Model.DuplicateCertificateException">
         /// The request was rejected because the same certificate is associated with an IAM user
         /// in the account.

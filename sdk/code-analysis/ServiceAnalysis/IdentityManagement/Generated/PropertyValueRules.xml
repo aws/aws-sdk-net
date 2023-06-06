@@ -89,7 +89,7 @@
     <property>Amazon.IdentityManagement.Model.CreateAccountAliasRequest.AccountAlias</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$</pattern>
+    <pattern>^[a-z0-9]([a-z0-9]|-(?!-)){1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateGroupRequest.GroupName</property>
@@ -101,7 +101,7 @@
     <property>Amazon.IdentityManagement.Model.CreateGroupRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateInstanceProfileRequest.InstanceProfileName</property>
@@ -113,7 +113,7 @@
     <property>Amazon.IdentityManagement.Model.CreateInstanceProfileRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateLoginProfileRequest.Password</property>
@@ -179,7 +179,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.Description</property>
     <max>1000</max>
-    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.MaxSessionDuration</property>
@@ -190,7 +190,7 @@
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateRoleRequest.PermissionsBoundary</property>
@@ -234,7 +234,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateServiceLinkedRoleRequest.Description</property>
     <max>1000</max>
-    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateServiceSpecificCredentialRequest.UserName</property>
@@ -246,7 +246,7 @@
     <property>Amazon.IdentityManagement.Model.CreateUserRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateUserRequest.PermissionsBoundary</property>
@@ -263,7 +263,7 @@
     <property>Amazon.IdentityManagement.Model.CreateVirtualMFADeviceRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.CreateVirtualMFADeviceRequest.VirtualMFADeviceName</property>
@@ -298,7 +298,7 @@
     <property>Amazon.IdentityManagement.Model.DeleteAccountAliasRequest.AccountAlias</property>
     <min>3</min>
     <max>63</max>
-    <pattern>^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$</pattern>
+    <pattern>^[a-z0-9]([a-z0-9]|-(?!-)){1,61}[a-z0-9]$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.DeleteGroupRequest.GroupName</property>
@@ -931,7 +931,7 @@
     <property>Amazon.IdentityManagement.Model.ListEntitiesForPolicyRequest.PathPrefix</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListEntitiesForPolicyRequest.PolicyArn</property>
@@ -1722,7 +1722,7 @@
     <property>Amazon.IdentityManagement.Model.UpdateGroupRequest.NewPath</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateLoginProfileRequest.Password</property>
@@ -1744,7 +1744,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateRoleRequest.Description</property>
     <max>1000</max>
-    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateRoleRequest.MaxSessionDuration</property>
@@ -1760,7 +1760,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateRoleDescriptionRequest.Description</property>
     <max>1000</max>
-    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateRoleDescriptionRequest.RoleName</property>
@@ -1787,7 +1787,7 @@
     <property>Amazon.IdentityManagement.Model.UpdateServerCertificateRequest.NewPath</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateServerCertificateRequest.NewServerCertificateName</property>
@@ -1841,7 +1841,7 @@
     <property>Amazon.IdentityManagement.Model.UpdateUserRequest.NewPath</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UpdateUserRequest.NewUserName</property>
@@ -1871,7 +1871,7 @@
     <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UploadServerCertificateRequest.PrivateKey</property>
@@ -1991,7 +1991,7 @@
     <property>Amazon.IdentityManagement.Model.EntityInfo.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.EvaluationResult.EvalActionName</property>
@@ -2024,7 +2024,7 @@
     <property>Amazon.IdentityManagement.Model.Group.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.GroupDetail.Arn</property>
@@ -2047,7 +2047,7 @@
     <property>Amazon.IdentityManagement.Model.GroupDetail.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.InstanceProfile.Arn</property>
@@ -2070,7 +2070,7 @@
     <property>Amazon.IdentityManagement.Model.InstanceProfile.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ListPoliciesGrantingServiceAccessEntry.ServiceNamespace</property>
@@ -2272,7 +2272,7 @@
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Role.Description</property>
     <max>1000</max>
-    <pattern>[\p{L}\p{M}\p{Z}\p{S}\p{N}\p{P}]*</pattern>
+    <pattern>[\u0009\u000A\u000D\u0020-\u007E\u00A1-\u00FF]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Role.MaxSessionDuration</property>
@@ -2283,7 +2283,7 @@
     <property>Amazon.IdentityManagement.Model.Role.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.Role.RoleId</property>
@@ -2312,7 +2312,7 @@
     <property>Amazon.IdentityManagement.Model.RoleDetail.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.RoleDetail.RoleId</property>
@@ -2357,7 +2357,7 @@
     <property>Amazon.IdentityManagement.Model.ServerCertificateMetadata.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.ServerCertificateMetadata.ServerCertificateId</property>
@@ -2498,7 +2498,7 @@
     <property>Amazon.IdentityManagement.Model.User.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.User.UserId</property>
@@ -2521,7 +2521,7 @@
     <property>Amazon.IdentityManagement.Model.UserDetail.Path</property>
     <min>1</min>
     <max>512</max>
-    <pattern>(\u002F)|(\u002F[\u0021-\u007F]+\u002F)</pattern>
+    <pattern>(\u002F)|(\u002F[\u0021-\u007E]+\u002F)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IdentityManagement.Model.UserDetail.UserId</property>
