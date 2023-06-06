@@ -36,6 +36,7 @@ namespace Amazon.QuickSight.Model
         private Visibility _alternateBandColorsVisibility;
         private string _alternateBandEvenColor;
         private string _alternateBandOddColor;
+        private RadarChartAxesRangeScale _axesRangeScale;
         private RadarChartSeriesSettings _baseSeriesSettings;
         private AxisDisplayOptions _categoryAxis;
         private ChartAxisLabelOptions _categoryLabelOptions;
@@ -100,6 +101,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetAlternateBandOddColor()
         {
             return this._alternateBandOddColor != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AxesRangeScale. 
+        /// <para>
+        /// The axis behavior options of a radar chart.
+        /// </para>
+        /// </summary>
+        public RadarChartAxesRangeScale AxesRangeScale
+        {
+            get { return this._axesRangeScale; }
+            set { this._axesRangeScale = value; }
+        }
+
+        // Check to see if AxesRangeScale property is set
+        internal bool IsSetAxesRangeScale()
+        {
+            return this._axesRangeScale != null;
         }
 
         /// <summary>

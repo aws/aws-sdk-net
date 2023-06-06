@@ -35,6 +35,7 @@ namespace Amazon.QuickSight.Model
     {
         private string _fieldId;
         private PivotTableConditionalFormattingScope _scope;
+        private List<PivotTableConditionalFormattingScope> _scopes = new List<PivotTableConditionalFormattingScope>();
         private TextConditionalFormat _textFormat;
 
         /// <summary>
@@ -72,6 +73,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetScope()
         {
             return this._scope != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scopes. 
+        /// <para>
+        /// A list of cell scopes for conditional formatting.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=3)]
+        public List<PivotTableConditionalFormattingScope> Scopes
+        {
+            get { return this._scopes; }
+            set { this._scopes = value; }
+        }
+
+        // Check to see if Scopes property is set
+        internal bool IsSetScopes()
+        {
+            return this._scopes != null && this._scopes.Count > 0; 
         }
 
         /// <summary>

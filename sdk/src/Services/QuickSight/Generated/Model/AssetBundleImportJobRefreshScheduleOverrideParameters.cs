@@ -82,8 +82,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property StartAfterDateTime. 
         /// <para>
-        /// An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>
-        /// to ensure that the <code>StartAfterDateTime</code> is set to a time that takes place
+        /// An override for the <code>StartAfterDateTime</code> of a <code>RefreshSchedule</code>.
+        /// Make sure that the <code>StartAfterDateTime</code> is set to a time that takes place
         /// in the future.
         /// </para>
         /// </summary>

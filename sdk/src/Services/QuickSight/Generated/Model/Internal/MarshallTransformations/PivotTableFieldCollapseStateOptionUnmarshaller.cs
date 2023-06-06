@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for PivotTableFieldOptions Object
+    /// Response Unmarshaller for PivotTableFieldCollapseStateOption Object
     /// </summary>  
-    public class PivotTableFieldOptionsUnmarshaller : IUnmarshaller<PivotTableFieldOptions, XmlUnmarshallerContext>, IUnmarshaller<PivotTableFieldOptions, JsonUnmarshallerContext>
+    public class PivotTableFieldCollapseStateOptionUnmarshaller : IUnmarshaller<PivotTableFieldCollapseStateOption, XmlUnmarshallerContext>, IUnmarshaller<PivotTableFieldCollapseStateOption, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        PivotTableFieldOptions IUnmarshaller<PivotTableFieldOptions, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PivotTableFieldCollapseStateOption IUnmarshaller<PivotTableFieldCollapseStateOption, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public PivotTableFieldOptions Unmarshall(JsonUnmarshallerContext context)
+        public PivotTableFieldCollapseStateOption Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            PivotTableFieldOptions unmarshalledObject = new PivotTableFieldOptions();
+            PivotTableFieldCollapseStateOption unmarshalledObject = new PivotTableFieldCollapseStateOption();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CollapseStateOptions", targetDepth))
+                if (context.TestExpression("State", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PivotTableFieldCollapseStateOption, PivotTableFieldCollapseStateOptionUnmarshaller>(PivotTableFieldCollapseStateOptionUnmarshaller.Instance);
-                    unmarshalledObject.CollapseStateOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.State = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("DataPathOptions", targetDepth))
+                if (context.TestExpression("Target", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<PivotTableDataPathOption, PivotTableDataPathOptionUnmarshaller>(PivotTableDataPathOptionUnmarshaller.Instance);
-                    unmarshalledObject.DataPathOptions = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("SelectedFieldOptions", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<PivotTableFieldOption, PivotTableFieldOptionUnmarshaller>(PivotTableFieldOptionUnmarshaller.Instance);
-                    unmarshalledObject.SelectedFieldOptions = unmarshaller.Unmarshall(context);
+                    var unmarshaller = PivotTableFieldCollapseStateTargetUnmarshaller.Instance;
+                    unmarshalledObject.Target = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         }
 
 
-        private static PivotTableFieldOptionsUnmarshaller _instance = new PivotTableFieldOptionsUnmarshaller();        
+        private static PivotTableFieldCollapseStateOptionUnmarshaller _instance = new PivotTableFieldCollapseStateOptionUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static PivotTableFieldOptionsUnmarshaller Instance
+        public static PivotTableFieldCollapseStateOptionUnmarshaller Instance
         {
             get
             {

@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// PivotTableCellConditionalFormatting Marshaller
+    /// PivotTableFieldCollapseStateTarget Marshaller
     /// </summary>
-    public class PivotTableCellConditionalFormattingMarshaller : IRequestMarshaller<PivotTableCellConditionalFormatting, JsonMarshallerContext> 
+    public class PivotTableFieldCollapseStateTargetMarshaller : IRequestMarshaller<PivotTableFieldCollapseStateTarget, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,50 +43,28 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(PivotTableCellConditionalFormatting requestObject, JsonMarshallerContext context)
+        public void Marshall(PivotTableFieldCollapseStateTarget requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetFieldId())
+            if(requestObject.IsSetFieldDataPathValues())
             {
-                context.Writer.WritePropertyName("FieldId");
-                context.Writer.Write(requestObject.FieldId);
-            }
-
-            if(requestObject.IsSetScope())
-            {
-                context.Writer.WritePropertyName("Scope");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = PivotTableConditionalFormattingScopeMarshaller.Instance;
-                marshaller.Marshall(requestObject.Scope, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetScopes())
-            {
-                context.Writer.WritePropertyName("Scopes");
+                context.Writer.WritePropertyName("FieldDataPathValues");
                 context.Writer.WriteArrayStart();
-                foreach(var requestObjectScopesListValue in requestObject.Scopes)
+                foreach(var requestObjectFieldDataPathValuesListValue in requestObject.FieldDataPathValues)
                 {
                     context.Writer.WriteObjectStart();
 
-                    var marshaller = PivotTableConditionalFormattingScopeMarshaller.Instance;
-                    marshaller.Marshall(requestObjectScopesListValue, context);
+                    var marshaller = DataPathValueMarshaller.Instance;
+                    marshaller.Marshall(requestObjectFieldDataPathValuesListValue, context);
 
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetTextFormat())
+            if(requestObject.IsSetFieldId())
             {
-                context.Writer.WritePropertyName("TextFormat");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = TextConditionalFormatMarshaller.Instance;
-                marshaller.Marshall(requestObject.TextFormat, context);
-
-                context.Writer.WriteObjectEnd();
+                context.Writer.WritePropertyName("FieldId");
+                context.Writer.Write(requestObject.FieldId);
             }
 
         }
@@ -94,7 +72,7 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static PivotTableCellConditionalFormattingMarshaller Instance = new PivotTableCellConditionalFormattingMarshaller();
+        public readonly static PivotTableFieldCollapseStateTargetMarshaller Instance = new PivotTableFieldCollapseStateTargetMarshaller();
 
     }
 }

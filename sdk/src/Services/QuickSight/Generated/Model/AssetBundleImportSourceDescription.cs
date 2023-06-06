@@ -30,8 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// A description of the import source that you provide at the start of an import job.
-    /// This value is set to either <code>Body</code> or <code>S3Uri</code> depending on how
-    /// the <code>StartAssetBundleImportJobRequest</code> is configured.
+    /// This value is set to either <code>Body</code> or <code>S3Uri</code>, depending on
+    /// how the <code>StartAssetBundleImportJobRequest</code> is configured.
     /// </summary>
     public partial class AssetBundleImportSourceDescription
     {
@@ -41,8 +41,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// A HTTPS download URL for the provided asset bundle that you optionally provided at
-        /// the start of the import job. This URL is valid for 5 minutes after issuance. Call
+        /// An HTTPS download URL for the provided asset bundle that you optionally provided at
+        /// the start of the import job. This URL is valid for five minutes after issuance. Call
         /// <code>DescribeAssetBundleExportJob</code> again for a fresh URL if needed. The downloaded
         /// asset bundle is a <code>.qs</code> zip file.
         /// </para>
@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The Amazon S3 uri that you provided at the start of the import job.
+        /// The Amazon S3 URI that you provided at the start of the import job.
         /// </para>
         /// </summary>
         public string S3Uri

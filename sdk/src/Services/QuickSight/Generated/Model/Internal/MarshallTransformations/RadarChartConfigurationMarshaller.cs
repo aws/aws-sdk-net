@@ -63,6 +63,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AlternateBandOddColor);
             }
 
+            if(requestObject.IsSetAxesRangeScale())
+            {
+                context.Writer.WritePropertyName("AxesRangeScale");
+                context.Writer.Write(requestObject.AxesRangeScale);
+            }
+
             if(requestObject.IsSetBaseSeriesSettings())
             {
                 context.Writer.WritePropertyName("BaseSeriesSettings");

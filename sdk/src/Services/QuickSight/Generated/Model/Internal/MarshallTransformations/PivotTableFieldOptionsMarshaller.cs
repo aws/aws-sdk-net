@@ -45,6 +45,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(PivotTableFieldOptions requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCollapseStateOptions())
+            {
+                context.Writer.WritePropertyName("CollapseStateOptions");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCollapseStateOptionsListValue in requestObject.CollapseStateOptions)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PivotTableFieldCollapseStateOptionMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCollapseStateOptionsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetDataPathOptions())
             {
                 context.Writer.WritePropertyName("DataPathOptions");
