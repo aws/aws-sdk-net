@@ -42,6 +42,7 @@ namespace Amazon.IoT.Model
     {
         private AbortConfig _abortConfig;
         private string _description;
+        private List<string> _destinationPackageVersions = new List<string>();
         private string _document;
         private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
         private string _documentSource;
@@ -92,6 +93,30 @@ namespace Amazon.IoT.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationPackageVersions. 
+        /// <para>
+        /// The package version Amazon Resource Names (ARNs) that are installed on the device
+        /// when the job successfully completes. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b>The following Length Constraints relates to a single string. Up to five
+        /// strings are allowed.
+        /// </para>
+        /// </summary>
+        public List<string> DestinationPackageVersions
+        {
+            get { return this._destinationPackageVersions; }
+            set { this._destinationPackageVersions = value; }
+        }
+
+        // Check to see if DestinationPackageVersions property is set
+        internal bool IsSetDestinationPackageVersions()
+        {
+            return this._destinationPackageVersions != null && this._destinationPackageVersions.Count > 0; 
         }
 
         /// <summary>
@@ -147,7 +172,8 @@ namespace Amazon.IoT.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>.
+        /// For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code>
+        /// 
         /// </para>
         ///  
         /// <para>

@@ -36,6 +36,7 @@ namespace Amazon.IoT.Model
     #endif
     public partial class ConflictException : AmazonIoTException
     {
+        private string _resourceId;
 
         /// <summary>
         /// Constructs a new ConflictException with the specified error
@@ -97,6 +98,7 @@ namespace Amazon.IoT.Model
         protected ConflictException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
         }
 
         /// <summary>
@@ -117,8 +119,27 @@ namespace Amazon.IoT.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("ResourceId", this.ResourceId);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// A resource with the same name already exists.
+        /// </para>
+        /// </summary>
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
+        }
 
     }
 }

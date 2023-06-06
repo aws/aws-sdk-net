@@ -44,7 +44,7 @@ namespace Amazon.IoT.Model
         /// Displays the duration of the next maintenance window.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=30, Max=1430)]
+        [AWSProperty(Required=true, Min=1, Max=1430)]
         public int DurationInMinutes
         {
             get { return this._durationInMinutes.GetValueOrDefault(); }

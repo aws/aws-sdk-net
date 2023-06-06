@@ -268,6 +268,22 @@ namespace Amazon.IoT.Model
         }
 
         /// <summary>
+        /// Paginator for ListPackages operation
+        ///</summary>
+        public IListPackagesPaginator ListPackages(ListPackagesRequest request) 
+        {
+            return new ListPackagesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListPackageVersions operation
+        ///</summary>
+        public IListPackageVersionsPaginator ListPackageVersions(ListPackageVersionsRequest request) 
+        {
+            return new ListPackageVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPolicies operation
         ///</summary>
         public IListPoliciesPaginator ListPolicies(ListPoliciesRequest request) 

@@ -85,6 +85,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDestinationPackageVersions())
+                {
+                    context.Writer.WritePropertyName("destinationPackageVersions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDestinationPackageVersionsListValue in publicRequest.DestinationPackageVersions)
+                    {
+                            context.Writer.Write(publicRequestDestinationPackageVersionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDocument())
                 {
                     context.Writer.WritePropertyName("document");
