@@ -1928,6 +1928,18 @@ namespace Amazon.ElasticMapReduce
         /// Constant CapacityOptimized for SpotProvisioningAllocationStrategy
         /// </summary>
         public static readonly SpotProvisioningAllocationStrategy CapacityOptimized = new SpotProvisioningAllocationStrategy("capacity-optimized");
+        /// <summary>
+        /// Constant Diversified for SpotProvisioningAllocationStrategy
+        /// </summary>
+        public static readonly SpotProvisioningAllocationStrategy Diversified = new SpotProvisioningAllocationStrategy("diversified");
+        /// <summary>
+        /// Constant LowestPrice for SpotProvisioningAllocationStrategy
+        /// </summary>
+        public static readonly SpotProvisioningAllocationStrategy LowestPrice = new SpotProvisioningAllocationStrategy("lowest-price");
+        /// <summary>
+        /// Constant PriceCapacityOptimized for SpotProvisioningAllocationStrategy
+        /// </summary>
+        public static readonly SpotProvisioningAllocationStrategy PriceCapacityOptimized = new SpotProvisioningAllocationStrategy("price-capacity-optimized");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
