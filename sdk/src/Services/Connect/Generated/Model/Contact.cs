@@ -204,7 +204,9 @@ namespace Amazon.Connect.Model
         /// this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent
         /// began dialing. For <code>CALLBACK</code>, this is when the callback contact was created.
         /// For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
-        /// was initiated. For <code>API</code>, this is when the request arrived.
+        /// was initiated. For <code>API</code>, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>,
+        /// this is when the agent started dialing the external participant. For <code>MONITOR</code>,
+        /// this is when the supervisor started listening to a contact.
         /// </para>
         /// </summary>
         public DateTime InitiationTimestamp
