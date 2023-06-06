@@ -1,3 +1,28 @@
+### 3.7.563.0 (2023-06-06 18:28 UTC)
+* Connect (3.7.126.6)
+	* GetMetricDataV2 API is now available in AWS GovCloud(US) region.
+* ElasticMapReduce (3.7.105.0)
+	* This release provides customers the ability to specify an allocation strategies amongst PRICE_CAPACITY_OPTIMIZED, CAPACITY_OPTIMIZED, LOWEST_PRICE, DIVERSIFIED for Spot instances in Instance Feet cluster. This enables customers to choose an allocation strategy best suited for their workload.
+* IdentityManagement (3.7.101.0)
+	* This release updates the AccountAlias regex pattern with the same length restrictions enforced by the length constraint.
+* Inspector2 (3.7.105.0)
+	* Adds new response properties and request parameters for 'last scanned at' on the ListCoverage operation. This feature allows you to search and view the date of which your resources were last scanned by Inspector.
+* IoT (3.7.109.0)
+	* Adding IoT Device Management Software Package Catalog APIs to register, store, and report system software packages, along with their versions and metadata in a centralized location.
+* IotData (3.7.104.0)
+	* Update thing shadow name regex to allow '$' character
+* LexModelsV2 (3.7.103.0)
+	* This release adds support for Lex Developers to create test sets and to execute those test-sets against their bots.
+* QuickSight (3.7.110.0)
+	* QuickSight support for pivot table field collapse state, radar chart range scale and multiple scope options in conditional formatting.
+* Signer (3.7.101.0)
+	* AWS Signer is launching Container Image Signing, a new feature that enables you to sign and verify container images. This feature enables you to validate that only container images you approve are used in your enterprise.
+* SQS (3.7.103.0)
+	* Amazon SQS adds three new APIs - StartMessageMoveTask, CancelMessageMoveTask, and ListMessageMoveTasks to automate redriving messages from dead-letter queues to source queues or a custom destination.
+* Core 3.7.107.3
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.562.0 (2023-06-05 18:28 UTC)
 * CloudFormation (3.7.106.0)
 	* AWS CloudFormation StackSets provides customers with three new APIs to activate, deactivate, and describe AWS Organizations trusted access which is needed to get started with service-managed StackSets.
