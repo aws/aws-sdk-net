@@ -229,7 +229,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property JumboFrameCapable. 
         /// <para>
-        /// Indicates whether jumbo frames (9001 MTU) are supported.
+        /// Indicates whether jumbo frames are supported.
         /// </para>
         /// </summary>
         public bool JumboFrameCapable
