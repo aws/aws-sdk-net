@@ -61,8 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a>
-        /// </code>.
+        /// To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

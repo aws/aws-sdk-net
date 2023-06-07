@@ -2259,6 +2259,10 @@ namespace Amazon.CloudFormation
         /// </summary>
         public static readonly StackInstanceDetailedStatus RUNNING = new StackInstanceDetailedStatus("RUNNING");
         /// <summary>
+        /// Constant SKIPPED_SUSPENDED_ACCOUNT for StackInstanceDetailedStatus
+        /// </summary>
+        public static readonly StackInstanceDetailedStatus SKIPPED_SUSPENDED_ACCOUNT = new StackInstanceDetailedStatus("SKIPPED_SUSPENDED_ACCOUNT");
+        /// <summary>
         /// Constant SUCCEEDED for StackInstanceDetailedStatus
         /// </summary>
         public static readonly StackInstanceDetailedStatus SUCCEEDED = new StackInstanceDetailedStatus("SUCCEEDED");

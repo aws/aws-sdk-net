@@ -56,8 +56,7 @@ namespace Amazon.CloudFormation
     /// <para>
     /// CloudFormation makes use of other Amazon Web Services products. If you need additional
     /// technical information about a specific Amazon Web Services product, you can find the
-    /// product's technical documentation at <a href="https://docs.aws.amazon.com/"> <code>docs.aws.amazon.com</code>
-    /// </a>.
+    /// product's technical documentation at <a href="https://docs.aws.amazon.com/">docs.aws.amazon.com</a>.
     /// </para>
     /// </summary>
     public partial interface IAmazonCloudFormation : IAmazonService, IDisposable
@@ -295,7 +294,8 @@ namespace Amazon.CloudFormation
 
         /// <summary>
         /// Creates a stack as specified in the template. After the call completes successfully,
-        /// the stack creation starts. You can check the status of the stack through the <a>DescribeStacks</a>operation.
+        /// the stack creation starts. You can check the status of the stack through the <a>DescribeStacks</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateStack service method.</param>
         /// <param name="cancellationToken">
@@ -1096,14 +1096,13 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// When you initiate a registration request using <code> <a>RegisterType</a> </code>,
-        /// you can then use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
-        /// of that registration request.
+        /// When you initiate a registration request using <a>RegisterType</a>, you can then use
+        /// <a>DescribeTypeRegistration</a> to monitor the progress of that registration request.
         /// </para>
         ///  
         /// <para>
-        /// Once the registration request has completed, use <code> <a>DescribeType</a> </code>
-        /// to return detailed information about an extension.
+        /// Once the registration request has completed, use <a>DescribeType</a> to return detailed
+        /// information about an extension.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeTypeRegistration service method.</param>
@@ -1221,10 +1220,10 @@ namespace Amazon.CloudFormation
         ///  
         /// <para>
         ///  <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the stack
-        /// set drift detection operation. Use this operation id with <code> <a>DescribeStackSetOperation</a>
-        /// </code> to monitor the progress of the drift detection operation. The drift detection
-        /// operation may take some time, depending on the number of stack instances included
-        /// in the stack set, in addition to the number of resources included in each stack.
+        /// set drift detection operation. Use this operation id with <a>DescribeStackSetOperation</a>
+        /// to monitor the progress of the drift detection operation. The drift detection operation
+        /// may take some time, depending on the number of stack instances included in the stack
+        /// set, in addition to the number of resources included in each stack.
         /// </para>
         ///  
         /// <para>
@@ -1232,20 +1231,19 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Use <code> <a>DescribeStackSet</a> </code> to return detailed information about the
-        /// stack set, including detailed information about the last <i>completed</i> drift operation
-        /// performed on the stack set. (Information about drift operations that are in progress
-        /// isn't included.)
+        /// Use <a>DescribeStackSet</a> to return detailed information about the stack set, including
+        /// detailed information about the last <i>completed</i> drift operation performed on
+        /// the stack set. (Information about drift operations that are in progress isn't included.)
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code> <a>ListStackInstances</a> </code> to return a list of stack instances belonging
-        /// to the stack set, including the drift status and last drift time checked of each instance.
+        /// Use <a>ListStackInstances</a> to return a list of stack instances belonging to the
+        /// stack set, including the drift status and last drift time checked of each instance.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Use <code> <a>DescribeStackInstance</a> </code> to return detailed information about
-        /// a specific stack instance, including its drift status and last drift time checked.
+        /// Use <a>DescribeStackInstance</a> to return detailed information about a specific stack
+        /// instance, including its drift status and last drift time checked.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -1259,8 +1257,7 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// To stop a drift detection stack set operation, use <code> <a>StopStackSetOperation</a>
-        /// </code>.
+        /// To stop a drift detection stack set operation, use <a>StopStackSetOperation</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetectStackSetDrift service method.</param>
@@ -1524,7 +1521,7 @@ namespace Amazon.CloudFormation
         /// Lists all exported output values in the account and Region in which you call this
         /// action. Use this action to see the exported output values that you can import into
         /// other stacks. To import values, use the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-        /// <code>Fn::ImportValue</code> </a> function.
+        /// Fn::ImportValue</a> function.
         /// 
         ///  
         /// <para>
@@ -1554,8 +1551,8 @@ namespace Amazon.CloudFormation
         /// 
         ///  
         /// <para>
-        /// For more information about importing an exported output value, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">
-        /// <code>Fn::ImportValue</code> </a> function.
+        /// For more information about importing an exported output value, see the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/intrinsic-function-reference-importvalue.html">Fn::ImportValue</a>
+        /// function.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
@@ -1930,9 +1927,8 @@ namespace Amazon.CloudFormation
         /// </para>
         ///  
         /// <para>
-        /// Once you have initiated a registration request using <code> <a>RegisterType</a> </code>,
-        /// you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
-        /// of the registration request.
+        /// Once you have initiated a registration request using <a>RegisterType</a>, you can
+        /// use <a>DescribeTypeRegistration</a> to monitor the progress of the registration request.
         /// </para>
         ///  
         /// <para>

@@ -60,9 +60,8 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// Once you have initiated a registration request using <code> <a>RegisterType</a> </code>,
-    /// you can use <code> <a>DescribeTypeRegistration</a> </code> to monitor the progress
-    /// of the registration request.
+    /// Once you have initiated a registration request using <a>RegisterType</a>, you can
+    /// use <a>DescribeTypeRegistration</a> to monitor the progress of the registration request.
     /// </para>
     ///  
     /// <para>
