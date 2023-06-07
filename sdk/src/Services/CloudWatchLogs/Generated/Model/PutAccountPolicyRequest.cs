@@ -29,18 +29,27 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchLogs.Model
 {
     /// <summary>
-    /// Container for the parameters to the PutDataProtectionPolicy operation.
-    /// Creates a data protection policy for the specified log group. A data protection policy
-    /// can help safeguard sensitive data that's ingested by the log group by auditing and
-    /// masking the sensitive log data.
+    /// Container for the parameters to the PutAccountPolicy operation.
+    /// Creates an account-level data protection policy that applies to all log groups in
+    /// the account. A data protection policy can help safeguard sensitive data that's ingested
+    /// by your log groups by auditing and masking the sensitive log data. Each account can
+    /// have only one account-level policy.
     /// 
     ///  <important> 
     /// <para>
-    /// Sensitive data is detected and masked when it is ingested into the log group. When
-    /// you set a data protection policy, log events ingested into the log group before that
+    /// Sensitive data is detected and masked when it is ingested into a log group. When you
+    /// set a data protection policy, log events ingested into the log groups before that
     /// time are not masked.
     /// </para>
     ///  </important> 
+    /// <para>
+    /// If you use <code>PutAccountPolicy</code> to create a data protection policy for your
+    /// whole account, it applies to both existing log groups and all log groups that are
+    /// created later in this account. The account policy is applied to existing log groups
+    /// with eventual consistency. It might take up to 5 minutes before sensitive data in
+    /// existing log groups begins to be masked.
+    /// </para>
+    ///  
     /// <para>
     /// By default, when a user views a log event that includes masked data, the sensitive
     /// data is replaced by asterisks. A user who has the <code>logs:Unmask</code> permission
@@ -59,38 +68,25 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// The <code>PutDataProtectionPolicy</code> operation applies to only the specified log
-    /// group. You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
-    /// to create an account-level data protection policy that applies to all log groups in
-    /// the account, including both existing log groups and log groups that are created level.
-    /// If a log group has its own data protection policy and the account also has an account-level
-    /// data protection policy, then the two policies are cumulative. Any sensitive term specified
+    /// To use the <code>PutAccountPolicy</code> operation, you must be signed on with the
+    /// <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <code>PutAccountPolicy</code> operation applies to all log groups in the account.
+    /// You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
+    /// to create a data protection policy that applies to just one log group. If a log group
+    /// has its own data protection policy and the account also has an account-level data
+    /// protection policy, then the two policies are cumulative. Any sensitive term specified
     /// in either policy is masked.
     /// </para>
     /// </summary>
-    public partial class PutDataProtectionPolicyRequest : AmazonCloudWatchLogsRequest
+    public partial class PutAccountPolicyRequest : AmazonCloudWatchLogsRequest
     {
-        private string _logGroupIdentifier;
         private string _policyDocument;
-
-        /// <summary>
-        /// Gets and sets the property LogGroupIdentifier. 
-        /// <para>
-        /// Specify either the log group name or log group ARN.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string LogGroupIdentifier
-        {
-            get { return this._logGroupIdentifier; }
-            set { this._logGroupIdentifier = value; }
-        }
-
-        // Check to see if LogGroupIdentifier property is set
-        internal bool IsSetLogGroupIdentifier()
-        {
-            return this._logGroupIdentifier != null;
-        }
+        private string _policyName;
+        private PolicyType _policyType;
+        private Scope _scope;
 
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
@@ -142,8 +138,9 @@ namespace Amazon.CloudWatchLogs.Model
         /// <para>
         /// In addition to the two JSON blocks, the <code>policyDocument</code> can also include
         /// <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The
-        /// <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings
-        /// metrics to CloudWatch.
+        /// <code>Name</code> is different than the operation's <code>policyName</code> parameter,
+        /// and is used as a dimension when CloudWatch Logs reports audit findings metrics to
+        /// CloudWatch.
         /// </para>
         ///  
         /// <para>
@@ -161,6 +158,64 @@ namespace Amazon.CloudWatchLogs.Model
         internal bool IsSetPolicyDocument()
         {
             return this._policyDocument != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyName. 
+        /// <para>
+        /// A name for the policy. This must be unique within the account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string PolicyName
+        {
+            get { return this._policyName; }
+            set { this._policyName = value; }
+        }
+
+        // Check to see if PolicyName property is set
+        internal bool IsSetPolicyName()
+        {
+            return this._policyName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PolicyType. 
+        /// <para>
+        /// Currently the only valid value for this parameter is <code>DATA_PROTECTION_POLICY</code>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public PolicyType PolicyType
+        {
+            get { return this._policyType; }
+            set { this._policyType = value; }
+        }
+
+        // Check to see if PolicyType property is set
+        internal bool IsSetPolicyType()
+        {
+            return this._policyType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Scope. 
+        /// <para>
+        /// Currently the only valid value for this parameter is <code>GLOBAL</code>, which specifies
+        /// that the data protection policy applies to all log groups in the account. If you omit
+        /// this parameter, the default of <code>GLOBAL</code> is used.
+        /// </para>
+        /// </summary>
+        public Scope Scope
+        {
+            get { return this._scope; }
+            set { this._scope = value; }
+        }
+
+        // Check to see if Scope property is set
+        internal bool IsSetScope()
+        {
+            return this._scope != null;
         }
 
     }

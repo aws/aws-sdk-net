@@ -93,13 +93,6 @@ namespace Amazon.CloudWatchLogs.Model
         /// and all log groups in all source accounts that are linked to the monitoring account.
         /// 
         /// </para>
-        ///  <note> 
-        /// <para>
-        ///  If you specify <code>includeLinkedAccounts</code> in your request, then <code>metricFilterCount</code>,
-        /// <code>retentionInDays</code>, and <code>storedBytes</code> are not included in the
-        /// response. 
-        /// </para>
-        ///  </note>
         /// </summary>
         public bool IncludeLinkedAccounts
         {
@@ -141,6 +134,12 @@ namespace Amazon.CloudWatchLogs.Model
         /// For example, if you specify <code>Foo</code>, log groups named <code>FooBar</code>,
         /// <code>aws/Foo</code>, and <code>GroupFoo</code> would match, but <code>foo</code>,
         /// <code>F/o/o</code> and <code>Froo</code> would not match.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify <code>logGroupNamePattern</code> in your request, then only <code>arn</code>,
+        /// <code>creationTime</code>, and <code>logGroupName</code> are included in the response.
+        /// 
         /// </para>
         ///  <note> 
         /// <para>

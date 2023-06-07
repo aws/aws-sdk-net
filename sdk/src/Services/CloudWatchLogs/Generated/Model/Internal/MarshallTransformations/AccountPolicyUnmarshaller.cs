@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for LogGroup Object
+    /// Response Unmarshaller for AccountPolicy Object
     /// </summary>  
-    public class LogGroupUnmarshaller : IUnmarshaller<LogGroup, XmlUnmarshallerContext>, IUnmarshaller<LogGroup, JsonUnmarshallerContext>
+    public class AccountPolicyUnmarshaller : IUnmarshaller<AccountPolicy, XmlUnmarshallerContext>, IUnmarshaller<AccountPolicy, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        LogGroup IUnmarshaller<LogGroup, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AccountPolicy IUnmarshaller<AccountPolicy, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,69 +53,51 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public LogGroup Unmarshall(JsonUnmarshallerContext context)
+        public AccountPolicy Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            LogGroup unmarshalledObject = new LogGroup();
+            AccountPolicy unmarshalledObject = new AccountPolicy();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("arn", targetDepth))
+                if (context.TestExpression("accountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("creationTime", targetDepth))
-                {
-                    var unmarshaller = DateTimeEpochLongMillisecondsUnmarshaller.Instance;
-                    unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("dataProtectionStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.DataProtectionStatus = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("inheritedProperties", targetDepth))
-                {
-                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
-                    unmarshalledObject.InheritedProperties = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("kmsKeyId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.KmsKeyId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("logGroupName", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LogGroupName = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("metricFilterCount", targetDepth))
-                {
-                    var unmarshaller = IntUnmarshaller.Instance;
-                    unmarshalledObject.MetricFilterCount = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("retentionInDays", targetDepth))
-                {
-                    var unmarshaller = NullableIntUnmarshaller.Instance;
-                    unmarshalledObject.RetentionInDays = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("storedBytes", targetDepth))
+                if (context.TestExpression("lastUpdatedTime", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;
-                    unmarshalledObject.StoredBytes = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.LastUpdatedTime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("policyDocument", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PolicyDocument = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("policyName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PolicyName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("policyType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.PolicyType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("scope", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -124,12 +106,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
         }
 
 
-        private static LogGroupUnmarshaller _instance = new LogGroupUnmarshaller();        
+        private static AccountPolicyUnmarshaller _instance = new AccountPolicyUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static LogGroupUnmarshaller Instance
+        public static AccountPolicyUnmarshaller Instance
         {
             get
             {

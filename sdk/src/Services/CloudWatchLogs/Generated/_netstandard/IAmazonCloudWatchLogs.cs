@@ -279,8 +279,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// If you attempt to associate a KMS key with the log group but the KMS keydoes not exist
-        /// or the KMS key is disabled, you receive an <code>InvalidParameterException</code>
+        /// If you attempt to associate a KMS key with the log group but the KMS key does not
+        /// exist or the KMS key is disabled, you receive an <code>InvalidParameterException</code>
         /// error. 
         /// </para>
         ///  <important> 
@@ -370,6 +370,42 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/CreateLogStream">REST API Reference for CreateLogStream Operation</seealso>
         Task<CreateLogStreamResponse> CreateLogStreamAsync(CreateLogStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DeleteAccountPolicy
+
+
+
+        /// <summary>
+        /// Deletes a CloudWatch Logs account policy.
+        /// 
+        ///  
+        /// <para>
+        /// To use this operation, you must be signed on with the <code>logs:DeleteDataProtectionPolicy</code>
+        /// and <code>logs:DeleteAccountPolicy</code> permissions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAccountPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAccountPolicy service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteAccountPolicy">REST API Reference for DeleteAccountPolicy Operation</seealso>
+        Task<DeleteAccountPolicyResponse> DeleteAccountPolicyAsync(DeleteAccountPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -660,6 +696,36 @@ namespace Amazon.CloudWatchLogs
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DeleteSubscriptionFilter">REST API Reference for DeleteSubscriptionFilter Operation</seealso>
         Task<DeleteSubscriptionFilterResponse> DeleteSubscriptionFilterAsync(DeleteSubscriptionFilterRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  DescribeAccountPolicies
+
+
+
+        /// <summary>
+        /// Returns a list of all CloudWatch Logs account policies in the account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAccountPolicies service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAccountPolicies service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/DescribeAccountPolicies">REST API Reference for DescribeAccountPolicies Operation</seealso>
+        Task<DescribeAccountPoliciesResponse> DescribeAccountPoliciesAsync(DescribeAccountPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 
@@ -1030,7 +1096,7 @@ namespace Amazon.CloudWatchLogs
         /// 
         ///  
         /// <para>
-        /// You must have the <code>logs;FilterLogEvents</code> permission to perform this operation.
+        /// You must have the <code>logs:FilterLogEvents</code> permission to perform this operation.
         /// </para>
         ///  
         /// <para>
@@ -1369,6 +1435,85 @@ namespace Amazon.CloudWatchLogs
 
         #endregion
                 
+        #region  PutAccountPolicy
+
+
+
+        /// <summary>
+        /// Creates an account-level data protection policy that applies to all log groups in
+        /// the account. A data protection policy can help safeguard sensitive data that's ingested
+        /// by your log groups by auditing and masking the sensitive log data. Each account can
+        /// have only one account-level policy.
+        /// 
+        ///  <important> 
+        /// <para>
+        /// Sensitive data is detected and masked when it is ingested into a log group. When you
+        /// set a data protection policy, log events ingested into the log groups before that
+        /// time are not masked.
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// If you use <code>PutAccountPolicy</code> to create a data protection policy for your
+        /// whole account, it applies to both existing log groups and all log groups that are
+        /// created later in this account. The account policy is applied to existing log groups
+        /// with eventual consistency. It might take up to 5 minutes before sensitive data in
+        /// existing log groups begins to be masked.
+        /// </para>
+        ///  
+        /// <para>
+        /// By default, when a user views a log event that includes masked data, the sensitive
+        /// data is replaced by asterisks. A user who has the <code>logs:Unmask</code> permission
+        /// can use a <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_GetLogEvents.html">GetLogEvents</a>
+        /// or <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_FilterLogEvents.html">FilterLogEvents</a>
+        /// operation with the <code>unmask</code> parameter set to <code>true</code> to view
+        /// the unmasked log events. Users with the <code>logs:Unmask</code> can also view unmasked
+        /// data in the CloudWatch Logs console by running a CloudWatch Logs Insights query with
+        /// the <code>unmask</code> query command.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, including a list of types of data that can be audited and masked,
+        /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect
+        /// sensitive log data with masking</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// To use the <code>PutAccountPolicy</code> operation, you must be signed on with the
+        /// <code>logs:PutDataProtectionPolicy</code> and <code>logs:PutAccountPolicy</code> permissions.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>PutAccountPolicy</code> operation applies to all log groups in the account.
+        /// You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutDataProtectionPolicy.html">PutDataProtectionPolicy</a>
+        /// to create a data protection policy that applies to just one log group. If a log group
+        /// has its own data protection policy and the account also has an account-level data
+        /// protection policy, then the two policies are cumulative. Any sensitive term specified
+        /// in either policy is masked.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAccountPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAccountPolicy service method, as returned by CloudWatchLogs.</returns>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.InvalidParameterException">
+        /// A parameter is specified incorrectly.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.LimitExceededException">
+        /// You have reached the maximum number of resources that can be created.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.OperationAbortedException">
+        /// Multiple concurrent requests to update the same resource were in conflict.
+        /// </exception>
+        /// <exception cref="Amazon.CloudWatchLogs.Model.ServiceUnavailableException">
+        /// The service cannot complete the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/logs-2014-03-28/PutAccountPolicy">REST API Reference for PutAccountPolicy Operation</seealso>
+        Task<PutAccountPolicyResponse> PutAccountPolicyAsync(PutAccountPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  PutDataProtectionPolicy
 
 
@@ -1400,6 +1545,16 @@ namespace Amazon.CloudWatchLogs
         /// For more information, including a list of types of data that can be audited and masked,
         /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect
         /// sensitive log data with masking</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>PutDataProtectionPolicy</code> operation applies to only the specified log
+        /// group. You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
+        /// to create an account-level data protection policy that applies to all log groups in
+        /// the account, including both existing log groups and log groups that are created level.
+        /// If a log group has its own data protection policy and the account also has an account-level
+        /// data protection policy, then the two policies are cumulative. Any sensitive term specified
+        /// in either policy is masked.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDataProtectionPolicy service method.</param>
@@ -1551,6 +1706,10 @@ namespace Amazon.CloudWatchLogs
         /// <para>
         /// A batch of log events in a single request cannot span more than 24 hours. Otherwise,
         /// the operation fails.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Each log event can be no larger than 256 KB.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -1847,8 +2006,8 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// To perform a <code>PutSubscriptionFilter</code> operation, you must also have the
-        /// <code>iam:PassRole</code> permission.
+        /// To perform a <code>PutSubscriptionFilter</code> operation for any destination except
+        /// a Lambda function, you must also have the <code>iam:PassRole</code> permission.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutSubscriptionFilter service method.</param>
@@ -1892,7 +2051,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// Queries time out after 15 minutes of runtime. If your queries are timing out, reduce
+        /// Queries time out after 60 minutes of runtime. If your queries are timing out, reduce
         /// the time range being searched or partition your query into a number of queries.
         /// </para>
         ///  
@@ -1905,7 +2064,7 @@ namespace Amazon.CloudWatchLogs
         /// </para>
         ///  
         /// <para>
-        /// You can have up to 20 concurrent CloudWatch Logs insights queries, including queries
+        /// You can have up to 30 concurrent CloudWatch Logs insights queries, including queries
         /// that have been added to dashboards. 
         /// </para>
         /// </summary>
