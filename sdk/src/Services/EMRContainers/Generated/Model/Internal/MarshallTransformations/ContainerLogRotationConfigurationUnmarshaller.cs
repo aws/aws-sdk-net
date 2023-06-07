@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for MonitoringConfiguration Object
+    /// Response Unmarshaller for ContainerLogRotationConfiguration Object
     /// </summary>  
-    public class MonitoringConfigurationUnmarshaller : IUnmarshaller<MonitoringConfiguration, XmlUnmarshallerContext>, IUnmarshaller<MonitoringConfiguration, JsonUnmarshallerContext>
+    public class ContainerLogRotationConfigurationUnmarshaller : IUnmarshaller<ContainerLogRotationConfiguration, XmlUnmarshallerContext>, IUnmarshaller<ContainerLogRotationConfiguration, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        MonitoringConfiguration IUnmarshaller<MonitoringConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        ContainerLogRotationConfiguration IUnmarshaller<ContainerLogRotationConfiguration, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public MonitoringConfiguration Unmarshall(JsonUnmarshallerContext context)
+        public ContainerLogRotationConfiguration Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            MonitoringConfiguration unmarshalledObject = new MonitoringConfiguration();
+            ContainerLogRotationConfiguration unmarshalledObject = new ContainerLogRotationConfiguration();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("cloudWatchMonitoringConfiguration", targetDepth))
+                if (context.TestExpression("maxFilesToKeep", targetDepth))
                 {
-                    var unmarshaller = CloudWatchMonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.CloudWatchMonitoringConfiguration = unmarshaller.Unmarshall(context);
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxFilesToKeep = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("containerLogRotationConfiguration", targetDepth))
-                {
-                    var unmarshaller = ContainerLogRotationConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.ContainerLogRotationConfiguration = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("persistentAppUI", targetDepth))
+                if (context.TestExpression("rotationSize", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.PersistentAppUI = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3MonitoringConfiguration", targetDepth))
-                {
-                    var unmarshaller = S3MonitoringConfigurationUnmarshaller.Instance;
-                    unmarshalledObject.S3MonitoringConfiguration = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RotationSize = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +82,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
         }
 
 
-        private static MonitoringConfigurationUnmarshaller _instance = new MonitoringConfigurationUnmarshaller();        
+        private static ContainerLogRotationConfigurationUnmarshaller _instance = new ContainerLogRotationConfigurationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static MonitoringConfigurationUnmarshaller Instance
+        public static ContainerLogRotationConfigurationUnmarshaller Instance
         {
             get
             {
