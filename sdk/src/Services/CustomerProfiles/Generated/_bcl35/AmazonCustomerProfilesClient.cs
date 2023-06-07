@@ -50,6 +50,24 @@ namespace Amazon.CustomerProfiles
     {
         private static IServiceMetadata serviceMetadata = new AmazonCustomerProfilesMetadata();
 
+#if BCL45 || AWS_ASYNC_ENUMERABLES_API
+        private ICustomerProfilesPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICustomerProfilesPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CustomerProfilesPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
         #region Constructors
 
         /// <summary>
@@ -492,6 +510,82 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateEventStream
+
+        /// <summary>
+        /// Creates an event stream, which is a subscription to real-time events, such as when
+        /// profiles are created and updated through Amazon Connect Customer Profiles.
+        /// 
+        ///  
+        /// <para>
+        /// Each event stream can be associated with only one Kinesis Data Stream destination
+        /// in the same region and Amazon Web Services account as the customer profiles domain
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventStream service method.</param>
+        /// 
+        /// <returns>The response from the CreateEventStream service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream">REST API Reference for CreateEventStream Operation</seealso>
+        public virtual CreateEventStreamResponse CreateEventStream(CreateEventStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventStreamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventStream operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEventStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream">REST API Reference for CreateEventStream Operation</seealso>
+        public virtual IAsyncResult BeginCreateEventStream(CreateEventStreamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEventStream.</param>
+        /// 
+        /// <returns>Returns a  CreateEventStreamResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream">REST API Reference for CreateEventStream Operation</seealso>
+        public virtual CreateEventStreamResponse EndCreateEventStream(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateEventStreamResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateIntegrationWorkflow
 
         /// <summary>
@@ -776,6 +870,75 @@ namespace Amazon.CustomerProfiles
         public virtual DeleteDomainResponse EndDeleteDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteEventStream
+
+        /// <summary>
+        /// Disables and deletes the specified event stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventStream service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEventStream service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
+        public virtual DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventStreamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventStream operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEventStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
+        public virtual IAsyncResult BeginDeleteEventStream(DeleteEventStreamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEventStream.</param>
+        /// 
+        /// <returns>Returns a  DeleteEventStreamResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
+        public virtual DeleteEventStreamResponse EndDeleteEventStream(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteEventStreamResponse>(asyncResult);
         }
 
         #endregion
@@ -1489,6 +1652,75 @@ namespace Amazon.CustomerProfiles
         public virtual GetDomainResponse EndGetDomain(IAsyncResult asyncResult)
         {
             return EndInvoke<GetDomainResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetEventStream
+
+        /// <summary>
+        /// Returns information about the specified event stream in a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventStream service method.</param>
+        /// 
+        /// <returns>The response from the GetEventStream service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
+        public virtual GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventStreamResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEventStream operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEventStream
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
+        public virtual IAsyncResult BeginGetEventStream(GetEventStreamRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEventStream operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEventStream.</param>
+        /// 
+        /// <returns>Returns a  GetEventStreamResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
+        public virtual GetEventStreamResponse EndGetEventStream(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEventStreamResponse>(asyncResult);
         }
 
         #endregion
@@ -2328,6 +2560,75 @@ namespace Amazon.CustomerProfiles
         public virtual ListDomainsResponse EndListDomains(IAsyncResult asyncResult)
         {
             return EndInvoke<ListDomainsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListEventStreams
+
+        /// <summary>
+        /// Returns a list of all the event streams in a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventStreams service method.</param>
+        /// 
+        /// <returns>The response from the ListEventStreams service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams">REST API Reference for ListEventStreams Operation</seealso>
+        public virtual ListEventStreamsResponse ListEventStreams(ListEventStreamsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventStreamsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventStreamsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEventStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEventStreams operation on AmazonCustomerProfilesClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEventStreams
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams">REST API Reference for ListEventStreams Operation</seealso>
+        public virtual IAsyncResult BeginListEventStreams(ListEventStreamsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventStreamsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEventStreams operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEventStreams.</param>
+        /// 
+        /// <returns>Returns a  ListEventStreamsResult from CustomerProfiles.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams">REST API Reference for ListEventStreams Operation</seealso>
+        public virtual ListEventStreamsResponse EndListEventStreams(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListEventStreamsResponse>(asyncResult);
         }
 
         #endregion

@@ -212,6 +212,24 @@ namespace Amazon.CustomerProfiles
         }
 
         #endregion
+#if AWS_ASYNC_ENUMERABLES_API
+        private ICustomerProfilesPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public ICustomerProfilesPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new CustomerProfilesPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
+#endif
 
         #region Overrides
 
@@ -435,6 +453,62 @@ namespace Amazon.CustomerProfiles
 
         #endregion
         
+        #region  CreateEventStream
+
+        internal virtual CreateEventStreamResponse CreateEventStream(CreateEventStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<CreateEventStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an event stream, which is a subscription to real-time events, such as when
+        /// profiles are created and updated through Amazon Connect Customer Profiles.
+        /// 
+        ///  
+        /// <para>
+        /// Each event stream can be associated with only one Kinesis Data Stream destination
+        /// in the same region and Amazon Web Services account as the customer profiles domain
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEventStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateEventStream service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/CreateEventStream">REST API Reference for CreateEventStream Operation</seealso>
+        public virtual Task<CreateEventStreamResponse> CreateEventStreamAsync(CreateEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateEventStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateEventStreamResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateIntegrationWorkflow
 
         internal virtual CreateIntegrationWorkflowResponse CreateIntegrationWorkflow(CreateIntegrationWorkflowRequest request)
@@ -639,6 +713,55 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = DeleteDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteEventStream
+
+        internal virtual DeleteEventStreamResponse DeleteEventStream(DeleteEventStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteEventStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Disables and deletes the specified event stream.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEventStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteEventStream service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/DeleteEventStream">REST API Reference for DeleteEventStream Operation</seealso>
+        public virtual Task<DeleteEventStreamResponse> DeleteEventStreamAsync(DeleteEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteEventStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteEventStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1152,6 +1275,55 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = GetDomainResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDomainResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEventStream
+
+        internal virtual GetEventStreamResponse GetEventStream(GetEventStreamRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+
+            return Invoke<GetEventStreamResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns information about the specified event stream in a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEventStream service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEventStream service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/GetEventStream">REST API Reference for GetEventStream Operation</seealso>
+        public virtual Task<GetEventStreamResponse> GetEventStreamAsync(GetEventStreamRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEventStreamRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEventStreamResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEventStreamResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1771,6 +1943,55 @@ namespace Amazon.CustomerProfiles
             options.ResponseUnmarshaller = ListDomainsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListDomainsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListEventStreams
+
+        internal virtual ListEventStreamsResponse ListEventStreams(ListEventStreamsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventStreamsResponseUnmarshaller.Instance;
+
+            return Invoke<ListEventStreamsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of all the event streams in a specific domain.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEventStreams service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListEventStreams service method, as returned by CustomerProfiles.</returns>
+        /// <exception cref="Amazon.CustomerProfiles.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.InternalServerException">
+        /// An internal service error occurred.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.CustomerProfiles.Model.ThrottlingException">
+        /// You exceeded the maximum number of requests.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/customer-profiles-2020-08-15/ListEventStreams">REST API Reference for ListEventStreams Operation</seealso>
+        public virtual Task<ListEventStreamsResponse> ListEventStreamsAsync(ListEventStreamsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListEventStreamsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListEventStreamsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListEventStreamsResponse>(request, options, cancellationToken);
         }
 
         #endregion

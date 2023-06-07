@@ -125,6 +125,106 @@ namespace Amazon.CustomerProfiles
 
 
     /// <summary>
+    /// Constants used for properties of type EventStreamDestinationStatus.
+    /// </summary>
+    public class EventStreamDestinationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HEALTHY for EventStreamDestinationStatus
+        /// </summary>
+        public static readonly EventStreamDestinationStatus HEALTHY = new EventStreamDestinationStatus("HEALTHY");
+        /// <summary>
+        /// Constant UNHEALTHY for EventStreamDestinationStatus
+        /// </summary>
+        public static readonly EventStreamDestinationStatus UNHEALTHY = new EventStreamDestinationStatus("UNHEALTHY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventStreamDestinationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventStreamDestinationStatus FindValue(string value)
+        {
+            return FindValue<EventStreamDestinationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventStreamDestinationStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type EventStreamState.
+    /// </summary>
+    public class EventStreamState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant RUNNING for EventStreamState
+        /// </summary>
+        public static readonly EventStreamState RUNNING = new EventStreamState("RUNNING");
+        /// <summary>
+        /// Constant STOPPED for EventStreamState
+        /// </summary>
+        public static readonly EventStreamState STOPPED = new EventStreamState("STOPPED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public EventStreamState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static EventStreamState FindValue(string value)
+        {
+            return FindValue<EventStreamState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator EventStreamState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FieldContentType.
     /// </summary>
     public class FieldContentType : ConstantClass
