@@ -507,6 +507,8 @@
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Outposts.CodeAnalysis" Path="|AWSSDK.Outposts.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Panorama.CodeAnalysis" Path="|AWSSDK.Panorama.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Panorama.CodeAnalysis" Path="|AWSSDK.Panorama.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.PaymentCryptographyData.CodeAnalysis" Path="|AWSSDK.PaymentCryptographyData.CodeAnalysis|"/>
+    <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.PaymentCryptographyData.CodeAnalysis" Path="|AWSSDK.PaymentCryptographyData.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.Personalize.CodeAnalysis" Path="|AWSSDK.Personalize.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.Analyzer" d:Source="Project" d:ProjectName="AWSSDK.Personalize.CodeAnalysis" Path="|AWSSDK.Personalize.CodeAnalysis|"/>
     <Asset Type="Microsoft.VisualStudio.MefComponent" d:Source="Project" d:ProjectName="AWSSDK.PersonalizeEvents.CodeAnalysis" Path="|AWSSDK.PersonalizeEvents.CodeAnalysis|"/>
