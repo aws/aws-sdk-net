@@ -1,3 +1,20 @@
+### 3.7.565.0 (2023-06-08 18:24 UTC)
+* Athena (3.7.111.0)
+	* You can now define custom spark properties at start of the session for use cases like cluster encryption, table formats, and general Spark tuning.
+* ComprehendMedical (3.7.102.0)
+	* This release supports a new set of entities and traits.
+* PaymentCryptography (3.7.100.0)
+	* Initial release of AWS Payment Cryptography Control Plane service for creating and managing cryptographic keys used during card payment processing.
+* PaymentCryptographyData (3.7.100.0)
+	* Initial release of AWS Payment Cryptography DataPlane Plane service for performing cryptographic operations typically used during card payment processing.
+* ServiceCatalog (3.7.104.0)
+	* New parameter added in ServiceCatalog DescribeProvisioningArtifact api - IncludeProvisioningArtifactParameters. This parameter can be used to return information about the parameters used to provision the product
+* TimestreamWrite (3.7.102.0)
+	* This release adds the capability for customers to define how their data should be partitioned, optimizing for certain access patterns. This definition will take place as a part of the table creation.
+* Core 3.7.107.4
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.564.0 (2023-06-07 18:24 UTC)
 * CloudFormation (3.7.107.0)
 	* AWS CloudFormation StackSets is updating the deployment experience for all stackset operations to skip suspended AWS accounts during deployments. StackSets will skip target AWS accounts that are suspended and set the Detailed Status of the corresponding stack instances as SKIPPED_SUSPENDED_ACCOUNT
