@@ -29,35 +29,44 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// Represents the data attribute of the time series. For example, the CPU utilization
-    /// of an EC2 instance or the RPM of a wind turbine are measures. MeasureValue has both
-    /// name and value. 
-    /// 
-    ///  
-    /// <para>
-    ///  MeasureValue is only allowed for type <code>MULTI</code>. Using <code>MULTI</code>
-    /// type, you can pass multiple data attributes associated with the same time series in
-    /// a single record 
-    /// </para>
+    /// An attribute used in partitioning data in a table. A dimension key partitions data
+    /// using the values of the dimension specified by the dimension-name as partition key,
+    /// while a measure key partitions data using measure names (values of the 'measure_name'
+    /// column).
     /// </summary>
-    public partial class MeasureValue
+    public partial class PartitionKey
     {
+        private PartitionKeyEnforcementLevel _enforcementInRecord;
         private string _name;
-        private MeasureValueType _type;
-        private string _value;
+        private PartitionKeyType _type;
+
+        /// <summary>
+        /// Gets and sets the property EnforcementInRecord. 
+        /// <para>
+        ///  The level of enforcement for the specification of a dimension key in ingested records.
+        /// Options are REQUIRED (dimension key must be specified) and OPTIONAL (dimension key
+        /// does not have to be specified). 
+        /// </para>
+        /// </summary>
+        public PartitionKeyEnforcementLevel EnforcementInRecord
+        {
+            get { return this._enforcementInRecord; }
+            set { this._enforcementInRecord = value; }
+        }
+
+        // Check to see if EnforcementInRecord property is set
+        internal bool IsSetEnforcementInRecord()
+        {
+            return this._enforcementInRecord != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  The name of the MeasureValue. 
-        /// </para>
-        ///  
-        /// <para>
-        ///  For constraints on MeasureValue names, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html#limits.naming">
-        /// Naming Constraints</a> in the Amazon Timestream Developer Guide.
+        ///  The name of the attribute used for a dimension key. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Min=1)]
         public string Name
         {
             get { return this._name; }
@@ -73,11 +82,12 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Contains the data type of the MeasureValue for the time-series data point.
+        ///  The type of the partition key. Options are DIMENSION (dimension key) and MEASURE
+        /// (measure key). 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public MeasureValueType Type
+        public PartitionKeyType Type
         {
             get { return this._type; }
             set { this._type = value; }
@@ -87,26 +97,6 @@ namespace Amazon.TimestreamWrite.Model
         internal bool IsSetType()
         {
             return this._type != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        ///  The value for the MeasureValue. For information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
-        /// types</a>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2048)]
-        public string Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null;
         }
 
     }
