@@ -38,6 +38,7 @@ namespace Amazon.Athena.Model
         private int? _coordinatorDpuSize;
         private int? _defaultExecutorDpuSize;
         private int? _maxConcurrentDpus;
+        private Dictionary<string, string> _sparkProperties = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property AdditionalConfigs. 
@@ -119,6 +120,25 @@ namespace Amazon.Athena.Model
         internal bool IsSetMaxConcurrentDpus()
         {
             return this._maxConcurrentDpus.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SparkProperties. 
+        /// <para>
+        /// Specifies custom jar files and Spark properties for use cases like cluster encryption,
+        /// table formats, and general Spark tuning.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> SparkProperties
+        {
+            get { return this._sparkProperties; }
+            set { this._sparkProperties = value; }
+        }
+
+        // Check to see if SparkProperties property is set
+        internal bool IsSetSparkProperties()
+        {
+            return this._sparkProperties != null && this._sparkProperties.Count > 0; 
         }
 
     }
