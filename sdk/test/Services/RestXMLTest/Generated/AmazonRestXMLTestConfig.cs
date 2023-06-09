@@ -35,13 +35,23 @@ namespace Amazon.RestXMLTest
             InternalSDKUtils.BuildUserAgentString("3.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Rest-XML-Test";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRestXMLTestConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRestXMLTestDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Rest-XML-Test";
             this.AuthenticationServiceName = "Rest-XML-Test";
         }
 

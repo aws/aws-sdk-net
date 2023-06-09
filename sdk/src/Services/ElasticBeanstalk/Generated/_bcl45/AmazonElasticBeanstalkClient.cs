@@ -138,7 +138,7 @@ namespace Amazon.ElasticBeanstalk
         /// </summary>
         /// <param name="config">The AmazonElasticBeanstalkClient Configuration Object</param>
         public AmazonElasticBeanstalkClient(AmazonElasticBeanstalkConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonElasticBeanstalkClient with AWS Credentials

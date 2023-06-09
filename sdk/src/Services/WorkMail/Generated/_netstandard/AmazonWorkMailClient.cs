@@ -138,7 +138,7 @@ namespace Amazon.WorkMail
         /// </summary>
         /// <param name="config">The AmazonWorkMailClient Configuration Object</param>
         public AmazonWorkMailClient(AmazonWorkMailConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

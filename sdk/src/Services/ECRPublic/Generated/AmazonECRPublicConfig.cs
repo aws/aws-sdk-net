@@ -35,13 +35,23 @@ namespace Amazon.ECRPublic
             InternalSDKUtils.BuildUserAgentString("3.7.102.40");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ECR PUBLIC";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonECRPublicConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonECRPublicDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ECR PUBLIC";
             this.AuthenticationServiceName = "ecr-public";
             this.EndpointProvider = new AmazonECRPublicEndpointProvider();
         }

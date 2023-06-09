@@ -142,8 +142,7 @@ namespace Amazon.EMRServerless
         /// </summary>
         /// <param name="config">The AmazonEMRServerlessClient Configuration Object</param>
         public AmazonEMRServerlessClient(AmazonEMRServerlessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonEMRServerlessClient with AWS Credentials
         /// </summary>

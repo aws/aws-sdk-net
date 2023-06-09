@@ -121,6 +121,35 @@ namespace Amazon.Runtime
         {
             return GetCredentials(false);
         }
+        /// <summary>
+        /// This overloaded method accepts a config parameter and looks to see if Profile is set on the config.
+        /// If this value is set, then the SDK tries to return the appropriate credentials for Profile.Name
+        /// in Profile.Location if it is set. If config.Profile is not set then it fallsback to the regular logic.
+        /// If config.Profile is set but that profile doesn't exist then an exception is thrown.
+        /// </summary>
+        /// <param name="config"></param>
+        /// <param name="fallbackToAnonymous"></param>
+        /// <returns></returns>
+        /// <exception cref="AmazonClientException"></exception>
+        public static AWSCredentials GetCredentials(IClientConfig config, bool fallbackToAnonymous = false)
+        {
+            CredentialProfile storedProfile;
+            Profile profile = config.Profile;
+            if (profile != null)
+            {
+                CredentialProfileStoreChain source = new CredentialProfileStoreChain(profile.Location);
+                if (source.TryGetProfile(profile.Name, out storedProfile))
+                    return storedProfile.GetAWSCredentials(source, true);
+                else
+                {
+                    throw new AmazonClientException("Unable to find the '" + profile.Name + "' profile in CredentialProfileStoreChain.");
+                }
+            }
+            else
+            {
+                return GetCredentials(fallbackToAnonymous);
+            }
+        }
 
         public static AWSCredentials GetCredentials(bool fallbackToAnonymous)
         {

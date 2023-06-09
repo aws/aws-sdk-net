@@ -118,8 +118,7 @@ namespace Amazon.FIS
         /// </summary>
         /// <param name="config">The AmazonFISClient Configuration Object</param>
         public AmazonFISClient(AmazonFISConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonFISClient with AWS Credentials
         /// </summary>

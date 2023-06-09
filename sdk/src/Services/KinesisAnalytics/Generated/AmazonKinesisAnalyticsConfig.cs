@@ -35,13 +35,23 @@ namespace Amazon.KinesisAnalytics
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Kinesis Analytics";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonKinesisAnalyticsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisAnalyticsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Kinesis Analytics";
             this.AuthenticationServiceName = "kinesisanalytics";
             this.EndpointProvider = new AmazonKinesisAnalyticsEndpointProvider();
         }

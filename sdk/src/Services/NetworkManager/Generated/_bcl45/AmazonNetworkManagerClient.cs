@@ -117,7 +117,7 @@ namespace Amazon.NetworkManager
         /// </summary>
         /// <param name="config">The AmazonNetworkManagerClient Configuration Object</param>
         public AmazonNetworkManagerClient(AmazonNetworkManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonNetworkManagerClient with AWS Credentials

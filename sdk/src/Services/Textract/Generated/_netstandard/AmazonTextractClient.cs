@@ -101,7 +101,7 @@ namespace Amazon.Textract
         /// </summary>
         /// <param name="config">The AmazonTextractClient Configuration Object</param>
         public AmazonTextractClient(AmazonTextractConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

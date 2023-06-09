@@ -136,8 +136,7 @@ namespace Amazon.ECS
         /// </summary>
         /// <param name="config">The AmazonECSClient Configuration Object</param>
         public AmazonECSClient(AmazonECSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonECSClient with AWS Credentials
         /// </summary>

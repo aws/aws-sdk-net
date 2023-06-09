@@ -35,13 +35,23 @@ namespace Amazon.AWSSupport
             InternalSDKUtils.BuildUserAgentString("3.7.102.22");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Support";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAWSSupportConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSSupportDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Support";
             this.AuthenticationServiceName = "support";
             this.EndpointProvider = new AmazonAWSSupportEndpointProvider();
         }

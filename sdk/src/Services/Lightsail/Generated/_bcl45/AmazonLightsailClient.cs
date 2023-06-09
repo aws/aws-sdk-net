@@ -121,7 +121,7 @@ namespace Amazon.Lightsail
         /// </summary>
         /// <param name="config">The AmazonLightsailClient Configuration Object</param>
         public AmazonLightsailClient(AmazonLightsailConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonLightsailClient with AWS Credentials

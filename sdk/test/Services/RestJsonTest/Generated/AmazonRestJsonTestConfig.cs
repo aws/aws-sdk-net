@@ -35,13 +35,23 @@ namespace Amazon.RestJsonTest
             InternalSDKUtils.BuildUserAgentString("3.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Rest-Json-Test";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRestJsonTestConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRestJsonTestDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Rest-Json-Test";
             this.AuthenticationServiceName = "Rest-Json-Test";
         }
 

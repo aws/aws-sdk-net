@@ -124,7 +124,7 @@ namespace Amazon.MarketplaceCatalog
         /// </summary>
         /// <param name="config">The AmazonMarketplaceCatalogClient Configuration Object</param>
         public AmazonMarketplaceCatalogClient(AmazonMarketplaceCatalogConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonMarketplaceCatalogClient with AWS Credentials

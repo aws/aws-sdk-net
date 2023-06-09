@@ -152,8 +152,7 @@ namespace Amazon.CloudWatchLogs
         /// </summary>
         /// <param name="config">The AmazonCloudWatchLogsClient Configuration Object</param>
         public AmazonCloudWatchLogsClient(AmazonCloudWatchLogsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonCloudWatchLogsClient with AWS Credentials
         /// </summary>

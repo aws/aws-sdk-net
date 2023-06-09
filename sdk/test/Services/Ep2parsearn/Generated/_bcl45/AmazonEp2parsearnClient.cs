@@ -99,7 +99,7 @@ namespace Amazon.Ep2parsearn
         /// </summary>
         /// <param name="config">The AmazonEp2parsearnClient Configuration Object</param>
         public AmazonEp2parsearnClient(AmazonEp2parsearnConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonEp2parsearnClient with AWS Credentials

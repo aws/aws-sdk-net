@@ -125,7 +125,7 @@ namespace Amazon.FMS
         /// </summary>
         /// <param name="config">The AmazonFMSClient Configuration Object</param>
         public AmazonFMSClient(AmazonFMSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonFMSClient with AWS Credentials

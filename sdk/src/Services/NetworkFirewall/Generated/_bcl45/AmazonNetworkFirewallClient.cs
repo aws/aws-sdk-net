@@ -219,7 +219,7 @@ namespace Amazon.NetworkFirewall
         /// </summary>
         /// <param name="config">The AmazonNetworkFirewallClient Configuration Object</param>
         public AmazonNetworkFirewallClient(AmazonNetworkFirewallConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonNetworkFirewallClient with AWS Credentials

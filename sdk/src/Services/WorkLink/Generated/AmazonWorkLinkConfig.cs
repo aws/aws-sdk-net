@@ -35,13 +35,23 @@ namespace Amazon.WorkLink
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "WorkLink";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonWorkLinkConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkLinkDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "WorkLink";
             this.AuthenticationServiceName = "worklink";
             this.EndpointProvider = new AmazonWorkLinkEndpointProvider();
         }

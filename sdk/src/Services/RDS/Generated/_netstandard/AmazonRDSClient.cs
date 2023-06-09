@@ -167,7 +167,7 @@ namespace Amazon.RDS
         /// </summary>
         /// <param name="config">The AmazonRDSClient Configuration Object</param>
         public AmazonRDSClient(AmazonRDSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

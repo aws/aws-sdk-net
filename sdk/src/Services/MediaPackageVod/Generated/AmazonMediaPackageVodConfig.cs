@@ -35,13 +35,23 @@ namespace Amazon.MediaPackageVod
             InternalSDKUtils.BuildUserAgentString("3.7.103.64");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MediaPackage Vod";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMediaPackageVodConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaPackageVodDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MediaPackage Vod";
             this.AuthenticationServiceName = "mediapackage-vod";
             this.EndpointProvider = new AmazonMediaPackageVodEndpointProvider();
         }

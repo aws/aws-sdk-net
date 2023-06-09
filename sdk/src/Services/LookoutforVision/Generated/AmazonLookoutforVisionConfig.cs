@@ -35,13 +35,23 @@ namespace Amazon.LookoutforVision
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "LookoutVision";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLookoutforVisionConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLookoutforVisionDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "LookoutVision";
             this.AuthenticationServiceName = "lookoutvision";
             this.EndpointProvider = new AmazonLookoutforVisionEndpointProvider();
         }

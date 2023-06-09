@@ -35,13 +35,23 @@ namespace Amazon.OpsWorks
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "OpsWorks";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonOpsWorksConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOpsWorksDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "OpsWorks";
             this.AuthenticationServiceName = "opsworks";
             this.EndpointProvider = new AmazonOpsWorksEndpointProvider();
         }

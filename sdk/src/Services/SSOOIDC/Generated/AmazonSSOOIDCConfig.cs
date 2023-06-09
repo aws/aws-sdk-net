@@ -35,13 +35,23 @@ namespace Amazon.SSOOIDC
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SSO OIDC";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSSOOIDCConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSOOIDCDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SSO OIDC";
             this.AuthenticationServiceName = "awsssooidc";
             this.EndpointProvider = new AmazonSSOOIDCEndpointProvider();
         }

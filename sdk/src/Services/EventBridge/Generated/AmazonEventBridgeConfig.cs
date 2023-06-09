@@ -35,13 +35,23 @@ namespace Amazon.EventBridge
             InternalSDKUtils.BuildUserAgentString("3.7.102.40");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "EventBridge";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonEventBridgeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEventBridgeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "EventBridge";
             this.AuthenticationServiceName = "events";
             this.EndpointProvider = new AmazonEventBridgeEndpointProvider();
         }

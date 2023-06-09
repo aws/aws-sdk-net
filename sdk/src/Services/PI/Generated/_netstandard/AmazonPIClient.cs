@@ -139,7 +139,7 @@ namespace Amazon.PI
         /// </summary>
         /// <param name="config">The AmazonPIClient Configuration Object</param>
         public AmazonPIClient(AmazonPIConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

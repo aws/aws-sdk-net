@@ -177,7 +177,7 @@ namespace Amazon.GlobalAccelerator
         /// </summary>
         /// <param name="config">The AmazonGlobalAcceleratorClient Configuration Object</param>
         public AmazonGlobalAcceleratorClient(AmazonGlobalAcceleratorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

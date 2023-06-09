@@ -127,8 +127,7 @@ namespace Amazon.Braket
         /// </summary>
         /// <param name="config">The AmazonBraketClient Configuration Object</param>
         public AmazonBraketClient(AmazonBraketConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonBraketClient with AWS Credentials
         /// </summary>

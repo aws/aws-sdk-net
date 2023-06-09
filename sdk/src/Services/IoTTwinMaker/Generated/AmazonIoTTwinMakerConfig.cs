@@ -35,13 +35,23 @@ namespace Amazon.IoTTwinMaker
             InternalSDKUtils.BuildUserAgentString("3.7.104.26");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IoTTwinMaker";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIoTTwinMakerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTTwinMakerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IoTTwinMaker";
             this.AuthenticationServiceName = "iottwinmaker";
             this.EndpointProvider = new AmazonIoTTwinMakerEndpointProvider();
         }

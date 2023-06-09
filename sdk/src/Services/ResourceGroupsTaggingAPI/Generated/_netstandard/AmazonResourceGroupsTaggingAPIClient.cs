@@ -100,7 +100,7 @@ namespace Amazon.ResourceGroupsTaggingAPI
         /// </summary>
         /// <param name="config">The AmazonResourceGroupsTaggingAPIClient Configuration Object</param>
         public AmazonResourceGroupsTaggingAPIClient(AmazonResourceGroupsTaggingAPIConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

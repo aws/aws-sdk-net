@@ -134,8 +134,7 @@ namespace Amazon.DirectoryService
         /// </summary>
         /// <param name="config">The AmazonDirectoryServiceClient Configuration Object</param>
         public AmazonDirectoryServiceClient(AmazonDirectoryServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonDirectoryServiceClient with AWS Credentials
         /// </summary>

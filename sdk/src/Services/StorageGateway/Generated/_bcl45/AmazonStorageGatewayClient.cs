@@ -193,7 +193,7 @@ namespace Amazon.StorageGateway
         /// </summary>
         /// <param name="config">The AmazonStorageGatewayClient Configuration Object</param>
         public AmazonStorageGatewayClient(AmazonStorageGatewayConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonStorageGatewayClient with AWS Credentials

@@ -35,13 +35,23 @@ namespace Amazon.Ep2parsearn
             InternalSDKUtils.BuildUserAgentString("3.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Ep2-parse-arn";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonEp2parsearnConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEp2parsearnDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Ep2-parse-arn";
             this.AuthenticationServiceName = "ep2";
             this.EndpointProvider = new AmazonEp2parsearnEndpointProvider();
         }

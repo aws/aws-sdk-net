@@ -124,7 +124,7 @@ namespace Amazon.EventBridge
         /// </summary>
         /// <param name="config">The AmazonEventBridgeClient Configuration Object</param>
         public AmazonEventBridgeClient(AmazonEventBridgeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

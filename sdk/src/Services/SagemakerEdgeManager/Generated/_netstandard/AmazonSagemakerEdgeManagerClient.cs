@@ -100,7 +100,7 @@ namespace Amazon.SagemakerEdgeManager
         /// </summary>
         /// <param name="config">The AmazonSagemakerEdgeManagerClient Configuration Object</param>
         public AmazonSagemakerEdgeManagerClient(AmazonSagemakerEdgeManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -35,13 +35,23 @@ namespace Amazon.EC2
             InternalSDKUtils.BuildUserAgentString("3.7.140.0");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "EC2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonEC2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEC2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "EC2";
             this.AuthenticationServiceName = "ec2";
             this.EndpointProvider = new AmazonEC2EndpointProvider();
         }

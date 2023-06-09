@@ -35,13 +35,23 @@ namespace Amazon.WellArchitected
             InternalSDKUtils.BuildUserAgentString("3.7.104.5");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "WellArchitected";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonWellArchitectedConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWellArchitectedDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "WellArchitected";
             this.AuthenticationServiceName = "wellarchitected";
             this.EndpointProvider = new AmazonWellArchitectedEndpointProvider();
         }

@@ -102,8 +102,7 @@ namespace Amazon.KinesisFirehose
         /// </summary>
         /// <param name="config">The AmazonKinesisFirehoseClient Configuration Object</param>
         public AmazonKinesisFirehoseClient(AmazonKinesisFirehoseConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonKinesisFirehoseClient with AWS Credentials
         /// </summary>

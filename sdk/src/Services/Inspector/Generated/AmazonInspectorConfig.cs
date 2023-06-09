@@ -35,13 +35,23 @@ namespace Amazon.Inspector
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Inspector";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonInspectorConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonInspectorDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Inspector";
             this.AuthenticationServiceName = "inspector";
             this.EndpointProvider = new AmazonInspectorEndpointProvider();
         }

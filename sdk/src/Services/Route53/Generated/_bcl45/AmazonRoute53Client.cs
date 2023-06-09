@@ -148,7 +148,7 @@ namespace Amazon.Route53
         /// </summary>
         /// <param name="config">The AmazonRoute53Client Configuration Object</param>
         public AmazonRoute53Client(AmazonRoute53Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonRoute53Client with AWS Credentials

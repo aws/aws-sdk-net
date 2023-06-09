@@ -35,13 +35,23 @@ namespace Amazon.Glacier
             InternalSDKUtils.BuildUserAgentString("3.7.101.88");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Glacier";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonGlacierConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlacierDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Glacier";
             this.AuthenticationServiceName = "glacier";
             this.EndpointProvider = new AmazonGlacierEndpointProvider();
         }

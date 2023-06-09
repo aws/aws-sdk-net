@@ -199,8 +199,7 @@ namespace Amazon.VerifiedPermissions
         /// </summary>
         /// <param name="config">The AmazonVerifiedPermissionsClient Configuration Object</param>
         public AmazonVerifiedPermissionsClient(AmazonVerifiedPermissionsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonVerifiedPermissionsClient with AWS Credentials
         /// </summary>

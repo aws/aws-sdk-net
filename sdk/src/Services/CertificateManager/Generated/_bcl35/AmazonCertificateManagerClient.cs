@@ -121,8 +121,7 @@ namespace Amazon.CertificateManager
         /// </summary>
         /// <param name="config">The AmazonCertificateManagerClient Configuration Object</param>
         public AmazonCertificateManagerClient(AmazonCertificateManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonCertificateManagerClient with AWS Credentials
         /// </summary>

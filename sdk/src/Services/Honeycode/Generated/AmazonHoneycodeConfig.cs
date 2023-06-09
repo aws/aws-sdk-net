@@ -35,13 +35,23 @@ namespace Amazon.Honeycode
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Honeycode";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonHoneycodeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonHoneycodeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Honeycode";
             this.AuthenticationServiceName = "honeycode";
             this.EndpointProvider = new AmazonHoneycodeEndpointProvider();
         }

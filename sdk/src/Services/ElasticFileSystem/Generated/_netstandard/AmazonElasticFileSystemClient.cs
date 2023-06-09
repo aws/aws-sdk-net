@@ -109,7 +109,7 @@ namespace Amazon.ElasticFileSystem
         /// </summary>
         /// <param name="config">The AmazonElasticFileSystemClient Configuration Object</param>
         public AmazonElasticFileSystemClient(AmazonElasticFileSystemConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

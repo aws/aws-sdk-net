@@ -35,13 +35,23 @@ namespace Amazon.ImportExport
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ImportExport";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonImportExportConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonImportExportDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ImportExport";
             this.AuthenticationServiceName = "importexport";
             this.EndpointProvider = new AmazonImportExportEndpointProvider();
         }

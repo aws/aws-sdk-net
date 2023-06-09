@@ -35,13 +35,23 @@ namespace Amazon.IAMRolesAnywhere
             InternalSDKUtils.BuildUserAgentString("3.7.101.21");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "RolesAnywhere";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIAMRolesAnywhereConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIAMRolesAnywhereDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "RolesAnywhere";
             this.AuthenticationServiceName = "rolesanywhere";
             this.EndpointProvider = new AmazonIAMRolesAnywhereEndpointProvider();
         }

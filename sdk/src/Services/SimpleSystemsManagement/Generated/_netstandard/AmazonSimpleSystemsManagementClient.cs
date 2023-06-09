@@ -137,7 +137,7 @@ namespace Amazon.SimpleSystemsManagement
         /// </summary>
         /// <param name="config">The AmazonSimpleSystemsManagementClient Configuration Object</param>
         public AmazonSimpleSystemsManagementClient(AmazonSimpleSystemsManagementConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -35,13 +35,23 @@ namespace Amazon.CostExplorer
             InternalSDKUtils.BuildUserAgentString("3.7.103.114");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Cost Explorer";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCostExplorerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCostExplorerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Cost Explorer";
             this.AuthenticationServiceName = "ce";
             this.EndpointProvider = new AmazonCostExplorerEndpointProvider();
         }

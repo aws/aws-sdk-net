@@ -149,8 +149,7 @@ namespace Amazon.Signer
         /// </summary>
         /// <param name="config">The AmazonSignerClient Configuration Object</param>
         public AmazonSignerClient(AmazonSignerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonSignerClient with AWS Credentials
         /// </summary>

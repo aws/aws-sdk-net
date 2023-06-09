@@ -160,7 +160,7 @@ namespace Amazon.SecurityHub
         /// </summary>
         /// <param name="config">The AmazonSecurityHubClient Configuration Object</param>
         public AmazonSecurityHubClient(AmazonSecurityHubConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

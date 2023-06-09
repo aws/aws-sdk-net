@@ -112,7 +112,7 @@ namespace Amazon.DataSync
         /// </summary>
         /// <param name="config">The AmazonDataSyncClient Configuration Object</param>
         public AmazonDataSyncClient(AmazonDataSyncConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

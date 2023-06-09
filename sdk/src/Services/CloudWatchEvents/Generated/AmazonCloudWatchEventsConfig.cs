@@ -35,13 +35,23 @@ namespace Amazon.CloudWatchEvents
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CloudWatch Events";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchEventsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchEventsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CloudWatch Events";
             this.AuthenticationServiceName = "events";
             this.EndpointProvider = new AmazonCloudWatchEventsEndpointProvider();
         }

@@ -146,7 +146,7 @@ namespace Amazon.Pricing
         /// </summary>
         /// <param name="config">The AmazonPricingClient Configuration Object</param>
         public AmazonPricingClient(AmazonPricingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

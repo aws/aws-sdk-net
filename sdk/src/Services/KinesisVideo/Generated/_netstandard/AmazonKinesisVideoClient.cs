@@ -100,7 +100,7 @@ namespace Amazon.KinesisVideo
         /// </summary>
         /// <param name="config">The AmazonKinesisVideoClient Configuration Object</param>
         public AmazonKinesisVideoClient(AmazonKinesisVideoConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

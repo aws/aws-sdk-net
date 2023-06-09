@@ -111,7 +111,7 @@ namespace Amazon.ConnectContactLens
         /// </summary>
         /// <param name="config">The AmazonConnectContactLensClient Configuration Object</param>
         public AmazonConnectContactLensClient(AmazonConnectContactLensConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

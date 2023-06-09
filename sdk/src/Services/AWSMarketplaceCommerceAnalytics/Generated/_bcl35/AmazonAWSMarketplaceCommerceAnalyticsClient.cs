@@ -97,8 +97,7 @@ namespace Amazon.AWSMarketplaceCommerceAnalytics
         /// </summary>
         /// <param name="config">The AmazonAWSMarketplaceCommerceAnalyticsClient Configuration Object</param>
         public AmazonAWSMarketplaceCommerceAnalyticsClient(AmazonAWSMarketplaceCommerceAnalyticsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonAWSMarketplaceCommerceAnalyticsClient with AWS Credentials
         /// </summary>

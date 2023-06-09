@@ -154,7 +154,7 @@ namespace Amazon.SecretsManager
         /// </summary>
         /// <param name="config">The AmazonSecretsManagerClient Configuration Object</param>
         public AmazonSecretsManagerClient(AmazonSecretsManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

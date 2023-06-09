@@ -122,7 +122,7 @@ namespace Amazon.CostExplorer
         /// </summary>
         /// <param name="config">The AmazonCostExplorerClient Configuration Object</param>
         public AmazonCostExplorerClient(AmazonCostExplorerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -35,13 +35,23 @@ namespace Amazon.MQ
             InternalSDKUtils.BuildUserAgentString("3.7.101.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "mq";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMQConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMQDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "mq";
             this.AuthenticationServiceName = "mq";
             this.EndpointProvider = new AmazonMQEndpointProvider();
         }

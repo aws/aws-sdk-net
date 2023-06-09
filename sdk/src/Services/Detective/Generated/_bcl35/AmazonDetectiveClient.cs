@@ -228,8 +228,7 @@ namespace Amazon.Detective
         /// </summary>
         /// <param name="config">The AmazonDetectiveClient Configuration Object</param>
         public AmazonDetectiveClient(AmazonDetectiveConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonDetectiveClient with AWS Credentials
         /// </summary>

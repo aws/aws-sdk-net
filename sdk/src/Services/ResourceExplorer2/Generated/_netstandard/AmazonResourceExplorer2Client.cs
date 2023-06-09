@@ -134,7 +134,7 @@ namespace Amazon.ResourceExplorer2
         /// </summary>
         /// <param name="config">The AmazonResourceExplorer2Client Configuration Object</param>
         public AmazonResourceExplorer2Client(AmazonResourceExplorer2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

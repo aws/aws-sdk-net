@@ -104,7 +104,7 @@ namespace Amazon.DAX
         /// </summary>
         /// <param name="config">The AmazonDAXClient Configuration Object</param>
         public AmazonDAXClient(AmazonDAXConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonDAXClient with AWS Credentials

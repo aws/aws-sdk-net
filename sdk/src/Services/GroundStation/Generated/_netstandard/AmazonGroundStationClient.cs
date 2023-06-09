@@ -103,7 +103,7 @@ namespace Amazon.GroundStation
         /// </summary>
         /// <param name="config">The AmazonGroundStationClient Configuration Object</param>
         public AmazonGroundStationClient(AmazonGroundStationConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

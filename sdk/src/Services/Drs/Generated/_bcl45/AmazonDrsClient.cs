@@ -115,7 +115,7 @@ namespace Amazon.Drs
         /// </summary>
         /// <param name="config">The AmazonDrsClient Configuration Object</param>
         public AmazonDrsClient(AmazonDrsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonDrsClient with AWS Credentials

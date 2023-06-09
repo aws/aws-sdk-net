@@ -35,13 +35,23 @@ namespace Amazon.Connect
             InternalSDKUtils.BuildUserAgentString("3.7.129.4");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Connect";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonConnectConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Connect";
             this.AuthenticationServiceName = "connect";
             this.EndpointProvider = new AmazonConnectEndpointProvider();
         }

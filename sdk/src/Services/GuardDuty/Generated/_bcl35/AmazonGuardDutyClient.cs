@@ -139,8 +139,7 @@ namespace Amazon.GuardDuty
         /// </summary>
         /// <param name="config">The AmazonGuardDutyClient Configuration Object</param>
         public AmazonGuardDutyClient(AmazonGuardDutyConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonGuardDutyClient with AWS Credentials
         /// </summary>

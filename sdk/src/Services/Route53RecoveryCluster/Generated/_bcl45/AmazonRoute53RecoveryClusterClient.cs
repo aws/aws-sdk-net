@@ -177,7 +177,7 @@ namespace Amazon.Route53RecoveryCluster
         /// </summary>
         /// <param name="config">The AmazonRoute53RecoveryClusterClient Configuration Object</param>
         public AmazonRoute53RecoveryClusterClient(AmazonRoute53RecoveryClusterConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonRoute53RecoveryClusterClient with AWS Credentials

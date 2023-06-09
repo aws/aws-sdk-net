@@ -115,8 +115,7 @@ namespace Amazon.DocDB
         /// </summary>
         /// <param name="config">The AmazonDocDBClient Configuration Object</param>
         public AmazonDocDBClient(AmazonDocDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonDocDBClient with AWS Credentials
         /// </summary>

@@ -35,13 +35,23 @@ namespace Amazon.SimpleWorkflow
             InternalSDKUtils.BuildUserAgentString("3.7.102.23");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SWF";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSimpleWorkflowConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleWorkflowDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SWF";
             this.AuthenticationServiceName = "swf";
             this.EndpointProvider = new AmazonSimpleWorkflowEndpointProvider();
         }

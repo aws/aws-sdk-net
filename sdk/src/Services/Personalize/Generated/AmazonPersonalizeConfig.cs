@@ -35,13 +35,23 @@ namespace Amazon.Personalize
             InternalSDKUtils.BuildUserAgentString("3.7.102.13");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Personalize";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPersonalizeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPersonalizeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Personalize";
             this.AuthenticationServiceName = "personalize";
             this.EndpointProvider = new AmazonPersonalizeEndpointProvider();
         }

@@ -104,7 +104,7 @@ namespace Amazon.ConnectCases
         /// </summary>
         /// <param name="config">The AmazonConnectCasesClient Configuration Object</param>
         public AmazonConnectCasesClient(AmazonConnectCasesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

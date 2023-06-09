@@ -110,7 +110,7 @@ namespace Amazon.LookoutforVision
         /// </summary>
         /// <param name="config">The AmazonLookoutforVisionClient Configuration Object</param>
         public AmazonLookoutforVisionClient(AmazonLookoutforVisionConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

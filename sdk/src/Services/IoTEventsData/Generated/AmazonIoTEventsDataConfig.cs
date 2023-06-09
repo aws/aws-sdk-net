@@ -35,13 +35,23 @@ namespace Amazon.IoTEventsData
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IoT Events Data";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIoTEventsDataConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTEventsDataDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IoT Events Data";
             this.AuthenticationServiceName = "ioteventsdata";
             this.EndpointProvider = new AmazonIoTEventsDataEndpointProvider();
         }

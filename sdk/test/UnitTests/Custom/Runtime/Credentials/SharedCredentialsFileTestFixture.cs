@@ -16,12 +16,14 @@ using Amazon;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
 using Amazon.Runtime.Internal;
+using AWSSDK.UnitTests.TestTools;
 using AWSSDK_DotNet.CommonTest.Utils;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
 
 namespace AWSSDK.UnitTests
 {
@@ -97,6 +99,10 @@ namespace AWSSDK.UnitTests
         {
             return ReadAndAssertProfile(profileName, expectedProfileOptions, null, null);
         }
+        public CredentialProfile ReadAndAssertProfile(string profileName,CredentialProfileOptions expectedProfileOptions, Dictionary<string,Dictionary<string,string>> expectedNestedProperties)
+        {
+            return ReadAndAssertProfile(profileName, expectedProfileOptions, null, null, null, expectedNestedProperties);
+        }
 
         public CredentialProfile ReadAndAssertProfile(
             string profileName, 
@@ -115,13 +121,43 @@ namespace AWSSDK.UnitTests
                     region: expectedRegion,
                     endpointDiscoveryEnabled: null,
                     retryMode: null,
-                    maxAttempts: null);
+                    maxAttempts: null,
+                    ignoreConfiguredEndpointUrls: null,
+                    endpointUrl: null,
+                    nestedProperties: null);
 
             var actualProfile = TestTryGetProfile(profileName, true, expectedProfile.CanCreateAWSCredentials);
             Assert.AreEqual(expectedProfile, actualProfile);
             return actualProfile;
         }
-
+        public CredentialProfile ReadAndAssertProfile(
+            string profileName,
+            CredentialProfileOptions expectedProfileOptions,
+            Dictionary<string, string> expectedProperties,
+            RegionEndpoint expectedRegion,
+            Guid? expectedUniqueKey,
+            Dictionary<string, Dictionary<string, string>> expectedNestedProperties
+            )
+        {
+            var expectedProfile = CredentialProfileTestHelper.GetCredentialProfile(
+                    uniqueKey: expectedUniqueKey,
+                    profileName: profileName,
+                    options: expectedProfileOptions,
+                    properties: expectedProperties,
+                    defaultConfigurationModeName: null,
+                    region: expectedRegion,
+                    endpointDiscoveryEnabled: null,
+                    retryMode: null,
+                    maxAttempts: null,
+                    ignoreConfiguredEndpointUrls: null,
+                    endpointUrl: null,
+                    nestedProperties: expectedNestedProperties
+                );
+                var actualProfile = TestTryGetProfile(profileName, true, expectedProfile.CanCreateAWSCredentials);
+                Assert.AreEqual (expectedProfile, actualProfile);
+                Assert.IsTrue(ComparisonUtils.CompareDictionariesOfDictionaries(expectedProfile.NestedProperties, actualProfile.NestedProperties));
+                return actualProfile;
+        }
         public CredentialProfile TestTryGetProfile(string profileName, bool expectProfile, bool expectValidProfile)
         {
             CredentialProfile profile = null;
@@ -173,7 +209,10 @@ namespace AWSSDK.UnitTests
                     region: region,
                     endpointDiscoveryEnabled: null,
                     retryMode: null,
-                    maxAttempts: null));
+                    maxAttempts: null,
+                    ignoreConfiguredEndpointUrls: null,
+                    endpointUrl:null,
+                    nestedProperties: null));
 
             AssertWriteProfile(profileName, profileOptions, properties, null, null, expectedFileContents);
         }
@@ -196,7 +235,9 @@ namespace AWSSDK.UnitTests
                     region: region,
                     endpointDiscoveryEnabled: null,
                     retryMode: null,
-                    maxAttempts: null));
+                    maxAttempts: null,
+                    ignoreConfiguredEndpointUrls: null,
+                    endpointUrl: null, nestedProperties: null));
 
             AssertCredentialsFileContents(expectedFileContents);
         }
@@ -222,7 +263,10 @@ namespace AWSSDK.UnitTests
                     region: region,
                     endpointDiscoveryEnabled: endpointDiscoveryEnabled,
                     retryMode: retryMode,
-                    maxAttempts: maxAttempts));
+                    maxAttempts: maxAttempts,
+                    ignoreConfiguredEndpointUrls: null,
+                    endpointUrl: null,
+                    nestedProperties: null));
 
             AssertCredentialsFileContents(expectedFileContents);
         }
@@ -239,7 +283,10 @@ namespace AWSSDK.UnitTests
                     region: null,
                     endpointDiscoveryEnabled: null,
                     retryMode: retryMode,
-                    maxAttempts: null));
+                    maxAttempts: null,
+                    ignoreConfiguredEndpointUrls: null,
+                    endpointUrl: null,
+                    nestedProperties:null));
 
             AssertCredentialsFileContents(expectedFileContents);
         }
@@ -256,7 +303,10 @@ namespace AWSSDK.UnitTests
                     region: null,
                     endpointDiscoveryEnabled: null,
                     retryMode: null,
-                    maxAttempts: maxAttempts));
+                    maxAttempts: maxAttempts,
+                    ignoreConfiguredEndpointUrls: null,
+                    endpointUrl: null,
+                    nestedProperties:null));
 
             AssertCredentialsFileContents(expectedFileContents);
         }
@@ -273,7 +323,10 @@ namespace AWSSDK.UnitTests
                     region: null,
                     endpointDiscoveryEnabled: null,
                     retryMode: null,
-                    maxAttempts: null));
+                    maxAttempts: null,
+                    ignoreConfiguredEndpointUrls: null,
+                    endpointUrl: null, 
+                    nestedProperties: null));
 
             AssertCredentialsFileContents(expectedCredentialsContents);
             AssertConfigsFileContents(expectedConfigContents);

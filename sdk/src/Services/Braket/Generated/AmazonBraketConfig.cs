@@ -35,13 +35,23 @@ namespace Amazon.Braket
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Braket";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonBraketConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBraketDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Braket";
             this.AuthenticationServiceName = "braket";
             this.EndpointProvider = new AmazonBraketEndpointProvider();
         }

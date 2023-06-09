@@ -35,13 +35,23 @@ namespace Amazon.CustomerProfiles
             InternalSDKUtils.BuildUserAgentString("3.7.105.8");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Customer Profiles";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCustomerProfilesConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCustomerProfilesDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Customer Profiles";
             this.AuthenticationServiceName = "profile";
             this.EndpointProvider = new AmazonCustomerProfilesEndpointProvider();
         }

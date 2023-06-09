@@ -35,13 +35,23 @@ namespace Amazon.AppSync
             InternalSDKUtils.BuildUserAgentString("3.7.105.16");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "AppSync";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAppSyncConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppSyncDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "AppSync";
             this.AuthenticationServiceName = "appsync";
             this.EndpointProvider = new AmazonAppSyncEndpointProvider();
         }

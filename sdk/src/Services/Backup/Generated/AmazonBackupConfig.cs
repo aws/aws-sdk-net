@@ -35,13 +35,23 @@ namespace Amazon.Backup
             InternalSDKUtils.BuildUserAgentString("3.7.104.18");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Backup";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonBackupConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBackupDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Backup";
             this.AuthenticationServiceName = "backup";
             this.EndpointProvider = new AmazonBackupEndpointProvider();
         }

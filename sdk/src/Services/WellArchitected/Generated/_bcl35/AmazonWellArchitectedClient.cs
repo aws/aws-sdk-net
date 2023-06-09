@@ -123,8 +123,7 @@ namespace Amazon.WellArchitected
         /// </summary>
         /// <param name="config">The AmazonWellArchitectedClient Configuration Object</param>
         public AmazonWellArchitectedClient(AmazonWellArchitectedConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonWellArchitectedClient with AWS Credentials
         /// </summary>

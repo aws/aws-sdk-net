@@ -146,7 +146,7 @@ namespace Amazon.Route53Resolver
         /// </summary>
         /// <param name="config">The AmazonRoute53ResolverClient Configuration Object</param>
         public AmazonRoute53ResolverClient(AmazonRoute53ResolverConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -193,7 +193,7 @@ namespace Amazon.CodeStar
         /// </summary>
         /// <param name="config">The AmazonCodeStarClient Configuration Object</param>
         public AmazonCodeStarClient(AmazonCodeStarConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

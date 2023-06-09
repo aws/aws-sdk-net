@@ -35,13 +35,23 @@ namespace Amazon.OpenSearchService
             InternalSDKUtils.BuildUserAgentString("3.7.108.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "OpenSearch";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonOpenSearchServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOpenSearchServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "OpenSearch";
             this.AuthenticationServiceName = "es";
             this.EndpointProvider = new AmazonOpenSearchServiceEndpointProvider();
         }

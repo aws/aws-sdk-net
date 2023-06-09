@@ -35,13 +35,23 @@ namespace Amazon.MigrationHubConfig
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MigrationHub Config";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMigrationHubConfigConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMigrationHubConfigDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MigrationHub Config";
             this.AuthenticationServiceName = "mgh";
             this.EndpointProvider = new AmazonMigrationHubConfigEndpointProvider();
         }

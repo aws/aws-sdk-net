@@ -115,7 +115,7 @@ namespace Amazon.PrometheusService
         /// </summary>
         /// <param name="config">The AmazonPrometheusServiceClient Configuration Object</param>
         public AmazonPrometheusServiceClient(AmazonPrometheusServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonPrometheusServiceClient with AWS Credentials

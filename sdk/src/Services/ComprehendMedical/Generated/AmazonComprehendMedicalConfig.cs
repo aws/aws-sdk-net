@@ -35,13 +35,23 @@ namespace Amazon.ComprehendMedical
             InternalSDKUtils.BuildUserAgentString("3.7.102.8");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ComprehendMedical";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonComprehendMedicalConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonComprehendMedicalDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ComprehendMedical";
             this.AuthenticationServiceName = "comprehendmedical";
             this.EndpointProvider = new AmazonComprehendMedicalEndpointProvider();
         }

@@ -115,8 +115,7 @@ namespace Amazon.Schemas
         /// </summary>
         /// <param name="config">The AmazonSchemasClient Configuration Object</param>
         public AmazonSchemasClient(AmazonSchemasConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonSchemasClient with AWS Credentials
         /// </summary>

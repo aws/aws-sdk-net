@@ -35,13 +35,23 @@ namespace Amazon.TimestreamQuery
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Timestream Query";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonTimestreamQueryConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTimestreamQueryDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Timestream Query";
             this.AuthenticationServiceName = "timestream";
             this.EndpointProvider = new AmazonTimestreamQueryEndpointProvider();
         }

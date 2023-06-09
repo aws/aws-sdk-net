@@ -35,13 +35,23 @@ namespace Amazon.SecurityToken
             InternalSDKUtils.BuildUserAgentString("3.7.103.19");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "STS";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSecurityTokenServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSecurityTokenServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "STS";
             this.AuthenticationServiceName = "sts";
             var region = FallbackRegionFactory.GetRegionEndpoint(false);
             this.RegionEndpoint = region ?? RegionEndpoint.USEast1;

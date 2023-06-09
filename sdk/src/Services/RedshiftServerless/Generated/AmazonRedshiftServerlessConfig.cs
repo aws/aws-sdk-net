@@ -35,13 +35,23 @@ namespace Amazon.RedshiftServerless
             InternalSDKUtils.BuildUserAgentString("3.7.101.122");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Redshift Serverless";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRedshiftServerlessConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRedshiftServerlessDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Redshift Serverless";
             this.AuthenticationServiceName = "redshift-serverless";
             this.EndpointProvider = new AmazonRedshiftServerlessEndpointProvider();
         }

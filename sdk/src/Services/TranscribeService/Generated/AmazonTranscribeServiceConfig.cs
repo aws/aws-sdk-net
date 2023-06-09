@@ -35,13 +35,23 @@ namespace Amazon.TranscribeService
             InternalSDKUtils.BuildUserAgentString("3.7.104.66");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Transcribe";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonTranscribeServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTranscribeServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Transcribe";
             this.AuthenticationServiceName = "transcribe";
             this.EndpointProvider = new AmazonTranscribeServiceEndpointProvider();
         }

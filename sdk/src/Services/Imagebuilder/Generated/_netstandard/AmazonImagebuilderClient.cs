@@ -103,7 +103,7 @@ namespace Amazon.Imagebuilder
         /// </summary>
         /// <param name="config">The AmazonImagebuilderClient Configuration Object</param>
         public AmazonImagebuilderClient(AmazonImagebuilderConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

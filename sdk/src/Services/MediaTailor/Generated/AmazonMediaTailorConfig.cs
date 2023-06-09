@@ -35,13 +35,23 @@ namespace Amazon.MediaTailor
             InternalSDKUtils.BuildUserAgentString("3.7.105.25");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MediaTailor";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMediaTailorConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaTailorDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MediaTailor";
             this.AuthenticationServiceName = "mediatailor";
             this.EndpointProvider = new AmazonMediaTailorEndpointProvider();
         }

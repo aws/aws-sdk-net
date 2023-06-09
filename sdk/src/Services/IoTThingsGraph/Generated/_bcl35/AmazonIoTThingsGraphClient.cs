@@ -131,8 +131,7 @@ namespace Amazon.IoTThingsGraph
         /// </summary>
         /// <param name="config">The AmazonIoTThingsGraphClient Configuration Object</param>
         public AmazonIoTThingsGraphClient(AmazonIoTThingsGraphConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonIoTThingsGraphClient with AWS Credentials
         /// </summary>

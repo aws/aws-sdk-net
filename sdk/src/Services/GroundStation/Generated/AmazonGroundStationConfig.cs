@@ -35,13 +35,23 @@ namespace Amazon.GroundStation
             InternalSDKUtils.BuildUserAgentString("3.7.104.39");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "GroundStation";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonGroundStationConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGroundStationDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "GroundStation";
             this.AuthenticationServiceName = "groundstation";
             this.EndpointProvider = new AmazonGroundStationEndpointProvider();
         }

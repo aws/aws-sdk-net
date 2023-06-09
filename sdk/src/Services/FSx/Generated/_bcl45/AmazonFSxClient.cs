@@ -116,7 +116,7 @@ namespace Amazon.FSx
         /// </summary>
         /// <param name="config">The AmazonFSxClient Configuration Object</param>
         public AmazonFSxClient(AmazonFSxConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonFSxClient with AWS Credentials

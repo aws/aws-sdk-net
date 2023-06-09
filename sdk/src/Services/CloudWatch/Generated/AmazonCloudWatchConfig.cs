@@ -35,13 +35,23 @@ namespace Amazon.CloudWatch
             InternalSDKUtils.BuildUserAgentString("3.7.104.25");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CloudWatch";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CloudWatch";
             this.AuthenticationServiceName = "monitoring";
             this.EndpointProvider = new AmazonCloudWatchEndpointProvider();
         }

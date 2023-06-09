@@ -127,8 +127,7 @@ namespace Amazon.ApplicationCostProfiler
         /// </summary>
         /// <param name="config">The AmazonApplicationCostProfilerClient Configuration Object</param>
         public AmazonApplicationCostProfilerClient(AmazonApplicationCostProfilerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonApplicationCostProfilerClient with AWS Credentials
         /// </summary>

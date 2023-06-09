@@ -35,13 +35,23 @@ namespace Amazon.OSIS
             InternalSDKUtils.BuildUserAgentString("3.7.100.30");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "OSIS";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonOSISConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOSISDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "OSIS";
             this.AuthenticationServiceName = "osis";
             this.EndpointProvider = new AmazonOSISEndpointProvider();
         }

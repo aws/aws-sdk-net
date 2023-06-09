@@ -35,13 +35,23 @@ namespace Amazon.Macie
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Macie";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMacieConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMacieDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Macie";
             this.AuthenticationServiceName = "macie";
             this.EndpointProvider = new AmazonMacieEndpointProvider();
         }

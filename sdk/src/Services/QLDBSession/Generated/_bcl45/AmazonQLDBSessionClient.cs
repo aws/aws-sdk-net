@@ -121,7 +121,7 @@ namespace Amazon.QLDBSession
         /// </summary>
         /// <param name="config">The AmazonQLDBSessionClient Configuration Object</param>
         public AmazonQLDBSessionClient(AmazonQLDBSessionConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonQLDBSessionClient with AWS Credentials

@@ -201,8 +201,7 @@ namespace Amazon.CodeStarNotifications
         /// </summary>
         /// <param name="config">The AmazonCodeStarNotificationsClient Configuration Object</param>
         public AmazonCodeStarNotificationsClient(AmazonCodeStarNotificationsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonCodeStarNotificationsClient with AWS Credentials
         /// </summary>

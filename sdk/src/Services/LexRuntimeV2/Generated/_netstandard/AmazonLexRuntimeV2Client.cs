@@ -100,7 +100,7 @@ namespace Amazon.LexRuntimeV2
         /// </summary>
         /// <param name="config">The AmazonLexRuntimeV2Client Configuration Object</param>
         public AmazonLexRuntimeV2Client(AmazonLexRuntimeV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

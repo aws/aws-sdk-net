@@ -134,7 +134,7 @@ namespace Amazon.Redshift
         /// </summary>
         /// <param name="config">The AmazonRedshiftClient Configuration Object</param>
         public AmazonRedshiftClient(AmazonRedshiftConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

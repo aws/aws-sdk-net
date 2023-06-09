@@ -130,8 +130,7 @@ namespace Amazon.OpenSearchServerless
         /// </summary>
         /// <param name="config">The AmazonOpenSearchServerlessClient Configuration Object</param>
         public AmazonOpenSearchServerlessClient(AmazonOpenSearchServerlessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonOpenSearchServerlessClient with AWS Credentials
         /// </summary>

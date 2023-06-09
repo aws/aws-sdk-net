@@ -116,8 +116,7 @@ namespace Amazon.XRay
         /// </summary>
         /// <param name="config">The AmazonXRayClient Configuration Object</param>
         public AmazonXRayClient(AmazonXRayConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonXRayClient with AWS Credentials
         /// </summary>

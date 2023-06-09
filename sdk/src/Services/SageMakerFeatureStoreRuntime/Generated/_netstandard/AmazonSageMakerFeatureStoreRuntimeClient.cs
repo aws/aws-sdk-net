@@ -128,7 +128,7 @@ namespace Amazon.SageMakerFeatureStoreRuntime
         /// </summary>
         /// <param name="config">The AmazonSageMakerFeatureStoreRuntimeClient Configuration Object</param>
         public AmazonSageMakerFeatureStoreRuntimeClient(AmazonSageMakerFeatureStoreRuntimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

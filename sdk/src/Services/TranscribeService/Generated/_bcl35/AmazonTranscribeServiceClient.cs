@@ -134,8 +134,7 @@ namespace Amazon.TranscribeService
         /// </summary>
         /// <param name="config">The AmazonTranscribeServiceClient Configuration Object</param>
         public AmazonTranscribeServiceClient(AmazonTranscribeServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonTranscribeServiceClient with AWS Credentials
         /// </summary>

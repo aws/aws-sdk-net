@@ -35,13 +35,23 @@ namespace Amazon.SimpleNotificationService
             InternalSDKUtils.BuildUserAgentString("3.7.101.86");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SNS";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSimpleNotificationServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleNotificationServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SNS";
             this.AuthenticationServiceName = "sns";
             this.EndpointProvider = new AmazonSimpleNotificationServiceEndpointProvider();
         }

@@ -98,8 +98,7 @@ namespace Amazon.MobileAnalytics
         /// </summary>
         /// <param name="config">The AmazonMobileAnalyticsClient Configuration Object</param>
         public AmazonMobileAnalyticsClient(AmazonMobileAnalyticsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonMobileAnalyticsClient with AWS Credentials
         /// </summary>

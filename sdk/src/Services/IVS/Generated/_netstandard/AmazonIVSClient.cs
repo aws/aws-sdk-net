@@ -453,7 +453,7 @@ namespace Amazon.IVS
         /// </summary>
         /// <param name="config">The AmazonIVSClient Configuration Object</param>
         public AmazonIVSClient(AmazonIVSConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

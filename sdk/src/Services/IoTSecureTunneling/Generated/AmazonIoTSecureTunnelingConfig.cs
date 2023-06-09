@@ -35,13 +35,23 @@ namespace Amazon.IoTSecureTunneling
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IoTSecureTunneling";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIoTSecureTunnelingConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTSecureTunnelingDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IoTSecureTunneling";
             this.AuthenticationServiceName = "IoTSecuredTunneling";
             this.EndpointProvider = new AmazonIoTSecureTunnelingEndpointProvider();
         }

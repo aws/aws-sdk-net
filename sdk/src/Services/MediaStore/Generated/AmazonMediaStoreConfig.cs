@@ -35,13 +35,23 @@ namespace Amazon.MediaStore
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MediaStore";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMediaStoreConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaStoreDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MediaStore";
             this.AuthenticationServiceName = "mediastore";
             this.EndpointProvider = new AmazonMediaStoreEndpointProvider();
         }

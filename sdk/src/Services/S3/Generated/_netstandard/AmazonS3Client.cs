@@ -100,7 +100,7 @@ namespace Amazon.S3
         /// </summary>
         /// <param name="config">The AmazonS3Client Configuration Object</param>
         public AmazonS3Client(AmazonS3Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

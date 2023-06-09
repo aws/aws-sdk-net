@@ -100,7 +100,7 @@ namespace Amazon.Kafka
         /// </summary>
         /// <param name="config">The AmazonKafkaClient Configuration Object</param>
         public AmazonKafkaClient(AmazonKafkaConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

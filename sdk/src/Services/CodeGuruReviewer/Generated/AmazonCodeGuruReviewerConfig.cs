@@ -35,13 +35,23 @@ namespace Amazon.CodeGuruReviewer
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CodeGuru Reviewer";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCodeGuruReviewerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeGuruReviewerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CodeGuru Reviewer";
             this.AuthenticationServiceName = "codeguru-reviewer";
             this.EndpointProvider = new AmazonCodeGuruReviewerEndpointProvider();
         }

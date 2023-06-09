@@ -128,7 +128,7 @@ namespace Amazon.ServerMigrationService
         /// </summary>
         /// <param name="config">The AmazonServerMigrationServiceClient Configuration Object</param>
         public AmazonServerMigrationServiceClient(AmazonServerMigrationServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

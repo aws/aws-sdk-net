@@ -35,13 +35,23 @@ namespace Amazon.Drs
             InternalSDKUtils.BuildUserAgentString("3.7.105.5");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "drs";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDrsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDrsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "drs";
             this.AuthenticationServiceName = "drs";
             this.EndpointProvider = new AmazonDrsEndpointProvider();
         }

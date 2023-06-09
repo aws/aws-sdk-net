@@ -35,13 +35,23 @@ namespace Amazon.Route53RecoveryReadiness
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Route53 Recovery Readiness";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRoute53RecoveryReadinessConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53RecoveryReadinessDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Route53 Recovery Readiness";
             this.AuthenticationServiceName = "route53-recovery-readiness";
             this.EndpointProvider = new AmazonRoute53RecoveryReadinessEndpointProvider();
         }

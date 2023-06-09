@@ -163,8 +163,7 @@ namespace Amazon.Appflow
         /// </summary>
         /// <param name="config">The AmazonAppflowClient Configuration Object</param>
         public AmazonAppflowClient(AmazonAppflowConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonAppflowClient with AWS Credentials
         /// </summary>

@@ -35,13 +35,23 @@ namespace Amazon.Transfer
             InternalSDKUtils.BuildUserAgentString("3.7.107.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Transfer";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonTransferConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTransferDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Transfer";
             this.AuthenticationServiceName = "transfer";
             this.EndpointProvider = new AmazonTransferEndpointProvider();
         }

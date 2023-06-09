@@ -117,8 +117,7 @@ namespace Amazon.CloudHSMV2
         /// </summary>
         /// <param name="config">The AmazonCloudHSMV2Client Configuration Object</param>
         public AmazonCloudHSMV2Client(AmazonCloudHSMV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonCloudHSMV2Client with AWS Credentials
         /// </summary>

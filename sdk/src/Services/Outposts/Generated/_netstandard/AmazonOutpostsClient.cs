@@ -105,7 +105,7 @@ namespace Amazon.Outposts
         /// </summary>
         /// <param name="config">The AmazonOutpostsClient Configuration Object</param>
         public AmazonOutpostsClient(AmazonOutpostsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

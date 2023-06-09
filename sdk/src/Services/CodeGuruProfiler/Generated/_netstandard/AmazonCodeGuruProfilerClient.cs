@@ -130,7 +130,7 @@ namespace Amazon.CodeGuruProfiler
         /// </summary>
         /// <param name="config">The AmazonCodeGuruProfilerClient Configuration Object</param>
         public AmazonCodeGuruProfilerClient(AmazonCodeGuruProfilerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

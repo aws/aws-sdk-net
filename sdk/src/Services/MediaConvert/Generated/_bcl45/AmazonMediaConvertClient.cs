@@ -115,7 +115,7 @@ namespace Amazon.MediaConvert
         /// </summary>
         /// <param name="config">The AmazonMediaConvertClient Configuration Object</param>
         public AmazonMediaConvertClient(AmazonMediaConvertConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonMediaConvertClient with AWS Credentials

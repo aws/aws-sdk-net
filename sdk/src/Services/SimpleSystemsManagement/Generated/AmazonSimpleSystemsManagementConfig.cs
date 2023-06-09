@@ -35,13 +35,23 @@ namespace Amazon.SimpleSystemsManagement
             InternalSDKUtils.BuildUserAgentString("3.7.104.54");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SSM";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSimpleSystemsManagementConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleSystemsManagementDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SSM";
             this.AuthenticationServiceName = "ssm";
             this.EndpointProvider = new AmazonSimpleSystemsManagementEndpointProvider();
         }

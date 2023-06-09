@@ -35,13 +35,23 @@ namespace Amazon.ElasticInference
             InternalSDKUtils.BuildUserAgentString("3.7.101.45");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Elastic Inference";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonElasticInferenceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticInferenceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Elastic Inference";
             this.AuthenticationServiceName = "elastic-inference";
             this.EndpointProvider = new AmazonElasticInferenceEndpointProvider();
         }

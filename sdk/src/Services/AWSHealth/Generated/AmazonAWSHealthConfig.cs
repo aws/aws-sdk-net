@@ -35,13 +35,23 @@ namespace Amazon.AWSHealth
             InternalSDKUtils.BuildUserAgentString("3.7.101.22");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Health";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAWSHealthConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAWSHealthDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Health";
             this.AuthenticationServiceName = "health";
             this.EndpointProvider = new AmazonAWSHealthEndpointProvider();
         }

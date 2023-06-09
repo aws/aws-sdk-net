@@ -31,6 +31,27 @@ namespace Amazon.Runtime
     public partial interface IClientConfig
     {
         /// <summary>
+        /// If set to true the SDK will ignore the configured endpointUrls in the config file or in the environment variables.
+        /// By default it is set to false.
+        /// </summary>
+        bool IgnoreConfiguredEndpointUrls { get; }
+        /// <summary>
+        /// The serviceId for the service, which is specified in the metadata in the ServiceModel.
+        /// The transformed value of the service ID (replace any spaces in the service ID 
+        /// with underscores and uppercase all letters) is used to set service-specific endpoint urls.
+        /// I.e: AWS_ENDPOINT_URL_ELASTIC_BEANSTALK
+        /// For configuration files, replace any spaces with underscores and lowercase all letters
+        /// I.e. elastic_beanstalk = 
+        ///     endpoint_url = http://localhost:8000
+        /// </summary>
+        string ServiceId { get; }
+        /// <summary>
+        /// Specifies the profile to be used. When this is set on the ClientConfig and that config is passed to 
+        /// the service client constructor the sdk will try to find the credentials associated with the Profile.Name property
+        /// If set, this will override AWS_PROFILE and AWSConfigs.ProfileName.
+        /// </summary>
+        Profile Profile { get; }
+        /// <summary>
         /// For Services using Bearer authentication, this controls how <see cref="BearerTokenSigner"/>
         /// resolves a <see cref="AWSToken"/>.
         /// <para />

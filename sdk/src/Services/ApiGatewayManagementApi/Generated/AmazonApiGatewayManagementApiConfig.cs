@@ -35,13 +35,23 @@ namespace Amazon.ApiGatewayManagementApi
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ApiGatewayManagementApi";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonApiGatewayManagementApiConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApiGatewayManagementApiDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ApiGatewayManagementApi";
             this.AuthenticationServiceName = "execute-api";
             this.EndpointProvider = new AmazonApiGatewayManagementApiEndpointProvider();
         }

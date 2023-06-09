@@ -35,13 +35,23 @@ namespace Amazon.CostAndUsageReport
             InternalSDKUtils.BuildUserAgentString("3.7.101.16");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Cost and Usage Report Service";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCostAndUsageReportConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCostAndUsageReportDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Cost and Usage Report Service";
             this.AuthenticationServiceName = "cur";
             this.EndpointProvider = new AmazonCostAndUsageReportEndpointProvider();
         }

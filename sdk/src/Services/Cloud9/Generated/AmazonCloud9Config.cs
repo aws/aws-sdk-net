@@ -35,13 +35,23 @@ namespace Amazon.Cloud9
             InternalSDKUtils.BuildUserAgentString("3.7.101.95");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Cloud9";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloud9Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloud9DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Cloud9";
             this.AuthenticationServiceName = "cloud9";
             this.EndpointProvider = new AmazonCloud9EndpointProvider();
         }

@@ -35,13 +35,23 @@ namespace Amazon.Ep2s3hostlabel
             InternalSDKUtils.BuildUserAgentString("3.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Ep2-s3-host-label";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonEp2s3hostlabelConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEp2s3hostlabelDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Ep2-s3-host-label";
             this.AuthenticationServiceName = "ep2";
             this.EndpointProvider = new AmazonEp2s3hostlabelEndpointProvider();
         }

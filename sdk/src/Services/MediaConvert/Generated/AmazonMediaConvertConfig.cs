@@ -35,13 +35,23 @@ namespace Amazon.MediaConvert
             InternalSDKUtils.BuildUserAgentString("3.7.112.4");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MediaConvert";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMediaConvertConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaConvertDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MediaConvert";
             this.AuthenticationServiceName = "mediaconvert";
             this.EndpointProvider = new AmazonMediaConvertEndpointProvider();
         }

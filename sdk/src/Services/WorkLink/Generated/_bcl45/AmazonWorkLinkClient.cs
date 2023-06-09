@@ -121,7 +121,7 @@ namespace Amazon.WorkLink
         /// </summary>
         /// <param name="config">The AmazonWorkLinkClient Configuration Object</param>
         public AmazonWorkLinkClient(AmazonWorkLinkConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonWorkLinkClient with AWS Credentials

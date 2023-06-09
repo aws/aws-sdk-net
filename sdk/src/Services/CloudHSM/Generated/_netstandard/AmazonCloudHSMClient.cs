@@ -114,7 +114,7 @@ namespace Amazon.CloudHSM
         /// </summary>
         /// <param name="config">The AmazonCloudHSMClient Configuration Object</param>
         public AmazonCloudHSMClient(AmazonCloudHSMConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

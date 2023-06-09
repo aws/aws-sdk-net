@@ -35,13 +35,23 @@ namespace Amazon.IoTThingsGraph
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IoTThingsGraph";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIoTThingsGraphConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoTThingsGraphDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IoTThingsGraph";
             this.AuthenticationServiceName = "iotthingsgraph";
             this.EndpointProvider = new AmazonIoTThingsGraphEndpointProvider();
         }

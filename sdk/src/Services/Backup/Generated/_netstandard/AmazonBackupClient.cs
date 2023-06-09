@@ -105,7 +105,7 @@ namespace Amazon.Backup
         /// </summary>
         /// <param name="config">The AmazonBackupClient Configuration Object</param>
         public AmazonBackupClient(AmazonBackupConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

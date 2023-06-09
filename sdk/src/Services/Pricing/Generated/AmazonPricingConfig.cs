@@ -35,13 +35,23 @@ namespace Amazon.Pricing
             InternalSDKUtils.BuildUserAgentString("3.7.102.4");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Pricing";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPricingConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPricingDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Pricing";
             this.AuthenticationServiceName = "pricing";
             this.EndpointProvider = new AmazonPricingEndpointProvider();
         }

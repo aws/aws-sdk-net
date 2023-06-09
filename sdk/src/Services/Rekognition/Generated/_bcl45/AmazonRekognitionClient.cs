@@ -473,7 +473,7 @@ namespace Amazon.Rekognition
         /// </summary>
         /// <param name="config">The AmazonRekognitionClient Configuration Object</param>
         public AmazonRekognitionClient(AmazonRekognitionConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonRekognitionClient with AWS Credentials

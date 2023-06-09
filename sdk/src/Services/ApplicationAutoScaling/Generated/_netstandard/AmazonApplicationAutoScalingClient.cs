@@ -197,7 +197,7 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         /// <param name="config">The AmazonApplicationAutoScalingClient Configuration Object</param>
         public AmazonApplicationAutoScalingClient(AmazonApplicationAutoScalingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

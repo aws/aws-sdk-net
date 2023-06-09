@@ -109,7 +109,7 @@ namespace Amazon.Lex
         /// </summary>
         /// <param name="config">The AmazonLexClient Configuration Object</param>
         public AmazonLexClient(AmazonLexConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

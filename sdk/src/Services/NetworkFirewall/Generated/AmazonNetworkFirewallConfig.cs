@@ -35,13 +35,23 @@ namespace Amazon.NetworkFirewall
             InternalSDKUtils.BuildUserAgentString("3.7.107.25");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Network Firewall";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonNetworkFirewallConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNetworkFirewallDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Network Firewall";
             this.AuthenticationServiceName = "network-firewall";
             this.EndpointProvider = new AmazonNetworkFirewallEndpointProvider();
         }

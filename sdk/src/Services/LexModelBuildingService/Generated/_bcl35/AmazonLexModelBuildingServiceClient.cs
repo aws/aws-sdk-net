@@ -120,8 +120,7 @@ namespace Amazon.LexModelBuildingService
         /// </summary>
         /// <param name="config">The AmazonLexModelBuildingServiceClient Configuration Object</param>
         public AmazonLexModelBuildingServiceClient(AmazonLexModelBuildingServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonLexModelBuildingServiceClient with AWS Credentials
         /// </summary>

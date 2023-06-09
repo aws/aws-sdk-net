@@ -35,13 +35,23 @@ namespace Amazon.VPCLattice
             InternalSDKUtils.BuildUserAgentString("3.7.100.48");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "VPC Lattice";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonVPCLatticeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonVPCLatticeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "VPC Lattice";
             this.AuthenticationServiceName = "vpc-lattice";
             this.EndpointProvider = new AmazonVPCLatticeEndpointProvider();
         }

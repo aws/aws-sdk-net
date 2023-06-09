@@ -35,13 +35,23 @@ namespace Amazon.CodeGuruSecurity
             InternalSDKUtils.BuildUserAgentString("3.7.100.5");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CodeGuru Security";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCodeGuruSecurityConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeGuruSecurityDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CodeGuru Security";
             this.AuthenticationServiceName = "codeguru-security";
             this.EndpointProvider = new AmazonCodeGuruSecurityEndpointProvider();
         }

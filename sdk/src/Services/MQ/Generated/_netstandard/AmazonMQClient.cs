@@ -103,7 +103,7 @@ namespace Amazon.MQ
         /// </summary>
         /// <param name="config">The AmazonMQClient Configuration Object</param>
         public AmazonMQClient(AmazonMQConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -35,13 +35,23 @@ namespace Amazon.Proton
             InternalSDKUtils.BuildUserAgentString("3.7.105.43");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Proton";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonProtonConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonProtonDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Proton";
             this.AuthenticationServiceName = "proton";
             this.EndpointProvider = new AmazonProtonEndpointProvider();
         }

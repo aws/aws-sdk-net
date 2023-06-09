@@ -103,7 +103,7 @@ namespace Amazon.PersonalizeEvents
         /// </summary>
         /// <param name="config">The AmazonPersonalizeEventsClient Configuration Object</param>
         public AmazonPersonalizeEventsClient(AmazonPersonalizeEventsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

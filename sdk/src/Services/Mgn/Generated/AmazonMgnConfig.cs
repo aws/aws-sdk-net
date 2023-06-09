@@ -35,13 +35,23 @@ namespace Amazon.Mgn
             InternalSDKUtils.BuildUserAgentString("3.7.103.1");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "mgn";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMgnConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMgnDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "mgn";
             this.AuthenticationServiceName = "mgn";
             this.EndpointProvider = new AmazonMgnEndpointProvider();
         }

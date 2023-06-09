@@ -35,13 +35,23 @@ namespace Amazon.TimestreamWrite
             InternalSDKUtils.BuildUserAgentString("3.7.102.7");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Timestream Write";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonTimestreamWriteConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonTimestreamWriteDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Timestream Write";
             this.AuthenticationServiceName = "timestream";
             this.EndpointProvider = new AmazonTimestreamWriteEndpointProvider();
         }

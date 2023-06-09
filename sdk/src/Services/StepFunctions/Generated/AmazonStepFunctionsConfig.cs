@@ -35,13 +35,23 @@ namespace Amazon.StepFunctions
             InternalSDKUtils.BuildUserAgentString("3.7.103.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SFN";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonStepFunctionsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonStepFunctionsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SFN";
             this.AuthenticationServiceName = "states";
             this.EndpointProvider = new AmazonStepFunctionsEndpointProvider();
         }

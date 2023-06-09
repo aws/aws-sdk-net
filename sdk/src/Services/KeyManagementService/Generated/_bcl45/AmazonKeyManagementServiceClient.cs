@@ -242,7 +242,7 @@ namespace Amazon.KeyManagementService
         /// </summary>
         /// <param name="config">The AmazonKeyManagementServiceClient Configuration Object</param>
         public AmazonKeyManagementServiceClient(AmazonKeyManagementServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonKeyManagementServiceClient with AWS Credentials

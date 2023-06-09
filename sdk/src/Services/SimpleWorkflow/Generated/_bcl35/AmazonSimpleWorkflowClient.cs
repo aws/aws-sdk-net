@@ -134,8 +134,7 @@ namespace Amazon.SimpleWorkflow
         /// </summary>
         /// <param name="config">The AmazonSimpleWorkflowClient Configuration Object</param>
         public AmazonSimpleWorkflowClient(AmazonSimpleWorkflowConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonSimpleWorkflowClient with AWS Credentials
         /// </summary>

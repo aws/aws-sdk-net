@@ -129,7 +129,7 @@ namespace Amazon.CleanRooms
         /// </summary>
         /// <param name="config">The AmazonCleanRoomsClient Configuration Object</param>
         public AmazonCleanRoomsClient(AmazonCleanRoomsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonCleanRoomsClient with AWS Credentials

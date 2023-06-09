@@ -35,13 +35,23 @@ namespace Amazon.Lightsail
             InternalSDKUtils.BuildUserAgentString("3.7.103.5");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Lightsail";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLightsailConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLightsailDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Lightsail";
             this.AuthenticationServiceName = "lightsail";
             this.EndpointProvider = new AmazonLightsailEndpointProvider();
         }

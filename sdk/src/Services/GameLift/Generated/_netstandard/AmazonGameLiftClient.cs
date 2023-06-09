@@ -166,7 +166,7 @@ namespace Amazon.GameLift
         /// </summary>
         /// <param name="config">The AmazonGameLiftClient Configuration Object</param>
         public AmazonGameLiftClient(AmazonGameLiftConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

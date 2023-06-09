@@ -104,7 +104,7 @@ namespace Amazon.ChimeSDKMessaging
         /// </summary>
         /// <param name="config">The AmazonChimeSDKMessagingClient Configuration Object</param>
         public AmazonChimeSDKMessagingClient(AmazonChimeSDKMessagingConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -35,13 +35,23 @@ namespace Amazon.WAF
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "WAF";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonWAFConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWAFDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "WAF";
             this.AuthenticationServiceName = "waf";
             this.EndpointProvider = new AmazonWAFEndpointProvider();
         }

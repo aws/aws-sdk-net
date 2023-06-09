@@ -35,13 +35,23 @@ namespace Amazon.EKS
             InternalSDKUtils.BuildUserAgentString("3.7.104.113");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "EKS";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonEKSConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEKSDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "EKS";
             this.AuthenticationServiceName = "eks";
             this.EndpointProvider = new AmazonEKSEndpointProvider();
         }

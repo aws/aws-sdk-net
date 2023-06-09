@@ -355,8 +355,7 @@ namespace Amazon.Proton
         /// </summary>
         /// <param name="config">The AmazonProtonClient Configuration Object</param>
         public AmazonProtonClient(AmazonProtonConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonProtonClient with AWS Credentials
         /// </summary>

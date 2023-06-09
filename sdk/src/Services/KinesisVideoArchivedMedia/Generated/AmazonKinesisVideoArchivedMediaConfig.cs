@@ -35,13 +35,23 @@ namespace Amazon.KinesisVideoArchivedMedia
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Kinesis Video Archived Media";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonKinesisVideoArchivedMediaConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisVideoArchivedMediaDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Kinesis Video Archived Media";
             this.AuthenticationServiceName = "kinesisvideo";
             this.EndpointProvider = new AmazonKinesisVideoArchivedMediaEndpointProvider();
         }

@@ -60,6 +60,9 @@ namespace Amazon.Runtime.CredentialManagement
         private const string EC2MetadataServiceEndpointModeField = "ec2_metadata_service_endpoint_mode";
         private const string UseDualstackEndpointField = "use_dualstack_endpoint";
         private const string UseFIPSEndpointField = "use_fips_endpoint";
+        private const string EndpointUrlField = "endpoint_url";
+        private const string ServicesField = "services";
+        private const string IgnoreConfiguredEndpointUrlsField = "ignore_configured_endpoint_urls";
         private readonly Logger _logger = Logger.GetLogger(typeof(SharedCredentialsFile));
 
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
@@ -83,7 +86,10 @@ namespace Amazon.Runtime.CredentialManagement
             EC2MetadataServiceEndpointModeField,
             UseDualstackEndpointField,
             UseFIPSEndpointField,
-            DefaultConfigurationModeField
+            DefaultConfigurationModeField,
+            EndpointUrlField,
+            ServicesField,
+            IgnoreConfiguredEndpointUrlsField
         };
 
         /// <summary>
@@ -94,20 +100,62 @@ namespace Amazon.Runtime.CredentialManagement
             new HashSet<CredentialProfileType>()
             {
                 CredentialProfileType.AssumeRole,
+                CredentialProfileType.AssumeRoleWithServices,
+                CredentialProfileType.AssumeRoleWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleCredentialSource,
+                CredentialProfileType.AssumeRoleCredentialSourceWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleCredentialSourceWithServices,
+                CredentialProfileType.AssumeRoleCredentialSourceWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleExternal,
+                CredentialProfileType.AssumeRoleExternalWithServices,
+                CredentialProfileType.AssumeRoleExternalWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleExternalWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleExternalMFA,
+                CredentialProfileType.AssumeRoleExternalMFAWithServices,
+                CredentialProfileType.AssumeRoleExternalMFAWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleExternalMFAWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleMFA,
+                CredentialProfileType.AssumeRoleMFAWithServices,
+                CredentialProfileType.AssumeRoleMFAWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleMFAWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleWithWebIdentity,
+                CredentialProfileType.AssumeRoleWithWebIdentityWithServices,
+                CredentialProfileType.AssumeRoleWithWebIdentityWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleWithWebIdentityWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleWithWebIdentitySessionName,
+                CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServices,
+                CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleWithWebIdentitySessionNameWithServicesAndGlobalEndpoint,
                 CredentialProfileType.Basic,
                 CredentialProfileType.Session,
+                CredentialProfileType.SessionWithServices,
+                CredentialProfileType.SessionWithGlobalEndpoint,
+                CredentialProfileType.SessionWithServicesAndGlobalEndpoint,
                 CredentialProfileType.CredentialProcess,
                 CredentialProfileType.AssumeRoleSessionName,
+                CredentialProfileType.AssumeRoleSessionNameWithServices,
+                CredentialProfileType.AssumeRoleSessionNameWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleSessionNameWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleCredentialSourceSessionName,
+                CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServices,
+                CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleCredentialSourceSessionNameWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleExternalSessionName,
+                CredentialProfileType.AssumeRoleExternalSessionNameWithServices,
+                CredentialProfileType.AssumeRoleExternalSessionNameWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleExternalSessionNameWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleExternalMFASessionName,
+                CredentialProfileType.AssumeRoleExternalMFASessionNameWithServices,
+                CredentialProfileType.AssumeRoleExternalMFASessionNameWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleExternalMFASessionNameWithServicesAndGlobalEndpoint,
                 CredentialProfileType.AssumeRoleMFASessionName,
+                CredentialProfileType.AssumeRoleMFASessionNameWithServices,
+                CredentialProfileType.AssumeRoleMFASessionNameWithGlobalEndpoint,
+                CredentialProfileType.AssumeRoleMFASessionNameWithServicesAndGlobalEndpoint,
+                CredentialProfileType.BasicWithGlobalEndpoint,
+                CredentialProfileType.BasicWithServices,
+                CredentialProfileType.BasicWithServicesAndGlobalEndpoint,
 #if !BCL35
                 CredentialProfileType.SSO,
 #endif
@@ -130,6 +178,8 @@ namespace Amazon.Runtime.CredentialManagement
                     { "UserIdentity", null },
                     { "CredentialProcess" , "credential_process" },
                     { "WebIdentityTokenFile", "web_identity_token_file" },
+                    { "Services", "services" },
+                    { "EndpointUrl", "endpoint_url" },
 #if !BCL35
                     { nameof(CredentialProfileOptions.SsoAccountId), SsoAccountId },
                     { nameof(CredentialProfileOptions.SsoRegion), SsoRegion },
@@ -270,7 +320,7 @@ namespace Amazon.Runtime.CredentialManagement
             foreach (var profileName in ListAllProfileNames())
             {
                 CredentialProfile profile = null;
-                if (TryGetProfile(profileName, doRefresh: false, isSsoSession: false, out profile) && profile.CanCreateAWSCredentials)
+                if (TryGetProfile(profileName, doRefresh: false, isSsoSession: false,isServicesSection: false, out profile) && profile.CanCreateAWSCredentials)
                 {
                     profiles.Add(profile);
                 }
@@ -280,7 +330,7 @@ namespace Amazon.Runtime.CredentialManagement
 
         public bool TryGetProfile(string profileName, out CredentialProfile profile)
         {
-            return TryGetProfile(profileName, doRefresh: true, isSsoSession: false, out profile);
+            return TryGetProfile(profileName, doRefresh: true, isSsoSession: false, isServicesSection: false, out profile);
         }
 
         /// <summary>
@@ -356,6 +406,13 @@ namespace Amazon.Runtime.CredentialManagement
 
             if (profile.UseFIPSEndpoint != null)
                 reservedProperties[UseFIPSEndpointField] = profile.UseFIPSEndpoint.ToString().ToLowerInvariant();
+
+            if(profile.IgnoreConfiguredEndpointUrls != null)
+                reservedProperties[IgnoreConfiguredEndpointUrlsField] = profile.IgnoreConfiguredEndpointUrls.ToString().ToLowerInvariant();
+                
+            if(profile.EndpointUrl != null)
+                reservedProperties[EndpointUrlField] = profile.EndpointUrl.ToString().ToLowerInvariant();
+
 
             var profileDictionary = PropertyMapping.CombineProfileParts(
                 profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);
@@ -496,15 +553,15 @@ namespace Amazon.Runtime.CredentialManagement
             return profileNames;
         }
 
-        private bool TryGetProfile(string profileName, bool doRefresh, bool isSsoSession, out CredentialProfile profile)
+        private bool TryGetProfile(string profileName, bool doRefresh, bool isSsoSession, bool isServicesSection, out CredentialProfile profile)
         {
             if (doRefresh)
             {
                 Refresh();
             }
-
+            Dictionary<string, Dictionary<string, string>> nestedProperties = null;
             Dictionary<string, string> profileDictionary = null;
-            if (TryGetSection(profileName, isSsoSession, out profileDictionary))
+            if (TryGetSection(profileName, isSsoSession, isServicesSection, out profileDictionary, out nestedProperties))
             {
                 CredentialProfileOptions profileOptions;
                 Dictionary<string, string> reservedProperties;
@@ -527,7 +584,42 @@ namespace Amazon.Runtime.CredentialManagement
                         return false;
                     }
                 }
+                string ignoreConfiguredEndpointUrlsString;
+                bool? ignoreConfiguredEndpointUrls = false;
+                if(reservedProperties.TryGetValue(IgnoreConfiguredEndpointUrlsField, out ignoreConfiguredEndpointUrlsString))
+                {
+                    bool ignoreConfiguredEndpointUrlsOut;
+                    if(!bool.TryParse(ignoreConfiguredEndpointUrlsString, out ignoreConfiguredEndpointUrlsOut))
+                    {
+                        Logger.GetLogger(GetType()).InfoFormat("Invalid value {0} for {1} in profile {2}. A boolean true/false is expected", ignoreConfiguredEndpointUrlsString, IgnoreConfiguredEndpointUrlsField, profileName);
+                        profile = null;
+                        return false;
+                    }
+                    else
+                    {
+                        ignoreConfiguredEndpointUrls = ignoreConfiguredEndpointUrlsOut;
+                    }
+                }
+                string endpointUrlString = null;
+                if (ignoreConfiguredEndpointUrls == false)
+                {
+                    string services;
 
+
+                    if (profileDictionary.TryGetValue(ServicesField, out services))
+                    {
+                        _configFile.TryGetSection(services, isSsoSession: false, isServicesSection: true, out userProperties, out nestedProperties);
+                        
+
+                    }
+                    else
+                    {
+                        string endpointUrlTemp;
+                        if (profileDictionary.TryGetValue(EndpointUrlField, out endpointUrlTemp))
+                            endpointUrlString = endpointUrlTemp;
+                            
+                    }
+                }
                 string regionString;
                 RegionEndpoint region = null;
                 if (reservedProperties.TryGetValue(RegionField, out regionString))
@@ -708,7 +800,7 @@ namespace Amazon.Runtime.CredentialManagement
                 {
                     profileOptions.SsoSession = session;
 
-                    if (TryGetProfile(session, doRefresh: false, isSsoSession: true, out var sessionProfile))
+                    if (TryGetProfile(session, doRefresh: false, isSsoSession: true, isServicesSection:false, out var sessionProfile))
                     {
                         profileOptions.SsoRegion = sessionProfile.Options.SsoRegion;
                         profileOptions.SsoStartUrl = sessionProfile.Options.SsoStartUrl;
@@ -766,7 +858,10 @@ namespace Amazon.Runtime.CredentialManagement
                     EC2MetadataServiceEndpoint = ec2MetadataServiceEndpoint,
                     EC2MetadataServiceEndpointMode = ec2MetadataServiceEndpointMode,
                     UseDualstackEndpoint = useDualstackEndpoint,
-                    UseFIPSEndpoint = useFIPSEndpoint
+                    UseFIPSEndpoint = useFIPSEndpoint,
+                    NestedProperties = nestedProperties,
+                    IgnoreConfiguredEndpointUrls = ignoreConfiguredEndpointUrls,
+                    EndpointUrl = endpointUrlString
                 };
 
                 if (!IsSupportedProfileType(profile.ProfileType))
@@ -788,17 +883,18 @@ namespace Amazon.Runtime.CredentialManagement
         /// Try to get a profile that may be partially in the credentials file and partially in the config file.
         /// If there are identically named properties in both files, the properties in the credentials file take precedence.
         /// </summary>
-        private bool TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string, string> iniProperties)
+        private bool TryGetSection(string sectionName, bool isSsoSession, bool isServicesSection, out Dictionary<string, string> iniProperties, out Dictionary<string,Dictionary<string,string>> nestedProperties)
         {
             Dictionary<string, string> credentialsProperties = null;
             Dictionary<string, string> configProperties = null;
-            var hasCredentialsProperties = _credentialsFile.TryGetSection(sectionName, isSsoSession, out credentialsProperties);
+            nestedProperties = null;
+            var hasCredentialsProperties = _credentialsFile.TryGetSection(sectionName, isSsoSession, isServicesSection, out credentialsProperties, out nestedProperties);
 
             var hasConfigProperties = false;
             if (_configFile != null)
             {
                 _configFile.ProfileMarkerRequired = sectionName != DefaultProfileName;
-                hasConfigProperties = _configFile.TryGetSection(sectionName, isSsoSession, out configProperties);
+                hasConfigProperties = _configFile.TryGetSection(sectionName, isSsoSession, isServicesSection, out configProperties, out nestedProperties);
             }
 
             if (hasConfigProperties)

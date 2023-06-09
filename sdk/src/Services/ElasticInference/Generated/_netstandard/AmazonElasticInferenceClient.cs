@@ -111,7 +111,7 @@ namespace Amazon.ElasticInference
         /// </summary>
         /// <param name="config">The AmazonElasticInferenceClient Configuration Object</param>
         public AmazonElasticInferenceClient(AmazonElasticInferenceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -35,13 +35,23 @@ namespace Amazon.RDSDataService
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "RDS Data";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRDSDataServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRDSDataServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "RDS Data";
             this.AuthenticationServiceName = "rds-data";
             this.EndpointProvider = new AmazonRDSDataServiceEndpointProvider();
         }

@@ -35,13 +35,23 @@ namespace Amazon.MediaPackage
             InternalSDKUtils.BuildUserAgentString("3.7.101.64");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MediaPackage";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMediaPackageConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaPackageDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MediaPackage";
             this.AuthenticationServiceName = "mediapackage";
             this.EndpointProvider = new AmazonMediaPackageEndpointProvider();
         }

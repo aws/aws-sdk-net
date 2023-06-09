@@ -35,13 +35,23 @@ namespace Amazon.EMRContainers
             InternalSDKUtils.BuildUserAgentString("3.7.104.8");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "EMR containers";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonEMRContainersConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEMRContainersDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "EMR containers";
             this.AuthenticationServiceName = "emr-containers";
             this.EndpointProvider = new AmazonEMRContainersEndpointProvider();
         }

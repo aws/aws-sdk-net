@@ -35,13 +35,23 @@ namespace Amazon.SecurityHub
             InternalSDKUtils.BuildUserAgentString("3.7.109.6");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SecurityHub";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSecurityHubConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSecurityHubDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SecurityHub";
             this.AuthenticationServiceName = "securityhub";
             this.EndpointProvider = new AmazonSecurityHubEndpointProvider();
         }

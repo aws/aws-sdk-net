@@ -27,6 +27,7 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using System.Text.RegularExpressions;
+using AWSSDK.UnitTests.TestTools;
 
 namespace AWSSDK.UnitTests
 {
@@ -212,6 +213,13 @@ namespace AWSSDK.UnitTests
             SecretKey = "basic_aws_secret_access_key"
         };
 
+        private static readonly CredentialProfileOptions BasicProfileOptionsWithServices = new CredentialProfileOptions
+        {
+            AccessKey = "basic_aws_access_key_id",
+            SecretKey = "basic_aws_secret_access_key",
+            Services = "foo"
+        };
+
         private static readonly string BasicProfileTextCredentialsPrecedence = new StringBuilder()
             .AppendLine("[basic_profile]")
             .Append("aws_access_key_id=basic_aws_access_key_id_CREDENTIALS_FILE")
@@ -385,7 +393,120 @@ namespace AWSSDK.UnitTests
             .AppendLine("; other comment")
             .AppendLine("property=value")
             .ToString();
+        private static readonly string ProfileWithSubproperties = new StringBuilder()
+            .AppendLine("[profile foo]")
+            .AppendLine("aws_access_key_id=basic_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
+            .AppendLine("s3 = ")
+            .AppendLine("\tname = value")
+            .ToString();
+        private static readonly string ProfileWithEmptySubpropertyDefinitions = new StringBuilder()
+            .AppendLine("[profile foo]")
+            .AppendLine("aws_access_key_id=basic_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
+            .AppendLine("s3 =")
+            .AppendLine("\tname = ")
+            .ToString();
+        private static readonly string ProfileWithInvalidSubpropertyDefinitionName = new StringBuilder()
+            .AppendLine("[profile foo]")
+            .AppendLine("aws_access_key_id=basic_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
+            .AppendLine("s3 =")
+            .AppendLine("\t in valid = value")
+            .ToString();
 
+        private static readonly string ProfileSubpropertyWithBlankLines = new StringBuilder()
+            .AppendLine("[profile foo]")
+            .AppendLine("aws_access_key_id=basic_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
+            .AppendLine("s3 =")
+            .AppendLine("\tname = value")
+            .AppendLine("\t  ")
+            .AppendLine(" name2 = value2")
+            .ToString();
+        /// in reality a services section would not have aws_access_key and aws_secret_access_key
+        /// but for the purposes of testing we include it since the testFixture expects ProfileOptions
+        ///
+        private static readonly string ServicesConfigurationWithMultipleProperties = new StringBuilder()
+            .AppendLine("[profile bar]")
+            .AppendLine("aws_access_key_id=basic_aws_access_key_id")
+            .AppendLine("aws_secret_access_key=basic_aws_secret_access_key")
+            .AppendLine("services = foo")
+            .AppendLine("[services foo]")
+            .AppendLine("name = value")
+            .AppendLine("name2 = value2")
+            .ToString();
+
+        [TestMethod]
+        public void ReadProfileWithSubproperties()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(null, ProfileWithSubproperties))
+            {
+                Dictionary<string, Dictionary<string, string>> expectedNestedProperties = new Dictionary<string, Dictionary<string, string>>();
+                Dictionary<string, string> entry = new Dictionary<string, string>
+                {
+                    {"name","value" }
+                };
+                expectedNestedProperties.Add("s3", entry);
+                tester.ReadAndAssertProfile("foo", BasicProfileOptions,  expectedNestedProperties);
+            }
+        }
+        [TestMethod]
+        public void ProfileSubpropertyDefinitionsCanHaveEmptyValues()
+        {
+            using(var tester = new SharedCredentialsFileTestFixture(null, ProfileWithEmptySubpropertyDefinitions))
+            {
+                Dictionary<string, Dictionary<string, string>> expectedNestedProperties = new Dictionary<string, Dictionary<string, string>>();
+                Dictionary<string, string> entry = new Dictionary<string, string>
+                {
+                    { "name","" }
+                };
+                expectedNestedProperties.Add("s3", entry);
+                tester.ReadAndAssertProfile("foo", BasicProfileOptions, expectedNestedProperties);
+            }
+        }
+        [TestMethod]
+        public void ProfileSubpropertyDefinitionsCanHaveInvalidName()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(null, ProfileWithInvalidSubpropertyDefinitionName))
+            {
+                Dictionary<string, Dictionary<string, string>> expectedNestedProperties = new Dictionary<string, Dictionary<string, string>>();
+                Dictionary<string, string> entry = new Dictionary<string, string>
+                {
+                    {"in valid", "value" } //this is allowed
+                };
+                expectedNestedProperties.Add("s3", entry);
+                tester.ReadAndAssertProfile("foo", BasicProfileOptions, expectedNestedProperties);
+            }
+        }
+        [TestMethod]
+        public void ProfileSubpropertyCanHaveBlankLinesThatAreIgnored()
+        {
+            using (var tester = new SharedCredentialsFileTestFixture(null, ProfileSubpropertyWithBlankLines))
+            {
+                Dictionary<string, Dictionary<string, string>> expectedNestedProperties = new Dictionary<string, Dictionary<string, string>>();
+                Dictionary<string, string> entry = new Dictionary<string, string>
+                {
+                    {"name","value" },
+                    {"name2", "value2" }
+                };
+                expectedNestedProperties.Add("s3", entry);
+                tester.ReadAndAssertProfile("foo", BasicProfileOptions, expectedNestedProperties);
+            }
+        }
+        [TestMethod]
+        public void ServicesConfigurationCanContainMultipleProperties()
+        {
+            using(var tester = new SharedCredentialsFileTestFixture(null, ServicesConfigurationWithMultipleProperties))
+            {
+                Dictionary<string, string> expectedProperties = new Dictionary<string, string>
+                {
+                    { "name", "value" },
+                    { "name2", "value2" }
+                };
+                tester.ReadAndAssertProfile("bar", BasicProfileOptionsWithServices, expectedProperties);
+            }
+        }
         [TestMethod]
         public void ReadDefaultConfigProfile()
         {

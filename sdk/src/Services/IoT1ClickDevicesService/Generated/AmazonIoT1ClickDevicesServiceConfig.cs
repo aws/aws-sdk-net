@@ -35,13 +35,23 @@ namespace Amazon.IoT1ClickDevicesService
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IoT 1Click Devices Service";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIoT1ClickDevicesServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIoT1ClickDevicesServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IoT 1Click Devices Service";
             this.AuthenticationServiceName = "iot1click";
             this.EndpointProvider = new AmazonIoT1ClickDevicesServiceEndpointProvider();
         }

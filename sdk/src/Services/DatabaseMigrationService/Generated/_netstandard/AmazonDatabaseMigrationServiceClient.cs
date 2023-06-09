@@ -114,7 +114,7 @@ namespace Amazon.DatabaseMigrationService
         /// </summary>
         /// <param name="config">The AmazonDatabaseMigrationServiceClient Configuration Object</param>
         public AmazonDatabaseMigrationServiceClient(AmazonDatabaseMigrationServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

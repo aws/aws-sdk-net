@@ -35,13 +35,23 @@ namespace Amazon.SSOAdmin
             InternalSDKUtils.BuildUserAgentString("3.7.101.84");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SSO Admin";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSSOAdminConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSSOAdminDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SSO Admin";
             this.AuthenticationServiceName = "sso";
             this.EndpointProvider = new AmazonSSOAdminEndpointProvider();
         }

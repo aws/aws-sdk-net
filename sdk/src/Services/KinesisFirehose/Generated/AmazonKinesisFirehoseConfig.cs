@@ -35,13 +35,23 @@ namespace Amazon.KinesisFirehose
             InternalSDKUtils.BuildUserAgentString("3.7.101.125");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Firehose";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonKinesisFirehoseConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKinesisFirehoseDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Firehose";
             this.AuthenticationServiceName = "firehose";
             this.EndpointProvider = new AmazonKinesisFirehoseEndpointProvider();
         }

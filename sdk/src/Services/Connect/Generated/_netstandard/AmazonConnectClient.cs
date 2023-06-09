@@ -121,7 +121,7 @@ namespace Amazon.Connect
         /// </summary>
         /// <param name="config">The AmazonConnectClient Configuration Object</param>
         public AmazonConnectClient(AmazonConnectConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

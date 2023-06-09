@@ -187,7 +187,7 @@ namespace Amazon.WAFV2
         /// </summary>
         /// <param name="config">The AmazonWAFV2Client Configuration Object</param>
         public AmazonWAFV2Client(AmazonWAFV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

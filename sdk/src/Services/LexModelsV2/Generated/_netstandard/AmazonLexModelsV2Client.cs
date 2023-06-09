@@ -100,7 +100,7 @@ namespace Amazon.LexModelsV2
         /// </summary>
         /// <param name="config">The AmazonLexModelsV2Client Configuration Object</param>
         public AmazonLexModelsV2Client(AmazonLexModelsV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -105,7 +105,7 @@ namespace Amazon.MemoryDB
         /// </summary>
         /// <param name="config">The AmazonMemoryDBClient Configuration Object</param>
         public AmazonMemoryDBClient(AmazonMemoryDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

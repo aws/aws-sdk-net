@@ -35,13 +35,23 @@ namespace Amazon.WorkSpacesWeb
             InternalSDKUtils.BuildUserAgentString("3.7.102.13");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "WorkSpaces Web";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonWorkSpacesWebConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWorkSpacesWebDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "WorkSpaces Web";
             this.AuthenticationServiceName = "workspaces-web";
             this.EndpointProvider = new AmazonWorkSpacesWebEndpointProvider();
         }

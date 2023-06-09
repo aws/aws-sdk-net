@@ -105,7 +105,7 @@ namespace Amazon.SecurityToken
         /// </summary>
         /// <param name="config">The AmazonSecurityTokenServiceClient Configuration Object</param>
         public AmazonSecurityTokenServiceClient(AmazonSecurityTokenServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonSecurityTokenServiceClient with AWS Credentials

@@ -123,7 +123,7 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         /// <param name="config">The AmazonDynamoDBClient Configuration Object</param>
         public AmazonDynamoDBClient(AmazonDynamoDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

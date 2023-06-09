@@ -35,13 +35,23 @@ namespace Amazon.DevOpsGuru
             InternalSDKUtils.BuildUserAgentString("3.7.103.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "DevOps Guru";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDevOpsGuruConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDevOpsGuruDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "DevOps Guru";
             this.AuthenticationServiceName = "devops-guru";
             this.EndpointProvider = new AmazonDevOpsGuruEndpointProvider();
         }

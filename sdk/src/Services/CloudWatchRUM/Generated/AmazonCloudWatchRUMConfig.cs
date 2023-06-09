@@ -35,13 +35,23 @@ namespace Amazon.CloudWatchRUM
             InternalSDKUtils.BuildUserAgentString("3.7.102.72");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "RUM";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchRUMConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchRUMDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "RUM";
             this.AuthenticationServiceName = "rum";
             this.EndpointProvider = new AmazonCloudWatchRUMEndpointProvider();
         }

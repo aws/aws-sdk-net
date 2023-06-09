@@ -99,8 +99,7 @@ namespace Amazon.IoT1ClickDevicesService
         /// </summary>
         /// <param name="config">The AmazonIoT1ClickDevicesServiceClient Configuration Object</param>
         public AmazonIoT1ClickDevicesServiceClient(AmazonIoT1ClickDevicesServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonIoT1ClickDevicesServiceClient with AWS Credentials
         /// </summary>

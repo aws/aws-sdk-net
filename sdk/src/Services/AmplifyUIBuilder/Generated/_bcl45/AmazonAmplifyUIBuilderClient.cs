@@ -133,7 +133,7 @@ namespace Amazon.AmplifyUIBuilder
         /// </summary>
         /// <param name="config">The AmazonAmplifyUIBuilderClient Configuration Object</param>
         public AmazonAmplifyUIBuilderClient(AmazonAmplifyUIBuilderConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonAmplifyUIBuilderClient with AWS Credentials

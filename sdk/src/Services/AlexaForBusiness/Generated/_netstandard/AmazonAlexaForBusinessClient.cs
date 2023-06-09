@@ -100,7 +100,7 @@ namespace Amazon.AlexaForBusiness
         /// </summary>
         /// <param name="config">The AmazonAlexaForBusinessClient Configuration Object</param>
         public AmazonAlexaForBusinessClient(AmazonAlexaForBusinessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

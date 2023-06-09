@@ -111,7 +111,7 @@ namespace Amazon.IdentityStore
         /// </summary>
         /// <param name="config">The AmazonIdentityStoreClient Configuration Object</param>
         public AmazonIdentityStoreClient(AmazonIdentityStoreConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

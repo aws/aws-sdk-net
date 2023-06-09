@@ -35,13 +35,23 @@ namespace Amazon.Signer
             InternalSDKUtils.BuildUserAgentString("3.7.101.8");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "signer";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSignerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSignerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "signer";
             this.AuthenticationServiceName = "signer";
             this.EndpointProvider = new AmazonSignerEndpointProvider();
         }

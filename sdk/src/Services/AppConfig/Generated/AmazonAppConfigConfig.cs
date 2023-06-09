@@ -35,13 +35,23 @@ namespace Amazon.AppConfig
             InternalSDKUtils.BuildUserAgentString("3.7.102.77");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "AppConfig";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAppConfigConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppConfigDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "AppConfig";
             this.AuthenticationServiceName = "appconfig";
             this.EndpointProvider = new AmazonAppConfigEndpointProvider();
         }

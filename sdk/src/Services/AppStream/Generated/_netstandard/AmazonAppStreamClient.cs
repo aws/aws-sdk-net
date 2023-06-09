@@ -130,7 +130,7 @@ namespace Amazon.AppStream
         /// </summary>
         /// <param name="config">The AmazonAppStreamClient Configuration Object</param>
         public AmazonAppStreamClient(AmazonAppStreamConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

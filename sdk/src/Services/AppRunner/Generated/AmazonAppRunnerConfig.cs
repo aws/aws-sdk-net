@@ -35,13 +35,23 @@ namespace Amazon.AppRunner
             InternalSDKUtils.BuildUserAgentString("3.7.105.44");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "AppRunner";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAppRunnerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppRunnerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "AppRunner";
             this.AuthenticationServiceName = "apprunner";
             this.EndpointProvider = new AmazonAppRunnerEndpointProvider();
         }

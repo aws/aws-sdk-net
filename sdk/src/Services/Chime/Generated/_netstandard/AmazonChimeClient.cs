@@ -159,7 +159,7 @@ namespace Amazon.Chime
         /// </summary>
         /// <param name="config">The AmazonChimeClient Configuration Object</param>
         public AmazonChimeClient(AmazonChimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

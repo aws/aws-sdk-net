@@ -35,13 +35,23 @@ namespace Amazon.Panorama
             InternalSDKUtils.BuildUserAgentString("3.7.101.93");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Panorama";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPanoramaConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPanoramaDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Panorama";
             this.AuthenticationServiceName = "panorama";
             this.EndpointProvider = new AmazonPanoramaEndpointProvider();
         }

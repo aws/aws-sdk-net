@@ -169,7 +169,7 @@ namespace Amazon.Budgets
         /// </summary>
         /// <param name="config">The AmazonBudgetsClient Configuration Object</param>
         public AmazonBudgetsClient(AmazonBudgetsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

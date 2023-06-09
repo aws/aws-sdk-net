@@ -118,7 +118,7 @@ namespace Amazon.OSIS
         /// </summary>
         /// <param name="config">The AmazonOSISClient Configuration Object</param>
         public AmazonOSISClient(AmazonOSISConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonOSISClient with AWS Credentials

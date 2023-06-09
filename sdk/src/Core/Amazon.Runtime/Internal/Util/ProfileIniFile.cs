@@ -12,6 +12,7 @@
  * express or implied. See the License for the specific language governing
  * permissions and limitations under the License.
  */
+using Amazon.Util;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -27,6 +28,7 @@ namespace Amazon.Runtime.Internal.Util
     {
         private const string ProfileMarker = "profile";
         private const string SsoSessionMarker = "sso-session";
+        private const string ServicesMarker = "services";
 
         public bool ProfileMarkerRequired { get; set; }
         public override HashSet<string> ListSectionNames()
@@ -51,11 +53,41 @@ namespace Amazon.Runtime.Internal.Util
             ProfileMarkerRequired = profileMarkerRequired;
         }
 
+        public bool TryGetSection(string sectionName, bool isSsoSession, bool isServicesSection, out Dictionary<string,string> properties, out Dictionary<string,Dictionary<string,string>> nestedProperties)
+        {
+            bool hasCredentialsProperties = false;
+            nestedProperties = null;
+            properties = null;
+
+            if (!ProfileMarkerRequired && !isSsoSession)
+                hasCredentialsProperties = base.TryGetSection(sectionName, out properties);
+
+            if (!hasCredentialsProperties)
+            {
+                string marker;
+                if(isServicesSection)
+                {
+                    marker = ServicesMarker;
+                }
+                else
+                {
+                    marker = isSsoSession ? SsoSessionMarker : ProfileMarker;
+                }
+                var credentialSectionNameRegex = new Regex("^" + marker + "[ \\t]+" + Regex.Escape(sectionName) + "$", RegexOptions.Singleline);
+                hasCredentialsProperties = this.TryGetSection(credentialSectionNameRegex, out properties, out nestedProperties);
+            }
+            return hasCredentialsProperties;
+        }
+        [Obsolete("TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string,string> properties is deprecated. Please use the overloaded" +
+    "method with nestedProperties instead")]
         public override bool TryGetSection(string sectionName, out Dictionary<string, string> properties)
         {
             return this.TryGetSection(sectionName, isSsoSession: false, out properties);
         }
-
+        // This is no longer used, as this implementation didn't take into account nested properties
+        // The overloaded method above correctly fills out a dictionary of nested properties
+        [Obsolete("TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string,string> properties is deprecated. Please use the overloaded" +
+            "method with nestedProperties instead")]
         public bool TryGetSection(string sectionName, bool isSsoSession, out Dictionary<string, string> properties)
         {
             bool hasCredentialsProperties = false;

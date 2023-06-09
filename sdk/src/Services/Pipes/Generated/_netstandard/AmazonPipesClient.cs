@@ -105,7 +105,7 @@ namespace Amazon.Pipes
         /// </summary>
         /// <param name="config">The AmazonPipesClient Configuration Object</param>
         public AmazonPipesClient(AmazonPipesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -35,13 +35,23 @@ namespace Amazon.GlueDataBrew
             InternalSDKUtils.BuildUserAgentString("3.7.101.90");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "DataBrew";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonGlueDataBrewConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlueDataBrewDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "DataBrew";
             this.AuthenticationServiceName = "databrew";
             this.EndpointProvider = new AmazonGlueDataBrewEndpointProvider();
         }

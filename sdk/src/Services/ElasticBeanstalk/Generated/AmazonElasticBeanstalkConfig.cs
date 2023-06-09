@@ -35,13 +35,23 @@ namespace Amazon.ElasticBeanstalk
             InternalSDKUtils.BuildUserAgentString("3.7.101.88");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Elastic Beanstalk";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonElasticBeanstalkConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticBeanstalkDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Elastic Beanstalk";
             this.AuthenticationServiceName = "elasticbeanstalk";
             this.EndpointProvider = new AmazonElasticBeanstalkEndpointProvider();
         }

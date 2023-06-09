@@ -99,7 +99,7 @@ namespace Amazon.QueryCompatible
         /// </summary>
         /// <param name="config">The AmazonQueryCompatibleClient Configuration Object</param>
         public AmazonQueryCompatibleClient(AmazonQueryCompatibleConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonQueryCompatibleClient with AWS Credentials

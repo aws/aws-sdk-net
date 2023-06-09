@@ -35,13 +35,23 @@ namespace Amazon.CognitoIdentityProvider
             InternalSDKUtils.BuildUserAgentString("3.7.101.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Cognito Identity Provider";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCognitoIdentityProviderConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCognitoIdentityProviderDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Cognito Identity Provider";
             this.AuthenticationServiceName = "cognito-idp";
             this.EndpointProvider = new AmazonCognitoIdentityProviderEndpointProvider();
         }

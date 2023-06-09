@@ -197,7 +197,7 @@ namespace Amazon.Lambda
         /// </summary>
         /// <param name="config">The AmazonLambdaClient Configuration Object</param>
         public AmazonLambdaClient(AmazonLambdaConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

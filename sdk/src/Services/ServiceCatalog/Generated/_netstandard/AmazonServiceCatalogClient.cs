@@ -107,7 +107,7 @@ namespace Amazon.ServiceCatalog
         /// </summary>
         /// <param name="config">The AmazonServiceCatalogClient Configuration Object</param>
         public AmazonServiceCatalogClient(AmazonServiceCatalogConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

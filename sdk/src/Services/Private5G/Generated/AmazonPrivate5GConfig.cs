@@ -35,13 +35,23 @@ namespace Amazon.Private5G
             InternalSDKUtils.BuildUserAgentString("3.7.103.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "PrivateNetworks";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPrivate5GConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPrivate5GDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "PrivateNetworks";
             this.AuthenticationServiceName = "private-networks";
             this.EndpointProvider = new AmazonPrivate5GEndpointProvider();
         }

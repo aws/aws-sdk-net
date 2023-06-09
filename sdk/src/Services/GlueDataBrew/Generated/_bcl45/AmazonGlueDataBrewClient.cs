@@ -118,7 +118,7 @@ namespace Amazon.GlueDataBrew
         /// </summary>
         /// <param name="config">The AmazonGlueDataBrewClient Configuration Object</param>
         public AmazonGlueDataBrewClient(AmazonGlueDataBrewConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonGlueDataBrewClient with AWS Credentials

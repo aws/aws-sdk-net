@@ -100,7 +100,7 @@ namespace Amazon.LocationService
         /// </summary>
         /// <param name="config">The AmazonLocationServiceClient Configuration Object</param>
         public AmazonLocationServiceClient(AmazonLocationServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

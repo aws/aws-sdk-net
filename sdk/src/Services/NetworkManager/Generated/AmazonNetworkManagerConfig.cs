@@ -35,13 +35,23 @@ namespace Amazon.NetworkManager
             InternalSDKUtils.BuildUserAgentString("3.7.101.114");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "NetworkManager";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonNetworkManagerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNetworkManagerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "NetworkManager";
             this.AuthenticationServiceName = "networkmanager";
             this.EndpointProvider = new AmazonNetworkManagerEndpointProvider();
         }

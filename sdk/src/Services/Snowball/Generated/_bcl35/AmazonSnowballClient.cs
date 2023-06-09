@@ -123,8 +123,7 @@ namespace Amazon.Snowball
         /// </summary>
         /// <param name="config">The AmazonSnowballClient Configuration Object</param>
         public AmazonSnowballClient(AmazonSnowballConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonSnowballClient with AWS Credentials
         /// </summary>

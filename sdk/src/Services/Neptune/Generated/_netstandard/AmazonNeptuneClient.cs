@@ -121,7 +121,7 @@ namespace Amazon.Neptune
         /// </summary>
         /// <param name="config">The AmazonNeptuneClient Configuration Object</param>
         public AmazonNeptuneClient(AmazonNeptuneConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

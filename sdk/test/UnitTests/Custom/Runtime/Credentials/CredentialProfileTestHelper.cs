@@ -68,7 +68,10 @@ namespace AWSSDK.UnitTests
                 region: GetRandomRegion(),
                 endpointDiscoveryEnabled: null,
                 retryMode: null,
-                maxAttempts: null);
+                maxAttempts: null,
+                ignoreConfiguredEndpointUrls: null,
+                endpointUrl: null,
+                nestedProperties: null);
         }
 
         public static CredentialProfile GetCredentialProfile(Guid? uniqueKey, string profileName, CredentialProfileOptions options)
@@ -82,7 +85,10 @@ namespace AWSSDK.UnitTests
                 region: null,
                 endpointDiscoveryEnabled: null,
                 retryMode: null,
-                maxAttempts: null);
+                maxAttempts: null,
+                ignoreConfiguredEndpointUrls: null,
+                endpointUrl: null,
+                nestedProperties: null);
         }
 
         public static CredentialProfile GetCredentialProfile(
@@ -94,7 +100,11 @@ namespace AWSSDK.UnitTests
             RegionEndpoint region,
             bool? endpointDiscoveryEnabled,
             RequestRetryMode? retryMode,
-            int? maxAttempts)
+            int? maxAttempts,
+            bool? ignoreConfiguredEndpointUrls,
+            string endpointUrl,
+            Dictionary<string,Dictionary<string,string>> nestedProperties
+            )
         {
             var profile = new CredentialProfile(profileName, options)
             {
@@ -102,7 +112,10 @@ namespace AWSSDK.UnitTests
                 Region = region,
                 EndpointDiscoveryEnabled = endpointDiscoveryEnabled,
                 RetryMode = retryMode,
-                MaxAttempts = maxAttempts
+                MaxAttempts = maxAttempts,
+                IgnoreConfiguredEndpointUrls = ignoreConfiguredEndpointUrls,
+                EndpointUrl = endpointUrl,
+                NestedProperties = nestedProperties
             };
             CredentialProfileUtils.SetUniqueKey(profile, uniqueKey);
             ReflectionHelpers.Invoke(profile, "Properties", properties);

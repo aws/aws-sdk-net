@@ -35,13 +35,23 @@ namespace Amazon.ConnectContactLens
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Connect Contact Lens";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonConnectContactLensConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectContactLensDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Connect Contact Lens";
             this.AuthenticationServiceName = "connect";
             this.EndpointProvider = new AmazonConnectContactLensEndpointProvider();
         }

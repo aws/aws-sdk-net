@@ -99,7 +99,7 @@ namespace Amazon.IoT1ClickProjects
         /// </summary>
         /// <param name="config">The AmazonIoT1ClickProjectsClient Configuration Object</param>
         public AmazonIoT1ClickProjectsClient(AmazonIoT1ClickProjectsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonIoT1ClickProjectsClient with AWS Credentials

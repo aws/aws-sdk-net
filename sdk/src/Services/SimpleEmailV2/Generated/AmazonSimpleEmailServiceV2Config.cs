@@ -35,13 +35,23 @@ namespace Amazon.SimpleEmailV2
             InternalSDKUtils.BuildUserAgentString("3.7.103.18");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SESv2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSimpleEmailServiceV2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleEmailServiceV2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SESv2";
             this.AuthenticationServiceName = "ses";
             this.EndpointProvider = new AmazonSimpleEmailServiceV2EndpointProvider();
         }

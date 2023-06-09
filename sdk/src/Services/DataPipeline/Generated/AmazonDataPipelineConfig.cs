@@ -35,13 +35,23 @@ namespace Amazon.DataPipeline
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Data Pipeline";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDataPipelineConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDataPipelineDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Data Pipeline";
             this.AuthenticationServiceName = "datapipeline";
             this.EndpointProvider = new AmazonDataPipelineEndpointProvider();
         }

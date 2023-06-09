@@ -137,7 +137,7 @@ namespace Amazon.FraudDetector
         /// </summary>
         /// <param name="config">The AmazonFraudDetectorClient Configuration Object</param>
         public AmazonFraudDetectorClient(AmazonFraudDetectorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonFraudDetectorClient with AWS Credentials

@@ -35,13 +35,23 @@ namespace Amazon.DAX
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "DAX";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonDAXConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonDAXDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "DAX";
             this.AuthenticationServiceName = "dax";
             this.EndpointProvider = new AmazonDAXEndpointProvider();
         }

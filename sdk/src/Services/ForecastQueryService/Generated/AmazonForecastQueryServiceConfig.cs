@@ -35,13 +35,23 @@ namespace Amazon.ForecastQueryService
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "forecastquery";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonForecastQueryServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonForecastQueryServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "forecastquery";
             this.AuthenticationServiceName = "forecast";
             this.EndpointProvider = new AmazonForecastQueryServiceEndpointProvider();
         }

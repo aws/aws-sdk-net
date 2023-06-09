@@ -35,13 +35,23 @@ namespace Amazon.LakeFormation
             InternalSDKUtils.BuildUserAgentString("3.7.104.46");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "LakeFormation";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLakeFormationConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLakeFormationDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "LakeFormation";
             this.AuthenticationServiceName = "lakeformation";
             this.EndpointProvider = new AmazonLakeFormationEndpointProvider();
         }

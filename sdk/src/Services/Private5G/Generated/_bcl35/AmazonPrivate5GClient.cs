@@ -118,8 +118,7 @@ namespace Amazon.Private5G
         /// </summary>
         /// <param name="config">The AmazonPrivate5GClient Configuration Object</param>
         public AmazonPrivate5GClient(AmazonPrivate5GConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonPrivate5GClient with AWS Credentials
         /// </summary>

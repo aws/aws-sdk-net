@@ -35,13 +35,23 @@ namespace Amazon.GameLift
             InternalSDKUtils.BuildUserAgentString("3.7.105.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "GameLift";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonGameLiftConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGameLiftDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "GameLift";
             this.AuthenticationServiceName = "gamelift";
             this.EndpointProvider = new AmazonGameLiftEndpointProvider();
         }

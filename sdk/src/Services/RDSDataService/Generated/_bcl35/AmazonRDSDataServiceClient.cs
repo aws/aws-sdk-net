@@ -112,8 +112,7 @@ namespace Amazon.RDSDataService
         /// </summary>
         /// <param name="config">The AmazonRDSDataServiceClient Configuration Object</param>
         public AmazonRDSDataServiceClient(AmazonRDSDataServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonRDSDataServiceClient with AWS Credentials
         /// </summary>

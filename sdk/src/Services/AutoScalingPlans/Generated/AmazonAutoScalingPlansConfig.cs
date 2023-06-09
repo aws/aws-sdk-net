@@ -35,13 +35,23 @@ namespace Amazon.AutoScalingPlans
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Auto Scaling Plans";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAutoScalingPlansConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAutoScalingPlansDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Auto Scaling Plans";
             this.AuthenticationServiceName = "autoscaling-plans";
             this.EndpointProvider = new AmazonAutoScalingPlansEndpointProvider();
         }

@@ -230,8 +230,7 @@ namespace Amazon.ApplicationDiscoveryService
         /// </summary>
         /// <param name="config">The AmazonApplicationDiscoveryServiceClient Configuration Object</param>
         public AmazonApplicationDiscoveryServiceClient(AmazonApplicationDiscoveryServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonApplicationDiscoveryServiceClient with AWS Credentials
         /// </summary>

@@ -35,13 +35,23 @@ namespace Amazon.BillingConductor
             InternalSDKUtils.BuildUserAgentString("3.7.105.56");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "billingconductor";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonBillingConductorConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBillingConductorDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "billingconductor";
             this.AuthenticationServiceName = "billingconductor";
             this.EndpointProvider = new AmazonBillingConductorEndpointProvider();
         }

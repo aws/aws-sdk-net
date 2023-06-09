@@ -35,13 +35,23 @@ namespace Amazon.InternetMonitor
             InternalSDKUtils.BuildUserAgentString("3.7.103.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "InternetMonitor";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonInternetMonitorConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonInternetMonitorDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "InternetMonitor";
             this.AuthenticationServiceName = "internetmonitor";
             this.EndpointProvider = new AmazonInternetMonitorEndpointProvider();
         }

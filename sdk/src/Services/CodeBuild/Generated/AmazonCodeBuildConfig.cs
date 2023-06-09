@@ -35,13 +35,23 @@ namespace Amazon.CodeBuild
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CodeBuild";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCodeBuildConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeBuildDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CodeBuild";
             this.AuthenticationServiceName = "codebuild";
             this.EndpointProvider = new AmazonCodeBuildEndpointProvider();
         }

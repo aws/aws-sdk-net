@@ -35,13 +35,23 @@ namespace Amazon.SageMakerRuntime
             InternalSDKUtils.BuildUserAgentString("3.7.102.45");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SageMaker Runtime";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSageMakerRuntimeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSageMakerRuntimeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SageMaker Runtime";
             this.AuthenticationServiceName = "sagemaker";
             this.EndpointProvider = new AmazonSageMakerRuntimeEndpointProvider();
         }

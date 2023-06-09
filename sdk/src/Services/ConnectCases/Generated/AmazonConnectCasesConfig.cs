@@ -35,13 +35,23 @@ namespace Amazon.ConnectCases
             InternalSDKUtils.BuildUserAgentString("3.7.103.18");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ConnectCases";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonConnectCasesConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConnectCasesDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ConnectCases";
             this.AuthenticationServiceName = "cases";
             this.EndpointProvider = new AmazonConnectCasesEndpointProvider();
         }

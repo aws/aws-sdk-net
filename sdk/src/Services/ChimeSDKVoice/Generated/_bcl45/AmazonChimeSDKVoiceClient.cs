@@ -118,7 +118,7 @@ namespace Amazon.ChimeSDKVoice
         /// </summary>
         /// <param name="config">The AmazonChimeSDKVoiceClient Configuration Object</param>
         public AmazonChimeSDKVoiceClient(AmazonChimeSDKVoiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonChimeSDKVoiceClient with AWS Credentials

@@ -115,7 +115,7 @@ namespace Amazon.DocDBElastic
         /// </summary>
         /// <param name="config">The AmazonDocDBElasticClient Configuration Object</param>
         public AmazonDocDBElasticClient(AmazonDocDBElasticConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonDocDBElasticClient with AWS Credentials

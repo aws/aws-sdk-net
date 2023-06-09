@@ -35,13 +35,23 @@ namespace Amazon.FSx
             InternalSDKUtils.BuildUserAgentString("3.7.103.7");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "FSx";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonFSxConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonFSxDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "FSx";
             this.AuthenticationServiceName = "fsx";
             this.EndpointProvider = new AmazonFSxEndpointProvider();
         }

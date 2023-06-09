@@ -35,13 +35,23 @@ namespace Amazon.MTurk
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MTurk";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMTurkConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMTurkDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MTurk";
             this.AuthenticationServiceName = "mturk-requester";
             this.EndpointProvider = new AmazonMTurkEndpointProvider();
         }

@@ -115,8 +115,7 @@ namespace Amazon.Route53RecoveryReadiness
         /// </summary>
         /// <param name="config">The AmazonRoute53RecoveryReadinessClient Configuration Object</param>
         public AmazonRoute53RecoveryReadinessClient(AmazonRoute53RecoveryReadinessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonRoute53RecoveryReadinessClient with AWS Credentials
         /// </summary>

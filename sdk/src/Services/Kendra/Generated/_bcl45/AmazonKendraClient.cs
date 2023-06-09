@@ -115,7 +115,7 @@ namespace Amazon.Kendra
         /// </summary>
         /// <param name="config">The AmazonKendraClient Configuration Object</param>
         public AmazonKendraClient(AmazonKendraConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonKendraClient with AWS Credentials

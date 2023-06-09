@@ -35,13 +35,23 @@ namespace Amazon.CodeCommit
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CodeCommit";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCodeCommitConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeCommitDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CodeCommit";
             this.AuthenticationServiceName = "codecommit";
             this.EndpointProvider = new AmazonCodeCommitEndpointProvider();
         }

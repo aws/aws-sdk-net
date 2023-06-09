@@ -143,7 +143,7 @@ namespace Amazon.CloudTrail
         /// </summary>
         /// <param name="config">The AmazonCloudTrailClient Configuration Object</param>
         public AmazonCloudTrailClient(AmazonCloudTrailConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonCloudTrailClient with AWS Credentials

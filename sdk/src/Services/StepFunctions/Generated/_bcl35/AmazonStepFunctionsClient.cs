@@ -138,8 +138,7 @@ namespace Amazon.StepFunctions
         /// </summary>
         /// <param name="config">The AmazonStepFunctionsClient Configuration Object</param>
         public AmazonStepFunctionsClient(AmazonStepFunctionsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonStepFunctionsClient with AWS Credentials
         /// </summary>

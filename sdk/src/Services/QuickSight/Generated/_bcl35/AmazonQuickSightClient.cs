@@ -121,8 +121,7 @@ namespace Amazon.QuickSight
         /// </summary>
         /// <param name="config">The AmazonQuickSightClient Configuration Object</param>
         public AmazonQuickSightClient(AmazonQuickSightConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonQuickSightClient with AWS Credentials
         /// </summary>

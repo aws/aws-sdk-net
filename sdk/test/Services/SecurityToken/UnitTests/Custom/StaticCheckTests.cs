@@ -44,9 +44,9 @@ namespace AWSSDK.UnitTests
         public void LookForProfileTypeChanges()
         {
 #if BCL35
-            var expectedHash = "F11B812752DD3261D6D734C860ED47010CA562DF4C82901E8D79D4CC09C7FDF1";
+            var expectedHash = "BAA0807391164631A9AB382D9319703CDBC44F344C2839D4127C49857C61FE94";
 #else
-            var expectedHash = "1C76F6CC5D3B18FD76D4A811E5EB2FD96E97F4D4F202F38B5FBE5FAC56BE09FB";
+            var expectedHash = "E15E66896846B0235881B8623AF005AA80B9DEDF4303348FC494290E0D6E2732";
 #endif
             AssertExtensions.AssertEnumUnchanged(
                 typeof(CredentialProfileType),

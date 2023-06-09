@@ -121,7 +121,7 @@ namespace Amazon.DevOpsGuru
         /// </summary>
         /// <param name="config">The AmazonDevOpsGuruClient Configuration Object</param>
         public AmazonDevOpsGuruClient(AmazonDevOpsGuruConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

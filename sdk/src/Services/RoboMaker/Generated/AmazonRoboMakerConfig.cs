@@ -35,13 +35,23 @@ namespace Amazon.RoboMaker
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "RoboMaker";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRoboMakerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoboMakerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "RoboMaker";
             this.AuthenticationServiceName = "robomaker";
             this.EndpointProvider = new AmazonRoboMakerEndpointProvider();
         }

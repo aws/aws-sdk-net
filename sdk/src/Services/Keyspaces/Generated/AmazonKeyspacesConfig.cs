@@ -35,13 +35,23 @@ namespace Amazon.Keyspaces
             InternalSDKUtils.BuildUserAgentString("3.7.103.9");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Keyspaces";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonKeyspacesConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKeyspacesDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Keyspaces";
             this.AuthenticationServiceName = "cassandra";
             this.EndpointProvider = new AmazonKeyspacesEndpointProvider();
         }

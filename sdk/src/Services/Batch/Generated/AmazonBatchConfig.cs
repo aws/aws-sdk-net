@@ -35,13 +35,23 @@ namespace Amazon.Batch
             InternalSDKUtils.BuildUserAgentString("3.7.105.2");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Batch";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonBatchConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonBatchDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Batch";
             this.AuthenticationServiceName = "batch";
             this.EndpointProvider = new AmazonBatchEndpointProvider();
         }

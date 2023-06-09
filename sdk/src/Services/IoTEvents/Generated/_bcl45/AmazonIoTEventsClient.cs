@@ -102,7 +102,7 @@ namespace Amazon.IoTEvents
         /// </summary>
         /// <param name="config">The AmazonIoTEventsClient Configuration Object</param>
         public AmazonIoTEventsClient(AmazonIoTEventsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonIoTEventsClient with AWS Credentials

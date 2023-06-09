@@ -105,7 +105,7 @@ namespace Amazon.Greengrass
         /// </summary>
         /// <param name="config">The AmazonGreengrassClient Configuration Object</param>
         public AmazonGreengrassClient(AmazonGreengrassConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

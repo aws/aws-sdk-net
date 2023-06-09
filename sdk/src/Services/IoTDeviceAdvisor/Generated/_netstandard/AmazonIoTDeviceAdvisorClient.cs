@@ -109,7 +109,7 @@ namespace Amazon.IoTDeviceAdvisor
         /// </summary>
         /// <param name="config">The AmazonIoTDeviceAdvisorClient Configuration Object</param>
         public AmazonIoTDeviceAdvisorClient(AmazonIoTDeviceAdvisorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

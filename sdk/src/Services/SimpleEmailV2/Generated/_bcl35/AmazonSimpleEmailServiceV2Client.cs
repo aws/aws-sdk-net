@@ -126,8 +126,7 @@ namespace Amazon.SimpleEmailV2
         /// </summary>
         /// <param name="config">The AmazonSimpleEmailServiceV2Client Configuration Object</param>
         public AmazonSimpleEmailServiceV2Client(AmazonSimpleEmailServiceV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonSimpleEmailServiceV2Client with AWS Credentials
         /// </summary>

@@ -115,7 +115,7 @@ namespace Amazon.S3Control
         /// </summary>
         /// <param name="config">The AmazonS3ControlClient Configuration Object</param>
         public AmazonS3ControlClient(AmazonS3ControlConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonS3ControlClient with AWS Credentials

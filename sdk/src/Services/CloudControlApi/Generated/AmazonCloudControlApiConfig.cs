@@ -35,13 +35,23 @@ namespace Amazon.CloudControlApi
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CloudControl";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudControlApiConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudControlApiDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CloudControl";
             this.AuthenticationServiceName = "cloudcontrolapi";
             this.EndpointProvider = new AmazonCloudControlApiEndpointProvider();
         }

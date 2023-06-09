@@ -35,13 +35,23 @@ namespace Amazon.ServiceCatalog
             InternalSDKUtils.BuildUserAgentString("3.7.104.7");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Service Catalog";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonServiceCatalogConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonServiceCatalogDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Service Catalog";
             this.AuthenticationServiceName = "servicecatalog";
             this.EndpointProvider = new AmazonServiceCatalogEndpointProvider();
         }

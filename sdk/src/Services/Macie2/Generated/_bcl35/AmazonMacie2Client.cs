@@ -115,8 +115,7 @@ namespace Amazon.Macie2
         /// </summary>
         /// <param name="config">The AmazonMacie2Client Configuration Object</param>
         public AmazonMacie2Client(AmazonMacie2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonMacie2Client with AWS Credentials
         /// </summary>

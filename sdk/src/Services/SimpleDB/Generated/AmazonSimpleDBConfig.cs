@@ -35,13 +35,23 @@ namespace Amazon.SimpleDB
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SimpleDB";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSimpleDBConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSimpleDBDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SimpleDB";
             this.AuthenticationServiceName = "sdb";
             this.EndpointProvider = new AmazonSimpleDBEndpointProvider();
         }

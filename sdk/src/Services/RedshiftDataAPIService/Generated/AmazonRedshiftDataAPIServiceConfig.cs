@@ -35,13 +35,23 @@ namespace Amazon.RedshiftDataAPIService
             InternalSDKUtils.BuildUserAgentString("3.7.102.64");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Redshift Data";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRedshiftDataAPIServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRedshiftDataAPIServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Redshift Data";
             this.AuthenticationServiceName = "redshift-data";
             this.EndpointProvider = new AmazonRedshiftDataAPIServiceEndpointProvider();
         }

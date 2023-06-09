@@ -111,7 +111,7 @@ namespace Amazon.CodeGuruSecurity
         /// </summary>
         /// <param name="config">The AmazonCodeGuruSecurityClient Configuration Object</param>
         public AmazonCodeGuruSecurityClient(AmazonCodeGuruSecurityConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

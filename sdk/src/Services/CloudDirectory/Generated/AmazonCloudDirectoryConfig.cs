@@ -35,13 +35,23 @@ namespace Amazon.CloudDirectory
             InternalSDKUtils.BuildUserAgentString("3.7.101.88");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CloudDirectory";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudDirectoryConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudDirectoryDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CloudDirectory";
             this.AuthenticationServiceName = "clouddirectory";
             this.EndpointProvider = new AmazonCloudDirectoryEndpointProvider();
         }

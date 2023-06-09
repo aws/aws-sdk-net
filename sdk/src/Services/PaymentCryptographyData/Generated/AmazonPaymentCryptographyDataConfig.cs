@@ -35,13 +35,23 @@ namespace Amazon.PaymentCryptographyData
             InternalSDKUtils.BuildUserAgentString("3.7.100.7");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Payment Cryptography Data";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonPaymentCryptographyDataConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonPaymentCryptographyDataDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Payment Cryptography Data";
             this.AuthenticationServiceName = "payment-cryptography";
             this.EndpointProvider = new AmazonPaymentCryptographyDataEndpointProvider();
         }

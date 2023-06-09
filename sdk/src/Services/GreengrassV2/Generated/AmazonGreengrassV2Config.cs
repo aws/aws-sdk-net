@@ -35,13 +35,23 @@ namespace Amazon.GreengrassV2
             InternalSDKUtils.BuildUserAgentString("3.7.103.43");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "GreengrassV2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonGreengrassV2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGreengrassV2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "GreengrassV2";
             this.AuthenticationServiceName = "greengrass";
             this.EndpointProvider = new AmazonGreengrassV2EndpointProvider();
         }

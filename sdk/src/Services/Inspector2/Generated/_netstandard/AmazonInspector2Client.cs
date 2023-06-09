@@ -101,7 +101,7 @@ namespace Amazon.Inspector2
         /// </summary>
         /// <param name="config">The AmazonInspector2Client Configuration Object</param>
         public AmazonInspector2Client(AmazonInspector2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

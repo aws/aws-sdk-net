@@ -35,13 +35,23 @@ namespace Amazon.RecycleBin
             InternalSDKUtils.BuildUserAgentString("3.7.101.128");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "rbin";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRecycleBinConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRecycleBinDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "rbin";
             this.AuthenticationServiceName = "rbin";
             this.EndpointProvider = new AmazonRecycleBinEndpointProvider();
         }

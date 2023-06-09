@@ -141,7 +141,7 @@ namespace Amazon.CloudFormation
         /// </summary>
         /// <param name="config">The AmazonCloudFormationClient Configuration Object</param>
         public AmazonCloudFormationClient(AmazonCloudFormationConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonCloudFormationClient with AWS Credentials

@@ -35,13 +35,23 @@ namespace Amazon.LicenseManager
             InternalSDKUtils.BuildUserAgentString("3.7.102.46");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "License Manager";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonLicenseManagerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonLicenseManagerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "License Manager";
             this.AuthenticationServiceName = "license-manager";
             this.EndpointProvider = new AmazonLicenseManagerEndpointProvider();
         }

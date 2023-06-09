@@ -35,13 +35,23 @@ namespace Amazon.S3Outposts
             InternalSDKUtils.BuildUserAgentString("3.7.102.55");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "S3Outposts";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonS3OutpostsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonS3OutpostsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "S3Outposts";
             this.AuthenticationServiceName = "s3-outposts";
             this.EndpointProvider = new AmazonS3OutpostsEndpointProvider();
         }

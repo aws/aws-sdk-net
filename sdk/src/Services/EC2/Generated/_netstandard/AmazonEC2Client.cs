@@ -136,7 +136,7 @@ namespace Amazon.EC2
         /// </summary>
         /// <param name="config">The AmazonEC2Client Configuration Object</param>
         public AmazonEC2Client(AmazonEC2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

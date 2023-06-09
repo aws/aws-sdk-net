@@ -35,13 +35,23 @@ namespace Amazon.ChimeSDKMediaPipelines
             InternalSDKUtils.BuildUserAgentString("3.7.102.34");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Chime SDK Media Pipelines";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonChimeSDKMediaPipelinesConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonChimeSDKMediaPipelinesDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Chime SDK Media Pipelines";
             this.AuthenticationServiceName = "chime";
             this.EndpointProvider = new AmazonChimeSDKMediaPipelinesEndpointProvider();
         }

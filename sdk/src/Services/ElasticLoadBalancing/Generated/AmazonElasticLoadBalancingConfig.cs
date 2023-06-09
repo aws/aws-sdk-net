@@ -35,13 +35,23 @@ namespace Amazon.ElasticLoadBalancing
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Elastic Load Balancing";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonElasticLoadBalancingConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonElasticLoadBalancingDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Elastic Load Balancing";
             this.AuthenticationServiceName = "elasticloadbalancing";
             this.EndpointProvider = new AmazonElasticLoadBalancingEndpointProvider();
         }

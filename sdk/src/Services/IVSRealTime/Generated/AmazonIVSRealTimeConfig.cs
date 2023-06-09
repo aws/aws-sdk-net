@@ -35,13 +35,23 @@ namespace Amazon.IVSRealTime
             InternalSDKUtils.BuildUserAgentString("3.7.102.22");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IVS RealTime";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIVSRealTimeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIVSRealTimeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IVS RealTime";
             this.AuthenticationServiceName = "ivs";
             this.EndpointProvider = new AmazonIVSRealTimeEndpointProvider();
         }

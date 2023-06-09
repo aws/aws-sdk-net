@@ -123,8 +123,7 @@ namespace Amazon.RedshiftDataAPIService
         /// </summary>
         /// <param name="config">The AmazonRedshiftDataAPIServiceClient Configuration Object</param>
         public AmazonRedshiftDataAPIServiceClient(AmazonRedshiftDataAPIServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonRedshiftDataAPIServiceClient with AWS Credentials
         /// </summary>

@@ -116,7 +116,7 @@ namespace Amazon.SageMaker
         /// </summary>
         /// <param name="config">The AmazonSageMakerClient Configuration Object</param>
         public AmazonSageMakerClient(AmazonSageMakerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

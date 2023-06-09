@@ -35,13 +35,23 @@ namespace Amazon.GlobalAccelerator
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Global Accelerator";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonGlobalAcceleratorConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonGlobalAcceleratorDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Global Accelerator";
             this.AuthenticationServiceName = "globalaccelerator";
             this.EndpointProvider = new AmazonGlobalAcceleratorEndpointProvider();
         }

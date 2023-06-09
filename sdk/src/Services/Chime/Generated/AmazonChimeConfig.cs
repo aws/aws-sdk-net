@@ -35,13 +35,23 @@ namespace Amazon.Chime
             InternalSDKUtils.BuildUserAgentString("3.7.102.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Chime";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonChimeConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonChimeDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Chime";
             this.AuthenticationServiceName = "chime";
             this.EndpointProvider = new AmazonChimeEndpointProvider();
         }

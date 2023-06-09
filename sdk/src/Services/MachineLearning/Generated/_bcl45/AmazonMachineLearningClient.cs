@@ -115,7 +115,7 @@ namespace Amazon.MachineLearning
         /// </summary>
         /// <param name="config">The AmazonMachineLearningClient Configuration Object</param>
         public AmazonMachineLearningClient(AmazonMachineLearningConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonMachineLearningClient with AWS Credentials

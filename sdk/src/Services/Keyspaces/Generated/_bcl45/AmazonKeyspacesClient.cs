@@ -146,7 +146,7 @@ namespace Amazon.Keyspaces
         /// </summary>
         /// <param name="config">The AmazonKeyspacesClient Configuration Object</param>
         public AmazonKeyspacesClient(AmazonKeyspacesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonKeyspacesClient with AWS Credentials

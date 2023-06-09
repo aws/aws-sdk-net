@@ -115,7 +115,7 @@ namespace Amazon.Mgn
         /// </summary>
         /// <param name="config">The AmazonMgnClient Configuration Object</param>
         public AmazonMgnClient(AmazonMgnConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonMgnClient with AWS Credentials

@@ -165,7 +165,7 @@ namespace Amazon.AWSHealth
         /// </summary>
         /// <param name="config">The AmazonAWSHealthClient Configuration Object</param>
         public AmazonAWSHealthClient(AmazonAWSHealthConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

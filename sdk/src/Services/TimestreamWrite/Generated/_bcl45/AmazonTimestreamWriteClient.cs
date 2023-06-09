@@ -132,7 +132,7 @@ namespace Amazon.TimestreamWrite
         /// </summary>
         /// <param name="config">The AmazonTimestreamWriteClient Configuration Object</param>
         public AmazonTimestreamWriteClient(AmazonTimestreamWriteConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonTimestreamWriteClient with AWS Credentials

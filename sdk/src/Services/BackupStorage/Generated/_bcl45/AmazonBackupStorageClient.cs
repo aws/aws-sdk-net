@@ -115,7 +115,7 @@ namespace Amazon.BackupStorage
         /// </summary>
         /// <param name="config">The AmazonBackupStorageClient Configuration Object</param>
         public AmazonBackupStorageClient(AmazonBackupStorageConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonBackupStorageClient with AWS Credentials

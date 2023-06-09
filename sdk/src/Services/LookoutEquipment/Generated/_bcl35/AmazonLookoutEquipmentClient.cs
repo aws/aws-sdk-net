@@ -116,8 +116,7 @@ namespace Amazon.LookoutEquipment
         /// </summary>
         /// <param name="config">The AmazonLookoutEquipmentClient Configuration Object</param>
         public AmazonLookoutEquipmentClient(AmazonLookoutEquipmentConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonLookoutEquipmentClient with AWS Credentials
         /// </summary>

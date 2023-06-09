@@ -35,13 +35,23 @@ namespace Amazon.CloudWatchLogs
             InternalSDKUtils.BuildUserAgentString("3.7.105.8");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CloudWatch Logs";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudWatchLogsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudWatchLogsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CloudWatch Logs";
             this.AuthenticationServiceName = "logs";
             this.EndpointProvider = new AmazonCloudWatchLogsEndpointProvider();
         }

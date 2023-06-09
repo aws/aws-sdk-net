@@ -35,13 +35,23 @@ namespace Amazon.SsmSap
             InternalSDKUtils.BuildUserAgentString("3.7.101.90");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Ssm Sap";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSsmSapConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSsmSapDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Ssm Sap";
             this.AuthenticationServiceName = "ssm-sap";
             this.EndpointProvider = new AmazonSsmSapEndpointProvider();
         }

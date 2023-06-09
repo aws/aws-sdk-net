@@ -35,13 +35,23 @@ namespace Amazon.CloudTrail
             InternalSDKUtils.BuildUserAgentString("3.7.107.5");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CloudTrail";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudTrailConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudTrailDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CloudTrail";
             this.AuthenticationServiceName = "cloudtrail";
             this.EndpointProvider = new AmazonCloudTrailEndpointProvider();
         }

@@ -134,7 +134,7 @@ namespace Amazon.AppRunner
         /// </summary>
         /// <param name="config">The AmazonAppRunnerClient Configuration Object</param>
         public AmazonAppRunnerClient(AmazonAppRunnerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

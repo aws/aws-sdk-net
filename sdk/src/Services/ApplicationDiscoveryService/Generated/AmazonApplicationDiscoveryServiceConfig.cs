@@ -35,13 +35,23 @@ namespace Amazon.ApplicationDiscoveryService
             InternalSDKUtils.BuildUserAgentString("3.7.102.4");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Application Discovery Service";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonApplicationDiscoveryServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonApplicationDiscoveryServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Application Discovery Service";
             this.AuthenticationServiceName = "discovery";
             this.EndpointProvider = new AmazonApplicationDiscoveryServiceEndpointProvider();
         }

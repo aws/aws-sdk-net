@@ -143,7 +143,7 @@ namespace Amazon.PinpointEmail
         /// </summary>
         /// <param name="config">The AmazonPinpointEmailClient Configuration Object</param>
         public AmazonPinpointEmailClient(AmazonPinpointEmailConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

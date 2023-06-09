@@ -118,7 +118,7 @@ namespace Amazon.LakeFormation
         /// </summary>
         /// <param name="config">The AmazonLakeFormationClient Configuration Object</param>
         public AmazonLakeFormationClient(AmazonLakeFormationConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonLakeFormationClient with AWS Credentials

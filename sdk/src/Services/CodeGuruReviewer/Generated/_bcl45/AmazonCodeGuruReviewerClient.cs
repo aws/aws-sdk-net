@@ -135,7 +135,7 @@ namespace Amazon.CodeGuruReviewer
         /// </summary>
         /// <param name="config">The AmazonCodeGuruReviewerClient Configuration Object</param>
         public AmazonCodeGuruReviewerClient(AmazonCodeGuruReviewerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonCodeGuruReviewerClient with AWS Credentials

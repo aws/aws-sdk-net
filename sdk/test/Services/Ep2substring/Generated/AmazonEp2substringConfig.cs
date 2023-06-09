@@ -35,13 +35,23 @@ namespace Amazon.Ep2substring
             InternalSDKUtils.BuildUserAgentString("3.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Ep2-substring";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonEp2substringConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonEp2substringDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Ep2-substring";
             this.AuthenticationServiceName = "ep2";
             this.EndpointProvider = new AmazonEp2substringEndpointProvider();
         }

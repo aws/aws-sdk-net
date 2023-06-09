@@ -35,13 +35,23 @@ namespace Amazon.SupportApp
             InternalSDKUtils.BuildUserAgentString("3.7.101.145");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Support App";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSupportAppConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSupportAppDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Support App";
             this.AuthenticationServiceName = "supportapp";
             this.EndpointProvider = new AmazonSupportAppEndpointProvider();
         }

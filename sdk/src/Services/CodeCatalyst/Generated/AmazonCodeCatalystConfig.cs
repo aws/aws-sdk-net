@@ -35,13 +35,23 @@ namespace Amazon.CodeCatalyst
             InternalSDKUtils.BuildUserAgentString("3.7.102.21");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CodeCatalyst";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCodeCatalystConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeCatalystDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CodeCatalyst";
             this.AuthenticationServiceName = "codecatalyst";
             this.EndpointProvider = new AmazonCodeCatalystEndpointProvider();
         }

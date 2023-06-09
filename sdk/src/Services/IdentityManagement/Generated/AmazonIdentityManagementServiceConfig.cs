@@ -35,13 +35,23 @@ namespace Amazon.IdentityManagement
             InternalSDKUtils.BuildUserAgentString("3.7.102.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "IAM";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIdentityManagementServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIdentityManagementServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "IAM";
             this.AuthenticationServiceName = "iam";
             var region = FallbackRegionFactory.GetRegionEndpoint(false);
             this.RegionEndpoint = region ?? RegionEndpoint.USEast1;

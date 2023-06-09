@@ -35,13 +35,23 @@ namespace Amazon.APIGateway
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "API Gateway";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAPIGatewayConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAPIGatewayDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "API Gateway";
             this.AuthenticationServiceName = "apigateway";
             this.EndpointProvider = new AmazonAPIGatewayEndpointProvider();
         }

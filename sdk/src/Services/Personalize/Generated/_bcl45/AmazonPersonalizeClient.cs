@@ -116,7 +116,7 @@ namespace Amazon.Personalize
         /// </summary>
         /// <param name="config">The AmazonPersonalizeClient Configuration Object</param>
         public AmazonPersonalizeClient(AmazonPersonalizeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonPersonalizeClient with AWS Credentials

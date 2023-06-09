@@ -107,7 +107,7 @@ namespace Amazon.NimbleStudio
         /// </summary>
         /// <param name="config">The AmazonNimbleStudioClient Configuration Object</param>
         public AmazonNimbleStudioClient(AmazonNimbleStudioConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

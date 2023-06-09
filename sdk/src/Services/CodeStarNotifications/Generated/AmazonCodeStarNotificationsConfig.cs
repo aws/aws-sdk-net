@@ -35,13 +35,23 @@ namespace Amazon.CodeStarNotifications
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "codestar notifications";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCodeStarNotificationsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCodeStarNotificationsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "codestar notifications";
             this.AuthenticationServiceName = "codestar-notifications";
             this.EndpointProvider = new AmazonCodeStarNotificationsEndpointProvider();
         }

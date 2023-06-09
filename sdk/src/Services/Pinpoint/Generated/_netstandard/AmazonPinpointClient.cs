@@ -100,7 +100,7 @@ namespace Amazon.Pinpoint
         /// </summary>
         /// <param name="config">The AmazonPinpointClient Configuration Object</param>
         public AmazonPinpointClient(AmazonPinpointConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

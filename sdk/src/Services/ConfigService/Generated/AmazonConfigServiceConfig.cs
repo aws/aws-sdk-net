@@ -35,13 +35,23 @@ namespace Amazon.ConfigService
             InternalSDKUtils.BuildUserAgentString("3.7.106.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Config Service";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonConfigServiceConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonConfigServiceDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Config Service";
             this.AuthenticationServiceName = "config";
             this.EndpointProvider = new AmazonConfigServiceEndpointProvider();
         }

@@ -110,7 +110,7 @@ namespace Amazon.Transfer
         /// </summary>
         /// <param name="config">The AmazonTransferClient Configuration Object</param>
         public AmazonTransferClient(AmazonTransferConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

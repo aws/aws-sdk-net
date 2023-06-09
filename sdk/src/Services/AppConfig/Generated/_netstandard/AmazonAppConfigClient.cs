@@ -153,7 +153,7 @@ namespace Amazon.AppConfig
         /// </summary>
         /// <param name="config">The AmazonAppConfigClient Configuration Object</param>
         public AmazonAppConfigClient(AmazonAppConfigConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

@@ -117,7 +117,7 @@ namespace Amazon.MigrationHubRefactorSpaces
         /// </summary>
         /// <param name="config">The AmazonMigrationHubRefactorSpacesClient Configuration Object</param>
         public AmazonMigrationHubRefactorSpacesClient(AmazonMigrationHubRefactorSpacesConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

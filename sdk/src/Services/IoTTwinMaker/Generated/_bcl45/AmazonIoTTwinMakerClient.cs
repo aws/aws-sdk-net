@@ -119,7 +119,7 @@ namespace Amazon.IoTTwinMaker
         /// </summary>
         /// <param name="config">The AmazonIoTTwinMakerClient Configuration Object</param>
         public AmazonIoTTwinMakerClient(AmazonIoTTwinMakerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonIoTTwinMakerClient with AWS Credentials

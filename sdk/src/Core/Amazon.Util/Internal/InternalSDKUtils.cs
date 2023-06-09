@@ -17,6 +17,7 @@ using System;
 using System.Collections.Generic;
 using System.Globalization;
 using System.IO;
+using System.Net;
 using Amazon.Runtime.Internal.Util;
 using Amazon.Util.Internal.PlatformServices;
 
@@ -240,6 +241,19 @@ namespace Amazon.Util.Internal
 
             //Test if the target file is a child of directoryPath
             return fileInfo.FullName.StartsWith(dirInfo.FullName);
+        }
+
+        //Since .net 35 doesn't have Zip functionality, this is a custom implementation that does the same thing as LINQ's zip method.
+        internal static IEnumerable<TResult> Zip<TFirst, TSecond, TResult>(IEnumerable<TFirst> first, IEnumerable<TSecond> second, Func<TFirst, TSecond, TResult> resultSelector)
+        {
+            using (var enumerator1 = first.GetEnumerator())
+            using (var enumerator2 = second.GetEnumerator())
+            {
+                while (enumerator1.MoveNext() && enumerator2.MoveNext())
+                {
+                    yield return resultSelector(enumerator1.Current, enumerator2.Current);
+                }
+            }
         }
 
         #region IsSet methods

@@ -35,13 +35,23 @@ namespace Amazon.WAFV2
             InternalSDKUtils.BuildUserAgentString("3.7.112.5");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "WAFV2";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonWAFV2Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonWAFV2DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "WAFV2";
             this.AuthenticationServiceName = "wafv2";
             this.EndpointProvider = new AmazonWAFV2EndpointProvider();
         }

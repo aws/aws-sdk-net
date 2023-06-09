@@ -102,8 +102,7 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         /// <param name="config">The AmazonComprehendMedicalClient Configuration Object</param>
         public AmazonComprehendMedicalClient(AmazonComprehendMedicalConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonComprehendMedicalClient with AWS Credentials
         /// </summary>

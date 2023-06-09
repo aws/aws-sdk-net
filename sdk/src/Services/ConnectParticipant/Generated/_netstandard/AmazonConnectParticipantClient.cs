@@ -112,7 +112,7 @@ namespace Amazon.ConnectParticipant
         /// </summary>
         /// <param name="config">The AmazonConnectParticipantClient Configuration Object</param>
         public AmazonConnectParticipantClient(AmazonConnectParticipantConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

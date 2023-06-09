@@ -35,13 +35,23 @@ namespace Amazon.Route53
             InternalSDKUtils.BuildUserAgentString("3.7.104.90");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Route 53";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonRoute53Config()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonRoute53DefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Route 53";
             this.AuthenticationServiceName = "route53";
             this.EndpointProvider = new AmazonRoute53EndpointProvider();
         }

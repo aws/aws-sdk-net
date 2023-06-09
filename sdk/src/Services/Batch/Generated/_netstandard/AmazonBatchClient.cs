@@ -118,7 +118,7 @@ namespace Amazon.Batch
         /// </summary>
         /// <param name="config">The AmazonBatchClient Configuration Object</param>
         public AmazonBatchClient(AmazonBatchConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

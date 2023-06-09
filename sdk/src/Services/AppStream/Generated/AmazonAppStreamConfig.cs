@@ -35,13 +35,23 @@ namespace Amazon.AppStream
             InternalSDKUtils.BuildUserAgentString("3.7.103.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "AppStream";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAppStreamConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAppStreamDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "AppStream";
             this.AuthenticationServiceName = "appstream";
             this.EndpointProvider = new AmazonAppStreamEndpointProvider();
         }

@@ -35,13 +35,23 @@ namespace Amazon.SagemakerEdgeManager
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Sagemaker Edge";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSagemakerEdgeManagerConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSagemakerEdgeManagerDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Sagemaker Edge";
             this.AuthenticationServiceName = "sagemaker";
             this.EndpointProvider = new AmazonSagemakerEdgeManagerEndpointProvider();
         }

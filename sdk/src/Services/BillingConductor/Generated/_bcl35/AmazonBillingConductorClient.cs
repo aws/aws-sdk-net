@@ -134,8 +134,7 @@ namespace Amazon.BillingConductor
         /// </summary>
         /// <param name="config">The AmazonBillingConductorClient Configuration Object</param>
         public AmazonBillingConductorClient(AmazonBillingConductorConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonBillingConductorClient with AWS Credentials
         /// </summary>

@@ -100,7 +100,7 @@ namespace Amazon.Account
         /// </summary>
         /// <param name="config">The AmazonAccountClient Configuration Object</param>
         public AmazonAccountClient(AmazonAccountConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

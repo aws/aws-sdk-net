@@ -35,13 +35,23 @@ namespace Amazon.Neptune
             InternalSDKUtils.BuildUserAgentString("3.7.102.55");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Neptune";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonNeptuneConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonNeptuneDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Neptune";
             this.AuthenticationServiceName = "rds";
             this.EndpointProvider = new AmazonNeptuneEndpointProvider();
         }

@@ -543,8 +543,7 @@ namespace Amazon.CodeCommit
         /// </summary>
         /// <param name="config">The AmazonCodeCommitClient Configuration Object</param>
         public AmazonCodeCommitClient(AmazonCodeCommitConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonCodeCommitClient with AWS Credentials
         /// </summary>

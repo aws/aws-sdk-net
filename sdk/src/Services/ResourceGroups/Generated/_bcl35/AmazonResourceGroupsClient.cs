@@ -164,8 +164,7 @@ namespace Amazon.ResourceGroups
         /// </summary>
         /// <param name="config">The AmazonResourceGroupsClient Configuration Object</param>
         public AmazonResourceGroupsClient(AmazonResourceGroupsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonResourceGroupsClient with AWS Credentials
         /// </summary>

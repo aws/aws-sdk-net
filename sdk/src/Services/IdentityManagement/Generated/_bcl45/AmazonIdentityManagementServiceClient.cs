@@ -124,7 +124,7 @@ namespace Amazon.IdentityManagement
         /// </summary>
         /// <param name="config">The AmazonIdentityManagementServiceClient Configuration Object</param>
         public AmazonIdentityManagementServiceClient(AmazonIdentityManagementServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonIdentityManagementServiceClient with AWS Credentials

@@ -101,7 +101,7 @@ namespace Amazon.LicenseManagerLinuxSubscriptions
         /// </summary>
         /// <param name="config">The AmazonLicenseManagerLinuxSubscriptionsClient Configuration Object</param>
         public AmazonLicenseManagerLinuxSubscriptionsClient(AmazonLicenseManagerLinuxSubscriptionsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

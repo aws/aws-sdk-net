@@ -97,8 +97,7 @@ namespace Amazon.Ep2hostlabel
         /// </summary>
         /// <param name="config">The AmazonEp2hostlabelClient Configuration Object</param>
         public AmazonEp2hostlabelClient(AmazonEp2hostlabelConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonEp2hostlabelClient with AWS Credentials
         /// </summary>

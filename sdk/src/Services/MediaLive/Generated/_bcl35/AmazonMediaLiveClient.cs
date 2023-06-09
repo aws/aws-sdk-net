@@ -115,8 +115,7 @@ namespace Amazon.MediaLive
         /// </summary>
         /// <param name="config">The AmazonMediaLiveClient Configuration Object</param>
         public AmazonMediaLiveClient(AmazonMediaLiveConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonMediaLiveClient with AWS Credentials
         /// </summary>

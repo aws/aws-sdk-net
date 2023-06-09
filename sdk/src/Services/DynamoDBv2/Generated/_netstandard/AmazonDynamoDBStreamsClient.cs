@@ -105,7 +105,7 @@ namespace Amazon.DynamoDBv2
         /// </summary>
         /// <param name="config">The AmazonDynamoDBStreamsClient Configuration Object</param>
         public AmazonDynamoDBStreamsClient(AmazonDynamoDBStreamsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

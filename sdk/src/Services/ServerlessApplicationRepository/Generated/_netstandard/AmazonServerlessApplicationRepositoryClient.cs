@@ -141,7 +141,7 @@ namespace Amazon.ServerlessApplicationRepository
         /// </summary>
         /// <param name="config">The AmazonServerlessApplicationRepositoryClient Configuration Object</param>
         public AmazonServerlessApplicationRepositoryClient(AmazonServerlessApplicationRepositoryConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

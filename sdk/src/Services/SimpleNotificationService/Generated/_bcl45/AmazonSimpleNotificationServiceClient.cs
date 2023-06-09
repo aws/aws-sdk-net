@@ -138,7 +138,7 @@ namespace Amazon.SimpleNotificationService
         /// </summary>
         /// <param name="config">The AmazonSimpleNotificationServiceClient Configuration Object</param>
         public AmazonSimpleNotificationServiceClient(AmazonSimpleNotificationServiceConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonSimpleNotificationServiceClient with AWS Credentials

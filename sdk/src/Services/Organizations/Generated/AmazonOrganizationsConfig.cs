@@ -35,13 +35,23 @@ namespace Amazon.Organizations
             InternalSDKUtils.BuildUserAgentString("3.7.102.67");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Organizations";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonOrganizationsConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonOrganizationsDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Organizations";
             this.AuthenticationServiceName = "organizations";
             this.EndpointProvider = new AmazonOrganizationsEndpointProvider();
         }

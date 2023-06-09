@@ -35,13 +35,23 @@ namespace Amazon.Shield
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Shield";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonShieldConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonShieldDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Shield";
             this.AuthenticationServiceName = "shield";
             this.EndpointProvider = new AmazonShieldEndpointProvider();
         }

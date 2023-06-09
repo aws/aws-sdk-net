@@ -133,8 +133,7 @@ namespace Amazon.IoTWireless
         /// </summary>
         /// <param name="config">The AmazonIoTWirelessClient Configuration Object</param>
         public AmazonIoTWirelessClient(AmazonIoTWirelessConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
-
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
         /// <summary>
         /// Constructs AmazonIoTWirelessClient with AWS Credentials
         /// </summary>

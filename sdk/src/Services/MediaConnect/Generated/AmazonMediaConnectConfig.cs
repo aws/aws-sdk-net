@@ -35,13 +35,23 @@ namespace Amazon.MediaConnect
             InternalSDKUtils.BuildUserAgentString("3.7.101.38");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "MediaConnect";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonMediaConnectConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonMediaConnectDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "MediaConnect";
             this.AuthenticationServiceName = "mediaconnect";
             this.EndpointProvider = new AmazonMediaConnectEndpointProvider();
         }

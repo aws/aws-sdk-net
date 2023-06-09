@@ -35,13 +35,23 @@ namespace Amazon.Ivschat
             InternalSDKUtils.BuildUserAgentString("3.7.104.62");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "ivschat";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonIvschatConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonIvschatDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "ivschat";
             this.AuthenticationServiceName = "ivschat";
             this.EndpointProvider = new AmazonIvschatEndpointProvider();
         }

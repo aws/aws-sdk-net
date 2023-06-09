@@ -66,7 +66,9 @@ namespace Amazon.Runtime.CredentialManagement
         private const string SsoRoleName = "sso_role_name";
         private const string SsoStartUrl = "sso_start_url";
         private const string SsoSession = "sso_session";
-
+        private const string EndpointUrlField = "endpoint_url";
+        private const string ServicesField = "services";
+        private const string IgnoreConfiguredEndpointUrlsField = "ignore_configured_endpoint_urls";
         private static readonly HashSet<string> ReservedPropertyNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             SettingsConstants.DisplayNameField,
@@ -84,6 +86,9 @@ namespace Amazon.Runtime.CredentialManagement
             SsoRegion,
             SsoRoleName,
             SsoStartUrl,
+            EndpointUrlField,
+            ServicesField,
+            IgnoreConfiguredEndpointUrlsField
         };
 
         private static readonly CredentialProfilePropertyMapping PropertyMapping =
@@ -101,6 +106,8 @@ namespace Amazon.Runtime.CredentialManagement
                     { "SourceProfile", SettingsConstants.SourceProfileField },
                     { "Token", SettingsConstants.SessionTokenField },
                     { "UserIdentity", SettingsConstants.UserIdentityField },
+                    { "Services", SettingsConstants.Services },
+                    { "EndpointUrl", SettingsConstants.EndpointUrl },
                     // Not implemented for NetSDKCredentials. Applicable only
                     // for SharedCredentials
                     { "CredentialProcess" , SettingsConstants.CredentialProcess },
@@ -319,7 +326,7 @@ namespace Amazon.Runtime.CredentialManagement
                         S3RegionalEndpoint = s3RegionalEndpoint,
                         S3DisableMultiRegionAccessPoints = s3DisableMultiRegionAccessPoints,
                         RetryMode = requestRetryMode,
-                        MaxAttempts = maxAttempts
+                        MaxAttempts = maxAttempts,
                     };
                     return true;
                 }
@@ -375,6 +382,12 @@ namespace Amazon.Runtime.CredentialManagement
 
                 if (profile.MaxAttempts != null)
                     reservedProperties[MaxAttemptsField] = profile.MaxAttempts.ToString().ToLowerInvariant();
+
+                if (profile.IgnoreConfiguredEndpointUrls != null)
+                    reservedProperties[IgnoreConfiguredEndpointUrlsField] = profile.IgnoreConfiguredEndpointUrls.ToString().ToLowerInvariant();
+
+                if (profile.EndpointUrl != null)
+                    reservedProperties[EndpointUrlField] = profile.EndpointUrl.ToString().ToLowerInvariant();
 
                 var profileDictionary = PropertyMapping.CombineProfileParts(
                     profile.Options, ReservedPropertyNames, reservedProperties, profile.Properties);

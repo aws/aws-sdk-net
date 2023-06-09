@@ -133,7 +133,7 @@ namespace Amazon.GreengrassV2
         /// </summary>
         /// <param name="config">The AmazonGreengrassV2Client Configuration Object</param>
         public AmazonGreengrassV2Client(AmazonGreengrassV2Config config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonGreengrassV2Client with AWS Credentials

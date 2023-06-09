@@ -100,7 +100,7 @@ namespace Amazon.SageMakerRuntime
         /// </summary>
         /// <param name="config">The AmazonSageMakerRuntimeClient Configuration Object</param>
         public AmazonSageMakerRuntimeClient(AmazonSageMakerRuntimeConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

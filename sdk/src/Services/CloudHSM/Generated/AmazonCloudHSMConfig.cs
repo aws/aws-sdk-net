@@ -35,13 +35,23 @@ namespace Amazon.CloudHSM
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "CloudHSM";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonCloudHSMConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonCloudHSMDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "CloudHSM";
             this.AuthenticationServiceName = "cloudhsm";
             this.EndpointProvider = new AmazonCloudHSMEndpointProvider();
         }

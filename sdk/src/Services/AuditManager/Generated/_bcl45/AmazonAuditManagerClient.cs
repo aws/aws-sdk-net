@@ -162,7 +162,7 @@ namespace Amazon.AuditManager
         /// </summary>
         /// <param name="config">The AmazonAuditManagerClient Configuration Object</param>
         public AmazonAuditManagerClient(AmazonAuditManagerConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
         /// <summary>
         /// Constructs AmazonAuditManagerClient with AWS Credentials

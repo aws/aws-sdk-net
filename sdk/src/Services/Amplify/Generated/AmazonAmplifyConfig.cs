@@ -35,13 +35,23 @@ namespace Amazon.Amplify
             InternalSDKUtils.BuildUserAgentString("3.7.101.130");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "Amplify";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonAmplifyConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonAmplifyDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "Amplify";
             this.AuthenticationServiceName = "amplify";
             this.EndpointProvider = new AmazonAmplifyEndpointProvider();
         }

@@ -35,13 +35,23 @@ namespace Amazon.SageMakerGeospatial
             InternalSDKUtils.BuildUserAgentString("3.7.102.19");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "SageMaker Geospatial";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonSageMakerGeospatialConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonSageMakerGeospatialDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "SageMaker Geospatial";
             this.AuthenticationServiceName = "sagemaker-geospatial";
             this.EndpointProvider = new AmazonSageMakerGeospatialEndpointProvider();
         }

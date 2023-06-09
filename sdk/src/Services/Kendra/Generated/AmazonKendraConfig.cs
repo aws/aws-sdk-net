@@ -35,13 +35,23 @@ namespace Amazon.Kendra
             InternalSDKUtils.BuildUserAgentString("3.7.105.3");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "kendra";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonKendraConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKendraDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "kendra";
             this.AuthenticationServiceName = "kendra";
             this.EndpointProvider = new AmazonKendraEndpointProvider();
         }

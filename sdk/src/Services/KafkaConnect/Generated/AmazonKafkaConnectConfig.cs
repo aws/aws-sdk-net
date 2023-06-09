@@ -35,13 +35,23 @@ namespace Amazon.KafkaConnect
             InternalSDKUtils.BuildUserAgentString("3.7.100.150");
 
         private string _userAgent = UserAgentString;
-
+        ///<summary>
+        /// The ServiceId, which is the unique identifier for a service.
+        ///</summary>
+        public static new string ServiceId
+        {
+            get
+            {
+                return "KafkaConnect";
+            }
+        }
         /// <summary>
         /// Default constructor
         /// </summary>
         public AmazonKafkaConnectConfig()
             : base(new Amazon.Runtime.Internal.DefaultConfigurationProvider(AmazonKafkaConnectDefaultConfiguration.GetAllConfigurations()))
         {
+            base.ServiceId = "KafkaConnect";
             this.AuthenticationServiceName = "kafkaconnect";
             this.EndpointProvider = new AmazonKafkaConnectEndpointProvider();
         }

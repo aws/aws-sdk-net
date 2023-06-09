@@ -110,7 +110,7 @@ namespace Amazon.MigrationHubStrategyRecommendations
         /// </summary>
         /// <param name="config">The AmazonMigrationHubStrategyRecommendationsClient Configuration Object</param>
         public AmazonMigrationHubStrategyRecommendationsClient(AmazonMigrationHubStrategyRecommendationsConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

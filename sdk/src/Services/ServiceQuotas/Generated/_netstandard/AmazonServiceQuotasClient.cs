@@ -103,7 +103,7 @@ namespace Amazon.ServiceQuotas
         /// </summary>
         /// <param name="config">The AmazonServiceQuotasClient Configuration Object</param>
         public AmazonServiceQuotasClient(AmazonServiceQuotasConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

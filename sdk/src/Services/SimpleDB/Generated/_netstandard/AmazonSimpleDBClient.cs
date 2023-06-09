@@ -117,7 +117,7 @@ namespace Amazon.SimpleDB
         /// </summary>
         /// <param name="config">The AmazonSimpleDBClient Configuration Object</param>
         public AmazonSimpleDBClient(AmazonSimpleDBConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>

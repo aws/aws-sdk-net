@@ -106,7 +106,7 @@ namespace Amazon.CloudFront
         /// </summary>
         /// <param name="config">The AmazonCloudFrontClient Configuration Object</param>
         public AmazonCloudFrontClient(AmazonCloudFrontConfig config)
-            : base(FallbackCredentialsFactory.GetCredentials(), config) { }
+            : base(FallbackCredentialsFactory.GetCredentials(config), config){}
 
 
         /// <summary>
