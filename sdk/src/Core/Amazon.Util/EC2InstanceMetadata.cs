@@ -26,6 +26,7 @@ using System.Globalization;
 using Amazon.Runtime.Internal.Util;
 using AWSSDK.Runtime.Internal.Util;
 using Amazon.Runtime.Internal;
+using Amazon.Util.Internal;
 
 namespace Amazon.Util
 {
@@ -348,7 +349,7 @@ namespace Amazon.Util
                 IAMInstanceProfileMetadata info;
                 try
                 {
-                    info = JsonMapper.ToObject<IAMInstanceProfileMetadata>(json);
+                    info = JsonSerializerHelper.Deserialize<IAMInstanceProfileMetadata>(json, EC2InstanceMetadataJsonSerializerContexts.Default);
                 }
                 catch
                 {
@@ -380,7 +381,7 @@ namespace Amazon.Util
                     var json = GetData("/iam/security-credentials/" + item);
                     try
                     {
-                        var cred = JsonMapper.ToObject<IAMSecurityCredentialMetadata>(json);
+                        var cred = JsonSerializerHelper.Deserialize<IAMSecurityCredentialMetadata>(json, EC2InstanceMetadataJsonSerializerContexts.Default);
                         creds[item] = cred;
                     }
                     catch
