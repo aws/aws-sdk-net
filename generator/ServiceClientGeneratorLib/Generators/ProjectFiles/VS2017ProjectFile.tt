@@ -98,6 +98,15 @@
   </PropertyGroup>
 <#
     }
+
+    if (this.Project.TargetFrameworks.Contains("net6.0"))
+    {
+#>
+  <PropertyGroup Condition="'$(TargetFramework)' == 'net6.0'">
+    <EnableTrimAnalyzer>true</EnableTrimAnalyzer>
+  </PropertyGroup>
+<#
+    }
 #>
 <#
 	if (!this.Project.AssemblyName.Contains("UnitTests"))
