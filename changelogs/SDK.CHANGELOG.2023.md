@@ -1,3 +1,9 @@
+### 3.7.566.0 (2023-06-09 18:22 UTC)
+* ACMPCA (3.7.102.94)
+	* Document-only update to refresh CLI  documentation for AWS Private CA. No change to the service.
+* Connect (3.7.127.0)
+	* This release adds search APIs for Prompts, Quick Connects and Hours of Operations, which can be used to search for those resources within a Connect Instance.
+
 ### 3.7.565.0 (2023-06-08 18:24 UTC)
 * Athena (3.7.111.0)
 	* You can now define custom spark properties at start of the session for use cases like cluster encryption, table formats, and general Spark tuning.
