@@ -29,13 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// A leaf node condition which can be used to specify a string condition. 
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The currently supported value for <code>FieldName</code>: <code>name</code> 
-    /// </para>
-    ///  </note>
+    /// A leaf node condition which can be used to specify a string condition.
     /// </summary>
     public partial class StringCondition
     {

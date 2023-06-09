@@ -42,7 +42,7 @@ namespace Amazon.Connect.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the prompt.
+        /// The description of the prompt.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=250)]

@@ -29,20 +29,12 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Connect.Model
 {
     /// <summary>
-    /// The search criteria to be used to return routing profiles.
-    /// 
-    ///  <note> 
-    /// <para>
-    /// The <code>name</code> and <code>description</code> fields support "contains" queries
-    /// with a minimum of 2 characters and a maximum of 25 characters. Any queries with character
-    /// lengths outside of this range will throw invalid results. 
-    /// </para>
-    ///  </note>
+    /// The search criteria to be used to return hours of operations.
     /// </summary>
-    public partial class RoutingProfileSearchCriteria
+    public partial class HoursOfOperationSearchCriteria
     {
-        private List<RoutingProfileSearchCriteria> _andConditions = new List<RoutingProfileSearchCriteria>();
-        private List<RoutingProfileSearchCriteria> _orConditions = new List<RoutingProfileSearchCriteria>();
+        private List<HoursOfOperationSearchCriteria> _andConditions = new List<HoursOfOperationSearchCriteria>();
+        private List<HoursOfOperationSearchCriteria> _orConditions = new List<HoursOfOperationSearchCriteria>();
         private StringCondition _stringCondition;
 
         /// <summary>
@@ -51,7 +43,7 @@ namespace Amazon.Connect.Model
         /// A list of conditions which would be applied together with an AND condition.
         /// </para>
         /// </summary>
-        public List<RoutingProfileSearchCriteria> AndConditions
+        public List<HoursOfOperationSearchCriteria> AndConditions
         {
             get { return this._andConditions; }
             set { this._andConditions = value; }
@@ -69,7 +61,7 @@ namespace Amazon.Connect.Model
         /// A list of conditions which would be applied together with an OR condition.
         /// </para>
         /// </summary>
-        public List<RoutingProfileSearchCriteria> OrConditions
+        public List<HoursOfOperationSearchCriteria> OrConditions
         {
             get { return this._orConditions; }
             set { this._orConditions = value; }
@@ -89,7 +81,7 @@ namespace Amazon.Connect.Model
         ///  <note> 
         /// <para>
         /// The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>,
-        /// and <code>resourceID</code>.
+        /// <code>timezone</code>, and <code>resourceID</code>.
         /// </para>
         ///  </note>
         /// </summary>

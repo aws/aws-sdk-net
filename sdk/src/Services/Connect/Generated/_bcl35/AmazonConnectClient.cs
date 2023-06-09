@@ -10104,6 +10104,144 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchHoursOfOperations
+
+        /// <summary>
+        /// Searches the hours of operation in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperations service method.</param>
+        /// 
+        /// <returns>The response from the SearchHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">REST API Reference for SearchHoursOfOperations Operation</seealso>
+        public virtual SearchHoursOfOperationsResponse SearchHoursOfOperations(SearchHoursOfOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchHoursOfOperationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchHoursOfOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">REST API Reference for SearchHoursOfOperations Operation</seealso>
+        public virtual IAsyncResult BeginSearchHoursOfOperations(SearchHoursOfOperationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchHoursOfOperations.</param>
+        /// 
+        /// <returns>Returns a  SearchHoursOfOperationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">REST API Reference for SearchHoursOfOperations Operation</seealso>
+        public virtual SearchHoursOfOperationsResponse EndSearchHoursOfOperations(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchHoursOfOperationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchPrompts
+
+        /// <summary>
+        /// Searches prompts in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchPrompts service method.</param>
+        /// 
+        /// <returns>The response from the SearchPrompts service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPrompts">REST API Reference for SearchPrompts Operation</seealso>
+        public virtual SearchPromptsResponse SearchPrompts(SearchPromptsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchPromptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchPromptsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchPromptsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchPrompts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchPrompts operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchPrompts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPrompts">REST API Reference for SearchPrompts Operation</seealso>
+        public virtual IAsyncResult BeginSearchPrompts(SearchPromptsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchPromptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchPromptsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchPrompts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchPrompts.</param>
+        /// 
+        /// <returns>Returns a  SearchPromptsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPrompts">REST API Reference for SearchPrompts Operation</seealso>
+        public virtual SearchPromptsResponse EndSearchPrompts(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchPromptsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  SearchQueues
 
         /// <summary>
@@ -10174,6 +10312,75 @@ namespace Amazon.Connect
         public virtual SearchQueuesResponse EndSearchQueues(IAsyncResult asyncResult)
         {
             return EndInvoke<SearchQueuesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  SearchQuickConnects
+
+        /// <summary>
+        /// Searches quick connects in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchQuickConnects service method.</param>
+        /// 
+        /// <returns>The response from the SearchQuickConnects service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQuickConnects">REST API Reference for SearchQuickConnects Operation</seealso>
+        public virtual SearchQuickConnectsResponse SearchQuickConnects(SearchQuickConnectsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchQuickConnectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchQuickConnectsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchQuickConnectsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchQuickConnects operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchQuickConnects
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQuickConnects">REST API Reference for SearchQuickConnects Operation</seealso>
+        public virtual IAsyncResult BeginSearchQuickConnects(SearchQuickConnectsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchQuickConnectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchQuickConnectsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchQuickConnects.</param>
+        /// 
+        /// <returns>Returns a  SearchQuickConnectsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQuickConnects">REST API Reference for SearchQuickConnects Operation</seealso>
+        public virtual SearchQuickConnectsResponse EndSearchQuickConnects(IAsyncResult asyncResult)
+        {
+            return EndInvoke<SearchQuickConnectsResponse>(asyncResult);
         }
 
         #endregion

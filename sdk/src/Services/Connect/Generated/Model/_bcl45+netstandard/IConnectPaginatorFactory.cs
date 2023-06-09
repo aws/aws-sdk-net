@@ -221,9 +221,24 @@ namespace Amazon.Connect.Model
         ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request);
 
         /// <summary>
+        /// Paginator for SearchHoursOfOperations operation
+        ///</summary>
+        ISearchHoursOfOperationsPaginator SearchHoursOfOperations(SearchHoursOfOperationsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchPrompts operation
+        ///</summary>
+        ISearchPromptsPaginator SearchPrompts(SearchPromptsRequest request);
+
+        /// <summary>
         /// Paginator for SearchQueues operation
         ///</summary>
         ISearchQueuesPaginator SearchQueues(SearchQueuesRequest request);
+
+        /// <summary>
+        /// Paginator for SearchQuickConnects operation
+        ///</summary>
+        ISearchQuickConnectsPaginator SearchQuickConnects(SearchQuickConnectsRequest request);
 
         /// <summary>
         /// Paginator for SearchRoutingProfiles operation

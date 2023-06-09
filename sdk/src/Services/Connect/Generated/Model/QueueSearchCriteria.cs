@@ -101,7 +101,16 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StringCondition.
+        /// Gets and sets the property StringCondition. 
+        /// <para>
+        /// A leaf node condition which can be used to specify a string condition.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The currently supported values for <code>FieldName</code> are <code>name</code>, <code>description</code>,
+        /// and <code>resourceID</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         public StringCondition StringCondition
         {
