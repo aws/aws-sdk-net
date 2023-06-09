@@ -86,7 +86,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property DriftInformation. 
         /// <para>
         /// Summarizes information about whether a stack's actual configuration differs, or has
-        /// <i>drifted</i>, from it's expected configuration, as defined in the stack template
+        /// <i>drifted</i>, from its expected configuration, as defined in the stack template
         /// and any values specified as template parameters. For more information, see <a href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting
         /// Unregulated Configuration Changes to Stacks and Resources</a>.
         /// </para>

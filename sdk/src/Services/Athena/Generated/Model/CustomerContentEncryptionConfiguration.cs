@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Athena.Model
 {
     /// <summary>
-    /// Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+    /// Specifies the KMS key that is used to encrypt the user's data stores in Athena. This
+    /// setting does not apply to Athena SQL workgroups.
     /// </summary>
     public partial class CustomerContentEncryptionConfiguration
     {

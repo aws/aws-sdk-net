@@ -38,7 +38,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property AllowedAccounts. 
         /// <para>
-        /// A list of AWS account IDs with access to use the action type in their pipelines.
+        /// A list of Amazon Web Services account IDs with access to use the action type in their
+        /// pipelines.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]

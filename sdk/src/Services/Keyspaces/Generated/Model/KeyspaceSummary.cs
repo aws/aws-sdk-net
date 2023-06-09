@@ -34,6 +34,8 @@ namespace Amazon.Keyspaces.Model
     public partial class KeyspaceSummary
     {
         private string _keyspaceName;
+        private List<string> _replicationRegions = new List<string>();
+        private Rs _replicationStrategy;
         private string _resourceArn;
 
         /// <summary>
@@ -53,6 +55,47 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetKeyspaceName()
         {
             return this._keyspaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationRegions. 
+        /// <para>
+        ///  If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>,
+        /// a list of replication Regions is returned. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=6)]
+        public List<string> ReplicationRegions
+        {
+            get { return this._replicationRegions; }
+            set { this._replicationRegions = value; }
+        }
+
+        // Check to see if ReplicationRegions property is set
+        internal bool IsSetReplicationRegions()
+        {
+            return this._replicationRegions != null && this._replicationRegions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationStrategy. 
+        /// <para>
+        ///  This property specifies if a keyspace is a single Region keyspace or a multi-Region
+        /// keyspace. The available values are <code>SINGLE_REGION</code> or <code>MULTI_REGION</code>.
+        /// 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20)]
+        public Rs ReplicationStrategy
+        {
+            get { return this._replicationStrategy; }
+            set { this._replicationStrategy = value; }
+        }
+
+        // Check to see if ReplicationStrategy property is set
+        internal bool IsSetReplicationStrategy()
+        {
+            return this._replicationStrategy != null;
         }
 
         /// <summary>

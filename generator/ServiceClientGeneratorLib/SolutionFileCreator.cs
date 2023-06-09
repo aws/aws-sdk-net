@@ -335,7 +335,7 @@ namespace ServiceClientGenerator
             {
                 Regex expression = new Regex(@"Project\(""{(.*)}""\)\s*=\s*""(.*)"",\s*""(.*)"",\s*""(.*)""");
                 foreach (string line in File.ReadAllLines(solutionsFilePath))
-                {
+                {   
                     Match match = expression.Match(line);
                     if (match.Success)
                     {
@@ -343,6 +343,7 @@ namespace ServiceClientGenerator
                         string itemName = match.Groups[2].ToString();
                         string itemSource = match.Groups[3].ToString();
                         string itemGuid = match.Groups[4].ToString();
+
                         itemGuidDictionary.Add(itemName, itemGuid);
                     }
                 }
@@ -701,30 +702,35 @@ namespace ServiceClientGenerator
         /// </summary>
         private List<string> AddProjectDependencies(string projectFile, string serviceName, List<string> depsProjects)
         {
+
+            // This slash conversion will make sure that the projectFile path works in Linux and Windows environment
+            projectFile = projectFile.Replace('\\', Path.DirectorySeparatorChar);
+
             foreach (var line in File.ReadAllLines(projectFile))
             {
                 if (line.Contains("ProjectReference"))
                 {
                     var matches = ProjectReferenceRegex.Match(line);
                     var fileName = matches.ToString().Replace("\"", "");
-                    if (!(fileName.Contains("\\Core\\") || fileName.Contains($".{serviceName}.") || fileName.Contains("Test") || depsProjects.Contains(fileName)))
+                    if (!(fileName.Contains("\\Core\\") || fileName.Contains("/Core/") || fileName.Contains($".{serviceName}.") || fileName.Contains("Test") || depsProjects.Contains(fileName)))
                     {
+                        var split = fileName.Contains('\\') ? fileName.Split('\\') : fileName.Split('/');
+
                         // This is in a different folder in than the usual service dependencies.
                         // Also skipping the recursion since this does not currently have any ProjectReferences beyond Core
                         if (fileName.Contains("AWSSDK.Extensions.CrtIntegration"))
                         {
-                            var split = fileName.Split('\\');
+                        
                             // Build the relative path to \extensions\src\AWSSDK.Extensions.CrtIntegration\AWSSDK.Extensions.CrtIntegration.<target framework>.csproj
                             var deps = Path.Combine("..", "..", "..", "..", split[split.Length - 4], split[split.Length - 3], split[split.Length - 2], split[split.Length - 1]);
                             depsProjects.Add(deps);
                         }
                         else
                         {
-                            var split = fileName.Split('\\');
                             // Build the relative path to \<service folder>\AWSSDK.<service>.<target framework>.csproj
                             var deps = Path.Combine("..", split[split.Length - 2], split[split.Length - 1]);
                             depsProjects.Add(deps);
-                            AddProjectDependencies(Path.Combine(Options.SdkRootFolder, @"src\Services", split[split.Length - 2], split[split.Length - 1]), split[split.Length - 2], depsProjects);
+                            AddProjectDependencies(Path.Combine(Options.SdkRootFolder, "src", "Services", split[split.Length - 2], split[split.Length - 1]), split[split.Length - 2], depsProjects);
                         }
                     }
                 }

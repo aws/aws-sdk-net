@@ -1367,6 +1367,60 @@ namespace Amazon.ConfigService
 
 
     /// <summary>
+    /// Constants used for properties of type RecordingStrategyType.
+    /// </summary>
+    public class RecordingStrategyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL_SUPPORTED_RESOURCE_TYPES for RecordingStrategyType
+        /// </summary>
+        public static readonly RecordingStrategyType ALL_SUPPORTED_RESOURCE_TYPES = new RecordingStrategyType("ALL_SUPPORTED_RESOURCE_TYPES");
+        /// <summary>
+        /// Constant EXCLUSION_BY_RESOURCE_TYPES for RecordingStrategyType
+        /// </summary>
+        public static readonly RecordingStrategyType EXCLUSION_BY_RESOURCE_TYPES = new RecordingStrategyType("EXCLUSION_BY_RESOURCE_TYPES");
+        /// <summary>
+        /// Constant INCLUSION_BY_RESOURCE_TYPES for RecordingStrategyType
+        /// </summary>
+        public static readonly RecordingStrategyType INCLUSION_BY_RESOURCE_TYPES = new RecordingStrategyType("INCLUSION_BY_RESOURCE_TYPES");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecordingStrategyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecordingStrategyType FindValue(string value)
+        {
+            return FindValue<RecordingStrategyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecordingStrategyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type RemediationExecutionState.
     /// </summary>
     public class RemediationExecutionState : ConstantClass

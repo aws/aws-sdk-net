@@ -36,8 +36,10 @@ namespace Amazon.IoTFleetWise.Model
     {
         private List<string> _allowedValues = new List<string>();
         private string _assignedValue;
+        private string _comment;
         private NodeDataType _dataType;
         private string _defaultValue;
+        private string _deprecationMessage;
         private string _description;
         private string _fullyQualifiedName;
         private double? _max;
@@ -82,6 +84,25 @@ namespace Amazon.IoTFleetWise.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// A comment in addition to the description.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string Comment
+        {
+            get { return this._comment; }
+            set { this._comment = value; }
+        }
+
+        // Check to see if Comment property is set
+        internal bool IsSetComment()
+        {
+            return this._comment != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property DataType. 
         /// <para>
         /// The specified data type of the attribute. 
@@ -116,6 +137,25 @@ namespace Amazon.IoTFleetWise.Model
         internal bool IsSetDefaultValue()
         {
             return this._defaultValue != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeprecationMessage. 
+        /// <para>
+        /// The deprecation message for the node or the branch that was moved or deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string DeprecationMessage
+        {
+            get { return this._deprecationMessage; }
+            set { this._deprecationMessage = value; }
+        }
+
+        // Check to see if DeprecationMessage property is set
+        internal bool IsSetDeprecationMessage()
+        {
+            return this._deprecationMessage != null;
         }
 
         /// <summary>

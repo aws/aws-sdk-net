@@ -66,9 +66,9 @@ namespace Amazon.CodePipeline.Model
         /// from the target action configuration can be included as placeholders in this value
         /// by surrounding the action configuration key with curly brackets. For example, if the
         /// value supplied here is "refs/heads/{Branch}" and the target action has an action configuration
-        /// property called "Branch" with a value of "master", the <code>MatchEquals</code> value
-        /// is evaluated as "refs/heads/master". For a list of action configuration properties
-        /// for built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
+        /// property called "Branch" with a value of "main", the <code>MatchEquals</code> value
+        /// is evaluated as "refs/heads/main". For a list of action configuration properties for
+        /// built-in action types, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/reference-pipeline-structure.html#action-requirements">Pipeline
         /// Structure Reference Action Requirements</a>.
         /// </para>
         /// </summary>

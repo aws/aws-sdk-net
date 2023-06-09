@@ -379,6 +379,10 @@ namespace Amazon.SageMaker.Model
         /// it available as input streams. For example, if you specify an EFS location, input
         /// data files are available as input streams. They do not need to be downloaded.
         /// </para>
+        ///  
+        /// <para>
+        /// Your input must be in the same Amazon Web Services region as your training job.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<Channel> InputDataConfig

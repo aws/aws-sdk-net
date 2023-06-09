@@ -43,7 +43,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property DnsResolvers. 
         /// <para>
-        /// An optional override of dns resolvers to be used by the VPC connection.
+        /// An optional override of DNS resolvers to be used by the VPC connection.
         /// </para>
         /// </summary>
         [AWSProperty(Max=15)]
@@ -102,7 +102,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A new security group ID for the VPC connection you are importing. This field is required
         /// if you are importing the VPC connection from another Amazon Web Services account or
-        /// region.
+        /// Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=16)]
@@ -123,7 +123,7 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A list of new subnet IDs for the VPC connection you are importing. This field is required
         /// if you are importing the VPC connection from another Amazon Web Services account or
-        /// region.
+        /// Region.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=15)]

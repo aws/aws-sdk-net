@@ -38,10 +38,10 @@ namespace Amazon.CloudFormation.Model
     ///  
     /// <para>
     ///  <code>DetectStackSetDrift</code> returns the <code>OperationId</code> of the stack
-    /// set drift detection operation. Use this operation id with <code> <a>DescribeStackSetOperation</a>
-    /// </code> to monitor the progress of the drift detection operation. The drift detection
-    /// operation may take some time, depending on the number of stack instances included
-    /// in the stack set, in addition to the number of resources included in each stack.
+    /// set drift detection operation. Use this operation id with <a>DescribeStackSetOperation</a>
+    /// to monitor the progress of the drift detection operation. The drift detection operation
+    /// may take some time, depending on the number of stack instances included in the stack
+    /// set, in addition to the number of resources included in each stack.
     /// </para>
     ///  
     /// <para>
@@ -49,20 +49,19 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// Use <code> <a>DescribeStackSet</a> </code> to return detailed information about the
-    /// stack set, including detailed information about the last <i>completed</i> drift operation
-    /// performed on the stack set. (Information about drift operations that are in progress
-    /// isn't included.)
+    /// Use <a>DescribeStackSet</a> to return detailed information about the stack set, including
+    /// detailed information about the last <i>completed</i> drift operation performed on
+    /// the stack set. (Information about drift operations that are in progress isn't included.)
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code> <a>ListStackInstances</a> </code> to return a list of stack instances belonging
-    /// to the stack set, including the drift status and last drift time checked of each instance.
+    /// Use <a>ListStackInstances</a> to return a list of stack instances belonging to the
+    /// stack set, including the drift status and last drift time checked of each instance.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// Use <code> <a>DescribeStackInstance</a> </code> to return detailed information about
-    /// a specific stack instance, including its drift status and last drift time checked.
+    /// Use <a>DescribeStackInstance</a> to return detailed information about a specific stack
+    /// instance, including its drift status and last drift time checked.
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -76,8 +75,7 @@ namespace Amazon.CloudFormation.Model
     /// </para>
     ///  
     /// <para>
-    /// To stop a drift detection stack set operation, use <code> <a>StopStackSetOperation</a>
-    /// </code>.
+    /// To stop a drift detection stack set operation, use <a>StopStackSetOperation</a>.
     /// </para>
     /// </summary>
     public partial class DetectStackSetDriftRequest : AmazonCloudFormationRequest
@@ -147,7 +145,16 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OperationPreferences.
+        /// Gets and sets the property OperationPreferences. 
+        /// <para>
+        /// The user-specified preferences for how CloudFormation performs a stack set operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about maximum concurrent accounts and failure tolerance, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+        /// set operation options</a>.
+        /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences
         {

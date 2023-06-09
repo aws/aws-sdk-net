@@ -64,6 +64,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CollapseStateOptions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PivotTableFieldCollapseStateOption, PivotTableFieldCollapseStateOptionUnmarshaller>(PivotTableFieldCollapseStateOptionUnmarshaller.Instance);
+                    unmarshalledObject.CollapseStateOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DataPathOptions", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<PivotTableDataPathOption, PivotTableDataPathOptionUnmarshaller>(PivotTableDataPathOptionUnmarshaller.Instance);

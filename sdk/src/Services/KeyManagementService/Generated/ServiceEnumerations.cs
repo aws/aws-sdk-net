@@ -31,6 +31,14 @@ namespace Amazon.KeyManagementService
     {
 
         /// <summary>
+        /// Constant RSA_AES_KEY_WRAP_SHA_1 for AlgorithmSpec
+        /// </summary>
+        public static readonly AlgorithmSpec RSA_AES_KEY_WRAP_SHA_1 = new AlgorithmSpec("RSA_AES_KEY_WRAP_SHA_1");
+        /// <summary>
+        /// Constant RSA_AES_KEY_WRAP_SHA_256 for AlgorithmSpec
+        /// </summary>
+        public static readonly AlgorithmSpec RSA_AES_KEY_WRAP_SHA_256 = new AlgorithmSpec("RSA_AES_KEY_WRAP_SHA_256");
+        /// <summary>
         /// Constant RSAES_OAEP_SHA_1 for AlgorithmSpec
         /// </summary>
         public static readonly AlgorithmSpec RSAES_OAEP_SHA_1 = new AlgorithmSpec("RSAES_OAEP_SHA_1");
@@ -1362,6 +1370,14 @@ namespace Amazon.KeyManagementService
         /// Constant RSA_2048 for WrappingKeySpec
         /// </summary>
         public static readonly WrappingKeySpec RSA_2048 = new WrappingKeySpec("RSA_2048");
+        /// <summary>
+        /// Constant RSA_3072 for WrappingKeySpec
+        /// </summary>
+        public static readonly WrappingKeySpec RSA_3072 = new WrappingKeySpec("RSA_3072");
+        /// <summary>
+        /// Constant RSA_4096 for WrappingKeySpec
+        /// </summary>
+        public static readonly WrappingKeySpec RSA_4096 = new WrappingKeySpec("RSA_4096");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

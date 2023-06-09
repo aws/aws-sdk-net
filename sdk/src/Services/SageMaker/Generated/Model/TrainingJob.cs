@@ -372,6 +372,10 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// An array of <code>Channel</code> objects that describes each data input channel.
         /// </para>
+        ///  
+        /// <para>
+        /// Your input must be in the same Amazon Web Services region as your training job.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<Channel> InputDataConfig

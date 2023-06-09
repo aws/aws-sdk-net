@@ -113,7 +113,7 @@ namespace Amazon.IoTDeviceAdvisor.Model
         /// <summary>
         /// Gets and sets the property SystemMessage. 
         /// <para>
-        ///  
+        /// Provides test case scenario system messages if any.
         /// </para>
         /// </summary>
         public string SystemMessage

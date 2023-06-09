@@ -171,6 +171,16 @@ namespace Amazon.IoT.Model
         IListOutgoingCertificatesPaginator ListOutgoingCertificates(ListOutgoingCertificatesRequest request);
 
         /// <summary>
+        /// Paginator for ListPackages operation
+        ///</summary>
+        IListPackagesPaginator ListPackages(ListPackagesRequest request);
+
+        /// <summary>
+        /// Paginator for ListPackageVersions operation
+        ///</summary>
+        IListPackageVersionsPaginator ListPackageVersions(ListPackageVersionsRequest request);
+
+        /// <summary>
         /// Paginator for ListPolicies operation
         ///</summary>
         IListPoliciesPaginator ListPolicies(ListPoliciesRequest request);

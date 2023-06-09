@@ -44,7 +44,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the agent who performed the contact.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=500)]
         public string ContactAgentId
         {
             get { return this._contactAgentId; }

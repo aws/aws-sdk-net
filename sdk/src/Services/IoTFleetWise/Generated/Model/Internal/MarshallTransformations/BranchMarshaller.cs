@@ -45,6 +45,18 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(Branch requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetComment())
+            {
+                context.Writer.WritePropertyName("comment");
+                context.Writer.Write(requestObject.Comment);
+            }
+
+            if(requestObject.IsSetDeprecationMessage())
+            {
+                context.Writer.WritePropertyName("deprecationMessage");
+                context.Writer.Write(requestObject.DeprecationMessage);
+            }
+
             if(requestObject.IsSetDescription())
             {
                 context.Writer.WritePropertyName("description");

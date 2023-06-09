@@ -3267,6 +3267,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Glue.Model.DataQualityTargetTable.CatalogId</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Glue.Model.DataQualityTargetTable.DatabaseName</property>
     <min>1</min>
     <max>255</max>
@@ -3428,6 +3433,15 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.EvaluateDataQuality.Ruleset</property>
+    <min>1</min>
+    <max>65536</max>
+    <pattern>([\u0020-\u007E\r\s\n])*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.EvaluateDataQualityMultiFrame.Name</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.EvaluateDataQualityMultiFrame.Ruleset</property>
     <min>1</min>
     <max>65536</max>
     <pattern>([\u0020-\u007E\r\s\n])*</pattern>
@@ -3700,6 +3714,11 @@
   <property-value-rule>
     <property>Amazon.Glue.Model.JobCommand.PythonVersion</property>
     <pattern>^([2-3]|3[.]9)$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Glue.Model.JobCommand.Runtime</property>
+    <max>64</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Glue.Model.JobCommand.ScriptLocation</property>

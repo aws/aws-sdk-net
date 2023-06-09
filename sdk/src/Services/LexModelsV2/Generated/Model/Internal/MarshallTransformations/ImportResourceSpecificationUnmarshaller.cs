@@ -82,6 +82,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomVocabularyImportSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("testSetImportResourceSpecification", targetDepth))
+                {
+                    var unmarshaller = TestSetImportResourceSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.TestSetImportResourceSpecification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

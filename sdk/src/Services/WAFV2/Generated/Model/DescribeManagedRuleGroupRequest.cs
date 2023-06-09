@@ -101,7 +101,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property VendorName. 
         /// <para>
         /// The name of the managed rule group vendor. You use this, along with the rule group
-        /// name, to identify the rule group.
+        /// name, to identify a rule group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

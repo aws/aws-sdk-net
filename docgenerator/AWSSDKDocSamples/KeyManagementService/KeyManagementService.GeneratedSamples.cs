@@ -832,19 +832,79 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceGetParametersForImport()
         {
-            #region to-retrieve-the-public-key-and-import-token-for-a-cmk-1480626483211
+            #region to-download-the-public-key-and-import-token-1
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.GetParametersForImport(new GetParametersForImportRequest 
             {
-                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key for which to retrieve the public key and import token. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key that will be associated with the imported key material. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
                 WrappingAlgorithm = "RSAES_OAEP_SHA_1", // The algorithm that you will use to encrypt the key material before importing it.
                 WrappingKeySpec = "RSA_2048" // The type of wrapping key (public key) to return in the response.
             });
 
             MemoryStream importToken = response.ImportToken; // The import token to send with a subsequent ImportKeyMaterial request.
-            string keyId = response.KeyId; // The ARN of the KMS key for which you are retrieving the public key and import token. This is the same KMS key specified in the request.
-            DateTime parametersValidTo = response.ParametersValidTo; // The time at which the import token and public key are no longer valid.
+            string keyId = response.KeyId; // The ARN of the KMS key that will be associated with the imported key material.
+            DateTime parametersValidTo = response.ParametersValidTo; // The date and time when the import token and public key expire. After this time, call GetParametersForImport again.
+            MemoryStream publicKey = response.PublicKey; // The public key to use to encrypt the key material before importing it.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceGetParametersForImport()
+        {
+            #region to-download-the-public-key-and-import-token-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GetParametersForImport(new GetParametersForImportRequest 
+            {
+                KeyId = "arn:aws:kms:us-east-2:111122223333:key/8888abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key that will be associated with the imported key material. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                WrappingAlgorithm = "RSA_AES_KEY_WRAP_SHA_256", // The algorithm that you will use to encrypt the key material before importing it.
+                WrappingKeySpec = "RSA_4096" // The type of wrapping key (public key) to return in the response.
+            });
+
+            MemoryStream importToken = response.ImportToken; // The import token to send with a subsequent ImportKeyMaterial request.
+            string keyId = response.KeyId; // The ARN of the KMS key that will be associated with the imported key material.
+            DateTime parametersValidTo = response.ParametersValidTo; // The date and time when the import token and public key expire. After this time, call GetParametersForImport again.
+            MemoryStream publicKey = response.PublicKey; // The public key to use to encrypt the key material before importing it.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceGetParametersForImport()
+        {
+            #region to-download-the-public-key-and-import-token-3
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GetParametersForImport(new GetParametersForImportRequest 
+            {
+                KeyId = "arn:aws:kms:us-east-2:111122223333:key/9876abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key that will be associated with the imported key material. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                WrappingAlgorithm = "RSAES_OAEP_SHA_256", // The algorithm that you will use to encrypt the key material before importing it.
+                WrappingKeySpec = "RSA_3072" // The type of wrapping key (public key) to return in the response.
+            });
+
+            MemoryStream importToken = response.ImportToken; // The import token to send with a subsequent ImportKeyMaterial request.
+            string keyId = response.KeyId; // The ARN of the KMS key that will be associated with the imported key material.
+            DateTime parametersValidTo = response.ParametersValidTo; // The date and time when the import token and public key expire. After this time, call GetParametersForImport again.
+            MemoryStream publicKey = response.PublicKey; // The public key to use to encrypt the key material before importing it.
+
+            #endregion
+        }
+
+        public void KeyManagementServiceGetParametersForImport()
+        {
+            #region to-download-the-public-key-and-import-token-4
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.GetParametersForImport(new GetParametersForImportRequest 
+            {
+                KeyId = "2468abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key that will be associated with the imported key material. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                WrappingAlgorithm = "RSAES_OAEP_SHA_256", // The algorithm that you will use to encrypt the key material before importing it.
+                WrappingKeySpec = "RSA_4096" // The type of wrapping key (public key) to return in the response.
+            });
+
+            MemoryStream importToken = response.ImportToken; // The import token to send with a subsequent ImportKeyMaterial request.
+            string keyId = response.KeyId; // The ARN of the KMS key that will be associated with the imported key material.
+            DateTime parametersValidTo = response.ParametersValidTo; // The date and time when the import token and public key expire. After this time, call GetParametersForImport again.
             MemoryStream publicKey = response.PublicKey; // The public key to use to encrypt the key material before importing it.
 
             #endregion
@@ -871,7 +931,7 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
 
         public void KeyManagementServiceImportKeyMaterial()
         {
-            #region to-import-key-material-into-a-cmk-1480630551969
+            #region to-import-key-material-into-a-kms-key-1
 
             var client = new AmazonKeyManagementServiceClient();
             var response = client.ImportKeyMaterial(new ImportKeyMaterialRequest 
@@ -880,6 +940,24 @@ namespace AWSSDKDocSamples.Amazon.KeyManagementService.Generated
                 ExpirationModel = "KEY_MATERIAL_DOES_NOT_EXPIRE", // A value that specifies whether the key material expires.
                 ImportToken = new MemoryStream(<binary data>), // The import token that you received in the response to a previous GetParametersForImport request.
                 KeyId = "1234abcd-12ab-34cd-56ef-1234567890ab" // The identifier of the KMS key to import the key material into. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+            });
+
+
+            #endregion
+        }
+
+        public void KeyManagementServiceImportKeyMaterial()
+        {
+            #region to-import-key-material-into-a-kms-key-2
+
+            var client = new AmazonKeyManagementServiceClient();
+            var response = client.ImportKeyMaterial(new ImportKeyMaterialRequest 
+            {
+                EncryptedKeyMaterial = new MemoryStream(<binary data>), // The encrypted key material to import.
+                ExpirationModel = "KEY_MATERIAL_EXPIRES", // A value that specifies whether the key material expires.
+                ImportToken = new MemoryStream(<binary data>), // The import token that you received in the response to a previous GetParametersForImport request.
+                KeyId = "arn:aws:kms:us-west-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab", // The identifier of the KMS key to import the key material into. You can use the key ID or the Amazon Resource Name (ARN) of the KMS key.
+                ValidTo = new DateTime(2023, 9, 29, 5, 0, 0, DateTimeKind.Utc) // Specifies the date and time when the imported key material expires.
             });
 
 

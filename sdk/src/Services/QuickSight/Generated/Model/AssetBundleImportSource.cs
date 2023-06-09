@@ -39,15 +39,15 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Body. 
         /// <para>
-        /// The bytes of the Base64 encoded asset bundle import zip file. This file can't exceed
-        /// 20MB.
+        /// The bytes of the base64 encoded asset bundle import zip file. This file can't exceed
+        /// 20 MB.
         /// </para>
         ///  
         /// <para>
-        /// If you are calling the APIs from the Amazon Web Services Java, JavaScript, Python,
-        /// or PHP SDKs, the SDK encodes Base64 automatically to allow the direct setting of the
-        /// zip file's bytes. If you are using a SDK of a different language or are receiving
-        /// related errors, try to Base64 encode your data.
+        /// If you are calling the API operations from the Amazon Web Services SDK for Java, JavaScript,
+        /// Python, or PHP, the SDK encodes base64 automatically to allow the direct setting of
+        /// the zip file's bytes. If you are using an SDK for a different language or receiving
+        /// related errors, try to base64 encode your data.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true, Min=0, Max=20971520)]
@@ -66,9 +66,9 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The Amazon S3 uri for an asset bundle import file that exists in an Amazon S3 bucket
+        /// The Amazon S3 URI for an asset bundle import file that exists in an Amazon S3 bucket
         /// that the caller has read access to. The file must be a zip format file and can't exceed
-        /// 20MB.
+        /// 20 MB.
         /// </para>
         /// </summary>
         public string S3Uri

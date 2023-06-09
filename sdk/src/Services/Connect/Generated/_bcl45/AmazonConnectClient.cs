@@ -7509,11 +7509,7 @@ namespace Amazon.Connect
         /// <para>
         /// For a description of the historical metrics that are supported by <code>GetMetricDataV2</code>
         /// and <code>GetMetricData</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-        /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This API is not available in the Amazon Web Services GovCloud (US) Regions.
+        /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 service method.</param>
@@ -7560,11 +7556,7 @@ namespace Amazon.Connect
         /// <para>
         /// For a description of the historical metrics that are supported by <code>GetMetricDataV2</code>
         /// and <code>GetMetricData</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-        /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>. 
-        /// </para>
-        ///  
-        /// <para>
-        /// This API is not available in the Amazon Web Services GovCloud (US) Regions.
+        /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 service method.</param>
@@ -11086,6 +11078,148 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchHoursOfOperations
+
+
+        /// <summary>
+        /// Searches the hours of operation in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperations service method.</param>
+        /// 
+        /// <returns>The response from the SearchHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">REST API Reference for SearchHoursOfOperations Operation</seealso>
+        public virtual SearchHoursOfOperationsResponse SearchHoursOfOperations(SearchHoursOfOperationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchHoursOfOperationsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchHoursOfOperationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches the hours of operation in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">REST API Reference for SearchHoursOfOperations Operation</seealso>
+        public virtual Task<SearchHoursOfOperationsResponse> SearchHoursOfOperationsAsync(SearchHoursOfOperationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchHoursOfOperationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchHoursOfOperationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchHoursOfOperationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchPrompts
+
+
+        /// <summary>
+        /// Searches prompts in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchPrompts service method.</param>
+        /// 
+        /// <returns>The response from the SearchPrompts service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPrompts">REST API Reference for SearchPrompts Operation</seealso>
+        public virtual SearchPromptsResponse SearchPrompts(SearchPromptsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchPromptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchPromptsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchPromptsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches prompts in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchPrompts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchPrompts service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPrompts">REST API Reference for SearchPrompts Operation</seealso>
+        public virtual Task<SearchPromptsResponse> SearchPromptsAsync(SearchPromptsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchPromptsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchPromptsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchPromptsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  SearchQueues
 
 
@@ -11163,6 +11297,77 @@ namespace Amazon.Connect
             options.ResponseUnmarshaller = SearchQueuesResponseUnmarshaller.Instance;
             
             return InvokeAsync<SearchQueuesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  SearchQuickConnects
+
+
+        /// <summary>
+        /// Searches quick connects in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchQuickConnects service method.</param>
+        /// 
+        /// <returns>The response from the SearchQuickConnects service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQuickConnects">REST API Reference for SearchQuickConnects Operation</seealso>
+        public virtual SearchQuickConnectsResponse SearchQuickConnects(SearchQuickConnectsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchQuickConnectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchQuickConnectsResponseUnmarshaller.Instance;
+
+            return Invoke<SearchQuickConnectsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Searches quick connects in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchQuickConnects service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchQuickConnects service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQuickConnects">REST API Reference for SearchQuickConnects Operation</seealso>
+        public virtual Task<SearchQuickConnectsResponse> SearchQuickConnectsAsync(SearchQuickConnectsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchQuickConnectsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchQuickConnectsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<SearchQuickConnectsResponse>(request, options, cancellationToken);
         }
 
         #endregion

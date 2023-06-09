@@ -57,6 +57,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PythonVersion);
             }
 
+            if(requestObject.IsSetRuntime())
+            {
+                context.Writer.WritePropertyName("Runtime");
+                context.Writer.Write(requestObject.Runtime);
+            }
+
             if(requestObject.IsSetScriptLocation())
             {
                 context.Writer.WritePropertyName("ScriptLocation");

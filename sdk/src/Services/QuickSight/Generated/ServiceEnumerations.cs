@@ -7195,6 +7195,56 @@ namespace Amazon.QuickSight
 
 
     /// <summary>
+    /// Constants used for properties of type PivotTableFieldCollapseState.
+    /// </summary>
+    public class PivotTableFieldCollapseState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COLLAPSED for PivotTableFieldCollapseState
+        /// </summary>
+        public static readonly PivotTableFieldCollapseState COLLAPSED = new PivotTableFieldCollapseState("COLLAPSED");
+        /// <summary>
+        /// Constant EXPANDED for PivotTableFieldCollapseState
+        /// </summary>
+        public static readonly PivotTableFieldCollapseState EXPANDED = new PivotTableFieldCollapseState("EXPANDED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PivotTableFieldCollapseState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PivotTableFieldCollapseState FindValue(string value)
+        {
+            return FindValue<PivotTableFieldCollapseState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PivotTableFieldCollapseState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PivotTableMetricPlacement.
     /// </summary>
     public class PivotTableMetricPlacement : ConstantClass
@@ -7450,6 +7500,60 @@ namespace Amazon.QuickSight
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PropertyUsage(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RadarChartAxesRangeScale.
+    /// </summary>
+    public class RadarChartAxesRangeScale : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTO for RadarChartAxesRangeScale
+        /// </summary>
+        public static readonly RadarChartAxesRangeScale AUTO = new RadarChartAxesRangeScale("AUTO");
+        /// <summary>
+        /// Constant INDEPENDENT for RadarChartAxesRangeScale
+        /// </summary>
+        public static readonly RadarChartAxesRangeScale INDEPENDENT = new RadarChartAxesRangeScale("INDEPENDENT");
+        /// <summary>
+        /// Constant SHARED for RadarChartAxesRangeScale
+        /// </summary>
+        public static readonly RadarChartAxesRangeScale SHARED = new RadarChartAxesRangeScale("SHARED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RadarChartAxesRangeScale(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RadarChartAxesRangeScale FindValue(string value)
+        {
+            return FindValue<RadarChartAxesRangeScale>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RadarChartAxesRangeScale(string value)
         {
             return FindValue(value);
         }

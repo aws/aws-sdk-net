@@ -94,6 +94,12 @@ namespace Amazon.WorkSpacesWeb.Model.Internal.MarshallTransformations
                     unmarshalledObject.DisplayName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ipAccessSettingsArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.IpAccessSettingsArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("networkSettingsArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -127,7 +127,7 @@ namespace Amazon.Connect.Model
         /// The unique identifier for the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=500)]
         public string EvaluationFormId
         {
             get { return this._evaluationFormId; }
@@ -239,7 +239,7 @@ namespace Amazon.Connect.Model
         /// A title of the evaluation form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=128)]
+        [AWSProperty(Required=true, Min=1, Max=128)]
         public string Title
         {
             get { return this._title; }

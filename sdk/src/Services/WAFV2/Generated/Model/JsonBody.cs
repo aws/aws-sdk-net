@@ -179,8 +179,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>CONTINUE</code> - Inspect the body normally, according to the rule inspection
-        /// criteria. 
+        ///  <code>CONTINUE</code> - Inspect the available body contents normally, according to
+        /// the rule inspection criteria. 
         /// </para>
         ///  </li> <li> 
         /// <para>

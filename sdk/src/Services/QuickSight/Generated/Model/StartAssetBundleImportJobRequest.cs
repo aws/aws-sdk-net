@@ -126,7 +126,7 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// If you choose <code>DO_NOTHING</code>, failed import jobs will not attempt to roll
-        /// back any asset changes caused by the failed job, possibly leaving the Amazon QuickSight
+        /// back any asset changes caused by the failed job, possibly keeping the Amazon QuickSight
         /// account in an inconsistent state.
         /// </para>
         /// </summary>

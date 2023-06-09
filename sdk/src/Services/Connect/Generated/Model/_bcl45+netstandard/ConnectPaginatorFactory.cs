@@ -348,11 +348,35 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchHoursOfOperations operation
+        ///</summary>
+        public ISearchHoursOfOperationsPaginator SearchHoursOfOperations(SearchHoursOfOperationsRequest request) 
+        {
+            return new SearchHoursOfOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchPrompts operation
+        ///</summary>
+        public ISearchPromptsPaginator SearchPrompts(SearchPromptsRequest request) 
+        {
+            return new SearchPromptsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchQueues operation
         ///</summary>
         public ISearchQueuesPaginator SearchQueues(SearchQueuesRequest request) 
         {
             return new SearchQueuesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchQuickConnects operation
+        ///</summary>
+        public ISearchQuickConnectsPaginator SearchQuickConnects(SearchQuickConnectsRequest request) 
+        {
+            return new SearchQuickConnectsPaginator(this.client, request);
         }
 
         /// <summary>

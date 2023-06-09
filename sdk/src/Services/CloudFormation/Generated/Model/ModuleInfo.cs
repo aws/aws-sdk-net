@@ -34,7 +34,7 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// For more information about modules, see <a href="AWSCloudFormation/latest/UserGuide/modules.html">Using
+    /// For more information about modules, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html">Using
     /// modules to encapsulate and reuse resource configurations</a> in the <i>CloudFormation
     /// User Guide</i>.
     /// </para>
@@ -61,7 +61,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing
         /// resources in a module</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>

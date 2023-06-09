@@ -61,7 +61,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Trails. 
         /// <para>
-        /// Returns the name, ARN, and home region of trails in the current account.
+        /// Returns the name, ARN, and home Region of trails in the current account.
         /// </para>
         /// </summary>
         public List<TrailInfo> Trails

@@ -144,7 +144,8 @@ namespace Amazon.TimestreamWrite.Model
         /// Gets and sets the property MeasureValueType. 
         /// <para>
         ///  Contains the data type of the measure value for the time-series data point. Default
-        /// type is <code>DOUBLE</code>. 
+        /// type is <code>DOUBLE</code>. For more information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+        /// types</a>.
         /// </para>
         /// </summary>
         public MeasureValueType MeasureValueType

@@ -35,6 +35,7 @@ namespace Amazon.ServiceCatalog.Model
     {
         private Dictionary<string, string> _info = new Dictionary<string, string>();
         private ProvisioningArtifactDetail _provisioningArtifactDetail;
+        private List<ProvisioningArtifactParameter> _provisioningArtifactParameters = new List<ProvisioningArtifactParameter>();
         private Status _status;
 
         /// <summary>
@@ -72,6 +73,24 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetProvisioningArtifactDetail()
         {
             return this._provisioningArtifactDetail != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProvisioningArtifactParameters. 
+        /// <para>
+        /// Information about the parameters used to provision the product. 
+        /// </para>
+        /// </summary>
+        public List<ProvisioningArtifactParameter> ProvisioningArtifactParameters
+        {
+            get { return this._provisioningArtifactParameters; }
+            set { this._provisioningArtifactParameters = value; }
+        }
+
+        // Check to see if ProvisioningArtifactParameters property is set
+        internal bool IsSetProvisioningArtifactParameters()
+        {
+            return this._provisioningArtifactParameters != null && this._provisioningArtifactParameters.Count > 0; 
         }
 
         /// <summary>

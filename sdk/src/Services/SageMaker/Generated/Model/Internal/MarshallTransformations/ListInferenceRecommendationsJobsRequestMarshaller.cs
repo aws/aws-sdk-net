@@ -97,6 +97,18 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.MaxResults);
                 }
 
+                if(publicRequest.IsSetModelNameEquals())
+                {
+                    context.Writer.WritePropertyName("ModelNameEquals");
+                    context.Writer.Write(publicRequest.ModelNameEquals);
+                }
+
+                if(publicRequest.IsSetModelPackageVersionArnEquals())
+                {
+                    context.Writer.WritePropertyName("ModelPackageVersionArnEquals");
+                    context.Writer.Write(publicRequest.ModelPackageVersionArnEquals);
+                }
+
                 if(publicRequest.IsSetNameContains())
                 {
                     context.Writer.WritePropertyName("NameContains");

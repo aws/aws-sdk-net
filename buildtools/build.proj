@@ -17,9 +17,9 @@
         <!-- perform a release build by default -->
         <Configuration Condition="'$(Configuration)'==''">Release</Configuration>
 
-        <TestWrapperAssembly>TestWrapper\TestRunners\bin\Debug\TestWrapper.dll</TestWrapperAssembly>
-        <CustomTasksAssembly>CustomTasks\bin\Debug\CustomTasks.dll</CustomTasksAssembly>
-        <TestAnalyzerAssembly>..\sdk\test\TestAnalyzer\IntegrationTestsAnalyzer\bin\Debug\IntegrationTestsAnalyzer.dll</TestAnalyzerAssembly>
+        <TestWrapperAssembly>TestWrapper\TestRunners\bin\$(Configuration)\TestWrapper.dll</TestWrapperAssembly>        
+        <CustomTasksAssembly>CustomTasks\bin\$(Configuration)\CustomTasks.dll</CustomTasksAssembly>
+        <TestAnalyzerAssembly>..\sdk\test\TestAnalyzer\IntegrationTestsAnalyzer\bin\$(Configuration)\IntegrationTestsAnalyzer.dll</TestAnalyzerAssembly>
         <RunIntegTests Condition="'$(RunIntegTests)'=='' And '$(IntegCategoriesToTest)' != ''">true</RunIntegTests>
 
         <CodeSigning Condition="'$(CodeSigning)'==''">false</CodeSigning>
@@ -66,35 +66,30 @@
             DependsOnTargets="build-custom-tasks;build-test-wrapper;build-test-analyzer" />
 
     <Target Name="build-custom-tasks" Condition="!Exists($(CustomTasksAssembly))">
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore .\CustomTasks\CustomTasks.sln" />
-
-        <MSBuild Projects=".\CustomTasks\CustomTasks.sln"
-            Targets="Clean;Build"
-            Properties="Configuration=Debug" />
+        <Exec Command="dotnet restore CustomTasks/CustomTasks.csproj" />
+        <Exec Command="dotnet clean CustomTasks/CustomTasks.csproj" />
+        <Exec Command="dotnet build -c $(Configuration) CustomTasks/CustomTasks.csproj" />
     </Target>
 
     <Target Name="build-test-wrapper" Condition="!Exists($(TestWrapperAssembly))">
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore .\TestWrapper\TestWrapper.sln" />
-        <Exec Command="dotnet clean TestWrapper.sln" WorkingDirectory=".\TestWrapper" />
-        <Exec Command="dotnet build -c Debug TestWrapper.sln" WorkingDirectory=".\TestWrapper" />
+        <Exec Command="dotnet restore TestWrapper/TestWrapper.sln" />
+        <Exec Command="dotnet clean TestWrapper.sln" WorkingDirectory="./TestWrapper" />
+        <Exec Command="dotnet build -c $(Configuration) TestWrapper.sln" WorkingDirectory="./TestWrapper" />
     </Target>
 
     <Target Name="build-test-analyzer" Condition="!Exists($(TestAnalyzerAssembly))">
-        <Exec Command="..\sdk\.nuget\NuGet.exe restore ..\sdk\test\TestAnalyzer\TestAnalyzer.sln" />
-
-        <MSBuild Projects="..\sdk\test\TestAnalyzer\TestAnalyzer.sln"
-            Targets="Clean;Build"
-            Properties="Configuration=Debug"/>
+        <Exec Command="dotnet restore ../sdk/test/TestAnalyzer/TestAnalyzer.sln" />
+        <Exec Command="dotnet clean ../sdk/test/TestAnalyzer/TestAnalyzer.sln" />
+        <Exec Command="dotnet build -c $(Configuration) ../sdk/test/TestAnalyzer/TestAnalyzer.sln" />
     </Target>
 
     <Target Name="clean-buildtools" DependsOnTargets="clean-common">
         <Delete Files="$(TestWrapperAssembly)" />
-        <Delete Files="$(CustomTasksAssembly)" />
+        <Delete Files="$(CustomTasksAssembly)" />        
         <Delete Files="$(TestAnalyzerAssembly)" />
     </Target>
 
     <UsingTask TaskName="CustomTasks.TimingTask" AssemblyFile="$(CustomTasksAssembly)"/>
-    <UsingTask TaskName="CustomTasks.ValidateIntegTests" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="CustomTasks.Endpoint.EndpointOverriderTask" AssemblyFile="$(CustomTasksAssembly)"/>
     <UsingTask TaskName="TestWrapper.MsTestWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
     <UsingTask TaskName="TestWrapper.XUnitWrapperTask" AssemblyFile="$(TestWrapperAssembly)"/>
@@ -114,8 +109,8 @@
         <Message Text="Applying overrides to the endpoints-original.json file and save it as endpoints.json" Importance="normal" />
 
         <EndpointOverriderTask
-            EndpointsJsonSourceLocation = "..\sdk\src\Core\endpoints-original.json"
-            EndpointsOverrideLocation = ".\CustomTasks\Endpoint\endpoints-override.json"
+            EndpointsJsonSourceLocation = "../sdk/src/Core/endpoints-original.json"
+            EndpointsOverrideLocation = "./CustomTasks/Endpoint/endpoints-override.json"
         />
     </Target>
 
@@ -272,17 +267,6 @@
         </CodeSignTask>
     </Target>
 
-    <Target Name="validate-integ-tests" DependsOnTargets="build-custom-tasks">
-        <ValidateIntegTests
-            TestAssembly="..\sdk\test\IntegrationTests\bin\$(Configuration)\net35\AWSSDK.IntegrationTests.Net35.dll"
-            WaitForDebugger="false"
-            />
-        <ValidateIntegTests
-            TestAssembly="..\sdk\test\IntegrationTests\bin\$(Configuration)\net45\AWSSDK.IntegrationTests.Net45.dll"
-            WaitForDebugger="false"
-            />
-    </Target>
-
     <Target Name="build-tests" Condition="'$(ServiceList)'!=''">
         <Exec Command="dotnet restore -f  $(Net35UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
         <Exec Command="dotnet clean -c $(Configuration) $(Net35UnitTestProject)" WorkingDirectory="..\sdk\test\UnitTests"/>
@@ -386,7 +370,7 @@
             TestExecutionProfile="test-runner"/>
     </Target>
 
-    <Target Name="run-integ-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="init;build-sdk;validate-integ-tests">
+    <Target Name="run-integ-tests" Condition="'$(RunIntegTests)' != '' And '$(RunIntegTests)' != 'false'" DependsOnTargets="init;build-sdk;">
         <MsTestWrapperTask
             TestSuiteRunner="dotnet"
             TestContainer="..\sdk\test\IntegrationTests\AWSSDK.IntegrationTests.Net45.csproj"

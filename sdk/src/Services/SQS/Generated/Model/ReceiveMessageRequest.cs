@@ -154,7 +154,7 @@ namespace Amazon.SQS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For an IAM user, returns the IAM user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
+        /// For a user, returns the user ID, for example <code>ABCDEFGHI1JKLMNOPQ23R</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -169,7 +169,7 @@ namespace Amazon.SQS.Model
         /// <para>
         ///  <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using SQS
         /// owned encryption keys. Only one server-side encryption option is supported per queue
-        /// (e.g. <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
+        /// (for example, <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
         /// or <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).
         /// </para>
         ///  </li> <li> 

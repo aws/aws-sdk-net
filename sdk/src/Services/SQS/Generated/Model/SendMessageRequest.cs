@@ -69,7 +69,7 @@ namespace Amazon.SQS.Model
         /// Instantiates SendMessageRequest with the parameterized properties
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue to which a message is sent. Queue URLs and names are case-sensitive.</param>
-        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
+        /// <param name="messageBody">The message to send. The minimum size is one character. The maximum size is 256 KiB. <important> A message can include only XML, JSON, and unformatted text. The following Unicode characters are allowed:  <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to <code>#x10FFFF</code>  Any characters not included in this list will be rejected. For more information, see the <a href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for characters</a>. </important></param>
         public SendMessageRequest(string queueUrl, string messageBody)
         {
             _queueUrl = queueUrl;
@@ -126,7 +126,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property MessageBody. 
         /// <para>
-        /// The message to send. The minimum size is one character. The maximum size is 256 KB.
+        /// The message to send. The minimum size is one character. The maximum size is 256 KiB.
         /// </para>
         ///  <important> 
         /// <para>

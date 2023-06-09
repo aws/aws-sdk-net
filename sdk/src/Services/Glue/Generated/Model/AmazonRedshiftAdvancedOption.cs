@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// Specifies an Amazon Redshift data store.
+    /// Specifies an optional value when connecting to the Redshift cluster.
     /// </summary>
     public partial class AmazonRedshiftAdvancedOption
     {
@@ -39,7 +39,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Key. 
         /// <para>
-        /// The key when specifying a key-value pair.
+        /// The key for the additional connection option.
         /// </para>
         /// </summary>
         public string Key
@@ -57,7 +57,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The value when specifying a key-value pair.
+        /// The value for the additional connection option.
         /// </para>
         /// </summary>
         public string Value

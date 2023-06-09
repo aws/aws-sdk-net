@@ -46,6 +46,7 @@ namespace Amazon.SageMaker.Model
         private PipelineExecutionStatus _pipelineExecutionStatus;
         private PipelineExperimentConfig _pipelineExperimentConfig;
         private List<Parameter> _pipelineParameters = new List<Parameter>();
+        private SelectiveExecutionConfig _selectiveExecutionConfig;
 
         /// <summary>
         /// Gets and sets the property CreatedBy.
@@ -276,6 +277,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetPipelineParameters()
         {
             return this._pipelineParameters != null && this._pipelineParameters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectiveExecutionConfig. 
+        /// <para>
+        /// The selective execution configuration applied to the pipeline run.
+        /// </para>
+        /// </summary>
+        public SelectiveExecutionConfig SelectiveExecutionConfig
+        {
+            get { return this._selectiveExecutionConfig; }
+            set { this._selectiveExecutionConfig = value; }
+        }
+
+        // Check to see if SelectiveExecutionConfig property is set
+        internal bool IsSetSelectiveExecutionConfig()
+        {
+            return this._selectiveExecutionConfig != null;
         }
 
     }

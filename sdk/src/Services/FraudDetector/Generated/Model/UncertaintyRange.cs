@@ -60,7 +60,7 @@ namespace Amazon.FraudDetector.Model
         /// <summary>
         /// Gets and sets the property UpperBoundValue. 
         /// <para>
-        ///  The lower bound value of the area under curve (auc). 
+        ///  The upper bound value of the area under curve (auc). 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

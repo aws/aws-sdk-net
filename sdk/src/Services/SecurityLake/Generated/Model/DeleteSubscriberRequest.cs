@@ -30,32 +30,34 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteSubscriber operation.
-    /// Deletes the subscription permission for accounts that are already enabled in Amazon
-    /// Security Lake. You can delete a subscriber and remove access to data in the current
+    /// Deletes the subscription permission and all notification settings for accounts that
+    /// are already enabled in Amazon Security Lake. When you run <code>DeleteSubscriber</code>,
+    /// the subscriber will no longer consume data from Security Lake and the subscriber is
+    /// removed. This operation deletes the subscriber and removes access to data in the current
     /// Amazon Web Services Region.
     /// </summary>
     public partial class DeleteSubscriberRequest : AmazonSecurityLakeRequest
     {
-        private string _id;
+        private string _subscriberId;
 
         /// <summary>
-        /// Gets and sets the property Id. 
+        /// Gets and sets the property SubscriberId. 
         /// <para>
         /// A value created by Security Lake that uniquely identifies your <code>DeleteSubscriber</code>
-        /// API request. 
+        /// API request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public string Id
+        public string SubscriberId
         {
-            get { return this._id; }
-            set { this._id = value; }
+            get { return this._subscriberId; }
+            set { this._subscriberId = value; }
         }
 
-        // Check to see if Id property is set
-        internal bool IsSetId()
+        // Check to see if SubscriberId property is set
+        internal bool IsSetSubscriberId()
         {
-            return this._id != null;
+            return this._subscriberId != null;
         }
 
     }

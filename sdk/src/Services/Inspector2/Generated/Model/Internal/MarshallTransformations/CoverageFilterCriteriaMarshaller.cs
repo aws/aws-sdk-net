@@ -157,6 +157,22 @@ namespace Amazon.Inspector2.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetLastScannedAt())
+            {
+                context.Writer.WritePropertyName("lastScannedAt");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLastScannedAtListValue in requestObject.LastScannedAt)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CoverageDateFilterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLastScannedAtListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetResourceId())
             {
                 context.Writer.WritePropertyName("resourceId");

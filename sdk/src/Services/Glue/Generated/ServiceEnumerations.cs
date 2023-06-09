@@ -25,6 +25,52 @@ namespace Amazon.Glue
 {
 
     /// <summary>
+    /// Constants used for properties of type AdditionalOptionKeys.
+    /// </summary>
+    public class AdditionalOptionKeys : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PerformanceTuningCaching for AdditionalOptionKeys
+        /// </summary>
+        public static readonly AdditionalOptionKeys PerformanceTuningCaching = new AdditionalOptionKeys("performanceTuning.caching");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdditionalOptionKeys(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdditionalOptionKeys FindValue(string value)
+        {
+            return FindValue<AdditionalOptionKeys>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdditionalOptionKeys(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AggFunction.
     /// </summary>
     public class AggFunction : ConstantClass
@@ -5092,6 +5138,10 @@ namespace Amazon.Glue
         /// Constant Standard for WorkerType
         /// </summary>
         public static readonly WorkerType Standard = new WorkerType("Standard");
+        /// <summary>
+        /// Constant Z2X for WorkerType
+        /// </summary>
+        public static readonly WorkerType Z2X = new WorkerType("Z.2X");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

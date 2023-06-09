@@ -70,7 +70,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The provider of the service used in the custom action, such as AWS CodeDeploy.
+        /// The provider of the service used in the custom action, such as CodeDeploy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]

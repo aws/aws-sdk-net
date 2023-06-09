@@ -48,6 +48,7 @@ namespace Amazon.EC2.Model
         /// Information about the tag keys to register.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public RegisterInstanceTagAttributeRequest InstanceTagAttribute
         {
             get { return this._instanceTagAttribute; }

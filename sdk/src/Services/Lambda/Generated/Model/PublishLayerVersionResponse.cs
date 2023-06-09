@@ -68,6 +68,11 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The layer's compatible runtimes.
         /// </para>
+        ///  
+        /// <para>
+        /// The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+        /// deprecation policy</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=15)]
         public List<string> CompatibleRuntimes

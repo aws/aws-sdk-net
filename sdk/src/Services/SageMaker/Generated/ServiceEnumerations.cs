@@ -2003,6 +2003,52 @@ namespace Amazon.SageMaker
 
 
     /// <summary>
+    /// Constants used for properties of type AutotuneMode.
+    /// </summary>
+    public class AutotuneMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Enabled for AutotuneMode
+        /// </summary>
+        public static readonly AutotuneMode Enabled = new AutotuneMode("Enabled");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutotuneMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutotuneMode FindValue(string value)
+        {
+            return FindValue<AutotuneMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutotuneMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AwsManagedHumanLoopRequestSource.
     /// </summary>
     public class AwsManagedHumanLoopRequestSource : ConstantClass
@@ -6213,6 +6259,22 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly InstanceType MlG5Xlarge = new InstanceType("ml.g5.xlarge");
         /// <summary>
+        /// Constant MlInf124xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf124xlarge = new InstanceType("ml.inf1.24xlarge");
+        /// <summary>
+        /// Constant MlInf12xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf12xlarge = new InstanceType("ml.inf1.2xlarge");
+        /// <summary>
+        /// Constant MlInf16xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf16xlarge = new InstanceType("ml.inf1.6xlarge");
+        /// <summary>
+        /// Constant MlInf1Xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlInf1Xlarge = new InstanceType("ml.inf1.xlarge");
+        /// <summary>
         /// Constant MlM410xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlM410xlarge = new InstanceType("ml.m4.10xlarge");
@@ -6312,6 +6374,14 @@ namespace Amazon.SageMaker
         /// Constant MlP3dn24xlarge for InstanceType
         /// </summary>
         public static readonly InstanceType MlP3dn24xlarge = new InstanceType("ml.p3dn.24xlarge");
+        /// <summary>
+        /// Constant MlP4d24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlP4d24xlarge = new InstanceType("ml.p4d.24xlarge");
+        /// <summary>
+        /// Constant MlP4de24xlarge for InstanceType
+        /// </summary>
+        public static readonly InstanceType MlP4de24xlarge = new InstanceType("ml.p4de.24xlarge");
         /// <summary>
         /// Constant MlR512xlarge for InstanceType
         /// </summary>
@@ -11102,6 +11172,64 @@ namespace Amazon.SageMaker
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RecommendationJobType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RecommendationStatus.
+    /// </summary>
+    public class RecommendationStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus COMPLETED = new RecommendationStatus("COMPLETED");
+        /// <summary>
+        /// Constant FAILED for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus FAILED = new RecommendationStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus IN_PROGRESS = new RecommendationStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_APPLICABLE for RecommendationStatus
+        /// </summary>
+        public static readonly RecommendationStatus NOT_APPLICABLE = new RecommendationStatus("NOT_APPLICABLE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RecommendationStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RecommendationStatus FindValue(string value)
+        {
+            return FindValue<RecommendationStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RecommendationStatus(string value)
         {
             return FindValue(value);
         }

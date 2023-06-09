@@ -169,10 +169,11 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
         /// The Amazon resource name (ARN) of the Amazon Simple Notification Service SNS topic
-        /// that's used to record changes to the managed rule group. You can subscribe to the
-        /// SNS topic to receive notifications when the managed rule group is modified, such as
-        /// for new versions and for version expiration. For more information, see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon
-        /// Simple Notification Service Developer Guide</a>.
+        /// that's used to provide notification of changes to the managed rule group. You can
+        /// subscribe to the SNS topic to receive notifications when the managed rule group is
+        /// modified, such as for new versions and for version expiration. For more information,
+        /// see the <a href="https://docs.aws.amazon.com/sns/latest/dg/welcome.html">Amazon Simple
+        /// Notification Service Developer Guide</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

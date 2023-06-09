@@ -32,7 +32,7 @@ namespace Amazon.ElasticMapReduce
     public partial class AmazonElasticMapReduceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.104.5");
+            InternalSDKUtils.BuildUserAgentString("3.7.105.1");
 
         private string _userAgent = UserAgentString;
 

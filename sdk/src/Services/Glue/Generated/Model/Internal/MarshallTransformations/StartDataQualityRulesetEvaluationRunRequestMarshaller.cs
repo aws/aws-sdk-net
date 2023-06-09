@@ -67,6 +67,25 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAdditionalDataSources())
+                {
+                    context.Writer.WritePropertyName("AdditionalDataSources");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestAdditionalDataSourcesKvp in publicRequest.AdditionalDataSources)
+                    {
+                        context.Writer.WritePropertyName(publicRequestAdditionalDataSourcesKvp.Key);
+                        var publicRequestAdditionalDataSourcesValue = publicRequestAdditionalDataSourcesKvp.Value;
+
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestAdditionalDataSourcesValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetAdditionalRunOptions())
                 {
                     context.Writer.WritePropertyName("AdditionalRunOptions");

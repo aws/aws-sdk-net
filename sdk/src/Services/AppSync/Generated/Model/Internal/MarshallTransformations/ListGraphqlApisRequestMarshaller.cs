@@ -59,11 +59,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
             request.HttpMethod = "GET";
 
             
+            if (publicRequest.IsSetApiType())
+                request.Parameters.Add("apiType", StringUtils.FromString(publicRequest.ApiType));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("maxResults", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("nextToken", StringUtils.FromString(publicRequest.NextToken));
+            
+            if (publicRequest.IsSetOwner())
+                request.Parameters.Add("owner", StringUtils.FromString(publicRequest.Owner));
             request.ResourcePath = "/v1/apis";
             request.UseQueryString = true;
 

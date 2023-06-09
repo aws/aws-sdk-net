@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.HealthLake.Model
 {
     /// <summary>
-    /// Displays the properties of the Data Store, including the ID, Arn, name, and the status
+    /// Displays the properties of the Data Store, including the ID, ARN, name, and the status
     /// of the Data Store.
     /// </summary>
     public partial class DatastoreProperties
@@ -41,6 +41,7 @@ namespace Amazon.HealthLake.Model
         private string _datastoreName;
         private DatastoreStatus _datastoreStatus;
         private FHIRVersion _datastoreTypeVersion;
+        private IdentityProviderConfiguration _identityProviderConfiguration;
         private PreloadDataConfig _preloadDataConfig;
         private SseConfiguration _sseConfiguration;
 
@@ -176,6 +177,24 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetDatastoreTypeVersion()
         {
             return this._datastoreTypeVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityProviderConfiguration. 
+        /// <para>
+        /// The identity provider that you selected when you created the Data Store.
+        /// </para>
+        /// </summary>
+        public IdentityProviderConfiguration IdentityProviderConfiguration
+        {
+            get { return this._identityProviderConfiguration; }
+            set { this._identityProviderConfiguration = value; }
+        }
+
+        // Check to see if IdentityProviderConfiguration property is set
+        internal bool IsSetIdentityProviderConfiguration()
+        {
+            return this._identityProviderConfiguration != null;
         }
 
         /// <summary>

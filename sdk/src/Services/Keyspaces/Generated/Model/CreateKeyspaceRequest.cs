@@ -47,6 +47,7 @@ namespace Amazon.Keyspaces.Model
     public partial class CreateKeyspaceRequest : AmazonKeyspacesRequest
     {
         private string _keyspaceName;
+        private ReplicationSpecification _replicationSpecification;
         private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
@@ -66,6 +67,37 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetKeyspaceName()
         {
             return this._keyspaceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationSpecification. 
+        /// <para>
+        ///  The replication specification of the keyspace includes:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>replicationStrategy</code> - the required value is <code>SINGLE_REGION</code>
+        /// or <code>MULTI_REGION</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>regionList</code> - if the <code>replicationStrategy</code> is <code>MULTI_REGION</code>,
+        /// the <code>regionList</code> requires the current Region and at least one additional
+        /// Amazon Web Services Region where the keyspace is going to be replicated in. The maximum
+        /// number of supported replication Regions including the current Region is six.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public ReplicationSpecification ReplicationSpecification
+        {
+            get { return this._replicationSpecification; }
+            set { this._replicationSpecification = value; }
+        }
+
+        // Check to see if ReplicationSpecification property is set
+        internal bool IsSetReplicationSpecification()
+        {
+            return this._replicationSpecification != null;
         }
 
         /// <summary>

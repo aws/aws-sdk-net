@@ -53,8 +53,8 @@ namespace Amazon.CloudFormation.Model
         ///  
         /// <para>
         /// If you specified a <code>TypeNameAlias</code> when enabling the extension in this
-        /// account and region, CloudFormation treats that alias as the extension's type name
-        /// within the account and region, not the type name of the public extension. For more
+        /// account and Region, CloudFormation treats that alias as the extension's type name
+        /// within the account and Region, not the type name of the public extension. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
         /// aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
@@ -112,9 +112,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeNameAlias. 
         /// <para>
-        /// An alias assigned to the public extension, in this account and region. If you specify
+        /// An alias assigned to the public extension, in this account and Region. If you specify
         /// an alias for the extension, CloudFormation treats the alias as the extension type
-        /// name within this account and region. You must use the alias to refer to the extension
+        /// name within this account and Region. You must use the alias to refer to the extension
         /// in your templates, API calls, and CloudFormation console.
         /// </para>
         /// </summary>

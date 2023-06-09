@@ -58,10 +58,13 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "DELETE";
 
+            if (!publicRequest.IsSetSourceName())
+                throw new AmazonSecurityLakeException("Request object does not have required field SourceName set");
+            request.AddPathResource("{sourceName}", StringUtils.FromString(publicRequest.SourceName));
             
-            if (publicRequest.IsSetCustomSourceName())
-                request.Parameters.Add("customSourceName", StringUtils.FromString(publicRequest.CustomSourceName));
-            request.ResourcePath = "/v1/logsources/custom";
+            if (publicRequest.IsSetSourceVersion())
+                request.Parameters.Add("sourceVersion", StringUtils.FromString(publicRequest.SourceVersion));
+            request.ResourcePath = "/v1/datalake/logsources/custom/{sourceName}";
             request.UseQueryString = true;
 
             return request;

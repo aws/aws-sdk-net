@@ -165,7 +165,11 @@ namespace Amazon.LexModelsV2.Model
         }
 
         /// <summary>
-        /// Gets and sets the property InitialResponseSetting.
+        /// Gets and sets the property InitialResponseSetting. 
+        /// <para>
+        /// Configuration setting for a response sent to the user before Amazon Lex starts eliciting
+        /// slots.
+        /// </para>
         /// </summary>
         public InitialResponseSetting InitialResponseSetting
         {

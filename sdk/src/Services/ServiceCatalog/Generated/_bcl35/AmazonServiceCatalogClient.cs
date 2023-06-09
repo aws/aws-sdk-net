@@ -3230,6 +3230,21 @@ namespace Amazon.ServiceCatalog
         /// a principal, share recipient accounts will no longer be able to provision products
         /// in this portfolio using a role matching the name of the associated principal. 
         /// </para>
+        ///  
+        /// <para>
+        /// For more information, review <a href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+        /// in the Amazon Web Services CLI Command Reference. 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you disassociate a principal from a portfolio, with PrincipalType as <code>IAM</code>,
+        /// the same principal will still have access to the portfolio if it matches one of the
+        /// associated principals of type <code>IAM_PATTERN</code>. To fully remove access for
+        /// a principal, verify all the associated Principals of type <code>IAM_PATTERN</code>,
+        /// and then ensure you disassociate any <code>IAM_PATTERN</code> principals that match
+        /// the principal whose access you are removing.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociatePrincipalFromPortfolio service method.</param>
         /// 

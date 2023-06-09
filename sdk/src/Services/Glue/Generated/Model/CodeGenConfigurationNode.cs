@@ -55,6 +55,7 @@ namespace Amazon.Glue.Model
         private DynamicTransform _dynamicTransform;
         private DynamoDBCatalogSource _dynamoDBCatalogSource;
         private EvaluateDataQuality _evaluateDataQuality;
+        private EvaluateDataQualityMultiFrame _evaluateDataQualityMultiFrame;
         private FillMissingValues _fillMissingValues;
         private Filter _filter;
         private GovernedCatalogSource _governedCatalogSource;
@@ -480,6 +481,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetEvaluateDataQuality()
         {
             return this._evaluateDataQuality != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EvaluateDataQualityMultiFrame. 
+        /// <para>
+        /// Specifies your data quality evaluation criteria. Allows multiple input data and returns
+        /// a collection of Dynamic Frames.
+        /// </para>
+        /// </summary>
+        public EvaluateDataQualityMultiFrame EvaluateDataQualityMultiFrame
+        {
+            get { return this._evaluateDataQualityMultiFrame; }
+            set { this._evaluateDataQualityMultiFrame = value; }
+        }
+
+        // Check to see if EvaluateDataQualityMultiFrame property is set
+        internal bool IsSetEvaluateDataQualityMultiFrame()
+        {
+            return this._evaluateDataQualityMultiFrame != null;
         }
 
         /// <summary>

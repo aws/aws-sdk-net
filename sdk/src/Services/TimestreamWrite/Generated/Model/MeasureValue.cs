@@ -92,7 +92,8 @@ namespace Amazon.TimestreamWrite.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value for the MeasureValue. 
+        ///  The value for the MeasureValue. For information, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/writes.html#writes.data-types">Data
+        /// types</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

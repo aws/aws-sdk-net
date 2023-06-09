@@ -37,6 +37,7 @@ namespace Amazon.HealthLake.Model
         private string _clientToken;
         private string _datastoreName;
         private FHIRVersion _datastoreTypeVersion;
+        private IdentityProviderConfiguration _identityProviderConfiguration;
         private PreloadDataConfig _preloadDataConfig;
         private SseConfiguration _sseConfiguration;
         private List<Tag> _tags = new List<Tag>();
@@ -96,6 +97,24 @@ namespace Amazon.HealthLake.Model
         internal bool IsSetDatastoreTypeVersion()
         {
             return this._datastoreTypeVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IdentityProviderConfiguration. 
+        /// <para>
+        /// The configuration of the identity provider that you want to use for your Data Store.
+        /// </para>
+        /// </summary>
+        public IdentityProviderConfiguration IdentityProviderConfiguration
+        {
+            get { return this._identityProviderConfiguration; }
+            set { this._identityProviderConfiguration = value; }
+        }
+
+        // Check to see if IdentityProviderConfiguration property is set
+        internal bool IsSetIdentityProviderConfiguration()
+        {
+            return this._identityProviderConfiguration != null;
         }
 
         /// <summary>

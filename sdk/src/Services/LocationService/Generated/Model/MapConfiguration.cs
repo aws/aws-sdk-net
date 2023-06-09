@@ -33,7 +33,39 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class MapConfiguration
     {
+        private string _politicalView;
         private string _style;
+
+        /// <summary>
+        /// Gets and sets the property PoliticalView. 
+        /// <para>
+        /// Specifies the political view for the style. Leave unset to not use a political view,
+        /// or, for styles that support specific political views, you can choose a view, such
+        /// as <code>IND</code> for the Indian view.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default is unset.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+        /// views</a> for more information.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=3, Max=3)]
+        public string PoliticalView
+        {
+            get { return this._politicalView; }
+            set { this._politicalView = value; }
+        }
+
+        // Check to see if PoliticalView property is set
+        internal bool IsSetPoliticalView()
+        {
+            return this._politicalView != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Style. 
@@ -71,14 +103,13 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides
-        /// a detailed vector basemap for the world symbolized with a classic Esri street map
-        /// style. The vector tile layer is similar in content and style to the World Street Map
-        /// raster map.
+        ///  <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed
+        /// vector basemap for the world symbolized with a classic Esri street map style. The
+        /// vector tile layer is similar in content and style to the World Street Map raster map.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides
+        ///  <code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides
         /// a detailed basemap for the world symbolized with a custom navigation map style that's
         /// designed for use during the day in mobile devices.
         /// </para>

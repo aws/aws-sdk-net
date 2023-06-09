@@ -82,6 +82,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.AlternateBandOddColor = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AxesRangeScale", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AxesRangeScale = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("BaseSeriesSettings", targetDepth))
                 {
                     var unmarshaller = RadarChartSeriesSettingsUnmarshaller.Instance;

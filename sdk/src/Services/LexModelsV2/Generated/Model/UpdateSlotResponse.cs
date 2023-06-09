@@ -70,7 +70,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The identifier of the slot version that contains the slot. Will always be <code>DRAFT</code>.
+        /// The version of the bot that contains the slot. Will always be <code>DRAFT</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=5)]

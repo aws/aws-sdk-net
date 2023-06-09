@@ -35,33 +35,25 @@ namespace Amazon.SecurityLake
     /// <summary>
     /// Implementation for accessing SecurityLake
     ///
-    /// <note> 
-    /// <para>
-    /// Amazon Security Lake is in preview release. Your use of the Security Lake preview
-    /// is subject to Section 2 of the <a href="http://aws.amazon.com/service-terms/">Amazon
-    /// Web Services Service Terms</a>("Betas and Previews").
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Amazon Security Lake is a fully managed security data lake service. You can use Security
     /// Lake to automatically centralize security data from cloud, on-premises, and custom
-    /// sources into a data lake that's stored in your Amazon Web Servicesaccount. Amazon
+    /// sources into a data lake that's stored in your Amazon Web Services account. Amazon
     /// Web Services Organizations is an account management service that lets you consolidate
     /// multiple Amazon Web Services accounts into an organization that you create and centrally
     /// manage. With Organizations, you can create member accounts and invite existing accounts
     /// to join your organization. Security Lake helps you analyze security data for a more
     /// complete understanding of your security posture across the entire organization. It
     /// can also help you improve the protection of your workloads, applications, and data.
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// The data lake is backed by Amazon Simple Storage Service (Amazon S3) buckets, and
-    /// you retain ownership over your data. 
+    /// you retain ownership over your data.
     /// </para>
     ///  
     /// <para>
     /// Amazon Security Lake integrates with CloudTrail, a service that provides a record
-    /// of actions taken by a user, role, or an Amazon Web Services service in Security Lake
+    /// of actions taken by a user, role, or an Amazon Web Services service. In Security Lake,
     /// CloudTrail captures API calls for Security Lake as events. The calls captured include
     /// calls from the Security Lake console and code calls to the Security Lake API operations.
     /// If you create a trail, you can enable continuous delivery of CloudTrail events to
@@ -320,24 +312,14 @@ namespace Amazon.SecurityLake
         /// Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables
         /// source types for member accounts in required Amazon Web Services Regions, based on
         /// the parameters you specify. You can choose any source type in any Region for either
-        /// accounts that are part of a trusted organization or standalone accounts. At least
-        /// one of the three dimensions is a mandatory input to this API. However, you can supply
-        /// any combination of the three dimensions to this API. 
+        /// accounts that are part of a trusted organization or standalone accounts. Once you
+        /// add an Amazon Web Service as a source, Security Lake starts collecting logs and events
+        /// from it, 
         /// 
-        ///  
-        /// <para>
-        /// By default, a dimension refers to the entire set. When you don't provide a dimension,
-        /// Security Lake assumes that the missing dimension refers to the entire set. This is
-        /// overridden when you supply any one of the inputs. For instance, when you do not specify
-        /// members, the API enables all Security Lake member accounts for all sources. Similarly,
-        /// when you do not specify Regions, Security Lake is enabled for all the Regions where
-        /// Security Lake is available as a service.
-        /// </para>
         ///  
         /// <para>
         /// You can use this API only to enable natively supported Amazon Web Services as a source.
         /// Use <code>CreateCustomLogSource</code> to enable data collection from a custom source.
-        /// 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAwsLogSource service method.</param>
@@ -350,10 +332,15 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
@@ -362,14 +349,8 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.S3Exception">
-        /// Provides an extension of the AmazonServiceException for errors reported by Amazon
-        /// S3 while processing a request. In particular, this class provides access to the Amazon
-        /// S3 extended request ID. If Amazon S3 is incorrectly handling a request and you need
-        /// to contact Amazon, this extended request ID may provide useful debugging information.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateAwsLogSource">REST API Reference for CreateAwsLogSource Operation</seealso>
         public virtual CreateAwsLogSourceResponse CreateAwsLogSource(CreateAwsLogSourceRequest request)
@@ -425,8 +406,8 @@ namespace Amazon.SecurityLake
         /// events from third-party custom sources. After creating the appropriate IAM role to
         /// invoke Glue crawler, use this API to add a custom source name in Security Lake. This
         /// operation creates a partition in the Amazon S3 bucket for Security Lake as the target
-        /// location for log files from the custom source in addition to an associated Glue table
-        /// and an Glue crawler.
+        /// location for log files from the custom source. In addition, this operation also creates
+        /// an associated Glue table and an Glue crawler.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateCustomLogSource service method.</param>
         /// 
@@ -438,17 +419,15 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.BucketNotFoundException">
-        /// Amazon Security Lake generally returns 404 errors if the requested object is missing
-        /// from the bucket.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConflictSourceNamesException">
-        /// There was a conflict when you attempted to modify a Security Lake source name.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
@@ -457,8 +436,8 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateCustomLogSource">REST API Reference for CreateCustomLogSource Operation</seealso>
         public virtual CreateCustomLogSourceResponse CreateCustomLogSource(CreateCustomLogSourceRequest request)
@@ -506,19 +485,18 @@ namespace Amazon.SecurityLake
 
         #endregion
         
-        #region  CreateDatalake
+        #region  CreateDataLake
 
         /// <summary>
         /// Initializes an Amazon Security Lake instance with the provided (or default) configuration.
         /// You can enable Security Lake in Amazon Web Services Regions with customized settings
-        /// before enabling log collection in Regions. You can either use the <code>enableAll</code>
-        /// parameter to specify all Regions or specify the Regions where you want to enable Security
-        /// Lake. To specify particular Regions, use the <code>Regions</code> parameter and then
-        /// configure these Regions using the <code>configurations</code> parameter. If you have
-        /// already enabled Security Lake in a Region when you call this command, the command
-        /// will update the Region if you provide new configuration parameters. If you have not
-        /// already enabled Security Lake in the Region when you call this API, it will set up
-        /// the data lake in the Region with the specified configurations.
+        /// before enabling log collection in Regions. By default, the <code>CreateDataLake</code>
+        /// Security Lake in all Regions. To specify particular Regions, configure these Regions
+        /// using the <code>configurations</code> parameter. If you have already enabled Security
+        /// Lake in a Region when you call this command, the command will update the Region if
+        /// you provide new configuration parameters. If you have not already enabled Security
+        /// Lake in the Region when you call this API, it will set up the data lake in the Region
+        /// with the specified configurations.
         /// 
         ///  
         /// <para>
@@ -531,15 +509,19 @@ namespace Amazon.SecurityLake
         /// Security Lake User Guide</a>.
         /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalake service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLake service method.</param>
         /// 
-        /// <returns>The response from the CreateDatalake service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the CreateDataLake service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
         /// An explicit denial occurs when a policy contains a Deny statement for the specific
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
         /// Occurs when a conflict with a previous successful write is detected. This generally
@@ -554,72 +536,147 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ServiceQuotaExceededException">
-        /// You have exceeded your service quota. To perform the requested action, remove some
-        /// of the relevant resources, or use Service Quotas to request a service quota increase.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalake">REST API Reference for CreateDatalake Operation</seealso>
-        public virtual CreateDatalakeResponse CreateDatalake(CreateDatalakeRequest request)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLake">REST API Reference for CreateDataLake Operation</seealso>
+        public virtual CreateDataLakeResponse CreateDataLake(CreateDataLakeRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = CreateDatalakeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateDatalakeResponseUnmarshaller.Instance;
+            options.RequestMarshaller = CreateDataLakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataLakeResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDatalakeResponse>(request, options);
+            return Invoke<CreateDataLakeResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDatalake operation.
+        /// Initiates the asynchronous execution of the CreateDataLake operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalake operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLake operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDatalake
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataLake
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalake">REST API Reference for CreateDatalake Operation</seealso>
-        public virtual IAsyncResult BeginCreateDatalake(CreateDatalakeRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLake">REST API Reference for CreateDataLake Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataLake(CreateDataLakeRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = CreateDatalakeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateDatalakeResponseUnmarshaller.Instance;
+            options.RequestMarshaller = CreateDataLakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataLakeResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  CreateDatalake operation.
+        /// Finishes the asynchronous execution of the  CreateDataLake operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDatalake.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataLake.</param>
         /// 
-        /// <returns>Returns a  CreateDatalakeResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalake">REST API Reference for CreateDatalake Operation</seealso>
-        public virtual CreateDatalakeResponse EndCreateDatalake(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateDataLakeResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLake">REST API Reference for CreateDataLake Operation</seealso>
+        public virtual CreateDataLakeResponse EndCreateDataLake(IAsyncResult asyncResult)
         {
-            return EndInvoke<CreateDatalakeResponse>(asyncResult);
+            return EndInvoke<CreateDataLakeResponse>(asyncResult);
         }
 
         #endregion
         
-        #region  CreateDatalakeAutoEnable
+        #region  CreateDataLakeExceptionSubscription
+
+        /// <summary>
+        /// Creates the specified notification subscription in Amazon Security Lake for the organization
+        /// you specify.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeExceptionSubscription service method.</param>
+        /// 
+        /// <returns>The response from the CreateDataLakeExceptionSubscription service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeExceptionSubscription">REST API Reference for CreateDataLakeExceptionSubscription Operation</seealso>
+        public virtual CreateDataLakeExceptionSubscriptionResponse CreateDataLakeExceptionSubscription(CreateDataLakeExceptionSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataLakeExceptionSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateDataLakeExceptionSubscriptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateDataLakeExceptionSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeExceptionSubscription operation on AmazonSecurityLakeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataLakeExceptionSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeExceptionSubscription">REST API Reference for CreateDataLakeExceptionSubscription Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataLakeExceptionSubscription(CreateDataLakeExceptionSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateDataLakeExceptionSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateDataLakeExceptionSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataLakeExceptionSubscription.</param>
+        /// 
+        /// <returns>Returns a  CreateDataLakeExceptionSubscriptionResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeExceptionSubscription">REST API Reference for CreateDataLakeExceptionSubscription Operation</seealso>
+        public virtual CreateDataLakeExceptionSubscriptionResponse EndCreateDataLakeExceptionSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateDataLakeExceptionSubscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateDataLakeOrganizationConfiguration
 
         /// <summary>
         /// Automatically enables Amazon Security Lake for new member accounts in your organization.
         /// Security Lake is not automatically enabled for any existing member accounts in your
         /// organization.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalakeAutoEnable service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeOrganizationConfiguration service method.</param>
         /// 
-        /// <returns>The response from the CreateDatalakeAutoEnable service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the CreateDataLakeOrganizationConfiguration service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -627,207 +684,68 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeAutoEnable">REST API Reference for CreateDatalakeAutoEnable Operation</seealso>
-        public virtual CreateDatalakeAutoEnableResponse CreateDatalakeAutoEnable(CreateDatalakeAutoEnableRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = CreateDatalakeAutoEnableRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateDatalakeAutoEnableResponseUnmarshaller.Instance;
-
-            return Invoke<CreateDatalakeAutoEnableResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateDatalakeAutoEnable operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalakeAutoEnable operation on AmazonSecurityLakeClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDatalakeAutoEnable
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeAutoEnable">REST API Reference for CreateDatalakeAutoEnable Operation</seealso>
-        public virtual IAsyncResult BeginCreateDatalakeAutoEnable(CreateDatalakeAutoEnableRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = CreateDatalakeAutoEnableRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateDatalakeAutoEnableResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  CreateDatalakeAutoEnable operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDatalakeAutoEnable.</param>
-        /// 
-        /// <returns>Returns a  CreateDatalakeAutoEnableResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeAutoEnable">REST API Reference for CreateDatalakeAutoEnable Operation</seealso>
-        public virtual CreateDatalakeAutoEnableResponse EndCreateDatalakeAutoEnable(IAsyncResult asyncResult)
-        {
-            return EndInvoke<CreateDatalakeAutoEnableResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  CreateDatalakeDelegatedAdmin
-
-        /// <summary>
-        /// Designates the Amazon Security Lake delegated administrator account for the organization.
-        /// This API can only be called by the organization management account. The organization
-        /// management account cannot be the delegated administrator account.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalakeDelegatedAdmin service method.</param>
-        /// 
-        /// <returns>The response from the CreateDatalakeDelegatedAdmin service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeDelegatedAdmin">REST API Reference for CreateDatalakeDelegatedAdmin Operation</seealso>
-        public virtual CreateDatalakeDelegatedAdminResponse CreateDatalakeDelegatedAdmin(CreateDatalakeDelegatedAdminRequest request)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeOrganizationConfiguration">REST API Reference for CreateDataLakeOrganizationConfiguration Operation</seealso>
+        public virtual CreateDataLakeOrganizationConfigurationResponse CreateDataLakeOrganizationConfiguration(CreateDataLakeOrganizationConfigurationRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = CreateDatalakeDelegatedAdminRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateDatalakeDelegatedAdminResponseUnmarshaller.Instance;
+            options.RequestMarshaller = CreateDataLakeOrganizationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateDatalakeDelegatedAdminResponse>(request, options);
+            return Invoke<CreateDataLakeOrganizationConfigurationResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateDatalakeDelegatedAdmin operation.
+        /// Initiates the asynchronous execution of the CreateDataLakeOrganizationConfiguration operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalakeDelegatedAdmin operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateDataLakeOrganizationConfiguration operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDatalakeDelegatedAdmin
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDataLakeOrganizationConfiguration
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeDelegatedAdmin">REST API Reference for CreateDatalakeDelegatedAdmin Operation</seealso>
-        public virtual IAsyncResult BeginCreateDatalakeDelegatedAdmin(CreateDatalakeDelegatedAdminRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeOrganizationConfiguration">REST API Reference for CreateDataLakeOrganizationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginCreateDataLakeOrganizationConfiguration(CreateDataLakeOrganizationConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = CreateDatalakeDelegatedAdminRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateDatalakeDelegatedAdminResponseUnmarshaller.Instance;
+            options.RequestMarshaller = CreateDataLakeOrganizationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  CreateDatalakeDelegatedAdmin operation.
+        /// Finishes the asynchronous execution of the  CreateDataLakeOrganizationConfiguration operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDatalakeDelegatedAdmin.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDataLakeOrganizationConfiguration.</param>
         /// 
-        /// <returns>Returns a  CreateDatalakeDelegatedAdminResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeDelegatedAdmin">REST API Reference for CreateDatalakeDelegatedAdmin Operation</seealso>
-        public virtual CreateDatalakeDelegatedAdminResponse EndCreateDatalakeDelegatedAdmin(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateDataLakeOrganizationConfigurationResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDataLakeOrganizationConfiguration">REST API Reference for CreateDataLakeOrganizationConfiguration Operation</seealso>
+        public virtual CreateDataLakeOrganizationConfigurationResponse EndCreateDataLakeOrganizationConfiguration(IAsyncResult asyncResult)
         {
-            return EndInvoke<CreateDatalakeDelegatedAdminResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  CreateDatalakeExceptionsSubscription
-
-        /// <summary>
-        /// Creates the specified notification subscription in Amazon Security Lake for the organization
-        /// you specify.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalakeExceptionsSubscription service method.</param>
-        /// 
-        /// <returns>The response from the CreateDatalakeExceptionsSubscription service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeExceptionsSubscription">REST API Reference for CreateDatalakeExceptionsSubscription Operation</seealso>
-        public virtual CreateDatalakeExceptionsSubscriptionResponse CreateDatalakeExceptionsSubscription(CreateDatalakeExceptionsSubscriptionRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = CreateDatalakeExceptionsSubscriptionRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
-
-            return Invoke<CreateDatalakeExceptionsSubscriptionResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the CreateDatalakeExceptionsSubscription operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateDatalakeExceptionsSubscription operation on AmazonSecurityLakeClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateDatalakeExceptionsSubscription
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeExceptionsSubscription">REST API Reference for CreateDatalakeExceptionsSubscription Operation</seealso>
-        public virtual IAsyncResult BeginCreateDatalakeExceptionsSubscription(CreateDatalakeExceptionsSubscriptionRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = CreateDatalakeExceptionsSubscriptionRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  CreateDatalakeExceptionsSubscription operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateDatalakeExceptionsSubscription.</param>
-        /// 
-        /// <returns>Returns a  CreateDatalakeExceptionsSubscriptionResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateDatalakeExceptionsSubscription">REST API Reference for CreateDatalakeExceptionsSubscription Operation</seealso>
-        public virtual CreateDatalakeExceptionsSubscriptionResponse EndCreateDatalakeExceptionsSubscription(IAsyncResult asyncResult)
-        {
-            return EndInvoke<CreateDatalakeExceptionsSubscriptionResponse>(asyncResult);
+            return EndInvoke<CreateDataLakeOrganizationConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -849,31 +767,25 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.BucketNotFoundException">
-        /// Amazon Security Lake generally returns 404 errors if the requested object is missing
-        /// from the bucket.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConflictSubscriptionException">
-        /// A conflicting subscription exception operation is in progress.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriber">REST API Reference for CreateSubscriber Operation</seealso>
         public virtual CreateSubscriberResponse CreateSubscriber(CreateSubscriberRequest request)
@@ -921,16 +833,16 @@ namespace Amazon.SecurityLake
 
         #endregion
         
-        #region  CreateSubscriptionNotificationConfiguration
+        #region  CreateSubscriberNotification
 
         /// <summary>
         /// Notifies the subscriber when new data is written to the data lake for the sources
         /// that the subscriber consumes in Security Lake. You can create only one subscriber
         /// notification per subscriber.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the CreateSubscriptionNotificationConfiguration service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubscriberNotification service method.</param>
         /// 
-        /// <returns>The response from the CreateSubscriptionNotificationConfiguration service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the CreateSubscriberNotification service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -938,70 +850,68 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConcurrentModificationException">
-        /// More than one process tried to modify a resource at the same time.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriptionNotificationConfiguration">REST API Reference for CreateSubscriptionNotificationConfiguration Operation</seealso>
-        public virtual CreateSubscriptionNotificationConfigurationResponse CreateSubscriptionNotificationConfiguration(CreateSubscriptionNotificationConfigurationRequest request)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriberNotification">REST API Reference for CreateSubscriberNotification Operation</seealso>
+        public virtual CreateSubscriberNotificationResponse CreateSubscriberNotification(CreateSubscriberNotificationRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = CreateSubscriptionNotificationConfigurationRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance;
+            options.RequestMarshaller = CreateSubscriberNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSubscriberNotificationResponseUnmarshaller.Instance;
 
-            return Invoke<CreateSubscriptionNotificationConfigurationResponse>(request, options);
+            return Invoke<CreateSubscriberNotificationResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the CreateSubscriptionNotificationConfiguration operation.
+        /// Initiates the asynchronous execution of the CreateSubscriberNotification operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the CreateSubscriptionNotificationConfiguration operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the CreateSubscriberNotification operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubscriptionNotificationConfiguration
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSubscriberNotification
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriptionNotificationConfiguration">REST API Reference for CreateSubscriptionNotificationConfiguration Operation</seealso>
-        public virtual IAsyncResult BeginCreateSubscriptionNotificationConfiguration(CreateSubscriptionNotificationConfigurationRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriberNotification">REST API Reference for CreateSubscriberNotification Operation</seealso>
+        public virtual IAsyncResult BeginCreateSubscriberNotification(CreateSubscriberNotificationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = CreateSubscriptionNotificationConfigurationRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = CreateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance;
+            options.RequestMarshaller = CreateSubscriberNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateSubscriberNotificationResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  CreateSubscriptionNotificationConfiguration operation.
+        /// Finishes the asynchronous execution of the  CreateSubscriberNotification operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSubscriptionNotificationConfiguration.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateSubscriberNotification.</param>
         /// 
-        /// <returns>Returns a  CreateSubscriptionNotificationConfigurationResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriptionNotificationConfiguration">REST API Reference for CreateSubscriptionNotificationConfiguration Operation</seealso>
-        public virtual CreateSubscriptionNotificationConfigurationResponse EndCreateSubscriptionNotificationConfiguration(IAsyncResult asyncResult)
+        /// <returns>Returns a  CreateSubscriberNotificationResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/CreateSubscriberNotification">REST API Reference for CreateSubscriberNotification Operation</seealso>
+        public virtual CreateSubscriberNotificationResponse EndCreateSubscriberNotification(IAsyncResult asyncResult)
         {
-            return EndInvoke<CreateSubscriptionNotificationConfigurationResponse>(asyncResult);
+            return EndInvoke<CreateSubscriberNotificationResponse>(asyncResult);
         }
 
         #endregion
@@ -1010,30 +920,15 @@ namespace Amazon.SecurityLake
 
         /// <summary>
         /// Removes a natively supported Amazon Web Service as an Amazon Security Lake source.
-        /// When you remove the source, Security Lake stops collecting data from that source,
-        /// and subscribers can no longer consume new data from the source. Subscribers can still
-        /// consume data that Security Lake collected from the source before disablement.
+        /// You can remove a source for one or more Regions. When you remove the source, Security
+        /// Lake stops collecting data from that source in the specified Regions and accounts,
+        /// and subscribers can no longer consume new data from the source. However, subscribers
+        /// can still consume data that Security Lake collected from the source before removal.
         /// 
         ///  
         /// <para>
         /// You can choose any source type in any Amazon Web Services Region for either accounts
-        /// that are part of a trusted organization or standalone accounts. At least one of the
-        /// three dimensions is a mandatory input to this API. However, you can supply any combination
-        /// of the three dimensions to this API. 
-        /// </para>
-        ///  
-        /// <para>
-        /// By default, a dimension refers to the entire set. This is overridden when you supply
-        /// any one of the inputs. For instance, when you do not specify members, the API disables
-        /// all Security Lake member accounts for sources. Similarly, when you do not specify
-        /// Regions, Security Lake is disabled for all the Regions where Security Lake is available
-        /// as a service.
-        /// </para>
-        ///  
-        /// <para>
-        /// When you don't provide a dimension, Security Lake assumes that the missing dimension
-        /// refers to the entire set. For example, if you don't provide specific accounts, the
-        /// API applies to the entire set of accounts in your organization.
+        /// that are part of a trusted organization or standalone accounts. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAwsLogSource service method.</param>
@@ -1046,17 +941,25 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteAwsLogSource">REST API Reference for DeleteAwsLogSource Operation</seealso>
         public virtual DeleteAwsLogSourceResponse DeleteAwsLogSource(DeleteAwsLogSourceRequest request)
@@ -1107,7 +1010,8 @@ namespace Amazon.SecurityLake
         #region  DeleteCustomLogSource
 
         /// <summary>
-        /// Removes a custom log source from Amazon Security Lake.
+        /// Removes a custom log source from Amazon Security Lake, to stop sending data from the
+        /// custom source to Security Lake.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteCustomLogSource service method.</param>
         /// 
@@ -1119,17 +1023,15 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.BucketNotFoundException">
-        /// Amazon Security Lake generally returns 404 errors if the requested object is missing
-        /// from the bucket.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConflictSourceNamesException">
-        /// There was a conflict when you attempted to modify a Security Lake source name.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
@@ -1138,8 +1040,8 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteCustomLogSource">REST API Reference for DeleteCustomLogSource Operation</seealso>
         public virtual DeleteCustomLogSourceResponse DeleteCustomLogSource(DeleteCustomLogSourceRequest request)
@@ -1187,33 +1089,37 @@ namespace Amazon.SecurityLake
 
         #endregion
         
-        #region  DeleteDatalake
+        #region  DeleteDataLake
 
         /// <summary>
-        /// When you delete Amazon Security Lake from your account, Security Lake is disabled
-        /// in all Amazon Web Services Regions. Also, this API automatically takes steps to remove
-        /// the account from Security Lake . 
+        /// When you disable Amazon Security Lake from your account, Security Lake is disabled
+        /// in all Amazon Web Services Regions and it stops collecting data from your sources.
+        /// Also, this API automatically takes steps to remove the account from Security Lake.
+        /// However, Security Lake retains all of your existing settings and the resources that
+        /// it created in your Amazon Web Services account in the current Amazon Web Services
+        /// Region.
         /// 
         ///  
         /// <para>
-        /// This operation disables security data collection from sources, deletes data stored,
-        /// and stops making data accessible to subscribers. Security Lake also deletes all the
-        /// existing settings and resources that it stores or maintains for your Amazon Web Services
-        /// account in the current Region, including security log and event data. The <code>DeleteDatalake</code>
-        /// operation does not delete the Amazon S3 bucket, which is owned by your Amazon Web
-        /// Services account. For more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon
+        /// The <code>DeleteDataLake</code> operation does not delete the data that is stored
+        /// in your Amazon S3 bucket, which is owned by your Amazon Web Services account. For
+        /// more information, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/disable-security-lake.html">Amazon
         /// Security Lake User Guide</a>.
         /// </para>
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalake service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLake service method.</param>
         /// 
-        /// <returns>The response from the DeleteDatalake service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the DeleteDataLake service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
         /// An explicit denial occurs when a policy contains a Deny statement for the specific
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
         /// Occurs when a conflict with a previous successful write is detected. This generally
@@ -1228,221 +1134,64 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ServiceQuotaExceededException">
-        /// You have exceeded your service quota. To perform the requested action, remove some
-        /// of the relevant resources, or use Service Quotas to request a service quota increase.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
         /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalake">REST API Reference for DeleteDatalake Operation</seealso>
-        public virtual DeleteDatalakeResponse DeleteDatalake(DeleteDatalakeRequest request)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLake">REST API Reference for DeleteDataLake Operation</seealso>
+        public virtual DeleteDataLakeResponse DeleteDataLake(DeleteDataLakeRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteDatalakeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteDatalakeResponseUnmarshaller.Instance;
+            options.RequestMarshaller = DeleteDataLakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataLakeResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDatalakeResponse>(request, options);
+            return Invoke<DeleteDataLakeResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDatalake operation.
+        /// Initiates the asynchronous execution of the DeleteDataLake operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalake operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLake operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDatalake
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataLake
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalake">REST API Reference for DeleteDatalake Operation</seealso>
-        public virtual IAsyncResult BeginDeleteDatalake(DeleteDatalakeRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLake">REST API Reference for DeleteDataLake Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataLake(DeleteDataLakeRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteDatalakeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteDatalakeResponseUnmarshaller.Instance;
+            options.RequestMarshaller = DeleteDataLakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataLakeResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  DeleteDatalake operation.
+        /// Finishes the asynchronous execution of the  DeleteDataLake operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDatalake.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataLake.</param>
         /// 
-        /// <returns>Returns a  DeleteDatalakeResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalake">REST API Reference for DeleteDatalake Operation</seealso>
-        public virtual DeleteDatalakeResponse EndDeleteDatalake(IAsyncResult asyncResult)
+        /// <returns>Returns a  DeleteDataLakeResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLake">REST API Reference for DeleteDataLake Operation</seealso>
+        public virtual DeleteDataLakeResponse EndDeleteDataLake(IAsyncResult asyncResult)
         {
-            return EndInvoke<DeleteDatalakeResponse>(asyncResult);
+            return EndInvoke<DeleteDataLakeResponse>(asyncResult);
         }
 
         #endregion
         
-        #region  DeleteDatalakeAutoEnable
-
-        /// <summary>
-        /// <code>DeleteDatalakeAutoEnable</code> removes automatic enablement of configuration
-        /// settings for new member accounts (but keeps settings for the delegated administrator)
-        /// from Amazon Security Lake. You must run this API using credentials of the delegated
-        /// administrator. When you run this API, new member accounts that are added after the
-        /// organization enables Security Lake won't contribute to the data lake.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalakeAutoEnable service method.</param>
-        /// 
-        /// <returns>The response from the DeleteDatalakeAutoEnable service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeAutoEnable">REST API Reference for DeleteDatalakeAutoEnable Operation</seealso>
-        public virtual DeleteDatalakeAutoEnableResponse DeleteDatalakeAutoEnable(DeleteDatalakeAutoEnableRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteDatalakeAutoEnableRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteDatalakeAutoEnableResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteDatalakeAutoEnableResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDatalakeAutoEnable operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalakeAutoEnable operation on AmazonSecurityLakeClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDatalakeAutoEnable
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeAutoEnable">REST API Reference for DeleteDatalakeAutoEnable Operation</seealso>
-        public virtual IAsyncResult BeginDeleteDatalakeAutoEnable(DeleteDatalakeAutoEnableRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteDatalakeAutoEnableRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteDatalakeAutoEnableResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DeleteDatalakeAutoEnable operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDatalakeAutoEnable.</param>
-        /// 
-        /// <returns>Returns a  DeleteDatalakeAutoEnableResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeAutoEnable">REST API Reference for DeleteDatalakeAutoEnable Operation</seealso>
-        public virtual DeleteDatalakeAutoEnableResponse EndDeleteDatalakeAutoEnable(IAsyncResult asyncResult)
-        {
-            return EndInvoke<DeleteDatalakeAutoEnableResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  DeleteDatalakeDelegatedAdmin
-
-        /// <summary>
-        /// Deletes the Amazon Security Lake delegated administrator account for the organization.
-        /// This API can only be called by the organization management account. The organization
-        /// management account cannot be the delegated administrator account.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalakeDelegatedAdmin service method.</param>
-        /// 
-        /// <returns>The response from the DeleteDatalakeDelegatedAdmin service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeDelegatedAdmin">REST API Reference for DeleteDatalakeDelegatedAdmin Operation</seealso>
-        public virtual DeleteDatalakeDelegatedAdminResponse DeleteDatalakeDelegatedAdmin(DeleteDatalakeDelegatedAdminRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteDatalakeDelegatedAdminRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteDatalakeDelegatedAdminResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteDatalakeDelegatedAdminResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDatalakeDelegatedAdmin operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalakeDelegatedAdmin operation on AmazonSecurityLakeClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDatalakeDelegatedAdmin
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeDelegatedAdmin">REST API Reference for DeleteDatalakeDelegatedAdmin Operation</seealso>
-        public virtual IAsyncResult BeginDeleteDatalakeDelegatedAdmin(DeleteDatalakeDelegatedAdminRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteDatalakeDelegatedAdminRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteDatalakeDelegatedAdminResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DeleteDatalakeDelegatedAdmin operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDatalakeDelegatedAdmin.</param>
-        /// 
-        /// <returns>Returns a  DeleteDatalakeDelegatedAdminResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeDelegatedAdmin">REST API Reference for DeleteDatalakeDelegatedAdmin Operation</seealso>
-        public virtual DeleteDatalakeDelegatedAdminResponse EndDeleteDatalakeDelegatedAdmin(IAsyncResult asyncResult)
-        {
-            return EndInvoke<DeleteDatalakeDelegatedAdminResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  DeleteDatalakeExceptionsSubscription
+        #region  DeleteDataLakeExceptionSubscription
 
         /// <summary>
         /// Deletes the specified notification subscription in Amazon Security Lake for the organization
         /// you specify.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalakeExceptionsSubscription service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeExceptionSubscription service method.</param>
         /// 
-        /// <returns>The response from the DeleteDatalakeExceptionsSubscription service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the DeleteDataLakeExceptionSubscription service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -1450,60 +1199,153 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeExceptionsSubscription">REST API Reference for DeleteDatalakeExceptionsSubscription Operation</seealso>
-        public virtual DeleteDatalakeExceptionsSubscriptionResponse DeleteDatalakeExceptionsSubscription(DeleteDatalakeExceptionsSubscriptionRequest request)
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeExceptionSubscription">REST API Reference for DeleteDataLakeExceptionSubscription Operation</seealso>
+        public virtual DeleteDataLakeExceptionSubscriptionResponse DeleteDataLakeExceptionSubscription(DeleteDataLakeExceptionSubscriptionRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteDatalakeExceptionsSubscriptionRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
+            options.RequestMarshaller = DeleteDataLakeExceptionSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
-            return Invoke<DeleteDatalakeExceptionsSubscriptionResponse>(request, options);
+            return Invoke<DeleteDataLakeExceptionSubscriptionResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the DeleteDatalakeExceptionsSubscription operation.
+        /// Initiates the asynchronous execution of the DeleteDataLakeExceptionSubscription operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteDatalakeExceptionsSubscription operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeExceptionSubscription operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDatalakeExceptionsSubscription
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataLakeExceptionSubscription
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeExceptionsSubscription">REST API Reference for DeleteDatalakeExceptionsSubscription Operation</seealso>
-        public virtual IAsyncResult BeginDeleteDatalakeExceptionsSubscription(DeleteDatalakeExceptionsSubscriptionRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeExceptionSubscription">REST API Reference for DeleteDataLakeExceptionSubscription Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataLakeExceptionSubscription(DeleteDataLakeExceptionSubscriptionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteDatalakeExceptionsSubscriptionRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
+            options.RequestMarshaller = DeleteDataLakeExceptionSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  DeleteDatalakeExceptionsSubscription operation.
+        /// Finishes the asynchronous execution of the  DeleteDataLakeExceptionSubscription operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDatalakeExceptionsSubscription.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataLakeExceptionSubscription.</param>
         /// 
-        /// <returns>Returns a  DeleteDatalakeExceptionsSubscriptionResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDatalakeExceptionsSubscription">REST API Reference for DeleteDatalakeExceptionsSubscription Operation</seealso>
-        public virtual DeleteDatalakeExceptionsSubscriptionResponse EndDeleteDatalakeExceptionsSubscription(IAsyncResult asyncResult)
+        /// <returns>Returns a  DeleteDataLakeExceptionSubscriptionResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeExceptionSubscription">REST API Reference for DeleteDataLakeExceptionSubscription Operation</seealso>
+        public virtual DeleteDataLakeExceptionSubscriptionResponse EndDeleteDataLakeExceptionSubscription(IAsyncResult asyncResult)
         {
-            return EndInvoke<DeleteDatalakeExceptionsSubscriptionResponse>(asyncResult);
+            return EndInvoke<DeleteDataLakeExceptionSubscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteDataLakeOrganizationConfiguration
+
+        /// <summary>
+        /// Removes automatic the enablement of configuration settings for new member accounts
+        /// (but retains the settings for the delegated administrator) from Amazon Security Lake.
+        /// You must run this API using the credentials of the delegated administrator. When you
+        /// run this API, new member accounts that are added after the organization enables Security
+        /// Lake won't contribute to the data lake.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeOrganizationConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the DeleteDataLakeOrganizationConfiguration service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeOrganizationConfiguration">REST API Reference for DeleteDataLakeOrganizationConfiguration Operation</seealso>
+        public virtual DeleteDataLakeOrganizationConfigurationResponse DeleteDataLakeOrganizationConfiguration(DeleteDataLakeOrganizationConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataLakeOrganizationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteDataLakeOrganizationConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteDataLakeOrganizationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteDataLakeOrganizationConfiguration operation on AmazonSecurityLakeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDataLakeOrganizationConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeOrganizationConfiguration">REST API Reference for DeleteDataLakeOrganizationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginDeleteDataLakeOrganizationConfiguration(DeleteDataLakeOrganizationConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteDataLakeOrganizationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteDataLakeOrganizationConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteDataLakeOrganizationConfiguration.</param>
+        /// 
+        /// <returns>Returns a  DeleteDataLakeOrganizationConfigurationResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteDataLakeOrganizationConfiguration">REST API Reference for DeleteDataLakeOrganizationConfiguration Operation</seealso>
+        public virtual DeleteDataLakeOrganizationConfigurationResponse EndDeleteDataLakeOrganizationConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteDataLakeOrganizationConfigurationResponse>(asyncResult);
         }
 
         #endregion
@@ -1511,8 +1353,10 @@ namespace Amazon.SecurityLake
         #region  DeleteSubscriber
 
         /// <summary>
-        /// Deletes the subscription permission for accounts that are already enabled in Amazon
-        /// Security Lake. You can delete a subscriber and remove access to data in the current
+        /// Deletes the subscription permission and all notification settings for accounts that
+        /// are already enabled in Amazon Security Lake. When you run <code>DeleteSubscriber</code>,
+        /// the subscriber will no longer consume data from Security Lake and the subscriber is
+        /// removed. This operation deletes the subscriber and removes access to data in the current
         /// Amazon Web Services Region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriber service method.</param>
@@ -1525,31 +1369,25 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.BucketNotFoundException">
-        /// Amazon Security Lake generally returns 404 errors if the requested object is missing
-        /// from the bucket.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConcurrentModificationException">
-        /// More than one process tried to modify a resource at the same time.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriber">REST API Reference for DeleteSubscriber Operation</seealso>
         public virtual DeleteSubscriberResponse DeleteSubscriber(DeleteSubscriberRequest request)
@@ -1597,15 +1435,15 @@ namespace Amazon.SecurityLake
 
         #endregion
         
-        #region  DeleteSubscriptionNotificationConfiguration
+        #region  DeleteSubscriberNotification
 
         /// <summary>
         /// Deletes the specified notification subscription in Amazon Security Lake for the organization
         /// you specify.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriptionNotificationConfiguration service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriberNotification service method.</param>
         /// 
-        /// <returns>The response from the DeleteSubscriptionNotificationConfiguration service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the DeleteSubscriberNotification service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -1613,95 +1451,15 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConcurrentModificationException">
-        /// More than one process tried to modify a resource at the same time.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
-        /// The resource could not be found.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriptionNotificationConfiguration">REST API Reference for DeleteSubscriptionNotificationConfiguration Operation</seealso>
-        public virtual DeleteSubscriptionNotificationConfigurationResponse DeleteSubscriptionNotificationConfiguration(DeleteSubscriptionNotificationConfigurationRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteSubscriptionNotificationConfigurationRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteSubscriptionNotificationConfigurationResponseUnmarshaller.Instance;
-
-            return Invoke<DeleteSubscriptionNotificationConfigurationResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the DeleteSubscriptionNotificationConfiguration operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriptionNotificationConfiguration operation on AmazonSecurityLakeClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubscriptionNotificationConfiguration
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriptionNotificationConfiguration">REST API Reference for DeleteSubscriptionNotificationConfiguration Operation</seealso>
-        public virtual IAsyncResult BeginDeleteSubscriptionNotificationConfiguration(DeleteSubscriptionNotificationConfigurationRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = DeleteSubscriptionNotificationConfigurationRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = DeleteSubscriptionNotificationConfigurationResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  DeleteSubscriptionNotificationConfiguration operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSubscriptionNotificationConfiguration.</param>
-        /// 
-        /// <returns>Returns a  DeleteSubscriptionNotificationConfigurationResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriptionNotificationConfiguration">REST API Reference for DeleteSubscriptionNotificationConfiguration Operation</seealso>
-        public virtual DeleteSubscriptionNotificationConfigurationResponse EndDeleteSubscriptionNotificationConfiguration(IAsyncResult asyncResult)
-        {
-            return EndInvoke<DeleteSubscriptionNotificationConfigurationResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  GetDatalake
-
-        /// <summary>
-        /// Retrieves the Amazon Security Lake configuration object for the specified Amazon Web
-        /// Services account ID. You can use the <code>GetDatalake</code> API to know whether
-        /// Security Lake is enabled for the current Region. This API does not take input parameters.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalake service method.</param>
-        /// 
-        /// <returns>The response from the GetDatalake service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
@@ -1710,65 +1468,230 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalake">REST API Reference for GetDatalake Operation</seealso>
-        public virtual GetDatalakeResponse GetDatalake(GetDatalakeRequest request)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriberNotification">REST API Reference for DeleteSubscriberNotification Operation</seealso>
+        public virtual DeleteSubscriberNotificationResponse DeleteSubscriberNotification(DeleteSubscriberNotificationRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = GetDatalakeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetDatalakeResponseUnmarshaller.Instance;
+            options.RequestMarshaller = DeleteSubscriberNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSubscriberNotificationResponseUnmarshaller.Instance;
 
-            return Invoke<GetDatalakeResponse>(request, options);
+            return Invoke<DeleteSubscriberNotificationResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDatalake operation.
+        /// Initiates the asynchronous execution of the DeleteSubscriberNotification operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalake operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteSubscriberNotification operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDatalake
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSubscriberNotification
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalake">REST API Reference for GetDatalake Operation</seealso>
-        public virtual IAsyncResult BeginGetDatalake(GetDatalakeRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriberNotification">REST API Reference for DeleteSubscriberNotification Operation</seealso>
+        public virtual IAsyncResult BeginDeleteSubscriberNotification(DeleteSubscriberNotificationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = GetDatalakeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetDatalakeResponseUnmarshaller.Instance;
+            options.RequestMarshaller = DeleteSubscriberNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteSubscriberNotificationResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  GetDatalake operation.
+        /// Finishes the asynchronous execution of the  DeleteSubscriberNotification operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDatalake.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteSubscriberNotification.</param>
         /// 
-        /// <returns>Returns a  GetDatalakeResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalake">REST API Reference for GetDatalake Operation</seealso>
-        public virtual GetDatalakeResponse EndGetDatalake(IAsyncResult asyncResult)
+        /// <returns>Returns a  DeleteSubscriberNotificationResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeleteSubscriberNotification">REST API Reference for DeleteSubscriberNotification Operation</seealso>
+        public virtual DeleteSubscriberNotificationResponse EndDeleteSubscriberNotification(IAsyncResult asyncResult)
         {
-            return EndInvoke<GetDatalakeResponse>(asyncResult);
+            return EndInvoke<DeleteSubscriberNotificationResponse>(asyncResult);
         }
 
         #endregion
         
-        #region  GetDatalakeAutoEnable
+        #region  DeregisterDataLakeDelegatedAdministrator
+
+        /// <summary>
+        /// Deletes the Amazon Security Lake delegated administrator account for the organization.
+        /// This API can only be called by the organization management account. The organization
+        /// management account cannot be the delegated administrator account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDataLakeDelegatedAdministrator service method.</param>
+        /// 
+        /// <returns>The response from the DeregisterDataLakeDelegatedAdministrator service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeregisterDataLakeDelegatedAdministrator">REST API Reference for DeregisterDataLakeDelegatedAdministrator Operation</seealso>
+        public virtual DeregisterDataLakeDelegatedAdministratorResponse DeregisterDataLakeDelegatedAdministrator(DeregisterDataLakeDelegatedAdministratorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterDataLakeDelegatedAdministratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance;
+
+            return Invoke<DeregisterDataLakeDelegatedAdministratorResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeregisterDataLakeDelegatedAdministrator operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeregisterDataLakeDelegatedAdministrator operation on AmazonSecurityLakeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeregisterDataLakeDelegatedAdministrator
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeregisterDataLakeDelegatedAdministrator">REST API Reference for DeregisterDataLakeDelegatedAdministrator Operation</seealso>
+        public virtual IAsyncResult BeginDeregisterDataLakeDelegatedAdministrator(DeregisterDataLakeDelegatedAdministratorRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeregisterDataLakeDelegatedAdministratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeregisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeregisterDataLakeDelegatedAdministrator operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeregisterDataLakeDelegatedAdministrator.</param>
+        /// 
+        /// <returns>Returns a  DeregisterDataLakeDelegatedAdministratorResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/DeregisterDataLakeDelegatedAdministrator">REST API Reference for DeregisterDataLakeDelegatedAdministrator Operation</seealso>
+        public virtual DeregisterDataLakeDelegatedAdministratorResponse EndDeregisterDataLakeDelegatedAdministrator(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeregisterDataLakeDelegatedAdministratorResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDataLakeExceptionSubscription
+
+        /// <summary>
+        /// Retrieves the details of exception notifications for the account in Amazon Security
+        /// Lake.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeExceptionSubscription service method.</param>
+        /// 
+        /// <returns>The response from the GetDataLakeExceptionSubscription service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeExceptionSubscription">REST API Reference for GetDataLakeExceptionSubscription Operation</seealso>
+        public virtual GetDataLakeExceptionSubscriptionResponse GetDataLakeExceptionSubscription(GetDataLakeExceptionSubscriptionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataLakeExceptionSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
+
+            return Invoke<GetDataLakeExceptionSubscriptionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetDataLakeExceptionSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeExceptionSubscription operation on AmazonSecurityLakeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataLakeExceptionSubscription
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeExceptionSubscription">REST API Reference for GetDataLakeExceptionSubscription Operation</seealso>
+        public virtual IAsyncResult BeginGetDataLakeExceptionSubscription(GetDataLakeExceptionSubscriptionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDataLakeExceptionSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetDataLakeExceptionSubscription operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataLakeExceptionSubscription.</param>
+        /// 
+        /// <returns>Returns a  GetDataLakeExceptionSubscriptionResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeExceptionSubscription">REST API Reference for GetDataLakeExceptionSubscription Operation</seealso>
+        public virtual GetDataLakeExceptionSubscriptionResponse EndGetDataLakeExceptionSubscription(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetDataLakeExceptionSubscriptionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetDataLakeOrganizationConfiguration
 
         /// <summary>
         /// Retrieves the configuration that will be automatically set up for accounts added to
         /// the organization after the organization has onboarded to Amazon Security Lake. This
         /// API does not take input parameters.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeAutoEnable service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeOrganizationConfiguration service method.</param>
         /// 
-        /// <returns>The response from the GetDatalakeAutoEnable service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the GetDataLakeOrganizationConfiguration service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -1776,222 +1699,81 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeAutoEnable">REST API Reference for GetDatalakeAutoEnable Operation</seealso>
-        public virtual GetDatalakeAutoEnableResponse GetDatalakeAutoEnable(GetDatalakeAutoEnableRequest request)
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeOrganizationConfiguration">REST API Reference for GetDataLakeOrganizationConfiguration Operation</seealso>
+        public virtual GetDataLakeOrganizationConfigurationResponse GetDataLakeOrganizationConfiguration(GetDataLakeOrganizationConfigurationRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = GetDatalakeAutoEnableRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetDatalakeAutoEnableResponseUnmarshaller.Instance;
+            options.RequestMarshaller = GetDataLakeOrganizationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
 
-            return Invoke<GetDatalakeAutoEnableResponse>(request, options);
+            return Invoke<GetDataLakeOrganizationConfigurationResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDatalakeAutoEnable operation.
+        /// Initiates the asynchronous execution of the GetDataLakeOrganizationConfiguration operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeAutoEnable operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeOrganizationConfiguration operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDatalakeAutoEnable
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataLakeOrganizationConfiguration
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeAutoEnable">REST API Reference for GetDatalakeAutoEnable Operation</seealso>
-        public virtual IAsyncResult BeginGetDatalakeAutoEnable(GetDatalakeAutoEnableRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeOrganizationConfiguration">REST API Reference for GetDataLakeOrganizationConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetDataLakeOrganizationConfiguration(GetDataLakeOrganizationConfigurationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = GetDatalakeAutoEnableRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetDatalakeAutoEnableResponseUnmarshaller.Instance;
+            options.RequestMarshaller = GetDataLakeOrganizationConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  GetDatalakeAutoEnable operation.
+        /// Finishes the asynchronous execution of the  GetDataLakeOrganizationConfiguration operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDatalakeAutoEnable.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataLakeOrganizationConfiguration.</param>
         /// 
-        /// <returns>Returns a  GetDatalakeAutoEnableResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeAutoEnable">REST API Reference for GetDatalakeAutoEnable Operation</seealso>
-        public virtual GetDatalakeAutoEnableResponse EndGetDatalakeAutoEnable(IAsyncResult asyncResult)
+        /// <returns>Returns a  GetDataLakeOrganizationConfigurationResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeOrganizationConfiguration">REST API Reference for GetDataLakeOrganizationConfiguration Operation</seealso>
+        public virtual GetDataLakeOrganizationConfigurationResponse EndGetDataLakeOrganizationConfiguration(IAsyncResult asyncResult)
         {
-            return EndInvoke<GetDatalakeAutoEnableResponse>(asyncResult);
+            return EndInvoke<GetDataLakeOrganizationConfigurationResponse>(asyncResult);
         }
 
         #endregion
         
-        #region  GetDatalakeExceptionsExpiry
-
-        /// <summary>
-        /// Retrieves the expiration period and time-to-live (TTL) for which the exception message
-        /// will remain. Exceptions are stored by default, for 2 weeks from when a record was
-        /// created in Amazon Security Lake. This API does not take input parameters.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeExceptionsExpiry service method.</param>
-        /// 
-        /// <returns>The response from the GetDatalakeExceptionsExpiry service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsExpiry">REST API Reference for GetDatalakeExceptionsExpiry Operation</seealso>
-        public virtual GetDatalakeExceptionsExpiryResponse GetDatalakeExceptionsExpiry(GetDatalakeExceptionsExpiryRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetDatalakeExceptionsExpiryRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetDatalakeExceptionsExpiryResponseUnmarshaller.Instance;
-
-            return Invoke<GetDatalakeExceptionsExpiryResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetDatalakeExceptionsExpiry operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeExceptionsExpiry operation on AmazonSecurityLakeClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDatalakeExceptionsExpiry
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsExpiry">REST API Reference for GetDatalakeExceptionsExpiry Operation</seealso>
-        public virtual IAsyncResult BeginGetDatalakeExceptionsExpiry(GetDatalakeExceptionsExpiryRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetDatalakeExceptionsExpiryRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetDatalakeExceptionsExpiryResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  GetDatalakeExceptionsExpiry operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDatalakeExceptionsExpiry.</param>
-        /// 
-        /// <returns>Returns a  GetDatalakeExceptionsExpiryResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsExpiry">REST API Reference for GetDatalakeExceptionsExpiry Operation</seealso>
-        public virtual GetDatalakeExceptionsExpiryResponse EndGetDatalakeExceptionsExpiry(IAsyncResult asyncResult)
-        {
-            return EndInvoke<GetDatalakeExceptionsExpiryResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  GetDatalakeExceptionsSubscription
-
-        /// <summary>
-        /// Retrieves the details of exception notifications for the account in Amazon Security
-        /// Lake.
-        /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeExceptionsSubscription service method.</param>
-        /// 
-        /// <returns>The response from the GetDatalakeExceptionsSubscription service method, as returned by SecurityLake.</returns>
-        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
-        /// You do not have sufficient access to perform this action. Access denied errors appear
-        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
-        /// An explicit denial occurs when a policy contains a Deny statement for the specific
-        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
-        /// Deny statement and also no applicable Allow statement.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
-        /// Internal service exceptions are sometimes caused by transient issues. Before you start
-        /// troubleshooting, perform the operation again.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
-        /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsSubscription">REST API Reference for GetDatalakeExceptionsSubscription Operation</seealso>
-        public virtual GetDatalakeExceptionsSubscriptionResponse GetDatalakeExceptionsSubscription(GetDatalakeExceptionsSubscriptionRequest request)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetDatalakeExceptionsSubscriptionRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
-
-            return Invoke<GetDatalakeExceptionsSubscriptionResponse>(request, options);
-        }
-
-        /// <summary>
-        /// Initiates the asynchronous execution of the GetDatalakeExceptionsSubscription operation.
-        /// </summary>
-        /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeExceptionsSubscription operation on AmazonSecurityLakeClient.</param>
-        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
-        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
-        ///          procedure using the AsyncState property.</param>
-        /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDatalakeExceptionsSubscription
-        ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsSubscription">REST API Reference for GetDatalakeExceptionsSubscription Operation</seealso>
-        public virtual IAsyncResult BeginGetDatalakeExceptionsSubscription(GetDatalakeExceptionsSubscriptionRequest request, AsyncCallback callback, object state)
-        {
-            var options = new InvokeOptions();
-            options.RequestMarshaller = GetDatalakeExceptionsSubscriptionRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
-
-            return BeginInvoke(request, options, callback, state);
-        }
-
-        /// <summary>
-        /// Finishes the asynchronous execution of the  GetDatalakeExceptionsSubscription operation.
-        /// </summary>
-        /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDatalakeExceptionsSubscription.</param>
-        /// 
-        /// <returns>Returns a  GetDatalakeExceptionsSubscriptionResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeExceptionsSubscription">REST API Reference for GetDatalakeExceptionsSubscription Operation</seealso>
-        public virtual GetDatalakeExceptionsSubscriptionResponse EndGetDatalakeExceptionsSubscription(IAsyncResult asyncResult)
-        {
-            return EndInvoke<GetDatalakeExceptionsSubscriptionResponse>(asyncResult);
-        }
-
-        #endregion
-        
-        #region  GetDatalakeStatus
+        #region  GetDataLakeSources
 
         /// <summary>
         /// Retrieves a snapshot of the current Region, including whether Amazon Security Lake
         /// is enabled for those accounts and which sources Security Lake is collecting data from.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeStatus service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeSources service method.</param>
         /// 
-        /// <returns>The response from the GetDatalakeStatus service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the GetDataLakeSources service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -1999,60 +1781,68 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeStatus">REST API Reference for GetDatalakeStatus Operation</seealso>
-        public virtual GetDatalakeStatusResponse GetDatalakeStatus(GetDatalakeStatusRequest request)
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeSources">REST API Reference for GetDataLakeSources Operation</seealso>
+        public virtual GetDataLakeSourcesResponse GetDataLakeSources(GetDataLakeSourcesRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = GetDatalakeStatusRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetDatalakeStatusResponseUnmarshaller.Instance;
+            options.RequestMarshaller = GetDataLakeSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakeSourcesResponseUnmarshaller.Instance;
 
-            return Invoke<GetDatalakeStatusResponse>(request, options);
+            return Invoke<GetDataLakeSourcesResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the GetDatalakeStatus operation.
+        /// Initiates the asynchronous execution of the GetDataLakeSources operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the GetDatalakeStatus operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the GetDataLakeSources operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDatalakeStatus
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDataLakeSources
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeStatus">REST API Reference for GetDatalakeStatus Operation</seealso>
-        public virtual IAsyncResult BeginGetDatalakeStatus(GetDatalakeStatusRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeSources">REST API Reference for GetDataLakeSources Operation</seealso>
+        public virtual IAsyncResult BeginGetDataLakeSources(GetDataLakeSourcesRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = GetDatalakeStatusRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = GetDatalakeStatusResponseUnmarshaller.Instance;
+            options.RequestMarshaller = GetDataLakeSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDataLakeSourcesResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  GetDatalakeStatus operation.
+        /// Finishes the asynchronous execution of the  GetDataLakeSources operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDatalakeStatus.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetDataLakeSources.</param>
         /// 
-        /// <returns>Returns a  GetDatalakeStatusResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDatalakeStatus">REST API Reference for GetDatalakeStatus Operation</seealso>
-        public virtual GetDatalakeStatusResponse EndGetDatalakeStatus(IAsyncResult asyncResult)
+        /// <returns>Returns a  GetDataLakeSourcesResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetDataLakeSources">REST API Reference for GetDataLakeSources Operation</seealso>
+        public virtual GetDataLakeSourcesResponse EndGetDataLakeSources(IAsyncResult asyncResult)
         {
-            return EndInvoke<GetDatalakeStatusResponse>(asyncResult);
+            return EndInvoke<GetDataLakeSourcesResponse>(asyncResult);
         }
 
         #endregion
@@ -2073,21 +1863,25 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/GetSubscriber">REST API Reference for GetSubscriber Operation</seealso>
         public virtual GetSubscriberResponse GetSubscriber(GetSubscriberRequest request)
@@ -2135,15 +1929,15 @@ namespace Amazon.SecurityLake
 
         #endregion
         
-        #region  ListDatalakeExceptions
+        #region  ListDataLakeExceptions
 
         /// <summary>
         /// Lists the Amazon Security Lake exceptions that you can use to find the source of problems
         /// and fix them.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the ListDatalakeExceptions service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakeExceptions service method.</param>
         /// 
-        /// <returns>The response from the ListDatalakeExceptions service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the ListDataLakeExceptions service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -2151,60 +1945,151 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDatalakeExceptions">REST API Reference for ListDatalakeExceptions Operation</seealso>
-        public virtual ListDatalakeExceptionsResponse ListDatalakeExceptions(ListDatalakeExceptionsRequest request)
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakeExceptions">REST API Reference for ListDataLakeExceptions Operation</seealso>
+        public virtual ListDataLakeExceptionsResponse ListDataLakeExceptions(ListDataLakeExceptionsRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = ListDatalakeExceptionsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListDatalakeExceptionsResponseUnmarshaller.Instance;
+            options.RequestMarshaller = ListDataLakeExceptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataLakeExceptionsResponseUnmarshaller.Instance;
 
-            return Invoke<ListDatalakeExceptionsResponse>(request, options);
+            return Invoke<ListDataLakeExceptionsResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ListDatalakeExceptions operation.
+        /// Initiates the asynchronous execution of the ListDataLakeExceptions operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the ListDatalakeExceptions operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakeExceptions operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDatalakeExceptions
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataLakeExceptions
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDatalakeExceptions">REST API Reference for ListDatalakeExceptions Operation</seealso>
-        public virtual IAsyncResult BeginListDatalakeExceptions(ListDatalakeExceptionsRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakeExceptions">REST API Reference for ListDataLakeExceptions Operation</seealso>
+        public virtual IAsyncResult BeginListDataLakeExceptions(ListDataLakeExceptionsRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = ListDatalakeExceptionsRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = ListDatalakeExceptionsResponseUnmarshaller.Instance;
+            options.RequestMarshaller = ListDataLakeExceptionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataLakeExceptionsResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  ListDatalakeExceptions operation.
+        /// Finishes the asynchronous execution of the  ListDataLakeExceptions operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDatalakeExceptions.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataLakeExceptions.</param>
         /// 
-        /// <returns>Returns a  ListDatalakeExceptionsResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDatalakeExceptions">REST API Reference for ListDatalakeExceptions Operation</seealso>
-        public virtual ListDatalakeExceptionsResponse EndListDatalakeExceptions(IAsyncResult asyncResult)
+        /// <returns>Returns a  ListDataLakeExceptionsResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakeExceptions">REST API Reference for ListDataLakeExceptions Operation</seealso>
+        public virtual ListDataLakeExceptionsResponse EndListDataLakeExceptions(IAsyncResult asyncResult)
         {
-            return EndInvoke<ListDatalakeExceptionsResponse>(asyncResult);
+            return EndInvoke<ListDataLakeExceptionsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListDataLakes
+
+        /// <summary>
+        /// Retrieves the Amazon Security Lake configuration object for the specified Amazon Web
+        /// Services account ID. You can use the <code>ListDataLakes</code> API to know whether
+        /// Security Lake is enabled for any region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakes service method.</param>
+        /// 
+        /// <returns>The response from the ListDataLakes service method, as returned by SecurityLake.</returns>
+        /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action. Access denied errors appear
+        /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
+        /// An explicit denial occurs when a policy contains a Deny statement for the specific
+        /// Amazon Web Services action. An implicit denial occurs when there is no applicable
+        /// Deny statement and also no applicable Allow statement.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
+        /// Internal service exceptions are sometimes caused by transient issues. Before you start
+        /// troubleshooting, perform the operation again.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakes">REST API Reference for ListDataLakes Operation</seealso>
+        public virtual ListDataLakesResponse ListDataLakes(ListDataLakesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataLakesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataLakesResponseUnmarshaller.Instance;
+
+            return Invoke<ListDataLakesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDataLakes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDataLakes operation on AmazonSecurityLakeClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDataLakes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakes">REST API Reference for ListDataLakes Operation</seealso>
+        public virtual IAsyncResult BeginListDataLakes(ListDataLakesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListDataLakesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListDataLakesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDataLakes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDataLakes.</param>
+        /// 
+        /// <returns>Returns a  ListDataLakesResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListDataLakes">REST API Reference for ListDataLakes Operation</seealso>
+        public virtual ListDataLakesResponse EndListDataLakes(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListDataLakesResponse>(asyncResult);
         }
 
         #endregion
@@ -2224,10 +2109,15 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
@@ -2236,8 +2126,8 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListLogSources">REST API Reference for ListLogSources Operation</seealso>
         public virtual ListLogSourcesResponse ListLogSources(ListLogSourcesRequest request)
@@ -2302,24 +2192,25 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/ListSubscribers">REST API Reference for ListSubscribers Operation</seealso>
         public virtual ListSubscribersResponse ListSubscribers(ListSubscribersRequest request)
@@ -2367,15 +2258,16 @@ namespace Amazon.SecurityLake
 
         #endregion
         
-        #region  UpdateDatalake
+        #region  RegisterDataLakeDelegatedAdministrator
 
         /// <summary>
-        /// Specifies where to store your security data and for how long. You can add a rollup
-        /// Region to consolidate data from multiple Amazon Web Services Regions.
+        /// Designates the Amazon Security Lake delegated administrator account for the organization.
+        /// This API can only be called by the organization management account. The organization
+        /// management account cannot be the delegated administrator account.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDatalake service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDataLakeDelegatedAdministrator service method.</param>
         /// 
-        /// <returns>The response from the UpdateDatalake service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the RegisterDataLakeDelegatedAdministrator service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -2383,8 +2275,15 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.EventBridgeException">
-        /// Represents an error interacting with the Amazon EventBridge service.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
@@ -2393,65 +2292,64 @@ namespace Amazon.SecurityLake
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalake">REST API Reference for UpdateDatalake Operation</seealso>
-        public virtual UpdateDatalakeResponse UpdateDatalake(UpdateDatalakeRequest request)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RegisterDataLakeDelegatedAdministrator">REST API Reference for RegisterDataLakeDelegatedAdministrator Operation</seealso>
+        public virtual RegisterDataLakeDelegatedAdministratorResponse RegisterDataLakeDelegatedAdministrator(RegisterDataLakeDelegatedAdministratorRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateDatalakeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateDatalakeResponseUnmarshaller.Instance;
+            options.RequestMarshaller = RegisterDataLakeDelegatedAdministratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDatalakeResponse>(request, options);
+            return Invoke<RegisterDataLakeDelegatedAdministratorResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDatalake operation.
+        /// Initiates the asynchronous execution of the RegisterDataLakeDelegatedAdministrator operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDatalake operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterDataLakeDelegatedAdministrator operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDatalake
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterDataLakeDelegatedAdministrator
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalake">REST API Reference for UpdateDatalake Operation</seealso>
-        public virtual IAsyncResult BeginUpdateDatalake(UpdateDatalakeRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RegisterDataLakeDelegatedAdministrator">REST API Reference for RegisterDataLakeDelegatedAdministrator Operation</seealso>
+        public virtual IAsyncResult BeginRegisterDataLakeDelegatedAdministrator(RegisterDataLakeDelegatedAdministratorRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateDatalakeRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateDatalakeResponseUnmarshaller.Instance;
+            options.RequestMarshaller = RegisterDataLakeDelegatedAdministratorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  UpdateDatalake operation.
+        /// Finishes the asynchronous execution of the  RegisterDataLakeDelegatedAdministrator operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDatalake.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginRegisterDataLakeDelegatedAdministrator.</param>
         /// 
-        /// <returns>Returns a  UpdateDatalakeResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalake">REST API Reference for UpdateDatalake Operation</seealso>
-        public virtual UpdateDatalakeResponse EndUpdateDatalake(IAsyncResult asyncResult)
+        /// <returns>Returns a  RegisterDataLakeDelegatedAdministratorResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/RegisterDataLakeDelegatedAdministrator">REST API Reference for RegisterDataLakeDelegatedAdministrator Operation</seealso>
+        public virtual RegisterDataLakeDelegatedAdministratorResponse EndRegisterDataLakeDelegatedAdministrator(IAsyncResult asyncResult)
         {
-            return EndInvoke<UpdateDatalakeResponse>(asyncResult);
+            return EndInvoke<RegisterDataLakeDelegatedAdministratorResponse>(asyncResult);
         }
 
         #endregion
         
-        #region  UpdateDatalakeExceptionsExpiry
+        #region  UpdateDataLake
 
         /// <summary>
-        /// Update the expiration period for the exception message to your preferred time, and
-        /// control the time-to-live (TTL) for the exception message to remain. Exceptions are
-        /// stored by default for 2 weeks from when a record was created in Amazon Security Lake.
+        /// Specifies where to store your security data and for how long. You can add a rollup
+        /// Region to consolidate data from multiple Amazon Web Services Regions.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDatalakeExceptionsExpiry service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLake service method.</param>
         /// 
-        /// <returns>The response from the UpdateDatalakeExceptionsExpiry service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the UpdateDataLake service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -2459,73 +2357,81 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsExpiry">REST API Reference for UpdateDatalakeExceptionsExpiry Operation</seealso>
-        public virtual UpdateDatalakeExceptionsExpiryResponse UpdateDatalakeExceptionsExpiry(UpdateDatalakeExceptionsExpiryRequest request)
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLake">REST API Reference for UpdateDataLake Operation</seealso>
+        public virtual UpdateDataLakeResponse UpdateDataLake(UpdateDataLakeRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateDatalakeExceptionsExpiryRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateDatalakeExceptionsExpiryResponseUnmarshaller.Instance;
+            options.RequestMarshaller = UpdateDataLakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataLakeResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDatalakeExceptionsExpiryResponse>(request, options);
+            return Invoke<UpdateDataLakeResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDatalakeExceptionsExpiry operation.
+        /// Initiates the asynchronous execution of the UpdateDataLake operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDatalakeExceptionsExpiry operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLake operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDatalakeExceptionsExpiry
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataLake
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsExpiry">REST API Reference for UpdateDatalakeExceptionsExpiry Operation</seealso>
-        public virtual IAsyncResult BeginUpdateDatalakeExceptionsExpiry(UpdateDatalakeExceptionsExpiryRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLake">REST API Reference for UpdateDataLake Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDataLake(UpdateDataLakeRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateDatalakeExceptionsExpiryRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateDatalakeExceptionsExpiryResponseUnmarshaller.Instance;
+            options.RequestMarshaller = UpdateDataLakeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataLakeResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  UpdateDatalakeExceptionsExpiry operation.
+        /// Finishes the asynchronous execution of the  UpdateDataLake operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDatalakeExceptionsExpiry.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataLake.</param>
         /// 
-        /// <returns>Returns a  UpdateDatalakeExceptionsExpiryResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsExpiry">REST API Reference for UpdateDatalakeExceptionsExpiry Operation</seealso>
-        public virtual UpdateDatalakeExceptionsExpiryResponse EndUpdateDatalakeExceptionsExpiry(IAsyncResult asyncResult)
+        /// <returns>Returns a  UpdateDataLakeResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLake">REST API Reference for UpdateDataLake Operation</seealso>
+        public virtual UpdateDataLakeResponse EndUpdateDataLake(IAsyncResult asyncResult)
         {
-            return EndInvoke<UpdateDatalakeExceptionsExpiryResponse>(asyncResult);
+            return EndInvoke<UpdateDataLakeResponse>(asyncResult);
         }
 
         #endregion
         
-        #region  UpdateDatalakeExceptionsSubscription
+        #region  UpdateDataLakeExceptionSubscription
 
         /// <summary>
         /// Updates the specified notification subscription in Amazon Security Lake for the organization
         /// you specify.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDatalakeExceptionsSubscription service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLakeExceptionSubscription service method.</param>
         /// 
-        /// <returns>The response from the UpdateDatalakeExceptionsSubscription service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the UpdateDataLakeExceptionSubscription service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -2533,60 +2439,68 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsSubscription">REST API Reference for UpdateDatalakeExceptionsSubscription Operation</seealso>
-        public virtual UpdateDatalakeExceptionsSubscriptionResponse UpdateDatalakeExceptionsSubscription(UpdateDatalakeExceptionsSubscriptionRequest request)
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLakeExceptionSubscription">REST API Reference for UpdateDataLakeExceptionSubscription Operation</seealso>
+        public virtual UpdateDataLakeExceptionSubscriptionResponse UpdateDataLakeExceptionSubscription(UpdateDataLakeExceptionSubscriptionRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateDatalakeExceptionsSubscriptionRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
+            options.RequestMarshaller = UpdateDataLakeExceptionSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateDatalakeExceptionsSubscriptionResponse>(request, options);
+            return Invoke<UpdateDataLakeExceptionSubscriptionResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateDatalakeExceptionsSubscription operation.
+        /// Initiates the asynchronous execution of the UpdateDataLakeExceptionSubscription operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateDatalakeExceptionsSubscription operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateDataLakeExceptionSubscription operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDatalakeExceptionsSubscription
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDataLakeExceptionSubscription
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsSubscription">REST API Reference for UpdateDatalakeExceptionsSubscription Operation</seealso>
-        public virtual IAsyncResult BeginUpdateDatalakeExceptionsSubscription(UpdateDatalakeExceptionsSubscriptionRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLakeExceptionSubscription">REST API Reference for UpdateDataLakeExceptionSubscription Operation</seealso>
+        public virtual IAsyncResult BeginUpdateDataLakeExceptionSubscription(UpdateDataLakeExceptionSubscriptionRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateDatalakeExceptionsSubscriptionRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
+            options.RequestMarshaller = UpdateDataLakeExceptionSubscriptionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  UpdateDatalakeExceptionsSubscription operation.
+        /// Finishes the asynchronous execution of the  UpdateDataLakeExceptionSubscription operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDatalakeExceptionsSubscription.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateDataLakeExceptionSubscription.</param>
         /// 
-        /// <returns>Returns a  UpdateDatalakeExceptionsSubscriptionResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDatalakeExceptionsSubscription">REST API Reference for UpdateDatalakeExceptionsSubscription Operation</seealso>
-        public virtual UpdateDatalakeExceptionsSubscriptionResponse EndUpdateDatalakeExceptionsSubscription(IAsyncResult asyncResult)
+        /// <returns>Returns a  UpdateDataLakeExceptionSubscriptionResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateDataLakeExceptionSubscription">REST API Reference for UpdateDataLakeExceptionSubscription Operation</seealso>
+        public virtual UpdateDataLakeExceptionSubscriptionResponse EndUpdateDataLakeExceptionSubscription(IAsyncResult asyncResult)
         {
-            return EndInvoke<UpdateDatalakeExceptionsSubscriptionResponse>(asyncResult);
+            return EndInvoke<UpdateDataLakeExceptionSubscriptionResponse>(asyncResult);
         }
 
         #endregion
@@ -2608,27 +2522,25 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConcurrentModificationException">
-        /// More than one process tried to modify a resource at the same time.
-        /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConflictSubscriptionException">
-        /// A conflicting subscription exception operation is in progress.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
+        /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
+        /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriber">REST API Reference for UpdateSubscriber Operation</seealso>
         public virtual UpdateSubscriberResponse UpdateSubscriber(UpdateSubscriberRequest request)
@@ -2676,15 +2588,15 @@ namespace Amazon.SecurityLake
 
         #endregion
         
-        #region  UpdateSubscriptionNotificationConfiguration
+        #region  UpdateSubscriberNotification
 
         /// <summary>
         /// Updates an existing notification method for the subscription (SQS or HTTPs endpoint)
         /// or switches the notification subscription endpoint for a subscriber.
         /// </summary>
-        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscriptionNotificationConfiguration service method.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscriberNotification service method.</param>
         /// 
-        /// <returns>The response from the UpdateSubscriptionNotificationConfiguration service method, as returned by SecurityLake.</returns>
+        /// <returns>The response from the UpdateSubscriberNotification service method, as returned by SecurityLake.</returns>
         /// <exception cref="Amazon.SecurityLake.Model.AccessDeniedException">
         /// You do not have sufficient access to perform this action. Access denied errors appear
         /// when Amazon Security Lake explicitly or implicitly denies an authorization request.
@@ -2692,70 +2604,68 @@ namespace Amazon.SecurityLake
         /// Amazon Web Services action. An implicit denial occurs when there is no applicable
         /// Deny statement and also no applicable Allow statement.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.AccountNotFoundException">
-        /// Amazon Security Lake cannot find an Amazon Web Services account with the accountID
-        /// that you specified, or the account whose credentials you used to make this request
-        /// isn't a member of an organization.
+        /// <exception cref="Amazon.SecurityLake.Model.BadRequestException">
+        /// The request is malformed or contains an error such as an invalid parameter value or
+        /// a missing required parameter.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ConcurrentModificationException">
-        /// More than one process tried to modify a resource at the same time.
+        /// <exception cref="Amazon.SecurityLake.Model.ConflictException">
+        /// Occurs when a conflict with a previous successful write is detected. This generally
+        /// occurs when the previous write did not have time to propagate to the host serving
+        /// the current request. A retry (with appropriate backoff logic) is the recommended response
+        /// to this exception.
         /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.InternalServerException">
         /// Internal service exceptions are sometimes caused by transient issues. Before you start
         /// troubleshooting, perform the operation again.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.InvalidInputException">
-        /// The request was rejected because a value that's not valid or is out of range was supplied
-        /// for an input parameter.
-        /// </exception>
         /// <exception cref="Amazon.SecurityLake.Model.ResourceNotFoundException">
         /// The resource could not be found.
         /// </exception>
-        /// <exception cref="Amazon.SecurityLake.Model.ValidationException">
-        /// Your signing certificate could not be validated.
+        /// <exception cref="Amazon.SecurityLake.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
         /// </exception>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriptionNotificationConfiguration">REST API Reference for UpdateSubscriptionNotificationConfiguration Operation</seealso>
-        public virtual UpdateSubscriptionNotificationConfigurationResponse UpdateSubscriptionNotificationConfiguration(UpdateSubscriptionNotificationConfigurationRequest request)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriberNotification">REST API Reference for UpdateSubscriberNotification Operation</seealso>
+        public virtual UpdateSubscriberNotificationResponse UpdateSubscriberNotification(UpdateSubscriberNotificationRequest request)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateSubscriptionNotificationConfigurationRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance;
+            options.RequestMarshaller = UpdateSubscriberNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSubscriberNotificationResponseUnmarshaller.Instance;
 
-            return Invoke<UpdateSubscriptionNotificationConfigurationResponse>(request, options);
+            return Invoke<UpdateSubscriberNotificationResponse>(request, options);
         }
 
         /// <summary>
-        /// Initiates the asynchronous execution of the UpdateSubscriptionNotificationConfiguration operation.
+        /// Initiates the asynchronous execution of the UpdateSubscriberNotification operation.
         /// </summary>
         /// 
-        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscriptionNotificationConfiguration operation on AmazonSecurityLakeClient.</param>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSubscriberNotification operation on AmazonSecurityLakeClient.</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
         /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
         ///          procedure using the AsyncState property.</param>
         /// 
-        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSubscriptionNotificationConfiguration
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSubscriberNotification
         ///         operation.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriptionNotificationConfiguration">REST API Reference for UpdateSubscriptionNotificationConfiguration Operation</seealso>
-        public virtual IAsyncResult BeginUpdateSubscriptionNotificationConfiguration(UpdateSubscriptionNotificationConfigurationRequest request, AsyncCallback callback, object state)
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriberNotification">REST API Reference for UpdateSubscriberNotification Operation</seealso>
+        public virtual IAsyncResult BeginUpdateSubscriberNotification(UpdateSubscriberNotificationRequest request, AsyncCallback callback, object state)
         {
             var options = new InvokeOptions();
-            options.RequestMarshaller = UpdateSubscriptionNotificationConfigurationRequestMarshaller.Instance;
-            options.ResponseUnmarshaller = UpdateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance;
+            options.RequestMarshaller = UpdateSubscriberNotificationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSubscriberNotificationResponseUnmarshaller.Instance;
 
             return BeginInvoke(request, options, callback, state);
         }
 
         /// <summary>
-        /// Finishes the asynchronous execution of the  UpdateSubscriptionNotificationConfiguration operation.
+        /// Finishes the asynchronous execution of the  UpdateSubscriberNotification operation.
         /// </summary>
         /// 
-        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSubscriptionNotificationConfiguration.</param>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSubscriberNotification.</param>
         /// 
-        /// <returns>Returns a  UpdateSubscriptionNotificationConfigurationResult from SecurityLake.</returns>
-        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriptionNotificationConfiguration">REST API Reference for UpdateSubscriptionNotificationConfiguration Operation</seealso>
-        public virtual UpdateSubscriptionNotificationConfigurationResponse EndUpdateSubscriptionNotificationConfiguration(IAsyncResult asyncResult)
+        /// <returns>Returns a  UpdateSubscriberNotificationResult from SecurityLake.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/UpdateSubscriberNotification">REST API Reference for UpdateSubscriberNotification Operation</seealso>
+        public virtual UpdateSubscriberNotificationResponse EndUpdateSubscriberNotification(IAsyncResult asyncResult)
         {
-            return EndInvoke<UpdateSubscriptionNotificationConfigurationResponse>(asyncResult);
+            return EndInvoke<UpdateSubscriberNotificationResponse>(asyncResult);
         }
 
         #endregion

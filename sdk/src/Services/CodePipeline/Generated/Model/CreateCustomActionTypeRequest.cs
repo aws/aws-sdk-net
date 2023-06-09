@@ -31,7 +31,7 @@ namespace Amazon.CodePipeline.Model
     /// <summary>
     /// Container for the parameters to the CreateCustomActionType operation.
     /// Creates a new custom action that can be used in all pipelines associated with the
-    /// AWS account. Only used for custom actions.
+    /// Amazon Web Services account. Only used for custom actions.
     /// </summary>
     public partial class CreateCustomActionTypeRequest : AmazonCodePipelineRequest
     {
@@ -131,7 +131,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Provider. 
         /// <para>
-        /// The provider of the service used in the custom action, such as AWS CodeDeploy.
+        /// The provider of the service used in the custom action, such as CodeDeploy.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=35)]

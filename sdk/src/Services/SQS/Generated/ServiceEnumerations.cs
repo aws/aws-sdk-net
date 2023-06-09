@@ -43,6 +43,10 @@ namespace Amazon.SQS
         /// </summary>
         public static readonly MessageSystemAttributeName AWSTraceHeader = new MessageSystemAttributeName("AWSTraceHeader");
         /// <summary>
+        /// Constant DeadLetterQueueSourceArn for MessageSystemAttributeName
+        /// </summary>
+        public static readonly MessageSystemAttributeName DeadLetterQueueSourceArn = new MessageSystemAttributeName("DeadLetterQueueSourceArn");
+        /// <summary>
         /// Constant MessageDeduplicationId for MessageSystemAttributeName
         /// </summary>
         public static readonly MessageSystemAttributeName MessageDeduplicationId = new MessageSystemAttributeName("MessageDeduplicationId");

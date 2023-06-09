@@ -43,7 +43,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// The name of the pipeline for which you want to get information. Pipeline names must
-        /// be unique under an AWS user account.
+        /// be unique in an Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

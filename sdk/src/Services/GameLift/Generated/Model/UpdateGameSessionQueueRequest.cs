@@ -252,7 +252,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The maximum time, in seconds, that a new game session placement request remains in
         /// the queue. When a request exceeds this time, the game session placement changes to
-        /// a <code>TIMED_OUT</code> status.
+        /// a <code>TIMED_OUT</code> status. By default, this property is set to <code>600</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

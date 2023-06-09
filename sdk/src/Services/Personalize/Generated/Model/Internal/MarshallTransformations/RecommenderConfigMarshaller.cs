@@ -65,6 +65,17 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MinRecommendationRequestsPerSecond);
             }
 
+            if(requestObject.IsSetTrainingDataConfig())
+            {
+                context.Writer.WritePropertyName("trainingDataConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TrainingDataConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TrainingDataConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -80,9 +80,9 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Nonce. 
         /// <para>
-        /// A system-generated random number that AWS CodePipeline uses to ensure that the job
-        /// is being worked on by only one job worker. Get this number from the response to a
-        /// <a>GetThirdPartyJobDetails</a> request.
+        /// A system-generated random number that CodePipeline uses to ensure that the job is
+        /// being worked on by only one job worker. Get this number from the response to a <a>GetThirdPartyJobDetails</a>
+        /// request.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

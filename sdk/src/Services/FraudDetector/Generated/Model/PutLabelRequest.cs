@@ -79,7 +79,10 @@ namespace Amazon.FraudDetector.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Tags.
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// A collection of key and value pairs.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags

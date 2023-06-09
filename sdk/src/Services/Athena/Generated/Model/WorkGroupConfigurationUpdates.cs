@@ -232,7 +232,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property RemoveCustomerContentEncryptionConfiguration. 
         /// <para>
-        /// Removes content encryption configuration for a workgroup.
+        /// Removes content encryption configuration from an Apache Spark-enabled Athena workgroup.
         /// </para>
         /// </summary>
         public bool RemoveCustomerContentEncryptionConfiguration

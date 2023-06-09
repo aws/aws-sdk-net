@@ -44,11 +44,7 @@ namespace Amazon.Connect.Model
     /// <para>
     /// For a description of the historical metrics that are supported by <code>GetMetricDataV2</code>
     /// and <code>GetMetricData</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
-    /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>. 
-    /// </para>
-    ///  
-    /// <para>
-    /// This API is not available in the Amazon Web Services GovCloud (US) Regions.
+    /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
     /// </para>
     /// </summary>
     public partial class GetMetricDataV2Request : AmazonConnectRequest

@@ -78,6 +78,17 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHeaderOrder())
+            {
+                context.Writer.WritePropertyName("HeaderOrder");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = HeaderOrderMarshaller.Instance;
+                marshaller.Marshall(requestObject.HeaderOrder, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetHeaders())
             {
                 context.Writer.WritePropertyName("Headers");

@@ -806,6 +806,12 @@ namespace Amazon.FMS
         /// to enable for the Firewall Manager administrator account and for Organizations before
         /// you can access it.
         /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.
         /// </exception>
@@ -1394,6 +1400,12 @@ namespace Amazon.FMS
         /// might have tried to access a Region that's disabled by default, and that you need
         /// to enable for the Firewall Manager administrator account and for Organizations before
         /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
         /// </exception>
         /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
         /// The specified resource was not found.

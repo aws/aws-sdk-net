@@ -249,6 +249,106 @@ namespace Amazon.TimestreamWrite
 
 
     /// <summary>
+    /// Constants used for properties of type PartitionKeyEnforcementLevel.
+    /// </summary>
+    public class PartitionKeyEnforcementLevel : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OPTIONAL for PartitionKeyEnforcementLevel
+        /// </summary>
+        public static readonly PartitionKeyEnforcementLevel OPTIONAL = new PartitionKeyEnforcementLevel("OPTIONAL");
+        /// <summary>
+        /// Constant REQUIRED for PartitionKeyEnforcementLevel
+        /// </summary>
+        public static readonly PartitionKeyEnforcementLevel REQUIRED = new PartitionKeyEnforcementLevel("REQUIRED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PartitionKeyEnforcementLevel(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PartitionKeyEnforcementLevel FindValue(string value)
+        {
+            return FindValue<PartitionKeyEnforcementLevel>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PartitionKeyEnforcementLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PartitionKeyType.
+    /// </summary>
+    public class PartitionKeyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIMENSION for PartitionKeyType
+        /// </summary>
+        public static readonly PartitionKeyType DIMENSION = new PartitionKeyType("DIMENSION");
+        /// <summary>
+        /// Constant MEASURE for PartitionKeyType
+        /// </summary>
+        public static readonly PartitionKeyType MEASURE = new PartitionKeyType("MEASURE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PartitionKeyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PartitionKeyType FindValue(string value)
+        {
+            return FindValue<PartitionKeyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PartitionKeyType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type S3EncryptionOption.
     /// </summary>
     public class S3EncryptionOption : ConstantClass

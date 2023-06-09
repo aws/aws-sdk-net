@@ -67,6 +67,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAutotune())
+                {
+                    context.Writer.WritePropertyName("Autotune");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutotuneMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Autotune, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetHyperParameterTuningJobConfig())
                 {
                     context.Writer.WritePropertyName("HyperParameterTuningJobConfig");

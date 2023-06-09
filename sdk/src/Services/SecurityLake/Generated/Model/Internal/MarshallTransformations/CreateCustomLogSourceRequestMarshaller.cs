@@ -59,34 +59,44 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/v1/logsources/custom";
+            request.ResourcePath = "/v1/datalake/logsources/custom";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetCustomSourceName())
+                if(publicRequest.IsSetConfiguration())
                 {
-                    context.Writer.WritePropertyName("customSourceName");
-                    context.Writer.Write(publicRequest.CustomSourceName);
+                    context.Writer.WritePropertyName("configuration");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = CustomLogSourceConfigurationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Configuration, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
-                if(publicRequest.IsSetEventClass())
+                if(publicRequest.IsSetEventClasses())
                 {
-                    context.Writer.WritePropertyName("eventClass");
-                    context.Writer.Write(publicRequest.EventClass);
+                    context.Writer.WritePropertyName("eventClasses");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEventClassesListValue in publicRequest.EventClasses)
+                    {
+                            context.Writer.Write(publicRequestEventClassesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
-                if(publicRequest.IsSetGlueInvocationRoleArn())
+                if(publicRequest.IsSetSourceName())
                 {
-                    context.Writer.WritePropertyName("glueInvocationRoleArn");
-                    context.Writer.Write(publicRequest.GlueInvocationRoleArn);
+                    context.Writer.WritePropertyName("sourceName");
+                    context.Writer.Write(publicRequest.SourceName);
                 }
 
-                if(publicRequest.IsSetLogProviderAccountId())
+                if(publicRequest.IsSetSourceVersion())
                 {
-                    context.Writer.WritePropertyName("logProviderAccountId");
-                    context.Writer.Write(publicRequest.LogProviderAccountId);
+                    context.Writer.WritePropertyName("sourceVersion");
+                    context.Writer.Write(publicRequest.SourceVersion);
                 }
 
                 writer.WriteObjectEnd();

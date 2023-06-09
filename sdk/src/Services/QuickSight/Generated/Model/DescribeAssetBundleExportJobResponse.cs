@@ -237,7 +237,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// Indicates tha status of a job through its queueing and execution.
+        /// Indicates the status of a job through its queuing and execution.
         /// </para>
         ///  
         /// <para>

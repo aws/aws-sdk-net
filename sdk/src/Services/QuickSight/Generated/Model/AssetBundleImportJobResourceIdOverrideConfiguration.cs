@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// An optional structure that configures resource ID overrides for the import job
+    /// An optional structure that configures resource ID overrides for the import job.
     /// </summary>
     public partial class AssetBundleImportJobResourceIdOverrideConfiguration
     {

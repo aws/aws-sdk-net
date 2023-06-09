@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// Gets and sets the property CredentialPair. 
         /// <para>
         /// A username and password credential pair to be used to create the imported data source.
-        /// Leave this field blank if you are using an Secrets Manager Secret to provide credentials.
+        /// Keep this field blank if you are using a Secrets Manager secret to provide credentials.
         /// </para>
         /// </summary>
         [AWSProperty(Sensitive=true)]
@@ -59,8 +59,8 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property SecretArn. 
         /// <para>
-        /// The ARN of the Secrets Manager Secret to be used to create the imported data source
-        /// leave this field blank if you aren't using a Secret in place of a credential pair.
+        /// The ARN of the Secrets Manager secret that's used to create the imported data source.
+        /// Keep this field blank, unless you are using a secret in place of a credential pair.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

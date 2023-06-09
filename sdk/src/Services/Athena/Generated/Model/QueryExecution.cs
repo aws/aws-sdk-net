@@ -68,7 +68,8 @@ namespace Amazon.Athena.Model
         /// Gets and sets the property ExecutionParameters. 
         /// <para>
         /// A list of values for the parameters in a query. The values are applied sequentially
-        /// to the parameters in the query in the order in which the parameters occur.
+        /// to the parameters in the query in the order in which the parameters occur. The list
+        /// of parameters is not returned in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

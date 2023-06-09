@@ -34,86 +34,28 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class ListLogSourcesRequest : AmazonSecurityLakeRequest
     {
-        private List<string> _inputOrder = new List<string>();
-        private Dictionary<string, Dictionary<string, List<string>>> _listAllDimensions = new Dictionary<string, Dictionary<string, List<string>>>();
-        private List<string> _listSingleDimension = new List<string>();
-        private Dictionary<string, List<string>> _listTwoDimensions = new Dictionary<string, List<string>>();
+        private List<string> _accounts = new List<string>();
         private int? _maxResults;
         private string _nextToken;
+        private List<string> _regions = new List<string>();
+        private List<LogSourceResource> _sources = new List<LogSourceResource>();
 
         /// <summary>
-        /// Gets and sets the property InputOrder. 
+        /// Gets and sets the property Accounts. 
         /// <para>
-        /// Lists the log sources in input order, namely Region, source type, and member account.
+        /// The list of Amazon Web Services accounts for which log sources are displayed.
         /// </para>
         /// </summary>
-        public List<string> InputOrder
+        public List<string> Accounts
         {
-            get { return this._inputOrder; }
-            set { this._inputOrder = value; }
+            get { return this._accounts; }
+            set { this._accounts = value; }
         }
 
-        // Check to see if InputOrder property is set
-        internal bool IsSetInputOrder()
+        // Check to see if Accounts property is set
+        internal bool IsSetAccounts()
         {
-            return this._inputOrder != null && this._inputOrder.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ListAllDimensions. 
-        /// <para>
-        /// List the view of log sources for enabled Amazon Security Lake accounts for specific
-        /// Amazon Web Services sources from specific accounts and specific Regions.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, Dictionary<string, List<string>>> ListAllDimensions
-        {
-            get { return this._listAllDimensions; }
-            set { this._listAllDimensions = value; }
-        }
-
-        // Check to see if ListAllDimensions property is set
-        internal bool IsSetListAllDimensions()
-        {
-            return this._listAllDimensions != null && this._listAllDimensions.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ListSingleDimension. 
-        /// <para>
-        /// List the view of log sources for enabled Security Lake accounts for all Amazon Web
-        /// Services sources from specific accounts or specific Regions.
-        /// </para>
-        /// </summary>
-        public List<string> ListSingleDimension
-        {
-            get { return this._listSingleDimension; }
-            set { this._listSingleDimension = value; }
-        }
-
-        // Check to see if ListSingleDimension property is set
-        internal bool IsSetListSingleDimension()
-        {
-            return this._listSingleDimension != null && this._listSingleDimension.Count > 0; 
-        }
-
-        /// <summary>
-        /// Gets and sets the property ListTwoDimensions. 
-        /// <para>
-        /// Lists the view of log sources for enabled Security Lake accounts for specific Amazon
-        /// Web Services sources from specific accounts or specific Regions.
-        /// </para>
-        /// </summary>
-        public Dictionary<string, List<string>> ListTwoDimensions
-        {
-            get { return this._listTwoDimensions; }
-            set { this._listTwoDimensions = value; }
-        }
-
-        // Check to see if ListTwoDimensions property is set
-        internal bool IsSetListTwoDimensions()
-        {
-            return this._listTwoDimensions != null && this._listTwoDimensions.Count > 0; 
+            return this._accounts != null && this._accounts.Count > 0; 
         }
 
         /// <summary>
@@ -122,6 +64,7 @@ namespace Amazon.SecurityLake.Model
         /// The maximum number of accounts for which the log sources are displayed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }
@@ -151,6 +94,42 @@ namespace Amazon.SecurityLake.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Regions. 
+        /// <para>
+        /// The list of regions for which log sources are displayed.
+        /// </para>
+        /// </summary>
+        public List<string> Regions
+        {
+            get { return this._regions; }
+            set { this._regions = value; }
+        }
+
+        // Check to see if Regions property is set
+        internal bool IsSetRegions()
+        {
+            return this._regions != null && this._regions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Sources. 
+        /// <para>
+        /// The list of sources for which log sources are displayed.
+        /// </para>
+        /// </summary>
+        public List<LogSourceResource> Sources
+        {
+            get { return this._sources; }
+            set { this._sources = value; }
+        }
+
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
+        {
+            return this._sources != null && this._sources.Count > 0; 
         }
 
     }

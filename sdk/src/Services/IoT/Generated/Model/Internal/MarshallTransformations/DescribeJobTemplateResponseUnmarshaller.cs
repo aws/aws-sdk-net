@@ -69,6 +69,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("destinationPackageVersions", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    response.DestinationPackageVersions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("document", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

@@ -29,9 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CustomerProfiles.Model
 {
     /// <summary>
-    /// The filter applied to ListProfileObjects response to include profile objects with
-    /// the specified index values. This filter is only supported for ObjectTypeName _asset,
-    /// _case and _order.
+    /// The filter applied to <code>ListProfileObjects</code> response to include profile
+    /// objects with the specified index values.
     /// </summary>
     public partial class ObjectFilter
     {
@@ -41,10 +40,11 @@ namespace Amazon.CustomerProfiles.Model
         /// <summary>
         /// Gets and sets the property KeyName. 
         /// <para>
-        /// A searchable identifier of a standard profile object. The predefined keys you can
-        /// use to search for _asset include: _assetId, _assetName, _serialNumber. The predefined
-        /// keys you can use to search for _case include: _caseId. The predefined keys you can
-        /// use to search for _order include: _orderId.
+        /// A searchable identifier of a profile object. The predefined keys you can use to search
+        /// for <code>_asset</code> include: <code>_assetId</code>, <code>_assetName</code>, and
+        /// <code>_serialNumber</code>. The predefined keys you can use to search for <code>_case</code>
+        /// include: <code>_caseId</code>. The predefined keys you can use to search for <code>_order</code>
+        /// include: <code>_orderId</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=64)]

@@ -34,6 +34,7 @@ namespace Amazon.Inspector2.Model
     public partial class CoveredResource
     {
         private string _accountId;
+        private DateTime? _lastScannedAt;
         private string _resourceId;
         private ResourceScanMetadata _resourceMetadata;
         private CoverageResourceType _resourceType;
@@ -57,6 +58,24 @@ namespace Amazon.Inspector2.Model
         internal bool IsSetAccountId()
         {
             return this._accountId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LastScannedAt. 
+        /// <para>
+        /// The date and time the resource was last checked for vulnerabilities.
+        /// </para>
+        /// </summary>
+        public DateTime LastScannedAt
+        {
+            get { return this._lastScannedAt.GetValueOrDefault(); }
+            set { this._lastScannedAt = value; }
+        }
+
+        // Check to see if LastScannedAt property is set
+        internal bool IsSetLastScannedAt()
+        {
+            return this._lastScannedAt.HasValue; 
         }
 
         /// <summary>

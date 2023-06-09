@@ -60,6 +60,7 @@ namespace Amazon.RDS.Model
         private bool? _enableCustomerOwnedIp;
         private bool? _enableIAMDatabaseAuthentication;
         private bool? _enablePerformanceInsights;
+        private string _engine;
         private string _engineVersion;
         private int? _iops;
         private string _licenseModel;
@@ -928,6 +929,64 @@ namespace Amazon.RDS.Model
         internal bool IsSetEnablePerformanceInsights()
         {
             return this._enablePerformanceInsights.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The target Oracle DB engine when you convert a non-CDB to a CDB. This intermediate
+        /// step is necessary to upgrade an Oracle Database 19c non-CDB to an Oracle Database
+        /// 21c CDB.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later
+        /// RU.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note the following limitations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't convert a CDB to a non-CDB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't convert a replica database.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't convert the existing custom parameter or option group when it has options
+        /// or parameters that are permanent or persistent. In this situation, the DB instance
+        /// reverts to the default option and parameter group. To avoid reverting to the default,
+        /// specify a new parameter group with <code>--db-parameter-group-name</code> and a new
+        /// option group with <code>--option-group-name</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
         }
 
         /// <summary>

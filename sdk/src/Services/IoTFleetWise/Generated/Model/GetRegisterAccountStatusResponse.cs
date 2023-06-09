@@ -159,7 +159,6 @@ namespace Amazon.IoTFleetWise.Model
         ///  Information about the registered Amazon Timestream resources or errors, if any.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public TimestreamRegistrationResponse TimestreamRegistrationResponse
         {
             get { return this._timestreamRegistrationResponse; }

@@ -95,6 +95,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetPreset())
+                {
+                    context.Writer.WritePropertyName("preset");
+                    context.Writer.Write(publicRequest.Preset);
+                }
+
                 if(publicRequest.IsSetRecordingConfigurationArn())
                 {
                     context.Writer.WritePropertyName("recordingConfigurationArn");

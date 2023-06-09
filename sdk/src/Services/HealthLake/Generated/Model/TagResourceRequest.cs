@@ -30,7 +30,7 @@ namespace Amazon.HealthLake.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Adds a user specifed key and value tag to a Data Store.
+    /// Adds a user specified key and value tag to a Data Store.
     /// </summary>
     public partial class TagResourceRequest : AmazonHealthLakeRequest
     {

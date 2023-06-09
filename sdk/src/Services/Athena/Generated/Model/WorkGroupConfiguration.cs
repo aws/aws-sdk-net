@@ -92,7 +92,8 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property CustomerContentEncryptionConfiguration. 
         /// <para>
-        /// Specifies the KMS key that is used to encrypt the user's data stores in Athena.
+        /// Specifies the KMS key that is used to encrypt the user's data stores in Athena. This
+        /// setting does not apply to Athena SQL workgroups.
         /// </para>
         /// </summary>
         public CustomerContentEncryptionConfiguration CustomerContentEncryptionConfiguration

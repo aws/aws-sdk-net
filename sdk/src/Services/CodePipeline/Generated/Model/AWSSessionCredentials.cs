@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents an AWS session credentials object. These credentials are temporary credentials
-    /// that are issued by AWS Secure Token Service (STS). They can be used to access input
-    /// and output artifacts in the S3 bucket used to store artifact for the pipeline in AWS
-    /// CodePipeline.
+    /// Represents an Amazon Web Services session credentials object. These credentials are
+    /// temporary credentials that are issued by Amazon Web Services Secure Token Service
+    /// (STS). They can be used to access input and output artifacts in the S3 bucket used
+    /// to store artifact for the pipeline in CodePipeline.
     /// </summary>
     public partial class AWSSessionCredentials
     {

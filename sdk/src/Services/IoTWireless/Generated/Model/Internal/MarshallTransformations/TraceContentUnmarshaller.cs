@@ -70,6 +70,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.LogLevel = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MulticastFrameInfo", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.MulticastFrameInfo = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("WirelessDeviceFrameInfo", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

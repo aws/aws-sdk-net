@@ -39,7 +39,14 @@ namespace Amazon.Personalize.Model
     /// <para>
     ///  <b>Minimum recommendation requests per second</b> 
     /// </para>
-    ///  
+    ///  <important> 
+    /// <para>
+    /// A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
+    /// recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the
+    /// default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code>
+    /// as necessary.
+    /// </para>
+    ///  </important> 
     /// <para>
     /// When you create a recommender, you can configure the recommender's minimum recommendation
     /// requests per second. The minimum recommendation requests per second (<code>minRecommendationRequestsPerSecond</code>)
@@ -209,7 +216,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
         /// to apply to the recommender.
         /// </para>
         /// </summary>

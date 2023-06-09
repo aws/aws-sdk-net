@@ -70,10 +70,22 @@ namespace Amazon.ConfigService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AllSupported = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("exclusionByResourceTypes", targetDepth))
+                {
+                    var unmarshaller = ExclusionByResourceTypesUnmarshaller.Instance;
+                    unmarshalledObject.ExclusionByResourceTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("includeGlobalResourceTypes", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.IncludeGlobalResourceTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("recordingStrategy", targetDepth))
+                {
+                    var unmarshaller = RecordingStrategyUnmarshaller.Instance;
+                    unmarshalledObject.RecordingStrategy = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceTypes", targetDepth))

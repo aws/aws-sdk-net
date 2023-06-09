@@ -1951,7 +1951,7 @@ namespace Amazon.IoT
         ///  <note> 
         /// <para>
         /// The CSR must include a public key that is either an RSA key with a length of at least
-        /// 2048 bits or an ECC key from NIST P-25 or NIST P-384 curves. For supported certificates,
+        /// 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. For supported certificates,
         /// consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
         /// Certificate signing algorithms supported by IoT</a>. 
         /// </para>
@@ -2051,7 +2051,7 @@ namespace Amazon.IoT
         ///  <note> 
         /// <para>
         /// The CSR must include a public key that is either an RSA key with a length of at least
-        /// 2048 bits or an ECC key from NIST P-25 or NIST P-384 curves. For supported certificates,
+        /// 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. For supported certificates,
         /// consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
         /// Certificate signing algorithms supported by IoT</a>. 
         /// </para>
@@ -2153,7 +2153,7 @@ namespace Amazon.IoT
         ///  <note> 
         /// <para>
         /// The CSR must include a public key that is either an RSA key with a length of at least
-        /// 2048 bits or an ECC key from NIST P-25 or NIST P-384 curves. For supported certificates,
+        /// 2048 bits or an ECC key from NIST P-256 or NIST P-384 curves. For supported certificates,
         /// consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms">
         /// Certificate signing algorithms supported by IoT</a>. 
         /// </para>
@@ -3174,6 +3174,160 @@ namespace Amazon.IoT
         public virtual CreateOTAUpdateResponse EndCreateOTAUpdate(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateOTAUpdateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreatePackage
+
+        /// <summary>
+        /// Creates an IoT software package that can be deployed to your fleet.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePackage</a>
+        /// and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+        /// actions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackage service method.</param>
+        /// 
+        /// <returns>The response from the CreatePackage service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// A resource with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceQuotaExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
+        public virtual CreatePackageResponse CreatePackage(CreatePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePackageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackage operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePackage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
+        public virtual IAsyncResult BeginCreatePackage(CreatePackageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePackageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePackage.</param>
+        /// 
+        /// <returns>Returns a  CreatePackageResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackage">REST API Reference for CreatePackage Operation</seealso>
+        public virtual CreatePackageResponse EndCreatePackage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePackageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreatePackageVersion
+
+        /// <summary>
+        /// Creates a new version for an existing IoT software package.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePackageVersion</a>
+        /// and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+        /// actions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the CreatePackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.ConflictException">
+        /// A resource with the same name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ServiceQuotaExceededException">
+        /// A limit has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackageVersion">REST API Reference for CreatePackageVersion Operation</seealso>
+        public virtual CreatePackageVersionResponse CreatePackageVersion(CreatePackageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePackageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<CreatePackageVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePackageVersion operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePackageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackageVersion">REST API Reference for CreatePackageVersion Operation</seealso>
+        public virtual IAsyncResult BeginCreatePackageVersion(CreatePackageVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreatePackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreatePackageVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePackageVersion.</param>
+        /// 
+        /// <returns>Returns a  CreatePackageVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/CreatePackageVersion">REST API Reference for CreatePackageVersion Operation</seealso>
+        public virtual CreatePackageVersionResponse EndCreatePackageVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreatePackageVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -5751,6 +5905,150 @@ namespace Amazon.IoT
         public virtual DeleteOTAUpdateResponse EndDeleteOTAUpdate(IAsyncResult asyncResult)
         {
             return EndInvoke<DeleteOTAUpdateResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePackage
+
+        /// <summary>
+        /// Deletes a specific version from a software package.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> All package versions must be deleted before deleting the software package.
+        /// </para>
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePackageVersion</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
+        /// 
+        /// <returns>The response from the DeletePackage service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        public virtual DeletePackageResponse DeletePackage(DeletePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePackageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePackage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        public virtual IAsyncResult BeginDeletePackage(DeletePackageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePackageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePackage.</param>
+        /// 
+        /// <returns>Returns a  DeletePackageResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        public virtual DeletePackageResponse EndDeletePackage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePackageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeletePackageVersion
+
+        /// <summary>
+        /// Deletes a specific version from a software package.
+        /// 
+        ///  
+        /// <para>
+        ///  <b>Note:</b> If a package version is designated as default, you must remove the designation
+        /// from the package using the <a>UpdatePackage</a> action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the DeletePackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackageVersion">REST API Reference for DeletePackageVersion Operation</seealso>
+        public virtual DeletePackageVersionResponse DeletePackageVersion(DeletePackageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePackageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DeletePackageVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackageVersion operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePackageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackageVersion">REST API Reference for DeletePackageVersion Operation</seealso>
+        public virtual IAsyncResult BeginDeletePackageVersion(DeletePackageVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeletePackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeletePackageVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePackageVersion.</param>
+        /// 
+        /// <returns>Returns a  DeletePackageVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/DeletePackageVersion">REST API Reference for DeletePackageVersion Operation</seealso>
+        public virtual DeletePackageVersionResponse EndDeletePackageVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeletePackageVersionResponse>(asyncResult);
         }
 
         #endregion
@@ -10940,6 +11238,219 @@ namespace Amazon.IoT
 
         #endregion
         
+        #region  GetPackage
+
+        /// <summary>
+        /// Gets information about the specified software package.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackage</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPackage service method.</param>
+        /// 
+        /// <returns>The response from the GetPackage service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackage">REST API Reference for GetPackage Operation</seealso>
+        public virtual GetPackageResponse GetPackage(GetPackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPackageResponseUnmarshaller.Instance;
+
+            return Invoke<GetPackageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPackage operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPackage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackage">REST API Reference for GetPackage Operation</seealso>
+        public virtual IAsyncResult BeginGetPackage(GetPackageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPackageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPackage.</param>
+        /// 
+        /// <returns>Returns a  GetPackageResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackage">REST API Reference for GetPackage Operation</seealso>
+        public virtual GetPackageResponse EndGetPackage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPackageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPackageConfiguration
+
+        /// <summary>
+        /// Gets information about the specified software package's configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackageConfiguration</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetPackageConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageConfiguration">REST API Reference for GetPackageConfiguration Operation</seealso>
+        public virtual GetPackageConfigurationResponse GetPackageConfiguration(GetPackageConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPackageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPackageConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetPackageConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPackageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageConfiguration operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPackageConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageConfiguration">REST API Reference for GetPackageConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginGetPackageConfiguration(GetPackageConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPackageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPackageConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPackageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPackageConfiguration.</param>
+        /// 
+        /// <returns>Returns a  GetPackageConfigurationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageConfiguration">REST API Reference for GetPackageConfiguration Operation</seealso>
+        public virtual GetPackageConfigurationResponse EndGetPackageConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPackageConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetPackageVersion
+
+        /// <summary>
+        /// Gets information about the specified package version. 
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackageVersion</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the GetPackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageVersion">REST API Reference for GetPackageVersion Operation</seealso>
+        public virtual GetPackageVersionResponse GetPackageVersion(GetPackageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPackageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<GetPackageVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPackageVersion operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPackageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageVersion">REST API Reference for GetPackageVersion Operation</seealso>
+        public virtual IAsyncResult BeginGetPackageVersion(GetPackageVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetPackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetPackageVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPackageVersion.</param>
+        /// 
+        /// <returns>Returns a  GetPackageVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/GetPackageVersion">REST API Reference for GetPackageVersion Operation</seealso>
+        public virtual GetPackageVersionResponse EndGetPackageVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetPackageVersionResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetPercentiles
 
         /// <summary>
@@ -13740,6 +14251,146 @@ namespace Amazon.IoT
         public virtual ListOutgoingCertificatesResponse EndListOutgoingCertificates(IAsyncResult asyncResult)
         {
             return EndInvoke<ListOutgoingCertificatesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPackages
+
+        /// <summary>
+        /// Lists the software packages associated to the account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPackages</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPackages service method.</param>
+        /// 
+        /// <returns>The response from the ListPackages service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackages">REST API Reference for ListPackages Operation</seealso>
+        public virtual ListPackagesResponse ListPackages(ListPackagesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPackagesResponseUnmarshaller.Instance;
+
+            return Invoke<ListPackagesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPackages operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPackages operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPackages
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackages">REST API Reference for ListPackages Operation</seealso>
+        public virtual IAsyncResult BeginListPackages(ListPackagesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPackagesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPackagesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPackages operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPackages.</param>
+        /// 
+        /// <returns>Returns a  ListPackagesResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackages">REST API Reference for ListPackages Operation</seealso>
+        public virtual ListPackagesResponse EndListPackages(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPackagesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListPackageVersions
+
+        /// <summary>
+        /// Lists the software package versions associated to the account.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPackageVersions</a>
+        /// action.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListPackageVersions service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackageVersions">REST API Reference for ListPackageVersions Operation</seealso>
+        public virtual ListPackageVersionsResponse ListPackageVersions(ListPackageVersionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPackageVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPackageVersionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPackageVersionsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPackageVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPackageVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackageVersions">REST API Reference for ListPackageVersions Operation</seealso>
+        public virtual IAsyncResult BeginListPackageVersions(ListPackageVersionsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPackageVersionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPackageVersionsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPackageVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPackageVersions.</param>
+        /// 
+        /// <returns>Returns a  ListPackageVersionsResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/ListPackageVersions">REST API Reference for ListPackageVersions Operation</seealso>
+        public virtual ListPackageVersionsResponse EndListPackageVersions(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListPackageVersionsResponse>(asyncResult);
         }
 
         #endregion
@@ -19592,6 +20243,225 @@ namespace Amazon.IoT
         public virtual UpdateMitigationActionResponse EndUpdateMitigationAction(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateMitigationActionResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePackage
+
+        /// <summary>
+        /// Updates the supported fields for a specific package.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackage</a>
+        /// and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+        /// actions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackage service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePackage service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
+        public virtual UpdatePackageResponse UpdatePackage(UpdatePackageRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackageResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePackageResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackage operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePackage
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePackage(UpdatePackageRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackageRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackageResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePackage operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePackage.</param>
+        /// 
+        /// <returns>Returns a  UpdatePackageResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackage">REST API Reference for UpdatePackage Operation</seealso>
+        public virtual UpdatePackageResponse EndUpdatePackage(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePackageResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePackageConfiguration
+
+        /// <summary>
+        /// Updates the package configuration.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackageConfiguration</a>
+        /// and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
+        /// actions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackageConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePackageConfiguration service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageConfiguration">REST API Reference for UpdatePackageConfiguration Operation</seealso>
+        public virtual UpdatePackageConfigurationResponse UpdatePackageConfiguration(UpdatePackageConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackageConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePackageConfigurationResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePackageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackageConfiguration operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePackageConfiguration
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageConfiguration">REST API Reference for UpdatePackageConfiguration Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePackageConfiguration(UpdatePackageConfigurationRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackageConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackageConfigurationResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePackageConfiguration operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePackageConfiguration.</param>
+        /// 
+        /// <returns>Returns a  UpdatePackageConfigurationResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageConfiguration">REST API Reference for UpdatePackageConfiguration Operation</seealso>
+        public virtual UpdatePackageConfigurationResponse EndUpdatePackageConfiguration(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePackageConfigurationResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdatePackageVersion
+
+        /// <summary>
+        /// Updates the supported fields for a specific package version.
+        /// 
+        ///  
+        /// <para>
+        /// Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackageVersion</a>
+        /// and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a>
+        /// actions.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePackageVersion service method, as returned by IoT.</returns>
+        /// <exception cref="Amazon.IoT.Model.InternalServerException">
+        /// Internal error from the service that indicates an unexpected error or that the service
+        /// is unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ResourceNotFoundException">
+        /// The specified resource does not exist.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ThrottlingException">
+        /// The rate exceeds the limit.
+        /// </exception>
+        /// <exception cref="Amazon.IoT.Model.ValidationException">
+        /// The request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageVersion">REST API Reference for UpdatePackageVersion Operation</seealso>
+        public virtual UpdatePackageVersionResponse UpdatePackageVersion(UpdatePackageVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackageVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdatePackageVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePackageVersion operation on AmazonIoTClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePackageVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageVersion">REST API Reference for UpdatePackageVersion Operation</seealso>
+        public virtual IAsyncResult BeginUpdatePackageVersion(UpdatePackageVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdatePackageVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdatePackageVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePackageVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePackageVersion.</param>
+        /// 
+        /// <returns>Returns a  UpdatePackageVersionResult from IoT.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/iot-2015-05-28/UpdatePackageVersion">REST API Reference for UpdatePackageVersion Operation</seealso>
+        public virtual UpdatePackageVersionResponse EndUpdatePackageVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdatePackageVersionResponse>(asyncResult);
         }
 
         #endregion

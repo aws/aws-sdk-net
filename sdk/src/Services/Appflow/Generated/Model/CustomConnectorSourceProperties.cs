@@ -34,6 +34,7 @@ namespace Amazon.Appflow.Model
     public partial class CustomConnectorSourceProperties
     {
         private Dictionary<string, string> _customProperties = new Dictionary<string, string>();
+        private DataTransferApi _dataTransferApi;
         private string _entityName;
 
         /// <summary>
@@ -53,6 +54,24 @@ namespace Amazon.Appflow.Model
         internal bool IsSetCustomProperties()
         {
             return this._customProperties != null && this._customProperties.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DataTransferApi. 
+        /// <para>
+        /// The API of the connector application that Amazon AppFlow uses to transfer your data.
+        /// </para>
+        /// </summary>
+        public DataTransferApi DataTransferApi
+        {
+            get { return this._dataTransferApi; }
+            set { this._dataTransferApi = value; }
+        }
+
+        // Check to see if DataTransferApi property is set
+        internal bool IsSetDataTransferApi()
+        {
+            return this._dataTransferApi != null;
         }
 
         /// <summary>

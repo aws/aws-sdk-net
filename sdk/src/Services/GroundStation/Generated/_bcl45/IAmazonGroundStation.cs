@@ -769,7 +769,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns the number of minutes used by account.
+        /// Returns the number of reserved minutes used by account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMinuteUsage service method.</param>
         /// 
@@ -789,7 +789,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns the number of minutes used by account.
+        /// Returns the number of reserved minutes used by account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMinuteUsage service method.</param>
         /// <param name="cancellationToken">

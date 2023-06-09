@@ -123,7 +123,7 @@ namespace Amazon.Connect.Model
         /// form.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=40)]
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string RefId
         {
             get { return this._refId; }

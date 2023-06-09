@@ -108,8 +108,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property MultiRegionEnabled. 
         /// <para>
-        /// Indicates whether the event data store includes events from all regions, or only from
-        /// the region in which it was created.
+        /// Indicates whether the event data store includes events from all Regions, or only from
+        /// the Region in which it was created.
         /// </para>
         /// </summary>
         [Obsolete("MultiRegionEnabled is no longer returned by ListEventDataStores")]
@@ -186,7 +186,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of an event data store. Values are <code>ENABLED</code> and <code>PENDING_DELETION</code>.
+        /// The status of an event data store.
         /// </para>
         /// </summary>
         [Obsolete("Status is no longer returned by ListEventDataStores")]

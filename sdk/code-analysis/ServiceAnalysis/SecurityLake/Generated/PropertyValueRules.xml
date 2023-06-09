@@ -1,40 +1,31 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateCustomLogSourceRequest.CustomSourceName</property>
+    <property>Amazon.SecurityLake.Model.CreateCustomLogSourceRequest.SourceName</property>
+    <min>1</min>
+    <max>64</max>
     <pattern>^[\\\w\-_:/.]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateCustomLogSourceRequest.GlueInvocationRoleArn</property>
-    <pattern>^arn:.*</pattern>
+    <property>Amazon.SecurityLake.Model.CreateCustomLogSourceRequest.SourceVersion</property>
+    <min>1</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateCustomLogSourceRequest.LogProviderAccountId</property>
-    <min>12</min>
-    <max>12</max>
-    <pattern>^\d+$</pattern>
+    <property>Amazon.SecurityLake.Model.CreateDataLakeRequest.MetaStoreManagerRoleArn</property>
+    <pattern>^arn:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateDatalakeRequest.MetaStoreManagerRoleArn</property>
-    <pattern>^arn:.*</pattern>
+    <property>Amazon.SecurityLake.Model.CreateDataLakeExceptionSubscriptionRequest.ExceptionTimeToLive</property>
+    <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateDatalakeDelegatedAdminRequest.Account</property>
+    <property>Amazon.SecurityLake.Model.CreateDataLakeExceptionSubscriptionRequest.NotificationEndpoint</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateDatalakeExceptionsSubscriptionRequest.NotificationEndpoint</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateSubscriberRequest.AccountId</property>
-    <min>12</min>
-    <max>12</max>
-    <pattern>^\d+$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateSubscriberRequest.ExternalId</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <property>Amazon.SecurityLake.Model.CreateDataLakeExceptionSubscriptionRequest.SubscriptionProtocol</property>
+    <pattern>^[a-z\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.CreateSubscriberRequest.SubscriberDescription</property>
@@ -46,80 +37,125 @@
     <max>64</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateSubscriberResponse.ResourceShareName</property>
-    <pattern>^LakeFormation(?:-V[0-9]+)-([a-zA-Z0-9]+)-([\\\w\-_:/.@=+]*)$</pattern>
+    <property>Amazon.SecurityLake.Model.CreateSubscriberNotificationRequest.SubscriberId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateSubscriberResponse.RoleArn</property>
-    <pattern>^arn:.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateSubscriberResponse.SubscriptionId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateSubscriptionNotificationConfigurationRequest.RoleArn</property>
-    <pattern>^arn:.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateSubscriptionNotificationConfigurationRequest.SubscriptionEndpoint</property>
-    <pattern>^(arn:aws:.+$|https?://.+$)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateSubscriptionNotificationConfigurationRequest.SubscriptionId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.CreateSubscriptionNotificationConfigurationResponse.QueueArn</property>
+    <property>Amazon.SecurityLake.Model.CreateSubscriberNotificationResponse.SubscriberEndpoint</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.DeleteDatalakeDelegatedAdminRequest.Account</property>
+    <property>Amazon.SecurityLake.Model.DeleteCustomLogSourceRequest.SourceName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[\\\w\-_:/.]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DeleteCustomLogSourceRequest.SourceVersion</property>
+    <min>1</min>
+    <max>32</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DeleteSubscriberRequest.SubscriberId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DeleteSubscriberNotificationRequest.SubscriberId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.GetDataLakeExceptionSubscriptionResponse.NotificationEndpoint</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.DeleteDatalakeExceptionsSubscriptionResponse.Status</property>
+    <property>Amazon.SecurityLake.Model.GetDataLakeExceptionSubscriptionResponse.SubscriptionProtocol</property>
+    <pattern>^[a-z\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.GetDataLakeSourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.GetDataLakeSourcesRequest.NextToken</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.DeleteSubscriptionNotificationConfigurationRequest.SubscriptionId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <property>Amazon.SecurityLake.Model.GetDataLakeSourcesResponse.DataLakeArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:securitylake:[A-za-z0-9_/.\-]{0,63}:[A-za-z0-9_/.\-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.\-]{0,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.GetDatalakeStatusRequest.NextToken</property>
+    <property>Amazon.SecurityLake.Model.GetDataLakeSourcesResponse.NextToken</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.GetDatalakeStatusResponse.NextToken</property>
+    <property>Amazon.SecurityLake.Model.GetSubscriberRequest.SubscriberId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.ListDataLakeExceptionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.ListDataLakeExceptionsRequest.NextToken</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.ListDatalakeExceptionsRequest.NextToken</property>
+    <property>Amazon.SecurityLake.Model.ListDataLakeExceptionsResponse.NextToken</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.ListDatalakeExceptionsResponse.NextToken</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <property>Amazon.SecurityLake.Model.ListLogSourcesRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.ListLogSourcesRequest.NextToken</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.UpdateDatalakeExceptionsExpiryRequest.ExceptionMessageExpiry</property>
+    <property>Amazon.SecurityLake.Model.ListLogSourcesResponse.NextToken</property>
+    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.ListSubscribersRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.ListSubscribersRequest.NextToken</property>
+    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.ListSubscribersResponse.NextToken</property>
+    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.RegisterDataLakeDelegatedAdministratorRequest.AccountId</property>
+    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.UpdateDataLakeExceptionSubscriptionRequest.ExceptionTimeToLive</property>
     <min>1</min>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.UpdateDatalakeExceptionsSubscriptionRequest.NotificationEndpoint</property>
+    <property>Amazon.SecurityLake.Model.UpdateDataLakeExceptionSubscriptionRequest.NotificationEndpoint</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.UpdateSubscriberRequest.ExternalId</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <property>Amazon.SecurityLake.Model.UpdateDataLakeExceptionSubscriptionRequest.SubscriptionProtocol</property>
+    <pattern>^[a-z\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.UpdateSubscriberRequest.SubscriberDescription</property>
     <pattern>^[\\\w\s\-_:/,.@=+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.UpdateSubscriberRequest.SubscriberId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.UpdateSubscriberRequest.SubscriberName</property>
@@ -128,66 +164,133 @@
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.UpdateSubscriptionNotificationConfigurationRequest.RoleArn</property>
-    <pattern>^arn:.*</pattern>
+    <property>Amazon.SecurityLake.Model.UpdateSubscriberNotificationRequest.SubscriberId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.UpdateSubscriptionNotificationConfigurationRequest.SubscriptionEndpoint</property>
-    <pattern>^(arn:aws:.+$|https?://.+$)</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.UpdateSubscriptionNotificationConfigurationRequest.SubscriptionId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.UpdateSubscriptionNotificationConfigurationResponse.QueueArn</property>
+    <property>Amazon.SecurityLake.Model.UpdateSubscriberNotificationResponse.SubscriberEndpoint</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.Failures.ExceptionMessage</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <property>Amazon.SecurityLake.Model.AwsIdentity.ExternalId</property>
+    <min>2</min>
+    <max>1224</max>
+    <pattern>^[\w+=,.@:\/-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.Failures.Remediation</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <property>Amazon.SecurityLake.Model.AwsIdentity.Principal</property>
+    <pattern>^([0-9]{12}|[a-z0-9\.\-]*\.(amazonaws|amazon)\.com)$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.FailuresResponse.Region</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+    <property>Amazon.SecurityLake.Model.AwsLogSourceConfiguration.SourceVersion</property>
+    <pattern>^(latest|[0-9]\.[0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.LakeConfigurationRequest.ReplicationRoleArn</property>
-    <pattern>^arn:.*</pattern>
+    <property>Amazon.SecurityLake.Model.AwsLogSourceResource.SourceVersion</property>
+    <pattern>^(latest|[0-9]\.[0-9])$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.LakeConfigurationResponse.ReplicationRoleArn</property>
-    <pattern>^arn:.*</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.ProtocolAndNotificationEndpoint.Endpoint</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.ProtocolAndNotificationEndpoint.Protocol</property>
-    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
-  </property-value-rule>
-  <property-value-rule>
-    <property>Amazon.SecurityLake.Model.RetentionSetting.RetentionPeriod</property>
+    <property>Amazon.SecurityLake.Model.CustomLogSourceAttributes.CrawlerArn</property>
     <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:securitylake:[A-za-z0-9_/.\-]{0,63}:[A-za-z0-9_/.\-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.\-]{0,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.SourceType.CustomSourceType</property>
+    <property>Amazon.SecurityLake.Model.CustomLogSourceAttributes.DatabaseArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:securitylake:[A-za-z0-9_/.\-]{0,63}:[A-za-z0-9_/.\-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.\-]{0,127}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.CustomLogSourceAttributes.TableArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:securitylake:[A-za-z0-9_/.\-]{0,63}:[A-za-z0-9_/.\-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.\-]{0,127}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.CustomLogSourceCrawlerConfiguration.RoleArn</property>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.CustomLogSourceProvider.Location</property>
+    <min>0</min>
+    <max>1024</max>
+    <pattern>^s3[an]?://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/[^/].*)+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.CustomLogSourceProvider.RoleArn</property>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.CustomLogSourceResource.SourceName</property>
+    <min>1</min>
+    <max>64</max>
     <pattern>^[\\\w\-_:/.]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.SubscriberResource.AccountId</property>
-    <min>12</min>
-    <max>12</max>
-    <pattern>^\d+$</pattern>
+    <property>Amazon.SecurityLake.Model.CustomLogSourceResource.SourceVersion</property>
+    <min>1</min>
+    <max>32</max>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.SubscriberResource.ExternalId</property>
+    <property>Amazon.SecurityLake.Model.DataLakeAutoEnableNewAccountConfiguration.Region</property>
+    <pattern>^(af|ap|ca|eu|me|sa|us)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DataLakeConfiguration.Region</property>
+    <pattern>^(af|ap|ca|eu|me|sa|us)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DataLakeException.Exception</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DataLakeException.Region</property>
+    <pattern>^(af|ap|ca|eu|me|sa|us)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DataLakeException.Remediation</property>
+    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DataLakeLifecycleExpiration.Days</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DataLakeLifecycleTransition.Days</property>
+    <min>1</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DataLakeReplicationConfiguration.RoleArn</property>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DataLakeResource.DataLakeArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:securitylake:[A-za-z0-9_/.\-]{0,63}:[A-za-z0-9_/.\-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.\-]{0,127}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.DataLakeResource.Region</property>
+    <pattern>^(af|ap|ca|eu|me|sa|us)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-\d+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.HttpsNotificationConfiguration.Endpoint</property>
+    <pattern>^https?://.+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.HttpsNotificationConfiguration.TargetRoleArn</property>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.LogSource.Account</property>
+    <min>12</min>
+    <max>12</max>
+    <pattern>^[0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.LogSource.Region</property>
+    <pattern>^(af|ap|ca|eu|me|sa|us)-(central|north|(north(?:east|west))|south|south(?:east|west)|east|west)-\d+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.SubscriberResource.ResourceShareName</property>
@@ -195,18 +298,28 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.SubscriberResource.RoleArn</property>
-    <pattern>^arn:.*</pattern>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.SubscriberResource.SubscriberArn</property>
+    <min>1</min>
+    <max>1011</max>
+    <pattern>^arn:aws:securitylake:[A-za-z0-9_/.\-]{0,63}:[A-za-z0-9_/.\-]{0,63}:[A-Za-z0-9][A-za-z0-9_/.\-]{0,127}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SecurityLake.Model.SubscriberResource.SubscriberDescription</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.SubscriberResource.SubscriberName</property>
+    <property>Amazon.SecurityLake.Model.SubscriberResource.SubscriberEndpoint</property>
     <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
   <property-value-rule>
-    <property>Amazon.SecurityLake.Model.SubscriberResource.SubscriptionId</property>
-    <pattern>[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}</pattern>
+    <property>Amazon.SecurityLake.Model.SubscriberResource.SubscriberId</property>
+    <pattern>^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SecurityLake.Model.SubscriberResource.SubscriberName</property>
+    <pattern>^[\\\w\-_:/.@=+]*$</pattern>
   </property-value-rule>
 </property-value-rules>

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// This exception is thrown when an operation is called on a trail from a region other
-    /// than the region in which the trail was created.
+    /// This exception is thrown when an operation is called on a trail from a Region other
+    /// than the Region in which the trail was created.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

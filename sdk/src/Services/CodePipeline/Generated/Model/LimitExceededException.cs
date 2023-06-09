@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// The number of pipelines associated with the AWS account has exceeded the limit allowed
-    /// for the account.
+    /// The number of pipelines associated with the Amazon Web Services account has exceeded
+    /// the limit allowed for the account.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CodePipeline.Model
 {
     /// <summary>
-    /// Represents information about an error in AWS CodePipeline.
+    /// Represents information about an error in CodePipeline.
     /// </summary>
     public partial class ErrorDetails
     {

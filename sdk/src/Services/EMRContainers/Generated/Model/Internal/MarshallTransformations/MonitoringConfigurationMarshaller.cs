@@ -56,6 +56,17 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetContainerLogRotationConfiguration())
+            {
+                context.Writer.WritePropertyName("containerLogRotationConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ContainerLogRotationConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.ContainerLogRotationConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetPersistentAppUI())
             {
                 context.Writer.WritePropertyName("persistentAppUI");

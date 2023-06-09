@@ -29,15 +29,7 @@ namespace Amazon.AlexaForBusiness
     /// <summary>
     /// Interface for accessing AlexaForBusiness
     ///
-    /// Alexa for Business helps you use Alexa in your organization. Alexa for Business provides
-    /// you with the tools to manage Alexa devices, enroll your users, and assign skills,
-    /// at scale. You can build your own context-aware voice skills using the Alexa Skills
-    /// Kit and the Alexa for Business API operations. You can also make these available as
-    /// private skills for your organization. Alexa for Business makes it efficient to voice-enable
-    /// your products and services, thus providing context-aware voice experiences for your
-    /// customers. Device makers building with the Alexa Voice Service (AVS) can create fully
-    /// integrated solutions, register their products with Alexa for Business, and manage
-    /// them as shared devices in their organization.
+    /// Alexa for Business has been retired and is no longer supported.
     /// </summary>
     public partial interface IAmazonAlexaForBusiness : IAmazonService, IDisposable
     {
@@ -72,6 +64,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill">REST API Reference for ApproveSkill Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ApproveSkillResponse ApproveSkill(ApproveSkillRequest request);
 
         /// <summary>
@@ -86,6 +79,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndApproveSkill
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill">REST API Reference for ApproveSkill Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginApproveSkill(ApproveSkillRequest request, AsyncCallback callback, object state);
 
 
@@ -98,6 +92,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ApproveSkillResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ApproveSkill">REST API Reference for ApproveSkill Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ApproveSkillResponse EndApproveSkill(IAsyncResult asyncResult);
 
         #endregion
@@ -115,6 +110,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateContactWithAddressBookResponse AssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request);
 
         /// <summary>
@@ -129,6 +125,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateContactWithAddressBook
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginAssociateContactWithAddressBook(AssociateContactWithAddressBookRequest request, AsyncCallback callback, object state);
 
 
@@ -141,6 +138,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  AssociateContactWithAddressBookResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateContactWithAddressBook">REST API Reference for AssociateContactWithAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateContactWithAddressBookResponse EndAssociateContactWithAddressBook(IAsyncResult asyncResult);
 
         #endregion
@@ -165,6 +163,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">REST API Reference for AssociateDeviceWithNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateDeviceWithNetworkProfileResponse AssociateDeviceWithNetworkProfile(AssociateDeviceWithNetworkProfileRequest request);
 
         /// <summary>
@@ -179,6 +178,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDeviceWithNetworkProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">REST API Reference for AssociateDeviceWithNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginAssociateDeviceWithNetworkProfile(AssociateDeviceWithNetworkProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -191,6 +191,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  AssociateDeviceWithNetworkProfileResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithNetworkProfile">REST API Reference for AssociateDeviceWithNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateDeviceWithNetworkProfileResponse EndAssociateDeviceWithNetworkProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -217,6 +218,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom">REST API Reference for AssociateDeviceWithRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateDeviceWithRoomResponse AssociateDeviceWithRoom(AssociateDeviceWithRoomRequest request);
 
         /// <summary>
@@ -231,6 +233,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateDeviceWithRoom
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom">REST API Reference for AssociateDeviceWithRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginAssociateDeviceWithRoom(AssociateDeviceWithRoomRequest request, AsyncCallback callback, object state);
 
 
@@ -243,6 +246,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  AssociateDeviceWithRoomResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateDeviceWithRoom">REST API Reference for AssociateDeviceWithRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateDeviceWithRoomResponse EndAssociateDeviceWithRoom(IAsyncResult asyncResult);
 
         #endregion
@@ -261,6 +265,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">REST API Reference for AssociateSkillGroupWithRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateSkillGroupWithRoomResponse AssociateSkillGroupWithRoom(AssociateSkillGroupWithRoomRequest request);
 
         /// <summary>
@@ -275,6 +280,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSkillGroupWithRoom
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">REST API Reference for AssociateSkillGroupWithRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginAssociateSkillGroupWithRoom(AssociateSkillGroupWithRoomRequest request, AsyncCallback callback, object state);
 
 
@@ -287,6 +293,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  AssociateSkillGroupWithRoomResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillGroupWithRoom">REST API Reference for AssociateSkillGroupWithRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateSkillGroupWithRoomResponse EndAssociateSkillGroupWithRoom(IAsyncResult asyncResult);
 
         #endregion
@@ -310,6 +317,7 @@ namespace Amazon.AlexaForBusiness
         /// The skill must be linked to a third-party account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateSkillWithSkillGroupResponse AssociateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest request);
 
         /// <summary>
@@ -324,6 +332,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSkillWithSkillGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginAssociateSkillWithSkillGroup(AssociateSkillWithSkillGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -336,6 +345,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  AssociateSkillWithSkillGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithSkillGroup">REST API Reference for AssociateSkillWithSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateSkillWithSkillGroupResponse EndAssociateSkillWithSkillGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -356,6 +366,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">REST API Reference for AssociateSkillWithUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateSkillWithUsersResponse AssociateSkillWithUsers(AssociateSkillWithUsersRequest request);
 
         /// <summary>
@@ -370,6 +381,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSkillWithUsers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">REST API Reference for AssociateSkillWithUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginAssociateSkillWithUsers(AssociateSkillWithUsersRequest request, AsyncCallback callback, object state);
 
 
@@ -382,6 +394,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  AssociateSkillWithUsersResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/AssociateSkillWithUsers">REST API Reference for AssociateSkillWithUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         AssociateSkillWithUsersResponse EndAssociateSkillWithUsers(IAsyncResult asyncResult);
 
         #endregion
@@ -402,6 +415,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateAddressBookResponse CreateAddressBook(CreateAddressBookRequest request);
 
         /// <summary>
@@ -416,6 +430,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAddressBook
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginCreateAddressBook(CreateAddressBookRequest request, AsyncCallback callback, object state);
 
 
@@ -428,6 +443,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  CreateAddressBookResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateAddressBook">REST API Reference for CreateAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateAddressBookResponse EndCreateAddressBook(IAsyncResult asyncResult);
 
         #endregion
@@ -446,6 +462,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource being created already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateBusinessReportScheduleResponse CreateBusinessReportSchedule(CreateBusinessReportScheduleRequest request);
 
         /// <summary>
@@ -460,6 +477,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateBusinessReportSchedule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginCreateBusinessReportSchedule(CreateBusinessReportScheduleRequest request, AsyncCallback callback, object state);
 
 
@@ -472,6 +490,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  CreateBusinessReportScheduleResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateBusinessReportSchedule">REST API Reference for CreateBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateBusinessReportScheduleResponse EndCreateBusinessReportSchedule(IAsyncResult asyncResult);
 
         #endregion
@@ -489,6 +508,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource being created already exists.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">REST API Reference for CreateConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateConferenceProviderResponse CreateConferenceProvider(CreateConferenceProviderRequest request);
 
         /// <summary>
@@ -503,6 +523,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateConferenceProvider
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">REST API Reference for CreateConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginCreateConferenceProvider(CreateConferenceProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -515,6 +536,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  CreateConferenceProviderResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateConferenceProvider">REST API Reference for CreateConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateConferenceProviderResponse EndCreateConferenceProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -535,6 +557,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateContactResponse CreateContact(CreateContactRequest request);
 
         /// <summary>
@@ -549,6 +572,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateContact
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginCreateContact(CreateContactRequest request, AsyncCallback callback, object state);
 
 
@@ -561,6 +585,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  CreateContactResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateContact">REST API Reference for CreateContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateContactResponse EndCreateContact(IAsyncResult asyncResult);
 
         #endregion
@@ -581,6 +606,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">REST API Reference for CreateGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateGatewayGroupResponse CreateGatewayGroup(CreateGatewayGroupRequest request);
 
         /// <summary>
@@ -595,6 +621,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateGatewayGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">REST API Reference for CreateGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginCreateGatewayGroup(CreateGatewayGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -607,6 +634,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  CreateGatewayGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateGatewayGroup">REST API Reference for CreateGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateGatewayGroupResponse EndCreateGatewayGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -636,6 +664,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateNetworkProfileResponse CreateNetworkProfile(CreateNetworkProfileRequest request);
 
         /// <summary>
@@ -650,6 +679,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateNetworkProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginCreateNetworkProfile(CreateNetworkProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -662,6 +692,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  CreateNetworkProfileResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateNetworkProfile">REST API Reference for CreateNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateNetworkProfileResponse EndCreateNetworkProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -685,6 +716,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateProfileResponse CreateProfile(CreateProfileRequest request);
 
         /// <summary>
@@ -699,6 +731,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginCreateProfile(CreateProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -711,6 +744,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  CreateProfileResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateProfileResponse EndCreateProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -731,6 +765,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom">REST API Reference for CreateRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateRoomResponse CreateRoom(CreateRoomRequest request);
 
         /// <summary>
@@ -745,6 +780,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateRoom
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom">REST API Reference for CreateRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginCreateRoom(CreateRoomRequest request, AsyncCallback callback, object state);
 
 
@@ -757,6 +793,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  CreateRoomResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateRoom">REST API Reference for CreateRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateRoomResponse EndCreateRoom(IAsyncResult asyncResult);
 
         #endregion
@@ -780,6 +817,7 @@ namespace Amazon.AlexaForBusiness
         /// You are performing an action that would put you beyond your account's limits.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup">REST API Reference for CreateSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateSkillGroupResponse CreateSkillGroup(CreateSkillGroupRequest request);
 
         /// <summary>
@@ -794,6 +832,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateSkillGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup">REST API Reference for CreateSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginCreateSkillGroup(CreateSkillGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -806,6 +845,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  CreateSkillGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateSkillGroup">REST API Reference for CreateSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateSkillGroupResponse EndCreateSkillGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -829,6 +869,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource in the request is already in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateUserResponse CreateUser(CreateUserRequest request);
 
         /// <summary>
@@ -843,6 +884,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateUser
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginCreateUser(CreateUserRequest request, AsyncCallback callback, object state);
 
 
@@ -855,6 +897,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  CreateUserResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/CreateUser">REST API Reference for CreateUser Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         CreateUserResponse EndCreateUser(IAsyncResult asyncResult);
 
         #endregion
@@ -875,6 +918,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteAddressBookResponse DeleteAddressBook(DeleteAddressBookRequest request);
 
         /// <summary>
@@ -889,6 +933,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteAddressBook
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteAddressBook(DeleteAddressBookRequest request, AsyncCallback callback, object state);
 
 
@@ -901,6 +946,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteAddressBookResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteAddressBook">REST API Reference for DeleteAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteAddressBookResponse EndDeleteAddressBook(IAsyncResult asyncResult);
 
         #endregion
@@ -921,6 +967,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteBusinessReportScheduleResponse DeleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest request);
 
         /// <summary>
@@ -935,6 +982,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteBusinessReportSchedule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteBusinessReportSchedule(DeleteBusinessReportScheduleRequest request, AsyncCallback callback, object state);
 
 
@@ -947,6 +995,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteBusinessReportScheduleResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteBusinessReportSchedule">REST API Reference for DeleteBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteBusinessReportScheduleResponse EndDeleteBusinessReportSchedule(IAsyncResult asyncResult);
 
         #endregion
@@ -964,6 +1013,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider">REST API Reference for DeleteConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteConferenceProviderResponse DeleteConferenceProvider(DeleteConferenceProviderRequest request);
 
         /// <summary>
@@ -978,6 +1028,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteConferenceProvider
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider">REST API Reference for DeleteConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteConferenceProvider(DeleteConferenceProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -990,6 +1041,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteConferenceProviderResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteConferenceProvider">REST API Reference for DeleteConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteConferenceProviderResponse EndDeleteConferenceProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -1010,6 +1062,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteContactResponse DeleteContact(DeleteContactRequest request);
 
         /// <summary>
@@ -1024,6 +1077,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteContact
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteContact(DeleteContactRequest request, AsyncCallback callback, object state);
 
 
@@ -1036,6 +1090,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteContactResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteContact">REST API Reference for DeleteContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteContactResponse EndDeleteContact(IAsyncResult asyncResult);
 
         #endregion
@@ -1059,6 +1114,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteDeviceResponse DeleteDevice(DeleteDeviceRequest request);
 
         /// <summary>
@@ -1073,6 +1129,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDevice
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteDevice(DeleteDeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -1085,6 +1142,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteDeviceResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDevice">REST API Reference for DeleteDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteDeviceResponse EndDeleteDevice(IAsyncResult asyncResult);
 
         #endregion
@@ -1112,6 +1170,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">REST API Reference for DeleteDeviceUsageData Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteDeviceUsageDataResponse DeleteDeviceUsageData(DeleteDeviceUsageDataRequest request);
 
         /// <summary>
@@ -1126,6 +1185,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteDeviceUsageData
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">REST API Reference for DeleteDeviceUsageData Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteDeviceUsageData(DeleteDeviceUsageDataRequest request, AsyncCallback callback, object state);
 
 
@@ -1138,6 +1198,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteDeviceUsageDataResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteDeviceUsageData">REST API Reference for DeleteDeviceUsageData Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteDeviceUsageDataResponse EndDeleteDeviceUsageData(IAsyncResult asyncResult);
 
         #endregion
@@ -1155,6 +1216,7 @@ namespace Amazon.AlexaForBusiness
         /// Another resource is associated with the resource in the request.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">REST API Reference for DeleteGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteGatewayGroupResponse DeleteGatewayGroup(DeleteGatewayGroupRequest request);
 
         /// <summary>
@@ -1169,6 +1231,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteGatewayGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">REST API Reference for DeleteGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteGatewayGroup(DeleteGatewayGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -1181,6 +1244,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteGatewayGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteGatewayGroup">REST API Reference for DeleteGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteGatewayGroupResponse EndDeleteGatewayGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -1204,6 +1268,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource in the request is already in use.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteNetworkProfileResponse DeleteNetworkProfile(DeleteNetworkProfileRequest request);
 
         /// <summary>
@@ -1218,6 +1283,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteNetworkProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteNetworkProfile(DeleteNetworkProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -1230,6 +1296,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteNetworkProfileResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteNetworkProfile">REST API Reference for DeleteNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteNetworkProfileResponse EndDeleteNetworkProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -1250,6 +1317,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteProfileResponse DeleteProfile(DeleteProfileRequest request);
 
         /// <summary>
@@ -1264,6 +1332,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteProfile(DeleteProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -1276,6 +1345,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteProfileResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteProfileResponse EndDeleteProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -1296,6 +1366,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom">REST API Reference for DeleteRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteRoomResponse DeleteRoom(DeleteRoomRequest request);
 
         /// <summary>
@@ -1310,6 +1381,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRoom
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom">REST API Reference for DeleteRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteRoom(DeleteRoomRequest request, AsyncCallback callback, object state);
 
 
@@ -1322,6 +1394,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteRoomResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoom">REST API Reference for DeleteRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteRoomResponse EndDeleteRoom(IAsyncResult asyncResult);
 
         #endregion
@@ -1339,6 +1412,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter">REST API Reference for DeleteRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteRoomSkillParameterResponse DeleteRoomSkillParameter(DeleteRoomSkillParameterRequest request);
 
         /// <summary>
@@ -1353,6 +1427,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteRoomSkillParameter
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter">REST API Reference for DeleteRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteRoomSkillParameter(DeleteRoomSkillParameterRequest request, AsyncCallback callback, object state);
 
 
@@ -1365,6 +1440,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteRoomSkillParameterResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteRoomSkillParameter">REST API Reference for DeleteRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteRoomSkillParameterResponse EndDeleteRoomSkillParameter(IAsyncResult asyncResult);
 
         #endregion
@@ -1385,6 +1461,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization">REST API Reference for DeleteSkillAuthorization Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteSkillAuthorizationResponse DeleteSkillAuthorization(DeleteSkillAuthorizationRequest request);
 
         /// <summary>
@@ -1399,6 +1476,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSkillAuthorization
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization">REST API Reference for DeleteSkillAuthorization Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteSkillAuthorization(DeleteSkillAuthorizationRequest request, AsyncCallback callback, object state);
 
 
@@ -1411,6 +1489,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteSkillAuthorizationResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillAuthorization">REST API Reference for DeleteSkillAuthorization Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteSkillAuthorizationResponse EndDeleteSkillAuthorization(IAsyncResult asyncResult);
 
         #endregion
@@ -1431,6 +1510,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup">REST API Reference for DeleteSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteSkillGroupResponse DeleteSkillGroup(DeleteSkillGroupRequest request);
 
         /// <summary>
@@ -1445,6 +1525,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteSkillGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup">REST API Reference for DeleteSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteSkillGroup(DeleteSkillGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -1457,6 +1538,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteSkillGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteSkillGroup">REST API Reference for DeleteSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteSkillGroupResponse EndDeleteSkillGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -1477,6 +1559,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteUserResponse DeleteUser(DeleteUserRequest request);
 
         /// <summary>
@@ -1491,6 +1574,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteUser
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDeleteUser(DeleteUserRequest request, AsyncCallback callback, object state);
 
 
@@ -1503,6 +1587,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DeleteUserResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DeleteUser">REST API Reference for DeleteUser Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DeleteUserResponse EndDeleteUser(IAsyncResult asyncResult);
 
         #endregion
@@ -1517,6 +1602,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the DisassociateContactFromAddressBook service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DisassociateContactFromAddressBookResponse DisassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request);
 
         /// <summary>
@@ -1531,6 +1617,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateContactFromAddressBook
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDisassociateContactFromAddressBook(DisassociateContactFromAddressBookRequest request, AsyncCallback callback, object state);
 
 
@@ -1543,6 +1630,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DisassociateContactFromAddressBookResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateContactFromAddressBook">REST API Reference for DisassociateContactFromAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DisassociateContactFromAddressBookResponse EndDisassociateContactFromAddressBook(IAsyncResult asyncResult);
 
         #endregion
@@ -1566,6 +1654,7 @@ namespace Amazon.AlexaForBusiness
         /// managed by this account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom">REST API Reference for DisassociateDeviceFromRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DisassociateDeviceFromRoomResponse DisassociateDeviceFromRoom(DisassociateDeviceFromRoomRequest request);
 
         /// <summary>
@@ -1580,6 +1669,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateDeviceFromRoom
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom">REST API Reference for DisassociateDeviceFromRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDisassociateDeviceFromRoom(DisassociateDeviceFromRoomRequest request, AsyncCallback callback, object state);
 
 
@@ -1592,6 +1682,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DisassociateDeviceFromRoomResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateDeviceFromRoom">REST API Reference for DisassociateDeviceFromRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DisassociateDeviceFromRoomResponse EndDisassociateDeviceFromRoom(IAsyncResult asyncResult);
 
         #endregion
@@ -1612,6 +1703,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">REST API Reference for DisassociateSkillFromSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DisassociateSkillFromSkillGroupResponse DisassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest request);
 
         /// <summary>
@@ -1626,6 +1718,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSkillFromSkillGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">REST API Reference for DisassociateSkillFromSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDisassociateSkillFromSkillGroup(DisassociateSkillFromSkillGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -1638,6 +1731,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DisassociateSkillFromSkillGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromSkillGroup">REST API Reference for DisassociateSkillFromSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DisassociateSkillFromSkillGroupResponse EndDisassociateSkillFromSkillGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -1659,6 +1753,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">REST API Reference for DisassociateSkillFromUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DisassociateSkillFromUsersResponse DisassociateSkillFromUsers(DisassociateSkillFromUsersRequest request);
 
         /// <summary>
@@ -1673,6 +1768,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSkillFromUsers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">REST API Reference for DisassociateSkillFromUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDisassociateSkillFromUsers(DisassociateSkillFromUsersRequest request, AsyncCallback callback, object state);
 
 
@@ -1685,6 +1781,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DisassociateSkillFromUsersResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillFromUsers">REST API Reference for DisassociateSkillFromUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DisassociateSkillFromUsersResponse EndDisassociateSkillFromUsers(IAsyncResult asyncResult);
 
         #endregion
@@ -1703,6 +1800,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom">REST API Reference for DisassociateSkillGroupFromRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DisassociateSkillGroupFromRoomResponse DisassociateSkillGroupFromRoom(DisassociateSkillGroupFromRoomRequest request);
 
         /// <summary>
@@ -1717,6 +1815,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSkillGroupFromRoom
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom">REST API Reference for DisassociateSkillGroupFromRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginDisassociateSkillGroupFromRoom(DisassociateSkillGroupFromRoomRequest request, AsyncCallback callback, object state);
 
 
@@ -1729,6 +1828,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  DisassociateSkillGroupFromRoomResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/DisassociateSkillGroupFromRoom">REST API Reference for DisassociateSkillGroupFromRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         DisassociateSkillGroupFromRoomResponse EndDisassociateSkillGroupFromRoom(IAsyncResult asyncResult);
 
         #endregion
@@ -1746,6 +1846,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances">REST API Reference for ForgetSmartHomeAppliances Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ForgetSmartHomeAppliancesResponse ForgetSmartHomeAppliances(ForgetSmartHomeAppliancesRequest request);
 
         /// <summary>
@@ -1760,6 +1861,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndForgetSmartHomeAppliances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances">REST API Reference for ForgetSmartHomeAppliances Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginForgetSmartHomeAppliances(ForgetSmartHomeAppliancesRequest request, AsyncCallback callback, object state);
 
 
@@ -1772,6 +1874,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ForgetSmartHomeAppliancesResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ForgetSmartHomeAppliances">REST API Reference for ForgetSmartHomeAppliances Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ForgetSmartHomeAppliancesResponse EndForgetSmartHomeAppliances(IAsyncResult asyncResult);
 
         #endregion
@@ -1789,6 +1892,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetAddressBookResponse GetAddressBook(GetAddressBookRequest request);
 
         /// <summary>
@@ -1803,6 +1907,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAddressBook
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetAddressBook(GetAddressBookRequest request, AsyncCallback callback, object state);
 
 
@@ -1815,6 +1920,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetAddressBookResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetAddressBook">REST API Reference for GetAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetAddressBookResponse EndGetAddressBook(IAsyncResult asyncResult);
 
         #endregion
@@ -1832,6 +1938,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference">REST API Reference for GetConferencePreference Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetConferencePreferenceResponse GetConferencePreference(GetConferencePreferenceRequest request);
 
         /// <summary>
@@ -1846,6 +1953,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConferencePreference
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference">REST API Reference for GetConferencePreference Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetConferencePreference(GetConferencePreferenceRequest request, AsyncCallback callback, object state);
 
 
@@ -1858,6 +1966,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetConferencePreferenceResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferencePreference">REST API Reference for GetConferencePreference Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetConferencePreferenceResponse EndGetConferencePreference(IAsyncResult asyncResult);
 
         #endregion
@@ -1875,6 +1984,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider">REST API Reference for GetConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetConferenceProviderResponse GetConferenceProvider(GetConferenceProviderRequest request);
 
         /// <summary>
@@ -1889,6 +1999,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetConferenceProvider
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider">REST API Reference for GetConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetConferenceProvider(GetConferenceProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -1901,6 +2012,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetConferenceProviderResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetConferenceProvider">REST API Reference for GetConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetConferenceProviderResponse EndGetConferenceProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -1918,6 +2030,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetContactResponse GetContact(GetContactRequest request);
 
         /// <summary>
@@ -1932,6 +2045,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetContact
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetContact(GetContactRequest request, AsyncCallback callback, object state);
 
 
@@ -1944,6 +2058,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetContactResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetContact">REST API Reference for GetContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetContactResponse EndGetContact(IAsyncResult asyncResult);
 
         #endregion
@@ -1961,6 +2076,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice">REST API Reference for GetDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetDeviceResponse GetDevice(GetDeviceRequest request);
 
         /// <summary>
@@ -1975,6 +2091,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetDevice
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice">REST API Reference for GetDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetDevice(GetDeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -1987,6 +2104,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetDeviceResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetDevice">REST API Reference for GetDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetDeviceResponse EndGetDevice(IAsyncResult asyncResult);
 
         #endregion
@@ -2004,6 +2122,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetGatewayResponse GetGateway(GetGatewayRequest request);
 
         /// <summary>
@@ -2018,6 +2137,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGateway
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetGateway(GetGatewayRequest request, AsyncCallback callback, object state);
 
 
@@ -2030,6 +2150,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetGatewayResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGateway">REST API Reference for GetGateway Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetGatewayResponse EndGetGateway(IAsyncResult asyncResult);
 
         #endregion
@@ -2047,6 +2168,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">REST API Reference for GetGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetGatewayGroupResponse GetGatewayGroup(GetGatewayGroupRequest request);
 
         /// <summary>
@@ -2061,6 +2183,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetGatewayGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">REST API Reference for GetGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetGatewayGroup(GetGatewayGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -2073,6 +2196,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetGatewayGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetGatewayGroup">REST API Reference for GetGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetGatewayGroupResponse EndGetGatewayGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -2090,6 +2214,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration">REST API Reference for GetInvitationConfiguration Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetInvitationConfigurationResponse GetInvitationConfiguration(GetInvitationConfigurationRequest request);
 
         /// <summary>
@@ -2104,6 +2229,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetInvitationConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration">REST API Reference for GetInvitationConfiguration Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetInvitationConfiguration(GetInvitationConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -2116,6 +2242,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetInvitationConfigurationResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetInvitationConfiguration">REST API Reference for GetInvitationConfiguration Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetInvitationConfigurationResponse EndGetInvitationConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -2136,6 +2263,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetNetworkProfileResponse GetNetworkProfile(GetNetworkProfileRequest request);
 
         /// <summary>
@@ -2150,6 +2278,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetNetworkProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetNetworkProfile(GetNetworkProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -2162,6 +2291,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetNetworkProfileResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetNetworkProfile">REST API Reference for GetNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetNetworkProfileResponse EndGetNetworkProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -2179,6 +2309,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile">REST API Reference for GetProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetProfileResponse GetProfile(GetProfileRequest request);
 
         /// <summary>
@@ -2193,6 +2324,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile">REST API Reference for GetProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetProfile(GetProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -2205,6 +2337,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetProfileResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetProfile">REST API Reference for GetProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetProfileResponse EndGetProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -2222,6 +2355,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom">REST API Reference for GetRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetRoomResponse GetRoom(GetRoomRequest request);
 
         /// <summary>
@@ -2236,6 +2370,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRoom
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom">REST API Reference for GetRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetRoom(GetRoomRequest request, AsyncCallback callback, object state);
 
 
@@ -2248,6 +2383,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetRoomResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoom">REST API Reference for GetRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetRoomResponse EndGetRoom(IAsyncResult asyncResult);
 
         #endregion
@@ -2265,6 +2401,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter">REST API Reference for GetRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetRoomSkillParameterResponse GetRoomSkillParameter(GetRoomSkillParameterRequest request);
 
         /// <summary>
@@ -2279,6 +2416,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetRoomSkillParameter
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter">REST API Reference for GetRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetRoomSkillParameter(GetRoomSkillParameterRequest request, AsyncCallback callback, object state);
 
 
@@ -2291,6 +2429,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetRoomSkillParameterResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetRoomSkillParameter">REST API Reference for GetRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetRoomSkillParameterResponse EndGetRoomSkillParameter(IAsyncResult asyncResult);
 
         #endregion
@@ -2308,6 +2447,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup">REST API Reference for GetSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetSkillGroupResponse GetSkillGroup(GetSkillGroupRequest request);
 
         /// <summary>
@@ -2322,6 +2462,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSkillGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup">REST API Reference for GetSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginGetSkillGroup(GetSkillGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -2334,6 +2475,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  GetSkillGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/GetSkillGroup">REST API Reference for GetSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         GetSkillGroupResponse EndGetSkillGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -2350,6 +2492,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListBusinessReportSchedules service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListBusinessReportSchedulesResponse ListBusinessReportSchedules(ListBusinessReportSchedulesRequest request);
 
         /// <summary>
@@ -2364,6 +2507,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListBusinessReportSchedules
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginListBusinessReportSchedules(ListBusinessReportSchedulesRequest request, AsyncCallback callback, object state);
 
 
@@ -2376,6 +2520,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ListBusinessReportSchedulesResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListBusinessReportSchedules">REST API Reference for ListBusinessReportSchedules Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListBusinessReportSchedulesResponse EndListBusinessReportSchedules(IAsyncResult asyncResult);
 
         #endregion
@@ -2390,6 +2535,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListConferenceProviders service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders">REST API Reference for ListConferenceProviders Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListConferenceProvidersResponse ListConferenceProviders(ListConferenceProvidersRequest request);
 
         /// <summary>
@@ -2404,6 +2550,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListConferenceProviders
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders">REST API Reference for ListConferenceProviders Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginListConferenceProviders(ListConferenceProvidersRequest request, AsyncCallback callback, object state);
 
 
@@ -2416,6 +2563,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ListConferenceProvidersResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListConferenceProviders">REST API Reference for ListConferenceProviders Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListConferenceProvidersResponse EndListConferenceProviders(IAsyncResult asyncResult);
 
         #endregion
@@ -2433,6 +2581,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListDeviceEventsResponse ListDeviceEvents(ListDeviceEventsRequest request);
 
         /// <summary>
@@ -2447,6 +2596,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDeviceEvents
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginListDeviceEvents(ListDeviceEventsRequest request, AsyncCallback callback, object state);
 
 
@@ -2459,6 +2609,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ListDeviceEventsResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListDeviceEvents">REST API Reference for ListDeviceEvents Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListDeviceEventsResponse EndListDeviceEvents(IAsyncResult asyncResult);
 
         #endregion
@@ -2474,6 +2625,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListGatewayGroups service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">REST API Reference for ListGatewayGroups Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListGatewayGroupsResponse ListGatewayGroups(ListGatewayGroupsRequest request);
 
         /// <summary>
@@ -2488,6 +2640,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGatewayGroups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">REST API Reference for ListGatewayGroups Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginListGatewayGroups(ListGatewayGroupsRequest request, AsyncCallback callback, object state);
 
 
@@ -2500,6 +2653,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ListGatewayGroupsResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGatewayGroups">REST API Reference for ListGatewayGroups Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListGatewayGroupsResponse EndListGatewayGroups(IAsyncResult asyncResult);
 
         #endregion
@@ -2516,6 +2670,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListGateways service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListGatewaysResponse ListGateways(ListGatewaysRequest request);
 
         /// <summary>
@@ -2530,6 +2685,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListGateways
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginListGateways(ListGatewaysRequest request, AsyncCallback callback, object state);
 
 
@@ -2542,6 +2698,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ListGatewaysResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListGateways">REST API Reference for ListGateways Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListGatewaysResponse EndListGateways(IAsyncResult asyncResult);
 
         #endregion
@@ -2556,6 +2713,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListSkills service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkills">REST API Reference for ListSkills Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListSkillsResponse ListSkills(ListSkillsRequest request);
 
         /// <summary>
@@ -2570,6 +2728,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSkills
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkills">REST API Reference for ListSkills Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginListSkills(ListSkillsRequest request, AsyncCallback callback, object state);
 
 
@@ -2582,6 +2741,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ListSkillsResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkills">REST API Reference for ListSkills Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListSkillsResponse EndListSkills(IAsyncResult asyncResult);
 
         #endregion
@@ -2596,6 +2756,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListSkillsStoreCategories service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories">REST API Reference for ListSkillsStoreCategories Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListSkillsStoreCategoriesResponse ListSkillsStoreCategories(ListSkillsStoreCategoriesRequest request);
 
         /// <summary>
@@ -2610,6 +2771,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSkillsStoreCategories
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories">REST API Reference for ListSkillsStoreCategories Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginListSkillsStoreCategories(ListSkillsStoreCategoriesRequest request, AsyncCallback callback, object state);
 
 
@@ -2622,6 +2784,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ListSkillsStoreCategoriesResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreCategories">REST API Reference for ListSkillsStoreCategories Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListSkillsStoreCategoriesResponse EndListSkillsStoreCategories(IAsyncResult asyncResult);
 
         #endregion
@@ -2636,6 +2799,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the ListSkillsStoreSkillsByCategory service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory">REST API Reference for ListSkillsStoreSkillsByCategory Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListSkillsStoreSkillsByCategoryResponse ListSkillsStoreSkillsByCategory(ListSkillsStoreSkillsByCategoryRequest request);
 
         /// <summary>
@@ -2650,6 +2814,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSkillsStoreSkillsByCategory
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory">REST API Reference for ListSkillsStoreSkillsByCategory Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginListSkillsStoreSkillsByCategory(ListSkillsStoreSkillsByCategoryRequest request, AsyncCallback callback, object state);
 
 
@@ -2662,6 +2827,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ListSkillsStoreSkillsByCategoryResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSkillsStoreSkillsByCategory">REST API Reference for ListSkillsStoreSkillsByCategory Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListSkillsStoreSkillsByCategoryResponse EndListSkillsStoreSkillsByCategory(IAsyncResult asyncResult);
 
         #endregion
@@ -2679,6 +2845,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances">REST API Reference for ListSmartHomeAppliances Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListSmartHomeAppliancesResponse ListSmartHomeAppliances(ListSmartHomeAppliancesRequest request);
 
         /// <summary>
@@ -2693,6 +2860,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSmartHomeAppliances
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances">REST API Reference for ListSmartHomeAppliances Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginListSmartHomeAppliances(ListSmartHomeAppliancesRequest request, AsyncCallback callback, object state);
 
 
@@ -2705,6 +2873,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ListSmartHomeAppliancesResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListSmartHomeAppliances">REST API Reference for ListSmartHomeAppliances Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListSmartHomeAppliancesResponse EndListSmartHomeAppliances(IAsyncResult asyncResult);
 
         #endregion
@@ -2722,6 +2891,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags">REST API Reference for ListTags Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListTagsResponse ListTags(ListTagsRequest request);
 
         /// <summary>
@@ -2736,6 +2906,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTags
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags">REST API Reference for ListTags Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginListTags(ListTagsRequest request, AsyncCallback callback, object state);
 
 
@@ -2748,6 +2919,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ListTagsResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ListTags">REST API Reference for ListTags Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ListTagsResponse EndListTags(IAsyncResult asyncResult);
 
         #endregion
@@ -2765,6 +2937,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference">REST API Reference for PutConferencePreference Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         PutConferencePreferenceResponse PutConferencePreference(PutConferencePreferenceRequest request);
 
         /// <summary>
@@ -2779,6 +2952,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutConferencePreference
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference">REST API Reference for PutConferencePreference Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginPutConferencePreference(PutConferencePreferenceRequest request, AsyncCallback callback, object state);
 
 
@@ -2791,6 +2965,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  PutConferencePreferenceResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutConferencePreference">REST API Reference for PutConferencePreference Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         PutConferencePreferenceResponse EndPutConferencePreference(IAsyncResult asyncResult);
 
         #endregion
@@ -2812,6 +2987,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration">REST API Reference for PutInvitationConfiguration Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         PutInvitationConfigurationResponse PutInvitationConfiguration(PutInvitationConfigurationRequest request);
 
         /// <summary>
@@ -2826,6 +3002,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutInvitationConfiguration
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration">REST API Reference for PutInvitationConfiguration Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginPutInvitationConfiguration(PutInvitationConfigurationRequest request, AsyncCallback callback, object state);
 
 
@@ -2838,6 +3015,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  PutInvitationConfigurationResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutInvitationConfiguration">REST API Reference for PutInvitationConfiguration Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         PutInvitationConfigurationResponse EndPutInvitationConfiguration(IAsyncResult asyncResult);
 
         #endregion
@@ -2856,6 +3034,7 @@ namespace Amazon.AlexaForBusiness
         /// There is a concurrent modification of resources.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter">REST API Reference for PutRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         PutRoomSkillParameterResponse PutRoomSkillParameter(PutRoomSkillParameterRequest request);
 
         /// <summary>
@@ -2870,6 +3049,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutRoomSkillParameter
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter">REST API Reference for PutRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginPutRoomSkillParameter(PutRoomSkillParameterRequest request, AsyncCallback callback, object state);
 
 
@@ -2882,6 +3062,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  PutRoomSkillParameterResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutRoomSkillParameter">REST API Reference for PutRoomSkillParameter Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         PutRoomSkillParameterResponse EndPutRoomSkillParameter(IAsyncResult asyncResult);
 
         #endregion
@@ -2904,6 +3085,7 @@ namespace Amazon.AlexaForBusiness
         /// The caller has no permissions to operate on the resource involved in the API call.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization">REST API Reference for PutSkillAuthorization Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         PutSkillAuthorizationResponse PutSkillAuthorization(PutSkillAuthorizationRequest request);
 
         /// <summary>
@@ -2918,6 +3100,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutSkillAuthorization
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization">REST API Reference for PutSkillAuthorization Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginPutSkillAuthorization(PutSkillAuthorizationRequest request, AsyncCallback callback, object state);
 
 
@@ -2930,6 +3113,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  PutSkillAuthorizationResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/PutSkillAuthorization">REST API Reference for PutSkillAuthorization Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         PutSkillAuthorizationResponse EndPutSkillAuthorization(IAsyncResult asyncResult);
 
         #endregion
@@ -2957,6 +3141,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">REST API Reference for RegisterAVSDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         RegisterAVSDeviceResponse RegisterAVSDevice(RegisterAVSDeviceRequest request);
 
         /// <summary>
@@ -2971,6 +3156,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRegisterAVSDevice
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">REST API Reference for RegisterAVSDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginRegisterAVSDevice(RegisterAVSDeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -2983,6 +3169,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  RegisterAVSDeviceResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RegisterAVSDevice">REST API Reference for RegisterAVSDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         RegisterAVSDeviceResponse EndRegisterAVSDevice(IAsyncResult asyncResult);
 
         #endregion
@@ -3005,6 +3192,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill">REST API Reference for RejectSkill Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         RejectSkillResponse RejectSkill(RejectSkillRequest request);
 
         /// <summary>
@@ -3019,6 +3207,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRejectSkill
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill">REST API Reference for RejectSkill Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginRejectSkill(RejectSkillRequest request, AsyncCallback callback, object state);
 
 
@@ -3031,6 +3220,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  RejectSkillResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RejectSkill">REST API Reference for RejectSkill Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         RejectSkillResponse EndRejectSkill(IAsyncResult asyncResult);
 
         #endregion
@@ -3059,6 +3249,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">REST API Reference for ResolveRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ResolveRoomResponse ResolveRoom(ResolveRoomRequest request);
 
         /// <summary>
@@ -3073,6 +3264,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndResolveRoom
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">REST API Reference for ResolveRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginResolveRoom(ResolveRoomRequest request, AsyncCallback callback, object state);
 
 
@@ -3085,6 +3277,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  ResolveRoomResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/ResolveRoom">REST API Reference for ResolveRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         ResolveRoomResponse EndResolveRoom(IAsyncResult asyncResult);
 
         #endregion
@@ -3105,6 +3298,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation">REST API Reference for RevokeInvitation Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         RevokeInvitationResponse RevokeInvitation(RevokeInvitationRequest request);
 
         /// <summary>
@@ -3119,6 +3313,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndRevokeInvitation
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation">REST API Reference for RevokeInvitation Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginRevokeInvitation(RevokeInvitationRequest request, AsyncCallback callback, object state);
 
 
@@ -3131,6 +3326,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  RevokeInvitationResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/RevokeInvitation">REST API Reference for RevokeInvitation Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         RevokeInvitationResponse EndRevokeInvitation(IAsyncResult asyncResult);
 
         #endregion
@@ -3145,6 +3341,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchAddressBooks service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchAddressBooksResponse SearchAddressBooks(SearchAddressBooksRequest request);
 
         /// <summary>
@@ -3159,6 +3356,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchAddressBooks
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginSearchAddressBooks(SearchAddressBooksRequest request, AsyncCallback callback, object state);
 
 
@@ -3171,6 +3369,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  SearchAddressBooksResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchAddressBooks">REST API Reference for SearchAddressBooks Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchAddressBooksResponse EndSearchAddressBooks(IAsyncResult asyncResult);
 
         #endregion
@@ -3185,6 +3384,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchContacts service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchContactsResponse SearchContacts(SearchContactsRequest request);
 
         /// <summary>
@@ -3199,6 +3399,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchContacts
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginSearchContacts(SearchContactsRequest request, AsyncCallback callback, object state);
 
 
@@ -3211,6 +3412,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  SearchContactsResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchContacts">REST API Reference for SearchContacts Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchContactsResponse EndSearchContacts(IAsyncResult asyncResult);
 
         #endregion
@@ -3225,6 +3427,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchDevices service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchDevices">REST API Reference for SearchDevices Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchDevicesResponse SearchDevices(SearchDevicesRequest request);
 
         /// <summary>
@@ -3239,6 +3442,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchDevices
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchDevices">REST API Reference for SearchDevices Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginSearchDevices(SearchDevicesRequest request, AsyncCallback callback, object state);
 
 
@@ -3251,6 +3455,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  SearchDevicesResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchDevices">REST API Reference for SearchDevices Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchDevicesResponse EndSearchDevices(IAsyncResult asyncResult);
 
         #endregion
@@ -3265,6 +3470,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchNetworkProfiles service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">REST API Reference for SearchNetworkProfiles Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchNetworkProfilesResponse SearchNetworkProfiles(SearchNetworkProfilesRequest request);
 
         /// <summary>
@@ -3279,6 +3485,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchNetworkProfiles
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">REST API Reference for SearchNetworkProfiles Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginSearchNetworkProfiles(SearchNetworkProfilesRequest request, AsyncCallback callback, object state);
 
 
@@ -3291,6 +3498,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  SearchNetworkProfilesResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchNetworkProfiles">REST API Reference for SearchNetworkProfiles Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchNetworkProfilesResponse EndSearchNetworkProfiles(IAsyncResult asyncResult);
 
         #endregion
@@ -3305,6 +3513,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchProfiles service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchProfiles">REST API Reference for SearchProfiles Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchProfilesResponse SearchProfiles(SearchProfilesRequest request);
 
         /// <summary>
@@ -3319,6 +3528,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchProfiles
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchProfiles">REST API Reference for SearchProfiles Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginSearchProfiles(SearchProfilesRequest request, AsyncCallback callback, object state);
 
 
@@ -3331,6 +3541,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  SearchProfilesResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchProfiles">REST API Reference for SearchProfiles Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchProfilesResponse EndSearchProfiles(IAsyncResult asyncResult);
 
         #endregion
@@ -3345,6 +3556,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchRooms service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchRooms">REST API Reference for SearchRooms Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchRoomsResponse SearchRooms(SearchRoomsRequest request);
 
         /// <summary>
@@ -3359,6 +3571,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchRooms
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchRooms">REST API Reference for SearchRooms Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginSearchRooms(SearchRoomsRequest request, AsyncCallback callback, object state);
 
 
@@ -3371,6 +3584,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  SearchRoomsResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchRooms">REST API Reference for SearchRooms Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchRoomsResponse EndSearchRooms(IAsyncResult asyncResult);
 
         #endregion
@@ -3385,6 +3599,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchSkillGroups service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchSkillGroups">REST API Reference for SearchSkillGroups Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchSkillGroupsResponse SearchSkillGroups(SearchSkillGroupsRequest request);
 
         /// <summary>
@@ -3399,6 +3614,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchSkillGroups
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchSkillGroups">REST API Reference for SearchSkillGroups Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginSearchSkillGroups(SearchSkillGroupsRequest request, AsyncCallback callback, object state);
 
 
@@ -3411,6 +3627,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  SearchSkillGroupsResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchSkillGroups">REST API Reference for SearchSkillGroups Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchSkillGroupsResponse EndSearchSkillGroups(IAsyncResult asyncResult);
 
         #endregion
@@ -3425,6 +3642,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>The response from the SearchUsers service method, as returned by AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchUsers">REST API Reference for SearchUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchUsersResponse SearchUsers(SearchUsersRequest request);
 
         /// <summary>
@@ -3439,6 +3657,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchUsers
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchUsers">REST API Reference for SearchUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginSearchUsers(SearchUsersRequest request, AsyncCallback callback, object state);
 
 
@@ -3451,6 +3670,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  SearchUsersResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SearchUsers">REST API Reference for SearchUsers Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SearchUsersResponse EndSearchUsers(IAsyncResult asyncResult);
 
         #endregion
@@ -3522,6 +3742,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation">REST API Reference for SendInvitation Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SendInvitationResponse SendInvitation(SendInvitationRequest request);
 
         /// <summary>
@@ -3536,6 +3757,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSendInvitation
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation">REST API Reference for SendInvitation Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginSendInvitation(SendInvitationRequest request, AsyncCallback callback, object state);
 
 
@@ -3548,6 +3770,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  SendInvitationResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/SendInvitation">REST API Reference for SendInvitation Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         SendInvitationResponse EndSendInvitation(IAsyncResult asyncResult);
 
         #endregion
@@ -3591,6 +3814,7 @@ namespace Amazon.AlexaForBusiness
         /// managed by this account.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">REST API Reference for StartDeviceSync Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         StartDeviceSyncResponse StartDeviceSync(StartDeviceSyncRequest request);
 
         /// <summary>
@@ -3605,6 +3829,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartDeviceSync
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">REST API Reference for StartDeviceSync Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginStartDeviceSync(StartDeviceSyncRequest request, AsyncCallback callback, object state);
 
 
@@ -3617,6 +3842,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  StartDeviceSyncResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartDeviceSync">REST API Reference for StartDeviceSync Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         StartDeviceSyncResponse EndStartDeviceSync(IAsyncResult asyncResult);
 
         #endregion
@@ -3634,6 +3860,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery">REST API Reference for StartSmartHomeApplianceDiscovery Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         StartSmartHomeApplianceDiscoveryResponse StartSmartHomeApplianceDiscovery(StartSmartHomeApplianceDiscoveryRequest request);
 
         /// <summary>
@@ -3648,6 +3875,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSmartHomeApplianceDiscovery
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery">REST API Reference for StartSmartHomeApplianceDiscovery Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginStartSmartHomeApplianceDiscovery(StartSmartHomeApplianceDiscoveryRequest request, AsyncCallback callback, object state);
 
 
@@ -3660,6 +3888,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  StartSmartHomeApplianceDiscoveryResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/StartSmartHomeApplianceDiscovery">REST API Reference for StartSmartHomeApplianceDiscovery Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         StartSmartHomeApplianceDiscoveryResponse EndStartSmartHomeApplianceDiscovery(IAsyncResult asyncResult);
 
         #endregion
@@ -3677,6 +3906,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         TagResourceResponse TagResource(TagResourceRequest request);
 
         /// <summary>
@@ -3691,6 +3921,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -3703,6 +3934,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  TagResourceResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/TagResource">REST API Reference for TagResource Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         TagResourceResponse EndTagResource(IAsyncResult asyncResult);
 
         #endregion
@@ -3720,6 +3952,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UntagResourceResponse UntagResource(UntagResourceRequest request);
 
         /// <summary>
@@ -3734,6 +3967,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
 
 
@@ -3746,6 +3980,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UntagResourceResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
@@ -3769,6 +4004,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateAddressBookResponse UpdateAddressBook(UpdateAddressBookRequest request);
 
         /// <summary>
@@ -3783,6 +4019,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateAddressBook
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUpdateAddressBook(UpdateAddressBookRequest request, AsyncCallback callback, object state);
 
 
@@ -3795,6 +4032,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UpdateAddressBookResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateAddressBook">REST API Reference for UpdateAddressBook Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateAddressBookResponse EndUpdateAddressBook(IAsyncResult asyncResult);
 
         #endregion
@@ -3816,6 +4054,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateBusinessReportScheduleResponse UpdateBusinessReportSchedule(UpdateBusinessReportScheduleRequest request);
 
         /// <summary>
@@ -3830,6 +4069,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateBusinessReportSchedule
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUpdateBusinessReportSchedule(UpdateBusinessReportScheduleRequest request, AsyncCallback callback, object state);
 
 
@@ -3842,6 +4082,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UpdateBusinessReportScheduleResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateBusinessReportSchedule">REST API Reference for UpdateBusinessReportSchedule Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateBusinessReportScheduleResponse EndUpdateBusinessReportSchedule(IAsyncResult asyncResult);
 
         #endregion
@@ -3859,6 +4100,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">REST API Reference for UpdateConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateConferenceProviderResponse UpdateConferenceProvider(UpdateConferenceProviderRequest request);
 
         /// <summary>
@@ -3873,6 +4115,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateConferenceProvider
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">REST API Reference for UpdateConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUpdateConferenceProvider(UpdateConferenceProviderRequest request, AsyncCallback callback, object state);
 
 
@@ -3885,6 +4128,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UpdateConferenceProviderResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateConferenceProvider">REST API Reference for UpdateConferenceProvider Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateConferenceProviderResponse EndUpdateConferenceProvider(IAsyncResult asyncResult);
 
         #endregion
@@ -3905,6 +4149,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateContactResponse UpdateContact(UpdateContactRequest request);
 
         /// <summary>
@@ -3919,6 +4164,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContact
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUpdateContact(UpdateContactRequest request, AsyncCallback callback, object state);
 
 
@@ -3931,6 +4177,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UpdateContactResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateContact">REST API Reference for UpdateContact Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateContactResponse EndUpdateContact(IAsyncResult asyncResult);
 
         #endregion
@@ -3955,6 +4202,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice">REST API Reference for UpdateDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateDeviceResponse UpdateDevice(UpdateDeviceRequest request);
 
         /// <summary>
@@ -3969,6 +4217,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateDevice
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice">REST API Reference for UpdateDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUpdateDevice(UpdateDeviceRequest request, AsyncCallback callback, object state);
 
 
@@ -3981,6 +4230,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UpdateDeviceResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateDevice">REST API Reference for UpdateDevice Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateDeviceResponse EndUpdateDevice(IAsyncResult asyncResult);
 
         #endregion
@@ -4002,6 +4252,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateGatewayResponse UpdateGateway(UpdateGatewayRequest request);
 
         /// <summary>
@@ -4016,6 +4267,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGateway
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUpdateGateway(UpdateGatewayRequest request, AsyncCallback callback, object state);
 
 
@@ -4028,6 +4280,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UpdateGatewayResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGateway">REST API Reference for UpdateGateway Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateGatewayResponse EndUpdateGateway(IAsyncResult asyncResult);
 
         #endregion
@@ -4049,6 +4302,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">REST API Reference for UpdateGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateGatewayGroupResponse UpdateGatewayGroup(UpdateGatewayGroupRequest request);
 
         /// <summary>
@@ -4063,6 +4317,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateGatewayGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">REST API Reference for UpdateGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUpdateGatewayGroup(UpdateGatewayGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -4075,6 +4330,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UpdateGatewayGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateGatewayGroup">REST API Reference for UpdateGatewayGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateGatewayGroupResponse EndUpdateGatewayGroup(IAsyncResult asyncResult);
 
         #endregion
@@ -4104,6 +4360,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateNetworkProfileResponse UpdateNetworkProfile(UpdateNetworkProfileRequest request);
 
         /// <summary>
@@ -4118,6 +4375,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateNetworkProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUpdateNetworkProfile(UpdateNetworkProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -4130,6 +4388,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UpdateNetworkProfileResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateNetworkProfile">REST API Reference for UpdateNetworkProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateNetworkProfileResponse EndUpdateNetworkProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -4153,6 +4412,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateProfileResponse UpdateProfile(UpdateProfileRequest request);
 
         /// <summary>
@@ -4167,6 +4427,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProfile
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUpdateProfile(UpdateProfileRequest request, AsyncCallback callback, object state);
 
 
@@ -4179,6 +4440,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UpdateProfileResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateProfileResponse EndUpdateProfile(IAsyncResult asyncResult);
 
         #endregion
@@ -4199,6 +4461,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom">REST API Reference for UpdateRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateRoomResponse UpdateRoom(UpdateRoomRequest request);
 
         /// <summary>
@@ -4213,6 +4476,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateRoom
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom">REST API Reference for UpdateRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUpdateRoom(UpdateRoomRequest request, AsyncCallback callback, object state);
 
 
@@ -4225,6 +4489,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UpdateRoomResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateRoom">REST API Reference for UpdateRoom Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateRoomResponse EndUpdateRoom(IAsyncResult asyncResult);
 
         #endregion
@@ -4248,6 +4513,7 @@ namespace Amazon.AlexaForBusiness
         /// The resource is not found.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup">REST API Reference for UpdateSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateSkillGroupResponse UpdateSkillGroup(UpdateSkillGroupRequest request);
 
         /// <summary>
@@ -4262,6 +4528,7 @@ namespace Amazon.AlexaForBusiness
         /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSkillGroup
         ///         operation.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup">REST API Reference for UpdateSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         IAsyncResult BeginUpdateSkillGroup(UpdateSkillGroupRequest request, AsyncCallback callback, object state);
 
 
@@ -4274,6 +4541,7 @@ namespace Amazon.AlexaForBusiness
         /// 
         /// <returns>Returns a  UpdateSkillGroupResult from AlexaForBusiness.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/alexaforbusiness-2017-11-09/UpdateSkillGroup">REST API Reference for UpdateSkillGroup Operation</seealso>
+        [Obsolete("Alexa For Business is no longer supported")]
         UpdateSkillGroupResponse EndUpdateSkillGroup(IAsyncResult asyncResult);
 
         #endregion

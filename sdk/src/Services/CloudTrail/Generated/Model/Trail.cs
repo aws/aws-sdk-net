@@ -128,7 +128,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property HomeRegion. 
         /// <para>
-        /// The region in which the trail was created.
+        /// The Region in which the trail was created.
         /// </para>
         /// </summary>
         public string HomeRegion
@@ -165,7 +165,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property IsMultiRegionTrail. 
         /// <para>
-        /// Specifies whether the trail exists only in one region or exists in all regions.
+        /// Specifies whether the trail exists only in one Region or exists in all Regions.
         /// </para>
         /// </summary>
         public bool IsMultiRegionTrail

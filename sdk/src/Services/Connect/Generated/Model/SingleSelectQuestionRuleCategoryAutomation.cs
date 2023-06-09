@@ -85,7 +85,7 @@ namespace Amazon.Connect.Model
         /// The identifier of the answer option.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=40)]
+        [AWSProperty(Required=true, Min=1, Max=40)]
         public string OptionRefId
         {
             get { return this._optionRefId; }

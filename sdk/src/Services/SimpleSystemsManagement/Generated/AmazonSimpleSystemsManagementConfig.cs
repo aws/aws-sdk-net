@@ -32,7 +32,7 @@ namespace Amazon.SimpleSystemsManagement
     public partial class AmazonSimpleSystemsManagementConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.104.35");
+            InternalSDKUtils.BuildUserAgentString("3.7.104.46");
 
         private string _userAgent = UserAgentString;
 

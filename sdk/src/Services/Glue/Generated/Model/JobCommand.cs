@@ -35,6 +35,7 @@ namespace Amazon.Glue.Model
     {
         private string _name;
         private string _pythonVersion;
+        private string _runtime;
         private string _scriptLocation;
 
         /// <summary>
@@ -42,7 +43,7 @@ namespace Amazon.Glue.Model
         /// <para>
         /// The name of the job command. For an Apache Spark ETL job, this must be <code>glueetl</code>.
         /// For a Python shell job, it must be <code>pythonshell</code>. For an Apache Spark streaming
-        /// ETL job, this must be <code>gluestreaming</code>.
+        /// ETL job, this must be <code>gluestreaming</code>. For a Ray job, this must be <code>glueray</code>.
         /// </para>
         /// </summary>
         public string Name
@@ -73,6 +74,28 @@ namespace Amazon.Glue.Model
         internal bool IsSetPythonVersion()
         {
             return this._pythonVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Runtime. 
+        /// <para>
+        /// In Ray jobs, Runtime is used to specify the versions of Ray, Python and additional
+        /// libraries available in your environment. This field is not used in other job types.
+        /// For supported runtime environment values, see <a href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
+        /// with Ray jobs</a> in the Glue Developer Guide.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=64)]
+        public string Runtime
+        {
+            get { return this._runtime; }
+            set { this._runtime = value; }
+        }
+
+        // Check to see if Runtime property is set
+        internal bool IsSetRuntime()
+        {
+            return this._runtime != null;
         }
 
         /// <summary>

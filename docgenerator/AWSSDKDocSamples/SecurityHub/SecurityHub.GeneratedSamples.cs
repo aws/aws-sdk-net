@@ -45,7 +45,7 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
         public void SecurityHubBatchEnableStandards()
         {
-            #region to-import-security-findings-from-a-third-party-provider-to-security-hub-1675090935260
+            #region to-enable-security-standards-1683233792239
 
             var client = new AmazonSecurityHubClient();
             var response = client.BatchEnableStandards(new BatchEnableStandardsRequest 
@@ -56,6 +56,48 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             });
 
             List<StandardsSubscription> standardsSubscriptions = response.StandardsSubscriptions;
+
+            #endregion
+        }
+
+        public void SecurityHubBatchGetSecurityControls()
+        {
+            #region to-get-security-control-details--1683234478355
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.BatchGetSecurityControls(new BatchGetSecurityControlsRequest 
+            {
+                SecurityControlIds = new List<string> {
+                    "ACM.1",
+                    "APIGateway.1"
+                }
+            });
+
+            List<SecurityControl> securityControls = response.SecurityControls;
+
+            #endregion
+        }
+
+        public void SecurityHubBatchGetStandardsControlAssociations()
+        {
+            #region to-get-enablement-status-of-a-batch-of-controls-1683301618357
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.BatchGetStandardsControlAssociations(new BatchGetStandardsControlAssociationsRequest 
+            {
+                StandardsControlAssociationIds = new List<StandardsControlAssociationId> {
+                    new StandardsControlAssociationId {
+                        SecurityControlId = "CloudTrail.1",
+                        StandardsArn = "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"
+                    },
+                    new StandardsControlAssociationId {
+                        SecurityControlId = "CloudWatch.12",
+                        StandardsArn = "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0"
+                    }
+                }
+            });
+
+            List<StandardsControlAssociationDetail> standardsControlAssociationDetails = response.StandardsControlAssociationDetails;
 
             #endregion
         }
@@ -148,6 +190,34 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
 
             List<AwsSecurityFindingIdentifier> processedFindings = response.ProcessedFindings;
             List<BatchUpdateFindingsUnprocessedFinding> unprocessedFindings = response.UnprocessedFindings;
+
+            #endregion
+        }
+
+        public void SecurityHubBatchUpdateStandardsControlAssociations()
+        {
+            #region to-update-enablement-status-of-a-batch-of-controls-1683300378416
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.BatchUpdateStandardsControlAssociations(new BatchUpdateStandardsControlAssociationsRequest 
+            {
+                StandardsControlAssociationUpdates = new List<StandardsControlAssociationUpdate> {
+                    new StandardsControlAssociationUpdate {
+                        AssociationStatus = "DISABLED",
+                        SecurityControlId = "CloudTrail.1",
+                        StandardsArn = "arn:aws:securityhub:::ruleset/sample-standard/v/1.1.0",
+                        UpdatedReason = "Not relevant to environment"
+                    },
+                    new StandardsControlAssociationUpdate {
+                        AssociationStatus = "DISABLED",
+                        SecurityControlId = "CloudWatch.12",
+                        StandardsArn = "arn:aws:securityhub:::ruleset/cis-aws-foundations-benchmark/v/1.2.0",
+                        UpdatedReason = "Not relevant to environment"
+                    }
+                }
+            });
+
+            List<UnprocessedStandardsControlAssociationUpdate> unprocessedAssociationUpdates = response.UnprocessedAssociationUpdates;
 
             #endregion
         }

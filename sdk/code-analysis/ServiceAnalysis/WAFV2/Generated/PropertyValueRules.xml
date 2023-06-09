@@ -177,6 +177,12 @@
     <pattern>^[\w\-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WAFV2.Model.DescribeManagedProductsByVendorRequest.VendorName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WAFV2.Model.DescribeManagedRuleGroupRequest.Name</property>
     <min>1</min>
     <max>128</max>
@@ -988,6 +994,46 @@
     <property>Amazon.WAFV2.Model.LoggingConfiguration.ResourceArn</property>
     <min>20</min>
     <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.ManagedRuleSetName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[\w\-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.ProductDescription</property>
+    <min>1</min>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.ProductId</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.ProductLink</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.ProductTitle</property>
+    <min>1</min>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.SnsTopicArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>.*\S.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WAFV2.Model.ManagedProductDescriptor.VendorName</property>
+    <min>1</min>
+    <max>128</max>
     <pattern>.*\S.*</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -82,6 +82,12 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomVocabularyExportSpecification = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("testSetExportSpecification", targetDepth))
+                {
+                    var unmarshaller = TestSetExportSpecificationUnmarshaller.Instance;
+                    unmarshalledObject.TestSetExportSpecification = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

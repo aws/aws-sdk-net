@@ -326,7 +326,8 @@ namespace Amazon.Lambda.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The minimum value that can be set is 60 seconds.
+        /// The minimum valid value for maximum record age is 60s. Although values less than 60
+        /// and greater than -1 fall within the parameter's absolute range, they are not allowed
         /// </para>
         ///  </note>
         /// </summary>

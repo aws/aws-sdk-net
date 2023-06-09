@@ -59,6 +59,17 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetDataTransferApi())
+            {
+                context.Writer.WritePropertyName("dataTransferApi");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = DataTransferApiMarshaller.Instance;
+                marshaller.Marshall(requestObject.DataTransferApi, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEntityName())
             {
                 context.Writer.WritePropertyName("entityName");

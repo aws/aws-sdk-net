@@ -33,7 +33,7 @@ namespace Amazon.CloudTrail.Model
     /// Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management
     /// events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail
     /// Insights events</a> that are captured by CloudTrail. You can look up events that occurred
-    /// in a region within the last 90 days. Lookup supports the following attributes for
+    /// in a Region within the last 90 days. Lookup supports the following attributes for
     /// management events:
     /// 
     ///  <ul> <li> 
@@ -92,7 +92,7 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  <important> 
     /// <para>
-    /// The rate of lookup requests is limited to two per second, per account, per region.
+    /// The rate of lookup requests is limited to two per second, per account, per Region.
     /// If this limit is exceeded, a throttling error occurs.
     /// </para>
     ///  </important>

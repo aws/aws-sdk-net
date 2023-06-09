@@ -56,6 +56,28 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetPo())
+            {
+                context.Writer.WritePropertyName("po");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PoAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Po, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetPs())
+            {
+                context.Writer.WritePropertyName("ps");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PsAttributesMarshaller.Instance;
+                marshaller.Marshall(requestObject.Ps, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVsam())
             {
                 context.Writer.WritePropertyName("vsam");

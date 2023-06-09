@@ -238,7 +238,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property Settings. 
         /// <para>
-        /// Settings that configure the translation output.
+        /// Settings that modify the translation output.
         /// </para>
         /// </summary>
         public TranslationSettings Settings
