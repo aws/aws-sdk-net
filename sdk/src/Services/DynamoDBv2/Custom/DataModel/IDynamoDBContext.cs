@@ -153,6 +153,35 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
         /// <returns>Empty strongly-typed BatchWrite object</returns>
         BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig);
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// 
+        /// This is intended for use only when the valuesType is not known at compile-time, for example,
+        /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
+        /// 
+        /// In scenarios when the valuesType is known at compile-time, the 
+        /// `BatchWrite<T> CreateBatchWrite<T>()` method is generally preferred.
+        /// </summary>
+        /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        BatchWrite<object> CreateBatchWrite(Type valuesType);
+
+        /// <summary>
+        /// Creates a strongly-typed BatchWrite object, allowing
+        /// a batch-write operation against DynamoDB.
+        /// 
+        /// This is intended for use only when the valuesType is not known at compile-time, for example,
+        /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
+        /// 
+        /// In scenarios when the valuesType is known at compile-time, the 
+        /// `BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)` method is generally preferred.
+        /// </summary>
+        /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed BatchWrite object</returns>
+        BatchWrite<object> CreateBatchWrite(Type valuesType, DynamoDBOperationConfig operationConfig);
 #else
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
@@ -166,6 +195,12 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <summary>
         /// Creates a strongly-typed BatchWrite object, allowing
         /// a batch-write operation against DynamoDB.
+        /// 
+        /// This is intended for use only when the valuesType is not known at compile-time, for example,
+        /// when hooking into EF's ChangeTracker to record audit logs from EF into DynamoDB.
+        /// 
+        /// In scenarios when the valuesType is known at compile-time, the 
+        /// `BatchWrite<T> CreateBatchWrite<T>(DynamoDBOperationConfig operationConfig)` method is generally preferred.
         /// </summary>
         /// <param name="valuesType">The type of data which will be persisted in this batch.</param>
         /// <param name="operationConfig">Config object which can be used to override that table used.</param>
