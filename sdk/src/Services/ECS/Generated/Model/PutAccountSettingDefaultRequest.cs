@@ -30,8 +30,8 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the PutAccountSettingDefault operation.
-    /// Modifies an account setting for all IAM users on an account for whom no individual
-    /// account setting has been specified. Account settings are set on a per-Region basis.
+    /// Modifies an account setting for all users on an account for whom no individual account
+    /// setting has been specified. Account settings are set on a per-Region basis.
     /// </summary>
     public partial class PutAccountSettingDefaultRequest : AmazonECSRequest
     {
@@ -47,14 +47,20 @@ namespace Amazon.ECS.Model
         /// is specified, the ARN and resource ID for your Amazon ECS container instances is affected.
         /// If <code>awsvpcTrunking</code> is specified, the ENI limit for your Amazon ECS container
         /// instances is affected. If <code>containerInsights</code> is specified, the default
-        /// setting for CloudWatch Container Insights for your clusters is affected.
+        /// setting for Amazon Web Services CloudWatch Container Insights for your clusters is
+        /// affected. If <code>tagResourceAuthorization</code> is specified, the opt-in option
+        /// for tagging resources on creation is affected. For information about the opt-in timeline,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+        /// authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Fargate is transitioning from task count-based quotas to vCPU-based quotas. You can
-        /// set the name to <code>fargateVCPULimit</code> to opt in or opt out of the vCPU-based
-        /// quotas. For information about the opt in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#fargate-quota-timeline">Fargate
-        /// vCPU-based quotas timeline</a> in the <i>Amazon ECS Developer Guide</i>.
+        /// When you specify <code>fargateFIPSMode</code> for the <code>name</code> and <code>enabled</code>
+        /// for the <code>value</code>, Fargate uses FIPS-140 compliant cryptographic algorithms
+        /// on your tasks. For more information about FIPS-140 compliance with Fargate, see <a
+        /// href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-fips-compliance.html">
+        /// Amazon Web Services Fargate Federal Information Processing Standard (FIPS) 140-2 compliance</a>
+        /// in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -73,8 +79,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>
-        /// and <code>disabled</code>.
+        /// The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>,
+        /// <code>disabled</code>, <code>on</code>, and <code>off</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

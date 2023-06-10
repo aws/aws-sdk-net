@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.QuickSight.Model
 {
     /// <summary>
-    /// 
+    /// The visual publish options of a visual in a dashboard
     /// </summary>
     public partial class DashboardVisualPublishOptions
     {
         private ExportHiddenFieldsOption _exportHiddenFieldsOption;
 
         /// <summary>
-        /// Gets and sets the property ExportHiddenFieldsOption.
+        /// Gets and sets the property ExportHiddenFieldsOption. 
+        /// <para>
+        /// Determines if hidden fields are included in an exported dashboard.
+        /// </para>
         /// </summary>
         public ExportHiddenFieldsOption ExportHiddenFieldsOption
         {

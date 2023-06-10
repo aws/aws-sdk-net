@@ -35,8 +35,13 @@ namespace Amazon.SecurityHub.Model
     /// 
     ///  
     /// <para>
-    /// This operation is only used by accounts that are not part of an organization. Organization
-    /// accounts do not receive invitations.
+    /// A Security Hub administrator account can use this operation to delete invitations
+    /// sent to one or more member accounts.
+    /// </para>
+    ///  
+    /// <para>
+    /// This operation is only used to delete invitations that are sent to member accounts
+    /// that aren't part of an organization. Organization accounts don't receive invitations.
     /// </para>
     /// </summary>
     public partial class DeleteInvitationsRequest : AmazonSecurityHubRequest
@@ -46,7 +51,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        /// The list of the account IDs that sent the invitations to delete.
+        /// The list of member account IDs that received the invitations you want to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -94,6 +94,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FederatedTable", targetDepth))
+                {
+                    var unmarshaller = FederatedTableUnmarshaller.Instance;
+                    unmarshalledObject.FederatedTable = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IsRegisteredWithLakeFormation", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

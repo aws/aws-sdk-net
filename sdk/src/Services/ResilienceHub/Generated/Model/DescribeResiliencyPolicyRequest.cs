@@ -30,9 +30,9 @@ namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeResiliencyPolicy operation.
-    /// Describes a specified resiliency policy for an AWS Resilience Hub application. The
-    /// returned policy object includes creation time, data location constraints, the Amazon
-    /// Resource Name (ARN) for the policy, tags, tier, and more.
+    /// Describes a specified resiliency policy for an Resilience Hub application. The returned
+    /// policy object includes creation time, data location constraints, the Amazon Resource
+    /// Name (ARN) for the policy, tags, tier, and more.
     /// </summary>
     public partial class DescribeResiliencyPolicyRequest : AmazonResilienceHubRequest
     {
@@ -44,7 +44,7 @@ namespace Amazon.ResilienceHub.Model
         /// The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
         /// arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

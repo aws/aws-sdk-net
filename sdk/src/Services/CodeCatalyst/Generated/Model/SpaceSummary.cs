@@ -77,8 +77,7 @@ namespace Amazon.CodeCatalyst.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        ///  <i>We need to know what this is and the basic usage information so that third-party
-        /// developers know how to use this data type.</i> 
+        /// The name of the space.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]

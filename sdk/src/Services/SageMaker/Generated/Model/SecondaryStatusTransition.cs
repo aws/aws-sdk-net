@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// An array element of <a>DescribeTrainingJobResponse$SecondaryStatusTransitions</a>.
+    /// An array element of <code>SecondaryStatusTransitions</code> for <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>.
     /// It provides additional details about a status that the training job has transitioned
     /// through. A training job can be in one of several states, for example, starting, downloading,
     /// training, or uploading. Within each state, there are a number of intermediate states.
@@ -210,8 +210,9 @@ namespace Amazon.SageMaker.Model
         ///  </important> 
         /// <para>
         /// To have an overview of your training job's progress, view <code>TrainingJobStatus</code>
-        /// and <code>SecondaryStatus</code> in <a>DescribeTrainingJob</a>, and <code>StatusMessage</code>
-        /// together. For example, at the start of a training job, you might see the following:
+        /// and <code>SecondaryStatus</code> in <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrainingJob.html">DescribeTrainingJob</a>,
+        /// and <code>StatusMessage</code> together. For example, at the start of a training job,
+        /// you might see the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>

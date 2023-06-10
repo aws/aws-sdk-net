@@ -1,0 +1,152 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the mediapackagev2-2022-12-25.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.MediaPackageV2.Model
+{
+    /// <summary>
+    /// Create an HTTP live streaming (HLS) manifest configuration.
+    /// </summary>
+    public partial class CreateHlsManifestConfiguration
+    {
+        private string _childManifestName;
+        private string _manifestName;
+        private int? _manifestWindowSeconds;
+        private int? _programDateTimeIntervalSeconds;
+        private ScteHls _scteHls;
+
+        /// <summary>
+        /// Gets and sets the property ChildManifestName. 
+        /// <para>
+        /// A short string that's appended to the endpoint URL. The child manifest name creates
+        /// a unique path to this endpoint. If you don't enter a value, MediaPackage uses the
+        /// default manifest name, index, with an added suffix to distinguish it from the manifest
+        /// name. The manifestName on the HLSManifest object overrides the manifestName you provided
+        /// on the originEndpoint object.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ChildManifestName
+        {
+            get { return this._childManifestName; }
+            set { this._childManifestName = value; }
+        }
+
+        // Check to see if ChildManifestName property is set
+        internal bool IsSetChildManifestName()
+        {
+            return this._childManifestName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestName. 
+        /// <para>
+        /// A short short string that's appended to the endpoint URL. The manifest name creates
+        /// a unique path to this endpoint. If you don't enter a value, MediaPackage uses the
+        /// default manifest name, index. MediaPackage automatically inserts the format extension,
+        /// such as .m3u8. You can't use the same manifest name if you use HLS manifest and low-latency
+        /// HLS manifest. The manifestName on the HLSManifest object overrides the manifestName
+        /// you provided on the originEndpoint object.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=256)]
+        public string ManifestName
+        {
+            get { return this._manifestName; }
+            set { this._manifestName = value; }
+        }
+
+        // Check to see if ManifestName property is set
+        internal bool IsSetManifestName()
+        {
+            return this._manifestName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ManifestWindowSeconds. 
+        /// <para>
+        /// The total duration (in seconds) of the manifest's content.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=30, Max=900)]
+        public int ManifestWindowSeconds
+        {
+            get { return this._manifestWindowSeconds.GetValueOrDefault(); }
+            set { this._manifestWindowSeconds = value; }
+        }
+
+        // Check to see if ManifestWindowSeconds property is set
+        internal bool IsSetManifestWindowSeconds()
+        {
+            return this._manifestWindowSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProgramDateTimeIntervalSeconds. 
+        /// <para>
+        /// Inserts EXT-X-PROGRAM-DATE-TIME tags in the output manifest at the interval that you
+        /// specify. If you don't enter an interval, EXT-X-PROGRAM-DATE-TIME tags aren't included
+        /// in the manifest. The tags sync the stream to the wall clock so that viewers can seek
+        /// to a specific time in the playback timeline on the player. ID3Timed metadata messages
+        /// generate every 5 seconds whenever the content is ingested.
+        /// </para>
+        ///  
+        /// <para>
+        /// Irrespective of this parameter, if any ID3Timed metadata is in the HLS input, it is
+        /// passed through to the HLS output.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1209600)]
+        public int ProgramDateTimeIntervalSeconds
+        {
+            get { return this._programDateTimeIntervalSeconds.GetValueOrDefault(); }
+            set { this._programDateTimeIntervalSeconds = value; }
+        }
+
+        // Check to see if ProgramDateTimeIntervalSeconds property is set
+        internal bool IsSetProgramDateTimeIntervalSeconds()
+        {
+            return this._programDateTimeIntervalSeconds.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScteHls.
+        /// </summary>
+        public ScteHls ScteHls
+        {
+            get { return this._scteHls; }
+            set { this._scteHls = value; }
+        }
+
+        // Check to see if ScteHls property is set
+        internal bool IsSetScteHls()
+        {
+            return this._scteHls != null;
+        }
+
+    }
+}

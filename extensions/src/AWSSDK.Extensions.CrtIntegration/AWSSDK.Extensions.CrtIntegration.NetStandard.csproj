@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard2.0</TargetFramework>
+    <TargetFrameworks>netstandard2.0;netcoreapp3.1</TargetFrameworks>
     <AssemblyName>AWSSDK.Extensions.CrtIntegration</AssemblyName>
     <PackageId>AWSSDK.Extensions.CrtIntegration</PackageId>
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
@@ -32,8 +32,8 @@
   </Choose>
 
   <ItemGroup>
-    <PackageReference Include="AWSCRT-AUTH" Version="0.4.1" />
-    <PackageReference Include="AWSCRT-CHECKSUMS" Version="0.4.1" />
+    <PackageReference Include="AWSCRT-AUTH" Version="0.4.3" />
+    <PackageReference Include="AWSCRT-CHECKSUMS" Version="0.4.3" />
   </ItemGroup>
 
   <ItemGroup>

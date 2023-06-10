@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property AssignmentName. 
         /// <para>
-        /// The name of the assignment. This name must be unique within the Amazon Web Services
+        /// The name of the assignment. The name must be unique within the Amazon Web Services
         /// account.
         /// </para>
         /// </summary>

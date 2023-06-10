@@ -34,6 +34,7 @@ namespace Amazon.Keyspaces.Model
     public partial class GetTableResponse : AmazonWebServiceResponse
     {
         private CapacitySpecificationSummary _capacitySpecification;
+        private ClientSideTimestamps _clientSideTimestamps;
         private Comment _comment;
         private DateTime? _creationTimestamp;
         private int? _defaultTimeToLive;
@@ -51,14 +52,15 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// The read/write throughput capacity mode for a table. The options are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>throughputMode:PAY_PER_REQUEST</code> 
+        ///  <code>throughputMode:PAY_PER_REQUEST</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>throughputMode:PROVISIONED</code> 
+        ///  <code>throughputMode:PROVISIONED</code> 
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         public CapacitySpecificationSummary CapacitySpecification
         {
@@ -70,6 +72,24 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetCapacitySpecification()
         {
             return this._capacitySpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSideTimestamps. 
+        /// <para>
+        ///  The client-side timestamps setting of the table.
+        /// </para>
+        /// </summary>
+        public ClientSideTimestamps ClientSideTimestamps
+        {
+            get { return this._clientSideTimestamps; }
+            set { this._clientSideTimestamps = value; }
+        }
+
+        // Check to see if ClientSideTimestamps property is set
+        internal bool IsSetClientSideTimestamps()
+        {
+            return this._clientSideTimestamps != null;
         }
 
         /// <summary>
@@ -111,7 +131,7 @@ namespace Amazon.Keyspaces.Model
         /// <summary>
         /// Gets and sets the property DefaultTimeToLive. 
         /// <para>
-        /// The default Time to Live settings of the specified table.
+        /// The default Time to Live settings in seconds of the specified table.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=630720000)]

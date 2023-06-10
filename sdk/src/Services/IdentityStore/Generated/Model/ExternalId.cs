@@ -42,7 +42,7 @@ namespace Amazon.IdentityStore.Model
         /// The identifier issued to this resource by an external identity provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }
@@ -61,7 +61,7 @@ namespace Amazon.IdentityStore.Model
         /// The issuer for an external identifier.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=100)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=100)]
         public string Issuer
         {
             get { return this._issuer; }

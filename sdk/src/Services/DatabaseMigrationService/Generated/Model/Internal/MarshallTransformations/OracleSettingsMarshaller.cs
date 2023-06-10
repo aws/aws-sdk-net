@@ -105,6 +105,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.CharLengthSemantics);
             }
 
+            if(requestObject.IsSetConvertTimestampWithZoneToUTC())
+            {
+                context.Writer.WritePropertyName("ConvertTimestampWithZoneToUTC");
+                context.Writer.Write(requestObject.ConvertTimestampWithZoneToUTC);
+            }
+
             if(requestObject.IsSetDatabaseName())
             {
                 context.Writer.WritePropertyName("DatabaseName");

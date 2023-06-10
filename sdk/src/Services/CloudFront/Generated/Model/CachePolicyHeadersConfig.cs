@@ -30,8 +30,7 @@ namespace Amazon.CloudFront.Model
 {
     /// <summary>
     /// An object that determines whether any HTTP headers (and if so, which headers) are
-    /// included in the cache key and automatically included in requests that CloudFront sends
-    /// to the origin.
+    /// included in the cache key and in requests that CloudFront sends to the origin.
     /// </summary>
     public partial class CachePolicyHeadersConfig
     {
@@ -41,21 +40,20 @@ namespace Amazon.CloudFront.Model
         /// <summary>
         /// Gets and sets the property HeaderBehavior. 
         /// <para>
-        /// Determines whether any HTTP headers are included in the cache key and automatically
-        /// included in requests that CloudFront sends to the origin. Valid values are:
+        /// Determines whether any HTTP headers are included in the cache key and in requests
+        /// that CloudFront sends to the origin. Valid values are:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>none</code> – HTTP headers are not included in the cache key and are not automatically
-        /// included in requests that CloudFront sends to the origin. Even when this field is
-        /// set to <code>none</code>, any headers that are listed in an <code>OriginRequestPolicy</code>
-        /// <i>are</i> included in origin requests.
+        ///  <code>none</code> – No HTTP headers are included in the cache key or in requests
+        /// that CloudFront sends to the origin. Even when this field is set to <code>none</code>,
+        /// any headers that are listed in an <code>OriginRequestPolicy</code> <i>are</i> included
+        /// in origin requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code>
-        /// type are included in the cache key and are automatically included in requests that
-        /// CloudFront sends to the origin.
+        ///  <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code>
+        /// type are included in the cache key and in requests that CloudFront sends to the origin.
         /// </para>
         ///  </li> </ul>
         /// </summary>

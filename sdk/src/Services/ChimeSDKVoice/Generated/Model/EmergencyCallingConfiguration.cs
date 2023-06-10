@@ -29,14 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The emergency calling configuration details associated with an Amazon Chime SDK Voice
+    /// Connector.
     /// </summary>
     public partial class EmergencyCallingConfiguration
     {
         private List<DNISEmergencyCallingConfiguration> _dnis = new List<DNISEmergencyCallingConfiguration>();
 
         /// <summary>
-        /// Gets and sets the property DNIS.
+        /// Gets and sets the property DNIS. 
+        /// <para>
+        /// The Dialed Number Identification Service (DNIS) emergency calling configuration details.
+        /// </para>
         /// </summary>
         public List<DNISEmergencyCallingConfiguration> DNIS
         {

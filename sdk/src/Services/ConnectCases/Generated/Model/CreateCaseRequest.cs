@@ -35,9 +35,13 @@ namespace Amazon.ConnectCases.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  <code>customer_id</code> is a required field when creating a case.
+    /// The following fields are required when creating a case:
     /// </para>
-    ///  </note>
+    ///  <pre><code> &lt;ul&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;customer_id&lt;/code&gt;
+    /// - You must provide the full customer profile ARN in this format: &lt;code&gt;arn:aws:profile:your
+    /// AWS Region:your AWS account ID:domains/profiles domain name/profiles/profile ID&lt;/code&gt;
+    /// &lt;/p&gt; &lt;/li&gt; &lt;li&gt; &lt;p&gt; &lt;code&gt;title&lt;/code&gt; &lt;/p&gt;
+    /// &lt;/li&gt; &lt;/ul&gt; &lt;/note&gt; </code></pre>
     /// </summary>
     public partial class CreateCaseRequest : AmazonConnectCasesRequest
     {

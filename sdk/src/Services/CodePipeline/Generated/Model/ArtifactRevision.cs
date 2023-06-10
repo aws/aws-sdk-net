@@ -122,9 +122,9 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property RevisionSummary. 
         /// <para>
         /// Summary information about the most recent revision of the artifact. For GitHub and
-        /// AWS CodeCommit repositories, the commit message. For Amazon S3 buckets or actions,
-        /// the user-provided content of a <code>codepipeline-artifact-revision-summary</code>
-        /// key specified in the object metadata.
+        /// CodeCommit repositories, the commit message. For Amazon S3 buckets or actions, the
+        /// user-provided content of a <code>codepipeline-artifact-revision-summary</code> key
+        /// specified in the object metadata.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -143,7 +143,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property RevisionUrl. 
         /// <para>
-        /// The commit ID for the artifact revision. For artifacts stored in GitHub or AWS CodeCommit
+        /// The commit ID for the artifact revision. For artifacts stored in GitHub or CodeCommit
         /// repositories, the commit ID is linked to a commit details page.
         /// </para>
         /// </summary>

@@ -37,7 +37,10 @@ namespace Amazon.CloudWatch.Model
     /// 
     ///  
     /// <para>
-    ///  In the event of an error, no alarms are deleted.
+    ///  If you specify an incorrect alarm name or make any other error in the operation,
+    /// no alarms are deleted. To confirm that alarms were deleted successfully, you can use
+    /// the <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_DescribeAlarms.html">DescribeAlarms</a>
+    /// operation after using <code>DeleteAlarms</code>.
     /// </para>
     ///  <note> 
     /// <para>
@@ -68,7 +71,7 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property AlarmNames. 
         /// <para>
-        /// The alarms to be deleted.
+        /// The alarms to be deleted. Do not enclose the alarm names in quote marks.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=100)]

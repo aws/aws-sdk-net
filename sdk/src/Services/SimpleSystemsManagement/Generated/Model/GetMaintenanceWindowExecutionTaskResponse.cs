@@ -280,6 +280,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<Dictionary<string, MaintenanceWindowTaskParameterValueExpression>> TaskParameters
         {
             get { return this._taskParameters; }

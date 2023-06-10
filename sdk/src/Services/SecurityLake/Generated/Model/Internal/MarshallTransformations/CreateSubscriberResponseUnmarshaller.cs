@@ -51,28 +51,10 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("roleArn", targetDepth))
+                if (context.TestExpression("subscriber", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.RoleArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("s3BucketArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.S3BucketArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("snsArn", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SnsArn = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("subscriptionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    response.SubscriptionId = unmarshaller.Unmarshall(context);
+                    var unmarshaller = SubscriberResourceUnmarshaller.Instance;
+                    response.Subscriber = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -102,33 +84,25 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccountNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
-                    return AccountNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("BucketNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                 {
-                    return BucketNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictSubscriptionException"))
-                {
-                    return ConflictSubscriptionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputException"))
-                {
-                    return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
                     return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSecurityLakeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

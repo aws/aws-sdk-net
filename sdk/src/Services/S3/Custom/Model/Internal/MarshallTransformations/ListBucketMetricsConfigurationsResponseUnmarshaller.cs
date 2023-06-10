@@ -65,7 +65,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
 
                         continue;
                     }
-                    if (context.TestExpression("InventoryConfiguration", targetDepth))
+                    if (context.TestExpression("MetricsConfiguration", targetDepth))
                     {
                         response.MetricsConfigurationList.Add(MetricsConfigurationUnmarshaller.Instance.Unmarshall(context));
 

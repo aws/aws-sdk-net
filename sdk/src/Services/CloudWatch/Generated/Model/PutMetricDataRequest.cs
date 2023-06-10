@@ -124,7 +124,8 @@ namespace Amazon.CloudWatch.Model
         /// <summary>
         /// Gets and sets the property Namespace. 
         /// <para>
-        /// The namespace for the metric data.
+        /// The namespace for the metric data. You can use ASCII characters for the namespace,
+        /// except for control characters which are not supported.
         /// </para>
         ///  
         /// <para>

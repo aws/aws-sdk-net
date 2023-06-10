@@ -46,6 +46,7 @@ namespace Amazon.QuickSight.Model
         /// 10 hours. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string EmbedUrl
         {
             get { return this._embedUrl; }

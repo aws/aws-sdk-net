@@ -366,8 +366,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SamplePayloadUrl. 
         /// <para>
-        /// The Amazon Simple Storage Service (Amazon S3) path where the sample payload are stored.
-        /// This path must point to a single gzip compressed tar archive (.tar.gz suffix).
+        /// The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored.
+        /// This path must point to a single gzip compressed tar archive (.tar.gz suffix). This
+        /// archive can hold multiple files that are all equally used in the load test. Each file
+        /// in the archive must satisfy the size constraints of the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html#API_runtime_InvokeEndpoint_RequestSyntax">InvokeEndpoint</a>
+        /// call.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

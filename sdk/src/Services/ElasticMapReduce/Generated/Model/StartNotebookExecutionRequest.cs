@@ -35,10 +35,14 @@ namespace Amazon.ElasticMapReduce.Model
     public partial class StartNotebookExecutionRequest : AmazonElasticMapReduceRequest
     {
         private string _editorId;
+        private Dictionary<string, string> _environmentVariables = new Dictionary<string, string>();
         private ExecutionEngineConfig _executionEngine;
         private string _notebookExecutionName;
         private string _notebookInstanceSecurityGroupId;
         private string _notebookParams;
+        private NotebookS3LocationFromInput _notebookS3Location;
+        private OutputNotebookFormat _outputNotebookFormat;
+        private OutputNotebookS3LocationFromInput _outputNotebookS3Location;
         private string _relativePath;
         private string _serviceRole;
         private List<Tag> _tags = new List<Tag>();
@@ -46,10 +50,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EditorId. 
         /// <para>
-        /// The unique identifier of the EMR Notebook to use for notebook execution.
+        /// The unique identifier of the Amazon EMR Notebook to use for notebook execution.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Min=0, Max=256)]
         public string EditorId
         {
             get { return this._editorId; }
@@ -60,6 +64,24 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetEditorId()
         {
             return this._editorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnvironmentVariables. 
+        /// <para>
+        /// The environment variables associated with the notebook execution.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> EnvironmentVariables
+        {
+            get { return this._environmentVariables; }
+            set { this._environmentVariables = value; }
+        }
+
+        // Check to see if EnvironmentVariables property is set
+        internal bool IsSetEnvironmentVariables()
+        {
+            return this._environmentVariables != null && this._environmentVariables.Count > 0; 
         }
 
         /// <summary>
@@ -103,8 +125,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property NotebookInstanceSecurityGroupId. 
         /// <para>
-        /// The unique identifier of the Amazon EC2 security group to associate with the EMR Notebook
-        /// for this notebook execution.
+        /// The unique identifier of the Amazon EC2 security group to associate with the Amazon
+        /// EMR Notebook for this notebook execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=256)]
@@ -123,7 +145,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property NotebookParams. 
         /// <para>
-        /// Input parameters in JSON format passed to the EMR Notebook at runtime for execution.
+        /// Input parameters in JSON format passed to the Amazon EMR Notebook at runtime for execution.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=10280)]
@@ -140,17 +162,71 @@ namespace Amazon.ElasticMapReduce.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NotebookS3Location. 
+        /// <para>
+        /// The Amazon S3 location for the notebook execution input.
+        /// </para>
+        /// </summary>
+        public NotebookS3LocationFromInput NotebookS3Location
+        {
+            get { return this._notebookS3Location; }
+            set { this._notebookS3Location = value; }
+        }
+
+        // Check to see if NotebookS3Location property is set
+        internal bool IsSetNotebookS3Location()
+        {
+            return this._notebookS3Location != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputNotebookFormat. 
+        /// <para>
+        /// The output format for the notebook execution.
+        /// </para>
+        /// </summary>
+        public OutputNotebookFormat OutputNotebookFormat
+        {
+            get { return this._outputNotebookFormat; }
+            set { this._outputNotebookFormat = value; }
+        }
+
+        // Check to see if OutputNotebookFormat property is set
+        internal bool IsSetOutputNotebookFormat()
+        {
+            return this._outputNotebookFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputNotebookS3Location. 
+        /// <para>
+        /// The Amazon S3 location for the notebook execution output.
+        /// </para>
+        /// </summary>
+        public OutputNotebookS3LocationFromInput OutputNotebookS3Location
+        {
+            get { return this._outputNotebookS3Location; }
+            set { this._outputNotebookS3Location = value; }
+        }
+
+        // Check to see if OutputNotebookS3Location property is set
+        internal bool IsSetOutputNotebookS3Location()
+        {
+            return this._outputNotebookS3Location != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RelativePath. 
         /// <para>
         /// The path and file name of the notebook file for this execution, relative to the path
-        /// specified for the EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code>
-        /// when you create an EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code>
+        /// specified for the Amazon EMR Notebook. For example, if you specify a path of <code>s3://MyBucket/MyNotebooks</code>
+        /// when you create an Amazon EMR Notebook for a notebook with an ID of <code>e-ABCDEFGHIJK1234567890ABCD</code>
         /// (the <code>EditorID</code> of this request), and you specify a <code>RelativePath</code>
         /// of <code>my_notebook_executions/notebook_execution.ipynb</code>, the location of the
         /// file for the notebook execution is <code>s3://MyBucket/MyNotebooks/e-ABCDEFGHIJK1234567890ABCD/my_notebook_executions/notebook_execution.ipynb</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=10280)]
+        [AWSProperty(Min=0, Max=10280)]
         public string RelativePath
         {
             get { return this._relativePath; }
@@ -167,7 +243,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property ServiceRole. 
         /// <para>
         /// The name or ARN of the IAM role that is used as the service role for Amazon EMR (the
-        /// EMR role) for the notebook execution.
+        /// Amazon EMR role) for the notebook execution.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=10280)]

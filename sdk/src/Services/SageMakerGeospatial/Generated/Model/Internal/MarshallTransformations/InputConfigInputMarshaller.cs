@@ -45,17 +45,6 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(InputConfigInput requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetDataSourceConfig())
-            {
-                context.Writer.WritePropertyName("DataSourceConfig");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = EojDataSourceConfigInputMarshaller.Instance;
-                marshaller.Marshall(requestObject.DataSourceConfig, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
             if(requestObject.IsSetPreviousEarthObservationJobArn())
             {
                 context.Writer.WritePropertyName("PreviousEarthObservationJobArn");

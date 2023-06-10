@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     {
         private List<string> _accountIds = new List<string>();
         private List<string> _dataSources = new List<string>();
+        private List<string> _features = new List<string>();
         private List<string> _resources = new List<string>();
 
         /// <summary>
@@ -62,7 +63,7 @@ namespace Amazon.GuardDuty.Model
         /// The data sources to aggregate usage statistics from.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [Obsolete("This parameter is deprecated, use Features instead")]
         public List<string> DataSources
         {
             get { return this._dataSources; }
@@ -73,6 +74,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDataSources()
         {
             return this._dataSources != null && this._dataSources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// The features to aggregate usage statistics from.
+        /// </para>
+        /// </summary>
+        public List<string> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && this._features.Count > 0; 
         }
 
         /// <summary>

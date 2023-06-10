@@ -137,8 +137,8 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property LogExports. 
         /// <para>
-        /// The collection of exported log types. Log types include the connection log, user log
-        /// and user activity log.
+        /// The collection of exported log types. Possible values are <code>connectionlog</code>,
+        /// <code>useractivitylog</code>, and <code>userlog</code>.
         /// </para>
         /// </summary>
         public List<string> LogExports

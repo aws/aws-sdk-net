@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// Input structure for the BandMath operation type. Defines Predefined and CustomIndices
+    /// to be computed using BandMath.
     /// </summary>
     public partial class BandMathConfigInput
     {
@@ -37,7 +38,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private List<string> _predefinedIndices = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property CustomIndices.
+        /// Gets and sets the property CustomIndices. 
+        /// <para>
+        /// CustomIndices that are computed.
+        /// </para>
         /// </summary>
         public CustomIndicesInput CustomIndices
         {
@@ -52,7 +56,12 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PredefinedIndices.
+        /// Gets and sets the property PredefinedIndices. 
+        /// <para>
+        /// One or many of the supported predefined indices to compute. Allowed values: <code>NDVI</code>,
+        /// <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>, <code>NDMI</code>, <code>NDSI</code>,
+        /// and <code>WDRVI</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> PredefinedIndices

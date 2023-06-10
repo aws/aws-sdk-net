@@ -30,7 +30,7 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Represents information about the key used to encrypt data in the artifact store, such
-    /// as an AWS Key Management Service (AWS KMS) key.
+    /// as an Amazon Web Services Key Management Service (Key Management Service) key.
     /// </summary>
     public partial class EncryptionKey
     {
@@ -40,14 +40,15 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The ID used to identify the key. For an AWS KMS key, you can use the key ID, the key
-        /// ARN, or the alias ARN.
+        /// The ID used to identify the key. For an Amazon Web Services KMS key, you can use the
+        /// key ID, the key ARN, or the alias ARN.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Aliases are recognized only in the account that created the customer master key (CMK).
-        /// For cross-account actions, you can only use the key ID or key ARN to identify the
-        /// key.
+        /// Aliases are recognized only in the account that created the KMS key. For cross-account
+        /// actions, you can only use the key ID or key ARN to identify the key. Cross-account
+        /// actions involve using the role from the other account (AccountB), so specifying the
+        /// key ID will use the key from the other account (AccountB).
         /// </para>
         ///  </note>
         /// </summary>
@@ -67,8 +68,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of encryption key, such as an AWS Key Management Service (AWS KMS) key. When
-        /// creating or updating a pipeline, the value must be set to 'KMS'.
+        /// The type of encryption key, such as an Amazon Web Services KMS key. When creating
+        /// or updating a pipeline, the value must be set to 'KMS'.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

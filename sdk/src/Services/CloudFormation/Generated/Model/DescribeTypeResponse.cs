@@ -83,9 +83,9 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AutoUpdate. 
         /// <para>
-        /// Whether CloudFormation automatically updates the extension in this account and region
+        /// Whether CloudFormation automatically updates the extension in this account and Region
         /// when a new <i>minor</i> version is published by the extension publisher. Major versions
-        /// released by the publisher must be manually updated. For more information, see <a href="AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating
+        /// released by the publisher must be manually updated. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable">Activating
         /// public extensions for use in your account</a> in the <i>CloudFormation User Guide</i>.
         /// </para>
         /// </summary>
@@ -105,7 +105,7 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ConfigurationSchema. 
         /// <para>
         /// A JSON string that represent the current configuration data for the extension in this
-        /// account and region.
+        /// account and Region.
         /// </para>
         ///  
         /// <para>
@@ -141,8 +141,7 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// To set the default version of an extension, use <code> <a>SetTypeDefaultVersion</a>
-        /// </code>.
+        /// To set the default version of an extension, use <a>SetTypeDefaultVersion</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -264,7 +263,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property IsActivated. 
         /// <para>
-        /// Whether the extension is activated in the account and region.
+        /// Whether the extension is activated in the account and Region.
         /// </para>
         ///  
         /// <para>
@@ -385,7 +384,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OriginalTypeArn. 
         /// <para>
-        /// For public extensions that have been activated for this account and region, the Amazon
+        /// For public extensions that have been activated for this account and Region, the Amazon
         /// Resource Name (ARN) of the public extension.
         /// </para>
         /// </summary>
@@ -405,14 +404,14 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property OriginalTypeName. 
         /// <para>
-        /// For public extensions that have been activated for this account and region, the type
+        /// For public extensions that have been activated for this account and Region, the type
         /// name of the public extension.
         /// </para>
         ///  
         /// <para>
         /// If you specified a <code>TypeNameAlias</code> when enabling the extension in this
-        /// account and region, CloudFormation treats that alias as the extension's type name
-        /// within the account and region, not the type name of the public extension. For more
+        /// account and Region, CloudFormation treats that alias as the extension's type name
+        /// within the account and Region, not the type name of the public extension. For more
         /// information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html#registry-public-enable-alias">Specifying
         /// aliases to refer to extensions</a> in the <i>CloudFormation User Guide</i>.
         /// </para>

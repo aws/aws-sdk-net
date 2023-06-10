@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Information about a CloudTrail trail, including the trail's name, home region, and
+    /// Information about a CloudTrail trail, including the trail's name, home Region, and
     /// Amazon Resource Name (ARN).
     /// </summary>
     public partial class TrailInfo

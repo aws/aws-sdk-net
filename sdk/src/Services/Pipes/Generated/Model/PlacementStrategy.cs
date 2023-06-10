@@ -48,7 +48,7 @@ namespace Amazon.Pipes.Model
         /// placement strategy, this field is not used. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=255)]
+        [AWSProperty(Sensitive=true, Min=0, Max=255)]
         public string Field
         {
             get { return this._field; }

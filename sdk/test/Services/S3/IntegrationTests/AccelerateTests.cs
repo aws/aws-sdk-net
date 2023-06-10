@@ -38,7 +38,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         public static void Initialize(TestContext a)
         {
             s3Client = new AmazonS3Client(TestRegionEndpoint);
-            bucketName = S3TestUtils.CreateBucketWithWait(s3Client);
+            bucketName = S3TestUtils.CreateBucketWithWait(s3Client, true);
             BucketAccelerateStatus bucketStatus = null;
 
             s3Client.PutBucketAccelerateConfiguration(new PutBucketAccelerateConfigurationRequest

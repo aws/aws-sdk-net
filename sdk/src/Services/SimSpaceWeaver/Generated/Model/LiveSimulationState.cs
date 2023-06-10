@@ -62,8 +62,8 @@ namespace Amazon.SimSpaceWeaver.Model
         /// <summary>
         /// Gets and sets the property Domains. 
         /// <para>
-        /// A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-        /// concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+        /// A list of domains for the simulation. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+        /// concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
         /// </para>
         /// </summary>
         public List<Domain> Domains

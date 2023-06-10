@@ -61,7 +61,7 @@ namespace Amazon.Lex.Model
         /// the operation of your application.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Sensitive=true, Min=0, Max=20)]
         public List<ActiveContext> ActiveContexts
         {
             get { return this._activeContexts; }
@@ -242,7 +242,7 @@ namespace Amazon.Lex.Model
         /// response.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Message
         {
             get { return this._message; }
@@ -368,6 +368,7 @@ namespace Amazon.Lex.Model
         /// A map of key-value pairs representing the session-specific context information.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> SessionAttributes
         {
             get { return this._sessionAttributes; }
@@ -416,6 +417,7 @@ namespace Amazon.Lex.Model
         /// the default is <code>ORIGINAL_VALUE</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Slots
         {
             get { return this._slots; }

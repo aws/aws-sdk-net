@@ -35,7 +35,7 @@ namespace Amazon.IotData.Model
     ///  
     /// <para>
     /// This action returns the message payload of the retained message, which can incur messaging
-    /// costs. To list only the topic names of the retained messages, call <a href="/iot/latest/developerguide/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.
+    /// costs. To list only the topic names of the retained messages, call <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.
     /// </para>
     ///  
     /// <para>

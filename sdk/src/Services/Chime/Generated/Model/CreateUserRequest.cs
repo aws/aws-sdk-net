@@ -64,6 +64,7 @@ namespace Amazon.Chime.Model
         /// The user's email address.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Email
         {
             get { return this._email; }

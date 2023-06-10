@@ -70,6 +70,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.AggregateKeyType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CustomKeys", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<RateBasedStatementCustomKey, RateBasedStatementCustomKeyUnmarshaller>(RateBasedStatementCustomKeyUnmarshaller.Instance);
+                    unmarshalledObject.CustomKeys = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ForwardedIPConfig", targetDepth))
                 {
                     var unmarshaller = ForwardedIPConfigUnmarshaller.Instance;

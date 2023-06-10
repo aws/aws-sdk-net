@@ -92,6 +92,22 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
+        /// Paginator for ListVoiceProfileDomains operation
+        ///</summary>
+        public IListVoiceProfileDomainsPaginator ListVoiceProfileDomains(ListVoiceProfileDomainsRequest request) 
+        {
+            return new ListVoiceProfileDomainsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListVoiceProfiles operation
+        ///</summary>
+        public IListVoiceProfilesPaginator ListVoiceProfiles(ListVoiceProfilesRequest request) 
+        {
+            return new ListVoiceProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchAvailablePhoneNumbers operation
         ///</summary>
         public ISearchAvailablePhoneNumbersPaginator SearchAvailablePhoneNumbers(SearchAvailablePhoneNumbersRequest request) 

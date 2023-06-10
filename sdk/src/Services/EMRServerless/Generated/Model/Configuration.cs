@@ -84,7 +84,7 @@ namespace Amazon.EMRServerless.Model
         /// A set of properties specified within a configuration classification.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100)]
+        [AWSProperty(Sensitive=true, Min=0, Max=100)]
         public Dictionary<string, string> Properties
         {
             get { return this._properties; }

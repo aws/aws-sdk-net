@@ -89,6 +89,11 @@ namespace Amazon.RAM.Model
         /// If you don't provide this value, then Amazon Web Services generates a random one for
         /// you.
         /// </para>
+        ///  
+        /// <para>
+        /// If you retry the operation with the same <code>ClientToken</code>, but with different
+        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// </para>
         /// </summary>
         public string ClientToken
         {
@@ -159,7 +164,7 @@ namespace Amazon.RAM.Model
         ///  </li> <li> 
         /// <para>
         /// An <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code>
+        /// Resource Name (ARN)</a> of an organization in Organizations, for example: <code>organizations::123456789012:organization/o-exampleorgid</code>
         /// 
         /// </para>
         ///  </li> <li> 

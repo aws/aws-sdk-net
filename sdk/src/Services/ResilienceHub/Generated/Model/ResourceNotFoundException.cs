@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// The specified resource could not be found.
+    /// This exception occurs when the specified resource could not be found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

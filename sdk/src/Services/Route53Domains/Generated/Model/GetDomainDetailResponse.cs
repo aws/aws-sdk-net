@@ -102,6 +102,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides details about the domain administrative contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public ContactDetail AdminContact
         {
             get { return this._adminContact; }
@@ -271,6 +272,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides details about the domain registrant.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public ContactDetail RegistrantContact
         {
             get { return this._registrantContact; }
@@ -421,6 +423,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides details about the domain technical contact.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public ContactDetail TechContact
         {
             get { return this._techContact; }

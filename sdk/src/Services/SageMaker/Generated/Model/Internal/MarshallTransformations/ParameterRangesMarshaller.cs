@@ -45,6 +45,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ParameterRanges requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAutoParameters())
+            {
+                context.Writer.WritePropertyName("AutoParameters");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAutoParametersListValue in requestObject.AutoParameters)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoParameterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAutoParametersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetCategoricalParameterRanges())
             {
                 context.Writer.WritePropertyName("CategoricalParameterRanges");

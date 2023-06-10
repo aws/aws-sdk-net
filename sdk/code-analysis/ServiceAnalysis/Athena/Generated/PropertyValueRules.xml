@@ -5,6 +5,22 @@
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.CancelCapacityReservationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreateCapacityReservationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CreateCapacityReservationRequest.TargetDpus</property>
+    <min>24</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.CreateDataCatalogRequest.Description</property>
     <min>1</min>
     <max>1024</max>
@@ -109,6 +125,12 @@
     <pattern>[a-zA-Z0-9._-]{1,128}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.DeleteCapacityReservationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.DeleteDataCatalogRequest.Name</property>
     <min>1</min>
     <max>256</max>
@@ -188,6 +210,18 @@
     <property>Amazon.Athena.Model.GetCalculationExecutionStatusRequest.CalculationExecutionId</property>
     <min>1</min>
     <max>36</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetCapacityAssignmentConfigurationRequest.CapacityReservationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.GetCapacityReservationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.GetDatabaseRequest.CatalogName</property>
@@ -375,6 +409,21 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.ListCalculationExecutionsResponse.NextToken</property>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListCapacityReservationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListCapacityReservationsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.ListCapacityReservationsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.ListDatabasesRequest.CatalogName</property>
@@ -628,6 +677,12 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.PutCapacityAssignmentConfigurationRequest.CapacityReservationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.StartCalculationExecutionRequest.ClientRequestToken</property>
     <min>32</min>
     <max>128</max>
@@ -725,6 +780,16 @@
     <property>Amazon.Athena.Model.UntagResourceRequest.ResourceARN</property>
     <min>1</min>
     <max>1011</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateCapacityReservationRequest.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.UpdateCapacityReservationRequest.TargetDpus</property>
+    <min>24</min>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.UpdateDataCatalogRequest.Description</property>
@@ -886,6 +951,26 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Athena.Model.CapacityAssignmentConfiguration.CapacityReservationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CapacityReservation.AllocatedDpus</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CapacityReservation.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>[a-zA-Z0-9._-]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Athena.Model.CapacityReservation.TargetDpus</property>
+    <min>24</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Athena.Model.Column.Comment</property>
     <min>0</min>
     <max>255</max>
@@ -934,12 +1019,12 @@
   <property-value-rule>
     <property>Amazon.Athena.Model.EngineConfiguration.CoordinatorDpuSize</property>
     <min>1</min>
-    <max>5000</max>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.EngineConfiguration.DefaultExecutorDpuSize</property>
     <min>1</min>
-    <max>5000</max>
+    <max>1</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Athena.Model.EngineConfiguration.MaxConcurrentDpus</property>

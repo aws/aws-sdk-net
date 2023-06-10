@@ -44,6 +44,14 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         }
 
         /// <summary>
+        /// Paginator for ListMediaInsightsPipelineConfigurations operation
+        ///</summary>
+        public IListMediaInsightsPipelineConfigurationsPaginator ListMediaInsightsPipelineConfigurations(ListMediaInsightsPipelineConfigurationsRequest request) 
+        {
+            return new ListMediaInsightsPipelineConfigurationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMediaPipelines operation
         ///</summary>
         public IListMediaPipelinesPaginator ListMediaPipelines(ListMediaPipelinesRequest request) 

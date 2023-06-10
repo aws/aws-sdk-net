@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMediaPipelines.Model
 {
     /// <summary>
-    /// The configuration object of a video contacatentation pipeline.
+    /// The configuration object of a video concatenation pipeline.
     /// </summary>
     public partial class VideoConcatenationConfiguration
     {

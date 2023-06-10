@@ -43,6 +43,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("TimestreamWrite")]
+        public void CreateBatchLoadTaskEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateBatchLoadTask");
+            var request = InstantiateClassGenerator.Execute<CreateBatchLoadTaskRequest>();
+            var marshaller = new CreateBatchLoadTaskEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamWrite")]
         public void CreateDatabaseEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("CreateDatabase");
@@ -103,6 +118,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Json")]
         [TestCategory("TimestreamWrite")]
+        public void DescribeBatchLoadTaskEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("DescribeBatchLoadTask");
+            var request = InstantiateClassGenerator.Execute<DescribeBatchLoadTaskRequest>();
+            var marshaller = new DescribeBatchLoadTaskEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamWrite")]
         public void DescribeDatabaseEndpointDiscoveryMarshallTest()
         {
             var operation = service_model.FindOperation("DescribeDatabase");
@@ -123,6 +153,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var operation = service_model.FindOperation("DescribeTable");
             var request = InstantiateClassGenerator.Execute<DescribeTableRequest>();
             var marshaller = new DescribeTableEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamWrite")]
+        public void ListBatchLoadTasksEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListBatchLoadTasks");
+            var request = InstantiateClassGenerator.Execute<ListBatchLoadTasksRequest>();
+            var marshaller = new ListBatchLoadTasksEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
             var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
@@ -168,6 +213,21 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var operation = service_model.FindOperation("ListTagsForResource");
             var request = InstantiateClassGenerator.Execute<ListTagsForResourceRequest>();
             var marshaller = new ListTagsForResourceEndpointDiscoveryMarshaller();
+
+            var internalData = marshaller.Marshall(request);
+            var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);
+            validator.Validate();
+        }
+ 
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Json")]
+        [TestCategory("TimestreamWrite")]
+        public void ResumeBatchLoadTaskEndpointDiscoveryMarshallTest()
+        {
+            var operation = service_model.FindOperation("ResumeBatchLoadTask");
+            var request = InstantiateClassGenerator.Execute<ResumeBatchLoadTaskRequest>();
+            var marshaller = new ResumeBatchLoadTaskEndpointDiscoveryMarshaller();
 
             var internalData = marshaller.Marshall(request);
             var validator = new EndpointDiscoveryValidator(internalData, request, service_model, operation);

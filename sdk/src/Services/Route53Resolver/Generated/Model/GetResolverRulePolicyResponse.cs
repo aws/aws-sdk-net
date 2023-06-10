@@ -42,7 +42,7 @@ namespace Amazon.Route53Resolver.Model
         /// request.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=5000)]
+        [AWSProperty(Max=30000)]
         public string ResolverRulePolicy
         {
             get { return this._resolverRulePolicy; }

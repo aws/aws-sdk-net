@@ -496,6 +496,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Xml")]
         [TestCategory("S3Control")]
+        public void DeleteBucketReplicationMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteBucketReplication");
+
+            var request = InstantiateClassGenerator.Execute<DeleteBucketReplicationRequest>();
+            var marshaller = new DeleteBucketReplicationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("DeleteBucketReplication", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
         public void DeleteBucketTaggingMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteBucketTagging");
@@ -1204,6 +1220,36 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
             ResponseUnmarshaller unmarshaller = GetBucketPolicyResponseUnmarshaller.Instance;
             var response = unmarshaller.Unmarshall(context) as GetBucketPolicyResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void GetBucketReplicationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetBucketReplication");
+
+            var request = InstantiateClassGenerator.Execute<GetBucketReplicationRequest>();
+            var marshaller = new GetBucketReplicationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("GetBucketReplication", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            webResponse.ContentLength = payloadResponse.Length;
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = GetBucketReplicationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetBucketReplicationResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1981,6 +2027,22 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             var internalRequest = marshaller.Marshall(request);
             TestTools.RequestValidator.Validate("PutBucketPolicy", request, internalRequest, service_model);
+
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Xml")]
+        [TestCategory("S3Control")]
+        public void PutBucketReplicationMarshallTest()
+        {
+            var operation = service_model.FindOperation("PutBucketReplication");
+
+            var request = InstantiateClassGenerator.Execute<PutBucketReplicationRequest>();
+            var marshaller = new PutBucketReplicationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("PutBucketReplication", request, internalRequest, service_model);
 
         }
 

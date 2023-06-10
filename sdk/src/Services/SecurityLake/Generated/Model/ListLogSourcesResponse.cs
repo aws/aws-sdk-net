@@ -34,7 +34,7 @@ namespace Amazon.SecurityLake.Model
     public partial class ListLogSourcesResponse : AmazonWebServiceResponse
     {
         private string _nextToken;
-        private List<Dictionary<string, Dictionary<string, List<string>>>> _regionSourceTypesAccountsList = new List<Dictionary<string, Dictionary<string, List<string>>>>();
+        private List<LogSource> _sources = new List<LogSource>();
 
         /// <summary>
         /// Gets and sets the property NextToken. 
@@ -56,22 +56,21 @@ namespace Amazon.SecurityLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RegionSourceTypesAccountsList. 
+        /// Gets and sets the property Sources. 
         /// <para>
-        /// Lists the log sources by Regions for enabled Security Lake accounts.
+        /// The list of log sources in your organization that send data to the data lake.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<Dictionary<string, Dictionary<string, List<string>>>> RegionSourceTypesAccountsList
+        public List<LogSource> Sources
         {
-            get { return this._regionSourceTypesAccountsList; }
-            set { this._regionSourceTypesAccountsList = value; }
+            get { return this._sources; }
+            set { this._sources = value; }
         }
 
-        // Check to see if RegionSourceTypesAccountsList property is set
-        internal bool IsSetRegionSourceTypesAccountsList()
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
         {
-            return this._regionSourceTypesAccountsList != null && this._regionSourceTypesAccountsList.Count > 0; 
+            return this._sources != null && this._sources.Count > 0; 
         }
 
     }

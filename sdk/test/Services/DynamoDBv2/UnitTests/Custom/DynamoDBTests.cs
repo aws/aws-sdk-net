@@ -8,6 +8,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 using Amazon.Auth.AccessControlPolicy;
 using Amazon.Auth.AccessControlPolicy.ActionIdentifiers;
+using Amazon.DynamoDBv2;
 using Amazon.DynamoDBv2.DocumentModel;
 using Amazon.DynamoDBv2.DataModel;
 using Amazon.DynamoDBv2.Model;
@@ -217,6 +218,49 @@ namespace AWSSDK_DotNet35.UnitTests
             }
         }
 
+        public class DateTestObject
+        {
+            public DateTime DateFromString { get; set; }
+        }
+        //This test is based off issue #2020 where user reported datetime with no decimals not being converted properly. 
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestDateTimeDeserializationWithDdbContext()
+        {
+            //Arrange
+            var dateWithNoDecimals = "2022-05-05T11:56:11Z";
+            var expectedDateNoDecimal = DateTime.Parse(dateWithNoDecimals);
+
+            var dateWithDecimals = "2022-05-05T11:56:11.000Z";
+            var expectedDateDecimal = DateTime.Parse(dateWithDecimals);
+
+            var jsonDateWithNoDecimals = JsonMapper.ToJson(new
+            {
+                DateFromString = dateWithNoDecimals
+            });
+            var jsonDateWithDecimals = JsonMapper.ToJson(new
+            {
+                DateFromString = dateWithDecimals
+            });
+
+            using (var dynamoDBContext = new DynamoDBContext())
+            {
+                var noDecimalDoc = Document.FromJson(jsonDateWithNoDecimals);
+                var decimalDoc = Document.FromJson(jsonDateWithDecimals);
+
+                var noDecimalContext = dynamoDBContext.FromDocument<DateTestObject>(noDecimalDoc);
+                var decimalContext = dynamoDBContext.FromDocument<DateTestObject>(decimalDoc);
+
+                Assert.IsNotNull(noDecimalContext);
+                Assert.IsNotNull(decimalContext);
+                //Assert that the two different formatted json dates get converted to the same date
+                Assert.AreEqual(noDecimalContext.DateFromString, decimalContext.DateFromString);
+                //Assert that the conversion itself works
+                Assert.AreEqual(expectedDateNoDecimal, noDecimalContext.DateFromString);
+                Assert.AreEqual(expectedDateDecimal, decimalContext.DateFromString);
+            }
+        }
+
         [TestMethod]
         [TestCategory("DynamoDBv2")]
         public void TestEmptyPropertyFromObjectOnDocument()
@@ -241,6 +285,61 @@ namespace AWSSDK_DotNet35.UnitTests
 
             Assert.IsTrue(doc["Name"] is Primitive);
             Assert.IsNull(doc["Name"].AsPrimitive().Value);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestPropertyAttributeInheritance()
+        {
+            // Use a mock client to skip credential checks.
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var context = new DynamoDBContext(mockClient.Object);
+
+            var parent = new Parent();
+            parent.Property1 = "Value";
+
+            var child = new Child();
+            child.Property1 = "Value";
+
+            var parentDocument = context.ToDocument(parent);
+            var childDocument = context.ToDocument(child);
+
+            Assert.AreEqual(parentDocument["actualPropertyName"].AsString(), parent.Property1);
+            Assert.AreEqual(childDocument["actualPropertyName"].AsString(), child.Property1);
+        }
+
+        [TestMethod]
+        [TestCategory("DynamoDBv2")]
+        public void TestVersionAttributeRename()
+        {
+            var mockClient = new Mock<IAmazonDynamoDB>();
+            var context = new DynamoDBContext(mockClient.Object);
+
+            var parent = new Parent
+            {
+                Property1 = "Value",
+                Version = 1
+            };
+
+            var document = context.ToDocument(parent);
+            var attributes = document.ToAttributeMap();
+
+            Assert.IsTrue(attributes.ContainsKey("V"));
+            Assert.AreEqual(document["V"].AsInt(), 1);
+        }
+
+        public class Parent
+        {
+            [DynamoDBProperty("actualPropertyName")]
+            public virtual string Property1 { get; set; }
+
+            [DynamoDBVersion(AttributeName = "V")]
+            public int? Version { get; set; }
+        }
+
+        public class Child : Parent
+        {
+            public override string Property1 { get; set; }
         }
 
 #if ASYNC_AWAIT

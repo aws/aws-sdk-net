@@ -30,9 +30,8 @@ namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProfile operation.
-    /// Updates the profile. A profile is configuration resource to list the roles that RolesAnywhere
-    /// service is trusted to assume. In addition, by applying a profile you can scope-down
-    /// permissions with IAM managed policies.
+    /// Updates a <i>profile</i>, a list of the roles that IAM Roles Anywhere service is trusted
+    /// to assume. You use profiles to intersect permissions with IAM managed policies.
     /// 
     ///  
     /// <para>
@@ -54,7 +53,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         ///  The number of seconds the vended session credentials are valid for. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=900, Max=43200)]
+        [AWSProperty(Min=900, Max=3600)]
         public int DurationSeconds
         {
             get { return this._durationSeconds.GetValueOrDefault(); }
@@ -127,8 +126,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property RoleArns. 
         /// <para>
-        /// A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-        /// operation.
+        /// A list of IAM roles that this profile can assume in a temporary credential request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

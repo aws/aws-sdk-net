@@ -41,7 +41,7 @@ namespace Amazon.SSMContacts
     /// Systems Manager Incident Manager is an incident management console designed to help
     /// users mitigate and recover from incidents affecting their Amazon Web Services-hosted
     /// applications. An incident is any unplanned interruption or reduction in quality of
-    /// services. 
+    /// services.
     /// 
     ///  
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.SSMContacts
     /// highlighting relevant troubleshooting data, and providing collaboration tools to get
     /// services back up and running. To achieve the primary goal of reducing the time-to-resolution
     /// of critical incidents, Incident Manager automates response plans and enables responder
-    /// team escalation. 
+    /// team escalation.
     /// </para>
     /// </summary>
     public partial class AmazonSSMContactsClient : AmazonServiceClient, IAmazonSSMContacts
@@ -487,6 +487,110 @@ namespace Amazon.SSMContacts
 
         #endregion
         
+        #region  CreateRotation
+
+        internal virtual CreateRotationResponse CreateRotation(CreateRotationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRotationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRotationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a rotation in an on-call schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRotation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRotation service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
+        /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotation">REST API Reference for CreateRotation Operation</seealso>
+        public virtual Task<CreateRotationResponse> CreateRotationAsync(CreateRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRotationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRotationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateRotationOverride
+
+        internal virtual CreateRotationOverrideResponse CreateRotationOverride(CreateRotationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRotationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRotationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<CreateRotationOverrideResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates an override for a rotation in an on-call schedule.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateRotationOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateRotationOverride service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
+        /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ServiceQuotaExceededException">
+        /// Request would cause a service quota to be exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotationOverride">REST API Reference for CreateRotationOverride Operation</seealso>
+        public virtual Task<CreateRotationOverrideResponse> CreateRotationOverrideAsync(CreateRotationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateRotationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateRotationOverrideResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateRotationOverrideResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeactivateContactChannel
 
         internal virtual DeactivateContactChannelResponse DeactivateContactChannel(DeactivateContactChannelRequest request)
@@ -565,6 +669,9 @@ namespace Amazon.SSMContacts
         /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
         /// You don't have sufficient access to perform this operation.
         /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ConflictException">
+        /// Updating or deleting a resource causes an inconsistent state.
+        /// </exception>
         /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
         /// Unexpected error occurred while processing the request.
         /// </exception>
@@ -637,6 +744,108 @@ namespace Amazon.SSMContacts
             options.ResponseUnmarshaller = DeleteContactChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteContactChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRotation
+
+        internal virtual DeleteRotationResponse DeleteRotation(DeleteRotationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRotationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRotationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a rotation from the system. If a rotation belongs to more than one on-call
+        /// schedule, this operation deletes it from all of them.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRotation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRotation service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ConflictException">
+        /// Updating or deleting a resource causes an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
+        /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotation">REST API Reference for DeleteRotation Operation</seealso>
+        public virtual Task<DeleteRotationResponse> DeleteRotationAsync(DeleteRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRotationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRotationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteRotationOverride
+
+        internal virtual DeleteRotationOverrideResponse DeleteRotationOverride(DeleteRotationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRotationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRotationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteRotationOverrideResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an existing override for an on-call rotation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteRotationOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteRotationOverride service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
+        /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotationOverride">REST API Reference for DeleteRotationOverride Operation</seealso>
+        public virtual Task<DeleteRotationOverrideResponse> DeleteRotationOverrideAsync(DeleteRotationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteRotationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteRotationOverrideResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteRotationOverrideResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -899,6 +1108,104 @@ namespace Amazon.SSMContacts
 
         #endregion
         
+        #region  GetRotation
+
+        internal virtual GetRotationResponse GetRotation(GetRotationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRotationResponseUnmarshaller.Instance;
+
+            return Invoke<GetRotationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about an on-call rotation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRotation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRotation service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
+        /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotation">REST API Reference for GetRotation Operation</seealso>
+        public virtual Task<GetRotationResponse> GetRotationAsync(GetRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRotationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRotationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRotationOverride
+
+        internal virtual GetRotationOverrideResponse GetRotationOverride(GetRotationOverrideRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRotationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRotationOverrideResponseUnmarshaller.Instance;
+
+            return Invoke<GetRotationOverrideResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves information about an override to an on-call rotation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRotationOverride service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRotationOverride service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
+        /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotationOverride">REST API Reference for GetRotationOverride Operation</seealso>
+        public virtual Task<GetRotationOverrideResponse> GetRotationOverrideAsync(GetRotationOverrideRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRotationOverrideRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRotationOverrideResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetRotationOverrideResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListContactChannels
 
         internal virtual ListContactChannelsResponse ListContactChannels(ListContactChannelsRequest request)
@@ -1092,6 +1399,58 @@ namespace Amazon.SSMContacts
 
         #endregion
         
+        #region  ListPageResolutions
+
+        internal virtual ListPageResolutionsResponse ListPageResolutions(ListPageResolutionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPageResolutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPageResolutionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPageResolutionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns the resolution path of an engagement. For example, the escalation plan engaged
+        /// in an incident might target an on-call schedule that includes several contacts in
+        /// a rotation, but just one contact on-call when the incident starts. The resolution
+        /// path indicates the hierarchy of <i>escalation plan &gt; on-call schedule &gt; contact</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPageResolutions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPageResolutions service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
+        /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPageResolutions">REST API Reference for ListPageResolutions Operation</seealso>
+        public virtual Task<ListPageResolutionsResponse> ListPageResolutionsAsync(ListPageResolutionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPageResolutionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPageResolutionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPageResolutionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListPagesByContact
 
         internal virtual ListPagesByContactResponse ListPagesByContact(ListPagesByContactRequest request)
@@ -1186,6 +1545,209 @@ namespace Amazon.SSMContacts
             options.ResponseUnmarshaller = ListPagesByEngagementResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListPagesByEngagementResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListPreviewRotationShifts
+
+        internal virtual ListPreviewRotationShiftsResponse ListPreviewRotationShifts(ListPreviewRotationShiftsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPreviewRotationShiftsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPreviewRotationShiftsResponseUnmarshaller.Instance;
+
+            return Invoke<ListPreviewRotationShiftsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of shifts based on rotation configuration parameters.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// The Incident Manager primarily uses this operation to populate the <b>Preview</b>
+        /// calendar. It is not typically run by end users.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPreviewRotationShifts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListPreviewRotationShifts service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPreviewRotationShifts">REST API Reference for ListPreviewRotationShifts Operation</seealso>
+        public virtual Task<ListPreviewRotationShiftsResponse> ListPreviewRotationShiftsAsync(ListPreviewRotationShiftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListPreviewRotationShiftsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListPreviewRotationShiftsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListPreviewRotationShiftsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRotationOverrides
+
+        internal virtual ListRotationOverridesResponse ListRotationOverrides(ListRotationOverridesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRotationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRotationOverridesResponseUnmarshaller.Instance;
+
+            return Invoke<ListRotationOverridesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of overrides currently specified for an on-call rotation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRotationOverrides service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRotationOverrides service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
+        /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationOverrides">REST API Reference for ListRotationOverrides Operation</seealso>
+        public virtual Task<ListRotationOverridesResponse> ListRotationOverridesAsync(ListRotationOverridesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRotationOverridesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRotationOverridesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRotationOverridesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRotations
+
+        internal virtual ListRotationsResponse ListRotations(ListRotationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRotationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRotationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRotationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves a list of on-call rotations.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRotations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRotations service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
+        /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotations">REST API Reference for ListRotations Operation</seealso>
+        public virtual Task<ListRotationsResponse> ListRotationsAsync(ListRotationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRotationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRotationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRotationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRotationShifts
+
+        internal virtual ListRotationShiftsResponse ListRotationShifts(ListRotationShiftsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRotationShiftsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRotationShiftsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRotationShiftsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of shifts generated by an existing rotation in the system.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRotationShifts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRotationShifts service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ConflictException">
+        /// Updating or deleting a resource causes an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
+        /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationShifts">REST API Reference for ListRotationShifts Operation</seealso>
+        public virtual Task<ListRotationShiftsResponse> ListRotationShiftsAsync(ListRotationShiftsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRotationShiftsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRotationShiftsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListRotationShiftsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1662,6 +2224,58 @@ namespace Amazon.SSMContacts
             options.ResponseUnmarshaller = UpdateContactChannelResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateContactChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateRotation
+
+        internal virtual UpdateRotationResponse UpdateRotation(UpdateRotationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRotationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateRotationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the information specified for an on-call rotation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateRotation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateRotation service method, as returned by SSMContacts.</returns>
+        /// <exception cref="Amazon.SSMContacts.Model.AccessDeniedException">
+        /// You don't have sufficient access to perform this operation.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ConflictException">
+        /// Updating or deleting a resource causes an inconsistent state.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.InternalServerException">
+        /// Unexpected error occurred while processing the request.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ResourceNotFoundException">
+        /// Request references a resource that doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.SSMContacts.Model.ValidationException">
+        /// The input fails to satisfy the constraints specified by an Amazon Web Services service.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateRotation">REST API Reference for UpdateRotation Operation</seealso>
+        public virtual Task<UpdateRotationResponse> UpdateRotationAsync(UpdateRotationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateRotationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateRotationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateRotationResponse>(request, options, cancellationToken);
         }
 
         #endregion

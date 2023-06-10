@@ -45,7 +45,7 @@ namespace Amazon.IdentityManagement.Model
     ///  
     /// <para>
     /// You can also optionally include one resource-based policy to be evaluated with each
-    /// of the resources included in the simulation.
+    /// of the resources included in the simulation for IAM users only.
     /// </para>
     ///  
     /// <para>
@@ -70,11 +70,17 @@ namespace Amazon.IdentityManagement.Model
     /// If the output is long, you can use the <code>MaxItems</code> and <code>Marker</code>
     /// parameters to paginate the results.
     /// </para>
-    ///  
+    ///  <note> 
     /// <para>
-    /// For more information about using the policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
+    /// The IAM policy simulator evaluates statements in the identity-based policy and the
+    /// inputs that you provide during simulation. The policy simulator results can differ
+    /// from your live Amazon Web Services environment. We recommend that you check your policies
+    /// against your live Amazon Web Services environment after testing using the policy simulator
+    /// to confirm that you have the desired results. For more information about using the
+    /// policy simulator, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_testing-policies.html">Testing
     /// IAM policies with the IAM policy simulator </a>in the <i>IAM User Guide</i>.
     /// </para>
+    ///  </note>
     /// </summary>
     public partial class SimulatePrincipalPolicyRequest : AmazonIdentityManagementServiceRequest
     {
@@ -375,6 +381,11 @@ namespace Amazon.IdentityManagement.Model
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
         /// Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Simulation of resource-based policies isn't supported for IAM roles.
+        /// </para>
+        ///  </note>
         /// </summary>
         public List<string> ResourceArns
         {
@@ -516,7 +527,11 @@ namespace Amazon.IdentityManagement.Model
         /// The special characters tab (<code>\u0009</code>), line feed (<code>\u000A</code>),
         /// and carriage return (<code>\u000D</code>)
         /// </para>
-        ///  </li> </ul>
+        ///  </li> </ul> <note> 
+        /// <para>
+        /// Simulation of resource-based policies isn't supported for IAM roles.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=131072)]
         public string ResourcePolicy

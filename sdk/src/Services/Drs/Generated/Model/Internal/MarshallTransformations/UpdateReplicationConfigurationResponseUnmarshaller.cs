@@ -57,6 +57,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     response.AssociateDefaultSecurityGroup = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("autoReplicateNewDisks", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    response.AutoReplicateNewDisks = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("bandwidthThrottling", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

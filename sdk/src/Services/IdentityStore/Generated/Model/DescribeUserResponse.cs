@@ -53,7 +53,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Addresses. 
         /// <para>
-        /// The user's physical address.
+        /// The physical address of the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -72,10 +72,10 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The user's name value for display.
+        /// The display name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -91,7 +91,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Emails. 
         /// <para>
-        /// The user's email value.
+        /// The email address of the user.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1)]
@@ -149,10 +149,10 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// A string containing the user's geographical region or location.
+        /// A string containing the geographical region or location of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Locale
         {
             get { return this._locale; }
@@ -189,7 +189,7 @@ namespace Amazon.IdentityStore.Model
         /// An alternative descriptive name for the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string NickName
         {
             get { return this._nickName; }
@@ -227,7 +227,7 @@ namespace Amazon.IdentityStore.Model
         /// The preferred language of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string PreferredLanguage
         {
             get { return this._preferredLanguage; }
@@ -246,7 +246,7 @@ namespace Amazon.IdentityStore.Model
         /// A URL link for the user's profile.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string ProfileUrl
         {
             get { return this._profileUrl; }
@@ -265,7 +265,7 @@ namespace Amazon.IdentityStore.Model
         /// The time zone for a user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Timezone
         {
             get { return this._timezone; }
@@ -281,10 +281,10 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// A string containing the user's title.
+        /// A string containing the title of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Title
         {
             get { return this._title; }
@@ -325,7 +325,7 @@ namespace Amazon.IdentityStore.Model
         /// of the user object in the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }
@@ -341,10 +341,10 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property UserType. 
         /// <para>
-        /// A string indicating the user's type.
+        /// A string indicating the type of user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string UserType
         {
             get { return this._userType; }

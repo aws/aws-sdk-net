@@ -66,10 +66,12 @@ namespace Amazon.ECS.Model
         ///  </note> 
         /// <para>
         /// The <b>deployment circuit breaker</b> determines whether a service deployment will
-        /// fail if the service can't reach a steady state. If deployment circuit breaker is enabled,
-        /// a service deployment will transition to a failed state and stop launching new tasks.
-        /// If rollback is enabled, when a service deployment fails, the service is rolled back
-        /// to the last deployment that completed successfully.
+        /// fail if the service can't reach a steady state. If you use the deployment circuit
+        /// breaker, a service deployment will transition to a failed state and stop launching
+        /// new tasks. If you use the rollback option, when a service deployment fails, the service
+        /// is rolled back to the last deployment that completed successfully. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-type-ecs.html">Rolling
+        /// update</a> in the <i>Amazon Elastic Container Service Developer Guide</i> 
         /// </para>
         /// </summary>
         public DeploymentCircuitBreaker DeploymentCircuitBreaker

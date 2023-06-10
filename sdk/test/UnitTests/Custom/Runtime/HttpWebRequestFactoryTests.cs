@@ -22,21 +22,12 @@ namespace AWSSDK.UnitTests
     {
         private readonly IFixture _fixture;
 
-        private readonly Mock<ILogger> _loggerMock;
-        private readonly Mock<IAmazonSecurityProtocolManager> _amazonSecurityPointManagerMock;
-
         public HttpWebRequestFactoryTests()
         {
             _fixture = new Fixture()
                 .Customize(new AutoMoqCustomization());
 
-            _loggerMock = _fixture.Freeze<Mock<ILogger>>();
-            _amazonSecurityPointManagerMock = _fixture.Freeze<Mock<IAmazonSecurityProtocolManager>>();
-
-            HttpWebRequestFactory.SetIsProtocolUpdated(false);
         }
-
-        #region Http Request Basic Checks
 
         [TestMethod]
         [TestCategory("UnitTest")]
@@ -226,96 +217,5 @@ namespace AWSSDK.UnitTests
             return request;
         }
 
-#endregion
-
-#region TLS Resolution
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void TestTlsResolutionSecurityProtocolSystemDefault()
-        {
-            _amazonSecurityPointManagerMock.Setup(spm => spm.IsSecurityProtocolSystemDefault()).Returns(true);
-
-            new HttpWebRequestFactory(_amazonSecurityPointManagerMock.Object);
-
-            _amazonSecurityPointManagerMock.Verify(spm => spm.IsSecurityProtocolSystemDefault(), Times.Once);
-            _amazonSecurityPointManagerMock.VerifyNoOtherCalls();
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void TestTlsResolutionSecurityProtocolChange()
-        {
-            _amazonSecurityPointManagerMock.Setup(spm => spm.IsSecurityProtocolSystemDefault()).Returns(false);
-
-            new HttpWebRequestFactory(_amazonSecurityPointManagerMock.Object);
-
-            _amazonSecurityPointManagerMock.Verify(spm => spm.IsSecurityProtocolSystemDefault(), Times.Once);
-            _amazonSecurityPointManagerMock.Verify(spm => spm.UpdateProtocolsToSupported(), Times.Once);
-            _amazonSecurityPointManagerMock.VerifyNoOtherCalls();
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void TestTlsResolutionSecurityProtocolChangeFailUnsupported()
-        {
-            _amazonSecurityPointManagerMock.Setup(spm => spm.IsSecurityProtocolSystemDefault()).Returns(false);
-            _amazonSecurityPointManagerMock.Setup(spm => spm.UpdateProtocolsToSupported())
-                .Throws<NotSupportedException>();
-            var logMessage = "";
-            _loggerMock.Setup(logger => logger.InfoFormat(It.IsAny<string>()))
-                .Callback<string, object[]>((value, _) => logMessage = value);
-
-            new HttpWebRequestFactory(_amazonSecurityPointManagerMock.Object, _loggerMock.Object);
-
-            TlsModificationCommonErrorChecks();
-            Assert.IsFalse(logMessage.StartsWith("Unexpected error"));
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void TestTlsResolutionSecurityProtocolChangeFailUnexpected()
-        {
-            _amazonSecurityPointManagerMock.Setup(spm => spm.IsSecurityProtocolSystemDefault()).Returns(false);
-            _amazonSecurityPointManagerMock.Setup(spm => spm.UpdateProtocolsToSupported())
-                .Throws<Exception>();
-            var logMessage = "";
-            _loggerMock.Setup(logger => logger.InfoFormat(It.IsAny<string>()))
-                .Callback<string, object[]>((value, _) => logMessage = value);
-
-            new HttpWebRequestFactory(_amazonSecurityPointManagerMock.Object, _loggerMock.Object);
-
-            TlsModificationCommonErrorChecks();
-            Assert.IsTrue(logMessage.StartsWith("Unexpected error"));
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Runtime")]
-        public void TestTlsResolutionSecurityProtocolAlreadyAttempted()
-        {
-            _amazonSecurityPointManagerMock.Setup(spm => spm.IsSecurityProtocolSystemDefault()).Returns(true);
-
-            new HttpWebRequestFactory(_amazonSecurityPointManagerMock.Object);
-            new HttpWebRequestFactory(_amazonSecurityPointManagerMock.Object);
-
-            _amazonSecurityPointManagerMock.Verify(spm => spm.IsSecurityProtocolSystemDefault(), Times.Once);
-            _amazonSecurityPointManagerMock.VerifyNoOtherCalls();
-        }
-
-        private void TlsModificationCommonErrorChecks()
-        {
-            _amazonSecurityPointManagerMock.Verify(spm => spm.IsSecurityProtocolSystemDefault(), Times.Once);
-            _amazonSecurityPointManagerMock.Verify(spm => spm.UpdateProtocolsToSupported(), Times.Once);
-            _loggerMock.Verify(logger => logger.InfoFormat(It.IsAny<string>()), Times.Once);
-            _amazonSecurityPointManagerMock.VerifyNoOtherCalls();
-            _loggerMock.VerifyNoOtherCalls();
-        }
-
-#endregion
     }
 }

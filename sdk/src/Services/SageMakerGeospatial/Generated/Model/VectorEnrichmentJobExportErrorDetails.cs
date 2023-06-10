@@ -56,7 +56,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The output error details for an Export operation on a Vector Enrichment job.
+        /// </para>
         /// </summary>
         public VectorEnrichmentJobExportErrorType Type
         {

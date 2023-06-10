@@ -36,28 +36,34 @@
         jQuery(this.tocRoot).data("activeTopic", tocItem);
     },
 
-    setContentPane: function(t) {
+    setContentPane: function (t) {
         jQuery(window.parent.frames["contentpane"].document.location).attr("href", t);
     },
 
-    toggleTOCGroup: function(tocGroup) {
+    toggleTOCGroup: function (tocGroup) {
         if (!tocGroup) return;
         var t = jQuery(tocGroup);
         if (t) {
             t.children("ul").toggleClass("expanded");
-            t.toggleClass("expanded");            
+            t.toggleClass("expanded");
+            
+            t.children("button").attr("aria-expanded", function (i, attr) {
+                return attr == "true" ? "false" : "true";
+            });
         }
     },
-    
-    collapseTOCGroup: function(g) {
+
+    collapseTOCGroup: function (g) {
         g.children("ul").removeClass("expanded");
         g.removeClass("expanded");
     },
-    
-    expandTOCGroup: function(g) {
+
+    expandTOCGroup: function (g) {
         g.children("ul").addClass("expanded");
         g.addClass("expanded");
     },
-    
+    setFrameFocus: function (name) {
+        window.top.frames[name].focus();
+    },
     dummy: null
 };

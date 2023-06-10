@@ -37,13 +37,15 @@ namespace Amazon.OpenSearchService.Model
     {
         private string _domainName;
         private string _engineVersion;
+        private string _instanceType;
         private int? _maxResults;
         private string _nextToken;
+        private bool? _retrieveAZs;
 
         /// <summary>
         /// Gets and sets the property DomainName. 
         /// <para>
-        /// Name of the domain to list instance type details for.
+        /// The name of the domain.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=28)]
@@ -62,7 +64,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y.
+        /// The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y.
         /// Defaults to the latest version of OpenSearch.
         /// </para>
         /// </summary>
@@ -77,6 +79,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetEngineVersion()
         {
             return this._engineVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceType. 
+        /// <para>
+        /// An optional parameter that lists information for a given instance type.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=10, Max=40)]
+        public string InstanceType
+        {
+            get { return this._instanceType; }
+            set { this._instanceType = value; }
+        }
+
+        // Check to see if InstanceType property is set
+        internal bool IsSetInstanceType()
+        {
+            return this._instanceType != null;
         }
 
         /// <summary>
@@ -117,6 +138,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetrieveAZs. 
+        /// <para>
+        /// An optional parameter that specifies the Availability Zones for the domain.
+        /// </para>
+        /// </summary>
+        public bool RetrieveAZs
+        {
+            get { return this._retrieveAZs.GetValueOrDefault(); }
+            set { this._retrieveAZs = value; }
+        }
+
+        // Check to see if RetrieveAZs property is set
+        internal bool IsSetRetrieveAZs()
+        {
+            return this._retrieveAZs.HasValue; 
         }
 
     }

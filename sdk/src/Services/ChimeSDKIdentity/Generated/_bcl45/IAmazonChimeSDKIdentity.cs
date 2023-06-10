@@ -142,8 +142,8 @@ namespace Amazon.ChimeSDKIdentity
 
 
         /// <summary>
-        /// Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The
-        /// promoted user can perform the following actions. 
+        /// Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an <code>AppInstanceAdmin</code>.
+        /// The promoted entity can perform the following actions. 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -155,8 +155,8 @@ namespace Amazon.ChimeSDKIdentity
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code>
-        /// role.
+        /// Only an <code>AppInstanceUser</code> and <code>AppInstanceBot</code> can be promoted
+        /// to an <code>AppInstanceAdmin</code> role.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAppInstanceAdmin service method.</param>
@@ -193,8 +193,8 @@ namespace Amazon.ChimeSDKIdentity
 
 
         /// <summary>
-        /// Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The
-        /// promoted user can perform the following actions. 
+        /// Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an <code>AppInstanceAdmin</code>.
+        /// The promoted entity can perform the following actions. 
         /// 
         ///  <ul> <li> 
         /// <para>
@@ -206,8 +206,8 @@ namespace Amazon.ChimeSDKIdentity
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code>
-        /// role.
+        /// Only an <code>AppInstanceUser</code> and <code>AppInstanceBot</code> can be promoted
+        /// to an <code>AppInstanceAdmin</code> role.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAppInstanceAdmin service method.</param>
@@ -243,6 +243,86 @@ namespace Amazon.ChimeSDKIdentity
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceAdmin">REST API Reference for CreateAppInstanceAdmin Operation</seealso>
         Task<CreateAppInstanceAdminResponse> CreateAppInstanceAdminAsync(CreateAppInstanceAdminRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  CreateAppInstanceBot
+
+
+        /// <summary>
+        /// Creates a bot under an Amazon Chime <code>AppInstance</code>. The request consists
+        /// of a unique <code>Configuration</code> and <code>Name</code> for that bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppInstanceBot service method.</param>
+        /// 
+        /// <returns>The response from the CreateAppInstanceBot service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceBot">REST API Reference for CreateAppInstanceBot Operation</seealso>
+        CreateAppInstanceBotResponse CreateAppInstanceBot(CreateAppInstanceBotRequest request);
+
+
+
+        /// <summary>
+        /// Creates a bot under an Amazon Chime <code>AppInstance</code>. The request consists
+        /// of a unique <code>Configuration</code> and <code>Name</code> for that bot.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppInstanceBot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAppInstanceBot service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/CreateAppInstanceBot">REST API Reference for CreateAppInstanceBot Operation</seealso>
+        Task<CreateAppInstanceBotResponse> CreateAppInstanceBotAsync(CreateAppInstanceBotRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -400,8 +480,8 @@ namespace Amazon.ChimeSDKIdentity
 
 
         /// <summary>
-        /// Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This
-        /// action does not delete the user.
+        /// Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.
+        /// This action does not delete the user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstanceAdmin service method.</param>
         /// 
@@ -437,8 +517,8 @@ namespace Amazon.ChimeSDKIdentity
 
 
         /// <summary>
-        /// Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code>. This
-        /// action does not delete the user.
+        /// Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.
+        /// This action does not delete the user.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstanceAdmin service method.</param>
         /// <param name="cancellationToken">
@@ -473,6 +553,84 @@ namespace Amazon.ChimeSDKIdentity
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceAdmin">REST API Reference for DeleteAppInstanceAdmin Operation</seealso>
         Task<DeleteAppInstanceAdminResponse> DeleteAppInstanceAdminAsync(DeleteAppInstanceAdminRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeleteAppInstanceBot
+
+
+        /// <summary>
+        /// Deletes an <code>AppInstanceBot</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstanceBot service method.</param>
+        /// 
+        /// <returns>The response from the DeleteAppInstanceBot service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceBot">REST API Reference for DeleteAppInstanceBot Operation</seealso>
+        DeleteAppInstanceBotResponse DeleteAppInstanceBot(DeleteAppInstanceBotRequest request);
+
+
+
+        /// <summary>
+        /// Deletes an <code>AppInstanceBot</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppInstanceBot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAppInstanceBot service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DeleteAppInstanceBot">REST API Reference for DeleteAppInstanceBot Operation</seealso>
+        Task<DeleteAppInstanceBotResponse> DeleteAppInstanceBotAsync(DeleteAppInstanceBotRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -746,6 +904,76 @@ namespace Amazon.ChimeSDKIdentity
 
         #endregion
         
+        #region  DescribeAppInstanceBot
+
+
+        /// <summary>
+        /// The <code>AppInstanceBot's</code> information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppInstanceBot service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAppInstanceBot service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceBot">REST API Reference for DescribeAppInstanceBot Operation</seealso>
+        DescribeAppInstanceBotResponse DescribeAppInstanceBot(DescribeAppInstanceBotRequest request);
+
+
+
+        /// <summary>
+        /// The <code>AppInstanceBot's</code> information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppInstanceBot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAppInstanceBot service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.NotFoundException">
+        /// One or more of the resources in the request does not exist in the system.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/DescribeAppInstanceBot">REST API Reference for DescribeAppInstanceBot Operation</seealso>
+        Task<DescribeAppInstanceBotResponse> DescribeAppInstanceBotAsync(DescribeAppInstanceBotRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  DescribeAppInstanceUser
 
 
@@ -1005,6 +1233,76 @@ namespace Amazon.ChimeSDKIdentity
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceAdmins">REST API Reference for ListAppInstanceAdmins Operation</seealso>
         Task<ListAppInstanceAdminsResponse> ListAppInstanceAdminsAsync(ListAppInstanceAdminsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  ListAppInstanceBots
+
+
+        /// <summary>
+        /// Lists all <code>AppInstanceBots</code> created under a single <code>AppInstance</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppInstanceBots service method.</param>
+        /// 
+        /// <returns>The response from the ListAppInstanceBots service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceBots">REST API Reference for ListAppInstanceBots Operation</seealso>
+        ListAppInstanceBotsResponse ListAppInstanceBots(ListAppInstanceBotsRequest request);
+
+
+
+        /// <summary>
+        /// Lists all <code>AppInstanceBots</code> created under a single <code>AppInstance</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppInstanceBots service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAppInstanceBots service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/ListAppInstanceBots">REST API Reference for ListAppInstanceBots Operation</seealso>
+        Task<ListAppInstanceBotsResponse> ListAppInstanceBotsAsync(ListAppInstanceBotsRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1328,6 +1626,102 @@ namespace Amazon.ChimeSDKIdentity
 
         #endregion
         
+        #region  PutAppInstanceUserExpirationSettings
+
+
+        /// <summary>
+        /// Sets the number of days before the <code>AppInstanceUser</code> is automatically deleted.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A background process deletes expired <code>AppInstanceUsers</code> within 6 hours
+        /// of expiration. Actual deletion times may vary.
+        /// </para>
+        ///  
+        /// <para>
+        /// Expired <code>AppInstanceUsers</code> that have not yet been deleted appear as active,
+        /// and you can update their expiration settings. The system honors the new settings.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAppInstanceUserExpirationSettings service method.</param>
+        /// 
+        /// <returns>The response from the PutAppInstanceUserExpirationSettings service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceUserExpirationSettings">REST API Reference for PutAppInstanceUserExpirationSettings Operation</seealso>
+        PutAppInstanceUserExpirationSettingsResponse PutAppInstanceUserExpirationSettings(PutAppInstanceUserExpirationSettingsRequest request);
+
+
+
+        /// <summary>
+        /// Sets the number of days before the <code>AppInstanceUser</code> is automatically deleted.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// A background process deletes expired <code>AppInstanceUsers</code> within 6 hours
+        /// of expiration. Actual deletion times may vary.
+        /// </para>
+        ///  
+        /// <para>
+        /// Expired <code>AppInstanceUsers</code> that have not yet been deleted appear as active,
+        /// and you can update their expiration settings. The system honors the new settings.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAppInstanceUserExpirationSettings service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutAppInstanceUserExpirationSettings service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/PutAppInstanceUserExpirationSettings">REST API Reference for PutAppInstanceUserExpirationSettings Operation</seealso>
+        Task<PutAppInstanceUserExpirationSettingsResponse> PutAppInstanceUserExpirationSettingsAsync(PutAppInstanceUserExpirationSettingsRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  RegisterAppInstanceUserEndpoint
 
 
@@ -1613,6 +2007,84 @@ namespace Amazon.ChimeSDKIdentity
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstance">REST API Reference for UpdateAppInstance Operation</seealso>
         Task<UpdateAppInstanceResponse> UpdateAppInstanceAsync(UpdateAppInstanceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAppInstanceBot
+
+
+        /// <summary>
+        /// Updates the name and metadata of an <code>AppInstanceBot</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppInstanceBot service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAppInstanceBot service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceBot">REST API Reference for UpdateAppInstanceBot Operation</seealso>
+        UpdateAppInstanceBotResponse UpdateAppInstanceBot(UpdateAppInstanceBotRequest request);
+
+
+
+        /// <summary>
+        /// Updates the name and metadata of an <code>AppInstanceBot</code>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppInstanceBot service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAppInstanceBot service method, as returned by ChimeSDKIdentity.</returns>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.BadRequestException">
+        /// The input parameters don't match the service's restrictions.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ConflictException">
+        /// The request could not be processed because of conflict in the current state of the
+        /// resource.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ForbiddenException">
+        /// The client is permanently forbidden from making the request.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ResourceLimitExceededException">
+        /// The request exceeds the resource limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceFailureException">
+        /// The service encountered an unexpected error.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ServiceUnavailableException">
+        /// The service is currently unavailable.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.ThrottledClientException">
+        /// The client exceeded its request rate limit.
+        /// </exception>
+        /// <exception cref="Amazon.ChimeSDKIdentity.Model.UnauthorizedClientException">
+        /// The client is not currently authorized to make the request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-identity-2021-04-20/UpdateAppInstanceBot">REST API Reference for UpdateAppInstanceBot Operation</seealso>
+        Task<UpdateAppInstanceBotResponse> UpdateAppInstanceBotAsync(UpdateAppInstanceBotRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

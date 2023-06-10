@@ -73,8 +73,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A descriptive label that is associated with a script. Script names do not need to
-        /// be unique.
+        /// A descriptive label that is associated with a script. Script names don't need to be
+        /// unique.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -94,9 +94,9 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property ScriptArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// that is assigned to a GameLift script resource and uniquely identifies it. ARNs are
-        /// unique across all Regions. In a GameLift script ARN, the resource ID matches the <i>ScriptId</i>
-        /// value.
+        /// that is assigned to a Amazon GameLift script resource and uniquely identifies it.
+        /// ARNs are unique across all Regions. In a GameLift script ARN, the resource ID matches
+        /// the <i>ScriptId</i> value.
         /// </para>
         /// </summary>
         public string ScriptArn
@@ -176,7 +176,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version information associated with a build or script. Version strings do not need
+        /// Version information associated with a build or script. Version strings don't need
         /// to be unique.
         /// </para>
         /// </summary>

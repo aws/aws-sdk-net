@@ -84,29 +84,25 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                 {
                     return AccessDeniedExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("AccountNotFoundException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("BadRequestException"))
                 {
-                    return AccountNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return BadRequestExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModificationException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
                 {
-                    return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictSubscriptionException"))
-                {
-                    return ConflictSubscriptionExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InternalServerException"))
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidInputException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
                 {
-                    return InvalidInputExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ValidationException"))
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
-                    return ValidationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                    return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
             }
             return new AmazonSecurityLakeException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);

@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class RowLevelPermissionTagConfiguration
     {
         private Status _status;
+        private List<List<string>> _tagRuleConfigurations = new List<List<string>>();
         private List<RowLevelPermissionTagRule> _tagRules = new List<RowLevelPermissionTagRule>();
 
         /// <summary>
@@ -53,6 +54,28 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TagRuleConfigurations. 
+        /// <para>
+        /// A list of tag configuration rules to apply to a dataset. All tag configurations have
+        /// the OR condition. Tags within each tile will be joined (AND). At least one rule in
+        /// this structure must have all tag values assigned to it to apply Row-level security
+        /// (RLS) to the dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<List<string>> TagRuleConfigurations
+        {
+            get { return this._tagRuleConfigurations; }
+            set { this._tagRuleConfigurations = value; }
+        }
+
+        // Check to see if TagRuleConfigurations property is set
+        internal bool IsSetTagRuleConfigurations()
+        {
+            return this._tagRuleConfigurations != null && this._tagRuleConfigurations.Count > 0; 
         }
 
         /// <summary>

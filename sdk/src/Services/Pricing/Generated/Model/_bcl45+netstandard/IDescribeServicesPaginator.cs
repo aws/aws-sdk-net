@@ -29,5 +29,10 @@ namespace Amazon.Pricing.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<DescribeServicesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Services
+        /// </summary>
+        IPaginatedEnumerable<Service> Services { get; }
     }
 }

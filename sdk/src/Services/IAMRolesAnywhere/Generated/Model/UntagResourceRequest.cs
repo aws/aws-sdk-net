@@ -67,7 +67,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// A list of keys. Tag keys are the unique identifiers of tags. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=50)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

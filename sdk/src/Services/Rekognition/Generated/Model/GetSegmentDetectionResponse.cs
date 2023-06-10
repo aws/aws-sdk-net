@@ -34,11 +34,14 @@ namespace Amazon.Rekognition.Model
     public partial class GetSegmentDetectionResponse : AmazonWebServiceResponse
     {
         private List<AudioMetadata> _audioMetadata = new List<AudioMetadata>();
+        private string _jobId;
         private VideoJobStatus _jobStatus;
+        private string _jobTag;
         private string _nextToken;
         private List<SegmentDetection> _segments = new List<SegmentDetection>();
         private List<SegmentTypeInfo> _selectedSegmentTypes = new List<SegmentTypeInfo>();
         private string _statusMessage;
+        private Video _video;
         private List<VideoMetadata> _videoMetadata = new List<VideoMetadata>();
 
         /// <summary>
@@ -64,6 +67,26 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Gets and sets the property JobId. 
+        /// <para>
+        /// Job identifier for the segment detection operation for which you want to obtain results.
+        /// The job identifer is returned by an initial call to StartSegmentDetection.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string JobId
+        {
+            get { return this._jobId; }
+            set { this._jobId = value; }
+        }
+
+        // Check to see if JobId property is set
+        internal bool IsSetJobId()
+        {
+            return this._jobId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
         /// Current status of the segment detection job.
@@ -79,6 +102,26 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetJobStatus()
         {
             return this._jobStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JobTag. 
+        /// <para>
+        /// A job identifier specified in the call to StartSegmentDetection and returned in the
+        /// job completion notification sent to your Amazon Simple Notification Service topic.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1024)]
+        public string JobTag
+        {
+            get { return this._jobTag; }
+            set { this._jobTag = value; }
+        }
+
+        // Check to see if JobTag property is set
+        internal bool IsSetJobTag()
+        {
+            return this._jobTag != null;
         }
 
         /// <summary>
@@ -158,6 +201,21 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetStatusMessage()
         {
             return this._statusMessage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Video.
+        /// </summary>
+        public Video Video
+        {
+            get { return this._video; }
+            set { this._video = value; }
+        }
+
+        // Check to see if Video property is set
+        internal bool IsSetVideo()
+        {
+            return this._video != null;
         }
 
         /// <summary>

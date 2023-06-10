@@ -30,15 +30,15 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateMap operation.
-    /// Creates a map resource in your AWS account, which provides map tiles of different
-    /// styles sourced from global location data providers.
+    /// Creates a map resource in your Amazon Web Services account, which provides map tiles
+    /// of different styles sourced from global location data providers.
     /// 
     ///  <note> 
     /// <para>
     /// If your application is tracking or routing assets you use in your business, such as
     /// delivery vehicles or employees, you must not use Esri as your geolocation provider.
-    /// See section 82 of the <a href="http://aws.amazon.com/service-terms">AWS service terms</a>
-    /// for more details.
+    /// See section 82 of the <a href="http://aws.amazon.com/service-terms">Amazon Web Services
+    /// service terms</a> for more details.
     /// </para>
     ///  </note>
     /// </summary>

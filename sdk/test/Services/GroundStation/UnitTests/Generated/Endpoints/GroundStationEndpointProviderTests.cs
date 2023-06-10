@@ -31,90 +31,45 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("GroundStation")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        [Description("For region af-south-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("GroundStation")]
-        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("GroundStation")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
-        {
-            var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = true;
+            parameters["Region"] = "af-south-1";
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+            Assert.AreEqual("https://groundstation.af-south-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("GroundStation")]
-        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "cn-north-1";
-            parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-northeast-2";
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation.cn-north-1.amazonaws.com.cn", endpoint.URL);
+            Assert.AreEqual("https://groundstation.ap-northeast-2.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("GroundStation")]
-        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("GroundStation")]
-        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "us-iso-east-1";
-            parameters["UseDualStack"] = false;
+            parameters["Region"] = "ap-southeast-2";
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+            Assert.AreEqual("https://groundstation.ap-southeast-2.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -126,8 +81,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "eu-central-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation.eu-central-1.amazonaws.com", endpoint.URL);
         }
@@ -136,30 +91,15 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("GroundStation")]
-        [Description("For region us-east-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region eu-north-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "us-east-2";
-            parameters["UseDualStack"] = false;
+            parameters["Region"] = "eu-north-1";
             parameters["UseFIPS"] = false;
-            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation.us-east-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("GroundStation")]
-        [Description("For region us-east-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "us-east-2";
             parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation-fips.us-east-2.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://groundstation.eu-north-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -171,8 +111,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "eu-west-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation.eu-west-1.amazonaws.com", endpoint.URL);
         }
@@ -186,40 +126,10 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "me-south-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation.me-south-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("GroundStation")]
-        [Description("For region ap-southeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apsoutheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "ap-southeast-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation.ap-southeast-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("GroundStation")]
-        [Description("For region eu-north-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_eunorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "eu-north-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation.eu-north-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -231,55 +141,10 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "sa-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation.sa-east-1.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("GroundStation")]
-        [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation.us-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("GroundStation")]
-        [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
-        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "us-west-2";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = true;
-            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation-fips.us-west-2.amazonaws.com", endpoint.URL);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Endpoints")]
-        [TestCategory("GroundStation")]
-        [Description("For region af-south-1 with FIPS disabled and DualStack disabled")]
-        public void For_region_afsouth1_with_FIPS_disabled_and_DualStack_disabled_Test()
-        {
-            var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "af-south-1";
-            parameters["UseDualStack"] = false;
-            parameters["UseFIPS"] = false;
-            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation.af-south-1.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -291,8 +156,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -306,8 +171,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation-fips.us-east-1.amazonaws.com", endpoint.URL);
         }
@@ -316,15 +181,60 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("GroundStation")]
-        [Description("For region ap-northeast-2 with FIPS disabled and DualStack disabled")]
-        public void For_region_apnortheast2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        [Description("For region us-east-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_useast2_with_FIPS_disabled_and_DualStack_disabled_Test()
         {
             var parameters = new GroundStationEndpointParameters();
-            parameters["Region"] = "ap-northeast-2";
-            parameters["UseDualStack"] = false;
+            parameters["Region"] = "us-east-2";
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
-            Assert.AreEqual("https://groundstation.ap-northeast-2.amazonaws.com", endpoint.URL);
+            Assert.AreEqual("https://groundstation.us-east-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region us-east-2 with FIPS enabled and DualStack disabled")]
+        public void For_region_useast2_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://groundstation-fips.us-east-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region us-west-2 with FIPS disabled and DualStack disabled")]
+        public void For_region_uswest2_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://groundstation.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region us-west-2 with FIPS enabled and DualStack disabled")]
+        public void For_region_uswest2_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://groundstation-fips.us-west-2.amazonaws.com", endpoint.URL);
         }
 
         [TestMethod]
@@ -336,8 +246,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation-fips.us-east-1.api.aws", endpoint.URL);
         }
@@ -351,10 +261,70 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation.us-east-1.api.aws", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region cn-north-1 with FIPS enabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://groundstation-fips.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region cn-north-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://groundstation-fips.cn-north-1.amazonaws.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region cn-north-1 with FIPS disabled and DualStack enabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://groundstation.cn-north-1.api.amazonwebservices.com.cn", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region cn-north-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_cnnorth1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://groundstation.cn-north-1.amazonaws.com.cn", endpoint.URL);
         }
 
         [TestMethod]
@@ -366,8 +336,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation-fips.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -381,8 +351,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation-fips.us-gov-east-1.amazonaws.com", endpoint.URL);
         }
@@ -396,8 +366,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation.us-gov-east-1.api.aws", endpoint.URL);
         }
@@ -411,10 +381,85 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-gov-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation.us-gov-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region us-iso-east-1 with FIPS enabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_enabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://groundstation-fips.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region us-iso-east-1 with FIPS disabled and DualStack disabled")]
+        public void For_region_usisoeast1_with_FIPS_disabled_and_DualStack_disabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "us-iso-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://groundstation.us-iso-east-1.c2s.ic.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region us-isob-east-1 with FIPS enabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"FIPS and DualStack are enabled, but this partition does not support one or both")]
+        public void For_region_usisobeast1_with_FIPS_enabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -426,10 +471,25 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation-fips.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For region us-isob-east-1 with FIPS disabled and DualStack enabled")]
+        [ExpectedException(typeof(AmazonClientException), @"DualStack is enabled but this partition does not support DualStack")]
+        public void For_region_usisobeast1_with_FIPS_disabled_and_DualStack_enabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["Region"] = "us-isob-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
         }
 
         [TestMethod]
@@ -441,8 +501,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-isob-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://groundstation.us-isob-east-1.sc2s.sgov.gov", endpoint.URL);
         }
@@ -451,13 +511,28 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("GroundStation")]
-        [Description("For custom endpoint with fips disabled and dualstack disabled")]
-        public void For_custom_endpoint_with_fips_disabled_and_dualstack_disabled_Test()
+        [Description("For custom endpoint with region set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_set_and_fips_disabled_and_dualstack_disabled_Test()
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("For custom endpoint with region not set and fips disabled and dualstack disabled")]
+        public void For_custom_endpoint_with_region_not_set_and_fips_disabled_and_dualstack_disabled_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
             Assert.AreEqual("https://example.com", endpoint.URL);
@@ -473,8 +548,8 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = false;
             parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
             parameters["Endpoint"] = "https://example.com";
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
         }
@@ -489,9 +564,21 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         {
             var parameters = new GroundStationEndpointParameters();
             parameters["Region"] = "us-east-1";
-            parameters["UseDualStack"] = true;
             parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
             parameters["Endpoint"] = "https://example.com";
+            var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("GroundStation")]
+        [Description("Missing region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Configuration: Missing Region")]
+        public void Missing_region_Test()
+        {
+            var parameters = new GroundStationEndpointParameters();
             var endpoint = new AmazonGroundStationEndpointProvider().ResolveEndpoint(parameters);
         }
 

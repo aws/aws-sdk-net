@@ -94,6 +94,12 @@ namespace Amazon.FraudDetector.Model.Internal.MarshallTransformations
                     unmarshalledObject.EventIngestion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eventOrchestration", targetDepth))
+                {
+                    var unmarshaller = EventOrchestrationUnmarshaller.Instance;
+                    unmarshalledObject.EventOrchestration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("eventVariables", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

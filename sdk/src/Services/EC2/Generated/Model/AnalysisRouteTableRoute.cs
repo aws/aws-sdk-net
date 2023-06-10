@@ -33,17 +33,57 @@ namespace Amazon.EC2.Model
     /// </summary>
     public partial class AnalysisRouteTableRoute
     {
+        private string _carrierGatewayId;
+        private string _coreNetworkArn;
         private string _destinationCidr;
         private string _destinationPrefixListId;
         private string _egressOnlyInternetGatewayId;
         private string _gatewayId;
         private string _instanceId;
+        private string _localGatewayId;
         private string _natGatewayId;
         private string _networkInterfaceId;
         private string _origin;
         private string _state;
         private string _transitGatewayId;
         private string _vpcPeeringConnectionId;
+
+        /// <summary>
+        /// Gets and sets the property CarrierGatewayId. 
+        /// <para>
+        /// The ID of a carrier gateway.
+        /// </para>
+        /// </summary>
+        public string CarrierGatewayId
+        {
+            get { return this._carrierGatewayId; }
+            set { this._carrierGatewayId = value; }
+        }
+
+        // Check to see if CarrierGatewayId property is set
+        internal bool IsSetCarrierGatewayId()
+        {
+            return this._carrierGatewayId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CoreNetworkArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of a core network.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1283)]
+        public string CoreNetworkArn
+        {
+            get { return this._coreNetworkArn; }
+            set { this._coreNetworkArn = value; }
+        }
+
+        // Check to see if CoreNetworkArn property is set
+        internal bool IsSetCoreNetworkArn()
+        {
+            return this._coreNetworkArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DestinationCidr. 
@@ -133,6 +173,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetInstanceId()
         {
             return this._instanceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LocalGatewayId. 
+        /// <para>
+        /// The ID of a local gateway.
+        /// </para>
+        /// </summary>
+        public string LocalGatewayId
+        {
+            get { return this._localGatewayId; }
+            set { this._localGatewayId = value; }
+        }
+
+        // Check to see if LocalGatewayId property is set
+        internal bool IsSetLocalGatewayId()
+        {
+            return this._localGatewayId != null;
         }
 
         /// <summary>

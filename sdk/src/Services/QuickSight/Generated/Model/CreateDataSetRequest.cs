@@ -39,6 +39,7 @@ namespace Amazon.QuickSight.Model
         private List<ColumnGroup> _columnGroups = new List<ColumnGroup>();
         private List<ColumnLevelPermissionRule> _columnLevelPermissionRules = new List<ColumnLevelPermissionRule>();
         private string _dataSetId;
+        private List<DatasetParameter> _datasetParameters = new List<DatasetParameter>();
         private DataSetUsageConfiguration _dataSetUsageConfiguration;
         private Dictionary<string, FieldFolder> _fieldFolders = new Dictionary<string, FieldFolder>();
         private DataSetImportMode _importMode;
@@ -127,6 +128,25 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDataSetId()
         {
             return this._dataSetId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DatasetParameters. 
+        /// <para>
+        /// The parameter declarations of the dataset.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public List<DatasetParameter> DatasetParameters
+        {
+            get { return this._datasetParameters; }
+            set { this._datasetParameters = value; }
+        }
+
+        // Check to see if DatasetParameters property is set
+        internal bool IsSetDatasetParameters()
+        {
+            return this._datasetParameters != null && this._datasetParameters.Count > 0; 
         }
 
         /// <summary>

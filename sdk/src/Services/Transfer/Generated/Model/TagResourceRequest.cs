@@ -67,7 +67,8 @@ namespace Amazon.Transfer.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Key-value pairs assigned to ARNs that you can use to group and search for resources
-        /// by type. You can attach this metadata to user accounts for any purpose.
+        /// by type. You can attach this metadata to resources (servers, users, workflows, and
+        /// so on) for any purpose.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=50)]

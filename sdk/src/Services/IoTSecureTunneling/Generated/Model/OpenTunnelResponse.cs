@@ -44,6 +44,7 @@ namespace Amazon.IoTSecureTunneling.Model
         /// The access token the destination local proxy uses to connect to IoT Secure Tunneling.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DestinationAccessToken
         {
             get { return this._destinationAccessToken; }
@@ -62,6 +63,7 @@ namespace Amazon.IoTSecureTunneling.Model
         /// The access token the source local proxy uses to connect to IoT Secure Tunneling.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SourceAccessToken
         {
             get { return this._sourceAccessToken; }

@@ -51,7 +51,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Instantiates CancelSpotInstanceRequestsRequest with the parameterized properties
         /// </summary>
-        /// <param name="spotInstanceRequestIds">One or more Spot Instance request IDs.</param>
+        /// <param name="spotInstanceRequestIds">The IDs of the Spot Instance requests.</param>
         public CancelSpotInstanceRequestsRequest(List<string> spotInstanceRequestIds)
         {
             _spotInstanceRequestIds = spotInstanceRequestIds;
@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SpotInstanceRequestIds. 
         /// <para>
-        /// One or more Spot Instance request IDs.
+        /// The IDs of the Spot Instance requests.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

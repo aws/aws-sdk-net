@@ -97,7 +97,7 @@ namespace Amazon.Route53Domains.Model
         /// for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ContactDetail AdminContact
         {
             get { return this._adminContact; }
@@ -329,7 +329,7 @@ namespace Amazon.Route53Domains.Model
         /// for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ContactDetail RegistrantContact
         {
             get { return this._registrantContact; }
@@ -349,7 +349,7 @@ namespace Amazon.Route53Domains.Model
         /// for each element, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_ContactDetail.html">ContactDetail</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ContactDetail TechContact
         {
             get { return this._techContact; }

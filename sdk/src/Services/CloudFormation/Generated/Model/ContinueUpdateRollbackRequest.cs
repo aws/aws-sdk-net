@@ -58,8 +58,8 @@ namespace Amazon.CloudFormation.Model
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
         /// A unique identifier for this <code>ContinueUpdateRollback</code> request. Specify
-        /// this token if you plan to retry requests so that CloudFormationknows that you're not
-        /// attempting to continue the rollback to a stack with the same name. You might retry
+        /// this token if you plan to retry requests so that CloudFormation knows that you're
+        /// not attempting to continue the rollback to a stack with the same name. You might retry
         /// <code>ContinueUpdateRollback</code> requests to ensure that CloudFormation successfully
         /// received them.
         /// </para>

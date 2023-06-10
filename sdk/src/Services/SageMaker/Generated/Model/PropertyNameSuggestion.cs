@@ -39,8 +39,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PropertyName. 
         /// <para>
-        /// A suggested property name based on what you entered in the search textbox in the Amazon
-        /// SageMaker console.
+        /// A suggested property name based on what you entered in the search textbox in the SageMaker
+        /// console.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]

@@ -57,7 +57,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property ApplyToAllRegions. 
         /// <para>
-        ///  Specifies whether the channel applies to a single region or to all regions.
+        ///  Specifies whether the channel applies to a single Region or to all Regions.
         /// </para>
         /// </summary>
         public bool ApplyToAllRegions

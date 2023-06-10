@@ -44,12 +44,13 @@ namespace Amazon.DirectConnect.Model
     /// </para>
     ///  </important> 
     /// <para>
-    /// Setting the MTU of a virtual interface to 8500 (jumbo frames) can cause an update
-    /// to the underlying physical connection if it wasn't updated to support jumbo frames.
-    /// Updating the connection disrupts network connectivity for all virtual interfaces associated
-    /// with the connection for up to 30 seconds. To check whether your connection supports
-    /// jumbo frames, call <a>DescribeConnections</a>. To check whether your virtual interface
-    /// supports jumbo frames, call <a>DescribeVirtualInterfaces</a>.
+    /// A jumbo MTU value must be either 1500 or 8500. No other values will be accepted. Setting
+    /// the MTU of a virtual interface to 8500 (jumbo frames) can cause an update to the underlying
+    /// physical connection if it wasn't updated to support jumbo frames. Updating the connection
+    /// disrupts network connectivity for all virtual interfaces associated with the connection
+    /// for up to 30 seconds. To check whether your connection supports jumbo frames, call
+    /// <a>DescribeConnections</a>. To check whether your virtual interface supports jumbo
+    /// frames, call <a>DescribeVirtualInterfaces</a>.
     /// </para>
     /// </summary>
     public partial class CreateTransitVirtualInterfaceRequest : AmazonDirectConnectRequest

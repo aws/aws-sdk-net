@@ -35,6 +35,7 @@ namespace Amazon.CodePipeline.Model
     {
         private DateTime? _created;
         private string _pipelineArn;
+        private DateTime? _pollingDisabledAt;
         private DateTime? _updated;
 
         /// <summary>
@@ -71,6 +72,30 @@ namespace Amazon.CodePipeline.Model
         internal bool IsSetPipelineArn()
         {
             return this._pipelineArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PollingDisabledAt. 
+        /// <para>
+        /// The date and time that polling for source changes (periodic checks) was stopped for
+        /// the pipeline, in timestamp format. You can migrate (update) a polling pipeline to
+        /// use event-based change detection. For example, for a pipeline with a CodeCommit source,
+        /// we recommend you migrate (update) your pipeline to use CloudWatch Events. To learn
+        /// more, see <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/update-change-detection.html">Migrate
+        /// polling pipelines to use event-based change detection</a> in the CodePipeline User
+        /// Guide.
+        /// </para>
+        /// </summary>
+        public DateTime PollingDisabledAt
+        {
+            get { return this._pollingDisabledAt.GetValueOrDefault(); }
+            set { this._pollingDisabledAt = value; }
+        }
+
+        // Check to see if PollingDisabledAt property is set
+        internal bool IsSetPollingDisabledAt()
+        {
+            return this._pollingDisabledAt.HasValue; 
         }
 
         /// <summary>

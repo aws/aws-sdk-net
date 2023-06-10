@@ -98,7 +98,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The user name of the IAM user who performed the action.
+        /// The username of the IAM user who performed the action.
         /// </para>
         /// </summary>
         public string UserName

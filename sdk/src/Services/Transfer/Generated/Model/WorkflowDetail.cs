@@ -34,9 +34,10 @@ namespace Amazon.Transfer.Model
     /// 
     ///  
     /// <para>
-    /// In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code>
+    /// In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code>
     /// can also contain a workflow ID (and execution role) for a workflow to execute on partial
-    /// upload. A partial upload occurs when a file is open when the session disconnects.
+    /// upload. A partial upload occurs when the server session disconnects while the file
+    /// is still being uploaded.
     /// </para>
     /// </summary>
     public partial class WorkflowDetail

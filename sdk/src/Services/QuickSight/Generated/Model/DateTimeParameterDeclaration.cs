@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class DateTimeParameterDeclaration
     {
         private DateTimeDefaultValues _defaultValues;
+        private List<MappedDataSetParameter> _mappedDataSetParameters = new List<MappedDataSetParameter>();
         private string _name;
         private TimeGranularity _timeGranularity;
         private DateTimeValueWhenUnsetConfiguration _valueWhenUnset;
@@ -55,6 +56,22 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetDefaultValues()
         {
             return this._defaultValues != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MappedDataSetParameters.
+        /// </summary>
+        [AWSProperty(Min=0, Max=150)]
+        public List<MappedDataSetParameter> MappedDataSetParameters
+        {
+            get { return this._mappedDataSetParameters; }
+            set { this._mappedDataSetParameters = value; }
+        }
+
+        // Check to see if MappedDataSetParameters property is set
+        internal bool IsSetMappedDataSetParameters()
+        {
+            return this._mappedDataSetParameters != null && this._mappedDataSetParameters.Count > 0; 
         }
 
         /// <summary>

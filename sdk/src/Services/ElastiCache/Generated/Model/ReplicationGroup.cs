@@ -41,6 +41,7 @@ namespace Amazon.ElastiCache.Model
         private bool? _autoMinorVersionUpgrade;
         private string _cacheNodeType;
         private bool? _clusterEnabled;
+        private ClusterMode _clusterMode;
         private Endpoint _configurationEndpoint;
         private DataTieringStatus _dataTiering;
         private string _description;
@@ -177,9 +178,9 @@ namespace Amazon.ElastiCache.Model
         /// <summary>
         /// Gets and sets the property AutoMinorVersionUpgrade. 
         /// <para>
-        ///  If you are running Redis engine version 6.0 or later, set this parameter to yes if
+        /// If you are running Redis engine version 6.0 or later, set this parameter to yes if
         /// you want to opt-in to the next auto minor version upgrade campaign. This parameter
-        /// is disabled for previous versions.  
+        /// is disabled for previous versions. 
         /// </para>
         /// </summary>
         public bool AutoMinorVersionUpgrade
@@ -234,6 +235,28 @@ namespace Amazon.ElastiCache.Model
         internal bool IsSetClusterEnabled()
         {
             return this._clusterEnabled.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClusterMode. 
+        /// <para>
+        /// Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you must first
+        /// set the cluster mode to Compatible. Compatible mode allows your Redis clients to connect
+        /// using both cluster mode enabled and cluster mode disabled. After you migrate all Redis
+        /// clients to use cluster mode enabled, you can then complete cluster mode configuration
+        /// and set the cluster mode to Enabled.
+        /// </para>
+        /// </summary>
+        public ClusterMode ClusterMode
+        {
+            get { return this._clusterMode; }
+            set { this._clusterMode = value; }
+        }
+
+        // Check to see if ClusterMode property is set
+        internal bool IsSetClusterMode()
+        {
+            return this._clusterMode != null;
         }
 
         /// <summary>
@@ -318,7 +341,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The network type you choose when modifying a cluster, either <code>ipv4</code> | <code>ipv6</code>.
         /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
-        /// engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>
         /// </summary>
@@ -431,7 +454,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
         /// is supported for workloads using Redis engine version 6.2 onward or Memcached engine
-        /// version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>
         /// </summary>

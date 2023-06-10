@@ -38,7 +38,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property LoggingConfiguration. 
         /// <para>
-        /// The logging configuration for Amazon Web Services Verified Access instance.
+        /// The logging configuration for the Verified Access instance.
         /// </para>
         /// </summary>
         public VerifiedAccessInstanceLoggingConfiguration LoggingConfiguration

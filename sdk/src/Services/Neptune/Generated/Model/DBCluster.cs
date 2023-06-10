@@ -62,12 +62,14 @@ namespace Amazon.Neptune.Model
         private string _endpoint;
         private string _engine;
         private string _engineVersion;
+        private string _globalClusterIdentifier;
         private string _hostedZoneId;
         private bool? _iamDatabaseAuthenticationEnabled;
         private string _kmsKeyId;
         private DateTime? _latestRestorableTime;
         private string _masterUsername;
         private bool? _multiAZ;
+        private ClusterPendingModifiedValues _pendingModifiedValues;
         private string _percentProgress;
         private int? _port;
         private string _preferredBackupWindow;
@@ -527,6 +529,26 @@ namespace Amazon.Neptune.Model
         }
 
         /// <summary>
+        /// Gets and sets the property GlobalClusterIdentifier. 
+        /// <para>
+        /// Contains a user-supplied global database cluster identifier. This identifier is the
+        /// unique key that identifies a global database.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string GlobalClusterIdentifier
+        {
+            get { return this._globalClusterIdentifier; }
+            set { this._globalClusterIdentifier = value; }
+        }
+
+        // Check to see if GlobalClusterIdentifier property is set
+        internal bool IsSetGlobalClusterIdentifier()
+        {
+            return this._globalClusterIdentifier != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property HostedZoneId. 
         /// <para>
         /// Specifies the ID that Amazon Route 53 assigns when you create a hosted zone.
@@ -634,6 +656,25 @@ namespace Amazon.Neptune.Model
         internal bool IsSetMultiAZ()
         {
             return this._multiAZ.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PendingModifiedValues. 
+        /// <para>
+        /// This data type is used as a response element in the <code>ModifyDBCluster</code> operation
+        /// and contains changes that will be applied during the next maintenance window.
+        /// </para>
+        /// </summary>
+        public ClusterPendingModifiedValues PendingModifiedValues
+        {
+            get { return this._pendingModifiedValues; }
+            set { this._pendingModifiedValues = value; }
+        }
+
+        // Check to see if PendingModifiedValues property is set
+        internal bool IsSetPendingModifiedValues()
+        {
+            return this._pendingModifiedValues != null;
         }
 
         /// <summary>

@@ -1160,6 +1160,10 @@ namespace Amazon.CleanRooms
         /// Constant INVALID_CONFIGURATION for ValidationExceptionReason
         /// </summary>
         public static readonly ValidationExceptionReason INVALID_CONFIGURATION = new ValidationExceptionReason("INVALID_CONFIGURATION");
+        /// <summary>
+        /// Constant INVALID_QUERY for ValidationExceptionReason
+        /// </summary>
+        public static readonly ValidationExceptionReason INVALID_QUERY = new ValidationExceptionReason("INVALID_QUERY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

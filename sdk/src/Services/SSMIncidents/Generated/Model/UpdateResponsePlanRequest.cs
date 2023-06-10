@@ -255,7 +255,7 @@ namespace Amazon.SSMIncidents.Model
         /// currently happening, and next steps.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4000)]
+        [AWSProperty(Min=0, Max=8000)]
         public string IncidentTemplateSummary
         {
             get { return this._incidentTemplateSummary; }

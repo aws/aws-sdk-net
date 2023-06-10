@@ -50,6 +50,7 @@ namespace Amazon.Keyspaces.Model
     public partial class CreateTableRequest : AmazonKeyspacesRequest
     {
         private CapacitySpecification _capacitySpecification;
+        private ClientSideTimestamps _clientSideTimestamps;
         private Comment _comment;
         private int? _defaultTimeToLive;
         private EncryptionSpecification _encryptionSpecification;
@@ -65,16 +66,16 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// Specifies the read/write throughput capacity mode for the table. The options are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>throughputMode:PAY_PER_REQUEST</code> and 
+        ///  <code>throughputMode:PAY_PER_REQUEST</code> and 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
+        ///  <code>throughputMode:PROVISIONED</code> - Provisioned capacity mode requires <code>readCapacityUnits</code>
         /// and <code>writeCapacityUnits</code> as input.
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// The default is <code>throughput_mode:PAY_PER_REQUEST</code>.
         /// </para>
@@ -94,6 +95,33 @@ namespace Amazon.Keyspaces.Model
         internal bool IsSetCapacitySpecification()
         {
             return this._capacitySpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ClientSideTimestamps. 
+        /// <para>
+        ///  Enables client-side timestamps for the table. By default, the setting is disabled.
+        /// You can enable client-side timestamps with the following option:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>status: "enabled"</code> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Once client-side timestamps are enabled for a table, this setting cannot be disabled.
+        /// </para>
+        /// </summary>
+        public ClientSideTimestamps ClientSideTimestamps
+        {
+            get { return this._clientSideTimestamps; }
+            set { this._clientSideTimestamps = value; }
+        }
+
+        // Check to see if ClientSideTimestamps property is set
+        internal bool IsSetClientSideTimestamps()
+        {
+            return this._clientSideTimestamps != null;
         }
 
         /// <summary>
@@ -144,19 +172,19 @@ namespace Amazon.Keyspaces.Model
         /// Specifies how the encryption key for encryption at rest is managed for the table.
         /// You can choose one of the following KMS key (KMS key):
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
+        ///  <code>type:AWS_OWNED_KMS_KEY</code> - This key is owned by Amazon Keyspaces. 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account
-        /// and is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
+        ///  <code>type:CUSTOMER_MANAGED_KMS_KEY</code> - This key is stored in your account and
+        /// is created, owned, and managed by you. This option requires the <code>kms_key_identifier</code>
         /// of the KMS key in Amazon Resource Name (ARN) format as input.
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
-        /// The default is <code>type:AWS_OWNED_KMS_KEY</code>. 
+        /// The default is <code>type:AWS_OWNED_KMS_KEY</code>.
         /// </para>
         ///  
         /// <para>
@@ -201,17 +229,17 @@ namespace Amazon.Keyspaces.Model
         /// Specifies if <code>pointInTimeRecovery</code> is enabled or disabled for the table.
         /// The options are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>ENABLED</code> 
+        ///  <code>status=ENABLED</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>DISABLED</code> 
+        ///  <code>status=DISABLED</code> 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
-        /// If it's not specified, the default is <code>DISABLED</code>.
+        /// If it's not specified, the default is <code>status=DISABLED</code>.
         /// </para>
         ///  
         /// <para>
@@ -240,42 +268,41 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// For each column to be created:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>name</code> - The name of the column.
+        ///  <code>name</code> - The name of the column.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>type</code> - An Amazon Keyspaces data type. For more information, see <a
-        /// href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
+        ///  <code>type</code> - An Amazon Keyspaces data type. For more information, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/cql.elements.html#cql.data-types">Data
         /// types</a> in the <i>Amazon Keyspaces Developer Guide</i>.
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// The primary key of the table consists of the following columns:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>partitionKeys</code> - The partition key can be a single column, or it can
+        ///  <code>partitionKeys</code> - The partition key can be a single column, or it can
         /// be a compound value composed of two or more columns. The partition key portion of
         /// the primary key is required and determines how Amazon Keyspaces stores your data.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>name</code> - The name of each partition key column.
+        ///  <code>name</code> - The name of each partition key column.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>clusteringKeys</code> - The optional clustering column portion of your primary
+        ///  <code>clusteringKeys</code> - The optional clustering column portion of your primary
         /// key determines how the data is clustered and sorted within each partition.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>name</code> - The name of the clustering column. 
+        ///  <code>name</code> - The name of the clustering column. 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>)
+        ///  <code>orderBy</code> - Sets the ascendant (<code>ASC</code>) or descendant (<code>DESC</code>)
         /// order modifier.
         /// </para>
         ///  
@@ -283,14 +310,15 @@ namespace Amazon.Keyspaces.Model
         /// To define a column as static use <code>staticColumns</code> - Static columns store
         /// values that are shared by all rows in the same partition:
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>name</code> - The name of the column.
+        ///  <code>name</code> - The name of the column.
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>type</code> - An Amazon Keyspaces data type.
+        ///  <code>type</code> - An Amazon Keyspaces data type.
         /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public SchemaDefinition SchemaDefinition
@@ -354,15 +382,15 @@ namespace Amazon.Keyspaces.Model
         /// <para>
         /// Enables Time to Live custom settings for the table. The options are:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// • <code>status:enabled</code> 
+        ///  <code>status:enabled</code> 
         /// </para>
-        ///  
+        ///  </li> <li> 
         /// <para>
-        /// • <code>status:disabled</code> 
+        ///  <code>status:disabled</code> 
         /// </para>
-        ///  
+        ///  </li> </ul> 
         /// <para>
         /// The default is <code>status:disabled</code>. After <code>ttl</code> is enabled, you
         /// can't disable it for the table.

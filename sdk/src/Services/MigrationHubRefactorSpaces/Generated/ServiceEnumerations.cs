@@ -479,6 +479,10 @@ namespace Amazon.MigrationHubRefactorSpaces
     {
 
         /// <summary>
+        /// Constant NONE for NetworkFabricType
+        /// </summary>
+        public static readonly NetworkFabricType NONE = new NetworkFabricType("NONE");
+        /// <summary>
         /// Constant TRANSIT_GATEWAY for NetworkFabricType
         /// </summary>
         public static readonly NetworkFabricType TRANSIT_GATEWAY = new NetworkFabricType("TRANSIT_GATEWAY");

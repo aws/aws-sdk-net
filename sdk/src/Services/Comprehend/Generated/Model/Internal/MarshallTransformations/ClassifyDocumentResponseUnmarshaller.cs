@@ -81,6 +81,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
                     response.Labels = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Warnings", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<WarningsListItem, WarningsListItemUnmarshaller>(WarningsListItemUnmarshaller.Instance);
+                    response.Warnings = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
 
             return response;

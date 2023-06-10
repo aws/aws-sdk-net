@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSupportedPhoneNumberCountries operation.
-    /// 
+    /// Lists the countries that you can order phone numbers from.
     /// </summary>
     public partial class ListSupportedPhoneNumberCountriesRequest : AmazonChimeSDKVoiceRequest
     {
         private PhoneNumberProductType _productType;
 
         /// <summary>
-        /// Gets and sets the property ProductType.
+        /// Gets and sets the property ProductType. 
+        /// <para>
+        /// The phone number product type.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PhoneNumberProductType ProductType

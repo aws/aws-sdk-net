@@ -33,8 +33,28 @@ namespace Amazon.SageMakerRuntime.Model
     /// </summary>
     public partial class InvokeEndpointAsyncResponse : AmazonWebServiceResponse
     {
+        private string _failureLocation;
         private string _inferenceId;
         private string _outputLocation;
+
+        /// <summary>
+        /// Gets and sets the property FailureLocation. 
+        /// <para>
+        /// The Amazon S3 URI where the inference failure response payload is stored.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1024)]
+        public string FailureLocation
+        {
+            get { return this._failureLocation; }
+            set { this._failureLocation = value; }
+        }
+
+        // Check to see if FailureLocation property is set
+        internal bool IsSetFailureLocation()
+        {
+            return this._failureLocation != null;
+        }
 
         /// <summary>
         /// Gets and sets the property InferenceId. 

@@ -46,7 +46,7 @@ namespace Amazon.Pipes.Model
         /// expect in the event detail.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string DetailType
         {
             get { return this._detailType; }
@@ -71,7 +71,7 @@ namespace Amazon.Pipes.Model
         /// </para>
         ///  </important>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public string EndpointId
         {
             get { return this._endpointId; }
@@ -110,7 +110,7 @@ namespace Amazon.Pipes.Model
         /// The source of the event.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string Source
         {
             get { return this._source; }

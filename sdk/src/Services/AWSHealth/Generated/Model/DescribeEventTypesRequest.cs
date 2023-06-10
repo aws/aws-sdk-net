@@ -32,8 +32,7 @@ namespace Amazon.AWSHealth.Model
     /// Container for the parameters to the DescribeEventTypes operation.
     /// Returns the event types that meet the specified filter criteria. You can use this
     /// API operation to find information about the Health event, such as the category, Amazon
-    /// Web Services service, and event code. The metadata for each event appears in the <a
-    /// href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a>
+    /// Web Service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a>
     /// object. 
     /// 
     ///  
@@ -98,6 +97,12 @@ namespace Amazon.AWSHealth.Model
         /// <para>
         /// The maximum number of items to return in one batch, between 10 and 100, inclusive.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you don't specify the <code>maxResults</code> parameter, this operation returns
+        /// a maximum of 30 items by default.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=10, Max=100)]
         public int MaxResults

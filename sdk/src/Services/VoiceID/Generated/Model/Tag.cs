@@ -44,7 +44,7 @@ namespace Amazon.VoiceID.Model
         /// For example, in the tag 'Department':'Sales', the key is 'Department'. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -64,7 +64,7 @@ namespace Amazon.VoiceID.Model
         /// For example, in the tag 'Department':'Sales', the value is 'Sales'. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

@@ -52,6 +52,7 @@ namespace Amazon.Lex.Model
         /// A list of active contexts for the session.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ActiveContexts
         {
             get { return this._activeContexts; }
@@ -156,7 +157,7 @@ namespace Amazon.Lex.Model
         /// before you can use the value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1366)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1366)]
         public string EncodedMessage
         {
             get { return this._encodedMessage; }
@@ -200,7 +201,7 @@ namespace Amazon.Lex.Model
         /// </para>
         /// </summary>
         [Obsolete("The message field is deprecated, use the encodedMessage field instead. The message field is available only in the de-DE, en-AU, en-GB, en-US, es-419, es-ES, es-US, fr-CA, fr-FR and it-IT locales.")]
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Message
         {
             get { return this._message; }

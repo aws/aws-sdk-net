@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LocationService.Model
 {
     /// <summary>
-    /// Contains details of an existing map resource in your AWS account.
+    /// Contains details of an existing map resource in your Amazon Web Services account.
     /// </summary>
     public partial class ListMapsResponseEntry
     {

@@ -29,6 +29,7 @@ namespace ServiceClientGenerator
         public const string RequiredKey = "required";
         public const string MinKey = "min";
         public const string MaxKey = "max";
+        public const string SensitiveKey = "sensitive";
         public const string PatternKey = "pattern";
         public const string ErrorKey = "error";
         public const string ErrorCodeKey = "code";
@@ -37,6 +38,7 @@ namespace ServiceClientGenerator
         public const string DeprecatedMessageKey = "deprecatedMessage";
         public const string TimestampFormatKey = "timestampFormat";
         public const string DocumentKey = "document";
+        public const string EventKey = "event";
 
         public static readonly HashSet<string> NullableTypes = new HashSet<string> {
             "bool",
@@ -559,6 +561,18 @@ namespace ServiceClientGenerator
             }
         }
 
+        public bool Sensitive
+        {
+            get
+            {
+                var sensitiveNode = data[SensitiveKey];
+                if (sensitiveNode == null)
+                    return false;
+
+                return bool.Parse(sensitiveNode.ToString());
+            }
+        }
+
         public long? Min
         {
             get
@@ -828,6 +842,17 @@ namespace ServiceClientGenerator
                 }
             }
             return false;
+        }
+        /// <summary>
+        /// Returns true if the structure contains the event trait,
+        /// not to be confused with the EventStream structure shape
+        /// </summary>
+        public bool IsEvent
+        {
+            get
+            {
+                return this.data.PropertyNames.Contains(EventKey);
+            }
         }
     }
 }

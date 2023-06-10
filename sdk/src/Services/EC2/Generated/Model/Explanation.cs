@@ -52,6 +52,8 @@ namespace Amazon.EC2.Model
         private string _direction;
         private AnalysisComponent _elasticLoadBalancerListener;
         private string _explanationCode;
+        private FirewallStatefulRule _firewallStatefulRule;
+        private FirewallStatelessRule _firewallStatelessRule;
         private AnalysisComponent _ingressRouteTable;
         private AnalysisComponent _internetGateway;
         private string _loadBalancerArn;
@@ -401,6 +403,42 @@ namespace Amazon.EC2.Model
         internal bool IsSetExplanationCode()
         {
             return this._explanationCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirewallStatefulRule. 
+        /// <para>
+        /// The Network Firewall stateful rule.
+        /// </para>
+        /// </summary>
+        public FirewallStatefulRule FirewallStatefulRule
+        {
+            get { return this._firewallStatefulRule; }
+            set { this._firewallStatefulRule = value; }
+        }
+
+        // Check to see if FirewallStatefulRule property is set
+        internal bool IsSetFirewallStatefulRule()
+        {
+            return this._firewallStatefulRule != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FirewallStatelessRule. 
+        /// <para>
+        /// The Network Firewall stateless rule.
+        /// </para>
+        /// </summary>
+        public FirewallStatelessRule FirewallStatelessRule
+        {
+            get { return this._firewallStatelessRule; }
+            set { this._firewallStatelessRule = value; }
+        }
+
+        // Check to see if FirewallStatelessRule property is set
+        internal bool IsSetFirewallStatelessRule()
+        {
+            return this._firewallStatelessRule != null;
         }
 
         /// <summary>

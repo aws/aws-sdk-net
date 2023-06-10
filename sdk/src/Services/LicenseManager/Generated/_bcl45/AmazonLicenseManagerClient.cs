@@ -659,7 +659,9 @@ namespace Amazon.LicenseManager
 
         /// <summary>
         /// Creates a grant for the specified license. A grant shares the use of license entitlements
-        /// with specific Amazon Web Services accounts.
+        /// with a specific Amazon Web Services account, an organization, or an organizational
+        /// unit (OU). For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted
+        /// licenses in License Manager</a> in the <i>License Manager User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
         /// 
@@ -699,7 +701,9 @@ namespace Amazon.LicenseManager
 
         /// <summary>
         /// Creates a grant for the specified license. A grant shares the use of license entitlements
-        /// with specific Amazon Web Services accounts.
+        /// with a specific Amazon Web Services account, an organization, or an organizational
+        /// unit (OU). For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted
+        /// licenses in License Manager</a> in the <i>License Manager User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrant service method.</param>
         /// <param name="cancellationToken">
@@ -745,7 +749,8 @@ namespace Amazon.LicenseManager
 
 
         /// <summary>
-        /// Creates a new version of the specified grant.
+        /// Creates a new version of the specified grant. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted
+        /// licenses in License Manager</a> in the <i>License Manager User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrantVersion service method.</param>
         /// 
@@ -784,7 +789,8 @@ namespace Amazon.LicenseManager
 
 
         /// <summary>
-        /// Creates a new version of the specified grant.
+        /// Creates a new version of the specified grant. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted
+        /// licenses in License Manager</a> in the <i>License Manager User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateGrantVersion service method.</param>
         /// <param name="cancellationToken">
@@ -3255,7 +3261,9 @@ namespace Amazon.LicenseManager
 
 
         /// <summary>
-        /// Lists grants that are received but not accepted.
+        /// Lists grants that are received. Received grants are grants created while specifying
+        /// the recipient as this Amazon Web Services account, your organization, or an organizational
+        /// unit (OU) to which this member account belongs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReceivedGrants service method.</param>
         /// 
@@ -3294,7 +3302,9 @@ namespace Amazon.LicenseManager
 
 
         /// <summary>
-        /// Lists grants that are received but not accepted.
+        /// Lists grants that are received. Received grants are grants created while specifying
+        /// the recipient as this Amazon Web Services account, your organization, or an organizational
+        /// unit (OU) to which this member account belongs.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReceivedGrants service method.</param>
         /// <param name="cancellationToken">

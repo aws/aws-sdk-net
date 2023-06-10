@@ -154,5 +154,37 @@ namespace Amazon.LexModelsV2.Model
         {
             return new ListSlotTypesPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListTestExecutionResultItems operation
+        ///</summary>
+        public IListTestExecutionResultItemsPaginator ListTestExecutionResultItems(ListTestExecutionResultItemsRequest request) 
+        {
+            return new ListTestExecutionResultItemsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestExecutions operation
+        ///</summary>
+        public IListTestExecutionsPaginator ListTestExecutions(ListTestExecutionsRequest request) 
+        {
+            return new ListTestExecutionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestSetRecords operation
+        ///</summary>
+        public IListTestSetRecordsPaginator ListTestSetRecords(ListTestSetRecordsRequest request) 
+        {
+            return new ListTestSetRecordsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTestSets operation
+        ///</summary>
+        public IListTestSetsPaginator ListTestSets(ListTestSetsRequest request) 
+        {
+            return new ListTestSetsPaginator(this.client, request);
+        }
     }
 }

@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// You have exceeded your service quota. To perform the requested action, remove some
-    /// of the relevant resources, or use Service Quotas to request a service quota increase.
+    /// This exception occurs when you have exceeded your service quota. To perform the requested
+    /// action, remove some of the relevant resources, or use Service Quotas to request a
+    /// service quota increase.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

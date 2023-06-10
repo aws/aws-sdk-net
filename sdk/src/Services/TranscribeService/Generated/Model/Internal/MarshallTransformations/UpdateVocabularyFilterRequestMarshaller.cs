@@ -67,6 +67,12 @@ namespace Amazon.TranscribeService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDataAccessRoleArn())
+                {
+                    context.Writer.WritePropertyName("DataAccessRoleArn");
+                    context.Writer.Write(publicRequest.DataAccessRoleArn);
+                }
+
                 if(publicRequest.IsSetVocabularyFilterFileUri())
                 {
                     context.Writer.WritePropertyName("VocabularyFilterFileUri");

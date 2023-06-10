@@ -31,7 +31,9 @@ namespace Amazon.CodeArtifact.Model
     /// <summary>
     /// Container for the parameters to the ListPackageVersions operation.
     /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-    /// objects for package versions in a repository that match the request parameters.
+    /// objects for package versions in a repository that match the request parameters. Package
+    /// versions of all statuses will be returned by default when calling <code>list-package-versions</code>
+    /// with no <code>--status</code> parameter.
     /// </summary>
     public partial class ListPackageVersionsRequest : AmazonCodeArtifactRequest
     {
@@ -90,7 +92,7 @@ namespace Amazon.CodeArtifact.Model
         /// <summary>
         /// Gets and sets the property Format. 
         /// <para>
-        ///  The format of the returned package versions. 
+        ///  The format of the package versions you want to list. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -143,6 +145,10 @@ namespace Amazon.CodeArtifact.Model
         /// <para>
         ///  Python and NuGet packages do not contain a corresponding component, packages of those
         /// formats do not have a namespace. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  The namespace of a generic package is its <code>namespace</code>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the PutVoiceConnectorEmergencyCallingConfiguration operation.
-    /// 
+    /// Updates a Voice Connector's emergency calling configuration.
     /// </summary>
     public partial class PutVoiceConnectorEmergencyCallingConfigurationRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property EmergencyCallingConfiguration.
+        /// Gets and sets the property EmergencyCallingConfiguration. 
+        /// <para>
+        /// The configuration being updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public EmergencyCallingConfiguration EmergencyCallingConfiguration
@@ -54,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

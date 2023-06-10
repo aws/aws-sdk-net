@@ -181,6 +181,11 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.DescribeOrganizationConfigurationRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.DescribePublishingDestinationRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
@@ -212,6 +217,11 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.GetAdministratorAccountRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.GetCoverageStatisticsRequest.DetectorId</property>
     <min>1</min>
     <max>300</max>
   </property-value-rule>
@@ -351,6 +361,16 @@
     <max>300</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListCoverageRequest.DetectorId</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.ListCoverageRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.GuardDuty.Model.ListDetectorsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
@@ -428,6 +448,15 @@
     <property>Amazon.GuardDuty.Model.ListThreatIntelSetsRequest.MaxResults</property>
     <min>1</min>
     <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.StartMalwareScanRequest.ResourceArn</property>
+    <pattern>^arn:[A-Za-z-]+:[A-Za-z0-9]+:[A-Za-z0-9-]+:\d+:(([A-Za-z0-9-]+)[:\/])?[A-Za-z0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.StartMalwareScanResponse.ScanId</property>
+    <min>1</min>
+    <max>200</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.StartMonitoringMembersRequest.DetectorId</property>
@@ -559,6 +588,16 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.GuardDuty.Model.CloudTrailConfigurationResult.Status</property>
+    <min>1</min>
+    <max>300</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CoverageResource.AccountId</property>
+    <min>12</min>
+    <max>12</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.GuardDuty.Model.CoverageResource.DetectorId</property>
     <min>1</min>
     <max>300</max>
   </property-value-rule>

@@ -150,7 +150,7 @@ namespace Amazon.CloudWatchEvidently.Model
         /// operation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=2500)]
         public Dictionary<string, string> EntityOverrides
         {
             get { return this._entityOverrides; }

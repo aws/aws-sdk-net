@@ -40,7 +40,8 @@ namespace Amazon.CodeCatalyst.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the IDE.
+        /// The name of the IDE. Valid values include <code>Cloud9</code>, <code>IntelliJ</code>,
+        /// <code>PyCharm</code>, <code>GoLand</code>, and <code>VSCode</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -59,8 +60,13 @@ namespace Amazon.CodeCatalyst.Model
         /// <summary>
         /// Gets and sets the property Runtime. 
         /// <para>
-        /// A link to the IDE runtime image.
+        /// A link to the IDE runtime image. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This parameter is not required for <code>VSCode</code>.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Min=1, Max=400)]
         public string Runtime

@@ -611,6 +611,60 @@ namespace Amazon.Appflow
 
 
     /// <summary>
+    /// Constants used for properties of type DataTransferApiType.
+    /// </summary>
+    public class DataTransferApiType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ASYNC for DataTransferApiType
+        /// </summary>
+        public static readonly DataTransferApiType ASYNC = new DataTransferApiType("ASYNC");
+        /// <summary>
+        /// Constant AUTOMATIC for DataTransferApiType
+        /// </summary>
+        public static readonly DataTransferApiType AUTOMATIC = new DataTransferApiType("AUTOMATIC");
+        /// <summary>
+        /// Constant SYNC for DataTransferApiType
+        /// </summary>
+        public static readonly DataTransferApiType SYNC = new DataTransferApiType("SYNC");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataTransferApiType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataTransferApiType FindValue(string value)
+        {
+            return FindValue<DataTransferApiType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataTransferApiType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DynatraceConnectorOperator.
     /// </summary>
     public class DynatraceConnectorOperator : ConstantClass
@@ -718,6 +772,14 @@ namespace Amazon.Appflow
     public class ExecutionStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Canceled for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus Canceled = new ExecutionStatus("Canceled");
+        /// <summary>
+        /// Constant CancelStarted for ExecutionStatus
+        /// </summary>
+        public static readonly ExecutionStatus CancelStarted = new ExecutionStatus("CancelStarted");
         /// <summary>
         /// Constant Error for ExecutionStatus
         /// </summary>
@@ -1208,6 +1270,10 @@ namespace Amazon.Appflow
         /// Constant CLIENT_CREDENTIALS for OAuth2GrantType
         /// </summary>
         public static readonly OAuth2GrantType CLIENT_CREDENTIALS = new OAuth2GrantType("CLIENT_CREDENTIALS");
+        /// <summary>
+        /// Constant JWT_BEARER for OAuth2GrantType
+        /// </summary>
+        public static readonly OAuth2GrantType JWT_BEARER = new OAuth2GrantType("JWT_BEARER");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2866,6 +2932,56 @@ namespace Amazon.Appflow
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SlackConnectorOperator(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SupportedDataTransferType.
+    /// </summary>
+    public class SupportedDataTransferType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FILE for SupportedDataTransferType
+        /// </summary>
+        public static readonly SupportedDataTransferType FILE = new SupportedDataTransferType("FILE");
+        /// <summary>
+        /// Constant RECORD for SupportedDataTransferType
+        /// </summary>
+        public static readonly SupportedDataTransferType RECORD = new SupportedDataTransferType("RECORD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SupportedDataTransferType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SupportedDataTransferType FindValue(string value)
+        {
+            return FindValue<SupportedDataTransferType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SupportedDataTransferType(string value)
         {
             return FindValue(value);
         }

@@ -210,7 +210,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property RegionOrder. 
         /// <para>
-        /// The order of the Regions in where you want to perform the stack operation.
+        /// The order of the Regions where you want to perform the stack operation.
         /// </para>
         /// </summary>
         public List<string> RegionOrder

@@ -30,12 +30,22 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DetachLoadBalancers operation.
+    /// <note> 
+    /// <para>
+    /// This API operation is superseded by <a>DetachTrafficSources</a>, which can detach
+    /// multiple traffic sources types. We recommend using <code>DetachTrafficSources</code>
+    /// to simplify how you manage traffic sources. However, we continue to support <code>DetachLoadBalancers</code>.
+    /// You can use both the original <code>DetachLoadBalancers</code> API operation and <code>DetachTrafficSources</code>
+    /// on the same Auto Scaling group.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Detaches one or more Classic Load Balancers from the specified Auto Scaling group.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// This operation detaches only Classic Load Balancers. If you have Application Load
-    /// Balancers, Network Load Balancers, or Gateway Load Balancer, use the <a>DetachLoadBalancerTargetGroups</a>
+    /// Balancers, Network Load Balancers, or Gateway Load Balancers, use the <a>DetachLoadBalancerTargetGroups</a>
     /// API instead.
     /// </para>
     ///  

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The structure representing a Geometry in terms of Type and Coordinates as per GeoJson
+    /// spec.
     /// </summary>
     public partial class Geometry
     {
@@ -37,7 +38,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private string _type;
 
         /// <summary>
-        /// Gets and sets the property Coordinates.
+        /// Gets and sets the property Coordinates. 
+        /// <para>
+        /// The coordinates of the GeoJson Geometry.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]
         public List<List<List<double>>> Coordinates
@@ -53,7 +57,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// GeoJson Geometry types like Polygon and MultiPolygon.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string Type

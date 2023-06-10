@@ -61,7 +61,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AutoRecoverySupported. 
         /// <para>
-        /// Indicates whether auto recovery is supported.
+        /// Indicates whether Amazon CloudWatch action based recovery is supported.
         /// </para>
         /// </summary>
         public bool AutoRecoverySupported

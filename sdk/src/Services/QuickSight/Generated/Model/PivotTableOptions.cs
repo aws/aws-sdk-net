@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class PivotTableOptions
     {
         private TableCellStyle _cellStyle;
+        private Visibility _collapsedRowDimensionsVisibility;
         private TableCellStyle _columnHeaderStyle;
         private Visibility _columnNamesVisibility;
         private PivotTableMetricPlacement _metricPlacement;
@@ -59,6 +60,26 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetCellStyle()
         {
             return this._cellStyle != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CollapsedRowDimensionsVisibility. 
+        /// <para>
+        /// The visibility setting of a pivot table's collapsed row dimension fields. If the value
+        /// of this structure is <code>HIDDEN</code>, all collapsed columns in a pivot table are
+        /// automatically hidden. The default value is <code>VISIBLE</code>.
+        /// </para>
+        /// </summary>
+        public Visibility CollapsedRowDimensionsVisibility
+        {
+            get { return this._collapsedRowDimensionsVisibility; }
+            set { this._collapsedRowDimensionsVisibility = value; }
+        }
+
+        // Check to see if CollapsedRowDimensionsVisibility property is set
+        internal bool IsSetCollapsedRowDimensionsVisibility()
+        {
+            return this._collapsedRowDimensionsVisibility != null;
         }
 
         /// <summary>

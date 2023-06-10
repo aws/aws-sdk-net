@@ -47,7 +47,7 @@ namespace Amazon.Route53Resolver.Model
         /// <para>
         /// If a response doesn't include the last of the configurations, you can get more configurations
         /// by submitting another <code>ListResolverConfigs</code> request. Get the value of <code>NextToken</code>
-        /// that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code>
+        /// that Amazon Route 53 returned in the previous response and include it in <code>NextToken</code>
         /// in the next request.
         /// </para>
         /// </summary>

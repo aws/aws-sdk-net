@@ -46,10 +46,6 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>en</code> - English (default)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>jp</code> - Japanese
         /// </para>
         ///  </li> <li> 
@@ -125,7 +121,7 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  
         /// <para>
-        /// The <code>OWNER</code> key accepts IAM user ARNs, IAM role ARNs, and STS assumed-role
+        /// The <code>OWNER</code> key accepts user ARNs, IAM role ARNs, and STS assumed-role
         /// ARNs. The owner is the user that has permission to see, update, terminate, and execute
         /// service actions in the provisioned product.
         /// </para>

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IdentityStore.Model
 {
     /// <summary>
-    /// A user object that contains a specified user’s metadata and attributes.
+    /// A user object that contains the metadata and attributes for a specified user.
     /// </summary>
     public partial class User
     {
@@ -72,11 +72,11 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// A string containing the user's name that's formatted for display when the user is
-        /// referenced. For example, "John Doe."
+        /// A string containing the name of the user that is formatted for display when the user
+        /// is referenced. For example, "John Doe."
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -151,10 +151,10 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Locale. 
         /// <para>
-        /// A string containing the user's geographical region or location.
+        /// A string containing the geographical region or location of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Locale
         {
             get { return this._locale; }
@@ -170,7 +170,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// An object containing the user's name.
+        /// An object containing the name of the user.
         /// </para>
         /// </summary>
         public Name Name
@@ -191,7 +191,7 @@ namespace Amazon.IdentityStore.Model
         /// A string containing an alternate name for the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string NickName
         {
             get { return this._nickName; }
@@ -231,7 +231,7 @@ namespace Amazon.IdentityStore.Model
         /// or "en-us."
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string PreferredLanguage
         {
             get { return this._preferredLanguage; }
@@ -247,10 +247,10 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property ProfileUrl. 
         /// <para>
-        /// A string containing a URL that may be associated with the user.
+        /// A string containing a URL that might be associated with the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string ProfileUrl
         {
             get { return this._profileUrl; }
@@ -266,10 +266,10 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Timezone. 
         /// <para>
-        /// A string containing the user's time zone.
+        /// A string containing the time zone of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Timezone
         {
             get { return this._timezone; }
@@ -285,11 +285,11 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property Title. 
         /// <para>
-        /// A string containing the user's title. Possible values depend on each customer's specific
-        /// needs, so they are left unspecified.
+        /// A string containing the title of the user. Possible values are left unspecified. The
+        /// value can vary based on your specific use case.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Title
         {
             get { return this._title; }
@@ -330,7 +330,7 @@ namespace Amazon.IdentityStore.Model
         /// of the user object in the identity store.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string UserName
         {
             get { return this._userName; }
@@ -346,11 +346,11 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property UserType. 
         /// <para>
-        /// A string indicating the user's type. Possible values depend on each customer's specific
-        /// needs, so they are left unspecified.
+        /// A string indicating the type of user. Possible values are left unspecified. The value
+        /// can vary based on your specific use case.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string UserType
         {
             get { return this._userType; }

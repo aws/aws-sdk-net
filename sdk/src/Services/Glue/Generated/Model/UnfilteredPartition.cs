@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// A partition that contains unfiltered metadata.
     /// </summary>
     public partial class UnfilteredPartition
     {
@@ -38,7 +38,10 @@ namespace Amazon.Glue.Model
         private Partition _partition;
 
         /// <summary>
-        /// Gets and sets the property AuthorizedColumns.
+        /// Gets and sets the property AuthorizedColumns. 
+        /// <para>
+        /// The list of columns the user has permissions to access.
+        /// </para>
         /// </summary>
         public List<string> AuthorizedColumns
         {
@@ -53,7 +56,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property IsRegisteredWithLakeFormation.
+        /// Gets and sets the property IsRegisteredWithLakeFormation. 
+        /// <para>
+        /// A Boolean value indicating that the partition location is registered with Lake Formation.
+        /// </para>
         /// </summary>
         public bool IsRegisteredWithLakeFormation
         {
@@ -68,7 +74,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Partition.
+        /// Gets and sets the property Partition. 
+        /// <para>
+        /// The partition object.
+        /// </para>
         /// </summary>
         public Partition Partition
         {

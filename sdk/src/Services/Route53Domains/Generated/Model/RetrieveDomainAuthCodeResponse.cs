@@ -41,7 +41,7 @@ namespace Amazon.Route53Domains.Model
         /// The authorization code for the domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Sensitive=true, Max=1024)]
         public string AuthCode
         {
             get { return this._authCode; }

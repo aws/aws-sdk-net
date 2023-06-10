@@ -30,9 +30,9 @@ namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
     /// Container for the parameters to the TagResource operation.
-    /// Associate a set of tags with a Timestream resource. You can then activate these user-defined
-    /// tags so that they appear on the Billing and Cost Management console for cost allocation
-    /// tracking.
+    /// Associates a set of tags with a Timestream resource. You can then activate these
+    /// user-defined tags so that they appear on the Billing and Cost Management console for
+    /// cost allocation tracking.
     /// </summary>
     public partial class TagResourceRequest : AmazonTimestreamWriteRequest
     {

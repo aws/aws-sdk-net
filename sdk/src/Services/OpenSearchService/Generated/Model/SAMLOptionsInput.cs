@@ -102,7 +102,7 @@ namespace Amazon.OpenSearchService.Model
         /// The SAML master user name, which is stored in the domain's internal user database.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string MasterUserName
         {
             get { return this._masterUserName; }

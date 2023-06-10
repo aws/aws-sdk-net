@@ -86,7 +86,7 @@ namespace Amazon.Proton.Model
         /// A description of the service.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -162,6 +162,7 @@ namespace Amazon.Proton.Model
         /// A service status message.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

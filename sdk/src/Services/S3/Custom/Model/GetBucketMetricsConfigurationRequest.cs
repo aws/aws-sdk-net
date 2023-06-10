@@ -49,7 +49,10 @@ namespace Amazon.S3.Model
         }
 
         /// <summary>
-        /// The ID used to identify the metrics configuration.
+        /// <para>
+        /// The ID used to identify the metrics configuration. 
+        /// The ID has a 64 character limit and can only contain letters, numbers, periods, dashes, and underscores.
+        /// </para>
         /// </summary>
         public string MetricsId
         {

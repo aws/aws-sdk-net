@@ -122,6 +122,7 @@ namespace Amazon.AppRunner.Model
         /// If specified, this command overrides the Docker image’s default start command.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StartCommand
         {
             get { return this._startCommand; }

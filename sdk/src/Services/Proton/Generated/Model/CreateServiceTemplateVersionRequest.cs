@@ -92,7 +92,7 @@ namespace Amazon.Proton.Model
         /// A description of the new version of a service template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }

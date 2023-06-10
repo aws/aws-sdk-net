@@ -46,7 +46,7 @@ namespace Amazon.Comprehend.Model
         /// maximum size of each document is 5 KB.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public List<string> TextList
         {
             get { return this._textList; }

@@ -35,6 +35,7 @@ namespace Amazon.GuardDuty.Model
     {
         private string _accountId;
         private DataSourcesFreeTrial _dataSources;
+        private List<FreeTrialFeatureConfigurationResult> _features = new List<FreeTrialFeatureConfigurationResult>();
 
         /// <summary>
         /// Gets and sets the property AccountId. 
@@ -60,6 +61,7 @@ namespace Amazon.GuardDuty.Model
         /// Describes the data source enabled for the GuardDuty member account.
         /// </para>
         /// </summary>
+        [Obsolete("This parameter is deprecated, use Features instead")]
         public DataSourcesFreeTrial DataSources
         {
             get { return this._dataSources; }
@@ -70,6 +72,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDataSources()
         {
             return this._dataSources != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// A list of features enabled for the GuardDuty account.
+        /// </para>
+        /// </summary>
+        public List<FreeTrialFeatureConfigurationResult> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && this._features.Count > 0; 
         }
 
     }

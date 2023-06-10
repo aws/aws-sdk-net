@@ -1,0 +1,7 @@
+{
+  "useNullableType": {
+    "FlexibleTimeWindow": [
+      "MaximumWindowInMinutes"
+    ]
+  }
+}

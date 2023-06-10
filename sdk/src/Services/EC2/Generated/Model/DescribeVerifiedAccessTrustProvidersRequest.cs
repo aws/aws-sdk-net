@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVerifiedAccessTrustProviders operation.
-    /// Describe details of existing Verified Access trust providers.
+    /// Describes the specified Amazon Web Services Verified Access trust providers.
     /// </summary>
     public partial class DescribeVerifiedAccessTrustProvidersRequest : AmazonEC2Request
     {
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessTrustProviderIds. 
         /// <para>
-        /// The IDs of the Amazon Web Services Verified Access trust providers.
+        /// The IDs of the Verified Access trust providers.
         /// </para>
         /// </summary>
         public List<string> VerifiedAccessTrustProviderIds

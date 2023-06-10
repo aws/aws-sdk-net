@@ -63,7 +63,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// The Amazon Resource Name (ARN) of the Chatbot topic or Chatbot client to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=320)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=320)]
         public string TargetAddress
         {
             get { return this._targetAddress; }

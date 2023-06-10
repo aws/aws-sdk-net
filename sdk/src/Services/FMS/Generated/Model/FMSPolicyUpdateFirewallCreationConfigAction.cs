@@ -66,7 +66,7 @@ namespace Amazon.FMS.Model
         /// in order to remedy scope violations.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=8192)]
+        [AWSProperty(Min=1, Max=10000)]
         public string FirewallCreationConfig
         {
             get { return this._firewallCreationConfig; }

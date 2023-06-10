@@ -94,6 +94,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                     unmarshalledObject.Emotions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EyeDirection", targetDepth))
+                {
+                    var unmarshaller = EyeDirectionUnmarshaller.Instance;
+                    unmarshalledObject.EyeDirection = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Eyeglasses", targetDepth))
                 {
                     var unmarshaller = EyeglassesUnmarshaller.Instance;
@@ -104,6 +110,12 @@ namespace Amazon.Rekognition.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = EyeOpenUnmarshaller.Instance;
                     unmarshalledObject.EyesOpen = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("FaceOccluded", targetDepth))
+                {
+                    var unmarshaller = FaceOccludedUnmarshaller.Instance;
+                    unmarshalledObject.FaceOccluded = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Gender", targetDepth))

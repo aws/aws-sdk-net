@@ -29,10 +29,10 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ResilienceHub.Model
 {
     /// <summary>
-    /// Occurs when a conflict with a previous successful write is detected. This generally
-    /// occurs when the previous write did not have time to propagate to the host serving
-    /// the current request. A retry (with appropriate backoff logic) is the recommended response
-    /// to this exception.
+    /// This exception occurs when a conflict with a previous successful write is detected.
+    /// This generally occurs when the previous write did not have time to propagate to the
+    /// host serving the current request. A retry (with appropriate backoff logic) is the
+    /// recommended response to this exception.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

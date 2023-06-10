@@ -267,6 +267,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameter value.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Value
         {
             get { return this._value; }

@@ -53,7 +53,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// Instantiates InstanceGroupConfig with the parameterized properties
         /// </summary>
         /// <param name="instanceRole">The role of the instance group in the cluster.</param>
-        /// <param name="instanceType">The EC2 instance type for all instances in the instance group.</param>
+        /// <param name="instanceType">The Amazon EC2 instance type for all instances in the instance group.</param>
         /// <param name="instanceCount">Target number of instances for the instance group.</param>
         public InstanceGroupConfig(InstanceRoleType instanceRole, string instanceType, int instanceCount)
         {
@@ -67,8 +67,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <para>
         /// An automatic scaling policy for a core instance group or task instance group in an
         /// Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically
-        /// adds and terminates EC2 instances in response to the value of a CloudWatch metric.
-        /// See <a>PutAutoScalingPolicy</a>.
+        /// adds and terminates Amazon EC2 instances in response to the value of a CloudWatch
+        /// metric. See <a>PutAutoScalingPolicy</a>.
         /// </para>
         /// </summary>
         public AutoScalingPolicy AutoScalingPolicy
@@ -111,8 +111,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  </note> 
         /// <para>
-        /// The list of configurations supplied for an EMR cluster instance group. You can specify
-        /// a separate configuration for each instance group (master, core, and task).
+        /// The list of configurations supplied for an Amazon EMR cluster instance group. You
+        /// can specify a separate configuration for each instance group (master, core, and task).
         /// </para>
         /// </summary>
         public List<Configuration> Configurations
@@ -149,7 +149,8 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property EbsConfiguration. 
         /// <para>
-        /// EBS configurations that will be attached to each EC2 instance in the instance group.
+        /// EBS configurations that will be attached to each Amazon EC2 instance in the instance
+        /// group.
         /// </para>
         /// </summary>
         public EbsConfiguration EbsConfiguration
@@ -205,7 +206,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The EC2 instance type for all instances in the instance group.
+        /// The Amazon EC2 instance type for all instances in the instance group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
@@ -224,7 +225,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Market. 
         /// <para>
-        /// Market type of the EC2 instances used to create a cluster node.
+        /// Market type of the Amazon EC2 instances used to create a cluster node.
         /// </para>
         /// </summary>
         public MarketType Market

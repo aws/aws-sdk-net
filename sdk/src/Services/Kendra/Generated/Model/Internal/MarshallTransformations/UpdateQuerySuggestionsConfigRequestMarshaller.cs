@@ -67,6 +67,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributeSuggestionsConfig())
+                {
+                    context.Writer.WritePropertyName("AttributeSuggestionsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AttributeSuggestionsUpdateConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AttributeSuggestionsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIncludeQueriesWithoutUserInformation())
                 {
                     context.Writer.WritePropertyName("IncludeQueriesWithoutUserInformation");

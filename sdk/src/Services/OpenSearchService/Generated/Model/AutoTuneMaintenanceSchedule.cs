@@ -29,8 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
+    /// <note> 
+    /// <para>
+    /// This object is deprecated. Use the domain's <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html">off-peak
+    /// window</a> to schedule Auto-Tune optimizations. For migration instructions, see <a
+    /// href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/off-peak.html#off-peak-migrate">Migrating
+    /// from Auto-Tune maintenance windows</a>.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// The Auto-Tune maintenance schedule. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune
     /// for Amazon OpenSearch Service</a>.
+    /// </para>
     /// </summary>
     public partial class AutoTuneMaintenanceSchedule
     {

@@ -183,6 +183,11 @@
     <pattern>[0-9a-f]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.GetConsolidatedReportRequest.MaxResults</property>
+    <min>1</min>
+    <max>15</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.GetLensRequest.LensAlias</property>
     <min>1</min>
     <max>128</max>
@@ -697,6 +702,16 @@
     <max>512</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.BestPractice.ChoiceId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.BestPractice.ChoiceTitle</property>
+    <min>1</min>
+    <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.CheckDetail.AccountId</property>
     <pattern>[0-9]{12}</pattern>
   </property-value-rule>
@@ -792,6 +807,19 @@
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ChoiceUpdate.Notes</property>
     <max>250</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ConsolidatedReportMetric.LensesAppliedCount</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ConsolidatedReportMetric.WorkloadId</property>
+    <pattern>[0-9a-f]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.ConsolidatedReportMetric.WorkloadName</property>
+    <min>3</min>
+    <max>100</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ImprovementSummary.ImprovementPlanUrl</property>
@@ -964,6 +992,11 @@
     <max>128</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.WellArchitected.Model.PillarMetric.PillarId</property>
+    <min>1</min>
+    <max>64</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.WellArchitected.Model.PillarReviewSummary.Notes</property>
     <max>2084</max>
   </property-value-rule>
@@ -986,6 +1019,11 @@
     <property>Amazon.WellArchitected.Model.QuestionDifference.QuestionTitle</property>
     <min>1</min>
     <max>512</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.WellArchitected.Model.QuestionMetric.QuestionId</property>
+    <min>1</min>
+    <max>128</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.WellArchitected.Model.ShareInvitation.LensAlias</property>

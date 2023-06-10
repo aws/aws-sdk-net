@@ -112,10 +112,28 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.LastModifiedTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ModelName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ModelPackageVersionArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ModelPackageVersionArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RoleArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.RoleArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SamplePayloadUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SamplePayloadUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("Status", targetDepth))

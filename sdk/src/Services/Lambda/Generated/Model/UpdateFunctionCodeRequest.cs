@@ -280,6 +280,7 @@ namespace Amazon.Lambda.Model
         /// file archive deployment package.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public MemoryStream ZipFile
         {
             get { return this._zipFile; }

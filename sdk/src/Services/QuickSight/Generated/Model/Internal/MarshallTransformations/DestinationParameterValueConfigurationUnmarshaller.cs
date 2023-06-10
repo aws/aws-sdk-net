@@ -76,6 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.SelectAllValueOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceColumn", targetDepth))
+                {
+                    var unmarshaller = ColumnIdentifierUnmarshaller.Instance;
+                    unmarshalledObject.SourceColumn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SourceField", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

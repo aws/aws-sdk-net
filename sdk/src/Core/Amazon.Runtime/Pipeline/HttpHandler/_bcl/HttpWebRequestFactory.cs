@@ -33,55 +33,6 @@ namespace Amazon.Runtime.Internal
     /// </summary>    
     public class HttpWebRequestFactory : IHttpRequestFactory<Stream>
     {
-        private ILogger _logger;
-        private static volatile bool _isProtocolUpdated;
-
-        /// <summary>
-        /// Some AWS services like Cloud 9 require at least TLS 1.1. Version of .NET Framework 4.5 and earlier 
-        /// do not eanble TLS 1.1 and TLS 1.2 by default. This code adds those protocols if using an earlier 
-        /// version of .NET that explicitly set the protocol and didn't have TLS 1.1 and TLS 1.2. 
-        /// </summary>
-        /// <param name="amazonSecurityProtocolManager"></param>
-        public HttpWebRequestFactory(IAmazonSecurityProtocolManager amazonSecurityProtocolManager)
-            : this(amazonSecurityProtocolManager, null)
-        {
-        }
-
-        /// <summary>
-        /// Some AWS services like Cloud 9 require at least TLS 1.1. Version of .NET Framework 4.5 and earlier 
-        /// do not eanble TLS 1.1 and TLS 1.2 by default. This code adds those protocols if using an earlier 
-        /// version of .NET that explicitly set the protocol and didn't have TLS 1.1 and TLS 1.2. 
-        /// </summary>
-        /// <param name="amazonSecurityProtocolManager"></param>
-        /// <param name="logger"></param>
-        public HttpWebRequestFactory(IAmazonSecurityProtocolManager amazonSecurityProtocolManager, ILogger logger)
-        {
-            _logger = logger ?? Logger.GetLogger(typeof(HttpWebRequestFactory));
-
-            if (_isProtocolUpdated) return;
-
-            if (!amazonSecurityProtocolManager.IsSecurityProtocolSystemDefault())
-            {
-                try
-                {
-                    amazonSecurityProtocolManager.UpdateProtocolsToSupported();
-                }
-                catch (Exception ex)
-                {
-                    if (ex is NotSupportedException)
-                    {
-                        _logger.InfoFormat(ex.Message);
-                    }
-                    else
-                    {
-                        _logger.InfoFormat("Unexpected error " + ex.GetType().Name +
-                                           " encountered when trying to set Security Protocol.\n" + ex);
-                    }
-                }
-            }
-            _isProtocolUpdated = true;
-        }
-
         /// <summary>
         /// Creates an HTTP request for the given URI.
         /// </summary>
@@ -90,16 +41,6 @@ namespace Amazon.Runtime.Internal
         public IHttpRequest<Stream> CreateHttpRequest(Uri requestUri)
         {
             return new HttpRequest(requestUri);
-        }
-
-        /// <summary>
-        /// This method is used for unit testing purposes. It allows setting of the flag
-        /// that indicates protocol setting was attempted.
-        /// </summary>
-        /// <param name="value">The new value</param>
-        public static void SetIsProtocolUpdated(bool value)
-        {
-            _isProtocolUpdated = value;
         }
 
         /// <summary>

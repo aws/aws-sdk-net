@@ -124,7 +124,7 @@ namespace Amazon.MigrationHubStrategyRecommendations.Model
         ///  Database credentials. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=512)]
+        [AWSProperty(Sensitive=true, Min=1, Max=512)]
         public string SecretsManagerKey
         {
             get { return this._secretsManagerKey; }

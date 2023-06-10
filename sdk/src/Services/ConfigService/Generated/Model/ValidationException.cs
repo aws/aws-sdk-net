@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// The requested action is invalid.
+    /// The requested action is not valid.
     /// 
     ///  
     /// <para>

@@ -33,11 +33,6 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// For specific notes and restrictions regarding the use of load balancers with services
-    /// and task sets, see the CreateService and CreateTaskSet actions.
-    /// </para>
-    ///  
-    /// <para>
     /// When you add, update, or remove a load balancer configuration, Amazon ECS starts a
     /// new deployment with the updated Elastic Load Balancing configuration. This causes
     /// tasks to register to and deregister from load balancers.

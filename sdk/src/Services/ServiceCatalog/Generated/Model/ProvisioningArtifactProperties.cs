@@ -152,6 +152,10 @@ namespace Amazon.ServiceCatalog.Model
         ///  <code>MARKETPLACE_CAR</code> - Amazon Web Services Marketplace Clusters and Amazon
         /// Web Services Resources
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TERRAFORM_OPEN_SOURCE</code> - Terraform open source configuration file
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public ProvisioningArtifactType Type

@@ -66,6 +66,10 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AmplifyUIBuilder.Model.Predicate.OperandType</property>
+    <pattern>boolean|string|number</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AmplifyUIBuilder.Model.Theme.Name</property>
     <min>1</min>
     <max>255</max>

@@ -30,11 +30,12 @@ namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
     /// Container for the parameters to the ExportVectorEnrichmentJob operation.
-    /// Use this operation to copy results of a Vector Enrichment job to an S3 location.
+    /// Use this operation to copy results of a Vector Enrichment job to an Amazon S3 location.
     /// </summary>
     public partial class ExportVectorEnrichmentJobRequest : AmazonSageMakerGeospatialRequest
     {
         private string _arn;
+        private string _clientToken;
         private string _executionRoleArn;
         private ExportVectorEnrichmentJobOutputConfig _outputConfig;
 
@@ -58,13 +59,32 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// A unique token that guarantees that the call to this API is idempotent.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=36, Max=64)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ExecutionRoleArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location
         /// in OutputConfig.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }

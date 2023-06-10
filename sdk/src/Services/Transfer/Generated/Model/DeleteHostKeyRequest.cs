@@ -30,7 +30,7 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteHostKey operation.
-    /// Deletes the host key that's specified in the <code>HoskKeyId</code> parameter.
+    /// Deletes the host key that's specified in the <code>HostKeyId</code> parameter.
     /// </summary>
     public partial class DeleteHostKeyRequest : AmazonTransferRequest
     {

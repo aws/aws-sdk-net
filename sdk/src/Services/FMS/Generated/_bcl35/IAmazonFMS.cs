@@ -37,8 +37,8 @@ namespace Amazon.FMS
     ///  
     /// <para>
     /// Some API actions require explicit resource permissions. For information, see the developer
-    /// guide topic <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
-    /// Manager required permissions for API actions</a>. 
+    /// guide topic <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service">Service
+    /// roles for Firewall Manager</a>. 
     /// </para>
     /// </summary>
     public partial interface IAmazonFMS : IAmazonService, IDisposable
@@ -58,14 +58,17 @@ namespace Amazon.FMS
 
 
         /// <summary>
-        /// Sets the Firewall Manager administrator account. The account must be a member of the
-        /// organization in Organizations whose resources you want to protect. Firewall Manager
-        /// sets the permissions that allow the account to administer your Firewall Manager policies.
+        /// Sets a Firewall Manager default administrator account. The Firewall Manager default
+        /// administrator account can manage third-party firewalls and has full administrative
+        /// scope that allows administration of all policy types, accounts, organizational units,
+        /// and Regions. This account must be a member account of the organization in Organizations
+        /// whose resources you want to protect.
         /// 
         ///  
         /// <para>
-        /// The account that you associate with Firewall Manager is called the Firewall Manager
-        /// administrator account. 
+        /// For information about working with Firewall Manager administrator accounts, see <a
+        /// href="https://docs.aws.amazon.com/organizations/latest/userguide/fms-administrators.html">Managing
+        /// Firewall Manager administrators</a> in the <i>Firewall Manager Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateAdminAccount service method.</param>
@@ -600,9 +603,18 @@ namespace Amazon.FMS
 
 
         /// <summary>
-        /// Disassociates the account that has been set as the Firewall Manager administrator
-        /// account. To set a different account as the administrator account, you must submit
-        /// an <code>AssociateAdminAccount</code> request.
+        /// Disassociates an Firewall Manager administrator account. To set a different account
+        /// as an Firewall Manager administrator, submit a <a>PutAdminAccount</a> request. To
+        /// set an account as a default administrator account, you must submit an <a>AssociateAdminAccount</a>
+        /// request.
+        /// 
+        ///  
+        /// <para>
+        /// Disassociation of the default administrator account follows the first in, last out
+        /// principle. If you are the default administrator, all Firewall Manager administrators
+        /// within the organization must first disassociate their accounts before you can disassociate
+        /// your account.
+        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateAdminAccount service method.</param>
         /// 
@@ -718,7 +730,7 @@ namespace Amazon.FMS
 
         /// <summary>
         /// Returns the Organizations account that is associated with Firewall Manager as the
-        /// Firewall Manager administrator.
+        /// Firewall Manager default administrator.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAdminAccount service method.</param>
         /// 
@@ -766,6 +778,71 @@ namespace Amazon.FMS
         /// <returns>Returns a  GetAdminAccountResult from FMS.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminAccount">REST API Reference for GetAdminAccount Operation</seealso>
         GetAdminAccountResponse EndGetAdminAccount(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetAdminScope
+
+
+        /// <summary>
+        /// Returns information about the specified account's administrative scope. The admistrative
+        /// scope defines the resources that an Firewall Manager administrator can manage.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAdminScope service method.</param>
+        /// 
+        /// <returns>The response from the GetAdminScope service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope">REST API Reference for GetAdminScope Operation</seealso>
+        GetAdminScopeResponse GetAdminScope(GetAdminScopeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetAdminScope operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetAdminScope operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetAdminScope
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope">REST API Reference for GetAdminScope Operation</seealso>
+        IAsyncResult BeginGetAdminScope(GetAdminScopeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetAdminScope operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetAdminScope.</param>
+        /// 
+        /// <returns>Returns a  GetAdminScopeResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/GetAdminScope">REST API Reference for GetAdminScope Operation</seealso>
+        GetAdminScopeResponse EndGetAdminScope(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1297,6 +1374,126 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  ListAdminAccountsForOrganization
+
+
+        /// <summary>
+        /// Returns a <code>AdminAccounts</code> object that lists the Firewall Manager administrators
+        /// within the organization that are onboarded to Firewall Manager by <a>AssociateAdminAccount</a>.
+        /// 
+        ///  
+        /// <para>
+        /// This operation can be called only from the organization's management account.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdminAccountsForOrganization service method.</param>
+        /// 
+        /// <returns>The response from the ListAdminAccountsForOrganization service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization">REST API Reference for ListAdminAccountsForOrganization Operation</seealso>
+        ListAdminAccountsForOrganizationResponse ListAdminAccountsForOrganization(ListAdminAccountsForOrganizationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAdminAccountsForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAdminAccountsForOrganization operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAdminAccountsForOrganization
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization">REST API Reference for ListAdminAccountsForOrganization Operation</seealso>
+        IAsyncResult BeginListAdminAccountsForOrganization(ListAdminAccountsForOrganizationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAdminAccountsForOrganization operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAdminAccountsForOrganization.</param>
+        /// 
+        /// <returns>Returns a  ListAdminAccountsForOrganizationResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminAccountsForOrganization">REST API Reference for ListAdminAccountsForOrganization Operation</seealso>
+        ListAdminAccountsForOrganizationResponse EndListAdminAccountsForOrganization(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListAdminsManagingAccount
+
+
+        /// <summary>
+        /// Lists the accounts that are managing the specified Organizations member account. This
+        /// is useful for any member account so that they can view the accounts who are managing
+        /// their account. This operation only returns the managing administrators that have the
+        /// requested account within their <a>AdminScope</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAdminsManagingAccount service method.</param>
+        /// 
+        /// <returns>The response from the ListAdminsManagingAccount service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount">REST API Reference for ListAdminsManagingAccount Operation</seealso>
+        ListAdminsManagingAccountResponse ListAdminsManagingAccount(ListAdminsManagingAccountRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAdminsManagingAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAdminsManagingAccount operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAdminsManagingAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount">REST API Reference for ListAdminsManagingAccount Operation</seealso>
+        IAsyncResult BeginListAdminsManagingAccount(ListAdminsManagingAccountRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAdminsManagingAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAdminsManagingAccount.</param>
+        /// 
+        /// <returns>Returns a  ListAdminsManagingAccountResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/ListAdminsManagingAccount">REST API Reference for ListAdminsManagingAccount Operation</seealso>
+        ListAdminsManagingAccountResponse EndListAdminsManagingAccount(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListAppsLists
 
 
@@ -1471,8 +1668,8 @@ namespace Amazon.FMS
         /// 
         ///  
         /// <para>
-        /// The <code>ListMemberAccounts</code> must be submitted by the account that is set as
-        /// the Firewall Manager administrator.
+        /// Either an Firewall Manager administrator or the organization's management account
+        /// can make this request.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListMemberAccounts service method.</param>
@@ -1862,6 +2059,75 @@ namespace Amazon.FMS
 
         #endregion
         
+        #region  PutAdminAccount
+
+
+        /// <summary>
+        /// Creates or updates an Firewall Manager administrator account. The account must be
+        /// a member of the organization that was onboarded to Firewall Manager by <a>AssociateAdminAccount</a>.
+        /// Only the organization's management account can create an Firewall Manager administrator
+        /// account. When you create an Firewall Manager administrator account, the service checks
+        /// to see if the account is already a delegated administrator within Organizations. If
+        /// the account isn't a delegated administrator, Firewall Manager calls Organizations
+        /// to delegate the account within Organizations. For more information about administrator
+        /// accounts within Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing
+        /// the Amazon Web Services Accounts in Your Organization</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutAdminAccount service method.</param>
+        /// 
+        /// <returns>The response from the PutAdminAccount service method, as returned by FMS.</returns>
+        /// <exception cref="Amazon.FMS.Model.InternalErrorException">
+        /// The operation failed because of a system problem, even though the request was valid.
+        /// Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidInputException">
+        /// The parameters of the request were invalid.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.InvalidOperationException">
+        /// The operation failed because there was nothing to do or the operation wasn't possible.
+        /// For example, you might have submitted an <code>AssociateAdminAccount</code> request
+        /// for an account ID that was already set as the Firewall Manager administrator. Or you
+        /// might have tried to access a Region that's disabled by default, and that you need
+        /// to enable for the Firewall Manager administrator account and for Organizations before
+        /// you can access it.
+        /// </exception>
+        /// <exception cref="Amazon.FMS.Model.LimitExceededException">
+        /// The operation exceeds a resource limit, for example, the maximum number of <code>policy</code>
+        /// objects that you can create for an Amazon Web Services account. For more information,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-limits.html">Firewall
+        /// Manager Limits</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAdminAccount">REST API Reference for PutAdminAccount Operation</seealso>
+        PutAdminAccountResponse PutAdminAccount(PutAdminAccountRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutAdminAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutAdminAccount operation on AmazonFMSClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutAdminAccount
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAdminAccount">REST API Reference for PutAdminAccount Operation</seealso>
+        IAsyncResult BeginPutAdminAccount(PutAdminAccountRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutAdminAccount operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutAdminAccount.</param>
+        /// 
+        /// <returns>Returns a  PutAdminAccountResult from FMS.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/fms-2018-01-01/PutAdminAccount">REST API Reference for PutAdminAccount Operation</seealso>
+        PutAdminAccountResponse EndPutAdminAccount(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutAppsList
 
 
@@ -1935,11 +2201,13 @@ namespace Amazon.FMS
         /// 
         ///  
         /// <para>
-        /// To perform this action outside of the console, you must configure the SNS topic to
-        /// allow the Firewall Manager role <code>AWSServiceRoleForFMS</code> to publish SNS logs.
-        /// For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-api-permissions-ref.html">Firewall
-        /// Manager required permissions for API actions</a> in the <i>Firewall Manager Developer
-        /// Guide</i>.
+        /// To perform this action outside of the console, you must first configure the SNS topic's
+        /// access policy to allow the <code>SnsRoleName</code> to publish SNS logs. If the <code>SnsRoleName</code>
+        /// provided is a role other than the <code>AWSServiceRoleForFMS</code> service-linked
+        /// role, this role must have a trust relationship configured to allow the Firewall Manager
+        /// service principal <code>fms.amazonaws.com</code> to assume this role. For information
+        /// about configuring an SNS access policy, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/fms-security_iam_service-with-iam.html#fms-security_iam_service-with-iam-roles-service">Service
+        /// roles for Firewall Manager</a> in the <i>Firewall Manager Developer Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutNotificationChannel service method.</param>

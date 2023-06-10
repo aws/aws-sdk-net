@@ -61,6 +61,7 @@ namespace Amazon.Lambda.Model
         /// The error message.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Message
         {
             get { return this._message; }

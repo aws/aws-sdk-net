@@ -33,14 +33,30 @@ namespace Amazon.MediaLive.Model
     /// </summary>
     public partial class HlsId3SegmentTaggingScheduleActionSettings
     {
+        private string _id3;
         private string _tag;
+
+        /// <summary>
+        /// Gets and sets the property Id3. Base64 string formatted according to the ID3 specification:
+        /// http://id3.org/id3v2.4.0-structure
+        /// </summary>
+        public string Id3
+        {
+            get { return this._id3; }
+            set { this._id3 = value; }
+        }
+
+        // Check to see if Id3 property is set
+        internal bool IsSetId3()
+        {
+            return this._id3 != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Tag. ID3 tag to insert into each segment. Supports special
         /// keyword identifiers to substitute in segment-related values.\nSupported keyword identifiers:
         /// https://docs.aws.amazon.com/medialive/latest/ug/variable-data-identifiers.html
         /// </summary>
-        [AWSProperty(Required=true)]
         public string Tag
         {
             get { return this._tag; }

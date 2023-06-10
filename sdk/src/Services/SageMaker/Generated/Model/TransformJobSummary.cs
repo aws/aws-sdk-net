@@ -30,7 +30,8 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Provides a summary of a transform job. Multiple <code>TransformJobSummary</code> objects
-    /// are returned as a list after in response to a <a>ListTransformJobs</a> call.
+    /// are returned as a list after in response to a <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTransformJobs.html">ListTransformJobs</a>
+    /// call.
     /// </summary>
     public partial class TransformJobSummary
     {

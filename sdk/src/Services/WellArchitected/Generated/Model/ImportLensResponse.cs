@@ -39,7 +39,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property LensArn. 
         /// <para>
-        /// The ARN for the lens.
+        /// The ARN for the lens that was created or updated.
         /// </para>
         /// </summary>
         public string LensArn

@@ -39,7 +39,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property EventDataStores. 
         /// <para>
-        /// Contains information about event data stores in the account, in the current region.
+        /// Contains information about event data stores in the account, in the current Region.
         /// </para>
         /// </summary>
         public List<EventDataStore> EventDataStores

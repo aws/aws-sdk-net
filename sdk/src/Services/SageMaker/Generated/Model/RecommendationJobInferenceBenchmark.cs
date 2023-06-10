@@ -34,7 +34,10 @@ namespace Amazon.SageMaker.Model
     public partial class RecommendationJobInferenceBenchmark
     {
         private EndpointOutputConfiguration _endpointConfiguration;
+        private InferenceMetrics _endpointMetrics;
         private string _failureReason;
+        private DateTime? _invocationEndTime;
+        private DateTime? _invocationStartTime;
         private RecommendationMetrics _metrics;
         private ModelConfiguration _modelConfiguration;
 
@@ -54,6 +57,21 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EndpointMetrics.
+        /// </summary>
+        public InferenceMetrics EndpointMetrics
+        {
+            get { return this._endpointMetrics; }
+            set { this._endpointMetrics = value; }
+        }
+
+        // Check to see if EndpointMetrics property is set
+        internal bool IsSetEndpointMetrics()
+        {
+            return this._endpointMetrics != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property FailureReason. 
         /// <para>
         /// The reason why a benchmark failed.
@@ -69,6 +87,42 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetFailureReason()
         {
             return this._failureReason != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvocationEndTime. 
+        /// <para>
+        /// A timestamp that shows when the benchmark completed.
+        /// </para>
+        /// </summary>
+        public DateTime InvocationEndTime
+        {
+            get { return this._invocationEndTime.GetValueOrDefault(); }
+            set { this._invocationEndTime = value; }
+        }
+
+        // Check to see if InvocationEndTime property is set
+        internal bool IsSetInvocationEndTime()
+        {
+            return this._invocationEndTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property InvocationStartTime. 
+        /// <para>
+        /// A timestamp that shows when the benchmark started.
+        /// </para>
+        /// </summary>
+        public DateTime InvocationStartTime
+        {
+            get { return this._invocationStartTime.GetValueOrDefault(); }
+            set { this._invocationStartTime = value; }
+        }
+
+        // Check to see if InvocationStartTime property is set
+        internal bool IsSetInvocationStartTime()
+        {
+            return this._invocationStartTime.HasValue; 
         }
 
         /// <summary>

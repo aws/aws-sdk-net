@@ -60,6 +60,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private EncryptionModeValue _encryptionMode;
         private string _expectedBucketOwner;
         private string _externalTableDefinition;
+        private bool? _glueCatalogGeneration;
         private int? _ignoreHeaderRows;
         private bool? _includeOpForFullLoad;
         private int? _maxFileSize;
@@ -833,6 +834,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetExternalTableDefinition()
         {
             return this._externalTableDefinition != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GlueCatalogGeneration. 
+        /// <para>
+        /// When true, allows Glue to catalog your S3 bucket. Creating an Glue catalog lets you
+        /// use Athena to query your data.
+        /// </para>
+        /// </summary>
+        public bool GlueCatalogGeneration
+        {
+            get { return this._glueCatalogGeneration.GetValueOrDefault(); }
+            set { this._glueCatalogGeneration = value; }
+        }
+
+        // Check to see if GlueCatalogGeneration property is set
+        internal bool IsSetGlueCatalogGeneration()
+        {
+            return this._glueCatalogGeneration.HasValue; 
         }
 
         /// <summary>

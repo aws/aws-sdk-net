@@ -30,9 +30,19 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeLoadBalancerTargetGroups operation.
+    /// <note> 
+    /// <para>
+    /// This API operation is superseded by <a>DescribeTrafficSources</a>, which can describe
+    /// multiple traffic sources types. We recommend using <code>DetachTrafficSources</code>
+    /// to simplify how you manage traffic sources. However, we continue to support <code>DescribeLoadBalancerTargetGroups</code>.
+    /// You can use both the original <code>DescribeLoadBalancerTargetGroups</code> API operation
+    /// and <code>DescribeTrafficSources</code> on the same Auto Scaling group.
+    /// </para>
+    ///  </note> 
+    /// <para>
     /// Gets information about the Elastic Load Balancing target groups for the specified
     /// Auto Scaling group.
-    /// 
+    /// </para>
     ///  
     /// <para>
     /// To determine the attachment status of the target group, use the <code>State</code>

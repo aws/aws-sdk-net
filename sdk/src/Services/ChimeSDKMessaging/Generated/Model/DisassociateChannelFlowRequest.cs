@@ -35,9 +35,13 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// 
     ///  <note> 
     /// <para>
-    /// Only administrators or channel moderators can disassociate a channel flow. The <code>x-amz-chime-bearer</code>
-    /// request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that
-    /// makes the API call as the value in the header.
+    /// Only administrators or channel moderators can disassociate a channel flow.
+    /// </para>
+    ///  
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>

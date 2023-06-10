@@ -130,7 +130,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// to help you organize your maintenance windows. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }

@@ -77,6 +77,20 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MaxConcurrentDpus);
             }
 
+            if(requestObject.IsSetSparkProperties())
+            {
+                context.Writer.WritePropertyName("SparkProperties");
+                context.Writer.WriteObjectStart();
+                foreach (var requestObjectSparkPropertiesKvp in requestObject.SparkProperties)
+                {
+                    context.Writer.WritePropertyName(requestObjectSparkPropertiesKvp.Key);
+                    var requestObjectSparkPropertiesValue = requestObjectSparkPropertiesKvp.Value;
+
+                        context.Writer.Write(requestObjectSparkPropertiesValue);
+                }
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

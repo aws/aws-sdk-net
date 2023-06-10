@@ -33,11 +33,42 @@ namespace Amazon.KeyManagementService.Model
     /// </summary>
     public partial class GenerateDataKeyPairResponse : AmazonWebServiceResponse
     {
+        private MemoryStream _ciphertextForRecipient;
         private string _keyId;
         private DataKeyPairSpec _keyPairSpec;
         private MemoryStream _privateKeyCiphertextBlob;
         private MemoryStream _privateKeyPlaintext;
         private MemoryStream _publicKey;
+
+        /// <summary>
+        /// Gets and sets the property CiphertextForRecipient. 
+        /// <para>
+        /// The plaintext private data key encrypted with the public key from the Nitro enclave.
+        /// This ciphertext can be decrypted only by using a private key in the Nitro enclave.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is included in the response only when the <code>Recipient</code> parameter
+        /// in the request includes a valid attestation document from an Amazon Web Services Nitro
+        /// enclave. For information about the interaction between KMS and Amazon Web Services
+        /// Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=6144)]
+        public MemoryStream CiphertextForRecipient
+        {
+            get { return this._ciphertextForRecipient; }
+            set { this._ciphertextForRecipient = value; }
+        }
+
+        // Check to see if CiphertextForRecipient property is set
+        internal bool IsSetCiphertextForRecipient()
+        {
+            return this._ciphertextForRecipient != null;
+        }
 
         /// <summary>
         /// Gets and sets the property KeyId. 
@@ -103,8 +134,13 @@ namespace Amazon.KeyManagementService.Model
         /// The plaintext copy of the private key. When you use the HTTP API or the Amazon Web
         /// Services CLI, the value is Base64-encoded. Otherwise, it is not Base64-encoded.
         /// </para>
+        ///  
+        /// <para>
+        /// If the response includes the <code>CiphertextForRecipient</code> field, the <code>PrivateKeyPlaintext</code>
+        /// field is null or empty.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public MemoryStream PrivateKeyPlaintext
         {
             get { return this._privateKeyPlaintext; }

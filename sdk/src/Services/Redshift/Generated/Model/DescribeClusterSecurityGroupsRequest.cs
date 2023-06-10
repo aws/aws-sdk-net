@@ -65,7 +65,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property ClusterSecurityGroupName. 
         /// <para>
-        /// The name of a cluster security group for which you are requesting details. You can
+        /// The name of a cluster security group for which you are requesting details. You must
         /// specify either the <b>Marker</b> parameter or a <b>ClusterSecurityGroupName</b> parameter,
         /// but not both. 
         /// </para>
@@ -99,7 +99,7 @@ namespace Amazon.Redshift.Model
         /// </para>
         ///  
         /// <para>
-        /// Constraints: You can specify either the <b>ClusterSecurityGroupName</b> parameter
+        /// Constraints: You must specify either the <b>ClusterSecurityGroupName</b> parameter
         /// or the <b>Marker</b> parameter, but not both. 
         /// </para>
         /// </summary>

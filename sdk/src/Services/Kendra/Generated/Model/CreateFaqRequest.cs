@@ -30,7 +30,8 @@ namespace Amazon.Kendra.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFaq operation.
-    /// Creates an new set of frequently asked question (FAQ) questions and answers.
+    /// Creates a set of frequently ask questions (FAQs) using a specified FAQ file stored
+    /// in an Amazon S3 bucket.
     /// 
     ///  
     /// <para>
@@ -187,9 +188,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of a role with permission to access the S3 bucket that
-        /// contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
-        /// Roles for Amazon Kendra</a>.
+        /// The Amazon Resource Name (ARN) of an IAM role with permission to access the S3 bucket
+        /// that contains the FAQs. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// access roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1284)]

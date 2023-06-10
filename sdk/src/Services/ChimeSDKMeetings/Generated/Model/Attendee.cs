@@ -101,7 +101,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// <para>
         /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
         /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-        /// the attendee turned on their video or content streams, remote attendess can receive
+        /// the attendee turned on their video or content streams, remote attendees can receive
         /// those streams, but only after media renegotiation between the client and the Amazon
         /// Chime back-end server.
         /// </para>
@@ -125,8 +125,17 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The Amazon Chime SDK external user ID. An idempotency token. Links the attendee to
         /// an identity managed by a builder application.
         /// </para>
+        ///  
+        /// <para>
+        /// Pattern: <code>[-_&amp;@+=,(){}\[\]\/«».:|'"#a-zA-Z0-9À-ÿ\s]*</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// Values that begin with <code>aws:</code> are reserved. You can't configure a value
+        /// that uses this prefix. Case insensitive.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ExternalUserId
         {
             get { return this._externalUserId; }
@@ -145,7 +154,7 @@ namespace Amazon.ChimeSDKMeetings.Model
         /// The join token used by the Amazon Chime SDK attendee.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=2, Max=2048)]
         public string JoinToken
         {
             get { return this._joinToken; }

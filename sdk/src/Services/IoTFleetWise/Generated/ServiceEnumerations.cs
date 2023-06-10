@@ -133,6 +133,56 @@ namespace Amazon.IoTFleetWise
 
 
     /// <summary>
+    /// Constants used for properties of type DataFormat.
+    /// </summary>
+    public class DataFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JSON for DataFormat
+        /// </summary>
+        public static readonly DataFormat JSON = new DataFormat("JSON");
+        /// <summary>
+        /// Constant PARQUET for DataFormat
+        /// </summary>
+        public static readonly DataFormat PARQUET = new DataFormat("PARQUET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DataFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DataFormat FindValue(string value)
+        {
+            return FindValue<DataFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DataFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DiagnosticsMode.
     /// </summary>
     public class DiagnosticsMode : ConstantClass
@@ -774,6 +824,56 @@ namespace Amazon.IoTFleetWise
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SpoolingMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type StorageCompressionFormat.
+    /// </summary>
+    public class StorageCompressionFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant GZIP for StorageCompressionFormat
+        /// </summary>
+        public static readonly StorageCompressionFormat GZIP = new StorageCompressionFormat("GZIP");
+        /// <summary>
+        /// Constant NONE for StorageCompressionFormat
+        /// </summary>
+        public static readonly StorageCompressionFormat NONE = new StorageCompressionFormat("NONE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public StorageCompressionFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static StorageCompressionFormat FindValue(string value)
+        {
+            return FindValue<StorageCompressionFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator StorageCompressionFormat(string value)
         {
             return FindValue(value);
         }

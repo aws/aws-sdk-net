@@ -285,7 +285,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property JumboFrameCapable. 
         /// <para>
-        /// Indicates whether jumbo frames (9001 MTU) are supported.
+        /// Indicates whether jumbo frames are supported.
         /// </para>
         /// </summary>
         public bool JumboFrameCapable
@@ -321,8 +321,8 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Mtu. 
         /// <para>
-        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001.
-        /// The default value is 1500.
+        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500.
+        /// The default value is 1500
         /// </para>
         /// </summary>
         public int Mtu

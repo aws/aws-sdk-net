@@ -30,7 +30,8 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the CreatePhoneNumberOrder operation.
-    /// 
+    /// Creates an order for phone numbers to be provisioned. For numbers outside the U.S.,
+    /// you must use the Amazon Chime SDK SIP media application dial-in product type.
     /// </summary>
     public partial class CreatePhoneNumberOrderRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private PhoneNumberProductType _productType;
 
         /// <summary>
-        /// Gets and sets the property E164PhoneNumbers.
+        /// Gets and sets the property E164PhoneNumbers. 
+        /// <para>
+        /// List of phone numbers, in E.164 format.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> E164PhoneNumbers
@@ -54,7 +58,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductType.
+        /// Gets and sets the property ProductType. 
+        /// <para>
+        /// The phone number product type.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public PhoneNumberProductType ProductType

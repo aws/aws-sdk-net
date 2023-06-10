@@ -117,6 +117,18 @@ namespace Amazon.SimSpaceWeaver.Model.Internal.MarshallTransformations
                     response.SchemaS3Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SnapshotS3Location", targetDepth))
+                {
+                    var unmarshaller = S3LocationUnmarshaller.Instance;
+                    response.SnapshotS3Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartError", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StartError = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

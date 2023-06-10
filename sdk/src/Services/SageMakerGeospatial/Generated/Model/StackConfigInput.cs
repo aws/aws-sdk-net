@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The input structure for Stacking Operation.
     /// </summary>
     public partial class StackConfigInput
     {
@@ -37,7 +37,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private List<string> _targetBands = new List<string>();
 
         /// <summary>
-        /// Gets and sets the property OutputResolution.
+        /// Gets and sets the property OutputResolution. 
+        /// <para>
+        /// The structure representing output resolution (in target georeferenced units) of the
+        /// result of stacking operation.
+        /// </para>
         /// </summary>
         public OutputResolutionStackInput OutputResolution
         {
@@ -52,7 +56,12 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TargetBands.
+        /// Gets and sets the property TargetBands. 
+        /// <para>
+        /// A list of bands to be stacked in the specified order. When the parameter is not provided,
+        /// all the available bands in the data collection are stacked in the alphabetical order
+        /// of their asset names.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<string> TargetBands

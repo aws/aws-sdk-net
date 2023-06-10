@@ -30,7 +30,7 @@ namespace Amazon.DynamoDBv2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeContributorInsights operation.
-    /// Returns information about contributor insights, for a given table or global secondary
+    /// Returns information about contributor insights for a given table or global secondary
     /// index.
     /// </summary>
     public partial class DescribeContributorInsightsRequest : AmazonDynamoDBRequest

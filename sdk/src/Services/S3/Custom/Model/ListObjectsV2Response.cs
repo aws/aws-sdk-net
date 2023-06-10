@@ -177,8 +177,8 @@ namespace Amazon.S3.Model
         /// Gets and sets the property KeyCount. 
         /// <para>
         /// KeyCount is the number of keys returned with this request. KeyCount will always be
-        /// less than or equals to MaxKeys field. Say you ask for 50 keys, your result will include
-        /// less than equals 50 keys 
+        /// less than or equal to the <code>MaxKeys</code> field. Say you ask for 50 keys, your
+        /// result will include 50 keys or fewer.
         /// </para>
         /// </summary>
         public int KeyCount
@@ -229,12 +229,12 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
-        /// you provide the Outposts bucket ARN in place of the bucket name. For more information
-        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts access point ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string Name

@@ -23,6 +23,46 @@
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateCalculatedAttributeDefinitionRequest.CalculatedAttributeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateCalculatedAttributeDefinitionRequest.Description</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateCalculatedAttributeDefinitionRequest.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateCalculatedAttributeDefinitionRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateCalculatedAttributeDefinitionResponse.CalculatedAttributeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateCalculatedAttributeDefinitionResponse.Description</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateCalculatedAttributeDefinitionResponse.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.CreateDomainRequest.DeadLetterQueueUrl</property>
     <min>0</min>
     <max>255</max>
@@ -63,6 +103,28 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateEventStreamRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateEventStreamRequest.EventStreamName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateEventStreamRequest.Uri</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.CreateEventStreamResponse.EventStreamArn</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.CreateIntegrationWorkflowRequest.DomainName</property>
@@ -181,7 +243,31 @@
     <pattern>[a-f0-9]{32}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.DeleteCalculatedAttributeDefinitionRequest.CalculatedAttributeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.DeleteCalculatedAttributeDefinitionRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.DeleteDomainRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.DeleteEventStreamRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.DeleteEventStreamRequest.EventStreamName</property>
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
@@ -285,6 +371,73 @@
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeDefinitionRequest.CalculatedAttributeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeDefinitionRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeDefinitionResponse.CalculatedAttributeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeDefinitionResponse.Description</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeDefinitionResponse.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeForProfileRequest.CalculatedAttributeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeForProfileRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeForProfileRequest.ProfileId</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeForProfileResponse.CalculatedAttributeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeForProfileResponse.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeForProfileResponse.IsDataPartial</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetCalculatedAttributeForProfileResponse.Value</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.GetDomainRequest.DomainName</property>
     <min>1</min>
     <max>64</max>
@@ -310,6 +463,29 @@
     <min>1</min>
     <max>64</max>
     <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetEventStreamRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetEventStreamRequest.EventStreamName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetEventStreamResponse.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.GetEventStreamResponse.EventStreamArn</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.GetIdentityResolutionJobRequest.DomainName</property>
@@ -536,6 +712,52 @@
     <max>1024</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributeDefinitionsRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributeDefinitionsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributeDefinitionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributeDefinitionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributesForProfileRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributesForProfileRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributesForProfileRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributesForProfileRequest.ProfileId</property>
+    <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributesForProfileResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.ListDomainsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -547,6 +769,27 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.ListDomainsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListEventStreamsRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListEventStreamsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListEventStreamsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListEventStreamsResponse.NextToken</property>
     <min>1</min>
     <max>1024</max>
   </property-value-rule>
@@ -864,6 +1107,46 @@
     <pattern>^arn:[a-z0-9]{1,10}:profile</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.UpdateCalculatedAttributeDefinitionRequest.CalculatedAttributeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.UpdateCalculatedAttributeDefinitionRequest.Description</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.UpdateCalculatedAttributeDefinitionRequest.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.UpdateCalculatedAttributeDefinitionRequest.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.UpdateCalculatedAttributeDefinitionResponse.CalculatedAttributeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.UpdateCalculatedAttributeDefinitionResponse.Description</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.UpdateCalculatedAttributeDefinitionResponse.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.UpdateDomainRequest.DeadLetterQueueUrl</property>
     <min>0</min>
     <max>255</max>
@@ -1086,14 +1369,62 @@
     <pattern>[a-zA-Z0-9][\w!@#.-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.AttributeDetails.Expression</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.AttributeItem.Name</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.AutoMerging.MinAllowedConfidenceScoreForMerging</property>
     <min>0</min>
     <max>1</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.Conditions.ObjectCount</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.ConflictResolution.SourceName</property>
     <min>1</min>
     <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.DestinationSummary.Uri</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.EventStreamDestinationDetails.Message</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.EventStreamDestinationDetails.Uri</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.EventStreamSummary.DomainName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.EventStreamSummary.EventStreamArn</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.EventStreamSummary.EventStreamName</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.FieldSourceProfileIds.AccountNumber</property>
@@ -1222,6 +1553,45 @@
     <min>3</min>
     <max>5</max>
     <pattern>^([0-9]|0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributeDefinitionItem.CalculatedAttributeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributeDefinitionItem.Description</property>
+    <min>1</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributeDefinitionItem.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributeForProfileItem.CalculatedAttributeName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributeForProfileItem.DisplayName</property>
+    <min>1</min>
+    <max>255</max>
+    <pattern>^[a-zA-Z_][a-zA-Z_0-9-\s]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributeForProfileItem.IsDataPartial</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.ListCalculatedAttributeForProfileItem.Value</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.ListDomainItem.DomainName</property>
@@ -1373,6 +1743,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.Profile.GenderString</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.Profile.HomePhoneNumber</property>
     <min>1</min>
     <max>255</max>
@@ -1393,6 +1768,11 @@
     <max>255</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.Profile.PartyTypeString</property>
+    <min>1</min>
+    <max>255</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.Profile.PersonalEmailAddress</property>
     <min>1</min>
     <max>255</max>
@@ -1405,6 +1785,11 @@
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.Profile.ProfileId</property>
     <pattern>[a-f0-9]{32}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.Range.Value</property>
+    <min>1</min>
+    <max>366</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.S3ExportingConfig.S3BucketName</property>
@@ -1475,6 +1860,11 @@
     <property>Amazon.CustomerProfiles.Model.Task.DestinationField</property>
     <max>256</max>
     <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CustomerProfiles.Model.Threshold.Value</property>
+    <min>1</min>
+    <max>255</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CustomerProfiles.Model.UpdateAddress.Address1</property>

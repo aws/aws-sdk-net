@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The details of an Amazon Chime SDK phone number order.
     /// </summary>
     public partial class PhoneNumberOrder
     {
@@ -42,7 +42,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private DateTime? _updatedTimestamp;
 
         /// <summary>
-        /// Gets and sets the property CreatedTimestamp.
+        /// Gets and sets the property CreatedTimestamp. 
+        /// <para>
+        /// The phone number order creation time stamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
         {
@@ -57,7 +60,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrderedPhoneNumbers.
+        /// Gets and sets the property OrderedPhoneNumbers. 
+        /// <para>
+        /// The ordered phone number details, such as the phone number in E.164 format and the
+        /// phone number status.
+        /// </para>
         /// </summary>
         public List<OrderedPhoneNumber> OrderedPhoneNumbers
         {
@@ -72,7 +79,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OrderType.
+        /// Gets and sets the property OrderType. 
+        /// <para>
+        /// The type of phone number being ordered, local or toll-free.
+        /// </para>
         /// </summary>
         public PhoneNumberOrderType OrderType
         {
@@ -87,7 +97,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberOrderId.
+        /// Gets and sets the property PhoneNumberOrderId. 
+        /// <para>
+        /// The ID of the phone order.
+        /// </para>
         /// </summary>
         public string PhoneNumberOrderId
         {
@@ -102,7 +115,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductType.
+        /// Gets and sets the property ProductType. 
+        /// <para>
+        /// The phone number order product type.
+        /// </para>
         /// </summary>
         public PhoneNumberProductType ProductType
         {
@@ -117,7 +133,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Status.
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The status of the phone number order.
+        /// </para>
         /// </summary>
         public PhoneNumberOrderStatus Status
         {
@@ -132,7 +151,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedTimestamp.
+        /// Gets and sets the property UpdatedTimestamp. 
+        /// <para>
+        /// The updated phone number order time stamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp
         {

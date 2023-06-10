@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Translate.Model
 {
     /// <summary>
-    /// Optional settings that configure the translation output. Use these settings for real
-    /// time translations and asynchronous translation jobs.
+    /// Settings to configure your translation output, including the option to set the formality
+    /// level of the output text and the option to mask profane words and phrases.
     /// </summary>
     public partial class TranslationSettings
     {

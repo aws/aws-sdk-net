@@ -30,9 +30,9 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWebhooks operation.
-    /// Gets a listing of all the webhooks in this AWS Region for this account. The output
-    /// lists all webhooks and includes the webhook URL and ARN and the configuration for
-    /// each webhook.
+    /// Gets a listing of all the webhooks in this Amazon Web Services Region for this account.
+    /// The output lists all webhooks and includes the webhook URL and ARN and the configuration
+    /// for each webhook.
     /// </summary>
     public partial class ListWebhooksRequest : AmazonCodePipelineRequest
     {

@@ -60,7 +60,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The token returned from previous API requests until the number of channels is reached.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

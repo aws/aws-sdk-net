@@ -40,20 +40,7 @@ namespace Amazon.SQS.Model
     /// actions, you should check for batch errors even when the call returns an HTTP status
     /// code of <code>200</code>.
     /// </para>
-    ///  </important> 
-    /// <para>
-    /// Some actions take lists of parameters. These lists are specified using the <code>param.n</code>
-    /// notation. Values of <code>n</code> are integers starting from 1. For example, a parameter
-    /// list with two elements looks like this:
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>&amp;AttributeName.1=first</code> 
-    /// </para>
-    ///  
-    /// <para>
-    ///  <code>&amp;AttributeName.2=second</code> 
-    /// </para>
+    ///  </important>
     /// </summary>
     public partial class DeleteMessageBatchRequest : AmazonSQSRequest
     {
@@ -69,7 +56,7 @@ namespace Amazon.SQS.Model
         /// Instantiates DeleteMessageBatchRequest with the parameterized properties
         /// </summary>
         /// <param name="queueUrl">The URL of the Amazon SQS queue from which messages are deleted. Queue URLs and names are case-sensitive.</param>
-        /// <param name="entries">A list of receipt handles for the messages to be deleted.</param>
+        /// <param name="entries">Lists the receipt handles for the messages to be deleted.</param>
         public DeleteMessageBatchRequest(string queueUrl, List<DeleteMessageBatchRequestEntry> entries)
         {
             _queueUrl = queueUrl;
@@ -79,7 +66,7 @@ namespace Amazon.SQS.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// A list of receipt handles for the messages to be deleted.
+        /// Lists the receipt handles for the messages to be deleted.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

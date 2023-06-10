@@ -111,7 +111,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// the task invocation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string OwnerInformation
         {
             get { return this._ownerInformation; }
@@ -130,6 +130,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The parameters that were provided for the invocation when it was run.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Parameters
         {
             get { return this._parameters; }

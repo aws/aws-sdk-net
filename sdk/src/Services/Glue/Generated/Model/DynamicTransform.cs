@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
         private string _functionName;
         private List<string> _inputs = new List<string>();
         private string _name;
+        private List<GlueSchema> _outputSchemas = new List<GlueSchema>();
         private List<TransformConfigParameter> _parameters = new List<TransformConfigParameter>();
         private string _path;
         private string _transformName;
@@ -96,6 +97,24 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OutputSchemas. 
+        /// <para>
+        /// Specifies the data schema for the dynamic transform.
+        /// </para>
+        /// </summary>
+        public List<GlueSchema> OutputSchemas
+        {
+            get { return this._outputSchemas; }
+            set { this._outputSchemas = value; }
+        }
+
+        // Check to see if OutputSchemas property is set
+        internal bool IsSetOutputSchemas()
+        {
+            return this._outputSchemas != null && this._outputSchemas.Count > 0; 
         }
 
         /// <summary>

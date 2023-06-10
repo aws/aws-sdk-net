@@ -76,6 +76,12 @@ namespace Amazon.AlexaForBusiness.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstantBooking = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProactiveJoin", targetDepth))
+                {
+                    var unmarshaller = ProactiveJoinUnmarshaller.Instance;
+                    unmarshalledObject.ProactiveJoin = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("RequireCheckIn", targetDepth))
                 {
                     var unmarshaller = RequireCheckInUnmarshaller.Instance;

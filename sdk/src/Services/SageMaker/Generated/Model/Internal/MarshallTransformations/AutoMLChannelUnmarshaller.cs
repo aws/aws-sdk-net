@@ -88,6 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SampleWeightAttributeName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SampleWeightAttributeName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TargetAttributeName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

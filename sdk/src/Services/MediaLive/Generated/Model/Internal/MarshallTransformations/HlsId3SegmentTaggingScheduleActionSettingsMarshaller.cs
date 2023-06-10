@@ -45,6 +45,12 @@ namespace Amazon.MediaLive.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(HlsId3SegmentTaggingScheduleActionSettings requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetId3())
+            {
+                context.Writer.WritePropertyName("id3");
+                context.Writer.Write(requestObject.Id3);
+            }
+
             if(requestObject.IsSetTag())
             {
                 context.Writer.WritePropertyName("tag");

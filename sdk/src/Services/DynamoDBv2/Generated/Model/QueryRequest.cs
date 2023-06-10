@@ -698,7 +698,8 @@ namespace Amazon.DynamoDBv2.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>COUNT</code> - Returns the number of matching items, rather than the matching
-        /// items themselves.
+        /// items themselves. Note that this uses the same quantity of read capacity units as
+        /// getting the items, and is subject to the same item size calculations.
         /// </para>
         ///  </li> <li> 
         /// <para>

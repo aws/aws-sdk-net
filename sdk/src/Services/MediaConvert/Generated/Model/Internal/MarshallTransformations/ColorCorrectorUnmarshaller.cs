@@ -94,6 +94,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                     unmarshalledObject.Hdr10Metadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("hdrToSdrToneMapper", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.HdrToSdrToneMapper = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("hue", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

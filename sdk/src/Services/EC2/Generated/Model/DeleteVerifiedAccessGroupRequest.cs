@@ -60,7 +60,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessGroupId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access group.
+        /// The ID of the Verified Access group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

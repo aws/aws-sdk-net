@@ -93,6 +93,7 @@ namespace Amazon.KafkaConnect.Model
         /// A map of keys to values that represent the configuration for the connector.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> ConnectorConfiguration
         {
             get { return this._connectorConfiguration; }

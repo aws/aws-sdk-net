@@ -82,6 +82,17 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetMulticastGroups())
+                {
+                    context.Writer.WritePropertyName("MulticastGroups");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMulticastGroupsListValue in publicRequest.MulticastGroups)
+                    {
+                            context.Writer.Write(publicRequestMulticastGroupsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

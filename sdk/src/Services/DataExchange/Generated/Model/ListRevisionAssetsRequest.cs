@@ -64,7 +64,7 @@ namespace Amazon.DataExchange.Model
         /// The maximum number of results returned by a single call.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25)]
+        [AWSProperty(Min=1, Max=200)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

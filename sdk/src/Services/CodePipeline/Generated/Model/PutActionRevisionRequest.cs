@@ -30,7 +30,7 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the PutActionRevision operation.
-    /// Provides information to AWS CodePipeline about new revisions to a source.
+    /// Provides information to CodePipeline about new revisions to a source.
     /// </summary>
     public partial class PutActionRevisionRequest : AmazonCodePipelineRequest
     {

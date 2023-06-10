@@ -65,7 +65,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// member.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
+        [AWSProperty(Sensitive=true, Min=1)]
         public string FilterRule
         {
             get { return this._filterRule; }

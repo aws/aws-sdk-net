@@ -200,6 +200,10 @@ namespace Amazon.ConnectCases
         /// Constant Text for FieldType
         /// </summary>
         public static readonly FieldType Text = new FieldType("Text");
+        /// <summary>
+        /// Constant Url for FieldType
+        /// </summary>
+        public static readonly FieldType Url = new FieldType("Url");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

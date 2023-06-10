@@ -65,7 +65,7 @@ namespace Amazon.StorageGateway.Model
         /// participate in mutual CHAP with the target.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string SecretToAuthenticateInitiator
         {
             get { return this._secretToAuthenticateInitiator; }
@@ -85,7 +85,7 @@ namespace Amazon.StorageGateway.Model
         /// initiator (e.g., Windows client).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string SecretToAuthenticateTarget
         {
             get { return this._secretToAuthenticateTarget; }

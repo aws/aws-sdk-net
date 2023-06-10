@@ -51,6 +51,12 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                 context.Writer.Write(requestObject.ActivationState);
             }
 
+            if(requestObject.IsSetAppendSourcePath())
+            {
+                context.Writer.WritePropertyName("AppendSourcePath");
+                context.Writer.Write(requestObject.AppendSourcePath);
+            }
+
             if(requestObject.IsSetIncludeChildPaths())
             {
                 context.Writer.WritePropertyName("IncludeChildPaths");

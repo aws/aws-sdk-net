@@ -108,8 +108,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
-        /// 
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>
@@ -144,7 +144,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property VendorName. 
         /// <para>
         /// The name of the managed rule group vendor. You use this, along with the rule group
-        /// name, to identify the rule group.
+        /// name, to identify a rule group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

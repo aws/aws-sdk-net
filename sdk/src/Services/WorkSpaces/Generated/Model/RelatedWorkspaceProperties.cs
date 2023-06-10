@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Describes the related WorkSpace. The related WorkSpace could be a Standby WorkSpace
-    /// or Primary WorkSpace related to the specified WorkSpace.
+    /// Describes the related WorkSpace. The related WorkSpace could be a standby WorkSpace
+    /// or primary WorkSpace related to the specified WorkSpace.
     /// </summary>
     public partial class RelatedWorkspaceProperties
     {

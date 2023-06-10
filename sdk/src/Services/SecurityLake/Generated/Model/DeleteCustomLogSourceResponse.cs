@@ -33,26 +33,6 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class DeleteCustomLogSourceResponse : AmazonWebServiceResponse
     {
-        private string _customDataLocation;
-
-        /// <summary>
-        /// Gets and sets the property CustomDataLocation. 
-        /// <para>
-        /// The location of the partition in the Amazon S3 bucket for Security Lake.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string CustomDataLocation
-        {
-            get { return this._customDataLocation; }
-            set { this._customDataLocation = value; }
-        }
-
-        // Check to see if CustomDataLocation property is set
-        internal bool IsSetCustomDataLocation()
-        {
-            return this._customDataLocation != null;
-        }
 
     }
 }

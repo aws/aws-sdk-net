@@ -43,7 +43,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property HttpEndpoint. 
         /// <para>
         ///  Enables or disables the HTTP metadata endpoint on your instances. If the parameter
-        /// is not specified, the default state is enabled, and you won’t be able to access your
+        /// is not specified, the default state is enabled, and you won't be able to access your
         /// instance metadata. 
         /// </para>
         /// </summary>

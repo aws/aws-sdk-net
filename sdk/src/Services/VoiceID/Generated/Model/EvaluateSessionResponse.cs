@@ -62,7 +62,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier of the domain containing the session.
+        /// The identifier of the domain that contains the session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=22, Max=22)]

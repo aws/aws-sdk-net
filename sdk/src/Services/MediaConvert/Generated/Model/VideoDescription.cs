@@ -166,7 +166,7 @@ namespace Amazon.MediaConvert.Model
         /// <summary>
         /// Gets and sets the property FixedAfd. Applies only if you set AFD Signaling(AfdSignaling)
         /// to Fixed (FIXED). Use Fixed (FixedAfd) to specify a four-bit AFD value which the service
-        /// will write on all  frames of this video output.
+        /// will write on all frames of this video output.
         /// </summary>
         [AWSProperty(Min=0, Max=15)]
         public int FixedAfd
@@ -182,9 +182,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Height. Use the Height (Height) setting to define the video
-        /// resolution height for this output. Specify in pixels. If you don't provide a value
-        /// here, the service will use the input height.
+        /// Gets and sets the property Height. Use Height to define the video resolution height,
+        /// in pixels, for this output. To use the same resolution as your input: Leave both Width
+        /// and Height blank. To evenly scale from your input resolution: Leave Height blank and
+        /// enter a value for Width. For example, if your input is 1920x1080 and you set Width
+        /// to 1280, your output will be 1280x720.
         /// </summary>
         [AWSProperty(Min=32, Max=8192)]
         public int Height
@@ -321,9 +323,11 @@ namespace Amazon.MediaConvert.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Width. Use Width (Width) to define the video resolution
-        /// width, in pixels, for this output. If you don't provide a value here, the service
-        /// will use the input width.
+        /// Gets and sets the property Width. Use Width to define the video resolution width,
+        /// in pixels, for this output. To use the same resolution as your input: Leave both Width
+        /// and Height blank. To evenly scale from your input resolution: Leave Width blank and
+        /// enter a value for Height. For example, if your input is 1920x1080 and you set Height
+        /// to 720, your output will be 1280x720.
         /// </summary>
         [AWSProperty(Min=32, Max=8192)]
         public int Width

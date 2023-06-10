@@ -54,8 +54,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide.</i> 
+    /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class RestoreDBClusterFromSnapshotRequest : AmazonRDSRequest
@@ -548,8 +547,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
-        /// The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-        /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
+        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
         /// </para>
         ///  
         /// <para>
@@ -576,22 +574,13 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
-        /// The version of the database engine to use for the new DB cluster.
+        /// The version of the database engine to use for the new DB cluster. If you don't specify
+        /// an engine version, the default version for the database engine in the Amazon Web Services
+        /// Region is used.
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for MySQL 5.6-compatible Aurora, use
-        /// the following command:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
-        /// Aurora, use the following command:
+        /// To list all of the available engine versions for Aurora MySQL, use the following command:
         /// </para>
         ///  
         /// <para>
@@ -634,8 +623,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-        /// on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.
+        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">Database
+        /// engine updates for Amazon Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -652,8 +641,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-        /// on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide.</i> 
+        /// See <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">Amazon
+        /// RDS for MySQL</a> in the <i>Amazon RDS User Guide.</i> 
         /// </para>
         ///  
         /// <para>
@@ -1005,20 +994,21 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type to be associated with the each DB instance in the Multi-AZ
-        /// DB cluster.
+        /// Specifies the storage type to be associated with the DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>io1</code> 
+        /// When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+        /// is required.
         /// </para>
         ///  
         /// <para>
-        /// When specified, a value for the <code>Iops</code> parameter is required.
+        /// Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters);
+        /// <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>io1</code> 
+        /// Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>

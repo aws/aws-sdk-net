@@ -106,6 +106,12 @@ namespace Amazon.HealthLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.DatastoreTypeVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("IdentityProviderConfiguration", targetDepth))
+                {
+                    var unmarshaller = IdentityProviderConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.IdentityProviderConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PreloadDataConfig", targetDepth))
                 {
                     var unmarshaller = PreloadDataConfigUnmarshaller.Instance;

@@ -77,6 +77,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Authorized);
                 }
 
+                if(publicRequest.IsSetInsecureIngest())
+                {
+                    context.Writer.WritePropertyName("insecureIngest");
+                    context.Writer.Write(publicRequest.InsecureIngest);
+                }
+
                 if(publicRequest.IsSetLatencyMode())
                 {
                     context.Writer.WritePropertyName("latencyMode");
@@ -87,6 +93,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("name");
                     context.Writer.Write(publicRequest.Name);
+                }
+
+                if(publicRequest.IsSetPreset())
+                {
+                    context.Writer.WritePropertyName("preset");
+                    context.Writer.Write(publicRequest.Preset);
                 }
 
                 if(publicRequest.IsSetRecordingConfigurationArn())

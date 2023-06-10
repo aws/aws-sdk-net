@@ -88,6 +88,12 @@ namespace Amazon.AmplifyUIBuilder.Model.Internal.MarshallTransformations
                     unmarshalledObject.DescriptiveText = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("fileUploaderConfig", targetDepth))
+                {
+                    var unmarshaller = FileUploaderFieldConfigUnmarshaller.Instance;
+                    unmarshalledObject.FileUploaderConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("isArray", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

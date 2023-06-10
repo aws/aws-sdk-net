@@ -1,0 +1,183 @@
+/*
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * 
+ * Licensed under the Apache License, Version 2.0 (the "License").
+ * You may not use this file except in compliance with the License.
+ * A copy of the License is located at
+ * 
+ *  http://aws.amazon.com/apache2.0
+ * 
+ * or in the "license" file accompanying this file. This file is distributed
+ * on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+ * express or implied. See the License for the specific language governing
+ * permissions and limitations under the License.
+ */
+
+/*
+ * Do not modify this file. This file is generated from the datasync-2018-11-09.normal.json service model.
+ */
+using System;
+using System.Collections.Generic;
+using System.Xml.Serialization;
+using System.Text;
+using System.IO;
+using System.Net;
+
+using Amazon.Runtime;
+using Amazon.Runtime.Internal;
+
+namespace Amazon.DataSync.Model
+{
+    /// <summary>
+    /// Container for the parameters to the DescribeStorageSystemResourceMetrics operation.
+    /// Returns information, including performance data and capacity usage, which DataSync
+    /// Discovery collects about a specific resource in your-premises storage system.
+    /// </summary>
+    public partial class DescribeStorageSystemResourceMetricsRequest : AmazonDataSyncRequest
+    {
+        private string _discoveryJobArn;
+        private DateTime? _endTime;
+        private int? _maxResults;
+        private string _nextToken;
+        private string _resourceId;
+        private DiscoveryResourceType _resourceType;
+        private DateTime? _startTime;
+
+        /// <summary>
+        /// Gets and sets the property DiscoveryJobArn. 
+        /// <para>
+        /// Specifies the Amazon Resource Name (ARN) of the discovery job that collects information
+        /// about your on-premises storage system.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Max=256)]
+        public string DiscoveryJobArn
+        {
+            get { return this._discoveryJobArn; }
+            set { this._discoveryJobArn = value; }
+        }
+
+        // Check to see if DiscoveryJobArn property is set
+        internal bool IsSetDiscoveryJobArn()
+        {
+            return this._discoveryJobArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EndTime. 
+        /// <para>
+        /// Specifies a time within the total duration that the discovery job ran. To see information
+        /// gathered during a certain time frame, use this parameter with <code>StartTime</code>.
+        /// </para>
+        /// </summary>
+        public DateTime EndTime
+        {
+            get { return this._endTime.GetValueOrDefault(); }
+            set { this._endTime = value; }
+        }
+
+        // Check to see if EndTime property is set
+        internal bool IsSetEndTime()
+        {
+            return this._endTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// Specifies how many results that you want in the response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
+        {
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
+        }
+
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
+        {
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// Specifies an opaque string that indicates the position to begin the next list of results
+        /// in the response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=65535)]
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// Specifies the universally unique identifier (UUID) of the storage system resource
+        /// that you want information about.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string ResourceId
+        {
+            get { return this._resourceId; }
+            set { this._resourceId = value; }
+        }
+
+        // Check to see if ResourceId property is set
+        internal bool IsSetResourceId()
+        {
+            return this._resourceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// Specifies the kind of storage system resource that you want information about.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public DiscoveryResourceType ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartTime. 
+        /// <para>
+        /// Specifies a time within the total duration that the discovery job ran. To see information
+        /// gathered during a certain time frame, use this parameter with <code>EndTime</code>.
+        /// </para>
+        /// </summary>
+        public DateTime StartTime
+        {
+            get { return this._startTime.GetValueOrDefault(); }
+            set { this._startTime = value; }
+        }
+
+        // Check to see if StartTime property is set
+        internal bool IsSetStartTime()
+        {
+            return this._startTime.HasValue; 
+        }
+
+    }
+}

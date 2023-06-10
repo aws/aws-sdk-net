@@ -178,11 +178,13 @@ namespace SDKDocGenerator.Writers
                 var nsId = (string) nsData["id"];
                 var nsFilePath = (string)nsData["href"];
 
-                writer.Write("<li class=\"nav\" id=\"{0}\"><a class=\"nav\" href=\"{1}\" target=\"contentpane\">{2}</a>",
+                writer.Write(@"<li class=""nav"" id=""{0}"">
+                                <button type = ""button"" aria-label=""{2} child nodes"" aria-expanded=""false""></button>
+                                <a class=""nav"" href=""{1}"" target=""contentpane"" id=""{2}-parentnode"">{2}</a>",
                              nsId,
                              nsFilePath,
                              nsName);
-                writer.Write("<ul>");
+                writer.Write("<ul role=\"region\" aria-labelledby=\"{0}\"/>",nsName);
 
                 var nsNodes = nsData["nodes"];
                 foreach (var p in nsNodes.PropertyNames)

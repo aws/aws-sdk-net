@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-16"?>
+<property-value-rules>
+  <property-value-rule>
+    <property>Amazon.CloudTrailData.Model.PutAuditEventsRequest.ChannelArn</property>
+    <pattern>^arn:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrailData.Model.PutAuditEventsRequest.ExternalId</property>
+    <min>2</min>
+    <max>1224</max>
+    <pattern>^[\w+=,.@:\/-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrailData.Model.AuditEvent.Id</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[-_A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrailData.Model.AuditEventResultEntry.EventID</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[-_A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrailData.Model.AuditEventResultEntry.Id</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[-_A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrailData.Model.ResultErrorEntry.ErrorCode</property>
+    <min>1</min>
+    <max>128</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrailData.Model.ResultErrorEntry.ErrorMessage</property>
+    <min>1</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrailData.Model.ResultErrorEntry.Id</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[-_A-Za-z0-9]+$</pattern>
+  </property-value-rule>
+</property-value-rules>

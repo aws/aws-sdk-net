@@ -31,12 +31,12 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the SetTypeConfiguration operation.
     /// Specifies the configuration data for a registered CloudFormation extension, in the
-    /// given account and region.
+    /// given account and Region.
     /// 
     ///  
     /// <para>
     /// To view the current configuration data for an extension, refer to the <code>ConfigurationSchema</code>
-    /// element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
+    /// element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
     /// For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
     /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
     /// </para>
@@ -60,12 +60,12 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Configuration. 
         /// <para>
-        /// The configuration data for the extension, in this account and region.
+        /// The configuration data for the extension, in this account and Region.
         /// </para>
         ///  
         /// <para>
         /// The configuration data must be formatted as JSON, and validate against the schema
-        /// returned in the <code>ConfigurationSchema</code> response element of <a href="AWSCloudFormation/latest/APIReference/API_DescribeType.html">API_DescribeType</a>.
+        /// returned in the <code>ConfigurationSchema</code> response element of <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_DescribeType.html">DescribeType</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/resource-type-model.html#resource-type-howto-configuration">Defining
         /// account-level configuration data for an extension</a> in the <i>CloudFormation CLI
         /// User Guide</i>.
@@ -134,14 +134,14 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the extension, in this account and region.
+        /// The Amazon Resource Name (ARN) for the extension, in this account and Region.
         /// </para>
         ///  
         /// <para>
         /// For public extensions, this will be the ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ActivateType.html">activate
-        /// the type</a> in this account and region. For private extensions, this will be the
+        /// the type</a> in this account and Region. For private extensions, this will be the
         /// ARN assigned when you <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_RegisterType.html">register
-        /// the type</a> in this account and region.
+        /// the type</a> in this account and Region.
         /// </para>
         ///  
         /// <para>

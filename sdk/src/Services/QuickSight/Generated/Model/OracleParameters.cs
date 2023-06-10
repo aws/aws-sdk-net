@@ -40,7 +40,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Database. 
         /// <para>
-        /// Database.
+        /// The database.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
@@ -78,7 +78,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// Port.
+        /// The port.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=65535)]

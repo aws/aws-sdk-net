@@ -60,6 +60,7 @@ namespace Amazon.NimbleStudio.Model
         /// The endpoint of the ComputeFarm that is accessed by the studio component resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Endpoint
         {
             get { return this._endpoint; }

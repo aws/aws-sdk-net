@@ -112,6 +112,10 @@ namespace Amazon.IdentityManagement.Model.Internal.MarshallTransformations
             using (var streamCopy = new MemoryStream(responseBodyBytes))
             using (var contextCopy = new XmlUnmarshallerContext(streamCopy, false, null))
             {
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConcurrentModification"))
+                {
+                    return ConcurrentModificationExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DuplicateCertificate"))
                 {
                     return DuplicateCertificateExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

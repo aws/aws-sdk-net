@@ -51,6 +51,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("accelerators", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.Accelerators = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("arn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -97,6 +103,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Main = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("metadata", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    response.Metadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("name", targetDepth))

@@ -45,6 +45,7 @@ namespace Amazon.SecurityLake.Model
         /// The maximum number of accounts for which the configuration is displayed.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=100)]
         public int MaxResults
         {
             get { return this._maxResults.GetValueOrDefault(); }

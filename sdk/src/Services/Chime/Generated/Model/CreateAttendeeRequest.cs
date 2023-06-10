@@ -31,8 +31,8 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the CreateAttendee operation.
     /// Creates a new attendee for an active Amazon Chime SDK meeting. For more information
-    /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-    /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.
+    /// about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+    /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
     /// </summary>
     public partial class CreateAttendeeRequest : AmazonChimeRequest
     {
@@ -47,7 +47,7 @@ namespace Amazon.Chime.Model
         /// an identity managed by a builder application.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=64)]
         public string ExternalUserId
         {
             get { return this._externalUserId; }

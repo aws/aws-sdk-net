@@ -31,12 +31,13 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// A conditional statement for a search expression that includes a resource property,
     /// a Boolean operator, and a value. Resources that match the statement are returned in
-    /// the results from the <a>Search</a> API.
+    /// the results from the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+    /// API.
     /// 
     ///  
     /// <para>
-    /// If you specify a <code>Value</code>, but not an <code>Operator</code>, Amazon SageMaker
-    /// uses the equals operator.
+    /// If you specify a <code>Value</code>, but not an <code>Operator</code>, SageMaker uses
+    /// the equals operator.
     /// </para>
     ///  
     /// <para>
@@ -113,7 +114,8 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property Name. 
         /// <para>
         /// A resource property name. For example, <code>TrainingJobName</code>. For valid property
-        /// names, see <a>SearchRecord</a>. You must specify a valid property for the resource.
+        /// names, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SearchRecord.html">SearchRecord</a>.
+        /// You must specify a valid property for the resource.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]

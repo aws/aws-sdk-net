@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxParallelTrainingJobs = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("MaxRuntimeInSeconds", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxRuntimeInSeconds = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

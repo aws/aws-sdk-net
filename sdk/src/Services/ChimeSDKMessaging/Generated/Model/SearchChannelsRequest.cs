@@ -30,9 +30,16 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchChannels operation.
-    /// Allows <code>ChimeBearer</code> to search channels by channel members. AppInstanceUsers
-    /// can search across the channels that they belong to. AppInstanceAdmins can search across
-    /// all channels.
+    /// Allows the <code>ChimeBearer</code> to search channels by channel members. Users or
+    /// bots can search across the channels that they belong to. Users in the <code>AppInstanceAdmin</code>
+    /// role can search across all channels.
+    /// 
+    ///  
+    /// <para>
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
+    /// </para>
     /// </summary>
     public partial class SearchChannelsRequest : AmazonChimeSDKMessagingRequest
     {
@@ -104,7 +111,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The token returned from previous API requests until the number of channels is reached.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

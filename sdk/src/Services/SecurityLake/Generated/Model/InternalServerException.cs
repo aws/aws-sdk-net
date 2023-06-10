@@ -37,7 +37,6 @@ namespace Amazon.SecurityLake.Model
     #endif
     public partial class InternalServerException : AmazonSecurityLakeException
     {
-        private int? _retryAfterSeconds;
 
         private RetryableDetails _retryableDetails = new RetryableDetails(false);
 
@@ -101,7 +100,6 @@ namespace Amazon.SecurityLake.Model
         protected InternalServerException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.RetryAfterSeconds = (int)info.GetValue("RetryAfterSeconds", typeof(int));
         }
 
         /// <summary>
@@ -122,27 +120,8 @@ namespace Amazon.SecurityLake.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
-            info.AddValue("RetryAfterSeconds", this.RetryAfterSeconds);
         }
 #endif
-
-        /// <summary>
-        /// Gets and sets the property RetryAfterSeconds. 
-        /// <para>
-        /// Retry the request after the specified time. 
-        /// </para>
-        /// </summary>
-        public int RetryAfterSeconds
-        {
-            get { return this._retryAfterSeconds.GetValueOrDefault(); }
-            set { this._retryAfterSeconds = value; }
-        }
-
-        // Check to see if RetryAfterSeconds property is set
-        internal bool IsSetRetryAfterSeconds()
-        {
-            return this._retryAfterSeconds.HasValue; 
-        }
 
         /// <summary>
         /// Flag indicating if the exception is retryable and the associated retry

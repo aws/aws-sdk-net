@@ -65,7 +65,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// A unique ID for this event.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=36, Max=36)]
         public string Id
         {
             get { return this._id; }

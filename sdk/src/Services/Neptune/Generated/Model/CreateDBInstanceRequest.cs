@@ -242,6 +242,7 @@ namespace Amazon.Neptune.Model
         /// Type: String
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string DBClusterIdentifier
         {
             get { return this._dbClusterIdentifier; }

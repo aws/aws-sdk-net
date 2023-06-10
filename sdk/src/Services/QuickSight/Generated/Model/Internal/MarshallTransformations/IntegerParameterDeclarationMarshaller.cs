@@ -56,6 +56,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetMappedDataSetParameters())
+            {
+                context.Writer.WritePropertyName("MappedDataSetParameters");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMappedDataSetParametersListValue in requestObject.MappedDataSetParameters)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MappedDataSetParameterMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMappedDataSetParametersListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetName())
             {
                 context.Writer.WritePropertyName("Name");

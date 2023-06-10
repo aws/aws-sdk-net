@@ -101,7 +101,7 @@ namespace Amazon.Pipes.Model
         /// The name of the destination queue to consume.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1000)]
         public string QueueName
         {
             get { return this._queueName; }

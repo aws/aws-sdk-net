@@ -63,6 +63,12 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                     response.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FileConfiguration", targetDepth))
+                {
+                    var unmarshaller = FileConfigurationUnmarshaller.Instance;
+                    response.FileConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Id", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -79,6 +85,12 @@ namespace Amazon.AppIntegrationsService.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     response.Name = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ObjectConfiguration", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, Dictionary<string, List<string>>, StringUnmarshaller, DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>>(StringUnmarshaller.Instance, new DictionaryUnmarshaller<string, List<string>, StringUnmarshaller, ListUnmarshaller<string, StringUnmarshaller>>(StringUnmarshaller.Instance, new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance)));
+                    response.ObjectConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("ScheduleConfiguration", targetDepth))

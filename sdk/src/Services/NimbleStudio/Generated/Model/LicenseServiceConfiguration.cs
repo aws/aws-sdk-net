@@ -41,6 +41,7 @@ namespace Amazon.NimbleStudio.Model
         /// The endpoint of the license service that is accessed by the studio component resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Endpoint
         {
             get { return this._endpoint; }

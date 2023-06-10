@@ -65,6 +65,62 @@ namespace Amazon.Connect
 
 
         
+        #region  ActivateEvaluationForm
+
+
+        /// <summary>
+        /// Activates an evaluation form in the specified Amazon Connect instance. After the evaluation
+        /// form is activated, it is available to start new evaluations based on the form.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ActivateEvaluationForm service method.</param>
+        /// 
+        /// <returns>The response from the ActivateEvaluationForm service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ActivateEvaluationForm">REST API Reference for ActivateEvaluationForm Operation</seealso>
+        ActivateEvaluationFormResponse ActivateEvaluationForm(ActivateEvaluationFormRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ActivateEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ActivateEvaluationForm operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndActivateEvaluationForm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ActivateEvaluationForm">REST API Reference for ActivateEvaluationForm Operation</seealso>
+        IAsyncResult BeginActivateEvaluationForm(ActivateEvaluationFormRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ActivateEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginActivateEvaluationForm.</param>
+        /// 
+        /// <returns>Returns a  ActivateEvaluationFormResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ActivateEvaluationForm">REST API Reference for ActivateEvaluationForm Operation</seealso>
+        ActivateEvaluationFormResponse EndActivateEvaluationForm(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  AssociateApprovedOrigin
 
 
@@ -399,7 +455,8 @@ namespace Amazon.Connect
         /// 
         ///  
         /// <para>
-        /// Allows the specified Amazon Connect instance to access the specified Amazon Lex bot.
+        /// Allows the specified Amazon Connect instance to access the specified Amazon Lex V1
+        /// bot. This API only supports the association of Amazon Lex V1 bots.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateLexBot service method.</param>
@@ -991,6 +1048,67 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  CreateEvaluationForm
+
+
+        /// <summary>
+        /// Creates an evaluation form in the specified Amazon Connect instance. The form can
+        /// be used to define questions related to agent performance, and create sections to organize
+        /// such questions. Question and section identifiers cannot be duplicated within the same
+        /// evaluation form.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationForm service method.</param>
+        /// 
+        /// <returns>The response from the CreateEvaluationForm service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEvaluationForm">REST API Reference for CreateEvaluationForm Operation</seealso>
+        CreateEvaluationFormResponse CreateEvaluationForm(CreateEvaluationFormRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateEvaluationForm operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateEvaluationForm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEvaluationForm">REST API Reference for CreateEvaluationForm Operation</seealso>
+        IAsyncResult BeginCreateEvaluationForm(CreateEvaluationFormRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateEvaluationForm.</param>
+        /// 
+        /// <returns>Returns a  CreateEvaluationFormResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEvaluationForm">REST API Reference for CreateEvaluationForm Operation</seealso>
+        CreateEvaluationFormResponse EndCreateEvaluationForm(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateHoursOfOperation
 
 
@@ -1180,6 +1298,123 @@ namespace Amazon.Connect
         /// <returns>Returns a  CreateIntegrationAssociationResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateIntegrationAssociation">REST API Reference for CreateIntegrationAssociation Operation</seealso>
         CreateIntegrationAssociationResponse EndCreateIntegrationAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreateParticipant
+
+
+        /// <summary>
+        /// Adds a new participant into an on-going chat contact. For more information, see <a
+        /// href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
+        /// chat flow experiences by integrating custom participants</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateParticipant service method.</param>
+        /// 
+        /// <returns>The response from the CreateParticipant service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">REST API Reference for CreateParticipant Operation</seealso>
+        CreateParticipantResponse CreateParticipant(CreateParticipantRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateParticipant operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateParticipant operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateParticipant
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">REST API Reference for CreateParticipant Operation</seealso>
+        IAsyncResult BeginCreateParticipant(CreateParticipantRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateParticipant operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateParticipant.</param>
+        /// 
+        /// <returns>Returns a  CreateParticipantResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">REST API Reference for CreateParticipant Operation</seealso>
+        CreateParticipantResponse EndCreateParticipant(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  CreatePrompt
+
+
+        /// <summary>
+        /// Creates a prompt. For more information about prompts, such as supported file types
+        /// and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
+        /// prompts</a> in the <i>Amazon Connect Administrator's Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrompt service method.</param>
+        /// 
+        /// <returns>The response from the CreatePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.DuplicateResourceException">
+        /// A resource with the specified name already exists.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.LimitExceededException">
+        /// The allowed limit for the resource has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePrompt">REST API Reference for CreatePrompt Operation</seealso>
+        CreatePromptResponse CreatePrompt(CreatePromptRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreatePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreatePrompt operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreatePrompt
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePrompt">REST API Reference for CreatePrompt Operation</seealso>
+        IAsyncResult BeginCreatePrompt(CreatePromptRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreatePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreatePrompt.</param>
+        /// 
+        /// <returns>Returns a  CreatePromptResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePrompt">REST API Reference for CreatePrompt Operation</seealso>
+        CreatePromptResponse EndCreatePrompt(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1894,6 +2129,118 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DeactivateEvaluationForm
+
+
+        /// <summary>
+        /// Deactivates an evaluation form in the specified Amazon Connect instance. After a form
+        /// is deactivated, it is no longer available for users to start new evaluations based
+        /// on the form.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateEvaluationForm service method.</param>
+        /// 
+        /// <returns>The response from the DeactivateEvaluationForm service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeactivateEvaluationForm">REST API Reference for DeactivateEvaluationForm Operation</seealso>
+        DeactivateEvaluationFormResponse DeactivateEvaluationForm(DeactivateEvaluationFormRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeactivateEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeactivateEvaluationForm operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeactivateEvaluationForm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeactivateEvaluationForm">REST API Reference for DeactivateEvaluationForm Operation</seealso>
+        IAsyncResult BeginDeactivateEvaluationForm(DeactivateEvaluationFormRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeactivateEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeactivateEvaluationForm.</param>
+        /// 
+        /// <returns>Returns a  DeactivateEvaluationFormResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeactivateEvaluationForm">REST API Reference for DeactivateEvaluationForm Operation</seealso>
+        DeactivateEvaluationFormResponse EndDeactivateEvaluationForm(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteContactEvaluation
+
+
+        /// <summary>
+        /// Deletes a contact evaluation in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactEvaluation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteContactEvaluation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactEvaluation">REST API Reference for DeleteContactEvaluation Operation</seealso>
+        DeleteContactEvaluationResponse DeleteContactEvaluation(DeleteContactEvaluationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteContactEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteContactEvaluation operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteContactEvaluation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactEvaluation">REST API Reference for DeleteContactEvaluation Operation</seealso>
+        IAsyncResult BeginDeleteContactEvaluation(DeleteContactEvaluationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteContactEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteContactEvaluation.</param>
+        /// 
+        /// <returns>Returns a  DeleteContactEvaluationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactEvaluation">REST API Reference for DeleteContactEvaluation Operation</seealso>
+        DeleteContactEvaluationResponse EndDeleteContactEvaluation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DeleteContactFlow
 
 
@@ -2007,6 +2354,72 @@ namespace Amazon.Connect
         /// <returns>Returns a  DeleteContactFlowModuleResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlowModule">REST API Reference for DeleteContactFlowModule Operation</seealso>
         DeleteContactFlowModuleResponse EndDeleteContactFlowModule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteEvaluationForm
+
+
+        /// <summary>
+        /// Deletes an evaluation form in the specified Amazon Connect instance. 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// If the version property is provided, only the specified version of the evaluation
+        /// form is deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If no version is provided, then the full form (all versions) is deleted.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluationForm service method.</param>
+        /// 
+        /// <returns>The response from the DeleteEvaluationForm service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEvaluationForm">REST API Reference for DeleteEvaluationForm Operation</seealso>
+        DeleteEvaluationFormResponse DeleteEvaluationForm(DeleteEvaluationFormRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteEvaluationForm operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteEvaluationForm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEvaluationForm">REST API Reference for DeleteEvaluationForm Operation</seealso>
+        IAsyncResult BeginDeleteEvaluationForm(DeleteEvaluationFormRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteEvaluationForm.</param>
+        /// 
+        /// <returns>Returns a  DeleteEvaluationFormResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEvaluationForm">REST API Reference for DeleteEvaluationForm Operation</seealso>
+        DeleteEvaluationFormResponse EndDeleteEvaluationForm(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2182,6 +2595,61 @@ namespace Amazon.Connect
         /// <returns>Returns a  DeleteIntegrationAssociationResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteIntegrationAssociation">REST API Reference for DeleteIntegrationAssociation Operation</seealso>
         DeleteIntegrationAssociationResponse EndDeleteIntegrationAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeletePrompt
+
+
+        /// <summary>
+        /// Deletes a prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrompt service method.</param>
+        /// 
+        /// <returns>The response from the DeletePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
+        DeletePromptResponse DeletePrompt(DeletePromptRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeletePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeletePrompt operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeletePrompt
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
+        IAsyncResult BeginDeletePrompt(DeletePromptRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeletePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeletePrompt.</param>
+        /// 
+        /// <returns>Returns a  DeletePromptResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePrompt">REST API Reference for DeletePrompt Operation</seealso>
+        DeletePromptResponse EndDeletePrompt(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2840,6 +3308,58 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  DescribeContactEvaluation
+
+
+        /// <summary>
+        /// Describes a contact evaluation in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactEvaluation service method.</param>
+        /// 
+        /// <returns>The response from the DescribeContactEvaluation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactEvaluation">REST API Reference for DescribeContactEvaluation Operation</seealso>
+        DescribeContactEvaluationResponse DescribeContactEvaluation(DescribeContactEvaluationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeContactEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeContactEvaluation operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeContactEvaluation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactEvaluation">REST API Reference for DescribeContactEvaluation Operation</seealso>
+        IAsyncResult BeginDescribeContactEvaluation(DescribeContactEvaluationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeContactEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeContactEvaluation.</param>
+        /// 
+        /// <returns>Returns a  DescribeContactEvaluationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactEvaluation">REST API Reference for DescribeContactEvaluation Operation</seealso>
+        DescribeContactEvaluationResponse EndDescribeContactEvaluation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  DescribeContactFlow
 
 
@@ -2959,6 +3479,59 @@ namespace Amazon.Connect
         /// <returns>Returns a  DescribeContactFlowModuleResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactFlowModule">REST API Reference for DescribeContactFlowModule Operation</seealso>
         DescribeContactFlowModuleResponse EndDescribeContactFlowModule(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeEvaluationForm
+
+
+        /// <summary>
+        /// Describes an evaluation form in the specified Amazon Connect instance. If the version
+        /// property is not provided, the latest version of the evaluation form is described.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvaluationForm service method.</param>
+        /// 
+        /// <returns>The response from the DescribeEvaluationForm service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEvaluationForm">REST API Reference for DescribeEvaluationForm Operation</seealso>
+        DescribeEvaluationFormResponse DescribeEvaluationForm(DescribeEvaluationFormRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeEvaluationForm operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeEvaluationForm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEvaluationForm">REST API Reference for DescribeEvaluationForm Operation</seealso>
+        IAsyncResult BeginDescribeEvaluationForm(DescribeEvaluationFormRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeEvaluationForm.</param>
+        /// 
+        /// <returns>Returns a  DescribeEvaluationFormResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEvaluationForm">REST API Reference for DescribeEvaluationForm Operation</seealso>
+        DescribeEvaluationFormResponse EndDescribeEvaluationForm(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3269,6 +3842,61 @@ namespace Amazon.Connect
         /// <returns>Returns a  DescribePhoneNumberResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePhoneNumber">REST API Reference for DescribePhoneNumber Operation</seealso>
         DescribePhoneNumberResponse EndDescribePhoneNumber(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribePrompt
+
+
+        /// <summary>
+        /// Describes the prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrompt service method.</param>
+        /// 
+        /// <returns>The response from the DescribePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePrompt">REST API Reference for DescribePrompt Operation</seealso>
+        DescribePromptResponse DescribePrompt(DescribePromptRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribePrompt operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribePrompt
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePrompt">REST API Reference for DescribePrompt Operation</seealso>
+        IAsyncResult BeginDescribePrompt(DescribePromptRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribePrompt.</param>
+        /// 
+        /// <returns>Returns a  DescribePromptResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePrompt">REST API Reference for DescribePrompt Operation</seealso>
+        DescribePromptResponse EndDescribePrompt(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3616,9 +4244,10 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// Describes the specified user account. You can find the instance ID in the console
-        /// (it’s the final part of the ARN). The console does not display the user IDs. Instead,
-        /// list the users and note the IDs provided in the output.
+        /// Describes the specified user account. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find
+        /// the instance ID in the Amazon Connect console</a> (it’s the final part of the ARN).
+        /// The console does not display the user IDs. Instead, list the users and note the IDs
+        /// provided in the output.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeUser service method.</param>
         /// 
@@ -4736,6 +5365,131 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  GetMetricDataV2
+
+
+        /// <summary>
+        /// Gets metric data from the specified Amazon Connect instance. 
+        /// 
+        ///  
+        /// <para>
+        ///  <code>GetMetricDataV2</code> offers more features than <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_GetMetricData.html">GetMetricData</a>,
+        /// the previous version of this API. It has new metrics, offers filtering at a metric
+        /// level, and offers the ability to filter and group data by channels, queues, routing
+        /// profiles, agents, and agent hierarchy levels. It can retrieve historical data for
+        /// the last 35 days, in 24-hour intervals.
+        /// </para>
+        ///  
+        /// <para>
+        /// For a description of the historical metrics that are supported by <code>GetMetricDataV2</code>
+        /// and <code>GetMetricData</code>, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
+        /// metrics definitions</a> in the <i>Amazon Connect Administrator's Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 service method.</param>
+        /// 
+        /// <returns>The response from the GetMetricDataV2 service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2">REST API Reference for GetMetricDataV2 Operation</seealso>
+        GetMetricDataV2Response GetMetricDataV2(GetMetricDataV2Request request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetMetricDataV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetMetricDataV2 operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetMetricDataV2
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2">REST API Reference for GetMetricDataV2 Operation</seealso>
+        IAsyncResult BeginGetMetricDataV2(GetMetricDataV2Request request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetMetricDataV2 operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetMetricDataV2.</param>
+        /// 
+        /// <returns>Returns a  GetMetricDataV2Result from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetMetricDataV2">REST API Reference for GetMetricDataV2 Operation</seealso>
+        GetMetricDataV2Response EndGetMetricDataV2(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetPromptFile
+
+
+        /// <summary>
+        /// Gets the prompt file.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPromptFile service method.</param>
+        /// 
+        /// <returns>The response from the GetPromptFile service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetPromptFile">REST API Reference for GetPromptFile Operation</seealso>
+        GetPromptFileResponse GetPromptFile(GetPromptFileRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPromptFile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPromptFile operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPromptFile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetPromptFile">REST API Reference for GetPromptFile Operation</seealso>
+        IAsyncResult BeginGetPromptFile(GetPromptFileRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPromptFile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPromptFile.</param>
+        /// 
+        /// <returns>Returns a  GetPromptFileResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetPromptFile">REST API Reference for GetPromptFile Operation</seealso>
+        GetPromptFileResponse EndGetPromptFile(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetTaskTemplate
 
 
@@ -5025,6 +5779,58 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  ListContactEvaluations
+
+
+        /// <summary>
+        /// Lists contact evaluations in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListContactEvaluations service method.</param>
+        /// 
+        /// <returns>The response from the ListContactEvaluations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactEvaluations">REST API Reference for ListContactEvaluations Operation</seealso>
+        ListContactEvaluationsResponse ListContactEvaluations(ListContactEvaluationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListContactEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListContactEvaluations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListContactEvaluations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactEvaluations">REST API Reference for ListContactEvaluations Operation</seealso>
+        IAsyncResult BeginListContactEvaluations(ListContactEvaluationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListContactEvaluations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListContactEvaluations.</param>
+        /// 
+        /// <returns>Returns a  ListContactEvaluationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactEvaluations">REST API Reference for ListContactEvaluations Operation</seealso>
+        ListContactEvaluationsResponse EndListContactEvaluations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListContactFlowModules
 
 
@@ -5259,6 +6065,110 @@ namespace Amazon.Connect
         /// <returns>Returns a  ListDefaultVocabulariesResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListDefaultVocabularies">REST API Reference for ListDefaultVocabularies Operation</seealso>
         ListDefaultVocabulariesResponse EndListDefaultVocabularies(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListEvaluationForms
+
+
+        /// <summary>
+        /// Lists evaluation forms in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEvaluationForms service method.</param>
+        /// 
+        /// <returns>The response from the ListEvaluationForms service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationForms">REST API Reference for ListEvaluationForms Operation</seealso>
+        ListEvaluationFormsResponse ListEvaluationForms(ListEvaluationFormsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEvaluationForms operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEvaluationForms operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEvaluationForms
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationForms">REST API Reference for ListEvaluationForms Operation</seealso>
+        IAsyncResult BeginListEvaluationForms(ListEvaluationFormsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEvaluationForms operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEvaluationForms.</param>
+        /// 
+        /// <returns>Returns a  ListEvaluationFormsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationForms">REST API Reference for ListEvaluationForms Operation</seealso>
+        ListEvaluationFormsResponse EndListEvaluationForms(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListEvaluationFormVersions
+
+
+        /// <summary>
+        /// Lists versions of an evaluation form in the specified Amazon Connect instance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListEvaluationFormVersions service method.</param>
+        /// 
+        /// <returns>The response from the ListEvaluationFormVersions service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationFormVersions">REST API Reference for ListEvaluationFormVersions Operation</seealso>
+        ListEvaluationFormVersionsResponse ListEvaluationFormVersions(ListEvaluationFormVersionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListEvaluationFormVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListEvaluationFormVersions operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListEvaluationFormVersions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationFormVersions">REST API Reference for ListEvaluationFormVersions Operation</seealso>
+        IAsyncResult BeginListEvaluationFormVersions(ListEvaluationFormVersionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListEvaluationFormVersions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListEvaluationFormVersions.</param>
+        /// 
+        /// <returns>Returns a  ListEvaluationFormVersionsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationFormVersions">REST API Reference for ListEvaluationFormVersions Operation</seealso>
+        ListEvaluationFormVersionsResponse EndListEvaluationFormVersions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7126,6 +8036,116 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  SearchHoursOfOperations
+
+
+        /// <summary>
+        /// Searches the hours of operation in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperations service method.</param>
+        /// 
+        /// <returns>The response from the SearchHoursOfOperations service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">REST API Reference for SearchHoursOfOperations Operation</seealso>
+        SearchHoursOfOperationsResponse SearchHoursOfOperations(SearchHoursOfOperationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchHoursOfOperations operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchHoursOfOperations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">REST API Reference for SearchHoursOfOperations Operation</seealso>
+        IAsyncResult BeginSearchHoursOfOperations(SearchHoursOfOperationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchHoursOfOperations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchHoursOfOperations.</param>
+        /// 
+        /// <returns>Returns a  SearchHoursOfOperationsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchHoursOfOperations">REST API Reference for SearchHoursOfOperations Operation</seealso>
+        SearchHoursOfOperationsResponse EndSearchHoursOfOperations(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SearchPrompts
+
+
+        /// <summary>
+        /// Searches prompts in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchPrompts service method.</param>
+        /// 
+        /// <returns>The response from the SearchPrompts service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPrompts">REST API Reference for SearchPrompts Operation</seealso>
+        SearchPromptsResponse SearchPrompts(SearchPromptsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchPrompts operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchPrompts operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchPrompts
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPrompts">REST API Reference for SearchPrompts Operation</seealso>
+        IAsyncResult BeginSearchPrompts(SearchPromptsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchPrompts operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchPrompts.</param>
+        /// 
+        /// <returns>Returns a  SearchPromptsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchPrompts">REST API Reference for SearchPrompts Operation</seealso>
+        SearchPromptsResponse EndSearchPrompts(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  SearchQueues
 
 
@@ -7183,6 +8203,61 @@ namespace Amazon.Connect
         /// <returns>Returns a  SearchQueuesResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQueues">REST API Reference for SearchQueues Operation</seealso>
         SearchQueuesResponse EndSearchQueues(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SearchQuickConnects
+
+
+        /// <summary>
+        /// Searches quick connects in an Amazon Connect instance, with optional filtering.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchQuickConnects service method.</param>
+        /// 
+        /// <returns>The response from the SearchQuickConnects service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQuickConnects">REST API Reference for SearchQuickConnects Operation</seealso>
+        SearchQuickConnectsResponse SearchQuickConnects(SearchQuickConnectsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SearchQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SearchQuickConnects operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSearchQuickConnects
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQuickConnects">REST API Reference for SearchQuickConnects Operation</seealso>
+        IAsyncResult BeginSearchQuickConnects(SearchQuickConnectsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SearchQuickConnects operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSearchQuickConnects.</param>
+        /// 
+        /// <returns>Returns a  SearchQuickConnectsResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SearchQuickConnects">REST API Reference for SearchQuickConnects Operation</seealso>
+        SearchQuickConnectsResponse EndSearchQuickConnects(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7507,6 +8582,74 @@ namespace Amazon.Connect
         /// <returns>Returns a  StartChatContactResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartChatContact">REST API Reference for StartChatContact Operation</seealso>
         StartChatContactResponse EndStartChatContact(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartContactEvaluation
+
+
+        /// <summary>
+        /// Starts an empty evaluation in the specified Amazon Connect instance, using the given
+        /// evaluation form for the particular contact. The evaluation form version used for the
+        /// contact evaluation corresponds to the currently activated version. If no version is
+        /// activated for the evaluation form, the contact evaluation cannot be started. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// Evaluations created through the public API do not contain answer values suggested
+        /// from automation.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartContactEvaluation service method.</param>
+        /// 
+        /// <returns>The response from the StartContactEvaluation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactEvaluation">REST API Reference for StartContactEvaluation Operation</seealso>
+        StartContactEvaluationResponse StartContactEvaluation(StartContactEvaluationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartContactEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartContactEvaluation operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartContactEvaluation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactEvaluation">REST API Reference for StartContactEvaluation Operation</seealso>
+        IAsyncResult BeginStartContactEvaluation(StartContactEvaluationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartContactEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartContactEvaluation.</param>
+        /// 
+        /// <returns>Returns a  StartContactEvaluationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactEvaluation">REST API Reference for StartContactEvaluation Operation</seealso>
+        StartContactEvaluationResponse EndStartContactEvaluation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -7978,6 +9121,71 @@ namespace Amazon.Connect
         /// <returns>Returns a  StopContactStreamingResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StopContactStreaming">REST API Reference for StopContactStreaming Operation</seealso>
         StopContactStreamingResponse EndStopContactStreaming(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  SubmitContactEvaluation
+
+
+        /// <summary>
+        /// Submits a contact evaluation in the specified Amazon Connect instance. Answers included
+        /// in the request are merged with existing answers for the given evaluation. If no answers
+        /// or notes are passed, the evaluation is submitted with the existing answers and notes.
+        /// You can delete an answer or note by passing an empty object (<code>{}</code>) to the
+        /// question identifier. 
+        /// 
+        ///  
+        /// <para>
+        /// If a contact evaluation is already in submitted state, this operation will trigger
+        /// a resubmission.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SubmitContactEvaluation service method.</param>
+        /// 
+        /// <returns>The response from the SubmitContactEvaluation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SubmitContactEvaluation">REST API Reference for SubmitContactEvaluation Operation</seealso>
+        SubmitContactEvaluationResponse SubmitContactEvaluation(SubmitContactEvaluationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the SubmitContactEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the SubmitContactEvaluation operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndSubmitContactEvaluation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SubmitContactEvaluation">REST API Reference for SubmitContactEvaluation Operation</seealso>
+        IAsyncResult BeginSubmitContactEvaluation(SubmitContactEvaluationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  SubmitContactEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginSubmitContactEvaluation.</param>
+        /// 
+        /// <returns>Returns a  SubmitContactEvaluationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SubmitContactEvaluation">REST API Reference for SubmitContactEvaluation Operation</seealso>
+        SubmitContactEvaluationResponse EndSubmitContactEvaluation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -8461,6 +9669,64 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateContactEvaluation
+
+
+        /// <summary>
+        /// Updates details about a contact evaluation in the specified Amazon Connect instance.
+        /// A contact evaluation must be in draft state. Answers included in the request are merged
+        /// with existing answers for the given evaluation. An answer or note can be deleted by
+        /// passing an empty object (<code>{}</code>) to the question identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactEvaluation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateContactEvaluation service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactEvaluation">REST API Reference for UpdateContactEvaluation Operation</seealso>
+        UpdateContactEvaluationResponse UpdateContactEvaluation(UpdateContactEvaluationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateContactEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateContactEvaluation operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateContactEvaluation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactEvaluation">REST API Reference for UpdateContactEvaluation Operation</seealso>
+        IAsyncResult BeginUpdateContactEvaluation(UpdateContactEvaluationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateContactEvaluation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateContactEvaluation.</param>
+        /// 
+        /// <returns>Returns a  UpdateContactEvaluationResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactEvaluation">REST API Reference for UpdateContactEvaluation Operation</seealso>
+        UpdateContactEvaluationResponse EndUpdateContactEvaluation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateContactFlowContent
 
 
@@ -8824,6 +10090,72 @@ namespace Amazon.Connect
 
         #endregion
         
+        #region  UpdateEvaluationForm
+
+
+        /// <summary>
+        /// Updates details about a specific evaluation form version in the specified Amazon Connect
+        /// instance. Question and section identifiers cannot be duplicated within the same evaluation
+        /// form.
+        /// 
+        ///  
+        /// <para>
+        /// This operation does not support partial updates. Instead it does a full update of
+        /// evaluation form content.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEvaluationForm service method.</param>
+        /// 
+        /// <returns>The response from the UpdateEvaluationForm service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceConflictException">
+        /// A resource already has that name.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEvaluationForm">REST API Reference for UpdateEvaluationForm Operation</seealso>
+        UpdateEvaluationFormResponse UpdateEvaluationForm(UpdateEvaluationFormRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEvaluationForm operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateEvaluationForm
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEvaluationForm">REST API Reference for UpdateEvaluationForm Operation</seealso>
+        IAsyncResult BeginUpdateEvaluationForm(UpdateEvaluationFormRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateEvaluationForm operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateEvaluationForm.</param>
+        /// 
+        /// <returns>Returns a  UpdateEvaluationFormResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEvaluationForm">REST API Reference for UpdateEvaluationForm Operation</seealso>
+        UpdateEvaluationFormResponse EndUpdateEvaluationForm(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  UpdateHoursOfOperation
 
 
@@ -9099,6 +10431,13 @@ namespace Amazon.Connect
         /// 
         ///  <important> 
         /// <para>
+        /// After using this API, you must verify that the phone number is attached to the correct
+        /// flow in the target instance or traffic distribution group. You need to do this because
+        /// the API switches only the phone number to a new instance or traffic distribution group.
+        /// It doesn't migrate the flow configuration of the phone number, too.
+        /// </para>
+        ///  
+        /// <para>
         /// You can call <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
         /// API to verify the status of a previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>
         /// operation.
@@ -9157,6 +10496,61 @@ namespace Amazon.Connect
         /// <returns>Returns a  UpdatePhoneNumberResult from Connect.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePhoneNumber">REST API Reference for UpdatePhoneNumber Operation</seealso>
         UpdatePhoneNumberResponse EndUpdatePhoneNumber(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdatePrompt
+
+
+        /// <summary>
+        /// Updates a prompt.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePrompt service method.</param>
+        /// 
+        /// <returns>The response from the UpdatePrompt service method, as returned by Connect.</returns>
+        /// <exception cref="Amazon.Connect.Model.InternalServiceException">
+        /// Request processing failed because of an error or failure with the service.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidParameterException">
+        /// One or more of the specified parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.InvalidRequestException">
+        /// The request is not valid.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ResourceNotFoundException">
+        /// The specified resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.Connect.Model.ThrottlingException">
+        /// The throttling limit has been exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
+        UpdatePromptResponse UpdatePrompt(UpdatePromptRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdatePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdatePrompt operation on AmazonConnectClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdatePrompt
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
+        IAsyncResult BeginUpdatePrompt(UpdatePromptRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdatePrompt operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdatePrompt.</param>
+        /// 
+        /// <returns>Returns a  UpdatePromptResult from Connect.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePrompt">REST API Reference for UpdatePrompt Operation</seealso>
+        UpdatePromptResponse EndUpdatePrompt(IAsyncResult asyncResult);
 
         #endregion
         

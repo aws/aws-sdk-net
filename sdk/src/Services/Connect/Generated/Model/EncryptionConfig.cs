@@ -64,6 +64,11 @@ namespace Amazon.Connect.Model
         /// <para>
         /// Be sure to provide the full ARN of the encryption key, not just the ID.
         /// </para>
+        ///  
+        /// <para>
+        /// Amazon Connect supports only KMS keys with the default key spec of <a href="https://docs.aws.amazon.com/kms/latest/developerguide/asymmetric-key-specs.html#key-spec-symmetric-default">
+        /// <code>SYMMETRIC_DEFAULT</code> </a>. 
+        /// </para>
         ///  </note>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]

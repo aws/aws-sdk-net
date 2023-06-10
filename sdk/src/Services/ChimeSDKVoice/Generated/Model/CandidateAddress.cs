@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// A suggested address.
     /// </summary>
     public partial class CandidateAddress
     {
@@ -42,8 +42,12 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _streetNumber;
 
         /// <summary>
-        /// Gets and sets the property City.
+        /// Gets and sets the property City. 
+        /// <para>
+        /// The city of the candidate address.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string City
         {
             get { return this._city; }
@@ -57,8 +61,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Country.
+        /// Gets and sets the property Country. 
+        /// <para>
+        /// The country of the candidate address.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Country
         {
             get { return this._country; }
@@ -72,8 +80,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PostalCode.
+        /// Gets and sets the property PostalCode. 
+        /// <para>
+        /// The postal code of the candidate address.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -87,8 +99,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PostalCodePlus4.
+        /// Gets and sets the property PostalCodePlus4. 
+        /// <para>
+        /// The zip + 4 or postal code +4 of the candidate address.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PostalCodePlus4
         {
             get { return this._postalCodePlus4; }
@@ -102,8 +118,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The state of the candidate address.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string State
         {
             get { return this._state; }
@@ -117,8 +137,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreetInfo.
+        /// Gets and sets the property StreetInfo. 
+        /// <para>
+        /// The street information of the candidate address.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StreetInfo
         {
             get { return this._streetInfo; }
@@ -132,8 +156,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreetNumber.
+        /// Gets and sets the property StreetNumber. 
+        /// <para>
+        /// The numeric portion of the candidate address.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StreetNumber
         {
             get { return this._streetNumber; }

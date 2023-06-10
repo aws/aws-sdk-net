@@ -117,8 +117,8 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If any one of the tags is invalid or if you exceed the maximum allowed number of tags
-        /// for a resource, then the entire request fails.
+        /// If any one of the tags is not valid or if you exceed the maximum allowed number of
+        /// tags for a resource, then the entire request fails.
         /// </para>
         ///  </note>
         /// </summary>

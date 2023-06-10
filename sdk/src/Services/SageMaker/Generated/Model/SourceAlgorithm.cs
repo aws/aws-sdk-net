@@ -68,7 +68,8 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The model artifacts must be in an S3 bucket that is in the same region as the algorithm.
+        /// The model artifacts must be in an S3 bucket that is in the same Amazon Web Services
+        /// region as the algorithm.
         /// </para>
         ///  </note>
         /// </summary>

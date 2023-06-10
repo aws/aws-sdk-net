@@ -101,6 +101,16 @@ namespace Amazon.DatabaseMigrationService.Model
         IDescribePendingMaintenanceActionsPaginator DescribePendingMaintenanceActions(DescribePendingMaintenanceActionsRequest request);
 
         /// <summary>
+        /// Paginator for DescribeRecommendationLimitations operation
+        ///</summary>
+        IDescribeRecommendationLimitationsPaginator DescribeRecommendationLimitations(DescribeRecommendationLimitationsRequest request);
+
+        /// <summary>
+        /// Paginator for DescribeRecommendations operation
+        ///</summary>
+        IDescribeRecommendationsPaginator DescribeRecommendations(DescribeRecommendationsRequest request);
+
+        /// <summary>
         /// Paginator for DescribeReplicationInstances operation
         ///</summary>
         IDescribeReplicationInstancesPaginator DescribeReplicationInstances(DescribeReplicationInstancesRequest request);

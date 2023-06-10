@@ -38,6 +38,15 @@ namespace Amazon.ECS.Model
     /// network mode, specify the exposed ports using <code>containerPort</code>. The <code>hostPort</code>
     /// can be left blank or it must be the same value as the <code>containerPort</code>.
     /// </para>
+    ///  
+    /// <para>
+    /// Most fields of this parameter (<code>containerPort</code>, <code>hostPort</code>,
+    /// <code>protocol</code>) maps to <code>PortBindings</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+    /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
+    /// Remote API</a> and the <code>--publish</code> option to <a href="https://docs.docker.com/engine/reference/commandline/run/">
+    /// <code>docker run</code> </a>. If the network mode of a task definition is set to <code>host</code>,
+    /// host ports must either be undefined or match the container port in the port mapping.
+    /// </para>
     ///  <note> 
     /// <para>
     /// You can't expose the same container port for multiple protocols. If you attempt this,
@@ -132,7 +141,7 @@ namespace Amazon.ECS.Model
         /// Gets and sets the property ContainerPortRange. 
         /// <para>
         /// The port number range on the container that's bound to the dynamically mapped host
-        /// port range.
+        /// port range. 
         /// </para>
         ///  
         /// <para>
@@ -247,7 +256,7 @@ namespace Amazon.ECS.Model
         ///  </li> <li> 
         /// <para>
         /// For containers in a task with the <code>bridge</code> network mode, the Amazon ECS
-        /// agent finds open ports on the host and automaticaly binds them to the container ports.
+        /// agent finds open ports on the host and automatically binds them to the container ports.
         /// This is a dynamic mapping strategy.
         /// </para>
         ///  </li> </ul> 
@@ -279,10 +288,10 @@ namespace Amazon.ECS.Model
         /// Amazon ECS container agent ports 51678-51680. Any host port that was previously specified
         /// in a running task is also reserved while the task is running. That is, after a task
         /// stops, the host port is released. The current reserved ports are displayed in the
-        /// <code>remainingResources</code> of <a>DescribeContainerInstances</a> output. A container
-        /// instance can have up to 100 reserved ports at a time. This number includes the default
-        /// reserved ports. Automatically assigned ports aren't included in the 100 reserved ports
-        /// quota.
+        /// <code>remainingResources</code> of <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_DescribeContainerInstances.html">DescribeContainerInstances</a>
+        /// output. A container instance can have up to 100 reserved ports at a time. This number
+        /// includes the default reserved ports. Automatically assigned ports aren't included
+        /// in the 100 reserved ports quota.
         /// </para>
         /// </summary>
         public int HostPort

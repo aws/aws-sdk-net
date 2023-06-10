@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// Invalid or malformed request.
+    /// An invalid or malformed request.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

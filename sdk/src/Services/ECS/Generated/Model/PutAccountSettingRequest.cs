@@ -34,26 +34,26 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// If you change the account setting for the root user, the default settings for all
-    /// of the IAM users and roles that no individual account setting was specified are reset
-    /// for. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
+    /// If you change the root user account setting, the default settings are reset for users
+    /// and roles that do not have specified individual account settings. For more information,
+    /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
     /// Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or <code>containerInstanceLongArnFormat</code>
     /// are specified, the Amazon Resource Name (ARN) and resource ID format of the resource
-    /// type for a specified IAM user, IAM role, or the root user for an account is affected.
-    /// The opt-in and opt-out account setting must be set for each Amazon ECS resource separately.
+    /// type for a specified user, role, or the root user for an account is affected. The
+    /// opt-in and opt-out account setting must be set for each Amazon ECS resource separately.
     /// The ARN and resource ID format of a resource is defined by the opt-in status of the
-    /// IAM user or role that created the resource. You must turn on this setting to use Amazon
+    /// user or role that created the resource. You must turn on this setting to use Amazon
     /// ECS features such as resource tagging.
     /// </para>
     ///  
     /// <para>
     /// When <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
     /// limit for any new container instances that support the feature is changed. If <code>awsvpcTrunking</code>
-    /// is enabled, any new container instances that support the feature are launched have
+    /// is turned on, any new container instances that support the feature are launched have
     /// the increased ENI limits available to them. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
     /// Network Interface Trunking</a> in the <i>Amazon Elastic Container Service Developer
     /// Guide</i>.
@@ -61,10 +61,21 @@ namespace Amazon.ECS.Model
     ///  
     /// <para>
     /// When <code>containerInsights</code> is specified, the default setting indicating whether
-    /// CloudWatch Container Insights is enabled for your clusters is changed. If <code>containerInsights</code>
-    /// is enabled, any new clusters that are created will have Container Insights enabled
-    /// unless you disable it during cluster creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
+    /// Amazon Web Services CloudWatch Container Insights is turned on for your clusters is
+    /// changed. If <code>containerInsights</code> is turned on, any new clusters that are
+    /// created will have Container Insights turned on unless you disable it during cluster
+    /// creation. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
     /// Container Insights</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Amazon ECS is introducing tagging authorization for resource creation. Users must
+    /// have permissions for actions that create the resource, such as <code>ecsCreateCluster</code>.
+    /// If tags are specified when you create a resource, Amazon Web Services performs additional
+    /// authorization to verify if users or roles have permissions to create tags. Therefore,
+    /// you must grant explicit permissions to use the <code>ecs:TagResource</code> action.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/supported-iam-actions-tagging.html">Grant
+    /// permission to tag resources on creation</a> in the <i>Amazon ECS Developer Guide</i>.
     /// </para>
     /// </summary>
     public partial class PutAccountSettingRequest : AmazonECSRequest
@@ -82,8 +93,12 @@ namespace Amazon.ECS.Model
         /// is specified, the ARN and resource ID for your Amazon ECS container instances is affected.
         /// If <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI) limit
         /// for your Amazon ECS container instances is affected. If <code>containerInsights</code>
-        /// is specified, the default setting for CloudWatch Container Insights for your clusters
-        /// is affected.
+        /// is specified, the default setting for Amazon Web Services CloudWatch Container Insights
+        /// for your clusters is affected. If <code>fargateFIPSMode</code> is specified, Fargate
+        /// FIPS 140 compliance is affected. If <code>tagResourceAuthorization</code> is specified,
+        /// the opt-in option for tagging resources on creation is affected. For information about
+        /// the opt-in timeline, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+        /// authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -102,11 +117,10 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PrincipalArn. 
         /// <para>
-        /// The ARN of the principal, which can be an IAM user, IAM role, or the root user. If
-        /// you specify the root user, it modifies the account setting for all IAM users, IAM
-        /// roles, and the root user of the account unless an IAM user or role explicitly overrides
-        /// these settings. If this field is omitted, the setting is changed only for the authenticated
-        /// user.
+        /// The ARN of the principal, which can be a user, role, or the root user. If you specify
+        /// the root user, it modifies the account setting for all users, roles, and the root
+        /// user of the account unless a user or role explicitly overrides these settings. If
+        /// this field is omitted, the setting is changed only for the authenticated user.
         /// </para>
         ///  <note> 
         /// <para>
@@ -130,8 +144,8 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        /// The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>
-        /// and <code>disabled</code>.
+        /// The account setting value for the specified principal ARN. Accepted values are <code>enabled</code>,
+        /// <code>disabled</code>, <code>on</code>, and <code>off</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

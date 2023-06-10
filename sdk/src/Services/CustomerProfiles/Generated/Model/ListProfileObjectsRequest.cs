@@ -102,7 +102,7 @@ namespace Amazon.CustomerProfiles.Model
         /// Gets and sets the property ObjectFilter. 
         /// <para>
         /// Applies a filter to the response to include profile objects with the specified index
-        /// values. This filter is only supported for ObjectTypeName _asset, _case and _order.
+        /// values.
         /// </para>
         /// </summary>
         public ObjectFilter ObjectFilter

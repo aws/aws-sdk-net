@@ -43,6 +43,7 @@ namespace Amazon.S3Outposts.Model
         private DateTime? _creationTime;
         private string _customerOwnedIpv4Pool;
         private string _endpointArn;
+        private FailedReason _failedReason;
         private List<NetworkInterface> _networkInterfaces = new List<NetworkInterface>();
         private string _outpostsId;
         private string _securityGroupId;
@@ -138,6 +139,24 @@ namespace Amazon.S3Outposts.Model
         internal bool IsSetEndpointArn()
         {
             return this._endpointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FailedReason. 
+        /// <para>
+        /// The failure reason, if any, for a create or delete endpoint operation.
+        /// </para>
+        /// </summary>
+        public FailedReason FailedReason
+        {
+            get { return this._failedReason; }
+            set { this._failedReason = value; }
+        }
+
+        // Check to see if FailedReason property is set
+        internal bool IsSetFailedReason()
+        {
+            return this._failedReason != null;
         }
 
         /// <summary>

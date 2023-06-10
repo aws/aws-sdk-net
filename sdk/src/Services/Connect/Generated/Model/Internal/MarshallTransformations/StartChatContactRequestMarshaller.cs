@@ -141,6 +141,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetRelatedContactId())
+                {
+                    context.Writer.WritePropertyName("RelatedContactId");
+                    context.Writer.Write(publicRequest.RelatedContactId);
+                }
+
                 if(publicRequest.IsSetSupportedMessagingContentTypes())
                 {
                     context.Writer.WritePropertyName("SupportedMessagingContentTypes");

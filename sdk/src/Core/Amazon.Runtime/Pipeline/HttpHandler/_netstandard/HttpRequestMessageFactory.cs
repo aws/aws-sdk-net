@@ -376,7 +376,7 @@ namespace Amazon.Runtime
         /// <summary>
         /// Set of content header names.
         /// </summary>
-        private static HashSet<string> ContentHeaderNames = new HashSet<string>
+        private static HashSet<string> ContentHeaderNames = new HashSet<string>(StringComparer.OrdinalIgnoreCase)
         {
             HeaderKeys.ContentLengthHeader,
             HeaderKeys.ContentTypeHeader,
@@ -461,7 +461,7 @@ namespace Amazon.Runtime
         {
             foreach (var kvp in headers)
             {
-                if (ContentHeaderNames.Contains(kvp.Key, StringComparer.OrdinalIgnoreCase))
+                if (ContentHeaderNames.Contains(kvp.Key))
                     continue;
 
                 _request.Headers.TryAddWithoutValidation(kvp.Key, kvp.Value);
@@ -472,17 +472,12 @@ namespace Amazon.Runtime
         /// Gets a handle to the request content.
         /// </summary>
         /// <returns>The request content.</returns>
+#pragma warning disable CA1024
         public HttpContent GetRequestContent()
         {
-            try
-            {
-                return this.GetRequestContentAsync().Result;
-            }
-            catch (AggregateException e)
-            {
-                throw e.InnerException;
-            }
+            return _request.Content;
         }
+#pragma warning restore CA1024
 
         /// <summary>
         /// Returns the HTTP response.
@@ -626,25 +621,24 @@ namespace Amazon.Runtime
             _request.Content.Headers.ContentType =
                 MediaTypeHeaderValue.Parse(contentHeaders[HeaderKeys.ContentTypeHeader]);
 
-            if (contentHeaders.ContainsKey(HeaderKeys.ContentRangeHeader))
+            if (contentHeaders.TryGetValue(HeaderKeys.ContentRangeHeader, out var contentRangeHeader))
                 _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentRangeHeader,
-                    contentHeaders[HeaderKeys.ContentRangeHeader]);
+                    contentRangeHeader);
 
-            if (contentHeaders.ContainsKey(HeaderKeys.ContentMD5Header))
+            if (contentHeaders.TryGetValue(HeaderKeys.ContentMD5Header, out var contentMd5Header))
                 _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentMD5Header,
-                    contentHeaders[HeaderKeys.ContentMD5Header]);
+                    contentMd5Header);
 
-            if (contentHeaders.ContainsKey(HeaderKeys.ContentEncodingHeader))
+            if (contentHeaders.TryGetValue(HeaderKeys.ContentEncodingHeader, out var contentEncodingHeader))
                 _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentEncodingHeader,
-                    contentHeaders[HeaderKeys.ContentEncodingHeader]);
+                    contentEncodingHeader);
 
-            if (contentHeaders.ContainsKey(HeaderKeys.ContentDispositionHeader))
+            if (contentHeaders.TryGetValue(HeaderKeys.ContentDispositionHeader, out var contentDispositionHeader))
                 _request.Content.Headers.TryAddWithoutValidation(HeaderKeys.ContentDispositionHeader,
-                    contentHeaders[HeaderKeys.ContentDispositionHeader]);
+                    contentDispositionHeader);
 
-            DateTime expires;
-            if (contentHeaders.ContainsKey(HeaderKeys.Expires) &&
-                DateTime.TryParse(contentHeaders[HeaderKeys.Expires], CultureInfo.InvariantCulture, DateTimeStyles.None, out expires))
+            if (contentHeaders.TryGetValue(HeaderKeys.Expires, out var expiresHeaderValue) &&
+                DateTime.TryParse(expiresHeaderValue, CultureInfo.InvariantCulture, DateTimeStyles.None, out var expires))
                 _request.Content.Headers.Expires = expires;
         }
 

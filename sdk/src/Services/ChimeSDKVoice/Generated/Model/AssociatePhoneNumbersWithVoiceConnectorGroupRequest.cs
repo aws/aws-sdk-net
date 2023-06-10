@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the AssociatePhoneNumbersWithVoiceConnectorGroup operation.
-    /// 
+    /// Associates phone numbers with the specified Amazon Chime SDK Voice Connector group.
     /// </summary>
     public partial class AssociatePhoneNumbersWithVoiceConnectorGroupRequest : AmazonChimeSDKVoiceRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorGroupId;
 
         /// <summary>
-        /// Gets and sets the property E164PhoneNumbers.
+        /// Gets and sets the property E164PhoneNumbers. 
+        /// <para>
+        /// List of phone numbers, in E.164 format.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> E164PhoneNumbers
@@ -55,7 +58,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ForceAssociate.
+        /// Gets and sets the property ForceAssociate. 
+        /// <para>
+        /// If true, associates the provided phone numbers with the provided Amazon Chime SDK
+        /// Voice Connector Group and removes any previously existing associations. If false,
+        /// does not associate any phone numbers that have previously existing associations.
+        /// </para>
         /// </summary>
         public bool ForceAssociate
         {
@@ -70,7 +78,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorGroupId.
+        /// Gets and sets the property VoiceConnectorGroupId. 
+        /// <para>
+        /// The Amazon Chime SDK Voice Connector group ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorGroupId

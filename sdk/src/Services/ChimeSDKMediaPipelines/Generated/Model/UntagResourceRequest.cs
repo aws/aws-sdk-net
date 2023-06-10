@@ -62,7 +62,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The key/value pairs in the tag that you want to remove.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

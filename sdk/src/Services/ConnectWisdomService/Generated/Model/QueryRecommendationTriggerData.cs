@@ -41,6 +41,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// The text associated with the recommendation trigger.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Text
         {
             get { return this._text; }

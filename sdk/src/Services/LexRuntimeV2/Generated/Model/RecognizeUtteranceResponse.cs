@@ -39,6 +39,7 @@ namespace Amazon.LexRuntimeV2.Model
         private string _inputTranscript;
         private string _interpretations;
         private string _messages;
+        private string _recognizedBotMember;
         private string _requestAttributes;
         private string _sessionId;
         private string _sessionStateValue;
@@ -193,6 +194,25 @@ namespace Amazon.LexRuntimeV2.Model
         internal bool IsSetMessages()
         {
             return this._messages != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RecognizedBotMember. 
+        /// <para>
+        /// The bot member that recognized the utterance.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public string RecognizedBotMember
+        {
+            get { return this._recognizedBotMember; }
+            set { this._recognizedBotMember = value; }
+        }
+
+        // Check to see if RecognizedBotMember property is set
+        internal bool IsSetRecognizedBotMember()
+        {
+            return this._recognizedBotMember != null;
         }
 
         /// <summary>

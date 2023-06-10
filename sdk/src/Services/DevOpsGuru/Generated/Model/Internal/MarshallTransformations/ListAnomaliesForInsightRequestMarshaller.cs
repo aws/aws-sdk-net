@@ -74,6 +74,17 @@ namespace Amazon.DevOpsGuru.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AccountId);
                 }
 
+                if(publicRequest.IsSetFilters())
+                {
+                    context.Writer.WritePropertyName("Filters");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ListAnomaliesForInsightFiltersMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Filters, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetMaxResults())
                 {
                     context.Writer.WritePropertyName("MaxResults");

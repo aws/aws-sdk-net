@@ -30,21 +30,21 @@ namespace Amazon.GameLift.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateGameServerGroup operation.
-    /// <b>This operation is used with the GameLift FleetIQ solution and game server groups.</b>
-    /// 
+    /// <b>This operation is used with the Amazon GameLift FleetIQ solution and game server
+    /// groups.</b> 
     /// 
     ///  
     /// <para>
-    /// Updates GameLift FleetIQ-specific properties for a game server group. Many Auto Scaling
-    /// group properties are updated on the Auto Scaling group directly, including the launch
-    /// template, Auto Scaling policies, and maximum/minimum/desired instance counts.
+    /// Updates Amazon GameLift FleetIQ-specific properties for a game server group. Many
+    /// Auto Scaling group properties are updated on the Auto Scaling group directly, including
+    /// the launch template, Auto Scaling policies, and maximum/minimum/desired instance counts.
     /// </para>
     ///  
     /// <para>
     /// To update the game server group, specify the game server group ID and provide the
     /// updated values. Before applying the updates, the new values are validated to ensure
-    /// that GameLift FleetIQ can continue to perform instance balancing activity. If successful,
-    /// a <code>GameServerGroup</code> object is returned.
+    /// that Amazon GameLift FleetIQ can continue to perform instance balancing activity.
+    /// If successful, a <code>GameServerGroup</code> object is returned.
     /// </para>
     ///  
     /// <para>
@@ -52,8 +52,8 @@ namespace Amazon.GameLift.Model
     /// </para>
     ///  
     /// <para>
-    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">GameLift
-    /// FleetIQ Guide</a> 
+    ///  <a href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
+    /// GameLift FleetIQ Guide</a> 
     /// </para>
     /// </summary>
     public partial class UpdateGameServerGroupRequest : AmazonGameLiftRequest
@@ -67,8 +67,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property BalancingStrategy. 
         /// <para>
-        /// Indicates how GameLift FleetIQ balances the use of Spot Instances and On-Demand Instances
-        /// in the game server group. Method options include the following:
+        /// Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and On-Demand
+        /// Instances in the game server group. Method options include the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -154,9 +154,9 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// An updated list of Amazon EC2 instance types to use in the Auto Scaling group. The
         /// instance definitions must specify at least two different instance types that are supported
-        /// by GameLift FleetIQ. This updated list replaces the entire current list of instance
-        /// definitions for the game server group. For more information on instance types, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
+        /// by Amazon GameLift FleetIQ. This updated list replaces the entire current list of
+        /// instance definitions for the game server group. For more information on instance types,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
         /// Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally specify
         /// capacity weighting for each instance type. If no weight value is specified for an
         /// instance type, it is set to the default value "1". For more information about capacity

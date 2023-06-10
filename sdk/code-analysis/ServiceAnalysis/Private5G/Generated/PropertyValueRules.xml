@@ -175,6 +175,15 @@
     <pattern>^arn:aws:private-networks:[a-z0-9-]+:[^:]*:.*$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Private5G.Model.StartNetworkResourceUpdateRequest.NetworkResourceArn</property>
+    <pattern>^arn:aws:private-networks:[a-z0-9-]+:[^:]*:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Private5G.Model.StartNetworkResourceUpdateRequest.ReturnReason</property>
+    <min>0</min>
+    <max>1000</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Private5G.Model.TagResourceRequest.ResourceArn</property>
     <pattern>^arn:aws:private-networks:[a-z0-9-]+:[^:]*:.*$</pattern>
   </property-value-rule>
@@ -340,6 +349,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Private5G.Model.Order.OrderArn</property>
+    <pattern>^arn:aws:private-networks:[a-z0-9-]+:[^:]*:.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Private5G.Model.ReturnInformation.ReplacementOrderArn</property>
     <pattern>^arn:aws:private-networks:[a-z0-9-]+:[^:]*:.*$</pattern>
   </property-value-rule>
 </property-value-rules>

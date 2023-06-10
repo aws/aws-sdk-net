@@ -30,13 +30,13 @@ namespace Amazon.QLDB.Model
 {
     /// <summary>
     /// Container for the parameters to the ListLedgers operation.
-    /// Returns an array of ledger summaries that are associated with the current Amazon Web
-    /// Services account and Region.
+    /// Returns all ledgers that are associated with the current Amazon Web Services account
+    /// and Region.
     /// 
     ///  
     /// <para>
-    /// This action returns a maximum of 100 items and is paginated so that you can retrieve
-    /// all the items by calling <code>ListLedgers</code> multiple times.
+    /// This action returns a maximum of <code>MaxResults</code> items and is paginated so
+    /// that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.
     /// </para>
     /// </summary>
     public partial class ListLedgersRequest : AmazonQLDBRequest

@@ -48,6 +48,7 @@ namespace Amazon.QuickSight.Model
         /// A custom value that's used when the value of a parameter isn't set.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public long CustomValue
         {
             get { return this._customValue.GetValueOrDefault(); }

@@ -76,6 +76,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Authorized = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("insecureIngest", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.InsecureIngest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("latencyMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -88,6 +94,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("preset", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Preset = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("recordingConfigurationArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +110,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
                     unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("type", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Type = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

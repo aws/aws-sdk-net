@@ -64,8 +64,8 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property SourceLanguageCode. 
         /// <para>
-        /// The language code for the language of the source text. The language must be a language
-        /// supported by Amazon Translate. For a list of language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+        /// The language code for the language of the source text. For a list of language codes,
+        /// see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
         /// languages</a>.
         /// </para>
         ///  
@@ -99,8 +99,9 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TargetLanguageCode. 
         /// <para>
-        /// The language code requested for the language of the target text. The language must
-        /// be a language supported by Amazon Translate.
+        /// The language code requested for the language of the target text. For a list of language
+        /// codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+        /// languages</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=5)]
@@ -119,9 +120,19 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property TerminologyNames. 
         /// <para>
-        /// The name of the terminology list file to be used in the TranslateText request. You
-        /// can use 1 terminology list at most in a <code>TranslateText</code> request. Terminology
-        /// lists can contain a maximum of 256 terms.
+        /// The name of a terminology list file to add to the translation job. This file provides
+        /// source terms and the desired translation for each term. A terminology list can contain
+        /// a maximum of 256 terms. You can use one custom terminology resource in your translation
+        /// request.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the <a>ListTerminologies</a> operation to get the available terminology lists.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about custom terminology lists, see <a href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+        /// terminology</a>.
         /// </para>
         /// </summary>
         public List<string> TerminologyNames

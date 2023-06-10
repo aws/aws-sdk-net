@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the PutVoiceConnectorTermination operation.
-    /// 
+    /// Updates a Voice Connector's termination settings.
     /// </summary>
     public partial class PutVoiceConnectorTerminationRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property Termination.
+        /// Gets and sets the property Termination. 
+        /// <para>
+        /// The termination settings to be updated.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Termination Termination
@@ -54,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

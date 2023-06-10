@@ -45,6 +45,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ResourceDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAwsAmazonMqBroker())
+            {
+                context.Writer.WritePropertyName("AwsAmazonMqBroker");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsAmazonMqBrokerDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsAmazonMqBroker, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetAwsApiGatewayRestApi())
             {
                 context.Writer.WritePropertyName("AwsApiGatewayRestApi");
@@ -85,6 +96,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsApiGatewayV2StageDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsApiGatewayV2Stage, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsAppSyncGraphQlApi())
+            {
+                context.Writer.WritePropertyName("AwsAppSyncGraphQlApi");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsAppSyncGraphQlApiDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsAppSyncGraphQlApi, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -272,6 +294,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsEc2NetworkInterfaceDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsEc2NetworkInterface, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEc2RouteTable())
+            {
+                context.Writer.WritePropertyName("AwsEc2RouteTable");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEc2RouteTableDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEc2RouteTable, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -503,6 +536,28 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsElbv2LoadBalancerDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsElbv2LoadBalancer, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsEventSchemasRegistry())
+            {
+                context.Writer.WritePropertyName("AwsEventSchemasRegistry");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsEventSchemasRegistryDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsEventSchemasRegistry, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsGuardDutyDetector())
+            {
+                context.Writer.WritePropertyName("AwsGuardDutyDetector");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsGuardDutyDetectorDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsGuardDutyDetector, context);
 
                 context.Writer.WriteObjectEnd();
             }
@@ -811,6 +866,17 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
 
                 var marshaller = AwsSsmPatchComplianceDetailsMarshaller.Instance;
                 marshaller.Marshall(requestObject.AwsSsmPatchCompliance, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetAwsStepFunctionStateMachine())
+            {
+                context.Writer.WritePropertyName("AwsStepFunctionStateMachine");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsStepFunctionStateMachineDetailsMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsStepFunctionStateMachine, context);
 
                 context.Writer.WriteObjectEnd();
             }

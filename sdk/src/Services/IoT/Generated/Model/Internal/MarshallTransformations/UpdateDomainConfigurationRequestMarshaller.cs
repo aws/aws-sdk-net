@@ -91,6 +91,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RemoveAuthorizerConfig);
                 }
 
+                if(publicRequest.IsSetTlsConfig())
+                {
+                    context.Writer.WritePropertyName("tlsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TlsConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.TlsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

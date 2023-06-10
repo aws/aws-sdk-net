@@ -35,7 +35,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// 
     ///  
     /// <para>
-    /// You must have the <code>logs;FilterLogEvents</code> permission to perform this operation.
+    /// You must have the <code>logs:FilterLogEvents</code> permission to perform this operation.
     /// </para>
     ///  
     /// <para>

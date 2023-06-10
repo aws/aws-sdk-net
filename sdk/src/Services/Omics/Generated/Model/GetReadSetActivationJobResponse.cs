@@ -119,7 +119,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// The job's sources.
+        /// The job's source files.
         /// </para>
         /// </summary>
         public List<ActivateReadSetSourceItem> Sources

@@ -30,7 +30,7 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Remove <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+    /// Remove <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
     /// that are attached to a resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonPersonalizeRequest

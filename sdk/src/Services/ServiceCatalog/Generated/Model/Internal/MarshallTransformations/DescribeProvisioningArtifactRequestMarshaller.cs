@@ -73,6 +73,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AcceptLanguage);
                 }
 
+                if(publicRequest.IsSetIncludeProvisioningArtifactParameters())
+                {
+                    context.Writer.WritePropertyName("IncludeProvisioningArtifactParameters");
+                    context.Writer.Write(publicRequest.IncludeProvisioningArtifactParameters);
+                }
+
                 if(publicRequest.IsSetProductId())
                 {
                     context.Writer.WritePropertyName("ProductId");

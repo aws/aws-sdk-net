@@ -33,7 +33,39 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class MapConfiguration
     {
+        private string _politicalView;
         private string _style;
+
+        /// <summary>
+        /// Gets and sets the property PoliticalView. 
+        /// <para>
+        /// Specifies the political view for the style. Leave unset to not use a political view,
+        /// or, for styles that support specific political views, you can choose a view, such
+        /// as <code>IND</code> for the Indian view.
+        /// </para>
+        ///  
+        /// <para>
+        /// Default is unset.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Not all map resources or styles support political view styles. See <a href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+        /// views</a> for more information.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        [AWSProperty(Min=3, Max=3)]
+        public string PoliticalView
+        {
+            get { return this._politicalView; }
+            set { this._politicalView = value; }
+        }
+
+        // Check to see if PoliticalView property is set
+        internal bool IsSetPoliticalView()
+        {
+            return this._politicalView != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Style. 
@@ -71,14 +103,13 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VectorEsriStreets</code> – The Esri World Streets map style, which provides
-        /// a detailed vector basemap for the world symbolized with a classic Esri street map
-        /// style. The vector tile layer is similar in content and style to the World Street Map
-        /// raster map.
+        ///  <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a detailed
+        /// vector basemap for the world symbolized with a classic Esri street map style. The
+        /// vector tile layer is similar in content and style to the World Street Map raster map.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which provides
+        ///  <code>VectorEsriNavigation</code> – The Esri Navigation map style, which provides
         /// a detailed basemap for the world symbolized with a custom navigation map style that's
         /// designed for use during the day in mobile devices.
         /// </para>
@@ -154,22 +185,36 @@ namespace Amazon.LocationService.Model
         ///  </note> 
         /// <para>
         /// Valid <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open
-        /// Data (Preview) map styles</a>:
+        /// Data map styles</a>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light (preview)
-        /// map style provides a detailed basemap for the world suitable for website and mobile
-        /// application use. The map includes highways major roads, minor roads, railways, water
-        /// features, cities, parks, landmarks, building footprints, and administrative boundaries.
+        ///  <code>VectorOpenDataStandardLight</code> – The Open Data Standard Light map style
+        /// provides a detailed basemap for the world suitable for website and mobile application
+        /// use. The map includes highways major roads, minor roads, railways, water features,
+        /// cities, parks, landmarks, building footprints, and administrative boundaries.
         /// </para>
-        ///  <important> 
+        ///  </li> <li> 
         /// <para>
-        /// Open Data maps is in preview. We may add, change, or remove features before announcing
-        /// general availability. For more information, see <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html#open-data-preview">Open
-        /// Data is in preview release</a>.
+        ///  <code>VectorOpenDataStandardDark</code> – Open Data Standard Dark is a dark-themed
+        /// map style that provides a detailed basemap for the world suitable for website and
+        /// mobile application use. The map includes highways major roads, minor roads, railways,
+        /// water features, cities, parks, landmarks, building footprints, and administrative
+        /// boundaries.
         /// </para>
-        ///  </important> </li> </ul>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VectorOpenDataVisualizationLight</code> – The Open Data Visualization Light
+        /// map style is a light-themed style with muted colors and fewer features that aids in
+        /// understanding overlaid data.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>VectorOpenDataVisualizationDark</code> – The Open Data Visualization Dark map
+        /// style is a dark-themed style with muted colors and fewer features that aids in understanding
+        /// overlaid data.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
         public string Style

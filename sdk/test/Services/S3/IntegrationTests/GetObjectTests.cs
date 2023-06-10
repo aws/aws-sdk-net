@@ -89,5 +89,26 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
                 }
             }
         }
+
+        [TestMethod]
+        [TestCategory("S3")]
+        public void TestObjectAttributesLastModified()
+        {
+            var getObjectAttributesResponse = Client.GetObjectAttributes(new GetObjectAttributesRequest
+            {
+                BucketName = bucketName,
+                Key = "TestObject",
+                ObjectAttributes = new List<ObjectAttributes> { ObjectAttributes.ObjectSize }
+            });
+
+            var getObjectMetadataResponse = Client.GetObjectMetadata(new GetObjectMetadataRequest
+            {
+                BucketName = bucketName,
+                Key = "TestObject"
+            });
+
+            Assert.AreNotEqual(getObjectAttributesResponse.LastModified, DateTime.MinValue);
+            Assert.AreEqual(getObjectAttributesResponse.LastModified, getObjectMetadataResponse.LastModified);
+        }
     }
 }

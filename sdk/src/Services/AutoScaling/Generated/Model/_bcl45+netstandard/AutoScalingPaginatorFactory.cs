@@ -98,5 +98,13 @@ namespace Amazon.AutoScaling.Model
         {
             return new DescribeTagsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for DescribeTrafficSources operation
+        ///</summary>
+        public IDescribeTrafficSourcesPaginator DescribeTrafficSources(DescribeTrafficSourcesRequest request) 
+        {
+            return new DescribeTrafficSourcesPaginator(this.client, request);
+        }
     }
 }

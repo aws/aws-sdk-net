@@ -46,7 +46,7 @@ namespace Amazon.Pipes.Model
         /// Query Language</a> in the Amazon Elastic Container Service Developer Guide. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2000)]
         public string Expression
         {
             get { return this._expression; }

@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DeactivateType operation.
-    /// Deactivates a public extension that was previously activated in this account and region.
+    /// Deactivates a public extension that was previously activated in this account and Region.
     /// 
     ///  
     /// <para>
@@ -49,7 +49,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) for the extension, in this account and region.
+        /// The Amazon Resource Name (ARN) for the extension, in this account and Region.
         /// </para>
         ///  
         /// <para>
@@ -96,7 +96,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeName. 
         /// <para>
-        /// The type name of the extension, in this account and region. If you specified a type
+        /// The type name of the extension, in this account and Region. If you specified a type
         /// name alias when enabling the extension, use the type name alias.
         /// </para>
         ///  

@@ -29,6 +29,7 @@ namespace Amazon.SecurityToken
     public partial class AmazonSecurityTokenServiceConfig : ClientConfig
     {
         private StsRegionalEndpointsValue? _stsRegionalEndpoints;
+        private object _stsRegionalEndpointsLock = new object();
         /// <summary>
         /// StsRegionalEndpoints should be set to <see cref="StsRegionalEndpointsValue.Legacy"/> to resolve to the global
         /// sts endpoint (only for legacy global regions) or StsRegionalEndpointsValue.Regional to resolve to
@@ -38,18 +39,33 @@ namespace Amazon.SecurityToken
         /// or falling back to <see cref="IDefaultConfigurationProvider"/> and using <see cref="DefaultConfiguration.StsRegionalEndpoints"/>
         /// </summary>
         public StsRegionalEndpointsValue StsRegionalEndpoints {
-            get {
-                if (!this._stsRegionalEndpoints.HasValue)
+            get 
+            {
+                if (_stsRegionalEndpoints.HasValue)
                 {
+                    return _stsRegionalEndpoints.GetValueOrDefault();
+                }
+
+                lock (_stsRegionalEndpointsLock)
+                {
+                    if (_stsRegionalEndpoints.HasValue)
+                    {
+                        return _stsRegionalEndpoints.Value;
+                    }
+
                     _stsRegionalEndpoints =
-                        CheckSTSEnvironmentVariable() ?? 
+                        CheckSTSEnvironmentVariable() ??
                         CheckCredentialsFile() ??
                         DefaultConfiguration.StsRegionalEndpoints;
+                    return _stsRegionalEndpoints.GetValueOrDefault();
                 }
-                return this._stsRegionalEndpoints.GetValueOrDefault();
             }
-            set {
-                this._stsRegionalEndpoints = value;
+            set
+            {
+                lock (_stsRegionalEndpointsLock)
+                {
+                    _stsRegionalEndpoints = value;
+                }
             }
         }
 
@@ -62,7 +78,12 @@ namespace Amazon.SecurityToken
         private const string StsDefaultHostname = "https://sts.amazonaws.com";
         
         private static readonly CredentialProfileStoreChain _credentialProfileChain = new CredentialProfileStoreChain();
-        
+
+        // we cache this per execution process to avoid excessive file I/O
+        private static CredentialProfile _profile;
+        private static object _triedToResolveProfileLock = new object();
+        private static bool _triedToResolveProfile = false;
+
 #if BCL35
         private static readonly HashSet<RegionEndpoint> legacyGlobalRegions = new HashSet<RegionEndpoint>
          {
@@ -191,10 +212,20 @@ namespace Amazon.SecurityToken
         /// or not the credentials file set the regional flag </returns>
         private static StsRegionalEndpointsValue? CheckCredentialsFile()
         {
-            CredentialProfile profile;
-            var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
-            _credentialProfileChain.TryGetProfile(profileName, out profile);
-            return profile?.StsRegionalEndpoints;
+            if (_triedToResolveProfile)
+            {
+                return _profile?.StsRegionalEndpoints;
+            }
+            lock (_triedToResolveProfileLock)
+            {
+                if (!_triedToResolveProfile)
+                {
+                    var profileName = Environment.GetEnvironmentVariable(AwsProfileEnvironmentVariable) ?? DefaultProfileName;
+                    _credentialProfileChain.TryGetProfile(profileName, out _profile);
+                    _triedToResolveProfile = true;
+                }
+            }
+            return _profile?.StsRegionalEndpoints;
         }
     }
 }

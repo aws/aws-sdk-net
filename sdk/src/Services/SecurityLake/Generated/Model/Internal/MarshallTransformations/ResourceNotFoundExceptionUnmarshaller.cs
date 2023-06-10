@@ -64,10 +64,10 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("resourceId", targetDepth))
+                if (context.TestExpression("resourceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ResourceId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("resourceType", targetDepth))

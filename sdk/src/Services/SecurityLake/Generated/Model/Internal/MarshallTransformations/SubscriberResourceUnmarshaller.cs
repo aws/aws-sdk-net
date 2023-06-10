@@ -70,22 +70,22 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.AccessTypes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("accountId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.AccountId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
                 if (context.TestExpression("createdAt", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("externalId", targetDepth))
+                if (context.TestExpression("resourceShareArn", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.ExternalId = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.ResourceShareArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("resourceShareName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ResourceShareName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("roleArn", targetDepth))
@@ -100,16 +100,16 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.S3BucketArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("snsArn", targetDepth))
+                if (context.TestExpression("sources", targetDepth))
                 {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SnsArn = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<LogSourceResource, LogSourceResourceUnmarshaller>(LogSourceResourceUnmarshaller.Instance);
+                    unmarshalledObject.Sources = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("sourceTypes", targetDepth))
+                if (context.TestExpression("subscriberArn", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<SourceType, SourceTypeUnmarshaller>(SourceTypeUnmarshaller.Instance);
-                    unmarshalledObject.SourceTypes = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubscriberArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("subscriberDescription", targetDepth))
@@ -118,34 +118,34 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
                     unmarshalledObject.SubscriberDescription = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("subscriberEndpoint", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubscriberEndpoint = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("subscriberId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SubscriberId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("subscriberIdentity", targetDepth))
+                {
+                    var unmarshaller = AwsIdentityUnmarshaller.Instance;
+                    unmarshalledObject.SubscriberIdentity = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("subscriberName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SubscriberName = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("subscriptionEndpoint", targetDepth))
+                if (context.TestExpression("subscriberStatus", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionEndpoint = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("subscriptionId", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionId = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("subscriptionProtocol", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionProtocol = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("subscriptionStatus", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.SubscriptionStatus = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SubscriberStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("updatedAt", targetDepth))

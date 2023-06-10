@@ -58,148 +58,109 @@ namespace Amazon.Runtime.Internal.Endpoints.StandardLibrary
         {
 ");
             
-            #line 34 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
- foreach(var partition in partitions.partitions) { 
+            #line 33 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+ foreach(var partition in Partitions.partitions) { 
             
             #line default
             #line hidden
             this.Write("            var ");
             
-            #line 35 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 34 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.id.ToVariableName()));
             
             #line default
             #line hidden
             this.Write(" = new PartitionAttributesShape\r\n            {\r\n                name = \"");
             
-            #line 37 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 36 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.name));
             
             #line default
             #line hidden
             this.Write("\",\r\n                dnsSuffix = \"");
             
-            #line 38 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 37 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.dnsSuffix));
             
             #line default
             #line hidden
             this.Write("\",\r\n                dualStackDnsSuffix = \"");
             
-            #line 39 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 38 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.dualStackDnsSuffix));
             
             #line default
             #line hidden
             this.Write("\",\r\n                supportsFIPS = ");
             
-            #line 40 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 39 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.supportsFIPS.ToString().ToLower()));
             
             #line default
             #line hidden
             this.Write(",\r\n                supportsDualStack = ");
             
-            #line 41 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 40 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.outputs.supportsDualStack.ToString().ToLower()));
             
             #line default
             #line hidden
             this.Write("\r\n            };\r\n            _partitionsByRegex.Add(@\"");
             
-            #line 43 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 42 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.regionRegex));
             
             #line default
             #line hidden
             this.Write("\", ");
             
-            #line 43 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 42 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.id.ToVariableName()));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 44 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 43 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
      foreach(var region in partition.regions.Keys) { 
             
             #line default
             #line hidden
             this.Write("            _partitionsByRegionName.Add(\"");
             
-            #line 45 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 44 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(region));
             
             #line default
             #line hidden
             this.Write("\", ");
             
-            #line 45 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 44 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(partition.id.ToVariableName()));
             
             #line default
             #line hidden
             this.Write(");\r\n");
             
-            #line 46 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 45 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
      } 
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 48 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+            #line 47 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("            _defaultPartition = aws;\r\n        }\r\n    }\r\n}\r\n");
+            this.Write("            _defaultPartition = aws;\r\n        }\r\n    }\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
+        #line 53 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\Endpoints\PartitionsTemplate.tt"
 
-private global::ServiceClientGenerator.Endpoints.Partitions.Partitions _partitionsField;
-
-/// <summary>
-/// Access the partitions parameter of the template.
-/// </summary>
-private global::ServiceClientGenerator.Endpoints.Partitions.Partitions partitions
-{
-    get
-    {
-        return this._partitionsField;
-    }
-}
-
-
-/// <summary>
-/// Initialize the template
-/// </summary>
-public virtual void Initialize()
-{
-    if ((this.Errors.HasErrors == false))
-    {
-bool partitionsValueAcquired = false;
-if (this.Session.ContainsKey("partitions"))
-{
-    this._partitionsField = ((global::ServiceClientGenerator.Endpoints.Partitions.Partitions)(this.Session["partitions"]));
-    partitionsValueAcquired = true;
-}
-if ((partitionsValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("partitions");
-    if ((data != null))
-    {
-        this._partitionsField = ((global::ServiceClientGenerator.Endpoints.Partitions.Partitions)(data));
-    }
-}
-
-
-    }
-}
-
+public ServiceClientGenerator.Endpoints.Partitions.Partitions Partitions { get; set; }
 
         
         #line default

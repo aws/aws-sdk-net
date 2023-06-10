@@ -57,6 +57,17 @@ namespace Amazon.VoiceID.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.FraudsterSimilarityThreshold);
             }
 
+            if(requestObject.IsSetWatchlistIds())
+            {
+                context.Writer.WritePropertyName("WatchlistIds");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectWatchlistIdsListValue in requestObject.WatchlistIds)
+                {
+                        context.Writer.Write(requestObjectWatchlistIdsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
         }
 
         /// <summary>

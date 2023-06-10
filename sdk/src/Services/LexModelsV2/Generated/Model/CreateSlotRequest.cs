@@ -151,7 +151,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property MultipleValuesSetting. 
         /// <para>
         /// Indicates whether the slot returns multiple values in one response. Multi-value slots
-        /// are only available in the en-US locale. If you set this value to <code>true</code>
+        /// are only available in the <code>en-US</code> locale. If you set this value to <code>true</code>
         /// in any other locale, Amazon Lex throws a <code>ValidationException</code>. 
         /// </para>
         ///  

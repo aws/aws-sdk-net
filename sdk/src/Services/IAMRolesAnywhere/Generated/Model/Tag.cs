@@ -42,7 +42,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The tag key.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -61,7 +61,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The tag value.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=256)]
         public string Value
         {
             get { return this._value; }

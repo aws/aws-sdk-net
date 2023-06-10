@@ -100,7 +100,6 @@ namespace Amazon.SSMContacts.Model
         /// Gets and sets the property DeliveryAddress. 
         /// <para>
         /// The details that Incident Manager uses when trying to engage the contact channel.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -60,6 +60,7 @@ namespace Amazon.Lightsail.Model
         /// The master user password for the <code>password version</code> specified.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }

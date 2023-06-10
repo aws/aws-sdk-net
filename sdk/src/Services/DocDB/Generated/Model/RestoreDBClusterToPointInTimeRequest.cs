@@ -292,6 +292,11 @@ namespace Amazon.DocDB.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
+        /// Constraints: You can't specify <code>copy-on-write</code> if the engine version of
+        /// the source DB cluster is earlier than 1.11.
+        /// </para>
+        ///  
+        /// <para>
         /// If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
         /// restored as a full copy of the source DB cluster.
         /// </para>

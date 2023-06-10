@@ -46,7 +46,8 @@ namespace Amazon.DynamoDBv2.Model
     /// A single <code>SELECT</code> statement response can return up to the maximum number
     /// of items (if using the Limit parameter) or a maximum of 1 MB of data (and then apply
     /// any filtering to the results using <code>WHERE</code> clause). If <code>LastEvaluatedKey</code>
-    /// is present in the response, you need to paginate the result set.
+    /// is present in the response, you need to paginate the result set. If <code>NextToken</code>
+    /// is present, you need to paginate the result set and include <code>NextToken</code>.
     /// </para>
     /// </summary>
     public partial class ExecuteStatementRequest : AmazonDynamoDBRequest

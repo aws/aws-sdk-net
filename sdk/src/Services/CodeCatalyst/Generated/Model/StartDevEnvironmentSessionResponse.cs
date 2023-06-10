@@ -42,7 +42,7 @@ namespace Amazon.CodeCatalyst.Model
         /// <summary>
         /// Gets and sets the property AccessDetails.
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public DevEnvironmentAccessDetails AccessDetails
         {
             get { return this._accessDetails; }

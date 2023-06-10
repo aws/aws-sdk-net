@@ -137,7 +137,8 @@ namespace Amazon.FSx.Model
         /// an unused IP address range for you from the 198.19.* range. By default in the Amazon
         /// FSx console, Amazon FSx chooses the last 64 IP addresses from the VPC’s primary CIDR
         /// range to use as the endpoint IP address range for the file system. You can have overlapping
-        /// endpoint IP addresses for file systems deployed in the same VPC/route tables.
+        /// endpoint IP addresses for file systems deployed in the same VPC/route tables, as long
+        /// as they don't overlap with any subnet.
         /// </para>
         /// </summary>
         [AWSProperty(Min=9, Max=17)]
@@ -160,7 +161,7 @@ namespace Amazon.FSx.Model
         /// administer your file system using the NetApp ONTAP CLI and REST API.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=50)]
+        [AWSProperty(Sensitive=true, Min=8, Max=50)]
         public string FsxAdminPassword
         {
             get { return this._fsxAdminPassword; }

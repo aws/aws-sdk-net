@@ -102,7 +102,7 @@ namespace Amazon.SecurityToken.Model
         /// The secret access key that can be used to sign requests.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string SecretAccessKey
         {
             get { return this._secretAccessKey; }

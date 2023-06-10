@@ -30,9 +30,9 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the ListExecutors operation.
-    /// Lists, in descending order, the executors that have been submitted to a session. Newer
-    /// executors are listed first; older executors are listed later. The result can be optionally
-    /// filtered by state.
+    /// Lists, in descending order, the executors that joined a session. Newer executors are
+    /// listed first; older executors are listed later. The result can be optionally filtered
+    /// by state.
     /// </summary>
     public partial class ListExecutorsRequest : AmazonAthenaRequest
     {

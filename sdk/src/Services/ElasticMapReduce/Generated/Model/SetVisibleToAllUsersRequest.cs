@@ -34,17 +34,17 @@ namespace Amazon.ElasticMapReduce.Model
     /// <para>
     /// The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible
     /// to all users in your account. To restrict cluster access using an IAM policy, see
-    /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html">Identity
-    /// and Access Management for EMR</a>. 
+    /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-IAM.html">Identity
+    /// and Access Management for Amazon EMR</a>. 
     /// </para>
     ///  </important> 
     /// <para>
-    /// Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>,
-    /// IAM principals in the Amazon Web Services account can perform EMR cluster actions
+    /// Sets the <a>Cluster$VisibleToAllUsers</a> value for an Amazon EMR cluster. When <code>true</code>,
+    /// IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions
     /// that their IAM policies allow. When <code>false</code>, only the IAM principal that
-    /// created the cluster and the Amazon Web Services account root user can perform EMR
-    /// actions on the cluster, regardless of IAM permissions policies attached to other IAM
-    /// principals.
+    /// created the cluster and the Amazon Web Services account root user can perform Amazon
+    /// EMR actions on the cluster, regardless of IAM permissions policies attached to other
+    /// IAM principals.
     /// </para>
     ///  
     /// <para>
@@ -53,8 +53,9 @@ namespace Amazon.ElasticMapReduce.Model
     /// </para>
     ///  
     /// <para>
-    /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-    /// the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.
+    /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_IAM_emr-with-IAM.html#security_set_visible_to_all_users">Understanding
+    /// the Amazon EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+    /// Guide</i>.
     /// </para>
     /// </summary>
     public partial class SetVisibleToAllUsersRequest : AmazonElasticMapReduceRequest
@@ -85,10 +86,10 @@ namespace Amazon.ElasticMapReduce.Model
         /// Gets and sets the property VisibleToAllUsers. 
         /// <para>
         /// A value of <code>true</code> indicates that an IAM principal in the Amazon Web Services
-        /// account can perform EMR actions on the cluster that the IAM policies attached to the
-        /// principal allow. A value of <code>false</code> indicates that only the IAM principal
-        /// that created the cluster and the Amazon Web Services root user can perform EMR actions
-        /// on the cluster.
+        /// account can perform Amazon EMR actions on the cluster that the IAM policies attached
+        /// to the principal allow. A value of <code>false</code> indicates that only the IAM
+        /// principal that created the cluster and the Amazon Web Services root user can perform
+        /// Amazon EMR actions on the cluster.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

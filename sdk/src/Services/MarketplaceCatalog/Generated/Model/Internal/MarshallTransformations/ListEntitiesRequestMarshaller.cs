@@ -105,6 +105,12 @@ namespace Amazon.MarketplaceCatalog.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NextToken);
                 }
 
+                if(publicRequest.IsSetOwnershipType())
+                {
+                    context.Writer.WritePropertyName("OwnershipType");
+                    context.Writer.Write(publicRequest.OwnershipType);
+                }
+
                 if(publicRequest.IsSetSort())
                 {
                     context.Writer.WritePropertyName("Sort");

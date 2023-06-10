@@ -70,6 +70,9 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
             
             if (publicRequest.IsSetStartingToken())
                 request.Parameters.Add("startingToken", StringUtils.FromString(publicRequest.StartingToken));
+            
+            if (publicRequest.IsSetStatus())
+                request.Parameters.Add("status", StringUtils.FromString(publicRequest.Status));
             request.ResourcePath = "/run";
             request.UseQueryString = true;
             

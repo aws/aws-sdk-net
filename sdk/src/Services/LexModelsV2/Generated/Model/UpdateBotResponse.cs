@@ -34,8 +34,10 @@ namespace Amazon.LexModelsV2.Model
     public partial class UpdateBotResponse : AmazonWebServiceResponse
     {
         private string _botId;
+        private List<BotMember> _botMembers = new List<BotMember>();
         private string _botName;
         private BotStatus _botStatus;
+        private BotType _botType;
         private DateTime? _creationDateTime;
         private DataPrivacy _dataPrivacy;
         private string _description;
@@ -60,6 +62,25 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetBotId()
         {
             return this._botId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BotMembers. 
+        /// <para>
+        /// The list of bot members in the network that was updated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<BotMember> BotMembers
+        {
+            get { return this._botMembers; }
+            set { this._botMembers = value; }
+        }
+
+        // Check to see if BotMembers property is set
+        internal bool IsSetBotMembers()
+        {
+            return this._botMembers != null && this._botMembers.Count > 0; 
         }
 
         /// <summary>
@@ -99,6 +120,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetBotStatus()
         {
             return this._botStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BotType. 
+        /// <para>
+        /// The type of the bot that was updated.
+        /// </para>
+        /// </summary>
+        public BotType BotType
+        {
+            get { return this._botType; }
+            set { this._botType = value; }
+        }
+
+        // Check to see if BotType property is set
+        internal bool IsSetBotType()
+        {
+            return this._botType != null;
         }
 
         /// <summary>

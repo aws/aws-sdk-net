@@ -74,5 +74,28 @@ namespace Amazon.Runtime.Internal.Util
             return hasCredentialsProperties;
         }
 
+        public override void EditSection(string sectionName, SortedDictionary<string, string> properties)
+        {
+            this.EditSection(sectionName, isSsoSession: false, properties);
+        }
+
+        public void EditSection(string sectionName, bool isSsoSession, SortedDictionary<string, string> properties)
+        {
+            if (!ProfileMarkerRequired && !isSsoSession)
+            {
+                base.EditSection(sectionName, properties);
+                return;
+            }
+
+            var marker = isSsoSession ? SsoSessionMarker : ProfileMarker;
+
+            var credentialSectionNameRegex = new Regex("^" + marker + "[ \\t]+" + Regex.Escape(sectionName) + "$", RegexOptions.Singleline);
+
+            if(SectionExists(credentialSectionNameRegex, out var fullSectionName))
+            {
+                base.EditSection(fullSectionName, properties);
+            }
+        }
+
     }
 }

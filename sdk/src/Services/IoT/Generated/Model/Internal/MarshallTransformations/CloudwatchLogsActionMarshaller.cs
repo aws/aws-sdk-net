@@ -45,6 +45,12 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(CloudwatchLogsAction requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetBatchMode())
+            {
+                context.Writer.WritePropertyName("batchMode");
+                context.Writer.Write(requestObject.BatchMode);
+            }
+
             if(requestObject.IsSetLogGroupName())
             {
                 context.Writer.WritePropertyName("logGroupName");

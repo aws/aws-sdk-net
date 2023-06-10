@@ -84,6 +84,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SQS")]
+        public void CancelMessageMoveTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelMessageMoveTask");
+
+            var request = InstantiateClassGenerator.Execute<CancelMessageMoveTaskRequest>();
+            var marshaller = new CancelMessageMoveTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = CancelMessageMoveTaskResponseUnmarshaller.Instance.Unmarshall(context)
+                as CancelMessageMoveTaskResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
+        public void CancelMessageMoveTask_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelMessageMoveTask");
+
+            var request = InstantiateClassGenerator.Execute<CancelMessageMoveTaskRequest>();
+            var marshaller = new CancelMessageMoveTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CancelMessageMoveTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
+        public void CancelMessageMoveTask_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CancelMessageMoveTask");
+
+            var request = InstantiateClassGenerator.Execute<CancelMessageMoveTaskRequest>();
+            var marshaller = new CancelMessageMoveTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = CancelMessageMoveTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
         public void ChangeMessageVisibilityMarshallTest()
         {
             var operation = service_model.FindOperation("ChangeMessageVisibility");
@@ -658,6 +726,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Query")]
         [TestCategory("SQS")]
+        public void ListMessageMoveTasksMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListMessageMoveTasks");
+
+            var request = InstantiateClassGenerator.Execute<ListMessageMoveTasksRequest>();
+            var marshaller = new ListMessageMoveTasksRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = ListMessageMoveTasksResponseUnmarshaller.Instance.Unmarshall(context)
+                as ListMessageMoveTasksResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
+        public void ListMessageMoveTasks_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListMessageMoveTasks");
+
+            var request = InstantiateClassGenerator.Execute<ListMessageMoveTasksRequest>();
+            var marshaller = new ListMessageMoveTasksRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListMessageMoveTasksResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
+        public void ListMessageMoveTasks_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListMessageMoveTasks");
+
+            var request = InstantiateClassGenerator.Execute<ListMessageMoveTasksRequest>();
+            var marshaller = new ListMessageMoveTasksRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = ListMessageMoveTasksResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
         public void ListQueuesMarshallTest()
         {
             var operation = service_model.FindOperation("ListQueues");
@@ -1087,6 +1223,74 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
             var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
             var response = SetQueueAttributesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
+        public void StartMessageMoveTaskMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartMessageMoveTask");
+
+            var request = InstantiateClassGenerator.Execute<StartMessageMoveTaskRequest>();
+            var marshaller = new StartMessageMoveTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute();
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, null);
+            var response = StartMessageMoveTaskResponseUnmarshaller.Instance.Unmarshall(context)
+                as StartMessageMoveTaskResponse;   
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);       
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
+        public void StartMessageMoveTask_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartMessageMoveTask");
+
+            var request = InstantiateClassGenerator.Execute<StartMessageMoveTaskRequest>();
+            var marshaller = new StartMessageMoveTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StartMessageMoveTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Query")]
+        [TestCategory("SQS")]
+        public void StartMessageMoveTask_UnsupportedOperationExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("StartMessageMoveTask");
+
+            var request = InstantiateClassGenerator.Execute<StartMessageMoveTaskRequest>();
+            var marshaller = new StartMessageMoveTaskRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            var validator = new AWSQueryValidator(internalRequest.Parameters, request, service_model, operation);
+            validator.Validate();
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("UnsupportedOperationException"));
+            var payloadResponse = new XmlSampleGenerator(service_model, operation).Execute(exception);
+            var context = new XmlUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, null, true);
+            var response = StartMessageMoveTaskResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

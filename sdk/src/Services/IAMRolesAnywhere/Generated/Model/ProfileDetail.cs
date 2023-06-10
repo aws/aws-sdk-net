@@ -197,8 +197,8 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property RequireInstanceProperties. 
         /// <para>
-        /// Specifies whether instance properties are required in <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-        /// requests with this profile. 
+        /// Specifies whether instance properties are required in temporary credential requests
+        /// with this profile. 
         /// </para>
         /// </summary>
         public bool RequireInstanceProperties
@@ -216,8 +216,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property RoleArns. 
         /// <para>
-        /// A list of IAM roles that this profile can assume in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-        /// operation.
+        /// A list of IAM roles that this profile can assume in a temporary credential request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

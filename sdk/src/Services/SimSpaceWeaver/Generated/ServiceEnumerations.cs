@@ -337,6 +337,10 @@ namespace Amazon.SimSpaceWeaver
         /// </summary>
         public static readonly SimulationStatus FAILED = new SimulationStatus("FAILED");
         /// <summary>
+        /// Constant SNAPSHOT_IN_PROGRESS for SimulationStatus
+        /// </summary>
+        public static readonly SimulationStatus SNAPSHOT_IN_PROGRESS = new SimulationStatus("SNAPSHOT_IN_PROGRESS");
+        /// <summary>
         /// Constant STARTED for SimulationStatus
         /// </summary>
         public static readonly SimulationStatus STARTED = new SimulationStatus("STARTED");

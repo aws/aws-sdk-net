@@ -70,10 +70,28 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     unmarshalledObject.AmazonId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CertificateId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CertificateId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("DeviceCertificates", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<CertificateList, CertificateListUnmarshaller>(CertificateListUnmarshaller.Instance);
                     unmarshalledObject.DeviceCertificates = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DeviceProfileId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.DeviceProfileId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("PrivateKeys", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<CertificateList, CertificateListUnmarshaller>(CertificateListUnmarshaller.Instance);
+                    unmarshalledObject.PrivateKeys = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("SidewalkId", targetDepth))
@@ -86,6 +104,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.SidewalkManufacturingSn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("Status", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

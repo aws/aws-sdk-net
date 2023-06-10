@@ -54,9 +54,9 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The URL that you get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid
-    /// only for 5 minutes. If you try to use the URL after the 5-minute limit expires, you
-    /// are directed to the Amazon Web Services console sign-in page.
+    /// The URL that you get from a call to <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePresignedNotebookInstanceUrl.html">CreatePresignedNotebookInstanceUrl</a>
+    /// is valid only for 5 minutes. If you try to use the URL after the 5-minute limit expires,
+    /// you are directed to the Amazon Web Services console sign-in page.
     /// </para>
     ///  </note>
     /// </summary>

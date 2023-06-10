@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateProxySession operation.
-    /// 
+    /// Updates the specified proxy session details, such as voice or SMS capabilities.
     /// </summary>
     public partial class UpdateProxySessionRequest : AmazonChimeSDKVoiceRequest
     {
@@ -40,7 +40,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property Capabilities.
+        /// Gets and sets the property Capabilities. 
+        /// <para>
+        /// The proxy session capabilities.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> Capabilities
@@ -56,7 +59,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExpiryMinutes.
+        /// Gets and sets the property ExpiryMinutes. 
+        /// <para>
+        /// The number of minutes allowed for the proxy session.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public int ExpiryMinutes
@@ -72,7 +78,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProxySessionId.
+        /// Gets and sets the property ProxySessionId. 
+        /// <para>
+        /// The proxy session ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string ProxySessionId
@@ -88,7 +97,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=128)]
         public string VoiceConnectorId

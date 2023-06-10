@@ -45,8 +45,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HyperParameterTuningJobObjective. 
         /// <para>
-        /// The <a>HyperParameterTuningJobObjective</a> specifies the objective metric used to
-        /// evaluate the performance of training jobs launched by this tuning job.
+        /// The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a>
+        /// specifies the objective metric used to evaluate the performance of training jobs launched
+        /// by this tuning job.
         /// </para>
         /// </summary>
         public HyperParameterTuningJobObjective HyperParameterTuningJobObjective
@@ -64,9 +65,10 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ParameterRanges. 
         /// <para>
-        /// The <a>ParameterRanges</a> object that specifies the ranges of hyperparameters that
-        /// this tuning job searches over to find the optimal configuration for the highest model
-        /// performance against your chosen objective metric. 
+        /// The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ParameterRanges.html">ParameterRanges</a>
+        /// object that specifies the ranges of hyperparameters that this tuning job searches
+        /// over to find the optimal configuration for the highest model performance against your
+        /// chosen objective metric. 
         /// </para>
         /// </summary>
         public ParameterRanges ParameterRanges
@@ -105,8 +107,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ResourceLimits. 
         /// <para>
-        /// The <a>ResourceLimits</a> object that specifies the maximum number of training and
-        /// parallel training jobs that can be used for this hyperparameter tuning job.
+        /// The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>
+        /// object that specifies the maximum number of training and parallel training jobs that
+        /// can be used for this hyperparameter tuning job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

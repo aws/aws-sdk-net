@@ -1,0 +1,78 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html lang="en-GB">
+
+<head>
+    <meta name="guide-name" content="API Reference" />
+    <meta name="service-name" content="AWS SDK for .NET Version 3" />
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8">
+    <title>Mobile Navigation Bar | AWS SDK for .NET Version 3</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+        }
+
+
+        header {
+            width: 100%;
+            background: #242424;
+            height: 40px;
+        }
+
+        .hamburger {
+            background: none;
+            position: absolute;
+            left: 6px;
+            color: #dfdfdf;
+            border: 0;
+            font-size: 1.5em;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .cross {
+            background: none;
+            position: absolute;
+            left: 8px;
+            color: #dfdfdf;
+            border: 0;
+            font-size: 3em;
+            font-weight: bold;
+            cursor: pointer;
+            display: none;
+        }
+    </style>
+    <script type="text/javascript" src="./resources/jquery.min.js"></script>
+
+    <script>
+        jQuery(function () {
+            jQuery(".hamburger").click(function () {
+                window.parent.showTOC();
+            });
+
+            jQuery(".cross").click(function () {
+                window.parent.showContentPane();
+            });
+        });
+
+        function showHamburgerButton() {
+            jQuery(".cross").hide();
+            jQuery(".hamburger").show();
+        }
+        
+        function showCrossButton() {
+            jQuery(".hamburger").hide();
+            jQuery(".cross").show();
+        }
+
+    </script>
+</head>
+
+<body>
+    <header>
+        <button aria-expanded="false" class="hamburger">&#9776;</button>
+        <button aria-expanded="true" class="cross">&#735;</button>
+    </header>
+</body>
+
+</html>

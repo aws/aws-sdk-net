@@ -36,8 +36,8 @@ namespace Amazon.CloudFormation.Model
     /// 
     ///  
     /// <para>
-    /// Once you have activated a public third-party extension in your account and region,
-    /// use <a href="AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
+    /// Once you have activated a public third-party extension in your account and Region,
+    /// use <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_SetTypeConfiguration.html">SetTypeConfiguration</a>
     /// to specify configuration properties for the extension. For more information, see <a
     /// href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-register.html#registry-set-configuration">Configuring
     /// extensions at the account level</a> in the <i>CloudFormation User Guide</i>.
@@ -59,7 +59,7 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property AutoUpdate. 
         /// <para>
-        /// Whether to automatically update the extension in this account and region when a new
+        /// Whether to automatically update the extension in this account and Region when a new
         /// <i>minor</i> version is published by the extension publisher. Major versions released
         /// by the publisher must be manually updated.
         /// </para>
@@ -100,7 +100,10 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property LoggingConfig.
+        /// Gets and sets the property LoggingConfig. 
+        /// <para>
+        /// Contains logging configuration information for an extension.
+        /// </para>
         /// </summary>
         public LoggingConfig LoggingConfig
         {
@@ -237,15 +240,15 @@ namespace Amazon.CloudFormation.Model
         /// <summary>
         /// Gets and sets the property TypeNameAlias. 
         /// <para>
-        /// An alias to assign to the public extension, in this account and region. If you specify
+        /// An alias to assign to the public extension, in this account and Region. If you specify
         /// an alias for the extension, CloudFormation treats the alias as the extension type
-        /// name within this account and region. You must use the alias to refer to the extension
+        /// name within this account and Region. You must use the alias to refer to the extension
         /// in your templates, API calls, and CloudFormation console.
         /// </para>
         ///  
         /// <para>
-        /// An extension alias must be unique within a given account and region. You can activate
-        /// the same public resource multiple times in the same account and region, using different
+        /// An extension alias must be unique within a given account and Region. You can activate
+        /// the same public resource multiple times in the same account and Region, using different
         /// type name aliases.
         /// </para>
         /// </summary>

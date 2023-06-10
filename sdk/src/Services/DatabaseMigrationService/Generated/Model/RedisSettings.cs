@@ -48,6 +48,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// options of the <code>AuthType</code> setting for a Redis target endpoint.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AuthPassword
         {
             get { return this._authPassword; }

@@ -43,6 +43,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _asmServer;
         private string _asmUser;
         private CharLengthSemantics _charLengthSemantics;
+        private bool? _convertTimestampWithZoneToUTC;
         private string _databaseName;
         private bool? _directPathNoLog;
         private bool? _directPathParallelLoad;
@@ -220,6 +221,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// for change data capture (CDC) on an Oracle source database</a>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AsmPassword
         {
             get { return this._asmPassword; }
@@ -298,6 +300,25 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetCharLengthSemantics()
         {
             return this._charLengthSemantics != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConvertTimestampWithZoneToUTC. 
+        /// <para>
+        /// When true, converts timestamps with the <code>timezone</code> datatype to their UTC
+        /// value.
+        /// </para>
+        /// </summary>
+        public bool ConvertTimestampWithZoneToUTC
+        {
+            get { return this._convertTimestampWithZoneToUTC.GetValueOrDefault(); }
+            set { this._convertTimestampWithZoneToUTC = value; }
+        }
+
+        // Check to see if ConvertTimestampWithZoneToUTC property is set
+        internal bool IsSetConvertTimestampWithZoneToUTC()
+        {
+            return this._convertTimestampWithZoneToUTC.HasValue; 
         }
 
         /// <summary>
@@ -520,6 +541,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Endpoint connection password.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }
@@ -751,6 +773,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Migration Service User Guide</i>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string SecurityDbEncryption
         {
             get { return this._securityDbEncryption; }
@@ -792,6 +815,12 @@ namespace Amazon.DatabaseMigrationService.Model
         /// Gets and sets the property ServerName. 
         /// <para>
         /// Fully qualified domain name of the endpoint.
+        /// </para>
+        ///  
+        /// <para>
+        /// For an Amazon RDS Oracle instance, this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+        /// in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+        /// field.
         /// </para>
         /// </summary>
         public string ServerName

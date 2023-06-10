@@ -43,6 +43,7 @@ namespace Amazon.Chime.Model
         /// The participant's phone number.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
@@ -61,6 +62,7 @@ namespace Amazon.Chime.Model
         /// The participant's proxy phone number.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ProxyPhoneNumber
         {
             get { return this._proxyPhoneNumber; }

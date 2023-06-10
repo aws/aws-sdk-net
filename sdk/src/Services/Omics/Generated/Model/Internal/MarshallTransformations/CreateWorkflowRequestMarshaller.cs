@@ -65,6 +65,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAccelerators())
+                {
+                    context.Writer.WritePropertyName("accelerators");
+                    context.Writer.Write(publicRequest.Accelerators);
+                }
+
                 if(publicRequest.IsSetDefinitionUri())
                 {
                     context.Writer.WritePropertyName("definitionUri");

@@ -82,6 +82,12 @@ namespace Amazon.SageMakerGeospatial.Model.Internal.MarshallTransformations
                     unmarshalledObject.ZoneS3Path = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ZoneS3PathKmsKeyId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ZoneS3PathKmsKeyId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

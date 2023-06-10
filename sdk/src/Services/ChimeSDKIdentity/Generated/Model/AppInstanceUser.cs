@@ -35,6 +35,7 @@ namespace Amazon.ChimeSDKIdentity.Model
     {
         private string _appInstanceUserArn;
         private DateTime? _createdTimestamp;
+        private ExpirationSettings _expirationSettings;
         private DateTime? _lastUpdatedTimestamp;
         private string _metadata;
         private string _name;
@@ -77,6 +78,24 @@ namespace Amazon.ChimeSDKIdentity.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpirationSettings. 
+        /// <para>
+        /// The interval after which an <code>AppInstanceUser</code> is automatically deleted.
+        /// </para>
+        /// </summary>
+        public ExpirationSettings ExpirationSettings
+        {
+            get { return this._expirationSettings; }
+            set { this._expirationSettings = value; }
+        }
+
+        // Check to see if ExpirationSettings property is set
+        internal bool IsSetExpirationSettings()
+        {
+            return this._expirationSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LastUpdatedTimestamp. 
         /// <para>
         /// The time at which the <code>AppInstanceUser</code> was last updated.
@@ -100,7 +119,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The metadata of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -119,7 +138,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The name of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100)]
         public string Name
         {
             get { return this._name; }

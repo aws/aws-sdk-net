@@ -1143,6 +1143,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableECSServiceField ServiceArn = new ExportableECSServiceField("ServiceArn");
         /// <summary>
+        /// Constant Tags for ExportableECSServiceField
+        /// </summary>
+        public static readonly ExportableECSServiceField Tags = new ExportableECSServiceField("Tags");
+        /// <summary>
         /// Constant UtilizationMetricsCpuMaximum for ExportableECSServiceField
         /// </summary>
         public static readonly ExportableECSServiceField UtilizationMetricsCpuMaximum = new ExportableECSServiceField("UtilizationMetricsCpuMaximum");
@@ -1249,6 +1253,14 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableInstanceField EffectiveRecommendationPreferencesInferredWorkloadTypes = new ExportableInstanceField("EffectiveRecommendationPreferencesInferredWorkloadTypes");
         /// <summary>
+        /// Constant ExternalMetricStatusCode for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField ExternalMetricStatusCode = new ExportableInstanceField("ExternalMetricStatusCode");
+        /// <summary>
+        /// Constant ExternalMetricStatusReason for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField ExternalMetricStatusReason = new ExportableInstanceField("ExternalMetricStatusReason");
+        /// <summary>
         /// Constant Finding for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField Finding = new ExportableInstanceField("Finding");
@@ -1268,6 +1280,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant InstanceName for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField InstanceName = new ExportableInstanceField("InstanceName");
+        /// <summary>
+        /// Constant InstanceState for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField InstanceState = new ExportableInstanceField("InstanceState");
         /// <summary>
         /// Constant LastRefreshTimestamp for ExportableInstanceField
         /// </summary>
@@ -1348,6 +1364,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant RecommendationsSourcesRecommendationSourceType for ExportableInstanceField
         /// </summary>
         public static readonly ExportableInstanceField RecommendationsSourcesRecommendationSourceType = new ExportableInstanceField("RecommendationsSourcesRecommendationSourceType");
+        /// <summary>
+        /// Constant Tags for ExportableInstanceField
+        /// </summary>
+        public static readonly ExportableInstanceField Tags = new ExportableInstanceField("Tags");
         /// <summary>
         /// Constant UtilizationMetricsCpuMaximum for ExportableInstanceField
         /// </summary>
@@ -1535,6 +1555,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableLambdaFunctionField RecommendationOptionsSavingsOpportunityPercentage = new ExportableLambdaFunctionField("RecommendationOptionsSavingsOpportunityPercentage");
         /// <summary>
+        /// Constant Tags for ExportableLambdaFunctionField
+        /// </summary>
+        public static readonly ExportableLambdaFunctionField Tags = new ExportableLambdaFunctionField("Tags");
+        /// <summary>
         /// Constant UtilizationMetricsDurationAverage for ExportableLambdaFunctionField
         /// </summary>
         public static readonly ExportableLambdaFunctionField UtilizationMetricsDurationAverage = new ExportableLambdaFunctionField("UtilizationMetricsDurationAverage");
@@ -1685,6 +1709,14 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly ExportableVolumeField RecommendationOptionsSavingsOpportunityPercentage = new ExportableVolumeField("RecommendationOptionsSavingsOpportunityPercentage");
         /// <summary>
+        /// Constant RootVolume for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField RootVolume = new ExportableVolumeField("RootVolume");
+        /// <summary>
+        /// Constant Tags for ExportableVolumeField
+        /// </summary>
+        public static readonly ExportableVolumeField Tags = new ExportableVolumeField("Tags");
+        /// <summary>
         /// Constant UtilizationMetricsVolumeReadBytesPerSecondMaximum for ExportableVolumeField
         /// </summary>
         public static readonly ExportableVolumeField UtilizationMetricsVolumeReadBytesPerSecondMaximum = new ExportableVolumeField("UtilizationMetricsVolumeReadBytesPerSecondMaximum");
@@ -1799,6 +1831,88 @@ namespace Amazon.ComputeOptimizer
 
 
     /// <summary>
+    /// Constants used for properties of type ExternalMetricStatusCode.
+    /// </summary>
+    public class ExternalMetricStatusCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATADOG_INTEGRATION_ERROR for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode DATADOG_INTEGRATION_ERROR = new ExternalMetricStatusCode("DATADOG_INTEGRATION_ERROR");
+        /// <summary>
+        /// Constant DYNATRACE_INTEGRATION_ERROR for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode DYNATRACE_INTEGRATION_ERROR = new ExternalMetricStatusCode("DYNATRACE_INTEGRATION_ERROR");
+        /// <summary>
+        /// Constant INSTANA_INTEGRATION_ERROR for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INSTANA_INTEGRATION_ERROR = new ExternalMetricStatusCode("INSTANA_INTEGRATION_ERROR");
+        /// <summary>
+        /// Constant INSUFFICIENT_DATADOG_METRICS for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INSUFFICIENT_DATADOG_METRICS = new ExternalMetricStatusCode("INSUFFICIENT_DATADOG_METRICS");
+        /// <summary>
+        /// Constant INSUFFICIENT_DYNATRACE_METRICS for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INSUFFICIENT_DYNATRACE_METRICS = new ExternalMetricStatusCode("INSUFFICIENT_DYNATRACE_METRICS");
+        /// <summary>
+        /// Constant INSUFFICIENT_INSTANA_METRICS for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INSUFFICIENT_INSTANA_METRICS = new ExternalMetricStatusCode("INSUFFICIENT_INSTANA_METRICS");
+        /// <summary>
+        /// Constant INSUFFICIENT_NEWRELIC_METRICS for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INSUFFICIENT_NEWRELIC_METRICS = new ExternalMetricStatusCode("INSUFFICIENT_NEWRELIC_METRICS");
+        /// <summary>
+        /// Constant INTEGRATION_SUCCESS for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode INTEGRATION_SUCCESS = new ExternalMetricStatusCode("INTEGRATION_SUCCESS");
+        /// <summary>
+        /// Constant NEWRELIC_INTEGRATION_ERROR for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode NEWRELIC_INTEGRATION_ERROR = new ExternalMetricStatusCode("NEWRELIC_INTEGRATION_ERROR");
+        /// <summary>
+        /// Constant NO_EXTERNAL_METRIC_SET for ExternalMetricStatusCode
+        /// </summary>
+        public static readonly ExternalMetricStatusCode NO_EXTERNAL_METRIC_SET = new ExternalMetricStatusCode("NO_EXTERNAL_METRIC_SET");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExternalMetricStatusCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExternalMetricStatusCode FindValue(string value)
+        {
+            return FindValue<ExternalMetricStatusCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExternalMetricStatusCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FileFormat.
     /// </summary>
     public class FileFormat : ConstantClass
@@ -1858,6 +1972,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant FindingReasonCodes for FilterName
         /// </summary>
         public static readonly FilterName FindingReasonCodes = new FilterName("FindingReasonCodes");
+        /// <summary>
+        /// Constant InferredWorkloadTypes for FilterName
+        /// </summary>
+        public static readonly FilterName InferredWorkloadTypes = new FilterName("InferredWorkloadTypes");
         /// <summary>
         /// Constant RecommendationSourceType for FilterName
         /// </summary>
@@ -2025,6 +2143,10 @@ namespace Amazon.ComputeOptimizer
         /// </summary>
         public static readonly InferredWorkloadType ApacheHadoop = new InferredWorkloadType("ApacheHadoop");
         /// <summary>
+        /// Constant Kafka for InferredWorkloadType
+        /// </summary>
+        public static readonly InferredWorkloadType Kafka = new InferredWorkloadType("Kafka");
+        /// <summary>
         /// Constant Memcached for InferredWorkloadType
         /// </summary>
         public static readonly InferredWorkloadType Memcached = new InferredWorkloadType("Memcached");
@@ -2040,6 +2162,10 @@ namespace Amazon.ComputeOptimizer
         /// Constant Redis for InferredWorkloadType
         /// </summary>
         public static readonly InferredWorkloadType Redis = new InferredWorkloadType("Redis");
+        /// <summary>
+        /// Constant SQLServer for InferredWorkloadType
+        /// </summary>
+        public static readonly InferredWorkloadType SQLServer = new InferredWorkloadType("SQLServer");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -2226,6 +2352,72 @@ namespace Amazon.ComputeOptimizer
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InstanceRecommendationFindingReasonCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InstanceState.
+    /// </summary>
+    public class InstanceState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Pending for InstanceState
+        /// </summary>
+        public static readonly InstanceState Pending = new InstanceState("pending");
+        /// <summary>
+        /// Constant Running for InstanceState
+        /// </summary>
+        public static readonly InstanceState Running = new InstanceState("running");
+        /// <summary>
+        /// Constant ShuttingDown for InstanceState
+        /// </summary>
+        public static readonly InstanceState ShuttingDown = new InstanceState("shutting-down");
+        /// <summary>
+        /// Constant Stopped for InstanceState
+        /// </summary>
+        public static readonly InstanceState Stopped = new InstanceState("stopped");
+        /// <summary>
+        /// Constant Stopping for InstanceState
+        /// </summary>
+        public static readonly InstanceState Stopping = new InstanceState("stopping");
+        /// <summary>
+        /// Constant Terminated for InstanceState
+        /// </summary>
+        public static readonly InstanceState Terminated = new InstanceState("terminated");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InstanceState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InstanceState FindValue(string value)
+        {
+            return FindValue<InstanceState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InstanceState(string value)
         {
             return FindValue(value);
         }

@@ -42,7 +42,7 @@ namespace Amazon.QLDB.Model
         /// The block data object in Amazon Ion format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ValueHolder Block
         {
             get { return this._block; }
@@ -63,6 +63,7 @@ namespace Amazon.QLDB.Model
         /// using a Merkle tree, starting with the specified block.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public ValueHolder Proof
         {
             get { return this._proof; }

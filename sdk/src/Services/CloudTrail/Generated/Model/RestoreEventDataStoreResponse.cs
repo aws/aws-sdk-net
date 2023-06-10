@@ -128,8 +128,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property MultiRegionEnabled. 
         /// <para>
-        /// Indicates whether the event data store is collecting events from all regions, or only
-        /// from the region in which the event data store was created.
+        /// Indicates whether the event data store is collecting events from all Regions, or only
+        /// from the Region in which the event data store was created.
         /// </para>
         /// </summary>
         public bool MultiRegionEnabled

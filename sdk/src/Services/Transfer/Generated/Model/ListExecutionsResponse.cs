@@ -40,28 +40,8 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Executions. 
         /// <para>
-        /// Returns the details for each execution.
+        /// Returns the details for each execution, in a <code>ListedExecution</code> array.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        ///  <b>NextToken</b>: returned from a call to several APIs, you can use pass it to a
-        /// subsequent command to continue listing additional executions.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>StartTime</b>: timestamp indicating when the execution began.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Executions</b>: details of the execution, including the execution ID, initial
-        /// file location, and Service metadata.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <b>Status</b>: one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-        /// <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. 
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<ListedExecution> Executions

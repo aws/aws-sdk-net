@@ -69,5 +69,10 @@ namespace Amazon.Inspector2.Model
         /// Paginator for ListUsageTotals operation
         ///</summary>
         IListUsageTotalsPaginator ListUsageTotals(ListUsageTotalsRequest request);
+
+        /// <summary>
+        /// Paginator for SearchVulnerabilities operation
+        ///</summary>
+        ISearchVulnerabilitiesPaginator SearchVulnerabilities(SearchVulnerabilitiesRequest request);
     }
 }

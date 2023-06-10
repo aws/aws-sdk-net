@@ -42,6 +42,7 @@ namespace Amazon.Chime.Model
         /// The RFC2617 compliant password associated with the SIP credentials, in US-ASCII format.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }
@@ -60,6 +61,7 @@ namespace Amazon.Chime.Model
         /// The RFC2617 compliant user name associated with the SIP credentials, in US-ASCII format.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Username
         {
             get { return this._username; }

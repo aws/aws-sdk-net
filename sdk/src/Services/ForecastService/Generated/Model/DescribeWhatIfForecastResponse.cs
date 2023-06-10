@@ -85,8 +85,8 @@ namespace Amazon.ForecastService.Model
         /// Gets and sets the property ForecastTypes. 
         /// <para>
         /// The quantiles at which probabilistic forecasts are generated. You can specify up to
-        /// 5 quantiles per what-if forecast in the <a>CreateWhatIfForecast</a> operation. If
-        /// you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.
+        /// five quantiles per what-if forecast in the <a>CreateWhatIfForecast</a> operation.
+        /// If you didn't specify quantiles, the default values are <code>["0.1", "0.5", "0.9"]</code>.
         /// 
         /// </para>
         /// </summary>

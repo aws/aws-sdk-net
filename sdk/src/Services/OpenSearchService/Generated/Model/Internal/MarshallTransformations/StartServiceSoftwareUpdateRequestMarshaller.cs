@@ -65,10 +65,22 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetDesiredStartTime())
+                {
+                    context.Writer.WritePropertyName("DesiredStartTime");
+                    context.Writer.Write(publicRequest.DesiredStartTime);
+                }
+
                 if(publicRequest.IsSetDomainName())
                 {
                     context.Writer.WritePropertyName("DomainName");
                     context.Writer.Write(publicRequest.DomainName);
+                }
+
+                if(publicRequest.IsSetScheduleAt())
+                {
+                    context.Writer.WritePropertyName("ScheduleAt");
+                    context.Writer.Write(publicRequest.ScheduleAt);
                 }
 
                 writer.WriteObjectEnd();

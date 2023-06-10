@@ -249,7 +249,7 @@ namespace Amazon.Mgn.Model
         /// Request to configure Staging Area tags during Replication Settings template creation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Dictionary<string, string> StagingAreaTags
         {
             get { return this._stagingAreaTags; }
@@ -268,6 +268,7 @@ namespace Amazon.Mgn.Model
         /// Request to configure tags during Replication Settings template creation.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

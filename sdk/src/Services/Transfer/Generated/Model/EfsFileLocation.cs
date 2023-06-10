@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// Reserved for future use.
+    /// Specifies the details for the file location for the file that's being used in the
+    /// workflow. Only applicable if you are using Amazon Elastic File Systems (Amazon EFS)
+    /// for storage.
     /// 
     ///  
     /// <para>

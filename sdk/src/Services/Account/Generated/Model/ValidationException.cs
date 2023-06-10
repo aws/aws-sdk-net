@@ -36,6 +36,8 @@ namespace Amazon.Account.Model
     #endif
     public partial class ValidationException : AmazonAccountException
     {
+        private List<ValidationExceptionField> _fieldList = new List<ValidationExceptionField>();
+        private ValidationExceptionReason _reason;
 
         /// <summary>
         /// Constructs a new ValidationException with the specified error
@@ -97,6 +99,8 @@ namespace Amazon.Account.Model
         protected ValidationException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
+            this.FieldList = (List<ValidationExceptionField>)info.GetValue("FieldList", typeof(List<ValidationExceptionField>));
+            this.Reason = (ValidationExceptionReason)info.GetValue("Reason", typeof(ValidationExceptionReason));
         }
 
         /// <summary>
@@ -117,8 +121,46 @@ namespace Amazon.Account.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
+            info.AddValue("FieldList", this.FieldList);
+            info.AddValue("Reason", this.Reason);
         }
 #endif
+
+        /// <summary>
+        /// Gets and sets the property FieldList. 
+        /// <para>
+        /// The field where the invalid entry was detected.
+        /// </para>
+        /// </summary>
+        public List<ValidationExceptionField> FieldList
+        {
+            get { return this._fieldList; }
+            set { this._fieldList = value; }
+        }
+
+        // Check to see if FieldList property is set
+        internal bool IsSetFieldList()
+        {
+            return this._fieldList != null && this._fieldList.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Reason. 
+        /// <para>
+        /// The reason that validation failed.
+        /// </para>
+        /// </summary>
+        public ValidationExceptionReason Reason
+        {
+            get { return this._reason; }
+            set { this._reason = value; }
+        }
+
+        // Check to see if Reason property is set
+        internal bool IsSetReason()
+        {
+            return this._reason != null;
+        }
 
     }
 }

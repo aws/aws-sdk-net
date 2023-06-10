@@ -39,7 +39,7 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property Entries. 
         /// <para>
-        /// Contains a list of maps in your AWS account
+        /// Contains a list of maps in your Amazon Web Services account
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

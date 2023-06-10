@@ -63,7 +63,7 @@ namespace Amazon.Chime.Model
         /// The phone number, in E.164 format.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string E164PhoneNumber
         {
             get { return this._e164PhoneNumber; }

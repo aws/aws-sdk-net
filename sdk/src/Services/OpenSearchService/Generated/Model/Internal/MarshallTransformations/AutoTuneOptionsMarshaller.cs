@@ -73,6 +73,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.RollbackOnDisable);
             }
 
+            if(requestObject.IsSetUseOffPeakWindow())
+            {
+                context.Writer.WritePropertyName("UseOffPeakWindow");
+                context.Writer.Write(requestObject.UseOffPeakWindow);
+            }
+
         }
 
         /// <summary>

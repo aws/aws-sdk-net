@@ -30,8 +30,8 @@ namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
     /// Container for the parameters to the DisableProfile operation.
-    /// Disables a profile. When disabled, <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-    /// requests with this profile fail.
+    /// Disables a profile. When disabled, temporary credential requests with this profile
+    /// fail.
     /// 
     ///  
     /// <para>

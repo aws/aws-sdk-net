@@ -41,6 +41,7 @@ namespace Amazon.Drs.Model
         /// The tags of the requested resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

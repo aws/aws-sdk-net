@@ -48,7 +48,9 @@ namespace Amazon.AppIntegrationsService.Model
         /// Gets and sets the property ClientToken. 
         /// <para>
         /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
-        /// the request.
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -143,7 +145,8 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags.
+        /// The tags used to organize, track, or control access for this resource. For example,
+        /// { "tags": {"key1":"value1", "key2":"value2"} }.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=200)]

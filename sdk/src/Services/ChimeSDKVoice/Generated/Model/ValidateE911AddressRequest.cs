@@ -30,7 +30,10 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the ValidateE911Address operation.
-    /// 
+    /// Validates an address to be used for 911 calls made with Amazon Chime SDK Voice Connectors.
+    /// You can use validated addresses in a Presence Information Data Format Location Object
+    /// file that you include in SIP requests. That helps ensure that addresses are routed
+    /// to the appropriate Public Safety Answering Point.
     /// </summary>
     public partial class ValidateE911AddressRequest : AmazonChimeSDKVoiceRequest
     {
@@ -43,7 +46,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _streetNumber;
 
         /// <summary>
-        /// Gets and sets the property AwsAccountId.
+        /// Gets and sets the property AwsAccountId. 
+        /// <para>
+        /// The AWS account ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string AwsAccountId
@@ -59,9 +65,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property City.
+        /// Gets and sets the property City. 
+        /// <para>
+        /// The address city, such as <code>Portland</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string City
         {
             get { return this._city; }
@@ -75,9 +84,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Country.
+        /// Gets and sets the property Country. 
+        /// <para>
+        /// The country in the address being validated.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Country
         {
             get { return this._country; }
@@ -91,9 +103,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PostalCode.
+        /// Gets and sets the property PostalCode. 
+        /// <para>
+        /// The dress postal code, such <code>04352</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -107,9 +122,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// The address state, such as <code>ME</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string State
         {
             get { return this._state; }
@@ -123,9 +141,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreetInfo.
+        /// Gets and sets the property StreetInfo. 
+        /// <para>
+        /// The address street information, such as <code>8th Avenue</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string StreetInfo
         {
             get { return this._streetInfo; }
@@ -139,9 +160,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property StreetNumber.
+        /// Gets and sets the property StreetNumber. 
+        /// <para>
+        /// The address street number, such as <code>200</code> or <code>2121</code>.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string StreetNumber
         {
             get { return this._streetNumber; }

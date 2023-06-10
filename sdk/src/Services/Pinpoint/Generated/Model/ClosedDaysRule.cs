@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Pinpoint.Model
 {
     /// <summary>
-    /// Closed Days Rule. Part of Journey sending schedule.
+    /// Specifies the rule settings for when messages can't be sent.
     /// </summary>
     public partial class ClosedDaysRule
     {
@@ -40,7 +40,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property EndDateTime. 
         /// <para>
-        /// End Datetime in ISO 8601 format.
+        /// End DateTime ISO 8601 format
         /// </para>
         /// </summary>
         public string EndDateTime
@@ -58,7 +58,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// Name of the rule.
+        /// The name of the closed day rule.
         /// </para>
         /// </summary>
         public string Name
@@ -76,7 +76,7 @@ namespace Amazon.Pinpoint.Model
         /// <summary>
         /// Gets and sets the property StartDateTime. 
         /// <para>
-        /// Start Datetime in ISO 8601 format.
+        /// Start DateTime ISO 8601 format
         /// </para>
         /// </summary>
         public string StartDateTime

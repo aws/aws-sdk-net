@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.MemorySizeInMB = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProvisionedConcurrency", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.ProvisionedConcurrency = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

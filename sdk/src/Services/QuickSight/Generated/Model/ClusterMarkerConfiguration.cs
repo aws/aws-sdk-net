@@ -38,7 +38,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property ClusterMarker. 
         /// <para>
-        /// The cluster marker that is a part of the cluster marker configuration
+        /// The cluster marker that is a part of the cluster marker configuration.
         /// </para>
         /// </summary>
         public ClusterMarker ClusterMarker

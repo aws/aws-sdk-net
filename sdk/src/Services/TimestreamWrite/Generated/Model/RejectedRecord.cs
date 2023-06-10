@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TimestreamWrite.Model
 {
     /// <summary>
-    /// Records that were not successfully inserted into Timestream due to data validation
-    /// issues that must be resolved prior to reinserting time series data into the system.
+    /// Represents records that were not successfully inserted into Timestream due to data
+    /// validation issues that must be resolved before reinserting time-series data into the
+    /// system.
     /// </summary>
     public partial class RejectedRecord
     {
@@ -74,19 +75,19 @@ namespace Amazon.TimestreamWrite.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Version is not present in the request <i>or</i> the value of version in the new record
+        /// Version is not present in the request, <i>or</i> the value of version in the new record
         /// is equal to or lower than the existing value
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  If Timestream rejects data for this case, the <code>ExistingVersion</code> field
-        /// in the <code>RejectedRecords</code> response will indicate the current record’s version.
+        /// If Timestream rejects data for this case, the <code>ExistingVersion</code> field in
+        /// the <code>RejectedRecords</code> response will indicate the current record’s version.
         /// To force an update, you can resend the request with a version for the record set to
         /// a value greater than the <code>ExistingVersion</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  Records with timestamps that lie outside the retention duration of the memory store
+        ///  Records with timestamps that lie outside the retention duration of the memory store.
         /// 
         /// </para>
         ///  <note> 

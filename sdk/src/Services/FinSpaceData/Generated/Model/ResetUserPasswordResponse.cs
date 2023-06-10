@@ -43,7 +43,7 @@ namespace Amazon.FinSpaceData.Model
         /// expires in 7 days.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=20)]
+        [AWSProperty(Sensitive=true, Min=8, Max=20)]
         public string TemporaryPassword
         {
             get { return this._temporaryPassword; }

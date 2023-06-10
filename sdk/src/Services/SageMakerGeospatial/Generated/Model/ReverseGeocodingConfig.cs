@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The input structure for Reverse Geocoding operation type.
     /// </summary>
     public partial class ReverseGeocodingConfig
     {
@@ -37,7 +37,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private string _yAttributeName;
 
         /// <summary>
-        /// Gets and sets the property XAttributeName.
+        /// Gets and sets the property XAttributeName. 
+        /// <para>
+        /// The field name for the data that describes x-axis coordinate, eg. longitude of a point.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string XAttributeName
@@ -53,7 +56,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property YAttributeName.
+        /// Gets and sets the property YAttributeName. 
+        /// <para>
+        /// The field name for the data that describes y-axis coordinate, eg. latitude of a point.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string YAttributeName

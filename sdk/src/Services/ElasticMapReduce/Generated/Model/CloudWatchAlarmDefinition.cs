@@ -143,9 +143,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property Period. 
         /// <para>
-        /// The period, in seconds, over which the statistic is applied. EMR CloudWatch metrics
-        /// are emitted every five minutes (300 seconds), so if an EMR CloudWatch metric is specified,
-        /// specify <code>300</code>.
+        /// The period, in seconds, over which the statistic is applied. CloudWatch metrics for
+        /// Amazon EMR are emitted every five minutes (300 seconds), so if you specify a CloudWatch
+        /// metric, specify <code>300</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

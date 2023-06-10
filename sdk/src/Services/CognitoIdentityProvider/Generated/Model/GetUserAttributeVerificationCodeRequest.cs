@@ -70,7 +70,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// to generate.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

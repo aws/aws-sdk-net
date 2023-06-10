@@ -100,6 +100,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.PortProbeAction = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("rdsLoginAttemptAction", targetDepth))
+                {
+                    var unmarshaller = RdsLoginAttemptActionUnmarshaller.Instance;
+                    unmarshalledObject.RdsLoginAttemptAction = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

@@ -99,6 +99,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HeartbeatSchema);
             }
 
+            if(requestObject.IsSetMapBooleanAsBoolean())
+            {
+                context.Writer.WritePropertyName("MapBooleanAsBoolean");
+                context.Writer.Write(requestObject.MapBooleanAsBoolean);
+            }
+
             if(requestObject.IsSetMaxFileSize())
             {
                 context.Writer.WritePropertyName("MaxFileSize");

@@ -106,6 +106,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.DataSetId);
                 }
 
+                if(publicRequest.IsSetDatasetParameters())
+                {
+                    context.Writer.WritePropertyName("DatasetParameters");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDatasetParametersListValue in publicRequest.DatasetParameters)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DatasetParameterMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDatasetParametersListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDataSetUsageConfiguration())
                 {
                     context.Writer.WritePropertyName("DataSetUsageConfiguration");

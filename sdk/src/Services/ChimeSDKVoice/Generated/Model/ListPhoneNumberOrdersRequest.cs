@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the ListPhoneNumberOrders operation.
-    /// 
+    /// Lists the phone numbers for an administrator's Amazon Chime SDK account.
     /// </summary>
     public partial class ListPhoneNumberOrdersRequest : AmazonChimeSDKVoiceRequest
     {
@@ -38,7 +38,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _nextToken;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -54,7 +57,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to retrieve the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {

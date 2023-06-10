@@ -31,6 +31,12 @@ namespace Amazon.SageMaker.Model
     /// <summary>
     /// Container for the parameters to the ListHubContentVersions operation.
     /// List hub content versions.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// Hub APIs are only callable through SageMaker Studio.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class ListHubContentVersionsRequest : AmazonSageMakerRequest
     {

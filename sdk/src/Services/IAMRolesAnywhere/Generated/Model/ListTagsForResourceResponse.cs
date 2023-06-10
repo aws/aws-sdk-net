@@ -41,7 +41,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// A list of tags attached to the resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

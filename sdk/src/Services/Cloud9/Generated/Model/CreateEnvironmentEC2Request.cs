@@ -123,7 +123,7 @@ namespace Amazon.Cloud9.Model
         /// The description of the environment to create.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=200)]
+        [AWSProperty(Sensitive=true, Max=200)]
         public string Description
         {
             get { return this._description; }
@@ -313,7 +313,7 @@ namespace Amazon.Cloud9.Model
         /// environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

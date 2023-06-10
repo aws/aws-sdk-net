@@ -288,7 +288,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  <note> 
         /// <para>
-        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
         /// later, excluding 5.0.x.
         /// </para>
         ///  </note>
@@ -487,7 +487,7 @@ namespace Amazon.ElasticMapReduce
         /// versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256 steps are allowed
         /// in each CancelSteps request. CancelSteps is idempotent but asynchronous; it does not
         /// guarantee that a step will be canceled, even if the request is successfully submitted.
-        /// When you use Amazon EMR versions 5.28.0 and later, you can cancel steps that are in
+        /// When you use Amazon EMR releases 5.28.0 and later, you can cancel steps that are in
         /// a <code>PENDING</code> or <code>RUNNING</code> state. In earlier versions of Amazon
         /// EMR, you can only cancel steps that are in a <code>PENDING</code> state.
         /// </summary>
@@ -1017,9 +1017,10 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides EMR release label details, such as releases available the region where the
-        /// API request is run, and the available applications for a specific EMR release label.
-        /// Can also list EMR release versions that support a specified version of Spark.
+        /// Provides Amazon EMR release label details, such as the releases available the Region
+        /// where the API request is run, and the available applications for a specific Amazon
+        /// EMR release label. Can also list Amazon EMR releases that support a specified version
+        /// of Spark.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeReleaseLabel service method.</param>
         /// <param name="cancellationToken">
@@ -1281,10 +1282,10 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides Temporary, basic HTTP credentials that are associated with a given runtime
+        /// Provides temporary, HTTP basic credentials that are associated with a given runtime
         /// IAM role and used by a cluster with fine-grained access control activated. You can
-        /// use these credentials to connect to cluster endpoints that support username-based
-        /// and password-based authentication.
+        /// use these credentials to connect to cluster endpoints that support username and password
+        /// authentication.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetClusterSessionCredentials service method.</param>
         /// <param name="cancellationToken">
@@ -1543,7 +1544,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  <note> 
         /// <para>
-        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
         /// later, excluding 5.0.x versions.
         /// </para>
         ///  </note>
@@ -1654,9 +1655,10 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides information for all active EC2 instances and EC2 instances terminated in
-        /// the last 30 days, up to a maximum of 2,000. EC2 instances in any of the following
-        /// states are considered active: AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.
+        /// Provides information for all active Amazon EC2 instances and Amazon EC2 instances
+        /// terminated in the last 30 days, up to a maximum of 2,000. Amazon EC2 instances in
+        /// any of the following states are considered active: AWAITING_FULFILLMENT, PROVISIONING,
+        /// BOOTSTRAPPING, RUNNING.
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -1678,9 +1680,10 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Provides information for all active EC2 instances and EC2 instances terminated in
-        /// the last 30 days, up to a maximum of 2,000. EC2 instances in any of the following
-        /// states are considered active: AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.
+        /// Provides information for all active Amazon EC2 instances and Amazon EC2 instances
+        /// terminated in the last 30 days, up to a maximum of 2,000. Amazon EC2 instances in
+        /// any of the following states are considered active: AWAITING_FULFILLMENT, PROVISIONING,
+        /// BOOTSTRAPPING, RUNNING.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListInstances service method.</param>
         /// <param name="cancellationToken">
@@ -1723,7 +1726,7 @@ namespace Amazon.ElasticMapReduce
         /// Provides summaries of all notebook executions. You can filter the list based on multiple
         /// criteria such as status, time range, and editor id. Returns a maximum of 50 notebook
         /// executions and a marker to track the paging of a longer notebook execution list across
-        /// multiple <code>ListNotebookExecution</code> calls.
+        /// multiple <code>ListNotebookExecutions</code> calls.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListNotebookExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -1764,7 +1767,7 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Retrieves release labels of EMR services in the region where the API is called.
+        /// Retrieves release labels of Amazon EMR services in the Region where the API is called.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListReleaseLabels service method.</param>
         /// <param name="cancellationToken">
@@ -2052,7 +2055,7 @@ namespace Amazon.ElasticMapReduce
         /// 
         ///  <note> 
         /// <para>
-        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
         /// later, excluding 5.0.x versions.
         /// </para>
         ///  </note>
@@ -2137,8 +2140,8 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// Creates or updates an automatic scaling policy for a core instance group or task instance
         /// group in an Amazon EMR cluster. The automatic scaling policy defines how an instance
-        /// group dynamically adds and terminates EC2 instances in response to the value of a
-        /// CloudWatch metric.
+        /// group dynamically adds and terminates Amazon EC2 instances in response to the value
+        /// of a CloudWatch metric.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutAutoScalingPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2174,7 +2177,7 @@ namespace Amazon.ElasticMapReduce
         /// <summary>
         /// <note> 
         /// <para>
-        /// Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0 and later. For
+        /// Auto-termination is supported in Amazon EMR releases 5.30.0 and 6.1.0 and later. For
         /// more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
         /// an auto-termination policy</a>.
         /// </para>
@@ -2261,9 +2264,9 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed
-        /// scaling policy defines the limits for resources, such as EC2 instances that can be
-        /// added or terminated from a cluster. The policy only applies to the core and task nodes.
-        /// The master node cannot be scaled after initial configuration.
+        /// scaling policy defines the limits for resources, such as Amazon EC2 instances that
+        /// can be added or terminated from a cluster. The policy only applies to the core and
+        /// task nodes. The master node cannot be scaled after initial configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutManagedScalingPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2297,8 +2300,8 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Removes an automatic scaling policy from a specified instance group within an EMR
-        /// cluster.
+        /// Removes an automatic scaling policy from a specified instance group within an Amazon
+        /// EMR cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveAutoScalingPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2366,7 +2369,7 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// Removes a managed scaling policy from a specified EMR cluster.
+        /// Removes a managed scaling policy from a specified Amazon EMR cluster.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RemoveManagedScalingPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -2478,7 +2481,7 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  <note> 
         /// <para>
-        /// The instance fleets configuration is available only in Amazon EMR versions 4.8.0 and
+        /// The instance fleets configuration is available only in Amazon EMR releases 4.8.0 and
         /// later, excluding 5.0.x versions. The RunJobFlow request can contain InstanceFleets
         /// parameters or InstanceGroups parameters, but not both.
         /// </para>
@@ -2520,11 +2523,12 @@ namespace Amazon.ElasticMapReduce
 
 
         /// <summary>
-        /// SetTerminationProtection locks a cluster (job flow) so the EC2 instances in the cluster
-        /// cannot be terminated by user intervention, an API call, or in the event of a job-flow
-        /// error. The cluster still terminates upon successful completion of the job flow. Calling
-        /// <code>SetTerminationProtection</code> on a cluster is similar to calling the Amazon
-        /// EC2 <code>DisableAPITermination</code> API on all EC2 instances in a cluster.
+        /// SetTerminationProtection locks a cluster (job flow) so the Amazon EC2 instances in
+        /// the cluster cannot be terminated by user intervention, an API call, or in the event
+        /// of a job-flow error. The cluster still terminates upon successful completion of the
+        /// job flow. Calling <code>SetTerminationProtection</code> on a cluster is similar to
+        /// calling the Amazon EC2 <code>DisableAPITermination</code> API on all Amazon EC2 instances
+        /// in a cluster.
         /// 
         ///  
         /// <para>
@@ -2584,17 +2588,17 @@ namespace Amazon.ElasticMapReduce
         /// <para>
         /// The SetVisibleToAllUsers parameter is no longer supported. Your cluster may be visible
         /// to all users in your account. To restrict cluster access using an IAM policy, see
-        /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html">Identity
-        /// and Access Management for EMR</a>. 
+        /// <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-IAM.html">Identity
+        /// and Access Management for Amazon EMR</a>. 
         /// </para>
         ///  </important> 
         /// <para>
-        /// Sets the <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When <code>true</code>,
-        /// IAM principals in the Amazon Web Services account can perform EMR cluster actions
+        /// Sets the <a>Cluster$VisibleToAllUsers</a> value for an Amazon EMR cluster. When <code>true</code>,
+        /// IAM principals in the Amazon Web Services account can perform Amazon EMR cluster actions
         /// that their IAM policies allow. When <code>false</code>, only the IAM principal that
-        /// created the cluster and the Amazon Web Services account root user can perform EMR
-        /// actions on the cluster, regardless of IAM permissions policies attached to other IAM
-        /// principals.
+        /// created the cluster and the Amazon Web Services account root user can perform Amazon
+        /// EMR actions on the cluster, regardless of IAM permissions policies attached to other
+        /// IAM principals.
         /// </para>
         ///  
         /// <para>
@@ -2603,8 +2607,9 @@ namespace Amazon.ElasticMapReduce
         /// </para>
         ///  
         /// <para>
-        /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-        /// the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement Guide</i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_IAM_emr-with-IAM.html#security_set_visible_to_all_users">Understanding
+        /// the Amazon EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR Management
+        /// Guide</i>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SetVisibleToAllUsers service method.</param>
@@ -2725,9 +2730,9 @@ namespace Amazon.ElasticMapReduce
 
         /// <summary>
         /// TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut
-        /// down, any step not yet completed is canceled and the EC2 instances on which the cluster
-        /// is running are stopped. Any log files not already saved are uploaded to Amazon S3
-        /// if a LogUri was specified when the cluster was created.
+        /// down, any step not yet completed is canceled and the Amazon EC2 instances on which
+        /// the cluster is running are stopped. Any log files not already saved are uploaded to
+        /// Amazon S3 if a LogUri was specified when the cluster was created.
         /// 
         ///  
         /// <para>

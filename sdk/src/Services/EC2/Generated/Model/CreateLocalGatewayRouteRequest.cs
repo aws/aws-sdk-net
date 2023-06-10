@@ -46,6 +46,7 @@ namespace Amazon.EC2.Model
     public partial class CreateLocalGatewayRouteRequest : AmazonEC2Request
     {
         private string _destinationCidrBlock;
+        private string _destinationPrefixListId;
         private string _localGatewayRouteTableId;
         private string _localGatewayVirtualInterfaceGroupId;
         private string _networkInterfaceId;
@@ -57,7 +58,6 @@ namespace Amazon.EC2.Model
         /// specific match.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string DestinationCidrBlock
         {
             get { return this._destinationCidrBlock; }
@@ -68,6 +68,26 @@ namespace Amazon.EC2.Model
         internal bool IsSetDestinationCidrBlock()
         {
             return this._destinationCidrBlock != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationPrefixListId. 
+        /// <para>
+        ///  The ID of the prefix list. Use a prefix list in place of <code>DestinationCidrBlock</code>.
+        /// You cannot use <code>DestinationPrefixListId</code> and <code>DestinationCidrBlock</code>
+        /// in the same request. 
+        /// </para>
+        /// </summary>
+        public string DestinationPrefixListId
+        {
+            get { return this._destinationPrefixListId; }
+            set { this._destinationPrefixListId = value; }
+        }
+
+        // Check to see if DestinationPrefixListId property is set
+        internal bool IsSetDestinationPrefixListId()
+        {
+            return this._destinationPrefixListId != null;
         }
 
         /// <summary>

@@ -194,7 +194,8 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property EnableVisualization. 
         /// <para>
-        /// Create an Explainability visualization that is viewable within the AWS console.
+        /// Create an Explainability visualization that is viewable within the Amazon Web Services
+        /// console.
         /// </para>
         /// </summary>
         public bool EnableVisualization

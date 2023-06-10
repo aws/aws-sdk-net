@@ -60,6 +60,7 @@ namespace Amazon.RDS.Model
         private string _sourceDBClusterSnapshotArn;
         private string _status;
         private bool? _storageEncrypted;
+        private string _storageType;
         private List<Tag> _tagList = new List<Tag>();
         private string _vpcId;
 
@@ -463,6 +464,28 @@ namespace Amazon.RDS.Model
         internal bool IsSetStorageEncrypted()
         {
             return this._storageEncrypted.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StorageType. 
+        /// <para>
+        /// The storage type associated with the DB cluster snapshot.
+        /// </para>
+        ///  
+        /// <para>
+        /// This setting is only for Aurora DB clusters.
+        /// </para>
+        /// </summary>
+        public string StorageType
+        {
+            get { return this._storageType; }
+            set { this._storageType = value; }
+        }
+
+        // Check to see if StorageType property is set
+        internal bool IsSetStorageType()
+        {
+            return this._storageType != null;
         }
 
         /// <summary>

@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// A custom key-value pair associated with a resource such as a CloudTrail trail.
+    /// A custom key-value pair associated with a resource such as a CloudTrail trail, event
+    /// data store, or channel.
     /// </summary>
     public partial class Tag
     {

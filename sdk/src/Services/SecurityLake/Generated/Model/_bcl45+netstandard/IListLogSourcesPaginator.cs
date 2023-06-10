@@ -29,5 +29,10 @@ namespace Amazon.SecurityLake.Model
         /// Enumerable containing all full responses for the operation
         /// </summary>
         IPaginatedEnumerable<ListLogSourcesResponse> Responses { get; }
+
+        /// <summary>
+        /// Enumerable containing all of the Sources
+        /// </summary>
+        IPaginatedEnumerable<LogSource> Sources { get; }
     }
 }

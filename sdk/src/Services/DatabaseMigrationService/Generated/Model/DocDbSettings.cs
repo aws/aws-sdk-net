@@ -161,6 +161,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }

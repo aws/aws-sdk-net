@@ -48,7 +48,7 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  
     /// <para>
-    /// For each service that principals in an account (root users, IAM users, or IAM roles)
+    /// For each service that principals in an account (root user, IAM users, or IAM roles)
     /// could access using SCPs, the operation returns details about the most recent access
     /// attempt. If there was no attempt, the service is listed without details about the
     /// most recent attempt to access the service. If the operation fails, it returns the

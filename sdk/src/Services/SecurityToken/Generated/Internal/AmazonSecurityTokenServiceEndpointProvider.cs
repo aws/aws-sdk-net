@@ -55,122 +55,126 @@ namespace Amazon.SecurityToken.Internal
                 ["Endpoint"] = parameters["Endpoint"],
                 ["UseGlobalEndpoint"] = parameters["UseGlobalEndpoint"],
             };
-            if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+            if (Equals(refs["UseGlobalEndpoint"], true) && !IsSet(refs["Endpoint"]) && IsSet(refs["Region"]) && (refs["PartitionResult"] = Partition((string)refs["Region"])) != null && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false))
             {
-                if (Equals(refs["UseGlobalEndpoint"], true) && Equals(refs["UseFIPS"], false) && Equals(refs["UseDualStack"], false) && !IsSet(refs["Endpoint"]))
+                if (Equals(refs["Region"], "ap-northeast-1"))
                 {
-                    if (Equals(refs["Region"], "ap-northeast-1"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "ap-south-1"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "ap-southeast-1"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "ap-southeast-2"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "aws-global"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "ca-central-1"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "eu-central-1"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "eu-north-1"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "eu-west-1"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "eu-west-2"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "eu-west-3"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "sa-east-1"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "us-east-1"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "us-east-2"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "us-west-1"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    if (Equals(refs["Region"], "us-west-2"))
-                    {
-                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
-                    }
-                    return new Endpoint(Interpolate(@"https://sts.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""{Region}"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
                 }
-                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
+                if (Equals(refs["Region"], "ap-south-1"))
                 {
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                    }
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                    }
-                    return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
                 }
-                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                if (Equals(refs["Region"], "ap-southeast-1"))
                 {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                    {
-                        return new Endpoint(Interpolate(@"https://sts-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
                 }
-                if (Equals(refs["UseFIPS"], true))
+                if (Equals(refs["Region"], "ap-southeast-2"))
                 {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
-                    {
-                        if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
-                        {
-                            return new Endpoint(Interpolate(@"https://sts.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        return new Endpoint(Interpolate(@"https://sts-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
-                }
-                if (Equals(refs["UseDualStack"], true))
-                {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                    {
-                        return new Endpoint(Interpolate(@"https://sts.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
                 }
                 if (Equals(refs["Region"], "aws-global"))
                 {
-                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingRegion"":""us-east-1"",""signingName"":""sts""}]}", refs), InterpolateJson(@"", refs));
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
                 }
-                return new Endpoint(Interpolate(@"https://sts.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                if (Equals(refs["Region"], "ca-central-1"))
+                {
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "eu-central-1"))
+                {
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "eu-north-1"))
+                {
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "eu-west-1"))
+                {
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "eu-west-2"))
+                {
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "eu-west-3"))
+                {
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "sa-east-1"))
+                {
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "us-east-1"))
+                {
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "us-east-2"))
+                {
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "us-west-1"))
+                {
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "us-west-2"))
+                {
+                    return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                }
+                return new Endpoint(Interpolate(@"https://sts.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""{Region}""}]}", refs), InterpolateJson(@"", refs));
             }
+            if (IsSet(refs["Endpoint"]))
+            {
+                if (Equals(refs["UseFIPS"], true))
+                {
+                    throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
+                }
+                if (Equals(refs["UseDualStack"], true))
+                {
+                    throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
+                }
+                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+            }
+            if (IsSet(refs["Region"]))
+            {
+                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+                {
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://sts-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                    }
+                    if (Equals(refs["UseFIPS"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        {
+                            if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
+                            {
+                                return new Endpoint(Interpolate(@"https://sts.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            return new Endpoint(Interpolate(@"https://sts-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    }
+                    if (Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://sts.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    }
+                    if (Equals(refs["Region"], "aws-global"))
+                    {
+                        return new Endpoint("https://sts.amazonaws.com", InterpolateJson(@"{""authSchemes"":[{""name"":""sigv4"",""signingName"":""sts"",""signingRegion"":""us-east-1""}]}", refs), InterpolateJson(@"", refs));
+                    }
+                    return new Endpoint(Interpolate(@"https://sts.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                }
+            }
+            throw new AmazonClientException("Invalid Configuration: Missing Region");
 
             throw new AmazonClientException("Cannot resolve endpoint");
         }

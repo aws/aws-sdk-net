@@ -86,24 +86,24 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Status – the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>,
-        /// <code>DELETING</code>, <code>DELETED</code>, or <code>FAILED</code>.
+        /// Status—the status can be either <code>PROCESSING</code>, <code>SUCCEEDED</code>, <code>DELETING</code>,
+        /// <code>DELETED</code>, or <code>FAILED</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Last updated – the last date-time an action was updated.
+        /// Last updated—the last date-time an action was updated.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Received – the last date-time an action was received or submitted.
+        /// Received—the last date-time an action was received or submitted.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Ordering ID – the latest action that should process and apply after other actions.
+        /// Ordering ID—the latest action that should process and apply after other actions.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Failure reason – the reason an action could not be processed.
+        /// Failure reason—the reason an action could not be processed.
         /// </para>
         ///  </li> </ul>
         /// </summary>

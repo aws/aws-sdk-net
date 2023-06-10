@@ -30,7 +30,8 @@ namespace Amazon.Transfer.Model
 {
     /// <summary>
     /// Container for the parameters to the ListWorkflows operation.
-    /// Lists all of your workflows.
+    /// Lists all workflows associated with your Amazon Web Services account for your current
+    /// region.
     /// </summary>
     public partial class ListWorkflowsRequest : AmazonTransferRequest
     {

@@ -47,6 +47,17 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
         {
             RegisterScalableTargetResponse response = new RegisterScalableTargetResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("ScalableTargetARN", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.ScalableTargetARN = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

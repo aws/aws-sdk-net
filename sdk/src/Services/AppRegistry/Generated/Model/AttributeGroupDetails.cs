@@ -34,6 +34,7 @@ namespace Amazon.AppRegistry.Model
     public partial class AttributeGroupDetails
     {
         private string _arn;
+        private string _createdBy;
         private string _id;
         private string _name;
 
@@ -56,12 +57,31 @@ namespace Amazon.AppRegistry.Model
         }
 
         /// <summary>
+        /// Gets and sets the property CreatedBy. 
+        /// <para>
+        /// The service principal that created the attribute group.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=128)]
+        public string CreatedBy
+        {
+            get { return this._createdBy; }
+            set { this._createdBy = value; }
+        }
+
+        // Check to see if CreatedBy property is set
+        internal bool IsSetCreatedBy()
+        {
+            return this._createdBy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
         /// The unique identifier of the attribute group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=26, Max=26)]
+        [AWSProperty(Min=1, Max=256)]
         public string Id
         {
             get { return this._id; }

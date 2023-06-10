@@ -39,7 +39,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property AdminAccount. 
         /// <para>
-        /// The Amazon Web Services account that is set as the Firewall Manager administrator.
+        /// The account that is set as the Firewall Manager default administrator.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -58,8 +58,7 @@ namespace Amazon.FMS.Model
         /// <summary>
         /// Gets and sets the property RoleStatus. 
         /// <para>
-        /// The status of the Amazon Web Services account that you set as the Firewall Manager
-        /// administrator.
+        /// The status of the account that you set as the Firewall Manager default administrator.
         /// </para>
         /// </summary>
         public AccountRoleStatus RoleStatus

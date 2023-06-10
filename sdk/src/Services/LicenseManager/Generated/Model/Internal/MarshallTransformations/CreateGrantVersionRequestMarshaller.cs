@@ -96,6 +96,17 @@ namespace Amazon.LicenseManager.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.GrantName);
                 }
 
+                if(publicRequest.IsSetOptions())
+                {
+                    context.Writer.WritePropertyName("Options");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OptionsMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Options, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetSourceVersion())
                 {
                     context.Writer.WritePropertyName("SourceVersion");

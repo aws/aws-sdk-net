@@ -48,6 +48,7 @@ namespace Amazon.TimestreamWrite.Model
         private string _databaseName;
         private MagneticStoreWriteProperties _magneticStoreWriteProperties;
         private RetentionProperties _retentionProperties;
+        private Schema _schema;
         private string _tableName;
 
         /// <summary>
@@ -103,6 +104,24 @@ namespace Amazon.TimestreamWrite.Model
         internal bool IsSetRetentionProperties()
         {
             return this._retentionProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Schema. 
+        /// <para>
+        ///  The schema of the table. 
+        /// </para>
+        /// </summary>
+        public Schema Schema
+        {
+            get { return this._schema; }
+            set { this._schema = value; }
+        }
+
+        // Check to see if Schema property is set
+        internal bool IsSetSchema()
+        {
+            return this._schema != null;
         }
 
         /// <summary>

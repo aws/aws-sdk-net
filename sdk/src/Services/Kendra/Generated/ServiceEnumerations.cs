@@ -125,6 +125,56 @@ namespace Amazon.Kendra
 
 
     /// <summary>
+    /// Constants used for properties of type AttributeSuggestionsMode.
+    /// </summary>
+    public class AttributeSuggestionsMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for AttributeSuggestionsMode
+        /// </summary>
+        public static readonly AttributeSuggestionsMode ACTIVE = new AttributeSuggestionsMode("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for AttributeSuggestionsMode
+        /// </summary>
+        public static readonly AttributeSuggestionsMode INACTIVE = new AttributeSuggestionsMode("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AttributeSuggestionsMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AttributeSuggestionsMode FindValue(string value)
+        {
+            return FindValue<AttributeSuggestionsMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AttributeSuggestionsMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ConditionOperator.
     /// </summary>
     public class ConditionOperator : ConstantClass
@@ -1458,6 +1508,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator FaqStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FeaturedResultsSetStatus.
+    /// </summary>
+    public class FeaturedResultsSetStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for FeaturedResultsSetStatus
+        /// </summary>
+        public static readonly FeaturedResultsSetStatus ACTIVE = new FeaturedResultsSetStatus("ACTIVE");
+        /// <summary>
+        /// Constant INACTIVE for FeaturedResultsSetStatus
+        /// </summary>
+        public static readonly FeaturedResultsSetStatus INACTIVE = new FeaturedResultsSetStatus("INACTIVE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FeaturedResultsSetStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FeaturedResultsSetStatus FindValue(string value)
+        {
+            return FindValue<FeaturedResultsSetStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FeaturedResultsSetStatus(string value)
         {
             return FindValue(value);
         }
@@ -3130,6 +3230,56 @@ namespace Amazon.Kendra
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator SortOrder(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type SuggestionType.
+    /// </summary>
+    public class SuggestionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DOCUMENT_ATTRIBUTES for SuggestionType
+        /// </summary>
+        public static readonly SuggestionType DOCUMENT_ATTRIBUTES = new SuggestionType("DOCUMENT_ATTRIBUTES");
+        /// <summary>
+        /// Constant QUERY for SuggestionType
+        /// </summary>
+        public static readonly SuggestionType QUERY = new SuggestionType("QUERY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public SuggestionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static SuggestionType FindValue(string value)
+        {
+            return FindValue<SuggestionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator SuggestionType(string value)
         {
             return FindValue(value);
         }

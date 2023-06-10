@@ -8,6 +8,7 @@
     <title>API Reference - Table of Contents | AWS SDK for .NET Version 3</title>
 </head>
 <body>
+    <button id="skipToMain" tabindex="0">Skip to main content</button>
     <a href="https://docs.aws.amazon.com/" title="AWS Documentation Home" target="_top" rel="noopener noreferrer">
         <img id="awslogo" src="./resources/blank.gif" title="AWS Documentation Home" alt="AWS Documentation Home" />
     </a>
@@ -35,8 +36,17 @@
                     AWSTOCObj.setActiveTopic(tocLink);
                     AWSTOCObj.toggleTOCGroup(this);
                 }
+                if($(event.target)[0].hasAttribute("aria-label")) {
+                    $(this).focus();
+                } else {
+                    AWSTOCObj.setFrameFocus("contentpane");
+                    window.parent.showContentPane();
+                }
             });
 
+            $("#skipToMain").click(function () {
+                AWSTOCObj.setFrameFocus("contentpane");
+            });
 
             var params = parseUri($(window.parent.location).attr('href')).queryKey;
             var li = jQuery("li#" + params.tocid);

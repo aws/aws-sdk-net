@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The service encountered an unexpected error.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

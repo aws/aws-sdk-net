@@ -106,5 +106,13 @@ namespace Amazon.Inspector2.Model
         {
             return new ListUsageTotalsPaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for SearchVulnerabilities operation
+        ///</summary>
+        public ISearchVulnerabilitiesPaginator SearchVulnerabilities(SearchVulnerabilitiesRequest request) 
+        {
+            return new SearchVulnerabilitiesPaginator(this.client, request);
+        }
     }
 }

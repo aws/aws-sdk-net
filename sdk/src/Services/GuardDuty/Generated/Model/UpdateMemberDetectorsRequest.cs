@@ -31,12 +31,21 @@ namespace Amazon.GuardDuty.Model
     /// <summary>
     /// Container for the parameters to the UpdateMemberDetectors operation.
     /// Contains information on member accounts to be updated.
+    /// 
+    ///  
+    /// <para>
+    /// There might be regional differences because some data sources might not be available
+    /// in all the Amazon Web Services Regions where GuardDuty is presently supported. For
+    /// more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_regions.html">Regions
+    /// and endpoints</a>.
+    /// </para>
     /// </summary>
     public partial class UpdateMemberDetectorsRequest : AmazonGuardDutyRequest
     {
         private List<string> _accountIds = new List<string>();
         private DataSourceConfigurations _dataSources;
         private string _detectorId;
+        private List<MemberFeaturesConfiguration> _features = new List<MemberFeaturesConfiguration>();
 
         /// <summary>
         /// Gets and sets the property AccountIds. 
@@ -63,6 +72,7 @@ namespace Amazon.GuardDuty.Model
         /// Describes which data sources will be updated.
         /// </para>
         /// </summary>
+        [Obsolete("This parameter is deprecated, use Features instead")]
         public DataSourceConfigurations DataSources
         {
             get { return this._dataSources; }
@@ -92,6 +102,24 @@ namespace Amazon.GuardDuty.Model
         internal bool IsSetDetectorId()
         {
             return this._detectorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Features. 
+        /// <para>
+        /// A list of features that will be updated for the specified member accounts.
+        /// </para>
+        /// </summary>
+        public List<MemberFeaturesConfiguration> Features
+        {
+            get { return this._features; }
+            set { this._features = value; }
+        }
+
+        // Check to see if Features property is set
+        internal bool IsSetFeatures()
+        {
+            return this._features != null && this._features.Count > 0; 
         }
 
     }

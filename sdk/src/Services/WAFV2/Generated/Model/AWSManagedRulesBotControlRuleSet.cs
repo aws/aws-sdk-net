@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Details for your use of the Bot Control managed rule group, used in <code>ManagedRuleGroupConfig</code>.
+    /// Details for your use of the Bot Control managed rule group, <code>AWSManagedRulesBotControlRuleSet</code>.
+    /// This configuration is used in <code>ManagedRuleGroupConfig</code>.
     /// </summary>
     public partial class AWSManagedRulesBotControlRuleSet
     {
@@ -41,7 +42,7 @@ namespace Amazon.WAFV2.Model
         /// The inspection level to use for the Bot Control rule group. The common level is the
         /// least expensive. The targeted level includes all common level rules and adds rules
         /// with more advanced inspection criteria. For details, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
-        /// Bot Control rule group</a>.
+        /// Bot Control rule group</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

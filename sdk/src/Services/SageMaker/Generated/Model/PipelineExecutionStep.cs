@@ -38,6 +38,7 @@ namespace Amazon.SageMaker.Model
         private DateTime? _endTime;
         private string _failureReason;
         private PipelineExecutionStepMetadata _metadata;
+        private SelectiveExecutionResult _selectiveExecutionResult;
         private DateTime? _startTime;
         private string _stepDescription;
         private string _stepDisplayName;
@@ -135,6 +136,25 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMetadata()
         {
             return this._metadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SelectiveExecutionResult. 
+        /// <para>
+        /// The ARN from an execution of the current pipeline from which results are reused for
+        /// this step.
+        /// </para>
+        /// </summary>
+        public SelectiveExecutionResult SelectiveExecutionResult
+        {
+            get { return this._selectiveExecutionResult; }
+            set { this._selectiveExecutionResult = value; }
+        }
+
+        // Check to see if SelectiveExecutionResult property is set
+        internal bool IsSetSelectiveExecutionResult()
+        {
+            return this._selectiveExecutionResult != null;
         }
 
         /// <summary>

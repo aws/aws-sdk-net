@@ -63,12 +63,19 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Certificate. 
+        /// Gets and sets the property Certificate. <ul> <li> 
         /// <para>
-        /// The file that contains the certificate to import.
+        /// For the CLI, provide a file path for a certificate in URI format. For example, <code>--certificate
+        /// file://encryption-cert.pem</code>. Alternatively, you can provide the raw content.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the SDK, specify the raw content of a certificate file. For example, <code>--certificate
+        /// "`cat encryption-cert.pem`"</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=16384)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=16384)]
         public string Certificate
         {
             get { return this._certificate; }
@@ -88,7 +95,7 @@ namespace Amazon.Transfer.Model
         /// being imported.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2097152)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2097152)]
         public string CertificateChain
         {
             get { return this._certificateChain; }
@@ -139,12 +146,20 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PrivateKey. 
+        /// Gets and sets the property PrivateKey. <ul> <li> 
         /// <para>
-        /// The file that contains the private key for the certificate that's being imported.
+        /// For the CLI, provide a file path for a private key in URI format.For example, <code>--private-key
+        /// file://encryption-key.pem</code>. Alternatively, you can provide the raw content of
+        /// the private key file.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For the SDK, specify the raw content of a private key file. For example, <code>--private-key
+        /// "`cat encryption-key.pem`"</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=16384)]
+        [AWSProperty(Sensitive=true, Min=1, Max=16384)]
         public string PrivateKey
         {
             get { return this._privateKey; }

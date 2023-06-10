@@ -39,8 +39,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DocumentClassifierArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) that identifies the document classifier. The operation
-        /// returns this identifier in its response.
+        /// The Amazon Resource Name (ARN) that identifies the document classifier. The <code>CreateDocumentClassifier</code>
+        /// operation returns this identifier in its response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

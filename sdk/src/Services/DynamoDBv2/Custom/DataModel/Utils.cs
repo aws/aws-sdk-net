@@ -219,9 +219,9 @@ namespace Amazon.DynamoDBv2.DataModel
         {
             if (targetMemberInfo == null) throw new ArgumentNullException("targetMemberInfo");
 #if NETSTANDARD
-            object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true).ToArray();
+            object[] attributes = CustomAttributeExtensions.GetCustomAttributes(targetMemberInfo, typeof(DynamoDBAttribute), true).ToArray<object>();
 #else
-            object[] attributes = targetMemberInfo.GetCustomAttributes(typeof(DynamoDBAttribute), true);
+            object[] attributes = Attribute.GetCustomAttributes(targetMemberInfo, typeof(DynamoDBAttribute), true).ToArray<object>();
 #endif
             return attributes;
         }

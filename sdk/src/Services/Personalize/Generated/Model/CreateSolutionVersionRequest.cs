@@ -160,7 +160,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
         /// to apply to the solution version.
         /// </para>
         /// </summary>

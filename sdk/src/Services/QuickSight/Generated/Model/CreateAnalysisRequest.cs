@@ -30,7 +30,8 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAnalysis operation.
-    /// Creates an analysis in Amazon QuickSight.
+    /// Creates an analysis in Amazon QuickSight. Analyses can be created either from a template
+    /// or from an <code>AnalysisDefinition</code>.
     /// </summary>
     public partial class CreateAnalysisRequest : AmazonQuickSightRequest
     {
@@ -90,6 +91,11 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// A definition is the data model of all features in a Dashboard, Template, or Analysis.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
+        /// order for the request to be valid.
         /// </para>
         /// </summary>
         public AnalysisDefinition Definition
@@ -174,6 +180,11 @@ namespace Amazon.QuickSight.Model
         /// <para>
         /// A source entity to use for the analysis that you're creating. This metadata structure
         /// contains details that describe a source template and one or more datasets.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
+        /// order for the request to be valid.
         /// </para>
         /// </summary>
         public AnalysisSourceEntity SourceEntity

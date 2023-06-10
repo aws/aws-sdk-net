@@ -68,8 +68,8 @@ namespace Amazon.RDS.Model
         /// Gets and sets the property EngineNativeAuditFieldsIncluded. 
         /// <para>
         /// Specifies whether the database activity stream includes engine-native audit fields.
-        /// This option only applies to an Oracle DB instance. By default, no engine-native audit
-        /// fields are included.
+        /// This option applies to an Oracle or Microsoft SQL Server DB instance. By default,
+        /// no engine-native audit fields are included.
         /// </para>
         /// </summary>
         public bool EngineNativeAuditFieldsIncluded

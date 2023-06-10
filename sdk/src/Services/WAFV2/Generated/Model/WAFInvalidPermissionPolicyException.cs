@@ -37,7 +37,7 @@ namespace Amazon.WAFV2.Model
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+    /// The policy must be composed using IAM Policy version 2012-10-17.
     /// </para>
     ///  </li> <li> 
     /// <para>

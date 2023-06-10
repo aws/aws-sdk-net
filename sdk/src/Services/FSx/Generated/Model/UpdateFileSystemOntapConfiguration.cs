@@ -122,7 +122,7 @@ namespace Amazon.FSx.Model
         /// The ONTAP administrative password for the <code>fsxadmin</code> user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=50)]
+        [AWSProperty(Sensitive=true, Min=8, Max=50)]
         public string FsxAdminPassword
         {
             get { return this._fsxAdminPassword; }

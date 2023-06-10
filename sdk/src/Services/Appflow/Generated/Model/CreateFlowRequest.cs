@@ -38,6 +38,7 @@ namespace Amazon.Appflow.Model
     /// </summary>
     public partial class CreateFlowRequest : AmazonAppflowRequest
     {
+        private string _clientToken;
         private string _description;
         private List<DestinationFlowConfig> _destinationFlowConfigList = new List<DestinationFlowConfig>();
         private string _flowName;
@@ -47,6 +48,40 @@ namespace Amazon.Appflow.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private List<Task> _tasks = new List<Task>();
         private TriggerConfig _triggerConfig;
+
+        /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// The <code>clientToken</code> parameter is an idempotency token. It ensures that your
+        /// <code>CreateFlow</code> request completes only once. You choose the value to pass.
+        /// For example, if you don't receive a response from your request, you can safely retry
+        /// the request with the same <code>clientToken</code> parameter value.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you omit a <code>clientToken</code> value, the Amazon Web Services SDK that you
+        /// are using inserts a value for you. This way, the SDK can safely retry requests multiple
+        /// times after a network error. You must provide your own value for other use cases.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you specify input parameters that differ from your first request, an error occurs.
+        /// If you use a different value for <code>clientToken</code>, Amazon AppFlow considers
+        /// it a new call to <code>CreateFlow</code>. The token is active for 8 hours.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

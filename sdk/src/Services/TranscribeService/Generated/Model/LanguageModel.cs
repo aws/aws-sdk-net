@@ -29,10 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.TranscribeService.Model
 {
     /// <summary>
-    /// Provides information about a custom language model, including the base model name,
-    /// when the model was created, the location of the files used to train the model, when
-    /// the model was last modified, the name you chose for the model, its language, its processing
-    /// state, and if there is an upgrade available for the base model.
+    /// Provides information about a custom language model, including:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// The base model name
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When the model was created
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The location of the files used to train the model
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// When the model was last modified
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The name you chose for the model
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The model's language
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The model's processing state
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Any available upgrades for the base model
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class LanguageModel
     {

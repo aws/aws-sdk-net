@@ -107,7 +107,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateAwsLogSource_AccountNotFoundExceptionMarshallTest()
+        public void CreateAwsLogSource_BadRequestExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateAwsLogSource");
 
@@ -117,13 +117,45 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("CreateAwsLogSource", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateAwsLogSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void CreateAwsLogSource_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateAwsLogSource");
+
+            var request = InstantiateClassGenerator.Execute<CreateAwsLogSourceRequest>();
+            var marshaller = new CreateAwsLogSourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateAwsLogSource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
@@ -203,7 +235,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateAwsLogSource_S3ExceptionMarshallTest()
+        public void CreateAwsLogSource_ThrottlingExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateAwsLogSource");
 
@@ -213,45 +245,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("CreateAwsLogSource", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("S3Exception"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","S3Exception"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateAwsLogSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void CreateAwsLogSource_ValidationExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateAwsLogSource");
-
-            var request = InstantiateClassGenerator.Execute<CreateAwsLogSourceRequest>();
-            var marshaller = new CreateAwsLogSourceRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("CreateAwsLogSource", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
@@ -329,7 +329,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateCustomLogSource_AccountNotFoundExceptionMarshallTest()
+        public void CreateCustomLogSource_BadRequestExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateCustomLogSource");
 
@@ -339,13 +339,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("CreateCustomLogSource", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
@@ -361,7 +361,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateCustomLogSource_BucketNotFoundExceptionMarshallTest()
+        public void CreateCustomLogSource_ConflictExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateCustomLogSource");
 
@@ -371,45 +371,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("CreateCustomLogSource", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("BucketNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BucketNotFoundException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateCustomLogSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void CreateCustomLogSource_ConflictSourceNamesExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateCustomLogSource");
-
-            var request = InstantiateClassGenerator.Execute<CreateCustomLogSourceRequest>();
-            var marshaller = new CreateCustomLogSourceRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("CreateCustomLogSource", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictSourceNamesException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictSourceNamesException"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
@@ -489,7 +457,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateCustomLogSource_ValidationExceptionMarshallTest()
+        public void CreateCustomLogSource_ThrottlingExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateCustomLogSource");
 
@@ -499,13 +467,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("CreateCustomLogSource", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
@@ -521,15 +489,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalakeMarshallTest()
+        public void CreateDataLakeMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalake");
+            var operation = service_model.FindOperation("CreateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeRequest>();
-            var marshaller = new CreateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeRequest>();
+            var marshaller = new CreateDataLakeRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLake", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -542,8 +510,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = CreateDatalakeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as CreateDatalakeResponse;
+            ResponseUnmarshaller unmarshaller = CreateDataLakeResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateDataLakeResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -551,15 +519,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalake_AccessDeniedExceptionMarshallTest()
+        public void CreateDataLake_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalake");
+            var operation = service_model.FindOperation("CreateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeRequest>();
-            var marshaller = new CreateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeRequest>();
+            var marshaller = new CreateDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -574,7 +542,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -583,15 +551,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalake_ConflictExceptionMarshallTest()
+        public void CreateDataLake_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalake");
+            var operation = service_model.FindOperation("CreateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeRequest>();
-            var marshaller = new CreateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeRequest>();
+            var marshaller = new CreateDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLake", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void CreateDataLake_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDataLake");
+
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeRequest>();
+            var marshaller = new CreateDataLakeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
             var webResponse = new WebResponseData
@@ -606,7 +606,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -615,15 +615,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalake_InternalServerExceptionMarshallTest()
+        public void CreateDataLake_InternalServerExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalake");
+            var operation = service_model.FindOperation("CreateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeRequest>();
-            var marshaller = new CreateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeRequest>();
+            var marshaller = new CreateDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -638,7 +638,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -647,15 +647,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalake_ResourceNotFoundExceptionMarshallTest()
+        public void CreateDataLake_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalake");
+            var operation = service_model.FindOperation("CreateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeRequest>();
-            var marshaller = new CreateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeRequest>();
+            var marshaller = new CreateDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
@@ -670,7 +670,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -679,47 +679,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalake_ServiceQuotaExceededExceptionMarshallTest()
+        public void CreateDataLake_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalake");
+            var operation = service_model.FindOperation("CreateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeRequest>();
-            var marshaller = new CreateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeRequest>();
+            var marshaller = new CreateDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalake", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceQuotaExceededException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void CreateDatalake_ThrottlingExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateDatalake");
-
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeRequest>();
-            var marshaller = new CreateDatalakeRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("CreateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
@@ -734,7 +702,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -743,47 +711,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalake_ValidationExceptionMarshallTest()
+        public void CreateDataLakeExceptionSubscriptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalake");
+            var operation = service_model.FindOperation("CreateDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeRequest>();
-            var marshaller = new CreateDatalakeRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("CreateDatalake", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void CreateDatalakeAutoEnableMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateDatalakeAutoEnable");
-
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeAutoEnableRequest>();
-            var marshaller = new CreateDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new CreateDataLakeExceptionSubscriptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -796,8 +732,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = CreateDatalakeAutoEnableResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as CreateDatalakeAutoEnableResponse;
+            ResponseUnmarshaller unmarshaller = CreateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateDataLakeExceptionSubscriptionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -805,15 +741,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalakeAutoEnable_AccessDeniedExceptionMarshallTest()
+        public void CreateDataLakeExceptionSubscription_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalakeAutoEnable");
+            var operation = service_model.FindOperation("CreateDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeAutoEnableRequest>();
-            var marshaller = new CreateDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new CreateDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -828,7 +764,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -837,30 +773,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalakeAutoEnable_AccountNotFoundExceptionMarshallTest()
+        public void CreateDataLakeExceptionSubscription_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalakeAutoEnable");
+            var operation = service_model.FindOperation("CreateDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeAutoEnableRequest>();
-            var marshaller = new CreateDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new CreateDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLakeExceptionSubscription", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -869,15 +805,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalakeAutoEnable_InternalServerExceptionMarshallTest()
+        public void CreateDataLakeExceptionSubscription_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalakeAutoEnable");
+            var operation = service_model.FindOperation("CreateDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeAutoEnableRequest>();
-            var marshaller = new CreateDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new CreateDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLakeExceptionSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void CreateDataLakeExceptionSubscription_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDataLakeExceptionSubscription");
+
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new CreateDataLakeExceptionSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -892,7 +860,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -901,30 +869,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalakeAutoEnable_ValidationExceptionMarshallTest()
+        public void CreateDataLakeExceptionSubscription_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalakeAutoEnable");
+            var operation = service_model.FindOperation("CreateDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeAutoEnableRequest>();
-            var marshaller = new CreateDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new CreateDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLakeExceptionSubscription", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -933,109 +901,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalakeDelegatedAdminMarshallTest()
+        public void CreateDataLakeExceptionSubscription_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalakeDelegatedAdmin");
+            var operation = service_model.FindOperation("CreateDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeDelegatedAdminRequest>();
-            var marshaller = new CreateDatalakeDelegatedAdminRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateDatalakeDelegatedAdmin", request, internalRequest, service_model);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = CreateDatalakeDelegatedAdminResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as CreateDatalakeDelegatedAdminResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void CreateDatalakeDelegatedAdmin_AccessDeniedExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateDatalakeDelegatedAdmin");
-
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeDelegatedAdminRequest>();
-            var marshaller = new CreateDatalakeDelegatedAdminRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new CreateDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalakeDelegatedAdmin", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeDelegatedAdminResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void CreateDatalakeDelegatedAdmin_InternalServerExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateDatalakeDelegatedAdmin");
-
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeDelegatedAdminRequest>();
-            var marshaller = new CreateDatalakeDelegatedAdminRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("CreateDatalakeDelegatedAdmin", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeDelegatedAdminResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void CreateDatalakeDelegatedAdmin_ThrottlingExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateDatalakeDelegatedAdmin");
-
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeDelegatedAdminRequest>();
-            var marshaller = new CreateDatalakeDelegatedAdminRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("CreateDatalakeDelegatedAdmin", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
@@ -1050,7 +924,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeDelegatedAdminResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1059,47 +933,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalakeDelegatedAdmin_ValidationExceptionMarshallTest()
+        public void CreateDataLakeOrganizationConfigurationMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalakeDelegatedAdmin");
+            var operation = service_model.FindOperation("CreateDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeDelegatedAdminRequest>();
-            var marshaller = new CreateDatalakeDelegatedAdminRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("CreateDatalakeDelegatedAdmin", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeDelegatedAdminResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void CreateDatalakeExceptionsSubscriptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateDatalakeExceptionsSubscription");
-
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new CreateDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new CreateDataLakeOrganizationConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1112,8 +954,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = CreateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as CreateDatalakeExceptionsSubscriptionResponse;
+            ResponseUnmarshaller unmarshaller = CreateDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateDataLakeOrganizationConfigurationResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1121,15 +963,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalakeExceptionsSubscription_AccessDeniedExceptionMarshallTest()
+        public void CreateDataLakeOrganizationConfiguration_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("CreateDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new CreateDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new CreateDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -1144,7 +986,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1153,30 +995,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalakeExceptionsSubscription_AccountNotFoundExceptionMarshallTest()
+        public void CreateDataLakeOrganizationConfiguration_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("CreateDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new CreateDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new CreateDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1185,15 +1027,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalakeExceptionsSubscription_InternalServerExceptionMarshallTest()
+        public void CreateDataLakeOrganizationConfiguration_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("CreateDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new CreateDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new CreateDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLakeOrganizationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void CreateDataLakeOrganizationConfiguration_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDataLakeOrganizationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new CreateDataLakeOrganizationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -1208,7 +1082,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1217,30 +1091,62 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateDatalakeExceptionsSubscription_ValidationExceptionMarshallTest()
+        public void CreateDataLakeOrganizationConfiguration_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("CreateDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<CreateDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new CreateDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new CreateDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void CreateDataLakeOrganizationConfiguration_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("CreateDataLakeOrganizationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<CreateDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new CreateDataLakeOrganizationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("CreateDataLakeOrganizationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = CreateDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1311,7 +1217,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateSubscriber_AccountNotFoundExceptionMarshallTest()
+        public void CreateSubscriber_BadRequestExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateSubscriber");
 
@@ -1321,13 +1227,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("CreateSubscriber", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
@@ -1343,7 +1249,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateSubscriber_BucketNotFoundExceptionMarshallTest()
+        public void CreateSubscriber_ConflictExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateSubscriber");
 
@@ -1353,45 +1259,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("CreateSubscriber", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("BucketNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BucketNotFoundException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void CreateSubscriber_ConflictSubscriptionExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateSubscriber");
-
-            var request = InstantiateClassGenerator.Execute<CreateSubscriberRequest>();
-            var marshaller = new CreateSubscriberRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("CreateSubscriber", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictSubscriptionException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictSubscriptionException"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
@@ -1439,38 +1313,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateSubscriber_InvalidInputExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateSubscriber");
-
-            var request = InstantiateClassGenerator.Execute<CreateSubscriberRequest>();
-            var marshaller = new CreateSubscriberRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("CreateSubscriber", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidInputException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
         public void CreateSubscriber_ResourceNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateSubscriber");
@@ -1503,7 +1345,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateSubscriber_ValidationExceptionMarshallTest()
+        public void CreateSubscriber_ThrottlingExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("CreateSubscriber");
 
@@ -1513,13 +1355,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("CreateSubscriber", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
@@ -1535,15 +1377,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateSubscriptionNotificationConfigurationMarshallTest()
+        public void CreateSubscriberNotificationMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("CreateSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<CreateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new CreateSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateSubscriberNotificationRequest>();
+            var marshaller = new CreateSubscriberNotificationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("CreateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateSubscriberNotification", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -1556,8 +1398,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = CreateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as CreateSubscriptionNotificationConfigurationResponse;
+            ResponseUnmarshaller unmarshaller = CreateSubscriberNotificationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as CreateSubscriberNotificationResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -1565,15 +1407,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateSubscriptionNotificationConfiguration_AccessDeniedExceptionMarshallTest()
+        public void CreateSubscriberNotification_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("CreateSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<CreateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new CreateSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateSubscriberNotificationRequest>();
+            var marshaller = new CreateSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateSubscriberNotification", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -1588,7 +1430,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1597,30 +1439,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateSubscriptionNotificationConfiguration_AccountNotFoundExceptionMarshallTest()
+        public void CreateSubscriberNotification_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("CreateSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<CreateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new CreateSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateSubscriberNotificationRequest>();
+            var marshaller = new CreateSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateSubscriberNotification", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1629,30 +1471,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateSubscriptionNotificationConfiguration_ConcurrentModificationExceptionMarshallTest()
+        public void CreateSubscriberNotification_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("CreateSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<CreateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new CreateSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateSubscriberNotificationRequest>();
+            var marshaller = new CreateSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateSubscriberNotification", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentModificationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConcurrentModificationException"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1661,15 +1503,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateSubscriptionNotificationConfiguration_InternalServerExceptionMarshallTest()
+        public void CreateSubscriberNotification_InternalServerExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("CreateSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<CreateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new CreateSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateSubscriberNotificationRequest>();
+            var marshaller = new CreateSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateSubscriberNotification", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -1684,7 +1526,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1693,47 +1535,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateSubscriptionNotificationConfiguration_InvalidInputExceptionMarshallTest()
+        public void CreateSubscriberNotification_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("CreateSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<CreateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new CreateSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateSubscriberNotificationRequest>();
+            var marshaller = new CreateSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidInputException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void CreateSubscriptionNotificationConfiguration_ResourceNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("CreateSubscriptionNotificationConfiguration");
-
-            var request = InstantiateClassGenerator.Execute<CreateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new CreateSubscriptionNotificationConfigurationRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("CreateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateSubscriberNotification", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
@@ -1748,7 +1558,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1757,30 +1567,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void CreateSubscriptionNotificationConfiguration_ValidationExceptionMarshallTest()
+        public void CreateSubscriberNotification_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("CreateSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("CreateSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<CreateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new CreateSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<CreateSubscriberNotificationRequest>();
+            var marshaller = new CreateSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("CreateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("CreateSubscriberNotification", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = CreateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = CreateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -1851,7 +1661,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteAwsLogSource_AccountNotFoundExceptionMarshallTest()
+        public void DeleteAwsLogSource_BadRequestExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteAwsLogSource");
 
@@ -1861,13 +1671,45 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("DeleteAwsLogSource", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAwsLogSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void DeleteAwsLogSource_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAwsLogSource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAwsLogSourceRequest>();
+            var marshaller = new DeleteAwsLogSourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAwsLogSource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
@@ -1915,7 +1757,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteAwsLogSource_ValidationExceptionMarshallTest()
+        public void DeleteAwsLogSource_ResourceNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteAwsLogSource");
 
@@ -1925,13 +1767,45 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("DeleteAwsLogSource", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteAwsLogSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void DeleteAwsLogSource_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteAwsLogSource");
+
+            var request = InstantiateClassGenerator.Execute<DeleteAwsLogSourceRequest>();
+            var marshaller = new DeleteAwsLogSourceRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteAwsLogSource", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
@@ -2009,7 +1883,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteCustomLogSource_AccountNotFoundExceptionMarshallTest()
+        public void DeleteCustomLogSource_BadRequestExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteCustomLogSource");
 
@@ -2019,13 +1893,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("DeleteCustomLogSource", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
@@ -2041,7 +1915,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteCustomLogSource_BucketNotFoundExceptionMarshallTest()
+        public void DeleteCustomLogSource_ConflictExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteCustomLogSource");
 
@@ -2051,45 +1925,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("DeleteCustomLogSource", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("BucketNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BucketNotFoundException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteCustomLogSourceResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void DeleteCustomLogSource_ConflictSourceNamesExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteCustomLogSource");
-
-            var request = InstantiateClassGenerator.Execute<DeleteCustomLogSourceRequest>();
-            var marshaller = new DeleteCustomLogSourceRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("DeleteCustomLogSource", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictSourceNamesException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictSourceNamesException"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
@@ -2169,7 +2011,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteCustomLogSource_ValidationExceptionMarshallTest()
+        public void DeleteCustomLogSource_ThrottlingExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteCustomLogSource");
 
@@ -2179,13 +2021,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("DeleteCustomLogSource", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
@@ -2201,15 +2043,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalakeMarshallTest()
+        public void DeleteDataLakeMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalake");
+            var operation = service_model.FindOperation("DeleteDataLake");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeRequest>();
-            var marshaller = new DeleteDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeRequest>();
+            var marshaller = new DeleteDataLakeRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLake", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2222,8 +2064,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = DeleteDatalakeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as DeleteDatalakeResponse;
+            ResponseUnmarshaller unmarshaller = DeleteDataLakeResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteDataLakeResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2231,15 +2073,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalake_AccessDeniedExceptionMarshallTest()
+        public void DeleteDataLake_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalake");
+            var operation = service_model.FindOperation("DeleteDataLake");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeRequest>();
-            var marshaller = new DeleteDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeRequest>();
+            var marshaller = new DeleteDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -2254,7 +2096,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2263,15 +2105,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalake_ConflictExceptionMarshallTest()
+        public void DeleteDataLake_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalake");
+            var operation = service_model.FindOperation("DeleteDataLake");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeRequest>();
-            var marshaller = new DeleteDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeRequest>();
+            var marshaller = new DeleteDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLake", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void DeleteDataLake_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDataLake");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeRequest>();
+            var marshaller = new DeleteDataLakeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
             var webResponse = new WebResponseData
@@ -2286,7 +2160,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2295,15 +2169,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalake_InternalServerExceptionMarshallTest()
+        public void DeleteDataLake_InternalServerExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalake");
+            var operation = service_model.FindOperation("DeleteDataLake");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeRequest>();
-            var marshaller = new DeleteDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeRequest>();
+            var marshaller = new DeleteDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -2318,7 +2192,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2327,15 +2201,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalake_ResourceNotFoundExceptionMarshallTest()
+        public void DeleteDataLake_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalake");
+            var operation = service_model.FindOperation("DeleteDataLake");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeRequest>();
-            var marshaller = new DeleteDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeRequest>();
+            var marshaller = new DeleteDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
@@ -2350,7 +2224,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2359,47 +2233,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalake_ServiceQuotaExceededExceptionMarshallTest()
+        public void DeleteDataLake_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalake");
+            var operation = service_model.FindOperation("DeleteDataLake");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeRequest>();
-            var marshaller = new DeleteDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeRequest>();
+            var marshaller = new DeleteDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalake", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ServiceQuotaExceededException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ServiceQuotaExceededException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void DeleteDatalake_ThrottlingExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteDatalake");
-
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeRequest>();
-            var marshaller = new DeleteDatalakeRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("DeleteDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
@@ -2414,7 +2256,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2423,47 +2265,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalake_ValidationExceptionMarshallTest()
+        public void DeleteDataLakeExceptionSubscriptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalake");
+            var operation = service_model.FindOperation("DeleteDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeRequest>();
-            var marshaller = new DeleteDatalakeRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("DeleteDatalake", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void DeleteDatalakeAutoEnableMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteDatalakeAutoEnable");
-
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeAutoEnableRequest>();
-            var marshaller = new DeleteDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new DeleteDataLakeExceptionSubscriptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2476,8 +2286,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = DeleteDatalakeAutoEnableResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as DeleteDatalakeAutoEnableResponse;
+            ResponseUnmarshaller unmarshaller = DeleteDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteDataLakeExceptionSubscriptionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2485,15 +2295,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalakeAutoEnable_AccessDeniedExceptionMarshallTest()
+        public void DeleteDataLakeExceptionSubscription_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalakeAutoEnable");
+            var operation = service_model.FindOperation("DeleteDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeAutoEnableRequest>();
-            var marshaller = new DeleteDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new DeleteDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -2508,7 +2318,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2517,30 +2327,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalakeAutoEnable_AccountNotFoundExceptionMarshallTest()
+        public void DeleteDataLakeExceptionSubscription_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalakeAutoEnable");
+            var operation = service_model.FindOperation("DeleteDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeAutoEnableRequest>();
-            var marshaller = new DeleteDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new DeleteDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLakeExceptionSubscription", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2549,15 +2359,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalakeAutoEnable_InternalServerExceptionMarshallTest()
+        public void DeleteDataLakeExceptionSubscription_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalakeAutoEnable");
+            var operation = service_model.FindOperation("DeleteDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeAutoEnableRequest>();
-            var marshaller = new DeleteDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new DeleteDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLakeExceptionSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void DeleteDataLakeExceptionSubscription_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDataLakeExceptionSubscription");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new DeleteDataLakeExceptionSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -2572,7 +2414,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2581,30 +2423,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalakeAutoEnable_ValidationExceptionMarshallTest()
+        public void DeleteDataLakeExceptionSubscription_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalakeAutoEnable");
+            var operation = service_model.FindOperation("DeleteDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeAutoEnableRequest>();
-            var marshaller = new DeleteDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new DeleteDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLakeExceptionSubscription", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2613,109 +2455,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalakeDelegatedAdminMarshallTest()
+        public void DeleteDataLakeExceptionSubscription_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalakeDelegatedAdmin");
+            var operation = service_model.FindOperation("DeleteDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeDelegatedAdminRequest>();
-            var marshaller = new DeleteDatalakeDelegatedAdminRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteDatalakeDelegatedAdmin", request, internalRequest, service_model);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = DeleteDatalakeDelegatedAdminResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as DeleteDatalakeDelegatedAdminResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void DeleteDatalakeDelegatedAdmin_AccessDeniedExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteDatalakeDelegatedAdmin");
-
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeDelegatedAdminRequest>();
-            var marshaller = new DeleteDatalakeDelegatedAdminRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new DeleteDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalakeDelegatedAdmin", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeDelegatedAdminResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void DeleteDatalakeDelegatedAdmin_InternalServerExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteDatalakeDelegatedAdmin");
-
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeDelegatedAdminRequest>();
-            var marshaller = new DeleteDatalakeDelegatedAdminRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("DeleteDatalakeDelegatedAdmin", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeDelegatedAdminResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void DeleteDatalakeDelegatedAdmin_ThrottlingExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteDatalakeDelegatedAdmin");
-
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeDelegatedAdminRequest>();
-            var marshaller = new DeleteDatalakeDelegatedAdminRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("DeleteDatalakeDelegatedAdmin", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
@@ -2730,7 +2478,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeDelegatedAdminResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2739,47 +2487,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalakeDelegatedAdmin_ValidationExceptionMarshallTest()
+        public void DeleteDataLakeOrganizationConfigurationMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalakeDelegatedAdmin");
+            var operation = service_model.FindOperation("DeleteDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeDelegatedAdminRequest>();
-            var marshaller = new DeleteDatalakeDelegatedAdminRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("DeleteDatalakeDelegatedAdmin", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeDelegatedAdminResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void DeleteDatalakeExceptionsSubscriptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteDatalakeExceptionsSubscription");
-
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new DeleteDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new DeleteDataLakeOrganizationConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -2792,8 +2508,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = DeleteDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as DeleteDatalakeExceptionsSubscriptionResponse;
+            ResponseUnmarshaller unmarshaller = DeleteDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteDataLakeOrganizationConfigurationResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -2801,15 +2517,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalakeExceptionsSubscription_AccessDeniedExceptionMarshallTest()
+        public void DeleteDataLakeOrganizationConfiguration_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("DeleteDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new DeleteDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new DeleteDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -2824,7 +2540,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2833,30 +2549,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalakeExceptionsSubscription_AccountNotFoundExceptionMarshallTest()
+        public void DeleteDataLakeOrganizationConfiguration_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("DeleteDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new DeleteDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new DeleteDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2865,15 +2581,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalakeExceptionsSubscription_InternalServerExceptionMarshallTest()
+        public void DeleteDataLakeOrganizationConfiguration_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("DeleteDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new DeleteDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new DeleteDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLakeOrganizationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void DeleteDataLakeOrganizationConfiguration_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDataLakeOrganizationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new DeleteDataLakeOrganizationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -2888,7 +2636,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2897,30 +2645,62 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteDatalakeExceptionsSubscription_ValidationExceptionMarshallTest()
+        public void DeleteDataLakeOrganizationConfiguration_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("DeleteDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<DeleteDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new DeleteDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new DeleteDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void DeleteDataLakeOrganizationConfiguration_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeleteDataLakeOrganizationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<DeleteDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new DeleteDataLakeOrganizationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeleteDataLakeOrganizationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeleteDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -2991,7 +2771,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteSubscriber_AccountNotFoundExceptionMarshallTest()
+        public void DeleteSubscriber_BadRequestExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteSubscriber");
 
@@ -3001,13 +2781,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("DeleteSubscriber", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
@@ -3023,7 +2803,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteSubscriber_BucketNotFoundExceptionMarshallTest()
+        public void DeleteSubscriber_ConflictExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteSubscriber");
 
@@ -3033,45 +2813,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("DeleteSubscriber", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("BucketNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","BucketNotFoundException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void DeleteSubscriber_ConcurrentModificationExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteSubscriber");
-
-            var request = InstantiateClassGenerator.Execute<DeleteSubscriberRequest>();
-            var marshaller = new DeleteSubscriberRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("DeleteSubscriber", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentModificationException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConcurrentModificationException"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
@@ -3119,38 +2867,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteSubscriber_InvalidInputExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteSubscriber");
-
-            var request = InstantiateClassGenerator.Execute<DeleteSubscriberRequest>();
-            var marshaller = new DeleteSubscriberRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("DeleteSubscriber", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidInputException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
         public void DeleteSubscriber_ResourceNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteSubscriber");
@@ -3183,7 +2899,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteSubscriber_ValidationExceptionMarshallTest()
+        public void DeleteSubscriber_ThrottlingExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("DeleteSubscriber");
 
@@ -3193,13 +2909,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("DeleteSubscriber", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
@@ -3215,15 +2931,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteSubscriptionNotificationConfigurationMarshallTest()
+        public void DeleteSubscriberNotificationMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("DeleteSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new DeleteSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteSubscriberNotificationRequest>();
+            var marshaller = new DeleteSubscriberNotificationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("DeleteSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteSubscriberNotification", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -3236,8 +2952,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = DeleteSubscriptionNotificationConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as DeleteSubscriptionNotificationConfigurationResponse;
+            ResponseUnmarshaller unmarshaller = DeleteSubscriberNotificationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeleteSubscriberNotificationResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3245,15 +2961,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteSubscriptionNotificationConfiguration_AccessDeniedExceptionMarshallTest()
+        public void DeleteSubscriberNotification_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("DeleteSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new DeleteSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteSubscriberNotificationRequest>();
+            var marshaller = new DeleteSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteSubscriberNotification", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -3268,7 +2984,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3277,30 +2993,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteSubscriptionNotificationConfiguration_AccountNotFoundExceptionMarshallTest()
+        public void DeleteSubscriberNotification_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("DeleteSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new DeleteSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteSubscriberNotificationRequest>();
+            var marshaller = new DeleteSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteSubscriberNotification", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3309,30 +3025,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteSubscriptionNotificationConfiguration_ConcurrentModificationExceptionMarshallTest()
+        public void DeleteSubscriberNotification_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("DeleteSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new DeleteSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteSubscriberNotificationRequest>();
+            var marshaller = new DeleteSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteSubscriberNotification", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentModificationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConcurrentModificationException"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3341,15 +3057,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteSubscriptionNotificationConfiguration_InternalServerExceptionMarshallTest()
+        public void DeleteSubscriberNotification_InternalServerExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("DeleteSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new DeleteSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteSubscriberNotificationRequest>();
+            var marshaller = new DeleteSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteSubscriberNotification", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -3364,7 +3080,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3373,47 +3089,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteSubscriptionNotificationConfiguration_InvalidInputExceptionMarshallTest()
+        public void DeleteSubscriberNotification_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("DeleteSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new DeleteSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteSubscriberNotificationRequest>();
+            var marshaller = new DeleteSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteSubscriptionNotificationConfiguration", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidInputException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void DeleteSubscriptionNotificationConfiguration_ResourceNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("DeleteSubscriptionNotificationConfiguration");
-
-            var request = InstantiateClassGenerator.Execute<DeleteSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new DeleteSubscriptionNotificationConfigurationRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("DeleteSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteSubscriberNotification", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
@@ -3428,7 +3112,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3437,30 +3121,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void DeleteSubscriptionNotificationConfiguration_ValidationExceptionMarshallTest()
+        public void DeleteSubscriberNotification_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("DeleteSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("DeleteSubscriberNotification");
 
-            var request = InstantiateClassGenerator.Execute<DeleteSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new DeleteSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeleteSubscriberNotificationRequest>();
+            var marshaller = new DeleteSubscriberNotificationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("DeleteSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeleteSubscriberNotification", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = DeleteSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeleteSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3469,15 +3153,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeMarshallTest()
+        public void DeregisterDataLakeDelegatedAdministratorMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalake");
+            var operation = service_model.FindOperation("DeregisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeRequest>();
-            var marshaller = new GetDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeregisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new DeregisterDataLakeDelegatedAdministratorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeregisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -3490,8 +3174,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = GetDatalakeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as GetDatalakeResponse;
+            ResponseUnmarshaller unmarshaller = DeregisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as DeregisterDataLakeDelegatedAdministratorResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3499,15 +3183,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalake_AccessDeniedExceptionMarshallTest()
+        public void DeregisterDataLakeDelegatedAdministrator_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalake");
+            var operation = service_model.FindOperation("DeregisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeRequest>();
-            var marshaller = new GetDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeregisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new DeregisterDataLakeDelegatedAdministratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeregisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -3522,7 +3206,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeregisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3531,30 +3215,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalake_AccountNotFoundExceptionMarshallTest()
+        public void DeregisterDataLakeDelegatedAdministrator_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalake");
+            var operation = service_model.FindOperation("DeregisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeRequest>();
-            var marshaller = new GetDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeregisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new DeregisterDataLakeDelegatedAdministratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeregisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeregisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3563,15 +3247,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalake_InternalServerExceptionMarshallTest()
+        public void DeregisterDataLakeDelegatedAdministrator_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalake");
+            var operation = service_model.FindOperation("DeregisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeRequest>();
-            var marshaller = new GetDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeregisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new DeregisterDataLakeDelegatedAdministratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeregisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = DeregisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void DeregisterDataLakeDelegatedAdministrator_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("DeregisterDataLakeDelegatedAdministrator");
+
+            var request = InstantiateClassGenerator.Execute<DeregisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new DeregisterDataLakeDelegatedAdministratorRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("DeregisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -3586,7 +3302,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeregisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3595,15 +3311,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalake_ResourceNotFoundExceptionMarshallTest()
+        public void DeregisterDataLakeDelegatedAdministrator_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalake");
+            var operation = service_model.FindOperation("DeregisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeRequest>();
-            var marshaller = new GetDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeregisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new DeregisterDataLakeDelegatedAdministratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeregisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
@@ -3618,7 +3334,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeregisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3627,30 +3343,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalake_ValidationExceptionMarshallTest()
+        public void DeregisterDataLakeDelegatedAdministrator_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalake");
+            var operation = service_model.FindOperation("DeregisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeRequest>();
-            var marshaller = new GetDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<DeregisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new DeregisterDataLakeDelegatedAdministratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("DeregisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = DeregisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3659,15 +3375,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeAutoEnableMarshallTest()
+        public void GetDataLakeExceptionSubscriptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeAutoEnable");
+            var operation = service_model.FindOperation("GetDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeAutoEnableRequest>();
-            var marshaller = new GetDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new GetDataLakeExceptionSubscriptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -3680,8 +3396,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = GetDatalakeAutoEnableResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as GetDatalakeAutoEnableResponse;
+            ResponseUnmarshaller unmarshaller = GetDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetDataLakeExceptionSubscriptionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3689,15 +3405,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeAutoEnable_AccessDeniedExceptionMarshallTest()
+        public void GetDataLakeExceptionSubscription_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeAutoEnable");
+            var operation = service_model.FindOperation("GetDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeAutoEnableRequest>();
-            var marshaller = new GetDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new GetDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -3712,7 +3428,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3721,30 +3437,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeAutoEnable_AccountNotFoundExceptionMarshallTest()
+        public void GetDataLakeExceptionSubscription_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeAutoEnable");
+            var operation = service_model.FindOperation("GetDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeAutoEnableRequest>();
-            var marshaller = new GetDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new GetDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeExceptionSubscription", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3753,15 +3469,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeAutoEnable_InternalServerExceptionMarshallTest()
+        public void GetDataLakeExceptionSubscription_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeAutoEnable");
+            var operation = service_model.FindOperation("GetDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeAutoEnableRequest>();
-            var marshaller = new GetDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new GetDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeExceptionSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void GetDataLakeExceptionSubscription_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDataLakeExceptionSubscription");
+
+            var request = InstantiateClassGenerator.Execute<GetDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new GetDataLakeExceptionSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -3776,7 +3524,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3785,30 +3533,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeAutoEnable_ValidationExceptionMarshallTest()
+        public void GetDataLakeExceptionSubscription_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeAutoEnable");
+            var operation = service_model.FindOperation("GetDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeAutoEnableRequest>();
-            var marshaller = new GetDatalakeAutoEnableRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new GetDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeAutoEnable", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeExceptionSubscription", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeAutoEnableResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3817,15 +3565,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeExceptionsExpiryMarshallTest()
+        public void GetDataLakeExceptionSubscription_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeExceptionsExpiry");
+            var operation = service_model.FindOperation("GetDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeExceptionsExpiryRequest>();
-            var marshaller = new GetDatalakeExceptionsExpiryRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new GetDataLakeExceptionSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetDataLakeExceptionSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void GetDataLakeOrganizationConfigurationMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDataLakeOrganizationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new GetDataLakeOrganizationConfigurationRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetDatalakeExceptionsExpiry", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -3838,8 +3618,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = GetDatalakeExceptionsExpiryResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as GetDatalakeExceptionsExpiryResponse;
+            ResponseUnmarshaller unmarshaller = GetDataLakeOrganizationConfigurationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetDataLakeOrganizationConfigurationResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -3847,15 +3627,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeExceptionsExpiry_AccessDeniedExceptionMarshallTest()
+        public void GetDataLakeOrganizationConfiguration_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeExceptionsExpiry");
+            var operation = service_model.FindOperation("GetDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeExceptionsExpiryRequest>();
-            var marshaller = new GetDatalakeExceptionsExpiryRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new GetDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeExceptionsExpiry", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -3870,7 +3650,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeExceptionsExpiryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3879,30 +3659,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeExceptionsExpiry_AccountNotFoundExceptionMarshallTest()
+        public void GetDataLakeOrganizationConfiguration_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeExceptionsExpiry");
+            var operation = service_model.FindOperation("GetDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeExceptionsExpiryRequest>();
-            var marshaller = new GetDatalakeExceptionsExpiryRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new GetDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeExceptionsExpiry", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeExceptionsExpiryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3911,15 +3691,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeExceptionsExpiry_InternalServerExceptionMarshallTest()
+        public void GetDataLakeOrganizationConfiguration_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeExceptionsExpiry");
+            var operation = service_model.FindOperation("GetDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeExceptionsExpiryRequest>();
-            var marshaller = new GetDatalakeExceptionsExpiryRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new GetDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeExceptionsExpiry", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeOrganizationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void GetDataLakeOrganizationConfiguration_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDataLakeOrganizationConfiguration");
+
+            var request = InstantiateClassGenerator.Execute<GetDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new GetDataLakeOrganizationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -3934,7 +3746,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeExceptionsExpiryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3943,30 +3755,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeExceptionsExpiry_ValidationExceptionMarshallTest()
+        public void GetDataLakeOrganizationConfiguration_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeExceptionsExpiry");
+            var operation = service_model.FindOperation("GetDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeExceptionsExpiryRequest>();
-            var marshaller = new GetDatalakeExceptionsExpiryRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new GetDataLakeOrganizationConfigurationRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeExceptionsExpiry", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeOrganizationConfiguration", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeExceptionsExpiryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -3975,15 +3787,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeExceptionsSubscriptionMarshallTest()
+        public void GetDataLakeOrganizationConfiguration_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("GetDataLakeOrganizationConfiguration");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new GetDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeOrganizationConfigurationRequest>();
+            var marshaller = new GetDataLakeOrganizationConfigurationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetDataLakeOrganizationConfiguration", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetDataLakeOrganizationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void GetDataLakeSourcesMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDataLakeSources");
+
+            var request = InstantiateClassGenerator.Execute<GetDataLakeSourcesRequest>();
+            var marshaller = new GetDataLakeSourcesRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeSources", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -3996,8 +3840,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = GetDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as GetDatalakeExceptionsSubscriptionResponse;
+            ResponseUnmarshaller unmarshaller = GetDataLakeSourcesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as GetDataLakeSourcesResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4005,15 +3849,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeExceptionsSubscription_AccessDeniedExceptionMarshallTest()
+        public void GetDataLakeSources_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("GetDataLakeSources");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new GetDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeSourcesRequest>();
+            var marshaller = new GetDataLakeSourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeSources", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -4028,7 +3872,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4037,30 +3881,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeExceptionsSubscription_AccountNotFoundExceptionMarshallTest()
+        public void GetDataLakeSources_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("GetDataLakeSources");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new GetDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeSourcesRequest>();
+            var marshaller = new GetDataLakeSourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeSources", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4069,15 +3913,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeExceptionsSubscription_InternalServerExceptionMarshallTest()
+        public void GetDataLakeSources_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("GetDataLakeSources");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new GetDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeSourcesRequest>();
+            var marshaller = new GetDataLakeSourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeSources", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetDataLakeSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void GetDataLakeSources_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetDataLakeSources");
+
+            var request = InstantiateClassGenerator.Execute<GetDataLakeSourcesRequest>();
+            var marshaller = new GetDataLakeSourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetDataLakeSources", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -4092,7 +3968,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4101,30 +3977,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeExceptionsSubscription_ValidationExceptionMarshallTest()
+        public void GetDataLakeSources_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("GetDataLakeSources");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new GetDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeSourcesRequest>();
+            var marshaller = new GetDataLakeSourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeSources", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4133,156 +4009,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetDatalakeStatusMarshallTest()
+        public void GetDataLakeSources_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("GetDatalakeStatus");
+            var operation = service_model.FindOperation("GetDataLakeSources");
 
-            var request = InstantiateClassGenerator.Execute<GetDatalakeStatusRequest>();
-            var marshaller = new GetDatalakeStatusRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("GetDatalakeStatus", request, internalRequest, service_model);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = GetDatalakeStatusResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as GetDatalakeStatusResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void GetDatalakeStatus_AccessDeniedExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("GetDatalakeStatus");
-
-            var request = InstantiateClassGenerator.Execute<GetDatalakeStatusRequest>();
-            var marshaller = new GetDatalakeStatusRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetDataLakeSourcesRequest>();
+            var marshaller = new GetDataLakeSourcesRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("GetDatalakeStatus", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("GetDataLakeSources", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void GetDatalakeStatus_AccountNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("GetDatalakeStatus");
-
-            var request = InstantiateClassGenerator.Execute<GetDatalakeStatusRequest>();
-            var marshaller = new GetDatalakeStatusRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("GetDatalakeStatus", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void GetDatalakeStatus_InternalServerExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("GetDatalakeStatus");
-
-            var request = InstantiateClassGenerator.Execute<GetDatalakeStatusRequest>();
-            var marshaller = new GetDatalakeStatusRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("GetDatalakeStatus", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void GetDatalakeStatus_ValidationExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("GetDatalakeStatus");
-
-            var request = InstantiateClassGenerator.Execute<GetDatalakeStatusRequest>();
-            var marshaller = new GetDatalakeStatusRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("GetDatalakeStatus", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetDatalakeStatusResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = GetDataLakeSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4353,7 +4103,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetSubscriber_AccountNotFoundExceptionMarshallTest()
+        public void GetSubscriber_BadRequestExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("GetSubscriber");
 
@@ -4363,13 +4113,45 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("GetSubscriber", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void GetSubscriber_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("GetSubscriber");
+
+            var request = InstantiateClassGenerator.Execute<GetSubscriberRequest>();
+            var marshaller = new GetSubscriberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSubscriber", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
@@ -4417,38 +4199,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void GetSubscriber_InvalidInputExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("GetSubscriber");
-
-            var request = InstantiateClassGenerator.Execute<GetSubscriberRequest>();
-            var marshaller = new GetSubscriberRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("GetSubscriber", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidInputException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = GetSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
         public void GetSubscriber_ResourceNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("GetSubscriber");
@@ -4481,15 +4231,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void ListDatalakeExceptionsMarshallTest()
+        public void GetSubscriber_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ListDatalakeExceptions");
+            var operation = service_model.FindOperation("GetSubscriber");
 
-            var request = InstantiateClassGenerator.Execute<ListDatalakeExceptionsRequest>();
-            var marshaller = new ListDatalakeExceptionsRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<GetSubscriberRequest>();
+            var marshaller = new GetSubscriberRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("GetSubscriber", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = GetSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListDataLakeExceptionsMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDataLakeExceptions");
+
+            var request = InstantiateClassGenerator.Execute<ListDataLakeExceptionsRequest>();
+            var marshaller = new ListDataLakeExceptionsRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("ListDatalakeExceptions", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("ListDataLakeExceptions", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -4502,8 +4284,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = ListDatalakeExceptionsResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as ListDatalakeExceptionsResponse;
+            ResponseUnmarshaller unmarshaller = ListDataLakeExceptionsResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListDataLakeExceptionsResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -4511,15 +4293,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void ListDatalakeExceptions_AccessDeniedExceptionMarshallTest()
+        public void ListDataLakeExceptions_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ListDatalakeExceptions");
+            var operation = service_model.FindOperation("ListDataLakeExceptions");
 
-            var request = InstantiateClassGenerator.Execute<ListDatalakeExceptionsRequest>();
-            var marshaller = new ListDatalakeExceptionsRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<ListDataLakeExceptionsRequest>();
+            var marshaller = new ListDataLakeExceptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("ListDatalakeExceptions", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("ListDataLakeExceptions", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -4534,7 +4316,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = ListDatalakeExceptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = ListDataLakeExceptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4543,30 +4325,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void ListDatalakeExceptions_AccountNotFoundExceptionMarshallTest()
+        public void ListDataLakeExceptions_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ListDatalakeExceptions");
+            var operation = service_model.FindOperation("ListDataLakeExceptions");
 
-            var request = InstantiateClassGenerator.Execute<ListDatalakeExceptionsRequest>();
-            var marshaller = new ListDatalakeExceptionsRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<ListDataLakeExceptionsRequest>();
+            var marshaller = new ListDataLakeExceptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("ListDatalakeExceptions", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("ListDataLakeExceptions", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = ListDatalakeExceptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = ListDataLakeExceptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4575,15 +4357,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void ListDatalakeExceptions_InternalServerExceptionMarshallTest()
+        public void ListDataLakeExceptions_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ListDatalakeExceptions");
+            var operation = service_model.FindOperation("ListDataLakeExceptions");
 
-            var request = InstantiateClassGenerator.Execute<ListDatalakeExceptionsRequest>();
-            var marshaller = new ListDatalakeExceptionsRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<ListDataLakeExceptionsRequest>();
+            var marshaller = new ListDataLakeExceptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("ListDatalakeExceptions", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("ListDataLakeExceptions", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListDataLakeExceptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListDataLakeExceptions_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDataLakeExceptions");
+
+            var request = InstantiateClassGenerator.Execute<ListDataLakeExceptionsRequest>();
+            var marshaller = new ListDataLakeExceptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListDataLakeExceptions", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -4598,7 +4412,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = ListDatalakeExceptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = ListDataLakeExceptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4607,30 +4421,284 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void ListDatalakeExceptions_ValidationExceptionMarshallTest()
+        public void ListDataLakeExceptions_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("ListDatalakeExceptions");
+            var operation = service_model.FindOperation("ListDataLakeExceptions");
 
-            var request = InstantiateClassGenerator.Execute<ListDatalakeExceptionsRequest>();
-            var marshaller = new ListDatalakeExceptionsRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<ListDataLakeExceptionsRequest>();
+            var marshaller = new ListDataLakeExceptionsRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("ListDatalakeExceptions", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("ListDataLakeExceptions", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = ListDatalakeExceptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = ListDataLakeExceptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListDataLakeExceptions_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDataLakeExceptions");
+
+            var request = InstantiateClassGenerator.Execute<ListDataLakeExceptionsRequest>();
+            var marshaller = new ListDataLakeExceptionsRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListDataLakeExceptions", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListDataLakeExceptionsResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListDataLakesMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDataLakes");
+
+            var request = InstantiateClassGenerator.Execute<ListDataLakesRequest>();
+            var marshaller = new ListDataLakesRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("ListDataLakes", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = ListDataLakesResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as ListDataLakesResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListDataLakes_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDataLakes");
+
+            var request = InstantiateClassGenerator.Execute<ListDataLakesRequest>();
+            var marshaller = new ListDataLakesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListDataLakes", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListDataLakesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListDataLakes_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDataLakes");
+
+            var request = InstantiateClassGenerator.Execute<ListDataLakesRequest>();
+            var marshaller = new ListDataLakesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListDataLakes", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListDataLakesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListDataLakes_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDataLakes");
+
+            var request = InstantiateClassGenerator.Execute<ListDataLakesRequest>();
+            var marshaller = new ListDataLakesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListDataLakes", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListDataLakesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListDataLakes_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDataLakes");
+
+            var request = InstantiateClassGenerator.Execute<ListDataLakesRequest>();
+            var marshaller = new ListDataLakesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListDataLakes", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListDataLakesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListDataLakes_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDataLakes");
+
+            var request = InstantiateClassGenerator.Execute<ListDataLakesRequest>();
+            var marshaller = new ListDataLakesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListDataLakes", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListDataLakesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListDataLakes_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListDataLakes");
+
+            var request = InstantiateClassGenerator.Execute<ListDataLakesRequest>();
+            var marshaller = new ListDataLakesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListDataLakes", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListDataLakesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -4701,7 +4769,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void ListLogSources_AccountNotFoundExceptionMarshallTest()
+        public void ListLogSources_BadRequestExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ListLogSources");
 
@@ -4711,13 +4779,45 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("ListLogSources", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListLogSourcesResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListLogSources_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListLogSources");
+
+            var request = InstantiateClassGenerator.Execute<ListLogSourcesRequest>();
+            var marshaller = new ListLogSourcesRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListLogSources", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
@@ -4797,7 +4897,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void ListLogSources_ValidationExceptionMarshallTest()
+        public void ListLogSources_ThrottlingExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ListLogSources");
 
@@ -4807,13 +4907,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("ListLogSources", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
@@ -4891,7 +4991,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void ListSubscribers_AccountNotFoundExceptionMarshallTest()
+        public void ListSubscribers_BadRequestExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ListSubscribers");
 
@@ -4901,13 +5001,45 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("ListSubscribers", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = ListSubscribersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void ListSubscribers_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("ListSubscribers");
+
+            var request = InstantiateClassGenerator.Execute<ListSubscribersRequest>();
+            var marshaller = new ListSubscribersRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("ListSubscribers", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
@@ -4955,38 +5087,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void ListSubscribers_InvalidInputExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("ListSubscribers");
-
-            var request = InstantiateClassGenerator.Execute<ListSubscribersRequest>();
-            var marshaller = new ListSubscribersRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("ListSubscribers", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidInputException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = ListSubscribersResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
         public void ListSubscribers_ResourceNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ListSubscribers");
@@ -5019,7 +5119,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void ListSubscribers_ValidationExceptionMarshallTest()
+        public void ListSubscribers_ThrottlingExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("ListSubscribers");
 
@@ -5029,13 +5129,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("ListSubscribers", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
@@ -5051,15 +5151,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalakeMarshallTest()
+        public void RegisterDataLakeDelegatedAdministratorMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalake");
+            var operation = service_model.FindOperation("RegisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeRequest>();
-            var marshaller = new UpdateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<RegisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new RegisterDataLakeDelegatedAdministratorRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UpdateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("RegisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -5072,8 +5172,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = UpdateDatalakeResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as UpdateDatalakeResponse;
+            ResponseUnmarshaller unmarshaller = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as RegisterDataLakeDelegatedAdministratorResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5081,15 +5181,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalake_AccessDeniedExceptionMarshallTest()
+        public void RegisterDataLakeDelegatedAdministrator_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalake");
+            var operation = service_model.FindOperation("RegisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeRequest>();
-            var marshaller = new UpdateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<RegisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new RegisterDataLakeDelegatedAdministratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("RegisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -5104,7 +5204,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5113,30 +5213,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalake_EventBridgeExceptionMarshallTest()
+        public void RegisterDataLakeDelegatedAdministrator_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalake");
+            var operation = service_model.FindOperation("RegisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeRequest>();
-            var marshaller = new UpdateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<RegisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new RegisterDataLakeDelegatedAdministratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("RegisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("EventBridgeException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","EventBridgeException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5145,15 +5245,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalake_InternalServerExceptionMarshallTest()
+        public void RegisterDataLakeDelegatedAdministrator_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalake");
+            var operation = service_model.FindOperation("RegisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeRequest>();
-            var marshaller = new UpdateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<RegisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new RegisterDataLakeDelegatedAdministratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("RegisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void RegisterDataLakeDelegatedAdministrator_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("RegisterDataLakeDelegatedAdministrator");
+
+            var request = InstantiateClassGenerator.Execute<RegisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new RegisterDataLakeDelegatedAdministratorRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("RegisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -5168,7 +5300,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5177,15 +5309,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalake_ResourceNotFoundExceptionMarshallTest()
+        public void RegisterDataLakeDelegatedAdministrator_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalake");
+            var operation = service_model.FindOperation("RegisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeRequest>();
-            var marshaller = new UpdateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<RegisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new RegisterDataLakeDelegatedAdministratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("RegisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
@@ -5200,7 +5332,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5209,30 +5341,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalake_ValidationExceptionMarshallTest()
+        public void RegisterDataLakeDelegatedAdministrator_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalake");
+            var operation = service_model.FindOperation("RegisterDataLakeDelegatedAdministrator");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeRequest>();
-            var marshaller = new UpdateDatalakeRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<RegisterDataLakeDelegatedAdministratorRequest>();
+            var marshaller = new RegisterDataLakeDelegatedAdministratorRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalake", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("RegisterDataLakeDelegatedAdministrator", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = RegisterDataLakeDelegatedAdministratorResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5241,15 +5373,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalakeExceptionsExpiryMarshallTest()
+        public void UpdateDataLakeMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalakeExceptionsExpiry");
+            var operation = service_model.FindOperation("UpdateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeExceptionsExpiryRequest>();
-            var marshaller = new UpdateDatalakeExceptionsExpiryRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeRequest>();
+            var marshaller = new UpdateDataLakeRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UpdateDatalakeExceptionsExpiry", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("UpdateDataLake", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -5262,8 +5394,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = UpdateDatalakeExceptionsExpiryResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as UpdateDatalakeExceptionsExpiryResponse;
+            ResponseUnmarshaller unmarshaller = UpdateDataLakeResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateDataLakeResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5271,15 +5403,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalakeExceptionsExpiry_AccessDeniedExceptionMarshallTest()
+        public void UpdateDataLake_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalakeExceptionsExpiry");
+            var operation = service_model.FindOperation("UpdateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeExceptionsExpiryRequest>();
-            var marshaller = new UpdateDatalakeExceptionsExpiryRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeRequest>();
+            var marshaller = new UpdateDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalakeExceptionsExpiry", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("UpdateDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -5294,7 +5426,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeExceptionsExpiryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = UpdateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5303,30 +5435,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalakeExceptionsExpiry_AccountNotFoundExceptionMarshallTest()
+        public void UpdateDataLake_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalakeExceptionsExpiry");
+            var operation = service_model.FindOperation("UpdateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeExceptionsExpiryRequest>();
-            var marshaller = new UpdateDatalakeExceptionsExpiryRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeRequest>();
+            var marshaller = new UpdateDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalakeExceptionsExpiry", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("UpdateDataLake", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeExceptionsExpiryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = UpdateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5335,15 +5467,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalakeExceptionsExpiry_InternalServerExceptionMarshallTest()
+        public void UpdateDataLake_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalakeExceptionsExpiry");
+            var operation = service_model.FindOperation("UpdateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeExceptionsExpiryRequest>();
-            var marshaller = new UpdateDatalakeExceptionsExpiryRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeRequest>();
+            var marshaller = new UpdateDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalakeExceptionsExpiry", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("UpdateDataLake", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void UpdateDataLake_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateDataLake");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeRequest>();
+            var marshaller = new UpdateDataLakeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateDataLake", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -5358,7 +5522,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeExceptionsExpiryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = UpdateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5367,30 +5531,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalakeExceptionsExpiry_ValidationExceptionMarshallTest()
+        public void UpdateDataLake_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalakeExceptionsExpiry");
+            var operation = service_model.FindOperation("UpdateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeExceptionsExpiryRequest>();
-            var marshaller = new UpdateDatalakeExceptionsExpiryRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeRequest>();
+            var marshaller = new UpdateDataLakeRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalakeExceptionsExpiry", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("UpdateDataLake", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeExceptionsExpiryResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = UpdateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5399,15 +5563,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalakeExceptionsSubscriptionMarshallTest()
+        public void UpdateDataLake_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("UpdateDataLake");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new UpdateDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeRequest>();
+            var marshaller = new UpdateDataLakeRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateDataLake", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateDataLakeResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void UpdateDataLakeExceptionSubscriptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateDataLakeExceptionSubscription");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new UpdateDataLakeExceptionSubscriptionRequestMarshaller();
 
             var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UpdateDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("UpdateDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var webResponse = new WebResponseData
             {
@@ -5420,8 +5616,8 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = UpdateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as UpdateDatalakeExceptionsSubscriptionResponse;
+            ResponseUnmarshaller unmarshaller = UpdateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateDataLakeExceptionSubscriptionResponse;
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
 
@@ -5429,15 +5625,15 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalakeExceptionsSubscription_AccessDeniedExceptionMarshallTest()
+        public void UpdateDataLakeExceptionSubscription_AccessDeniedExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("UpdateDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new UpdateDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new UpdateDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("UpdateDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
             var webResponse = new WebResponseData
@@ -5452,7 +5648,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = UpdateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5461,30 +5657,30 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalakeExceptionsSubscription_AccountNotFoundExceptionMarshallTest()
+        public void UpdateDataLakeExceptionSubscription_BadRequestExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("UpdateDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new UpdateDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new UpdateDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("UpdateDataLakeExceptionSubscription", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = UpdateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5493,15 +5689,47 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalakeExceptionsSubscription_InternalServerExceptionMarshallTest()
+        public void UpdateDataLakeExceptionSubscription_ConflictExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("UpdateDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new UpdateDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new UpdateDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("UpdateDataLakeExceptionSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void UpdateDataLakeExceptionSubscription_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateDataLakeExceptionSubscription");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new UpdateDataLakeExceptionSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateDataLakeExceptionSubscription", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
             var webResponse = new WebResponseData
@@ -5516,7 +5744,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = UpdateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5525,30 +5753,62 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateDatalakeExceptionsSubscription_ValidationExceptionMarshallTest()
+        public void UpdateDataLakeExceptionSubscription_ResourceNotFoundExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateDatalakeExceptionsSubscription");
+            var operation = service_model.FindOperation("UpdateDataLakeExceptionSubscription");
 
-            var request = InstantiateClassGenerator.Execute<UpdateDatalakeExceptionsSubscriptionRequest>();
-            var marshaller = new UpdateDatalakeExceptionsSubscriptionRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new UpdateDataLakeExceptionSubscriptionRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateDatalakeExceptionsSubscription", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("UpdateDataLakeExceptionSubscription", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateDatalakeExceptionsSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = UpdateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void UpdateDataLakeExceptionSubscription_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateDataLakeExceptionSubscription");
+
+            var request = InstantiateClassGenerator.Execute<UpdateDataLakeExceptionSubscriptionRequest>();
+            var marshaller = new UpdateDataLakeExceptionSubscriptionRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateDataLakeExceptionSubscription", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateDataLakeExceptionSubscriptionResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -5619,7 +5879,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateSubscriber_AccountNotFoundExceptionMarshallTest()
+        public void UpdateSubscriber_BadRequestExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateSubscriber");
 
@@ -5629,13 +5889,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("UpdateSubscriber", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
+                    {"x-amzn-ErrorType","BadRequestException"},
                 }
             };
 
@@ -5651,7 +5911,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateSubscriber_ConcurrentModificationExceptionMarshallTest()
+        public void UpdateSubscriber_ConflictExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateSubscriber");
 
@@ -5661,45 +5921,13 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
 
             TestTools.RequestValidator.Validate("UpdateSubscriber", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentModificationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConcurrentModificationException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void UpdateSubscriber_ConflictSubscriptionExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("UpdateSubscriber");
-
-            var request = InstantiateClassGenerator.Execute<UpdateSubscriberRequest>();
-            var marshaller = new UpdateSubscriberRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("UpdateSubscriber", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictSubscriptionException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConflictSubscriptionException"},
+                    {"x-amzn-ErrorType","ConflictException"},
                 }
             };
 
@@ -5747,7 +5975,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateSubscriber_InvalidInputExceptionMarshallTest()
+        public void UpdateSubscriber_ResourceNotFoundExceptionMarshallTest()
         {
             var operation = service_model.FindOperation("UpdateSubscriber");
 
@@ -5756,260 +5984,6 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var internalRequest = marshaller.Marshall(request);
 
             TestTools.RequestValidator.Validate("UpdateSubscriber", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidInputException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void UpdateSubscriber_ValidationExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("UpdateSubscriber");
-
-            var request = InstantiateClassGenerator.Execute<UpdateSubscriberRequest>();
-            var marshaller = new UpdateSubscriberRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("UpdateSubscriber", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void UpdateSubscriptionNotificationConfigurationMarshallTest()
-        {
-            var operation = service_model.FindOperation("UpdateSubscriptionNotificationConfiguration");
-
-            var request = InstantiateClassGenerator.Execute<UpdateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new UpdateSubscriptionNotificationConfigurationRequestMarshaller();
-
-            var internalRequest = marshaller.Marshall(request);
-            TestTools.RequestValidator.Validate("UpdateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
-
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"}
-                }
-            };
-            
-            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
-            ResponseUnmarshaller unmarshaller = UpdateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance;
-            var response = unmarshaller.Unmarshall(context) as UpdateSubscriptionNotificationConfigurationResponse;
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void UpdateSubscriptionNotificationConfiguration_AccessDeniedExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("UpdateSubscriptionNotificationConfiguration");
-
-            var request = InstantiateClassGenerator.Execute<UpdateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new UpdateSubscriptionNotificationConfigurationRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("UpdateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccessDeniedException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void UpdateSubscriptionNotificationConfiguration_AccountNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("UpdateSubscriptionNotificationConfiguration");
-
-            var request = InstantiateClassGenerator.Execute<UpdateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new UpdateSubscriptionNotificationConfigurationRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("UpdateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("AccountNotFoundException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","AccountNotFoundException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void UpdateSubscriptionNotificationConfiguration_ConcurrentModificationExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("UpdateSubscriptionNotificationConfiguration");
-
-            var request = InstantiateClassGenerator.Execute<UpdateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new UpdateSubscriptionNotificationConfigurationRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("UpdateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ConcurrentModificationException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ConcurrentModificationException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void UpdateSubscriptionNotificationConfiguration_InternalServerExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("UpdateSubscriptionNotificationConfiguration");
-
-            var request = InstantiateClassGenerator.Execute<UpdateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new UpdateSubscriptionNotificationConfigurationRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("UpdateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InternalServerException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void UpdateSubscriptionNotificationConfiguration_InvalidInputExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("UpdateSubscriptionNotificationConfiguration");
-
-            var request = InstantiateClassGenerator.Execute<UpdateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new UpdateSubscriptionNotificationConfigurationRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("UpdateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
-
-            var exception = operation.Exceptions.First(e => e.Name.Equals("InvalidInputException"));
-            var webResponse = new WebResponseData
-            {
-                Headers = {
-                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
-                    {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","InvalidInputException"},
-                }
-            };
-
-            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
-            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
-            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
-
-            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
-        }
-
-        [TestMethod]
-        [TestCategory("UnitTest")]
-        [TestCategory("Rest_Json")]
-        [TestCategory("SecurityLake")]
-        public void UpdateSubscriptionNotificationConfiguration_ResourceNotFoundExceptionMarshallTest()
-        {
-            var operation = service_model.FindOperation("UpdateSubscriptionNotificationConfiguration");
-
-            var request = InstantiateClassGenerator.Execute<UpdateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new UpdateSubscriptionNotificationConfigurationRequestMarshaller();
-            var internalRequest = marshaller.Marshall(request);
-
-            TestTools.RequestValidator.Validate("UpdateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
 
             var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
             var webResponse = new WebResponseData
@@ -6024,7 +5998,7 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = UpdateSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }
@@ -6033,30 +6007,252 @@ namespace AWSSDK_DotNet35.UnitTests.Marshalling
         [TestCategory("UnitTest")]
         [TestCategory("Rest_Json")]
         [TestCategory("SecurityLake")]
-        public void UpdateSubscriptionNotificationConfiguration_ValidationExceptionMarshallTest()
+        public void UpdateSubscriber_ThrottlingExceptionMarshallTest()
         {
-            var operation = service_model.FindOperation("UpdateSubscriptionNotificationConfiguration");
+            var operation = service_model.FindOperation("UpdateSubscriber");
 
-            var request = InstantiateClassGenerator.Execute<UpdateSubscriptionNotificationConfigurationRequest>();
-            var marshaller = new UpdateSubscriptionNotificationConfigurationRequestMarshaller();
+            var request = InstantiateClassGenerator.Execute<UpdateSubscriberRequest>();
+            var marshaller = new UpdateSubscriberRequestMarshaller();
             var internalRequest = marshaller.Marshall(request);
 
-            TestTools.RequestValidator.Validate("UpdateSubscriptionNotificationConfiguration", request, internalRequest, service_model);
+            TestTools.RequestValidator.Validate("UpdateSubscriber", request, internalRequest, service_model);
 
-            var exception = operation.Exceptions.First(e => e.Name.Equals("ValidationException"));
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
             var webResponse = new WebResponseData
             {
                 Headers = {
                     {"x-amzn-RequestId", Guid.NewGuid().ToString()},
                     {"x-amz-crc32","0"},
-                    {"x-amzn-ErrorType","ValidationException"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
                 }
             };
 
             var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
             webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
             var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
-            var response = UpdateSubscriptionNotificationConfigurationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+            var response = UpdateSubscriberResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void UpdateSubscriberNotificationMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSubscriberNotification");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSubscriberNotificationRequest>();
+            var marshaller = new UpdateSubscriberNotificationRequestMarshaller();
+
+            var internalRequest = marshaller.Marshall(request);
+            TestTools.RequestValidator.Validate("UpdateSubscriberNotification", request, internalRequest, service_model);
+
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"}
+                }
+            };
+            
+            var payloadResponse = new JsonSampleGenerator(service_model, operation.ResponseStructure).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), false, webResponse);
+            ResponseUnmarshaller unmarshaller = UpdateSubscriberNotificationResponseUnmarshaller.Instance;
+            var response = unmarshaller.Unmarshall(context) as UpdateSubscriberNotificationResponse;
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void UpdateSubscriberNotification_AccessDeniedExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSubscriberNotification");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSubscriberNotificationRequest>();
+            var marshaller = new UpdateSubscriberNotificationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSubscriberNotification", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("AccessDeniedException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","AccessDeniedException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void UpdateSubscriberNotification_BadRequestExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSubscriberNotification");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSubscriberNotificationRequest>();
+            var marshaller = new UpdateSubscriberNotificationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSubscriberNotification", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("BadRequestException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","BadRequestException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void UpdateSubscriberNotification_ConflictExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSubscriberNotification");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSubscriberNotificationRequest>();
+            var marshaller = new UpdateSubscriberNotificationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSubscriberNotification", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ConflictException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ConflictException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void UpdateSubscriberNotification_InternalServerExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSubscriberNotification");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSubscriberNotificationRequest>();
+            var marshaller = new UpdateSubscriberNotificationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSubscriberNotification", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("InternalServerException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","InternalServerException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void UpdateSubscriberNotification_ResourceNotFoundExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSubscriberNotification");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSubscriberNotificationRequest>();
+            var marshaller = new UpdateSubscriberNotificationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSubscriberNotification", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ResourceNotFoundException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ResourceNotFoundException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
+
+            InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Rest_Json")]
+        [TestCategory("SecurityLake")]
+        public void UpdateSubscriberNotification_ThrottlingExceptionMarshallTest()
+        {
+            var operation = service_model.FindOperation("UpdateSubscriberNotification");
+
+            var request = InstantiateClassGenerator.Execute<UpdateSubscriberNotificationRequest>();
+            var marshaller = new UpdateSubscriberNotificationRequestMarshaller();
+            var internalRequest = marshaller.Marshall(request);
+
+            TestTools.RequestValidator.Validate("UpdateSubscriberNotification", request, internalRequest, service_model);
+
+            var exception = operation.Exceptions.First(e => e.Name.Equals("ThrottlingException"));
+            var webResponse = new WebResponseData
+            {
+                Headers = {
+                    {"x-amzn-RequestId", Guid.NewGuid().ToString()},
+                    {"x-amz-crc32","0"},
+                    {"x-amzn-ErrorType","ThrottlingException"},
+                }
+            };
+
+            var payloadResponse = new JsonSampleGenerator(service_model, exception).Execute();
+            webResponse.Headers["Content-Length"] = UTF8Encoding.UTF8.GetBytes(payloadResponse).Length.ToString();
+            var context = new JsonUnmarshallerContext(Utils.CreateStreamFromString(payloadResponse), true, webResponse, true);
+            var response = UpdateSubscriberNotificationResponseUnmarshaller.Instance.UnmarshallException(context, null, System.Net.HttpStatusCode.OK);
 
             InstantiateClassGenerator.ValidateObjectFullyInstantiated(response);
         }

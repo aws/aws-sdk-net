@@ -244,7 +244,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// for the <code>MessageAction</code> parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=256)]
+        [AWSProperty(Sensitive=true, Max=256)]
         public string TemporaryPassword
         {
             get { return this._temporaryPassword; }
@@ -319,7 +319,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// between 1 and 128 characters. After the user is created, the username can't be changed.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

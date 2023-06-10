@@ -83,7 +83,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxParallelLaunches. 
         /// <para>
-        /// The maximum number of parallel instances to launch for creating resources.
+        /// The maximum number of instances that Amazon EC2 can launch at the same time to create
+        /// pre-provisioned snapshots for Windows faster launching.
         /// </para>
         /// </summary>
         public int MaxParallelLaunches

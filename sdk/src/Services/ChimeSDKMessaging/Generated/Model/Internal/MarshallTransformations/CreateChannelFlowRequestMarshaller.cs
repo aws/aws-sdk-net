@@ -77,6 +77,11 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ClientRequestToken);
                 }
 
+                else if(!(publicRequest.IsSetClientRequestToken()))
+                {
+                    context.Writer.WritePropertyName("ClientRequestToken");
+                    context.Writer.Write(Guid.NewGuid().ToString());
+                }
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

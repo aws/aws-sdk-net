@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.DataSync.Model
 {
     /// <summary>
-    /// Represents a single entry in a list of agents. <code>AgentListEntry</code> returns
-    /// an array that contains a list of agents when the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a>
-    /// operation is called.
+    /// Represents a single entry in a list (or array) of DataSync agents when you call the
+    /// <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_ListAgents.html">ListAgents</a>
+    /// operation.
     /// </summary>
     public partial class AgentListEntry
     {
@@ -42,7 +42,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent.
+        /// The Amazon Resource Name (ARN) of a DataSync agent.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -61,7 +61,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the agent.
+        /// The name of an agent.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -80,7 +80,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the agent.
+        /// The status of an agent. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/understand-agent-statuses.html">DataSync
+        /// agent statuses</a>.
         /// </para>
         /// </summary>
         public AgentStatus Status

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// A structure containing information for audit.
+    /// A structure containing the Lake Formation audit context.
     /// </summary>
     public partial class AuditContext
     {
@@ -40,7 +40,7 @@ namespace Amazon.Glue.Model
         /// <summary>
         /// Gets and sets the property AdditionalAuditContext. 
         /// <para>
-        /// The context for the audit..
+        /// A string containing the additional audit context information.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]

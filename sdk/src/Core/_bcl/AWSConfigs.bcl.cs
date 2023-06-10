@@ -49,7 +49,7 @@ namespace Amazon
         /// Changes to this setting will only take effect in newly-constructed objects using this property.
         /// <code>
         /// &lt;configSections&gt;
-        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK.Core"/&gt;
         /// &lt;/configSections&gt;
         /// &lt;aws applicationName="" /&gt;
         /// </code>

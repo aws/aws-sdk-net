@@ -35,7 +35,8 @@ namespace Amazon.SageMaker.Model
     ///  
     /// <para>
     ///  To see a list of human task user interfaces (work task templates) in your account,
-    /// use . When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.
+    /// use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListHumanTaskUis.html">ListHumanTaskUis</a>.
+    /// When you delete a worker task template, it no longer appears when you call <code>ListHumanTaskUis</code>.
     /// </para>
     /// </summary>
     public partial class DeleteHumanTaskUiRequest : AmazonSageMakerRequest

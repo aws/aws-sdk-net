@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the BatchCreateChannelMembership operation.
-    /// Adds a specified number of users to a channel.
+    /// Adds a specified number of users and bots to a channel.
     /// </summary>
     public partial class BatchCreateChannelMembershipRequest : AmazonChimeSDKMessagingRequest
     {
@@ -43,7 +43,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The ARN of the channel to which you're adding users.
+        /// The ARN of the channel to which you're adding users or bots.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -62,7 +62,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -81,7 +82,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property MemberArns. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code>s of the members you want to add to the channel.
+        /// The ARNs of the members you want to add to the channel. Only <code>AppInstanceUsers</code>
+        /// and <code>AppInstanceBots</code> can be added as a channel member.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

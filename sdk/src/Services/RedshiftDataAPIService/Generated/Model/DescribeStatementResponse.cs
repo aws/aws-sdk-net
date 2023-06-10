@@ -425,10 +425,10 @@ namespace Amazon.RedshiftDataAPIService.Model
         /// <summary>
         /// Gets and sets the property WorkgroupName. 
         /// <para>
-        /// The serverless workgroup name.
+        /// The serverless workgroup name or Amazon Resource Name (ARN).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=64)]
+        [AWSProperty(Min=3, Max=128)]
         public string WorkgroupName
         {
             get { return this._workgroupName; }

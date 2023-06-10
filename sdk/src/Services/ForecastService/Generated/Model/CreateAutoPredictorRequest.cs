@@ -189,9 +189,41 @@ namespace Amazon.ForecastService.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid intervals are Y (Year), M (Month), W (Week), D (Day), H (Hour), 30min (30 minutes),
-        /// 15min (15 minutes), 10min (10 minutes), 5min (5 minutes), and 1min (1 minute). For
-        /// example, "Y" indicates every year and "5min" indicates every five minutes.
+        /// Valid intervals are an integer followed by Y (Year), M (Month), W (Week), D (Day),
+        /// H (Hour), and min (Minute). For example, "1D" indicates every day and "15min" indicates
+        /// every 15 minutes. You cannot specify a value that would overlap with the next larger
+        /// frequency. That means, for example, you cannot specify a frequency of 60 minutes,
+        /// because that is equivalent to 1 hour. The valid values for each frequency are the
+        /// following:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Minute - 1-59
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Hour - 1-23
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Day - 1-6
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Week - 1-4
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Month - 1-11
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Year - 1
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Thus, if you want every other week forecasts, specify "2W". Or, if you want quarterly
+        /// forecasts, you specify "3M".
         /// </para>
         ///  
         /// <para>

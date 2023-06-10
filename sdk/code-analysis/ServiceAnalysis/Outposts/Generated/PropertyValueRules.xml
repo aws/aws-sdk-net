@@ -110,7 +110,7 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetOutpostInstanceTypesRequest.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -122,7 +122,7 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.GetOutpostInstanceTypesResponse.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -163,7 +163,7 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListAssetsRequest.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -175,7 +175,7 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListAssetsResponse.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -186,13 +186,13 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListCatalogItemsRequest.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListCatalogItemsResponse.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -203,7 +203,7 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListOrdersRequest.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -215,7 +215,7 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListOrdersResponse.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -226,13 +226,13 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListOutpostsRequest.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListOutpostsResponse.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -243,13 +243,13 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListSitesRequest.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.ListSitesResponse.NextToken</property>
     <min>1</min>
-    <max>1005</max>
+    <max>2048</max>
     <pattern>^(\d+)##(\S+)$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -502,6 +502,16 @@
   <property-value-rule>
     <property>Amazon.Outposts.Model.LineItem.LineItemId</property>
     <pattern>ooi-[a-f0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.LineItem.PreviousLineItemId</property>
+    <pattern>ooi-[a-f0-9]{17}</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Outposts.Model.LineItem.PreviousOrderId</property>
+    <min>1</min>
+    <max>20</max>
+    <pattern>oo-[a-f0-9]{17}$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Outposts.Model.LineItem.Quantity</property>

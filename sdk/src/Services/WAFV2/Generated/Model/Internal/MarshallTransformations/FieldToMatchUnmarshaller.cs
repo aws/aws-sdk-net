@@ -82,6 +82,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.Cookies = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("HeaderOrder", targetDepth))
+                {
+                    var unmarshaller = HeaderOrderUnmarshaller.Instance;
+                    unmarshalledObject.HeaderOrder = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Headers", targetDepth))
                 {
                     var unmarshaller = HeadersUnmarshaller.Instance;

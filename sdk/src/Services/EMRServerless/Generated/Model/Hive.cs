@@ -43,7 +43,7 @@ namespace Amazon.EMRServerless.Model
         /// The query file for the Hive job run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string InitQueryFile
         {
             get { return this._initQueryFile; }
@@ -62,7 +62,7 @@ namespace Amazon.EMRServerless.Model
         /// The parameters for the Hive job run.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=102400)]
+        [AWSProperty(Sensitive=true, Min=1, Max=102400)]
         public string Parameters
         {
             get { return this._parameters; }
@@ -81,7 +81,7 @@ namespace Amazon.EMRServerless.Model
         /// The query for the Hive job run.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10280)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=10280)]
         public string Query
         {
             get { return this._query; }

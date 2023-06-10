@@ -41,6 +41,9 @@ namespace Amazon.Comprehend.Model
     {
         private List<AugmentedManifestsListItem> _augmentedManifests = new List<AugmentedManifestsListItem>();
         private DocumentClassifierDataFormat _dataFormat;
+        private DocumentReaderConfig _documentReaderConfig;
+        private DocumentClassifierDocuments _documents;
+        private DocumentClassifierDocumentTypeFormat _documentType;
         private string _labelDelimiter;
         private string _s3Uri;
         private string _testS3Uri;
@@ -110,6 +113,60 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DocumentReaderConfig.
+        /// </summary>
+        public DocumentReaderConfig DocumentReaderConfig
+        {
+            get { return this._documentReaderConfig; }
+            set { this._documentReaderConfig = value; }
+        }
+
+        // Check to see if DocumentReaderConfig property is set
+        internal bool IsSetDocumentReaderConfig()
+        {
+            return this._documentReaderConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Documents. 
+        /// <para>
+        /// The S3 location of the training documents. This parameter is required in a request
+        /// to create a native classifier model.
+        /// </para>
+        /// </summary>
+        public DocumentClassifierDocuments Documents
+        {
+            get { return this._documents; }
+            set { this._documents = value; }
+        }
+
+        // Check to see if Documents property is set
+        internal bool IsSetDocuments()
+        {
+            return this._documents != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentType. 
+        /// <para>
+        /// The type of input documents for training the model. Provide plain-text documents to
+        /// create a plain-text model, and provide semi-structured documents to create a native
+        /// model.
+        /// </para>
+        /// </summary>
+        public DocumentClassifierDocumentTypeFormat DocumentType
+        {
+            get { return this._documentType; }
+            set { this._documentType = value; }
+        }
+
+        // Check to see if DocumentType property is set
+        internal bool IsSetDocumentType()
+        {
+            return this._documentType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property LabelDelimiter. 
         /// <para>
         /// Indicates the delimiter used to separate each label for training a multi-label classifier.
@@ -136,7 +193,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property S3Uri. 
         /// <para>
-        /// The Amazon S3 URI for the input data. The S3 bucket must be in the same region as
+        /// The Amazon S3 URI for the input data. The S3 bucket must be in the same Region as
         /// the API endpoint that you are calling. The URI can point to a single input file or
         /// it can provide the prefix for a collection of input files.
         /// </para>
@@ -168,8 +225,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property TestS3Uri. 
         /// <para>
         /// This specifies the Amazon S3 location where the test annotations for an entity recognizer
-        /// are located. The URI must be in the same AWS Region as the API endpoint that you are
-        /// calling. 
+        /// are located. The URI must be in the same Amazon Web Services Region as the API endpoint
+        /// that you are calling. 
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

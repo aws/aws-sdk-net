@@ -85,6 +85,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return CloudTrailAccessNotEnabledExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("ConflictException"))
+                {
+                    return ConflictExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("DelegatedAdminAccountLimitExceededException"))
                 {
                     return DelegatedAdminAccountLimitExceededExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

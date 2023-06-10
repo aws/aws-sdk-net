@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// The object that provides message text and it's type.
+    /// The object that provides message text and its type.
     /// </summary>
     public partial class Message
     {

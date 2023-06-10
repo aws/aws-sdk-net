@@ -67,10 +67,10 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property LineRanges. 
         /// <para>
-        /// An array of objects, one for each occurrence of sensitive data in a non-binary text
-        /// file, such as an HTML, TXT, or XML file. Each Range object specifies a line or inclusive
-        /// range of lines that contains the sensitive data, and the position of the data on the
-        /// specified line or lines.
+        /// An array of objects, one for each occurrence of sensitive data in an email message
+        /// or a non-binary text file such as an HTML, TXT, or XML file. Each Range object specifies
+        /// a line or inclusive range of lines that contains the sensitive data, and the position
+        /// of the data on the specified line or lines.
         /// </para>
         ///  
         /// <para>

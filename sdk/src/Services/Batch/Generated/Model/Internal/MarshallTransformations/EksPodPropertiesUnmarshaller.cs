@@ -82,6 +82,12 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                     unmarshalledObject.HostNetwork = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("metadata", targetDepth))
+                {
+                    var unmarshaller = EksMetadataUnmarshaller.Instance;
+                    unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceAccountName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

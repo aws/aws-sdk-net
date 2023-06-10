@@ -36,6 +36,7 @@ namespace Amazon.ServiceCatalog.Model
     public partial class DescribeProvisioningArtifactRequest : AmazonServiceCatalogRequest
     {
         private string _acceptLanguage;
+        private bool? _includeProvisioningArtifactParameters;
         private string _productId;
         private string _productName;
         private string _provisioningArtifactId;
@@ -48,10 +49,6 @@ namespace Amazon.ServiceCatalog.Model
         /// The language code.
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <code>en</code> - English (default)
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <code>jp</code> - Japanese
         /// </para>
@@ -72,6 +69,25 @@ namespace Amazon.ServiceCatalog.Model
         internal bool IsSetAcceptLanguage()
         {
             return this._acceptLanguage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IncludeProvisioningArtifactParameters. 
+        /// <para>
+        /// Indicates if the API call response does or does not include additional details about
+        /// the provisioning parameters. 
+        /// </para>
+        /// </summary>
+        public bool IncludeProvisioningArtifactParameters
+        {
+            get { return this._includeProvisioningArtifactParameters.GetValueOrDefault(); }
+            set { this._includeProvisioningArtifactParameters = value; }
+        }
+
+        // Check to see if IncludeProvisioningArtifactParameters property is set
+        internal bool IsSetIncludeProvisioningArtifactParameters()
+        {
+            return this._includeProvisioningArtifactParameters.HasValue; 
         }
 
         /// <summary>

@@ -3024,6 +3024,14 @@ namespace Amazon.IoT
         /// Constant CREATE_PENDING for OTAUpdateStatus
         /// </summary>
         public static readonly OTAUpdateStatus CREATE_PENDING = new OTAUpdateStatus("CREATE_PENDING");
+        /// <summary>
+        /// Constant DELETE_FAILED for OTAUpdateStatus
+        /// </summary>
+        public static readonly OTAUpdateStatus DELETE_FAILED = new OTAUpdateStatus("DELETE_FAILED");
+        /// <summary>
+        /// Constant DELETE_IN_PROGRESS for OTAUpdateStatus
+        /// </summary>
+        public static readonly OTAUpdateStatus DELETE_IN_PROGRESS = new OTAUpdateStatus("DELETE_IN_PROGRESS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -3054,6 +3062,110 @@ namespace Amazon.IoT
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OTAUpdateStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageVersionAction.
+    /// </summary>
+    public class PackageVersionAction : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEPRECATE for PackageVersionAction
+        /// </summary>
+        public static readonly PackageVersionAction DEPRECATE = new PackageVersionAction("DEPRECATE");
+        /// <summary>
+        /// Constant PUBLISH for PackageVersionAction
+        /// </summary>
+        public static readonly PackageVersionAction PUBLISH = new PackageVersionAction("PUBLISH");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageVersionAction(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageVersionAction FindValue(string value)
+        {
+            return FindValue<PackageVersionAction>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageVersionAction(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PackageVersionStatus.
+    /// </summary>
+    public class PackageVersionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DEPRECATED for PackageVersionStatus
+        /// </summary>
+        public static readonly PackageVersionStatus DEPRECATED = new PackageVersionStatus("DEPRECATED");
+        /// <summary>
+        /// Constant DRAFT for PackageVersionStatus
+        /// </summary>
+        public static readonly PackageVersionStatus DRAFT = new PackageVersionStatus("DRAFT");
+        /// <summary>
+        /// Constant PUBLISHED for PackageVersionStatus
+        /// </summary>
+        public static readonly PackageVersionStatus PUBLISHED = new PackageVersionStatus("PUBLISHED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PackageVersionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PackageVersionStatus FindValue(string value)
+        {
+            return FindValue<PackageVersionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PackageVersionStatus(string value)
         {
             return FindValue(value);
         }

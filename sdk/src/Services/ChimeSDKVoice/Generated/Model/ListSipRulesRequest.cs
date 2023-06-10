@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the ListSipRules operation.
-    /// 
+    /// Lists the SIP rules under the administrator's AWS account.
     /// </summary>
     public partial class ListSipRulesRequest : AmazonChimeSDKVoiceRequest
     {
@@ -39,7 +39,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _sipMediaApplicationId;
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return in a single call. Defaults to 100.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int MaxResults
@@ -55,7 +58,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to return the next page of results.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]
         public string NextToken
@@ -71,7 +77,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationId.
+        /// Gets and sets the property SipMediaApplicationId. 
+        /// <para>
+        /// The SIP media application ID.
+        /// </para>
         /// </summary>
         public string SipMediaApplicationId
         {

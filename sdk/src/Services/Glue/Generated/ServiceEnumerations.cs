@@ -25,6 +25,52 @@ namespace Amazon.Glue
 {
 
     /// <summary>
+    /// Constants used for properties of type AdditionalOptionKeys.
+    /// </summary>
+    public class AdditionalOptionKeys : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant PerformanceTuningCaching for AdditionalOptionKeys
+        /// </summary>
+        public static readonly AdditionalOptionKeys PerformanceTuningCaching = new AdditionalOptionKeys("performanceTuning.caching");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AdditionalOptionKeys(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AdditionalOptionKeys FindValue(string value)
+        {
+            return FindValue<AdditionalOptionKeys>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AdditionalOptionKeys(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AggFunction.
     /// </summary>
     public class AggFunction : ConstantClass
@@ -1337,6 +1383,56 @@ namespace Amazon.Glue
 
 
     /// <summary>
+    /// Constants used for properties of type DeltaTargetCompressionType.
+    /// </summary>
+    public class DeltaTargetCompressionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Snappy for DeltaTargetCompressionType
+        /// </summary>
+        public static readonly DeltaTargetCompressionType Snappy = new DeltaTargetCompressionType("snappy");
+        /// <summary>
+        /// Constant Uncompressed for DeltaTargetCompressionType
+        /// </summary>
+        public static readonly DeltaTargetCompressionType Uncompressed = new DeltaTargetCompressionType("uncompressed");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DeltaTargetCompressionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DeltaTargetCompressionType FindValue(string value)
+        {
+            return FindValue<DeltaTargetCompressionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DeltaTargetCompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DQStopJobOnFailureTiming.
     /// </summary>
     public class DQStopJobOnFailureTiming : ConstantClass
@@ -1584,6 +1680,68 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ExistCondition(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type FederationSourceErrorCode.
+    /// </summary>
+    public class FederationSourceErrorCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant InternalServiceException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode InternalServiceException = new FederationSourceErrorCode("InternalServiceException");
+        /// <summary>
+        /// Constant InvalidResponseException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode InvalidResponseException = new FederationSourceErrorCode("InvalidResponseException");
+        /// <summary>
+        /// Constant OperationNotSupportedException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode OperationNotSupportedException = new FederationSourceErrorCode("OperationNotSupportedException");
+        /// <summary>
+        /// Constant OperationTimeoutException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode OperationTimeoutException = new FederationSourceErrorCode("OperationTimeoutException");
+        /// <summary>
+        /// Constant ThrottlingException for FederationSourceErrorCode
+        /// </summary>
+        public static readonly FederationSourceErrorCode ThrottlingException = new FederationSourceErrorCode("ThrottlingException");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FederationSourceErrorCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FederationSourceErrorCode FindValue(string value)
+        {
+            return FindValue<FederationSourceErrorCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FederationSourceErrorCode(string value)
         {
             return FindValue(value);
         }
@@ -2022,6 +2180,68 @@ namespace Amazon.Glue
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator HudiTargetCompressionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type JDBCConnectionType.
+    /// </summary>
+    public class JDBCConnectionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Mysql for JDBCConnectionType
+        /// </summary>
+        public static readonly JDBCConnectionType Mysql = new JDBCConnectionType("mysql");
+        /// <summary>
+        /// Constant Oracle for JDBCConnectionType
+        /// </summary>
+        public static readonly JDBCConnectionType Oracle = new JDBCConnectionType("oracle");
+        /// <summary>
+        /// Constant Postgresql for JDBCConnectionType
+        /// </summary>
+        public static readonly JDBCConnectionType Postgresql = new JDBCConnectionType("postgresql");
+        /// <summary>
+        /// Constant Redshift for JDBCConnectionType
+        /// </summary>
+        public static readonly JDBCConnectionType Redshift = new JDBCConnectionType("redshift");
+        /// <summary>
+        /// Constant Sqlserver for JDBCConnectionType
+        /// </summary>
+        public static readonly JDBCConnectionType Sqlserver = new JDBCConnectionType("sqlserver");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public JDBCConnectionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static JDBCConnectionType FindValue(string value)
+        {
+            return FindValue<JDBCConnectionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator JDBCConnectionType(string value)
         {
             return FindValue(value);
         }
@@ -3377,6 +3597,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly ResourceShareType ALL = new ResourceShareType("ALL");
         /// <summary>
+        /// Constant FEDERATED for ResourceShareType
+        /// </summary>
+        public static readonly ResourceShareType FEDERATED = new ResourceShareType("FEDERATED");
+        /// <summary>
         /// Constant FOREIGN for ResourceShareType
         /// </summary>
         public static readonly ResourceShareType FOREIGN = new ResourceShareType("FOREIGN");
@@ -4199,6 +4423,10 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly TargetFormat Csv = new TargetFormat("csv");
         /// <summary>
+        /// Constant Delta for TargetFormat
+        /// </summary>
+        public static readonly TargetFormat Delta = new TargetFormat("delta");
+        /// <summary>
         /// Constant Hudi for TargetFormat
         /// </summary>
         public static readonly TargetFormat Hudi = new TargetFormat("hudi");
@@ -4899,9 +5127,21 @@ namespace Amazon.Glue
         /// </summary>
         public static readonly WorkerType G2X = new WorkerType("G.2X");
         /// <summary>
+        /// Constant G4X for WorkerType
+        /// </summary>
+        public static readonly WorkerType G4X = new WorkerType("G.4X");
+        /// <summary>
+        /// Constant G8X for WorkerType
+        /// </summary>
+        public static readonly WorkerType G8X = new WorkerType("G.8X");
+        /// <summary>
         /// Constant Standard for WorkerType
         /// </summary>
         public static readonly WorkerType Standard = new WorkerType("Standard");
+        /// <summary>
+        /// Constant Z2X for WorkerType
+        /// </summary>
+        public static readonly WorkerType Z2X = new WorkerType("Z.2X");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

@@ -30,22 +30,46 @@ namespace Amazon.RAM.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes the specified tag key and value pairs from the specified resource share.
+    /// Removes the specified tag key and value pairs from the specified resource share or
+    /// managed permission.
     /// </summary>
     public partial class UntagResourceRequest : AmazonRAMRequest
     {
+        private string _resourceArn;
         private string _resourceShareArn;
         private List<string> _tagKeys = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+        /// Resource Name (ARN)</a> of the managed permission that you want to remove tags from.
+        /// You must specify either <code>resourceArn</code>, or <code>resourceShareArn</code>,
+        /// but not both.
+        /// </para>
+        /// </summary>
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
         /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource share that you want to remove tags from. The
+        /// Resource Name (ARN)</a> of the resource share that you want to remove tags from. The
         /// tags are removed from the resource share, not the resources in the resource share.
+        /// You must specify either <code>resourceShareArn</code>, or <code>resourceArn</code>,
+        /// but not both.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ResourceShareArn
         {
             get { return this._resourceShareArn; }

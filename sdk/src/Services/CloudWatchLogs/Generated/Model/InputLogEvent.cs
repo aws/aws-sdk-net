@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
         /// <summary>
         /// Gets and sets the property Message. 
         /// <para>
-        /// The raw event message.
+        /// The raw event message. Each log event can be no larger than 256 KB.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1)]

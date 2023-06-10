@@ -90,7 +90,7 @@ namespace Amazon.NetworkFirewall.Model
         /// An array of individual stateful rules inspection criteria to be used together in a
         /// stateful rule group. Use this option to specify simple Suricata rules with protocol,
         /// source and destination, ports, direction, and rule options. For information about
-        /// the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.io/rules/intro.html#">Rules
+        /// the Suricata <code>Rules</code> format, see <a href="https://suricata.readthedocs.iorules/intro.html#">Rules
         /// Format</a>. 
         /// </para>
         /// </summary>

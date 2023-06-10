@@ -45,7 +45,7 @@ namespace Amazon.SSMIncidents.Model
         /// Gets and sets the property Filters. 
         /// <para>
         /// Filters the timeline events based on the provided conditional values. You can filter
-        /// timeline events using the following keys:
+        /// timeline events with the following keys:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -148,7 +148,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property SortBy. 
         /// <para>
-        /// Sort by the specified key value pair.
+        /// Sort timeline events by the specified key value pair.
         /// </para>
         /// </summary>
         public TimelineEventSort SortBy

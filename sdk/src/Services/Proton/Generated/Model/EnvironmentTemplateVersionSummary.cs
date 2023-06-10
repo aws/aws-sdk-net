@@ -88,7 +88,7 @@ namespace Amazon.Proton.Model
         /// A description of the version of an environment template.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -202,6 +202,7 @@ namespace Amazon.Proton.Model
         /// The status message of the version of an environment template.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

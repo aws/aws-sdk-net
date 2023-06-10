@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ForecastService.Model
 {
     /// <summary>
-    /// The destination for an export job. Provide an S3 path, an AWS Identity and Access
-    /// Management (IAM) role that allows Amazon Forecast to access the location, and an AWS
-    /// Key Management Service (KMS) key (optional).
+    /// The destination for an export job. Provide an S3 path, an Identity and Access Management
+    /// (IAM) role that allows Amazon Forecast to access the location, and an Key Management
+    /// Service (KMS) key (optional).
     /// </summary>
     public partial class DataDestination
     {

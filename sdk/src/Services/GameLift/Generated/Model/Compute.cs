@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// Resources used to host your game servers. A compute resource can be managed GameLift
-    /// Amazon EC2 instances or your own resources.
+    /// Resources used to host your game servers. A compute resource can be managed Amazon
+    /// GameLift Amazon EC2 instances or your own resources.
     /// </summary>
     public partial class Compute
     {
@@ -128,8 +128,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property DnsName. 
         /// <para>
-        /// The DNS name of the compute resource. GameLift requires the DNS name or IP address
-        /// to manage your compute resource.
+        /// The DNS name of the compute resource. Amazon GameLift requires the DNS name or IP
+        /// address to manage your compute resource.
         /// </para>
         /// </summary>
         public string DnsName
@@ -183,8 +183,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property GameLiftServiceSdkEndpoint. 
         /// <para>
-        /// The endpoint connection details of the GameLift SDK endpoint that your game server
-        /// connects to.
+        /// The endpoint connection details of the Amazon GameLift SDK endpoint that your game
+        /// server connects to.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -203,8 +203,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address of the compute resource. GameLift requires the DNS name or IP address
-        /// to manage your compute resource.
+        /// The IP address of the compute resource. Amazon GameLift requires the DNS name or IP
+        /// address to manage your compute resource.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -261,8 +261,8 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// Which compute type that the fleet uses. A fleet can use Anywhere compute resources
-        /// owned by you or managed Amazon EC2 instances.
+        /// The compute type that the fleet uses. A fleet can use Anywhere compute resources that
+        /// you own, or use managed Amazon EC2 instances.
         /// </para>
         /// </summary>
         public EC2InstanceType Type

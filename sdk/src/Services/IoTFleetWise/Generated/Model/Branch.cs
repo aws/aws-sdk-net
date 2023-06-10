@@ -33,8 +33,48 @@ namespace Amazon.IoTFleetWise.Model
     /// </summary>
     public partial class Branch
     {
+        private string _comment;
+        private string _deprecationMessage;
         private string _description;
         private string _fullyQualifiedName;
+
+        /// <summary>
+        /// Gets and sets the property Comment. 
+        /// <para>
+        /// A comment in addition to the description.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string Comment
+        {
+            get { return this._comment; }
+            set { this._comment = value; }
+        }
+
+        // Check to see if Comment property is set
+        internal bool IsSetComment()
+        {
+            return this._comment != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeprecationMessage. 
+        /// <para>
+        /// The deprecation message for the node or the branch that was moved or deleted.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string DeprecationMessage
+        {
+            get { return this._deprecationMessage; }
+            set { this._deprecationMessage = value; }
+        }
+
+        // Check to see if DeprecationMessage property is set
+        internal bool IsSetDeprecationMessage()
+        {
+            return this._deprecationMessage != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Description. 

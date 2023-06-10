@@ -78,9 +78,7 @@ namespace Amazon.FSx.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// The <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
-        /// with the <code>Persistent_2</code> deployment type. Instead, use to update a data
-        /// repository association on your <code>Persistent_2</code> file system.
+        /// This parameter is not supported for file systems with a data repository association.
         /// </para>
         /// </summary>
         public AutoImportPolicyType AutoImportPolicy

@@ -112,6 +112,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                     unmarshalledObject.Name = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Operation", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Operation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Scope", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -134,6 +140,12 @@ namespace Amazon.BillingConductor.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.Type = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("UsageType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.UsageType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }

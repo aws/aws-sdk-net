@@ -54,6 +54,8 @@ namespace Amazon.Appflow.Model
         private DateTime? _registeredAt;
         private string _registeredBy;
         private List<string> _supportedApiVersions = new List<string>();
+        private List<DataTransferApi> _supportedDataTransferApis = new List<DataTransferApi>();
+        private List<string> _supportedDataTransferTypes = new List<string>();
         private List<string> _supportedDestinationConnectors = new List<string>();
         private List<string> _supportedOperators = new List<string>();
         private List<string> _supportedSchedulingFrequencies = new List<string>();
@@ -445,6 +447,52 @@ namespace Amazon.Appflow.Model
         internal bool IsSetSupportedApiVersions()
         {
             return this._supportedApiVersions != null && this._supportedApiVersions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedDataTransferApis. 
+        /// <para>
+        /// The APIs of the connector application that Amazon AppFlow can use to transfer your
+        /// data.
+        /// </para>
+        /// </summary>
+        public List<DataTransferApi> SupportedDataTransferApis
+        {
+            get { return this._supportedDataTransferApis; }
+            set { this._supportedDataTransferApis = value; }
+        }
+
+        // Check to see if SupportedDataTransferApis property is set
+        internal bool IsSetSupportedDataTransferApis()
+        {
+            return this._supportedDataTransferApis != null && this._supportedDataTransferApis.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedDataTransferTypes. 
+        /// <para>
+        /// The data transfer types that the connector supports.
+        /// </para>
+        ///  <dl> <dt>RECORD</dt> <dd> 
+        /// <para>
+        /// Structured records.
+        /// </para>
+        ///  </dd> <dt>FILE</dt> <dd> 
+        /// <para>
+        /// Files or binary data.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public List<string> SupportedDataTransferTypes
+        {
+            get { return this._supportedDataTransferTypes; }
+            set { this._supportedDataTransferTypes = value; }
+        }
+
+        // Check to see if SupportedDataTransferTypes property is set
+        internal bool IsSetSupportedDataTransferTypes()
+        {
+            return this._supportedDataTransferTypes != null && this._supportedDataTransferTypes.Count > 0; 
         }
 
         /// <summary>

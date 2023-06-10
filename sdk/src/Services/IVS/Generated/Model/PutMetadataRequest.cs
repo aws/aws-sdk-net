@@ -67,7 +67,7 @@ namespace Amazon.IVS.Model
         /// Metadata to insert into the stream. Maximum: 1 KB per request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Metadata
         {
             get { return this._metadata; }

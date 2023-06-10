@@ -33,7 +33,12 @@ namespace Amazon.DynamoDBv2.Model
     /// Modifies the provisioned throughput settings, global secondary indexes, or DynamoDB
     /// Streams settings for a given table.
     /// 
-    ///  
+    ///  <important> 
+    /// <para>
+    /// This operation only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
+    /// 2019.11.21 (Current)</a> of global tables. 
+    /// </para>
+    ///  </important> 
     /// <para>
     /// You can only perform one of the following operations at once:
     /// </para>
@@ -63,6 +68,7 @@ namespace Amazon.DynamoDBv2.Model
     {
         private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
         private BillingMode _billingMode;
+        private bool? _deletionProtectionEnabled;
         private List<GlobalSecondaryIndexUpdate> _globalSecondaryIndexUpdates = new List<GlobalSecondaryIndexUpdate>();
         private ProvisionedThroughput _provisionedThroughput;
         private List<ReplicationGroupUpdate> _replicaUpdates = new List<ReplicationGroupUpdate>();
@@ -144,6 +150,25 @@ namespace Amazon.DynamoDBv2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property DeletionProtectionEnabled. 
+        /// <para>
+        /// Indicates whether deletion protection is to be enabled (true) or disabled (false)
+        /// on the table.
+        /// </para>
+        /// </summary>
+        public bool DeletionProtectionEnabled
+        {
+            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            set { this._deletionProtectionEnabled = value; }
+        }
+
+        // Check to see if DeletionProtectionEnabled property is set
+        internal bool IsSetDeletionProtectionEnabled()
+        {
+            return this._deletionProtectionEnabled.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property GlobalSecondaryIndexUpdates. 
         /// <para>
         /// An array of one or more global secondary indexes for the table. For each index in
@@ -211,7 +236,7 @@ namespace Amazon.DynamoDBv2.Model
         ///  <note> 
         /// <para>
         /// This property only applies to <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/globaltables.V2.html">Version
-        /// 2019.11.21</a> of global tables.
+        /// 2019.11.21 (Current)</a> of global tables. 
         /// </para>
         ///  </note>
         /// </summary>

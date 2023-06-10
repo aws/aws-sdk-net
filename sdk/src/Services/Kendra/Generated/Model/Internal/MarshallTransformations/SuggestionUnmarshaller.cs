@@ -70,6 +70,12 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                     unmarshalledObject.Id = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SourceDocuments", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<SourceDocument, SourceDocumentUnmarshaller>(SourceDocumentUnmarshaller.Instance);
+                    unmarshalledObject.SourceDocuments = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Value", targetDepth))
                 {
                     var unmarshaller = SuggestionValueUnmarshaller.Instance;

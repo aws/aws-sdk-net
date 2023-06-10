@@ -93,6 +93,130 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  AssociateMergedGraphqlApi
+
+
+        /// <summary>
+        /// Creates an association between a Merged API and source API using the source API's
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMergedGraphqlApi service method.</param>
+        /// 
+        /// <returns>The response from the AssociateMergedGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateMergedGraphqlApi">REST API Reference for AssociateMergedGraphqlApi Operation</seealso>
+        AssociateMergedGraphqlApiResponse AssociateMergedGraphqlApi(AssociateMergedGraphqlApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateMergedGraphqlApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMergedGraphqlApi operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateMergedGraphqlApi
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateMergedGraphqlApi">REST API Reference for AssociateMergedGraphqlApi Operation</seealso>
+        IAsyncResult BeginAssociateMergedGraphqlApi(AssociateMergedGraphqlApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateMergedGraphqlApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateMergedGraphqlApi.</param>
+        /// 
+        /// <returns>Returns a  AssociateMergedGraphqlApiResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateMergedGraphqlApi">REST API Reference for AssociateMergedGraphqlApi Operation</seealso>
+        AssociateMergedGraphqlApiResponse EndAssociateMergedGraphqlApi(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  AssociateSourceGraphqlApi
+
+
+        /// <summary>
+        /// Creates an association between a Merged API and source API using the Merged API's
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceGraphqlApi service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSourceGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateSourceGraphqlApi">REST API Reference for AssociateSourceGraphqlApi Operation</seealso>
+        AssociateSourceGraphqlApiResponse AssociateSourceGraphqlApi(AssociateSourceGraphqlApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateSourceGraphqlApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceGraphqlApi operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateSourceGraphqlApi
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateSourceGraphqlApi">REST API Reference for AssociateSourceGraphqlApi Operation</seealso>
+        IAsyncResult BeginAssociateSourceGraphqlApi(AssociateSourceGraphqlApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateSourceGraphqlApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateSourceGraphqlApi.</param>
+        /// 
+        /// <returns>Returns a  AssociateSourceGraphqlApiResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateSourceGraphqlApi">REST API Reference for AssociateSourceGraphqlApi Operation</seealso>
+        AssociateSourceGraphqlApiResponse EndAssociateSourceGraphqlApi(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateApiCache
 
 
@@ -1082,6 +1206,124 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  DisassociateMergedGraphqlApi
+
+
+        /// <summary>
+        /// Deletes an association between a Merged API and source API using the source API's
+        /// identifier and the association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMergedGraphqlApi service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateMergedGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateMergedGraphqlApi">REST API Reference for DisassociateMergedGraphqlApi Operation</seealso>
+        DisassociateMergedGraphqlApiResponse DisassociateMergedGraphqlApi(DisassociateMergedGraphqlApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateMergedGraphqlApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMergedGraphqlApi operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateMergedGraphqlApi
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateMergedGraphqlApi">REST API Reference for DisassociateMergedGraphqlApi Operation</seealso>
+        IAsyncResult BeginDisassociateMergedGraphqlApi(DisassociateMergedGraphqlApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateMergedGraphqlApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateMergedGraphqlApi.</param>
+        /// 
+        /// <returns>Returns a  DisassociateMergedGraphqlApiResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateMergedGraphqlApi">REST API Reference for DisassociateMergedGraphqlApi Operation</seealso>
+        DisassociateMergedGraphqlApiResponse EndDisassociateMergedGraphqlApi(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DisassociateSourceGraphqlApi
+
+
+        /// <summary>
+        /// Deletes an association between a Merged API and source API using the Merged API's
+        /// identifier and the association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceGraphqlApi service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSourceGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateSourceGraphqlApi">REST API Reference for DisassociateSourceGraphqlApi Operation</seealso>
+        DisassociateSourceGraphqlApiResponse DisassociateSourceGraphqlApi(DisassociateSourceGraphqlApiRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateSourceGraphqlApi operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceGraphqlApi operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateSourceGraphqlApi
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateSourceGraphqlApi">REST API Reference for DisassociateSourceGraphqlApi Operation</seealso>
+        IAsyncResult BeginDisassociateSourceGraphqlApi(DisassociateSourceGraphqlApiRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateSourceGraphqlApi operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateSourceGraphqlApi.</param>
+        /// 
+        /// <returns>Returns a  DisassociateSourceGraphqlApiResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateSourceGraphqlApi">REST API Reference for DisassociateSourceGraphqlApi Operation</seealso>
+        DisassociateSourceGraphqlApiResponse EndDisassociateSourceGraphqlApi(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  EvaluateCode
 
 
@@ -1748,6 +1990,60 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  GetSourceApiAssociation
+
+
+        /// <summary>
+        /// Retrieves a <code>SourceApiAssociation</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSourceApiAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetSourceApiAssociation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSourceApiAssociation">REST API Reference for GetSourceApiAssociation Operation</seealso>
+        GetSourceApiAssociationResponse GetSourceApiAssociation(GetSourceApiAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetSourceApiAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetSourceApiAssociation operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetSourceApiAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSourceApiAssociation">REST API Reference for GetSourceApiAssociation Operation</seealso>
+        IAsyncResult BeginGetSourceApiAssociation(GetSourceApiAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetSourceApiAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetSourceApiAssociation.</param>
+        /// 
+        /// <returns>Returns a  GetSourceApiAssociationResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSourceApiAssociation">REST API Reference for GetSourceApiAssociation Operation</seealso>
+        GetSourceApiAssociationResponse EndGetSourceApiAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetType
 
 
@@ -2185,6 +2481,60 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  ListSourceApiAssociations
+
+
+        /// <summary>
+        /// Lists the <code>SourceApiAssociationSummary</code> data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceApiAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListSourceApiAssociations service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListSourceApiAssociations">REST API Reference for ListSourceApiAssociations Operation</seealso>
+        ListSourceApiAssociationsResponse ListSourceApiAssociations(ListSourceApiAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListSourceApiAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceApiAssociations operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListSourceApiAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListSourceApiAssociations">REST API Reference for ListSourceApiAssociations Operation</seealso>
+        IAsyncResult BeginListSourceApiAssociations(ListSourceApiAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListSourceApiAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListSourceApiAssociations.</param>
+        /// 
+        /// <returns>Returns a  ListSourceApiAssociationsResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListSourceApiAssociations">REST API Reference for ListSourceApiAssociations Operation</seealso>
+        ListSourceApiAssociationsResponse EndListSourceApiAssociations(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -2303,6 +2653,64 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  ListTypesByAssociation
+
+
+        /// <summary>
+        /// Lists <code>Type</code> objects by the source API association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypesByAssociation service method.</param>
+        /// 
+        /// <returns>The response from the ListTypesByAssociation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypesByAssociation">REST API Reference for ListTypesByAssociation Operation</seealso>
+        ListTypesByAssociationResponse ListTypesByAssociation(ListTypesByAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTypesByAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTypesByAssociation operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTypesByAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypesByAssociation">REST API Reference for ListTypesByAssociation Operation</seealso>
+        IAsyncResult BeginListTypesByAssociation(ListTypesByAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTypesByAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTypesByAssociation.</param>
+        /// 
+        /// <returns>Returns a  ListTypesByAssociationResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypesByAssociation">REST API Reference for ListTypesByAssociation Operation</seealso>
+        ListTypesByAssociationResponse EndListTypesByAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  StartSchemaCreation
 
 
@@ -2363,6 +2771,64 @@ namespace Amazon.AppSync
         /// <returns>Returns a  StartSchemaCreationResult from AppSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaCreation">REST API Reference for StartSchemaCreation Operation</seealso>
         StartSchemaCreationResponse EndStartSchemaCreation(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StartSchemaMerge
+
+
+        /// <summary>
+        /// Initiates a merge operation. Returns a status that shows the result of the merge operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSchemaMerge service method.</param>
+        /// 
+        /// <returns>The response from the StartSchemaMerge service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaMerge">REST API Reference for StartSchemaMerge Operation</seealso>
+        StartSchemaMergeResponse StartSchemaMerge(StartSchemaMergeRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartSchemaMerge operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartSchemaMerge operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartSchemaMerge
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaMerge">REST API Reference for StartSchemaMerge Operation</seealso>
+        IAsyncResult BeginStartSchemaMerge(StartSchemaMergeRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartSchemaMerge operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartSchemaMerge.</param>
+        /// 
+        /// <returns>Returns a  StartSchemaMergeResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaMerge">REST API Reference for StartSchemaMerge Operation</seealso>
+        StartSchemaMergeResponse EndStartSchemaMerge(IAsyncResult asyncResult);
 
         #endregion
         
@@ -2891,6 +3357,64 @@ namespace Amazon.AppSync
         /// <returns>Returns a  UpdateResolverResult from AppSync.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateResolver">REST API Reference for UpdateResolver Operation</seealso>
         UpdateResolverResponse EndUpdateResolver(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UpdateSourceApiAssociation
+
+
+        /// <summary>
+        /// Updates some of the configuration choices of a particular source API association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceApiAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSourceApiAssociation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateSourceApiAssociation">REST API Reference for UpdateSourceApiAssociation Operation</seealso>
+        UpdateSourceApiAssociationResponse UpdateSourceApiAssociation(UpdateSourceApiAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateSourceApiAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceApiAssociation operation on AmazonAppSyncClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateSourceApiAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateSourceApiAssociation">REST API Reference for UpdateSourceApiAssociation Operation</seealso>
+        IAsyncResult BeginUpdateSourceApiAssociation(UpdateSourceApiAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateSourceApiAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateSourceApiAssociation.</param>
+        /// 
+        /// <returns>Returns a  UpdateSourceApiAssociationResult from AppSync.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateSourceApiAssociation">REST API Reference for UpdateSourceApiAssociation Operation</seealso>
+        UpdateSourceApiAssociationResponse EndUpdateSourceApiAssociation(IAsyncResult asyncResult);
 
         #endregion
         

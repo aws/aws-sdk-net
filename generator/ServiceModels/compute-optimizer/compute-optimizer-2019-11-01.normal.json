@@ -552,7 +552,7 @@
         },
         "inferredWorkloadTypes":{
           "shape":"InferredWorkloadTypes",
-          "documentation":"<p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p> <ul> <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li> <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li> <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li> </ul>"
+          "documentation":"<p>The applications that might be running on the instances in the Auto Scaling group as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if one of the following applications might be running on the instances:</p> <ul> <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instances.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instances.</p> </li> <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instances.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instances.</p> </li> <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instances.</p> </li> <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instances.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be running on the instances.</p> </li> <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li> <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li> </ul>"
         }
       },
       "documentation":"<p>Describes an Auto Scaling group recommendation.</p>"
@@ -762,7 +762,7 @@
       "members":{
         "name":{
           "shape":"EBSFilterName",
-          "documentation":"<p>The name of the filter.</p> <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p>"
+          "documentation":"<p>The name of the filter.</p> <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p> <p>You can filter your Amazon EBS volume recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon EBS volume recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Amazon EBS volume recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the key of a tag assigned to your Amazon EBS volume recommendations. Use this filter to find all of your Amazon EBS volume recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Amazon EBS volume recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>"
         },
         "values":{
           "shape":"FilterValues",
@@ -843,7 +843,7 @@
       "members":{
         "name":{
           "shape":"ECSServiceMetricName",
-          "documentation":"<p> The name of the projected metric. </p> <p>The following metrics are available:</p> <ul> <li> <p> <code>CPU</code> — The percentage of allocated compute units that are currently in use on the ECS service tasks.</p> </li> <li> <p> <code>Memory</code> — The percentage of memory that is currently in use on the ECS service tasks.</p> </li> </ul>"
+          "documentation":"<p> The name of the projected metric. </p> <p>The following metrics are available:</p> <ul> <li> <p> <code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p> </li> <li> <p> <code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p> </li> </ul>"
         },
         "timestamps":{
           "shape":"Timestamps",
@@ -858,7 +858,7 @@
           "documentation":"<p> The lower bound values for the projected metric. </p>"
         }
       },
-      "documentation":"<p> Describes the projected metrics of an Amazon ECS service recommendation option. </p> <p>To determine the performance difference between your current ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>"
+      "documentation":"<p> Describes the projected metrics of an Amazon ECS service recommendation option. </p> <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>"
     },
     "ECSServiceProjectedMetrics":{
       "type":"list",
@@ -869,7 +869,7 @@
       "members":{
         "name":{
           "shape":"ECSServiceMetricName",
-          "documentation":"<p> The name of the projected utilization metric. </p> <p>The following utilization metrics are available:</p> <ul> <li> <p> <code>CPU</code> — The percentage of allocated compute units that are currently in use on the ECS service tasks.</p> </li> <li> <p> <code>Memory</code> — The percentage of memory that is currently in use on the ECS service tasks.</p> </li> </ul>"
+          "documentation":"<p> The name of the projected utilization metric. </p> <p>The following utilization metrics are available:</p> <ul> <li> <p> <code>Cpu</code> — The percentage of allocated compute units that are currently in use on the service tasks.</p> </li> <li> <p> <code>Memory</code> — The percentage of memory that's currently in use on the service tasks.</p> </li> </ul>"
         },
         "statistic":{
           "shape":"ECSServiceMetricStatistic",
@@ -884,7 +884,7 @@
           "documentation":"<p> The upper bound values for the projected utilization metrics. </p>"
         }
       },
-      "documentation":"<p> Describes the projected utilization metrics of an Amazon ECS service recommendation option. </p> <p>To determine the performance difference between your current ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p>"
+      "documentation":"<p> Describes the projected utilization metrics of an Amazon ECS service recommendation option. </p> <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p>"
     },
     "ECSServiceProjectedUtilizationMetrics":{
       "type":"list",
@@ -895,47 +895,51 @@
       "members":{
         "serviceArn":{
           "shape":"ServiceArn",
-          "documentation":"<p> The Amazon Resource Name (ARN) of the current ECS service. </p> <p> The following is the format of the ARN: </p> <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>"
+          "documentation":"<p> The Amazon Resource Name (ARN) of the current Amazon ECS service. </p> <p> The following is the format of the ARN: </p> <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>"
         },
         "accountId":{
           "shape":"AccountId",
-          "documentation":"<p> The Amazon Web Services account ID of the ECS service. </p>"
+          "documentation":"<p> The Amazon Web Services account ID of the Amazon ECS service. </p>"
         },
         "currentServiceConfiguration":{
           "shape":"ServiceConfiguration",
-          "documentation":"<p> The configuration of the current ECS service. </p>"
+          "documentation":"<p> The configuration of the current Amazon ECS service. </p>"
         },
         "utilizationMetrics":{
           "shape":"ECSServiceUtilizationMetrics",
-          "documentation":"<p> An array of objects that describe the utilization metrics of the ECS service. </p>"
+          "documentation":"<p> An array of objects that describe the utilization metrics of the Amazon ECS service. </p>"
         },
         "lookbackPeriodInDays":{
           "shape":"LookBackPeriodInDays",
-          "documentation":"<p> The number of days the ECS service utilization metrics were analyzed. </p>"
+          "documentation":"<p> The number of days the Amazon ECS service utilization metrics were analyzed. </p>"
         },
         "launchType":{
           "shape":"ECSServiceLaunchType",
-          "documentation":"<p> The launch type the ECS service is using. </p> <note> <p>Compute Optimizer only supports the Fargate launch type.</p> </note>"
+          "documentation":"<p> The launch type the Amazon ECS service is using. </p> <note> <p>Compute Optimizer only supports the Fargate launch type.</p> </note>"
         },
         "lastRefreshTimestamp":{
           "shape":"LastRefreshTimestamp",
-          "documentation":"<p> The timestamp of when the ECS service recommendation was last generated. </p>"
+          "documentation":"<p> The timestamp of when the Amazon ECS service recommendation was last generated. </p>"
         },
         "finding":{
           "shape":"ECSServiceRecommendationFinding",
-          "documentation":"<p> The finding classification of an ECS service. </p> <p>Findings for ECS services include:</p> <ul> <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an ECS service is considered under-provisioned. An under-provisioned ECS service might result in poor application performance.</p> </li> <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an ECS service is considered over-provisioned. An over-provisioned ECS service might result in additional infrastructure costs. </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li> </ul>"
+          "documentation":"<p> The finding classification of an Amazon ECS service. </p> <p>Findings for Amazon ECS services include:</p> <ul> <li> <p> <b> <code>Underprovisioned</code> </b> — When Compute Optimizer detects that there’s not enough memory or CPU, an Amazon ECS service is considered under-provisioned. An under-provisioned service might result in poor application performance.</p> </li> <li> <p> <b> <code>Overprovisioned</code> </b> — When Compute Optimizer detects that there’s excessive memory or CPU, an Amazon ECS service is considered over-provisioned. An over-provisioned service might result in additional infrastructure costs. </p> </li> <li> <p> <b> <code>Optimized</code> </b> — When both the CPU and memory of your Amazon ECS service meet the performance requirements of your workload, the service is considered optimized.</p> </li> </ul>"
         },
         "findingReasonCodes":{
           "shape":"ECSServiceRecommendationFindingReasonCodes",
-          "documentation":"<p> The reason for the finding classification of an ECS service. </p> <p>Finding reason codes for ECS services include:</p> <ul> <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The ECS service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li> <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The ECS service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The ECS service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The ECS service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li> </ul>"
+          "documentation":"<p> The reason for the finding classification of an Amazon ECS service. </p> <p>Finding reason codes for Amazon ECS services include:</p> <ul> <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The service CPU configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period.</p> </li> <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The service CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current service during the look-back period. </p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The service memory configuration can be sized up to enhance the performance of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The service memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>MemoryUtilization</code> metric of the current service during the look-back period.</p> </li> </ul>"
         },
         "serviceRecommendationOptions":{
           "shape":"ECSServiceRecommendationOptions",
-          "documentation":"<p> An array of objects that describe the recommendation options for the ECS service. </p>"
+          "documentation":"<p> An array of objects that describe the recommendation options for the Amazon ECS service. </p>"
         },
         "currentPerformanceRisk":{
           "shape":"CurrentPerformanceRisk",
-          "documentation":"<p> The risk of the current ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>"
+          "documentation":"<p> The risk of the current Amazon ECS service not meeting the performance needs of its workloads. The higher the risk, the more likely the current service can't meet the performance requirements of its workload. </p>"
+        },
+        "tags":{
+          "shape":"Tags",
+          "documentation":"<p> A list of tags assigned to your Amazon ECS service recommendations. </p>"
         }
       },
       "documentation":"<p> Describes an Amazon ECS service recommendation. </p>"
@@ -945,7 +949,7 @@
       "members":{
         "name":{
           "shape":"ECSServiceRecommendationFilterName",
-          "documentation":"<p> The name of the filter. </p> <p> Specify <code>Finding</code> to return recommendations with a specific finding classification. </p> <p> Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code. </p>"
+          "documentation":"<p> The name of the filter. </p> <p> Specify <code>Finding</code> to return recommendations with a specific finding classification. </p> <p> Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code. </p> <p>You can filter your Amazon ECS service recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Amazon ECS service recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Amazon ECS service recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the key of a tag assigned to your Amazon ECS service recommendations. Use this filter to find all of your Amazon ECS service recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Amazon ECS service recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>"
         },
         "values":{
           "shape":"FilterValues",
@@ -991,20 +995,20 @@
       "members":{
         "memory":{
           "shape":"NullableMemory",
-          "documentation":"<p> The memory size of the ECS service recommendation option. </p>"
+          "documentation":"<p> The memory size of the Amazon ECS service recommendation option. </p>"
         },
         "cpu":{
           "shape":"NullableCpu",
-          "documentation":"<p> The CPU size of the ECS service recommendation option. </p>"
+          "documentation":"<p> The CPU size of the Amazon ECS service recommendation option. </p>"
         },
         "savingsOpportunity":{"shape":"SavingsOpportunity"},
         "projectedUtilizationMetrics":{
           "shape":"ECSServiceProjectedUtilizationMetrics",
-          "documentation":"<p> An array of objects that describe the projected utilization metrics of the ECS service recommendation option. </p>"
+          "documentation":"<p> An array of objects that describe the projected utilization metrics of the Amazon ECS service recommendation option. </p>"
         },
         "containerRecommendations":{
           "shape":"ContainerRecommendations",
-          "documentation":"<p> The CPU and memory size recommendations for the containers within the task of your ECS service. </p>"
+          "documentation":"<p> The CPU and memory size recommendations for the containers within the task of your Amazon ECS service. </p>"
         }
       },
       "documentation":"<p> Describes the recommendation options for an Amazon ECS service. </p>"
@@ -1022,18 +1026,18 @@
       "members":{
         "recommendedCpuUnits":{
           "shape":"CpuSize",
-          "documentation":"<p> The recommended CPU size for the ECS service. </p>"
+          "documentation":"<p> The recommended CPU size for the Amazon ECS service. </p>"
         },
         "recommendedMemorySize":{
           "shape":"MemorySize",
-          "documentation":"<p> The recommended memory size for the ECS service. </p>"
+          "documentation":"<p> The recommended memory size for the Amazon ECS service. </p>"
         },
         "projectedMetrics":{
           "shape":"ECSServiceProjectedMetrics",
           "documentation":"<p> An array of objects that describe the projected metric. </p>"
         }
       },
-      "documentation":"<p> Describes the projected metrics of an Amazon ECS service recommendation option. </p> <p>To determine the performance difference between your current ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>"
+      "documentation":"<p> Describes the projected metrics of an Amazon ECS service recommendation option. </p> <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the metric data of your service against its projected metric data.</p>"
     },
     "ECSServiceRecommendedOptionProjectedMetrics":{
       "type":"list",
@@ -1044,7 +1048,7 @@
       "members":{
         "name":{
           "shape":"ECSServiceMetricName",
-          "documentation":"<p> The name of the utilization metric. </p> <p>The following utilization metrics are available:</p> <ul> <li> <p> <code>Cpu</code> — The amount of CPU units that are used in the service.</p> </li> <li> <p> <code>Memory</code> — The amount of memory that is used in the service.</p> </li> </ul>"
+          "documentation":"<p> The name of the utilization metric. </p> <p>The following utilization metrics are available:</p> <ul> <li> <p> <code>Cpu</code> — The amount of CPU capacity that's used in the service.</p> </li> <li> <p> <code>Memory</code> — The amount of memory that's used in the service.</p> </li> </ul>"
         },
         "statistic":{
           "shape":"ECSServiceMetricStatistic",
@@ -1055,7 +1059,7 @@
           "documentation":"<p> The value of the utilization metric. </p>"
         }
       },
-      "documentation":"<p> Describes the utilization metric of an Amazon ECS service. </p> <p>To determine the performance difference between your current ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p>"
+      "documentation":"<p> Describes the utilization metric of an Amazon ECS service. </p> <p>To determine the performance difference between your current Amazon ECS service and the recommended option, compare the utilization metric data of your service against its projected utilization metric data.</p>"
     },
     "ECSServiceUtilizationMetrics":{
       "type":"list",
@@ -1274,11 +1278,11 @@
       "members":{
         "accountIds":{
           "shape":"AccountIds",
-          "documentation":"<p> The Amazon Web Services account IDs for the export ECS service recommendations. </p> <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p> <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p> <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p> <p>You can specify multiple account IDs per request.</p>"
+          "documentation":"<p> The Amazon Web Services account IDs for the export Amazon ECS service recommendations. </p> <p>If your account is the management account or the delegated administrator of an organization, use this parameter to specify the member account you want to export recommendations to.</p> <p>This parameter can't be specified together with the include member accounts parameter. The parameters are mutually exclusive.</p> <p>If this parameter or the include member accounts parameter is omitted, the recommendations for member accounts aren't included in the export.</p> <p>You can specify multiple account IDs per request.</p>"
         },
         "filters":{
           "shape":"ECSServiceRecommendationFilters",
-          "documentation":"<p> An array of objects to specify a filter that exports a more specific set of ECS service recommendations. </p>"
+          "documentation":"<p> An array of objects to specify a filter that exports a more specific set of Amazon ECS service recommendations. </p>"
         },
         "fieldsToExport":{
           "shape":"ExportableECSServiceFields",
@@ -1430,7 +1434,8 @@
         "RecommendationOptionsEstimatedMonthlySavingsValue",
         "RecommendationOptionsContainerRecommendations",
         "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum",
-        "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum"
+        "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum",
+        "Tags"
       ]
     },
     "ExportableECSServiceFields":{
@@ -1492,7 +1497,11 @@
         "EffectiveRecommendationPreferencesInferredWorkloadTypes",
         "InferredWorkloadTypes",
         "RecommendationOptionsMigrationEffort",
-        "EffectiveRecommendationPreferencesExternalMetricsSource"
+        "EffectiveRecommendationPreferencesExternalMetricsSource",
+        "InstanceState",
+        "Tags",
+        "ExternalMetricStatusCode",
+        "ExternalMetricStatusReason"
       ]
     },
     "ExportableInstanceFields":{
@@ -1527,7 +1536,8 @@
         "CurrentPerformanceRisk",
         "RecommendationOptionsSavingsOpportunityPercentage",
         "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-        "RecommendationOptionsEstimatedMonthlySavingsValue"
+        "RecommendationOptionsEstimatedMonthlySavingsValue",
+        "Tags"
       ]
     },
     "ExportableLambdaFunctionFields":{
@@ -1564,13 +1574,45 @@
         "CurrentPerformanceRisk",
         "RecommendationOptionsSavingsOpportunityPercentage",
         "RecommendationOptionsEstimatedMonthlySavingsCurrency",
-        "RecommendationOptionsEstimatedMonthlySavingsValue"
+        "RecommendationOptionsEstimatedMonthlySavingsValue",
+        "RootVolume",
+        "Tags"
       ]
     },
     "ExportableVolumeFields":{
       "type":"list",
       "member":{"shape":"ExportableVolumeField"}
     },
+    "ExternalMetricStatus":{
+      "type":"structure",
+      "members":{
+        "statusCode":{
+          "shape":"ExternalMetricStatusCode",
+          "documentation":"<p> The status code for Compute Optimizer's integration with an external metrics provider. </p>"
+        },
+        "statusReason":{
+          "shape":"ExternalMetricStatusReason",
+          "documentation":"<p> The reason for Compute Optimizer's integration status with your external metric provider. </p>"
+        }
+      },
+      "documentation":"<p> Describes Compute Optimizer's integration status with your chosen external metric provider. For example, Datadog. </p>"
+    },
+    "ExternalMetricStatusCode":{
+      "type":"string",
+      "enum":[
+        "NO_EXTERNAL_METRIC_SET",
+        "INTEGRATION_SUCCESS",
+        "DATADOG_INTEGRATION_ERROR",
+        "DYNATRACE_INTEGRATION_ERROR",
+        "NEWRELIC_INTEGRATION_ERROR",
+        "INSTANA_INTEGRATION_ERROR",
+        "INSUFFICIENT_DATADOG_METRICS",
+        "INSUFFICIENT_DYNATRACE_METRICS",
+        "INSUFFICIENT_NEWRELIC_METRICS",
+        "INSUFFICIENT_INSTANA_METRICS"
+      ]
+    },
+    "ExternalMetricStatusReason":{"type":"string"},
     "ExternalMetricsPreference":{
       "type":"structure",
       "members":{
@@ -1600,7 +1642,7 @@
       "members":{
         "name":{
           "shape":"FilterName",
-          "documentation":"<p>The name of the filter.</p> <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>Underprovisioned</code>).</p> <p>Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>"
+          "documentation":"<p>The name of the filter.</p> <p>Specify <code>Finding</code> to return recommendations with a specific finding classification. For example, <code>Underprovisioned</code>.</p> <p>Specify <code>RecommendationSourceType</code> to return recommendations of a specific resource type. For example, <code>Ec2Instance</code>.</p> <p>Specify <code>FindingReasonCodes</code> to return recommendations with a specific finding reason code. For example, <code>CPUUnderprovisioned</code>.</p> <p>Specify <code>InferredWorkloadTypes</code> to return recommendations of a specific inferred workload. For example, <code>Redis</code>.</p> <p>You can filter your EC2 instance recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the key of a tag assigned to your recommendations. Use this filter to find all of your recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>"
         },
         "values":{
           "shape":"FilterValues",
@@ -1614,7 +1656,8 @@
       "enum":[
         "Finding",
         "FindingReasonCodes",
-        "RecommendationSourceType"
+        "RecommendationSourceType",
+        "InferredWorkloadTypes"
       ]
     },
     "FilterValue":{"type":"string"},
@@ -1839,7 +1882,7 @@
       "members":{
         "serviceArn":{
           "shape":"ServiceArn",
-          "documentation":"<p> The ARN that identifies the ECS service. </p> <p> The following is the format of the ARN: </p> <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>"
+          "documentation":"<p> The ARN that identifies the Amazon ECS service. </p> <p> The following is the format of the ARN: </p> <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>"
         },
         "stat":{
           "shape":"MetricStatistic",
@@ -1873,23 +1916,23 @@
       "members":{
         "serviceArns":{
           "shape":"ServiceArns",
-          "documentation":"<p> The ARN that identifies the ECS service. </p> <p> The following is the format of the ARN: </p> <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>"
+          "documentation":"<p> The ARN that identifies the Amazon ECS service. </p> <p> The following is the format of the ARN: </p> <p> <code>arn:aws:ecs:region:aws_account_id:service/cluster-name/service-name</code> </p>"
         },
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p> The token to advance to the next page of ECS service recommendations. </p>"
+          "documentation":"<p> The token to advance to the next page of Amazon ECS service recommendations. </p>"
         },
         "maxResults":{
           "shape":"MaxResults",
-          "documentation":"<p> The maximum number of ECS service recommendations to return with a single request. </p> <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>"
+          "documentation":"<p> The maximum number of Amazon ECS service recommendations to return with a single request. </p> <p>To retrieve the remaining results, make another request with the returned <code>nextToken</code> value.</p>"
         },
         "filters":{
           "shape":"ECSServiceRecommendationFilters",
-          "documentation":"<p> An array of objects to specify a filter that returns a more specific list of ECS service recommendations. </p>"
+          "documentation":"<p> An array of objects to specify a filter that returns a more specific list of Amazon ECS service recommendations. </p>"
         },
         "accountIds":{
           "shape":"AccountIds",
-          "documentation":"<p> Return the ECS service recommendations to the specified Amazon Web Services account IDs. </p> <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the ECS service recommendations to specific member accounts.</p> <p>You can only specify one account ID per request.</p>"
+          "documentation":"<p> Return the Amazon ECS service recommendations to the specified Amazon Web Services account IDs. </p> <p>If your account is the management account or the delegated administrator of an organization, use this parameter to return the Amazon ECS service recommendations to specific member accounts.</p> <p>You can only specify one account ID per request.</p>"
         }
       }
     },
@@ -1898,11 +1941,11 @@
       "members":{
         "nextToken":{
           "shape":"NextToken",
-          "documentation":"<p> The token to advance to the next page of ECS service recommendations. </p>"
+          "documentation":"<p> The token to advance to the next page of Amazon ECS service recommendations. </p>"
         },
         "ecsServiceRecommendations":{
           "shape":"ECSServiceRecommendations",
-          "documentation":"<p> An array of objects that describe the ECS service recommendations. </p>"
+          "documentation":"<p> An array of objects that describe the Amazon ECS service recommendations. </p>"
         },
         "errors":{
           "shape":"GetRecommendationErrors",
@@ -2121,6 +2164,24 @@
     "High":{"type":"long"},
     "Identifier":{"type":"string"},
     "IncludeMemberAccounts":{"type":"boolean"},
+    "InferredWorkloadSaving":{
+      "type":"structure",
+      "members":{
+        "inferredWorkloadTypes":{
+          "shape":"InferredWorkloadTypes",
+          "documentation":"<p>The applications that might be running on the instance as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p> <ul> <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p> </li> <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instance.</p> </li> <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instance.</p> </li> <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li> <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li> </ul>"
+        },
+        "estimatedMonthlySavings":{
+          "shape":"EstimatedMonthlySavings",
+          "documentation":"<p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing.</p>"
+        }
+      },
+      "documentation":"<p> The estimated monthly savings after you adjust the configurations of your instances running on the inferred workload types to the recommended configurations. If the <code>inferredWorkloadTypes</code> list contains multiple entries, then the savings are the sum of the monthly savings from instances that run the exact combination of the inferred workload types. </p>"
+    },
+    "InferredWorkloadSavings":{
+      "type":"list",
+      "member":{"shape":"InferredWorkloadSaving"}
+    },
     "InferredWorkloadType":{
       "type":"string",
       "enum":[
@@ -2130,7 +2191,9 @@
         "Memcached",
         "Nginx",
         "PostgreSql",
-        "Redis"
+        "Redis",
+        "Kafka",
+        "SQLServer"
       ]
     },
     "InferredWorkloadTypes":{
@@ -2175,7 +2238,7 @@
         },
         "findingReasonCodes":{
           "shape":"InstanceRecommendationFindingReasonCodes",
-          "documentation":"<p>The reason for the finding classification of the instance.</p> <p>Finding reason codes for instances include:</p> <ul> <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better CPU performance. This is identified by analyzing the <code>CPUUtilization</code> metric of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the memory utilization metric of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better memory performance. This is identified by analyzing the memory utilization metric of the current instance during the look-back period.</p> <note> <p>Memory utilization is analyzed only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or the legacy <code>MemoryUtilization</code> metric in the <code>System/Linux</code> namespace. On Windows instances, Compute Optimizer analyses the <code>Memory % Committed Bytes In Use</code> metric in the <code>CWAgent</code> namespace.</p> </note> </li> <li> <p> <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li> <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS throughput performance. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li> <li> <p> <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS performance. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li> <li> <p> <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better network bandwidth performance. This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the current instance during the look-back period. This finding reason happens when the <code>NetworkIn</code> or <code>NetworkOut</code> performance of an instance is impacted.</p> </li> <li> <p> <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>NetworkPacketsIn</code> and <code>NetworkPacketsIn</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better network PPS performance. This is identified by analyzing the <code>NetworkPacketsIn</code> and <code>NetworkPacketsIn</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>DiskReadOps</code> and <code>DiskWriteOps</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better disk IOPS performance. This is identified by analyzing the <code>DiskReadOps</code> and <code>DiskWriteOps</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>DiskReadBytes</code> and <code>DiskWriteBytes</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better disk throughput performance. This is identified by analyzing the <code>DiskReadBytes</code> and <code>DiskWriteBytes</code> metrics of the current instance during the look-back period.</p> </li> </ul> <note> <p>For more information about instance metrics, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html\">List the available CloudWatch metrics for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about EBS volume metrics, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html\">Amazon CloudWatch metrics for Amazon EBS</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </note>"
+          "documentation":"<p>The reason for the finding classification of the instance.</p> <p>Finding reason codes for instances include:</p> <ul> <li> <p> <b> <code>CPUOverprovisioned</code> </b> — The instance’s CPU configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>CPUUtilization</code> metric of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>CPUUnderprovisioned</code> </b> — The instance’s CPU configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better CPU performance. This is identified by analyzing the <code>CPUUtilization</code> metric of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>MemoryOverprovisioned</code> </b> — The instance’s memory configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the memory utilization metric of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>MemoryUnderprovisioned</code> </b> — The instance’s memory configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better memory performance. This is identified by analyzing the memory utilization metric of the current instance during the look-back period.</p> <note> <p>Memory utilization is analyzed only for resources that have the unified CloudWatch agent installed on them. For more information, see <a href=\"https://docs.aws.amazon.com/compute-optimizer/latest/ug/metrics.html#cw-agent\">Enabling memory utilization with the Amazon CloudWatch Agent</a> in the <i>Compute Optimizer User Guide</i>. On Linux instances, Compute Optimizer analyses the <code>mem_used_percent</code> metric in the <code>CWAgent</code> namespace, or the legacy <code>MemoryUtilization</code> metric in the <code>System/Linux</code> namespace. On Windows instances, Compute Optimizer analyses the <code>Memory % Committed Bytes In Use</code> metric in the <code>CWAgent</code> namespace.</p> </note> </li> <li> <p> <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li> <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS throughput performance. This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance during the look-back period.</p> </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li> <li> <p> <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better EBS IOPS performance. This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes attached to the current instance during the look-back period.</p> </li> <li> <p> <b> <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network bandwidth configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>NetworkBandwidthUnderprovisioned</code> </b> — The instance’s network bandwidth configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better network bandwidth performance. This is identified by analyzing the <code>NetworkIn</code> and <code>NetworkOut</code> metrics of the current instance during the look-back period. This finding reason happens when the <code>NetworkIn</code> or <code>NetworkOut</code> performance of an instance is impacted.</p> </li> <li> <p> <b> <code>NetworkPPSOverprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>NetworkPacketsIn</code> and <code>NetworkPacketsIn</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>NetworkPPSUnderprovisioned</code> </b> — The instance’s network PPS (packets per second) configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better network PPS performance. This is identified by analyzing the <code>NetworkPacketsIn</code> and <code>NetworkPacketsIn</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>DiskIOPSOverprovisioned</code> </b> — The instance’s disk IOPS configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>DiskReadOps</code> and <code>DiskWriteOps</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>DiskIOPSUnderprovisioned</code> </b> — The instance’s disk IOPS configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better disk IOPS performance. This is identified by analyzing the <code>DiskReadOps</code> and <code>DiskWriteOps</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>DiskThroughputOverprovisioned</code> </b> — The instance’s disk throughput configuration can be sized down while still meeting the performance requirements of your workload. This is identified by analyzing the <code>DiskReadBytes</code> and <code>DiskWriteBytes</code> metrics of the current instance during the look-back period.</p> </li> <li> <p> <b> <code>DiskThroughputUnderprovisioned</code> </b> — The instance’s disk throughput configuration doesn't meet the performance requirements of your workload and there is an alternative instance type that provides better disk throughput performance. This is identified by analyzing the <code>DiskReadBytes</code> and <code>DiskWriteBytes</code> metrics of the current instance during the look-back period.</p> </li> </ul> <note> <p>For more information about instance metrics, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/viewing_metrics_with_cloudwatch.html\">List the available CloudWatch metrics for your instances</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>. For more information about EBS volume metrics, see <a href=\"https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using_cloudwatch_ebs.html\">Amazon CloudWatch metrics for Amazon EBS</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> </note>"
         },
         "utilizationMetrics":{
           "shape":"UtilizationMetrics",
@@ -2207,7 +2270,19 @@
         },
         "inferredWorkloadTypes":{
           "shape":"InferredWorkloadTypes",
-          "documentation":"<p>The applications that might be running on the instance as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p> <ul> <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p> </li> <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instance.</p> </li> <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instance.</p> </li> <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li> </ul>"
+          "documentation":"<p>The applications that might be running on the instance as inferred by Compute Optimizer.</p> <p>Compute Optimizer can infer if one of the following applications might be running on the instance:</p> <ul> <li> <p> <code>AmazonEmr</code> - Infers that Amazon EMR might be running on the instance.</p> </li> <li> <p> <code>ApacheCassandra</code> - Infers that Apache Cassandra might be running on the instance.</p> </li> <li> <p> <code>ApacheHadoop</code> - Infers that Apache Hadoop might be running on the instance.</p> </li> <li> <p> <code>Memcached</code> - Infers that Memcached might be running on the instance.</p> </li> <li> <p> <code>NGINX</code> - Infers that NGINX might be running on the instance.</p> </li> <li> <p> <code>PostgreSql</code> - Infers that PostgreSQL might be running on the instance.</p> </li> <li> <p> <code>Redis</code> - Infers that Redis might be running on the instance.</p> </li> <li> <p> <code>Kafka</code> - Infers that Kafka might be running on the instance.</p> </li> <li> <p> <code>SQLServer</code> - Infers that SQLServer might be running on the instance.</p> </li> </ul>"
+        },
+        "instanceState":{
+          "shape":"InstanceState",
+          "documentation":"<p> The state of the instance when the recommendation was generated. </p>"
+        },
+        "tags":{
+          "shape":"Tags",
+          "documentation":"<p> A list of tags assigned to your Amazon EC2 instance recommendations. </p>"
+        },
+        "externalMetricStatus":{
+          "shape":"ExternalMetricStatus",
+          "documentation":"<p> An object that describes Compute Optimizer's integration status with your external metrics provider. </p>"
         }
       },
       "documentation":"<p>Describes an Amazon EC2 instance recommendation.</p>"
@@ -2274,6 +2349,17 @@
     "InstanceRecommendations":{
       "type":"list",
       "member":{"shape":"InstanceRecommendation"}
+    },
+    "InstanceState":{
+      "type":"string",
+      "enum":[
+        "pending",
+        "running",
+        "shutting-down",
+        "terminated",
+        "stopping",
+        "stopped"
+      ]
     },
     "InstanceType":{"type":"string"},
     "InternalServerException":{
@@ -2457,6 +2543,10 @@
         "currentPerformanceRisk":{
           "shape":"CurrentPerformanceRisk",
           "documentation":"<p>The risk of the current Lambda function not meeting the performance needs of its workloads. The higher the risk, the more likely the current Lambda function requires more memory.</p>"
+        },
+        "tags":{
+          "shape":"Tags",
+          "documentation":"<p> A list of tags assigned to your Lambda function recommendations. </p>"
         }
       },
       "documentation":"<p>Describes an Lambda function recommendation.</p>"
@@ -2466,7 +2556,7 @@
       "members":{
         "name":{
           "shape":"LambdaFunctionRecommendationFilterName",
-          "documentation":"<p>The name of the filter.</p> <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p>"
+          "documentation":"<p>The name of the filter.</p> <p>Specify <code>Finding</code> to return recommendations with a specific finding classification (for example, <code>NotOptimized</code>).</p> <p>Specify <code>FindingReasonCode</code> to return recommendations with a specific finding reason code (for example, <code>MemoryUnderprovisioned</code>).</p> <p>You can filter your Lambda function recommendations by <code>tag:key</code> and <code>tag-key</code> tags.</p> <p>A <code>tag:key</code> is a key and value combination of a tag assigned to your Lambda function recommendations. Use the tag key in the filter name and the tag value as the filter value. For example, to find all Lambda function recommendations that have a tag with the key of <code>Owner</code> and the value of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the key of a tag assigned to your Lambda function recommendations. Use this filter to find all of your Lambda function recommendations that have a tag with a specific key. This doesn’t consider the tag value. For example, you can find your Lambda function recommendations with a tag key value of <code>Owner</code> or without any tag keys assigned.</p>"
         },
         "values":{
           "shape":"FilterValues",
@@ -2884,6 +2974,10 @@
         "currentPerformanceRiskRatings":{
           "shape":"CurrentPerformanceRiskRatings",
           "documentation":"<p>An object that describes the performance risk ratings for a given resource type.</p>"
+        },
+        "inferredWorkloadSavings":{
+          "shape":"InferredWorkloadSavings",
+          "documentation":"<p> An array of objects that describes the estimated monthly saving amounts for the instances running on the specified <code>inferredWorkloadTypes</code>. The array contains the top three savings opportunites for the instances running inferred workload types. </p>"
         }
       },
       "documentation":"<p>A summary of a recommendation.</p>"
@@ -2932,6 +3026,7 @@
         "EcsService"
       ]
     },
+    "RootVolume":{"type":"boolean"},
     "S3Destination":{
       "type":"structure",
       "members":{
@@ -2973,7 +3068,7 @@
         },
         "estimatedMonthlySavings":{
           "shape":"EstimatedMonthlySavings",
-          "documentation":"<p>An object that describes the estimated monthly savings amount possible, based on On-Demand instance pricing, by adopting Compute Optimizer recommendations for a given resource.</p>"
+          "documentation":"<p>An object that describes the estimated monthly savings amount possible by adopting Compute Optimizer recommendations for a given resource. This is based on the On-Demand instance pricing..</p>"
         }
       },
       "documentation":"<p>Describes the savings opportunity for recommendations of a given resource type or for the recommendation option of an individual resource.</p> <p>Savings opportunity represents the estimated monthly savings you can achieve by implementing a given Compute Optimizer recommendation.</p> <important> <p>Savings opportunity data requires that you opt in to Cost Explorer, as well as activate <b>Receive Amazon EC2 resource recommendations</b> in the Cost Explorer preferences page. That creates a connection between Cost Explorer and Compute Optimizer. With this connection, Cost Explorer generates savings estimates considering the price of existing resources, the price of recommended resources, and historical usage data. Estimated monthly savings reflects the projected dollar savings associated with each of the recommendations generated. For more information, see <a href=\"https://docs.aws.amazon.com/cost-management/latest/userguide/ce-enable.html\">Enabling Cost Explorer</a> and <a href=\"https://docs.aws.amazon.com/cost-management/latest/userguide/ce-rightsizing.html\">Optimizing your cost with Rightsizing Recommendations</a> in the <i>Cost Management User Guide</i>.</p> </important>"
@@ -3012,23 +3107,23 @@
       "members":{
         "memory":{
           "shape":"NullableMemory",
-          "documentation":"<p> The amount of memory used by the tasks in the ECS service. </p>"
+          "documentation":"<p> The amount of memory used by the tasks in the Amazon ECS service. </p>"
         },
         "cpu":{
           "shape":"NullableCpu",
-          "documentation":"<p> The number of CPU units used by the tasks in the ECS service. </p>"
+          "documentation":"<p> The number of CPU units used by the tasks in the Amazon ECS service. </p>"
         },
         "containerConfigurations":{
           "shape":"ContainerConfigurations",
-          "documentation":"<p> The container configurations within a task of an ECS service. </p>"
+          "documentation":"<p> The container configurations within a task of an Amazon ECS service. </p>"
         },
         "autoScalingConfiguration":{
           "shape":"AutoScalingConfiguration",
-          "documentation":"<p> Describes the Auto Scaling configuration methods for an Amazon ECS service. This affects the generated recommendations. For example, if Auto Scaling is configured on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations. </p> <p>The Auto Scaling configuration methods include:</p> <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS service is configured to use target scaling on CPU, Compute Optimizer doesn't generate CPU recommendations.</p> </li> <li> <p> <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured to use target scaling on memory, Compute Optimizer doesn't generate memory recommendations.</p> </li> </ul> <p>For more information about step scaling and target scaling, see <a href=\"https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html\"> Step scaling policies for Application Auto Scaling</a> and <a href=\"https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html\"> Target tracking scaling policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>"
+          "documentation":"<p> Describes the Auto Scaling configuration methods for an Amazon ECS service. This affects the generated recommendations. For example, if Auto Scaling is configured on a service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations. </p> <p>The Auto Scaling configuration methods include:</p> <ul> <li> <p> <code>TARGET_TRACKING_SCALING_CPU</code> — If the Amazon ECS service is configured to use target scaling on CPU, Compute Optimizer doesn't generate CPU recommendations.</p> </li> <li> <p> <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the Amazon ECS service is configured to use target scaling on memory, Compute Optimizer doesn't generate memory recommendations.</p> </li> </ul> <p>For more information about step scaling and target scaling, see <a href=\"https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-step-scaling-policies.html\"> Step scaling policies for Application Auto Scaling</a> and <a href=\"https://docs.aws.amazon.com/autoscaling/application/userguide/application-auto-scaling-target-tracking.html\"> Target tracking scaling policies for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.</p>"
         },
         "taskDefinitionArn":{
           "shape":"TaskDefinitionArn",
-          "documentation":"<p> The task definition ARN used by the tasks in the ECS service. </p>"
+          "documentation":"<p> The task definition ARN used by the tasks in the Amazon ECS service. </p>"
         }
       },
       "documentation":"<p> The Amazon ECS service configurations used for recommendations. </p>"
@@ -3075,6 +3170,26 @@
       "documentation":"<p>The summary of a recommendation.</p>"
     },
     "SummaryValue":{"type":"double"},
+    "Tag":{
+      "type":"structure",
+      "members":{
+        "key":{
+          "shape":"TagKey",
+          "documentation":"<p> One part of a key-value pair that makes up a tag. A key is a general label that acts like a category for more specific tag values. </p>"
+        },
+        "value":{
+          "shape":"TagValue",
+          "documentation":"<p> One part of a key-value pair that make up a tag. A value acts as a descriptor within a tag category (key). The value can be empty or null. </p>"
+        }
+      },
+      "documentation":"<p> A list of tag key and value pairs that you define. </p>"
+    },
+    "TagKey":{"type":"string"},
+    "TagValue":{"type":"string"},
+    "Tags":{
+      "type":"list",
+      "member":{"shape":"Tag"}
+    },
     "TaskDefinitionArn":{"type":"string"},
     "ThrottlingException":{
       "type":"structure",
@@ -3178,6 +3293,10 @@
         "volumeBurstThroughput":{
           "shape":"VolumeBurstThroughput",
           "documentation":"<p>The burst throughput of the volume.</p>"
+        },
+        "rootVolume":{
+          "shape":"RootVolume",
+          "documentation":"<p> Contains the image used to boot the instance during launch. </p>"
         }
       },
       "documentation":"<p>Describes the configuration of an Amazon Elastic Block Store (Amazon EBS) volume.</p>"
@@ -3220,6 +3339,10 @@
         "currentPerformanceRisk":{
           "shape":"CurrentPerformanceRisk",
           "documentation":"<p>The risk of the current EBS volume not meeting the performance needs of its workloads. The higher the risk, the more likely the current EBS volume doesn't have sufficient capacity.</p>"
+        },
+        "tags":{
+          "shape":"Tags",
+          "documentation":"<p> A list of tags assigned to your Amazon EBS volume recommendations. </p>"
         }
       },
       "documentation":"<p>Describes an Amazon Elastic Block Store (Amazon EBS) volume recommendation.</p>"

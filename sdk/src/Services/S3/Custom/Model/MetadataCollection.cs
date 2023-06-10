@@ -27,7 +27,7 @@ namespace Amazon.S3.Model
     {
         internal const string MetaDataHeaderPrefix = "x-amz-meta-";
             
-        IDictionary<string, string> values = new Dictionary<string, string>();
+        IDictionary<string, string> values = new Dictionary<string, string>(StringComparer.OrdinalIgnoreCase);
 
         /// <summary>
         /// Gets and sets meta data for the object. Meta data names must start with "x-amz-meta-". If the name passeed in as the indexer 

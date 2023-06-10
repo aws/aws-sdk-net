@@ -105,6 +105,23 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Name);
                 }
 
+                if(publicRequest.IsSetStreamsKmsKey())
+                {
+                    context.Writer.WritePropertyName("streamsKmsKey");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = KmsKeyMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.StreamsKmsKey, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetStreamsKmsRole())
+                {
+                    context.Writer.WritePropertyName("streamsKmsRole");
+                    context.Writer.Write(publicRequest.StreamsKmsRole);
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

@@ -84,8 +84,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property PolicyStatementsTemplate. 
         /// <para>
-        /// The policy statement that specifies the permissions in the CodePipeline customer’s
-        /// account that are needed to successfully run an action.
+        /// The policy statement that specifies the permissions in the CodePipeline customer account
+        /// that are needed to successfully run an action.
         /// </para>
         ///  
         /// <para>

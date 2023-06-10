@@ -115,7 +115,7 @@ namespace Amazon.Honeycode.Model
         /// formula. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=8192)]
+        [AWSProperty(Sensitive=true, Min=0, Max=8192)]
         public string Formula
         {
             get { return this._formula; }

@@ -76,10 +76,6 @@ namespace Amazon.ServiceCatalog.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>en</code> - English (default)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>jp</code> - Japanese
         /// </para>
         ///  </li> <li> 
@@ -123,15 +119,80 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PrincipalARN. 
         /// <para>
-        /// The ARN of the principal (IAM user, role, or group). This field allows an ARN with
-        /// no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
-        /// 
+        /// The ARN of the principal (user, role, or group). If the <code>PrincipalType</code>
+        /// is <code>IAM</code>, the supported value is a fully defined <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+        /// Amazon Resource Name (ARN)</a>. If the <code>PrincipalType</code> is <code>IAM_PATTERN</code>,
+        /// the supported value is an <code>IAM</code> ARN <i>without an AccountID</i> in the
+        /// following format:
         /// </para>
         ///  
         /// <para>
-        /// You can associate multiple <code>IAM</code> patterns even if the account has no principal
-        /// with that name. This is useful in Principal Name Sharing if you want to share a principal
-        /// without creating it in the account that owns the portfolio. 
+        ///  <i>arn:partition:iam:::resource-type/resource-id</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// The ARN resource-id can be either:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// A fully formed resource-id. For example, <i>arn:aws:iam:::role/resource-name</i> or
+        /// <i>arn:aws:iam:::role/resource-path/resource-name</i> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A wildcard ARN. The wildcard ARN accepts <code>IAM_PATTERN</code> values with a "*"
+        /// or "?" in the resource-id segment of the ARN. For example <i>arn:partition:service:::resource-type/resource-path/resource-name</i>.
+        /// The new symbols are exclusive to the <b>resource-path</b> and <b>resource-name</b>
+        /// and cannot replace the <b>resource-type</b> or other ARN values. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The ARN path and principal name allow unlimited wildcard characters.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Examples of an <b>acceptable</b> wildcard ARN:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// arn:aws:iam:::role/ResourceName_*
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// arn:aws:iam:::role/*/ResourceName_?
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Examples of an <b>unacceptable</b> wildcard ARN:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// arn:aws:iam:::*/ResourceName
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can associate multiple <code>IAM_PATTERN</code>s even if the account has no principal
+        /// with that name. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The "?" wildcard character matches zero or one of any character. This is similar to
+        /// ".?" in regular regex context. The "*" wildcard character matches any number of any
+        /// characters. This is similar to ".*" in regular regex context.
+        /// </para>
+        ///  
+        /// <para>
+        /// In the IAM Principal ARN format (<i>arn:partition:iam:::resource-type/resource-path/resource-name</i>),
+        /// valid resource-type values include <b>user/</b>, <b>group/</b>, or <b>role/</b>. The
+        /// "?" and "*" characters are allowed only after the resource-type in the resource-id
+        /// segment. You can use special characters anywhere within the resource-id. 
+        /// </para>
+        ///  
+        /// <para>
+        /// The "*" character also matches the "/" character, allowing paths to be formed <i>within</i>
+        /// the resource-id. For example, <i>arn:aws:iam:::role/<b>*</b>/ResourceName_?</i> matches
+        /// both <i>arn:aws:iam:::role/pathA/pathB/ResourceName_1</i> and <i>arn:aws:iam:::role/pathA/ResourceName_1</i>.
+        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -151,8 +212,8 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property PrincipalType. 
         /// <para>
         /// The principal type. The supported value is <code>IAM</code> if you use a fully defined
-        /// ARN, or <code>IAM_PATTERN</code> if you use an ARN with no <code>accountID</code>.
-        /// 
+        /// Amazon Resource Name (ARN), or <code>IAM_PATTERN</code> if you use an ARN with no
+        /// <code>accountID</code>, with or without wildcard characters. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

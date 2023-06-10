@@ -542,6 +542,58 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  CreateVpcConnection
+
+        internal virtual CreateVpcConnectionResponse CreateVpcConnection(CreateVpcConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<CreateVpcConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new MSK VPC connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateVpcConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateVpcConnection service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.TooManyRequestsException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/CreateVpcConnection">REST API Reference for CreateVpcConnection Operation</seealso>
+        public virtual Task<CreateVpcConnectionResponse> CreateVpcConnectionAsync(CreateVpcConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateVpcConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateVpcConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateVpcConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteCluster
 
         internal virtual DeleteClusterResponse DeleteCluster(DeleteClusterRequest request)
@@ -588,6 +640,53 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  DeleteClusterPolicy
+
+        internal virtual DeleteClusterPolicyResponse DeleteClusterPolicy(DeleteClusterPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteClusterPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the MSK cluster policy specified by the Amazon Resource Name (ARN) in the
+        /// request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteClusterPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteClusterPolicy service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteClusterPolicy">REST API Reference for DeleteClusterPolicy Operation</seealso>
+        public virtual Task<DeleteClusterPolicyResponse> DeleteClusterPolicyAsync(DeleteClusterPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteClusterPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteClusterPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  DeleteConfiguration
 
         internal virtual DeleteConfigurationResponse DeleteConfiguration(DeleteConfigurationRequest request)
@@ -630,6 +729,52 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = DeleteConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteVpcConnection
+
+        internal virtual DeleteVpcConnectionResponse DeleteVpcConnection(DeleteVpcConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteVpcConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a MSK VPC connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteVpcConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteVpcConnection service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DeleteVpcConnection">REST API Reference for DeleteVpcConnection Operation</seealso>
+        public virtual Task<DeleteVpcConnectionResponse> DeleteVpcConnectionAsync(DeleteVpcConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteVpcConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteVpcConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteVpcConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -887,6 +1032,58 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  DescribeVpcConnection
+
+        internal virtual DescribeVpcConnectionResponse DescribeVpcConnection(DescribeVpcConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeVpcConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a description of this MSK VPC connection.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeVpcConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeVpcConnection service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/DescribeVpcConnection">REST API Reference for DescribeVpcConnection Operation</seealso>
+        public virtual Task<DescribeVpcConnectionResponse> DescribeVpcConnectionAsync(DescribeVpcConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeVpcConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeVpcConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeVpcConnectionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetBootstrapBrokers
 
         internal virtual GetBootstrapBrokersResponse GetBootstrapBrokers(GetBootstrapBrokersRequest request)
@@ -932,6 +1129,52 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = GetBootstrapBrokersResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetBootstrapBrokersResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetClusterPolicy
+
+        internal virtual GetClusterPolicyResponse GetClusterPolicy(GetClusterPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClusterPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<GetClusterPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Get the MSK cluster policy specified by the Amazon Resource Name (ARN) in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetClusterPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetClusterPolicy service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.NotFoundException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/GetClusterPolicy">REST API Reference for GetClusterPolicy Operation</seealso>
+        public virtual Task<GetClusterPolicyResponse> GetClusterPolicyAsync(GetClusterPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetClusterPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetClusterPolicyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -987,6 +1230,55 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = GetCompatibleKafkaVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetCompatibleKafkaVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListClientVpcConnections
+
+        internal virtual ListClientVpcConnectionsResponse ListClientVpcConnections(ListClientVpcConnectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClientVpcConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClientVpcConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListClientVpcConnectionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of all the VPC connections in this Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListClientVpcConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListClientVpcConnections service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListClientVpcConnections">REST API Reference for ListClientVpcConnections Operation</seealso>
+        public virtual Task<ListClientVpcConnectionsResponse> ListClientVpcConnectionsAsync(ListClientVpcConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListClientVpcConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListClientVpcConnectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListClientVpcConnectionsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1421,6 +1713,99 @@ namespace Amazon.Kafka
 
         #endregion
         
+        #region  ListVpcConnections
+
+        internal virtual ListVpcConnectionsResponse ListVpcConnections(ListVpcConnectionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcConnectionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListVpcConnectionsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns a list of all the VPC connections in this Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListVpcConnections service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListVpcConnections service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ListVpcConnections">REST API Reference for ListVpcConnections Operation</seealso>
+        public virtual Task<ListVpcConnectionsResponse> ListVpcConnectionsAsync(ListVpcConnectionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListVpcConnectionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListVpcConnectionsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListVpcConnectionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  PutClusterPolicy
+
+        internal virtual PutClusterPolicyResponse PutClusterPolicy(PutClusterPolicyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutClusterPolicyResponseUnmarshaller.Instance;
+
+            return Invoke<PutClusterPolicyResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates or updates the MSK cluster policy specified by the cluster Amazon Resource
+        /// Name (ARN) in the request.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutClusterPolicy service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PutClusterPolicy service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/PutClusterPolicy">REST API Reference for PutClusterPolicy Operation</seealso>
+        public virtual Task<PutClusterPolicyResponse> PutClusterPolicyAsync(PutClusterPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = PutClusterPolicyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = PutClusterPolicyResponseUnmarshaller.Instance;
+
+            return InvokeAsync<PutClusterPolicyResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  RebootBroker
 
         internal virtual RebootBrokerResponse RebootBroker(RebootBrokerRequest request)
@@ -1472,6 +1857,55 @@ namespace Amazon.Kafka
             options.ResponseUnmarshaller = RebootBrokerResponseUnmarshaller.Instance;
 
             return InvokeAsync<RebootBrokerResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  RejectClientVpcConnection
+
+        internal virtual RejectClientVpcConnectionResponse RejectClientVpcConnection(RejectClientVpcConnectionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectClientVpcConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectClientVpcConnectionResponseUnmarshaller.Instance;
+
+            return Invoke<RejectClientVpcConnectionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Returns empty response.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RejectClientVpcConnection service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RejectClientVpcConnection service method, as returned by Kafka.</returns>
+        /// <exception cref="Amazon.Kafka.Model.BadRequestException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ForbiddenException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.InternalServerErrorException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.ServiceUnavailableException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <exception cref="Amazon.Kafka.Model.UnauthorizedException">
+        /// Returns information about an error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/RejectClientVpcConnection">REST API Reference for RejectClientVpcConnection Operation</seealso>
+        public virtual Task<RejectClientVpcConnectionResponse> RejectClientVpcConnectionAsync(RejectClientVpcConnectionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = RejectClientVpcConnectionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = RejectClientVpcConnectionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<RejectClientVpcConnectionResponse>(request, options, cancellationToken);
         }
 
         #endregion

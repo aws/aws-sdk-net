@@ -74,7 +74,7 @@ namespace Amazon.GameLift.Model
     ///  
     /// <para>
     ///  <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
-    /// up GameLift Fleets</a> 
+    /// up Amazon GameLift Fleets</a> 
     /// </para>
     ///  
     /// <para>

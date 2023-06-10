@@ -30,14 +30,18 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVoiceConnectorGroup operation.
-    /// 
+    /// Retrieves details for the specified Amazon Chime SDK Voice Connector group, such as
+    /// timestamps,name, and associated <code>VoiceConnectorItems</code>.
     /// </summary>
     public partial class GetVoiceConnectorGroupRequest : AmazonChimeSDKVoiceRequest
     {
         private string _voiceConnectorGroupId;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorGroupId.
+        /// Gets and sets the property VoiceConnectorGroupId. 
+        /// <para>
+        /// The Voice Connector group ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorGroupId

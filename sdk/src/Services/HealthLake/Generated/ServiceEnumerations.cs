@@ -25,6 +25,56 @@ namespace Amazon.HealthLake
 {
 
     /// <summary>
+    /// Constants used for properties of type AuthorizationStrategy.
+    /// </summary>
+    public class AuthorizationStrategy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWS_AUTH for AuthorizationStrategy
+        /// </summary>
+        public static readonly AuthorizationStrategy AWS_AUTH = new AuthorizationStrategy("AWS_AUTH");
+        /// <summary>
+        /// Constant SMART_ON_FHIR_V1 for AuthorizationStrategy
+        /// </summary>
+        public static readonly AuthorizationStrategy SMART_ON_FHIR_V1 = new AuthorizationStrategy("SMART_ON_FHIR_V1");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AuthorizationStrategy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AuthorizationStrategy FindValue(string value)
+        {
+            return FindValue<AuthorizationStrategy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AuthorizationStrategy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type CmkType.
     /// </summary>
     public class CmkType : ConstantClass
@@ -184,6 +234,22 @@ namespace Amazon.HealthLake
     public class JobStatus : ConstantClass
     {
 
+        /// <summary>
+        /// Constant CANCEL_COMPLETED for JobStatus
+        /// </summary>
+        public static readonly JobStatus CANCEL_COMPLETED = new JobStatus("CANCEL_COMPLETED");
+        /// <summary>
+        /// Constant CANCEL_FAILED for JobStatus
+        /// </summary>
+        public static readonly JobStatus CANCEL_FAILED = new JobStatus("CANCEL_FAILED");
+        /// <summary>
+        /// Constant CANCEL_IN_PROGRESS for JobStatus
+        /// </summary>
+        public static readonly JobStatus CANCEL_IN_PROGRESS = new JobStatus("CANCEL_IN_PROGRESS");
+        /// <summary>
+        /// Constant CANCEL_SUBMITTED for JobStatus
+        /// </summary>
+        public static readonly JobStatus CANCEL_SUBMITTED = new JobStatus("CANCEL_SUBMITTED");
         /// <summary>
         /// Constant COMPLETED for JobStatus
         /// </summary>

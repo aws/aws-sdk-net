@@ -155,7 +155,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageName. 
         /// <para>
-        /// User-specified name of the package.
+        /// The user-specified name of the package.
         /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=28)]
@@ -174,7 +174,9 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageStatus. 
         /// <para>
-        /// Current status of the package.
+        /// The current status of the package. The available options are <code>AVAILABLE</code>,
+        /// <code>COPYING</code>, <code>COPY_FAILED</code>, <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>,
+        /// <code>DELETING</code>, and <code>DELETE_FAILED</code>.
         /// </para>
         /// </summary>
         public PackageStatus PackageStatus

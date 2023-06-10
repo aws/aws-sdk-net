@@ -318,9 +318,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// One or more security groups. When requesting instances in a VPC, you must specify
-        /// the IDs of the security groups. When requesting instances in EC2-Classic, you can
-        /// specify the names or the IDs of the security groups.
+        /// The security groups.
         /// </para>
         /// </summary>
         public List<GroupIdentifier> SecurityGroups
@@ -401,9 +399,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The Base64-encoded user data that instances use when starting up.
+        /// The base64-encoded user data that instances use when starting up. User data is limited
+        /// to 16 KB.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserData
         {
             get { return this._userData; }

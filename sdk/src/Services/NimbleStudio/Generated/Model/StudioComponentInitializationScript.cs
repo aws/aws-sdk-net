@@ -100,7 +100,7 @@ namespace Amazon.NimbleStudio.Model
         /// The initialization script.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=5120)]
+        [AWSProperty(Sensitive=true, Min=1, Max=5120)]
         public string Script
         {
             get { return this._script; }

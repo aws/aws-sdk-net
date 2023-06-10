@@ -45,6 +45,21 @@ namespace Amazon.ServiceCatalog.Model
     /// a principal, share recipient accounts will no longer be able to provision products
     /// in this portfolio using a role matching the name of the associated principal. 
     /// </para>
+    ///  
+    /// <para>
+    /// For more information, review <a href="https://docs.aws.amazon.com/cli/latest/reference/servicecatalog/associate-principal-with-portfolio.html#options">associate-principal-with-portfolio</a>
+    /// in the Amazon Web Services CLI Command Reference. 
+    /// </para>
+    ///  <note> 
+    /// <para>
+    /// If you disassociate a principal from a portfolio, with PrincipalType as <code>IAM</code>,
+    /// the same principal will still have access to the portfolio if it matches one of the
+    /// associated principals of type <code>IAM_PATTERN</code>. To fully remove access for
+    /// a principal, verify all the associated Principals of type <code>IAM_PATTERN</code>,
+    /// and then ensure you disassociate any <code>IAM_PATTERN</code> principals that match
+    /// the principal whose access you are removing.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class DisassociatePrincipalFromPortfolioRequest : AmazonServiceCatalogRequest
     {
@@ -59,10 +74,6 @@ namespace Amazon.ServiceCatalog.Model
         /// The language code.
         /// </para>
         ///  <ul> <li> 
-        /// <para>
-        ///  <code>en</code> - English (default)
-        /// </para>
-        ///  </li> <li> 
         /// <para>
         ///  <code>jp</code> - Japanese
         /// </para>
@@ -107,8 +118,9 @@ namespace Amazon.ServiceCatalog.Model
         /// <summary>
         /// Gets and sets the property PrincipalARN. 
         /// <para>
-        /// The ARN of the principal (IAM user, role, or group). This field allows an ARN with
-        /// no <code>accountID</code> if <code>PrincipalType</code> is <code>IAM_PATTERN</code>.
+        /// The ARN of the principal (user, role, or group). This field allows an ARN with no
+        /// <code>accountID</code> with or without wildcard characters if <code>PrincipalType</code>
+        /// is <code>IAM_PATTERN</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1000)]
@@ -128,7 +140,8 @@ namespace Amazon.ServiceCatalog.Model
         /// Gets and sets the property PrincipalType. 
         /// <para>
         /// The supported value is <code>IAM</code> if you use a fully defined ARN, or <code>IAM_PATTERN</code>
-        /// if you use no <code>accountID</code>. 
+        /// if you specify an <code>IAM</code> ARN with no AccountId, with or without wildcard
+        /// characters. 
         /// </para>
         /// </summary>
         public PrincipalType PrincipalType

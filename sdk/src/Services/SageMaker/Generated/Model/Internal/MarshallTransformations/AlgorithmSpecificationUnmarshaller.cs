@@ -100,6 +100,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.TrainingImage = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TrainingImageConfig", targetDepth))
+                {
+                    var unmarshaller = TrainingImageConfigUnmarshaller.Instance;
+                    unmarshalledObject.TrainingImageConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TrainingInputMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

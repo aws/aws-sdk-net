@@ -94,6 +94,12 @@ namespace Amazon.S3Outposts.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndpointArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FailedReason", targetDepth))
+                {
+                    var unmarshaller = FailedReasonUnmarshaller.Instance;
+                    unmarshalledObject.FailedReason = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NetworkInterfaces", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<NetworkInterface, NetworkInterfaceUnmarshaller>(NetworkInterfaceUnmarshaller.Instance);

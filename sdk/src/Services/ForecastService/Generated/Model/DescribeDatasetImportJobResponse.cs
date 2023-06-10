@@ -43,6 +43,7 @@ namespace Amazon.ForecastService.Model
         private Dictionary<string, Statistics> _fieldStatistics = new Dictionary<string, Statistics>();
         private string _format;
         private string _geolocationFormat;
+        private ImportMode _importMode;
         private DateTime? _lastModificationTime;
         private string _message;
         private string _status;
@@ -147,12 +148,12 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property DataSource. 
         /// <para>
-        /// The location of the training data to import and an AWS Identity and Access Management
+        /// The location of the training data to import and an Identity and Access Management
         /// (IAM) role that Amazon Forecast can assume to access the data.
         /// </para>
         ///  
         /// <para>
-        /// If encryption is used, <code>DataSource</code> includes an AWS Key Management Service
+        /// If encryption is used, <code>DataSource</code> includes an Key Management Service
         /// (KMS) key.
         /// </para>
         /// </summary>
@@ -241,6 +242,24 @@ namespace Amazon.ForecastService.Model
         internal bool IsSetGeolocationFormat()
         {
             return this._geolocationFormat != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImportMode. 
+        /// <para>
+        /// The import mode of the dataset import job, FULL or INCREMENTAL.
+        /// </para>
+        /// </summary>
+        public ImportMode ImportMode
+        {
+            get { return this._importMode; }
+            set { this._importMode = value; }
+        }
+
+        // Check to see if ImportMode property is set
+        internal bool IsSetImportMode()
+        {
+            return this._importMode != null;
         }
 
         /// <summary>

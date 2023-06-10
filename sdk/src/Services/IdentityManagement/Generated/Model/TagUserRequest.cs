@@ -47,7 +47,7 @@ namespace Amazon.IdentityManagement.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <b>Access control</b> - Include tags in IAM user-based and resource-based policies.
+    ///  <b>Access control</b> - Include tags in IAM identity-based and resource-based policies.
     /// You can use tags to restrict access to only an IAM requesting user that has a specified
     /// tag attached. You can also restrict access to only those resources that have a certain
     /// tag attached. For examples of policies that show how to use tags to control access,

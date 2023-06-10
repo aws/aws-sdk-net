@@ -221,6 +221,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetRadarChartVisual())
+            {
+                context.Writer.WritePropertyName("RadarChartVisual");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = RadarChartVisualMarshaller.Instance;
+                marshaller.Marshall(requestObject.RadarChartVisual, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSankeyDiagramVisual())
             {
                 context.Writer.WritePropertyName("SankeyDiagramVisual");

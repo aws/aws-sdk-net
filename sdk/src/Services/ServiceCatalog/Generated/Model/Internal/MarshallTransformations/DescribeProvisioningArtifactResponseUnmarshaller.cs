@@ -63,6 +63,12 @@ namespace Amazon.ServiceCatalog.Model.Internal.MarshallTransformations
                     response.ProvisioningArtifactDetail = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProvisioningArtifactParameters", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<ProvisioningArtifactParameter, ProvisioningArtifactParameterUnmarshaller>(ProvisioningArtifactParameterUnmarshaller.Instance);
+                    response.ProvisioningArtifactParameters = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

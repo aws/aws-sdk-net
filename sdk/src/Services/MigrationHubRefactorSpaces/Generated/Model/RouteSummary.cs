@@ -33,6 +33,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     /// </summary>
     public partial class RouteSummary
     {
+        private bool? _appendSourcePath;
         private string _applicationId;
         private string _arn;
         private string _createdByAccountId;
@@ -50,6 +51,25 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         private string _sourcePath;
         private RouteState _state;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AppendSourcePath. 
+        /// <para>
+        /// If set to <code>true</code>, this option appends the source path to the service URL
+        /// endpoint.
+        /// </para>
+        /// </summary>
+        public bool AppendSourcePath
+        {
+            get { return this._appendSourcePath.GetValueOrDefault(); }
+            set { this._appendSourcePath = value; }
+        }
+
+        // Check to see if AppendSourcePath property is set
+        internal bool IsSetAppendSourcePath()
+        {
+            return this._appendSourcePath.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property ApplicationId. 
@@ -317,8 +337,10 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property SourcePath. 
         /// <para>
-        /// The path to use to match traffic. Paths must start with <code>/</code> and are relative
-        /// to the base of the application.
+        /// This is the path that Refactor Spaces uses to match traffic. Paths must start with
+        /// <code>/</code> and are relative to the base of the application. To use path parameters
+        /// in the source path, add a variable in curly braces. For example, the resource path
+        /// {user} represents a path parameter called 'user'.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]
@@ -358,7 +380,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// The tags assigned to the route. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

@@ -213,6 +213,7 @@ namespace Amazon.EC2.Model
         /// The URL of the disk image from which the snapshot is created.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Url
         {
             get { return this._url; }

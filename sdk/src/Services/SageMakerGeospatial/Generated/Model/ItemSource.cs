@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// Structure representing the items in the response for SearchRasterDataCollection.
+    /// The structure representing the items in the response for SearchRasterDataCollection.
     /// </summary>
     public partial class ItemSource
     {
@@ -40,7 +40,11 @@ namespace Amazon.SageMakerGeospatial.Model
         private Properties _properties;
 
         /// <summary>
-        /// Gets and sets the property Assets.
+        /// Gets and sets the property Assets. 
+        /// <para>
+        /// This is a dictionary of Asset Objects data associated with the Item that can be downloaded
+        /// or streamed, each with a unique key.
+        /// </para>
         /// </summary>
         public Dictionary<string, AssetValue> Assets
         {
@@ -55,7 +59,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DateTime.
+        /// Gets and sets the property DateTime. 
+        /// <para>
+        /// The searchable date and time of the item, in UTC.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public DateTime DateTime
@@ -71,7 +78,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Geometry.
+        /// Gets and sets the property Geometry. 
+        /// <para>
+        /// The item Geometry in GeoJson format.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public Geometry Geometry
@@ -106,7 +116,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Properties.
+        /// Gets and sets the property Properties. 
+        /// <para>
+        /// This field contains additional properties of the item.
+        /// </para>
         /// </summary>
         public Properties Properties
         {

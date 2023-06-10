@@ -56,6 +56,13 @@ namespace TestWrapper.TestRunners
         public TestConfiguration Configuration { get; set; }
         public string TestExecutionProfile { get; set; }
 
+        /// <summary>
+        /// Whether the final test results file should be kept on disk.
+        /// If set to true, the TRX file will not be deleted after all tests run successfully or
+        /// all retries are exhausted.
+        /// </summary>
+        public bool KeepTestResults { get; set; }
+
         private string TestResultsPath => Path.Combine(TestContainer.DirectoryName, "TestResults");
 
         /// <summary>
@@ -120,6 +127,12 @@ namespace TestWrapper.TestRunners
                     {
                         break;
                     }
+
+                    // If the max number of retries hasn't been reached yet, delete the current test results file.
+                    if (runCount < MaxTestRuns)
+                    {
+                        CleanUpTestResults();
+                    }
                 }
             }
             catch (Exception e)
@@ -127,6 +140,13 @@ namespace TestWrapper.TestRunners
                 Console.WriteLine("Exception occurred running tests:\n {0}", e.ToString());
                 exception = e;
                 allTestsPassed = false;
+            }
+
+            // At this point, the tests have completed (either successfully or not), but we check
+            // if whoever invoked the task requested the results files should be maintained.
+            if (!KeepTestResults)
+            {
+                CleanUpTestResults();
             }
 
             return allTestsPassed;
@@ -138,10 +158,12 @@ namespace TestWrapper.TestRunners
             int exitCode = InvokeTestSuite(args, out var logLocation);
             var summary = ParseLog(exitCode, logLocation);
 
-            // Clean up the log files.
-            Directory.Delete(TestResultsPath, true);
-
             return summary;
+        }
+
+        private void CleanUpTestResults()
+        {
+            Directory.Delete(TestResultsPath, true);
         }
         
         private static ResultsSummary ParseLog(int exitCode, string logLocation)

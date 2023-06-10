@@ -47,7 +47,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property CollectionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
-        /// need to specify a resource across all AWS. 
+        /// need to specify a resource across all Amazon Web Services. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -130,8 +130,8 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-        /// KMS customer managed key</a> assigned to the Amazon Location resource
+        /// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+        /// Web Services KMS customer managed key</a> assigned to the Amazon Location resource
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

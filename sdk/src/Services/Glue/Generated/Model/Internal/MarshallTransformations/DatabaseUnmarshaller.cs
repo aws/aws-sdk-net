@@ -88,6 +88,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Description = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FederatedDatabase", targetDepth))
+                {
+                    var unmarshaller = FederatedDatabaseUnmarshaller.Instance;
+                    unmarshalledObject.FederatedDatabase = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LocationUri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

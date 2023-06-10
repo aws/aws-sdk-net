@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Snowball.Model
 {
     /// <summary>
-    /// Your IAM user lacks the necessary Amazon EC2 permissions to perform the attempted
-    /// action.
+    /// Your user lacks the necessary Amazon EC2 permissions to perform the attempted action.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

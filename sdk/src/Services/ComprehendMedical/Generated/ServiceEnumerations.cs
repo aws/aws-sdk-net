@@ -571,6 +571,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly ICD10CMRelationshipType OVERLAP = new ICD10CMRelationshipType("OVERLAP");
         /// <summary>
+        /// Constant QUALITY for ICD10CMRelationshipType
+        /// </summary>
+        public static readonly ICD10CMRelationshipType QUALITY = new ICD10CMRelationshipType("QUALITY");
+        /// <summary>
         /// Constant SYSTEM_ORGAN_SITE for ICD10CMRelationshipType
         /// </summary>
         public static readonly ICD10CMRelationshipType SYSTEM_ORGAN_SITE = new ICD10CMRelationshipType("SYSTEM_ORGAN_SITE");
@@ -851,6 +855,10 @@ namespace Amazon.ComprehendMedical
         /// </summary>
         public static readonly RelationshipType OVERLAP = new RelationshipType("OVERLAP");
         /// <summary>
+        /// Constant QUALITY for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType QUALITY = new RelationshipType("QUALITY");
+        /// <summary>
         /// Constant RATE for RelationshipType
         /// </summary>
         public static readonly RelationshipType RATE = new RelationshipType("RATE");
@@ -878,6 +886,10 @@ namespace Amazon.ComprehendMedical
         /// Constant TEST_VALUE for RelationshipType
         /// </summary>
         public static readonly RelationshipType TEST_VALUE = new RelationshipType("TEST_VALUE");
+        /// <summary>
+        /// Constant USAGE for RelationshipType
+        /// </summary>
+        public static readonly RelationshipType USAGE = new RelationshipType("USAGE");
         /// <summary>
         /// Constant WITH_DOSAGE for RelationshipType
         /// </summary>
@@ -1094,6 +1106,10 @@ namespace Amazon.ComprehendMedical
         /// Constant NEGATION for RxNormTraitName
         /// </summary>
         public static readonly RxNormTraitName NEGATION = new RxNormTraitName("NEGATION");
+        /// <summary>
+        /// Constant PAST_HISTORY for RxNormTraitName
+        /// </summary>
+        public static readonly RxNormTraitName PAST_HISTORY = new RxNormTraitName("PAST_HISTORY");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -1330,6 +1346,10 @@ namespace Amazon.ComprehendMedical
         /// Constant SYSTEM_ORGAN_SITE for SNOMEDCTRelationshipType
         /// </summary>
         public static readonly SNOMEDCTRelationshipType SYSTEM_ORGAN_SITE = new SNOMEDCTRelationshipType("SYSTEM_ORGAN_SITE");
+        /// <summary>
+        /// Constant TEST_UNIT for SNOMEDCTRelationshipType
+        /// </summary>
+        public static readonly SNOMEDCTRelationshipType TEST_UNIT = new SNOMEDCTRelationshipType("TEST_UNIT");
         /// <summary>
         /// Constant TEST_UNITS for SNOMEDCTRelationshipType
         /// </summary>

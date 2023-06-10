@@ -44,7 +44,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The configuration object's Chime SDK meeting ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string Arn
         {
             get { return this._arn; }

@@ -36,8 +36,8 @@ namespace Amazon.FSx.Model
     /// 
     ///  
     /// <para>
-    /// The <code>AutoImportPolicy</code> is supported only for Amazon FSx for Lustre file
-    /// systems with the <code>Persistent_2</code> deployment type.
+    /// The <code>AutoImportPolicy</code> is only supported on Amazon FSx for Lustre file
+    /// systems with a data repository association.
     /// </para>
     /// </summary>
     public partial class AutoImportPolicy

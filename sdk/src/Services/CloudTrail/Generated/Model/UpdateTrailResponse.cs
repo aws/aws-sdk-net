@@ -107,7 +107,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property IsMultiRegionTrail. 
         /// <para>
-        /// Specifies whether the trail exists in one region or in all regions.
+        /// Specifies whether the trail exists in one Region or in all Regions.
         /// </para>
         /// </summary>
         public bool IsMultiRegionTrail

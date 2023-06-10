@@ -30,7 +30,7 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the ListReleaseLabels operation.
-    /// Retrieves release labels of EMR services in the region where the API is called.
+    /// Retrieves release labels of Amazon EMR services in the Region where the API is called.
     /// </summary>
     public partial class ListReleaseLabelsRequest : AmazonElasticMapReduceRequest
     {

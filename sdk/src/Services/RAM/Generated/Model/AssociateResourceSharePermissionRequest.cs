@@ -58,6 +58,11 @@ namespace Amazon.RAM.Model
         /// If you don't provide this value, then Amazon Web Services generates a random one for
         /// you.
         /// </para>
+        ///  
+        /// <para>
+        /// If you retry the operation with the same <code>ClientToken</code>, but with different
+        /// parameters, the retry fails with an <code>IdempotentParameterMismatch</code> error.
+        /// </para>
         /// </summary>
         public string ClientToken
         {
@@ -75,7 +80,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property PermissionArn. 
         /// <para>
         /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the RAM permission to associate with the resource share.
+        /// Resource Name (ARN)</a> of the RAM permission to associate with the resource share.
         /// To find the ARN for a permission, use either the <a>ListPermissions</a> operation
         /// or go to the <a href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
         /// library</a> page in the RAM console and then choose the name of the permission. The
@@ -99,10 +104,18 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property PermissionVersion. 
         /// <para>
         /// Specifies the version of the RAM permission to associate with the resource share.
-        /// If you don't specify this parameter, the operation uses the version designated as
-        /// the default. You can use the <a>ListPermissionVersions</a> operation to discover the
-        /// available versions of a permission.
+        /// You can specify <i>only</i> the version that is currently set as the default version
+        /// for the permission. If you also set the <code>replace</code> pararameter to <code>true</code>,
+        /// then this operation updates an outdated version of the permission to the current default
+        /// version.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// You don't need to specify this parameter because the default behavior is to use the
+        /// version that is currently set as the default version for the permission. This parameter
+        /// is supported for backwards compatibility.
+        /// </para>
+        ///  </note>
         /// </summary>
         public int PermissionVersion
         {
@@ -119,10 +132,10 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Replace. 
         /// <para>
-        /// Specifies whether the specified permission should replace or add to the existing permission
+        /// Specifies whether the specified permission should replace the existing permission
         /// associated with the resource share. Use <code>true</code> to replace the current permissions.
-        /// Use <code>false</code> to add the permission to the current permission. The default
-        /// value is <code>false</code>.
+        /// Use <code>false</code> to add the permission to a resource share that currently doesn't
+        /// have a permission. The default value is <code>false</code>.
         /// </para>
         ///  <note> 
         /// <para>
@@ -149,7 +162,8 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
         /// Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource share to which you want to add or replace permissions.
+        /// Resource Name (ARN)</a> of the resource share to which you want to add or replace
+        /// permissions.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -67,6 +67,22 @@ namespace Amazon.ApplicationAutoScaling.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MetricName);
             }
 
+            if(requestObject.IsSetMetrics())
+            {
+                context.Writer.WritePropertyName("Metrics");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMetricsListValue in requestObject.Metrics)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = TargetTrackingMetricDataQueryMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMetricsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetNamespace())
             {
                 context.Writer.WritePropertyName("Namespace");

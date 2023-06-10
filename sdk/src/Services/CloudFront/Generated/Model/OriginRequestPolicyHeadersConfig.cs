@@ -45,13 +45,14 @@ namespace Amazon.CloudFront.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>none</code> – HTTP headers are not included in requests that CloudFront sends
-        /// to the origin. Even when this field is set to <code>none</code>, any headers that
-        /// are listed in a <code>CachePolicy</code> <i>are</i> included in origin requests.
+        ///  <code>none</code> – No HTTP headers in viewer requests are included in requests that
+        /// CloudFront sends to the origin. Even when this field is set to <code>none</code>,
+        /// any headers that are listed in a <code>CachePolicy</code> <i>are</i> included in origin
+        /// requests.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>whitelist</code> – The HTTP headers that are listed in the <code>Headers</code>
+        ///  <code>whitelist</code> – Only the HTTP headers that are listed in the <code>Headers</code>
         /// type are included in requests that CloudFront sends to the origin.
         /// </para>
         ///  </li> <li> 
@@ -65,6 +66,12 @@ namespace Amazon.CloudFront.Model
         /// and the additional CloudFront headers that are listed in the <code>Headers</code>
         /// type are included in requests that CloudFront sends to the origin. The additional
         /// headers are added by CloudFront.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>allExcept</code> – All HTTP headers in viewer requests are included in requests
+        /// that CloudFront sends to the origin, <i> <b>except</b> </i> for those listed in the
+        /// <code>Headers</code> type, which are not included.
         /// </para>
         ///  </li> </ul>
         /// </summary>

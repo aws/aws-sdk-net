@@ -39,7 +39,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property ManagedRuleSets. 
         /// <para>
-        /// Your managed rule sets. 
+        /// Your managed rule sets. If you specified a <code>Limit</code> in your request, this
+        /// might not be the full list. 
         /// </para>
         /// </summary>
         public List<ManagedRuleSetSummary> ManagedRuleSets

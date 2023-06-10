@@ -33,7 +33,7 @@ namespace Amazon.ElasticMapReduce.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+    /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
     /// later, excluding 5.0.x versions.
     /// </para>
     ///  </note>
@@ -51,37 +51,37 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>PROVISIONING</code>—The instance fleet is provisioning EC2 resources and is
-        /// not yet ready to run jobs.
+        ///  <code>PROVISIONING</code>—The instance fleet is provisioning Amazon EC2 resources
+        /// and is not yet ready to run jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>BOOTSTRAPPING</code>—EC2 instances and other resources have been provisioned
+        ///  <code>BOOTSTRAPPING</code>—Amazon EC2 instances and other resources have been provisioned
         /// and the bootstrap actions specified for the instances are underway.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RUNNING</code>—EC2 instances and other resources are running. They are either
-        /// executing jobs or waiting to execute jobs.
+        ///  <code>RUNNING</code>—Amazon EC2 instances and other resources are running. They are
+        /// either executing jobs or waiting to execute jobs.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>RESIZING</code>—A resize operation is underway. EC2 instances are either being
-        /// added or removed.
+        ///  <code>RESIZING</code>—A resize operation is underway. Amazon EC2 instances are either
+        /// being added or removed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>SUSPENDED</code>—A resize operation could not complete. Existing EC2 instances
-        /// are running, but instances can't be added or removed.
+        ///  <code>SUSPENDED</code>—A resize operation could not complete. Existing Amazon EC2
+        /// instances are running, but instances can't be added or removed.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERMINATING</code>—The instance fleet is terminating EC2 instances.
+        ///  <code>TERMINATING</code>—The instance fleet is terminating Amazon EC2 instances.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2 instances
-        /// have been terminated.
+        ///  <code>TERMINATED</code>—The instance fleet is no longer active, and all Amazon EC2
+        /// instances have been terminated.
         /// </para>
         ///  </li> </ul>
         /// </summary>

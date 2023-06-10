@@ -123,7 +123,7 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity
         /// provider. If you choose this value, you must specify the ARN for the Lambda function
-        /// in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code>
+        /// in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code>
         /// data type.
         /// </para>
         /// </summary>

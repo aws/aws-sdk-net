@@ -8,9 +8,55 @@
         <link rel="stylesheet" type="text/css" href="./resources/style.css" media="screen">
         <link rel="stylesheet" type="text/css" href="./resources/sdkstyle.css" media="screen">
 		<link rel="shortcut icon" href="favicon.ico"/>
+        <script type="text/javascript" src="./resources/jquery.min.js"></script>
+
+        <script>
+            var LARGE_WINDOW_BREAKPOINT = 992;
+
+            jQuery(function () {
+                jQuery(window).resize(function () {
+                    windowWidthUpdated();
+                });
+                windowWidthUpdated();
+            });
+
+            function windowWidthUpdated() {
+                var windowWidth = jQuery(window).width();
+                if (windowWidth <= LARGE_WINDOW_BREAKPOINT) {
+                    jQuery('#contentFrameset')[0].cols = '0,*';
+                    jQuery('#mainFrameset')[0].rows = '40,*';
+                } else {
+                    jQuery('#contentFrameset')[0].cols = '250,*';
+                    jQuery('#mainFrameset')[0].rows = '0,*';
+                }
+
+                return windowWidth;
+            }
+
+            function showTOC() {
+                var windowWidth = jQuery(window).width();
+                if (windowWidth > LARGE_WINDOW_BREAKPOINT) return;
+
+                jQuery('#contentFrameset')[0].cols = '*,0';
+                window.parent.frames["mobileNavBar"].showCrossButton();
+            }
+
+            function showContentPane() {
+                var windowWidth = jQuery(window).width();
+                if (windowWidth > LARGE_WINDOW_BREAKPOINT) return;
+
+                jQuery('#contentFrameset')[0].cols = '0,*';
+                window.parent.frames["mobileNavBar"].showHamburgerButton();
+            }
+
+        </script>
     </head>
-    <frameset cols="250,*">
-        <frame name="TOC" src="./TOC.html" />
-        <frame name="contentpane" />
+
+    <frameset id="mainFrameset" rows="0,*" border="0">
+        <frame title="Mobile navigation bar" id="mobileNavBar" name="mobileNavBar" src="./MobileNavBar.html" />
+        <frameset id="contentFrameset" cols="250,*">
+            <frame title="Table of Content" id="TOC" name="TOC" src="./TOC.html" />
+            <frame title="Main content pane" id="contentpane" name="contentpane" tabindex="-1" />
+        </frameset>
     </frameset>
 </html>

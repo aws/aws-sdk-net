@@ -39,8 +39,8 @@ namespace Amazon.ConnectWisdomService.Model
         /// Gets and sets the property TemplateUri. 
         /// <para>
         /// A URI template containing exactly one variable in <code>${variableName} </code>format.
-        /// This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce and
-        /// ServiceNow, the variable must be one of the following:
+        /// This can only be set for <code>EXTERNAL</code> knowledge bases. For Salesforce, ServiceNow,
+        /// and Zendesk, the variable must be one of the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -52,9 +52,17 @@ namespace Amazon.ConnectWisdomService.Model
         /// ServiceNow: <code>number</code>, <code>short_description</code>, <code>sys_mod_count</code>,
         /// <code>workflow_state</code>, or <code>active</code> 
         /// </para>
-        ///  </li> </ul> <pre><code> &lt;p&gt;The variable is replaced with the actual value for
-        /// a piece of content when calling &lt;a href=&quot;https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html&quot;&gt;GetContent&lt;/a&gt;.
-        /// &lt;/p&gt; </code></pre>
+        ///  </li> <li> 
+        /// <para>
+        /// Zendesk: <code>id</code>, <code>title</code>, <code>updated_at</code>, or <code>draft</code>
+        /// 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The variable is replaced with the actual value for a piece of content when calling
+        /// <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetContent.html">GetContent</a>.
+        /// 
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=4096)]
         public string TemplateUri

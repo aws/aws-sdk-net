@@ -40,7 +40,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property AccountId. 
         /// <para>
-        /// The AWS account ID associated with the job.
+        /// The Amazon Web Services account ID associated with the job.
         /// </para>
         /// </summary>
         public string AccountId

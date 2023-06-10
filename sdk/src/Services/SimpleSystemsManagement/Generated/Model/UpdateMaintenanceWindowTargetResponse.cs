@@ -46,7 +46,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The updated description.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Description
         {
             get { return this._description; }
@@ -84,7 +84,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The updated owner.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string OwnerInformation
         {
             get { return this._ownerInformation; }

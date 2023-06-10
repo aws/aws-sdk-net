@@ -30,8 +30,9 @@ namespace Amazon.QuickSight.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTemplate operation.
-    /// Creates a template from an existing Amazon QuickSight analysis or template. You can
-    /// use the resulting template to create a dashboard.
+    /// Creates a template either from a <code>TemplateDefinition</code> or from an existing
+    /// Amazon QuickSight analysis or template. You can use the resulting template to create
+    /// additional dashboards, templates, or analyses.
     /// 
     ///  
     /// <para>
@@ -82,6 +83,11 @@ namespace Amazon.QuickSight.Model
         ///  
         /// <para>
         /// A definition is the data model of all features in a Dashboard, Template, or Analysis.
+        /// </para>
+        ///  
+        /// <para>
+        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
+        /// order for the request to be valid.
         /// </para>
         /// </summary>
         public TemplateVersionDefinition Definition
@@ -150,6 +156,11 @@ namespace Amazon.QuickSight.Model
         /// Use the <code>DataSetReferences</code> entity within <code>SourceTemplate</code> or
         /// <code>SourceAnalysis</code> to list the replacement datasets for the placeholders
         /// listed in the original. The schema in each dataset must match its placeholder. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Either a <code>SourceEntity</code> or a <code>Definition</code> must be provided in
+        /// order for the request to be valid.
         /// </para>
         /// </summary>
         public TemplateSourceEntity SourceEntity

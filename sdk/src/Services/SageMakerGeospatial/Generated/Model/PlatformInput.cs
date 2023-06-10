@@ -29,7 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The input structure for specifying Platform. Platform refers to the unique name of
+    /// the specific platform the instrument is attached to. For satellites it is the name
+    /// of the satellite, eg. landsat-8 (Landsat-8), sentinel-2a.
     /// </summary>
     public partial class PlatformInput
     {
@@ -37,7 +39,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private string _value;
 
         /// <summary>
-        /// Gets and sets the property ComparisonOperator.
+        /// Gets and sets the property ComparisonOperator. 
+        /// <para>
+        /// The ComparisonOperator to use with PlatformInput.
+        /// </para>
         /// </summary>
         public ComparisonOperator ComparisonOperator
         {

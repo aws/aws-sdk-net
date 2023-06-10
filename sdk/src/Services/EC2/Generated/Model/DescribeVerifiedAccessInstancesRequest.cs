@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeVerifiedAccessInstances operation.
-    /// Describe Verified Access instances.
+    /// Describes the specified Amazon Web Services Verified Access instances.
     /// </summary>
     public partial class DescribeVerifiedAccessInstancesRequest : AmazonEC2Request
     {
@@ -98,7 +98,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessInstanceIds. 
         /// <para>
-        /// The IDs of the Amazon Web Services Verified Access instances.
+        /// The IDs of the Verified Access instances.
         /// </para>
         /// </summary>
         public List<string> VerifiedAccessInstanceIds

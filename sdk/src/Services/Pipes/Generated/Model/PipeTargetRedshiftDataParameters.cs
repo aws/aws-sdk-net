@@ -47,7 +47,7 @@ namespace Amazon.Pipes.Model
         /// The name of the database. Required when authenticating using temporary credentials.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string Database
         {
             get { return this._database; }
@@ -66,7 +66,7 @@ namespace Amazon.Pipes.Model
         /// The database user name. Required when authenticating using temporary credentials.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string DbUser
         {
             get { return this._dbUser; }
@@ -125,7 +125,7 @@ namespace Amazon.Pipes.Model
         /// identify the query.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=500)]
+        [AWSProperty(Sensitive=true, Min=1, Max=500)]
         public string StatementName
         {
             get { return this._statementName; }

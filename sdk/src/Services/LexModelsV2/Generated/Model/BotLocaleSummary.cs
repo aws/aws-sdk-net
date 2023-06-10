@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Summary information about bot locales returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_ListBotLocales.html">ListBotLocales</a>
+    /// Summary information about bot locales returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListBotLocales.html">ListBotLocales</a>
     /// operation.
     /// </summary>
     public partial class BotLocaleSummary

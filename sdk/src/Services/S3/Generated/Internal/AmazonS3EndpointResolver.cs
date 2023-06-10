@@ -124,6 +124,11 @@ namespace Amazon.S3.Internal
                 result.Bucket = request.DestinationBucket;
                 return result;
             }
+            if (requestContext.RequestName == "CopyPartRequest") {
+                var request = (CopyPartRequest)requestContext.OriginalRequest;
+                result.Bucket = request.DestinationBucket;
+                return result;
+            }
             if (requestContext.RequestName == "DeleteBucketRequest") {
                 var request = (DeleteBucketRequest)requestContext.OriginalRequest;
                 result.Bucket = request.BucketName;

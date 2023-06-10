@@ -31,7 +31,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Container for the parameters to the StartCalculationExecution operation.
     /// Submits calculations for execution within a session. You can supply the code to run
-    /// as an inline code block within the request or as an Amazon S3 URL.
+    /// as an inline code block within the request.
     /// </summary>
     public partial class StartCalculationExecutionRequest : AmazonAthenaRequest
     {

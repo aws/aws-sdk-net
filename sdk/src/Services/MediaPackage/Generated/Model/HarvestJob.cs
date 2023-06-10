@@ -75,7 +75,7 @@ namespace Amazon.MediaPackage.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedAt. The time the HarvestJob was submitted
+        /// Gets and sets the property CreatedAt. The date and time the HarvestJob was submitted.
         /// </summary>
         public string CreatedAt
         {

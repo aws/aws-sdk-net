@@ -98,7 +98,8 @@ namespace Amazon.SecretsManager.Model
         /// <summary>
         /// Gets and sets the property IncludePlannedDeletion. 
         /// <para>
-        /// Specifies whether to include secrets scheduled for deletion.
+        /// Specifies whether to include secrets scheduled for deletion. By default, secrets scheduled
+        /// for deletion aren't included.
         /// </para>
         /// </summary>
         public bool IncludePlannedDeletion

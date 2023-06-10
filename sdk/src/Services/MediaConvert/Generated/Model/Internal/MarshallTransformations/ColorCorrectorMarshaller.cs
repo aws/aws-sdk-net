@@ -85,6 +85,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHdrToSdrToneMapper())
+            {
+                context.Writer.WritePropertyName("hdrToSdrToneMapper");
+                context.Writer.Write(requestObject.HdrToSdrToneMapper);
+            }
+
             if(requestObject.IsSetHue())
             {
                 context.Writer.WritePropertyName("hue");

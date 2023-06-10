@@ -31,7 +31,7 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeIpamResourceDiscoveries operation.
     /// Describes IPAM resource discoveries. A resource discovery is an IPAM component that
-    /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+    /// enables IPAM to manage and monitor resources that belong to the owning account.
     /// </summary>
     public partial class DescribeIpamResourceDiscoveriesRequest : AmazonEC2Request
     {

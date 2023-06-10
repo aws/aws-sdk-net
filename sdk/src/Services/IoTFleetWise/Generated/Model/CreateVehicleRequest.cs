@@ -36,7 +36,7 @@ namespace Amazon.IoTFleetWise.Model
     /// 
     ///  <note> 
     /// <para>
-    ///  If you have an existing Amazon Web Services IoT Thing, you can use Amazon Web Services
+    ///  If you have an existing Amazon Web Services IoT thing, you can use Amazon Web Services
     /// IoT FleetWise to create a vehicle and collect data from your thing. 
     /// </para>
     ///  </note> 
@@ -82,6 +82,11 @@ namespace Amazon.IoTFleetWise.Model
         /// <para>
         /// Static information about a vehicle in a key-value pair. For example: <code>"engineType"</code>
         /// : <code>"1.3 L R2"</code> 
+        /// </para>
+        ///  
+        /// <para>
+        /// A campaign must include the keys (attribute names) in <code>dataExtraDimensions</code>
+        /// for them to display in Amazon Timestream.
         /// </para>
         /// </summary>
         public Dictionary<string, string> Attributes

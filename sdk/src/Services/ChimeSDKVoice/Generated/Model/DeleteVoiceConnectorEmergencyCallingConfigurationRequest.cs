@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVoiceConnectorEmergencyCallingConfiguration operation.
-    /// 
+    /// Deletes the emergency calling details from the specified Amazon Chime SDK Voice Connector.
     /// </summary>
     public partial class DeleteVoiceConnectorEmergencyCallingConfigurationRequest : AmazonChimeSDKVoiceRequest
     {
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

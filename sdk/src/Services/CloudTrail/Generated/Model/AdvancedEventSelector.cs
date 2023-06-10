@@ -33,7 +33,7 @@ namespace Amazon.CloudTrail.Model
     /// event record ﬁelds. They help you control costs by logging only those events that
     /// are important to you. For more information about advanced event selectors, see <a
     /// href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
+    /// data events</a> in the <i>CloudTrail User Guide</i>.
     /// 
     ///  <ul> <li> 
     /// <para>

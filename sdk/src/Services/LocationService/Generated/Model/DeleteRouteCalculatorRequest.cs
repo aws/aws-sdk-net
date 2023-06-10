@@ -30,7 +30,7 @@ namespace Amazon.LocationService.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteRouteCalculator operation.
-    /// Deletes a route calculator resource from your AWS account.
+    /// Deletes a route calculator resource from your Amazon Web Services account.
     /// 
     ///  <note> 
     /// <para>

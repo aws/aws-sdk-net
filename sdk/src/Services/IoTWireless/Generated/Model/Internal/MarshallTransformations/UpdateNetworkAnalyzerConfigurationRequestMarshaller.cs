@@ -74,6 +74,28 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetMulticastGroupsToAdd())
+                {
+                    context.Writer.WritePropertyName("MulticastGroupsToAdd");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMulticastGroupsToAddListValue in publicRequest.MulticastGroupsToAdd)
+                    {
+                            context.Writer.Write(publicRequestMulticastGroupsToAddListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetMulticastGroupsToRemove())
+                {
+                    context.Writer.WritePropertyName("MulticastGroupsToRemove");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMulticastGroupsToRemoveListValue in publicRequest.MulticastGroupsToRemove)
+                    {
+                            context.Writer.Write(publicRequestMulticastGroupsToRemoveListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetTraceContent())
                 {
                     context.Writer.WritePropertyName("TraceContent");

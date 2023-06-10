@@ -55,11 +55,11 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Unicode characters ("\ u&lt;Unicode&gt;")
+        /// Unicode characters ("\⁠u&lt;Unicode&gt;")
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  Represent Unicode characters with four digits, for example "\u0041" or "\u005A".
+        ///  Represent Unicode characters with four digits, for example "\⁠u0041" or "\⁠u005A".
         /// 
         /// </para>
         ///  

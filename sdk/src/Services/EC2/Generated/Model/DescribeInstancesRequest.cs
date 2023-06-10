@@ -125,16 +125,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>group-id</code> - The ID of the security group for the instance. EC2-Classic
-        /// only.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>group-name</code> - The name of the security group for the instance. EC2-Classic
-        /// only.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>hibernation-options.configured</code> - A Boolean that indicates whether the
         /// instance is enabled for hibernation. A value of <code>true</code> means that the instance
         /// is enabled for hibernation. 
@@ -551,10 +541,13 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of results to return in a single call. To retrieve the remaining
-        /// results, make another call with the returned <code>NextToken</code> value. This value
-        /// can be between 5 and 1000. You cannot specify this parameter and the instance IDs
-        /// parameter in the same call.
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot specify this parameter and the instance IDs parameter in the same request.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -572,7 +565,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token to request the next page of results.
+        /// The token returned from a previous paginated request. Pagination continues from the
+        /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
         public string NextToken

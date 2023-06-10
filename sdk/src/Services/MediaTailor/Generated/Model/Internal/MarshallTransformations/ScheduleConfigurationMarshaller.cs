@@ -45,6 +45,17 @@ namespace Amazon.MediaTailor.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ScheduleConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetClipRange())
+            {
+                context.Writer.WritePropertyName("ClipRange");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ClipRangeMarshaller.Instance;
+                marshaller.Marshall(requestObject.ClipRange, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTransition())
             {
                 context.Writer.WritePropertyName("Transition");

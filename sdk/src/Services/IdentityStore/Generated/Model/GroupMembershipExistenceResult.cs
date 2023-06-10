@@ -82,6 +82,7 @@ namespace Amazon.IdentityStore.Model
         /// Indicates whether a membership relation exists or not.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool MembershipExists
         {
             get { return this._membershipExists.GetValueOrDefault(); }

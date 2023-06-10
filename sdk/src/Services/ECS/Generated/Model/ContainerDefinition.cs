@@ -222,7 +222,7 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DisableNetworking. 
         /// <para>
-        /// When this parameter is true, networking is disabled within the container. This parameter
+        /// When this parameter is true, networking is off within the container. This parameter
         /// maps to <code>NetworkDisabled</code> in the <a href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
         /// a container</a> section of the <a href="https://docs.docker.com/engine/api/v1.35/">Docker
         /// Remote API</a>.
@@ -327,15 +327,23 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property DockerSecurityOptions. 
         /// <para>
-        /// A list of strings to provide custom labels for SELinux and AppArmor multi-level security
-        /// systems. This field isn't valid for containers in tasks using the Fargate launch type.
+        /// A list of strings to provide custom configuration for multiple security systems. For
+        /// more information about valid values, see <a href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+        /// Run Security Configuration</a>. This field isn't valid for containers in tasks using
+        /// the Fargate launch type.
         /// </para>
         ///  
         /// <para>
-        /// With Windows containers, this parameter can be used to reference a credential spec
-        /// file when configuring a container for Active Directory authentication. For more information,
+        /// For Linux tasks on EC2, this parameter can be used to reference custom labels for
+        /// SELinux and AppArmor multi-level security systems.
+        /// </para>
+        ///  
+        /// <para>
+        /// For any tasks on EC2, this parameter can be used to reference a credential spec file
+        /// that configures a container for Active Directory authentication. For more information,
         /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-        /// gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service Developer
+        /// gMSAs for Windows Containers</a> and <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+        /// gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service Developer
         /// Guide</i>.
         /// </para>
         ///  
@@ -1295,7 +1303,7 @@ namespace Amazon.ECS.Model
         /// operating system with the exception of the <code>nofile</code> resource limit parameter
         /// which Fargate overrides. The <code>nofile</code> resource limit sets a restriction
         /// on the number of open files that a container can use. The default <code>nofile</code>
-        /// soft limit is <code>1024</code> and hard limit is <code>4096</code>.
+        /// soft limit is <code>1024</code> and the default hard limit is <code>4096</code>.
         /// </para>
         ///  
         /// <para>

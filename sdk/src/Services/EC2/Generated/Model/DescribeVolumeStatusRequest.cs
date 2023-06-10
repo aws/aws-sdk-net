@@ -159,15 +159,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of volume results returned by <code>DescribeVolumeStatus</code>
-        /// in paginated output. When this parameter is used, the request only returns <code>MaxResults</code>
-        /// results in a single page along with a <code>NextToken</code> response element. The
-        /// remaining results of the initial request can be seen by sending another request with
-        /// the returned <code>NextToken</code> value. This value can be between 5 and 1,000;
-        /// if <code>MaxResults</code> is given a value larger than 1,000, only 1,000 results
-        /// are returned. If this parameter is not used, then <code>DescribeVolumeStatus</code>
-        /// returns all results. You cannot specify this parameter and the volume IDs parameter
-        /// in the same request.
+        /// The maximum number of items to return for this request. To get the next page of items,
+        /// make another request with the token returned in the output. This value can be between
+        /// 5 and 1,000; if the value is larger than 1,000, only 1,000 results are returned. If
+        /// this parameter is not used, then all items are returned. You cannot specify this parameter
+        /// and the volume IDs parameter in the same request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -185,10 +181,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value to include in a future <code>DescribeVolumeStatus</code>
-        /// request. When the results of the request exceed <code>MaxResults</code>, this value
-        /// can be used to retrieve the next page of results. This value is <code>null</code>
-        /// when there are no more results to return.
+        /// The token returned from a previous paginated request. Pagination continues from the
+        /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
         public string NextToken

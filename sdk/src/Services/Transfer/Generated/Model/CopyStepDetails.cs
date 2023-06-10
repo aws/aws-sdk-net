@@ -41,10 +41,28 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property DestinationFileLocation. 
         /// <para>
-        /// Specifies the location for the file being copied. Only applicable for Copy type workflow
-        /// steps. Use <code>${Transfer:username}</code> in this field to parametrize the destination
-        /// prefix by username.
+        /// Specifies the location for the file being copied. Use <code>${Transfer:UserName}</code>
+        /// or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination
+        /// prefix by username or uploaded date.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UserName}</code>
+        /// to copy uploaded files to an Amazon S3 bucket that is prefixed with the name of the
+        /// Transfer Family user that uploaded the file.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code>
+        /// to copy uploaded files to an Amazon S3 bucket that is prefixed with the date of the
+        /// upload.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>,
+        /// based on the date the file is uploaded in UTC.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         public InputFileLocation DestinationFileLocation
         {
@@ -80,9 +98,25 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property OverwriteExisting. 
         /// <para>
-        /// A flag that indicates whether or not to overwrite an existing file of the same name.
-        /// The default is <code>FALSE</code>.
+        /// A flag that indicates whether to overwrite an existing file of the same name. The
+        /// default is <code>FALSE</code>.
         /// </para>
+        ///  
+        /// <para>
+        /// If the workflow is processing a file that has the same name as an existing file, the
+        /// behavior is as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing file is replaced
+        /// with the file being processed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the
+        /// workflow processing stops.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public OverwriteExisting OverwriteExisting
         {
@@ -104,14 +138,13 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Enter <code>${previous.file}</code> to use the previous file as the input. In this
+        /// To use the previous file as the input, enter <code>${previous.file}</code>. In this
         /// case, this workflow step uses the output file from the previous workflow step as input.
         /// This is the default value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enter <code>${original.file}</code> to use the originally-uploaded file location as
-        /// input for this step.
+        /// To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

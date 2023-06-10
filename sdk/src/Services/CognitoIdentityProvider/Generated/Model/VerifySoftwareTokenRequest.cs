@@ -48,6 +48,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// want to verify.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

@@ -76,6 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreationTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("DeploymentRecommendation", targetDepth))
+                {
+                    var unmarshaller = DeploymentRecommendationUnmarshaller.Instance;
+                    unmarshalledObject.DeploymentRecommendation = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnableNetworkIsolation", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

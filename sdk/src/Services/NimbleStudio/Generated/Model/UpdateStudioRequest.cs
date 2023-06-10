@@ -91,7 +91,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for the studio.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }

@@ -29,8 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains no configuration parameters because the DELETE Object tagging API only accepts
-    /// the bucket name and key name as parameters, which are defined in the job's manifest.
+    /// Contains no configuration parameters because the DELETE Object tagging (<code>DeleteObjectTagging</code>)
+    /// API operation accepts only the bucket name and key name as parameters, which are defined
+    /// in the job's manifest.
     /// </summary>
     public partial class S3DeleteObjectTaggingOperation
     {

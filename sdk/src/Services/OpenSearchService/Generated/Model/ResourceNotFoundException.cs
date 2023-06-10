@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// An exception for accessing or deleting a resource that does not exist. Gives http
-    /// status code of 400.
+    /// An exception for accessing or deleting a resource that doesn't exist.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

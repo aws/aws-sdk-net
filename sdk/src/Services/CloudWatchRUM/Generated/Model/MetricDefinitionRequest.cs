@@ -29,11 +29,21 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudWatchRUM.Model
 {
     /// <summary>
-    /// Use this structure to define one extended metric that RUM will send to CloudWatch
-    /// or CloudWatch Evidently. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
+    /// Use this structure to define one extended metric or custom metric that RUM will send
+    /// to CloudWatch or CloudWatch Evidently. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html">
     /// Additional metrics that you can send to CloudWatch and CloudWatch Evidently</a>.
     /// 
     ///  
+    /// <para>
+    /// This structure is validated differently for extended metrics and custom metrics. For
+    /// extended metrics that are sent to the <code>AWS/RUM</code> namespace, the following
+    /// validations apply:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The <code>Namespace</code> parameter must be omitted or set to <code>AWS/RUM</code>.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     /// Only certain combinations of values for <code>Name</code>, <code>ValueKey</code>,
     /// and <code>EventPattern</code> are valid. In addition to what is displayed in the list
@@ -107,6 +117,116 @@ namespace Amazon.CloudWatchRUM.Model
     /// be null and the <code>EventPattern</code> must include <code>{"event_type":["com.amazon.rum.session_start_event"]}</code>
     /// 
     /// </para>
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    /// For custom metrics, the following validation rules apply:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The namespace can't be omitted and can't be <code>AWS/RUM</code>. You can use the
+    /// <code>AWS/RUM</code> namespace only for extended metrics.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// All dimensions listed in the <code>DimensionKeys</code> field must be present in the
+    /// value of <code>EventPattern</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The values that you specify for <code>ValueKey</code>, <code>EventPattern</code>,
+    /// and <code>DimensionKeys</code> must be fields in RUM events, so all first-level keys
+    /// in these fields must be one of the keys in the list later in this section.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If you set a value for <code>EventPattern</code>, it must be a JSON object.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// For every non-empty <code>event_details</code>, there must be a non-empty <code>event_type</code>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// If <code>EventPattern</code> contains an <code>event_details</code> field, it must
+    /// also contain an <code>event_type</code>. For every built-in <code>event_type</code>
+    /// that you use, you must use a value for <code>event_details</code> that corresponds
+    /// to that <code>event_type</code>. For information about event details that correspond
+    /// to event types, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-datacollected.html#CloudWatch-RUM-datacollected-eventDetails">
+    /// RUM event details</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// In <code>EventPattern</code>, any JSON array must contain only one value.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// Valid key values for first-level keys in the <code>ValueKey</code>, <code>EventPattern</code>,
+    /// and <code>DimensionKeys</code> fields:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <code>account_id</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>application_Id</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>application_version</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>application_name</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>batch_id</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>event_details</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>event_id</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>event_interaction</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>event_timestamp</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>event_type</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>event_version</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>log_stream</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>metadata</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>sessionId</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>user_details</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>userId</code> 
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class MetricDefinitionRequest
@@ -114,6 +234,7 @@ namespace Amazon.CloudWatchRUM.Model
         private Dictionary<string, string> _dimensionKeys = new Dictionary<string, string>();
         private string _eventPattern;
         private string _name;
+        private string _awsNamespace;
         private string _unitLabel;
         private string _valueKey;
 
@@ -125,8 +246,8 @@ namespace Amazon.CloudWatchRUM.Model
         ///  
         /// <para>
         /// This field is a map of field paths to dimension names. It defines the dimensions to
-        /// associate with this metric in CloudWatch. Valid values for the entries in this field
-        /// are the following:
+        /// associate with this metric in CloudWatch. For extended metrics, valid values for the
+        /// entries in this field are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -154,9 +275,11 @@ namespace Amazon.CloudWatchRUM.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        ///  All dimensions listed in this field must also be included in <code>EventPattern</code>.
+        ///  For both extended metrics and custom metrics, all dimensions listed in this field
+        /// must also be included in <code>EventPattern</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=29)]
         public Dictionary<string, string> DimensionKeys
         {
             get { return this._dimensionKeys; }
@@ -225,7 +348,8 @@ namespace Amazon.CloudWatchRUM.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name for the metric that is defined in this structure. Valid values are the following:
+        /// The name for the metric that is defined in this structure. For custom metrics, you
+        /// can specify any name that you like. For extended metrics, valid values are the following:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -284,6 +408,31 @@ namespace Amazon.CloudWatchRUM.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Namespace. 
+        /// <para>
+        /// If this structure is for a custom metric instead of an extended metrics, use this
+        /// parameter to define the metric namespace for that custom metric. Do not specify this
+        /// parameter if this structure is for an extended metric.
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use any string that starts with <code>AWS/</code> for your namespace.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=237)]
+        public string Namespace
+        {
+            get { return this._awsNamespace; }
+            set { this._awsNamespace = value; }
+        }
+
+        // Check to see if Namespace property is set
+        internal bool IsSetNamespace()
+        {
+            return this._awsNamespace != null;
         }
 
         /// <summary>

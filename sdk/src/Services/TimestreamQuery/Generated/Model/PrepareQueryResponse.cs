@@ -81,7 +81,7 @@ namespace Amazon.TimestreamQuery.Model
         /// The query string that you want prepare.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=262144)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=262144)]
         public string QueryString
         {
             get { return this._queryString; }

@@ -33,6 +33,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class GetWorkflowResponse : AmazonWebServiceResponse
     {
+        private Accelerators _accelerators;
         private string _arn;
         private DateTime? _creationTime;
         private string _definition;
@@ -41,6 +42,7 @@ namespace Amazon.Omics.Model
         private WorkflowEngine _engine;
         private string _id;
         private string _main;
+        private Dictionary<string, string> _metadata = new Dictionary<string, string>();
         private string _name;
         private Dictionary<string, WorkflowParameter> _parameterTemplate = new Dictionary<string, WorkflowParameter>();
         private WorkflowStatus _status;
@@ -48,6 +50,25 @@ namespace Amazon.Omics.Model
         private int? _storageCapacity;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private WorkflowType _type;
+
+        /// <summary>
+        /// Gets and sets the property Accelerators. 
+        /// <para>
+        ///  The computational accelerator specified to run the workflow. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public Accelerators Accelerators
+        {
+            get { return this._accelerators; }
+            set { this._accelerators = value; }
+        }
+
+        // Check to see if Accelerators property is set
+        internal bool IsSetAccelerators()
+        {
+            return this._accelerators != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -201,6 +222,24 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Metadata. 
+        /// <para>
+        ///  Gets metadata for workflow. 
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Metadata
+        {
+            get { return this._metadata; }
+            set { this._metadata = value; }
+        }
+
+        // Check to see if Metadata property is set
+        internal bool IsSetMetadata()
+        {
+            return this._metadata != null && this._metadata.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The workflow's name.
@@ -278,7 +317,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The workflow's storage capacity.
+        /// The workflow's storage capacity in gigabytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]

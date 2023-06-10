@@ -33,6 +33,13 @@ namespace Amazon.EC2.Model
     /// Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from
     /// an IPAM pool to another IPAM pool or to a resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
     /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+    /// 
+    ///  <note> 
+    /// <para>
+    /// This action creates an allocation with strong consistency. The returned CIDR will
+    /// not overlap with any other allocations from the same pool.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class AllocateIpamPoolCidrRequest : AmazonEC2Request
     {

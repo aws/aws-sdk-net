@@ -31,7 +31,7 @@ namespace Amazon
     /// Example section:
     /// <code>
     /// &lt;configSections&gt;
-    ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+    ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK.Core"/&gt;
     /// &lt;/configSections&gt;
     /// &lt;aws&gt;
     ///   &lt;s3 useSignatureVersion4="true" /&gt;

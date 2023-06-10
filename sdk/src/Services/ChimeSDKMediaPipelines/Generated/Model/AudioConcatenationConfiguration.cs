@@ -38,8 +38,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// Enables the <i>name</i> object, where <i>name</i> is the name of the configuration
-        /// object, such as <code>AudioConcatenation</code>.
+        /// Enables or disables the configuration object.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

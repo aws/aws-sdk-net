@@ -97,6 +97,12 @@ namespace Amazon.SimpleWorkflow.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.ReverseOrder);
                 }
 
+                if(publicRequest.IsSetStartAtPreviousStartedEvent())
+                {
+                    context.Writer.WritePropertyName("startAtPreviousStartedEvent");
+                    context.Writer.Write(publicRequest.StartAtPreviousStartedEvent);
+                }
+
                 if(publicRequest.IsSetTaskList())
                 {
                     context.Writer.WritePropertyName("taskList");

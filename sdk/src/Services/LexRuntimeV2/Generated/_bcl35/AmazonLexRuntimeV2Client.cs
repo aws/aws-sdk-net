@@ -35,7 +35,7 @@ namespace Amazon.LexRuntimeV2
     /// <summary>
     /// Implementation for accessing LexRuntimeV2
     ///
-    /// 
+    /// This section contains documentation for the Amazon Lex V2 Runtime V2 API operations.
     /// </summary>
     public partial class AmazonLexRuntimeV2Client : AmazonServiceClient, IAmazonLexRuntimeV2
     {

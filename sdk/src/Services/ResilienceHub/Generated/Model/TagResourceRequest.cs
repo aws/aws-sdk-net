@@ -62,7 +62,7 @@ namespace Amazon.ResilienceHub.Model
         /// The tags to assign to the resource. Each tag consists of a key/value pair.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

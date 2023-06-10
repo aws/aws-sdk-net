@@ -57,7 +57,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property AccountIds. 
         /// <para>
-        ///  The Amazon Web Services account IDs for the export ECS service recommendations. 
+        ///  The Amazon Web Services account IDs for the export Amazon ECS service recommendations.
+        /// 
         /// </para>
         ///  
         /// <para>
@@ -137,8 +138,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Filters. 
         /// <para>
-        ///  An array of objects to specify a filter that exports a more specific set of ECS service
-        /// recommendations. 
+        ///  An array of objects to specify a filter that exports a more specific set of Amazon
+        /// ECS service recommendations. 
         /// </para>
         /// </summary>
         public List<ECSServiceRecommendationFilter> Filters

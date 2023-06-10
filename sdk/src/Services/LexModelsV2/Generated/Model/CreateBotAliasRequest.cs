@@ -111,7 +111,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_UpdateBotAlias.html">UpdateBotAlias</a>
+        /// The version of the bot that this alias points to. You can use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_UpdateBotAlias.html">UpdateBotAlias</a>
         /// operation to change the bot version associated with the alias.
         /// </para>
         /// </summary>

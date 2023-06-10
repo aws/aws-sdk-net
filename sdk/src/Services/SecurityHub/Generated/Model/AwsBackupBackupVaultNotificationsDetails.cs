@@ -77,8 +77,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SnsTopicArn. 
         /// <para>
-        /// An ARN that uniquely identifies the Amazon SNS topic for a backup vault’s events.
-        /// 
+        /// The Amazon Resource Name (ARN) that uniquely identifies the Amazon SNS topic for a
+        /// backup vault's events. 
         /// </para>
         /// </summary>
         public string SnsTopicArn

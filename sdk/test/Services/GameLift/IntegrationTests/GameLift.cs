@@ -37,7 +37,8 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests
             var newBuild = Client.CreateBuild(new CreateBuildRequest
             {
                 Name = "TestBuild-" + timestamp,
-                Version = timestamp
+                Version = timestamp,
+                OperatingSystem = Amazon.GameLift.OperatingSystem.AMAZON_LINUX_2
             }).Build;
             createdBuilds.Add(newBuild.BuildId);
 

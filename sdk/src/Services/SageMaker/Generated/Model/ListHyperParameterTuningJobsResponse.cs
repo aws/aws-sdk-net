@@ -39,8 +39,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property HyperParameterTuningJobSummaries. 
         /// <para>
-        /// A list of <a>HyperParameterTuningJobSummary</a> objects that describe the tuning jobs
-        /// that the <code>ListHyperParameterTuningJobs</code> request returned.
+        /// A list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a>
+        /// objects that describe the tuning jobs that the <code>ListHyperParameterTuningJobs</code>
+        /// request returned.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

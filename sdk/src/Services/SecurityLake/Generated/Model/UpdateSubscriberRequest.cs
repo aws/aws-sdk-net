@@ -36,68 +36,30 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class UpdateSubscriberRequest : AmazonSecurityLakeRequest
     {
-        private string _externalId;
-        private string _id;
-        private List<SourceType> _sourceTypes = new List<SourceType>();
+        private List<LogSourceResource> _sources = new List<LogSourceResource>();
         private string _subscriberDescription;
+        private string _subscriberId;
+        private AwsIdentity _subscriberIdentity;
         private string _subscriberName;
 
         /// <summary>
-        /// Gets and sets the property ExternalId. 
-        /// <para>
-        /// The external ID of the Security Lake account.
-        /// </para>
-        /// </summary>
-        public string ExternalId
-        {
-            get { return this._externalId; }
-            set { this._externalId = value; }
-        }
-
-        // Check to see if ExternalId property is set
-        internal bool IsSetExternalId()
-        {
-            return this._externalId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Id. 
-        /// <para>
-        /// A value created by Security Lake that uniquely identifies your subscription. 
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string Id
-        {
-            get { return this._id; }
-            set { this._id = value; }
-        }
-
-        // Check to see if Id property is set
-        internal bool IsSetId()
-        {
-            return this._id != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SourceTypes. 
+        /// Gets and sets the property Sources. 
         /// <para>
         /// The supported Amazon Web Services from which logs and events are collected. For the
         /// list of supported Amazon Web Services, see the <a href="https://docs.aws.amazon.com/security-lake/latest/userguide/internal-sources.html">Amazon
         /// Security Lake User Guide</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<SourceType> SourceTypes
+        public List<LogSourceResource> Sources
         {
-            get { return this._sourceTypes; }
-            set { this._sourceTypes = value; }
+            get { return this._sources; }
+            set { this._sources = value; }
         }
 
-        // Check to see if SourceTypes property is set
-        internal bool IsSetSourceTypes()
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
         {
-            return this._sourceTypes != null && this._sourceTypes.Count > 0; 
+            return this._sources != null && this._sources.Count > 0; 
         }
 
         /// <summary>
@@ -119,9 +81,46 @@ namespace Amazon.SecurityLake.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SubscriberId. 
+        /// <para>
+        /// A value created by Security Lake that uniquely identifies your subscription.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string SubscriberId
+        {
+            get { return this._subscriberId; }
+            set { this._subscriberId = value; }
+        }
+
+        // Check to see if SubscriberId property is set
+        internal bool IsSetSubscriberId()
+        {
+            return this._subscriberId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriberIdentity. 
+        /// <para>
+        /// The AWS identity used to access your data.
+        /// </para>
+        /// </summary>
+        public AwsIdentity SubscriberIdentity
+        {
+            get { return this._subscriberIdentity; }
+            set { this._subscriberIdentity = value; }
+        }
+
+        // Check to see if SubscriberIdentity property is set
+        internal bool IsSetSubscriberIdentity()
+        {
+            return this._subscriberIdentity != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubscriberName. 
         /// <para>
-        /// The name of the Security Lake account subscriber. 
+        /// The name of the Security Lake account subscriber.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=64)]

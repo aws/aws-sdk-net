@@ -73,6 +73,17 @@ namespace Amazon.Keyspaces.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.KeyspaceName);
                 }
 
+                if(publicRequest.IsSetReplicationSpecification())
+                {
+                    context.Writer.WritePropertyName("replicationSpecification");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ReplicationSpecificationMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ReplicationSpecification, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTags())
                 {
                     context.Writer.WritePropertyName("tags");

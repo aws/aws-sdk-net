@@ -179,7 +179,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property PropertyGroups. 
         /// <para>
-        /// The property groups
+        /// The property groups.
         /// </para>
         /// </summary>
         public Dictionary<string, PropertyGroupRequest> PropertyGroups

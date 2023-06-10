@@ -50,7 +50,7 @@ namespace Amazon.SSO.Model
         /// in the <i>IAM Identity Center OIDC API Reference Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

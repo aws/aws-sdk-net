@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// The list of supported product configurations that allow user-supplied arguments. EMR
-    /// accepts these arguments and forwards them to the corresponding installation script
+    /// The list of supported product configurations that allow user-supplied arguments. Amazon
+    /// EMR accepts these arguments and forwards them to the corresponding installation script
     /// as bootstrap action arguments.
     /// </summary>
     public partial class SupportedProductConfig

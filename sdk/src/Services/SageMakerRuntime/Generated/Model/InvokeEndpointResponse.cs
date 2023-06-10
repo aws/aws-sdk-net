@@ -55,7 +55,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// the Endpoint</a> in the Developer Guide.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=6291456)]
+        [AWSProperty(Required=true, Sensitive=true, Max=6291456)]
         public MemoryStream Body
         {
             get { return this._body; }
@@ -114,7 +114,7 @@ namespace Amazon.SageMakerRuntime.Model
         /// Amazon SageMaker Python SDK.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Sensitive=true, Max=1024)]
         public string CustomAttributes
         {
             get { return this._customAttributes; }

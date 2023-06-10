@@ -26,7 +26,7 @@ namespace SDKDocGenerator.Writers
 
             writer.WriteLine("<div class=\"sectionbody\">");
                 writer.WriteLine("<div id=\"parameters\">");
-                    writer.WriteLine("<strong class=\"subHeading\">Parameters</strong>");
+                    writer.WriteLine("<h3><strong class=\"subHeading\">Parameters</strong></h3>");
                 writer.WriteLine("</div>");
 
                 foreach (var parameter in parameters)

@@ -73,6 +73,10 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Each log event can be no larger than 256 KB.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// The maximum number of log events in a batch is 10,000.
     /// </para>
     ///  </li> <li> <important> 

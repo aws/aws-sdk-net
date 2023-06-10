@@ -35,6 +35,7 @@ namespace Amazon.OpenSearchService.Model
     {
         private string _errorMessage;
         private AutoTuneState _state;
+        private bool? _useOffPeakWindow;
 
         /// <summary>
         /// Gets and sets the property ErrorMessage. 
@@ -70,6 +71,25 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetState()
         {
             return this._state != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UseOffPeakWindow. 
+        /// <para>
+        /// Whether the domain's off-peak window will be used to deploy Auto-Tune changes rather
+        /// than a maintenance schedule.
+        /// </para>
+        /// </summary>
+        public bool UseOffPeakWindow
+        {
+            get { return this._useOffPeakWindow.GetValueOrDefault(); }
+            set { this._useOffPeakWindow = value; }
+        }
+
+        // Check to see if UseOffPeakWindow property is set
+        internal bool IsSetUseOffPeakWindow()
+        {
+            return this._useOffPeakWindow.HasValue; 
         }
 
     }

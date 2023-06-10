@@ -30,7 +30,7 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the ModifyVerifiedAccessGroup operation.
-    /// Modifies the specified Verified Access group configuration.
+    /// Modifies the specified Amazon Web Services Verified Access group configuration.
     /// </summary>
     public partial class ModifyVerifiedAccessGroupRequest : AmazonEC2Request
     {
@@ -62,7 +62,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Web Services Verified Access group.
+        /// A description for the Verified Access group.
         /// </para>
         /// </summary>
         public string Description
@@ -80,7 +80,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessGroupId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access group.
+        /// The ID of the Verified Access group.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -99,7 +99,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessInstanceId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access instance.
+        /// The ID of the Verified Access instance.
         /// </para>
         /// </summary>
         public string VerifiedAccessInstanceId

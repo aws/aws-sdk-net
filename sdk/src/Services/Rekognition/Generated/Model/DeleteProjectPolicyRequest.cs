@@ -37,6 +37,11 @@ namespace Amazon.Rekognition.Model
     /// To get a list of project policies attached to a project, call <a>ListProjectPolicies</a>.
     /// To attach a project policy to a project, call <a>PutProjectPolicy</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// This operation requires permissions to perform the <code>rekognition:DeleteProjectPolicy</code>
+    /// action.
+    /// </para>
     /// </summary>
     public partial class DeleteProjectPolicyRequest : AmazonRekognitionRequest
     {

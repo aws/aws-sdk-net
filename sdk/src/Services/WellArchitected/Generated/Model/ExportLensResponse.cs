@@ -38,7 +38,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property LensJSON. 
         /// <para>
-        /// The JSON for the lens.
+        /// The JSON representation of a lens.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=500000)]

@@ -33,6 +33,8 @@ namespace Amazon.Runtime
 {
     public abstract class AmazonServiceClient : IDisposable
     {
+        private static volatile bool _isProtocolUpdated;
+        
         private bool _disposed;
         private Logger _logger;
         protected EndpointDiscoveryResolverBase EndpointDiscoveryResolver { get; private set; }
@@ -159,6 +161,7 @@ namespace Amazon.Runtime
             Signer = CreateSigner();
             EndpointDiscoveryResolver = new EndpointDiscoveryResolver(config, _logger);
             Initialize();
+            UpdateSecurityProtocol();
             BuildRuntimePipeline();
         }
 
@@ -425,7 +428,7 @@ namespace Amazon.Runtime
         private void BuildRuntimePipeline()
         {
 #if BCL
-            var httpRequestFactory = new HttpWebRequestFactory(new AmazonSecurityProtocolManager());
+            var httpRequestFactory = new HttpWebRequestFactory();
             var httpHandler = new HttpHandler<Stream>(httpRequestFactory, this);
 #else
             var httpRequestFactory = new HttpRequestMessageFactory(this.Config);
@@ -493,6 +496,39 @@ namespace Amazon.Runtime
 
             // Apply global pipeline customizations
             RuntimePipelineCustomizerRegistry.Instance.ApplyCustomizations(this.GetType(), this.RuntimePipeline);
+        }
+
+        /// <summary>
+        /// Some AWS services like Cloud 9 require at least TLS 1.1. Version of .NET Framework 4.5 and earlier 
+        /// do not eanble TLS 1.1 and TLS 1.2 by default. This code adds those protocols if using an earlier 
+        /// version of .NET that explicitly set the protocol and didn't have TLS 1.1 and TLS 1.2. 
+        /// </summary>
+        private void UpdateSecurityProtocol()
+        {
+            if (_isProtocolUpdated) return;
+
+            var amazonSecurityProtocolManager = new AmazonSecurityProtocolManager();
+
+            try
+            {
+                if (!amazonSecurityProtocolManager.IsSecurityProtocolSystemDefault())
+                {
+                    amazonSecurityProtocolManager.UpdateProtocolsToSupported();
+                }
+            }
+            catch (Exception ex)
+            {
+                if (ex is NotSupportedException)
+                {
+                    _logger.InfoFormat(ex.Message);
+                }
+                else
+                {
+                    _logger.InfoFormat("Unexpected error " + ex.GetType().Name +
+                                       " encountered when trying to set Security Protocol.\n" + ex);
+                }
+            }
+            _isProtocolUpdated = true;
         }
 
         /// <summary>

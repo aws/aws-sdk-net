@@ -35,8 +35,7 @@ namespace Amazon.FSx.Model
     /// 
     ///  
     /// <para>
-    /// For Amazon FSx for Windows File Server file systems, you can update the following
-    /// properties:
+    /// For FSx for Windows File Server file systems, you can update the following properties:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -68,7 +67,7 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For Amazon FSx for Lustre file systems, you can update the following properties:
+    /// For FSx for Lustre file systems, you can update the following properties:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -100,9 +99,13 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For Amazon FSx for NetApp ONTAP file systems, you can update the following properties:
+    /// For FSx for ONTAP file systems, you can update the following properties:
     /// </para>
     ///  <ul> <li> 
+    /// <para>
+    ///  <code>AddRouteTableIds</code> 
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     ///  <code>AutomaticBackupRetentionDays</code> 
     /// </para>
@@ -120,6 +123,10 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>RemoveRouteTableIds</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>StorageCapacity</code> 
     /// </para>
     ///  </li> <li> 
@@ -132,7 +139,7 @@ namespace Amazon.FSx.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// For the Amazon FSx for OpenZFS file systems, you can update the following properties:
+    /// For FSx for OpenZFS file systems, you can update the following properties:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -149,6 +156,14 @@ namespace Amazon.FSx.Model
     ///  </li> <li> 
     /// <para>
     ///  <code>DailyAutomaticBackupStartTime</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>DiskIopsConfiguration</code> 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>StorageCapacity</code> 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -173,7 +188,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// A string of up to 64 ASCII characters that Amazon FSx uses to ensure idempotent updates.
+        /// A string of up to 63 ASCII characters that Amazon FSx uses to ensure idempotent updates.
         /// This string is automatically filled on your behalf when you use the Command Line Interface
         /// (CLI) or an Amazon Web Services SDK.
         /// </para>
@@ -261,10 +276,10 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// Use this parameter to increase the storage capacity of an Amazon FSx for Windows File
-        /// Server, Amazon FSx for Lustre, or Amazon FSx for NetApp ONTAP file system. Specifies
-        /// the storage capacity target value, in GiB, to increase the storage capacity for the
-        /// file system that you're updating. 
+        /// Use this parameter to increase the storage capacity of an FSx for Windows File Server,
+        /// FSx for Lustre, FSx for OpenZFS, or FSx for ONTAP file system. Specifies the storage
+        /// capacity target value, in GiB, to increase the storage capacity for the file system
+        /// that you're updating. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -272,14 +287,6 @@ namespace Amazon.FSx.Model
         /// capacity increase request in progress.
         /// </para>
         ///  </note> 
-        /// <para>
-        /// For Windows file systems, the storage capacity target value must be at least 10 percent
-        /// greater than the current storage capacity value. To increase storage capacity, the
-        /// file system must have at least 16 MBps of throughput capacity. For more information,
-        /// see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-        /// storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.
-        /// </para>
-        ///  
         /// <para>
         /// For Lustre file systems, the storage capacity target value can be the following:
         /// </para>
@@ -303,7 +310,22 @@ namespace Amazon.FSx.Model
         ///  </li> </ul> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/managing-storage-capacity.html">Managing
-        /// storage and throughput capacity</a> in the <i>Amazon FSx for Lustre User Guide</i>.
+        /// storage and throughput capacity</a> in the <i>FSx for Lustre User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For FSx for OpenZFS file systems, the storage capacity target value must be at least
+        /// 10 percent greater than the current storage capacity value. For more information,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/OpenZFSGuide/managing-storage-capacity.html">Managing
+        /// storage capacity</a> in the <i>FSx for OpenZFS User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For Windows file systems, the storage capacity target value must be at least 10 percent
+        /// greater than the current storage capacity value. To increase storage capacity, the
+        /// file system must have at least 16 MBps of throughput capacity. For more information,
+        /// see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
+        /// storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.
         /// </para>
         ///  
         /// <para>

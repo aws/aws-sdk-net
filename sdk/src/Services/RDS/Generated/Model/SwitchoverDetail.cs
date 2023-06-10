@@ -35,9 +35,9 @@ namespace Amazon.RDS.Model
     /// <para>
     /// For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/blue-green-deployments.html">Using
     /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon RDS User
-    /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">
-    /// Using Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon
-    /// Aurora User Guide</i>.
+    /// Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/blue-green-deployments.html">Using
+    /// Amazon RDS Blue/Green Deployments for database updates</a> in the <i>Amazon Aurora
+    /// User Guide</i>.
     /// </para>
     /// </summary>
     public partial class SwitchoverDetail
@@ -76,24 +76,31 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>preparing-for-switchover</code> - The resource is being prepared to switch
-        /// over.
+        ///  <code>PROVISIONING</code> - The resource is being prepared to switch over.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>ready-for-switchover</code> - The resource is ready to switch over.
+        ///  <code>AVAILABLE</code> - The resource is ready to switch over.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>switchover-in-progress</code> - The resource is being switched over.
+        ///  <code>SWITCHOVER_IN_PROGRESS</code> - The resource is being switched over.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>switchover-completed</code> - The resource has been switched over.
+        ///  <code>SWITCHOVER_COMPLETED</code> - The resource has been switched over.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>switchover-failed</code> - The resource attempted to switch over but failed.
+        ///  <code>SWITCHOVER_FAILED</code> - The resource attempted to switch over but failed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MISSING_SOURCE</code> - The source resource has been deleted.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>MISSING_TARGET</code> - The target resource has been deleted.
         /// </para>
         ///  </li> </ul>
         /// </summary>

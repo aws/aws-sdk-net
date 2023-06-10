@@ -1,14 +1,25 @@
 ﻿img#awslogo {
     background: transparent url(../resources/imagesprite.png) 0 -60px no-repeat;
-    width:200px;
-    height:30px;
+    width: 200px;
+    height: 30px;
     display: block;
     border: 0 none;
-    margin:8px 4px 4px 8px;
+    margin: 8px 4px 4px 8px;
+}
+
+#skipToMain {
+    position: absolute;
+    z-index: -1;
+    top: -40px;
+}
+
+#skipToMain:focus {
+    z-index: 500;
+    top: 10px;
 }
 
 div#toc {
-    padding-left: 15px;
+    padding-left: 3px;
     width: auto;
     background-color:#fff;    
     font-family: "Segoe UI","Lucida Grande",Verdana,Arial,Helvetica,sans-serif;
@@ -17,14 +28,14 @@ div#toc {
 }
 
 .awstoc {
-    margin:0;
-    padding-left:10px;
+    margin: 0;
+    padding-left: 10px;
 }
 
 .awstoc li {
-    padding-top:5px;
-    cursor:pointer;
-    background-color:#fff;
+    padding-top: 5px;
+    cursor: pointer;
+    background-color: #fff;
 }
 
 .awstoc ul {
@@ -36,21 +47,33 @@ div#toc {
 }
 
 .awstoc li {
-    list-style-image:url('toggle-small-expand.png');
+    list-style-type: none;
+    display: flex;
+    align-items: center;
 }
 
-.awstoc li.expanded {
-    list-style-image:url('toggle-small.png');
+.awstoc li.expanded {    
+    display: inline-block;
 }
 
-.awstoc li.leaf{
-    list-style-image:url('blank.gif');
-    cursor:auto;
-	margin-left:-25px;
+.awstoc li button {
+    background: url('toggle-small-expand.png') no-repeat;
+    cursor: pointer;
+    border: none;
+    height: 11px;
 }
 
-.awstoc a.nav {
-    text-decoration: none;
+.awstoc li.expanded button {
+    background: url('toggle-small.png') no-repeat;
+    height: 9px;
+    width: 9px;
+    padding: 0;
+}
+
+.awstoc li.leaf {
+    list-style-type: none;
+    cursor: auto;
+    margin-left: -13px;
 }
 
 .awstoc a.activeTopic {

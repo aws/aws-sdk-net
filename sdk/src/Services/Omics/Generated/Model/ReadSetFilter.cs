@@ -35,9 +35,12 @@ namespace Amazon.Omics.Model
     {
         private DateTime? _createdAfter;
         private DateTime? _createdBefore;
+        private string _generatedFrom;
         private string _name;
         private string _referenceArn;
+        private string _sampleId;
         private ReadSetStatus _status;
+        private string _subjectId;
 
         /// <summary>
         /// Gets and sets the property CreatedAfter. 
@@ -73,6 +76,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetCreatedBefore()
         {
             return this._createdBefore.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property GeneratedFrom. 
+        /// <para>
+        ///  Where the source originated. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=127)]
+        public string GeneratedFrom
+        {
+            get { return this._generatedFrom; }
+            set { this._generatedFrom = value; }
+        }
+
+        // Check to see if GeneratedFrom property is set
+        internal bool IsSetGeneratedFrom()
+        {
+            return this._generatedFrom != null;
         }
 
         /// <summary>
@@ -114,6 +136,25 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SampleId. 
+        /// <para>
+        ///  The read set source's sample ID. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=127)]
+        public string SampleId
+        {
+            get { return this._sampleId; }
+            set { this._sampleId = value; }
+        }
+
+        // Check to see if SampleId property is set
+        internal bool IsSetSampleId()
+        {
+            return this._sampleId != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
         /// A status to filter on.
@@ -129,6 +170,25 @@ namespace Amazon.Omics.Model
         internal bool IsSetStatus()
         {
             return this._status != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubjectId. 
+        /// <para>
+        ///  The read set source's subject ID. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=127)]
+        public string SubjectId
+        {
+            get { return this._subjectId; }
+            set { this._subjectId = value; }
+        }
+
+        // Check to see if SubjectId property is set
+        internal bool IsSetSubjectId()
+        {
+            return this._subjectId != null;
         }
 
     }

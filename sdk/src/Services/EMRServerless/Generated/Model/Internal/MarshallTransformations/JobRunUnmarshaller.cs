@@ -76,6 +76,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                     unmarshalledObject.Arn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("billedResourceUtilization", targetDepth))
+                {
+                    var unmarshaller = ResourceUtilizationUnmarshaller.Instance;
+                    unmarshalledObject.BilledResourceUtilization = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("configurationOverrides", targetDepth))
                 {
                     var unmarshaller = ConfigurationOverridesUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.EMRServerless.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.ExecutionRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("executionTimeoutMinutes", targetDepth))
+                {
+                    var unmarshaller = LongUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionTimeoutMinutes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("jobDriver", targetDepth))

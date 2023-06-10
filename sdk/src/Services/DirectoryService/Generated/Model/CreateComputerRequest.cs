@@ -124,7 +124,7 @@ namespace Amazon.DirectoryService.Model
         /// generate a random, strong password to use for this parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=8, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=8, Max=64)]
         public string Password
         {
             get { return this._password; }

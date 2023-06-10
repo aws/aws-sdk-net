@@ -42,8 +42,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// You can use this operation ID with <code> <a>DescribeStackSetOperation</a> </code>
-        /// to monitor the progress of the drift detection operation.
+        /// You can use this operation ID with <a>DescribeStackSetOperation</a> to monitor the
+        /// progress of the drift detection operation.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

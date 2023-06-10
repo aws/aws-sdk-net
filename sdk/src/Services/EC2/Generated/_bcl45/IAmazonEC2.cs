@@ -652,6 +652,13 @@ namespace Amazon.EC2
         /// Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from
         /// an IPAM pool to another IPAM pool or to a resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
         /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action creates an allocation with strong consistency. The returned CIDR will
+        /// not overlap with any other allocations from the same pool.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateIpamPoolCidr service method.</param>
         /// 
@@ -665,6 +672,13 @@ namespace Amazon.EC2
         /// Allocate a CIDR from an IPAM pool. In IPAM, an allocation is a CIDR assignment from
         /// an IPAM pool to another IPAM pool or to a resource. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/allocate-cidrs-ipam.html">Allocate
         /// CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This action creates an allocation with strong consistency. The returned CIDR will
+        /// not overlap with any other allocations from the same pool.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AllocateIpamPoolCidr service method.</param>
         /// <param name="cancellationToken">
@@ -870,6 +884,38 @@ namespace Amazon.EC2
         /// <returns>The response from the AssignPrivateIpAddresses service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateIpAddresses">REST API Reference for AssignPrivateIpAddresses Operation</seealso>
         Task<AssignPrivateIpAddressesResponse> AssignPrivateIpAddressesAsync(AssignPrivateIpAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssignPrivateNatGatewayAddress
+
+
+        /// <summary>
+        /// Assigns one or more private IPv4 addresses to a private NAT gateway. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssignPrivateNatGatewayAddress service method.</param>
+        /// 
+        /// <returns>The response from the AssignPrivateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress">REST API Reference for AssignPrivateNatGatewayAddress Operation</seealso>
+        AssignPrivateNatGatewayAddressResponse AssignPrivateNatGatewayAddress(AssignPrivateNatGatewayAddressRequest request);
+
+
+
+        /// <summary>
+        /// Assigns one or more private IPv4 addresses to a private NAT gateway. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssignPrivateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssignPrivateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssignPrivateNatGatewayAddress">REST API Reference for AssignPrivateNatGatewayAddress Operation</seealso>
+        Task<AssignPrivateNatGatewayAddressResponse> AssignPrivateNatGatewayAddressAsync(AssignPrivateNatGatewayAddressRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1254,8 +1300,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource discovery
-        /// is an IPAM component that enables IPAM Service to manage and monitor resources that
-        /// belong to the owning account.
+        /// is an IPAM component that enables IPAM to manage and monitor resources that belong
+        /// to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateIpamResourceDiscovery service method.</param>
         /// 
@@ -1267,8 +1313,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource discovery
-        /// is an IPAM component that enables IPAM Service to manage and monitor resources that
-        /// belong to the owning account.
+        /// is an IPAM component that enables IPAM to manage and monitor resources that belong
+        /// to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateIpamResourceDiscovery service method.</param>
         /// <param name="cancellationToken">
@@ -1278,6 +1324,54 @@ namespace Amazon.EC2
         /// <returns>The response from the AssociateIpamResourceDiscovery service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateIpamResourceDiscovery">REST API Reference for AssociateIpamResourceDiscovery Operation</seealso>
         Task<AssociateIpamResourceDiscoveryResponse> AssociateIpamResourceDiscoveryAsync(AssociateIpamResourceDiscoveryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  AssociateNatGatewayAddress
+
+
+        /// <summary>
+        /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
+        /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// By default, you can associate up to 2 Elastic IP addresses per public NAT gateway.
+        /// You can increase the limit by requesting a quota adjustment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
+        /// IP address quotas</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateNatGatewayAddress service method.</param>
+        /// 
+        /// <returns>The response from the AssociateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">REST API Reference for AssociateNatGatewayAddress Operation</seealso>
+        AssociateNatGatewayAddressResponse AssociateNatGatewayAddress(AssociateNatGatewayAddressRequest request);
+
+
+
+        /// <summary>
+        /// Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT
+        /// gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work
+        /// with NAT gateways</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// By default, you can associate up to 2 Elastic IP addresses per public NAT gateway.
+        /// You can increase the limit by requesting a quota adjustment. For more information,
+        /// see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/amazon-vpc-limits.html#vpc-limits-eips">Elastic
+        /// IP address quotas</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AssociateNatGatewayAddress">REST API Reference for AssociateNatGatewayAddress Operation</seealso>
+        Task<AssociateNatGatewayAddressResponse> AssociateNatGatewayAddressAsync(AssociateNatGatewayAddressRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -1719,9 +1813,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// A trust provider is a third-party entity that creates, maintains, and manages identity
-        /// information for users and devices. One or more trust providers can be attached to
-        /// an Amazon Web Services Verified Access instance.
+        /// Attaches the specified Amazon Web Services Verified Access trust provider to the specified
+        /// Amazon Web Services Verified Access instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVerifiedAccessTrustProvider service method.</param>
         /// 
@@ -1732,9 +1825,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// A trust provider is a third-party entity that creates, maintains, and manages identity
-        /// information for users and devices. One or more trust providers can be attached to
-        /// an Amazon Web Services Verified Access instance.
+        /// Attaches the specified Amazon Web Services Verified Access trust provider to the specified
+        /// Amazon Web Services Verified Access instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AttachVerifiedAccessTrustProvider service method.</param>
         /// <param name="cancellationToken">
@@ -2380,9 +2472,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Removes your Amazon Web Services account from the launch permissions for the specified
-        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/">Cancel having
-        /// an AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2 User
-        /// Guide</i>.
+        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">
+        /// Cancel having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon
+        /// EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageLaunchPermission service method.</param>
         /// 
@@ -2394,9 +2486,9 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Removes your Amazon Web Services account from the launch permissions for the specified
-        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/">Cancel having
-        /// an AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2 User
-        /// Guide</i>.
+        /// AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html">
+        /// Cancel having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon
+        /// EC2 User Guide</i>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CancelImageLaunchPermission service method.</param>
         /// <param name="cancellationToken">
@@ -2485,9 +2577,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// After you cancel a Spot Fleet request, the Spot Fleet launches no new Spot Instances.
-        /// You must specify whether the Spot Fleet should also terminate its Spot Instances.
-        /// If you terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code>
+        /// After you cancel a Spot Fleet request, the Spot Fleet launches no new instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must also specify whether a canceled Spot Fleet request should terminate its instances.
+        /// If you choose to terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code>
         /// state. Otherwise, the Spot Fleet request enters the <code>cancelled_running</code>
         /// state and the instances continue to run until they are interrupted or you terminate
         /// them manually.
@@ -2506,9 +2601,12 @@ namespace Amazon.EC2
         /// 
         ///  
         /// <para>
-        /// After you cancel a Spot Fleet request, the Spot Fleet launches no new Spot Instances.
-        /// You must specify whether the Spot Fleet should also terminate its Spot Instances.
-        /// If you terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code>
+        /// After you cancel a Spot Fleet request, the Spot Fleet launches no new instances.
+        /// </para>
+        ///  
+        /// <para>
+        /// You must also specify whether a canceled Spot Fleet request should terminate its instances.
+        /// If you choose to terminate the instances, the Spot Fleet request enters the <code>cancelled_terminating</code>
         /// state. Otherwise, the Spot Fleet request enters the <code>cancelled_running</code>
         /// state and the instances continue to run until they are interrupted or you terminate
         /// them manually.
@@ -4003,7 +4101,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates an IPAM resource discovery. A resource discovery is an IPAM component that
-        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIpamResourceDiscovery service method.</param>
         /// 
@@ -4015,7 +4113,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Creates an IPAM resource discovery. A resource discovery is an IPAM component that
-        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateIpamResourceDiscovery service method.</param>
         /// <param name="cancellationToken">
@@ -4673,8 +4771,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Reachability Analyzer enables you to analyze and debug network reachability between
-        /// two resources in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/">What
-        /// is Reachability Analyzer</a>.
+        /// two resources in your virtual private cloud (VPC). For more information, see the <a
+        /// href="https://docs.aws.amazon.com/vpc/latest/reachability/">Reachability Analyzer
+        /// Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInsightsPath service method.</param>
@@ -4691,8 +4790,9 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// Reachability Analyzer enables you to analyze and debug network reachability between
-        /// two resources in your virtual private cloud (VPC). For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/">What
-        /// is Reachability Analyzer</a>.
+        /// two resources in your virtual private cloud (VPC). For more information, see the <a
+        /// href="https://docs.aws.amazon.com/vpc/latest/reachability/">Reachability Analyzer
+        /// Guide</a>.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateNetworkInsightsPath service method.</param>
@@ -5360,8 +5460,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// To create a snapshot for Amazon EBS volumes that serve as root devices, you should
-        /// stop the instance before taking the snapshot.
+        /// When you create a snapshot for an EBS volume that serves as a root device, we recommend
+        /// that you stop the instance before taking the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -5420,8 +5520,8 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// To create a snapshot for Amazon EBS volumes that serve as root devices, you should
-        /// stop the instance before taking the snapshot.
+        /// When you create a snapshot for an EBS volume that serves as a root device, we recommend
+        /// that you stop the instance before taking the snapshot.
         /// </para>
         ///  
         /// <para>
@@ -6508,10 +6608,9 @@ namespace Amazon.EC2
         /// <summary>
         /// An Amazon Web Services Verified Access group is a collection of Amazon Web Services
         /// Verified Access endpoints who's associated applications have similar security requirements.
-        /// Each instance within an Amazon Web Services Verified Access group shares an Amazon
-        /// Web Services Verified Access policy. For example, you can group all Amazon Web Services
-        /// Verified Access instances associated with “sales” applications together and use one
-        /// common Amazon Web Services Verified Access policy.
+        /// Each instance within a Verified Access group shares an Verified Access policy. For
+        /// example, you can group all Verified Access instances associated with "sales" applications
+        /// together and use one common Verified Access policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessGroup service method.</param>
         /// 
@@ -6524,10 +6623,9 @@ namespace Amazon.EC2
         /// <summary>
         /// An Amazon Web Services Verified Access group is a collection of Amazon Web Services
         /// Verified Access endpoints who's associated applications have similar security requirements.
-        /// Each instance within an Amazon Web Services Verified Access group shares an Amazon
-        /// Web Services Verified Access policy. For example, you can group all Amazon Web Services
-        /// Verified Access instances associated with “sales” applications together and use one
-        /// common Amazon Web Services Verified Access policy.
+        /// Each instance within a Verified Access group shares an Verified Access policy. For
+        /// example, you can group all Verified Access instances associated with "sales" applications
+        /// together and use one common Verified Access policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessGroup service method.</param>
         /// <param name="cancellationToken">
@@ -6576,8 +6674,8 @@ namespace Amazon.EC2
         /// <summary>
         /// A trust provider is a third-party entity that creates, maintains, and manages identity
         /// information for users and devices. When an application request is made, the identity
-        /// information sent by the trust provider will be evaluated by Amazon Web Services Verified
-        /// Access, before allowing or denying the application request.
+        /// information sent by the trust provider is evaluated by Verified Access before allowing
+        /// or denying the application request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessTrustProvider service method.</param>
         /// 
@@ -6590,8 +6688,8 @@ namespace Amazon.EC2
         /// <summary>
         /// A trust provider is a third-party entity that creates, maintains, and manages identity
         /// information for users and devices. When an application request is made, the identity
-        /// information sent by the trust provider will be evaluated by Amazon Web Services Verified
-        /// Access, before allowing or denying the application request.
+        /// information sent by the trust provider is evaluated by Verified Access before allowing
+        /// or denying the application request.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateVerifiedAccessTrustProvider service method.</param>
         /// <param name="cancellationToken">
@@ -7420,7 +7518,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the specified EC2 Fleet.
+        /// Deletes the specified EC2 Fleets.
         /// 
         ///  
         /// <para>
@@ -7428,7 +7526,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You must specify whether a deleted EC2 Fleet should also terminate its instances.
+        /// You must also specify whether a deleted EC2 Fleet should terminate its instances.
         /// If you choose to terminate the instances, the EC2 Fleet enters the <code>deleted_terminating</code>
         /// state. Otherwise, the EC2 Fleet enters the <code>deleted_running</code> state, and
         /// the instances continue to run until they are interrupted or you terminate them manually.
@@ -7467,7 +7565,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Deletes the specified EC2 Fleet.
+        /// Deletes the specified EC2 Fleets.
         /// 
         ///  
         /// <para>
@@ -7475,7 +7573,7 @@ namespace Amazon.EC2
         /// </para>
         ///  
         /// <para>
-        /// You must specify whether a deleted EC2 Fleet should also terminate its instances.
+        /// You must also specify whether a deleted EC2 Fleet should terminate its instances.
         /// If you choose to terminate the instances, the EC2 Fleet enters the <code>deleted_terminating</code>
         /// state. Otherwise, the EC2 Fleet enters the <code>deleted_running</code> state, and
         /// the instances continue to run until they are interrupted or you terminate them manually.
@@ -7741,7 +7839,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deletes an IPAM resource discovery. A resource discovery is an IPAM component that
-        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIpamResourceDiscovery service method.</param>
         /// 
@@ -7753,7 +7851,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Deletes an IPAM resource discovery. A resource discovery is an IPAM component that
-        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteIpamResourceDiscovery service method.</param>
         /// <param name="cancellationToken">
@@ -12750,7 +12848,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes IPAM resource discoveries. A resource discovery is an IPAM component that
-        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveries service method.</param>
         /// 
@@ -12762,7 +12860,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Describes IPAM resource discoveries. A resource discovery is an IPAM component that
-        /// enables IPAM Service to manage and monitor resources that belong to the owning account.
+        /// enables IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeIpamResourceDiscoveries service method.</param>
         /// <param name="cancellationToken">
@@ -14798,11 +14896,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of snapshots, we recommend that you paginate the
-        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
-        /// the maximum number of results returned in a single page. If the list of results exceeds
-        /// your <code>MaxResults</code> value, then that number of results is returned along
-        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
-        /// request to retrieve the remaining results.
+        /// output to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -14881,11 +14975,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of snapshots, we recommend that you paginate the
-        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
-        /// the maximum number of results returned in a single page. If the list of results exceeds
-        /// your <code>MaxResults</code> value, then that number of results is returned along
-        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
-        /// request to retrieve the remaining results.
+        /// output to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -14965,11 +15055,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of snapshots, we recommend that you paginate the
-        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
-        /// the maximum number of results returned in a single page. If the list of results exceeds
-        /// your <code>MaxResults</code> value, then that number of results is returned along
-        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
-        /// request to retrieve the remaining results.
+        /// output to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -15052,11 +15138,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of snapshots, we recommend that you paginate the
-        /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
-        /// the maximum number of results returned in a single page. If the list of results exceeds
-        /// your <code>MaxResults</code> value, then that number of results is returned along
-        /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
-        /// request to retrieve the remaining results.
+        /// output to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -15297,11 +15379,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to
-        /// limit the number of results returned. This paginates the output, which makes the list
-        /// more manageable and returns the results faster. If the list of results exceeds your
-        /// <code>MaxResults</code> value, then that number of results is returned along with
-        /// a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code>
-        /// request to retrieve the remaining results.
+        /// limit the number of items returned. This paginates the output, which makes the list
+        /// more manageable and returns the items faster. If the list of items exceeds your <code>MaxResults</code>
+        /// value, then that number of items is returned along with a <code>NextToken</code> value
+        /// that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code> request
+        /// to retrieve the remaining items.
         /// </para>
         ///  
         /// <para>
@@ -15329,11 +15411,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to
-        /// limit the number of results returned. This paginates the output, which makes the list
-        /// more manageable and returns the results faster. If the list of results exceeds your
-        /// <code>MaxResults</code> value, then that number of results is returned along with
-        /// a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code>
-        /// request to retrieve the remaining results.
+        /// limit the number of items returned. This paginates the output, which makes the list
+        /// more manageable and returns the items faster. If the list of items exceeds your <code>MaxResults</code>
+        /// value, then that number of items is returned along with a <code>NextToken</code> value
+        /// that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code> request
+        /// to retrieve the remaining items.
         /// </para>
         ///  
         /// <para>
@@ -15362,11 +15444,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to
-        /// limit the number of results returned. This paginates the output, which makes the list
-        /// more manageable and returns the results faster. If the list of results exceeds your
-        /// <code>MaxResults</code> value, then that number of results is returned along with
-        /// a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code>
-        /// request to retrieve the remaining results.
+        /// limit the number of items returned. This paginates the output, which makes the list
+        /// more manageable and returns the items faster. If the list of items exceeds your <code>MaxResults</code>
+        /// value, then that number of items is returned along with a <code>NextToken</code> value
+        /// that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code> request
+        /// to retrieve the remaining items.
         /// </para>
         ///  
         /// <para>
@@ -15398,11 +15480,11 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// We recommend that you set <code>MaxResults</code> to a value between 5 and 1000 to
-        /// limit the number of results returned. This paginates the output, which makes the list
-        /// more manageable and returns the results faster. If the list of results exceeds your
-        /// <code>MaxResults</code> value, then that number of results is returned along with
-        /// a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code>
-        /// request to retrieve the remaining results.
+        /// limit the number of items returned. This paginates the output, which makes the list
+        /// more manageable and returns the items faster. If the list of items exceeds your <code>MaxResults</code>
+        /// value, then that number of items is returned along with a <code>NextToken</code> value
+        /// that can be passed to a subsequent <code>DescribeSpotInstanceRequests</code> request
+        /// to retrieve the remaining items.
         /// </para>
         ///  
         /// <para>
@@ -16184,7 +16266,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe Amazon Web Services Verified Access endpoints.
+        /// Describes the specified Amazon Web Services Verified Access endpoints.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessEndpoints service method.</param>
         /// 
@@ -16195,7 +16277,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe Amazon Web Services Verified Access endpoints.
+        /// Describes the specified Amazon Web Services Verified Access endpoints.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessEndpoints service method.</param>
         /// <param name="cancellationToken">
@@ -16212,7 +16294,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe details of existing Verified Access groups.
+        /// Describes the specified Verified Access groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessGroups service method.</param>
         /// 
@@ -16223,7 +16305,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe details of existing Verified Access groups.
+        /// Describes the specified Verified Access groups.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessGroups service method.</param>
         /// <param name="cancellationToken">
@@ -16240,8 +16322,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the current logging configuration for the Amazon Web Services Verified Access
-        /// instances.
+        /// Describes the specified Amazon Web Services Verified Access instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstanceLoggingConfigurations service method.</param>
         /// 
@@ -16252,8 +16333,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describes the current logging configuration for the Amazon Web Services Verified Access
-        /// instances.
+        /// Describes the specified Amazon Web Services Verified Access instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstanceLoggingConfigurations service method.</param>
         /// <param name="cancellationToken">
@@ -16270,7 +16350,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe Verified Access instances.
+        /// Describes the specified Amazon Web Services Verified Access instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstances service method.</param>
         /// 
@@ -16281,7 +16361,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe Verified Access instances.
+        /// Describes the specified Amazon Web Services Verified Access instances.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessInstances service method.</param>
         /// <param name="cancellationToken">
@@ -16298,7 +16378,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe details of existing Verified Access trust providers.
+        /// Describes the specified Amazon Web Services Verified Access trust providers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessTrustProviders service method.</param>
         /// 
@@ -16309,7 +16389,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Describe details of existing Verified Access trust providers.
+        /// Describes the specified Amazon Web Services Verified Access trust providers.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeVerifiedAccessTrustProviders service method.</param>
         /// <param name="cancellationToken">
@@ -16373,11 +16453,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of volumes, we recommend that you paginate the output
-        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
-        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
-        /// the remaining results.
+        /// to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -16397,11 +16473,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of volumes, we recommend that you paginate the output
-        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
-        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
-        /// the remaining results.
+        /// to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -16422,11 +16494,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of volumes, we recommend that you paginate the output
-        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
-        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
-        /// the remaining results.
+        /// to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -16450,11 +16518,7 @@ namespace Amazon.EC2
         ///  
         /// <para>
         /// If you are describing a long list of volumes, we recommend that you paginate the output
-        /// to make the list more manageable. The <code>MaxResults</code> parameter sets the maximum
-        /// number of results returned in a single page. If the list of results exceeds your <code>MaxResults</code>
-        /// value, then that number of results is returned along with a <code>NextToken</code>
-        /// value that can be passed to a subsequent <code>DescribeVolumes</code> request to retrieve
-        /// the remaining results.
+        /// to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         ///  
         /// <para>
@@ -17444,7 +17508,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Detach a trust provider from an Amazon Web Services Verified Access instance.
+        /// Detaches the specified Amazon Web Services Verified Access trust provider from the
+        /// specified Amazon Web Services Verified Access instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachVerifiedAccessTrustProvider service method.</param>
         /// 
@@ -17455,7 +17520,8 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Detach a trust provider from an Amazon Web Services Verified Access instance.
+        /// Detaches the specified Amazon Web Services Verified Access trust provider from the
+        /// specified Amazon Web Services Verified Access instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DetachVerifiedAccessTrustProvider service method.</param>
         /// <param name="cancellationToken">
@@ -18289,8 +18355,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Disassociates a resource discovery from an Amazon VPC IPAM. A resource discovery is
-        /// an IPAM component that enables IPAM Service to manage and monitor resources that belong
-        /// to the owning account.
+        /// an IPAM component that enables IPAM to manage and monitor resources that belong to
+        /// the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamResourceDiscovery service method.</param>
         /// 
@@ -18302,8 +18368,8 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Disassociates a resource discovery from an Amazon VPC IPAM. A resource discovery is
-        /// an IPAM component that enables IPAM Service to manage and monitor resources that belong
-        /// to the owning account.
+        /// an IPAM component that enables IPAM to manage and monitor resources that belong to
+        /// the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateIpamResourceDiscovery service method.</param>
         /// <param name="cancellationToken">
@@ -18313,6 +18379,70 @@ namespace Amazon.EC2
         /// <returns>The response from the DisassociateIpamResourceDiscovery service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateIpamResourceDiscovery">REST API Reference for DisassociateIpamResourceDiscovery Operation</seealso>
         Task<DisassociateIpamResourceDiscoveryResponse> DisassociateIpamResourceDiscoveryAsync(DisassociateIpamResourceDiscoveryRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DisassociateNatGatewayAddress
+
+
+        /// <summary>
+        /// Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You
+        /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// While disassociating is in progress, you cannot associate/disassociate additional
+        /// EIPs while the connections are being drained. You are, however, allowed to delete
+        /// the NAT gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// An EIP will only be released at the end of MaxDrainDurationSeconds. The EIPs stay
+        /// associated and support the existing connections but do not support any new connections
+        /// (new connections are distributed across the remaining associated EIPs). As the existing
+        /// connections drain out, the EIPs (and the corresponding private IPs mapped to them)
+        /// get released.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateNatGatewayAddress service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress">REST API Reference for DisassociateNatGatewayAddress Operation</seealso>
+        DisassociateNatGatewayAddressResponse DisassociateNatGatewayAddress(DisassociateNatGatewayAddressRequest request);
+
+
+
+        /// <summary>
+        /// Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You
+        /// cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// While disassociating is in progress, you cannot associate/disassociate additional
+        /// EIPs while the connections are being drained. You are, however, allowed to delete
+        /// the NAT gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// An EIP will only be released at the end of MaxDrainDurationSeconds. The EIPs stay
+        /// associated and support the existing connections but do not support any new connections
+        /// (new connections are distributed across the remaining associated EIPs). As the existing
+        /// connections drain out, the EIPs (and the corresponding private IPs mapped to them)
+        /// get released.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DisassociateNatGatewayAddress">REST API Reference for DisassociateNatGatewayAddress Operation</seealso>
+        Task<DisassociateNatGatewayAddressResponse> DisassociateNatGatewayAddressAsync(DisassociateNatGatewayAddressRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -20075,6 +20205,15 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Get a list of all the CIDR allocations in an IPAM pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you use this action after <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateIpamPoolCidr.html">AllocateIpamPoolCidr</a>
+        /// or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>,
+        /// note that all EC2 API actions follow an <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency">eventual
+        /// consistency</a> model.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIpamPoolAllocations service method.</param>
         /// 
@@ -20086,6 +20225,15 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Get a list of all the CIDR allocations in an IPAM pool.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you use this action after <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AllocateIpamPoolCidr.html">AllocateIpamPoolCidr</a>
+        /// or <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ReleaseIpamPoolAllocation.html">ReleaseIpamPoolAllocation</a>,
+        /// note that all EC2 API actions follow an <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency">eventual
+        /// consistency</a> model.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIpamPoolAllocations service method.</param>
         /// <param name="cancellationToken">
@@ -20133,7 +20281,7 @@ namespace Amazon.EC2
         /// Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated
         /// with more than one resource discovery, the resource CIDRs across all of the resource
         /// discoveries is returned. A resource discovery is an IPAM component that enables IPAM
-        /// Service to manage and monitor resources that belong to the owning account.
+        /// to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIpamResourceCidrs service method.</param>
         /// 
@@ -20147,7 +20295,7 @@ namespace Amazon.EC2
         /// Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated
         /// with more than one resource discovery, the resource CIDRs across all of the resource
         /// discoveries is returned. A resource discovery is an IPAM component that enables IPAM
-        /// Service to manage and monitor resources that belong to the owning account.
+        /// to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetIpamResourceCidrs service method.</param>
         /// <param name="cancellationToken">
@@ -20872,6 +21020,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  GetVpnTunnelReplacementStatus
+
+
+        /// <summary>
+        /// Get details of available tunnel endpoint maintenance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpnTunnelReplacementStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetVpnTunnelReplacementStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus">REST API Reference for GetVpnTunnelReplacementStatus Operation</seealso>
+        GetVpnTunnelReplacementStatusResponse GetVpnTunnelReplacementStatus(GetVpnTunnelReplacementStatusRequest request);
+
+
+
+        /// <summary>
+        /// Get details of available tunnel endpoint maintenance.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetVpnTunnelReplacementStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetVpnTunnelReplacementStatus service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus">REST API Reference for GetVpnTunnelReplacementStatus Operation</seealso>
+        Task<GetVpnTunnelReplacementStatusResponse> GetVpnTunnelReplacementStatusAsync(GetVpnTunnelReplacementStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ImportClientVpnClientCertificateRevocationList
 
 
@@ -20918,9 +21094,19 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// To import your virtual machines (VMs) with a console-based experience, you can use
+        /// the <i>Import virtual machine images to Amazon Web Services</i> template in the <a
+        /// href="https://console.aws.amazon.com/migrationhub/orchestrator">Migration Hub Orchestrator
+        /// console</a>. For more information, see the <a href="https://docs.aws.amazon.com/migrationhub-orchestrator/latest/userguide/import-vm-images.html">
+        /// <i>Migration Hub Orchestrator User Guide</i> </a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
         /// Image (AMI).
-        /// 
+        /// </para>
         ///  <important> 
         /// <para>
         /// Amazon Web Services VM Import/Export strongly recommends specifying a value for either
@@ -20943,9 +21129,19 @@ namespace Amazon.EC2
 
 
         /// <summary>
+        /// <note> 
+        /// <para>
+        /// To import your virtual machines (VMs) with a console-based experience, you can use
+        /// the <i>Import virtual machine images to Amazon Web Services</i> template in the <a
+        /// href="https://console.aws.amazon.com/migrationhub/orchestrator">Migration Hub Orchestrator
+        /// console</a>. For more information, see the <a href="https://docs.aws.amazon.com/migrationhub-orchestrator/latest/userguide/import-vm-images.html">
+        /// <i>Migration Hub Orchestrator User Guide</i> </a>.
+        /// </para>
+        ///  </note> 
+        /// <para>
         /// Import single or multi-volume disk images or EBS snapshots into an Amazon Machine
         /// Image (AMI).
-        /// 
+        /// </para>
         ///  <important> 
         /// <para>
         /// Amazon Web Services VM Import/Export strongly recommends specifying a value for either
@@ -21933,9 +22129,14 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
-        /// at a time. You can use the <code>Attribute</code> parameter to specify the attribute
-        /// or one of the following parameters: <code>Description</code> or <code>LaunchPermission</code>.
+        /// at a time.
         /// 
+        ///  
+        /// <para>
+        /// To specify the attribute, you can use the <code>Attribute</code> parameter, or one
+        /// of the following parameters: <code>Description</code>, <code>ImdsSupport</code>, or
+        /// <code>LaunchPermission</code>.
+        /// </para>
         ///  
         /// <para>
         /// Images with an Amazon Web Services Marketplace product code cannot be made public.
@@ -21956,9 +22157,14 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
-        /// at a time. You can use the <code>Attribute</code> parameter to specify the attribute
-        /// or one of the following parameters: <code>Description</code> or <code>LaunchPermission</code>.
+        /// at a time.
         /// 
+        ///  
+        /// <para>
+        /// To specify the attribute, you can use the <code>Attribute</code> parameter, or one
+        /// of the following parameters: <code>Description</code>, <code>ImdsSupport</code>, or
+        /// <code>LaunchPermission</code>.
+        /// </para>
         ///  
         /// <para>
         /// Images with an Amazon Web Services Marketplace product code cannot be made public.
@@ -21990,10 +22196,10 @@ namespace Amazon.EC2
         ///  
         /// <para>
         ///  <b>Note: </b>Using this action to change the security groups associated with an elastic
-        /// network interface (ENI) attached to an instance in a VPC can result in an error if
-        /// the instance has more than one ENI. To change the security groups associated with
-        /// an ENI attached to an instance that has multiple ENIs, we recommend that you use the
-        /// <a>ModifyNetworkInterfaceAttribute</a> action.
+        /// network interface (ENI) attached to an instance can result in an error if the instance
+        /// has more than one ENI. To change the security groups associated with an ENI attached
+        /// to an instance that has multiple ENIs, we recommend that you use the <a>ModifyNetworkInterfaceAttribute</a>
+        /// action.
         /// </para>
         ///  
         /// <para>
@@ -22017,10 +22223,10 @@ namespace Amazon.EC2
         ///  
         /// <para>
         ///  <b>Note: </b>Using this action to change the security groups associated with an elastic
-        /// network interface (ENI) attached to an instance in a VPC can result in an error if
-        /// the instance has more than one ENI. To change the security groups associated with
-        /// an ENI attached to an instance that has multiple ENIs, we recommend that you use the
-        /// <a>ModifyNetworkInterfaceAttribute</a> action.
+        /// network interface (ENI) attached to an instance can result in an error if the instance
+        /// has more than one ENI. To change the security groups associated with an ENI attached
+        /// to an instance that has multiple ENIs, we recommend that you use the <a>ModifyNetworkInterfaceAttribute</a>
+        /// action.
         /// </para>
         ///  
         /// <para>
@@ -22501,7 +22707,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies a resource discovery. A resource discovery is an IPAM component that enables
-        /// IPAM Service to manage and monitor resources that belong to the owning account.
+        /// IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceDiscovery service method.</param>
         /// 
@@ -22513,7 +22719,7 @@ namespace Amazon.EC2
 
         /// <summary>
         /// Modifies a resource discovery. A resource discovery is an IPAM component that enables
-        /// IPAM Service to manage and monitor resources that belong to the owning account.
+        /// IPAM to manage and monitor resources that belong to the owning account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyIpamResourceDiscovery service method.</param>
         /// <param name="cancellationToken">
@@ -22737,13 +22943,6 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method.</param>
         /// 
@@ -22763,13 +22962,6 @@ namespace Amazon.EC2
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
         /// Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyReservedInstances service method.</param>
         /// <param name="cancellationToken">
@@ -23312,7 +23504,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+        /// Modifies the configuration of the specified Amazon Web Services Verified Access endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpoint service method.</param>
         /// 
@@ -23323,7 +23515,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the configuration of an Amazon Web Services Verified Access endpoint.
+        /// Modifies the configuration of the specified Amazon Web Services Verified Access endpoint.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpoint service method.</param>
         /// <param name="cancellationToken">
@@ -23340,7 +23532,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the specified Verified Access endpoint policy.
+        /// Modifies the specified Amazon Web Services Verified Access endpoint policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpointPolicy service method.</param>
         /// 
@@ -23351,7 +23543,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the specified Verified Access endpoint policy.
+        /// Modifies the specified Amazon Web Services Verified Access endpoint policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessEndpointPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -23368,7 +23560,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the specified Verified Access group configuration.
+        /// Modifies the specified Amazon Web Services Verified Access group configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroup service method.</param>
         /// 
@@ -23379,7 +23571,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the specified Verified Access group configuration.
+        /// Modifies the specified Amazon Web Services Verified Access group configuration.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroup service method.</param>
         /// <param name="cancellationToken">
@@ -23396,7 +23588,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the specified Verified Access group policy.
+        /// Modifies the specified Amazon Web Services Verified Access group policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroupPolicy service method.</param>
         /// 
@@ -23407,7 +23599,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the specified Verified Access group policy.
+        /// Modifies the specified Amazon Web Services Verified Access group policy.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessGroupPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -23424,7 +23616,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the configuration of the specified Verified Access instance.
+        /// Modifies the configuration of the specified Amazon Web Services Verified Access instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessInstance service method.</param>
         /// 
@@ -23435,7 +23627,7 @@ namespace Amazon.EC2
 
 
         /// <summary>
-        /// Modifies the configuration of the specified Verified Access instance.
+        /// Modifies the configuration of the specified Amazon Web Services Verified Access instance.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ModifyVerifiedAccessInstance service method.</param>
         /// <param name="cancellationToken">
@@ -23907,13 +24099,13 @@ namespace Amazon.EC2
         /// If the peered VPCs are in the same Amazon Web Services account, you can enable DNS
         /// resolution for queries from the local VPC. This ensures that queries from the local
         /// VPC resolve to private IP addresses in the peer VPC. This option is not available
-        /// if the peered VPCs are in different different Amazon Web Services accounts or different
-        /// Regions. For peered VPCs in different Amazon Web Services accounts, each Amazon Web
-        /// Services account owner must initiate a separate request to modify the peering connection
-        /// options. For inter-region peering connections, you must use the Region for the requester
-        /// VPC to modify the requester VPC peering options and the Region for the accepter VPC
-        /// to modify the accepter VPC peering options. To verify which VPCs are the accepter
-        /// and the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
+        /// if the peered VPCs are in different Amazon Web Services accounts or different Regions.
+        /// For peered VPCs in different Amazon Web Services accounts, each Amazon Web Services
+        /// account owner must initiate a separate request to modify the peering connection options.
+        /// For inter-region peering connections, you must use the Region for the requester VPC
+        /// to modify the requester VPC peering options and the Region for the accepter VPC to
+        /// modify the accepter VPC peering options. To verify which VPCs are the accepter and
+        /// the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
         /// command.
         /// </para>
         /// </summary>
@@ -23957,13 +24149,13 @@ namespace Amazon.EC2
         /// If the peered VPCs are in the same Amazon Web Services account, you can enable DNS
         /// resolution for queries from the local VPC. This ensures that queries from the local
         /// VPC resolve to private IP addresses in the peer VPC. This option is not available
-        /// if the peered VPCs are in different different Amazon Web Services accounts or different
-        /// Regions. For peered VPCs in different Amazon Web Services accounts, each Amazon Web
-        /// Services account owner must initiate a separate request to modify the peering connection
-        /// options. For inter-region peering connections, you must use the Region for the requester
-        /// VPC to modify the requester VPC peering options and the Region for the accepter VPC
-        /// to modify the accepter VPC peering options. To verify which VPCs are the accepter
-        /// and the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
+        /// if the peered VPCs are in different Amazon Web Services accounts or different Regions.
+        /// For peered VPCs in different Amazon Web Services accounts, each Amazon Web Services
+        /// account owner must initiate a separate request to modify the peering connection options.
+        /// For inter-region peering connections, you must use the Region for the requester VPC
+        /// to modify the requester VPC peering options and the Region for the accepter VPC to
+        /// modify the accepter VPC peering options. To verify which VPCs are the accepter and
+        /// the requester for a VPC peering connection, use the <a>DescribeVpcPeeringConnections</a>
         /// command.
         /// </para>
         /// </summary>
@@ -24646,13 +24838,6 @@ namespace Amazon.EC2
         /// Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstancesOffering service method.</param>
         /// 
@@ -24683,13 +24868,6 @@ namespace Amazon.EC2
         /// Instances</a> and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
         /// Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PurchaseReservedInstancesOffering service method.</param>
         /// <param name="cancellationToken">
@@ -25472,7 +25650,14 @@ namespace Amazon.EC2
         /// manual allocations. To remove an allocation for a resource without deleting the resource,
         /// set its monitored state to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/release-pool-alloc-ipam.html">Release
-        /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// All EC2 API actions follow an <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency">eventual
+        /// consistency</a> model.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleaseIpamPoolAllocation service method.</param>
         /// 
@@ -25487,7 +25672,14 @@ namespace Amazon.EC2
         /// manual allocations. To remove an allocation for a resource without deleting the resource,
         /// set its monitored state to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>.
         /// For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/release-pool-alloc-ipam.html">Release
-        /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>.
+        /// an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// All EC2 API actions follow an <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/query-api-troubleshooting.html#eventual-consistency">eventual
+        /// consistency</a> model.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ReleaseIpamPoolAllocation service method.</param>
         /// <param name="cancellationToken">
@@ -25746,6 +25938,34 @@ namespace Amazon.EC2
 
         #endregion
         
+        #region  ReplaceVpnTunnel
+
+
+        /// <summary>
+        /// Trigger replacement of specified VPN tunnel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceVpnTunnel service method.</param>
+        /// 
+        /// <returns>The response from the ReplaceVpnTunnel service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel">REST API Reference for ReplaceVpnTunnel Operation</seealso>
+        ReplaceVpnTunnelResponse ReplaceVpnTunnel(ReplaceVpnTunnelRequest request);
+
+
+
+        /// <summary>
+        /// Trigger replacement of specified VPN tunnel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ReplaceVpnTunnel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ReplaceVpnTunnel service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel">REST API Reference for ReplaceVpnTunnel Operation</seealso>
+        Task<ReplaceVpnTunnelResponse> ReplaceVpnTunnelAsync(ReplaceVpnTunnelRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ReportInstanceStatus
 
 
@@ -25924,13 +26144,7 @@ namespace Amazon.EC2
         /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
         /// Instances</i>.
         /// </para>
-        ///  </important> <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-        /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// 
@@ -25955,13 +26169,7 @@ namespace Amazon.EC2
         /// is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for Linux
         /// Instances</i>.
         /// </para>
-        ///  </important> <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.
-        /// </para>
-        ///  </note>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RequestSpotInstances service method.</param>
         /// <param name="cancellationToken">
@@ -26635,25 +26843,13 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// [EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default
-        /// VPC for you. If you don't have a default VPC, you must specify a subnet ID in the
-        /// request.
+        /// If you don't specify a subnet ID, we choose a default subnet from your default VPC
+        /// for you. If you don't have a default VPC, you must specify a subnet ID in the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// [EC2-Classic] If don't specify an Availability Zone, we choose one for you.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Some instance types must be launched into a VPC. If you do not have a default VPC,
-        /// or if you do not specify a subnet ID, the request fails. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-        /// types available only in a VPC</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// [EC2-VPC] All instances have a network interface with a primary private IPv4 address.
-        /// If you don't specify this address, we choose one from the IPv4 range of your subnet.
+        /// All instances have a network interface with a primary private IPv4 address. If you
+        /// don't specify this address, we choose one from the IPv4 range of your subnet.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26705,13 +26901,6 @@ namespace Amazon.EC2
         /// to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
         /// connecting to your instance</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunInstances service method.</param>
         /// 
@@ -26731,25 +26920,13 @@ namespace Amazon.EC2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// [EC2-VPC] If you don't specify a subnet ID, we choose a default subnet from your default
-        /// VPC for you. If you don't have a default VPC, you must specify a subnet ID in the
-        /// request.
+        /// If you don't specify a subnet ID, we choose a default subnet from your default VPC
+        /// for you. If you don't have a default VPC, you must specify a subnet ID in the request.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// [EC2-Classic] If don't specify an Availability Zone, we choose one for you.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Some instance types must be launched into a VPC. If you do not have a default VPC,
-        /// or if you do not specify a subnet ID, the request fails. For more information, see
-        /// <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-        /// types available only in a VPC</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// [EC2-VPC] All instances have a network interface with a primary private IPv4 address.
-        /// If you don't specify this address, we choose one from the IPv4 range of your subnet.
+        /// All instances have a network interface with a primary private IPv4 address. If you
+        /// don't specify this address, we choose one from the IPv4 range of your subnet.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -26801,13 +26978,6 @@ namespace Amazon.EC2
         /// to do if an instance immediately terminates</a>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
         /// connecting to your instance</a>.
         /// </para>
-        ///  <note> 
-        /// <para>
-        /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
-        /// </para>
-        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the RunInstances service method.</param>
         /// <param name="cancellationToken">
@@ -27649,6 +27819,70 @@ namespace Amazon.EC2
         /// <returns>The response from the UnassignPrivateIpAddresses service method, as returned by EC2.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateIpAddresses">REST API Reference for UnassignPrivateIpAddresses Operation</seealso>
         Task<UnassignPrivateIpAddressesResponse> UnassignPrivateIpAddressesAsync(UnassignPrivateIpAddressesRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UnassignPrivateNatGatewayAddress
+
+
+        /// <summary>
+        /// Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot
+        /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// While unassigning is in progress, you cannot assign/unassign additional IP addresses
+        /// while the connections are being drained. You are, however, allowed to delete the NAT
+        /// gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// A private IP address will only be released at the end of MaxDrainDurationSeconds.
+        /// The private IP addresses stay associated and support the existing connections but
+        /// do not support any new connections (new connections are distributed across the remaining
+        /// assigned private IP address). After the existing connections drain out, the private
+        /// IP addresses get released. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateNatGatewayAddress service method.</param>
+        /// 
+        /// <returns>The response from the UnassignPrivateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateNatGatewayAddress">REST API Reference for UnassignPrivateNatGatewayAddress Operation</seealso>
+        UnassignPrivateNatGatewayAddressResponse UnassignPrivateNatGatewayAddress(UnassignPrivateNatGatewayAddressRequest request);
+
+
+
+        /// <summary>
+        /// Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot
+        /// unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit
+        /// secondary IP address associations</a> in the <i>Amazon Virtual Private Cloud User
+        /// Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// While unassigning is in progress, you cannot assign/unassign additional IP addresses
+        /// while the connections are being drained. You are, however, allowed to delete the NAT
+        /// gateway.
+        /// </para>
+        ///  
+        /// <para>
+        /// A private IP address will only be released at the end of MaxDrainDurationSeconds.
+        /// The private IP addresses stay associated and support the existing connections but
+        /// do not support any new connections (new connections are distributed across the remaining
+        /// assigned private IP address). After the existing connections drain out, the private
+        /// IP addresses get released. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UnassignPrivateNatGatewayAddress service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UnassignPrivateNatGatewayAddress service method, as returned by EC2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnassignPrivateNatGatewayAddress">REST API Reference for UnassignPrivateNatGatewayAddress Operation</seealso>
+        Task<UnassignPrivateNatGatewayAddressResponse> UnassignPrivateNatGatewayAddressAsync(UnassignPrivateNatGatewayAddressRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

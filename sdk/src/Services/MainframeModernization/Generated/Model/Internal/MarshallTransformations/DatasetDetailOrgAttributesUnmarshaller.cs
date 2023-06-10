@@ -70,6 +70,18 @@ namespace Amazon.MainframeModernization.Model.Internal.MarshallTransformations
                     unmarshalledObject.Gdg = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("po", targetDepth))
+                {
+                    var unmarshaller = PoDetailAttributesUnmarshaller.Instance;
+                    unmarshalledObject.Po = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ps", targetDepth))
+                {
+                    var unmarshaller = PsDetailAttributesUnmarshaller.Instance;
+                    unmarshalledObject.Ps = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("vsam", targetDepth))
                 {
                     var unmarshaller = VsamDetailAttributesUnmarshaller.Instance;

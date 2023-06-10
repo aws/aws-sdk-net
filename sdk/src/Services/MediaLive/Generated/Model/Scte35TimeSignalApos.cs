@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaLive.Model
 {
     /// <summary>
-    /// Scte35 Time Signal Apos
+    /// Atypical configuration that applies segment breaks only on SCTE-35 time signal placement
+    /// opportunities and breaks.
     /// </summary>
     public partial class Scte35TimeSignalApos
     {

@@ -35,6 +35,7 @@ namespace Amazon.AlexaForBusiness.Model
     {
         private CreateEndOfMeetingReminder _endOfMeetingReminder;
         private CreateInstantBooking _instantBooking;
+        private CreateProactiveJoin _proactiveJoin;
         private CreateRequireCheckIn _requireCheckIn;
         private bool? _roomUtilizationMetricsEnabled;
 
@@ -70,6 +71,21 @@ namespace Amazon.AlexaForBusiness.Model
         internal bool IsSetInstantBooking()
         {
             return this._instantBooking != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProactiveJoin.
+        /// </summary>
+        public CreateProactiveJoin ProactiveJoin
+        {
+            get { return this._proactiveJoin; }
+            set { this._proactiveJoin = value; }
+        }
+
+        // Check to see if ProactiveJoin property is set
+        internal bool IsSetProactiveJoin()
+        {
+            return this._proactiveJoin != null;
         }
 
         /// <summary>

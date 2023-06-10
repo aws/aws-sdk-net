@@ -25,6 +25,7 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Omics.Model
 {
@@ -36,6 +37,7 @@ namespace Amazon.Omics.Model
     {
         private string _clientToken;
         private string _description;
+        private string _fallbackLocation;
         private string _name;
         private SseConfig _sseConfig;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -77,6 +79,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FallbackLocation. 
+        /// <para>
+        ///  An S3 location that is used to store files that have failed a direct upload. 
+        /// </para>
+        /// </summary>
+        public string FallbackLocation
+        {
+            get { return this._fallbackLocation; }
+            set { this._fallbackLocation = value; }
+        }
+
+        // Check to see if FallbackLocation property is set
+        internal bool IsSetFallbackLocation()
+        {
+            return this._fallbackLocation != null;
         }
 
         /// <summary>
@@ -134,5 +154,13 @@ namespace Amazon.Omics.Model
             return this._tags != null && this._tags.Count > 0; 
         }
 
+        /// <summary>
+        /// Get the signer to use for this request.
+        /// </summary>
+        /// <returns>A signer for this request.</returns>
+        override protected AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
     }
 }

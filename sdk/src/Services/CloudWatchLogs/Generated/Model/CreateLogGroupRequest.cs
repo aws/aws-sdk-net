@@ -65,8 +65,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// If you attempt to associate a KMS key with the log group but the KMS keydoes not exist
-    /// or the KMS key is disabled, you receive an <code>InvalidParameterException</code>
+    /// If you attempt to associate a KMS key with the log group but the KMS key does not
+    /// exist or the KMS key is disabled, you receive an <code>InvalidParameterException</code>
     /// error. 
     /// </para>
     ///  <important> 

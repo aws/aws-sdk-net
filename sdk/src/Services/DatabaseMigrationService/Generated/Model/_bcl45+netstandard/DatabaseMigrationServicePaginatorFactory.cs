@@ -156,6 +156,22 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeRecommendationLimitations operation
+        ///</summary>
+        public IDescribeRecommendationLimitationsPaginator DescribeRecommendationLimitations(DescribeRecommendationLimitationsRequest request) 
+        {
+            return new DescribeRecommendationLimitationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRecommendations operation
+        ///</summary>
+        public IDescribeRecommendationsPaginator DescribeRecommendations(DescribeRecommendationsRequest request) 
+        {
+            return new DescribeRecommendationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeReplicationInstances operation
         ///</summary>
         public IDescribeReplicationInstancesPaginator DescribeReplicationInstances(DescribeReplicationInstancesRequest request) 

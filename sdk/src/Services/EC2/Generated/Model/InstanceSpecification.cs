@@ -85,6 +85,7 @@ namespace Amazon.EC2.Model
         /// The instance to specify which volumes should be snapshotted.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string InstanceId
         {
             get { return this._instanceId; }

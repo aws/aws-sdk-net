@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.CloudTrail.Model
 {
     /// <summary>
-    /// Cannot set a CloudWatch Logs delivery for this region.
+    /// Cannot set a CloudWatch Logs delivery for this Region.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

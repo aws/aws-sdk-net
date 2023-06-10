@@ -80,6 +80,10 @@ namespace Amazon.Outposts.Internal
                 {
                     if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
                     {
+                        if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
+                        {
+                            return new Endpoint(Interpolate(@"https://outposts.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
                         return new Endpoint(Interpolate(@"https://outposts-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
@@ -91,6 +95,14 @@ namespace Amazon.Outposts.Internal
                         return new Endpoint(Interpolate(@"https://outposts.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                     }
                     throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                }
+                if (Equals(refs["Region"], "us-gov-east-1"))
+                {
+                    return new Endpoint("https://outposts.us-gov-east-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                }
+                if (Equals(refs["Region"], "us-gov-west-1"))
+                {
+                    return new Endpoint("https://outposts.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
                 }
                 return new Endpoint(Interpolate(@"https://outposts.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }

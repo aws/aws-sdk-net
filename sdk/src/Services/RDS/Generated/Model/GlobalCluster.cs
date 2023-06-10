@@ -178,8 +178,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterMembers. 
         /// <para>
-        /// The list of cluster IDs for secondary clusters within the global database cluster.
-        /// Currently limited to 1 item.
+        /// The list of primary and secondary clusters within the global database cluster.
         /// </para>
         /// </summary>
         public List<GlobalClusterMember> GlobalClusterMembers

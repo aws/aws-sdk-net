@@ -74,6 +74,11 @@ namespace Amazon.Lambda.Model
         /// A list of compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">function
         /// runtimes</a>. Used for filtering with <a>ListLayers</a> and <a>ListLayerVersions</a>.
         /// </para>
+        ///  
+        /// <para>
+        /// The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+        /// deprecation policy</a>.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=15)]
         public List<string> CompatibleRuntimes

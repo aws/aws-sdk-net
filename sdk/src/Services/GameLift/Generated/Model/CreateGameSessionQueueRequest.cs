@@ -37,8 +37,8 @@ namespace Amazon.GameLift.Model
     /// 
     ///  
     /// <para>
-    /// A game session queue is configured with a set of destinations (GameLift fleets or
-    /// aliases), which determine the locations where the queue can place new game sessions.
+    /// A game session queue is configured with a set of destinations (Amazon GameLift fleets
+    /// or aliases), which determine the locations where the queue can place new game sessions.
     /// These destinations can span multiple fleet types (Spot and On-Demand), instance types,
     /// and Amazon Web Services Regions. If the queue includes multi-location fleets, the
     /// queue is able to place game sessions in all of a fleet's remote locations. You can
@@ -277,7 +277,7 @@ namespace Amazon.GameLift.Model
         /// <para>
         /// The maximum time, in seconds, that a new game session placement request remains in
         /// the queue. When a request exceeds this time, the game session placement changes to
-        /// a <code>TIMED_OUT</code> status.
+        /// a <code>TIMED_OUT</code> status. By default, this property is set to <code>600</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0)]

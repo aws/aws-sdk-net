@@ -43,7 +43,7 @@ namespace Amazon.Finspace.Model
         /// The email address of the superuser.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string EmailAddress
         {
             get { return this._emailAddress; }

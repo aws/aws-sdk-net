@@ -99,6 +99,18 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                     response.Region = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("streamsKmsKey", targetDepth))
+                {
+                    var unmarshaller = KmsKeyUnmarshaller.Instance;
+                    response.StreamsKmsKey = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("streamsKmsRole", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.StreamsKmsRole = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("tags", targetDepth))
                 {
                     var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);

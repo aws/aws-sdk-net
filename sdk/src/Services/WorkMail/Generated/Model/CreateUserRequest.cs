@@ -104,7 +104,7 @@ namespace Amazon.WorkMail.Model
         /// The password for the new user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Max=256)]
         public string Password
         {
             get { return this._password; }

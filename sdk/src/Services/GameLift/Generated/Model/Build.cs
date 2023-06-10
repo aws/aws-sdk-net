@@ -53,8 +53,8 @@ namespace Amazon.GameLift.Model
         /// Gets and sets the property BuildArn. 
         /// <para>
         /// The Amazon Resource Name (<a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-        /// assigned to a GameLift build resource and uniquely identifies it. ARNs are unique
-        /// across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
+        /// assigned to a Amazon GameLift build resource and uniquely identifies it. ARNs are
+        /// unique across all Regions. Format is <code>arn:aws:gamelift:&lt;region&gt;::build/build-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
         /// In a GameLift build ARN, the resource ID matches the <i>BuildId</i> value.
         /// </para>
         /// </summary>
@@ -110,7 +110,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A descriptive label associated with a build. Build names do not need to be unique.
+        /// A descriptive label associated with a build. Build names don't need to be unique.
         /// It can be set using <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">CreateBuild</a>
         /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/UpdateBuild">UpdateBuild</a>.
         /// </para>
@@ -149,7 +149,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ServerSdkVersion. 
         /// <para>
-        /// The GameLift Server SDK version used to develop your game server.
+        /// The Amazon GameLift Server SDK version used to develop your game server.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -228,7 +228,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version information associated with a build or script. Version strings do not need
+        /// Version information associated with a build or script. Version strings don't need
         /// to be unique.
         /// </para>
         /// </summary>

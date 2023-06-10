@@ -63,7 +63,7 @@ namespace Amazon.Chime.Model
         /// The bot display name.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string DisplayName
         {
             get { return this._displayName; }

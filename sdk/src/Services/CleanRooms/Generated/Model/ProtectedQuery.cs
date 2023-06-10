@@ -181,7 +181,7 @@ namespace Amazon.CleanRooms.Model
         /// The protected query SQL parameters.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ProtectedQuerySQLParameters SqlParameters
         {
             get { return this._sqlParameters; }

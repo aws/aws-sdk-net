@@ -421,7 +421,8 @@
         "de-AT",
         "yue-CN",
         "ar-AE",
-        "fi-FI"
+        "fi-FI",
+        "en-IE"
       ]
     },
     "LanguageCodeList":{
@@ -1097,7 +1098,13 @@
         "Sergio",
         "Remi",
         "Adriano",
-        "Thiago"
+        "Thiago",
+        "Ruth",
+        "Stephen",
+        "Kazuha",
+        "Tomoko",
+        "Niamh",
+        "Sofie"
       ]
     },
     "VoiceList":{

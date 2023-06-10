@@ -83,9 +83,8 @@ namespace Amazon.ECS.Model
         /// </para>
         ///  
         /// <para>
-        /// If this parameter isn't specified, the default value of <code>discoveryName.namespace</code>
-        /// is used. If the <code>discoveryName</code> isn't specified, the port mapping name
-        /// from the task definition is used in <code>portName.namespace</code>.
+        /// If the <code>discoveryName</code> isn't specified, the port mapping name from the
+        /// task definition is used in <code>portName.namespace</code>.
         /// </para>
         /// </summary>
         public string DiscoveryName

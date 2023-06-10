@@ -219,7 +219,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=512)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=512)]
         public string Username
         {
             get { return this._username; }

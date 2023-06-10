@@ -43,7 +43,7 @@ namespace Amazon.NimbleStudio.Model
         /// The folder path in Linux workstations where files are uploaded.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Linux
         {
             get { return this._linux; }
@@ -62,7 +62,7 @@ namespace Amazon.NimbleStudio.Model
         /// The folder path in Windows workstations where files are uploaded.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Windows
         {
             get { return this._windows; }

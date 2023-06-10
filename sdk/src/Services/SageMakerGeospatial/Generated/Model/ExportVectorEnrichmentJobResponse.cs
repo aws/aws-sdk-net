@@ -84,7 +84,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// in OutputConfig.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }

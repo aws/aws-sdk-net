@@ -62,6 +62,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetScopes())
+            {
+                context.Writer.WritePropertyName("Scopes");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectScopesListValue in requestObject.Scopes)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PivotTableConditionalFormattingScopeMarshaller.Instance;
+                    marshaller.Marshall(requestObjectScopesListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetTextFormat())
             {
                 context.Writer.WritePropertyName("TextFormat");

@@ -45,6 +45,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(MapConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPoliticalView())
+            {
+                context.Writer.WritePropertyName("PoliticalView");
+                context.Writer.Write(requestObject.PoliticalView);
+            }
+
             if(requestObject.IsSetStyle())
             {
                 context.Writer.WritePropertyName("Style");

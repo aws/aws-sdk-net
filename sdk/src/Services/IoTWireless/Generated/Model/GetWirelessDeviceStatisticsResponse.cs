@@ -43,6 +43,11 @@ namespace Amazon.IoTWireless.Model
         /// <para>
         /// The date and time when the most recent uplink was received.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// This value is only valid for 3 months.
+        /// </para>
+        ///  </note>
         /// </summary>
         public string LastUplinkReceivedAt
         {

@@ -38,9 +38,10 @@ namespace Amazon.WellArchitected.Model
     /// </para>
     ///  
     /// <para>
-    /// After a lens has been imported, create a new lens version to publish it. The owner
-    /// of a lens can share the lens with other Amazon Web Services accounts and IAM users
-    /// in the same Amazon Web Services Region. Only the owner of a lens can delete it. 
+    /// Use this operation to publish a new lens version after you have imported a lens. The
+    /// <code>LensAlias</code> is used to identify the lens to be published. The owner of
+    /// a lens can share the lens with other Amazon Web Services accounts and users in the
+    /// same Amazon Web Services Region. Only the owner of a lens can delete it. 
     /// </para>
     /// </summary>
     public partial class CreateLensVersionRequest : AmazonWellArchitectedRequest

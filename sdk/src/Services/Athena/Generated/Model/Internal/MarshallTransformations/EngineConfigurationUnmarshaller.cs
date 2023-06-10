@@ -88,6 +88,12 @@ namespace Amazon.Athena.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxConcurrentDpus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SparkProperties", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.SparkProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

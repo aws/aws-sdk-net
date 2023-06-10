@@ -33,84 +33,25 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class CreateSubscriberResponse : AmazonWebServiceResponse
     {
-        private string _roleArn;
-        private string _s3BucketArn;
-        private string _snsArn;
-        private string _subscriptionId;
+        private SubscriberResource _subscriber;
 
         /// <summary>
-        /// Gets and sets the property RoleArn. 
+        /// Gets and sets the property Subscriber. 
         /// <para>
-        /// The Amazon Resource Name (ARN) created by you to provide to the subscriber. For more
-        /// information about ARNs and how to use them in policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
-        /// identifiers in the Identity and Access Management (IAM) User Guide</a>. .
+        /// Retrieve information about the subscriber created using the <code>CreateSubscriber</code>
+        /// API.
         /// </para>
         /// </summary>
-        public string RoleArn
+        public SubscriberResource Subscriber
         {
-            get { return this._roleArn; }
-            set { this._roleArn = value; }
+            get { return this._subscriber; }
+            set { this._subscriber = value; }
         }
 
-        // Check to see if RoleArn property is set
-        internal bool IsSetRoleArn()
+        // Check to see if Subscriber property is set
+        internal bool IsSetSubscriber()
         {
-            return this._roleArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property S3BucketArn. 
-        /// <para>
-        /// The ARN for the Amazon S3 bucket. 
-        /// </para>
-        /// </summary>
-        public string S3BucketArn
-        {
-            get { return this._s3BucketArn; }
-            set { this._s3BucketArn = value; }
-        }
-
-        // Check to see if S3BucketArn property is set
-        internal bool IsSetS3BucketArn()
-        {
-            return this._s3BucketArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SnsArn. 
-        /// <para>
-        /// The ARN for the Amazon Simple Notification Service.
-        /// </para>
-        /// </summary>
-        public string SnsArn
-        {
-            get { return this._snsArn; }
-            set { this._snsArn = value; }
-        }
-
-        // Check to see if SnsArn property is set
-        internal bool IsSetSnsArn()
-        {
-            return this._snsArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubscriptionId. 
-        /// <para>
-        /// The <code>subscriptionId</code> created by the <code>CreateSubscriber</code> API call.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string SubscriptionId
-        {
-            get { return this._subscriptionId; }
-            set { this._subscriptionId = value; }
-        }
-
-        // Check to see if SubscriptionId property is set
-        internal bool IsSetSubscriptionId()
-        {
-            return this._subscriptionId != null;
+            return this._subscriber != null;
         }
 
     }

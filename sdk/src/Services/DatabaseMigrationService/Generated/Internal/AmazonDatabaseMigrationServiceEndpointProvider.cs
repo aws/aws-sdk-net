@@ -52,74 +52,62 @@ namespace Amazon.DatabaseMigrationService.Internal
                 ["UseFIPS"] = parameters["UseFIPS"],
                 ["Endpoint"] = parameters["Endpoint"],
             };
-            if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+            if (IsSet(refs["Endpoint"]))
             {
-                if (IsSet(refs["Endpoint"]) && (refs["url"] = ParseURL((string)refs["Endpoint"])) != null)
-                {
-                    if (Equals(refs["UseFIPS"], true))
-                    {
-                        throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
-                    }
-                    if (Equals(refs["UseDualStack"], true))
-                    {
-                        throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
-                    }
-                    return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                }
-                if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
-                {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                    {
-                        return new Endpoint(Interpolate(@"https://dms-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
-                }
                 if (Equals(refs["UseFIPS"], true))
                 {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
-                    {
-                        if (Equals(refs["Region"], "dms"))
-                        {
-                            return new Endpoint("https://dms-fips.us-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        if (Equals(refs["Region"], "dms"))
-                        {
-                            return new Endpoint("https://dms.us-gov-west-1.amazonaws.com", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
-                        {
-                            return new Endpoint(Interpolate(@"https://dms.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        if (Equals(refs["Region"], "dms"))
-                        {
-                            return new Endpoint("https://dms.us-iso-east-1.c2s.ic.gov", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        if (Equals("aws-iso", GetAttr(refs["PartitionResult"], "name")))
-                        {
-                            return new Endpoint(Interpolate(@"https://dms.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        if (Equals(refs["Region"], "dms"))
-                        {
-                            return new Endpoint("https://dms.us-isob-east-1.sc2s.sgov.gov", InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        if (Equals("aws-iso-b", GetAttr(refs["PartitionResult"], "name")))
-                        {
-                            return new Endpoint(Interpolate(@"https://dms.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                        }
-                        return new Endpoint(Interpolate(@"https://dms-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    throw new AmazonClientException("Invalid Configuration: FIPS and custom endpoint are not supported");
                 }
                 if (Equals(refs["UseDualStack"], true))
                 {
-                    if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
-                    {
-                        return new Endpoint(Interpolate(@"https://dms.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
-                    }
-                    throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    throw new AmazonClientException("Invalid Configuration: Dualstack and custom endpoint are not supported");
                 }
-                return new Endpoint(Interpolate(@"https://dms.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                return new Endpoint((string)refs["Endpoint"], InterpolateJson(@"", refs), InterpolateJson(@"", refs));
             }
+            if (IsSet(refs["Region"]))
+            {
+                if ((refs["PartitionResult"] = Partition((string)refs["Region"])) != null)
+                {
+                    if (Equals(refs["UseFIPS"], true) && Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")) && Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://dms-fips.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS and DualStack are enabled, but this partition does not support one or both");
+                    }
+                    if (Equals(refs["UseFIPS"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsFIPS")))
+                        {
+                            if (Equals("aws-us-gov", GetAttr(refs["PartitionResult"], "name")))
+                            {
+                                return new Endpoint(Interpolate(@"https://dms.{Region}.amazonaws.com", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (Equals("aws-iso", GetAttr(refs["PartitionResult"], "name")))
+                            {
+                                return new Endpoint(Interpolate(@"https://dms.{Region}.c2s.ic.gov", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            if (Equals("aws-iso-b", GetAttr(refs["PartitionResult"], "name")))
+                            {
+                                return new Endpoint(Interpolate(@"https://dms.{Region}.sc2s.sgov.gov", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                            }
+                            return new Endpoint(Interpolate(@"https://dms-fips.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("FIPS is enabled but this partition does not support FIPS");
+                    }
+                    if (Equals(refs["UseDualStack"], true))
+                    {
+                        if (Equals(true, GetAttr(refs["PartitionResult"], "supportsDualStack")))
+                        {
+                            return new Endpoint(Interpolate(@"https://dms.{Region}.{PartitionResult#dualStackDnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                        }
+                        throw new AmazonClientException("DualStack is enabled but this partition does not support DualStack");
+                    }
+                    return new Endpoint(Interpolate(@"https://dms.{Region}.{PartitionResult#dnsSuffix}", refs), InterpolateJson(@"", refs), InterpolateJson(@"", refs));
+                }
+            }
+            throw new AmazonClientException("Invalid Configuration: Missing Region");
 
             throw new AmazonClientException("Cannot resolve endpoint");
         }

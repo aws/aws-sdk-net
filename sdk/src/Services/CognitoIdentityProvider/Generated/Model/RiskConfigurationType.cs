@@ -65,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The app client ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }

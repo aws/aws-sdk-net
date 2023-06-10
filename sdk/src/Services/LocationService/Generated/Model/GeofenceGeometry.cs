@@ -54,6 +54,7 @@ namespace Amazon.LocationService.Model
         /// A circle on the earth, as defined by a center point and a radius.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Circle Circle
         {
             get { return this._circle; }

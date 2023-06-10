@@ -37,6 +37,7 @@ namespace Amazon.DynamoDBv2.Model
         private List<AttributeDefinition> _attributeDefinitions = new List<AttributeDefinition>();
         private BillingModeSummary _billingModeSummary;
         private DateTime? _creationDateTime;
+        private bool? _deletionProtectionEnabled;
         private List<GlobalSecondaryIndexDescription> _globalSecondaryIndexes = new List<GlobalSecondaryIndexDescription>();
         private string _globalTableVersion;
         private long? _itemCount;
@@ -146,6 +147,25 @@ namespace Amazon.DynamoDBv2.Model
         internal bool IsSetCreationDateTime()
         {
             return this._creationDateTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeletionProtectionEnabled. 
+        /// <para>
+        /// Indicates whether deletion protection is enabled (true) or disabled (false) on the
+        /// table.
+        /// </para>
+        /// </summary>
+        public bool DeletionProtectionEnabled
+        {
+            get { return this._deletionProtectionEnabled.GetValueOrDefault(); }
+            set { this._deletionProtectionEnabled = value; }
+        }
+
+        // Check to see if DeletionProtectionEnabled property is set
+        internal bool IsSetDeletionProtectionEnabled()
+        {
+            return this._deletionProtectionEnabled.HasValue; 
         }
 
         /// <summary>

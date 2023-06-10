@@ -55,11 +55,39 @@ namespace Amazon.DNXCore.IntegrationTests
             }
         }
 
-        public async static Task<string> CreateBucketAsync(IAmazonS3 s3Client, string testName)
+        public async static Task<string> CreateBucketAsync(IAmazonS3 s3Client, string testName, bool setPublicACLs = false)
         {
             string bucketName = string.Format("{0}-{1}-{2}", UtilityMethods.SDK_TEST_PREFIX, testName, DateTime.Now.Ticks).ToLower().Replace('_','-');
             await s3Client.PutBucketAsync(new PutBucketRequest { BucketName = bucketName }).ConfigureAwait(false);
+            if (setPublicACLs)
+            {
+                await SetPublicBucketACLs(s3Client, bucketName);
+            }
             return bucketName;
+        }
+
+        private static async Task SetPublicBucketACLs(IAmazonS3 client, string bucketName)
+        {
+            await client.PutBucketOwnershipControlsAsync(new PutBucketOwnershipControlsRequest
+            {
+                BucketName = bucketName,
+                OwnershipControls = new OwnershipControls
+                {
+                    Rules = new List<OwnershipControlsRule>
+                         {
+                             new OwnershipControlsRule{ObjectOwnership = ObjectOwnership.BucketOwnerPreferred}
+                         }
+                }
+            });
+
+            await client.PutPublicAccessBlockAsync(new PutPublicAccessBlockRequest
+            {
+                BucketName = bucketName,
+                PublicAccessBlockConfiguration = new PublicAccessBlockConfiguration
+                {
+                    BlockPublicAcls = false
+                }
+            });
         }
 
         public static string GenerateName()

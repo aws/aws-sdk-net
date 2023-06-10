@@ -35,6 +35,8 @@ namespace Amazon.Appflow.Model
     {
         private string _accessToken;
         private string _clientCredentialsArn;
+        private string _jwtToken;
+        private OAuth2GrantType _oAuth2GrantType;
         private ConnectorOAuthRequest _oAuthRequest;
         private string _refreshToken;
 
@@ -44,7 +46,7 @@ namespace Amazon.Appflow.Model
         ///  The credentials used to access protected Salesforce resources. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Sensitive=true, Max=4096)]
         public string AccessToken
         {
             get { return this._accessToken; }
@@ -64,7 +66,7 @@ namespace Amazon.Appflow.Model
         /// app. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=20, Max=2048)]
         public string ClientCredentialsArn
         {
             get { return this._clientCredentialsArn; }
@@ -75,6 +77,69 @@ namespace Amazon.Appflow.Model
         internal bool IsSetClientCredentialsArn()
         {
             return this._clientCredentialsArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property JwtToken. 
+        /// <para>
+        /// A JSON web token (JWT) that authorizes Amazon AppFlow to access your Salesforce records.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Max=8000)]
+        public string JwtToken
+        {
+            get { return this._jwtToken; }
+            set { this._jwtToken = value; }
+        }
+
+        // Check to see if JwtToken property is set
+        internal bool IsSetJwtToken()
+        {
+            return this._jwtToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OAuth2GrantType. 
+        /// <para>
+        /// Specifies the OAuth 2.0 grant type that Amazon AppFlow uses when it requests an access
+        /// token from Salesforce. Amazon AppFlow requires an access token each time it attempts
+        /// to access your Salesforce records.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can specify one of the following values:
+        /// </para>
+        ///  <dl> <dt>AUTHORIZATION_CODE</dt> <dd> 
+        /// <para>
+        /// Amazon AppFlow passes an authorization code when it requests the access token from
+        /// Salesforce. Amazon AppFlow receives the authorization code from Salesforce after you
+        /// log in to your Salesforce account and authorize Amazon AppFlow to access your records.
+        /// </para>
+        ///  </dd> <dt>CLIENT_CREDENTIALS</dt> <dd> 
+        /// <para>
+        /// Amazon AppFlow passes client credentials (a client ID and client secret) when it requests
+        /// the access token from Salesforce. You provide these credentials to Amazon AppFlow
+        /// when you define the connection to your Salesforce account.
+        /// </para>
+        ///  </dd> <dt>JWT_BEARER</dt> <dd> 
+        /// <para>
+        /// Amazon AppFlow passes a JSON web token (JWT) when it requests the access token from
+        /// Salesforce. You provide the JWT to Amazon AppFlow when you define the connection to
+        /// your Salesforce account. When you use this grant type, you don't need to log in to
+        /// your Salesforce account to authorize Amazon AppFlow to access your records.
+        /// </para>
+        ///  </dd> </dl>
+        /// </summary>
+        public OAuth2GrantType OAuth2GrantType
+        {
+            get { return this._oAuth2GrantType; }
+            set { this._oAuth2GrantType = value; }
+        }
+
+        // Check to see if OAuth2GrantType property is set
+        internal bool IsSetOAuth2GrantType()
+        {
+            return this._oAuth2GrantType != null;
         }
 
         /// <summary>
@@ -102,7 +167,7 @@ namespace Amazon.Appflow.Model
         ///  The credentials used to acquire new access tokens. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Max=4096)]
         public string RefreshToken
         {
             get { return this._refreshToken; }

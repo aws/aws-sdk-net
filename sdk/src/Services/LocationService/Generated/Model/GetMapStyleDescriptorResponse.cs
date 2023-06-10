@@ -34,6 +34,7 @@ namespace Amazon.LocationService.Model
     public partial class GetMapStyleDescriptorResponse : AmazonWebServiceResponse
     {
         private MemoryStream _blob;
+        private string _cacheControl;
         private string _contentType;
 
         /// <summary>
@@ -52,6 +53,24 @@ namespace Amazon.LocationService.Model
         internal bool IsSetBlob()
         {
             return this._blob != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CacheControl. 
+        /// <para>
+        /// The HTTP Cache-Control directive for the value.
+        /// </para>
+        /// </summary>
+        public string CacheControl
+        {
+            get { return this._cacheControl; }
+            set { this._cacheControl = value; }
+        }
+
+        // Check to see if CacheControl property is set
+        internal bool IsSetCacheControl()
+        {
+            return this._cacheControl != null;
         }
 
         /// <summary>

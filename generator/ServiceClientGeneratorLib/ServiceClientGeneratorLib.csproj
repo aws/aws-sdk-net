@@ -1,13 +1,14 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net45</TargetFramework>
+    <TargetFrameworks Condition="'$(OS)' == 'Windows_NT'">netstandard2.0;net45</TargetFrameworks>
+    <TargetFramework Condition="'$(OS)' != 'Windows_NT'">netstandard2.0</TargetFramework>
     <DebugType>portable</DebugType>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <RootNamespace>ServiceClientGenerator</RootNamespace>
     <AssemblyName>ServiceClientGeneratorLib</AssemblyName>
     <PackageId>ServiceClientGeneratorLib</PackageId>
     <RootNamespace>ServiceClientGenerator</RootNamespace>
-    
+
     <GenerateAssemblyTitleAttribute>false</GenerateAssemblyTitleAttribute>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
     <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
@@ -18,7 +19,7 @@
     <GenerateAssemblyDescriptionAttribute>false</GenerateAssemblyDescriptionAttribute>
 
     <NoWarn>CS1591;CS1572;CS1573;CS1570;CS0109;CS0252</NoWarn>
-  </PropertyGroup>  
+  </PropertyGroup> 
   <ItemGroup>
     <Compile Update="Generators\CodeAnalysis\CodeAnalysisAssemblyInfo.cs">
       <AutoGen>True</AutoGen>
@@ -164,6 +165,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EndpointsGenerator.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Generators\SourceFiles\Exceptions\EventStreamExceptions.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EventStreamExceptions.tt</DependentUpon>
     </Compile>
     <Compile Update="Generators\SourceFiles\InternalSDKUtils.cs">
       <AutoGen>True</AutoGen>
@@ -490,6 +496,14 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>DefaultConfigurationModeGenerator.cs</LastGenOutput>
     </None>
+    <None Update="Generators\SourceFiles\EventStreamInterfaces.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EventStreamInterfaces.cs</LastGenOutput>
+    </None>
+    <None Update="Generators\SourceFiles\Exceptions\EventStreamExceptions.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EventStreamExceptions.cs</LastGenOutput>
+    </None>
     <None Update="Generators\SourceFiles\InternalSDKUtils.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>InternalSDKUtils.cs</LastGenOutput>
@@ -727,11 +741,9 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="HtmlAgilityPack" Version="1.4.9" />
-    <PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
-    <PackageReference Include="ReverseMarkdown" Version="0.1.12" />
+	<PackageReference Include="Microsoft.CSharp" Version="4.4.1" />
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="mscorlib" />
+  <ItemGroup Condition="'$(TargetFramework)' == 'netstandard2.0'">
+	<PackageReference Include="System.CodeDom" Version="6.0.0" />
   </ItemGroup>
 </Project>

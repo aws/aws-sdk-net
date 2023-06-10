@@ -62,7 +62,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// allowed: 1-50.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

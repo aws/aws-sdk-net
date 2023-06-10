@@ -65,7 +65,7 @@ namespace Amazon.VoiceID.Model
         /// The client-provided identifier for the speaker.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string CustomerSpeakerId
         {
             get { return this._customerSpeakerId; }

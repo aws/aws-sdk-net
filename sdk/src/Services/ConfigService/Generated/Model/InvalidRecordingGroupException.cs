@@ -29,8 +29,38 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ConfigService.Model
 {
     /// <summary>
-    /// Config throws an exception if the recording group does not contain a valid list of
-    /// resource types. Invalid values might also be incorrectly formatted.
+    /// Indicates one of the following errors:
+    /// 
+    ///  <ul> <li> 
+    /// <para>
+    /// You have provided a combination of parameter values that is not valid. For example:
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+    /// to <code>true</code>, but providing a non-empty list for the <code>resourceTypes</code>field
+    /// of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// Setting the <code>allSupported</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingGroup.html">RecordingGroup</a>
+    /// to <code>true</code>, but also setting the <code>useOnly</code> field of <a href="https://docs.aws.amazon.com/config/latest/APIReference/API_RecordingStrategy.html">RecordingStrategy</a>
+    /// to <code>EXCLUSION_BY_RESOURCE_TYPES</code>.
+    /// </para>
+    ///  </li> </ul> </li> <li> 
+    /// <para>
+    /// Every parameter is either null, false, or empty.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You have reached the limit of the number of resource types you can provide for the
+    /// recording group.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// You have provided resource types or a recording strategy that are not valid.
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

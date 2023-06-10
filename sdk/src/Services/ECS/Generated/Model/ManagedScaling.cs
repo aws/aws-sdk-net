@@ -33,7 +33,7 @@ namespace Amazon.ECS.Model
     /// 
     ///  
     /// <para>
-    /// When managed scaling is enabled, Amazon ECS manages the scale-in and scale-out actions
+    /// When managed scaling is turned on, Amazon ECS manages the scale-in and scale-out actions
     /// of the Auto Scaling group. Amazon ECS manages a target tracking scaling policy using
     /// an Amazon ECS managed CloudWatch metric with the specified <code>targetCapacity</code>
     /// value as the target value for the metric. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/asg-capacity-providers.html#asg-capacity-providers-managed-scaling">Using
@@ -41,8 +41,7 @@ namespace Amazon.ECS.Model
     /// </para>
     ///  
     /// <para>
-    /// If managed scaling is disabled, the user must manage the scaling of the Auto Scaling
-    /// group.
+    /// If managed scaling is off, the user must manage the scaling of the Auto Scaling group.
     /// </para>
     /// </summary>
     public partial class ManagedScaling
@@ -149,9 +148,12 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property TargetCapacity. 
         /// <para>
-        /// The target capacity value for the capacity provider. The specified value must be greater
-        /// than <code>0</code> and less than or equal to <code>100</code>. A value of <code>100</code>
-        /// results in the Amazon EC2 instances in your Auto Scaling group being completely used.
+        /// The target capacity utilization as a percentage for the capacity provider. The specified
+        /// value must be greater than <code>0</code> and less than or equal to <code>100</code>.
+        /// For example, if you want the capacity provider to maintain 10% spare capacity, then
+        /// that means the utilization is 90%, so use a <code>targetCapacity</code> of <code>90</code>.
+        /// The default value of <code>100</code> percent results in the Amazon EC2 instances
+        /// in your Auto Scaling group being completely used.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]

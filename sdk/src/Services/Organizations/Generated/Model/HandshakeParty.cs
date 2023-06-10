@@ -47,7 +47,7 @@ namespace Amazon.Organizations.Model
         /// requires "h-" followed by from 8 to 32 lowercase letters or digits.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=64)]
         public string Id
         {
             get { return this._id; }

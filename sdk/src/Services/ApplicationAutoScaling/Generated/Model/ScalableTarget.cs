@@ -39,6 +39,7 @@ namespace Amazon.ApplicationAutoScaling.Model
         private string _resourceId;
         private string _roleARN;
         private ScalableDimension _scalableDimension;
+        private string _scalableTargetARN;
         private ServiceNamespace _serviceNamespace;
         private SuspendedState _suspendedState;
 
@@ -190,6 +191,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         /// Neptune cluster - The resource type is <code>cluster</code> and the unique identifier
         /// is the cluster name. Example: <code>cluster:mycluster</code>.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// SageMaker Serverless endpoint - The resource type is <code>variant</code> and the
+        /// unique identifier is the resource ID. Example: <code>endpoint/my-end-point/variant/KMeansClustering</code>.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1600)]
@@ -331,6 +337,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         ///  <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
         /// Amazon Neptune DB cluster.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned concurrency
+        /// for a SageMaker Serverless endpoint.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -344,6 +355,24 @@ namespace Amazon.ApplicationAutoScaling.Model
         internal bool IsSetScalableDimension()
         {
             return this._scalableDimension != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScalableTargetARN. 
+        /// <para>
+        /// The ARN of the scalable target.
+        /// </para>
+        /// </summary>
+        public string ScalableTargetARN
+        {
+            get { return this._scalableTargetARN; }
+            set { this._scalableTargetARN = value; }
+        }
+
+        // Check to see if ScalableTargetARN property is set
+        internal bool IsSetScalableTargetARN()
+        {
+            return this._scalableTargetARN != null;
         }
 
         /// <summary>
@@ -367,7 +396,11 @@ namespace Amazon.ApplicationAutoScaling.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SuspendedState.
+        /// Gets and sets the property SuspendedState. 
+        /// <para>
+        /// Specifies whether the scaling activities for a scalable target are in a suspended
+        /// state.
+        /// </para>
         /// </summary>
         public SuspendedState SuspendedState
         {

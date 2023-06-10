@@ -67,8 +67,8 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// To perform a <code>PutSubscriptionFilter</code> operation, you must also have the
-    /// <code>iam:PassRole</code> permission.
+    /// To perform a <code>PutSubscriptionFilter</code> operation for any destination except
+    /// a Lambda function, you must also have the <code>iam:PassRole</code> permission.
     /// </para>
     /// </summary>
     public partial class PutSubscriptionFilterRequest : AmazonCloudWatchLogsRequest

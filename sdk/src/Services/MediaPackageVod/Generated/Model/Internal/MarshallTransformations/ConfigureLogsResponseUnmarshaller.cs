@@ -63,6 +63,12 @@ namespace Amazon.MediaPackageVod.Model.Internal.MarshallTransformations
                     response.Authorization = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("createdAt", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.CreatedAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("domainName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

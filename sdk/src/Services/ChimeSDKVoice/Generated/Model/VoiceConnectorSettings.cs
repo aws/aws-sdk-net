@@ -29,14 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The Amazon Chime SDK Voice Connector settings. Includes any Amazon S3 buckets designated
+    /// for storing call detail records.
     /// </summary>
     public partial class VoiceConnectorSettings
     {
         private string _cdrBucket;
 
         /// <summary>
-        /// Gets and sets the property CdrBucket.
+        /// Gets and sets the property CdrBucket. 
+        /// <para>
+        /// The S3 bucket that stores the Voice Connector's call detail records.
+        /// </para>
         /// </summary>
         public string CdrBucket
         {

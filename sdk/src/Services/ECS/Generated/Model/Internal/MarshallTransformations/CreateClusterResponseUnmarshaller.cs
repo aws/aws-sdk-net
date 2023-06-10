@@ -88,6 +88,10 @@ namespace Amazon.ECS.Model.Internal.MarshallTransformations
                 {
                     return InvalidParameterExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("NamespaceNotFoundException"))
+                {
+                    return NamespaceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ServerException"))
                 {
                     return ServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

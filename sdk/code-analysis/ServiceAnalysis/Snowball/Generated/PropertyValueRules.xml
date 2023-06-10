@@ -37,6 +37,11 @@
     <pattern>ADID[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.CreateClusterRequest.InitialClusterSize</property>
+    <min>0</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.CreateClusterRequest.KmsKeyARN</property>
     <max>255</max>
     <pattern>arn:aws.*:kms:.*:[0-9]{12}:key/.*</pattern>
@@ -285,6 +290,23 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.ListServiceVersionsRequest.MaxResults</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.ListServiceVersionsRequest.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.ListServiceVersionsResponse.NextToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.UpdateClusterRequest.AddressId</property>
     <min>40</min>
     <max>40</max>
@@ -515,6 +537,18 @@
     <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.EKSOnDeviceServiceConfiguration.EKSAnywhereVersion</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.EKSOnDeviceServiceConfiguration.KubernetesVersion</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.EventTriggerDefinition.EventResourceARN</property>
     <max>255</max>
     <pattern>arn:aws.*:*</pattern>
@@ -658,9 +692,29 @@
     <pattern>arn:aws.*:sns:.*:[0-9]{12}:.*</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Snowball.Model.S3OnDeviceServiceConfiguration.FaultTolerance</property>
+    <min>1</min>
+    <max>4</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.S3OnDeviceServiceConfiguration.ServiceSize</property>
+    <min>3</min>
+    <max>16</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.S3OnDeviceServiceConfiguration.StorageLimit</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Snowball.Model.S3Resource.BucketArn</property>
     <max>255</max>
     <pattern>arn:aws.*:*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Snowball.Model.ServiceVersion.Version</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Snowball.Model.Shipment.Status</property>

@@ -62,7 +62,7 @@ namespace Amazon.StorageGateway.Model
         /// The password you want to set for your VM local console.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=512)]
+        [AWSProperty(Required=true, Sensitive=true, Min=6, Max=512)]
         public string LocalConsolePassword
         {
             get { return this._localConsolePassword; }

@@ -32,10 +32,9 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateVerifiedAccessGroup operation.
     /// An Amazon Web Services Verified Access group is a collection of Amazon Web Services
     /// Verified Access endpoints who's associated applications have similar security requirements.
-    /// Each instance within an Amazon Web Services Verified Access group shares an Amazon
-    /// Web Services Verified Access policy. For example, you can group all Amazon Web Services
-    /// Verified Access instances associated with “sales” applications together and use one
-    /// common Amazon Web Services Verified Access policy.
+    /// Each instance within a Verified Access group shares an Verified Access policy. For
+    /// example, you can group all Verified Access instances associated with "sales" applications
+    /// together and use one common Verified Access policy.
     /// </summary>
     public partial class CreateVerifiedAccessGroupRequest : AmazonEC2Request
     {
@@ -68,7 +67,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Web Services Verified Access group.
+        /// A description for the Verified Access group.
         /// </para>
         /// </summary>
         public string Description
@@ -86,7 +85,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property PolicyDocument. 
         /// <para>
-        /// The Amazon Web Services Verified Access policy document.
+        /// The Verified Access policy document.
         /// </para>
         /// </summary>
         public string PolicyDocument
@@ -104,7 +103,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to assign to the Amazon Web Services Verified Access group.
+        /// The tags to assign to the Verified Access group.
         /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications
@@ -122,7 +121,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property VerifiedAccessInstanceId. 
         /// <para>
-        /// The ID of the Amazon Web Services Verified Access instance.
+        /// The ID of the Verified Access instance.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

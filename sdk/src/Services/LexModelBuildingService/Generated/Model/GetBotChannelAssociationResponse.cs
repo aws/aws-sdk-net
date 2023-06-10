@@ -70,7 +70,7 @@ namespace Amazon.LexModelBuildingService.Model
         /// Lex bot.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=10)]
+        [AWSProperty(Sensitive=true, Min=1, Max=10)]
         public Dictionary<string, string> BotConfiguration
         {
             get { return this._botConfiguration; }

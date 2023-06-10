@@ -890,6 +890,99 @@ namespace Amazon.Mgn
 
         #endregion
                 
+        #region  ListExportErrors
+
+
+
+        /// <summary>
+        /// List export errors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportErrors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExportErrors service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">REST API Reference for ListExportErrors Operation</seealso>
+        Task<ListExportErrorsResponse> ListExportErrorsAsync(ListExportErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListExports
+
+
+
+        /// <summary>
+        /// List exports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExports service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListImportErrors
+
+
+
+        /// <summary>
+        /// List import errors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportErrors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImportErrors service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors">REST API Reference for ListImportErrors Operation</seealso>
+        Task<ListImportErrorsResponse> ListImportErrorsAsync(ListImportErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  ListImports
+
+
+
+        /// <summary>
+        /// List imports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">REST API Reference for ListImports Operation</seealso>
+        Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
         #region  ListSourceServerActions
 
 
@@ -1196,6 +1289,67 @@ namespace Amazon.Mgn
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartCutover">REST API Reference for StartCutover Operation</seealso>
         Task<StartCutoverResponse> StartCutoverAsync(StartCutoverRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartExport
+
+
+
+        /// <summary>
+        /// Start export.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartExport service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport">REST API Reference for StartExport Operation</seealso>
+        Task<StartExportResponse> StartExportAsync(StartExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+                
+        #region  StartImport
+
+
+
+        /// <summary>
+        /// Start import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartImport service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport">REST API Reference for StartImport Operation</seealso>
+        Task<StartImportResponse> StartImportAsync(StartImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
                 

@@ -41,6 +41,16 @@ namespace Amazon.DynamoDBv2.DocumentModel
     }
 
     /// <summary>
+    /// An enumeration of supported return value directives
+    /// for scenarios where attributes are returned when the condition check fails.
+    /// </summary>
+    public enum ReturnValuesOnConditionCheckFailure
+    {
+        None,
+        AllOldAttributes
+    }
+
+    /// <summary>
     /// An enumeration of all supported scan operator directives
     /// </summary>
     public enum ScanOperator
@@ -223,6 +233,19 @@ namespace Amazon.DynamoDBv2.DocumentModel
                     return "UPDATED_NEW";
                 default:
                     throw new ArgumentOutOfRangeException("value", "Invalid ReturnValues value");
+            }
+        }
+
+        public static string Convert(ReturnValuesOnConditionCheckFailure value)
+        {
+            switch (value)
+            {
+                case ReturnValuesOnConditionCheckFailure.None:
+                    return "NONE";
+                case ReturnValuesOnConditionCheckFailure.AllOldAttributes:
+                    return "ALL_OLD";
+                default:
+                    throw new ArgumentOutOfRangeException("value", "Invalid ReturnValuesOnConditionCheckFailure value");
             }
         }
 
@@ -425,6 +448,11 @@ namespace Amazon.DynamoDBv2.DocumentModel
             attributeCount++;
             string variableName = AwsVariablePrefix + attributeCount;
             return variableName;
+        }
+
+        public static string GetVariableName(string suffix)
+        {
+            return AwsVariablePrefix + suffix;
         }
 
         public static Dictionary<string, T> Combine<T>(

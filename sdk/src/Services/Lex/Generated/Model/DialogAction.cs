@@ -103,7 +103,7 @@ namespace Amazon.Lex.Model
         /// Lex will use the message configured for the intent.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Message
         {
             get { return this._message; }
@@ -155,6 +155,7 @@ namespace Amazon.Lex.Model
         /// Map of the slots that have been gathered and their values. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Slots
         {
             get { return this._slots; }

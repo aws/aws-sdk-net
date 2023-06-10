@@ -109,8 +109,9 @@ namespace Amazon.LexModelsV2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Extended</code> - A slot type created by extending the AMAZON.AlphaNumeric
-        /// built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">AMAZON.AlphaNumeric</a>.
+        ///  <code>Extended</code> - A slot type created by extending the <code>AMAZON.AlphaNumeric</code>
+        /// built-in slot type. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/built-in-slot-alphanumerice.html">
+        /// <code>AMAZON.AlphaNumeric</code> </a>.
         /// </para>
         ///  </li> <li> 
         /// <para>

@@ -45,6 +45,22 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(AutoMLCandidateGenerationConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAlgorithmsConfig())
+            {
+                context.Writer.WritePropertyName("AlgorithmsConfig");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAlgorithmsConfigListValue in requestObject.AlgorithmsConfig)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AutoMLAlgorithmConfigMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAlgorithmsConfigListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetFeatureSpecificationS3Uri())
             {
                 context.Writer.WritePropertyName("FeatureSpecificationS3Uri");

@@ -30,7 +30,8 @@ namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
     /// Container for the parameters to the ListCrls operation.
-    /// Lists all Crls in the authenticated account and Amazon Web Services Region.
+    /// Lists all certificate revocation lists (CRL) in the authenticated account and Amazon
+    /// Web Services Region.
     /// 
     ///  
     /// <para>
@@ -45,8 +46,8 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// A token that indicates where the output should continue from, if a previous operation
-        /// did not show all results. To get the next results, call the operation again with this
+        /// A token that indicates where the output should continue from, if a previous request
+        /// did not show all results. To get the next results, make the request again with this
         /// value.
         /// </para>
         /// </summary>

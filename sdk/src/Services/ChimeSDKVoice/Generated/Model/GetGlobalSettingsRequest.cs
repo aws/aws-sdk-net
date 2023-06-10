@@ -30,7 +30,8 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetGlobalSettings operation.
-    /// 
+    /// Retrieves the global settings for the Amazon Chime SDK Voice Connectors in an AWS
+    /// account.
     /// </summary>
     public partial class GetGlobalSettingsRequest : AmazonChimeSDKVoiceRequest
     {

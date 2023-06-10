@@ -127,7 +127,7 @@ namespace Amazon.Proton.Model
         /// The deployment status message for your provisioned resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=5000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=5000)]
         public string StatusMessage
         {
             get { return this._statusMessage; }

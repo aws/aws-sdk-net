@@ -46,7 +46,7 @@ namespace Amazon.AppConfig.Model
         /// Either the JSON Schema content or the Amazon Resource Name (ARN) of an Lambda function.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=32768)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=32768)]
         public string Content
         {
             get { return this._content; }

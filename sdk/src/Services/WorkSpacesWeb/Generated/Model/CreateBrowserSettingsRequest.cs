@@ -67,7 +67,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// sessions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=131072)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=131072)]
         public string BrowserPolicy
         {
             get { return this._browserPolicy; }

@@ -61,6 +61,7 @@ namespace Amazon.MWAA.Model
         /// An Airflow web server login token.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string WebToken
         {
             get { return this._webToken; }

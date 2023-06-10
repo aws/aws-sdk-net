@@ -142,6 +142,10 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                 {
                     return InactiveEventDataStoreExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
+                if (errorResponse.Code != null && errorResponse.Code.Equals("InsufficientEncryptionPolicyException"))
+                {
+                    return InsufficientEncryptionPolicyExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
+                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("InvalidEventDataStoreCategoryException"))
                 {
                     return InvalidEventDataStoreCategoryExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);

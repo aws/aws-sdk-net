@@ -759,13 +759,15 @@ namespace Amazon.DynamoDBv2.DataModel
                     if (attribute is DynamoDBVersionAttribute)
                         propertyStorage.IsVersion = true;
 
-                    
+                    DynamoDBRenamableAttribute renamableAttribute = attribute as DynamoDBRenamableAttribute;
+                    if (renamableAttribute != null && !string.IsNullOrEmpty(renamableAttribute.AttributeName))
+                    {
+                        propertyStorage.AttributeName = GetAccurateCase(config, renamableAttribute.AttributeName);
+                    }
+
                     DynamoDBPropertyAttribute propertyAttribute = attribute as DynamoDBPropertyAttribute;
                     if (propertyAttribute != null)
                     {
-                        if (!string.IsNullOrEmpty(propertyAttribute.AttributeName))
-                            propertyStorage.AttributeName = GetAccurateCase(config, propertyAttribute.AttributeName);
-
                         propertyStorage.StoreAsEpoch = propertyAttribute.StoreAsEpoch;
 
                         if (propertyAttribute.Converter != null)
@@ -878,6 +880,9 @@ namespace Amazon.DynamoDBv2.DataModel
             if (typeMappings.TryGetValue(baseType, out typeMapping))
             {
                 config.TableName = typeMapping.TargetTable;
+
+                if (AWSConfigsDynamoDB.Context.TableAliases.TryGetValue(config.TableName, out var tableAlias))
+                    config.TableName = tableAlias;
 
                 foreach (var kvp in typeMapping.PropertyConfigs)
                 {

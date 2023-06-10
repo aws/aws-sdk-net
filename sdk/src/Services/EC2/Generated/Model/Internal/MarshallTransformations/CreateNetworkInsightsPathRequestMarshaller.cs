@@ -78,6 +78,72 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("DestinationPort", StringUtils.FromInt(publicRequest.DestinationPort));
                 }
+                if(publicRequest.IsSetFilterAtDestination())
+                {
+                    if(publicRequest.FilterAtDestination.IsSetDestinationAddress())
+                    {
+                        request.Parameters.Add("FilterAtDestination" + "." + "DestinationAddress", StringUtils.FromString(publicRequest.FilterAtDestination.DestinationAddress));
+                    }
+                    if(publicRequest.FilterAtDestination.IsSetDestinationPortRange())
+                    {
+                        if(publicRequest.FilterAtDestination.DestinationPortRange.IsSetFromPort())
+                        {
+                            request.Parameters.Add("FilterAtDestination" + "." + "DestinationPortRange" + "." + "FromPort", StringUtils.FromInt(publicRequest.FilterAtDestination.DestinationPortRange.FromPort));
+                        }
+                        if(publicRequest.FilterAtDestination.DestinationPortRange.IsSetToPort())
+                        {
+                            request.Parameters.Add("FilterAtDestination" + "." + "DestinationPortRange" + "." + "ToPort", StringUtils.FromInt(publicRequest.FilterAtDestination.DestinationPortRange.ToPort));
+                        }
+                    }
+                    if(publicRequest.FilterAtDestination.IsSetSourceAddress())
+                    {
+                        request.Parameters.Add("FilterAtDestination" + "." + "SourceAddress", StringUtils.FromString(publicRequest.FilterAtDestination.SourceAddress));
+                    }
+                    if(publicRequest.FilterAtDestination.IsSetSourcePortRange())
+                    {
+                        if(publicRequest.FilterAtDestination.SourcePortRange.IsSetFromPort())
+                        {
+                            request.Parameters.Add("FilterAtDestination" + "." + "SourcePortRange" + "." + "FromPort", StringUtils.FromInt(publicRequest.FilterAtDestination.SourcePortRange.FromPort));
+                        }
+                        if(publicRequest.FilterAtDestination.SourcePortRange.IsSetToPort())
+                        {
+                            request.Parameters.Add("FilterAtDestination" + "." + "SourcePortRange" + "." + "ToPort", StringUtils.FromInt(publicRequest.FilterAtDestination.SourcePortRange.ToPort));
+                        }
+                    }
+                }
+                if(publicRequest.IsSetFilterAtSource())
+                {
+                    if(publicRequest.FilterAtSource.IsSetDestinationAddress())
+                    {
+                        request.Parameters.Add("FilterAtSource" + "." + "DestinationAddress", StringUtils.FromString(publicRequest.FilterAtSource.DestinationAddress));
+                    }
+                    if(publicRequest.FilterAtSource.IsSetDestinationPortRange())
+                    {
+                        if(publicRequest.FilterAtSource.DestinationPortRange.IsSetFromPort())
+                        {
+                            request.Parameters.Add("FilterAtSource" + "." + "DestinationPortRange" + "." + "FromPort", StringUtils.FromInt(publicRequest.FilterAtSource.DestinationPortRange.FromPort));
+                        }
+                        if(publicRequest.FilterAtSource.DestinationPortRange.IsSetToPort())
+                        {
+                            request.Parameters.Add("FilterAtSource" + "." + "DestinationPortRange" + "." + "ToPort", StringUtils.FromInt(publicRequest.FilterAtSource.DestinationPortRange.ToPort));
+                        }
+                    }
+                    if(publicRequest.FilterAtSource.IsSetSourceAddress())
+                    {
+                        request.Parameters.Add("FilterAtSource" + "." + "SourceAddress", StringUtils.FromString(publicRequest.FilterAtSource.SourceAddress));
+                    }
+                    if(publicRequest.FilterAtSource.IsSetSourcePortRange())
+                    {
+                        if(publicRequest.FilterAtSource.SourcePortRange.IsSetFromPort())
+                        {
+                            request.Parameters.Add("FilterAtSource" + "." + "SourcePortRange" + "." + "FromPort", StringUtils.FromInt(publicRequest.FilterAtSource.SourcePortRange.FromPort));
+                        }
+                        if(publicRequest.FilterAtSource.SourcePortRange.IsSetToPort())
+                        {
+                            request.Parameters.Add("FilterAtSource" + "." + "SourcePortRange" + "." + "ToPort", StringUtils.FromInt(publicRequest.FilterAtSource.SourcePortRange.ToPort));
+                        }
+                    }
+                }
                 if(publicRequest.IsSetProtocol())
                 {
                     request.Parameters.Add("Protocol", StringUtils.FromString(publicRequest.Protocol));

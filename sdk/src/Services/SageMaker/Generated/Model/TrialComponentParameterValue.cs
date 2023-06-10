@@ -34,7 +34,8 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// This object is specified in the <a>CreateTrialComponent</a> request.
+    /// This object is specified in the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html">CreateTrialComponent</a>
+    /// request.
     /// </para>
     /// </summary>
     public partial class TrialComponentParameterValue

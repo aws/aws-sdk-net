@@ -36,6 +36,22 @@ namespace Amazon.WorkDocs.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeActivities operation
+        ///</summary>
+        public IDescribeActivitiesPaginator DescribeActivities(DescribeActivitiesRequest request) 
+        {
+            return new DescribeActivitiesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeComments operation
+        ///</summary>
+        public IDescribeCommentsPaginator DescribeComments(DescribeCommentsRequest request) 
+        {
+            return new DescribeCommentsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDocumentVersions operation
         ///</summary>
         public IDescribeDocumentVersionsPaginator DescribeDocumentVersions(DescribeDocumentVersionsRequest request) 
@@ -52,11 +68,51 @@ namespace Amazon.WorkDocs.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeGroups operation
+        ///</summary>
+        public IDescribeGroupsPaginator DescribeGroups(DescribeGroupsRequest request) 
+        {
+            return new DescribeGroupsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeNotificationSubscriptions operation
+        ///</summary>
+        public IDescribeNotificationSubscriptionsPaginator DescribeNotificationSubscriptions(DescribeNotificationSubscriptionsRequest request) 
+        {
+            return new DescribeNotificationSubscriptionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeResourcePermissions operation
+        ///</summary>
+        public IDescribeResourcePermissionsPaginator DescribeResourcePermissions(DescribeResourcePermissionsRequest request) 
+        {
+            return new DescribeResourcePermissionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for DescribeRootFolders operation
+        ///</summary>
+        public IDescribeRootFoldersPaginator DescribeRootFolders(DescribeRootFoldersRequest request) 
+        {
+            return new DescribeRootFoldersPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeUsers operation
         ///</summary>
         public IDescribeUsersPaginator DescribeUsers(DescribeUsersRequest request) 
         {
             return new DescribeUsersPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchResources operation
+        ///</summary>
+        public ISearchResourcesPaginator SearchResources(SearchResourcesRequest request) 
+        {
+            return new SearchResourcesPaginator(this.client, request);
         }
     }
 }

@@ -84,6 +84,22 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Compression);
                 }
 
+                if(publicRequest.IsSetDataDestinationConfigs())
+                {
+                    context.Writer.WritePropertyName("dataDestinationConfigs");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDataDestinationConfigsListValue in publicRequest.DataDestinationConfigs)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = DataDestinationConfigMarshaller.Instance;
+                        marshaller.Marshall(publicRequestDataDestinationConfigsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDataExtraDimensions())
                 {
                     context.Writer.WritePropertyName("dataExtraDimensions");

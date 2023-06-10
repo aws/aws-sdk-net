@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The structure representing Polygon Geometry based on the <a href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson
+    /// spec</a>.
     /// </summary>
     public partial class MultiPolygonGeometryInput
     {

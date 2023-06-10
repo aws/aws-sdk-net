@@ -54,21 +54,22 @@ namespace Amazon.SageMaker.Model
     /// </para>
     ///  
     /// <para>
-    /// You can add tags to experiments, trials, trial components and then use the <a>Search</a>
+    /// You can add tags to experiments, trials, trial components and then use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
     /// API to search for the tags.
     /// </para>
     ///  
     /// <para>
     /// To add a description to an experiment, specify the optional <code>Description</code>
-    /// parameter. To add a description later, or to change the description, call the <a>UpdateExperiment</a>
+    /// parameter. To add a description later, or to change the description, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>
     /// API.
     /// </para>
     ///  
     /// <para>
-    /// To get a list of all your experiments, call the <a>ListExperiments</a> API. To view
-    /// an experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
-    /// of all the trials associated with an experiment, call the <a>ListTrials</a> API. To
-    /// create a trial call the <a>CreateTrial</a> API.
+    /// To get a list of all your experiments, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListExperiments.html">ListExperiments</a>
+    /// API. To view an experiment's properties, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeExperiment.html">DescribeExperiment</a>
+    /// API. To get a list of all the trials associated with an experiment, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a>
+    /// API. To create a trial call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrial.html">CreateTrial</a>
+    /// API.
     /// </para>
     /// </summary>
     public partial class CreateExperimentRequest : AmazonSageMakerRequest
@@ -141,8 +142,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of tags to associate with the experiment. You can use <a>Search</a> API to
-        /// search on the tags.
+        /// A list of tags to associate with the experiment. You can use <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+        /// API to search on the tags.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

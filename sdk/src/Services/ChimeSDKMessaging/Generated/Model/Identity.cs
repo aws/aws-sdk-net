@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
-    /// The details of a user.
+    /// The details of a user or bot.
     /// </summary>
     public partial class Identity
     {
@@ -61,7 +61,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The name in an Identity.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string Name
         {
             get { return this._name; }

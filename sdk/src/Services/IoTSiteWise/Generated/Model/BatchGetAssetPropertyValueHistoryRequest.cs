@@ -68,12 +68,12 @@ namespace Amazon.IoTSiteWise.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The size of the result set is less than 1 MB.
+        /// The size of the result set is equal to 4 MB.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The number of data points in the result set is less than the value of <code>maxResults</code>.
-        /// The maximum value of <code>maxResults</code> is 4000.
+        /// The number of data points in the result set is equal to the value of <code>maxResults</code>.
+        /// The maximum value of <code>maxResults</code> is 20000.
         /// </para>
         ///  </li> </ul>
         /// </summary>

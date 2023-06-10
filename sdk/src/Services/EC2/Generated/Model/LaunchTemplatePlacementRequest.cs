@@ -193,8 +193,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Tenancy. 
         /// <para>
-        /// The tenancy of the instance (if the instance is running in a VPC). An instance with
-        /// a tenancy of dedicated runs on single-tenant hardware.
+        /// The tenancy of the instance. An instance with a tenancy of dedicated runs on single-tenant
+        /// hardware.
         /// </para>
         /// </summary>
         public Tenancy Tenancy

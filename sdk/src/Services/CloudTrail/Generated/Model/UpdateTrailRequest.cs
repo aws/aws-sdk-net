@@ -34,7 +34,7 @@ namespace Amazon.CloudTrail.Model
     /// log files. Changes to a trail do not require stopping the CloudTrail service. Use
     /// this action to designate an existing bucket for log delivery. If the existing bucket
     /// has previously been a target for CloudTrail log files, an IAM policy exists for the
-    /// bucket. <code>UpdateTrail</code> must be called from the region in which the trail
+    /// bucket. <code>UpdateTrail</code> must be called from the Region in which the trail
     /// was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.
     /// </summary>
     public partial class UpdateTrailRequest : AmazonCloudTrailRequest
@@ -55,8 +55,12 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property CloudWatchLogsLogGroupArn. 
         /// <para>
         /// Specifies a log group name using an Amazon Resource Name (ARN), a unique identifier
-        /// that represents the log group to which CloudTrail logs are delivered. Not required
-        /// unless you specify <code>CloudWatchLogsRoleArn</code>.
+        /// that represents the log group to which CloudTrail logs are delivered. You must use
+        /// a log group that exists in your account.
+        /// </para>
+        ///  
+        /// <para>
+        /// Not required unless you specify <code>CloudWatchLogsRoleArn</code>.
         /// </para>
         /// </summary>
         public string CloudWatchLogsLogGroupArn
@@ -75,7 +79,7 @@ namespace Amazon.CloudTrail.Model
         /// Gets and sets the property CloudWatchLogsRoleArn. 
         /// <para>
         /// Specifies the role for the CloudWatch Logs endpoint to assume to write to a user's
-        /// log group.
+        /// log group. You must use a role that exists in your account.
         /// </para>
         /// </summary>
         public string CloudWatchLogsRoleArn
@@ -141,13 +145,13 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property IsMultiRegionTrail. 
         /// <para>
-        /// Specifies whether the trail applies only to the current region or to all regions.
-        /// The default is false. If the trail exists only in the current region and this value
+        /// Specifies whether the trail applies only to the current Region or to all Regions.
+        /// The default is false. If the trail exists only in the current Region and this value
         /// is set to true, shadow trails (replications of the trail) will be created in the other
-        /// regions. If the trail exists in all regions and this value is set to false, the trail
-        /// will remain in the region where it was created, and its shadow trails in other regions
+        /// Regions. If the trail exists in all Regions and this value is set to false, the trail
+        /// will remain in the Region where it was created, and its shadow trails in other Regions
         /// will be deleted. As a best practice, consider using trails that log events in all
-        /// regions.
+        /// Regions.
         /// </para>
         /// </summary>
         public bool IsMultiRegionTrail
@@ -168,12 +172,12 @@ namespace Amazon.CloudTrail.Model
         /// Specifies whether the trail is applied to all accounts in an organization in Organizations,
         /// or only for the current Amazon Web Services account. The default is false, and cannot
         /// be true unless the call is made on behalf of an Amazon Web Services account that is
-        /// the management account for an organization in Organizations. If the trail is not an
-        /// organization trail and this is set to <code>true</code>, the trail will be created
-        /// in all Amazon Web Services accounts that belong to the organization. If the trail
-        /// is an organization trail and this is set to <code>false</code>, the trail will remain
-        /// in the current Amazon Web Services account but be deleted from all member accounts
-        /// in the organization.
+        /// the management account or delegated administrator account for an organization in Organizations.
+        /// If the trail is not an organization trail and this is set to <code>true</code>, the
+        /// trail will be created in all Amazon Web Services accounts that belong to the organization.
+        /// If the trail is an organization trail and this is set to <code>false</code>, the trail
+        /// will remain in the current Amazon Web Services account but be deleted from all member
+        /// accounts in the organization.
         /// </para>
         /// </summary>
         public bool IsOrganizationTrail

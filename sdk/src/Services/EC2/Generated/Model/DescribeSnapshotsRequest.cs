@@ -90,11 +90,7 @@ namespace Amazon.EC2.Model
     ///  
     /// <para>
     /// If you are describing a long list of snapshots, we recommend that you paginate the
-    /// output to make the list more manageable. The <code>MaxResults</code> parameter sets
-    /// the maximum number of results returned in a single page. If the list of results exceeds
-    /// your <code>MaxResults</code> value, then that number of results is returned along
-    /// with a <code>NextToken</code> value that can be passed to a subsequent <code>DescribeSnapshots</code>
-    /// request to retrieve the remaining results.
+    /// output to make the list more manageable. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
     /// </para>
     ///  
     /// <para>
@@ -201,15 +197,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of snapshot results returned by <code>DescribeSnapshots</code>
-        /// in paginated output. When this parameter is used, <code>DescribeSnapshots</code> only
-        /// returns <code>MaxResults</code> results in a single page along with a <code>NextToken</code>
-        /// response element. The remaining results of the initial request can be seen by sending
-        /// another <code>DescribeSnapshots</code> request with the returned <code>NextToken</code>
-        /// value. This value can be between 5 and 1,000; if <code>MaxResults</code> is given
-        /// a value larger than 1,000, only 1,000 results are returned. If this parameter is not
-        /// used, then <code>DescribeSnapshots</code> returns all results. You cannot specify
-        /// this parameter and the snapshot IDs parameter in the same request.
+        /// The maximum number of snapshots to return for this request. This value can be between
+        /// 5 and 1,000; if this value is larger than 1,000, only 1,000 results are returned.
+        /// If this parameter is not used, then the request returns all snapshots. You cannot
+        /// specify this parameter and the snapshot IDs parameter in the same request. For more
+        /// information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Query-Requests.html#api-pagination">Pagination</a>.
         /// </para>
         /// </summary>
         public int MaxResults
@@ -227,11 +219,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The <code>NextToken</code> value returned from a previous paginated <code>DescribeSnapshots</code>
-        /// request where <code>MaxResults</code> was used and the results exceeded the value
-        /// of that parameter. Pagination continues from the end of the previous results that
-        /// returned the <code>NextToken</code> value. This value is <code>null</code> when there
-        /// are no more results to return.
+        /// The token returned from a previous paginated request. Pagination continues from the
+        /// end of the items returned by the previous request.
         /// </para>
         /// </summary>
         public string NextToken

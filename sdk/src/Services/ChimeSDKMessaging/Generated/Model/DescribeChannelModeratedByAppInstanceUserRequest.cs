@@ -30,12 +30,14 @@ namespace Amazon.ChimeSDKMessaging.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeChannelModeratedByAppInstanceUser operation.
-    /// Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>.
+    /// Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code>
+    /// or <code>AppInstanceBot</code>.
     /// 
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -48,7 +50,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property AppInstanceUserArn. 
         /// <para>
-        /// The ARN of the <code>AppInstanceUser</code> in the moderated channel.
+        /// The ARN of the user or bot in the moderated channel.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -86,7 +88,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]

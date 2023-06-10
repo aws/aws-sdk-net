@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.GameLift.Model
 {
     /// <summary>
-    /// <b>This data type is used with the GameLift FleetIQ and game server groups.</b> 
+    /// <b>This data type is used with the Amazon GameLift FleetIQ and game server groups.</b>
+    /// 
     /// 
     ///  
     /// <para>

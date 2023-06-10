@@ -48,7 +48,7 @@ namespace Amazon.IdentityStore.Model
         /// The country of the address.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Country
         {
             get { return this._country; }
@@ -67,7 +67,7 @@ namespace Amazon.IdentityStore.Model
         /// A string containing a formatted version of the address for display.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Formatted
         {
             get { return this._formatted; }
@@ -86,7 +86,7 @@ namespace Amazon.IdentityStore.Model
         /// A string of the address locality.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Locality
         {
             get { return this._locality; }
@@ -105,7 +105,7 @@ namespace Amazon.IdentityStore.Model
         /// The postal code of the address.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -125,6 +125,7 @@ namespace Amazon.IdentityStore.Model
         /// resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool Primary
         {
             get { return this._primary.GetValueOrDefault(); }
@@ -143,7 +144,7 @@ namespace Amazon.IdentityStore.Model
         /// The region of the address.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Region
         {
             get { return this._region; }
@@ -162,7 +163,7 @@ namespace Amazon.IdentityStore.Model
         /// The street of the address.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string StreetAddress
         {
             get { return this._streetAddress; }
@@ -181,7 +182,7 @@ namespace Amazon.IdentityStore.Model
         /// A string representing the type of address. For example, "Home."
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Type
         {
             get { return this._type; }

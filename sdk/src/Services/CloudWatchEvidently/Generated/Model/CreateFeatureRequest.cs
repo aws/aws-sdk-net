@@ -109,8 +109,13 @@ namespace Amazon.CloudWatchEvidently.Model
         /// user ID, account ID, or some other identifier. For the value, specify the name of
         /// the variation that they are to be served.
         /// </para>
+        ///  
+        /// <para>
+        /// This parameter is limited to 2500 overrides or a total of 40KB. The 40KB limit includes
+        /// an overhead of 6 bytes per override.
+        /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=20)]
+        [AWSProperty(Min=0, Max=2500)]
         public Dictionary<string, string> EntityOverrides
         {
             get { return this._entityOverrides; }
@@ -197,9 +202,15 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
         /// as strings of characters.
         /// </para>
-        ///  <pre><code> &lt;p&gt;You can associate as many as 50 tags with a feature.&lt;/p&gt;
-        /// &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-        /// Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with a feature.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

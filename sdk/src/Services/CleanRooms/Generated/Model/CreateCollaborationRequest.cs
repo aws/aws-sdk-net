@@ -41,6 +41,7 @@ namespace Amazon.CleanRooms.Model
         private List<MemberSpecification> _members = new List<MemberSpecification>();
         private string _name;
         private CollaborationQueryLogStatus _queryLogStatus;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property CreatorDisplayName. 
@@ -172,6 +173,27 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetQueryLogStatus()
         {
             return this._queryLogStatus != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An optional label that you can assign to a resource when you create it. Each tag consists
+        /// of a key and an optional value, both of which you define. When you use tagging, you
+        /// can also use tag-based access control in IAM policies to control access to this resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

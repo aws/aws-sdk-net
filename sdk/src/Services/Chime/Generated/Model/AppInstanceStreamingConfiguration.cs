@@ -61,7 +61,7 @@ namespace Amazon.Chime.Model
         /// The resource ARN.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string ResourceArn
         {
             get { return this._resourceArn; }

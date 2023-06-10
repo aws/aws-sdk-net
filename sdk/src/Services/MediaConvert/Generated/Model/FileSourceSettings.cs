@@ -36,6 +36,7 @@ namespace Amazon.MediaConvert.Model
     public partial class FileSourceSettings
     {
         private FileSourceConvert608To708 _convert608To708;
+        private CaptionSourceConvertPaintOnToPopOn _convertPaintToPop;
         private CaptionSourceFramerate _framerate;
         private string _sourceFile;
         private int? _timeDelta;
@@ -58,6 +59,24 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetConvert608To708()
         {
             return this._convert608To708 != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConvertPaintToPop. Choose the presentation style of your
+        /// input SCC captions. To use the same presentation style as your input: Keep the default
+        /// value, Disabled. To convert paint-on captions to pop-on: Choose Enabled. We also recommend
+        /// that you choose Enabled if you notice additional repeated lines in your output captions.
+        /// </summary>
+        public CaptionSourceConvertPaintOnToPopOn ConvertPaintToPop
+        {
+            get { return this._convertPaintToPop; }
+            set { this._convertPaintToPop = value; }
+        }
+
+        // Check to see if ConvertPaintToPop property is set
+        internal bool IsSetConvertPaintToPop()
+        {
+            return this._convertPaintToPop != null;
         }
 
         /// <summary>

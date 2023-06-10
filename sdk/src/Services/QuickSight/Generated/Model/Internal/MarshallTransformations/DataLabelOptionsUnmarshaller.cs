@@ -112,6 +112,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Position = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("TotalsVisibility", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.TotalsVisibility = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Visibility", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

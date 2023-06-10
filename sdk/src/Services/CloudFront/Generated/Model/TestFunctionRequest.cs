@@ -64,7 +64,7 @@ namespace Amazon.CloudFront.Model
         /// functions</a> in the <i>Amazon CloudFront Developer Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=40960)]
+        [AWSProperty(Required=true, Sensitive=true, Max=40960)]
         public MemoryStream EventObject
         {
             get { return this._eventObject; }

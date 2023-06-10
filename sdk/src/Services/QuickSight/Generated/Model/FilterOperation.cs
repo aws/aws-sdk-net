@@ -42,7 +42,7 @@ namespace Amazon.QuickSight.Model
         /// evaluates to true are kept in the dataset.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=4096)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=4096)]
         public string ConditionExpression
         {
             get { return this._conditionExpression; }

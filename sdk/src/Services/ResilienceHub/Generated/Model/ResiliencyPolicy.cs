@@ -122,7 +122,7 @@ namespace Amazon.ResilienceHub.Model
         /// The Amazon Resource Name (ARN) of the resiliency policy. The format for this ARN is:
         /// arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:resiliency-policy/<code>policy-id</code>.
         /// For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
-        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
+        /// Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.
         /// </para>
         /// </summary>
         public string PolicyArn
@@ -181,7 +181,7 @@ namespace Amazon.ResilienceHub.Model
         /// Services resource. Each tag consists of a key/value pair.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

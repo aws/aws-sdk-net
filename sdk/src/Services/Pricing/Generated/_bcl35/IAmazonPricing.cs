@@ -197,6 +197,69 @@ namespace Amazon.Pricing
 
         #endregion
         
+        #region  GetPriceListFileUrl
+
+
+        /// <summary>
+        /// <i> <b>This feature is in preview release and is subject to change. Your use of Amazon
+        /// Web Services Price List API is subject to the Beta Service Participation terms of
+        /// the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// 
+        ///  
+        /// <para>
+        /// This returns the URL that you can retrieve your Price List file from. This URL is
+        /// based on the <code>PriceListArn</code> and <code>FileFormat</code> that you retrieve
+        /// from the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_ListPriceLists.html">
+        /// <code>ListPriceLists</code> </a> response. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetPriceListFileUrl service method.</param>
+        /// 
+        /// <returns>The response from the GetPriceListFileUrl service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.NotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">REST API Reference for GetPriceListFileUrl Operation</seealso>
+        GetPriceListFileUrlResponse GetPriceListFileUrl(GetPriceListFileUrlRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetPriceListFileUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetPriceListFileUrl operation on AmazonPricingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetPriceListFileUrl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">REST API Reference for GetPriceListFileUrl Operation</seealso>
+        IAsyncResult BeginGetPriceListFileUrl(GetPriceListFileUrlRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetPriceListFileUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetPriceListFileUrl.</param>
+        /// 
+        /// <returns>Returns a  GetPriceListFileUrlResult from Pricing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetPriceListFileUrl">REST API Reference for GetPriceListFileUrl Operation</seealso>
+        GetPriceListFileUrlResponse EndGetPriceListFileUrl(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetProducts
 
 
@@ -249,6 +312,79 @@ namespace Amazon.Pricing
         /// <returns>Returns a  GetProductsResult from Pricing.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/GetProducts">REST API Reference for GetProducts Operation</seealso>
         GetProductsResponse EndGetProducts(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListPriceLists
+
+
+        /// <summary>
+        /// <i> <b>This feature is in preview release and is subject to change. Your use of Amazon
+        /// Web Services Price List API is subject to the Beta Service Participation terms of
+        /// the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a>
+        /// (Section 1.10).</b> </i> 
+        /// 
+        ///  
+        /// <para>
+        /// This returns a list of Price List references that the requester if authorized to view,
+        /// given a <code>ServiceCode</code>, <code>CurrencyCode</code>, and an <code>EffectiveDate</code>.
+        /// Use without a <code>RegionCode</code> filter to list Price List references from all
+        /// available Amazon Web Services Regions. Use with a <code>RegionCode</code> filter to
+        /// get the Price List reference that's specific to a specific Amazon Web Services Region.
+        /// You can use the <code>PriceListArn</code> from the response to get your preferred
+        /// Price List files through the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_pricing_GetPriceListFileUrl.html">
+        /// <code>GetPriceListFileUrl</code> </a> API.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListPriceLists service method.</param>
+        /// 
+        /// <returns>The response from the ListPriceLists service method, as returned by Pricing.</returns>
+        /// <exception cref="Amazon.Pricing.Model.AccessDeniedException">
+        /// General authentication failure. The request wasn't signed correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.ExpiredNextTokenException">
+        /// The pagination token expired. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InternalErrorException">
+        /// An error on the server occurred during the processing of your request. Try again later.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidNextTokenException">
+        /// The pagination token is invalid. Try again without a pagination token.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.InvalidParameterException">
+        /// One or more parameters had an invalid value.
+        /// </exception>
+        /// <exception cref="Amazon.Pricing.Model.NotFoundException">
+        /// The requested resource can't be found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">REST API Reference for ListPriceLists Operation</seealso>
+        ListPriceListsResponse ListPriceLists(ListPriceListsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListPriceLists operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListPriceLists operation on AmazonPricingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListPriceLists
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">REST API Reference for ListPriceLists Operation</seealso>
+        IAsyncResult BeginListPriceLists(ListPriceListsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListPriceLists operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListPriceLists.</param>
+        /// 
+        /// <returns>Returns a  ListPriceListsResult from Pricing.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pricing-2017-10-15/ListPriceLists">REST API Reference for ListPriceLists Operation</seealso>
+        ListPriceListsResponse EndListPriceLists(IAsyncResult asyncResult);
 
         #endregion
         

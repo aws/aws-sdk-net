@@ -50,6 +50,7 @@ namespace Amazon.RedshiftServerless.Model
         /// The username of the administrator for the first database created in the namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AdminUsername
         {
             get { return this._adminUsername; }
@@ -68,6 +69,7 @@ namespace Amazon.RedshiftServerless.Model
         /// The password of the administrator for the first database created in the namespace.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AdminUserPassword
         {
             get { return this._adminUserPassword; }

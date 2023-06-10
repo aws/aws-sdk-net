@@ -46,7 +46,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The client ID for the token that you want to revoke.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }
@@ -65,7 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The secret for the client ID. This is required only if the client ID has a secret.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string ClientSecret
         {
             get { return this._clientSecret; }
@@ -84,7 +84,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The refresh token that you want to revoke.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Token
         {
             get { return this._token; }

@@ -38,7 +38,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// <summary>
         /// Gets and sets the property MediaLiveConnectorPipeline. 
         /// <para>
-        /// The new media pipeline.
+        /// The new media live connector pipeline.
         /// </para>
         /// </summary>
         public MediaLiveConnectorPipeline MediaLiveConnectorPipeline

@@ -35,6 +35,7 @@ namespace Amazon.Omics.Model
     {
         private int? _cpus;
         private DateTime? _creationTime;
+        private int? _gpus;
         private string _logStream;
         private int? _memory;
         private string _name;
@@ -82,6 +83,25 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Gpus. 
+        /// <para>
+        ///  The number of Graphics Processing Units (GPU) specified in the task. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public int Gpus
+        {
+            get { return this._gpus.GetValueOrDefault(); }
+            set { this._gpus = value; }
+        }
+
+        // Check to see if Gpus property is set
+        internal bool IsSetGpus()
+        {
+            return this._gpus.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property LogStream. 
         /// <para>
         /// The task's log stream.
@@ -102,7 +122,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        /// The task's memory setting.
+        /// The task's memory use in gigabytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

@@ -102,6 +102,7 @@ namespace Amazon.NetworkManager.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Location Location
         {
             get { return this._location; }

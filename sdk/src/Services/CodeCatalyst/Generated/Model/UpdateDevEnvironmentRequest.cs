@@ -51,7 +51,7 @@ namespace Amazon.CodeCatalyst.Model
         /// a restart.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Min=0, Max=128)]
         public string Alias
         {
             get { return this._alias; }

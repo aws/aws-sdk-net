@@ -30,7 +30,7 @@ namespace Amazon.GroundStation.Model
 {
     /// <summary>
     /// Container for the parameters to the GetMinuteUsage operation.
-    /// Returns the number of minutes used by account.
+    /// Returns the number of reserved minutes used by account.
     /// </summary>
     public partial class GetMinuteUsageRequest : AmazonGroundStationRequest
     {

@@ -130,6 +130,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("statusMessage", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StatusMessage = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("subjectId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

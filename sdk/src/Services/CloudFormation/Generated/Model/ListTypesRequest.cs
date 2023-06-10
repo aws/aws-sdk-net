@@ -217,15 +217,15 @@ namespace Amazon.CloudFormation.Model
         ///  <ul> <li> 
         /// <para>
         ///  <code>PRIVATE</code>: Extensions that are visible and usable within this account
-        /// and region. This includes:
+        /// and Region. This includes:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Private extensions you have registered in this account and region.
+        /// Private extensions you have registered in this account and Region.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Public extensions that you have activated in this account and region.
+        /// Public extensions that you have activated in this account and Region.
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>

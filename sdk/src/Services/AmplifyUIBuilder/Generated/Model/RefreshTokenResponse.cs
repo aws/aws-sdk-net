@@ -42,7 +42,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The access token.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

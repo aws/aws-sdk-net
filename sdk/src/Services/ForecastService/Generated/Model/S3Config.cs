@@ -30,9 +30,9 @@ namespace Amazon.ForecastService.Model
 {
     /// <summary>
     /// The path to the file(s) in an Amazon Simple Storage Service (Amazon S3) bucket, and
-    /// an AWS Identity and Access Management (IAM) role that Amazon Forecast can assume to
-    /// access the file(s). Optionally, includes an AWS Key Management Service (KMS) key.
-    /// This object is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a>
+    /// an Identity and Access Management (IAM) role that Amazon Forecast can assume to access
+    /// the file(s). Optionally, includes an Key Management Service (KMS) key. This object
+    /// is part of the <a>DataSource</a> object that is submitted in the <a>CreateDatasetImportJob</a>
     /// request, and part of the <a>DataDestination</a> object.
     /// </summary>
     public partial class S3Config
@@ -44,7 +44,7 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key.
+        /// The Amazon Resource Name (ARN) of an Key Management Service (KMS) key.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -83,14 +83,14 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// The ARN of the AWS Identity and Access Management (IAM) role that Amazon Forecast
-        /// can assume to access the Amazon S3 bucket or files. If you provide a value for the
-        /// <code>KMSKeyArn</code> key, the role must allow access to the key.
+        /// The ARN of the Identity and Access Management (IAM) role that Amazon Forecast can
+        /// assume to access the Amazon S3 bucket or files. If you provide a value for the <code>KMSKeyArn</code>
+        /// key, the role must allow access to the key.
         /// </para>
         ///  
         /// <para>
-        /// Passing a role across AWS accounts is not allowed. If you pass a role that isn't in
-        /// your account, you get an <code>InvalidInputException</code> error.
+        /// Passing a role across Amazon Web Services accounts is not allowed. If you pass a role
+        /// that isn't in your account, you get an <code>InvalidInputException</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Max=256)]

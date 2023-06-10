@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private Termination _termination;
 
         /// <summary>
-        /// Gets and sets the property Termination.
+        /// Gets and sets the property Termination. 
+        /// <para>
+        /// The updated termination settings.
+        /// </para>
         /// </summary>
         public Termination Termination
         {

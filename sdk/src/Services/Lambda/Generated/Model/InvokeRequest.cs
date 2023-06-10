@@ -219,6 +219,7 @@ namespace Amazon.Lambda.Model
         /// You can also specify a file path. For example, <code>--payload file://payload.json</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public MemoryStream PayloadStream
         {
             get { return this._payloadStream; }

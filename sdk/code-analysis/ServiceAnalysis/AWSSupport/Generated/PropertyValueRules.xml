@@ -21,8 +21,38 @@
     <max>100</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DescribeCreateCaseOptionsResponse.LanguageAvailability</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DescribeSupportedLanguagesRequest.CategoryCode</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DescribeSupportedLanguagesRequest.IssueType</property>
+    <min>9</min>
+    <max>22</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DescribeSupportedLanguagesRequest.ServiceCode</property>
+    <min>0</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.AWSSupport.Model.Communication.Body</property>
     <min>1</min>
     <max>8000</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DateInterval.EndDateTime</property>
+    <min>8</min>
+    <max>30</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.AWSSupport.Model.DateInterval.StartDateTime</property>
+    <min>8</min>
+    <max>30</max>
   </property-value-rule>
 </property-value-rules>

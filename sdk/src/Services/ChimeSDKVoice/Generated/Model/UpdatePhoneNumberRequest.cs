@@ -30,7 +30,20 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdatePhoneNumber operation.
+    /// Updates phone number details, such as product type or calling name, for the specified
+    /// phone number ID. You can update one phone number detail at a time. For example, you
+    /// can update either the product type or the calling name in one action.
     /// 
+    ///  
+    /// <para>
+    /// For numbers outside the U.S., you must use the Amazon Chime SDK SIP Media Application
+    /// Dial-In product type.
+    /// </para>
+    ///  
+    /// <para>
+    /// Updates to outbound calling names can take 72 hours to complete. Pending updates to
+    /// outbound calling names must be complete before you can request another update.
+    /// </para>
     /// </summary>
     public partial class UpdatePhoneNumberRequest : AmazonChimeSDKVoiceRequest
     {
@@ -39,8 +52,12 @@ namespace Amazon.ChimeSDKVoice.Model
         private PhoneNumberProductType _productType;
 
         /// <summary>
-        /// Gets and sets the property CallingName.
+        /// Gets and sets the property CallingName. 
+        /// <para>
+        /// The outbound calling name associated with the phone number.
+        /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string CallingName
         {
             get { return this._callingName; }
@@ -54,9 +71,12 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberId.
+        /// Gets and sets the property PhoneNumberId. 
+        /// <para>
+        /// The phone number ID.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string PhoneNumberId
         {
             get { return this._phoneNumberId; }
@@ -70,7 +90,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ProductType.
+        /// Gets and sets the property ProductType. 
+        /// <para>
+        /// The product type.
+        /// </para>
         /// </summary>
         public PhoneNumberProductType ProductType
         {

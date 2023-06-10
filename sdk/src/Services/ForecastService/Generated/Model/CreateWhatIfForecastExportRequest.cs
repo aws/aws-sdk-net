@@ -45,9 +45,9 @@ namespace Amazon.ForecastService.Model
     /// </para>
     ///  
     /// <para>
-    /// You must specify a <a>DataDestination</a> object that includes an AWS Identity and
-    /// Access Management (IAM) role that Amazon Forecast can assume to access the Amazon
-    /// S3 bucket. For more information, see <a>aws-forecast-iam-roles</a>.
+    /// You must specify a <a>DataDestination</a> object that includes an Identity and Access
+    /// Management (IAM) role that Amazon Forecast can assume to access the Amazon S3 bucket.
+    /// For more information, see <a>aws-forecast-iam-roles</a>.
     /// </para>
     ///  
     /// <para>
@@ -77,15 +77,14 @@ namespace Amazon.ForecastService.Model
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        /// The location where you want to save the forecast and an AWS Identity and Access Management
+        /// The location where you want to save the forecast and an Identity and Access Management
         /// (IAM) role that Amazon Forecast can assume to access the location. The forecast must
         /// be exported to an Amazon S3 bucket.
         /// </para>
         ///  
         /// <para>
-        /// If encryption is used, <code>Destination</code> must include an AWS Key Management
-        /// Service (KMS) key. The IAM role must allow Amazon Forecast permission to access the
-        /// key.
+        /// If encryption is used, <code>Destination</code> must include an Key Management Service
+        /// (KMS) key. The IAM role must allow Amazon Forecast permission to access the key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
