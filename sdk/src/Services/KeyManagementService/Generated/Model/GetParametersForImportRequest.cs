@@ -30,32 +30,80 @@ namespace Amazon.KeyManagementService.Model
 {
     /// <summary>
     /// Container for the parameters to the GetParametersForImport operation.
-    /// Returns the items you need to import key material into a symmetric encryption KMS
-    /// key. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-    /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+    /// Returns the public key and an import token you need to import or reimport key material
+    /// for a KMS key. 
     /// 
     ///  
     /// <para>
-    /// This operation returns a public key and an import token. Use the public key to encrypt
-    /// the symmetric key material. Store the import token to send with a subsequent <a>ImportKeyMaterial</a>
+    /// By default, KMS keys are created with key material that KMS generates. This operation
+    /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+    /// key material</a>, an advanced feature that lets you generate and import the cryptographic
+    /// key material for a KMS key. For more information about importing key material into
+    /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+    /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Before calling <code>GetParametersForImport</code>, use the <a>CreateKey</a> operation
+    /// with an <code>Origin</code> value of <code>EXTERNAL</code> to create a KMS key with
+    /// no key material. You can import key material for a symmetric encryption KMS key, HMAC
+    /// KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also
+    /// import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+    /// key</a> of any supported type. However, you can't import key material into a KMS key
+    /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+    /// store</a>. You can also use <code>GetParametersForImport</code> to get a public key
+    /// and import token to <a href="kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+    /// the original key material</a> into a KMS key whose key material expired or was deleted.
+    /// </para>
+    ///  
+    /// <para>
+    ///  <code>GetParametersForImport</code> returns the items that you need to import your
+    /// key material.
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    /// The public key (or "wrapping key") of an RSA key pair that KMS generates.
+    /// </para>
+    ///  
+    /// <para>
+    /// You will use this public key to encrypt ("wrap") your key material while it's in transit
+    /// to KMS. 
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// A import token that ensures that KMS can decrypt your key material and associate it
+    /// with the correct KMS key.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// The public key and its import token are permanently linked and must be used together.
+    /// Each public key and import token set is valid for 24 hours. The expiration date and
+    /// time appear in the <code>ParametersValidTo</code> field in the <code>GetParametersForImport</code>
+    /// response. You cannot use an expired public key or import token in an <a>ImportKeyMaterial</a>
+    /// request. If your key and token expire, send another <code>GetParametersForImport</code>
     /// request.
     /// </para>
     ///  
     /// <para>
-    /// You must specify the key ID of the symmetric encryption KMS key into which you will
-    /// import key material. The KMS key <code>Origin</code> must be <code>EXTERNAL</code>.
-    /// You must also specify the wrapping algorithm and type of wrapping key (public key)
-    /// that you will use to encrypt the key material. You cannot perform this operation on
-    /// an asymmetric KMS key, an HMAC KMS key, or on any KMS key in a different Amazon Web
-    /// Services account.
+    ///  <code>GetParametersForImport</code> requires the following information:
     /// </para>
-    ///  
+    ///  <ul> <li> 
     /// <para>
-    /// To import key material, you must use the public key and import token from the same
-    /// response. These items are valid for 24 hours. The expiration date and time appear
-    /// in the <code>GetParametersForImport</code> response. You cannot use an expired token
-    /// in an <a>ImportKeyMaterial</a> request. If your key and token expire, send another
-    /// <code>GetParametersForImport</code> request.
+    /// The key ID of the KMS key for which you are importing the key material.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The key spec of the public key ("wrapping key") that you will use to encrypt your
+    /// key material during import.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    /// The wrapping algorithm that you will use with the public key to encrypt your key material.
+    /// </para>
+    ///  </li> </ul> 
+    /// <para>
+    /// You can use the same or a different public key spec and wrapping algorithm each time
+    /// you import or reimport the same key material. 
     /// </para>
     ///  
     /// <para>
@@ -96,8 +144,13 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property KeyId. 
         /// <para>
-        /// The identifier of the symmetric encryption KMS key into which you will import key
-        /// material. The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.
+        /// The identifier of the KMS key that will be associated with the imported key material.
+        /// The <code>Origin</code> of the KMS key must be <code>EXTERNAL</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// All KMS key types are supported, including multi-Region keys. However, you cannot
+        /// import key material into a KMS key in a custom key store.
         /// </para>
         ///  
         /// <para>
@@ -137,10 +190,57 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property WrappingAlgorithm. 
         /// <para>
-        /// The algorithm you will use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.
-        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys-encrypt-key-material.html">Encrypt
-        /// the Key Material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// The algorithm you will use with the RSA public key (<code>PublicKey</code>) in the
+        /// response to protect your key material during import. For more information, see <a
+        /// href="kms/latest/developerguide/importing-keys-get-public-key-and-token.html#select-wrapping-algorithm">Select
+        /// a wrapping algorithm</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
+        ///  
+        /// <para>
+        /// For RSA_AES wrapping algorithms, you encrypt your key material with an AES key that
+        /// you generate, then encrypt your AES key with the RSA public key from KMS. For RSAES
+        /// wrapping algorithms, you encrypt your key material directly with the RSA public key
+        /// from KMS.
+        /// </para>
+        ///  
+        /// <para>
+        /// The wrapping algorithms that you can use depend on the type of key material that you
+        /// are importing. To import an RSA private key, you must use an RSA_AES wrapping algorithm.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <b>RSA_AES_KEY_WRAP_SHA_256</b> — Supported for wrapping RSA and ECC key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>RSA_AES_KEY_WRAP_SHA_1</b> — Supported for wrapping RSA and ECC key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>RSAES_OAEP_SHA_256</b> — Supported for all types of key material, except RSA key
+        /// material (private key).
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use the RSAES_OAEP_SHA_256 wrapping algorithm with the RSA_2048 wrapping
+        /// key spec to wrap ECC_NIST_P521 key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>RSAES_OAEP_SHA_1</b> — Supported for all types of key material, except RSA key
+        /// material (private key).
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use the RSAES_OAEP_SHA_1 wrapping algorithm with the RSA_2048 wrapping
+        /// key spec to wrap ECC_NIST_P521 key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>RSAES_PKCS1_V1_5</b> (Deprecated) — Supported only for symmetric encryption key
+        /// material (and only in legacy mode).
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public AlgorithmSpec WrappingAlgorithm
@@ -158,8 +258,18 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property WrappingKeySpec. 
         /// <para>
-        /// The type of wrapping key (public key) to return in the response. Only 2048-bit RSA
-        /// public keys are supported.
+        /// The type of RSA public key to return in the response. You will use this wrapping key
+        /// with the specified wrapping algorithm to protect your key material during import.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use the longest RSA wrapping key that is practical. 
+        /// </para>
+        ///  
+        /// <para>
+        /// You cannot use an RSA_2048 public key to directly wrap an ECC_NIST_P521 private key.
+        /// Instead, use an RSA_AES wrapping algorithm or choose a longer RSA public key.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

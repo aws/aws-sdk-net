@@ -36,7 +36,7 @@ namespace Amazon.SecurityLake.Model
     #endif
     public partial class ResourceNotFoundException : AmazonSecurityLakeException
     {
-        private string _resourceId;
+        private string _resourceName;
         private string _resourceType;
 
         /// <summary>
@@ -99,7 +99,7 @@ namespace Amazon.SecurityLake.Model
         protected ResourceNotFoundException(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
             : base(info, context)
         {
-            this.ResourceId = (string)info.GetValue("ResourceId", typeof(string));
+            this.ResourceName = (string)info.GetValue("ResourceName", typeof(string));
             this.ResourceType = (string)info.GetValue("ResourceType", typeof(string));
         }
 
@@ -121,28 +121,27 @@ namespace Amazon.SecurityLake.Model
         public override void GetObjectData(System.Runtime.Serialization.SerializationInfo info, System.Runtime.Serialization.StreamingContext context)
         {
             base.GetObjectData(info, context);
-            info.AddValue("ResourceId", this.ResourceId);
+            info.AddValue("ResourceName", this.ResourceName);
             info.AddValue("ResourceType", this.ResourceType);
         }
 #endif
 
         /// <summary>
-        /// Gets and sets the property ResourceId. 
+        /// Gets and sets the property ResourceName. 
         /// <para>
-        /// The ID of the resource for which the type of resource could not be found.
+        /// The name of the resource that could not be found.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string ResourceId
+        public string ResourceName
         {
-            get { return this._resourceId; }
-            set { this._resourceId = value; }
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
         }
 
-        // Check to see if ResourceId property is set
-        internal bool IsSetResourceId()
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
         {
-            return this._resourceId != null;
+            return this._resourceName != null;
         }
 
         /// <summary>
@@ -151,7 +150,6 @@ namespace Amazon.SecurityLake.Model
         /// The type of the resource that could not be found.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ResourceType
         {
             get { return this._resourceType; }

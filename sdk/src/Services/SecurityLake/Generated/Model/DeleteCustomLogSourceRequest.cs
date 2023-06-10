@@ -30,29 +30,51 @@ namespace Amazon.SecurityLake.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteCustomLogSource operation.
-    /// Removes a custom log source from Amazon Security Lake.
+    /// Removes a custom log source from Amazon Security Lake, to stop sending data from the
+    /// custom source to Security Lake.
     /// </summary>
     public partial class DeleteCustomLogSourceRequest : AmazonSecurityLakeRequest
     {
-        private string _customSourceName;
+        private string _sourceName;
+        private string _sourceVersion;
 
         /// <summary>
-        /// Gets and sets the property CustomSourceName. 
+        /// Gets and sets the property SourceName. 
         /// <para>
-        /// The custom source name for the custom log source.
+        /// The source name of custom log source that you want to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string CustomSourceName
+        [AWSProperty(Required=true, Min=1, Max=64)]
+        public string SourceName
         {
-            get { return this._customSourceName; }
-            set { this._customSourceName = value; }
+            get { return this._sourceName; }
+            set { this._sourceName = value; }
         }
 
-        // Check to see if CustomSourceName property is set
-        internal bool IsSetCustomSourceName()
+        // Check to see if SourceName property is set
+        internal bool IsSetSourceName()
         {
-            return this._customSourceName != null;
+            return this._sourceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceVersion. 
+        /// <para>
+        /// The source version for the third-party custom source. You can limit the custom source
+        /// removal to the specified source version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=32)]
+        public string SourceVersion
+        {
+            get { return this._sourceVersion; }
+            set { this._sourceVersion = value; }
+        }
+
+        // Check to see if SourceVersion property is set
+        internal bool IsSetSourceVersion()
+        {
+            return this._sourceVersion != null;
         }
 
     }

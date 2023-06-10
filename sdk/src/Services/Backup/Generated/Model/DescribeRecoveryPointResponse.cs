@@ -50,6 +50,7 @@ namespace Amazon.Backup.Model
         private string _parentRecoveryPointArn;
         private string _recoveryPointArn;
         private string _resourceArn;
+        private string _resourceName;
         private string _resourceType;
         private string _sourceBackupVaultArn;
         private RecoveryPointStatus _status;
@@ -400,6 +401,24 @@ namespace Amazon.Backup.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ResourceName. 
+        /// <para>
+        /// This is the non-unique name of the resource that belongs to the specified backup.
+        /// </para>
+        /// </summary>
+        public string ResourceName
+        {
+            get { return this._resourceName; }
+            set { this._resourceName = value; }
+        }
+
+        // Check to see if ResourceName property is set
+        internal bool IsSetResourceName()
+        {
+            return this._resourceName != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceType. 
         /// <para>
         /// The type of Amazon Web Services resource to save as a recovery point; for example,
@@ -475,6 +494,12 @@ namespace Amazon.Backup.Model
         /// met, the next instance of a backup rule running will result in a new continuous recovery
         /// point being created. The recovery points with STOPPED status do not need to be deleted.
         /// </para>
+        ///  
+        /// <para>
+        /// For SAP HANA on Amazon EC2 <code>STOPPED</code> status occurs due to user action,
+        /// application misconfiguration, or backup failure. To ensure that future continuous
+        /// backups succeed, refer to the recovery point status and check SAP HANA for details.
+        /// </para>
         /// </summary>
         public RecoveryPointStatus Status
         {
@@ -491,7 +516,7 @@ namespace Amazon.Backup.Model
         /// <summary>
         /// Gets and sets the property StatusMessage. 
         /// <para>
-        /// A status message explaining the reason for the recovery point deletion failure.
+        /// A status message explaining the status of the recovery point.
         /// </para>
         /// </summary>
         public string StatusMessage

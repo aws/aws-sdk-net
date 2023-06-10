@@ -39,7 +39,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property ImportId. 
         /// <para>
-        /// An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_StartImport.html">StartImport</a>
+        /// An identifier for a unique import job. Use it when you call the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_StartImport.html">StartImport</a>
         /// operation.
         /// </para>
         /// </summary>

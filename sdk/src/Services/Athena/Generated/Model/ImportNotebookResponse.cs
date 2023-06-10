@@ -38,7 +38,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property NotebookId. 
         /// <para>
-        /// The ID of the notebook to import.
+        /// The ID assigned to the imported notebook.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=36)]

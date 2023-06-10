@@ -34,7 +34,7 @@ namespace Amazon.WAFV2.Model
     /// 
     ///  
     /// <para>
-    /// This is used only in the <a>FieldToMatch</a> specification for some web request component
+    /// This is used in the <a>FieldToMatch</a> specification for some web request component
     /// types. 
     /// </para>
     ///  

@@ -46,15 +46,37 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class ParameterRanges
     {
+        private List<AutoParameter> _autoParameters = new List<AutoParameter>();
         private List<CategoricalParameterRange> _categoricalParameterRanges = new List<CategoricalParameterRange>();
         private List<ContinuousParameterRange> _continuousParameterRanges = new List<ContinuousParameterRange>();
         private List<IntegerParameterRange> _integerParameterRanges = new List<IntegerParameterRange>();
 
         /// <summary>
+        /// Gets and sets the property AutoParameters. 
+        /// <para>
+        /// A list containing hyperparameter names and example values to be used by Autotune to
+        /// determine optimal ranges for your tuning job.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public List<AutoParameter> AutoParameters
+        {
+            get { return this._autoParameters; }
+            set { this._autoParameters = value; }
+        }
+
+        // Check to see if AutoParameters property is set
+        internal bool IsSetAutoParameters()
+        {
+            return this._autoParameters != null && this._autoParameters.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property CategoricalParameterRanges. 
         /// <para>
-        /// The array of <a>CategoricalParameterRange</a> objects that specify ranges of categorical
-        /// hyperparameters that a hyperparameter tuning job searches.
+        /// The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html">CategoricalParameterRange</a>
+        /// objects that specify ranges of categorical hyperparameters that a hyperparameter tuning
+        /// job searches.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
@@ -73,8 +95,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ContinuousParameterRanges. 
         /// <para>
-        /// The array of <a>ContinuousParameterRange</a> objects that specify ranges of continuous
-        /// hyperparameters that a hyperparameter tuning job searches.
+        /// The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ContinuousParameterRange.html">ContinuousParameterRange</a>
+        /// objects that specify ranges of continuous hyperparameters that a hyperparameter tuning
+        /// job searches.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30)]
@@ -93,8 +116,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property IntegerParameterRanges. 
         /// <para>
-        /// The array of <a>IntegerParameterRange</a> objects that specify ranges of integer hyperparameters
-        /// that a hyperparameter tuning job searches.
+        /// The array of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_IntegerParameterRange.html">IntegerParameterRange</a>
+        /// objects that specify ranges of integer hyperparameters that a hyperparameter tuning
+        /// job searches.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=30)]

@@ -85,9 +85,10 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthStatus. 
         /// <para>
-        /// The last reported health status of this instance. "Healthy" means that the instance
-        /// is healthy and should remain in service. "Unhealthy" means that the instance is unhealthy
-        /// and Amazon EC2 Auto Scaling should terminate and replace it.
+        /// The last reported health status of this instance. <code>Healthy</code> means that
+        /// the instance is healthy and should remain in service. <code>Unhealthy</code> means
+        /// that the instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
+        /// it.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

@@ -36,7 +36,10 @@ namespace Amazon.Chime.Model
         private User _user;
 
         /// <summary>
-        /// Gets and sets the property User.
+        /// Gets and sets the property User. 
+        /// <para>
+        /// The user on the Amazon Chime account.
+        /// </para>
         /// </summary>
         public User User
         {

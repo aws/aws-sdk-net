@@ -115,7 +115,7 @@ namespace Amazon.CodeStarNotifications.Model
         /// The name of the notification rule.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string Name
         {
             get { return this._name; }

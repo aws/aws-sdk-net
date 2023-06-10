@@ -65,8 +65,8 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  
         /// <para>
-        /// Use <code> <a>DescribeTypeRegistration</a> </code> to return detailed information
-        /// about a type registration request.
+        /// Use <a>DescribeTypeRegistration</a> to return detailed information about a type registration
+        /// request.
         /// </para>
         /// </summary>
         public List<string> RegistrationTokenList

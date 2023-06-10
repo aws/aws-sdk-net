@@ -35,8 +35,29 @@ namespace Amazon.MediaTailor.Model
     /// </summary>
     public partial class AvailSuppression
     {
+        private FillPolicy _fillPolicy;
         private Mode _mode;
         private string _value;
+
+        /// <summary>
+        /// Gets and sets the property FillPolicy. 
+        /// <para>
+        /// Defines the policy to apply to the avail suppression mode. <code>BEHIND_LIVE_EDGE</code>
+        /// will always use the full avail suppression policy. <code>AFTER_LIVE_EDGE</code> mode
+        /// can be used to invoke partial ad break fills when a session starts mid-break.
+        /// </para>
+        /// </summary>
+        public FillPolicy FillPolicy
+        {
+            get { return this._fillPolicy; }
+            set { this._fillPolicy = value; }
+        }
+
+        // Check to see if FillPolicy property is set
+        internal bool IsSetFillPolicy()
+        {
+            return this._fillPolicy != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Mode. 
@@ -44,7 +65,9 @@ namespace Amazon.MediaTailor.Model
         /// Sets the ad suppression mode. By default, ad suppression is off and all ad breaks
         /// are filled with ads or slate. When Mode is set to <code>BEHIND_LIVE_EDGE</code>, ad
         /// suppression is active and MediaTailor won't fill ad breaks on or behind the ad suppression
-        /// Value time in the manifest lookback window.
+        /// Value time in the manifest lookback window. When Mode is set to <code>AFTER_LIVE_EDGE</code>,
+        /// ad suppression is active and MediaTailor won't fill ad breaks that are within the
+        /// live edge plus the avail suppression value.
         /// </para>
         /// </summary>
         public Mode Mode

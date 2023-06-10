@@ -136,6 +136,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.ScanStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("scanType", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ScanType = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("totalBytes", targetDepth))
                 {
                     var unmarshaller = LongUnmarshaller.Instance;

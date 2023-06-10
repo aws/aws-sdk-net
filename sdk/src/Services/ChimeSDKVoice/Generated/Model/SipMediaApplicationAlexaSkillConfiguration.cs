@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The Alexa Skill configuration of a SIP media application.
     /// </summary>
     public partial class SipMediaApplicationAlexaSkillConfiguration
     {
@@ -37,7 +37,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private AlexaSkillStatus _alexaSkillStatus;
 
         /// <summary>
-        /// Gets and sets the property AlexaSkillIds.
+        /// Gets and sets the property AlexaSkillIds. 
+        /// <para>
+        /// The ID of the Alexa Skill configuration.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1)]
         public List<string> AlexaSkillIds
@@ -53,7 +56,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AlexaSkillStatus.
+        /// Gets and sets the property AlexaSkillStatus. 
+        /// <para>
+        /// The status of the Alexa Skill configuration.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public AlexaSkillStatus AlexaSkillStatus

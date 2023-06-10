@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The input structure for Land Cover Operation type.
     /// </summary>
     public partial class LandCoverSegmentationConfigInput
     {

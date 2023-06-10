@@ -140,6 +140,7 @@ namespace Amazon.Honeycode.Model
         /// rawValue, which holds the value of the variable to be passed to the screen. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, VariableValue> Variables
         {
             get { return this._variables; }

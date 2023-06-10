@@ -36,6 +36,7 @@ namespace Amazon.DataExchange.Model
         private string _bucket;
         private List<string> _keyPrefixes = new List<string>();
         private List<string> _keys = new List<string>();
+        private List<KmsKeyToGrant> _kmsKeysToGrant = new List<KmsKeyToGrant>();
         private string _s3AccessPointAlias;
         private string _s3AccessPointArn;
 
@@ -92,6 +93,27 @@ namespace Amazon.DataExchange.Model
         internal bool IsSetKeys()
         {
             return this._keys != null && this._keys.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeysToGrant. 
+        /// <para>
+        ///  List of AWS KMS CMKs (Key Management System Customer Managed Keys) and ARNs used
+        /// to encrypt S3 objects being shared in this S3 Data Access asset. Providers must include
+        /// all AWS KMS keys used to encrypt these shared S3 objects.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<KmsKeyToGrant> KmsKeysToGrant
+        {
+            get { return this._kmsKeysToGrant; }
+            set { this._kmsKeysToGrant = value; }
+        }
+
+        // Check to see if KmsKeysToGrant property is set
+        internal bool IsSetKmsKeysToGrant()
+        {
+            return this._kmsKeysToGrant != null && this._kmsKeysToGrant.Count > 0; 
         }
 
         /// <summary>

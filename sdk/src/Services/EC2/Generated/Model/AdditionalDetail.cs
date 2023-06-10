@@ -29,17 +29,24 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes an additional detail for a path analysis.
+    /// Describes an additional detail for a path analysis. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/reachability/additional-detail-codes.html">Reachability
+    /// Analyzer additional detail codes</a>.
     /// </summary>
     public partial class AdditionalDetail
     {
         private string _additionalDetailType;
         private AnalysisComponent _component;
+        private List<AnalysisComponent> _loadBalancers = new List<AnalysisComponent>();
+        private List<RuleGroupRuleOptionsPair> _ruleGroupRuleOptionsPairs = new List<RuleGroupRuleOptionsPair>();
+        private List<RuleGroupTypePair> _ruleGroupTypePairs = new List<RuleGroupTypePair>();
+        private List<RuleOption> _ruleOptions = new List<RuleOption>();
+        private string _serviceName;
+        private AnalysisComponent _vpcEndpointService;
 
         /// <summary>
         /// Gets and sets the property AdditionalDetailType. 
         /// <para>
-        /// The information type.
+        /// The additional detail code.
         /// </para>
         /// </summary>
         public string AdditionalDetailType
@@ -70,6 +77,114 @@ namespace Amazon.EC2.Model
         internal bool IsSetComponent()
         {
             return this._component != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LoadBalancers. 
+        /// <para>
+        /// The load balancers.
+        /// </para>
+        /// </summary>
+        public List<AnalysisComponent> LoadBalancers
+        {
+            get { return this._loadBalancers; }
+            set { this._loadBalancers = value; }
+        }
+
+        // Check to see if LoadBalancers property is set
+        internal bool IsSetLoadBalancers()
+        {
+            return this._loadBalancers != null && this._loadBalancers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleGroupRuleOptionsPairs. 
+        /// <para>
+        /// The rule options.
+        /// </para>
+        /// </summary>
+        public List<RuleGroupRuleOptionsPair> RuleGroupRuleOptionsPairs
+        {
+            get { return this._ruleGroupRuleOptionsPairs; }
+            set { this._ruleGroupRuleOptionsPairs = value; }
+        }
+
+        // Check to see if RuleGroupRuleOptionsPairs property is set
+        internal bool IsSetRuleGroupRuleOptionsPairs()
+        {
+            return this._ruleGroupRuleOptionsPairs != null && this._ruleGroupRuleOptionsPairs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleGroupTypePairs. 
+        /// <para>
+        /// The rule group type.
+        /// </para>
+        /// </summary>
+        public List<RuleGroupTypePair> RuleGroupTypePairs
+        {
+            get { return this._ruleGroupTypePairs; }
+            set { this._ruleGroupTypePairs = value; }
+        }
+
+        // Check to see if RuleGroupTypePairs property is set
+        internal bool IsSetRuleGroupTypePairs()
+        {
+            return this._ruleGroupTypePairs != null && this._ruleGroupTypePairs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property RuleOptions. 
+        /// <para>
+        /// The rule options.
+        /// </para>
+        /// </summary>
+        public List<RuleOption> RuleOptions
+        {
+            get { return this._ruleOptions; }
+            set { this._ruleOptions = value; }
+        }
+
+        // Check to see if RuleOptions property is set
+        internal bool IsSetRuleOptions()
+        {
+            return this._ruleOptions != null && this._ruleOptions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ServiceName. 
+        /// <para>
+        /// The name of the VPC endpoint service.
+        /// </para>
+        /// </summary>
+        public string ServiceName
+        {
+            get { return this._serviceName; }
+            set { this._serviceName = value; }
+        }
+
+        // Check to see if ServiceName property is set
+        internal bool IsSetServiceName()
+        {
+            return this._serviceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VpcEndpointService. 
+        /// <para>
+        /// The VPC endpoint service.
+        /// </para>
+        /// </summary>
+        public AnalysisComponent VpcEndpointService
+        {
+            get { return this._vpcEndpointService; }
+            set { this._vpcEndpointService = value; }
+        }
+
+        // Check to see if VpcEndpointService property is set
+        internal bool IsSetVpcEndpointService()
+        {
+            return this._vpcEndpointService != null;
         }
 
     }

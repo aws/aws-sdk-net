@@ -67,7 +67,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The feedback token.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string FeedbackToken
         {
             get { return this._feedbackToken; }
@@ -105,7 +105,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The user pool username.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Username
         {
             get { return this._username; }

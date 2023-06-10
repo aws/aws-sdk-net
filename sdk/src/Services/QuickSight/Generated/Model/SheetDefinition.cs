@@ -269,7 +269,7 @@ namespace Amazon.QuickSight.Model
         /// of the sheet.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=30)]
+        [AWSProperty(Max=50)]
         public List<Visual> Visuals
         {
             get { return this._visuals; }

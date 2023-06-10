@@ -40,6 +40,7 @@ namespace Amazon.SecurityHub.Model
         private string _keyName;
         private string _launchedAt;
         private AwsEc2InstanceMetadataOptions _metadataOptions;
+        private AwsEc2InstanceMonitoringDetails _monitoring;
         private List<AwsEc2InstanceNetworkInterfacesDetails> _networkInterfaces = new List<AwsEc2InstanceNetworkInterfacesDetails>();
         private string _subnetId;
         private string _type;
@@ -144,8 +145,8 @@ namespace Amazon.SecurityHub.Model
         ///  
         /// <para>
         /// Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC
-        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces.
-        /// For example, <code>2020-03-22T13:22:13.933Z</code>.
+        /// 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces,
+        /// and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.
         /// </para>
         /// </summary>
         public string LaunchedAt
@@ -176,6 +177,24 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetMetadataOptions()
         {
             return this._metadataOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Monitoring. 
+        /// <para>
+        ///  Describes the type of monitoring that’s turned on for an instance. 
+        /// </para>
+        /// </summary>
+        public AwsEc2InstanceMonitoringDetails Monitoring
+        {
+            get { return this._monitoring; }
+            set { this._monitoring = value; }
+        }
+
+        // Check to see if Monitoring property is set
+        internal bool IsSetMonitoring()
+        {
+            return this._monitoring != null;
         }
 
         /// <summary>

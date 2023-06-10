@@ -39,8 +39,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property IPSets. 
         /// <para>
-        /// Array of IPSets. This may not be the full list of IPSets that you have defined. See
-        /// the <code>Limit</code> specification for this request.
+        /// Array of IPSets. If you specified a <code>Limit</code> in your request, this might
+        /// not be the full list. 
         /// </para>
         /// </summary>
         public List<IPSetSummary> IPSets

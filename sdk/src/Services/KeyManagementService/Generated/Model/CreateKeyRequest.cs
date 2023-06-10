@@ -123,14 +123,6 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  
     /// <para>
-    /// HMAC KMS keys are not supported in all Amazon Web Services Regions. If you try to
-    /// create an HMAC KMS key in an Amazon Web Services Region in which HMAC keys are not
-    /// supported, the <code>CreateKey</code> operation returns an <code>UnsupportedOperationException</code>.
-    /// For a list of Regions in which HMAC KMS keys are supported, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
-    /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
     ///  
     /// </para>
     ///  </dd> <dt>Multi-Region primary keys</dt> <dt>Imported key material</dt> <dd> 
@@ -165,18 +157,20 @@ namespace Amazon.KeyManagementService.Model
     /// </para>
     ///  </dd> <dd> 
     /// <para>
-    /// To import your own key material into a KMS key, begin by creating a symmetric encryption
-    /// KMS key with no key material. To do this, use the <code>Origin</code> parameter of
-    /// <code>CreateKey</code> with a value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a>
-    /// operation to get a public key and import token, and use the public key to encrypt
-    /// your key material. Then, use <a>ImportKeyMaterial</a> with your import token to import
+    /// To import your own key material into a KMS key, begin by creating a KMS key with no
+    /// key material. To do this, use the <code>Origin</code> parameter of <code>CreateKey</code>
+    /// with a value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a> operation
+    /// to get a public key and import token. Use the wrapping public key to encrypt your
+    /// key material. Then, use <a>ImportKeyMaterial</a> with your import token to import
     /// the key material. For step-by-step instructions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
     /// Key Material</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
     /// </para>
     ///  
     /// <para>
-    /// This feature supports only symmetric encryption KMS keys, including multi-Region symmetric
-    /// encryption KMS keys. You cannot import key material into any other type of KMS key.
+    /// You can import key material into KMS keys of all supported KMS key types: symmetric
+    /// encryption KMS keys, HMAC KMS keys, asymmetric encryption KMS keys, and asymmetric
+    /// signing KMS keys. You can also create multi-Region keys with imported key material.
+    /// However, you can't import key material into a KMS key in a custom key store.
     /// </para>
     ///  
     /// <para>
@@ -295,7 +289,7 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property BypassPolicyLockoutSafetyCheck. 
         /// <para>
-        /// A flag to indicate whether to bypass the key policy lockout safety check.
+        /// Skips ("bypasses") the key policy lockout safety check. The default value is false.
         /// </para>
         ///  <important> 
         /// <para>
@@ -304,18 +298,13 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
-        /// Key Policy</a> section in the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
+        /// key policy</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  </important> 
         /// <para>
-        /// Use this parameter only when you include a policy in the request and you intend to
-        /// prevent the principal that is making the request from making a subsequent <a>PutKeyPolicy</a>
-        /// request on the KMS key.
-        /// </para>
-        ///  
-        /// <para>
-        /// The default value is false.
+        /// Use this parameter only when you intend to prevent the principal that is making the
+        /// request from making a subsequent <a>PutKeyPolicy</a> request on the KMS key.
         /// </para>
         /// </summary>
         public bool BypassPolicyLockoutSafetyCheck
@@ -392,14 +381,15 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description of the KMS key.
+        /// A description of the KMS key. Use a description that helps you decide whether the
+        /// KMS key is appropriate for a task. The default value is an empty string (no description).
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// Use a description that helps you decide whether the KMS key is appropriate for a task.
-        /// The default value is an empty string (no description).
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         /// To set or change the description after the key is created, use <a>UpdateKeyDescription</a>.
         /// </para>
@@ -689,20 +679,19 @@ namespace Amazon.KeyManagementService.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy
-        /// must allow the principal that is making the <code>CreateKey</code> request to make
-        /// a subsequent <a>PutKeyPolicy</a> request on the KMS key. This reduces the risk that
-        /// the KMS key becomes unmanageable. For more information, refer to the scenario in the
-        /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default
-        /// Key Policy</a> section of the <i> <i>Key Management Service Developer Guide</i> </i>.
+        /// The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code>
+        /// request on the KMS key. This reduces the risk that the KMS key becomes unmanageable.
+        /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default
+        /// key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this
+        /// condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.)
         /// </para>
         ///  </li> <li> 
         /// <para>
         /// Each statement in the key policy must contain one or more principals. The principals
         /// in the key policy must exist and be visible to KMS. When you create a new Amazon Web
-        /// Services principal (for example, an IAM user or role), you might need to enforce a
-        /// delay before including the new principal in a key policy because the new principal
-        /// might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
+        /// Services principal, you might need to enforce a delay before including the new principal
+        /// in a key policy because the new principal might not be immediately visible to KMS.
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes
         /// that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity
         /// and Access Management User Guide</i>.
         /// </para>
@@ -710,7 +699,7 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// If you do not provide a key policy, KMS attaches a default key policy to the KMS key.
         /// For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default">Default
-        /// Key Policy</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// key policy</a> in the <i>Key Management Service Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -742,7 +731,12 @@ namespace Amazon.KeyManagementService.Model
         /// Assigns one or more tags to the KMS key. Use this parameter to tag the KMS key when
         /// it is created. To tag an existing KMS key, use the <a>TagResource</a> operation.
         /// </para>
-        ///  <note> 
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important> <note> 
         /// <para>
         /// Tagging or untagging a KMS key can allow or deny permission to the KMS key. For details,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC

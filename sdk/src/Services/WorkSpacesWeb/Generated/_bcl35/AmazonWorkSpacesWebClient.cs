@@ -341,6 +341,78 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  AssociateIpAccessSettings
+
+        /// <summary>
+        /// Associates an IP access settings resource with a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpAccessSettings service method.</param>
+        /// 
+        /// <returns>The response from the AssociateIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateIpAccessSettings">REST API Reference for AssociateIpAccessSettings Operation</seealso>
+        public virtual AssociateIpAccessSettingsResponse AssociateIpAccessSettings(AssociateIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateIpAccessSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateIpAccessSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateIpAccessSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateIpAccessSettings">REST API Reference for AssociateIpAccessSettings Operation</seealso>
+        public virtual IAsyncResult BeginAssociateIpAccessSettings(AssociateIpAccessSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateIpAccessSettings.</param>
+        /// 
+        /// <returns>Returns a  AssociateIpAccessSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateIpAccessSettings">REST API Reference for AssociateIpAccessSettings Operation</seealso>
+        public virtual AssociateIpAccessSettingsResponse EndAssociateIpAccessSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateIpAccessSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  AssociateNetworkSettings
 
         /// <summary>
@@ -774,6 +846,78 @@ namespace Amazon.WorkSpacesWeb
         public virtual CreateIdentityProviderResponse EndCreateIdentityProvider(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateIdentityProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateIpAccessSettings
+
+        /// <summary>
+        /// Creates an IP access settings resource that can be associated with a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpAccessSettings service method.</param>
+        /// 
+        /// <returns>The response from the CreateIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ServiceQuotaExceededException">
+        /// The service quota has been exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIpAccessSettings">REST API Reference for CreateIpAccessSettings Operation</seealso>
+        public virtual CreateIpAccessSettingsResponse CreateIpAccessSettings(CreateIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<CreateIpAccessSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateIpAccessSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateIpAccessSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIpAccessSettings">REST API Reference for CreateIpAccessSettings Operation</seealso>
+        public virtual IAsyncResult BeginCreateIpAccessSettings(CreateIpAccessSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateIpAccessSettings.</param>
+        /// 
+        /// <returns>Returns a  CreateIpAccessSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIpAccessSettings">REST API Reference for CreateIpAccessSettings Operation</seealso>
+        public virtual CreateIpAccessSettingsResponse EndCreateIpAccessSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateIpAccessSettingsResponse>(asyncResult);
         }
 
         #endregion
@@ -1289,6 +1433,75 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  DeleteIpAccessSettings
+
+        /// <summary>
+        /// Deletes IP access settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpAccessSettings service method.</param>
+        /// 
+        /// <returns>The response from the DeleteIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIpAccessSettings">REST API Reference for DeleteIpAccessSettings Operation</seealso>
+        public virtual DeleteIpAccessSettingsResponse DeleteIpAccessSettings(DeleteIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteIpAccessSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteIpAccessSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteIpAccessSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIpAccessSettings">REST API Reference for DeleteIpAccessSettings Operation</seealso>
+        public virtual IAsyncResult BeginDeleteIpAccessSettings(DeleteIpAccessSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteIpAccessSettings.</param>
+        /// 
+        /// <returns>Returns a  DeleteIpAccessSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIpAccessSettings">REST API Reference for DeleteIpAccessSettings Operation</seealso>
+        public virtual DeleteIpAccessSettingsResponse EndDeleteIpAccessSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteIpAccessSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteNetworkSettings
 
         /// <summary>
@@ -1703,6 +1916,75 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  DisassociateIpAccessSettings
+
+        /// <summary>
+        /// Disassociates IP access settings from a web portal.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpAccessSettings service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateIpAccessSettings">REST API Reference for DisassociateIpAccessSettings Operation</seealso>
+        public virtual DisassociateIpAccessSettingsResponse DisassociateIpAccessSettings(DisassociateIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateIpAccessSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateIpAccessSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateIpAccessSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateIpAccessSettings">REST API Reference for DisassociateIpAccessSettings Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateIpAccessSettings(DisassociateIpAccessSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateIpAccessSettings.</param>
+        /// 
+        /// <returns>Returns a  DisassociateIpAccessSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateIpAccessSettings">REST API Reference for DisassociateIpAccessSettings Operation</seealso>
+        public virtual DisassociateIpAccessSettingsResponse EndDisassociateIpAccessSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateIpAccessSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DisassociateNetworkSettings
 
         /// <summary>
@@ -2113,6 +2395,75 @@ namespace Amazon.WorkSpacesWeb
         public virtual GetIdentityProviderResponse EndGetIdentityProvider(IAsyncResult asyncResult)
         {
             return EndInvoke<GetIdentityProviderResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetIpAccessSettings
+
+        /// <summary>
+        /// Gets the IP access settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetIpAccessSettings service method.</param>
+        /// 
+        /// <returns>The response from the GetIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIpAccessSettings">REST API Reference for GetIpAccessSettings Operation</seealso>
+        public virtual GetIpAccessSettingsResponse GetIpAccessSettings(GetIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<GetIpAccessSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetIpAccessSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetIpAccessSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIpAccessSettings">REST API Reference for GetIpAccessSettings Operation</seealso>
+        public virtual IAsyncResult BeginGetIpAccessSettings(GetIpAccessSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetIpAccessSettings.</param>
+        /// 
+        /// <returns>Returns a  GetIpAccessSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIpAccessSettings">REST API Reference for GetIpAccessSettings Operation</seealso>
+        public virtual GetIpAccessSettingsResponse EndGetIpAccessSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetIpAccessSettingsResponse>(asyncResult);
         }
 
         #endregion
@@ -2728,6 +3079,72 @@ namespace Amazon.WorkSpacesWeb
         public virtual ListIdentityProvidersResponse EndListIdentityProviders(IAsyncResult asyncResult)
         {
             return EndInvoke<ListIdentityProvidersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListIpAccessSettings
+
+        /// <summary>
+        /// Retrieves a list of IP access settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListIpAccessSettings service method.</param>
+        /// 
+        /// <returns>The response from the ListIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIpAccessSettings">REST API Reference for ListIpAccessSettings Operation</seealso>
+        public virtual ListIpAccessSettingsResponse ListIpAccessSettings(ListIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<ListIpAccessSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListIpAccessSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListIpAccessSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIpAccessSettings">REST API Reference for ListIpAccessSettings Operation</seealso>
+        public virtual IAsyncResult BeginListIpAccessSettings(ListIpAccessSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListIpAccessSettings.</param>
+        /// 
+        /// <returns>Returns a  ListIpAccessSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIpAccessSettings">REST API Reference for ListIpAccessSettings Operation</seealso>
+        public virtual ListIpAccessSettingsResponse EndListIpAccessSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListIpAccessSettingsResponse>(asyncResult);
         }
 
         #endregion
@@ -3479,6 +3896,75 @@ namespace Amazon.WorkSpacesWeb
 
         #endregion
         
+        #region  UpdateIpAccessSettings
+
+        /// <summary>
+        /// Updates IP access settings.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIpAccessSettings service method.</param>
+        /// 
+        /// <returns>The response from the UpdateIpAccessSettings service method, as returned by WorkSpacesWeb.</returns>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
+        /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
+        /// There is an internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ResourceNotFoundException">
+        /// The resource cannot be found.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ThrottlingException">
+        /// There is a throttling error.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ValidationException">
+        /// There is a validation error.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIpAccessSettings">REST API Reference for UpdateIpAccessSettings Operation</seealso>
+        public virtual UpdateIpAccessSettingsResponse UpdateIpAccessSettings(UpdateIpAccessSettingsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateIpAccessSettingsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateIpAccessSettings operation on AmazonWorkSpacesWebClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateIpAccessSettings
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIpAccessSettings">REST API Reference for UpdateIpAccessSettings Operation</seealso>
+        public virtual IAsyncResult BeginUpdateIpAccessSettings(UpdateIpAccessSettingsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateIpAccessSettingsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateIpAccessSettingsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateIpAccessSettings operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateIpAccessSettings.</param>
+        /// 
+        /// <returns>Returns a  UpdateIpAccessSettingsResult from WorkSpacesWeb.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIpAccessSettings">REST API Reference for UpdateIpAccessSettings Operation</seealso>
+        public virtual UpdateIpAccessSettingsResponse EndUpdateIpAccessSettings(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateIpAccessSettingsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  UpdateNetworkSettings
 
         /// <summary>
@@ -3558,6 +4044,9 @@ namespace Amazon.WorkSpacesWeb
         /// <returns>The response from the UpdatePortal service method, as returned by WorkSpacesWeb.</returns>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.AccessDeniedException">
         /// Access is denied.
+        /// </exception>
+        /// <exception cref="Amazon.WorkSpacesWeb.Model.ConflictException">
+        /// There is a conflict.
         /// </exception>
         /// <exception cref="Amazon.WorkSpacesWeb.Model.InternalServerException">
         /// There is an internal server error.

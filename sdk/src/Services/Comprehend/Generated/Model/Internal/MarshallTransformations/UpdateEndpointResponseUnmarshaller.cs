@@ -47,6 +47,17 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         {
             UpdateEndpointResponse response = new UpdateEndpointResponse();
 
+            context.Read();
+            int targetDepth = context.CurrentDepth;
+            while (context.ReadAtDepth(targetDepth))
+            {
+                if (context.TestExpression("DesiredModelArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.DesiredModelArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+            }
 
             return response;
         }

@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private SipMediaApplicationCall _sipMediaApplicationCall;
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationCall.
+        /// Gets and sets the property SipMediaApplicationCall. 
+        /// <para>
+        /// The actual call.
+        /// </para>
         /// </summary>
         public SipMediaApplicationCall SipMediaApplicationCall
         {

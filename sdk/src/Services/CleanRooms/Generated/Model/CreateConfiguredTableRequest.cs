@@ -39,6 +39,7 @@ namespace Amazon.CleanRooms.Model
         private string _description;
         private string _name;
         private TableReference _tableReference;
+        private Dictionary<string, string> _tags = new Dictionary<string, string>();
 
         /// <summary>
         /// Gets and sets the property AllowedColumns. 
@@ -47,7 +48,7 @@ namespace Amazon.CleanRooms.Model
         /// rules.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=250)]
+        [AWSProperty(Required=true, Min=1, Max=100)]
         public List<string> AllowedColumns
         {
             get { return this._allowedColumns; }
@@ -134,6 +135,27 @@ namespace Amazon.CleanRooms.Model
         internal bool IsSetTableReference()
         {
             return this._tableReference != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// An optional label that you can assign to a resource when you create it. Each tag consists
+        /// of a key and an optional value, both of which you define. When you use tagging, you
+        /// can also use tag-based access control in IAM policies to control access to this resource.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=200)]
+        public Dictionary<string, string> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

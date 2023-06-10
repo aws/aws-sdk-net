@@ -70,6 +70,12 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.CustomProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("dataTransferApi", targetDepth))
+                {
+                    var unmarshaller = DataTransferApiUnmarshaller.Instance;
+                    unmarshalledObject.DataTransferApi = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("entityName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

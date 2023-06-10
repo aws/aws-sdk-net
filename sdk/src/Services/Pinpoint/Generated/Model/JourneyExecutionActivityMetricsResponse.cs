@@ -48,32 +48,32 @@ namespace Amazon.Pinpoint.Model
         /// </para>
         ///  <ul><li>
         /// <para>
-        /// CONDITIONAL_SPLIT - For a yes/no split activity, which is an activity that sends participants
+        /// CONDITIONAL_SPLIT – For a yes/no split activity, which is an activity that sends participants
         /// down one of two paths in a journey.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// HOLDOUT - For a holdout activity, which is an activity that stops a journey for a
+        /// HOLDOUT – For a holdout activity, which is an activity that stops a journey for a
         /// specified percentage of participants.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// MESSAGE - For an email activity, which is an activity that sends an email message
+        /// MESSAGE – For an email activity, which is an activity that sends an email message
         /// to participants.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// MULTI_CONDITIONAL_SPLIT - For a multivariate split activity, which is an activity
+        /// MULTI_CONDITIONAL_SPLIT – For a multivariate split activity, which is an activity
         /// that sends participants down one of as many as five paths in a journey.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// RANDOM_SPLIT - For a random split activity, which is an activity that sends specified
+        /// RANDOM_SPLIT – For a random split activity, which is an activity that sends specified
         /// percentages of participants down one of as many as five paths in a journey.
         /// </para>
         /// </li> <li>
         /// <para>
-        /// WAIT - For a wait activity, which is an activity that waits for a certain amount of
+        /// WAIT – For a wait activity, which is an activity that waits for a certain amount of
         /// time or until a specific date and time before moving participants to the next activity
         /// in a journey.
         /// </para>

@@ -37,15 +37,18 @@ namespace Amazon.ComputeOptimizer.Model
         private string _currentInstanceType;
         private CurrentPerformanceRisk _currentPerformanceRisk;
         private EffectiveRecommendationPreferences _effectiveRecommendationPreferences;
+        private ExternalMetricStatus _externalMetricStatus;
         private Finding _finding;
         private List<string> _findingReasonCodes = new List<string>();
         private List<string> _inferredWorkloadTypes = new List<string>();
         private string _instanceArn;
         private string _instanceName;
+        private InstanceState _instanceState;
         private DateTime? _lastRefreshTimestamp;
         private double? _lookBackPeriodInDays;
         private List<InstanceRecommendationOption> _recommendationOptions = new List<InstanceRecommendationOption>();
         private List<RecommendationSource> _recommendationSources = new List<RecommendationSource>();
+        private List<Tag> _tags = new List<Tag>();
         private List<UtilizationMetric> _utilizationMetrics = new List<UtilizationMetric>();
 
         /// <summary>
@@ -120,6 +123,25 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetEffectiveRecommendationPreferences()
         {
             return this._effectiveRecommendationPreferences != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExternalMetricStatus. 
+        /// <para>
+        ///  An object that describes Compute Optimizer's integration status with your external
+        /// metrics provider. 
+        /// </para>
+        /// </summary>
+        public ExternalMetricStatus ExternalMetricStatus
+        {
+            get { return this._externalMetricStatus; }
+            set { this._externalMetricStatus = value; }
+        }
+
+        // Check to see if ExternalMetricStatus property is set
+        internal bool IsSetExternalMetricStatus()
+        {
+            return this._externalMetricStatus != null;
         }
 
         /// <summary>
@@ -219,8 +241,8 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  <b> <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
         /// configuration can be sized down while still meeting the performance requirements of
-        /// your workload. This is identified by analyzing the <code>VolumeReadOps</code> and
-        /// <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current instance
+        /// your workload. This is identified by analyzing the <code>VolumeReadBytes</code> and
+        /// <code>VolumeWriteBytes</code> metrics of EBS volumes attached to the current instance
         /// during the look-back period.
         /// </para>
         ///  </li> <li> 
@@ -228,14 +250,14 @@ namespace Amazon.ComputeOptimizer.Model
         ///  <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
         /// configuration doesn't meet the performance requirements of your workload and there
         /// is an alternative instance type that provides better EBS throughput performance. This
-        /// is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code>
+        /// is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>
         /// metrics of EBS volumes attached to the current instance during the look-back period.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
         /// can be sized down while still meeting the performance requirements of your workload.
-        /// This is identified by analyzing the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>
+        /// This is identified by analyzing the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code>
         /// metric of EBS volumes attached to the current instance during the look-back period.
         /// </para>
         ///  </li> <li> 
@@ -243,7 +265,7 @@ namespace Amazon.ComputeOptimizer.Model
         ///  <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS configuration
         /// doesn't meet the performance requirements of your workload and there is an alternative
         /// instance type that provides better EBS IOPS performance. This is identified by analyzing
-        /// the <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metric of EBS volumes
+        /// the <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
         /// attached to the current instance during the look-back period.
         /// </para>
         ///  </li> <li> 
@@ -370,6 +392,14 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  <code>Redis</code> - Infers that Redis might be running on the instance.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Kafka</code> - Infers that Kafka might be running on the instance.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>SQLServer</code> - Infers that SQLServer might be running on the instance.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public List<string> InferredWorkloadTypes
@@ -418,6 +448,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetInstanceName()
         {
             return this._instanceName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property InstanceState. 
+        /// <para>
+        ///  The state of the instance when the recommendation was generated. 
+        /// </para>
+        /// </summary>
+        public InstanceState InstanceState
+        {
+            get { return this._instanceState; }
+            set { this._instanceState = value; }
+        }
+
+        // Check to see if InstanceState property is set
+        internal bool IsSetInstanceState()
+        {
+            return this._instanceState != null;
         }
 
         /// <summary>
@@ -490,6 +538,24 @@ namespace Amazon.ComputeOptimizer.Model
         internal bool IsSetRecommendationSources()
         {
             return this._recommendationSources != null && this._recommendationSources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        ///  A list of tags assigned to your Amazon EC2 instance recommendations. 
+        /// </para>
+        /// </summary>
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
         /// <summary>

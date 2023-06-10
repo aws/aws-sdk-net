@@ -37,6 +37,7 @@ namespace Amazon.MediaConnect.Model
         private Encryption _decryption;
         private string _description;
         private string _entitlementArn;
+        private GatewayBridgeSource _gatewayBridgeSource;
         private string _ingestIp;
         private int? _ingestPort;
         private List<MediaStreamSourceConfiguration> _mediaStreamSourceConfigurations = new List<MediaStreamSourceConfiguration>();
@@ -112,6 +113,22 @@ namespace Amazon.MediaConnect.Model
         internal bool IsSetEntitlementArn()
         {
             return this._entitlementArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GatewayBridgeSource. The source configuration for cloud
+        /// flows receiving a stream from a bridge.
+        /// </summary>
+        public GatewayBridgeSource GatewayBridgeSource
+        {
+            get { return this._gatewayBridgeSource; }
+            set { this._gatewayBridgeSource = value; }
+        }
+
+        // Check to see if GatewayBridgeSource property is set
+        internal bool IsSetGatewayBridgeSource()
+        {
+            return this._gatewayBridgeSource != null;
         }
 
         /// <summary>

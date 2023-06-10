@@ -30,14 +30,18 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSipRule operation.
-    /// 
+    /// Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and target
+    /// endpoints.
     /// </summary>
     public partial class GetSipRuleRequest : AmazonChimeSDKVoiceRequest
     {
         private string _sipRuleId;
 
         /// <summary>
-        /// Gets and sets the property SipRuleId.
+        /// Gets and sets the property SipRuleId. 
+        /// <para>
+        /// The SIP rule ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SipRuleId

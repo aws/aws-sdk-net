@@ -42,7 +42,7 @@ namespace Amazon.Pipes.Model
         /// Name of parameter to start execution of a SageMaker Model Building Pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }
@@ -61,7 +61,7 @@ namespace Amazon.Pipes.Model
         /// Value of parameter to start execution of a SageMaker Model Building Pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=1024)]
         public string Value
         {
             get { return this._value; }

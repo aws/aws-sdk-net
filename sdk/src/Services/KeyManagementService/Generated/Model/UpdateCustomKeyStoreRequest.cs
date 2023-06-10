@@ -240,7 +240,7 @@ namespace Amazon.KeyManagementService.Model
         /// To change this value, the CloudHSM key store must be disconnected.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=7, Max=32)]
+        [AWSProperty(Sensitive=true, Min=7, Max=32)]
         public string KeyStorePassword
         {
             get { return this._keyStorePassword; }
@@ -259,7 +259,12 @@ namespace Amazon.KeyManagementService.Model
         /// Changes the friendly name of the custom key store to the value that you specify. The
         /// custom key store name must be unique in the Amazon Web Services account.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// To change this value, an CloudHSM key store must be disconnected. An external key
         /// store can be connected or disconnected.

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IoTTwinMaker.Model
 {
     /// <summary>
-    /// 
+    /// The component property group request.
     /// </summary>
     public partial class ComponentPropertyGroupRequest
     {

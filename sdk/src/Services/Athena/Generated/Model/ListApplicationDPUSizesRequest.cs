@@ -31,7 +31,7 @@ namespace Amazon.Athena.Model
     /// <summary>
     /// Container for the parameters to the ListApplicationDPUSizes operation.
     /// Returns the supported DPU sizes for the supported application runtimes (for example,
-    /// <code>Jupyter 1.0</code>).
+    /// <code>Athena notebook version 1</code>).
     /// </summary>
     public partial class ListApplicationDPUSizesRequest : AmazonAthenaRequest
     {

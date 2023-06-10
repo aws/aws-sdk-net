@@ -30,14 +30,15 @@ namespace Amazon.Comprehend.Model
 {
     /// <summary>
     /// Container for the parameters to the StartDocumentClassificationJob operation.
-    /// Starts an asynchronous document classification job. Use the operation to track the
-    /// progress of the job.
+    /// Starts an asynchronous document classification job. Use the <code>DescribeDocumentClassificationJob</code>
+    /// operation to track the progress of the job.
     /// </summary>
     public partial class StartDocumentClassificationJobRequest : AmazonComprehendRequest
     {
         private string _clientRequestToken;
         private string _dataAccessRoleArn;
         private string _documentClassifierArn;
+        private string _flywheelArn;
         private InputDataConfig _inputDataConfig;
         private string _jobName;
         private OutputDataConfig _outputDataConfig;
@@ -68,8 +69,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the AWS Identity and Access Management (IAM) role
-        /// that grants Amazon Comprehend read access to your input data.
+        /// The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read
+        /// access to your input data.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=2048)]
@@ -91,7 +92,7 @@ namespace Amazon.Comprehend.Model
         /// The Amazon Resource Name (ARN) of the document classifier to use to process the job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=256)]
+        [AWSProperty(Max=256)]
         public string DocumentClassifierArn
         {
             get { return this._documentClassifierArn; }
@@ -102,6 +103,25 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetDocumentClassifierArn()
         {
             return this._documentClassifierArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlywheelArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the flywheel associated with the model to use.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FlywheelArn
+        {
+            get { return this._flywheelArn; }
+            set { this._flywheelArn = value; }
+        }
+
+        // Check to see if FlywheelArn property is set
+        internal bool IsSetFlywheelArn()
+        {
+            return this._flywheelArn != null;
         }
 
         /// <summary>
@@ -164,7 +184,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// Tags to be associated with the document classification job. A tag is a key-value pair
+        /// Tags to associate with the document classification job. A tag is a key-value pair
         /// that adds metadata to a resource used by Amazon Comprehend. For example, a tag with
         /// "Sales" as the key might be added to a resource to indicate its use by the sales department.
         /// </para>
@@ -184,9 +204,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the
-        /// analysis job. The VolumeKmsKeyId can be either of the following formats:
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt data on the storage volume attached to the ML compute instance(s)
+        /// that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>

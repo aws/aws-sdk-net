@@ -35,7 +35,7 @@ namespace Amazon.ElasticMapReduce.Model
     ///  
     /// <para>
     /// To use this configuration, consider attaching managed policy AmazonElasticMapReducePlacementGroupPolicy
-    /// to the EMR role.
+    /// to the Amazon EMR role.
     /// </para>
     /// </summary>
     public partial class PlacementGroupConfig
@@ -50,7 +50,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  
         /// <para>
-        /// Starting with Amazon EMR version 5.23.0, the only supported instance role is <code>MASTER</code>.
+        /// Starting with Amazon EMR release 5.23.0, the only supported instance role is <code>MASTER</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -69,11 +69,11 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property PlacementStrategy. 
         /// <para>
-        /// EC2 Placement Group strategy associated with instance role.
+        /// Amazon EC2 Placement Group strategy associated with instance role.
         /// </para>
         ///  
         /// <para>
-        /// Starting with Amazon EMR version 5.23.0, the only supported placement strategy is
+        /// Starting with Amazon EMR release 5.23.0, the only supported placement strategy is
         /// <code>SPREAD</code> for the <code>MASTER</code> instance role.
         /// </para>
         /// </summary>

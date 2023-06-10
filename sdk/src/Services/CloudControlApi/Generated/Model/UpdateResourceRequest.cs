@@ -149,7 +149,7 @@ namespace Amazon.CloudControlApi.Model
         /// the patch document</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=65536)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=65536)]
         public string PatchDocument
         {
             get { return this._patchDocument; }

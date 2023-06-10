@@ -53,8 +53,7 @@ namespace Amazon.RDS.Model
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide.</i> 
+    /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide.</i> 
     /// </para>
     /// </summary>
     public partial class RestoreDBClusterToPointInTimeRequest : AmazonRDSRequest
@@ -807,11 +806,6 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// Constraints: You can't specify <code>copy-on-write</code> if the engine version of
-        /// the source DB cluster is earlier than 1.11.
-        /// </para>
-        ///  
-        /// <para>
         /// If you don't specify a <code>RestoreType</code> value, then the new DB cluster is
         /// restored as a full copy of the source DB cluster.
         /// </para>
@@ -904,24 +898,25 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property StorageType. 
         /// <para>
-        /// Specifies the storage type to be associated with the each DB instance in the Multi-AZ
-        /// DB cluster.
+        /// Specifies the storage type to be associated with the DB cluster.
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>io1</code> 
+        /// When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+        /// is required.
         /// </para>
         ///  
         /// <para>
-        /// When specified, a value for the <code>Iops</code> parameter is required.
+        /// Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters);
+        /// <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>io1</code> 
+        /// Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Multi-AZ DB clusters only
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public string StorageType

@@ -35,6 +35,7 @@ namespace Amazon.Omics.Model
     {
         private JobStatus _jobStatus;
         private string _source;
+        private string _statusMessage;
 
         /// <summary>
         /// Gets and sets the property JobStatus. 
@@ -72,6 +73,24 @@ namespace Amazon.Omics.Model
         internal bool IsSetSource()
         {
             return this._source != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property StatusMessage. 
+        /// <para>
+        ///  A message that provides additional context about a job 
+        /// </para>
+        /// </summary>
+        public string StatusMessage
+        {
+            get { return this._statusMessage; }
+            set { this._statusMessage = value; }
+        }
+
+        // Check to see if StatusMessage property is set
+        internal bool IsSetStatusMessage()
+        {
+            return this._statusMessage != null;
         }
 
     }

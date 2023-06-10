@@ -33,8 +33,27 @@ namespace Amazon.Lambda.Model
     /// </summary>
     public partial class GetRuntimeManagementConfigResponse : AmazonWebServiceResponse
     {
+        private string _functionArn;
         private string _runtimeVersionArn;
         private UpdateRuntimeOn _updateRuntimeOn;
+
+        /// <summary>
+        /// Gets and sets the property FunctionArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of your function.
+        /// </para>
+        /// </summary>
+        public string FunctionArn
+        {
+            get { return this._functionArn; }
+            set { this._functionArn = value; }
+        }
+
+        // Check to see if FunctionArn property is set
+        internal bool IsSetFunctionArn()
+        {
+            return this._functionArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RuntimeVersionArn. 

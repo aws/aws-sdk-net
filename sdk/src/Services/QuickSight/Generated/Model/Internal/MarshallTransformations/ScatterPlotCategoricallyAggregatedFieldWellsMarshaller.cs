@@ -61,6 +61,22 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetLabel())
+            {
+                context.Writer.WritePropertyName("Label");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectLabelListValue in requestObject.Label)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = DimensionFieldMarshaller.Instance;
+                    marshaller.Marshall(requestObjectLabelListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSize())
             {
                 context.Writer.WritePropertyName("Size");

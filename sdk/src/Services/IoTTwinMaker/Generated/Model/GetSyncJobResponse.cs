@@ -124,7 +124,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently the only supported syncSoucre is <code>SITEWISE </code>.
+        /// Currently the only supported syncSource is <code>SITEWISE </code>.
         /// </para>
         ///  </note>
         /// </summary>

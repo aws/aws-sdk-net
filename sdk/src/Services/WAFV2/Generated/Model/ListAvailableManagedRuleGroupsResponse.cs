@@ -37,7 +37,11 @@ namespace Amazon.WAFV2.Model
         private string _nextMarker;
 
         /// <summary>
-        /// Gets and sets the property ManagedRuleGroups.
+        /// Gets and sets the property ManagedRuleGroups. 
+        /// <para>
+        /// Array of managed rule groups that you can use. If you specified a <code>Limit</code>
+        /// in your request, this might not be the full list. 
+        /// </para>
         /// </summary>
         public List<ManagedRuleGroupSummary> ManagedRuleGroups
         {

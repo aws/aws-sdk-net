@@ -43,9 +43,34 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class AttachDiskRequest : AmazonLightsailRequest
     {
+        private bool? _autoMounting;
         private string _diskName;
         private string _diskPath;
         private string _instanceName;
+
+        /// <summary>
+        /// Gets and sets the property AutoMounting. 
+        /// <para>
+        /// A Boolean value used to determine the automatic mounting of a storage volume to a
+        /// virtual computer. The default value is <code>False</code>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This value only applies to Lightsail for Research resources.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public bool AutoMounting
+        {
+            get { return this._autoMounting.GetValueOrDefault(); }
+            set { this._autoMounting = value; }
+        }
+
+        // Check to see if AutoMounting property is set
+        internal bool IsSetAutoMounting()
+        {
+            return this._autoMounting.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DiskName. 

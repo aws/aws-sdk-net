@@ -63,7 +63,7 @@ namespace Amazon.QLDB.Model
         /// an Amazon Ion structure that has two fields: <code>strandId</code> and <code>sequenceNo</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ValueHolder DigestTipAddress
         {
             get { return this._digestTipAddress; }

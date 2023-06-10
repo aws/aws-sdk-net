@@ -317,6 +317,176 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  AssociateMergedGraphqlApi
+
+
+        /// <summary>
+        /// Creates an association between a Merged API and source API using the source API's
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMergedGraphqlApi service method.</param>
+        /// 
+        /// <returns>The response from the AssociateMergedGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateMergedGraphqlApi">REST API Reference for AssociateMergedGraphqlApi Operation</seealso>
+        public virtual AssociateMergedGraphqlApiResponse AssociateMergedGraphqlApi(AssociateMergedGraphqlApiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMergedGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMergedGraphqlApiResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateMergedGraphqlApiResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an association between a Merged API and source API using the source API's
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateMergedGraphqlApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateMergedGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateMergedGraphqlApi">REST API Reference for AssociateMergedGraphqlApi Operation</seealso>
+        public virtual Task<AssociateMergedGraphqlApiResponse> AssociateMergedGraphqlApiAsync(AssociateMergedGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateMergedGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateMergedGraphqlApiResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateMergedGraphqlApiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  AssociateSourceGraphqlApi
+
+
+        /// <summary>
+        /// Creates an association between a Merged API and source API using the Merged API's
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceGraphqlApi service method.</param>
+        /// 
+        /// <returns>The response from the AssociateSourceGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateSourceGraphqlApi">REST API Reference for AssociateSourceGraphqlApi Operation</seealso>
+        public virtual AssociateSourceGraphqlApiResponse AssociateSourceGraphqlApi(AssociateSourceGraphqlApiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSourceGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceGraphqlApiResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateSourceGraphqlApiResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an association between a Merged API and source API using the Merged API's
+        /// identifier.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateSourceGraphqlApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the AssociateSourceGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.LimitExceededException">
+        /// The request exceeded a limit. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateSourceGraphqlApi">REST API Reference for AssociateSourceGraphqlApi Operation</seealso>
+        public virtual Task<AssociateSourceGraphqlApiResponse> AssociateSourceGraphqlApiAsync(AssociateSourceGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateSourceGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateSourceGraphqlApiResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<AssociateSourceGraphqlApiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateApiCache
 
 
@@ -1632,6 +1802,164 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  DisassociateMergedGraphqlApi
+
+
+        /// <summary>
+        /// Deletes an association between a Merged API and source API using the source API's
+        /// identifier and the association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMergedGraphqlApi service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateMergedGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateMergedGraphqlApi">REST API Reference for DisassociateMergedGraphqlApi Operation</seealso>
+        public virtual DisassociateMergedGraphqlApiResponse DisassociateMergedGraphqlApi(DisassociateMergedGraphqlApiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMergedGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMergedGraphqlApiResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateMergedGraphqlApiResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an association between a Merged API and source API using the source API's
+        /// identifier and the association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateMergedGraphqlApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateMergedGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateMergedGraphqlApi">REST API Reference for DisassociateMergedGraphqlApi Operation</seealso>
+        public virtual Task<DisassociateMergedGraphqlApiResponse> DisassociateMergedGraphqlApiAsync(DisassociateMergedGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateMergedGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateMergedGraphqlApiResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateMergedGraphqlApiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DisassociateSourceGraphqlApi
+
+
+        /// <summary>
+        /// Deletes an association between a Merged API and source API using the Merged API's
+        /// identifier and the association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceGraphqlApi service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateSourceGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateSourceGraphqlApi">REST API Reference for DisassociateSourceGraphqlApi Operation</seealso>
+        public virtual DisassociateSourceGraphqlApiResponse DisassociateSourceGraphqlApi(DisassociateSourceGraphqlApiRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSourceGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSourceGraphqlApiResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateSourceGraphqlApiResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Deletes an association between a Merged API and source API using the Merged API's
+        /// identifier and the association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateSourceGraphqlApi service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisassociateSourceGraphqlApi service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateSourceGraphqlApi">REST API Reference for DisassociateSourceGraphqlApi Operation</seealso>
+        public virtual Task<DisassociateSourceGraphqlApiResponse> DisassociateSourceGraphqlApiAsync(DisassociateSourceGraphqlApiRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateSourceGraphqlApiRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateSourceGraphqlApiResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisassociateSourceGraphqlApiResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  EvaluateCode
 
 
@@ -2496,6 +2824,75 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  GetSourceApiAssociation
+
+
+        /// <summary>
+        /// Retrieves a <code>SourceApiAssociation</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSourceApiAssociation service method.</param>
+        /// 
+        /// <returns>The response from the GetSourceApiAssociation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSourceApiAssociation">REST API Reference for GetSourceApiAssociation Operation</seealso>
+        public virtual GetSourceApiAssociationResponse GetSourceApiAssociation(GetSourceApiAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSourceApiAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSourceApiAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<GetSourceApiAssociationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a <code>SourceApiAssociation</code> object.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetSourceApiAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetSourceApiAssociation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSourceApiAssociation">REST API Reference for GetSourceApiAssociation Operation</seealso>
+        public virtual Task<GetSourceApiAssociationResponse> GetSourceApiAssociationAsync(GetSourceApiAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetSourceApiAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetSourceApiAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetSourceApiAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetType
 
 
@@ -3058,6 +3455,75 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  ListSourceApiAssociations
+
+
+        /// <summary>
+        /// Lists the <code>SourceApiAssociationSummary</code> data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceApiAssociations service method.</param>
+        /// 
+        /// <returns>The response from the ListSourceApiAssociations service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListSourceApiAssociations">REST API Reference for ListSourceApiAssociations Operation</seealso>
+        public virtual ListSourceApiAssociationsResponse ListSourceApiAssociations(ListSourceApiAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSourceApiAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceApiAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListSourceApiAssociationsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists the <code>SourceApiAssociationSummary</code> data.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListSourceApiAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListSourceApiAssociations service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListSourceApiAssociations">REST API Reference for ListSourceApiAssociations Operation</seealso>
+        public virtual Task<ListSourceApiAssociationsResponse> ListSourceApiAssociationsAsync(ListSourceApiAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListSourceApiAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListSourceApiAssociationsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListSourceApiAssociationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListTagsForResource
 
 
@@ -3216,6 +3682,83 @@ namespace Amazon.AppSync
 
         #endregion
         
+        #region  ListTypesByAssociation
+
+
+        /// <summary>
+        /// Lists <code>Type</code> objects by the source API association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypesByAssociation service method.</param>
+        /// 
+        /// <returns>The response from the ListTypesByAssociation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypesByAssociation">REST API Reference for ListTypesByAssociation Operation</seealso>
+        public virtual ListTypesByAssociationResponse ListTypesByAssociation(ListTypesByAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypesByAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypesByAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<ListTypesByAssociationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists <code>Type</code> objects by the source API association ID.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTypesByAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListTypesByAssociation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypesByAssociation">REST API Reference for ListTypesByAssociation Operation</seealso>
+        public virtual Task<ListTypesByAssociationResponse> ListTypesByAssociationAsync(ListTypesByAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListTypesByAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListTypesByAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListTypesByAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  StartSchemaCreation
 
 
@@ -3299,6 +3842,83 @@ namespace Amazon.AppSync
             options.ResponseUnmarshaller = StartSchemaCreationResponseUnmarshaller.Instance;
             
             return InvokeAsync<StartSchemaCreationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartSchemaMerge
+
+
+        /// <summary>
+        /// Initiates a merge operation. Returns a status that shows the result of the merge operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSchemaMerge service method.</param>
+        /// 
+        /// <returns>The response from the StartSchemaMerge service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaMerge">REST API Reference for StartSchemaMerge Operation</seealso>
+        public virtual StartSchemaMergeResponse StartSchemaMerge(StartSchemaMergeRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSchemaMergeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSchemaMergeResponseUnmarshaller.Instance;
+
+            return Invoke<StartSchemaMergeResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Initiates a merge operation. Returns a status that shows the result of the merge operation.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartSchemaMerge service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartSchemaMerge service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaMerge">REST API Reference for StartSchemaMerge Operation</seealso>
+        public virtual Task<StartSchemaMergeResponse> StartSchemaMergeAsync(StartSchemaMergeRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartSchemaMergeRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartSchemaMergeResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartSchemaMergeResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -4004,6 +4624,83 @@ namespace Amazon.AppSync
             options.ResponseUnmarshaller = UpdateResolverResponseUnmarshaller.Instance;
             
             return InvokeAsync<UpdateResolverResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateSourceApiAssociation
+
+
+        /// <summary>
+        /// Updates some of the configuration choices of a particular source API association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceApiAssociation service method.</param>
+        /// 
+        /// <returns>The response from the UpdateSourceApiAssociation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateSourceApiAssociation">REST API Reference for UpdateSourceApiAssociation Operation</seealso>
+        public virtual UpdateSourceApiAssociationResponse UpdateSourceApiAssociation(UpdateSourceApiAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSourceApiAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSourceApiAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateSourceApiAssociationResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Updates some of the configuration choices of a particular source API association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateSourceApiAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateSourceApiAssociation service method, as returned by AppSync.</returns>
+        /// <exception cref="Amazon.AppSync.Model.BadRequestException">
+        /// The request is not well formed. For example, a value is invalid or a required field
+        /// is missing. Check the field values, and then try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.ConcurrentModificationException">
+        /// Another modification is in progress at this time and it must complete before you can
+        /// make your change.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.InternalFailureException">
+        /// An internal AppSync error occurred. Try your request again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.NotFoundException">
+        /// The resource specified in the request was not found. Check the resource, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.AppSync.Model.UnauthorizedException">
+        /// You aren't authorized to perform this operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateSourceApiAssociation">REST API Reference for UpdateSourceApiAssociation Operation</seealso>
+        public virtual Task<UpdateSourceApiAssociationResponse> UpdateSourceApiAssociationAsync(UpdateSourceApiAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateSourceApiAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateSourceApiAssociationResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<UpdateSourceApiAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion

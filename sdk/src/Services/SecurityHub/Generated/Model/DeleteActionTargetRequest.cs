@@ -45,7 +45,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ActionTargetArn. 
         /// <para>
-        /// The ARN of the custom action target to delete.
+        /// The Amazon Resource Name (ARN) of the custom action target to delete.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

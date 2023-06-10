@@ -94,6 +94,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     unmarshalledObject.Metadata = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("SelectiveExecutionResult", targetDepth))
+                {
+                    var unmarshaller = SelectiveExecutionResultUnmarshaller.Instance;
+                    unmarshalledObject.SelectiveExecutionResult = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("StartTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

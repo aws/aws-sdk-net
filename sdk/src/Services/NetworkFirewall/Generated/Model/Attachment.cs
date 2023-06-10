@@ -86,9 +86,11 @@ namespace Amazon.NetworkFirewall.Model
         /// Gets and sets the property StatusMessage. 
         /// <para>
         /// If Network Firewall fails to create or delete the firewall endpoint in the subnet,
-        /// it populates this with the reason for the failure and how to resolve it. Depending
-        /// on the error, it can take as many as 15 minutes to populate this field. For more information
-        /// about the errors and solutions available for this field, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting
+        /// it populates this with the reason for the error or failure and how to resolve it.
+        /// A <code>FAILED</code> status indicates a non-recoverable state, and a <code>ERROR</code>
+        /// status indicates an issue that you can fix. Depending on the error, it can take as
+        /// many as 15 minutes to populate this field. For more information about the causes for
+        /// failiure or errors and solutions available for this field, see <a href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/firewall-troubleshooting-endpoint-failures.html">Troubleshooting
         /// firewall endpoint failures</a> in the <i>Network Firewall Developer Guide</i>.
         /// </para>
         /// </summary>

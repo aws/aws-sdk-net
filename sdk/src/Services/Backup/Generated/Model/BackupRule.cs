@@ -143,6 +143,7 @@ namespace Amazon.Backup.Model
         /// with this rule when restored from backup.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> RecoveryPointTags
         {
             get { return this._recoveryPointTags; }
@@ -222,6 +223,16 @@ namespace Amazon.Backup.Model
         /// A value in minutes after a backup is scheduled before a job will be canceled if it
         /// doesn't start successfully. This value is optional. If this value is included, it
         /// must be at least 60 minutes to avoid errors.
+        /// </para>
+        ///  
+        /// <para>
+        /// During the start window, the backup job status remains in <code>CREATED</code> status
+        /// until it has successfully begun or until the start window time has run out. If within
+        /// the start window time Backup receives an error that allows the job to be retried,
+        /// Backup will automatically retry to begin the job at least every 10 minutes until the
+        /// backup successfully begins (the job status changes to <code>RUNNING</code>) or until
+        /// the job status changes to <code>EXPIRED</code> (which is expected to occur when the
+        /// start window time is over).
         /// </para>
         /// </summary>
         public long StartWindowMinutes

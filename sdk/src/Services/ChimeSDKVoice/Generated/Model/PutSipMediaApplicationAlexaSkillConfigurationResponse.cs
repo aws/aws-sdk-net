@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private SipMediaApplicationAlexaSkillConfiguration _sipMediaApplicationAlexaSkillConfiguration;
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationAlexaSkillConfiguration.
+        /// Gets and sets the property SipMediaApplicationAlexaSkillConfiguration. 
+        /// <para>
+        /// Returns the Alexa Skill configuration.
+        /// </para>
         /// </summary>
         public SipMediaApplicationAlexaSkillConfiguration SipMediaApplicationAlexaSkillConfiguration
         {

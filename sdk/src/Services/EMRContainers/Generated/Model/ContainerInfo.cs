@@ -38,7 +38,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property EksInfo. 
         /// <para>
-        /// The information about the EKS cluster.
+        /// The information about the Amazon EKS cluster.
         /// </para>
         /// </summary>
         public EksInfo EksInfo

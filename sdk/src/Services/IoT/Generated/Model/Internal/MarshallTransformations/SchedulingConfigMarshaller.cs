@@ -57,6 +57,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.EndTime);
             }
 
+            if(requestObject.IsSetMaintenanceWindows())
+            {
+                context.Writer.WritePropertyName("maintenanceWindows");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectMaintenanceWindowsListValue in requestObject.MaintenanceWindows)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MaintenanceWindowMarshaller.Instance;
+                    marshaller.Marshall(requestObjectMaintenanceWindowsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetStartTime())
             {
                 context.Writer.WritePropertyName("startTime");

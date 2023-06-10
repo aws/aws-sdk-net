@@ -88,6 +88,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.EffectiveRecommendationPreferences = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("externalMetricStatus", targetDepth))
+                {
+                    var unmarshaller = ExternalMetricStatusUnmarshaller.Instance;
+                    unmarshalledObject.ExternalMetricStatus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("finding", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -118,6 +124,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                     unmarshalledObject.InstanceName = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("instanceState", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.InstanceState = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("lastRefreshTimestamp", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;
@@ -140,6 +152,12 @@ namespace Amazon.ComputeOptimizer.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<RecommendationSource, RecommendationSourceUnmarshaller>(RecommendationSourceUnmarshaller.Instance);
                     unmarshalledObject.RecommendationSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("tags", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<Tag, TagUnmarshaller>(TagUnmarshaller.Instance);
+                    unmarshalledObject.Tags = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("utilizationMetrics", targetDepth))

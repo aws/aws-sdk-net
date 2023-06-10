@@ -61,7 +61,7 @@ namespace Amazon.KinesisFirehose.Model
         /// The URL of the HTTP endpoint selected as the destination.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
         public string Url
         {
             get { return this._url; }

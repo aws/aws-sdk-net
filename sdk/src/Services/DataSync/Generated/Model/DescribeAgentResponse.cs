@@ -44,7 +44,7 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property AgentArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the agent.
+        /// The ARN of the agent.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]

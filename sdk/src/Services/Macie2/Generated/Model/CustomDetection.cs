@@ -42,7 +42,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the custom data identifier.
+        /// The unique identifier for the custom data identifier.
         /// </para>
         /// </summary>
         public string Arn

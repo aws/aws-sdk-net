@@ -308,6 +308,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// Parameters specified when the association version was created.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }

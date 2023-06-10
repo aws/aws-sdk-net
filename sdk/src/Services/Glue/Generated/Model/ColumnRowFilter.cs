@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Glue.Model
 {
     /// <summary>
-    /// 
+    /// A filter that uses both column-level and row-level filtering.
     /// </summary>
     public partial class ColumnRowFilter
     {
@@ -37,7 +37,10 @@ namespace Amazon.Glue.Model
         private string _rowFilterExpression;
 
         /// <summary>
-        /// Gets and sets the property ColumnName.
+        /// Gets and sets the property ColumnName. 
+        /// <para>
+        /// A string containing the name of the column.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
         public string ColumnName
@@ -53,7 +56,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RowFilterExpression.
+        /// Gets and sets the property RowFilterExpression. 
+        /// <para>
+        /// A string containing the row-level filter expression.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=2048)]
         public string RowFilterExpression

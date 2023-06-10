@@ -64,6 +64,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AlgorithmsConfig", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<AutoMLAlgorithmConfig, AutoMLAlgorithmConfigUnmarshaller>(AutoMLAlgorithmConfigUnmarshaller.Instance);
+                    unmarshalledObject.AlgorithmsConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("FeatureSpecificationS3Uri", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

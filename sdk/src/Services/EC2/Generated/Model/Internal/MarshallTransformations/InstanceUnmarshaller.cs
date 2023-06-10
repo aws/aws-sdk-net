@@ -103,6 +103,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.CpuOptions = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("currentInstanceBootMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.CurrentInstanceBootMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ebsOptimized", targetDepth))
                     {
                         var unmarshaller = BoolUnmarshaller.Instance;

@@ -117,11 +117,7 @@ namespace Amazon.S3.Model
     /// For more information about conditional requests, see <a href="https://tools.ietf.org/html/rfc7232">RFC
     /// 7232</a>.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Permissions</b> 
-    /// </para>
-    ///  
+    ///  <dl> <dt>Permissions</dt> <dd> 
     /// <para>
     /// The permissions you need to use this operation depend on whether or not the bucket
     /// is versioned. If the bucket is versioned, you need both the <code>s3:GetObjectVersion</code>
@@ -141,7 +137,7 @@ namespace Amazon.S3.Model
     /// If you don't have the <code>s3:ListBucket</code> permission, Amazon S3 returns an
     /// HTTP status code 403 ("access denied") error.
     /// </para>
-    ///  </li> </ul> 
+    ///  </li> </ul> </dd> </dl> 
     /// <para>
     /// The following actions are related to <code>GetObjectAttributes</code>:
     /// </para>
@@ -204,7 +200,7 @@ namespace Amazon.S3.Model
         /// <summary>
         /// Gets and sets the property BucketName. 
         /// <para>
-        /// The name of the bucket containing the object.
+        /// The name of the bucket that contains the object.
         /// </para>
         ///  
         /// <para>
@@ -217,12 +213,12 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
-        /// you provide the Outposts bucket ARN in place of the bucket name. For more information
-        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts access point ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName

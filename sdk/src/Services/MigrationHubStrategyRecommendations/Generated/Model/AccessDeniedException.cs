@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MigrationHubStrategyRecommendations.Model
 {
     /// <summary>
-    /// The AWS user account does not have permission to perform the action. Check the AWS
-    /// Identity and Access Management (IAM) policy associated with this account.
+    /// The user does not have permission to perform the action. Check the AWS Identity and
+    /// Access Management (IAM) policy associated with this user.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

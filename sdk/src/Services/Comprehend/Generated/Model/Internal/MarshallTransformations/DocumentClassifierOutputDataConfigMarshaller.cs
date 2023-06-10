@@ -45,6 +45,12 @@ namespace Amazon.Comprehend.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(DocumentClassifierOutputDataConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetFlywheelStatsS3Prefix())
+            {
+                context.Writer.WritePropertyName("FlywheelStatsS3Prefix");
+                context.Writer.Write(requestObject.FlywheelStatsS3Prefix);
+            }
+
             if(requestObject.IsSetKmsKeyId())
             {
                 context.Writer.WritePropertyName("KmsKeyId");

@@ -65,7 +65,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Required. A list of key names of tags to be removed. Number of strings allowed: 0-256.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Min=1, Max=200)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

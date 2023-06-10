@@ -46,6 +46,10 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
+        ///  <code>prefix-list-id</code> - The ID of the prefix list.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>route-search.exact-match</code> - The exact match of the specified filter.
         /// </para>
         ///  </li> <li> 

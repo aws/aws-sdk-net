@@ -306,8 +306,9 @@ namespace Amazon.DynamoDBv2.DataModel
         #region BatchGet async
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ExecuteBatchGet operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.ExecuteBatchGet"/>
+        /// Issues a batch-get request with multiple batches.
+        ///
+        /// Results are stored in the individual batches.
         /// </summary>
         /// <param name="batches">Configured BatchGet objects</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -336,8 +337,7 @@ namespace Amazon.DynamoDBv2.DataModel
         #region BatchWrite async
 
         /// <summary>
-        /// Initiates the asynchronous execution of the ExecuteBatchWrite operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.ExecuteBatchWrite"/>
+        /// Issues a batch-write request with multiple batches.
         /// </summary>
         /// <param name="batches">Configured BatchWrite objects</param>
         /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
@@ -357,6 +357,73 @@ namespace Amazon.DynamoDBv2.DataModel
         /// </summary>
         /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteBatchWrite.</param>
         public void EndExecuteBatchWrite(IAsyncResult asyncResult)
+        {
+            DynamoDBAsyncExecutor.EndOperation(asyncResult);
+        }
+
+        #endregion
+
+        #region TransactGet async
+
+        /// <summary>
+        /// Issues a transactional get request with multiple TransactGet objects.
+        /// Results are stored in the individual TransactGet objects.
+        /// </summary>
+        /// <param name="transactionParts">Configured TransactGet objects.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">
+        /// A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        /// procedure using the AsyncState property.
+        /// </param>
+        /// <returns>
+        /// An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndExecuteBatchGet
+        /// operation.
+        /// </returns>
+        public IAsyncResult BeginExecuteTransactGet(TransactGet[] transactionParts, AsyncCallback callback, object state)
+        {
+            MultiTableTransactGet transaction = new MultiTableTransactGet(transactionParts);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { transaction.ExecuteHelper(); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ExecuteTransactGet operation.
+        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.ExecuteTransactGet"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteTransactGet.</param>
+        public void EndExecuteTransactGet(IAsyncResult asyncResult)
+        {
+            DynamoDBAsyncExecutor.EndOperation(asyncResult);
+        }
+
+        #endregion
+
+        #region TransactWrite async
+
+        /// <summary>
+        /// Issues a transactional write request with multiple TransactWrite objects.
+        /// </summary>
+        /// <param name="transactionParts">Configured TransactWrite objects.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">
+        /// A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        /// procedure using the AsyncState property.
+        /// </param>
+        /// <returns>
+        /// An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDelete
+        /// operation.
+        /// </returns>
+        public IAsyncResult BeginExecuteTransactWrite(TransactWrite[] transactionParts, AsyncCallback callback, object state)
+        {
+            MultiTableTransactWrite transaction = new MultiTableTransactWrite(transactionParts);
+            return DynamoDBAsyncExecutor.BeginOperation(() => { transaction.ExecuteHelper(); return null; }, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the ExecuteTransactWrite operation.
+        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.ExecuteTransactWrite"/>
+        /// </summary>
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginExecuteTransactWrite.</param>
+        public void EndExecuteTransactWrite(IAsyncResult asyncResult)
         {
             DynamoDBAsyncExecutor.EndOperation(asyncResult);
         }

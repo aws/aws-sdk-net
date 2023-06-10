@@ -63,7 +63,7 @@ namespace Amazon.Mgn.Model
         /// Untag resource by Keys.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public List<string> TagKeys
         {
             get { return this._tagKeys; }

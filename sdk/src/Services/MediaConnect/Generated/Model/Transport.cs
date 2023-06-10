@@ -65,8 +65,8 @@ namespace Amazon.MediaConnect.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxBitrate. The smoothing max bitrate for RIST, RTP, and
-        /// RTP-FEC streams.
+        /// Gets and sets the property MaxBitrate. The smoothing max bitrate (in bps) for RIST,
+        /// RTP, and RTP-FEC streams.
         /// </summary>
         public int MaxBitrate
         {
@@ -243,7 +243,7 @@ namespace Amazon.MediaConnect.Model
 
         /// <summary>
         /// Gets and sets the property StreamId. The stream ID that you want to use for this transport.
-        /// This parameter applies only to Zixi-based streams.
+        /// This parameter applies only to Zixi and SRT caller-based streams.
         /// </summary>
         public string StreamId
         {

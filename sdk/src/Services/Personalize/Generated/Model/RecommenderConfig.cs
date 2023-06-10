@@ -35,6 +35,7 @@ namespace Amazon.Personalize.Model
     {
         private Dictionary<string, string> _itemExplorationConfig = new Dictionary<string, string>();
         private int? _minRecommendationRequestsPerSecond;
+        private TrainingDataConfig _trainingDataConfig;
 
         /// <summary>
         /// Gets and sets the property ItemExplorationConfig. 
@@ -63,7 +64,10 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property MinRecommendationRequestsPerSecond. 
         /// <para>
         /// Specifies the requested minimum provisioned recommendation requests per second that
-        /// Amazon Personalize will support.
+        /// Amazon Personalize will support. A high <code>minRecommendationRequestsPerSecond</code>
+        /// will increase your bill. We recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code>
+        /// (the default). Track your usage using Amazon CloudWatch metrics, and increase the
+        /// <code>minRecommendationRequestsPerSecond</code> as necessary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -77,6 +81,25 @@ namespace Amazon.Personalize.Model
         internal bool IsSetMinRecommendationRequestsPerSecond()
         {
             return this._minRecommendationRequestsPerSecond.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TrainingDataConfig. 
+        /// <para>
+        ///  Specifies the training data configuration to use when creating a domain recommender.
+        /// 
+        /// </para>
+        /// </summary>
+        public TrainingDataConfig TrainingDataConfig
+        {
+            get { return this._trainingDataConfig; }
+            set { this._trainingDataConfig = value; }
+        }
+
+        // Check to see if TrainingDataConfig property is set
+        internal bool IsSetTrainingDataConfig()
+        {
+            return this._trainingDataConfig != null;
         }
 
     }

@@ -50,10 +50,12 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class ResourceDetails
     {
+        private AwsAmazonMqBrokerDetails _awsAmazonMqBroker;
         private AwsApiGatewayRestApiDetails _awsApiGatewayRestApi;
         private AwsApiGatewayStageDetails _awsApiGatewayStage;
         private AwsApiGatewayV2ApiDetails _awsApiGatewayV2Api;
         private AwsApiGatewayV2StageDetails _awsApiGatewayV2Stage;
+        private AwsAppSyncGraphQlApiDetails _awsAppSyncGraphQlApi;
         private AwsAutoScalingAutoScalingGroupDetails _awsAutoScalingAutoScalingGroup;
         private AwsAutoScalingLaunchConfigurationDetails _awsAutoScalingLaunchConfiguration;
         private AwsBackupBackupPlanDetails _awsBackupBackupPlan;
@@ -71,6 +73,7 @@ namespace Amazon.SecurityHub.Model
         private AwsEc2LaunchTemplateDetails _awsEc2LaunchTemplate;
         private AwsEc2NetworkAclDetails _awsEc2NetworkAcl;
         private AwsEc2NetworkInterfaceDetails _awsEc2NetworkInterface;
+        private AwsEc2RouteTableDetails _awsEc2RouteTable;
         private AwsEc2SecurityGroupDetails _awsEc2SecurityGroup;
         private AwsEc2SubnetDetails _awsEc2Subnet;
         private AwsEc2TransitGatewayDetails _awsEc2TransitGateway;
@@ -92,6 +95,8 @@ namespace Amazon.SecurityHub.Model
         private AwsElasticsearchDomainDetails _awsElasticsearchDomain;
         private AwsElbLoadBalancerDetails _awsElbLoadBalancer;
         private AwsElbv2LoadBalancerDetails _awsElbv2LoadBalancer;
+        private AwsEventSchemasRegistryDetails _awsEventSchemasRegistry;
+        private AwsGuardDutyDetectorDetails _awsGuardDutyDetector;
         private AwsIamAccessKeyDetails _awsIamAccessKey;
         private AwsIamGroupDetails _awsIamGroup;
         private AwsIamPolicyDetails _awsIamPolicy;
@@ -120,6 +125,7 @@ namespace Amazon.SecurityHub.Model
         private AwsSnsTopicDetails _awsSnsTopic;
         private AwsSqsQueueDetails _awsSqsQueue;
         private AwsSsmPatchComplianceDetails _awsSsmPatchCompliance;
+        private AwsStepFunctionStateMachineDetails _awsStepFunctionStateMachine;
         private AwsWafRateBasedRuleDetails _awsWafRateBasedRule;
         private AwsWafRegionalRateBasedRuleDetails _awsWafRegionalRateBasedRule;
         private AwsWafRegionalRuleDetails _awsWafRegionalRule;
@@ -133,6 +139,26 @@ namespace Amazon.SecurityHub.Model
         private AwsXrayEncryptionConfigDetails _awsXrayEncryptionConfig;
         private ContainerDetails _container;
         private Dictionary<string, string> _other = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property AwsAmazonMqBroker. 
+        /// <para>
+        ///  Provides details about AppSync message broker. A message broker allows software applications
+        /// and components to communicate using various programming languages, operating systems,
+        /// and formal messaging protocols. 
+        /// </para>
+        /// </summary>
+        public AwsAmazonMqBrokerDetails AwsAmazonMqBroker
+        {
+            get { return this._awsAmazonMqBroker; }
+            set { this._awsAmazonMqBroker = value; }
+        }
+
+        // Check to see if AwsAmazonMqBroker property is set
+        internal bool IsSetAwsAmazonMqBroker()
+        {
+            return this._awsAmazonMqBroker != null;
+        }
 
         /// <summary>
         /// Gets and sets the property AwsApiGatewayRestApi. 
@@ -204,6 +230,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsApiGatewayV2Stage()
         {
             return this._awsApiGatewayV2Stage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsAppSyncGraphQlApi. 
+        /// <para>
+        ///  Provides details about an AppSync Graph QL API, which lets you query multiple databases,
+        /// microservices, and APIs from a single GraphQL endpoint. 
+        /// </para>
+        /// </summary>
+        public AwsAppSyncGraphQlApiDetails AwsAppSyncGraphQlApi
+        {
+            get { return this._awsAppSyncGraphQlApi; }
+            set { this._awsAppSyncGraphQlApi = value; }
+        }
+
+        // Check to see if AwsAppSyncGraphQlApi property is set
+        internal bool IsSetAwsAppSyncGraphQlApi()
+        {
+            return this._awsAppSyncGraphQlApi != null;
         }
 
         /// <summary>
@@ -509,6 +554,26 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsEc2NetworkInterface()
         {
             return this._awsEc2NetworkInterface != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEc2RouteTable. 
+        /// <para>
+        ///  Provides details about a route table. A route table contains a set of rules, called
+        /// routes, that determine where to direct network traffic from your subnet or gateway.
+        /// 
+        /// </para>
+        /// </summary>
+        public AwsEc2RouteTableDetails AwsEc2RouteTable
+        {
+            get { return this._awsEc2RouteTable; }
+            set { this._awsEc2RouteTable = value; }
+        }
+
+        // Check to see if AwsEc2RouteTable property is set
+        internal bool IsSetAwsEc2RouteTable()
+        {
+            return this._awsEc2RouteTable != null;
         }
 
         /// <summary>
@@ -893,6 +958,46 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsElbv2LoadBalancer()
         {
             return this._awsElbv2LoadBalancer != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsEventSchemasRegistry. 
+        /// <para>
+        ///  A schema defines the structure of events that are sent to Amazon EventBridge. Schema
+        /// registries are containers for schemas. They collect and organize schemas so that your
+        /// schemas are in logical groups. 
+        /// </para>
+        /// </summary>
+        public AwsEventSchemasRegistryDetails AwsEventSchemasRegistry
+        {
+            get { return this._awsEventSchemasRegistry; }
+            set { this._awsEventSchemasRegistry = value; }
+        }
+
+        // Check to see if AwsEventSchemasRegistry property is set
+        internal bool IsSetAwsEventSchemasRegistry()
+        {
+            return this._awsEventSchemasRegistry != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsGuardDutyDetector. 
+        /// <para>
+        ///  Provides details about an Amazon GuardDuty detector. A detector is an object that
+        /// represents the GuardDuty service. A detector is required for GuardDuty to become operational.
+        /// 
+        /// </para>
+        /// </summary>
+        public AwsGuardDutyDetectorDetails AwsGuardDutyDetector
+        {
+            get { return this._awsGuardDutyDetector; }
+            set { this._awsGuardDutyDetector = value; }
+        }
+
+        // Check to see if AwsGuardDutyDetector property is set
+        internal bool IsSetAwsGuardDutyDetector()
+        {
+            return this._awsGuardDutyDetector != null;
         }
 
         /// <summary>
@@ -1395,6 +1500,25 @@ namespace Amazon.SecurityHub.Model
         internal bool IsSetAwsSsmPatchCompliance()
         {
             return this._awsSsmPatchCompliance != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AwsStepFunctionStateMachine. 
+        /// <para>
+        ///  Provides details about an Step Functions state machine, which is a workflow consisting
+        /// of a series of event-driven steps. 
+        /// </para>
+        /// </summary>
+        public AwsStepFunctionStateMachineDetails AwsStepFunctionStateMachine
+        {
+            get { return this._awsStepFunctionStateMachine; }
+            set { this._awsStepFunctionStateMachine = value; }
+        }
+
+        // Check to see if AwsStepFunctionStateMachine property is set
+        internal bool IsSetAwsStepFunctionStateMachine()
+        {
+            return this._awsStepFunctionStateMachine != null;
         }
 
         /// <summary>

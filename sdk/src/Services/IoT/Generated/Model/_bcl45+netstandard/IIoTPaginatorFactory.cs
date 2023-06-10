@@ -146,6 +146,11 @@ namespace Amazon.IoT.Model
         IListJobTemplatesPaginator ListJobTemplates(ListJobTemplatesRequest request);
 
         /// <summary>
+        /// Paginator for ListManagedJobTemplates operation
+        ///</summary>
+        IListManagedJobTemplatesPaginator ListManagedJobTemplates(ListManagedJobTemplatesRequest request);
+
+        /// <summary>
         /// Paginator for ListMetricValues operation
         ///</summary>
         IListMetricValuesPaginator ListMetricValues(ListMetricValuesRequest request);
@@ -164,6 +169,16 @@ namespace Amazon.IoT.Model
         /// Paginator for ListOutgoingCertificates operation
         ///</summary>
         IListOutgoingCertificatesPaginator ListOutgoingCertificates(ListOutgoingCertificatesRequest request);
+
+        /// <summary>
+        /// Paginator for ListPackages operation
+        ///</summary>
+        IListPackagesPaginator ListPackages(ListPackagesRequest request);
+
+        /// <summary>
+        /// Paginator for ListPackageVersions operation
+        ///</summary>
+        IListPackageVersionsPaginator ListPackageVersions(ListPackageVersionsRequest request);
 
         /// <summary>
         /// Paginator for ListPolicies operation
@@ -189,6 +204,11 @@ namespace Amazon.IoT.Model
         /// Paginator for ListProvisioningTemplateVersions operation
         ///</summary>
         IListProvisioningTemplateVersionsPaginator ListProvisioningTemplateVersions(ListProvisioningTemplateVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRelatedResourcesForAuditFinding operation
+        ///</summary>
+        IListRelatedResourcesForAuditFindingPaginator ListRelatedResourcesForAuditFinding(ListRelatedResourcesForAuditFindingRequest request);
 
         /// <summary>
         /// Paginator for ListRoleAliases operation

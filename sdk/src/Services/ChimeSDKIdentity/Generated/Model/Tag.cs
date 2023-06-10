@@ -42,7 +42,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The key in a tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Key
         {
             get { return this._key; }
@@ -61,7 +61,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The value in a tag.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Value
         {
             get { return this._value; }

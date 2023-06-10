@@ -66,9 +66,9 @@ namespace Amazon.SecurityToken.Model
     /// </para>
     ///  
     /// <para>
-    /// When you create a role, you create two policies: A role trust policy that specifies
-    /// <i>who</i> can assume the role and a permissions policy that specifies <i>what</i>
-    /// can be done with the role. You specify the trusted principal who is allowed to assume
+    /// When you create a role, you create two policies: a role trust policy that specifies
+    /// <i>who</i> can assume the role, and a permissions policy that specifies <i>what</i>
+    /// can be done with the role. You specify the trusted principal that is allowed to assume
     /// the role in the role trust policy.
     /// </para>
     ///  
@@ -81,8 +81,8 @@ namespace Amazon.SecurityToken.Model
     ///  
     /// <para>
     /// A user who wants to access a role in a different account must also have permissions
-    /// that are delegated from the user account administrator. The administrator must attach
-    /// a policy that allows the user to call <code>AssumeRole</code> for the ARN of the role
+    /// that are delegated from the account administrator. The administrator must attach a
+    /// policy that allows the user to call <code>AssumeRole</code> for the ARN of the role
     /// in the other account.
     /// </para>
     ///  

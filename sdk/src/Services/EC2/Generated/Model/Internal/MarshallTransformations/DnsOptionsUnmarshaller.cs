@@ -60,6 +60,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DnsRecordIpType = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("privateDnsOnlyForInboundResolverEndpoint", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.PrivateDnsOnlyForInboundResolverEndpoint = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

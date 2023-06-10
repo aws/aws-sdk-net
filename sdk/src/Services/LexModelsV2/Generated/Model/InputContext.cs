@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// The name of a context that must be active for an intent to be selected by Amazon Lex.
+    /// A context that must be active for an intent to be selected by Amazon Lex.
     /// </summary>
     public partial class InputContext
     {

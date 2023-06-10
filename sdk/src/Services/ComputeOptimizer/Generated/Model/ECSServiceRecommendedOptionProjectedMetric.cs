@@ -33,8 +33,9 @@ namespace Amazon.ComputeOptimizer.Model
     /// 
     ///  
     /// <para>
-    /// To determine the performance difference between your current ECS service and the recommended
-    /// option, compare the metric data of your service against its projected metric data.
+    /// To determine the performance difference between your current Amazon ECS service and
+    /// the recommended option, compare the metric data of your service against its projected
+    /// metric data.
     /// </para>
     /// </summary>
     public partial class ECSServiceRecommendedOptionProjectedMetric
@@ -64,7 +65,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property RecommendedCpuUnits. 
         /// <para>
-        ///  The recommended CPU size for the ECS service. 
+        ///  The recommended CPU size for the Amazon ECS service. 
         /// </para>
         /// </summary>
         public int RecommendedCpuUnits
@@ -82,7 +83,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property RecommendedMemorySize. 
         /// <para>
-        ///  The recommended memory size for the ECS service. 
+        ///  The recommended memory size for the Amazon ECS service. 
         /// </para>
         /// </summary>
         public int RecommendedMemorySize

@@ -33,6 +33,7 @@ namespace Amazon.Kendra.Model
     /// </summary>
     public partial class DescribeQuerySuggestionsConfigResponse : AmazonWebServiceResponse
     {
+        private AttributeSuggestionsDescribeConfig _attributeSuggestionsConfig;
         private bool? _includeQueriesWithoutUserInformation;
         private DateTime? _lastClearTime;
         private DateTime? _lastSuggestionsBuildTime;
@@ -42,6 +43,25 @@ namespace Amazon.Kendra.Model
         private int? _queryLogLookBackWindowInDays;
         private QuerySuggestionsStatus _status;
         private int? _totalSuggestionsCount;
+
+        /// <summary>
+        /// Gets and sets the property AttributeSuggestionsConfig. 
+        /// <para>
+        /// Configuration information for the document fields/attributes that you want to base
+        /// query suggestions on.
+        /// </para>
+        /// </summary>
+        public AttributeSuggestionsDescribeConfig AttributeSuggestionsConfig
+        {
+            get { return this._attributeSuggestionsConfig; }
+            set { this._attributeSuggestionsConfig = value; }
+        }
+
+        // Check to see if AttributeSuggestionsConfig property is set
+        internal bool IsSetAttributeSuggestionsConfig()
+        {
+            return this._attributeSuggestionsConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IncludeQueriesWithoutUserInformation. 
@@ -65,7 +85,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LastClearTime. 
         /// <para>
-        /// The date-time query suggestions for an index was last cleared.
+        /// The Unix timestamp when query suggestions for an index was last cleared.
         /// </para>
         ///  
         /// <para>
@@ -89,7 +109,13 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property LastSuggestionsBuildTime. 
         /// <para>
-        /// The date-time query suggestions for an index was last updated.
+        /// The Unix timestamp when query suggestions for an index was last updated.
+        /// </para>
+        ///  
+        /// <para>
+        /// Amazon Kendra automatically updates suggestions every 24 hours, after you change a
+        /// setting or after you apply a <a href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">block
+        /// list</a>.
         /// </para>
         /// </summary>
         public DateTime LastSuggestionsBuildTime
@@ -221,6 +247,12 @@ namespace Amazon.Kendra.Model
         /// This count can change when you update your query suggestions settings, if you filter
         /// out certain queries from suggestions using a block list, and as the query log accumulates
         /// more queries for Amazon Kendra to learn from.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the count is much lower than you expected, it could be because Amazon Kendra needs
+        /// more queries in the query history to learn from or your current query suggestions
+        /// settings are too strict.
         /// </para>
         /// </summary>
         public int TotalSuggestionsCount

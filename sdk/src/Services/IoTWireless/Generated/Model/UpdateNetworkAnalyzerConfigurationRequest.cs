@@ -36,6 +36,8 @@ namespace Amazon.IoTWireless.Model
     {
         private string _configurationName;
         private string _description;
+        private List<string> _multicastGroupsToAdd = new List<string>();
+        private List<string> _multicastGroupsToRemove = new List<string>();
         private TraceContent _traceContent;
         private List<string> _wirelessDevicesToAdd = new List<string>();
         private List<string> _wirelessDevicesToRemove = new List<string>();
@@ -72,6 +74,46 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastGroupsToAdd. 
+        /// <para>
+        /// Multicast group resources to add to the network analyzer configuration. Provide the
+        /// <code>MulticastGroupId</code> of the resource to add in the input array.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> MulticastGroupsToAdd
+        {
+            get { return this._multicastGroupsToAdd; }
+            set { this._multicastGroupsToAdd = value; }
+        }
+
+        // Check to see if MulticastGroupsToAdd property is set
+        internal bool IsSetMulticastGroupsToAdd()
+        {
+            return this._multicastGroupsToAdd != null && this._multicastGroupsToAdd.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastGroupsToRemove. 
+        /// <para>
+        /// Multicast group resources to remove from the network analyzer configuration. Provide
+        /// the <code>MulticastGroupId</code> of the resource to remove in the input array.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> MulticastGroupsToRemove
+        {
+            get { return this._multicastGroupsToRemove; }
+            set { this._multicastGroupsToRemove = value; }
+        }
+
+        // Check to see if MulticastGroupsToRemove property is set
+        internal bool IsSetMulticastGroupsToRemove()
+        {
+            return this._multicastGroupsToRemove != null && this._multicastGroupsToRemove.Count > 0; 
         }
 
         /// <summary>

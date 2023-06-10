@@ -79,6 +79,17 @@ namespace Amazon.KeyManagementService.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.NumberOfBytes);
                 }
 
+                if(publicRequest.IsSetRecipient())
+                {
+                    context.Writer.WritePropertyName("Recipient");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RecipientInfoMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Recipient, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);

@@ -95,6 +95,17 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetSchema())
+                {
+                    context.Writer.WritePropertyName("Schema");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = SchemaMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.Schema, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetTableName())
                 {
                     context.Writer.WritePropertyName("TableName");

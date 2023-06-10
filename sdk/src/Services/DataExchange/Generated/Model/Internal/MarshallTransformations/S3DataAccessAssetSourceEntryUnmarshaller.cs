@@ -82,6 +82,12 @@ namespace Amazon.DataExchange.Model.Internal.MarshallTransformations
                     unmarshalledObject.Keys = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("KmsKeysToGrant", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<KmsKeyToGrant, KmsKeyToGrantUnmarshaller>(KmsKeyToGrantUnmarshaller.Instance);
+                    unmarshalledObject.KmsKeysToGrant = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

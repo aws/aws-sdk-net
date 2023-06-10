@@ -43,6 +43,7 @@ namespace Amazon.EMRContainers.Model
         private Dictionary<string, string> _jobTemplateParameters = new Dictionary<string, string>();
         private string _name;
         private string _releaseLabel;
+        private RetryPolicyConfiguration _retryPolicyConfiguration;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _virtualClusterId;
 
@@ -194,6 +195,24 @@ namespace Amazon.EMRContainers.Model
         internal bool IsSetReleaseLabel()
         {
             return this._releaseLabel != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RetryPolicyConfiguration. 
+        /// <para>
+        /// The retry policy configuration for the job run.
+        /// </para>
+        /// </summary>
+        public RetryPolicyConfiguration RetryPolicyConfiguration
+        {
+            get { return this._retryPolicyConfiguration; }
+            set { this._retryPolicyConfiguration = value; }
+        }
+
+        // Check to see if RetryPolicyConfiguration property is set
+        internal bool IsSetRetryPolicyConfiguration()
+        {
+            return this._retryPolicyConfiguration != null;
         }
 
         /// <summary>

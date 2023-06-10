@@ -81,8 +81,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property MessageGroups. 
         /// <para>
-        /// One to 5 message groups that contain update messages. Amazon Lex chooses one of the
-        /// messages to play to the user.
+        /// 1 - 5 message groups that contain update messages. Amazon Lex chooses one of the messages
+        /// to play to the user.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

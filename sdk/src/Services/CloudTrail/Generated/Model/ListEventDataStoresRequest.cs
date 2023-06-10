@@ -30,7 +30,7 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the ListEventDataStores operation.
-    /// Returns information about all event data stores in the account, in the current region.
+    /// Returns information about all event data stores in the account, in the current Region.
     /// </summary>
     public partial class ListEventDataStoresRequest : AmazonCloudTrailRequest
     {

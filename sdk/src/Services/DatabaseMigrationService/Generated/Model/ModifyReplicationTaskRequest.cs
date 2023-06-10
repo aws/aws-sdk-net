@@ -136,7 +136,7 @@ namespace Amazon.DatabaseMigrationService.Model
         /// </para>
         ///  
         /// <para>
-        /// Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12 “
+        /// Commit time example: --cdc-stop-position “commit_time: 2018-02-09T12:12:12“
         /// </para>
         /// </summary>
         public string CdcStopPosition

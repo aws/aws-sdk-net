@@ -104,7 +104,8 @@ namespace Amazon.IoTFleetWise.Model
         /// <summary>
         /// Gets and sets the property Offset. 
         /// <para>
-        /// Indicates where data appears in the message.
+        /// The offset used to calculate the signal value. Combined with scaling, the calculation
+        /// is <code>value = raw_value * scaling + offset</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

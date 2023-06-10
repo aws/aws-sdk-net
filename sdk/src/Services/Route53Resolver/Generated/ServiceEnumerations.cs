@@ -92,6 +92,10 @@ namespace Amazon.Route53Resolver
         /// Constant ENABLE for AutodefinedReverseFlag
         /// </summary>
         public static readonly AutodefinedReverseFlag ENABLE = new AutodefinedReverseFlag("ENABLE");
+        /// <summary>
+        /// Constant USE_LOCAL_RESOURCE_SETTING for AutodefinedReverseFlag
+        /// </summary>
+        public static readonly AutodefinedReverseFlag USE_LOCAL_RESOURCE_SETTING = new AutodefinedReverseFlag("USE_LOCAL_RESOURCE_SETTING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -404,6 +408,10 @@ namespace Amazon.Route53Resolver
         /// Constant ENABLED for FirewallFailOpenStatus
         /// </summary>
         public static readonly FirewallFailOpenStatus ENABLED = new FirewallFailOpenStatus("ENABLED");
+        /// <summary>
+        /// Constant USE_LOCAL_RESOURCE_SETTING for FirewallFailOpenStatus
+        /// </summary>
+        public static readonly FirewallFailOpenStatus USE_LOCAL_RESOURCE_SETTING = new FirewallFailOpenStatus("USE_LOCAL_RESOURCE_SETTING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -594,6 +602,10 @@ namespace Amazon.Route53Resolver
         /// Constant REMAP_DETACHING for IpAddressStatus
         /// </summary>
         public static readonly IpAddressStatus REMAP_DETACHING = new IpAddressStatus("REMAP_DETACHING");
+        /// <summary>
+        /// Constant UPDATING for IpAddressStatus
+        /// </summary>
+        public static readonly IpAddressStatus UPDATING = new IpAddressStatus("UPDATING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -702,6 +714,14 @@ namespace Amazon.Route53Resolver
         /// Constant ENABLING for ResolverAutodefinedReverseStatus
         /// </summary>
         public static readonly ResolverAutodefinedReverseStatus ENABLING = new ResolverAutodefinedReverseStatus("ENABLING");
+        /// <summary>
+        /// Constant UPDATING_TO_USE_LOCAL_RESOURCE_SETTING for ResolverAutodefinedReverseStatus
+        /// </summary>
+        public static readonly ResolverAutodefinedReverseStatus UPDATING_TO_USE_LOCAL_RESOURCE_SETTING = new ResolverAutodefinedReverseStatus("UPDATING_TO_USE_LOCAL_RESOURCE_SETTING");
+        /// <summary>
+        /// Constant USE_LOCAL_RESOURCE_SETTING for ResolverAutodefinedReverseStatus
+        /// </summary>
+        public static readonly ResolverAutodefinedReverseStatus USE_LOCAL_RESOURCE_SETTING = new ResolverAutodefinedReverseStatus("USE_LOCAL_RESOURCE_SETTING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -760,6 +780,14 @@ namespace Amazon.Route53Resolver
         /// Constant ENABLING for ResolverDNSSECValidationStatus
         /// </summary>
         public static readonly ResolverDNSSECValidationStatus ENABLING = new ResolverDNSSECValidationStatus("ENABLING");
+        /// <summary>
+        /// Constant UPDATING_TO_USE_LOCAL_RESOURCE_SETTING for ResolverDNSSECValidationStatus
+        /// </summary>
+        public static readonly ResolverDNSSECValidationStatus UPDATING_TO_USE_LOCAL_RESOURCE_SETTING = new ResolverDNSSECValidationStatus("UPDATING_TO_USE_LOCAL_RESOURCE_SETTING");
+        /// <summary>
+        /// Constant USE_LOCAL_RESOURCE_SETTING for ResolverDNSSECValidationStatus
+        /// </summary>
+        public static readonly ResolverDNSSECValidationStatus USE_LOCAL_RESOURCE_SETTING = new ResolverDNSSECValidationStatus("USE_LOCAL_RESOURCE_SETTING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -906,6 +934,60 @@ namespace Amazon.Route53Resolver
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResolverEndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ResolverEndpointType.
+    /// </summary>
+    public class ResolverEndpointType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DUALSTACK for ResolverEndpointType
+        /// </summary>
+        public static readonly ResolverEndpointType DUALSTACK = new ResolverEndpointType("DUALSTACK");
+        /// <summary>
+        /// Constant IPV4 for ResolverEndpointType
+        /// </summary>
+        public static readonly ResolverEndpointType IPV4 = new ResolverEndpointType("IPV4");
+        /// <summary>
+        /// Constant IPV6 for ResolverEndpointType
+        /// </summary>
+        public static readonly ResolverEndpointType IPV6 = new ResolverEndpointType("IPV6");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResolverEndpointType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResolverEndpointType FindValue(string value)
+        {
+            return FindValue<ResolverEndpointType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResolverEndpointType(string value)
         {
             return FindValue(value);
         }
@@ -1382,6 +1464,10 @@ namespace Amazon.Route53Resolver
         /// Constant ENABLE for Validation
         /// </summary>
         public static readonly Validation ENABLE = new Validation("ENABLE");
+        /// <summary>
+        /// Constant USE_LOCAL_RESOURCE_SETTING for Validation
+        /// </summary>
+        public static readonly Validation USE_LOCAL_RESOURCE_SETTING = new Validation("USE_LOCAL_RESOURCE_SETTING");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

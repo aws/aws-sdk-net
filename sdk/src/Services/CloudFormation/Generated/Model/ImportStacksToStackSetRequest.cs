@@ -34,12 +34,6 @@ namespace Amazon.CloudFormation.Model
     /// up to 10 stacks into a new stack set in the same account as the source stack or in
     /// a different administrator account and Region, by specifying the stack ID of the stack
     /// you intend to import.
-    /// 
-    ///  <note> 
-    /// <para>
-    ///  <code>ImportStacksToStackSet</code> is only supported by self-managed permissions.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class ImportStacksToStackSetRequest : AmazonCloudFormationRequest
     {
@@ -99,7 +93,16 @@ namespace Amazon.CloudFormation.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OperationPreferences.
+        /// Gets and sets the property OperationPreferences. 
+        /// <para>
+        /// The user-specified preferences for how CloudFormation performs a stack set operation.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about maximum concurrent accounts and failure tolerance, see
+        /// <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+        /// set operation options</a>.
+        /// </para>
         /// </summary>
         public StackSetOperationPreferences OperationPreferences
         {

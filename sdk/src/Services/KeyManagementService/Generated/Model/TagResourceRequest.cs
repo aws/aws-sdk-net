@@ -151,14 +151,15 @@ namespace Amazon.KeyManagementService.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// One or more tags. 
+        /// One or more tags. Each tag consists of a tag key and a tag value. The tag value can
+        /// be an empty (null) string. 
         /// </para>
-        ///  
+        ///  <important> 
         /// <para>
-        /// Each tag consists of a tag key and a tag value. The tag value can be an empty (null)
-        /// string. 
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
         /// </para>
-        ///  
+        ///  </important> 
         /// <para>
         /// You cannot have more than one tag on a KMS key with the same tag key. If you specify
         /// an existing tag key with a different tag value, KMS replaces the current tag value

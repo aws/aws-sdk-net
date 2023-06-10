@@ -30,7 +30,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the UntagResource operation.
-    /// Removes one or more tags from a data catalog or workgroup resource.
+    /// Removes one or more tags from an Athena resource.
     /// </summary>
     public partial class UntagResourceRequest : AmazonAthenaRequest
     {

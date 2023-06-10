@@ -30,7 +30,7 @@ namespace Amazon.CodePipeline.Model
 {
     /// <summary>
     /// Container for the parameters to the PutApprovalResult operation.
-    /// Provides the response to a manual approval request to AWS CodePipeline. Valid responses
+    /// Provides the response to a manual approval request to CodePipeline. Valid responses
     /// include Approved and Rejected.
     /// </summary>
     public partial class PutApprovalResultRequest : AmazonCodePipelineRequest

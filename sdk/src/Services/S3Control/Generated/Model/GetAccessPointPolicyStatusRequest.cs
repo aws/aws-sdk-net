@@ -64,7 +64,7 @@ namespace Amazon.S3Control.Model
         /// The name of the access point whose policy status you want to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=3, Max=63)]
+        [AWSProperty(Required=true, Min=3, Max=255)]
         public string Name
         {
             get { return this._name; }

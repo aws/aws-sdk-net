@@ -30,9 +30,9 @@ namespace Amazon.MediaConvert.Model
 {
     /// <summary>
     /// Ignore these settings unless you are using Nielsen non-linear watermarking. Specify
-    /// the values that  MediaConvert uses to generate and place Nielsen watermarks in your
-    /// output audio. In addition to  specifying these values, you also need to set up your
-    /// cloud TIC server. These settings apply to  every output in your job. The MediaConvert
+    /// the values that MediaConvert uses to generate and place Nielsen watermarks in your
+    /// output audio. In addition to specifying these values, you also need to set up your
+    /// cloud TIC server. These settings apply to every output in your job. The MediaConvert
     /// implementation is currently with the following Nielsen versions: Nielsen Watermark
     /// SDK Version 5.2.1 Nielsen NLM Watermark Engine Version 1.2.7 Nielsen Watermark Authenticator
     /// [SID_TIC] Version [5.0.0]
@@ -72,8 +72,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property AdiFilename. Optional. Use this setting when you want the
-        /// service to include an ADI file in the Nielsen  metadata .zip file. To provide an ADI
-        /// file, store it in Amazon S3 and provide a URL to it  here. The URL should be in the
+        /// service to include an ADI file in the Nielsen metadata .zip file. To provide an ADI
+        /// file, store it in Amazon S3 and provide a URL to it here. The URL should be in the
         /// following format: S3://bucket/path/ADI-file. For more information about the metadata
         /// .zip file, see the setting Metadata destination (metadataDestination).
         /// </summary>
@@ -203,7 +203,7 @@ namespace Amazon.MediaConvert.Model
         /// Gets and sets the property SourceWatermarkStatus. Required. Specify whether your source
         /// content already contains Nielsen non-linear watermarks. When you set this value to
         /// Watermarked (WATERMARKED), the service fails the job. Nielsen requires that you add
-        /// non-linear watermarking to only clean content that doesn't already  have non-linear
+        /// non-linear watermarking to only clean content that doesn't already have non-linear
         /// Nielsen watermarks.
         /// </summary>
         public NielsenSourceWatermarkStatusType SourceWatermarkStatus

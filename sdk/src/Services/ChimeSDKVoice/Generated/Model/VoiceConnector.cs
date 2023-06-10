@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The Amazon Chime SDK Voice Connector configuration, including outbound host name and
+    /// encryption settings.
     /// </summary>
     public partial class VoiceConnector
     {
@@ -43,7 +44,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property AwsRegion.
+        /// Gets and sets the property AwsRegion. 
+        /// <para>
+        /// The AWS Region in which the Voice Connector is created. Default: us-east-1.
+        /// </para>
         /// </summary>
         public VoiceConnectorAwsRegion AwsRegion
         {
@@ -58,7 +62,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CreatedTimestamp.
+        /// Gets and sets the property CreatedTimestamp. 
+        /// <para>
+        /// The Voice Connector's creation timestamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime CreatedTimestamp
         {
@@ -73,7 +80,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The Voice Connector's name.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
         public string Name
@@ -89,7 +99,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OutboundHostName.
+        /// Gets and sets the property OutboundHostName. 
+        /// <para>
+        /// The outbound host name for the Voice Connector.
+        /// </para>
         /// </summary>
         public string OutboundHostName
         {
@@ -104,7 +117,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequireEncryption.
+        /// Gets and sets the property RequireEncryption. 
+        /// <para>
+        /// Enables or disables encryption for the Voice Connector.
+        /// </para>
         /// </summary>
         public bool RequireEncryption
         {
@@ -119,7 +135,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpdatedTimestamp.
+        /// Gets and sets the property UpdatedTimestamp. 
+        /// <para>
+        /// The Voice Connector's updated timestamp, in ISO 8601 format.
+        /// </para>
         /// </summary>
         public DateTime UpdatedTimestamp
         {
@@ -134,7 +153,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorArn.
+        /// Gets and sets the property VoiceConnectorArn. 
+        /// <para>
+        /// The ARN of the Voice Connector.
+        /// </para>
         /// </summary>
         public string VoiceConnectorArn
         {
@@ -149,7 +171,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector's ID.
+        /// </para>
         /// </summary>
         public string VoiceConnectorId
         {

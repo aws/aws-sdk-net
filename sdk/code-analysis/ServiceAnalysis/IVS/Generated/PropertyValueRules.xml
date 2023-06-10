@@ -442,7 +442,7 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IVS.Model.ThumbnailConfiguration.TargetIntervalSeconds</property>
-    <min>5</min>
+    <min>1</min>
     <max>60</max>
   </property-value-rule>
 </property-value-rules>

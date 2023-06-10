@@ -57,6 +57,16 @@ namespace Amazon.CloudWatchLogs.Model
     /// see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/mask-sensitive-log-data.html">Protect
     /// sensitive log data with masking</a>.
     /// </para>
+    ///  
+    /// <para>
+    /// The <code>PutDataProtectionPolicy</code> operation applies to only the specified log
+    /// group. You can also use <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutAccountPolicy.html">PutAccountPolicy</a>
+    /// to create an account-level data protection policy that applies to all log groups in
+    /// the account, including both existing log groups and log groups that are created level.
+    /// If a log group has its own data protection policy and the account also has an account-level
+    /// data protection policy, then the two policies are cumulative. Any sensitive term specified
+    /// in either policy is masked.
+    /// </para>
     /// </summary>
     public partial class PutDataProtectionPolicyRequest : AmazonCloudWatchLogsRequest
     {
@@ -126,9 +136,19 @@ namespace Amazon.CloudWatchLogs.Model
         /// </para>
         ///  <important> 
         /// <para>
-        /// The contents of two <code>DataIdentifer</code> arrays must match exactly.
+        /// The contents of the two <code>DataIdentifer</code> arrays must match exactly.
         /// </para>
-        ///  </important>
+        ///  </important> 
+        /// <para>
+        /// In addition to the two JSON blocks, the <code>policyDocument</code> can also include
+        /// <code>Name</code>, <code>Description</code>, and <code>Version</code> fields. The
+        /// <code>Name</code> is used as a dimension when CloudWatch Logs reports audit findings
+        /// metrics to CloudWatch.
+        /// </para>
+        ///  
+        /// <para>
+        /// The JSON specified in <code>policyDocument</code> can be up to 30,720 characters.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string PolicyDocument

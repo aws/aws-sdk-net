@@ -43,6 +43,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// The session ID that the performance events are from.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string SessionId
         {
             get { return this._sessionId; }
@@ -62,6 +63,7 @@ namespace Amazon.CloudWatchRUM.Model
         /// include any personally identifiable information about the user.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=36)]
         public string UserId
         {
             get { return this._userId; }

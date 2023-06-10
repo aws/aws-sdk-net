@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// The tags to apply to a resource when the resource is being created.
+    /// The tags to apply to a resource when the resource is being created. When you specify
+    /// a tag, you must specify the resource type to tag, otherwise the request will fail.
     /// 
     ///  <note> 
     /// <para>

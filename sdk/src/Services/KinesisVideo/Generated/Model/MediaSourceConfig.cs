@@ -45,7 +45,7 @@ namespace Amazon.KinesisVideo.Model
         /// media file location.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=20, Max=2048)]
+        [AWSProperty(Required=true, Sensitive=true, Min=20, Max=2048)]
         public string MediaUriSecretArn
         {
             get { return this._mediaUriSecretArn; }

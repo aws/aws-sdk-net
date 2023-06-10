@@ -39,7 +39,9 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property Agents. 
         /// <para>
-        /// A list of agents in your account.
+        /// A list of DataSync agents in your Amazon Web Services account in the Amazon Web Services
+        /// Region specified in the request. The list is ordered by the agents' Amazon Resource
+        /// Names (ARNs).
         /// </para>
         /// </summary>
         public List<AgentListEntry> Agents
@@ -57,8 +59,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An opaque string that indicates the position at which to begin returning the next
-        /// list of agents.
+        /// The opaque string that indicates the position to begin the next list of results in
+        /// the response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]

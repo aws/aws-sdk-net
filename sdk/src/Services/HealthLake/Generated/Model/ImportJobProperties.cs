@@ -176,8 +176,8 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property JobStatus. 
         /// <para>
-        /// The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED,
-        /// FAILED.
+        /// The job status for an Import job. Possible statuses are SUBMITTED, IN_PROGRESS, COMPLETED_WITH_ERRORS,
+        /// COMPLETED, FAILED.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

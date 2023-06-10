@@ -64,6 +64,7 @@ namespace Amazon.Drs.Model
         /// The tags to be associated with the failback launch Job.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

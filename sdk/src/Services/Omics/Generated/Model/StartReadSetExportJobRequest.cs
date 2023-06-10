@@ -25,12 +25,13 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the StartReadSetExportJob operation.
-    /// Starts a read set export job.
+    /// Exports a read set to Amazon S3.
     /// </summary>
     public partial class StartReadSetExportJobRequest : AmazonOmicsRequest
     {
@@ -119,7 +120,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// Sources for the job.
+        /// The job's source files.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]
@@ -135,5 +136,13 @@ namespace Amazon.Omics.Model
             return this._sources != null && this._sources.Count > 0; 
         }
 
+        /// <summary>
+        /// Get the signer to use for this request.
+        /// </summary>
+        /// <returns>A signer for this request.</returns>
+        override protected AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
     }
 }

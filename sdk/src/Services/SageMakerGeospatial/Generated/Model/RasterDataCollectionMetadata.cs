@@ -117,7 +117,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SupportedFilters.
+        /// Gets and sets the property SupportedFilters. 
+        /// <para>
+        /// The list of filters supported by the raster data collection.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<Filter> SupportedFilters

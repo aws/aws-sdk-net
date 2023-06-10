@@ -37,7 +37,7 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             {
                 if (context.IsStartElement || context.IsAttribute)
                 {
-                    if (context.TestExpression("ChecksumAlgorithm/member", targetDepth))
+                    if (context.TestExpression("ChecksumAlgorithm", targetDepth))
                     {
                         contentsItem.ChecksumAlgorithm.Add(StringUnmarshaller.GetInstance().Unmarshall(context));
                         continue;

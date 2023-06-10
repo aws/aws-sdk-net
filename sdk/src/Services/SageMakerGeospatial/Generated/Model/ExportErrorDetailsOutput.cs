@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The structure representing the errors in an export EarthObservationJob operation.
     /// </summary>
     public partial class ExportErrorDetailsOutput
     {
@@ -37,7 +37,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private ExportErrorType _type;
 
         /// <summary>
-        /// Gets and sets the property Message.
+        /// Gets and sets the property Message. 
+        /// <para>
+        /// A detailed message describing the error in an export EarthObservationJob operation.
+        /// </para>
         /// </summary>
         public string Message
         {
@@ -52,7 +55,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of error in an export EarthObservationJob operation.
+        /// </para>
         /// </summary>
         public ExportErrorType Type
         {

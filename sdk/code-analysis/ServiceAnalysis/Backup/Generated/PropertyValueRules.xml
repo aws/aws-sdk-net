@@ -387,6 +387,12 @@
     <property>Amazon.Backup.Model.RecoveryPointByResource.BackupVaultName</property>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Backup.Model.RecoveryPointMember.BackupVaultName</property>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Backup.Model.RecoveryPointMember.ResourceType</property>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Backup.Model.ReportPlan.ReportPlanDescription</property>
     <min>0</min>
     <max>1024</max>

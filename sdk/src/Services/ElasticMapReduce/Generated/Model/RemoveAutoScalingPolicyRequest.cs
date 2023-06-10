@@ -30,8 +30,8 @@ namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
     /// Container for the parameters to the RemoveAutoScalingPolicy operation.
-    /// Removes an automatic scaling policy from a specified instance group within an EMR
-    /// cluster.
+    /// Removes an automatic scaling policy from a specified instance group within an Amazon
+    /// EMR cluster.
     /// </summary>
     public partial class RemoveAutoScalingPolicyRequest : AmazonElasticMapReduceRequest
     {

@@ -124,9 +124,11 @@ namespace Amazon.SageMakerGeospatial.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property ResourceId.
+        /// Gets and sets the property ResourceId. 
+        /// <para>
+        /// Identifier of the resource affected.
+        /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public string ResourceId
         {
             get { return this._resourceId; }

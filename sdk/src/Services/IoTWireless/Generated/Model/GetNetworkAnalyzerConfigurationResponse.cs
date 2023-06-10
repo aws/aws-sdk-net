@@ -35,6 +35,7 @@ namespace Amazon.IoTWireless.Model
     {
         private string _arn;
         private string _description;
+        private List<string> _multicastGroups = new List<string>();
         private string _name;
         private TraceContent _traceContent;
         private List<string> _wirelessDevices = new List<string>();
@@ -73,6 +74,25 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property MulticastGroups. 
+        /// <para>
+        /// List of multicast group resources that have been added to the network analyzer configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10)]
+        public List<string> MulticastGroups
+        {
+            get { return this._multicastGroups; }
+            set { this._multicastGroups = value; }
+        }
+
+        // Check to see if MulticastGroups property is set
+        internal bool IsSetMulticastGroups()
+        {
+            return this._multicastGroups != null && this._multicastGroups.Count > 0; 
         }
 
         /// <summary>

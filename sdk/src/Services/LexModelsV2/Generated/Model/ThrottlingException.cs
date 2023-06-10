@@ -124,7 +124,10 @@ namespace Amazon.LexModelsV2.Model
 #endif
 
         /// <summary>
-        /// Gets and sets the property RetryAfterSeconds.
+        /// Gets and sets the property RetryAfterSeconds. 
+        /// <para>
+        /// The number of seconds after which the user can invoke the API again.
+        /// </para>
         /// </summary>
         public int RetryAfterSeconds
         {

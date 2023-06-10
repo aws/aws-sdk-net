@@ -122,6 +122,13 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// An ISO8601-formatted timestamp that indicates when the API call was first observed.
         /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
+        /// </para>
         /// </summary>
         public string FirstSeen
         {
@@ -140,6 +147,13 @@ namespace Amazon.SecurityHub.Model
         /// <para>
         /// An ISO8601-formatted timestamp that indicates when the API call was most recently
         /// observed.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public string LastSeen

@@ -78,7 +78,7 @@ namespace Amazon.Inspector2.Model
         /// <summary>
         /// Gets and sets the property Lambda. 
         /// <para>
-        /// The status of Amazon Inspector scanning for AWS Lambda function resources.
+        /// The status of Amazon Inspector scanning for AWS Lambda function.
         /// </para>
         /// </summary>
         public Status Lambda

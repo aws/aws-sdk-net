@@ -44,7 +44,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <para>
         ///  Describes the Auto Scaling configuration methods for an Amazon ECS service. This
         /// affects the generated recommendations. For example, if Auto Scaling is configured
-        /// on a ECS service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations.
+        /// on a service’s CPU, then Compute Optimizer doesn’t generate CPU size recommendations.
         /// 
         /// </para>
         ///  
@@ -53,13 +53,13 @@ namespace Amazon.ComputeOptimizer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>TARGET_TRACKING_SCALING_CPU</code> — If the ECS service is configured to use
-        /// target scaling on CPU, Compute Optimizer doesn't generate CPU recommendations.
+        ///  <code>TARGET_TRACKING_SCALING_CPU</code> — If the Amazon ECS service is configured
+        /// to use target scaling on CPU, Compute Optimizer doesn't generate CPU recommendations.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the ECS service is configured to
-        /// use target scaling on memory, Compute Optimizer doesn't generate memory recommendations.
+        ///  <code>TARGET_TRACKING_SCALING_MEMORY</code> — If the Amazon ECS service is configured
+        /// to use target scaling on memory, Compute Optimizer doesn't generate memory recommendations.
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -84,7 +84,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property ContainerConfigurations. 
         /// <para>
-        ///  The container configurations within a task of an ECS service. 
+        ///  The container configurations within a task of an Amazon ECS service. 
         /// </para>
         /// </summary>
         public List<ContainerConfiguration> ContainerConfigurations
@@ -102,7 +102,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Cpu. 
         /// <para>
-        ///  The number of CPU units used by the tasks in the ECS service. 
+        ///  The number of CPU units used by the tasks in the Amazon ECS service. 
         /// </para>
         /// </summary>
         public int Cpu
@@ -120,7 +120,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property Memory. 
         /// <para>
-        ///  The amount of memory used by the tasks in the ECS service. 
+        ///  The amount of memory used by the tasks in the Amazon ECS service. 
         /// </para>
         /// </summary>
         public int Memory
@@ -138,7 +138,7 @@ namespace Amazon.ComputeOptimizer.Model
         /// <summary>
         /// Gets and sets the property TaskDefinitionArn. 
         /// <para>
-        ///  The task definition ARN used by the tasks in the ECS service. 
+        ///  The task definition ARN used by the tasks in the Amazon ECS service. 
         /// </para>
         /// </summary>
         public string TaskDefinitionArn

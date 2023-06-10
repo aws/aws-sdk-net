@@ -106,8 +106,7 @@ namespace Amazon.Kendra.Model
         /// <para>
         /// The Amazon Kendra edition to use for the index. Choose <code>DEVELOPER_EDITION</code>
         /// for indexes intended for development, testing, or proof of concept. Use <code>ENTERPRISE_EDITION</code>
-        /// for your production databases. Once you set the edition for an index, it can't be
-        /// changed.
+        /// for production. Once you set the edition for an index, it can't be changed.
         /// </para>
         ///  
         /// <para>
@@ -116,7 +115,7 @@ namespace Amazon.Kendra.Model
         /// </para>
         ///  
         /// <para>
-        /// For more information on quota limits for enterprise and developer editions, see <a
+        /// For more information on quota limits for Enterprise and Developer editions, see <a
         /// href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.
         /// </para>
         /// </summary>
@@ -154,10 +153,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property RoleArn. 
         /// <para>
-        /// An Identity and Access Management (IAM) role that gives Amazon Kendra permissions
-        /// to access your Amazon CloudWatch logs and metrics. This is also the role you use when
-        /// you call the <code>BatchPutDocument</code> API to index documents from an Amazon S3
-        /// bucket.
+        /// The Amazon Resource Name (ARN) of an IAM role with permission to access your Amazon
+        /// CloudWatch logs and metrics. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM
+        /// access roles for Amazon Kendra</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=1284)]
@@ -195,8 +193,9 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of key-value pairs that identify the index. You can use the tags to identify
-        /// and organize your resources and to control access to resources.
+        /// A list of key-value pairs that identify or categorize the index. You can also use
+        /// tags to help control access to the index. Tag keys and values can consist of Unicode
+        /// letters, digits, white space, and any of the following symbols: _ . : / = + - @.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=200)]
@@ -247,8 +246,8 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UserGroupResolutionConfiguration. 
         /// <para>
-        /// Enables fetching access levels of groups and users from an IAM Identity Center (successor
-        /// to Single Sign-On) identity source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
+        /// Gets users and groups from IAM Identity Center (successor to Single Sign-On) identity
+        /// source. To configure this, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.
         /// </para>
         /// </summary>
         public UserGroupResolutionConfiguration UserGroupResolutionConfiguration

@@ -33,109 +33,24 @@ namespace Amazon.SecurityLake.Model
     /// </summary>
     public partial class CreateCustomLogSourceResponse : AmazonWebServiceResponse
     {
-        private string _customDataLocation;
-        private string _glueCrawlerName;
-        private string _glueDatabaseName;
-        private string _glueTableName;
-        private string _logProviderAccessRoleArn;
+        private CustomLogSourceResource _source;
 
         /// <summary>
-        /// Gets and sets the property CustomDataLocation. 
+        /// Gets and sets the property Source. 
         /// <para>
-        /// The location of the partition in the Amazon S3 bucket for Security Lake.
+        /// The created third-party custom source.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public string CustomDataLocation
+        public CustomLogSourceResource Source
         {
-            get { return this._customDataLocation; }
-            set { this._customDataLocation = value; }
+            get { return this._source; }
+            set { this._source = value; }
         }
 
-        // Check to see if CustomDataLocation property is set
-        internal bool IsSetCustomDataLocation()
+        // Check to see if Source property is set
+        internal bool IsSetSource()
         {
-            return this._customDataLocation != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GlueCrawlerName. 
-        /// <para>
-        /// The name of the Glue crawler.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string GlueCrawlerName
-        {
-            get { return this._glueCrawlerName; }
-            set { this._glueCrawlerName = value; }
-        }
-
-        // Check to see if GlueCrawlerName property is set
-        internal bool IsSetGlueCrawlerName()
-        {
-            return this._glueCrawlerName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GlueDatabaseName. 
-        /// <para>
-        /// The Glue database where results are written, such as: <code>arn:aws:daylight:us-east-1::database/sometable/*</code>.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string GlueDatabaseName
-        {
-            get { return this._glueDatabaseName; }
-            set { this._glueDatabaseName = value; }
-        }
-
-        // Check to see if GlueDatabaseName property is set
-        internal bool IsSetGlueDatabaseName()
-        {
-            return this._glueDatabaseName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property GlueTableName. 
-        /// <para>
-        /// The table name of the Glue crawler.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string GlueTableName
-        {
-            get { return this._glueTableName; }
-            set { this._glueTableName = value; }
-        }
-
-        // Check to see if GlueTableName property is set
-        internal bool IsSetGlueTableName()
-        {
-            return this._glueTableName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property LogProviderAccessRoleArn. 
-        /// <para>
-        /// The ARN of the IAM role to be used by the entity putting logs into your custom source
-        /// partition. Security Lake will apply the correct access policies to this role, but
-        /// you must first manually create the trust policy for this role. The IAM role name must
-        /// start with the text 'Security Lake'. The IAM role must trust the <code>logProviderAccountId</code>
-        /// to assume the role.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string LogProviderAccessRoleArn
-        {
-            get { return this._logProviderAccessRoleArn; }
-            set { this._logProviderAccessRoleArn = value; }
-        }
-
-        // Check to see if LogProviderAccessRoleArn property is set
-        internal bool IsSetLogProviderAccessRoleArn()
-        {
-            return this._logProviderAccessRoleArn != null;
+            return this._source != null;
         }
 
     }

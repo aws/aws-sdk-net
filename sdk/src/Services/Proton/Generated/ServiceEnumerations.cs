@@ -25,6 +25,102 @@ namespace Amazon.Proton
 {
 
     /// <summary>
+    /// Constants used for properties of type BlockerStatus.
+    /// </summary>
+    public class BlockerStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACTIVE for BlockerStatus
+        /// </summary>
+        public static readonly BlockerStatus ACTIVE = new BlockerStatus("ACTIVE");
+        /// <summary>
+        /// Constant RESOLVED for BlockerStatus
+        /// </summary>
+        public static readonly BlockerStatus RESOLVED = new BlockerStatus("RESOLVED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BlockerStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlockerStatus FindValue(string value)
+        {
+            return FindValue<BlockerStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlockerStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type BlockerType.
+    /// </summary>
+    public class BlockerType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AUTOMATED for BlockerType
+        /// </summary>
+        public static readonly BlockerType AUTOMATED = new BlockerType("AUTOMATED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public BlockerType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static BlockerType FindValue(string value)
+        {
+            return FindValue<BlockerType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator BlockerType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ComponentDeploymentUpdateType.
     /// </summary>
     public class ComponentDeploymentUpdateType : ConstantClass
@@ -986,6 +1082,10 @@ namespace Amazon.Proton
     public class SyncType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant SERVICE_SYNC for SyncType
+        /// </summary>
+        public static readonly SyncType SERVICE_SYNC = new SyncType("SERVICE_SYNC");
         /// <summary>
         /// Constant TEMPLATE_SYNC for SyncType
         /// </summary>

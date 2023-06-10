@@ -38,6 +38,7 @@ namespace Amazon.IoTTwinMaker.Model
         private string _contentLocation;
         private string _description;
         private string _sceneId;
+        private Dictionary<string, string> _sceneMetadata = new Dictionary<string, string>();
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _workspaceId;
 
@@ -115,6 +116,25 @@ namespace Amazon.IoTTwinMaker.Model
         internal bool IsSetSceneId()
         {
             return this._sceneId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SceneMetadata. 
+        /// <para>
+        /// The request metadata.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public Dictionary<string, string> SceneMetadata
+        {
+            get { return this._sceneMetadata; }
+            set { this._sceneMetadata = value; }
+        }
+
+        // Check to see if SceneMetadata property is set
+        internal bool IsSetSceneMetadata()
+        {
+            return this._sceneMetadata != null && this._sceneMetadata.Count > 0; 
         }
 
         /// <summary>

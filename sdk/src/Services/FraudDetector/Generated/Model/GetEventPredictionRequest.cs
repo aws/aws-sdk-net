@@ -217,6 +217,7 @@ namespace Amazon.FraudDetector.Model
         /// The Amazon SageMaker model endpoint input data blobs.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, ModelEndpointDataBlob> ExternalModelEndpointDataBlobs
         {
             get { return this._externalModelEndpointDataBlobs; }

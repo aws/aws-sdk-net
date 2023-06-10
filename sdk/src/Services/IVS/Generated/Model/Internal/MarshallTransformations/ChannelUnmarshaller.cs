@@ -82,6 +82,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                     unmarshalledObject.IngestEndpoint = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("insecureIngest", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.InsecureIngest = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("latencyMode", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -98,6 +104,12 @@ namespace Amazon.IVS.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.PlaybackUrl = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("preset", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Preset = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("recordingConfigurationArn", targetDepth))

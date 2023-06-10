@@ -33,8 +33,29 @@ namespace Amazon.SecurityHub.Model
     /// </summary>
     public partial class AwsEksClusterResourcesVpcConfigDetails
     {
+        private bool? _endpointPublicAccess;
         private List<string> _securityGroupIds = new List<string>();
         private List<string> _subnetIds = new List<string>();
+
+        /// <summary>
+        /// Gets and sets the property EndpointPublicAccess. 
+        /// <para>
+        ///  Indicates whether the Amazon EKS public API server endpoint is turned on. If the
+        /// Amazon EKS public API server endpoint is turned off, your cluster's Kubernetes API
+        /// server can only receive requests that originate from within the cluster VPC. 
+        /// </para>
+        /// </summary>
+        public bool EndpointPublicAccess
+        {
+            get { return this._endpointPublicAccess.GetValueOrDefault(); }
+            set { this._endpointPublicAccess = value; }
+        }
+
+        // Check to see if EndpointPublicAccess property is set
+        internal bool IsSetEndpointPublicAccess()
+        {
+            return this._endpointPublicAccess.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property SecurityGroupIds. 

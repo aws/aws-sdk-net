@@ -76,6 +76,12 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                     unmarshalledObject.Concurrency = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("CrossChannelBehavior", targetDepth))
+                {
+                    var unmarshaller = CrossChannelBehaviorUnmarshaller.Instance;
+                    unmarshalledObject.CrossChannelBehavior = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

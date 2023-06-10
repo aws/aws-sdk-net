@@ -47,7 +47,7 @@ namespace Amazon.Chime.Model
         /// phone number inventory.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string FromPhoneNumber
         {
             get { return this._fromPhoneNumber; }
@@ -104,7 +104,7 @@ namespace Amazon.Chime.Model
         /// The phone number that the service should call.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string ToPhoneNumber
         {
             get { return this._toPhoneNumber; }

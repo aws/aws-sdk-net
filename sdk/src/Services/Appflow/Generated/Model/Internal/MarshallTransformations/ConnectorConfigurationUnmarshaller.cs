@@ -190,6 +190,18 @@ namespace Amazon.Appflow.Model.Internal.MarshallTransformations
                     unmarshalledObject.SupportedApiVersions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("supportedDataTransferApis", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<DataTransferApi, DataTransferApiUnmarshaller>(DataTransferApiUnmarshaller.Instance);
+                    unmarshalledObject.SupportedDataTransferApis = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("supportedDataTransferTypes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.SupportedDataTransferTypes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("supportedDestinationConnectors", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);

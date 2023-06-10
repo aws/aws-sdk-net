@@ -203,6 +203,7 @@ namespace Amazon.Lex.Model
         /// Map of the slots that have been gathered and their values. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Slots
         {
             get { return this._slots; }

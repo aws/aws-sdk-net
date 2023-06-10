@@ -57,6 +57,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DesiredWeight);
             }
 
+            if(requestObject.IsSetServerlessUpdateConfig())
+            {
+                context.Writer.WritePropertyName("ServerlessUpdateConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = ProductionVariantServerlessUpdateConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.ServerlessUpdateConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetVariantName())
             {
                 context.Writer.WritePropertyName("VariantName");

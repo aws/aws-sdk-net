@@ -75,7 +75,7 @@ namespace Amazon.Organizations.Model
         /// account owner.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Sensitive=true, Max=1024)]
         public string Notes
         {
             get { return this._notes; }
@@ -108,7 +108,7 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  </important> <note> 
         /// <para>
-        /// If any one of the tags is invalid or if you exceed the allowed number of tags for
+        /// If any one of the tags is not valid or if you exceed the allowed number of tags for
         /// an account, then the entire request fails and invitations are not sent.
         /// </para>
         ///  </note>

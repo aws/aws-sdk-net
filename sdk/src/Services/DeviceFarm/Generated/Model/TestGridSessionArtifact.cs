@@ -87,6 +87,7 @@ namespace Amazon.DeviceFarm.Model
         /// A semi-stable URL to the content of the object.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Url
         {
             get { return this._url; }

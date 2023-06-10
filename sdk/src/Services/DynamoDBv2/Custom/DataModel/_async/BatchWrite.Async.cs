@@ -35,8 +35,10 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.BatchWrite.Execute"/>
+        /// Executes a server call to batch-write/delete the items requested.
+        ///
+        /// If more than 25 put/delete operations are specified, calls of up to 25
+        /// put/delete items will be made until all items are processed.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// 
@@ -58,8 +60,10 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Public methods
 
         /// <summary>
-        /// Initiates the asynchronous execution of the Execute operation.
-        /// <seealso cref="Amazon.DynamoDBv2.DataModel.MultiTableBatchWrite.Execute"/>
+        /// Executes a multi-table batch request against all configured batches.
+        ///
+        /// If more than 25 put/delete operations are specified, calls of up to 25
+        /// put/delete items will be made until all items are processed.
         /// </summary>
         /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
         /// 

@@ -79,7 +79,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The URL of the RTMP configuration.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string Url
         {
             get { return this._url; }

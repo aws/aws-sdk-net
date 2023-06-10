@@ -81,7 +81,7 @@ namespace Amazon.Rekognition.Model
     ///  
     /// <para>
     ///  For each object, scene, and concept the API returns one or more labels. The API returns
-    /// the following types of information regarding labels:
+    /// the following types of information about labels:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -190,7 +190,7 @@ namespace Amazon.Rekognition.Model
     /// </para>
     ///  </note> 
     /// <para>
-    /// This is a stateless API operation. That is, the operation does not persist any data.
+    /// This is a stateless API operation that doesn't return any data.
     /// </para>
     ///  
     /// <para>
@@ -305,8 +305,8 @@ namespace Amazon.Rekognition.Model
         /// A list of the filters to be applied to returned detected labels and image properties.
         /// Specified filters can be inclusive, exclusive, or a combination of both. Filters can
         /// be used for individual labels or label categories. The exact label names or label
-        /// categories must be supplied. For a full list of labels and label categories, see LINK
-        /// HERE.
+        /// categories must be supplied. For a full list of labels and label categories, see <a
+        /// href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting labels</a>.
         /// </para>
         /// </summary>
         public DetectLabelsSettings Settings

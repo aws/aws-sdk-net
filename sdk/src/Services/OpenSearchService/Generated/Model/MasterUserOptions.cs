@@ -64,7 +64,7 @@ namespace Amazon.OpenSearchService.Model
         /// is <code>true</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string MasterUserName
         {
             get { return this._masterUserName; }
@@ -84,7 +84,7 @@ namespace Amazon.OpenSearchService.Model
         /// is <code>true</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=128)]
+        [AWSProperty(Sensitive=true, Min=8, Max=128)]
         public string MasterUserPassword
         {
             get { return this._masterUserPassword; }

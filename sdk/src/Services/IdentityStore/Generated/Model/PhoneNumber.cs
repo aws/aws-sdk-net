@@ -44,6 +44,7 @@ namespace Amazon.IdentityStore.Model
         /// resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public bool Primary
         {
             get { return this._primary.GetValueOrDefault(); }
@@ -62,7 +63,7 @@ namespace Amazon.IdentityStore.Model
         /// A string representing the type of a phone number. For example, "Mobile."
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Type
         {
             get { return this._type; }
@@ -81,7 +82,7 @@ namespace Amazon.IdentityStore.Model
         /// A string containing a phone number. For example, "8675309" or "+1 (800) 123-4567".
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Value
         {
             get { return this._value; }

@@ -98,7 +98,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// The name of the template.
+        /// The name of the template: automated-sensitive-data-discovery.
         /// </para>
         /// </summary>
         public string Name

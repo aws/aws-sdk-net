@@ -105,6 +105,7 @@ namespace Amazon.IVS.Model
         /// Stream-key value.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Value
         {
             get { return this._value; }

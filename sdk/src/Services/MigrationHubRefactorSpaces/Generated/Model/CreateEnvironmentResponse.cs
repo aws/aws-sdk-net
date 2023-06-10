@@ -122,7 +122,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// A timestamp that indicates when the environment was last updated. 
+        /// A timestamp that indicates when the environment was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -218,7 +218,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// an Amazon Web Services resource. Each tag consists of a key-value pair..
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

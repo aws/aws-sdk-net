@@ -70,6 +70,12 @@ namespace Amazon.EMRContainers.Model.Internal.MarshallTransformations
                     unmarshalledObject.CloudWatchMonitoringConfiguration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("containerLogRotationConfiguration", targetDepth))
+                {
+                    var unmarshaller = ContainerLogRotationConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ContainerLogRotationConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("persistentAppUI", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

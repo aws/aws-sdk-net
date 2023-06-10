@@ -30,8 +30,10 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateImage operation.
-    /// Updates the properties of a SageMaker image. To change the image's tags, use the <a>AddTags</a>
-    /// and <a>DeleteTags</a> APIs.
+    /// Updates the properties of a SageMaker image. To change the image's tags, use the <a
+    /// href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html">AddTags</a>
+    /// and <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTags.html">DeleteTags</a>
+    /// APIs.
     /// </summary>
     public partial class UpdateImageRequest : AmazonSageMakerRequest
     {

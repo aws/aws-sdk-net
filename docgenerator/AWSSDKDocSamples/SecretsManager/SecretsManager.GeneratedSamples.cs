@@ -241,6 +241,26 @@ namespace AWSSDKDocSamples.Amazon.SecretsManager.Generated
             #endregion
         }
 
+        public void SecretsManagerReplicateSecretToRegions()
+        {
+            #region example-1679591984774
+
+            var client = new AmazonSecretsManagerClient();
+            var response = client.ReplicateSecretToRegions(new ReplicateSecretToRegionsRequest 
+            {
+                AddReplicaRegions = new List<ReplicaRegionType> {
+                    new ReplicaRegionType { Region = "eu-west-3" }
+                },
+                ForceOverwriteReplicaSecret = true,
+                SecretId = "MyTestSecret"
+            });
+
+            string arn = response.ARN;
+            List<ReplicationStatusType> replicationStatus = response.ReplicationStatus;
+
+            #endregion
+        }
+
         public void SecretsManagerRestoreSecret()
         {
             #region to-restore-a-previously-deleted-secret-1524001513930

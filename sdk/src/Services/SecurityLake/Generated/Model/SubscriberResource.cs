@@ -36,19 +36,19 @@ namespace Amazon.SecurityLake.Model
     public partial class SubscriberResource
     {
         private List<string> _accessTypes = new List<string>();
-        private string _accountId;
         private DateTime? _createdAt;
-        private string _externalId;
+        private string _resourceShareArn;
+        private string _resourceShareName;
         private string _roleArn;
         private string _s3BucketArn;
-        private string _snsArn;
-        private List<SourceType> _sourceTypes = new List<SourceType>();
+        private List<LogSourceResource> _sources = new List<LogSourceResource>();
+        private string _subscriberArn;
         private string _subscriberDescription;
+        private string _subscriberEndpoint;
+        private string _subscriberId;
+        private AwsIdentity _subscriberIdentity;
         private string _subscriberName;
-        private string _subscriptionEndpoint;
-        private string _subscriptionId;
-        private EndpointProtocol _subscriptionProtocol;
-        private SubscriptionStatus _subscriptionStatus;
+        private SubscriberStatus _subscriberStatus;
         private DateTime? _updatedAt;
 
         /// <summary>
@@ -56,13 +56,12 @@ namespace Amazon.SecurityLake.Model
         /// <para>
         /// You can choose to notify subscribers of new objects with an Amazon Simple Queue Service
         /// (Amazon SQS) queue or through messaging to an HTTPS endpoint provided by the subscriber.
-        /// 
         /// </para>
         ///  
         /// <para>
         ///  Subscribers can consume data by directly querying Lake Formation tables in your Amazon
         /// S3 bucket through services like Amazon Athena. This subscription type is defined as
-        /// <code>LAKEFORMATION</code>. 
+        /// <code>LAKEFORMATION</code>.
         /// </para>
         /// </summary>
         public List<string> AccessTypes
@@ -78,29 +77,9 @@ namespace Amazon.SecurityLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property AccountId. 
-        /// <para>
-        /// The Amazon Web Services account ID you are using to create your Amazon Security Lake
-        /// account.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true, Min=12, Max=12)]
-        public string AccountId
-        {
-            get { return this._accountId; }
-            set { this._accountId = value; }
-        }
-
-        // Check to see if AccountId property is set
-        internal bool IsSetAccountId()
-        {
-            return this._accountId != null;
-        }
-
-        /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The date and time when the subscription was created. 
+        /// The date and time when the subscriber was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -116,23 +95,46 @@ namespace Amazon.SecurityLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ExternalId. 
+        /// Gets and sets the property ResourceShareArn. 
         /// <para>
-        /// The external ID of the subscriber. The external ID lets the user that is assuming
-        /// the role assert the circumstances in which they are operating. It also provides a
-        /// way for the account owner to permit the role to be assumed only under specific circumstances.
+        /// The Amazon Resource Name (ARN) which uniquely defines the AWS RAM resource share.
+        /// Before accepting the RAM resource share invitation, you can view details related to
+        /// the RAM resource share.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field is available only for Lake Formation subscribers created after March 8,
+        /// 2023.
         /// </para>
         /// </summary>
-        public string ExternalId
+        public string ResourceShareArn
         {
-            get { return this._externalId; }
-            set { this._externalId = value; }
+            get { return this._resourceShareArn; }
+            set { this._resourceShareArn = value; }
         }
 
-        // Check to see if ExternalId property is set
-        internal bool IsSetExternalId()
+        // Check to see if ResourceShareArn property is set
+        internal bool IsSetResourceShareArn()
         {
-            return this._externalId != null;
+            return this._resourceShareArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceShareName. 
+        /// <para>
+        /// The name of the resource share.
+        /// </para>
+        /// </summary>
+        public string ResourceShareName
+        {
+            get { return this._resourceShareName; }
+            set { this._resourceShareName = value; }
+        }
+
+        // Check to see if ResourceShareName property is set
+        internal bool IsSetResourceShareName()
+        {
+            return this._resourceShareName != null;
         }
 
         /// <summary>
@@ -156,7 +158,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property S3BucketArn. 
         /// <para>
-        /// The ARN for the Amazon S3 bucket. 
+        /// The ARN for the Amazon S3 bucket.
         /// </para>
         /// </summary>
         public string S3BucketArn
@@ -172,41 +174,42 @@ namespace Amazon.SecurityLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SnsArn. 
-        /// <para>
-        /// The ARN for the Amazon Simple Notification Service.
-        /// </para>
-        /// </summary>
-        public string SnsArn
-        {
-            get { return this._snsArn; }
-            set { this._snsArn = value; }
-        }
-
-        // Check to see if SnsArn property is set
-        internal bool IsSetSnsArn()
-        {
-            return this._snsArn != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SourceTypes. 
+        /// Gets and sets the property Sources. 
         /// <para>
         /// Amazon Security Lake supports log and event collection for natively supported Amazon
         /// Web Services. For more information, see the Amazon Security Lake User Guide.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public List<SourceType> SourceTypes
+        public List<LogSourceResource> Sources
         {
-            get { return this._sourceTypes; }
-            set { this._sourceTypes = value; }
+            get { return this._sources; }
+            set { this._sources = value; }
         }
 
-        // Check to see if SourceTypes property is set
-        internal bool IsSetSourceTypes()
+        // Check to see if Sources property is set
+        internal bool IsSetSources()
         {
-            return this._sourceTypes != null && this._sourceTypes.Count > 0; 
+            return this._sources != null && this._sources.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriberArn. 
+        /// <para>
+        /// The subscriber ARN of the Amazon Security Lake subscriber account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=1011)]
+        public string SubscriberArn
+        {
+            get { return this._subscriberArn; }
+            set { this._subscriberArn = value; }
+        }
+
+        // Check to see if SubscriberArn property is set
+        internal bool IsSetSubscriberArn()
+        {
+            return this._subscriberArn != null;
         }
 
         /// <summary>
@@ -214,7 +217,7 @@ namespace Amazon.SecurityLake.Model
         /// <para>
         /// The subscriber descriptions for a subscriber account. The description for a subscriber
         /// includes <code>subscriberName</code>, <code>accountID</code>, <code>externalID</code>,
-        /// and <code>subscriptionId</code>.
+        /// and <code>subscriberId</code>.
         /// </para>
         /// </summary>
         public string SubscriberDescription
@@ -230,11 +233,68 @@ namespace Amazon.SecurityLake.Model
         }
 
         /// <summary>
+        /// Gets and sets the property SubscriberEndpoint. 
+        /// <para>
+        /// The subscriber endpoint to which exception messages are posted.
+        /// </para>
+        /// </summary>
+        public string SubscriberEndpoint
+        {
+            get { return this._subscriberEndpoint; }
+            set { this._subscriberEndpoint = value; }
+        }
+
+        // Check to see if SubscriberEndpoint property is set
+        internal bool IsSetSubscriberEndpoint()
+        {
+            return this._subscriberEndpoint != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriberId. 
+        /// <para>
+        /// The subscriber ID of the Amazon Security Lake subscriber account.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public string SubscriberId
+        {
+            get { return this._subscriberId; }
+            set { this._subscriberId = value; }
+        }
+
+        // Check to see if SubscriberId property is set
+        internal bool IsSetSubscriberId()
+        {
+            return this._subscriberId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SubscriberIdentity. 
+        /// <para>
+        /// The AWS identity used to access your data.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public AwsIdentity SubscriberIdentity
+        {
+            get { return this._subscriberIdentity; }
+            set { this._subscriberIdentity = value; }
+        }
+
+        // Check to see if SubscriberIdentity property is set
+        internal bool IsSetSubscriberIdentity()
+        {
+            return this._subscriberIdentity != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property SubscriberName. 
         /// <para>
         /// The name of your Amazon Security Lake subscriber account.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public string SubscriberName
         {
             get { return this._subscriberName; }
@@ -248,82 +308,27 @@ namespace Amazon.SecurityLake.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SubscriptionEndpoint. 
+        /// Gets and sets the property SubscriberStatus. 
         /// <para>
-        /// The subscription endpoint to which exception messages are posted. 
+        /// The subscriber status of the Amazon Security Lake subscriber account.
         /// </para>
         /// </summary>
-        public string SubscriptionEndpoint
+        public SubscriberStatus SubscriberStatus
         {
-            get { return this._subscriptionEndpoint; }
-            set { this._subscriptionEndpoint = value; }
+            get { return this._subscriberStatus; }
+            set { this._subscriberStatus = value; }
         }
 
-        // Check to see if SubscriptionEndpoint property is set
-        internal bool IsSetSubscriptionEndpoint()
+        // Check to see if SubscriberStatus property is set
+        internal bool IsSetSubscriberStatus()
         {
-            return this._subscriptionEndpoint != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubscriptionId. 
-        /// <para>
-        /// The subscription ID of the Amazon Security Lake subscriber account.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public string SubscriptionId
-        {
-            get { return this._subscriptionId; }
-            set { this._subscriptionId = value; }
-        }
-
-        // Check to see if SubscriptionId property is set
-        internal bool IsSetSubscriptionId()
-        {
-            return this._subscriptionId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubscriptionProtocol. 
-        /// <para>
-        /// The subscription protocol to which exception messages are posted. 
-        /// </para>
-        /// </summary>
-        public EndpointProtocol SubscriptionProtocol
-        {
-            get { return this._subscriptionProtocol; }
-            set { this._subscriptionProtocol = value; }
-        }
-
-        // Check to see if SubscriptionProtocol property is set
-        internal bool IsSetSubscriptionProtocol()
-        {
-            return this._subscriptionProtocol != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property SubscriptionStatus. 
-        /// <para>
-        /// The subscription status of the Amazon Security Lake subscriber account.
-        /// </para>
-        /// </summary>
-        public SubscriptionStatus SubscriptionStatus
-        {
-            get { return this._subscriptionStatus; }
-            set { this._subscriptionStatus = value; }
-        }
-
-        // Check to see if SubscriptionStatus property is set
-        internal bool IsSetSubscriptionStatus()
-        {
-            return this._subscriptionStatus != null;
+            return this._subscriberStatus != null;
         }
 
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The date and time when the subscription was created. 
+        /// The date and time when the subscriber was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

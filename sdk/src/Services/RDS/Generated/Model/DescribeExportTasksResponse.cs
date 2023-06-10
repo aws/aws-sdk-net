@@ -39,7 +39,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property ExportTasks. 
         /// <para>
-        /// Information about an export of a snapshot to Amazon S3.
+        /// Information about an export of a snapshot or cluster to Amazon S3.
         /// </para>
         /// </summary>
         public List<ExportTask> ExportTasks

@@ -40,7 +40,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// Queries time out after 15 minutes of runtime. If your queries are timing out, reduce
+    /// Queries time out after 60 minutes of runtime. If your queries are timing out, reduce
     /// the time range being searched or partition your query into a number of queries.
     /// </para>
     ///  
@@ -53,7 +53,7 @@ namespace Amazon.CloudWatchLogs.Model
     /// </para>
     ///  
     /// <para>
-    /// You can have up to 20 concurrent CloudWatch Logs insights queries, including queries
+    /// You can have up to 30 concurrent CloudWatch Logs insights queries, including queries
     /// that have been added to dashboards. 
     /// </para>
     /// </summary>

@@ -88,6 +88,12 @@ namespace Amazon.ForecastService.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ImportMode", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ImportMode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("LastModificationTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

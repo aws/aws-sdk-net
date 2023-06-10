@@ -33,7 +33,47 @@ namespace Amazon.SageMaker.Model
     /// </summary>
     public partial class TuningJobCompletionCriteria
     {
+        private BestObjectiveNotImproving _bestObjectiveNotImproving;
+        private ConvergenceDetected _convergenceDetected;
         private float? _targetObjectiveMetricValue;
+
+        /// <summary>
+        /// Gets and sets the property BestObjectiveNotImproving. 
+        /// <para>
+        /// A flag to stop your hyperparameter tuning job if model performance fails to improve
+        /// as evaluated against an objective function.
+        /// </para>
+        /// </summary>
+        public BestObjectiveNotImproving BestObjectiveNotImproving
+        {
+            get { return this._bestObjectiveNotImproving; }
+            set { this._bestObjectiveNotImproving = value; }
+        }
+
+        // Check to see if BestObjectiveNotImproving property is set
+        internal bool IsSetBestObjectiveNotImproving()
+        {
+            return this._bestObjectiveNotImproving != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ConvergenceDetected. 
+        /// <para>
+        /// A flag to top your hyperparameter tuning job if automatic model tuning (AMT) has detected
+        /// that your model has converged as evaluated against your objective function.
+        /// </para>
+        /// </summary>
+        public ConvergenceDetected ConvergenceDetected
+        {
+            get { return this._convergenceDetected; }
+            set { this._convergenceDetected = value; }
+        }
+
+        // Check to see if ConvergenceDetected property is set
+        internal bool IsSetConvergenceDetected()
+        {
+            return this._convergenceDetected != null;
+        }
 
         /// <summary>
         /// Gets and sets the property TargetObjectiveMetricValue. 
@@ -41,7 +81,6 @@ namespace Amazon.SageMaker.Model
         /// The value of the objective metric.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public float TargetObjectiveMetricValue
         {
             get { return this._targetObjectiveMetricValue.GetValueOrDefault(); }

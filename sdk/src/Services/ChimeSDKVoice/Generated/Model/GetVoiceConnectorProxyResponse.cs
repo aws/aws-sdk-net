@@ -36,7 +36,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private Proxy _proxy;
 
         /// <summary>
-        /// Gets and sets the property Proxy.
+        /// Gets and sets the property Proxy. 
+        /// <para>
+        /// The proxy configuration details.
+        /// </para>
         /// </summary>
         public Proxy Proxy
         {

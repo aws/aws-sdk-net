@@ -1,0 +1,10 @@
+﻿{
+  "AWS": {
+    "useHttp": true,
+    "maxErrorRetry": 6,
+    "timeout": 1000,
+    "authenticationregion": "us-east-1",
+    "defaultsMode": "Standard",
+    "serviceURL": "https://localhost:9021"
+  }
+}

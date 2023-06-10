@@ -44,6 +44,7 @@ namespace Amazon.BillingConductor.Model
         ///  The Amazon Web Services account email. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AccountEmail
         {
             get { return this._accountEmail; }
@@ -80,6 +81,7 @@ namespace Amazon.BillingConductor.Model
         ///  The Amazon Web Services account name. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AccountName
         {
             get { return this._accountName; }

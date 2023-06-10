@@ -152,7 +152,7 @@ namespace Amazon.IdentityStore.Model
         /// <summary>
         /// Gets and sets the property RetryAfterSeconds. 
         /// <para>
-        /// The number of seconds that you would like to wait before retrying the next request.
+        /// The number of seconds to wait before retrying the next request.
         /// </para>
         /// </summary>
         public int RetryAfterSeconds

@@ -29,10 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.S3Control.Model
 {
     /// <summary>
-    /// Contains the configuration parameters for a Set Object Tagging operation. S3 Batch
-    /// Operations passes every object to the underlying PUT Object tagging API. For more
-    /// information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PUT
-    /// Object tagging</a>.
+    /// Contains the configuration parameters for a PUT Object Tagging operation. S3 Batch
+    /// Operations passes every object to the underlying <code>PutObjectTagging</code> API
+    /// operation. For more information about the parameters for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectPUTtagging.html">PutObjectTagging</a>.
     /// </summary>
     public partial class S3SetObjectTaggingOperation
     {

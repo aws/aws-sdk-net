@@ -78,6 +78,17 @@ namespace Amazon.LexModelsV2.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTestSetExportSpecification())
+            {
+                context.Writer.WritePropertyName("testSetExportSpecification");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TestSetExportSpecificationMarshaller.Instance;
+                marshaller.Marshall(requestObject.TestSetExportSpecification, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

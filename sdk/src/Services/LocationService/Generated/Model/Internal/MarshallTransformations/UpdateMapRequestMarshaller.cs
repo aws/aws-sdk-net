@@ -68,6 +68,17 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetConfigurationUpdate())
+                {
+                    context.Writer.WritePropertyName("ConfigurationUpdate");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = MapConfigurationUpdateMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.ConfigurationUpdate, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetDescription())
                 {
                     context.Writer.WritePropertyName("Description");

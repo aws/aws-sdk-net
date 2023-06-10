@@ -1,6 +1,5 @@
 ﻿<#@ template language="C#" #>
 <#@ import namespace="System.Linq" #>
-<#@ parameter name="endpoints" type="System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant>" #>
 /*******************************************************************************
  *  Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  *  Licensed under the Apache License, Version 2.0 (the "License"). You may not use
@@ -25,7 +24,7 @@ namespace Amazon.S3
 {
     public sealed partial class S3Region
     {
-<# foreach(var endpoint in endpoints) { #>
+<# foreach (var endpoint in Endpoints) { #>
         /// <summary>
         /// Specifies that the S3 Bucket should use the <#= endpoint.RegionCode #> locality.
         /// </summary>
@@ -34,3 +33,7 @@ namespace Amazon.S3
 <# } #>
     }
 }
+
+<#+
+public System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant> Endpoints { get; set; }
+#>

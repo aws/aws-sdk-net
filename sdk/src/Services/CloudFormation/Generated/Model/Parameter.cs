@@ -81,7 +81,7 @@ namespace Amazon.CloudFormation.Model
         /// <para>
         /// Read-only. The value that corresponds to a SSM parameter key. This field is returned
         /// only for <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
-        /// <code>SSM</code> </a> parameter types in the template.
+        /// SSM</a> parameter types in the template.
         /// </para>
         /// </summary>
         public string ResolvedValue

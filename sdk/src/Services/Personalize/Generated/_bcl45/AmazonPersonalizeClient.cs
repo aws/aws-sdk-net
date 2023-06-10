@@ -438,7 +438,13 @@ namespace Amazon.Personalize
         /// <para>
         ///  <b>Minimum Provisioned TPS and Auto-Scaling</b> 
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        ///  A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting
+        /// with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
+        /// CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// A transaction is a single <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code>
         /// call. Transactions per second (TPS) is the throughput and unit of billing for Amazon
@@ -551,7 +557,13 @@ namespace Amazon.Personalize
         /// <para>
         ///  <b>Minimum Provisioned TPS and Auto-Scaling</b> 
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        ///  A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting
+        /// with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
+        /// CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// A transaction is a single <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code>
         /// call. Transactions per second (TPS) is the throughput and unit of billing for Amazon
@@ -1753,7 +1765,14 @@ namespace Amazon.Personalize
         /// <para>
         ///  <b>Minimum recommendation requests per second</b> 
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
+        /// recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the
+        /// default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code>
+        /// as necessary.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// When you create a recommender, you can configure the recommender's minimum recommendation
         /// requests per second. The minimum recommendation requests per second (<code>minRecommendationRequestsPerSecond</code>)
@@ -1875,7 +1894,14 @@ namespace Amazon.Personalize
         /// <para>
         ///  <b>Minimum recommendation requests per second</b> 
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// A high <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
+        /// recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code> (the
+        /// default). Track your usage using Amazon CloudWatch metrics, and increase the <code>minRecommendationRequestsPerSecond</code>
+        /// as necessary.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// When you create a recommender, you can configure the recommender's minimum recommendation
         /// requests per second. The minimum recommendation requests per second (<code>minRecommendationRequestsPerSecond</code>)
@@ -2108,9 +2134,9 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates the configuration for training a model. A trained model is known as a solution.
-        /// After the configuration is created, you train the model (create a solution) by calling
-        /// the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
+        /// Creates the configuration for training a model. A trained model is known as a solution
+        /// version. After the configuration is created, you train the model (create a solution
+        /// version) by calling the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
         /// operation. Every time you call <code>CreateSolutionVersion</code>, a new version of
         /// the solution is created.
         /// 
@@ -2126,9 +2152,7 @@ namespace Amazon.Personalize
         /// To train a model, Amazon Personalize requires training data and a recipe. The training
         /// data comes from the dataset group that you provide in the request. A recipe specifies
         /// the training algorithm and a feature transformation. You can specify one of the predefined
-        /// recipes provided by Amazon Personalize. Alternatively, you can specify <code>performAutoML</code>
-        /// and Amazon Personalize will analyze your data and select the optimum USER_PERSONALIZATION
-        /// recipe for you.
+        /// recipes provided by Amazon Personalize. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -2223,9 +2247,9 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Creates the configuration for training a model. A trained model is known as a solution.
-        /// After the configuration is created, you train the model (create a solution) by calling
-        /// the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
+        /// Creates the configuration for training a model. A trained model is known as a solution
+        /// version. After the configuration is created, you train the model (create a solution
+        /// version) by calling the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
         /// operation. Every time you call <code>CreateSolutionVersion</code>, a new version of
         /// the solution is created.
         /// 
@@ -2241,9 +2265,7 @@ namespace Amazon.Personalize
         /// To train a model, Amazon Personalize requires training data and a recipe. The training
         /// data comes from the dataset group that you provide in the request. A recipe specifies
         /// the training algorithm and a feature transformation. You can specify one of the predefined
-        /// recipes provided by Amazon Personalize. Alternatively, you can specify <code>performAutoML</code>
-        /// and Amazon Personalize will analyze your data and select the optimum USER_PERSONALIZATION
-        /// recipe for you.
+        /// recipes provided by Amazon Personalize. 
         /// </para>
         ///  <note> 
         /// <para>
@@ -5211,7 +5233,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
         /// attached to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -5238,7 +5260,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
         /// attached to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
@@ -5572,7 +5594,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Remove <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// Remove <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
         /// that are attached to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -5603,7 +5625,7 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Remove <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// Remove <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
         /// that are attached to a resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
@@ -5803,7 +5825,13 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Updates the recommender to modify the recommender configuration.
+        /// Updates the recommender to modify the recommender configuration. If you update the
+        /// recommender to modify the columns used in training, Amazon Personalize automatically
+        /// starts a full retraining of the models backing your recommender. While the update
+        /// completes, you can still get recommendations from the recommender. The recommender
+        /// uses the previous configuration until the update completes. To track the status of
+        /// this update, use the <code>latestRecommenderUpdate</code> returned in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecommender service method.</param>
         /// 
@@ -5829,7 +5857,13 @@ namespace Amazon.Personalize
 
 
         /// <summary>
-        /// Updates the recommender to modify the recommender configuration.
+        /// Updates the recommender to modify the recommender configuration. If you update the
+        /// recommender to modify the columns used in training, Amazon Personalize automatically
+        /// starts a full retraining of the models backing your recommender. While the update
+        /// completes, you can still get recommendations from the recommender. The recommender
+        /// uses the previous configuration until the update completes. To track the status of
+        /// this update, use the <code>latestRecommenderUpdate</code> returned in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+        /// operation.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateRecommender service method.</param>
         /// <param name="cancellationToken">

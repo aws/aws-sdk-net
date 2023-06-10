@@ -33,6 +33,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class GetRunResponse : AmazonWebServiceResponse
     {
+        private Accelerators _accelerators;
         private string _arn;
         private DateTime? _creationTime;
         private string _definition;
@@ -56,6 +57,25 @@ namespace Amazon.Omics.Model
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _workflowId;
         private WorkflowType _workflowType;
+
+        /// <summary>
+        /// Gets and sets the property Accelerators. 
+        /// <para>
+        ///  The computational accelerator used to run the workflow. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public Accelerators Accelerators
+        {
+            get { return this._accelerators; }
+            set { this._accelerators = value; }
+        }
+
+        // Check to see if Accelerators property is set
+        internal bool IsSetAccelerators()
+        {
+            return this._accelerators != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Arn. 
@@ -415,7 +435,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// The run's storage capacity.
+        /// The run's storage capacity in gigabytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]

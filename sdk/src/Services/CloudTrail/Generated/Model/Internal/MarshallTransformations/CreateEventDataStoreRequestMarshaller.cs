@@ -113,6 +113,12 @@ namespace Amazon.CloudTrail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.RetentionPeriod);
                 }
 
+                if(publicRequest.IsSetStartIngestion())
+                {
+                    context.Writer.WritePropertyName("StartIngestion");
+                    context.Writer.Write(publicRequest.StartIngestion);
+                }
+
                 if(publicRequest.IsSetTagsList())
                 {
                     context.Writer.WritePropertyName("TagsList");

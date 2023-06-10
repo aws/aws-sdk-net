@@ -146,7 +146,7 @@ namespace Amazon.CodeStar.Model
         /// The GitHub user's personal access token for the GitHub repository.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1)]
         public string Token
         {
             get { return this._token; }

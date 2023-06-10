@@ -296,14 +296,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property HealthCheckType. 
         /// <para>
-        /// Determines whether any additional health checks are performed on the instances in
-        /// this group. Amazon EC2 health checks are always on.
-        /// </para>
-        ///  
-        /// <para>
-        /// The valid values are <code>EC2</code> (default), <code>ELB</code>, and <code>VPC_LATTICE</code>.
-        /// The <code>VPC_LATTICE</code> health check type is reserved for use with VPC Lattice,
-        /// which is in preview release and is subject to change.
+        /// A comma-separated value string of one or more health check types.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]
@@ -641,7 +634,7 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property TrafficSources. 
         /// <para>
-        /// The unique identifiers of the traffic sources.
+        /// The traffic sources associated with this Auto Scaling group.
         /// </para>
         /// </summary>
         public List<TrafficSourceIdentifier> TrafficSources

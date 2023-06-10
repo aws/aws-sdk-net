@@ -255,6 +255,7 @@ namespace Amazon.Drs.Model
         /// The tags associated with the Source Server.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

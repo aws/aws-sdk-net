@@ -148,7 +148,7 @@ namespace Amazon.NimbleStudio.Model
         /// A human-readable description for the studio component resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=256)]
+        [AWSProperty(Sensitive=true, Min=0, Max=256)]
         public string Description
         {
             get { return this._description; }
@@ -204,7 +204,7 @@ namespace Amazon.NimbleStudio.Model
         /// A friendly name for the studio component resource.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=64)]
+        [AWSProperty(Sensitive=true, Min=0, Max=64)]
         public string Name
         {
             get { return this._name; }
@@ -243,7 +243,7 @@ namespace Amazon.NimbleStudio.Model
         /// Parameters for the studio component scripts.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=30)]
+        [AWSProperty(Sensitive=true, Min=0, Max=30)]
         public List<ScriptParameterKeyValue> ScriptParameters
         {
             get { return this._scriptParameters; }

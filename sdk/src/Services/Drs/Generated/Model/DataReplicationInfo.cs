@@ -39,6 +39,7 @@ namespace Amazon.Drs.Model
         private string _etaDateTime;
         private string _lagDuration;
         private List<DataReplicationInfoReplicatedDisk> _replicatedDisks = new List<DataReplicationInfoReplicatedDisk>();
+        private string _stagingAvailabilityZone;
 
         /// <summary>
         /// Gets and sets the property DataReplicationError. 
@@ -149,6 +150,25 @@ namespace Amazon.Drs.Model
         internal bool IsSetReplicatedDisks()
         {
             return this._replicatedDisks != null && this._replicatedDisks.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StagingAvailabilityZone. 
+        /// <para>
+        /// AWS Availability zone into which data is being replicated.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=255)]
+        public string StagingAvailabilityZone
+        {
+            get { return this._stagingAvailabilityZone; }
+            set { this._stagingAvailabilityZone = value; }
+        }
+
+        // Check to see if StagingAvailabilityZone property is set
+        internal bool IsSetStagingAvailabilityZone()
+        {
+            return this._stagingAvailabilityZone != null;
         }
 
     }

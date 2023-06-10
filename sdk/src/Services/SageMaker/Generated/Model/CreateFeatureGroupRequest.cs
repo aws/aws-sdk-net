@@ -223,7 +223,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// To learn more about this parameter, see <a>OfflineStoreConfig</a>.
+        /// To learn more about this parameter, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.
         /// </para>
         /// </summary>
         public OfflineStoreConfig OfflineStoreConfig
@@ -242,13 +242,16 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property OnlineStoreConfig. 
         /// <para>
         /// You can turn the <code>OnlineStore</code> on or off by specifying <code>True</code>
-        /// for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>; the
-        /// default value is <code>False</code>.
+        /// for the <code>EnableOnlineStore</code> flag in <code>OnlineStoreConfig</code>.
         /// </para>
         ///  
         /// <para>
         /// You can also include an Amazon Web Services KMS key ID (<code>KMSKeyId</code>) for
         /// at-rest encryption of the <code>OnlineStore</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// The default value is <code>False</code>.
         /// </para>
         /// </summary>
         public OnlineStoreConfig OnlineStoreConfig

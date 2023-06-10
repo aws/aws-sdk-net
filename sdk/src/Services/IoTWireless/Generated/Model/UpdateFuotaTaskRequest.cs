@@ -37,9 +37,12 @@ namespace Amazon.IoTWireless.Model
         private string _description;
         private string _firmwareUpdateImage;
         private string _firmwareUpdateRole;
+        private int? _fragmentIntervalMS;
+        private int? _fragmentSizeBytes;
         private string _id;
         private LoRaWANFuotaTask _loRaWAN;
         private string _name;
+        private int? _redundancyPercent;
 
         /// <summary>
         /// Gets and sets the property Description.
@@ -90,6 +93,38 @@ namespace Amazon.IoTWireless.Model
         }
 
         /// <summary>
+        /// Gets and sets the property FragmentIntervalMS.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int FragmentIntervalMS
+        {
+            get { return this._fragmentIntervalMS.GetValueOrDefault(); }
+            set { this._fragmentIntervalMS = value; }
+        }
+
+        // Check to see if FragmentIntervalMS property is set
+        internal bool IsSetFragmentIntervalMS()
+        {
+            return this._fragmentIntervalMS.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FragmentSizeBytes.
+        /// </summary>
+        [AWSProperty(Min=1)]
+        public int FragmentSizeBytes
+        {
+            get { return this._fragmentSizeBytes.GetValueOrDefault(); }
+            set { this._fragmentSizeBytes = value; }
+        }
+
+        // Check to see if FragmentSizeBytes property is set
+        internal bool IsSetFragmentSizeBytes()
+        {
+            return this._fragmentSizeBytes.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Id.
         /// </summary>
         [AWSProperty(Required=true, Max=256)]
@@ -134,6 +169,22 @@ namespace Amazon.IoTWireless.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RedundancyPercent.
+        /// </summary>
+        [AWSProperty(Min=0, Max=100)]
+        public int RedundancyPercent
+        {
+            get { return this._redundancyPercent.GetValueOrDefault(); }
+            set { this._redundancyPercent = value; }
+        }
+
+        // Check to see if RedundancyPercent property is set
+        internal bool IsSetRedundancyPercent()
+        {
+            return this._redundancyPercent.HasValue; 
         }
 
     }

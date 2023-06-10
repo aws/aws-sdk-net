@@ -71,6 +71,28 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.AppArn);
                 }
 
+                if(publicRequest.IsSetEksSources())
+                {
+                    context.Writer.WritePropertyName("eksSources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEksSourcesListValue in publicRequest.EksSources)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = EksSourceMarshaller.Instance;
+                        marshaller.Marshall(publicRequestEksSourcesListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
+                if(publicRequest.IsSetImportStrategy())
+                {
+                    context.Writer.WritePropertyName("importStrategy");
+                    context.Writer.Write(publicRequest.ImportStrategy);
+                }
+
                 if(publicRequest.IsSetSourceArns())
                 {
                     context.Writer.WritePropertyName("sourceArns");

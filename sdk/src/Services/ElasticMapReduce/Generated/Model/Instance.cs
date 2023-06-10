@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ElasticMapReduce.Model
 {
     /// <summary>
-    /// Represents an EC2 instance provisioned as part of cluster.
+    /// Represents an Amazon EC2 instance provisioned as part of cluster.
     /// </summary>
     public partial class Instance
     {
@@ -103,7 +103,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceFleetId. 
         /// <para>
-        /// The unique identifier of the instance fleet to which an EC2 instance belongs.
+        /// The unique identifier of the instance fleet to which an Amazon EC2 instance belongs.
         /// </para>
         /// </summary>
         public string InstanceFleetId
@@ -139,7 +139,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property InstanceType. 
         /// <para>
-        /// The EC2 instance type, for example <code>m3.xlarge</code>.
+        /// The Amazon EC2 instance type, for example <code>m3.xlarge</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

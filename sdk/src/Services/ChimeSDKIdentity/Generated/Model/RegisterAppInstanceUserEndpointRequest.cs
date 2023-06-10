@@ -70,7 +70,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The ARN of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=1600)]
+        [AWSProperty(Required=true, Sensitive=true, Min=5, Max=1600)]
         public string AppInstanceUserArn
         {
             get { return this._appInstanceUserArn; }
@@ -86,7 +86,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The idempotency token for each client request. 
+        /// The unique ID assigned to the request. Use different tokens to register other endpoints.
         /// </para>
         /// </summary>
         [AWSProperty(Min=2, Max=64)]
@@ -127,7 +127,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The name of the <code>AppInstanceUserEndpoint</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1600)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1600)]
         public string Name
         {
             get { return this._name; }

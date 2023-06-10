@@ -20,6 +20,7 @@
 //  */
 
 using Amazon.Runtime;
+using Amazon.Runtime.Internal;
 using System;
 
 namespace Amazon.S3.Model
@@ -42,16 +43,7 @@ namespace Amazon.S3.Model
     /// For more information about Amazon S3 Select, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
     /// Content from Objects</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  
-    /// <para>
-    /// For more information about using SQL with Amazon S3 Select, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">
-    /// SQL Reference for Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon S3 User
-    /// Guide</i>.
-    /// </para>
-    ///   
-    /// <para>
-    ///  <b>Permissions</b> 
-    /// </para>
+    ///   <dl> <dt>Permissions</dt> <dd> 
     ///  
     /// <para>
     /// You must have <code>s3:GetObject</code> permission for this operation. Amazon S3 Select
@@ -60,9 +52,7 @@ namespace Amazon.S3.Model
     /// Permissions in a Policy</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
     ///   
-    /// <para>
-    ///  <i>Object Data Formats</i> 
-    /// </para>
+    ///  </dd> <dt>Object Data Formats</dt> <dd> 
     ///  
     /// <para>
     /// You can use Amazon S3 Select to query objects that have the following format properties:
@@ -104,10 +94,7 @@ namespace Amazon.S3.Model
     /// including SSE-S3 and SSE-KMS, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
     /// Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    ///  <b>Working with the Response Body</b> 
-    /// </para>
+    ///  </li> </ul> </dd> <dt>Working with the Response Body</dt> <dd> 
     ///  
     /// <para>
     /// Given the response size is unknown, Amazon S3 Select streams the response as a series
@@ -115,11 +102,7 @@ namespace Amazon.S3.Model
     /// as its value in the response. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTSelectObjectAppendix.html">Appendix:
     /// SelectObjectContent Response</a>.
     /// </para>
-    ///   
-    /// <para>
-    ///  <b>GetObject Support</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>GetObject Support</dt> <dd> 
     /// <para>
     /// The <code>SelectObjectContent</code> action does not support the following <code>GetObject</code>
     /// functionality. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>.
@@ -138,16 +121,14 @@ namespace Amazon.S3.Model
     /// information, about storage classes see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#storage-class-intro">Storage
     /// Classes</a> in the <i>Amazon S3 User Guide</i>.
     /// </para>
-    ///  </li> </ul>  
-    /// <para>
-    ///  <b>Special Errors</b> 
-    /// </para>
-    ///  
+    ///  </li> </ul> </dd> <dt>Special Errors</dt> <dd> 
     /// <para>
     /// For a list of special errors for this operation, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#SelectObjectContentErrorCodeList">List
     /// of SELECT Object Content Error Codes</a> 
     /// </para>
-    ///  <p class="title"> <b>Related Resources</b> 
+    ///  </dd> </dl> 
+    /// <para>
+    /// The following operations are related to <code>SelectObjectContent</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -214,6 +195,7 @@ namespace Amazon.S3.Model
         /// algorithm. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Protecting
         /// data using SSE-C keys</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey { get; set; }
 
         internal bool IsSetServerSideEncryptionCustomerProvidedKey() => ServerSideEncryptionCustomerProvidedKey != null;

@@ -59,7 +59,7 @@ namespace Amazon.LexModelsV2.Model
         /// Gets and sets the property Slots. 
         /// <para>
         /// A map of all of the slot value overrides for the intent. The name of the slot maps
-        /// to the value of the slot. Slots that are not included in the map aren't overridden.,
+        /// to the value of the slot. Slots that are not included in the map aren't overridden.
         /// </para>
         /// </summary>
         public Dictionary<string, SlotValueOverride> Slots

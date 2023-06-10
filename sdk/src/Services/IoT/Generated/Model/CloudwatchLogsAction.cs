@@ -33,8 +33,28 @@ namespace Amazon.IoT.Model
     /// </summary>
     public partial class CloudwatchLogsAction
     {
+        private bool? _batchMode;
         private string _logGroupName;
         private string _roleArn;
+
+        /// <summary>
+        /// Gets and sets the property BatchMode. 
+        /// <para>
+        /// Indicates whether batches of log records will be extracted and uploaded into CloudWatch.
+        /// Values include <code>true</code> or <code>false</code> <i>(default)</i>.
+        /// </para>
+        /// </summary>
+        public bool BatchMode
+        {
+            get { return this._batchMode.GetValueOrDefault(); }
+            set { this._batchMode = value; }
+        }
+
+        // Check to see if BatchMode property is set
+        internal bool IsSetBatchMode()
+        {
+            return this._batchMode.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property LogGroupName. 

@@ -34,10 +34,12 @@ namespace Amazon.Glue.Model
     public partial class KinesisStreamingSourceOptions
     {
         private bool? _addIdleTimeBetweenReads;
+        private string _addRecordTimestamp;
         private bool? _avoidEmptyBatches;
         private string _classification;
         private string _delimiter;
         private long? _describeShardInterval;
+        private string _emitConsumerLagMetrics;
         private string _endpointUrl;
         private long? _idleTimeBetweenReadsInMs;
         private long? _maxFetchRecordsPerShard;
@@ -70,6 +72,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetAddIdleTimeBetweenReads()
         {
             return this._addIdleTimeBetweenReads.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property AddRecordTimestamp. 
+        /// <para>
+        /// When this option is set to 'true', the data output will contain an additional column
+        /// named "__src_timestamp" that indicates the time when the corresponding record received
+        /// by the stream. The default value is 'false'. This option is supported in Glue version
+        /// 4.0 or later.
+        /// </para>
+        /// </summary>
+        public string AddRecordTimestamp
+        {
+            get { return this._addRecordTimestamp; }
+            set { this._addRecordTimestamp = value; }
+        }
+
+        // Check to see if AddRecordTimestamp property is set
+        internal bool IsSetAddRecordTimestamp()
+        {
+            return this._addRecordTimestamp != null;
         }
 
         /// <summary>
@@ -145,6 +168,27 @@ namespace Amazon.Glue.Model
         internal bool IsSetDescribeShardInterval()
         {
             return this._describeShardInterval.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EmitConsumerLagMetrics. 
+        /// <para>
+        /// When this option is set to 'true', for each batch, it will emit the metrics for the
+        /// duration between the oldest record received by the stream and the time it arrives
+        /// in Glue to CloudWatch. The metric's name is "glue.driver.streaming.maxConsumerLagInMs".
+        /// The default value is 'false'. This option is supported in Glue version 4.0 or later.
+        /// </para>
+        /// </summary>
+        public string EmitConsumerLagMetrics
+        {
+            get { return this._emitConsumerLagMetrics; }
+            set { this._emitConsumerLagMetrics = value; }
+        }
+
+        // Check to see if EmitConsumerLagMetrics property is set
+        internal bool IsSetEmitConsumerLagMetrics()
+        {
+            return this._emitConsumerLagMetrics != null;
         }
 
         /// <summary>

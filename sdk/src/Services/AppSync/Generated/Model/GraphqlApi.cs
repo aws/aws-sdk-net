@@ -35,15 +35,21 @@ namespace Amazon.AppSync.Model
     {
         private List<AdditionalAuthenticationProvider> _additionalAuthenticationProviders = new List<AdditionalAuthenticationProvider>();
         private string _apiId;
+        private GraphQLApiType _apiType;
         private string _arn;
         private AuthenticationType _authenticationType;
+        private Dictionary<string, string> _dns = new Dictionary<string, string>();
         private LambdaAuthorizerConfig _lambdaAuthorizerConfig;
         private LogConfig _logConfig;
+        private string _mergedApiExecutionRoleArn;
         private string _name;
         private OpenIDConnectConfig _openidConnectConfig;
+        private string _owner;
+        private string _ownerContact;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private Dictionary<string, string> _uris = new Dictionary<string, string>();
         private UserPoolConfig _userPoolConfig;
+        private GraphQLApiVisibility _visibility;
         private string _wafWebAclArn;
         private bool? _xrayEnabled;
 
@@ -84,6 +90,25 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ApiType. 
+        /// <para>
+        /// The value that indicates whether the GraphQL API is a standard API (<code>GRAPHQL</code>)
+        /// or merged API (<code>MERGED</code>).
+        /// </para>
+        /// </summary>
+        public GraphQLApiType ApiType
+        {
+            get { return this._apiType; }
+            set { this._apiType = value; }
+        }
+
+        // Check to see if ApiType property is set
+        internal bool IsSetApiType()
+        {
+            return this._apiType != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
         /// The Amazon Resource Name (ARN).
@@ -117,6 +142,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetAuthenticationType()
         {
             return this._authenticationType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Dns. 
+        /// <para>
+        /// The DNS records for the API.
+        /// </para>
+        /// </summary>
+        public Dictionary<string, string> Dns
+        {
+            get { return this._dns; }
+            set { this._dns = value; }
+        }
+
+        // Check to see if Dns property is set
+        internal bool IsSetDns()
+        {
+            return this._dns != null && this._dns.Count > 0; 
         }
 
         /// <summary>
@@ -156,6 +199,27 @@ namespace Amazon.AppSync.Model
         }
 
         /// <summary>
+        /// Gets and sets the property MergedApiExecutionRoleArn. 
+        /// <para>
+        /// The Identity and Access Management service role ARN for a merged API. The AppSync
+        /// service assumes this role on behalf of the Merged API to validate access to source
+        /// APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update the merged API
+        /// endpoint with the source API changes automatically.
+        /// </para>
+        /// </summary>
+        public string MergedApiExecutionRoleArn
+        {
+            get { return this._mergedApiExecutionRoleArn; }
+            set { this._mergedApiExecutionRoleArn = value; }
+        }
+
+        // Check to see if MergedApiExecutionRoleArn property is set
+        internal bool IsSetMergedApiExecutionRoleArn()
+        {
+            return this._mergedApiExecutionRoleArn != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
         /// The API name.
@@ -190,6 +254,46 @@ namespace Amazon.AppSync.Model
         internal bool IsSetOpenIDConnectConfig()
         {
             return this._openidConnectConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Owner. 
+        /// <para>
+        /// The account owner of the GraphQL API.
+        /// </para>
+        /// </summary>
+        public string Owner
+        {
+            get { return this._owner; }
+            set { this._owner = value; }
+        }
+
+        // Check to see if Owner property is set
+        internal bool IsSetOwner()
+        {
+            return this._owner != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OwnerContact. 
+        /// <para>
+        /// The owner contact information for an API resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field accepts any string input with a length of 0 - 256 characters.
+        /// </para>
+        /// </summary>
+        public string OwnerContact
+        {
+            get { return this._ownerContact; }
+            set { this._ownerContact = value; }
+        }
+
+        // Check to see if OwnerContact property is set
+        internal bool IsSetOwnerContact()
+        {
+            return this._ownerContact != null;
         }
 
         /// <summary>
@@ -245,6 +349,26 @@ namespace Amazon.AppSync.Model
         internal bool IsSetUserPoolConfig()
         {
             return this._userPoolConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Visibility. 
+        /// <para>
+        /// Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private (<code>PRIVATE</code>).
+        /// If no value is provided, the visibility will be set to <code>GLOBAL</code> by default.
+        /// This value cannot be changed once the API has been created.
+        /// </para>
+        /// </summary>
+        public GraphQLApiVisibility Visibility
+        {
+            get { return this._visibility; }
+            set { this._visibility = value; }
+        }
+
+        // Check to see if Visibility property is set
+        internal bool IsSetVisibility()
+        {
+            return this._visibility != null;
         }
 
         /// <summary>

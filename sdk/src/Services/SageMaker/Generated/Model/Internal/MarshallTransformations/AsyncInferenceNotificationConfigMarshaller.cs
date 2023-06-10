@@ -51,6 +51,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ErrorTopic);
             }
 
+            if(requestObject.IsSetIncludeInferenceResponseIn())
+            {
+                context.Writer.WritePropertyName("IncludeInferenceResponseIn");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectIncludeInferenceResponseInListValue in requestObject.IncludeInferenceResponseIn)
+                {
+                        context.Writer.Write(requestObjectIncludeInferenceResponseInListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetSuccessTopic())
             {
                 context.Writer.WritePropertyName("SuccessTopic");

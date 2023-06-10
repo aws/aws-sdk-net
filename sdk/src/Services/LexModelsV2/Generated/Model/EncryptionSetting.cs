@@ -45,7 +45,7 @@ namespace Amazon.LexModelsV2.Model
         /// The password used to encrypt the associated transcript file.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string AssociatedTranscriptsPassword
         {
             get { return this._associatedTranscriptsPassword; }
@@ -64,7 +64,7 @@ namespace Amazon.LexModelsV2.Model
         /// The password used to encrypt the recommended bot recommendation file.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string BotLocaleExportPassword
         {
             get { return this._botLocaleExportPassword; }

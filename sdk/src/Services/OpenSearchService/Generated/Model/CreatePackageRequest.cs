@@ -101,7 +101,7 @@ namespace Amazon.OpenSearchService.Model
         /// <summary>
         /// Gets and sets the property PackageType. 
         /// <para>
-        /// Type of package.
+        /// The type of package.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

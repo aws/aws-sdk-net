@@ -66,6 +66,46 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.Component = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("loadBalancerSet/item", targetDepth))
+                    {
+                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.LoadBalancers.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ruleGroupRuleOptionsPairSet/item", targetDepth))
+                    {
+                        var unmarshaller = RuleGroupRuleOptionsPairUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.RuleGroupRuleOptionsPairs.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ruleGroupTypePairSet/item", targetDepth))
+                    {
+                        var unmarshaller = RuleGroupTypePairUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.RuleGroupTypePairs.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("ruleOptionSet/item", targetDepth))
+                    {
+                        var unmarshaller = RuleOptionUnmarshaller.Instance;
+                        var item = unmarshaller.Unmarshall(context);
+                        unmarshalledObject.RuleOptions.Add(item);
+                        continue;
+                    }
+                    if (context.TestExpression("serviceName", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ServiceName = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("vpcEndpointService", targetDepth))
+                    {
+                        var unmarshaller = AnalysisComponentUnmarshaller.Instance;
+                        unmarshalledObject.VpcEndpointService = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                 }
                 else if (context.IsEndElement && context.CurrentDepth < originalDepth)
                 {

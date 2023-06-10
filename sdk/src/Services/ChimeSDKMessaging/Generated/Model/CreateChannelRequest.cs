@@ -38,8 +38,9 @@ namespace Amazon.ChimeSDKMessaging.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code>
-    /// of the user that makes the API call as the value in the header.
+    /// The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the
+    /// <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call
+    /// as the value in the header.
     /// </para>
     ///  </note>
     /// </summary>
@@ -50,6 +51,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         private string _chimeBearer;
         private string _clientRequestToken;
         private ElasticChannelConfiguration _elasticChannelConfiguration;
+        private ExpirationSettings _expirationSettings;
         private List<string> _memberArns = new List<string>();
         private string _metadata;
         private ChannelMode _mode;
@@ -83,7 +85,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The ID of the channel in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string ChannelId
         {
             get { return this._channelId; }
@@ -99,7 +101,8 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChimeBearer. 
         /// <para>
-        /// The <code>AppInstanceUserArn</code> of the user that makes the API call.
+        /// The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes
+        /// the API call.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=5, Max=1600)]
@@ -121,7 +124,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The client token for the request. An <code>Idempotency</code> token.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -154,6 +157,24 @@ namespace Amazon.ChimeSDKMessaging.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ExpirationSettings. 
+        /// <para>
+        /// Settings that control the interval after which the channel is automatically deleted.
+        /// </para>
+        /// </summary>
+        public ExpirationSettings ExpirationSettings
+        {
+            get { return this._expirationSettings; }
+            set { this._expirationSettings = value; }
+        }
+
+        // Check to see if ExpirationSettings property is set
+        internal bool IsSetExpirationSettings()
+        {
+            return this._expirationSettings != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property MemberArns. 
         /// <para>
         /// The ARNs of the channel members in the request.
@@ -178,7 +199,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The metadata of the creation request. Limited to 1KB and UTF-8.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }
@@ -236,7 +257,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// The name of the channel.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

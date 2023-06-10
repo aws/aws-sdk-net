@@ -190,6 +190,18 @@ namespace Amazon.MWAA.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceBucketArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("StartupScriptS3ObjectVersion", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartupScriptS3ObjectVersion = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("StartupScriptS3Path", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StartupScriptS3Path = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Status", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

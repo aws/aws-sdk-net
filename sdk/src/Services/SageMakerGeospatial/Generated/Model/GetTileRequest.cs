@@ -35,6 +35,7 @@ namespace Amazon.SageMakerGeospatial.Model
     public partial class GetTileRequest : AmazonSageMakerGeospatialRequest
     {
         private string _arn;
+        private string _executionRoleArn;
         private List<string> _imageAssets = new List<string>();
         private bool? _imageMask;
         private OutputType _outputDataType;
@@ -63,6 +64,25 @@ namespace Amazon.SageMakerGeospatial.Model
         internal bool IsSetArn()
         {
             return this._arn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of the IAM role that you specify.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string ExecutionRoleArn
+        {
+            get { return this._executionRoleArn; }
+            set { this._executionRoleArn = value; }
+        }
+
+        // Check to see if ExecutionRoleArn property is set
+        internal bool IsSetExecutionRoleArn()
+        {
+            return this._executionRoleArn != null;
         }
 
         /// <summary>

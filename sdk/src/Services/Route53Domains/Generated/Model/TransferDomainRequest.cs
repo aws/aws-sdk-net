@@ -101,7 +101,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides detailed contact information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ContactDetail AdminContact
         {
             get { return this._adminContact; }
@@ -120,7 +120,7 @@ namespace Amazon.Route53Domains.Model
         /// The authorization code for the domain. You get this value from the current registrar.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Sensitive=true, Max=1024)]
         public string AuthCode
         {
             get { return this._authCode; }
@@ -360,7 +360,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides detailed contact information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ContactDetail RegistrantContact
         {
             get { return this._registrantContact; }
@@ -379,7 +379,7 @@ namespace Amazon.Route53Domains.Model
         /// Provides detailed contact information.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ContactDetail TechContact
         {
             get { return this._techContact; }

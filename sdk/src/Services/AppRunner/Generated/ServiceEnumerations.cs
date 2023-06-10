@@ -602,6 +602,10 @@ namespace Amazon.AppRunner
         /// Constant START_DEPLOYMENT for OperationType
         /// </summary>
         public static readonly OperationType START_DEPLOYMENT = new OperationType("START_DEPLOYMENT");
+        /// <summary>
+        /// Constant UPDATE_SERVICE for OperationType
+        /// </summary>
+        public static readonly OperationType UPDATE_SERVICE = new OperationType("UPDATE_SERVICE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

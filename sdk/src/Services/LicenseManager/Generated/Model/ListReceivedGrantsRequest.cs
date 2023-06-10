@@ -30,7 +30,9 @@ namespace Amazon.LicenseManager.Model
 {
     /// <summary>
     /// Container for the parameters to the ListReceivedGrants operation.
-    /// Lists grants that are received but not accepted.
+    /// Lists grants that are received. Received grants are grants created while specifying
+    /// the recipient as this Amazon Web Services account, your organization, or an organizational
+    /// unit (OU) to which this member account belongs.
     /// </summary>
     public partial class ListReceivedGrantsRequest : AmazonLicenseManagerRequest
     {

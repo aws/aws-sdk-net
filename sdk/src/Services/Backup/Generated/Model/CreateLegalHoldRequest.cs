@@ -109,6 +109,7 @@ namespace Amazon.Backup.Model
         /// spaces, and the following characters: + - = . _ : /. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

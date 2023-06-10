@@ -43,7 +43,7 @@ namespace Amazon.Redshift.Model
         /// <summary>
         /// Gets and sets the property Account. 
         /// <para>
-        /// The AAmazon Web Services account ID of either the cluster owner (grantor) or grantee.
+        /// The Amazon Web Services account ID of either the cluster owner (grantor) or grantee.
         /// If <code>Grantee</code> parameter is true, then the <code>Account</code> value is
         /// of the grantor.
         /// </para>

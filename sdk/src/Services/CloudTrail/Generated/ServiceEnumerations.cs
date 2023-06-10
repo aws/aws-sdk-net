@@ -216,6 +216,18 @@ namespace Amazon.CloudTrail
         /// Constant PENDING_DELETION for EventDataStoreStatus
         /// </summary>
         public static readonly EventDataStoreStatus PENDING_DELETION = new EventDataStoreStatus("PENDING_DELETION");
+        /// <summary>
+        /// Constant STARTING_INGESTION for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus STARTING_INGESTION = new EventDataStoreStatus("STARTING_INGESTION");
+        /// <summary>
+        /// Constant STOPPED_INGESTION for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus STOPPED_INGESTION = new EventDataStoreStatus("STOPPED_INGESTION");
+        /// <summary>
+        /// Constant STOPPING_INGESTION for EventDataStoreStatus
+        /// </summary>
+        public static readonly EventDataStoreStatus STOPPING_INGESTION = new EventDataStoreStatus("STOPPING_INGESTION");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

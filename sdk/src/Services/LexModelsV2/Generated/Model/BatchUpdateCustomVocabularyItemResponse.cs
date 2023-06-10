@@ -42,8 +42,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotId. 
         /// <para>
-        /// The unique identifier of the bot to the batch update response for the custom vocabulary
-        /// item.
+        /// The identifier of the bot associated with this custom vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=10)]
@@ -62,8 +61,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property BotVersion. 
         /// <para>
-        /// The bot version of the bot to the batch update response for the custom vocabulary
-        /// item.
+        /// The identifier of the version of the bot associated with this custom vocabulary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
@@ -82,7 +80,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Errors. 
         /// <para>
-        /// The errors of the action to batch update response for the custom vocabulary item.
+        /// A list of custom vocabulary items that failed to update during the operation. The
+        /// reason for the error is contained within each error object.
         /// </para>
         /// </summary>
         public List<FailedCustomVocabularyItem> Errors
@@ -100,8 +99,9 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property LocaleId. 
         /// <para>
-        /// The locale identifier of the bot to the batch update response for the custom vocabulary
-        /// item.
+        /// The identifier of the language and locale where this custom vocabulary is used. The
+        /// string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">
+        /// Supported Languages </a>.
         /// </para>
         /// </summary>
         public string LocaleId
@@ -119,7 +119,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Resources. 
         /// <para>
-        /// The resources of the action to batch update response for the custom vocabulary item.
+        /// A list of custom vocabulary items that were successfully updated during the operation.
         /// </para>
         /// </summary>
         public List<CustomVocabularyItem> Resources

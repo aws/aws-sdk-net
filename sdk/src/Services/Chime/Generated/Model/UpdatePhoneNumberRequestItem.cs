@@ -44,6 +44,7 @@ namespace Amazon.Chime.Model
         /// The outbound calling name to update.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string CallingName
         {
             get { return this._callingName; }

@@ -39,7 +39,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property ImageBuildVersionArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the image that you want to retrieve.
+        /// The Amazon Resource Name (ARN) of the image that you want to get.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

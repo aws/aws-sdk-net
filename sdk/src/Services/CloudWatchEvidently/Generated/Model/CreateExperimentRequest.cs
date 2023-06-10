@@ -247,9 +247,15 @@ namespace Amazon.CloudWatchEvidently.Model
         /// Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly
         /// as strings of characters.
         /// </para>
-        ///  <pre><code> &lt;p&gt;You can associate as many as 50 tags with an experiment.&lt;/p&gt;
-        /// &lt;p&gt;For more information, see &lt;a href=&quot;https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html&quot;&gt;Tagging
-        /// Amazon Web Services resources&lt;/a&gt;.&lt;/p&gt; </code></pre>
+        ///  
+        /// <para>
+        /// You can associate as many as 50 tags with an experiment.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a>.
+        /// </para>
         /// </summary>
         public Dictionary<string, string> Tags
         {

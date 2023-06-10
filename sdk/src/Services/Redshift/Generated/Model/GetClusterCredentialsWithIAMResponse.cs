@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// A temporary password that you provide when you connect to a database.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DbPassword
         {
             get { return this._dbPassword; }

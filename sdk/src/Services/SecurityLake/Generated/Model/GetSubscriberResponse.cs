@@ -38,7 +38,7 @@ namespace Amazon.SecurityLake.Model
         /// <summary>
         /// Gets and sets the property Subscriber. 
         /// <para>
-        /// The subscription information for the specified subscription ID.
+        /// The subscriber information for the specified subscriber ID.
         /// </para>
         /// </summary>
         public SubscriberResource Subscriber

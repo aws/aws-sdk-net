@@ -65,7 +65,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// Gets and sets the property Credentials. 
         /// <para>
         /// The temporary session credentials vended at the last authenticating call with this
-        /// Subject.
+        /// subject.
         /// </para>
         /// </summary>
         public List<CredentialSummary> Credentials
@@ -119,7 +119,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property LastSeenAt. 
         /// <para>
-        /// The ISO-8601 timestamp of the last time this Subject requested temporary session credentials.
+        /// The ISO-8601 timestamp of the last time this subject requested temporary session credentials.
         /// </para>
         /// </summary>
         public DateTime LastSeenAt

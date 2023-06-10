@@ -102,6 +102,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.HostId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("hostMaintenance", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.HostMaintenance = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("hostProperties", targetDepth))
                     {
                         var unmarshaller = HostPropertiesUnmarshaller.Instance;

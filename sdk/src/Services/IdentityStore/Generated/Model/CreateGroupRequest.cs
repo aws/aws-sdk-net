@@ -44,7 +44,7 @@ namespace Amazon.IdentityStore.Model
         /// A string containing the description of the group.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -61,10 +61,11 @@ namespace Amazon.IdentityStore.Model
         /// Gets and sets the property DisplayName. 
         /// <para>
         /// A string containing the name of the group. This value is commonly displayed when the
-        /// group is referenced.
+        /// group is referenced. "Administrator" and "AWSAdministrators" are reserved names and
+        /// can't be used for users or groups.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string DisplayName
         {
             get { return this._displayName; }

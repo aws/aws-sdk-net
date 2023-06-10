@@ -70,7 +70,7 @@ namespace Amazon.LakeFormation.Model
         /// A list of conditions (<code>LFTag</code> structures) to search for in database resources.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=5)]
+        [AWSProperty(Required=true)]
         public List<LFTag> Expression
         {
             get { return this._expression; }

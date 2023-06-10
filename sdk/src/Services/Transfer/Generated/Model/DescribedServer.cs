@@ -216,7 +216,7 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// Use the <code>AWS_LAMBDA</code> value to directly use an Lambda function as your identity
         /// provider. If you choose this value, you must specify the ARN for the Lambda function
-        /// in the <code>Function</code> parameter or the <code>IdentityProviderDetails</code>
+        /// in the <code>Function</code> parameter for the <code>IdentityProviderDetails</code>
         /// data type.
         /// </para>
         /// </summary>
@@ -385,7 +385,7 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// If <code>Protocol</code> includes either <code>FTP</code> or <code>FTPS</code>, then
         /// the <code>EndpointType</code> must be <code>VPC</code> and the <code>IdentityProviderType</code>
-        /// must be <code>AWS_DIRECTORY_SERVICE</code> or <code>API_GATEWAY</code>.
+        /// must be either <code>AWS_DIRECTORY_SERVICE</code>, <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -396,7 +396,8 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// If <code>Protocol</code> is set only to <code>SFTP</code>, the <code>EndpointType</code>
         /// can be set to <code>PUBLIC</code> and the <code>IdentityProviderType</code> can be
-        /// set to <code>SERVICE_MANAGED</code>.
+        /// set any of the supported identity types: <code>SERVICE_MANAGED</code>, <code>AWS_DIRECTORY_SERVICE</code>,
+        /// <code>AWS_LAMBDA</code>, or <code>API_GATEWAY</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -530,9 +531,10 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  
         /// <para>
-        /// In additon to a workflow to execute when a file is uploaded completely, <code>WorkflowDeatails</code>
+        /// In addition to a workflow to execute when a file is uploaded completely, <code>WorkflowDetails</code>
         /// can also contain a workflow ID (and execution role) for a workflow to execute on partial
-        /// upload. A partial upload occurs when a file is open when the session disconnects.
+        /// upload. A partial upload occurs when the server session disconnects while the file
+        /// is still being uploaded.
         /// </para>
         /// </summary>
         public WorkflowDetails WorkflowDetails

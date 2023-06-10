@@ -76,6 +76,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.AppLogsEnabled = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AvailabilityZones", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.AvailabilityZones = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("CognitoEnabled", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

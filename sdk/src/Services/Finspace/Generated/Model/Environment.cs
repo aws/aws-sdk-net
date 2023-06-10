@@ -145,7 +145,7 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property EnvironmentUrl. 
         /// <para>
-        /// The sign-in url for the web application of your FinSpace environment.
+        /// The sign-in URL for the web application of your FinSpace environment.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]
@@ -238,7 +238,7 @@ namespace Amazon.Finspace.Model
         /// <summary>
         /// Gets and sets the property SageMakerStudioDomainUrl. 
         /// <para>
-        /// The url of the integrated FinSpace notebook environment in your web application.
+        /// The URL of the integrated FinSpace notebook environment in your web application.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1000)]

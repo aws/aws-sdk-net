@@ -77,12 +77,14 @@ namespace Amazon.WAFV2.Model
     /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
     /// group. You can associate a web ACL with one or more Amazon Web Services resources
     /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-    /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
-    /// Cognito user pool. 
+    /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
+    /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+    /// instance. 
     /// </para>
     /// </summary>
     public partial class UpdateWebACLRequest : AmazonWAFV2Request
     {
+        private AssociationConfig _associationConfig;
         private CaptchaConfig _captchaConfig;
         private ChallengeConfig _challengeConfig;
         private Dictionary<string, CustomResponseBody> _customResponseBodies = new Dictionary<string, CustomResponseBody>();
@@ -95,6 +97,38 @@ namespace Amazon.WAFV2.Model
         private Scope _scope;
         private List<string> _tokenDomains = new List<string>();
         private VisibilityConfig _visibilityConfig;
+
+        /// <summary>
+        /// Gets and sets the property AssociationConfig. 
+        /// <para>
+        /// Specifies custom configurations for the associations between the web ACL and protected
+        /// resources. 
+        /// </para>
+        ///  
+        /// <para>
+        /// Use this to customize the maximum size of the request body that your protected CloudFront
+        /// distributions forward to WAF for inspection. The default is 16 KB (16,384 kilobytes).
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// You are charged additional fees when your protected resources forward body sizes that
+        /// are larger than the default. For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF
+        /// Pricing</a>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        public AssociationConfig AssociationConfig
+        {
+            get { return this._associationConfig; }
+            set { this._associationConfig = value; }
+        }
+
+        // Check to see if AssociationConfig property is set
+        internal bool IsSetAssociationConfig()
+        {
+            return this._associationConfig != null;
+        }
 
         /// <summary>
         /// Gets and sets the property CaptchaConfig. 
@@ -147,15 +181,13 @@ namespace Amazon.WAFV2.Model
         ///  
         /// <para>
         /// For information about customizing web requests and responses, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-        /// web requests and responses in WAF</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
-        /// Developer Guide</a>. 
+        /// web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
         /// For information about the limits on count and size for custom request and response
         /// settings, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-        /// quotas</a> in the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
-        /// Developer Guide</a>. 
+        /// quotas</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
@@ -301,8 +333,8 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// Specifies whether this is for an Amazon CloudFront distribution or for a regional
         /// application. A regional application can be an Application Load Balancer (ALB), an
-        /// Amazon API Gateway REST API, an AppSync GraphQL API, or an Amazon Cognito user pool.
-        /// 
+        /// Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool,
+        /// an App Runner service, or an Amazon Web Services Verified Access instance. 
         /// </para>
         ///  
         /// <para>
@@ -354,7 +386,6 @@ namespace Amazon.WAFV2.Model
         /// <code>co.uk</code> as token domains.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1)]
         public List<string> TokenDomains
         {
             get { return this._tokenDomains; }

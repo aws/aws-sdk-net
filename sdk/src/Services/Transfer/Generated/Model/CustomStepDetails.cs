@@ -65,14 +65,13 @@ namespace Amazon.Transfer.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// Enter <code>${previous.file}</code> to use the previous file as the input. In this
+        /// To use the previous file as the input, enter <code>${previous.file}</code>. In this
         /// case, this workflow step uses the output file from the previous workflow step as input.
         /// This is the default value.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Enter <code>${original.file}</code> to use the originally-uploaded file location as
-        /// input for this step.
+        /// To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -92,7 +91,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Target. 
         /// <para>
-        /// The ARN for the lambda function that is being called.
+        /// The ARN for the Lambda function that is being called.
         /// </para>
         /// </summary>
         [AWSProperty(Max=170)]

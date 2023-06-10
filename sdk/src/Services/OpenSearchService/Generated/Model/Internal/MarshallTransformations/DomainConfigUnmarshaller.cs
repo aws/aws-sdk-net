@@ -142,10 +142,22 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
                     unmarshalledObject.NodeToNodeEncryptionOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("OffPeakWindowOptions", targetDepth))
+                {
+                    var unmarshaller = OffPeakWindowOptionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.OffPeakWindowOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SnapshotOptions", targetDepth))
                 {
                     var unmarshaller = SnapshotOptionsStatusUnmarshaller.Instance;
                     unmarshalledObject.SnapshotOptions = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("SoftwareUpdateOptions", targetDepth))
+                {
+                    var unmarshaller = SoftwareUpdateOptionsStatusUnmarshaller.Instance;
+                    unmarshalledObject.SoftwareUpdateOptions = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("VPCOptions", targetDepth))

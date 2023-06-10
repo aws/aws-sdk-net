@@ -57,6 +57,7 @@ namespace Amazon.DocDBElastic.Model
         ///  <i>Constraints</i>: Must contain from 8 to 100 characters.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AdminUserPassword
         {
             get { return this._adminUserPassword; }

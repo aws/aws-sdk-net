@@ -46,7 +46,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property AudioAggregationEndedAt. 
         /// <para>
-        /// A timestamp indicating when audio aggregation ended for this authentication result.
+        /// A timestamp of when audio aggregation ended for this authentication result.
         /// </para>
         /// </summary>
         public DateTime AudioAggregationEndedAt
@@ -64,7 +64,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property AudioAggregationStartedAt. 
         /// <para>
-        /// A timestamp indicating when audio aggregation started for this authentication result.
+        /// A timestamp of when audio aggregation started for this authentication result.
         /// </para>
         /// </summary>
         public DateTime AudioAggregationStartedAt
@@ -128,7 +128,7 @@ namespace Amazon.VoiceID.Model
         /// Only present if a <code>SpeakerId</code> is provided for the session.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string CustomerSpeakerId
         {
             get { return this._customerSpeakerId; }

@@ -42,7 +42,7 @@ namespace Amazon.Appflow.Model
         ///  The password that corresponds to the user name. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=512)]
+        [AWSProperty(Sensitive=true, Max=512)]
         public string Password
         {
             get { return this._password; }

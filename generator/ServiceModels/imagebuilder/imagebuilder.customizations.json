@@ -1,0 +1,13 @@
+{
+    "shapeModifiers": {
+      "ListImageScanFindingAggregationsResponse": {
+        "modify": [
+          {
+            "responses": {
+              "emitPropertyName": "aggregations"
+            }
+          }
+        ]
+      }
+    }
+}

@@ -603,6 +603,66 @@ namespace Amazon.GroundStation
 
         #endregion
         
+        #region  GetAgentConfiguration
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Gets the latest configuration information for a registered agent.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentConfiguration service method.</param>
+        /// 
+        /// <returns>The response from the GetAgentConfiguration service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">REST API Reference for GetAgentConfiguration Operation</seealso>
+        GetAgentConfigurationResponse GetAgentConfiguration(GetAgentConfigurationRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Gets the latest configuration information for a registered agent.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetAgentConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetAgentConfiguration service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">REST API Reference for GetAgentConfiguration Operation</seealso>
+        Task<GetAgentConfigurationResponse> GetAgentConfigurationAsync(GetAgentConfigurationRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  GetConfig
 
 
@@ -709,7 +769,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns the number of minutes used by account.
+        /// Returns the number of reserved minutes used by account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMinuteUsage service method.</param>
         /// 
@@ -729,7 +789,7 @@ namespace Amazon.GroundStation
 
 
         /// <summary>
-        /// Returns the number of minutes used by account.
+        /// Returns the number of reserved minutes used by account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetMinuteUsage service method.</param>
         /// <param name="cancellationToken">
@@ -1223,6 +1283,66 @@ namespace Amazon.GroundStation
 
         #endregion
         
+        #region  RegisterAgent
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Registers a new agent with AWS Ground Station. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAgent service method.</param>
+        /// 
+        /// <returns>The response from the RegisterAgent service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/RegisterAgent">REST API Reference for RegisterAgent Operation</seealso>
+        RegisterAgentResponse RegisterAgent(RegisterAgentRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        ///  Registers a new agent with AWS Ground Station. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the RegisterAgent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the RegisterAgent service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/RegisterAgent">REST API Reference for RegisterAgent Operation</seealso>
+        Task<RegisterAgentResponse> RegisterAgentAsync(RegisterAgentRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
         #region  ReserveContact
 
 
@@ -1358,6 +1478,66 @@ namespace Amazon.GroundStation
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UntagResource">REST API Reference for UntagResource Operation</seealso>
         Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  UpdateAgentStatus
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Update the status of the agent.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
+        /// 
+        /// <returns>The response from the UpdateAgentStatus service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateAgentStatus">REST API Reference for UpdateAgentStatus Operation</seealso>
+        UpdateAgentStatusResponse UpdateAgentStatus(UpdateAgentStatusRequest request);
+
+
+
+        /// <summary>
+        /// <note> 
+        /// <para>
+        ///  For use by AWS Ground Station Agent and shouldn't be called directly.
+        /// </para>
+        ///  </note> 
+        /// <para>
+        /// Update the status of the agent.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAgentStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAgentStatus service method, as returned by GroundStation.</returns>
+        /// <exception cref="Amazon.GroundStation.Model.DependencyException">
+        /// Dependency encountered an error.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.InvalidParameterException">
+        /// One or more parameters are not valid.
+        /// </exception>
+        /// <exception cref="Amazon.GroundStation.Model.ResourceNotFoundException">
+        /// Resource was not found.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateAgentStatus">REST API Reference for UpdateAgentStatus Operation</seealso>
+        Task<UpdateAgentStatusResponse> UpdateAgentStatusAsync(UpdateAgentStatusRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

@@ -39,7 +39,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The token for the next set of results.
+        /// The token to include in another request to get the next page of items. This value
+        /// is <code>null</code> when there are no more items to return.
         /// </para>
         /// </summary>
         public string NextToken

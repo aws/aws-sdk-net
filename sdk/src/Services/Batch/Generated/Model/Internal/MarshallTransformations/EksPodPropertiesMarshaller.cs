@@ -73,6 +73,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.HostNetwork);
             }
 
+            if(requestObject.IsSetMetadata())
+            {
+                context.Writer.WritePropertyName("metadata");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EksMetadataMarshaller.Instance;
+                marshaller.Marshall(requestObject.Metadata, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetServiceAccountName())
             {
                 context.Writer.WritePropertyName("serviceAccountName");

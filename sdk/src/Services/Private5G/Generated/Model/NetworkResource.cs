@@ -43,6 +43,7 @@ namespace Amazon.Private5G.Model
         private string _networkSiteArn;
         private string _orderArn;
         private Position _position;
+        private ReturnInformation _returnInformation;
         private string _serialNumber;
         private NetworkResourceStatus _status;
         private string _statusReason;
@@ -229,6 +230,24 @@ namespace Amazon.Private5G.Model
         internal bool IsSetPosition()
         {
             return this._position != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReturnInformation. 
+        /// <para>
+        /// Information about a request to return the network resource.
+        /// </para>
+        /// </summary>
+        public ReturnInformation ReturnInformation
+        {
+            get { return this._returnInformation; }
+            set { this._returnInformation = value; }
+        }
+
+        // Check to see if ReturnInformation property is set
+        internal bool IsSetReturnInformation()
+        {
+            return this._returnInformation != null;
         }
 
         /// <summary>

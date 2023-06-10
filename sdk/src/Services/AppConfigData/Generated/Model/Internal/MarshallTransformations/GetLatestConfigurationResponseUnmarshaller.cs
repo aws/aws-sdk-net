@@ -57,6 +57,8 @@ namespace Amazon.AppConfigData.Model.Internal.MarshallTransformations
                 response.NextPollConfigurationToken = context.ResponseData.GetHeaderValue("Next-Poll-Configuration-Token");
             if (context.ResponseData.IsHeaderPresent("Next-Poll-Interval-In-Seconds"))
                 response.NextPollIntervalInSeconds = int.Parse(context.ResponseData.GetHeaderValue("Next-Poll-Interval-In-Seconds"), CultureInfo.InvariantCulture);
+            if (context.ResponseData.IsHeaderPresent("Version-Label"))
+                response.VersionLabel = context.ResponseData.GetHeaderValue("Version-Label");
 
             return response;
         }

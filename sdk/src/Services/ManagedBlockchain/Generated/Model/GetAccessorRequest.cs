@@ -30,17 +30,8 @@ namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAccessor operation.
-    /// <important> 
-    /// <para>
-    /// The token based access feature is in preview release for Ethereum on Amazon Managed
-    /// Blockchain and is subject to change. We recommend that you use this feature only with
-    /// test scenarios, and not in production environments.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// Returns detailed information about an accessor. An accessor object is a container
     /// that has the information required for token based access to your Ethereum nodes.
-    /// </para>
     /// </summary>
     public partial class GetAccessorRequest : AmazonManagedBlockchainRequest
     {

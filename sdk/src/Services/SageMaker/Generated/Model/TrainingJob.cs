@@ -372,6 +372,10 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// An array of <code>Channel</code> objects that describes each data input channel.
         /// </para>
+        ///  
+        /// <para>
+        /// Your input must be in the same Amazon Web Services region as your training job.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=20)]
         public List<Channel> InputDataConfig
@@ -522,7 +526,7 @@ namespace Amazon.SageMaker.Model
         /// <para>
         ///  Provides detailed information about the state of the training job. For detailed information
         /// about the secondary status of the training job, see <code>StatusMessage</code> under
-        /// <a>SecondaryStatusTransition</a>.
+        /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_SecondaryStatusTransition.html">SecondaryStatusTransition</a>.
         /// </para>
         ///  
         /// <para>
@@ -856,8 +860,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// A <a>VpcConfig</a> object that specifies the VPC that this training job has access
-        /// to. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+        /// A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+        /// object that specifies the VPC that this training job has access to. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
         /// Training Jobs by Using an Amazon Virtual Private Cloud</a>.
         /// </para>
         /// </summary>

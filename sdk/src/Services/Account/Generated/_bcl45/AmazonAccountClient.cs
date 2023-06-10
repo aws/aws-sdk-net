@@ -43,6 +43,22 @@ namespace Amazon.Account
     public partial class AmazonAccountClient : AmazonServiceClient, IAmazonAccount
     {
         private static IServiceMetadata serviceMetadata = new AmazonAccountMetadata();
+        private IAccountPaginatorFactory _paginators;
+
+        /// <summary>
+        /// Paginators for the service
+        /// </summary>
+        public IAccountPaginatorFactory Paginators 
+        {
+            get 
+            {
+                if (this._paginators == null) 
+                {
+                    this._paginators = new AccountPaginatorFactory(this);
+                }
+                return this._paginators;
+            }
+        }
         #region Constructors
 
         /// <summary>
@@ -354,6 +370,168 @@ namespace Amazon.Account
 
         #endregion
         
+        #region  DisableRegion
+
+
+        /// <summary>
+        /// Disables (opts-out) a particular Region for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableRegion service method.</param>
+        /// 
+        /// <returns>The response from the DisableRegion service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING).
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DisableRegion">REST API Reference for DisableRegion Operation</seealso>
+        public virtual DisableRegionResponse DisableRegion(DisableRegionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableRegionResponseUnmarshaller.Instance;
+
+            return Invoke<DisableRegionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Disables (opts-out) a particular Region for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisableRegion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DisableRegion service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING).
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/DisableRegion">REST API Reference for DisableRegion Operation</seealso>
+        public virtual Task<DisableRegionResponse> DisableRegionAsync(DisableRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisableRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisableRegionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DisableRegionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  EnableRegion
+
+
+        /// <summary>
+        /// Enables (opts-in) a particular Region for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableRegion service method.</param>
+        /// 
+        /// <returns>The response from the EnableRegion service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING).
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/EnableRegion">REST API Reference for EnableRegion Operation</seealso>
+        public virtual EnableRegionResponse EnableRegion(EnableRegionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableRegionResponseUnmarshaller.Instance;
+
+            return Invoke<EnableRegionResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Enables (opts-in) a particular Region for an account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the EnableRegion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the EnableRegion service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ConflictException">
+        /// The request could not be processed because of a conflict in the current status of
+        /// the resource. For example, this happens if you try to enable a Region that is currently
+        /// being disabled (in a status of DISABLING).
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/EnableRegion">REST API Reference for EnableRegion Operation</seealso>
+        public virtual Task<EnableRegionResponse> EnableRegionAsync(EnableRegionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = EnableRegionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = EnableRegionResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<EnableRegionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetAlternateContact
 
 
@@ -546,6 +724,150 @@ namespace Amazon.Account
             options.ResponseUnmarshaller = GetContactInformationResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetContactInformationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetRegionOptStatus
+
+
+        /// <summary>
+        /// Retrieves the opt-in status of a particular Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegionOptStatus service method.</param>
+        /// 
+        /// <returns>The response from the GetRegionOptStatus service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetRegionOptStatus">REST API Reference for GetRegionOptStatus Operation</seealso>
+        public virtual GetRegionOptStatusResponse GetRegionOptStatus(GetRegionOptStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRegionOptStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegionOptStatusResponseUnmarshaller.Instance;
+
+            return Invoke<GetRegionOptStatusResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves the opt-in status of a particular Region.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetRegionOptStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetRegionOptStatus service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/GetRegionOptStatus">REST API Reference for GetRegionOptStatus Operation</seealso>
+        public virtual Task<GetRegionOptStatusResponse> GetRegionOptStatusAsync(GetRegionOptStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetRegionOptStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetRegionOptStatusResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetRegionOptStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListRegions
+
+
+        /// <summary>
+        /// Lists all the Regions for a given account and their respective opt-in statuses. Optionally,
+        /// this list can be filtered by the <code>region-opt-status-contains</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegions service method.</param>
+        /// 
+        /// <returns>The response from the ListRegions service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ListRegions">REST API Reference for ListRegions Operation</seealso>
+        public virtual ListRegionsResponse ListRegions(ListRegionsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRegionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegionsResponseUnmarshaller.Instance;
+
+            return Invoke<ListRegionsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Lists all the Regions for a given account and their respective opt-in statuses. Optionally,
+        /// this list can be filtered by the <code>region-opt-status-contains</code> parameter.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListRegions service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListRegions service method, as returned by Account.</returns>
+        /// <exception cref="Amazon.Account.Model.AccessDeniedException">
+        /// The operation failed because the calling identity doesn't have the minimum required
+        /// permissions.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.InternalServerException">
+        /// The operation failed because of an error internal to Amazon Web Services. Try your
+        /// operation again later.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.TooManyRequestsException">
+        /// The operation failed because it was called too frequently and exceeded a throttle
+        /// limit.
+        /// </exception>
+        /// <exception cref="Amazon.Account.Model.ValidationException">
+        /// The operation failed because one of the input parameters was invalid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/account-2021-02-01/ListRegions">REST API Reference for ListRegions Operation</seealso>
+        public virtual Task<ListRegionsResponse> ListRegionsAsync(ListRegionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListRegionsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListRegionsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListRegionsResponse>(request, options, cancellationToken);
         }
 
         #endregion

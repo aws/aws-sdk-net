@@ -86,7 +86,7 @@ namespace Amazon.SageMaker.Model
         /// The OIDC IdP client secret used to configure your private workforce.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string ClientSecret
         {
             get { return this._clientSecret; }

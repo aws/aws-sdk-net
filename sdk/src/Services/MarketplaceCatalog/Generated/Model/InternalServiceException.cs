@@ -30,6 +30,11 @@ namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
     /// There was an internal service exception.
+    /// 
+    ///  
+    /// <para>
+    /// HTTP status code: 500
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

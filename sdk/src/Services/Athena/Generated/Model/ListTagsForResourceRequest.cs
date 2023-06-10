@@ -30,7 +30,7 @@ namespace Amazon.Athena.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Lists the tags associated with an Athena workgroup or data catalog resource.
+    /// Lists the tags associated with an Athena resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonAthenaRequest
     {

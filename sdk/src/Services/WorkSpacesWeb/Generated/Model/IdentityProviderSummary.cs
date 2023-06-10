@@ -62,7 +62,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The identity provider name.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=32)]
+        [AWSProperty(Sensitive=true, Min=1, Max=32)]
         public string IdentityProviderName
         {
             get { return this._identityProviderName; }

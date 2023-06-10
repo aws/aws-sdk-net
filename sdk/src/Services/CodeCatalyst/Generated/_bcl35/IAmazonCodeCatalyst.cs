@@ -29,16 +29,10 @@ namespace Amazon.CodeCatalyst
     /// <summary>
     /// Interface for accessing CodeCatalyst
     ///
-    /// <note> 
-    /// <para>
-    ///  <b>Amazon CodeCatalyst is in preview release and subject to change.</b> 
-    /// </para>
-    ///  </note> 
-    /// <para>
     /// Welcome to the Amazon CodeCatalyst API reference. This reference provides descriptions
     /// of operations and data types for Amazon CodeCatalyst. You can use the Amazon CodeCatalyst
     /// API to work with the following objects. 
-    /// </para>
+    /// 
     ///  
     /// <para>
     /// Dev Environments and the Amazon Web Services Toolkits, by calling the following:
@@ -81,6 +75,10 @@ namespace Amazon.CodeCatalyst
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>GetSpace</a>, which returns information about a space.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>GetSubscription</a>, which returns information about the Amazon Web Services account
     /// used for billing purposes and the billing plan for the space.
     /// </para>
@@ -90,7 +88,12 @@ namespace Amazon.CodeCatalyst
     /// </para>
     ///  </li> <li> 
     /// <para>
-    ///  <a>ListDevEnvironments</a>, which retrives a list of Dev Environments in a project.
+    ///  <a>ListDevEnvironments</a>, which retrieves a list of Dev Environments in a project.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a>ListDevEnvironmentSessions</a>, which retrieves a list of active Dev Environment
+    /// sessions in a project.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -126,6 +129,10 @@ namespace Amazon.CodeCatalyst
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <a>StopDevEnvironmentSession</a>, which stops a session for a specified Dev Environment.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <a>UpdateDevEnvironment</a>, which changes one or more values for a Dev Environment.
     /// </para>
     ///  </li> <li> 
@@ -152,7 +159,15 @@ namespace Amazon.CodeCatalyst
     ///  <a>ListEventLogs</a>, which retrieves a list of events that occurred during a specified
     /// time period in a space.
     /// </para>
-    ///  </li> </ul>
+    ///  </li> </ul> <note> 
+    /// <para>
+    /// If you are using the Amazon CodeCatalyst APIs with an SDK or the CLI, you must configure
+    /// your computer to work with Amazon CodeCatalyst and single sign-on (SSO). For more
+    /// information, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/set-up-cli.html">Setting
+    /// up to use the CLI with Amazon CodeCatalyst</a> and the SSO documentation for your
+    /// SDK.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial interface IAmazonCodeCatalyst : IAmazonService, IDisposable
     {
@@ -172,10 +187,11 @@ namespace Amazon.CodeCatalyst
 
         /// <summary>
         /// Creates a personal access token (PAT) for the current user. A personal access token
-        /// (PAT) is similar to a password. It is associated with your user account. You use PATs
-        /// to access Amazon CodeCatalyst resources such as source repositories from third-party
-        /// applications like Git and integrated development environments (IDEs). For more information,
-        /// see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-tokens-keys.html">Managing
+        /// (PAT) is similar to a password. It is associated with your user identity for use across
+        /// all spaces and projects in Amazon CodeCatalyst. You use PATs to access CodeCatalyst
+        /// from resources that include integrated development environments (IDEs) and Git-based
+        /// source repositories. PATs represent you in Amazon CodeCatalyst and you can manage
+        /// them in your user settings.For more information, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-tokens-keys.html">Managing
         /// personal access tokens in Amazon CodeCatalyst</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessToken service method.</param>
@@ -242,10 +258,17 @@ namespace Amazon.CodeCatalyst
 
 
         /// <summary>
-        /// Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development Dev Environment
+        /// Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development environment
         /// that you can use to quickly work on the code stored in the source repositories of
-        /// your project. By default, a Dev Environment is configured to have a 2 core processor,
-        /// 4GB of RAM, and 16GB of persistent storage.
+        /// your project. 
+        /// 
+        ///  <note> 
+        /// <para>
+        /// When created in the Amazon CodeCatalyst console, by default a Dev Environment is configured
+        /// to have a 2 core processor, 4GB of RAM, and 16GB of persistent storage. None of these
+        /// defaults apply to a Dev Environment created programmatically.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateDevEnvironment service method.</param>
         /// 
@@ -983,7 +1006,7 @@ namespace Amazon.CodeCatalyst
 
         /// <summary>
         /// Lists all personal access tokens (PATs) associated with the user who calls the API.
-        /// You can only list PATs associated with your user account.
+        /// You can only list PATs associated with your Amazon Web Services Builder ID.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessTokens service method.</param>
         /// 
@@ -1049,7 +1072,7 @@ namespace Amazon.CodeCatalyst
 
 
         /// <summary>
-        /// Retrives a list of Dev Environments in a project.
+        /// Retrieves a list of Dev Environments in a project.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListDevEnvironments service method.</param>
         /// 
@@ -1108,6 +1131,72 @@ namespace Amazon.CodeCatalyst
         /// <returns>Returns a  ListDevEnvironmentsResult from CodeCatalyst.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListDevEnvironments">REST API Reference for ListDevEnvironments Operation</seealso>
         ListDevEnvironmentsResponse EndListDevEnvironments(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ListDevEnvironmentSessions
+
+
+        /// <summary>
+        /// Retrieves a list of active sessions for a Dev Environment in a project.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListDevEnvironmentSessions service method.</param>
+        /// 
+        /// <returns>The response from the ListDevEnvironmentSessions service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListDevEnvironmentSessions">REST API Reference for ListDevEnvironmentSessions Operation</seealso>
+        ListDevEnvironmentSessionsResponse ListDevEnvironmentSessions(ListDevEnvironmentSessionsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListDevEnvironmentSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListDevEnvironmentSessions operation on AmazonCodeCatalystClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListDevEnvironmentSessions
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListDevEnvironmentSessions">REST API Reference for ListDevEnvironmentSessions Operation</seealso>
+        IAsyncResult BeginListDevEnvironmentSessions(ListDevEnvironmentSessionsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListDevEnvironmentSessions operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListDevEnvironmentSessions.</param>
+        /// 
+        /// <returns>Returns a  ListDevEnvironmentSessionsResult from CodeCatalyst.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListDevEnvironmentSessions">REST API Reference for ListDevEnvironmentSessions Operation</seealso>
+        ListDevEnvironmentSessionsResponse EndListDevEnvironmentSessions(IAsyncResult asyncResult);
 
         #endregion
         
@@ -1638,6 +1727,72 @@ namespace Amazon.CodeCatalyst
         /// <returns>Returns a  StopDevEnvironmentResult from CodeCatalyst.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironment">REST API Reference for StopDevEnvironment Operation</seealso>
         StopDevEnvironmentResponse EndStopDevEnvironment(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  StopDevEnvironmentSession
+
+
+        /// <summary>
+        /// Stops a session for a specified Dev Environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StopDevEnvironmentSession service method.</param>
+        /// 
+        /// <returns>The response from the StopDevEnvironmentSession service method, as returned by CodeCatalyst.</returns>
+        /// <exception cref="Amazon.CodeCatalyst.Model.AccessDeniedException">
+        /// The request was denied because you don't have sufficient access to perform this action.
+        /// Verify that you are a member of a role that allows this action.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ConflictException">
+        /// The request was denied because the requested operation would cause a conflict with
+        /// the current state of a service resource associated with the request. Another user
+        /// might have updated the resource. Reload, make sure you have the latest data, and then
+        /// try again.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ResourceNotFoundException">
+        /// The request was denied because the specified resource was not found. Verify that the
+        /// spelling is correct and that you have access to the resource.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ServiceQuotaExceededException">
+        /// The request was denied because one or more resources has reached its limits for the
+        /// tier the space belongs to. Either reduce the number of resources, or change the tier
+        /// if applicable.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.CodeCatalyst.Model.ValidationException">
+        /// The request was denied because an input failed to satisfy the constraints specified
+        /// by the service. Check the spelling and input requirements, and then try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironmentSession">REST API Reference for StopDevEnvironmentSession Operation</seealso>
+        StopDevEnvironmentSessionResponse StopDevEnvironmentSession(StopDevEnvironmentSessionRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StopDevEnvironmentSession operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StopDevEnvironmentSession operation on AmazonCodeCatalystClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStopDevEnvironmentSession
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironmentSession">REST API Reference for StopDevEnvironmentSession Operation</seealso>
+        IAsyncResult BeginStopDevEnvironmentSession(StopDevEnvironmentSessionRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StopDevEnvironmentSession operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStopDevEnvironmentSession.</param>
+        /// 
+        /// <returns>Returns a  StopDevEnvironmentSessionResult from CodeCatalyst.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/StopDevEnvironmentSession">REST API Reference for StopDevEnvironmentSession Operation</seealso>
+        StopDevEnvironmentSessionResponse EndStopDevEnvironmentSession(IAsyncResult asyncResult);
 
         #endregion
         

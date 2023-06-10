@@ -370,8 +370,15 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property KMSKeyArn. 
         /// <para>
-        /// The ARN of the Key Management Service (KMS) key that's used to encrypt your function's
-        /// environment variables. If it's not provided, Lambda uses a default service key.
+        /// The ARN of the Key Management Service (KMS) customer managed key that's used to encrypt
+        /// your function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-envvars.html#configuration-envvars-encryption">environment
+        /// variables</a>. When <a href="https://docs.aws.amazon.com/lambda/latest/dg/snapstart-security.html">Lambda
+        /// SnapStart</a> is activated, Lambda also uses this key is to encrypt your function's
+        /// snapshot. If you deploy your function using a container image, Lambda also uses this
+        /// key to encrypt your function when it's deployed. Note that this is not the same key
+        /// that's used to protect your container image in the Amazon Elastic Container Registry
+        /// (Amazon ECR). If you don't provide a customer managed key, Lambda uses a default service
+        /// key.
         /// </para>
         /// </summary>
         public string KMSKeyArn
@@ -488,7 +495,12 @@ namespace Amazon.Lambda.Model
         /// Gets and sets the property Runtime. 
         /// <para>
         /// The identifier of the function's <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime</a>.
-        /// Runtime is required if the deployment package is a .zip file archive. 
+        /// Runtime is required if the deployment package is a .zip file archive.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime
+        /// deprecation policy</a>.
         /// </para>
         /// </summary>
         public Runtime Runtime

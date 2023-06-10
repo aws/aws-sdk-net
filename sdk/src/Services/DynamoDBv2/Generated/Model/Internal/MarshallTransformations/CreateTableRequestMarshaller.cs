@@ -89,6 +89,12 @@ namespace Amazon.DynamoDBv2.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.BillingMode);
                 }
 
+                if(publicRequest.IsSetDeletionProtectionEnabled())
+                {
+                    context.Writer.WritePropertyName("DeletionProtectionEnabled");
+                    context.Writer.Write(publicRequest.DeletionProtectionEnabled);
+                }
+
                 if(publicRequest.IsSetGlobalSecondaryIndexes())
                 {
                     context.Writer.WritePropertyName("GlobalSecondaryIndexes");

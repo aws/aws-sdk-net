@@ -75,7 +75,7 @@ namespace Amazon.Private5G.Model
         /// certifying the coordinates of the network resource. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=100000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=100000)]
         public string CpiSecretKey
         {
             get { return this._cpiSecretKey; }
@@ -95,7 +95,7 @@ namespace Amazon.Private5G.Model
         /// 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string CpiUserId
         {
             get { return this._cpiUserId; }
@@ -114,7 +114,7 @@ namespace Amazon.Private5G.Model
         /// The CPI user name of the CPI user who is certifying the coordinates of the radio unit.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string CpiUsername
         {
             get { return this._cpiUsername; }
@@ -133,7 +133,7 @@ namespace Amazon.Private5G.Model
         /// The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public string CpiUserPassword
         {
             get { return this._cpiUserPassword; }

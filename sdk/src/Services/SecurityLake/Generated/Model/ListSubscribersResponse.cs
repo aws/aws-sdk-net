@@ -61,7 +61,6 @@ namespace Amazon.SecurityLake.Model
         /// The subscribers available for the specified Security Lake account ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
         public List<SubscriberResource> Subscribers
         {
             get { return this._subscribers; }

@@ -30,7 +30,8 @@ namespace Amazon.EMRServerless.Model
 {
     /// <summary>
     /// Container for the parameters to the GetDashboardForJobRun operation.
-    /// Returns a URL to access the job run dashboard.
+    /// Returns a URL to access the job run dashboard. The generated URL is valid for one
+    /// hour, after which you must invoke the API again to generate a new URL.
     /// </summary>
     public partial class GetDashboardForJobRunRequest : AmazonEMRServerlessRequest
     {

@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimpleSystemsManagement.Model
 {
     /// <summary>
-    /// The document can't be shared with more Amazon Web Services user accounts. You can
-    /// specify a maximum of 20 accounts per API operation to share a private document.
+    /// The document can't be shared with more Amazon Web Services accounts. You can specify
+    /// a maximum of 20 accounts per API operation to share a private document.
     /// 
     ///  
     /// <para>

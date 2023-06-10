@@ -63,7 +63,7 @@ namespace Amazon.Budgets.Model
         /// breaks.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2147483647)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=2147483647)]
         public string Address
         {
             get { return this._address; }

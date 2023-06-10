@@ -70,6 +70,12 @@ namespace Amazon.MigrationHubRefactorSpaces.Model.Internal.MarshallTransformatio
                     unmarshalledObject.ActivationState = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AppendSourcePath", targetDepth))
+                {
+                    var unmarshaller = BoolUnmarshaller.Instance;
+                    unmarshalledObject.AppendSourcePath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("IncludeChildPaths", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Transfer.Model
 {
     /// <summary>
-    /// 
+    /// Each step type has its own <code>StepDetails</code> structure.
     /// </summary>
     public partial class DecryptStepDetails
     {
@@ -40,7 +40,30 @@ namespace Amazon.Transfer.Model
         private EncryptionType _type;
 
         /// <summary>
-        /// Gets and sets the property DestinationFileLocation.
+        /// Gets and sets the property DestinationFileLocation. 
+        /// <para>
+        /// Specifies the location for the file being decrypted. Use <code>${Transfer:UserName}</code>
+        /// or <code>${Transfer:UploadDate}</code> in this field to parametrize the destination
+        /// prefix by username or uploaded date.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UserName}</code>
+        /// to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the name of
+        /// the Transfer Family user that uploaded the file.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Set the value of <code>DestinationFileLocation</code> to <code>${Transfer:UploadDate}</code>
+        /// to decrypt uploaded files to an Amazon S3 bucket that is prefixed with the date of
+        /// the upload.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// The system resolves <code>UploadDate</code> to a date format of <i>YYYY-MM-DD</i>,
+        /// based on the date the file is uploaded in UTC.
+        /// </para>
+        ///  </note> </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public InputFileLocation DestinationFileLocation
@@ -56,7 +79,10 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the step, used as an identifier.
+        /// </para>
         /// </summary>
         [AWSProperty(Max=30)]
         public string Name
@@ -72,7 +98,27 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property OverwriteExisting.
+        /// Gets and sets the property OverwriteExisting. 
+        /// <para>
+        /// A flag that indicates whether to overwrite an existing file of the same name. The
+        /// default is <code>FALSE</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the workflow is processing a file that has the same name as an existing file, the
+        /// behavior is as follows:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// If <code>OverwriteExisting</code> is <code>TRUE</code>, the existing file is replaced
+        /// with the file being processed.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// If <code>OverwriteExisting</code> is <code>FALSE</code>, nothing happens, and the
+        /// workflow processing stops.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public OverwriteExisting OverwriteExisting
         {
@@ -87,7 +133,22 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SourceFileLocation.
+        /// Gets and sets the property SourceFileLocation. 
+        /// <para>
+        /// Specifies which file to use as input to the workflow step: either the output from
+        /// the previous step, or the originally uploaded file for the workflow.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// To use the previous file as the input, enter <code>${previous.file}</code>. In this
+        /// case, this workflow step uses the output file from the previous workflow step as input.
+        /// This is the default value.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To use the originally uploaded file location as input for this step, enter <code>${original.file}</code>.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Max=256)]
         public string SourceFileLocation
@@ -103,7 +164,10 @@ namespace Amazon.Transfer.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Type.
+        /// Gets and sets the property Type. 
+        /// <para>
+        /// The type of encryption used. Currently, this value must be <code>PGP</code>.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public EncryptionType Type

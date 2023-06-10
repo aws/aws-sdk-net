@@ -30,8 +30,8 @@ namespace Amazon.ChimeSDKIdentity.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAppInstanceAdmin operation.
-    /// Promotes an <code>AppInstanceUser</code> to an <code>AppInstanceAdmin</code>. The
-    /// promoted user can perform the following actions. 
+    /// Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an <code>AppInstanceAdmin</code>.
+    /// The promoted entity can perform the following actions. 
     /// 
     ///  <ul> <li> 
     /// <para>
@@ -43,8 +43,8 @@ namespace Amazon.ChimeSDKIdentity.Model
     /// </para>
     ///  </li> </ul> 
     /// <para>
-    /// Only an <code>AppInstanceUser</code> can be promoted to an <code>AppInstanceAdmin</code>
-    /// role.
+    /// Only an <code>AppInstanceUser</code> and <code>AppInstanceBot</code> can be promoted
+    /// to an <code>AppInstanceAdmin</code> role.
     /// </para>
     /// </summary>
     public partial class CreateAppInstanceAdminRequest : AmazonChimeSDKIdentityRequest

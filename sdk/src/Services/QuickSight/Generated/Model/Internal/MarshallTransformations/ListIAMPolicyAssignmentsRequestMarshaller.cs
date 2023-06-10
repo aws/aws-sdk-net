@@ -65,28 +65,15 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 throw new AmazonQuickSightException("Request object does not have required field Namespace set");
             request.AddPathResource("{Namespace}", StringUtils.FromString(publicRequest.Namespace));
             
+            if (publicRequest.IsSetAssignmentStatus())
+                request.Parameters.Add("assignment-status", StringUtils.FromString(publicRequest.AssignmentStatus));
+            
             if (publicRequest.IsSetMaxResults())
                 request.Parameters.Add("max-results", StringUtils.FromInt(publicRequest.MaxResults));
             
             if (publicRequest.IsSetNextToken())
                 request.Parameters.Add("next-token", StringUtils.FromString(publicRequest.NextToken));
-            request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/iam-policy-assignments";
-            using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
-            {
-                JsonWriter writer = new JsonWriter(stringWriter);
-                writer.WriteObjectStart();
-                var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetAssignmentStatus())
-                {
-                    context.Writer.WritePropertyName("AssignmentStatus");
-                    context.Writer.Write(publicRequest.AssignmentStatus);
-                }
-
-                writer.WriteObjectEnd();
-                string snippet = stringWriter.ToString();
-                request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
-            }
-
+            request.ResourcePath = "/accounts/{AwsAccountId}/namespaces/{Namespace}/v2/iam-policy-assignments";
             request.UseQueryString = true;
 
             return request;

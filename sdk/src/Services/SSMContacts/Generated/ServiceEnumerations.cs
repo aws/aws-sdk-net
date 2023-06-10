@@ -239,6 +239,10 @@ namespace Amazon.SSMContacts
         /// </summary>
         public static readonly ContactType ESCALATION = new ContactType("ESCALATION");
         /// <summary>
+        /// Constant ONCALL_SCHEDULE for ContactType
+        /// </summary>
+        public static readonly ContactType ONCALL_SCHEDULE = new ContactType("ONCALL_SCHEDULE");
+        /// <summary>
         /// Constant PERSONAL for ContactType
         /// </summary>
         public static readonly ContactType PERSONAL = new ContactType("PERSONAL");
@@ -272,6 +276,76 @@ namespace Amazon.SSMContacts
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContactType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DayOfWeek.
+    /// </summary>
+    public class DayOfWeek : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FRI for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek FRI = new DayOfWeek("FRI");
+        /// <summary>
+        /// Constant MON for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek MON = new DayOfWeek("MON");
+        /// <summary>
+        /// Constant SAT for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SAT = new DayOfWeek("SAT");
+        /// <summary>
+        /// Constant SUN for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek SUN = new DayOfWeek("SUN");
+        /// <summary>
+        /// Constant THU for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek THU = new DayOfWeek("THU");
+        /// <summary>
+        /// Constant TUE for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek TUE = new DayOfWeek("TUE");
+        /// <summary>
+        /// Constant WED for DayOfWeek
+        /// </summary>
+        public static readonly DayOfWeek WED = new DayOfWeek("WED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DayOfWeek(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DayOfWeek FindValue(string value)
+        {
+            return FindValue<DayOfWeek>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DayOfWeek(string value)
         {
             return FindValue(value);
         }
@@ -334,6 +408,56 @@ namespace Amazon.SSMContacts
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ReceiptType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ShiftType.
+    /// </summary>
+    public class ShiftType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant OVERRIDDEN for ShiftType
+        /// </summary>
+        public static readonly ShiftType OVERRIDDEN = new ShiftType("OVERRIDDEN");
+        /// <summary>
+        /// Constant REGULAR for ShiftType
+        /// </summary>
+        public static readonly ShiftType REGULAR = new ShiftType("REGULAR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ShiftType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ShiftType FindValue(string value)
+        {
+            return FindValue<ShiftType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ShiftType(string value)
         {
             return FindValue(value);
         }

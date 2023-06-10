@@ -58,7 +58,7 @@ namespace Amazon.LocationService.Model
         /// <code>-123.1174</code> and latitude <code>49.2847</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=2)]
+        [AWSProperty(Sensitive=true, Min=2, Max=2)]
         public List<double> BiasPosition
         {
             get { return this._biasPosition; }
@@ -114,7 +114,7 @@ namespace Amazon.LocationService.Model
         /// Contains the coordinates for the optional bounding box specified in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=4, Max=4)]
+        [AWSProperty(Sensitive=true, Min=4, Max=4)]
         public List<double> FilterBBox
         {
             get { return this._filterBBox; }
@@ -198,7 +198,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=4, Max=4)]
+        [AWSProperty(Sensitive=true, Min=4, Max=4)]
         public List<double> ResultBBox
         {
             get { return this._resultBBox; }
@@ -217,7 +217,7 @@ namespace Amazon.LocationService.Model
         /// The search text specified in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Text
         {
             get { return this._text; }

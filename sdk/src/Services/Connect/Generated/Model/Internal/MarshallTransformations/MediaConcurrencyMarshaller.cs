@@ -57,6 +57,17 @@ namespace Amazon.Connect.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Concurrency);
             }
 
+            if(requestObject.IsSetCrossChannelBehavior())
+            {
+                context.Writer.WritePropertyName("CrossChannelBehavior");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = CrossChannelBehaviorMarshaller.Instance;
+                marshaller.Marshall(requestObject.CrossChannelBehavior, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

@@ -92,7 +92,7 @@ namespace Amazon.ConfigService.Model
         /// Gets and sets the property NextToken. 
         /// <para>
         /// The <code>nextToken</code> string in a prior request that you can use to get the paginated
-        /// response for next set of conformance pack compliance scores.
+        /// response for the next set of conformance pack compliance scores.
         /// </para>
         /// </summary>
         public string NextToken

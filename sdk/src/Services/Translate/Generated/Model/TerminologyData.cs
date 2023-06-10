@@ -84,7 +84,7 @@ namespace Amazon.Translate.Model
         /// of the SDK should not perform Base64-encoding themselves.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=10485760)]
+        [AWSProperty(Required=true, Sensitive=true, Max=10485760)]
         public MemoryStream File
         {
             get { return this._file; }

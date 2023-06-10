@@ -33,8 +33,27 @@ namespace Amazon.QuickSight.Model
     /// </summary>
     public partial class PivotTableFieldOptions
     {
+        private List<PivotTableFieldCollapseStateOption> _collapseStateOptions = new List<PivotTableFieldCollapseStateOption>();
         private List<PivotTableDataPathOption> _dataPathOptions = new List<PivotTableDataPathOption>();
         private List<PivotTableFieldOption> _selectedFieldOptions = new List<PivotTableFieldOption>();
+
+        /// <summary>
+        /// Gets and sets the property CollapseStateOptions. 
+        /// <para>
+        /// The collapse state options for the pivot table field options.
+        /// </para>
+        /// </summary>
+        public List<PivotTableFieldCollapseStateOption> CollapseStateOptions
+        {
+            get { return this._collapseStateOptions; }
+            set { this._collapseStateOptions = value; }
+        }
+
+        // Check to see if CollapseStateOptions property is set
+        internal bool IsSetCollapseStateOptions()
+        {
+            return this._collapseStateOptions != null && this._collapseStateOptions.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property DataPathOptions. 

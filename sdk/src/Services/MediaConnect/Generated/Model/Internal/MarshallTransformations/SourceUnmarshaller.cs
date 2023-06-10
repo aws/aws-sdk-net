@@ -88,6 +88,12 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
                     unmarshalledObject.EntitlementArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("gatewayBridgeSource", targetDepth))
+                {
+                    var unmarshaller = GatewayBridgeSourceUnmarshaller.Instance;
+                    unmarshalledObject.GatewayBridgeSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ingestIp", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

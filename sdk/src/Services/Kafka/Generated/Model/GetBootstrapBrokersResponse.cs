@@ -40,6 +40,9 @@ namespace Amazon.Kafka.Model
         private string _bootstrapBrokerStringSaslIam;
         private string _bootstrapBrokerStringSaslScram;
         private string _bootstrapBrokerStringTls;
+        private string _bootstrapBrokerStringVpcConnectivitySaslIam;
+        private string _bootstrapBrokerStringVpcConnectivitySaslScram;
+        private string _bootstrapBrokerStringVpcConnectivityTls;
 
         /// <summary>
         /// Gets and sets the property BootstrapBrokerString.             
@@ -165,6 +168,64 @@ namespace Amazon.Kafka.Model
         internal bool IsSetBootstrapBrokerStringTls()
         {
             return this._bootstrapBrokerStringTls != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringVpcConnectivitySaslIam.          
+        ///   
+        /// <para>
+        /// A string containing one or more DNS names (or IP) and SASL/IAM port pairs for VPC
+        /// connectivity.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringVpcConnectivitySaslIam
+        {
+            get { return this._bootstrapBrokerStringVpcConnectivitySaslIam; }
+            set { this._bootstrapBrokerStringVpcConnectivitySaslIam = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringVpcConnectivitySaslIam property is set
+        internal bool IsSetBootstrapBrokerStringVpcConnectivitySaslIam()
+        {
+            return this._bootstrapBrokerStringVpcConnectivitySaslIam != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringVpcConnectivitySaslScram.        
+        ///     
+        /// <para>
+        /// A string containing one or more DNS names (or IP) and SASL/SCRAM port pairs for VPC
+        /// connectivity.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringVpcConnectivitySaslScram
+        {
+            get { return this._bootstrapBrokerStringVpcConnectivitySaslScram; }
+            set { this._bootstrapBrokerStringVpcConnectivitySaslScram = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringVpcConnectivitySaslScram property is set
+        internal bool IsSetBootstrapBrokerStringVpcConnectivitySaslScram()
+        {
+            return this._bootstrapBrokerStringVpcConnectivitySaslScram != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property BootstrapBrokerStringVpcConnectivityTls.             
+        /// <para>
+        /// A string containing one or more DNS names (or IP) and TLS port pairs for VPC connectivity.
+        /// </para>
+        /// </summary>
+        public string BootstrapBrokerStringVpcConnectivityTls
+        {
+            get { return this._bootstrapBrokerStringVpcConnectivityTls; }
+            set { this._bootstrapBrokerStringVpcConnectivityTls = value; }
+        }
+
+        // Check to see if BootstrapBrokerStringVpcConnectivityTls property is set
+        internal bool IsSetBootstrapBrokerStringVpcConnectivityTls()
+        {
+            return this._bootstrapBrokerStringVpcConnectivityTls != null;
         }
 
     }

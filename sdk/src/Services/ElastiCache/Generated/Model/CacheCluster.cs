@@ -571,7 +571,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// The network type associated with the cluster, either <code>ipv4</code> | <code>ipv6</code>.
         /// IPv6 is supported for workloads using Redis engine version 6.2 onward or Memcached
-        /// engine version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// engine version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>
         /// </summary>
@@ -610,7 +610,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Must be either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
         /// is supported for workloads using Redis engine version 6.2 onward or Memcached engine
-        /// version 1.6.6 on all instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+        /// version 1.6.6 on all instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
         /// system</a>.
         /// </para>
         /// </summary>

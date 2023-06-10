@@ -505,4 +505,128 @@ namespace Amazon.Kafka
         }
     }
 
+
+    /// <summary>
+    /// Constants used for properties of type UserIdentityType.
+    /// </summary>
+    public class UserIdentityType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AWSACCOUNT for UserIdentityType
+        /// </summary>
+        public static readonly UserIdentityType AWSACCOUNT = new UserIdentityType("AWSACCOUNT");
+        /// <summary>
+        /// Constant AWSSERVICE for UserIdentityType
+        /// </summary>
+        public static readonly UserIdentityType AWSSERVICE = new UserIdentityType("AWSSERVICE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public UserIdentityType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static UserIdentityType FindValue(string value)
+        {
+            return FindValue<UserIdentityType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator UserIdentityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type VpcConnectionState.
+    /// </summary>
+    public class VpcConnectionState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant AVAILABLE for VpcConnectionState
+        /// </summary>
+        public static readonly VpcConnectionState AVAILABLE = new VpcConnectionState("AVAILABLE");
+        /// <summary>
+        /// Constant CREATING for VpcConnectionState
+        /// </summary>
+        public static readonly VpcConnectionState CREATING = new VpcConnectionState("CREATING");
+        /// <summary>
+        /// Constant DEACTIVATING for VpcConnectionState
+        /// </summary>
+        public static readonly VpcConnectionState DEACTIVATING = new VpcConnectionState("DEACTIVATING");
+        /// <summary>
+        /// Constant DELETING for VpcConnectionState
+        /// </summary>
+        public static readonly VpcConnectionState DELETING = new VpcConnectionState("DELETING");
+        /// <summary>
+        /// Constant FAILED for VpcConnectionState
+        /// </summary>
+        public static readonly VpcConnectionState FAILED = new VpcConnectionState("FAILED");
+        /// <summary>
+        /// Constant INACTIVE for VpcConnectionState
+        /// </summary>
+        public static readonly VpcConnectionState INACTIVE = new VpcConnectionState("INACTIVE");
+        /// <summary>
+        /// Constant REJECTED for VpcConnectionState
+        /// </summary>
+        public static readonly VpcConnectionState REJECTED = new VpcConnectionState("REJECTED");
+        /// <summary>
+        /// Constant REJECTING for VpcConnectionState
+        /// </summary>
+        public static readonly VpcConnectionState REJECTING = new VpcConnectionState("REJECTING");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public VpcConnectionState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static VpcConnectionState FindValue(string value)
+        {
+            return FindValue<VpcConnectionState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator VpcConnectionState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
 }

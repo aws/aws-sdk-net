@@ -31,6 +31,10 @@ namespace Amazon.MemoryDB
     {
 
         /// <summary>
+        /// Constant Iam for AuthenticationType
+        /// </summary>
+        public static readonly AuthenticationType Iam = new AuthenticationType("iam");
+        /// <summary>
         /// Constant NoPassword for AuthenticationType
         /// </summary>
         public static readonly AuthenticationType NoPassword = new AuthenticationType("no-password");
@@ -180,6 +184,10 @@ namespace Amazon.MemoryDB
     public class InputAuthenticationType : ConstantClass
     {
 
+        /// <summary>
+        /// Constant Iam for InputAuthenticationType
+        /// </summary>
+        public static readonly InputAuthenticationType Iam = new InputAuthenticationType("iam");
         /// <summary>
         /// Constant Password for InputAuthenticationType
         /// </summary>

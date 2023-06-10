@@ -31,7 +31,7 @@ namespace Amazon.FMS.Model
     /// <summary>
     /// Container for the parameters to the GetAdminAccount operation.
     /// Returns the Organizations account that is associated with Firewall Manager as the
-    /// Firewall Manager administrator.
+    /// Firewall Manager default administrator.
     /// </summary>
     public partial class GetAdminAccountRequest : AmazonFMSRequest
     {

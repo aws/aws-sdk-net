@@ -37,6 +37,7 @@ namespace Amazon.AppConfig.Model
         private string _configurationProfileId;
         private string _contentType;
         private string _description;
+        private string _versionLabel;
         private int? _versionNumber;
 
         /// <summary>
@@ -112,6 +113,25 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property VersionLabel. 
+        /// <para>
+        /// A user-defined label for an AppConfig hosted configuration version.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public string VersionLabel
+        {
+            get { return this._versionLabel; }
+            set { this._versionLabel = value; }
+        }
+
+        // Check to see if VersionLabel property is set
+        internal bool IsSetVersionLabel()
+        {
+            return this._versionLabel != null;
         }
 
         /// <summary>

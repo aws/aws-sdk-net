@@ -432,7 +432,12 @@ namespace Amazon.EC2.Model
         /// <para>
         /// Magnetic: <code>standard</code> 
         /// </para>
-        ///  </li> </ul> 
+        ///  </li> </ul> <important> 
+        /// <para>
+        /// Throughput Optimized HDD (<code>st1</code>) and Cold HDD (<code>sc1</code>) volumes
+        /// can't be used as boot volumes.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
         /// EBS volume types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.

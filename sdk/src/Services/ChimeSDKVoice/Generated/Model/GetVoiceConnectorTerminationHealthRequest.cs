@@ -30,14 +30,18 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetVoiceConnectorTerminationHealth operation.
-    /// 
+    /// Retrieves information about the last time a <code>SIP OPTIONS</code> ping was received
+    /// from your SIP infrastructure for the specified Amazon Chime SDK Voice Connector.
     /// </summary>
     public partial class GetVoiceConnectorTerminationHealthRequest : AmazonChimeSDKVoiceRequest
     {
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

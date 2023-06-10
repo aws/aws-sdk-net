@@ -38,7 +38,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ActionTargetArn. 
         /// <para>
-        /// The ARN for the custom action target.
+        /// The Amazon Resource Name (ARN) for the custom action target.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

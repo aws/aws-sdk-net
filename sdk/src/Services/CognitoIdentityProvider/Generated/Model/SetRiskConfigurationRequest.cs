@@ -79,7 +79,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// client is used instead.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }

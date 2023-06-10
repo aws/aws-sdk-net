@@ -30,7 +30,10 @@ namespace Amazon.GuardDuty.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateFilter operation.
-    /// Creates a filter using the specified finding criteria.
+    /// Creates a filter using the specified finding criteria. The maximum number of saved
+    /// filters per Amazon Web Services account per Region is 100. For more information, see
+    /// <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_limits.html">Quotas
+    /// for GuardDuty</a>.
     /// </summary>
     public partial class CreateFilterRequest : AmazonGuardDutyRequest
     {
@@ -84,9 +87,10 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// The description of the filter. Valid special characters include period (.), underscore
-        /// (_), dash (-), and whitespace. The new line character is considered to be an invalid
-        /// input for description.
+        /// The description of the filter. Valid characters include alphanumeric characters, and
+        /// special characters such as hyphen, period, colon, underscore, parentheses (<code>{
+        /// }</code>, <code>[ ]</code>, and <code>( )</code>), forward slash, horizontal tab,
+        /// vertical tab, newline, form feed, return, and whitespace.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=512)]
@@ -138,10 +142,6 @@ namespace Amazon.GuardDuty.Model
         ///  </li> <li> 
         /// <para>
         /// region
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// confidence
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -338,16 +338,6 @@ namespace Amazon.GuardDuty.Model
         ///  </li> <li> 
         /// <para>
         /// resource.s3BucketDetails.type
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// service.archived
-        /// </para>
-        ///  
-        /// <para>
-        /// When this attribute is set to TRUE, only archived findings are listed. When it's set
-        /// to FALSE, only unarchived findings are listed. When this attribute is not set, all
-        /// existing findings are listed.
         /// </para>
         ///  </li> <li> 
         /// <para>

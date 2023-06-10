@@ -91,7 +91,7 @@ namespace Amazon.Transfer.Model
         /// The file name for the certificate.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=16384)]
+        [AWSProperty(Sensitive=true, Min=1, Max=16384)]
         public string Certificate
         {
             get { return this._certificate; }
@@ -110,7 +110,7 @@ namespace Amazon.Transfer.Model
         /// The list of certificates that make up the chain for the certificate.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2097152)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2097152)]
         public string CertificateChain
         {
             get { return this._certificateChain; }

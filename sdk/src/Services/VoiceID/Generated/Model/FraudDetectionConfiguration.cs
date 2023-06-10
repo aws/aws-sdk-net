@@ -34,6 +34,7 @@ namespace Amazon.VoiceID.Model
     public partial class FraudDetectionConfiguration
     {
         private int? _riskThreshold;
+        private string _watchlistId;
 
         /// <summary>
         /// Gets and sets the property RiskThreshold. 
@@ -43,7 +44,7 @@ namespace Amazon.VoiceID.Model
         /// a fraudster.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=100)]
+        [AWSProperty(Min=0, Max=100)]
         public int RiskThreshold
         {
             get { return this._riskThreshold.GetValueOrDefault(); }
@@ -54,6 +55,25 @@ namespace Amazon.VoiceID.Model
         internal bool IsSetRiskThreshold()
         {
             return this._riskThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WatchlistId. 
+        /// <para>
+        /// The identifier of the watchlist against which fraud detection is performed. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=22, Max=22)]
+        public string WatchlistId
+        {
+            get { return this._watchlistId; }
+            set { this._watchlistId = value; }
+        }
+
+        // Check to see if WatchlistId property is set
+        internal bool IsSetWatchlistId()
+        {
+            return this._watchlistId != null;
         }
 
     }

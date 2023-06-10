@@ -34,20 +34,24 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
+    /// If you create an Aurora DB cluster, the request creates an empty cluster. You must
+    /// explicitly create the writer instance for your DB cluster using the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBInstance.html">CreateDBInstance</a>
+    /// operation. If you create a Multi-AZ DB cluster, the request creates a writer and two
+    /// reader DB instances for you, each in a different Availability Zone.
+    /// </para>
+    ///  
+    /// <para>
     /// You can use the <code>ReplicationSourceIdentifier</code> parameter to create an Amazon
-    /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS MySQL or PostgreSQL
-    /// DB instance.
+    /// Aurora DB cluster as a read replica of another DB cluster or Amazon RDS for MySQL
+    /// or PostgreSQL DB instance. For more information about Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
+    /// is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
-    /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
-    /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
-    /// </para>
-    ///  
-    /// <para>
-    /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide</i>.
+    /// You can also use the <code>ReplicationSourceIdentifier</code> parameter to create
+    /// a Multi-AZ DB cluster read replica with an RDS for MySQL or PostgreSQL DB instance
+    /// as the source. For more information about Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
+    /// DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class CreateDBClusterRequest : AmazonRDSRequest
@@ -758,11 +762,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+        ///  <code>aurora-mysql</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -797,24 +797,7 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property EngineMode. 
         /// <para>
-        /// The DB engine mode of the DB cluster, either <code>provisioned</code>, <code>serverless</code>,
-        /// <code>parallelquery</code>, <code>global</code>, or <code>multimaster</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// The <code>parallelquery</code> engine mode isn't required for Aurora MySQL version
-        /// 1.23 and higher 1.x versions, and version 2.09 and higher 2.x versions.
-        /// </para>
-        ///  
-        /// <para>
-        /// The <code>global</code> engine mode isn't required for Aurora MySQL version 1.22 and
-        /// higher 1.x versions, and <code>global</code> engine mode isn't required for any 2.x
-        /// versions.
-        /// </para>
-        ///  
-        /// <para>
-        /// The <code>multimaster</code> engine mode only applies for DB clusters created with
-        /// Aurora MySQL version 5.6.10a.
+        /// The DB engine mode of the DB cluster, either <code>provisioned</code> or <code>serverless</code>.
         /// </para>
         ///  
         /// <para>
@@ -822,14 +805,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For Aurora PostgreSQL, the <code>global</code> engine mode isn't required, and both
-        /// the <code>parallelquery</code> and the <code>multimaster</code> engine modes currently
-        /// aren't supported.
-        /// </para>
-        ///  
-        /// <para>
-        /// Limitations and requirements apply to some DB engine modes. For more information,
-        /// see the following sections in the <i>Amazon Aurora User Guide</i>:
+        /// For information about limitations and requirements for Serverless DB clusters, see
+        /// the following sections in the <i>Amazon Aurora User Guide</i>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -840,21 +817,6 @@ namespace Amazon.RDS.Model
         /// <para>
         ///  <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
         /// for Aurora Serverless v2</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
-        /// of Parallel Query</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
-        /// of Aurora Global Databases</a> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-multi-master.html#aurora-multi-master-limitations">Limitations
-        /// of Multi-Master Clusters</a> 
         /// </para>
         ///  </li> </ul> 
         /// <para>
@@ -880,23 +842,18 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// To list all of the available engine versions for MySQL 5.6-compatible Aurora, use
-        /// the following command:
-        /// </para>
-        ///  
-        /// <para>
-        ///  <code>aws rds describe-db-engine-versions --engine aurora --query "DBEngineVersions[].EngineVersion"</code>
-        /// 
-        /// </para>
-        ///  
-        /// <para>
-        /// To list all of the available engine versions for MySQL 5.7-compatible and MySQL 8.0-compatible
-        /// Aurora, use the following command:
+        /// To list all of the available engine versions for Aurora MySQL version 2 (5.7-compatible)
+        /// and version 3 (MySQL 8.0-compatible), use the following command:
         /// </para>
         ///  
         /// <para>
         ///  <code>aws rds describe-db-engine-versions --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code>
         /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// You can supply either <code>5.7</code> or <code>8.0</code> to use the default engine
+        /// version for Aurora MySQL version 2 or version 3, respectively.
         /// </para>
         ///  
         /// <para>
@@ -934,8 +891,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">MySQL
-        /// on Amazon RDS Versions</a> in the <i>Amazon Aurora User Guide</i>.
+        /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Updates.html">Database
+        /// engine updates for Amazon Aurora MySQL</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -952,8 +909,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">MySQL
-        /// on Amazon RDS Versions</a> in the <i>Amazon RDS User Guide</i>.
+        /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_MySQL.html#MySQL.Concepts.VersionMgmt">Amazon
+        /// RDS for MySQL</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -962,7 +919,7 @@ namespace Amazon.RDS.Model
         ///  
         /// <para>
         /// For information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_PostgreSQL.html#PostgreSQL.Concepts">Amazon
-        /// RDS for PostgreSQL versions and extensions</a> in the <i>Amazon RDS User Guide</i>.
+        /// RDS for PostgreSQL</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1012,8 +969,8 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
-        /// RDS Provisioned IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
+        /// For information about valid IOPS values, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Provisioned
+        /// IOPS storage</a> in the <i>Amazon RDS User Guide</i>.
         /// </para>
         ///  
         /// <para>
@@ -1770,7 +1727,7 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Aurora DB clusters only
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
         /// </para>
         /// </summary>
         public string ReplicationSourceIdentifier
@@ -1856,19 +1813,28 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>io1</code> 
+        /// When specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+        /// is required.
         /// </para>
         ///  
         /// <para>
-        /// When specified, a value for the <code>Iops</code> parameter is required.
+        /// Valid values: <code>aurora</code>, <code>aurora-iopt1</code> (Aurora DB clusters);
+        /// <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>
-        /// Default: <code>io1</code> 
+        /// Default: <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)
         /// </para>
         ///  
         /// <para>
-        /// Valid for: Multi-AZ DB clusters only
+        /// Valid for: Aurora DB clusters and Multi-AZ DB clusters
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information on storage types for Aurora DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage
+        /// configurations for Amazon Aurora DB clusters</a>. For more information on storage
+        /// types for Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings
+        /// for creating Multi-AZ DB clusters</a>.
         /// </para>
         /// </summary>
         public string StorageType

@@ -65,7 +65,7 @@ namespace Amazon.Pipes.Model
         /// The short name of the capacity provider.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]
         public string CapacityProvider
         {
             get { return this._capacityProvider; }

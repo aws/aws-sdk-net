@@ -68,7 +68,7 @@ namespace Amazon.ElastiCache.Model
         /// Instantiates CreateCacheParameterGroupRequest with the parameterized properties
         /// </summary>
         /// <param name="cacheParameterGroupName">A user-specified name for the cache parameter group.</param>
-        /// <param name="cacheParameterGroupFamily">The name of the cache parameter group family that the cache parameter group can be used with. Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> </param>
+        /// <param name="cacheParameterGroupFamily">The name of the cache parameter group family that the cache parameter group can be used with. Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code> | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code> | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> </param>
         /// <param name="description">A user-specified description for the cache parameter group.</param>
         public CreateCacheParameterGroupRequest(string cacheParameterGroupName, string cacheParameterGroupFamily, string description)
         {
@@ -87,7 +87,7 @@ namespace Amazon.ElastiCache.Model
         /// <para>
         /// Valid values are: <code>memcached1.4</code> | <code>memcached1.5</code> | <code>memcached1.6</code>
         /// | <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> | <code>redis4.0</code>
-        /// | <code>redis5.0</code> | <code>redis6.x</code> 
+        /// | <code>redis5.0</code> | <code>redis6.x</code> | <code>redis7</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -67,9 +67,9 @@
                     <form action="/search/doc-search.html" target="_parent" rel="noopener noreferrer" onsubmit="return AWSHelpObj.searchFormSubmit(this);" method="get">
                         <div id="sfrm">
                             <span id="lbl">
-                                <label>Search: </label>
+                                <label for="sel">Search: </label>
                             </span>
-                            <select name="searchPath" id="sel">
+                            <select aria-label="Search From" name="searchPath" id="sel">
                                 <option value="all">Entire Site</option>
                                 <option value="articles">Articles &amp; Tutorials</option>
                                 <option value="documentation">Documentation</option>
@@ -78,8 +78,10 @@
                                 <option value="releasenotes">Release Notes</option>
                                 <option value="code">Sample Code &amp; Libraries</option>
                             </select>
-                            <input type="text" name="searchQuery" id="sq">
-                            <input type="image" alt="Go" src="../resources/search-button.png" id="sb">
+                            <div id="searchInputContainer">
+                                <input aria-label="Search" name="searchQuery" id="sq">
+                                <input type="image" alt="Go" src="../resources/search-button.png" id="sb">
+                            </div>
                         </div>
                         <input id="this_doc_product" type="hidden" value="AWS SDK for .NET Version 3" name="this_doc_product">
                         <input id="this_doc_guide" type="hidden" value="API Reference" name="this_doc_guide">

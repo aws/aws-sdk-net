@@ -41,7 +41,7 @@ namespace Amazon.Cloud9.Model
         /// The list of tags associated with the Cloud9 development environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=200)]
+        [AWSProperty(Sensitive=true, Min=0, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

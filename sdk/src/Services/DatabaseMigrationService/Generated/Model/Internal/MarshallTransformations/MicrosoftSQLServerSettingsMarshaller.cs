@@ -63,6 +63,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.DatabaseName);
             }
 
+            if(requestObject.IsSetForceLobLookup())
+            {
+                context.Writer.WritePropertyName("ForceLobLookup");
+                context.Writer.Write(requestObject.ForceLobLookup);
+            }
+
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");
@@ -109,6 +115,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
             {
                 context.Writer.WritePropertyName("ServerName");
                 context.Writer.Write(requestObject.ServerName);
+            }
+
+            if(requestObject.IsSetTlogAccessMode())
+            {
+                context.Writer.WritePropertyName("TlogAccessMode");
+                context.Writer.Write(requestObject.TlogAccessMode);
             }
 
             if(requestObject.IsSetTrimSpaceInChar())

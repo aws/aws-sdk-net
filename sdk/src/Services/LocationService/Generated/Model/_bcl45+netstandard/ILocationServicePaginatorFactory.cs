@@ -46,6 +46,11 @@ namespace Amazon.LocationService.Model
         IListGeofencesPaginator ListGeofences(ListGeofencesRequest request);
 
         /// <summary>
+        /// Paginator for ListKeys operation
+        ///</summary>
+        IListKeysPaginator ListKeys(ListKeysRequest request);
+
+        /// <summary>
         /// Paginator for ListMaps operation
         ///</summary>
         IListMapsPaginator ListMaps(ListMapsRequest request);

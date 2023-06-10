@@ -40,15 +40,34 @@ namespace Amazon.CloudTrail.Model
         private string _name;
         private bool? _organizationEnabled;
         private int? _retentionPeriod;
+        private bool? _startIngestion;
         private List<Tag> _tagsList = new List<Tag>();
         private bool? _terminationProtectionEnabled;
 
         /// <summary>
         /// Gets and sets the property AdvancedEventSelectors. 
         /// <para>
-        /// The advanced event selectors to use to select the events for the data store. For more
-        /// information about how to use advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log
+        /// The advanced event selectors to use to select the events for the data store. You can
+        /// configure up to five advanced event selectors for each event data store.
+        /// </para>
+        ///  
+        /// <para>
+        ///  For more information about how to use advanced event selectors to log CloudTrail
+        /// events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html#creating-data-event-selectors-advanced">Log
         /// events by using advanced event selectors</a> in the CloudTrail User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to use advanced event selectors to include Config configuration
+        /// items in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-eds-config">Create
+        /// an event data store for Config configuration items</a> in the CloudTrail User Guide.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about how to use advanced event selectors to include non-Amazon
+        /// Web Services events in your event data store, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/query-lake-cli.html#lake-cli-create-integration">Create
+        /// an integration to log events from outside Amazon Web Services</a> in the CloudTrail
+        /// User Guide.
         /// </para>
         /// </summary>
         public List<AdvancedEventSelector> AdvancedEventSelectors
@@ -124,8 +143,8 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property MultiRegionEnabled. 
         /// <para>
-        /// Specifies whether the event data store includes events from all regions, or only from
-        /// the region in which the event data store is created.
+        /// Specifies whether the event data store includes events from all Regions, or only from
+        /// the Region in which the event data store is created.
         /// </para>
         /// </summary>
         public bool MultiRegionEnabled
@@ -196,6 +215,25 @@ namespace Amazon.CloudTrail.Model
         internal bool IsSetRetentionPeriod()
         {
             return this._retentionPeriod.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property StartIngestion. 
+        /// <para>
+        /// Specifies whether the event data store should start ingesting live events. The default
+        /// is true.
+        /// </para>
+        /// </summary>
+        public bool StartIngestion
+        {
+            get { return this._startIngestion.GetValueOrDefault(); }
+            set { this._startIngestion = value; }
+        }
+
+        // Check to see if StartIngestion property is set
+        internal bool IsSetStartIngestion()
+        {
+            return this._startIngestion.HasValue; 
         }
 
         /// <summary>

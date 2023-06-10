@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The specified Amazon Resource Name (ARN) was not found.
+    /// The operation failed because the specified <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+    /// Resource Name (ARN)</a> was not found.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

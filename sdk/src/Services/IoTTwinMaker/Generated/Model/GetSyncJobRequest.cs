@@ -40,11 +40,11 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property SyncSource. 
         /// <para>
-        /// The sync soucre.
+        /// The sync source.
         /// </para>
         ///  <note> 
         /// <para>
-        /// Currently the only supported syncSoucre is <code>SITEWISE </code>.
+        /// Currently the only supported syncSource is <code>SITEWISE </code>.
         /// </para>
         ///  </note>
         /// </summary>
@@ -64,7 +64,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The workspace Id.
+        /// The workspace ID.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

@@ -111,6 +111,40 @@ namespace Amazon.DynamoDBv2.DocumentModel
             request.ExpressionAttributeValues = ConvertToAttributeValues(this.ExpressionAttributeValues, table);
         }
 
+        internal void ApplyExpression(Get request, Table table)
+        {
+            request.ProjectionExpression = ExpressionStatement;
+            request.ExpressionAttributeNames = new Dictionary<string, string>(this.ExpressionAttributeNames);
+        }
+
+        internal void ApplyExpression(Put request, Table table)
+        {
+            request.ConditionExpression = ExpressionStatement;
+            request.ExpressionAttributeNames = new Dictionary<string,string>(ExpressionAttributeNames);
+            request.ExpressionAttributeValues = ConvertToAttributeValues(ExpressionAttributeValues, table);
+        }
+
+        internal void ApplyExpression(Update request, Table table)
+        {
+            request.ConditionExpression = ExpressionStatement;
+            request.ExpressionAttributeNames = new Dictionary<string,string>(ExpressionAttributeNames);
+            request.ExpressionAttributeValues = ConvertToAttributeValues(ExpressionAttributeValues, table);
+        }
+
+        internal void ApplyExpression(Delete request, Table table)
+        {
+            request.ConditionExpression = ExpressionStatement;
+            request.ExpressionAttributeNames = new Dictionary<string,string>(ExpressionAttributeNames);
+            request.ExpressionAttributeValues = ConvertToAttributeValues(ExpressionAttributeValues, table);
+        }
+
+        internal void ApplyExpression(ConditionCheck request, Table table)
+        {
+            request.ConditionExpression = ExpressionStatement;
+            request.ExpressionAttributeNames = new Dictionary<string,string>(ExpressionAttributeNames);
+            request.ExpressionAttributeValues = ConvertToAttributeValues(ExpressionAttributeValues, table);
+        }
+
 
         internal static void ApplyExpression(QueryRequest request, Table table,
             Expression keyExpression, Expression filterExpression)

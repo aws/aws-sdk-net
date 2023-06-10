@@ -64,7 +64,7 @@ namespace Amazon.CloudFront.Model
         /// The value for the header that you specified in the <code>HeaderName</code> field.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string HeaderValue
         {
             get { return this._headerValue; }

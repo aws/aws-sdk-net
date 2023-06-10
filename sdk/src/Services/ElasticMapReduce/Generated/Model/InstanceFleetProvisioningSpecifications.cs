@@ -34,9 +34,9 @@ namespace Amazon.ElasticMapReduce.Model
     /// 
     ///  <note> 
     /// <para>
-    /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-    /// later, excluding 5.0.x versions. On-Demand and Spot Instance allocation strategies
-    /// are available in Amazon EMR version 5.12.1 and later.
+    /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
+    /// later, excluding 5.0.x versions. On-Demand and Spot instance allocation strategies
+    /// are available in Amazon EMR releases 5.12.1 and later.
     /// </para>
     ///  </note>
     /// </summary>
@@ -53,9 +53,9 @@ namespace Amazon.ElasticMapReduce.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// The instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+        /// The instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
         /// later, excluding 5.0.x versions. On-Demand Instances allocation strategy is available
-        /// in Amazon EMR version 5.12.1 and later.
+        /// in Amazon EMR releases 5.12.1 and later.
         /// </para>
         ///  </note>
         /// </summary>
@@ -74,7 +74,7 @@ namespace Amazon.ElasticMapReduce.Model
         /// <summary>
         /// Gets and sets the property SpotSpecification. 
         /// <para>
-        /// The launch specification for Spot Instances in the fleet, which determines the defined
+        /// The launch specification for Spot instances in the fleet, which determines the defined
         /// duration, provisioning timeout behavior, and allocation strategy.
         /// </para>
         /// </summary>

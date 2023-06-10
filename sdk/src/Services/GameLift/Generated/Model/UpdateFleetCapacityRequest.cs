@@ -38,9 +38,9 @@ namespace Amazon.GameLift.Model
     /// 
     ///  <ul> <li> 
     /// <para>
-    /// Minimum/maximum size: Set hard limits on fleet capacity. GameLift cannot set the fleet's
-    /// capacity to a value outside of this range, whether the capacity is changed manually
-    /// or through automatic scaling. 
+    /// Minimum/maximum size: Set hard limits on fleet capacity. Amazon GameLift cannot set
+    /// the fleet's capacity to a value outside of this range, whether the capacity is changed
+    /// manually or through automatic scaling. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -69,10 +69,10 @@ namespace Amazon.GameLift.Model
     ///  </li> </ul> 
     /// <para>
     /// If successful, capacity settings are updated immediately. In response a change in
-    /// desired capacity, GameLift initiates steps to start new instances or terminate existing
-    /// instances in the requested fleet location. This continues until the location's active
-    /// instance count matches the new desired instance count. You can track a fleet's current
-    /// capacity by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
+    /// desired capacity, Amazon GameLift initiates steps to start new instances or terminate
+    /// existing instances in the requested fleet location. This continues until the location's
+    /// active instance count matches the new desired instance count. You can track a fleet's
+    /// current capacity by calling <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetCapacity.html">DescribeFleetCapacity</a>
     /// or <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationCapacity.html">DescribeFleetLocationCapacity</a>.
     /// If the requested desired instance count is higher than the instance type's limit,
     /// the <code>LimitExceeded</code> exception occurs.

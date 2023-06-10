@@ -43,6 +43,7 @@ namespace Amazon.Chime.Model
         /// The ARN of the room resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AlexaForBusinessRoomArn
         {
             get { return this._alexaForBusinessRoomArn; }

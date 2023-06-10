@@ -129,7 +129,7 @@ namespace Amazon.BillingConductor.Model
         /// with the charge value. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=255)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=255)]
         public string Description
         {
             get { return this._description; }
@@ -148,7 +148,7 @@ namespace Amazon.BillingConductor.Model
         ///  The name of the custom line item. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string Name
         {
             get { return this._name; }

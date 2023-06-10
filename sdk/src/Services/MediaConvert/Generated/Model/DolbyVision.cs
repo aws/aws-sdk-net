@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.MediaConvert.Model
 {
     /// <summary>
-    /// Create Dolby Vision Profile 5 or Profile 8.1  compatible video output.
+    /// Create Dolby Vision Profile 5 or Profile 8.1 compatible video output.
     /// </summary>
     public partial class DolbyVision
     {

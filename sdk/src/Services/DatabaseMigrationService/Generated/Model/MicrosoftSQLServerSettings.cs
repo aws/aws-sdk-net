@@ -36,6 +36,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private int? _bcpPacketSize;
         private string _controlTablesFileGroup;
         private string _databaseName;
+        private bool? _forceLobLookup;
         private string _password;
         private int? _port;
         private bool? _querySingleAlwaysOnNode;
@@ -44,6 +45,7 @@ namespace Amazon.DatabaseMigrationService.Model
         private string _secretsManagerAccessRoleArn;
         private string _secretsManagerSecretId;
         private string _serverName;
+        private TlogAccessMode _tlogAccessMode;
         private bool? _trimSpaceInChar;
         private bool? _useBcpFullLoad;
         private string _username;
@@ -106,11 +108,30 @@ namespace Amazon.DatabaseMigrationService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ForceLobLookup. 
+        /// <para>
+        /// Forces LOB lookup on inline LOB.
+        /// </para>
+        /// </summary>
+        public bool ForceLobLookup
+        {
+            get { return this._forceLobLookup.GetValueOrDefault(); }
+            set { this._forceLobLookup = value; }
+        }
+
+        // Check to see if ForceLobLookup property is set
+        internal bool IsSetForceLobLookup()
+        {
+            return this._forceLobLookup.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Password. 
         /// <para>
         /// Endpoint connection password.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Password
         {
             get { return this._password; }
@@ -276,7 +297,10 @@ namespace Amazon.DatabaseMigrationService.Model
         /// <summary>
         /// Gets and sets the property ServerName. 
         /// <para>
-        /// Fully qualified domain name of the endpoint.
+        /// Fully qualified domain name of the endpoint. For an Amazon RDS SQL Server instance,
+        /// this is the output of <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBInstances.html">DescribeDBInstances</a>,
+        /// in the <code> <a href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Endpoint.html">Endpoint</a>.Address</code>
+        /// field.
         /// </para>
         /// </summary>
         public string ServerName
@@ -289,6 +313,24 @@ namespace Amazon.DatabaseMigrationService.Model
         internal bool IsSetServerName()
         {
             return this._serverName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlogAccessMode. 
+        /// <para>
+        /// Indicates the mode used to fetch CDC data.
+        /// </para>
+        /// </summary>
+        public TlogAccessMode TlogAccessMode
+        {
+            get { return this._tlogAccessMode; }
+            set { this._tlogAccessMode = value; }
+        }
+
+        // Check to see if TlogAccessMode property is set
+        internal bool IsSetTlogAccessMode()
+        {
+            return this._tlogAccessMode != null;
         }
 
         /// <summary>

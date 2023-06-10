@@ -238,7 +238,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// Web Services resource. Each tag consists of a key-value pair. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Sensitive=true, Min=0, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }
@@ -254,7 +254,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property TransitGatewayId. 
         /// <para>
-        /// The ID of the transit gateway set up by the environment. 
+        /// The ID of the Transit Gateway set up by the environment, if applicable.
         /// </para>
         /// </summary>
         [AWSProperty(Min=21, Max=21)]

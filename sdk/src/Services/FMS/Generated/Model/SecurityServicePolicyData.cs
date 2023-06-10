@@ -58,6 +58,21 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
+        /// Example: <code>IMPORT_NETWORK_FIREWALL</code> <code>"{\"type\":\"IMPORT_NETWORK_FIREWALL\",\"awsNetworkFirewallConfig\":{\"networkFirewallStatelessRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-2:000000000000:stateless-rulegroup\/rg1\",\"priority\":1}],\"networkFirewallStatelessDefaultActions\":[\"aws:drop\"],\"networkFirewallStatelessFragmentDefaultActions\":[\"aws:pass\"],\"networkFirewallStatelessCustomActions\":[],\"networkFirewallStatefulRuleGroupReferences\":[{\"resourceARN\":\"arn:aws:network-firewall:us-west-2:aws-managed:stateful-rulegroup\/ThreatSignaturesEmergingEventsStrictOrder\",\"priority\":8}],\"networkFirewallStatefulEngineOptions\":{\"ruleOrder\":\"STRICT_ORDER\"},\"networkFirewallStatefulDefaultActions\":[\"aws:drop_strict\"]}}"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{\"type\":\"DNS_FIREWALL\",\"preProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-1\",\"priority\":10}],\"postProcessRuleGroups\":[{\"ruleGroupId\":\"rslvr-frg-2\",\"priority\":9911}]}"</code>
+        /// 
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Valid values for <code>preProcessRuleGroups</code> are between 1 and 99. Valid values
+        /// for <code>postProcessRuleGroups</code> are between 9901 and 10000.
+        /// </para>
+        ///  </note> </li> <li> 
+        /// <para>
         /// Example: <code>NETWORK_FIREWALL</code> - Centralized deployment model
         /// </para>
         ///  
@@ -258,19 +273,54 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Example: <code>WAFV2</code> 
+        /// Example: <code>WAFV2</code> - Account takeover prevention and Bot Control managed
+        /// rule groups, and rule action override 
         /// </para>
         ///  
         /// <para>
-        ///  <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAmazonIpReputationList\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[{\"name\":\"NoUserAgent_HEADER\"}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":{\"logDestinationConfigs\":[\"arn:aws:firehose:us-west-2:12345678912:deliverystream/aws-waf-logs-fms-admin-destination\"],\"redactedFields\":[{\"redactedFieldType\":\"SingleHeader\",\"redactedFieldValue\":\"Cookies\"},{\"redactedFieldType\":\"Method\"}]}}"</code>
+        ///  <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":null,\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesATPRuleSet\",\"managedRuleGroupConfigs\":[{\"awsmanagedRulesATPRuleSet\":{\"loginPath\":\"/loginpath\",\"requestInspection\":{\"payloadType\":\"FORM_ENCODED|JSON\",\"usernameField\":{\"identifier\":\"/form/username\"},\"passwordField\":{\"identifier\":\"/form/password\"}}}}]},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[],\"sampledRequestsEnabled\":true},{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":null,\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesBotControlRuleSet\",\"managedRuleGroupConfigs\":[{\"awsmanagedRulesBotControlRuleSet\":{\"inspectionLevel\":\"TARGETED|COMMON\"}}]},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[],\"sampledRequestsEnabled\":true,\"ruleActionOverrides\":[{\"name\":\"Rule1\",\"actionToUse\":{\"allow|block|count|captcha|challenge\":{}}},{\"name\":\"Rule2\",\"actionToUse\":{\"allow|block|count|captcha|challenge\":{}}}]}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"customRequestHandling\":null,\"customResponse\":null,\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":null,\"sampledRequestsEnabledForDefaultActions\":true}"</code>
+        /// 
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Fraud Control account takeover prevention (ATP) - For information about the properties
+        /// available for <code>AWSManagedRulesATPRuleSet</code> managed rule groups, see <a href="https://docs.aws.amazon.com/waf/latest/APIReference/API_AWSManagedRulesATPRuleSet.html">AWSManagedRulesATPRuleSet</a>
+        /// in the <i>WAF API Reference</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Bot Control - For information about <code>AWSManagedRulesBotControlRuleSet</code>
+        /// managed rule groups, see <a href="https://docs.aws.amazon.com/waf/latest/APIReference/API_AWSManagedRulesBotControlRuleSet.html">AWSManagedRulesBotControlRuleSet</a>
+        /// in the <i>WAF API Reference</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Rule action overrides - Firewall Manager supports rule action overrides only for managed
+        /// rule groups. To configure a <code>RuleActionOverrides</code> add the <code>Name</code>
+        /// of the rule to override, and <code>ActionToUse</code>, which is the new action to
+        /// use for the rule. For information about using rule action override, see <a href="https://docs.aws.amazon.com/waf/latest/APIReference/API_RuleActionOverride.html">RuleActionOverride</a>
+        /// in the <i>WAF API Reference</i>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// Example: <code>WAFV2</code> - <code>CAPTCHA</code> and <code>Challenge</code> configs
         /// 
         /// </para>
         ///  
         /// <para>
-        /// In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>,
-        /// you can optionally provide up to 20 <code>redactedFields</code>, and the <code>RedactedFieldType</code>
-        /// must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or
-        /// <code>METHOD</code>.
+        ///  <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null,\"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":{\"versionEnabled\":null,\"version\":null,\"vendorName\":\"AWS\",\"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\"},\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[],\"sampledRequestsEnabled\":true}],\"postProcessRuleGroups\":[],\"defaultAction\":{\"type\":\"ALLOW\"},\"customRequestHandling\":null,\"customResponse\":null,\"overrideCustomerWebACLAssociation\":false,\"loggingConfiguration\":null,\"sampledRequestsEnabledForDefaultActions\":true,\"captchaConfig\":{\"immunityTimeProperty\":{\"immunityTime\":500}},\"challengeConfig\":{\"immunityTimeProperty\":{\"immunityTime\":800}},\"tokenDomains\":[\"google.com\",\"amazon.com\"]}"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you update the policy's values for <code>captchaConfig</code>, <code>challengeConfig</code>,
+        /// or <code>tokenDomains</code>, Firewall Manager will overwrite your local web ACLs
+        /// to contain the new value(s). However, if you don't update the policy's <code>captchaConfig</code>,
+        /// <code>challengeConfig</code>, or <code>tokenDomains</code> values, the values in your
+        /// local web ACLs will remain unchanged. For information about CAPTCHA and Challenge
+        /// configs, see <a href="https://docs.aws.amazon.com/waf/latest/APIReference/API_CaptchaConfig.html">CaptchaConfig</a>
+        /// and <a href="https://docs.aws.amazon.com/waf/latest/APIReference/API_ChallengeConfig.html">ChallengeConfig</a>
+        /// in the <i>WAF API Reference</i>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -292,6 +342,36 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        /// Example: <code>WAFV2</code> - Logging configurations 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>"{\"type\":\"WAFV2\",\"preProcessRuleGroups\":[{\"ruleGroupArn\":null, \"overrideAction\":{\"type\":\"NONE\"},\"managedRuleGroupIdentifier\":
+        /// {\"versionEnabled\":null,\"version\":null,\"vendorName\":\"AWS\", \"managedRuleGroupName\":\"AWSManagedRulesAdminProtectionRuleSet\"}
+        /// ,\"ruleGroupType\":\"ManagedRuleGroup\",\"excludeRules\":[], \"sampledRequestsEnabled\":true}],\"postProcessRuleGroups\":[],
+        /// \"defaultAction\":{\"type\":\"ALLOW\"},\"customRequestHandling\" :null,\"customResponse\":null,\"overrideCustomerWebACLAssociation\"
+        /// :false,\"loggingConfiguration\":{\"logDestinationConfigs\": [\"arn:aws:s3:::aws-waf-logs-example-bucket\"]
+        /// ,\"redactedFields\":[],\"loggingFilterConfigs\":{\"defaultBehavior\":\"KEEP\", \"filters\":[{\"behavior\":\"KEEP\",\"requirement\":\"MEETS_ALL\",
+        /// \"conditions\":[{\"actionCondition\":\"CAPTCHA\"},{\"actionCondition\": \"CHALLENGE\"},
+        /// {\"actionCondition\":\"EXCLUDED_AS_COUNT\"}]}]}},\"sampledRequestsEnabledForDefaultActions\":true}"</code>
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// Firewall Manager supports Amazon Kinesis Data Firehose and Amazon S3 as the <code>logDestinationConfigs</code>
+        /// in your <code>loggingConfiguration</code>. For information about WAF logging configurations,
+        /// see <a href="https://docs.aws.amazon.com/waf/latest/APIReference/API_LoggingConfiguration.html">LoggingConfiguration</a>
+        /// in the <i>WAF API Reference</i> 
+        /// </para>
+        ///  
+        /// <para>
+        /// In the <code>loggingConfiguration</code>, you can specify one <code>logDestinationConfigs</code>.
+        /// Optionally provide as many as 20 <code>redactedFields</code>. The <code>RedactedFieldType</code>
+        /// must be one of <code>URI</code>, <code>QUERY_STRING</code>, <code>HEADER</code>, or
+        /// <code>METHOD</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         /// Example: <code>WAF Classic</code> 
         /// </para>
         ///  
@@ -302,7 +382,7 @@ namespace Amazon.FMS.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=1, Max=8192)]
+        [AWSProperty(Min=1, Max=10000)]
         public string ManagedServiceData
         {
             get { return this._managedServiceData; }

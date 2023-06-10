@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// The specified invitation is expired.
+    /// The operation failed because the specified invitation is past its expiration date
+    /// and time.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

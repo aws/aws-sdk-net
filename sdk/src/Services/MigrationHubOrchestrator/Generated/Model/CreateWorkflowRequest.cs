@@ -86,7 +86,7 @@ namespace Amazon.MigrationHubOrchestrator.Model
         /// The input parameters required to create a migration workflow.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Dictionary<string, StepInput> InputParameters
         {
             get { return this._inputParameters; }

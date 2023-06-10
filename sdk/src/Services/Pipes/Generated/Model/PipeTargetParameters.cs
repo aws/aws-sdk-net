@@ -145,7 +145,7 @@ namespace Amazon.Pipes.Model
         /// JavaScript Object Notation (JSON) Data Interchange Format</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=8192)]
+        [AWSProperty(Sensitive=true, Min=0, Max=8192)]
         public string InputTemplate
         {
             get { return this._inputTemplate; }

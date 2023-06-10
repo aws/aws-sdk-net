@@ -30,9 +30,18 @@ namespace Amazon.FMS.Model
 {
     /// <summary>
     /// Container for the parameters to the DisassociateAdminAccount operation.
-    /// Disassociates the account that has been set as the Firewall Manager administrator
-    /// account. To set a different account as the administrator account, you must submit
-    /// an <code>AssociateAdminAccount</code> request.
+    /// Disassociates an Firewall Manager administrator account. To set a different account
+    /// as an Firewall Manager administrator, submit a <a>PutAdminAccount</a> request. To
+    /// set an account as a default administrator account, you must submit an <a>AssociateAdminAccount</a>
+    /// request.
+    /// 
+    ///  
+    /// <para>
+    /// Disassociation of the default administrator account follows the first in, last out
+    /// principle. If you are the default administrator, all Firewall Manager administrators
+    /// within the organization must first disassociate their accounts before you can disassociate
+    /// your account.
+    /// </para>
     /// </summary>
     public partial class DisassociateAdminAccountRequest : AmazonFMSRequest
     {

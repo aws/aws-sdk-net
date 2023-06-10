@@ -122,6 +122,24 @@ namespace Amazon.DynamoDBv2.DataModel
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property, Inherited = true, AllowMultiple = false)]
     public sealed class DynamoDBVersionAttribute : DynamoDBRenamableAttribute
     {
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public DynamoDBVersionAttribute()
+            : base()
+        {
+        }
+
+        /// <summary>
+        /// Constructor that specifies an alternate attribute name
+        /// </summary>
+        /// <param name="attributeName">
+        /// Name of attribute to be associated with property or field.
+        /// </param>
+        public DynamoDBVersionAttribute(string attributeName)
+            : base(attributeName)
+        {
+        }
     }
 
 

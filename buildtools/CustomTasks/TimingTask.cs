@@ -1,14 +1,9 @@
-﻿using Microsoft.Build.Framework;
-using Microsoft.Build.Utilities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System;
 using System.Threading;
 
 namespace CustomTasks
 {
-    public class TimingTask : Task
+    public class TimingTask : BuildTaskBase
     {
         private readonly static TimeSpan SleepTime = TimeSpan.FromSeconds(30);
         private static bool ShouldInit = true;

@@ -118,7 +118,7 @@ namespace Amazon.FinSpaceData.Model
         /// The first name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public string FirstName
         {
             get { return this._firstName; }
@@ -137,7 +137,7 @@ namespace Amazon.FinSpaceData.Model
         /// The last name of the user.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public string LastName
         {
             get { return this._lastName; }

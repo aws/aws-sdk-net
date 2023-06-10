@@ -77,6 +77,12 @@ namespace Amazon.ChimeSDKMessaging.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Content);
                 }
 
+                if(publicRequest.IsSetContentType())
+                {
+                    context.Writer.WritePropertyName("ContentType");
+                    context.Writer.Write(publicRequest.ContentType);
+                }
+
                 if(publicRequest.IsSetMetadata())
                 {
                     context.Writer.WritePropertyName("Metadata");

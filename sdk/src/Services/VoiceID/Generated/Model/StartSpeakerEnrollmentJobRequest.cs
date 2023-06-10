@@ -45,8 +45,10 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The idempotency token for starting a new speaker enrollment Job. If not provided,
-        /// Amazon Web Services SDK populates this field.
+        /// A unique, case-sensitive identifier that you provide to ensure the idempotency of
+        /// the request. If not provided, the Amazon Web Services SDK populates this field. For
+        /// more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+        /// retries safe with idempotent APIs</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -150,7 +152,7 @@ namespace Amazon.VoiceID.Model
         /// A name for your speaker enrollment job.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string JobName
         {
             get { return this._jobName; }

@@ -29,7 +29,15 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
+    /// Origination routes define call distribution properties for your SIP hosts to receive
+    /// inbound calls using an Amazon Chime SDK Voice Connector. Limit: Ten origination routes
+    /// for each Voice Connector.
     /// 
+    ///  <note> 
+    /// <para>
+    /// The parameters listed below are not required, but you must use at least one.
+    /// </para>
+    ///  </note>
     /// </summary>
     public partial class OriginationRoute
     {
@@ -40,7 +48,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private int? _weight;
 
         /// <summary>
-        /// Gets and sets the property Host.
+        /// Gets and sets the property Host. 
+        /// <para>
+        /// The FQDN or IP address to contact for origination traffic.
+        /// </para>
         /// </summary>
         public string Host
         {
@@ -55,7 +66,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Port.
+        /// Gets and sets the property Port. 
+        /// <para>
+        /// The designated origination route port. Defaults to 5060.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
         public int Port
@@ -71,7 +85,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Priority.
+        /// Gets and sets the property Priority. 
+        /// <para>
+        /// The priority associated with the host, with 1 being the highest priority. Higher priority
+        /// hosts are attempted first.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int Priority
@@ -87,7 +105,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Protocol.
+        /// Gets and sets the property Protocol. 
+        /// <para>
+        /// The protocol to use for the origination route. Encryption-enabled Amazon Chime SDK
+        /// Voice Connectors use TCP protocol by default.
+        /// </para>
         /// </summary>
         public OriginationRouteProtocol Protocol
         {
@@ -102,7 +124,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Weight.
+        /// Gets and sets the property Weight. 
+        /// <para>
+        /// The weight assigned to an origination route. When hosts have equal priority, calls
+        /// are distributed between them based on their relative weights.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=100)]
         public int Weight

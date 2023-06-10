@@ -3,7 +3,6 @@ using ServiceClientGenerator.Endpoints.Tests;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Remoting.Messaging;
 using System.Text;
 
 namespace ServiceClientGenerator
@@ -300,7 +299,7 @@ namespace ServiceClientGenerator
         public Dictionary<string, List<Dependency>> NugetDependencies { get; set; }
         public List<string> Tags { get; set; }
         public bool NetStandardSupport { get; set; }
-
+        public bool GeneratedEventStreamException { get; set; }
         public string ServiceVersion
         {
             get

@@ -76,6 +76,14 @@ namespace Amazon.RAM.Model
         }
 
         /// <summary>
+        /// Paginator for ListPermissionAssociations operation
+        ///</summary>
+        public IListPermissionAssociationsPaginator ListPermissionAssociations(ListPermissionAssociationsRequest request) 
+        {
+            return new ListPermissionAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListPermissions operation
         ///</summary>
         public IListPermissionsPaginator ListPermissions(ListPermissionsRequest request) 
@@ -97,6 +105,14 @@ namespace Amazon.RAM.Model
         public IListPrincipalsPaginator ListPrincipals(ListPrincipalsRequest request) 
         {
             return new ListPrincipalsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListReplacePermissionAssociationsWork operation
+        ///</summary>
+        public IListReplacePermissionAssociationsWorkPaginator ListReplacePermissionAssociationsWork(ListReplacePermissionAssociationsWorkRequest request) 
+        {
+            return new ListReplacePermissionAssociationsWorkPaginator(this.client, request);
         }
 
         /// <summary>

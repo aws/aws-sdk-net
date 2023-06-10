@@ -41,7 +41,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property ExecutionRole. 
         /// <para>
-        /// The execution role for the space.
+        /// The ARN of the execution role for the space.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -90,7 +90,8 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property SecurityGroups. 
         /// <para>
-        /// The security groups for the Amazon Virtual Private Cloud that the space uses for communication.
+        /// The security group IDs for the Amazon Virtual Private Cloud that the space uses for
+        /// communication.
         /// </para>
         /// </summary>
         [AWSProperty(Max=5)]

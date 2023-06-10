@@ -36,10 +36,12 @@ namespace Amazon.Comprehend.Model
         private string _dataAccessRoleArn;
         private DateTime? _endTime;
         private string _entityRecognizerArn;
+        private string _flywheelArn;
         private EntityRecognizerInputDataConfig _inputDataConfig;
         private LanguageCode _languageCode;
         private string _message;
         private string _modelKmsKeyId;
+        private EntityRecognizerOutputDataConfig _outputDataConfig;
         private EntityRecognizerMetadata _recognizerMetadata;
         private string _sourceModelArn;
         private ModelStatus _status;
@@ -53,8 +55,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property DataAccessRoleArn. 
         /// <para>
-        ///  The Amazon Resource Name (ARN) of the AWS Identity and Management (IAM) role that
-        /// grants Amazon Comprehend read access to your input data.
+        ///  The Amazon Resource Name (ARN) of the IAM role that grants Amazon Comprehend read
+        /// access to your input data.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -105,6 +107,25 @@ namespace Amazon.Comprehend.Model
         internal bool IsSetEntityRecognizerArn()
         {
             return this._entityRecognizerArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FlywheelArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the flywheel
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string FlywheelArn
+        {
+            get { return this._flywheelArn; }
+            set { this._flywheelArn = value; }
+        }
+
+        // Check to see if FlywheelArn property is set
+        internal bool IsSetFlywheelArn()
+        {
+            return this._flywheelArn != null;
         }
 
         /// <summary>
@@ -165,8 +186,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property ModelKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// trained custom models. The ModelKmsKeyId can be either of the following formats: 
+        /// ID for the KMS key that Amazon Comprehend uses to encrypt trained custom models. The
+        /// ModelKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -193,11 +214,30 @@ namespace Amazon.Comprehend.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OutputDataConfig. 
+        /// <para>
+        /// Output data configuration.
+        /// </para>
+        /// </summary>
+        public EntityRecognizerOutputDataConfig OutputDataConfig
+        {
+            get { return this._outputDataConfig; }
+            set { this._outputDataConfig = value; }
+        }
+
+        // Check to see if OutputDataConfig property is set
+        internal bool IsSetOutputDataConfig()
+        {
+            return this._outputDataConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property RecognizerMetadata. 
         /// <para>
         ///  Provides information about an entity recognizer.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public EntityRecognizerMetadata RecognizerMetadata
         {
             get { return this._recognizerMetadata; }
@@ -214,7 +254,8 @@ namespace Amazon.Comprehend.Model
         /// Gets and sets the property SourceModelArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) of the source model. This model was imported from a
-        /// different AWS account to create the entity recognizer model in your AWS account.
+        /// different Amazon Web Services account to create the entity recognizer model in your
+        /// Amazon Web Services account.
         /// </para>
         /// </summary>
         [AWSProperty(Max=256)]
@@ -324,9 +365,9 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property VolumeKmsKeyId. 
         /// <para>
-        /// ID for the AWS Key Management Service (KMS) key that Amazon Comprehend uses to encrypt
-        /// data on the storage volume attached to the ML compute instance(s) that process the
-        /// analysis job. The VolumeKmsKeyId can be either of the following formats:
+        /// ID for the Amazon Web Services Key Management Service (KMS) key that Amazon Comprehend
+        /// uses to encrypt data on the storage volume attached to the ML compute instance(s)
+        /// that process the analysis job. The VolumeKmsKeyId can be either of the following formats:
         /// </para>
         ///  <ul> <li> 
         /// <para>

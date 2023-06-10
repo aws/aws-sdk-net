@@ -141,26 +141,20 @@ namespace Amazon.ACMPCA.Model
         /// <para>
         /// Default: FIPS_140_2_LEVEL_3_OR_HIGHER
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// Some Amazon Web Services Regions do not support the default. When creating a CA in
+        /// these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code> as the argument
+        /// for <code>KeyStorageSecurityStandard</code>. Failure to do this results in an <code>InvalidArgsException</code>
+        /// with the message, "A certificate authority cannot be created in this region with the
+        /// specified security standard."
+        /// </para>
         ///  
         /// <para>
-        ///  <i>Note:</i> <code>FIPS_140_2_LEVEL_3_OR_HIGHER</code> is not supported in the following
-        /// Regions:
+        /// For information about security standard support in various Regions, see <a href="https://docs.aws.amazon.com/privateca/latest/userguide/data-protection.html#private-keys">Storage
+        /// and security compliance of Amazon Web Services Private CA private keys</a>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// ap-northeast-3
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// ap-southeast-3
-        /// </para>
-        ///  </li> </ul> 
-        /// <para>
-        /// When creating a CA in these Regions, you must provide <code>FIPS_140_2_LEVEL_2_OR_HIGHER</code>
-        /// as the argument for <code>KeyStorageSecurityStandard</code>. Failure to do this results
-        /// in an <code>InvalidArgsException</code> with the message, "A certificate authority
-        /// cannot be created in this region with the specified security standard."
-        /// </para>
+        ///  </note>
         /// </summary>
         public KeyStorageSecurityStandard KeyStorageSecurityStandard
         {

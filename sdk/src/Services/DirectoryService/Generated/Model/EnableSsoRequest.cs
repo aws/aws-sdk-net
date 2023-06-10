@@ -66,7 +66,7 @@ namespace Amazon.DirectoryService.Model
         /// used for AD Connector directories. For more information, see the <i>UserName</i> parameter.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=128)]
+        [AWSProperty(Sensitive=true, Min=1, Max=128)]
         public string Password
         {
             get { return this._password; }

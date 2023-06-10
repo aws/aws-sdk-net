@@ -67,7 +67,7 @@ namespace Amazon.TimestreamQuery.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Min=32, Max=128)]
+        [AWSProperty(Sensitive=true, Min=32, Max=128)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -183,7 +183,7 @@ namespace Amazon.TimestreamQuery.Model
         /// 2021-12-01 00:00:00 when invoking the query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=262144)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=262144)]
         public string QueryString
         {
             get { return this._queryString; }

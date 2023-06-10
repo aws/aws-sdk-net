@@ -45,6 +45,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(ExecutionEngineConfig requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetExecutionRoleArn())
+            {
+                context.Writer.WritePropertyName("ExecutionRoleArn");
+                context.Writer.Write(requestObject.ExecutionRoleArn);
+            }
+
             if(requestObject.IsSetId())
             {
                 context.Writer.WritePropertyName("Id");

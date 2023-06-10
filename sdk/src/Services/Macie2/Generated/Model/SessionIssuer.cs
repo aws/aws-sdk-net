@@ -62,8 +62,8 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Arn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the source account, IAM user, or role that was used
-        /// to get the credentials.
+        /// The Amazon Resource Name (ARN) of the source account, Identity and Access Management
+        /// (IAM) user, or role that was used to get the credentials.
         /// </para>
         /// </summary>
         public string Arn

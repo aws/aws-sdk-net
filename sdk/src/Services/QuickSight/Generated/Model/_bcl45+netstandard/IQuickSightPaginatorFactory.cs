@@ -31,6 +31,16 @@ namespace Amazon.QuickSight.Model
         IListAnalysesPaginator ListAnalyses(ListAnalysesRequest request);
 
         /// <summary>
+        /// Paginator for ListAssetBundleExportJobs operation
+        ///</summary>
+        IListAssetBundleExportJobsPaginator ListAssetBundleExportJobs(ListAssetBundleExportJobsRequest request);
+
+        /// <summary>
+        /// Paginator for ListAssetBundleImportJobs operation
+        ///</summary>
+        IListAssetBundleImportJobsPaginator ListAssetBundleImportJobs(ListAssetBundleImportJobsRequest request);
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         IListDashboardsPaginator ListDashboards(ListDashboardsRequest request);
@@ -84,6 +94,16 @@ namespace Amazon.QuickSight.Model
         /// Paginator for ListThemeVersions operation
         ///</summary>
         IListThemeVersionsPaginator ListThemeVersions(ListThemeVersionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListTopics operation
+        ///</summary>
+        IListTopicsPaginator ListTopics(ListTopicsRequest request);
+
+        /// <summary>
+        /// Paginator for ListVPCConnections operation
+        ///</summary>
+        IListVPCConnectionsPaginator ListVPCConnections(ListVPCConnectionsRequest request);
 
         /// <summary>
         /// Paginator for SearchAnalyses operation

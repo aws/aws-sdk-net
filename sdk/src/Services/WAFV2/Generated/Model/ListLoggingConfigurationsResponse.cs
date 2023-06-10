@@ -37,7 +37,11 @@ namespace Amazon.WAFV2.Model
         private string _nextMarker;
 
         /// <summary>
-        /// Gets and sets the property LoggingConfigurations.
+        /// Gets and sets the property LoggingConfigurations. 
+        /// <para>
+        /// Array of logging configurations. If you specified a <code>Limit</code> in your request,
+        /// this might not be the full list. 
+        /// </para>
         /// </summary>
         public List<LoggingConfiguration> LoggingConfigurations
         {

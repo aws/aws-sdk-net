@@ -43,6 +43,7 @@ namespace Amazon.Imagebuilder.Model
         private string _distributionConfigurationArn;
         private bool? _enhancedImageMetadataEnabled;
         private string _imageRecipeArn;
+        private ImageScanningConfiguration _imageScanningConfiguration;
         private ImageTestsConfiguration _imageTestsConfiguration;
         private string _infrastructureConfigurationArn;
         private string _name;
@@ -200,7 +201,7 @@ namespace Amazon.Imagebuilder.Model
         /// <summary>
         /// Gets and sets the property EnhancedImageMetadataEnabled. 
         /// <para>
-        ///  Collects additional information about the image being created, including the operating
+        /// Collects additional information about the image being created, including the operating
         /// system (OS) version and package list. This information is used to enhance the overall
         /// experience of using EC2 Image Builder. Enabled by default.
         /// </para>
@@ -233,6 +234,24 @@ namespace Amazon.Imagebuilder.Model
         internal bool IsSetImageRecipeArn()
         {
             return this._imageRecipeArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImageScanningConfiguration. 
+        /// <para>
+        /// Contains settings for vulnerability scans.
+        /// </para>
+        /// </summary>
+        public ImageScanningConfiguration ImageScanningConfiguration
+        {
+            get { return this._imageScanningConfiguration; }
+            set { this._imageScanningConfiguration = value; }
+        }
+
+        // Check to see if ImageScanningConfiguration property is set
+        internal bool IsSetImageScanningConfiguration()
+        {
+            return this._imageScanningConfiguration != null;
         }
 
         /// <summary>

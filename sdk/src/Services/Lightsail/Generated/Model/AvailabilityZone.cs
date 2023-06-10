@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Lightsail.Model
 {
     /// <summary>
-    /// Describes an Availability Zone.
+    /// Describes an Availability Zone. This is returned only as part of a <code>GetRegions</code>
+    /// request.
     /// </summary>
     public partial class AvailabilityZone
     {

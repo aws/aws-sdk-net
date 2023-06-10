@@ -58,11 +58,10 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "DELETE";
 
-            
-            if (publicRequest.IsSetId())
-                request.Parameters.Add("id", StringUtils.FromString(publicRequest.Id));
-            request.ResourcePath = "/v1/subscribers";
-            request.UseQueryString = true;
+            if (!publicRequest.IsSetSubscriberId())
+                throw new AmazonSecurityLakeException("Request object does not have required field SubscriberId set");
+            request.AddPathResource("{subscriberId}", StringUtils.FromString(publicRequest.SubscriberId));
+            request.ResourcePath = "/v1/subscribers/{subscriberId}";
 
             return request;
         }

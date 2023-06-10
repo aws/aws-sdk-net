@@ -76,6 +76,12 @@ namespace Amazon.Personalize.Model.Internal.MarshallTransformations
                     unmarshalledObject.MinRecommendationRequestsPerSecond = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("trainingDataConfig", targetDepth))
+                {
+                    var unmarshaller = TrainingDataConfigUnmarshaller.Instance;
+                    unmarshalledObject.TrainingDataConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

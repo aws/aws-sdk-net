@@ -38,6 +38,7 @@ namespace Amazon.WorkSpacesWeb.Model
         private BrowserType _browserType;
         private DateTime? _creationDate;
         private string _displayName;
+        private string _ipAccessSettingsArn;
         private string _networkSettingsArn;
         private string _portalArn;
         private string _portalEndpoint;
@@ -142,7 +143,7 @@ namespace Amazon.WorkSpacesWeb.Model
         /// The name of the web portal.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Sensitive=true, Min=1, Max=64)]
         public string DisplayName
         {
             get { return this._displayName; }
@@ -153,6 +154,25 @@ namespace Amazon.WorkSpacesWeb.Model
         internal bool IsSetDisplayName()
         {
             return this._displayName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property IpAccessSettingsArn. 
+        /// <para>
+        /// The ARN of the IP access settings.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string IpAccessSettingsArn
+        {
+            get { return this._ipAccessSettingsArn; }
+            set { this._ipAccessSettingsArn = value; }
+        }
+
+        // Check to see if IpAccessSettingsArn property is set
+        internal bool IsSetIpAccessSettingsArn()
+        {
+            return this._ipAccessSettingsArn != null;
         }
 
         /// <summary>

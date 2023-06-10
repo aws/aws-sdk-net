@@ -39,7 +39,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property Priority. 
         /// <para>
-        /// The priority that a slot should be elicited.
+        /// The priority that Amazon Lex should apply to the slot.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

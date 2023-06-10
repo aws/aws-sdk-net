@@ -1595,6 +1595,163 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  ListExportErrors
+
+        internal virtual ListExportErrorsResponse ListExportErrors(ListExportErrorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportErrorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportErrorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List export errors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportErrors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExportErrors service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">REST API Reference for ListExportErrors Operation</seealso>
+        public virtual Task<ListExportErrorsResponse> ListExportErrorsAsync(ListExportErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportErrorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListExportErrorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListExports
+
+        internal virtual ListExportsResponse ListExports(ListExportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List exports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListExports service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        public virtual Task<ListExportsResponse> ListExportsAsync(ListExportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListExportsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListImportErrors
+
+        internal virtual ListImportErrorsResponse ListImportErrors(ListImportErrorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportErrorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportErrorsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List import errors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportErrors service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImportErrors service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors">REST API Reference for ListImportErrors Operation</seealso>
+        public virtual Task<ListImportErrorsResponse> ListImportErrorsAsync(ListImportErrorsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportErrorsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListImportErrorsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListImports
+
+        internal virtual ListImportsResponse ListImports(ListImportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// List imports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual Task<ListImportsResponse> ListImportsAsync(ListImportsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListImportsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ListSourceServerActions
 
         internal virtual ListSourceServerActionsResponse ListSourceServerActions(ListSourceServerActionsRequest request)
@@ -2076,6 +2233,99 @@ namespace Amazon.Mgn
             options.ResponseUnmarshaller = StartCutoverResponseUnmarshaller.Instance;
 
             return InvokeAsync<StartCutoverResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartExport
+
+        internal virtual StartExportResponse StartExport(StartExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportResponseUnmarshaller.Instance;
+
+            return Invoke<StartExportResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Start export.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartExport service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport">REST API Reference for StartExport Operation</seealso>
+        public virtual Task<StartExportResponse> StartExportAsync(StartExportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartExportResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartImport
+
+        internal virtual StartImportResponse StartImport(StartImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Start import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImport service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartImport service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual Task<StartImportResponse> StartImportAsync(StartImportRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return InvokeAsync<StartImportResponse>(request, options, cancellationToken);
         }
 
         #endregion

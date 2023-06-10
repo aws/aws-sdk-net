@@ -45,6 +45,7 @@ namespace Amazon.EBS.Model
         /// An array of objects containing information about the blocks.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public List<Block> Blocks
         {
             get { return this._blocks; }

@@ -88,10 +88,6 @@ namespace Amazon.ManagedBlockchain.Model
         /// <para>
         ///  <code>n-ethereum-rinkeby</code> 
         /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>n-ethereum-ropsten</code> 
-        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

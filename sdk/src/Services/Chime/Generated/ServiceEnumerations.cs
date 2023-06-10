@@ -2149,6 +2149,10 @@ namespace Amazon.Chime
         /// </summary>
         public static readonly TranscribeLanguageCode FrFR = new TranscribeLanguageCode("fr-FR");
         /// <summary>
+        /// Constant HiIN for TranscribeLanguageCode
+        /// </summary>
+        public static readonly TranscribeLanguageCode HiIN = new TranscribeLanguageCode("hi-IN");
+        /// <summary>
         /// Constant ItIT for TranscribeLanguageCode
         /// </summary>
         public static readonly TranscribeLanguageCode ItIT = new TranscribeLanguageCode("it-IT");
@@ -2164,6 +2168,10 @@ namespace Amazon.Chime
         /// Constant PtBR for TranscribeLanguageCode
         /// </summary>
         public static readonly TranscribeLanguageCode PtBR = new TranscribeLanguageCode("pt-BR");
+        /// <summary>
+        /// Constant ThTH for TranscribeLanguageCode
+        /// </summary>
+        public static readonly TranscribeLanguageCode ThTH = new TranscribeLanguageCode("th-TH");
         /// <summary>
         /// Constant ZhCN for TranscribeLanguageCode
         /// </summary>

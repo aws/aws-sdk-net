@@ -114,7 +114,7 @@ namespace Amazon.S3Control.Model
         ///  
         /// <para>
         /// If all Regions in the routing configuration are designated as passive, you'll receive
-        /// an <code>InvalidRequest</code> error. 
+        /// an <code>InvalidRequest</code> error.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=100)]

@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Options for OIDC-based, user-identity type trust provider.
+    /// Describes the options for an OpenID Connect-compatible user-identity trust provider.
     /// </summary>
     public partial class OidcOptions
     {
@@ -83,6 +83,7 @@ namespace Amazon.EC2.Model
         /// The client secret.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ClientSecret
         {
             get { return this._clientSecret; }

@@ -82,6 +82,17 @@ namespace Amazon.ResilienceHub.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetEksSourceNames())
+                {
+                    context.Writer.WritePropertyName("eksSourceNames");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestEksSourceNamesListValue in publicRequest.EksSourceNames)
+                    {
+                            context.Writer.Write(publicRequestEksSourceNamesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetLogicalStackNames())
                 {
                     context.Writer.WritePropertyName("logicalStackNames");

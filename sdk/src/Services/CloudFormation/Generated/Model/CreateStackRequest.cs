@@ -31,7 +31,8 @@ namespace Amazon.CloudFormation.Model
     /// <summary>
     /// Container for the parameters to the CreateStack operation.
     /// Creates a stack as specified in the template. After the call completes successfully,
-    /// the stack creation starts. You can check the status of the stack through the <a>DescribeStacks</a>operation.
+    /// the stack creation starts. You can check the status of the stack through the <a>DescribeStacks</a>
+    /// operation.
     /// </summary>
     public partial class CreateStackRequest : AmazonCloudFormationRequest
     {

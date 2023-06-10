@@ -31,10 +31,10 @@ namespace Amazon.Chime.Model
     /// <summary>
     /// Container for the parameters to the CreateMeeting operation.
     /// Creates a new Amazon Chime SDK meeting in the specified media Region with no initial
-    /// attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-    /// Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For more
-    /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using
-    /// the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> .
+    /// attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Amazon
+    /// Chime SDK Media Regions</a> in the <i>Amazon Chime SDK Developer Guide</i> . For more
+    /// information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+    /// the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i> .
     /// </summary>
     public partial class CreateMeetingRequest : AmazonChimeRequest
     {
@@ -52,7 +52,7 @@ namespace Amazon.Chime.Model
         /// meetings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -71,7 +71,7 @@ namespace Amazon.Chime.Model
         /// The external meeting ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ExternalMeetingId
         {
             get { return this._externalMeetingId; }
@@ -117,7 +117,7 @@ namespace Amazon.Chime.Model
         /// Reserved.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string MeetingHostId
         {
             get { return this._meetingHostId; }

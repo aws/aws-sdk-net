@@ -32,7 +32,7 @@ namespace Amazon.DynamoDBv2.DataModel
     {
         #region Versioning
 
-        private static void SetNewVersion(ItemStorage storage)
+        internal static void SetNewVersion(ItemStorage storage)
         {
             if (!storage.Config.HasVersion) return;
 
@@ -85,6 +85,33 @@ namespace Amazon.DynamoDBv2.DataModel
                 }
             }
             return document;
+        }
+
+        internal static Expression CreateConditionExpressionForVersion(ItemStorage storage, DynamoDBEntry.AttributeConversionConfig conversionConfig)
+        {
+            if (!storage.Config.HasVersion) return new Expression();
+
+            bool shouldExist = storage.CurrentVersion?.ConvertToExpectedAttributeValue(conversionConfig).Exists ?? false;
+            string variableName = Common.GetVariableName("version");
+            string attributeReference = Common.GetAttributeReference(variableName);
+            string versionAttributeName = storage.Config.VersionPropertyStorage.AttributeName;
+
+            if (!shouldExist)
+            {
+                return new Expression
+                {
+                    ExpressionStatement = $"attribute_not_exists({attributeReference})",
+                    ExpressionAttributeNames = { [attributeReference] = versionAttributeName }
+                };
+            }
+
+            string attributeValueReference = Common.GetAttributeValueReference(variableName);
+            return new Expression
+            {
+                ExpressionStatement = $"{attributeReference} = {attributeValueReference}",
+                ExpressionAttributeNames = { [attributeReference] = versionAttributeName },
+                ExpressionAttributeValues = { [attributeValueReference] = storage.CurrentVersion }
+            };
         }
 
         #endregion
@@ -262,6 +289,19 @@ namespace Amazon.DynamoDBv2.DataModel
             PopulateInstance(storage, instance, flatConfig);
             return instance;
         }
+
+        internal class ObjectWithItemStorage
+        {
+            public object OriginalObject { get; set; }
+
+            public ItemStorage ItemStorage { get; set; }
+
+            public void PopulateObject(DynamoDBContext context, DynamoDBFlatConfig flatConfig)
+            {
+                context.PopulateInstance(ItemStorage, OriginalObject, flatConfig);
+            }
+        }
+
         private void PopulateInstance(ItemStorage storage, object instance, DynamoDBFlatConfig flatConfig)
         {
             ItemStorageConfig config = storage.Config;
@@ -492,7 +532,7 @@ namespace Amazon.DynamoDBv2.DataModel
             return true;
         }
 
-        private DynamoDBEntry ToDynamoDBEntry(SimplePropertyStorage propertyStorage, object value, DynamoDBFlatConfig flatConfig)
+        internal DynamoDBEntry ToDynamoDBEntry(SimplePropertyStorage propertyStorage, object value, DynamoDBFlatConfig flatConfig)
         {
             return ToDynamoDBEntry(propertyStorage, value, flatConfig, canReturnScalarInsteadOfList: false);
         }

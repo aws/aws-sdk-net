@@ -34,8 +34,28 @@ namespace Amazon.IoTWireless.Model
     /// </summary>
     public partial class ListDeviceProfilesRequest : AmazonIoTWirelessRequest
     {
+        private DeviceProfileType _deviceProfileType;
         private int? _maxResults;
         private string _nextToken;
+
+        /// <summary>
+        /// Gets and sets the property DeviceProfileType. 
+        /// <para>
+        /// A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code>
+        /// or <code>Sidewalk</code>.
+        /// </para>
+        /// </summary>
+        public DeviceProfileType DeviceProfileType
+        {
+            get { return this._deviceProfileType; }
+            set { this._deviceProfileType = value; }
+        }
+
+        // Check to see if DeviceProfileType property is set
+        internal bool IsSetDeviceProfileType()
+        {
+            return this._deviceProfileType != null;
+        }
 
         /// <summary>
         /// Gets and sets the property MaxResults. 

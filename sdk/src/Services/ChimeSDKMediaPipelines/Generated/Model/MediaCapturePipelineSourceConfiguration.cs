@@ -62,7 +62,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The media pipeline ARN in the configuration object of a media capture pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string MediaPipelineArn
         {
             get { return this._mediaPipelineArn; }

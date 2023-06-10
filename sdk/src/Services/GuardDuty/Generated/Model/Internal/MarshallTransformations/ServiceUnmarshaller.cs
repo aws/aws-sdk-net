@@ -130,6 +130,12 @@ namespace Amazon.GuardDuty.Model.Internal.MarshallTransformations
                     unmarshalledObject.ResourceRole = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("runtimeDetails", targetDepth))
+                {
+                    var unmarshaller = RuntimeDetailsUnmarshaller.Instance;
+                    unmarshalledObject.RuntimeDetails = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("serviceName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

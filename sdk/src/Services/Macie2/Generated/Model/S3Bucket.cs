@@ -46,7 +46,7 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property AllowsUnencryptedObjectUploads. 
         /// <para>
         /// Specifies whether the bucket policy for the bucket requires server-side encryption
-        /// of objects when objects are uploaded to the bucket. Possible values are:
+        /// of objects when objects are added to the bucket. Possible values are:
         /// </para>
         ///  <ul><li>
         /// <para>
@@ -105,6 +105,9 @@ namespace Amazon.Macie2.Model
         /// Gets and sets the property CreatedAt. 
         /// <para>
         /// The date and time, in UTC and extended ISO 8601 format, when the bucket was created.
+        /// This value can also indicate when changes such as edits to the bucket's policy were
+        /// most recently made to the bucket, relative to when the finding was created or last
+        /// updated.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -122,8 +125,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property DefaultServerSideEncryption. 
         /// <para>
-        /// The type of server-side encryption that's used by default to encrypt objects in the
-        /// bucket.
+        /// The default server-side encryption settings for the bucket.
         /// </para>
         /// </summary>
         public ServerSideEncryption DefaultServerSideEncryption

@@ -40,7 +40,7 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property DomainId. 
         /// <para>
-        /// The identifier of the domain containing the speaker.
+        /// The identifier of the domain that contains the speaker.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=22, Max=22)]
@@ -62,7 +62,7 @@ namespace Amazon.VoiceID.Model
         /// The identifier of the speaker you want to delete.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string SpeakerId
         {
             get { return this._speakerId; }

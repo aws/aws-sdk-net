@@ -37,7 +37,7 @@ namespace Amazon.LexModelsV2.Model
     /// <para>
     /// To use a built-in intent as a the base for your own intent, include the built-in intent
     /// signature in the <code>parentIntentSignature</code> parameter when you call the <code>CreateIntent</code>
-    /// operation. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/API_CreateIntent.html">CreateIntent</a>.
+    /// operation. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateIntent.html">CreateIntent</a>.
     /// </para>
     /// </summary>
     public partial class ListBuiltInIntentsRequest : AmazonLexModelsV2Request

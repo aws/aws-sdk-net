@@ -199,6 +199,52 @@ namespace Amazon.CloudWatchLogs
 
 
     /// <summary>
+    /// Constants used for properties of type InheritedProperty.
+    /// </summary>
+    public class InheritedProperty : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ACCOUNT_DATA_PROTECTION for InheritedProperty
+        /// </summary>
+        public static readonly InheritedProperty ACCOUNT_DATA_PROTECTION = new InheritedProperty("ACCOUNT_DATA_PROTECTION");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InheritedProperty(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InheritedProperty FindValue(string value)
+        {
+            return FindValue<InheritedProperty>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InheritedProperty(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type OrderBy.
     /// </summary>
     public class OrderBy : ConstantClass
@@ -242,6 +288,52 @@ namespace Amazon.CloudWatchLogs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator OrderBy(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PolicyType.
+    /// </summary>
+    public class PolicyType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DATA_PROTECTION_POLICY for PolicyType
+        /// </summary>
+        public static readonly PolicyType DATA_PROTECTION_POLICY = new PolicyType("DATA_PROTECTION_POLICY");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PolicyType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PolicyType FindValue(string value)
+        {
+            return FindValue<PolicyType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PolicyType(string value)
         {
             return FindValue(value);
         }
@@ -312,6 +404,52 @@ namespace Amazon.CloudWatchLogs
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator QueryStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Scope.
+    /// </summary>
+    public class Scope : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant ALL for Scope
+        /// </summary>
+        public static readonly Scope ALL = new Scope("ALL");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Scope(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Scope FindValue(string value)
+        {
+            return FindValue<Scope>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Scope(string value)
         {
             return FindValue(value);
         }

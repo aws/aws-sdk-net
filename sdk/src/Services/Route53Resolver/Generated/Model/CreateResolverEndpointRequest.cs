@@ -51,6 +51,7 @@ namespace Amazon.Route53Resolver.Model
         private ResolverEndpointDirection _direction;
         private List<IpAddressRequest> _ipAddresses = new List<IpAddressRequest>();
         private string _name;
+        private ResolverEndpointType _resolverEndpointType;
         private List<string> _securityGroupIds = new List<string>();
         private List<Tag> _tags = new List<Tag>();
 
@@ -113,7 +114,7 @@ namespace Amazon.Route53Resolver.Model
         /// ID uniquely identifies a VPC. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public List<IpAddressRequest> IpAddresses
         {
             get { return this._ipAddresses; }
@@ -144,6 +145,26 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolverEndpointType. 
+        /// <para>
+        ///  For the endpoint type you can choose either IPv4, IPv6. or dual-stack. A dual-stack
+        /// endpoint means that it will resolve via both IPv4 and IPv6. This endpoint type is
+        /// applied to all IP addresses. 
+        /// </para>
+        /// </summary>
+        public ResolverEndpointType ResolverEndpointType
+        {
+            get { return this._resolverEndpointType; }
+            set { this._resolverEndpointType = value; }
+        }
+
+        // Check to see if ResolverEndpointType property is set
+        internal bool IsSetResolverEndpointType()
+        {
+            return this._resolverEndpointType != null;
         }
 
         /// <summary>

@@ -16,7 +16,7 @@ namespace ServiceClientGenerator.Generators.SourceFiles
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+    #line 1 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class EndpointsGenerator : EndpointsGeneratorBase
     {
@@ -47,14 +47,14 @@ namespace ServiceClientGenerator.Generators.SourceFiles
                     "1Regional = GetEndpoint(\"us-east-1-regional\", \"US East (Virginia) regional\");\r\n\r" +
                     "\n");
             
-            #line 38 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
- foreach(var endpoint in endpoints) { 
+            #line 37 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+ foreach (var endpoint in Endpoints) { 
             
             #line default
             #line hidden
             this.Write("        /// <summary>\r\n        /// The ");
             
-            #line 40 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            #line 39 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.RegionName));
             
             #line default
@@ -62,78 +62,39 @@ namespace ServiceClientGenerator.Generators.SourceFiles
             this.Write(" endpoint.\r\n        /// </summary>\r\n        public static readonly RegionEndpoint" +
                     " ");
             
-            #line 42 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            #line 41 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.Name));
             
             #line default
             #line hidden
             this.Write(" = GetEndpoint(\"");
             
-            #line 42 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            #line 41 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.RegionCode));
             
             #line default
             #line hidden
             this.Write("\", \"");
             
-            #line 42 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            #line 41 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(endpoint.RegionName));
             
             #line default
             #line hidden
             this.Write("\");\r\n\r\n");
             
-            #line 44 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+            #line 43 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
  } 
             
             #line default
             #line hidden
-            this.Write("    }\r\n}\r\n");
+            this.Write("    }\r\n}\r\n\r\n");
             return this.GenerationEnvironment.ToString();
         }
         
-        #line 1 "C:\projects\aws\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
+        #line 47 "C:\Projects\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\SourceFiles\EndpointsGenerator.tt"
 
-private global::System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant> _endpointsField;
-
-/// <summary>
-/// Access the endpoints parameter of the template.
-/// </summary>
-private global::System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant> endpoints
-{
-    get
-    {
-        return this._endpointsField;
-    }
-}
-
-
-/// <summary>
-/// Initialize the template
-/// </summary>
-public virtual void Initialize()
-{
-    if ((this.Errors.HasErrors == false))
-    {
-bool endpointsValueAcquired = false;
-if (this.Session.ContainsKey("endpoints"))
-{
-    this._endpointsField = ((global::System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant>)(this.Session["endpoints"]));
-    endpointsValueAcquired = true;
-}
-if ((endpointsValueAcquired == false))
-{
-    object data = global::System.Runtime.Remoting.Messaging.CallContext.LogicalGetData("endpoints");
-    if ((data != null))
-    {
-        this._endpointsField = ((global::System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant>)(data));
-    }
-}
-
-
-    }
-}
-
+public System.Collections.Generic.List<ServiceClientGenerator.EndpointConstant> Endpoints { get; set; }
 
         
         #line default

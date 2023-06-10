@@ -39,9 +39,9 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property AcmPcaArn. 
         /// <para>
-        /// The root certificate of the Certificate Manager Private Certificate Authority specified
-        /// by this ARN is used in trust validation for <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-        /// operations. Included for trust anchors of type <code>AWS_ACM_PCA</code>. 
+        ///  The root certificate of the Private Certificate Authority specified by this ARN is
+        /// used in trust validation for temporary credential requests. Included for trust anchors
+        /// of type <code>AWS_ACM_PCA</code>. 
         /// </para>
         /// </summary>
         public string AcmPcaArn
@@ -63,6 +63,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <code>CERTIFICATE_BUNDLE</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Min=1, Max=8000)]
         public string X509CertificateData
         {
             get { return this._x509CertificateData; }

@@ -4126,6 +4126,191 @@ namespace Amazon.Pinpoint
 
         #endregion
         
+        #region  GetJourneyRunExecutionActivityMetrics
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard run execution metric that applies
+        /// to a journey activity.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRunExecutionActivityMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyRunExecutionActivityMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics">REST API Reference for GetJourneyRunExecutionActivityMetrics Operation</seealso>
+        GetJourneyRunExecutionActivityMetricsResponse GetJourneyRunExecutionActivityMetrics(GetJourneyRunExecutionActivityMetricsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJourneyRunExecutionActivityMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRunExecutionActivityMetrics operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyRunExecutionActivityMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics">REST API Reference for GetJourneyRunExecutionActivityMetrics Operation</seealso>
+        IAsyncResult BeginGetJourneyRunExecutionActivityMetrics(GetJourneyRunExecutionActivityMetricsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJourneyRunExecutionActivityMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyRunExecutionActivityMetrics.</param>
+        /// 
+        /// <returns>Returns a  GetJourneyRunExecutionActivityMetricsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics">REST API Reference for GetJourneyRunExecutionActivityMetrics Operation</seealso>
+        GetJourneyRunExecutionActivityMetricsResponse EndGetJourneyRunExecutionActivityMetrics(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetJourneyRunExecutionMetrics
+
+
+        /// <summary>
+        /// Retrieves (queries) pre-aggregated data for a standard run execution metric that applies
+        /// to a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRunExecutionMetrics service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyRunExecutionMetrics service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics">REST API Reference for GetJourneyRunExecutionMetrics Operation</seealso>
+        GetJourneyRunExecutionMetricsResponse GetJourneyRunExecutionMetrics(GetJourneyRunExecutionMetricsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJourneyRunExecutionMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRunExecutionMetrics operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyRunExecutionMetrics
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics">REST API Reference for GetJourneyRunExecutionMetrics Operation</seealso>
+        IAsyncResult BeginGetJourneyRunExecutionMetrics(GetJourneyRunExecutionMetricsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJourneyRunExecutionMetrics operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyRunExecutionMetrics.</param>
+        /// 
+        /// <returns>Returns a  GetJourneyRunExecutionMetricsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics">REST API Reference for GetJourneyRunExecutionMetrics Operation</seealso>
+        GetJourneyRunExecutionMetricsResponse EndGetJourneyRunExecutionMetrics(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  GetJourneyRuns
+
+
+        /// <summary>
+        /// Provides information about the runs of a journey.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRuns service method.</param>
+        /// 
+        /// <returns>The response from the GetJourneyRuns service method, as returned by Pinpoint.</returns>
+        /// <exception cref="Amazon.Pinpoint.Model.BadRequestException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.ForbiddenException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.InternalServerErrorException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.MethodNotAllowedException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.NotFoundException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.PayloadTooLargeException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <exception cref="Amazon.Pinpoint.Model.TooManyRequestsException">
+        /// Provides information about an API request or response.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns">REST API Reference for GetJourneyRuns Operation</seealso>
+        GetJourneyRunsResponse GetJourneyRuns(GetJourneyRunsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetJourneyRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetJourneyRuns operation on AmazonPinpointClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetJourneyRuns
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns">REST API Reference for GetJourneyRuns Operation</seealso>
+        IAsyncResult BeginGetJourneyRuns(GetJourneyRunsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetJourneyRuns operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetJourneyRuns.</param>
+        /// 
+        /// <returns>Returns a  GetJourneyRunsResult from Pinpoint.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns">REST API Reference for GetJourneyRuns Operation</seealso>
+        GetJourneyRunsResponse EndGetJourneyRuns(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  GetPushTemplate
 
 

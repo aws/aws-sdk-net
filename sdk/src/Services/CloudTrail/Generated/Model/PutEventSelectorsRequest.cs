@@ -32,8 +32,12 @@ namespace Amazon.CloudTrail.Model
     /// Container for the parameters to the PutEventSelectors operation.
     /// Configures an event selector or advanced event selectors for your trail. Use event
     /// selectors or advanced event selectors to specify management and data event settings
-    /// for your trail. By default, trails created without specific event selectors are configured
-    /// to log all read and write management events, and no data events.
+    /// for your trail. If you want your trail to log Insights events, be sure the event selector
+    /// enables logging of the Insights event types you want configured for your trail. For
+    /// more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+    /// Insights events for trails</a> in the <i>CloudTrail User Guide</i>. By default, trails
+    /// created without specific event selectors are configured to log all read and write
+    /// management events, and no data events.
     /// 
     ///  
     /// <para>
@@ -71,7 +75,7 @@ namespace Amazon.CloudTrail.Model
     /// </para>
     ///  </li> </ol> 
     /// <para>
-    /// The <code>PutEventSelectors</code> operation must be called from the region in which
+    /// The <code>PutEventSelectors</code> operation must be called from the Region in which
     /// the trail was created; otherwise, an <code>InvalidHomeRegionException</code> exception
     /// is thrown.
     /// </para>
@@ -79,8 +83,8 @@ namespace Amazon.CloudTrail.Model
     /// <para>
     /// You can configure up to five event selectors for each trail. For more information,
     /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-    /// management events for trails </a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails </a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
+    /// management events</a>, <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
+    /// data events</a>, and <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
     /// in CloudTrail</a> in the <i>CloudTrail User Guide</i>.
     /// </para>
     ///  
@@ -91,7 +95,7 @@ namespace Amazon.CloudTrail.Model
     /// not both. If you apply <code>AdvancedEventSelectors</code> to a trail, any existing
     /// <code>EventSelectors</code> are overwritten. For more information about advanced event
     /// selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-    /// data events for trails</a> in the <i>CloudTrail User Guide</i>.
+    /// data events</a> in the <i>CloudTrail User Guide</i>.
     /// </para>
     /// </summary>
     public partial class PutEventSelectorsRequest : AmazonCloudTrailRequest
@@ -109,7 +113,7 @@ namespace Amazon.CloudTrail.Model
         /// or <code>EventSelectors</code>, but not both. If you apply <code>AdvancedEventSelectors</code>
         /// to a trail, any existing <code>EventSelectors</code> are overwritten. For more information
         /// about advanced event selectors, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-        /// data events for trails</a> in the <i>CloudTrail User Guide</i>. 
+        /// data events</a> in the <i>CloudTrail User Guide</i>. 
         /// </para>
         /// </summary>
         public List<AdvancedEventSelector> AdvancedEventSelectors

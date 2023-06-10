@@ -33,8 +33,28 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class ExchangeCodeForTokenRequestBody
     {
+        private string _clientId;
         private string _code;
         private string _redirectUri;
+
+        /// <summary>
+        /// Gets and sets the property ClientId. 
+        /// <para>
+        /// The ID of the client to request the token from.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true)]
+        public string ClientId
+        {
+            get { return this._clientId; }
+            set { this._clientId = value; }
+        }
+
+        // Check to see if ClientId property is set
+        internal bool IsSetClientId()
+        {
+            return this._clientId != null;
+        }
 
         /// <summary>
         /// Gets and sets the property Code. 
@@ -42,7 +62,7 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// The access code to send in the request.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string Code
         {
             get { return this._code; }

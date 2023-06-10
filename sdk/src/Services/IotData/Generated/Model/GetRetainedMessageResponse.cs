@@ -37,6 +37,7 @@ namespace Amazon.IotData.Model
         private MemoryStream _payload;
         private int? _qos;
         private string _topic;
+        private MemoryStream _userProperties;
 
         /// <summary>
         /// Gets and sets the property LastModifiedTime. 
@@ -110,6 +111,34 @@ namespace Amazon.IotData.Model
         internal bool IsSetTopic()
         {
             return this._topic != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserProperties. 
+        /// <para>
+        /// A base64-encoded JSON string that includes an array of JSON objects, or null if the
+        /// retained message doesn't include any user properties.
+        /// </para>
+        ///  
+        /// <para>
+        /// The following example <code>userProperties</code> parameter is a JSON string that
+        /// represents two user properties. Note that it will be base64-encoded:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> 
+        /// </para>
+        /// </summary>
+        public MemoryStream UserProperties
+        {
+            get { return this._userProperties; }
+            set { this._userProperties = value; }
+        }
+
+        // Check to see if UserProperties property is set
+        internal bool IsSetUserProperties()
+        {
+            return this._userProperties != null;
         }
 
     }

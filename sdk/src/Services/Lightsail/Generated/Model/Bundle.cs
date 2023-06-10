@@ -43,6 +43,7 @@ namespace Amazon.Lightsail.Model
         private int? _power;
         private float? _price;
         private float? _ramSizeInGb;
+        private List<string> _supportedAppCategories = new List<string>();
         private List<string> _supportedPlatforms = new List<string>();
         private int? _transferPerMonthInGb;
 
@@ -210,6 +211,29 @@ namespace Amazon.Lightsail.Model
         internal bool IsSetRamSizeInGb()
         {
             return this._ramSizeInGb.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupportedAppCategories. 
+        /// <para>
+        /// Virtual computer blueprints that are supported by a Lightsail for Research bundle.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// This parameter only applies to Lightsail for Research resources.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public List<string> SupportedAppCategories
+        {
+            get { return this._supportedAppCategories; }
+            set { this._supportedAppCategories = value; }
+        }
+
+        // Check to see if SupportedAppCategories property is set
+        internal bool IsSetSupportedAppCategories()
+        {
+            return this._supportedAppCategories != null && this._supportedAppCategories.Count > 0; 
         }
 
         /// <summary>

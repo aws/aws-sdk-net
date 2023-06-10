@@ -45,7 +45,7 @@ namespace Amazon.ResilienceHub.Model
         /// <summary>
         /// Gets and sets the property AppComponentName. 
         /// <para>
-        /// The application component name.
+        /// The name of the Application Component.
         /// </para>
         /// </summary>
         public string AppComponentName

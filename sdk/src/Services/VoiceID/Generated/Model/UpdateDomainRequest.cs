@@ -44,10 +44,10 @@ namespace Amazon.VoiceID.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A brief description of the domain.
+        /// A brief description about this domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1024)]
         public string Description
         {
             get { return this._description; }
@@ -85,7 +85,7 @@ namespace Amazon.VoiceID.Model
         /// The name of the domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

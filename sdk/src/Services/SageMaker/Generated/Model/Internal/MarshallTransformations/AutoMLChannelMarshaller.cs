@@ -74,6 +74,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetSampleWeightAttributeName())
+            {
+                context.Writer.WritePropertyName("SampleWeightAttributeName");
+                context.Writer.Write(requestObject.SampleWeightAttributeName);
+            }
+
             if(requestObject.IsSetTargetAttributeName())
             {
                 context.Writer.WritePropertyName("TargetAttributeName");

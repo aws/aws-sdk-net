@@ -248,6 +248,7 @@ namespace AWSSDK.UnitTests.Runtime
             // Valid token with all fields
             yield return new object[] {new TestCase
             {
+                TestName = "Valid Token with all fields",
                 CurrentTime = DateTime.Parse("2021-12-25T13:30:00Z"),
                 CachedToken = @"
                 {
@@ -270,6 +271,7 @@ namespace AWSSDK.UnitTests.Runtime
             // Minimal valid cached token
             yield return new object[] {new TestCase
             {
+                TestName = "Minimal valid cached token",
                 CurrentTime = DateTime.Parse("2021-12-25T13:30:00Z"),
                 CachedToken = @"{
                 ""accessToken"": ""cachedtoken"",
@@ -285,6 +287,7 @@ namespace AWSSDK.UnitTests.Runtime
             // Minimal expired cached token
             yield return new object[] {new TestCase
             {
+                TestName = "Minimal expired cached token",
                 CurrentTime = DateTime.Parse("2021-12-25T13:30:00Z"),
                 CachedToken = @"{
                     ""accessToken"": ""cachedtoken"",
@@ -300,6 +303,7 @@ namespace AWSSDK.UnitTests.Runtime
             // Token missing the expiresAt fields
             yield return new object[] {new TestCase
             {
+                TestName = "Token missing the expiresAt fields",
                 CurrentTime = DateTime.Parse("2021-12-25T13:30:00Z"),
                 CachedToken = @"{
                     ""accessToken"": ""cachedtoken""
@@ -314,6 +318,7 @@ namespace AWSSDK.UnitTests.Runtime
             // Token missing the accessToken field
             yield return new object[] {new TestCase
             {
+                TestName = "Token missing the accessToken field",
                 CurrentTime = DateTime.Parse("2021-12-25T13:30:00Z"),
                 CachedToken = @"{
                     ""expiresAt"": ""2021-12-25T13:00:00Z""
@@ -328,6 +333,7 @@ namespace AWSSDK.UnitTests.Runtime
             // Expired token refresh with refresh token
             yield return new object[] {new TestCase
             {
+                TestName = " Expired token refresh with refresh token",
                 CurrentTime = DateTime.Parse("2021-12-25T13:30:00Z"),
                 CachedToken = @"
                 {
@@ -378,6 +384,7 @@ namespace AWSSDK.UnitTests.Runtime
             // Expired token refresh without new refresh token
             yield return new object[] {new TestCase
             {
+                TestName = "Expired token refresh without new refresh token",
                 CurrentTime = DateTime.Parse("2021-12-25T13:30:00Z"),
                 CachedToken = @"
                 {
@@ -426,6 +433,7 @@ namespace AWSSDK.UnitTests.Runtime
             // Expired token and expired client registration
             yield return new object[] {new TestCase
             {
+                TestName = "Expired token and expired client registration",
                 CurrentTime = DateTime.Parse("2021-12-25T13:30:00Z"),
                 CachedToken = @"
                 {
@@ -448,6 +456,7 @@ namespace AWSSDK.UnitTests.Runtime
 
         public class TestCase
         {
+            public string TestName  { get; set; }
             public DateTime CurrentTime { get; set; } = DateTime.UtcNow;
             public string CachedToken { get; set; }
             public TestCaseMockRefreshDetails MockSSOOIDCCLientRefreshDetails { get; set; }

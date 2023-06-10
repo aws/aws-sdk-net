@@ -42,6 +42,8 @@ namespace Amazon.SecurityHub.Model
     {
         private List<StringFilter> _awsAccountId = new List<StringFilter>();
         private List<StringFilter> _companyName = new List<StringFilter>();
+        private List<StringFilter> _complianceAssociatedStandardsId = new List<StringFilter>();
+        private List<StringFilter> _complianceSecurityControlId = new List<StringFilter>();
         private List<StringFilter> _complianceStatus = new List<StringFilter>();
         private List<NumberFilter> _confidence = new List<NumberFilter>();
         private List<DateFilter> _createdAt = new List<DateFilter>();
@@ -174,6 +176,46 @@ namespace Amazon.SecurityHub.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ComplianceAssociatedStandardsId. 
+        /// <para>
+        ///  The unique identifier of a standard in which a control is enabled. This field consists
+        /// of the resource portion of the Amazon Resource Name (ARN) returned for a standard
+        /// in the <a href="https://docs.aws.amazon.com/securityhub/1.0/APIReference/API_DescribeStandards.html">DescribeStandards</a>
+        /// API response. 
+        /// </para>
+        /// </summary>
+        public List<StringFilter> ComplianceAssociatedStandardsId
+        {
+            get { return this._complianceAssociatedStandardsId; }
+            set { this._complianceAssociatedStandardsId = value; }
+        }
+
+        // Check to see if ComplianceAssociatedStandardsId property is set
+        internal bool IsSetComplianceAssociatedStandardsId()
+        {
+            return this._complianceAssociatedStandardsId != null && this._complianceAssociatedStandardsId.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ComplianceSecurityControlId. 
+        /// <para>
+        ///  The unique identifier of a control across standards. Values for this field typically
+        /// consist of an Amazon Web Service and a number, such as APIGateway.5. 
+        /// </para>
+        /// </summary>
+        public List<StringFilter> ComplianceSecurityControlId
+        {
+            get { return this._complianceSecurityControlId; }
+            set { this._complianceSecurityControlId = value; }
+        }
+
+        // Check to see if ComplianceSecurityControlId property is set
+        internal bool IsSetComplianceSecurityControlId()
+        {
+            return this._complianceSecurityControlId != null && this._complianceSecurityControlId.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property ComplianceStatus. 
         /// <para>
         /// Exclusive to findings that are generated as the result of a check run against a specific
@@ -220,8 +262,15 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// An ISO8601-formatted timestamp that indicates when the security findings provider
         /// captured the potential security issue that a finding captured.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> CreatedAt
@@ -426,8 +475,15 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property FirstObservedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// An ISO8601-formatted timestamp that indicates when the security findings provider
         /// first observed the potential security issue that a finding captured.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> FirstObservedAt
@@ -446,7 +502,7 @@ namespace Amazon.SecurityHub.Model
         /// Gets and sets the property GeneratorId. 
         /// <para>
         /// The identifier for the solution-specific component (a discrete unit of logic) that
-        /// generated a finding. In various security-findings providers' solutions, this generator
+        /// generated a finding. In various security findings providers' solutions, this generator
         /// can be called a rule, a check, a detector, a plugin, etc.
         /// </para>
         /// </summary>
@@ -502,8 +558,15 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property LastObservedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// An ISO8601-formatted timestamp that indicates when the security findings provider
         /// most recently observed the potential security issue that a finding captured.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> LastObservedAt
@@ -846,7 +909,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProcessLaunchedAt. 
         /// <para>
-        /// The date/time that the process was launched.
+        /// A timestamp that identifies when the process was launched.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> ProcessLaunchedAt
@@ -882,7 +952,8 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProcessParentPid. 
         /// <para>
-        /// The parent process ID.
+        /// The parent process ID. This field accepts positive integers between <code>O</code>
+        /// and <code>2147483647</code>.
         /// </para>
         /// </summary>
         public List<NumberFilter> ProcessParentPid
@@ -936,7 +1007,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProcessTerminatedAt. 
         /// <para>
-        /// The date/time that the process was terminated.
+        /// A timestamp that identifies when the process was terminated.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> ProcessTerminatedAt
@@ -974,7 +1052,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ProductFields. 
         /// <para>
-        /// A data type where security-findings providers can include additional solution-specific
+        /// A data type where security findings providers can include additional solution-specific
         /// details that aren't part of the defined <code>AwsSecurityFinding</code> format.
         /// </para>
         /// </summary>
@@ -1426,7 +1504,14 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ResourceContainerLaunchedAt. 
         /// <para>
-        /// The date/time that the container was started.
+        /// A timestamp that identifies when the container was started.
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> ResourceContainerLaunchedAt
@@ -1627,7 +1712,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SeverityProduct. 
         /// <para>
-        /// The native severity as defined by the security-findings provider's solution that generated
+        /// The native severity as defined by the security findings provider's solution that generated
         /// the finding.
         /// </para>
         /// </summary>
@@ -1647,7 +1732,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property SourceUrl. 
         /// <para>
-        /// A URL that links to a page about the current finding in the security-findings provider's
+        /// A URL that links to a page about the current finding in the security findings provider's
         /// solution.
         /// </para>
         /// </summary>
@@ -1684,7 +1769,7 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property ThreatIntelIndicatorLastObservedAt. 
         /// <para>
-        /// The date/time of the last observation of a threat intelligence indicator.
+        /// A timestamp that identifies the last observation of a threat intelligence indicator.
         /// </para>
         /// </summary>
         public List<DateFilter> ThreatIntelIndicatorLastObservedAt
@@ -1811,8 +1896,15 @@ namespace Amazon.SecurityHub.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// An ISO8601-formatted timestamp that indicates when the security-findings provider
+        /// An ISO8601-formatted timestamp that indicates when the security findings provider
         /// last updated the finding record. 
+        /// </para>
+        ///  
+        /// <para>
+        /// A correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
+        /// cannot contain spaces, and date and time should be separated by <code>T</code>. For
+        /// more information, see <a href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC
+        /// 3339 section 5.6, Internet Date/Time Format</a>.
         /// </para>
         /// </summary>
         public List<DateFilter> UpdatedAt

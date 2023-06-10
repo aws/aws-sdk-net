@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SimSpaceWeaver.Model
 {
     /// <summary>
-    /// A collection of metadata about an app.
+    /// A collection of metadata about the app.
     /// </summary>
     public partial class SimulationAppMetadata
     {
@@ -42,8 +42,8 @@ namespace Amazon.SimSpaceWeaver.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// The domain of the app. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-        /// concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.
+        /// The domain of the app. For more information about domains, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+        /// concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=64)]
@@ -65,7 +65,7 @@ namespace Amazon.SimSpaceWeaver.Model
         /// The name of the app.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=64)]
+        [AWSProperty(Min=1, Max=256)]
         public string Name
         {
             get { return this._name; }

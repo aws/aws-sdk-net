@@ -159,6 +159,18 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.ExplanationCode = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("firewallStatefulRule", targetDepth))
+                    {
+                        var unmarshaller = FirewallStatefulRuleUnmarshaller.Instance;
+                        unmarshalledObject.FirewallStatefulRule = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("firewallStatelessRule", targetDepth))
+                    {
+                        var unmarshaller = FirewallStatelessRuleUnmarshaller.Instance;
+                        unmarshalledObject.FirewallStatelessRule = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ingressRouteTable", targetDepth))
                     {
                         var unmarshaller = AnalysisComponentUnmarshaller.Instance;

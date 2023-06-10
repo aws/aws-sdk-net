@@ -1,13 +1,12 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace TestCases
 {
-    [TestClass]
     public class MismatchTest
     {
 
-        [DataTestMethod]
+        [Test]
         public void SignatureMismatch()
         {
             throw new Exception("The request signature we calculated does not match the signature you provided.");

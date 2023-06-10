@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.LexModelsV2.Model
 {
     /// <summary>
-    /// Provides configuration information for the AMAZON.KendraSearchIntent intent. When
-    /// you use this intent, Amazon Lex searches the specified Amazon Kendra index and returns
-    /// documents from the index that match the user's utterance.
+    /// Provides configuration information for the <code>AMAZON.KendraSearchIntent</code>
+    /// intent. When you use this intent, Amazon Lex searches the specified Amazon Kendra
+    /// index and returns documents from the index that match the user's utterance.
     /// </summary>
     public partial class KendraConfiguration
     {
@@ -42,7 +42,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property KendraIndex. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the AMAZON.KendraSearchIntent
+        /// The Amazon Resource Name (ARN) of the Amazon Kendra index that you want the <code>AMAZON.KendraSearchIntent</code>
         /// intent to search. The index must be in the same account and Region as the Amazon Lex
         /// bot.
         /// </para>
@@ -85,8 +85,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property QueryFilterStringEnabled. 
         /// <para>
-        /// Determines whether the AMAZON.KendraSearchIntent intent uses a custom query string
-        /// to query the Amazon Kendra index.
+        /// Determines whether the <code>AMAZON.KendraSearchIntent</code> intent uses a custom
+        /// query string to query the Amazon Kendra index.
         /// </para>
         /// </summary>
         public bool QueryFilterStringEnabled

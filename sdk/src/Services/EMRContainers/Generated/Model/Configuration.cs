@@ -85,7 +85,7 @@ namespace Amazon.EMRContainers.Model
         /// A set of properties specified within a configuration classification.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=100)]
+        [AWSProperty(Sensitive=true, Max=100)]
         public Dictionary<string, string> Properties
         {
             get { return this._properties; }

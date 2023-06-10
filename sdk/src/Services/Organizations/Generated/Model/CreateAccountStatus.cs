@@ -74,7 +74,7 @@ namespace Amazon.Organizations.Model
         /// The account name given to the account when it was created.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public string AccountName
         {
             get { return this._accountName; }

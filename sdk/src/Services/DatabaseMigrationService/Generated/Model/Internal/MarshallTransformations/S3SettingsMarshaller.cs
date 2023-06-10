@@ -207,6 +207,12 @@ namespace Amazon.DatabaseMigrationService.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.ExternalTableDefinition);
             }
 
+            if(requestObject.IsSetGlueCatalogGeneration())
+            {
+                context.Writer.WritePropertyName("GlueCatalogGeneration");
+                context.Writer.Write(requestObject.GlueCatalogGeneration);
+            }
+
             if(requestObject.IsSetIgnoreHeaderRows())
             {
                 context.Writer.WritePropertyName("IgnoreHeaderRows");

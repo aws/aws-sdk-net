@@ -100,6 +100,12 @@ namespace Amazon.TimestreamWrite.Model.Internal.MarshallTransformations
                     unmarshalledObject.RetentionProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Schema", targetDepth))
+                {
+                    var unmarshaller = SchemaUnmarshaller.Instance;
+                    unmarshalledObject.Schema = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TableName", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

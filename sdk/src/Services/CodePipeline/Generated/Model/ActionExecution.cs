@@ -72,7 +72,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ErrorDetails. 
         /// <para>
-        /// The details of an error returned by a URL external to AWS.
+        /// The details of an error returned by a URL external to Amazon Web Services.
         /// </para>
         /// </summary>
         public ErrorDetails ErrorDetails
@@ -109,8 +109,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property ExternalExecutionUrl. 
         /// <para>
-        /// The URL of a resource external to AWS that is used when running the action (for example,
-        /// an external repository URL).
+        /// The URL of a resource external to Amazon Web Services that is used when running the
+        /// action (for example, an external repository URL).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

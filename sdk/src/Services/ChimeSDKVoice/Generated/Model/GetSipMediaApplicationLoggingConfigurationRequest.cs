@@ -30,14 +30,17 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the GetSipMediaApplicationLoggingConfiguration operation.
-    /// 
+    /// Retrieves the logging configuration for the specified SIP media application.
     /// </summary>
     public partial class GetSipMediaApplicationLoggingConfigurationRequest : AmazonChimeSDKVoiceRequest
     {
         private string _sipMediaApplicationId;
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationId.
+        /// Gets and sets the property SipMediaApplicationId. 
+        /// <para>
+        /// The SIP media application ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SipMediaApplicationId

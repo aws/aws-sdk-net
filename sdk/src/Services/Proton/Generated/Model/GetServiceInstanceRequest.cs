@@ -60,7 +60,7 @@ namespace Amazon.Proton.Model
         /// <summary>
         /// Gets and sets the property ServiceName. 
         /// <para>
-        /// The name of the service that the service instance belongs to.
+        /// The name of the service that you want the service instance input for.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

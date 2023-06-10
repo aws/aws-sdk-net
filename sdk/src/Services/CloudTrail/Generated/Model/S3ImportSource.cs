@@ -59,7 +59,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property S3BucketRegion. 
         /// <para>
-        ///  The region associated with the source S3 bucket. 
+        ///  The Region associated with the source S3 bucket. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

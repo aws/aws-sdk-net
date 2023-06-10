@@ -76,8 +76,28 @@ namespace Amazon.Imagebuilder.Model
         IListImagesPaginator ListImages(ListImagesRequest request);
 
         /// <summary>
+        /// Paginator for ListImageScanFindingAggregations operation
+        ///</summary>
+        IListImageScanFindingAggregationsPaginator ListImageScanFindingAggregations(ListImageScanFindingAggregationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListImageScanFindings operation
+        ///</summary>
+        IListImageScanFindingsPaginator ListImageScanFindings(ListImageScanFindingsRequest request);
+
+        /// <summary>
         /// Paginator for ListInfrastructureConfigurations operation
         ///</summary>
         IListInfrastructureConfigurationsPaginator ListInfrastructureConfigurations(ListInfrastructureConfigurationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkflowExecutions operation
+        ///</summary>
+        IListWorkflowExecutionsPaginator ListWorkflowExecutions(ListWorkflowExecutionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListWorkflowStepExecutions operation
+        ///</summary>
+        IListWorkflowStepExecutionsPaginator ListWorkflowStepExecutions(ListWorkflowStepExecutionsRequest request);
     }
 }

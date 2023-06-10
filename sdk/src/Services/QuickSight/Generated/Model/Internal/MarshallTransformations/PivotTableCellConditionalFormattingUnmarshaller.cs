@@ -76,6 +76,12 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                     unmarshalledObject.Scope = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Scopes", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PivotTableConditionalFormattingScope, PivotTableConditionalFormattingScopeUnmarshaller>(PivotTableConditionalFormattingScopeUnmarshaller.Instance);
+                    unmarshalledObject.Scopes = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("TextFormat", targetDepth))
                 {
                     var unmarshaller = TextConditionalFormatUnmarshaller.Instance;

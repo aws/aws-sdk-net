@@ -46,8 +46,32 @@ namespace Amazon.Lightsail.Model
     /// </summary>
     public partial class GetBlueprintsRequest : AmazonLightsailRequest
     {
+        private AppCategory _appCategory;
         private bool? _includeInactive;
         private string _pageToken;
+
+        /// <summary>
+        /// Gets and sets the property AppCategory. 
+        /// <para>
+        /// Returns a list of blueprints that are specific to Lightsail for Research.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// You must use this parameter to view Lightsail for Research blueprints.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public AppCategory AppCategory
+        {
+            get { return this._appCategory; }
+            set { this._appCategory = value; }
+        }
+
+        // Check to see if AppCategory property is set
+        internal bool IsSetAppCategory()
+        {
+            return this._appCategory != null;
+        }
 
         /// <summary>
         /// Gets and sets the property IncludeInactive. 

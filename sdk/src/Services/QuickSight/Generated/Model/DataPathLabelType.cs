@@ -62,7 +62,7 @@ namespace Amazon.QuickSight.Model
         /// The actual value of the field that is labeled.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2048)]
+        [AWSProperty(Sensitive=true, Max=2048)]
         public string FieldValue
         {
             get { return this._fieldValue; }

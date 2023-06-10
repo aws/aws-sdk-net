@@ -35,32 +35,32 @@ namespace Amazon.GameLift.Model
     /// 
     ///  <important> 
     /// <para>
-    /// When setting up a new game build for GameLift, we recommend using the CLI command
+    /// When setting up a new game build for Amazon GameLift, we recommend using the CLI command
     /// <b> <a href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
     /// </b>. This helper command combines two tasks: (1) it uploads your build files from
-    /// a file directory to a GameLift Amazon S3 location, and (2) it creates a new build
-    /// resource.
+    /// a file directory to an Amazon GameLift Amazon S3 location, and (2) it creates a new
+    /// build resource.
     /// </para>
     ///  </important> 
     /// <para>
-    /// You can use the operation in the following scenarios:
+    /// You can use the <code>CreateBuild</code> operation in the following scenarios:
     /// </para>
     ///  <ul> <li> 
     /// <para>
-    /// To create a new game build with build files that are in an Amazon S3 location under
-    /// an Amazon Web Services account that you control. To use this option, you give Amazon
+    /// Create a new game build with build files that are in an Amazon S3 location under an
+    /// Amazon Web Services account that you control. To use this option, you give Amazon
     /// GameLift access to the Amazon S3 bucket. With permissions in place, specify a build
     /// name, operating system, and the Amazon S3 storage location of your game build.
     /// </para>
     ///  </li> <li> 
     /// <para>
-    /// To directly upload your build files to a GameLift Amazon S3 location. To use this
-    /// option, specify a build name and operating system. This operation creates a new build
-    /// resource and also returns an Amazon S3 location with temporary access credentials.
-    /// Use the credentials to manually upload your build files to the specified Amazon S3
-    /// location. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
+    /// Upload your build files to a Amazon GameLift Amazon S3 location. To use this option,
+    /// specify a build name and operating system. This operation creates a new build resource
+    /// and also returns an Amazon S3 location with temporary access credentials. Use the
+    /// credentials to manually upload your build files to the specified Amazon S3 location.
+    /// For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
     /// Objects</a> in the <i>Amazon S3 Developer Guide</i>. After you upload build files
-    /// to the GameLift Amazon S3 location, you can't update them. 
+    /// to the Amazon GameLift Amazon S3 location, you can't update them. 
     /// </para>
     ///  </li> </ul> 
     /// <para>
@@ -100,7 +100,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Name. 
         /// <para>
-        /// A descriptive label associated with a build. Build names do not need to be unique.
+        /// A descriptive label associated with a build. Build names don't need to be unique.
         /// You can change this value later. 
         /// </para>
         /// </summary>
@@ -120,12 +120,20 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property OperatingSystem. 
         /// <para>
-        /// The operating system that you built the game server binaries to run on. This value
-        /// determines the type of fleet resources that you can use for this build. If your game
-        /// build contains multiple executables, they all must run on the same operating system.
-        /// If an operating system is not specified when creating a build, GameLift uses the default
-        /// value (WINDOWS_2012). This value cannot be changed later.
+        /// The operating system that your game server binaries run on. This value determines
+        /// the type of fleet resources that you use for this build. If your game build contains
+        /// multiple executables, they all must run on the same operating system. You must specify
+        /// a valid operating system in this request. There is no default value. You can't change
+        /// a build's operating system later.
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// If you have active fleets using the Windows Server 2012 operating system, you can
+        /// continue to create new builds using this OS until October 10, 2023, when Microsoft
+        /// ends its support. All others must use Windows Server 2016 when creating new Windows-based
+        /// builds.
+        /// </para>
+        ///  </note>
         /// </summary>
         public OperatingSystem OperatingSystem
         {
@@ -142,9 +150,10 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property ServerSdkVersion. 
         /// <para>
-        /// A server SDK version you used when integrating your game server build with GameLift.
-        /// For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
-        /// games with custom game servers</a>.
+        /// A server SDK version you used when integrating your game server build with Amazon
+        /// GameLift. For more information see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
+        /// games with custom game servers</a>. By default Amazon GameLift sets this value to
+        /// <code>4.0.2</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Max=128)]
@@ -218,7 +227,7 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Version. 
         /// <para>
-        /// Version information associated with a build or script. Version strings do not need
+        /// Version information associated with a build or script. Version strings don't need
         /// to be unique. You can change this value later. 
         /// </para>
         /// </summary>

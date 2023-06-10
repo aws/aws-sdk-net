@@ -29,14 +29,37 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
-    /// 
+    /// The logging configuration associated with an Amazon Chime SDK Voice Connector. Specifies
+    /// whether SIP message logs can be sent to Amazon CloudWatch Logs.
     /// </summary>
     public partial class LoggingConfiguration
     {
+        private bool? _enableMediaMetricLogs;
         private bool? _enableSIPLogs;
 
         /// <summary>
-        /// Gets and sets the property EnableSIPLogs.
+        /// Gets and sets the property EnableMediaMetricLogs. 
+        /// <para>
+        /// Enables or disables media metrics logging.
+        /// </para>
+        /// </summary>
+        public bool EnableMediaMetricLogs
+        {
+            get { return this._enableMediaMetricLogs.GetValueOrDefault(); }
+            set { this._enableMediaMetricLogs = value; }
+        }
+
+        // Check to see if EnableMediaMetricLogs property is set
+        internal bool IsSetEnableMediaMetricLogs()
+        {
+            return this._enableMediaMetricLogs.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property EnableSIPLogs. 
+        /// <para>
+        /// Boolean that enables sending SIP message logs to Amazon CloudWatch.
+        /// </para>
         /// </summary>
         public bool EnableSIPLogs
         {

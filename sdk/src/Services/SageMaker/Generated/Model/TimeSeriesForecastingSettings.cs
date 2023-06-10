@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Time series forecast settings for the SageMaker Canvas app.
+    /// Time series forecast settings for the SageMaker Canvas application.
     /// </summary>
     public partial class TimeSeriesForecastingSettings
     {
@@ -41,9 +41,10 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// The IAM role that Canvas passes to Amazon Forecast for time series forecasting. By
         /// default, Canvas uses the execution role specified in the <code>UserProfile</code>
-        /// that launches the Canvas app. If an execution role is not specified in the <code>UserProfile</code>,
-        /// Canvas uses the execution role specified in the Domain that owns the <code>UserProfile</code>.
-        /// To allow time series forecasting, this IAM role should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess">
+        /// that launches the Canvas application. If an execution role is not specified in the
+        /// <code>UserProfile</code>, Canvas uses the execution role specified in the Domain that
+        /// owns the <code>UserProfile</code>. To allow time series forecasting, this IAM role
+        /// should have the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess">
         /// AmazonSageMakerCanvasForecastAccess</a> policy attached and <code>forecast.amazonaws.com</code>
         /// added in the trust relationship as a service principal.
         /// </para>
@@ -64,7 +65,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Describes whether time series forecasting is enabled or disabled in the Canvas app.
+        /// Describes whether time series forecasting is enabled or disabled in the Canvas application.
         /// </para>
         /// </summary>
         public FeatureStatus Status

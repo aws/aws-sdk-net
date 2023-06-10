@@ -36,7 +36,28 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class StartServiceSoftwareUpdateRequest : AmazonOpenSearchServiceRequest
     {
+        private long? _desiredStartTime;
         private string _domainName;
+        private ScheduleAt _scheduleAt;
+
+        /// <summary>
+        /// Gets and sets the property DesiredStartTime. 
+        /// <para>
+        /// The Epoch timestamp when you want the service software update to start. You only need
+        /// to specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.
+        /// </para>
+        /// </summary>
+        public long DesiredStartTime
+        {
+            get { return this._desiredStartTime.GetValueOrDefault(); }
+            set { this._desiredStartTime = value; }
+        }
+
+        // Check to see if DesiredStartTime property is set
+        internal bool IsSetDesiredStartTime()
+        {
+            return this._desiredStartTime.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property DomainName. 
@@ -55,6 +76,45 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetDomainName()
         {
             return this._domainName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduleAt. 
+        /// <para>
+        /// When to start the service software update.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>NOW</code> - Immediately schedules the update to happen in the current hour
+        /// if there's capacity available.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update.
+        /// If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>OFF_PEAK_WINDOW</code> - Marks the update to be picked up during an upcoming
+        /// off-peak window. There's no guarantee that the update will happen during the next
+        /// immediate window. Depending on capacity, it might happen in subsequent days.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Default: <code>NOW</code> if you don't specify a value for <code>DesiredStartTime</code>,
+        /// and <code>TIMESTAMP</code> if you do.
+        /// </para>
+        /// </summary>
+        public ScheduleAt ScheduleAt
+        {
+            get { return this._scheduleAt; }
+            set { this._scheduleAt = value; }
+        }
+
+        // Check to see if ScheduleAt property is set
+        internal bool IsSetScheduleAt()
+        {
+            return this._scheduleAt != null;
         }
 
     }

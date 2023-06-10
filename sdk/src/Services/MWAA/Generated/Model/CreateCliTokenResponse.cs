@@ -42,6 +42,7 @@ namespace Amazon.MWAA.Model
         /// An Airflow CLI login token.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string CliToken
         {
             get { return this._cliToken; }

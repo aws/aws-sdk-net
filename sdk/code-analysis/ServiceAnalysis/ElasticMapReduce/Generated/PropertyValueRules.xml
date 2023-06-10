@@ -216,6 +216,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.ListNotebookExecutionsRequest.ExecutionEngineId</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ListReleaseLabelsRequest.MaxResults</property>
     <min>1</min>
     <max>100</max>
@@ -428,6 +433,12 @@
     <property>Amazon.ElasticMapReduce.Model.ClusterSummary.OutpostArn</property>
     <min>0</min>
     <max>2048</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.ExecutionEngineConfig.ExecutionRoleArn</property>
+    <min>20</min>
+    <max>2048</max>
+    <pattern>^arn:(aws[a-zA-Z0-9-]*):iam::(\d{12})?:(role((\u002F)|(\u002F[\u0021-\u007F]+\u002F))[\w+=,.@-]+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.ExecutionEngineConfig.Id</property>
@@ -813,6 +824,11 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookExecutionSummary.ExecutionEngineId</property>
+    <min>0</min>
+    <max>10280</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.NotebookExecutionSummary.NotebookExecutionId</property>
     <min>0</min>
     <max>256</max>
@@ -823,9 +839,57 @@
     <max>256</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookS3LocationForOutput.Bucket</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookS3LocationForOutput.Key</property>
+    <min>1</min>
+    <max>10280</max>
+    <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookS3LocationFromInput.Bucket</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.NotebookS3LocationFromInput.Key</property>
+    <min>1</min>
+    <max>10280</max>
+    <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.OnDemandCapacityReservationOptions.CapacityReservationResourceGroupArn</property>
     <min>0</min>
     <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.OnDemandResizingSpecification.TimeoutDurationMinutes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.OutputNotebookS3LocationForOutput.Bucket</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.OutputNotebookS3LocationForOutput.Key</property>
+    <min>1</min>
+    <max>10280</max>
+    <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.OutputNotebookS3LocationFromInput.Bucket</property>
+    <min>0</min>
+    <max>256</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.OutputNotebookS3LocationFromInput.Key</property>
+    <min>1</min>
+    <max>10280</max>
+    <pattern>[\u0020-\uD7FF\uE000-\uFFFD\uD800\uDBFF-\uDC00\uDFFF\r\n\t]*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.PlacementType.AvailabilityZone</property>
@@ -898,6 +962,10 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.ElasticMapReduce.Model.SpotProvisioningSpecification.TimeoutDurationMinutes</property>
+    <min>0</min>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.ElasticMapReduce.Model.SpotResizingSpecification.TimeoutDurationMinutes</property>
     <min>0</min>
   </property-value-rule>
   <property-value-rule>

@@ -39,7 +39,7 @@ namespace Amazon.GuardDuty.Model
         /// <summary>
         /// Gets and sets the property AttributeName. 
         /// <para>
-        /// Represents the finding attribute (for example, accountId) to sort findings by.
+        /// Represents the finding attribute, such as <code>accountId</code>, that sorts the findings.
         /// </para>
         /// </summary>
         public string AttributeName

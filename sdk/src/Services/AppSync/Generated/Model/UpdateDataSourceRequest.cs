@@ -38,6 +38,7 @@ namespace Amazon.AppSync.Model
         private string _description;
         private DynamodbDataSourceConfig _dynamodbConfig;
         private ElasticsearchDataSourceConfig _elasticsearchConfig;
+        private EventBridgeDataSourceConfig _eventBridgeConfig;
         private HttpDataSourceConfig _httpConfig;
         private LambdaDataSourceConfig _lambdaConfig;
         private string _name;
@@ -123,6 +124,24 @@ namespace Amazon.AppSync.Model
         internal bool IsSetElasticsearchConfig()
         {
             return this._elasticsearchConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property EventBridgeConfig. 
+        /// <para>
+        /// The new Amazon EventBridge settings.
+        /// </para>
+        /// </summary>
+        public EventBridgeDataSourceConfig EventBridgeConfig
+        {
+            get { return this._eventBridgeConfig; }
+            set { this._eventBridgeConfig = value; }
+        }
+
+        // Check to see if EventBridgeConfig property is set
+        internal bool IsSetEventBridgeConfig()
+        {
+            return this._eventBridgeConfig != null;
         }
 
         /// <summary>

@@ -110,6 +110,7 @@ namespace Amazon.RDS.Model
         private bool? _publiclyAccessible;
         private List<string> _readReplicaDBClusterIdentifiers = new List<string>();
         private List<string> _readReplicaDBInstanceIdentifiers = new List<string>();
+        private string _readReplicaSourceDBClusterIdentifier;
         private string _readReplicaSourceDBInstanceIdentifier;
         private ReplicaMode _replicaMode;
         private DateTime? _resumeFullAutomationModeTime;
@@ -984,22 +985,10 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// IAM database authentication can be enabled for the following database engines
+        /// For a list of engine versions that support IAM database authentication, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM
+        /// database authentication</a> in the <i>Amazon RDS User Guide</i> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM
+        /// database authentication in Aurora</a> in the <i>Amazon Aurora User Guide</i>.
         /// </para>
-        ///  <ul> <li> 
-        /// <para>
-        /// For MySQL 5.6, minor version 5.6.34 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// For MySQL 5.7, minor version 5.7.16 or higher
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        /// Aurora 5.6 or higher. To enable IAM database authentication for Aurora, see DBCluster
-        /// Type.
-        /// </para>
-        ///  </li> </ul>
         /// </summary>
         public bool IAMDatabaseAuthenticationEnabled
         {
@@ -1597,6 +1586,24 @@ namespace Amazon.RDS.Model
         internal bool IsSetReadReplicaDBInstanceIdentifiers()
         {
             return this._readReplicaDBInstanceIdentifiers != null && this._readReplicaDBInstanceIdentifiers.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReadReplicaSourceDBClusterIdentifier. 
+        /// <para>
+        /// Contains the identifier of the source DB cluster if this DB instance is a read replica.
+        /// </para>
+        /// </summary>
+        public string ReadReplicaSourceDBClusterIdentifier
+        {
+            get { return this._readReplicaSourceDBClusterIdentifier; }
+            set { this._readReplicaSourceDBClusterIdentifier = value; }
+        }
+
+        // Check to see if ReadReplicaSourceDBClusterIdentifier property is set
+        internal bool IsSetReadReplicaSourceDBClusterIdentifier()
+        {
+            return this._readReplicaSourceDBClusterIdentifier != null;
         }
 
         /// <summary>

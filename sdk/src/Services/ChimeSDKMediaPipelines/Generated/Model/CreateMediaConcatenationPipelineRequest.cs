@@ -46,7 +46,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// Use a unique token for each media concatenation pipeline request.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -103,7 +103,7 @@ namespace Amazon.ChimeSDKMediaPipelines.Model
         /// The tags associated with the media concatenation pipeline.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

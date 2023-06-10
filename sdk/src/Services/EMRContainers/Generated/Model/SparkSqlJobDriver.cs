@@ -42,7 +42,7 @@ namespace Amazon.EMRContainers.Model
         /// The SQL file to be executed.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string EntryPoint
         {
             get { return this._entryPoint; }
@@ -61,7 +61,7 @@ namespace Amazon.EMRContainers.Model
         /// The Spark parameters to be included in the Spark SQL command.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=102400)]
+        [AWSProperty(Sensitive=true, Min=1, Max=102400)]
         public string SparkSqlParameters
         {
             get { return this._sparkSqlParameters; }

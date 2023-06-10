@@ -64,6 +64,18 @@ namespace Amazon.MediaConnect.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("bridgeArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.BridgeArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("bridgePorts", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<int, IntUnmarshaller>(IntUnmarshaller.Instance);
+                    unmarshalledObject.BridgePorts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("dataTransferSubscriberFeePercent", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

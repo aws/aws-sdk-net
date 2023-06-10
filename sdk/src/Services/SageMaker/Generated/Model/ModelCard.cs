@@ -50,11 +50,11 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property Content. 
         /// <para>
-        /// The content of the model card. Content uses the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+        /// The content of the model card. Content uses the <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
         /// card JSON schema</a> and provided as a string.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=100000)]
+        [AWSProperty(Sensitive=true, Min=0, Max=100000)]
         public string Content
         {
             get { return this._content; }

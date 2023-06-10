@@ -44,6 +44,7 @@ namespace Amazon.Redshift.Model
         /// to log on to the database <code>DbName</code>. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DbPassword
         {
             get { return this._dbPassword; }

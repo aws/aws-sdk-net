@@ -37,7 +37,7 @@ namespace AWSSDK.UnitTests
         public SharedCredentialsFile CredentialsFile { get; private set; }
 
         public SharedCredentialsFileTestFixture(string credentialsFileContents, string configFileContents = null,
-            bool createEmptyFile = false, bool isSharedCredentialsVarProvided = false)
+            bool createEmptyFile = false, bool isSharedCredentialsVarProvided = false, bool isSharedConfigVarProvided = false)
         {
             PrepareTempFilePaths();
 
@@ -57,15 +57,22 @@ namespace AWSSDK.UnitTests
             {
                 File.WriteAllText(ConfigFilePath, configFileContents);
             }
-            if (isSharedCredentialsVarProvided)
+            // In order to test the shared creds environment variable we must guarantee the static constructor gets called again
+            // This is because the logic for checking the shared creds env variable is in the static constructor.
+            if (isSharedCredentialsVarProvided || isSharedConfigVarProvided)
             {
-                // In order to test the shared creds environment variable we must guarantee the static constructor gets called again
-                // This is because the logic for checking the shared creds env variable is in the static constructor.
-                Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", CredentialsFilePath);
+                if (isSharedCredentialsVarProvided)
+                {
+                    Environment.SetEnvironmentVariable("AWS_SHARED_CREDENTIALS_FILE", CredentialsFilePath);
+                }
+                if (isSharedConfigVarProvided)
+                {
+                    Environment.SetEnvironmentVariable("AWS_CONFIG_FILE", ConfigFilePath);
+                }
                 Type sharedCredentialsFile = typeof(SharedCredentialsFile);
                 sharedCredentialsFile.TypeInitializer.Invoke(null,null);
             }
-            
+
             CredentialsFile = new SharedCredentialsFile(CredentialsFilePath);
         }
 
@@ -254,9 +261,32 @@ namespace AWSSDK.UnitTests
             AssertCredentialsFileContents(expectedFileContents);
         }
 
+        public void AssertSsoSplitProfileWithCredentials(string profileName, CredentialProfileOptions profileOptions, string expectedCredentialsContents, string expectedConfigContents)
+        {
+            CredentialsFile.RegisterProfile(
+                CredentialProfileTestHelper.GetCredentialProfile(
+                    uniqueKey: null,
+                    profileName: profileName,
+                    options: profileOptions,
+                    properties: null,
+                    defaultConfigurationModeName: null,
+                    region: null,
+                    endpointDiscoveryEnabled: null,
+                    retryMode: null,
+                    maxAttempts: null));
+
+            AssertCredentialsFileContents(expectedCredentialsContents);
+            AssertConfigsFileContents(expectedConfigContents);
+        }
+
         public void AssertCredentialsFileContents(string expectedContents)
         {
-            Assert.AreEqual(expectedContents, File.ReadAllText(CredentialsFilePath));
+            Assert.AreEqual(expectedContents.Trim(), File.ReadAllText(CredentialsFilePath).Trim());
+        }
+
+        public void AssertConfigsFileContents(string expectedContents)
+        {
+            Assert.AreEqual(expectedContents.Trim(), File.ReadAllText(ConfigFilePath).Trim());
         }
 
         public void Dispose()

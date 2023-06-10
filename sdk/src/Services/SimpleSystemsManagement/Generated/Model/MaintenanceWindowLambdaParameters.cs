@@ -91,7 +91,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// JSON to provide to your Lambda function as input.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=4096)]
+        [AWSProperty(Sensitive=true, Max=4096)]
         public MemoryStream Payload
         {
             get { return this._payload; }

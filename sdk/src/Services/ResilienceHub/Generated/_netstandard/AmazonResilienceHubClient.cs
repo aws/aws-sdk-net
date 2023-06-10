@@ -38,12 +38,12 @@ namespace Amazon.ResilienceHub
     /// <summary>
     /// Implementation for accessing ResilienceHub
     ///
-    /// AWS Resilience Hub helps you proactively prepare and protect your Amazon Web Services
-    /// applications from disruptions. Resilience Hub offers continuous resiliency assessment
-    /// and validation that integrates into your software development lifecycle. This enables
-    /// you to uncover resiliency weaknesses, ensure recovery time objective (RTO) and recovery
-    /// point objective (RPO) targets for your applications are met, and resolve issues before
-    /// they are released into production.
+    /// Resilience Hub helps you proactively prepare and protect your Amazon Web Services
+    /// applications from disruptions. It offers continual resiliency assessment and validation
+    /// that integrates into your software development lifecycle. This enables you to uncover
+    /// resiliency weaknesses, ensure recovery time objective (RTO) and recovery point objective
+    /// (RPO) targets for your applications are met, and resolve issues before they are released
+    /// into production.
     /// </summary>
     public partial class AmazonResilienceHubClient : AmazonServiceClient, IAmazonResilienceHub
     {
@@ -286,7 +286,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Adds the resource mapping for the draft application version.
+        /// Adds the resource mapping for the draft application version. You can also update an
+        /// existing resource mapping to a new physical resource.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AddDraftAppVersionResourceMappings service method.</param>
         /// <param name="cancellationToken">
@@ -300,23 +301,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/AddDraftAppVersionResourceMappings">REST API Reference for AddDraftAppVersionResourceMappings Operation</seealso>
         public virtual Task<AddDraftAppVersionResourceMappingsResponse> AddDraftAppVersionResourceMappingsAsync(AddDraftAppVersionResourceMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -344,15 +345,18 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Creates a Resilience Hub application. A Resilience Hub application is a collection
+        /// Creates an Resilience Hub application. An Resilience Hub application is a collection
         /// of Amazon Web Services resources structured to prevent and recover Amazon Web Services
-        /// application disruptions. To describe a Resilience Hub application, you provide an
-        /// application name, resources from one or more–up to five–CloudFormation stacks, and
-        /// an appropriate resiliency policy.
+        /// application disruptions. To describe an Resilience Hub application, you provide an
+        /// application name, resources from one or more CloudFormation stacks, Resource Groups,
+        /// Terraform state files, AppRegistry applications, and an appropriate resiliency policy.
+        /// For more information about the number of resources supported per application, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service
+        /// Quotas</a>.
         /// 
         ///  
         /// <para>
-        /// After you create a Resilience Hub application, you publish it so that you can run
+        /// After you create an Resilience Hub application, you publish it so that you can run
         /// a resiliency assessment on it. You can then use recommendations from the assessment
         /// to improve resiliency by running another assessment, comparing results, and then iterating
         /// the process until you achieve your goals for recovery time objective (RTO) and recovery
@@ -371,27 +375,28 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
-        /// You have exceeded your service quota. To perform the requested action, remove some
-        /// of the relevant resources, or use Service Quotas to request a service quota increase.
+        /// This exception occurs when you have exceeded your service quota. To perform the requested
+        /// action, remove some of the relevant resources, or use Service Quotas to request a
+        /// service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateApp">REST API Reference for CreateApp Operation</seealso>
         public virtual Task<CreateAppResponse> CreateAppAsync(CreateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -401,6 +406,159 @@ namespace Amazon.ResilienceHub
             options.ResponseUnmarshaller = CreateAppResponseUnmarshaller.Instance;
 
             return InvokeAsync<CreateAppResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAppVersionAppComponent
+
+        internal virtual CreateAppVersionAppComponentResponse CreateAppVersionAppComponent(CreateAppVersionAppComponentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppVersionAppComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppVersionAppComponentResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAppVersionAppComponentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Creates a new Application Component in the Resilience Hub application.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API updates the Resilience Hub application draft version. To use this Application
+        /// Component for running assessments, you must publish the Resilience Hub application
+        /// using the <code>PublishAppVersion</code> API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppVersionAppComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAppVersionAppComponent service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
+        /// This exception occurs when you have exceeded your service quota. To perform the requested
+        /// action, remove some of the relevant resources, or use Service Quotas to request a
+        /// service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionAppComponent">REST API Reference for CreateAppVersionAppComponent Operation</seealso>
+        public virtual Task<CreateAppVersionAppComponentResponse> CreateAppVersionAppComponentAsync(CreateAppVersionAppComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppVersionAppComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppVersionAppComponentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAppVersionAppComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAppVersionResource
+
+        internal virtual CreateAppVersionResourceResponse CreateAppVersionResource(CreateAppVersionResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppVersionResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppVersionResourceResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAppVersionResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Adds a resource to the Resilience Hub application and assigns it to the specified
+        /// Application Components. If you specify a new Application Component, Resilience Hub
+        /// will automatically create the Application Component.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// This action has no effect outside Resilience Hub.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This API updates the Resilience Hub application draft version. To use this resource
+        /// for running resiliency assessments, you must publish the Resilience Hub application
+        /// using the <code>PublishAppVersion</code> API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To update application version with new <code>physicalResourceID</code>, you must call
+        /// <code>ResolveAppVersionResources</code> API.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAppVersionResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAppVersionResource service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
+        /// This exception occurs when you have exceeded your service quota. To perform the requested
+        /// action, remove some of the relevant resources, or use Service Quotas to request a
+        /// service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateAppVersionResource">REST API Reference for CreateAppVersionResource Operation</seealso>
+        public virtual Task<CreateAppVersionResourceResponse> CreateAppVersionResourceAsync(CreateAppVersionResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAppVersionResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAppVersionResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateAppVersionResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -419,7 +577,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Creates a new recommendation template.
+        /// Creates a new recommendation template for the Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateRecommendationTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -433,23 +591,28 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
+        /// This exception occurs when you have exceeded your service quota. To perform the requested
+        /// action, remove some of the relevant resources, or use Service Quotas to request a
+        /// service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateRecommendationTemplate">REST API Reference for CreateRecommendationTemplate Operation</seealso>
         public virtual Task<CreateRecommendationTemplateResponse> CreateRecommendationTemplateAsync(CreateRecommendationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -491,24 +654,25 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
-        /// You have exceeded your service quota. To perform the requested action, remove some
-        /// of the relevant resources, or use Service Quotas to request a service quota increase.
+        /// This exception occurs when you have exceeded your service quota. To perform the requested
+        /// action, remove some of the relevant resources, or use Service Quotas to request a
+        /// service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateResiliencyPolicy">REST API Reference for CreateResiliencyPolicy Operation</seealso>
         public virtual Task<CreateResiliencyPolicyResponse> CreateResiliencyPolicyAsync(CreateResiliencyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -536,8 +700,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes an AWS Resilience Hub application. This is a destructive action that can't
-        /// be undone.
+        /// Deletes an Resilience Hub application. This is a destructive action that can't be
+        /// undone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteApp service method.</param>
         /// <param name="cancellationToken">
@@ -546,23 +710,23 @@ namespace Amazon.ResilienceHub
         /// 
         /// <returns>The response from the DeleteApp service method, as returned by ResilienceHub.</returns>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteApp">REST API Reference for DeleteApp Operation</seealso>
         public virtual Task<DeleteAppResponse> DeleteAppAsync(DeleteAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -590,8 +754,8 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Deletes an AWS Resilience Hub application assessment. This is a destructive action
-        /// that can't be undone.
+        /// Deletes an Resilience Hub application assessment. This is a destructive action that
+        /// can't be undone.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAppAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -605,23 +769,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppAssessment">REST API Reference for DeleteAppAssessment Operation</seealso>
         public virtual Task<DeleteAppAssessmentResponse> DeleteAppAssessmentAsync(DeleteAppAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -631,6 +795,211 @@ namespace Amazon.ResilienceHub
             options.ResponseUnmarshaller = DeleteAppAssessmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteAppAssessmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAppInputSource
+
+        internal virtual DeleteAppInputSourceResponse DeleteAppInputSource(DeleteAppInputSourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppInputSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppInputSourceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppInputSourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes the input source and all of its imported resources from the Resilience Hub
+        /// application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppInputSource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAppInputSource service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppInputSource">REST API Reference for DeleteAppInputSource Operation</seealso>
+        public virtual Task<DeleteAppInputSourceResponse> DeleteAppInputSourceAsync(DeleteAppInputSourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppInputSourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppInputSourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAppInputSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAppVersionAppComponent
+
+        internal virtual DeleteAppVersionAppComponentResponse DeleteAppVersionAppComponent(DeleteAppVersionAppComponentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppVersionAppComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppVersionAppComponentResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppVersionAppComponentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes an Application Component from the Resilience Hub application.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// This API updates the Resilience Hub application draft version. To use this Application
+        /// Component for running assessments, you must publish the Resilience Hub application
+        /// using the <code>PublishAppVersion</code> API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You will not be able to delete an Application Component if it has resources associated
+        /// with it.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppVersionAppComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAppVersionAppComponent service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionAppComponent">REST API Reference for DeleteAppVersionAppComponent Operation</seealso>
+        public virtual Task<DeleteAppVersionAppComponentResponse> DeleteAppVersionAppComponentAsync(DeleteAppVersionAppComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppVersionAppComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppVersionAppComponentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAppVersionAppComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteAppVersionResource
+
+        internal virtual DeleteAppVersionResourceResponse DeleteAppVersionResource(DeleteAppVersionResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppVersionResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppVersionResourceResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteAppVersionResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Deletes a resource from the Resilience Hub application.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// You can only delete a manually added resource. To exclude non-manually added resources,
+        /// use the <code>UpdateAppVersionResource</code> API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This action has no effect outside Resilience Hub.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This API updates the Resilience Hub application draft version. To use this resource
+        /// for running resiliency assessments, you must publish the Resilience Hub application
+        /// using the <code>PublishAppVersion</code> API.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteAppVersionResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteAppVersionResource service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteAppVersionResource">REST API Reference for DeleteAppVersionResource Operation</seealso>
+        public virtual Task<DeleteAppVersionResourceResponse> DeleteAppVersionResourceAsync(DeleteAppVersionResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteAppVersionResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteAppVersionResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteAppVersionResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -663,17 +1032,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteRecommendationTemplate">REST API Reference for DeleteRecommendationTemplate Operation</seealso>
         public virtual Task<DeleteRecommendationTemplateResponse> DeleteRecommendationTemplateAsync(DeleteRecommendationTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -715,23 +1084,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DeleteResiliencyPolicy">REST API Reference for DeleteResiliencyPolicy Operation</seealso>
         public virtual Task<DeleteResiliencyPolicyResponse> DeleteResiliencyPolicyAsync(DeleteResiliencyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -759,7 +1128,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes an AWS Resilience Hub application.
+        /// Describes an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeApp service method.</param>
         /// <param name="cancellationToken">
@@ -773,17 +1142,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeApp">REST API Reference for DescribeApp Operation</seealso>
         public virtual Task<DescribeAppResponse> DescribeAppAsync(DescribeAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -811,7 +1180,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes an assessment for an AWS Resilience Hub application.
+        /// Describes an assessment for an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppAssessment service method.</param>
         /// <param name="cancellationToken">
@@ -825,17 +1194,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppAssessment">REST API Reference for DescribeAppAssessment Operation</seealso>
         public virtual Task<DescribeAppAssessmentResponse> DescribeAppAssessmentAsync(DescribeAppAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -845,6 +1214,193 @@ namespace Amazon.ResilienceHub
             options.ResponseUnmarshaller = DescribeAppAssessmentResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeAppAssessmentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAppVersion
+
+        internal virtual DescribeAppVersionResponse DescribeAppVersion(DescribeAppVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppVersionResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes the Resilience Hub application version.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAppVersion service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersion">REST API Reference for DescribeAppVersion Operation</seealso>
+        public virtual Task<DescribeAppVersionResponse> DescribeAppVersionAsync(DescribeAppVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAppVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAppVersionAppComponent
+
+        internal virtual DescribeAppVersionAppComponentResponse DescribeAppVersionAppComponent(DescribeAppVersionAppComponentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppVersionAppComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppVersionAppComponentResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppVersionAppComponentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes an Application Component in the Resilience Hub application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppVersionAppComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAppVersionAppComponent service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionAppComponent">REST API Reference for DescribeAppVersionAppComponent Operation</seealso>
+        public virtual Task<DescribeAppVersionAppComponentResponse> DescribeAppVersionAppComponentAsync(DescribeAppVersionAppComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppVersionAppComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppVersionAppComponentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAppVersionAppComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAppVersionResource
+
+        internal virtual DescribeAppVersionResourceResponse DescribeAppVersionResource(DescribeAppVersionResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppVersionResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppVersionResourceResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAppVersionResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Describes a resource of the Resilience Hub application.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API accepts only one of the following parameters to descibe the resource:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>resourceName</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>logicalResourceId</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>physicalResourceId</code> (Along with <code>physicalResourceId</code>, you
+        /// can also provide <code>awsAccountId</code>, and <code>awsRegion</code>)
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAppVersionResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAppVersionResource service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionResource">REST API Reference for DescribeAppVersionResource Operation</seealso>
+        public virtual Task<DescribeAppVersionResourceResponse> DescribeAppVersionResourceAsync(DescribeAppVersionResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAppVersionResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAppVersionResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeAppVersionResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -879,17 +1435,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionResourcesResolutionStatus">REST API Reference for DescribeAppVersionResourcesResolutionStatus Operation</seealso>
         public virtual Task<DescribeAppVersionResourcesResolutionStatusResponse> DescribeAppVersionResourcesResolutionStatusAsync(DescribeAppVersionResourcesResolutionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -917,7 +1473,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes details about an AWS Resilience Hub
+        /// Describes details about an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAppVersionTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -931,17 +1487,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeAppVersionTemplate">REST API Reference for DescribeAppVersionTemplate Operation</seealso>
         public virtual Task<DescribeAppVersionTemplateResponse> DescribeAppVersionTemplateAsync(DescribeAppVersionTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -970,6 +1526,15 @@ namespace Amazon.ResilienceHub
 
         /// <summary>
         /// Describes the status of importing resources to an application version.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If you get a 404 error with <code>ResourceImportStatusNotFoundAppMetadataException</code>,
+        /// you must call <code>importResourcesToDraftAppVersion</code> after creating the application
+        /// and before calling <code>describeDraftAppVersionResourcesImportStatus</code> to obtain
+        /// the status.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeDraftAppVersionResourcesImportStatus service method.</param>
         /// <param name="cancellationToken">
@@ -983,17 +1548,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeDraftAppVersionResourcesImportStatus">REST API Reference for DescribeDraftAppVersionResourcesImportStatus Operation</seealso>
         public virtual Task<DescribeDraftAppVersionResourcesImportStatusResponse> DescribeDraftAppVersionResourcesImportStatusAsync(DescribeDraftAppVersionResourcesImportStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1021,9 +1586,9 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Describes a specified resiliency policy for an AWS Resilience Hub application. The
-        /// returned policy object includes creation time, data location constraints, the Amazon
-        /// Resource Name (ARN) for the policy, tags, tier, and more.
+        /// Describes a specified resiliency policy for an Resilience Hub application. The returned
+        /// policy object includes creation time, data location constraints, the Amazon Resource
+        /// Name (ARN) for the policy, tags, tier, and more.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeResiliencyPolicy service method.</param>
         /// <param name="cancellationToken">
@@ -1037,17 +1602,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/DescribeResiliencyPolicy">REST API Reference for DescribeResiliencyPolicy Operation</seealso>
         public virtual Task<DescribeResiliencyPolicyResponse> DescribeResiliencyPolicyAsync(DescribeResiliencyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1075,8 +1640,10 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Imports resources from sources such as a CloudFormation stack, resource-groups, or
-        /// application registry app to a draft application version.
+        /// Imports resources to Resilience Hub application draft version from different input
+        /// sources. For more information about the input sources supported by Resilience Hub,
+        /// see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
+        /// the structure and describe your Resilience Hub application</a>.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ImportResourcesToDraftAppVersion service method.</param>
         /// <param name="cancellationToken">
@@ -1090,23 +1657,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ImportResourcesToDraftAppVersion">REST API Reference for ImportResourcesToDraftAppVersion Operation</seealso>
         public virtual Task<ImportResourcesToDraftAppVersionResponse> ImportResourcesToDraftAppVersionAsync(ImportResourcesToDraftAppVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1134,7 +1701,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the alarm recommendations for a AWS Resilience Hub application.
+        /// Lists the alarm recommendations for an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAlarmRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -1148,17 +1715,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAlarmRecommendations">REST API Reference for ListAlarmRecommendations Operation</seealso>
         public virtual Task<ListAlarmRecommendationsResponse> ListAlarmRecommendationsAsync(ListAlarmRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1186,7 +1753,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the assessments for an AWS Resilience Hub application. You can use request parameters
+        /// Lists the assessments for an Resilience Hub application. You can use request parameters
         /// to refine the results for the response object.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppAssessments service method.</param>
@@ -1201,17 +1768,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppAssessments">REST API Reference for ListAppAssessments Operation</seealso>
         public virtual Task<ListAppAssessmentsResponse> ListAppAssessmentsAsync(ListAppAssessmentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1239,7 +1806,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the compliances for an AWS Resilience Hub component.
+        /// Lists the compliances for an Resilience Hub Application Component.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppComponentCompliances service method.</param>
         /// <param name="cancellationToken">
@@ -1253,17 +1820,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppComponentCompliances">REST API Reference for ListAppComponentCompliances Operation</seealso>
         public virtual Task<ListAppComponentCompliancesResponse> ListAppComponentCompliancesAsync(ListAppComponentCompliancesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1291,7 +1858,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the recommendations for an AWS Resilience Hub component.
+        /// Lists the recommendations for an Resilience Hub Application Component.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppComponentRecommendations service method.</param>
         /// <param name="cancellationToken">
@@ -1305,17 +1872,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppComponentRecommendations">REST API Reference for ListAppComponentRecommendations Operation</seealso>
         public virtual Task<ListAppComponentRecommendationsResponse> ListAppComponentRecommendationsAsync(ListAppComponentRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1325,6 +1892,60 @@ namespace Amazon.ResilienceHub
             options.ResponseUnmarshaller = ListAppComponentRecommendationsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAppComponentRecommendationsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAppInputSources
+
+        internal virtual ListAppInputSourcesResponse ListAppInputSources(ListAppInputSourcesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppInputSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppInputSourcesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAppInputSourcesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the input sources of the Resilience Hub application. For more information
+        /// about the input sources supported by Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover
+        /// the structure and describe your Resilience Hub application</a>.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppInputSources service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAppInputSources service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppInputSources">REST API Reference for ListAppInputSources Operation</seealso>
+        public virtual Task<ListAppInputSourcesResponse> ListAppInputSourcesAsync(ListAppInputSourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppInputSourcesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppInputSourcesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAppInputSourcesResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1344,6 +1965,19 @@ namespace Amazon.ResilienceHub
 
         /// <summary>
         /// Lists your Resilience Hub applications.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// You can filter applications using only one filter at a time or without using any filter.
+        /// If you try to filter applications using multiple filters, you will get the following
+        /// error:
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>An error occurred (ValidationException) when calling the ListApps operation:
+        /// Only one filter is supported for this operation.</code> 
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListApps service method.</param>
         /// <param name="cancellationToken">
@@ -1357,14 +1991,14 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListApps">REST API Reference for ListApps Operation</seealso>
         public virtual Task<ListAppsResponse> ListAppsAsync(ListAppsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1374,6 +2008,64 @@ namespace Amazon.ResilienceHub
             options.ResponseUnmarshaller = ListAppsResponseUnmarshaller.Instance;
 
             return InvokeAsync<ListAppsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAppVersionAppComponents
+
+        internal virtual ListAppVersionAppComponentsResponse ListAppVersionAppComponents(ListAppVersionAppComponentsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppVersionAppComponentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppVersionAppComponentsResponseUnmarshaller.Instance;
+
+            return Invoke<ListAppVersionAppComponentsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists all the Application Components in the Resilience Hub application.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAppVersionAppComponents service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAppVersionAppComponents service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionAppComponents">REST API Reference for ListAppVersionAppComponents Operation</seealso>
+        public virtual Task<ListAppVersionAppComponentsResponse> ListAppVersionAppComponentsAsync(ListAppVersionAppComponentsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAppVersionAppComponentsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAppVersionAppComponentsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ListAppVersionAppComponentsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1408,17 +2100,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionResourceMappings">REST API Reference for ListAppVersionResourceMappings Operation</seealso>
         public virtual Task<ListAppVersionResourceMappingsResponse> ListAppVersionResourceMappingsAsync(ListAppVersionResourceMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1446,7 +2138,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists all the resources in an application version.
+        /// Lists all the resources in an Resilience Hub application.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAppVersionResources service method.</param>
         /// <param name="cancellationToken">
@@ -1460,23 +2152,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersionResources">REST API Reference for ListAppVersionResources Operation</seealso>
         public virtual Task<ListAppVersionResourcesResponse> ListAppVersionResourcesAsync(ListAppVersionResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1518,14 +2210,13 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListAppVersions">REST API Reference for ListAppVersions Operation</seealso>
         public virtual Task<ListAppVersionsResponse> ListAppVersionsAsync(ListAppVersionsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1567,14 +2258,14 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListRecommendationTemplates">REST API Reference for ListRecommendationTemplates Operation</seealso>
         public virtual Task<ListRecommendationTemplatesResponse> ListRecommendationTemplatesAsync(ListRecommendationTemplatesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1616,17 +2307,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListResiliencyPolicies">REST API Reference for ListResiliencyPolicies Operation</seealso>
         public virtual Task<ListResiliencyPoliciesResponse> ListResiliencyPoliciesAsync(ListResiliencyPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1669,23 +2360,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSopRecommendations">REST API Reference for ListSopRecommendations Operation</seealso>
         public virtual Task<ListSopRecommendationsResponse> ListSopRecommendationsAsync(ListSopRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1727,17 +2418,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListSuggestedResiliencyPolicies">REST API Reference for ListSuggestedResiliencyPolicies Operation</seealso>
         public virtual Task<ListSuggestedResiliencyPoliciesResponse> ListSuggestedResiliencyPoliciesAsync(ListSuggestedResiliencyPoliciesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1779,17 +2470,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         public virtual Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1831,23 +2522,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListTestRecommendations">REST API Reference for ListTestRecommendations Operation</seealso>
         public virtual Task<ListTestRecommendationsResponse> ListTestRecommendationsAsync(ListTestRecommendationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1875,7 +2566,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Lists the resources that are not currently supported in AWS Resilience Hub. An unsupported
+        /// Lists the resources that are not currently supported in Resilience Hub. An unsupported
         /// resource is a resource that exists in the object that was used to create an app, but
         /// is not supported by Resilience Hub.
         /// </summary>
@@ -1891,23 +2582,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ListUnsupportedAppVersionResources">REST API Reference for ListUnsupportedAppVersionResources Operation</seealso>
         public virtual Task<ListUnsupportedAppVersionResourcesResponse> ListUnsupportedAppVersionResourcesAsync(ListUnsupportedAppVersionResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1949,23 +2640,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PublishAppVersion">REST API Reference for PublishAppVersion Operation</seealso>
         public virtual Task<PublishAppVersionResponse> PublishAppVersionAsync(PublishAppVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -1993,7 +2684,7 @@ namespace Amazon.ResilienceHub
 
 
         /// <summary>
-        /// Adds or updates the app template for a draft version of a Resilience Hub app.
+        /// Adds or updates the app template for an Resilience Hub application draft version.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the PutDraftAppVersionTemplate service method.</param>
         /// <param name="cancellationToken">
@@ -2007,23 +2698,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/PutDraftAppVersionTemplate">REST API Reference for PutDraftAppVersionTemplate Operation</seealso>
         public virtual Task<PutDraftAppVersionTemplateResponse> PutDraftAppVersionTemplateAsync(PutDraftAppVersionTemplateRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2065,23 +2756,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/RemoveDraftAppVersionResourceMappings">REST API Reference for RemoveDraftAppVersionResourceMappings Operation</seealso>
         public virtual Task<RemoveDraftAppVersionResourceMappingsResponse> RemoveDraftAppVersionResourceMappingsAsync(RemoveDraftAppVersionResourceMappingsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2123,23 +2814,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/ResolveAppVersionResources">REST API Reference for ResolveAppVersionResources Operation</seealso>
         public virtual Task<ResolveAppVersionResourcesResponse> ResolveAppVersionResourcesAsync(ResolveAppVersionResourcesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2181,27 +2872,28 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
-        /// You have exceeded your service quota. To perform the requested action, remove some
-        /// of the relevant resources, or use Service Quotas to request a service quota increase.
+        /// This exception occurs when you have exceeded your service quota. To perform the requested
+        /// action, remove some of the relevant resources, or use Service Quotas to request a
+        /// service quota increase.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/StartAppAssessment">REST API Reference for StartAppAssessment Operation</seealso>
         public virtual Task<StartAppAssessmentResponse> StartAppAssessmentAsync(StartAppAssessmentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2243,17 +2935,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/TagResource">REST API Reference for TagResource Operation</seealso>
         public virtual Task<TagResourceResponse> TagResourceAsync(TagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2295,17 +2987,17 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UntagResource">REST API Reference for UntagResource Operation</seealso>
         public virtual Task<UntagResourceResponse> UntagResourceAsync(UntagResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2347,23 +3039,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateApp">REST API Reference for UpdateApp Operation</seealso>
         public virtual Task<UpdateAppResponse> UpdateAppAsync(UpdateAppRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -2373,6 +3065,218 @@ namespace Amazon.ResilienceHub
             options.ResponseUnmarshaller = UpdateAppResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateAppResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAppVersion
+
+        internal virtual UpdateAppVersionResponse UpdateAppVersion(UpdateAppVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAppVersionResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the Resilience Hub application version.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API updates the Resilience Hub application draft version. To use this information
+        /// for running resiliency assessments, you must publish the Resilience Hub application
+        /// using the <code>PublishAppVersion</code> API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAppVersion service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersion">REST API Reference for UpdateAppVersion Operation</seealso>
+        public virtual Task<UpdateAppVersionResponse> UpdateAppVersionAsync(UpdateAppVersionRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppVersionResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAppVersionResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAppVersionAppComponent
+
+        internal virtual UpdateAppVersionAppComponentResponse UpdateAppVersionAppComponent(UpdateAppVersionAppComponentRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppVersionAppComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppVersionAppComponentResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAppVersionAppComponentResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates an existing Application Component in the Resilience Hub application.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API updates the Resilience Hub application draft version. To use this Application
+        /// Component for running assessments, you must publish the Resilience Hub application
+        /// using the <code>PublishAppVersion</code> API.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppVersionAppComponent service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAppVersionAppComponent service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionAppComponent">REST API Reference for UpdateAppVersionAppComponent Operation</seealso>
+        public virtual Task<UpdateAppVersionAppComponentResponse> UpdateAppVersionAppComponentAsync(UpdateAppVersionAppComponentRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppVersionAppComponentRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppVersionAppComponentResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAppVersionAppComponentResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateAppVersionResource
+
+        internal virtual UpdateAppVersionResourceResponse UpdateAppVersionResource(UpdateAppVersionResourceRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppVersionResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppVersionResourceResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateAppVersionResourceResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the resource details in the Resilience Hub application.
+        /// 
+        ///  <note> <ul> <li> 
+        /// <para>
+        /// This action has no effect outside Resilience Hub.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// This API updates the Resilience Hub application draft version. To use this resource
+        /// for running resiliency assessments, you must publish the Resilience Hub application
+        /// using the <code>PublishAppVersion</code> API.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// To update application version with new <code>physicalResourceID</code>, you must call
+        /// <code>ResolveAppVersionResources</code> API.
+        /// </para>
+        ///  </li> </ul> </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateAppVersionResource service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateAppVersionResource service method, as returned by ResilienceHub.</returns>
+        /// <exception cref="Amazon.ResilienceHub.Model.AccessDeniedException">
+        /// You don't have permissions to perform the requested operation. The user or role that
+        /// is making the request must have at least one IAM permissions policy attached that
+        /// grants the required permissions.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
+        /// This exception occurs when the specified resource could not be found.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ServiceQuotaExceededException">
+        /// This exception occurs when you have exceeded your service quota. To perform the requested
+        /// action, remove some of the relevant resources, or use Service Quotas to request a
+        /// service quota increase.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
+        /// </exception>
+        /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
+        /// This exception occurs when a request is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateAppVersionResource">REST API Reference for UpdateAppVersionResource Operation</seealso>
+        public virtual Task<UpdateAppVersionResourceResponse> UpdateAppVersionResourceAsync(UpdateAppVersionResourceRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateAppVersionResourceRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateAppVersionResourceResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateAppVersionResourceResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2405,23 +3309,23 @@ namespace Amazon.ResilienceHub
         /// grants the required permissions.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ConflictException">
-        /// Occurs when a conflict with a previous successful write is detected. This generally
-        /// occurs when the previous write did not have time to propagate to the host serving
-        /// the current request. A retry (with appropriate backoff logic) is the recommended response
-        /// to this exception.
+        /// This exception occurs when a conflict with a previous successful write is detected.
+        /// This generally occurs when the previous write did not have time to propagate to the
+        /// host serving the current request. A retry (with appropriate backoff logic) is the
+        /// recommended response to this exception.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.InternalServerException">
-        /// This exception occurs when there is an internal failure in the AWS Resilience Hub
-        /// service.
+        /// This exception occurs when there is an internal failure in the Resilience Hub service.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ResourceNotFoundException">
-        /// The specified resource could not be found.
+        /// This exception occurs when the specified resource could not be found.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ThrottlingException">
-        /// The limit on the number of requests per second was exceeded.
+        /// This exception occurs when you have exceeded the limit on the number of requests per
+        /// second.
         /// </exception>
         /// <exception cref="Amazon.ResilienceHub.Model.ValidationException">
-        /// Indicates that a request was not valid.
+        /// This exception occurs when a request is not valid.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/UpdateResiliencyPolicy">REST API Reference for UpdateResiliencyPolicy Operation</seealso>
         public virtual Task<UpdateResiliencyPolicyResponse> UpdateResiliencyPolicyAsync(UpdateResiliencyPolicyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))

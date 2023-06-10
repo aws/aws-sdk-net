@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private List<ContainerDefinition> _containers = new List<ContainerDefinition>();
         private DateTime? _creationTime;
+        private DeploymentRecommendation _deploymentRecommendation;
         private bool? _enableNetworkIsolation;
         private string _executionRoleArn;
         private InferenceExecutionConfig _inferenceExecutionConfig;
@@ -79,6 +80,24 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetCreationTime()
         {
             return this._creationTime.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property DeploymentRecommendation. 
+        /// <para>
+        /// A set of recommended deployment configurations for the model.
+        /// </para>
+        /// </summary>
+        public DeploymentRecommendation DeploymentRecommendation
+        {
+            get { return this._deploymentRecommendation; }
+            set { this._deploymentRecommendation = value; }
+        }
+
+        // Check to see if DeploymentRecommendation property is set
+        internal bool IsSetDeploymentRecommendation()
+        {
+            return this._deploymentRecommendation != null;
         }
 
         /// <summary>
@@ -197,8 +216,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property VpcConfig. 
         /// <para>
-        /// A <a>VpcConfig</a> object that specifies the VPC that this model has access to. For
-        /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+        /// A <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+        /// object that specifies the VPC that this model has access to. For more information,
+        /// see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
         /// Endpoints by Using an Amazon Virtual Private Cloud</a> 
         /// </para>
         /// </summary>

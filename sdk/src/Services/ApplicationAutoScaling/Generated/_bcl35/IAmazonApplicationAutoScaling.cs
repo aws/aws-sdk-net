@@ -82,6 +82,10 @@ namespace Amazon.ApplicationAutoScaling
     /// </para>
     ///  </li> <li> 
     /// <para>
+    /// Amazon SageMaker Serverless endpoint provisioned concurrency
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     /// Spot Fleets (Amazon EC2)
     /// </para>
     ///  </li> <li> 
@@ -89,6 +93,11 @@ namespace Amazon.ApplicationAutoScaling
     /// Custom resources provided by your own applications or services
     /// </para>
     ///  </li> </ul> 
+    /// <para>
+    /// To learn more about Application Auto Scaling, see the <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
+    /// Auto Scaling User Guide</a>.
+    /// </para>
+    ///  
     /// <para>
     ///  <b>API Summary</b> 
     /// </para>
@@ -117,12 +126,7 @@ namespace Amazon.ApplicationAutoScaling
     /// policy, scale-in activities that are triggered by a scaling policy, and scheduled
     /// scaling.
     /// </para>
-    ///  </li> </ul> 
-    /// <para>
-    /// To learn more about Application Auto Scaling, including information about granting
-    /// IAM users required permissions for Application Auto Scaling actions, see the <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/what-is-application-auto-scaling.html">Application
-    /// Auto Scaling User Guide</a>.
-    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial interface IAmazonApplicationAutoScaling : IAmazonService, IDisposable
     {
@@ -605,6 +609,55 @@ namespace Amazon.ApplicationAutoScaling
 
         #endregion
         
+        #region  ListTagsForResource
+
+
+        /// <summary>
+        /// Returns all the tags on the specified Application Auto Scaling scalable target.
+        /// 
+        ///  
+        /// <para>
+        /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource service method.</param>
+        /// 
+        /// <returns>The response from the ListTagsForResource service method, as returned by ApplicationAutoScaling.</returns>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse ListTagsForResource(ListTagsForResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListTagsForResource operation on AmazonApplicationAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListTagsForResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        IAsyncResult BeginListTagsForResource(ListTagsForResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListTagsForResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListTagsForResource.</param>
+        /// 
+        /// <returns>Returns a  ListTagsForResourceResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
+        ListTagsForResourceResponse EndListTagsForResource(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutScalingPolicy
 
 
@@ -648,8 +701,8 @@ namespace Amazon.ApplicationAutoScaling
         ///  <note> 
         /// <para>
         /// If a scalable target is deregistered, the scalable target is no longer available to
-        /// execute scaling policies. Any scaling policies that were specified for the scalable
-        /// target are deleted.
+        /// use scaling policies. Any scaling policies that were specified for the scalable target
+        /// are deleted.
         /// </para>
         ///  </note>
         /// </summary>
@@ -732,7 +785,7 @@ namespace Amazon.ApplicationAutoScaling
         /// </para>
         ///  
         /// <para>
-        /// When start and end times are specified with a recurring schedule using a cron expression
+        /// When you specify start and end times with a recurring schedule using a cron expression
         /// or rates, they form the boundaries for when the recurring action starts and stops.
         /// </para>
         ///  
@@ -813,7 +866,7 @@ namespace Amazon.ApplicationAutoScaling
 
 
         /// <summary>
-        /// Registers or updates a scalable target, the resource that you want to scale.
+        /// Registers or updates a scalable target, which is the resource that you want to scale.
         /// 
         ///  
         /// <para>
@@ -830,9 +883,9 @@ namespace Amazon.ApplicationAutoScaling
         /// </para>
         ///  
         /// <para>
-        /// If you choose to add a scaling policy, current capacity is adjustable within the specified
-        /// range when scaling starts. Application Auto Scaling scaling policies will not scale
-        /// capacity to values that are outside of the minimum and maximum range.
+        /// If you add a scaling policy, current capacity is adjustable within the specified range
+        /// when scaling starts. Application Auto Scaling scaling policies will not scale capacity
+        /// to values that are outside of the minimum and maximum range.
         /// </para>
         ///  
         /// <para>
@@ -851,12 +904,20 @@ namespace Amazon.ApplicationAutoScaling
         /// </para>
         ///  <note> 
         /// <para>
-        /// If you call the <code>RegisterScalableTarget</code> API to update an existing scalable
-        /// target, Application Auto Scaling retrieves the current capacity of the resource. If
-        /// it is below the minimum capacity or above the maximum capacity, Application Auto Scaling
-        /// adjusts the capacity of the scalable target to place it within these bounds, even
-        /// if you don't include the <code>MinCapacity</code> or <code>MaxCapacity</code> request
-        /// parameters.
+        /// If you call the <code>RegisterScalableTarget</code> API operation to create a scalable
+        /// target, there might be a brief delay until the operation achieves <a href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual
+        /// consistency</a>. You might become aware of this brief delay if you get unexpected
+        /// errors when performing sequential operations. The typical strategy is to retry the
+        /// request, and some Amazon Web Services SDKs include automatic backoff and retry logic.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you call the <code>RegisterScalableTarget</code> API operation to update an existing
+        /// scalable target, Application Auto Scaling retrieves the current capacity of the resource.
+        /// If it's below the minimum capacity or above the maximum capacity, Application Auto
+        /// Scaling adjusts the capacity of the scalable target to place it within these bounds,
+        /// even if you don't include the <code>MinCapacity</code> or <code>MaxCapacity</code>
+        /// request parameters.
         /// </para>
         ///  </note>
         /// </summary>
@@ -906,6 +967,131 @@ namespace Amazon.ApplicationAutoScaling
         /// <returns>Returns a  RegisterScalableTargetResult from ApplicationAutoScaling.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/RegisterScalableTarget">REST API Reference for RegisterScalableTarget Operation</seealso>
         RegisterScalableTargetResponse EndRegisterScalableTarget(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  TagResource
+
+
+        /// <summary>
+        /// Adds or edits tags on an Application Auto Scaling scalable target.
+        /// 
+        ///  
+        /// <para>
+        /// Each tag consists of a tag key and a tag value, which are both case-sensitive strings.
+        /// To add a tag, specify a new tag key and a tag value. To edit a tag, specify an existing
+        /// tag key and a new tag value.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use this operation to tag an Application Auto Scaling scalable target, but
+        /// you cannot tag a scaling policy or scheduled action.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can also add tags to an Application Auto Scaling scalable target while creating
+        /// it (<code>RegisterScalableTarget</code>).
+        /// </para>
+        ///  
+        /// <para>
+        /// For general information about tags, including the format and syntax, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
+        /// Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Use tags to control access to a scalable target. For more information, see <a href="https://docs.aws.amazon.com/autoscaling/application/userguide/resource-tagging-support.html">Tagging
+        /// support for Application Auto Scaling</a> in the <i>Application Auto Scaling User Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the TagResource service method.</param>
+        /// 
+        /// <returns>The response from the TagResource service method, as returned by ApplicationAutoScaling.</returns>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.TooManyTagsException">
+        /// The request contains too many tags. Try the request again with fewer tags.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
+        /// An exception was thrown for a validation issue. Review the available parameters for
+        /// the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse TagResource(TagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the TagResource operation on AmazonApplicationAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndTagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        IAsyncResult BeginTagResource(TagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  TagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginTagResource.</param>
+        /// 
+        /// <returns>Returns a  TagResourceResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/TagResource">REST API Reference for TagResource Operation</seealso>
+        TagResourceResponse EndTagResource(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  UntagResource
+
+
+        /// <summary>
+        /// Deletes tags from an Application Auto Scaling scalable target. To delete a tag, specify
+        /// the tag key and the Application Auto Scaling scalable target.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource service method.</param>
+        /// 
+        /// <returns>The response from the UntagResource service method, as returned by ApplicationAutoScaling.</returns>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ResourceNotFoundException">
+        /// The specified resource doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.ApplicationAutoScaling.Model.ValidationException">
+        /// An exception was thrown for a validation issue. Review the available parameters for
+        /// the API request.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse UntagResource(UntagResourceRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UntagResource operation on AmazonApplicationAutoScalingClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUntagResource
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        IAsyncResult BeginUntagResource(UntagResourceRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UntagResource operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUntagResource.</param>
+        /// 
+        /// <returns>Returns a  UntagResourceResult from ApplicationAutoScaling.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/UntagResource">REST API Reference for UntagResource Operation</seealso>
+        UntagResourceResponse EndUntagResource(IAsyncResult asyncResult);
 
         #endregion
         

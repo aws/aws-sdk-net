@@ -56,6 +56,17 @@ namespace Amazon.QuickSight.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetHeatmapConfiguration())
+            {
+                context.Writer.WritePropertyName("HeatmapConfiguration");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = GeospatialHeatmapConfigurationMarshaller.Instance;
+                marshaller.Marshall(requestObject.HeatmapConfiguration, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetSelectedPointStyle())
             {
                 context.Writer.WritePropertyName("SelectedPointStyle");

@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AutoScaling.Model
 {
     /// <summary>
-    /// Reports the progress of an instance refresh on instances that are in the Auto Scaling
-    /// group.
+    /// Reports progress on replacing instances that are in the Auto Scaling group.
     /// </summary>
     public partial class InstanceRefreshLivePoolProgress
     {

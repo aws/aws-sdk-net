@@ -29,16 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ManagedBlockchain.Model
 {
     /// <summary>
-    /// <important> 
-    /// <para>
-    /// The token based access feature is in preview release for Ethereum on Amazon Managed
-    /// Blockchain and is subject to change. We recommend that you use this feature only with
-    /// test scenarios, and not in production environments.
-    /// </para>
-    ///  </important> 
-    /// <para>
     /// A summary of accessor properties.
-    /// </para>
     /// </summary>
     public partial class AccessorSummary
     {

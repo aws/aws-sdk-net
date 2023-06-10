@@ -173,5 +173,85 @@ namespace Amazon.DynamoDBv2.DataModel
         MultiTableBatchWrite CreateMultiTableBatchWrite(params BatchWrite[] batches);
 
         #endregion
+
+        #region Transact Get
+
+#if BCL35
+        /// <summary>
+        /// Creates a strongly-typed TransactGet object, allowing
+        /// a transactional get operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to get.</typeparam>
+        /// <returns>Empty strongly-typed TransactGet object.</returns>
+        TransactGet<T> CreateTransactGet<T>();
+
+        /// <summary>
+        /// Creates a strongly-typed TransactGet object, allowing
+        /// a transactional get operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to get.</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed TransactGet object.</returns>
+        TransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig);
+#else
+        /// <summary>
+        /// Creates a strongly-typed TransactGet object, allowing
+        /// a transactional get operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to get.</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed TransactGet object.</returns>
+        TransactGet<T> CreateTransactGet<T>(DynamoDBOperationConfig operationConfig = null);
+#endif
+
+        /// <summary>
+        /// Creates a MultiTableTransactGet object, composed of multiple
+        /// individual TransactGet objects.
+        /// </summary>
+        /// <param name="transactionParts">Individual TransactGet objects.</param>
+        /// <returns>Composite MultiTableTransactGet object.</returns>
+        MultiTableTransactGet CreateMultiTableTransactGet(params TransactGet[] transactionParts);
+
+        #endregion
+
+        #region Transact Write
+
+#if BCL35
+        /// <summary>
+        /// Creates a strongly-typed TransactWrite object, allowing
+        /// a transactional write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write.</typeparam>
+        /// <returns>Empty strongly-typed TransactWrite object.</returns>
+        TransactWrite<T> CreateTransactWrite<T>();
+
+        /// <summary>
+        /// Creates a strongly-typed TransactWrite object, allowing
+        /// a transactional write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write.</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed TransactWrite object.</returns>
+        TransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig);
+#else
+        /// <summary>
+        /// Creates a strongly-typed TransactWrite object, allowing
+        /// a transactional write operation against DynamoDB.
+        /// </summary>
+        /// <typeparam name="T">Type of objects to write.</typeparam>
+        /// <param name="operationConfig">Config object which can be used to override that table used.</param>
+        /// <returns>Empty strongly-typed TransactWrite object.</returns>
+        TransactWrite<T> CreateTransactWrite<T>(DynamoDBOperationConfig operationConfig = null);
+#endif
+
+        /// <summary>
+        /// Creates a MultiTableTransactWrite object, composed of multiple
+        /// individual TransactWrite objects.
+        /// </summary>
+        /// <param name="transactionParts">Individual TransactWrite objects.</param>
+        /// <returns>Composite MultiTableTransactWrite object.</returns>
+        MultiTableTransactWrite CreateMultiTableTransactWrite(params TransactWrite[] transactionParts);
+
+        #endregion
     }
 }

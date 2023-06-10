@@ -27,8 +27,8 @@
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationRequest.SourceURI</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>.*\S.*</pattern>
+    <max>1000</max>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationResponse.Arn</property>
@@ -67,8 +67,8 @@
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateDataIntegrationResponse.SourceURI</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>.*\S.*</pattern>
+    <max>1000</max>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.CreateEventIntegrationRequest.ClientToken</property>
@@ -149,8 +149,8 @@
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetDataIntegrationResponse.SourceURI</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>.*\S.*</pattern>
+    <max>1000</max>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.GetEventIntegrationRequest.Name</property>
@@ -343,8 +343,8 @@
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.DataIntegrationSummary.SourceURI</property>
     <min>1</min>
-    <max>255</max>
-    <pattern>.*\S.*</pattern>
+    <max>1000</max>
+    <pattern>^(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+$)|(\w+\:\/\/[\w.-]+[\w/!@#+=.-]+[\w/!@#+=.-]+[\w/!@#+=.,-]+$)</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.AppIntegrationsService.Model.EventFilter.Source</property>
@@ -420,6 +420,6 @@
     <property>Amazon.AppIntegrationsService.Model.ScheduleConfiguration.ScheduleExpression</property>
     <min>1</min>
     <max>255</max>
-    <pattern>^[a-zA-Z0-9\/\._\-]+$</pattern>
+    <pattern>.*\S.*</pattern>
   </property-value-rule>
 </property-value-rules>

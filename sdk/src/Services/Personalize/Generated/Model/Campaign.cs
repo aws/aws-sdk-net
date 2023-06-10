@@ -155,6 +155,9 @@ namespace Amazon.Personalize.Model
         /// Gets and sets the property MinProvisionedTPS. 
         /// <para>
         /// Specifies the requested minimum provisioned transactions (recommendations) per second.
+        /// A high <code>minProvisionedTPS</code> will increase your bill. We recommend starting
+        /// with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
+        /// CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as necessary.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

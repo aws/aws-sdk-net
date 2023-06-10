@@ -20,6 +20,7 @@ using Amazon.Runtime;
 using Amazon.Util;
 
 using Amazon.Extensions.NETCore.Setup;
+using System.Linq;
 
 namespace Microsoft.Extensions.Configuration
 {
@@ -52,7 +53,33 @@ namespace Microsoft.Extensions.Configuration
         /// <returns>The AWSOptions containing the values set in configuration system.</returns>
         public static AWSOptions GetAWSOptions(this IConfiguration config, string configSection)
         {
-            var options = new AWSOptions();
+            return GetAWSOptions<DefaultClientConfig>(config, configSection);
+        }
+
+        /// <summary>
+        /// Constructs an AWSOptions class with the options specified in the "AWS" section in the IConfiguration object.
+        /// </summary>
+        /// <typeparam name="TConfig">The AWS client config to be used in creating clients, like AmazonS3Config.</typeparam>
+        /// <param name="config"></param>
+        /// <returns>The AWSOptions containing the values set in configuration system.</returns>
+        public static AWSOptions GetAWSOptions<TConfig>(this IConfiguration config) where TConfig : ClientConfig, new()
+        {
+            return GetAWSOptions<TConfig>(config, DEFAULT_CONFIG_SECTION);
+        }
+
+        /// <summary>
+        /// Constructs an AWSOptions class with the options specified in the "AWS" section in the IConfiguration object.
+        /// </summary>
+        /// <typeparam name="TConfig">The AWS client config to be used in creating clients, like AmazonS3Config.</typeparam>
+        /// <param name="config"></param>
+        /// <param name="configSection">The config section to extract AWS options from.</param>
+        /// <returns>The AWSOptions containing the values set in configuration system.</returns>
+        public static AWSOptions GetAWSOptions<TConfig>(this IConfiguration config, string configSection) where TConfig : ClientConfig, new()
+        {
+            var options = new AWSOptions
+            {
+                DefaultClientConfig = new TConfig(),
+            };
 
             IConfiguration section;
             if (string.IsNullOrEmpty(configSection))
@@ -63,12 +90,13 @@ namespace Microsoft.Extensions.Configuration
             if (section == null)
                 return options;
 
-            var clientConfigTypeInfo = typeof(ClientConfig).GetTypeInfo();
-            foreach(var element in section.GetChildren())
+            var clientConfigType = typeof(TConfig);
+            var properties = clientConfigType.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            foreach (var element in section.GetChildren())
             {
                 try
                 {
-                    var property = clientConfigTypeInfo.GetDeclaredProperty(element.Key);
+                    var property = properties.SingleOrDefault(p => p.Name.Equals(element.Key, StringComparison.OrdinalIgnoreCase));
                     if (property == null || property.SetMethod == null)
                         continue;
 
@@ -82,6 +110,15 @@ namespace Microsoft.Extensions.Configuration
                         var milliSeconds = Convert.ToInt64(element.Value);
                         var timespan = TimeSpan.FromMilliseconds(milliSeconds);
                         property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { timespan });
+                    }
+                    else if (property.PropertyType.IsEnum)
+                    {
+
+                        var value = Enum.Parse(property.PropertyType, element.Value);
+                        if ( value != null )
+                        {
+                            property.SetMethod.Invoke(options.DefaultClientConfig, new object[] { value });
+                        }
                     }
                 }
                 catch(Exception e)
@@ -131,6 +168,16 @@ namespace Microsoft.Extensions.Configuration
                     throw new ArgumentException($"Invalid value for DefaultConfiguration. Valid values are: {string.Join(", ", Enum.GetNames(typeof(DefaultConfigurationMode)))} ");
                 }
                 options.DefaultConfigurationMode = mode;
+            }
+
+            if (!string.IsNullOrEmpty(section["SessionRoleArn"]))
+            {
+                options.SessionRoleArn = section["SessionRoleArn"];
+            }
+
+            if (!string.IsNullOrEmpty(section["SessionName"]))
+            {
+                options.SessionName = section["SessionName"];
             }
 
             var loggingSection = section.GetSection("Logging");

@@ -41,6 +41,12 @@ namespace Amazon.SecurityLake.Model
         /// </summary>
         public IPaginatedEnumerable<ListLogSourcesResponse> Responses => new PaginatedResponse<ListLogSourcesResponse>(this);
 
+        /// <summary>
+        /// Enumerable containing all of the Sources
+        /// </summary>
+        public IPaginatedEnumerable<LogSource> Sources => 
+            new PaginatedResultKeyResponse<ListLogSourcesResponse, LogSource>(this, (i) => i.Sources);
+
         internal ListLogSourcesPaginator(IAmazonSecurityLake client, ListLogSourcesRequest request)
         {
             this._client = client;

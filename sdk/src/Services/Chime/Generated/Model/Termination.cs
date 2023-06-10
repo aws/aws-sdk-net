@@ -102,6 +102,7 @@ namespace Amazon.Chime.Model
         /// The default caller ID phone number.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DefaultPhoneNumber
         {
             get { return this._defaultPhoneNumber; }

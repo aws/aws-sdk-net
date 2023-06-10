@@ -60,6 +60,7 @@ namespace Amazon.RDS.Model
         private bool? _enableCustomerOwnedIp;
         private bool? _enableIAMDatabaseAuthentication;
         private bool? _enablePerformanceInsights;
+        private string _engine;
         private string _engineVersion;
         private int? _iops;
         private string _licenseModel;
@@ -931,6 +932,64 @@ namespace Amazon.RDS.Model
         }
 
         /// <summary>
+        /// Gets and sets the property Engine. 
+        /// <para>
+        /// The target Oracle DB engine when you convert a non-CDB to a CDB. This intermediate
+        /// step is necessary to upgrade an Oracle Database 19c non-CDB to an Oracle Database
+        /// 21c CDB.
+        /// </para>
+        ///  
+        /// <para>
+        /// Note the following requirements:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Make sure that you specify <code>oracle-ee-cdb</code> or <code>oracle-se2-cdb</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Make sure that your DB engine runs Oracle Database 19c with an April 2021 or later
+        /// RU.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// Note the following limitations:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// You can't convert a CDB to a non-CDB.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't convert a replica database.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't convert a non-CDB to a CDB and upgrade the engine version in the same command.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You can't convert the existing custom parameter or option group when it has options
+        /// or parameters that are permanent or persistent. In this situation, the DB instance
+        /// reverts to the default option and parameter group. To avoid reverting to the default,
+        /// specify a new parameter group with <code>--db-parameter-group-name</code> and a new
+        /// option group with <code>--option-group-name</code>.
+        /// </para>
+        ///  </li> </ul>
+        /// </summary>
+        public string Engine
+        {
+            get { return this._engine; }
+            set { this._engine = value; }
+        }
+
+        // Check to see if Engine property is set
+        internal bool IsSetEngine()
+        {
+            return this._engine != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property EngineVersion. 
         /// <para>
         /// The version number of the database engine to upgrade to. Changing this parameter results
@@ -949,6 +1008,12 @@ namespace Amazon.RDS.Model
         /// If you specify only a major version, Amazon RDS will update the DB instance to the
         /// default minor version if the current minor version is lower. For information about
         /// valid engine versions, see <code>CreateDBInstance</code>, or call <code>DescribeDBEngineVersions</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If the instance that you're modifying is acting as a read replica, the engine version
+        /// that you specify must be the same or later than the version that the source DB instance
+        /// or cluster is running.
         /// </para>
         ///  
         /// <para>
@@ -1054,13 +1119,13 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  
         /// <para>
-        /// If the DB cluster doesn't manage the master user password with Amazon Web Services
+        /// If the DB instance doesn't manage the master user password with Amazon Web Services
         /// Secrets Manager, you can turn on this management. In this case, you can't specify
         /// <code>MasterUserPassword</code>.
         /// </para>
         ///  
         /// <para>
-        /// If the DB cluster already manages the master user password with Amazon Web Services
+        /// If the DB instance already manages the master user password with Amazon Web Services
         /// Secrets Manager, and you specify that the master user password is not managed with
         /// Amazon Web Services Secrets Manager, then you must specify <code>MasterUserPassword</code>.
         /// In this case, RDS deletes the secret and uses the new password for the master user

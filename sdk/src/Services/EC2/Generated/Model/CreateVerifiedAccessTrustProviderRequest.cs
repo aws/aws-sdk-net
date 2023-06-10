@@ -32,8 +32,8 @@ namespace Amazon.EC2.Model
     /// Container for the parameters to the CreateVerifiedAccessTrustProvider operation.
     /// A trust provider is a third-party entity that creates, maintains, and manages identity
     /// information for users and devices. When an application request is made, the identity
-    /// information sent by the trust provider will be evaluated by Amazon Web Services Verified
-    /// Access, before allowing or denying the application request.
+    /// information sent by the trust provider is evaluated by Verified Access before allowing
+    /// or denying the application request.
     /// </summary>
     public partial class CreateVerifiedAccessTrustProviderRequest : AmazonEC2Request
     {
@@ -70,7 +70,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A description for the Amazon Web Services Verified Access trust provider.
+        /// A description for the Verified Access trust provider.
         /// </para>
         /// </summary>
         public string Description
@@ -88,7 +88,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceOptions. 
         /// <para>
-        /// The options for device identity based trust providers.
+        /// The options for a device-based trust provider. This parameter is required when the
+        /// provider type is <code>device</code>.
         /// </para>
         /// </summary>
         public CreateVerifiedAccessTrustProviderDeviceOptions DeviceOptions
@@ -106,7 +107,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property DeviceTrustProviderType. 
         /// <para>
-        /// The type of device-based trust provider.
+        /// The type of device-based trust provider. This parameter is required when the provider
+        /// type is <code>device</code>.
         /// </para>
         /// </summary>
         public DeviceTrustProviderType DeviceTrustProviderType
@@ -124,8 +126,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property OidcOptions. 
         /// <para>
-        /// The OpenID Connect details for an <code>oidc</code>-type, user-identity based trust
-        /// provider.
+        /// The options for a OpenID Connect-compatible user-identity trust provider. This parameter
+        /// is required when the provider type is <code>user</code>.
         /// </para>
         /// </summary>
         public CreateVerifiedAccessTrustProviderOidcOptions OidcOptions
@@ -162,7 +164,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TagSpecifications. 
         /// <para>
-        /// The tags to assign to the Amazon Web Services Verified Access trust provider.
+        /// The tags to assign to the Verified Access trust provider.
         /// </para>
         /// </summary>
         public List<TagSpecification> TagSpecifications
@@ -180,7 +182,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property TrustProviderType. 
         /// <para>
-        /// The type of trust provider can be either user or device-based.
+        /// The type of trust provider.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -199,7 +201,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserTrustProviderType. 
         /// <para>
-        /// The type of user-based trust provider.
+        /// The type of user-based trust provider. This parameter is required when the provider
+        /// type is <code>user</code>.
         /// </para>
         /// </summary>
         public UserTrustProviderType UserTrustProviderType

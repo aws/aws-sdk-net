@@ -65,7 +65,7 @@ namespace Amazon.Drs.Model
         /// Array of tags to be added or updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

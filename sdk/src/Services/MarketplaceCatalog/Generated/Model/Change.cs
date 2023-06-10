@@ -63,7 +63,11 @@ namespace Amazon.MarketplaceCatalog.Model
         /// <para>
         /// Change types are single string values that describe your intention for the change.
         /// Each change type is unique for each <code>EntityType</code> provided in the change's
-        /// scope.
+        /// scope. For more information on change types available for single-AMI products, see
+        /// <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+        /// with single-AMI products</a>. Also, for more information on change types available
+        /// for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+        /// with container products</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -83,6 +87,10 @@ namespace Amazon.MarketplaceCatalog.Model
         /// Gets and sets the property Details. 
         /// <para>
         /// This object contains details specific to the change type of the requested change.
+        /// For more information on change types available for single-AMI products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+        /// with single-AMI products</a>. Also, for more information on change types available
+        /// for container-based products, see <a href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+        /// with container products</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=2, Max=16384)]
@@ -123,7 +131,7 @@ namespace Amazon.MarketplaceCatalog.Model
         /// The tags associated with the change.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Min=1, Max=200)]
         public List<Tag> EntityTags
         {
             get { return this._entityTags; }

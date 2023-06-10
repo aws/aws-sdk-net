@@ -122,7 +122,9 @@ namespace Amazon.S3.Model
     /// <para>
     /// x-amz-server-side-encryption-customer-key-MD5
     /// </para>
-    ///  </li> </ul> <para class="title"> <b>Special Errors</b> 
+    ///  </li> </ul> 
+    /// <para>
+    ///  <code>UploadPart</code> has the following special errors:
     /// </para>
     ///  <ul> <li> <ul> <li> 
     /// <para>
@@ -141,7 +143,9 @@ namespace Amazon.S3.Model
     /// <para>
     ///  <i>SOAP Fault Code Prefix: Client</i> 
     /// </para>
-    ///  </li> </ul> </li> </ul> <para class="title"> <b>Related Resources</b> 
+    ///  </li> </ul> </li> </ul> 
+    /// <para>
+    /// The following operations are related to <code>UploadPart</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>
@@ -226,12 +230,12 @@ namespace Amazon.S3.Model
         /// </para>
         ///  
         /// <para>
-        /// When using this action with Amazon S3 on Outposts, you must direct requests to the
-        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com.
-        /// When using this action using S3 on Outposts through the Amazon Web Services SDKs,
-        /// you provide the Outposts bucket ARN in place of the bucket name. For more information
-        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-        /// S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
+        /// When you use this action with Amazon S3 on Outposts, you must direct requests to the
+        /// S3 on Outposts hostname. The S3 on Outposts hostname takes the form <code> <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
+        /// When you use this action with S3 on Outposts through the Amazon Web Services SDKs,
+        /// you provide the Outposts access point ARN in place of the bucket name. For more information
+        /// about S3 on Outposts ARNs, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+        /// is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.
         /// </para>
         /// </summary>
         public string BucketName
@@ -465,6 +469,7 @@ namespace Amazon.S3.Model
         /// Important: Amazon S3 does not store the encryption key you provide.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ServerSideEncryptionCustomerProvidedKey
         {
             get { return this.serverSideEncryptionCustomerProvidedKey; }

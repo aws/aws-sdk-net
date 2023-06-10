@@ -62,11 +62,7 @@ namespace Amazon.S3.Model
     /// For information about enabling versioning on a bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html">Using
     /// Versioning</a>.
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Handling Replication of Encrypted Objects</b> 
-    /// </para>
-    ///  
+    ///  <dl> <dt>Handling Replication of Encrypted Objects</dt> <dd> 
     /// <para>
     /// By default, Amazon S3 doesn't replicate objects that are stored at rest using server-side
     /// encryption with CMKs stored in Amazon Web Services KMS. To replicate Amazon Web Services
@@ -80,11 +76,7 @@ namespace Amazon.S3.Model
     /// For information on <code>PutBucketReplication</code> errors, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ReplicationErrorCodeList">List
     /// of replication-related error codes</a> 
     /// </para>
-    ///  
-    /// <para>
-    ///  <b>Permissions</b> 
-    /// </para>
-    ///  
+    ///  </dd> <dt>Permissions</dt> <dd> 
     /// <para>
     /// To create a <code>PutBucketReplication</code> request, you must have <code>s3:PutReplicationConfiguration</code>
     /// permissions for the bucket. 
@@ -103,7 +95,7 @@ namespace Amazon.S3.Model
     /// href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
     /// permission.
     /// </para>
-    ///  </note> 
+    ///  </note> </dd> </dl> 
     /// <para>
     /// The following operations are related to <code>PutBucketReplication</code>:
     /// </para>

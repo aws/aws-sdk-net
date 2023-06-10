@@ -98,6 +98,7 @@ namespace Amazon.SimpleWorkflow.Model
         private int? _maximumPageSize;
         private string _nextPageToken;
         private bool? _reverseOrder;
+        private bool? _startAtPreviousStartedEvent;
         private TaskList _taskList;
 
         /// <summary>
@@ -171,7 +172,7 @@ namespace Amazon.SimpleWorkflow.Model
         /// If <code>NextPageToken</code> is returned there are more results available. The value
         /// of <code>NextPageToken</code> is a unique pagination token for each page. Make the
         /// call again using the returned token to retrieve the next page. Keep all other arguments
-        /// unchanged. Each pagination token expires after 60 seconds. Using an expired pagination
+        /// unchanged. Each pagination token expires after 24 hours. Using an expired pagination
         /// token will return a <code>400</code> error: "<code>Specified token has exceeded its
         /// maximum lifetime</code>". 
         /// </para>
@@ -223,16 +224,35 @@ namespace Amazon.SimpleWorkflow.Model
         }
 
         /// <summary>
+        /// Gets and sets the property StartAtPreviousStartedEvent. 
+        /// <para>
+        /// When set to <code>true</code>, returns the events with <code>eventTimestamp</code>
+        /// greater than or equal to <code>eventTimestamp</code> of the most recent <code>DecisionTaskStarted</code>
+        /// event. By default, this parameter is set to <code>false</code>.
+        /// </para>
+        /// </summary>
+        public bool StartAtPreviousStartedEvent
+        {
+            get { return this._startAtPreviousStartedEvent.GetValueOrDefault(); }
+            set { this._startAtPreviousStartedEvent = value; }
+        }
+
+        // Check to see if StartAtPreviousStartedEvent property is set
+        internal bool IsSetStartAtPreviousStartedEvent()
+        {
+            return this._startAtPreviousStartedEvent.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property TaskList. 
         /// <para>
         /// Specifies the task list to poll for decision tasks.
         /// </para>
         ///  
         /// <para>
-        /// The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
-        /// any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>).
-        /// Also, it must not <i>be</i> the literal string <code>arn</code>.
+        /// The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+        /// <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code>
+        /// | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

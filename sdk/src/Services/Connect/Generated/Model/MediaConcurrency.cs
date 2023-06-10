@@ -36,6 +36,7 @@ namespace Amazon.Connect.Model
     {
         private Channel _channel;
         private int? _concurrency;
+        private CrossChannelBehavior _crossChannelBehavior;
 
         /// <summary>
         /// Gets and sets the property Channel. 
@@ -85,6 +86,26 @@ namespace Amazon.Connect.Model
         internal bool IsSetConcurrency()
         {
             return this._concurrency.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property CrossChannelBehavior. 
+        /// <para>
+        /// Defines the cross-channel routing behavior for each channel that is enabled for this
+        /// Routing Profile. For example, this allows you to offer an agent a different contact
+        /// from another channel when they are currently working with a contact from a Voice channel.
+        /// </para>
+        /// </summary>
+        public CrossChannelBehavior CrossChannelBehavior
+        {
+            get { return this._crossChannelBehavior; }
+            set { this._crossChannelBehavior = value; }
+        }
+
+        // Check to see if CrossChannelBehavior property is set
+        internal bool IsSetCrossChannelBehavior()
+        {
+            return this._crossChannelBehavior != null;
         }
 
     }

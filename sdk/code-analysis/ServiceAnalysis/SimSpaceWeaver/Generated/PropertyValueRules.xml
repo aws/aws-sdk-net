@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-16"?>
 <property-value-rules>
   <property-value-rule>
+    <property>Amazon.SimSpaceWeaver.Model.CreateSnapshotRequest.Simulation</property>
+    <min>1</min>
+    <max>64</max>
+    <pattern>^[a-zA-Z0-9_.-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.DeleteAppRequest.App</property>
     <min>1</min>
     <max>64</max>
@@ -27,7 +33,7 @@
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.DescribeAppRequest.App</property>
     <min>1</min>
-    <max>64</max>
+    <max>256</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -56,7 +62,7 @@
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.DescribeAppResponse.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>256</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
@@ -279,6 +285,16 @@
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.SimSpaceWeaver.Model.S3Destination.BucketName</property>
+    <min>3</min>
+    <max>63</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.SimSpaceWeaver.Model.S3Destination.ObjectKeyPrefix</property>
+    <min>0</min>
+    <max>1024</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.S3Location.BucketName</property>
     <min>3</min>
     <max>63</max>
@@ -302,7 +318,7 @@
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.SimulationAppMetadata.Name</property>
     <min>1</min>
-    <max>64</max>
+    <max>256</max>
     <pattern>^[a-zA-Z0-9_.-]+$</pattern>
   </property-value-rule>
   <property-value-rule>

@@ -58,7 +58,7 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Id. 
         /// <para>
-        /// The identifier used to identify the job details in AWS CodePipeline.
+        /// The identifier used to identify the job details in CodePipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=512)]
@@ -77,8 +77,8 @@ namespace Amazon.CodePipeline.Model
         /// <summary>
         /// Gets and sets the property Nonce. 
         /// <para>
-        /// A system-generated random number that AWS CodePipeline uses to ensure that the job
-        /// is being worked on by only one job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a>
+        /// A system-generated random number that CodePipeline uses to ensure that the job is
+        /// being worked on by only one job worker. Use this number in an <a>AcknowledgeThirdPartyJob</a>
         /// request.
         /// </para>
         /// </summary>

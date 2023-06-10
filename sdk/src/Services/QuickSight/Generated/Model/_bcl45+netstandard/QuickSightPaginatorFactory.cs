@@ -44,6 +44,22 @@ namespace Amazon.QuickSight.Model
         }
 
         /// <summary>
+        /// Paginator for ListAssetBundleExportJobs operation
+        ///</summary>
+        public IListAssetBundleExportJobsPaginator ListAssetBundleExportJobs(ListAssetBundleExportJobsRequest request) 
+        {
+            return new ListAssetBundleExportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListAssetBundleImportJobs operation
+        ///</summary>
+        public IListAssetBundleImportJobsPaginator ListAssetBundleImportJobs(ListAssetBundleImportJobsRequest request) 
+        {
+            return new ListAssetBundleImportJobsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListDashboards operation
         ///</summary>
         public IListDashboardsPaginator ListDashboards(ListDashboardsRequest request) 
@@ -129,6 +145,22 @@ namespace Amazon.QuickSight.Model
         public IListThemeVersionsPaginator ListThemeVersions(ListThemeVersionsRequest request) 
         {
             return new ListThemeVersionsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListTopics operation
+        ///</summary>
+        public IListTopicsPaginator ListTopics(ListTopicsRequest request) 
+        {
+            return new ListTopicsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListVPCConnections operation
+        ///</summary>
+        public IListVPCConnectionsPaginator ListVPCConnections(ListVPCConnectionsRequest request) 
+        {
+            return new ListVPCConnectionsPaginator(this.client, request);
         }
 
         /// <summary>

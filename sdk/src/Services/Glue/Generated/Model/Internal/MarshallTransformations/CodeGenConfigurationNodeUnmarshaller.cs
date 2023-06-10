@@ -70,6 +70,18 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.Aggregate = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AmazonRedshiftSource", targetDepth))
+                {
+                    var unmarshaller = AmazonRedshiftSourceUnmarshaller.Instance;
+                    unmarshalledObject.AmazonRedshiftSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AmazonRedshiftTarget", targetDepth))
+                {
+                    var unmarshaller = AmazonRedshiftTargetUnmarshaller.Instance;
+                    unmarshalledObject.AmazonRedshiftTarget = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ApplyMapping", targetDepth))
                 {
                     var unmarshaller = ApplyMappingUnmarshaller.Instance;
@@ -80,6 +92,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AthenaConnectorSourceUnmarshaller.Instance;
                     unmarshalledObject.AthenaConnectorSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("CatalogDeltaSource", targetDepth))
+                {
+                    var unmarshaller = CatalogDeltaSourceUnmarshaller.Instance;
+                    unmarshalledObject.CatalogDeltaSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("CatalogHudiSource", targetDepth))
@@ -116,6 +134,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = CustomCodeUnmarshaller.Instance;
                     unmarshalledObject.CustomCode = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("DirectJDBCSource", targetDepth))
+                {
+                    var unmarshaller = DirectJDBCSourceUnmarshaller.Instance;
+                    unmarshalledObject.DirectJDBCSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("DirectKafkaSource", targetDepth))
@@ -164,6 +188,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = EvaluateDataQualityUnmarshaller.Instance;
                     unmarshalledObject.EvaluateDataQuality = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("EvaluateDataQualityMultiFrame", targetDepth))
+                {
+                    var unmarshaller = EvaluateDataQualityMultiFrameUnmarshaller.Instance;
+                    unmarshalledObject.EvaluateDataQualityMultiFrame = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("FillMissingValues", targetDepth))
@@ -292,6 +322,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.RenameField = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("S3CatalogDeltaSource", targetDepth))
+                {
+                    var unmarshaller = S3CatalogDeltaSourceUnmarshaller.Instance;
+                    unmarshalledObject.S3CatalogDeltaSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("S3CatalogHudiSource", targetDepth))
                 {
                     var unmarshaller = S3CatalogHudiSourceUnmarshaller.Instance;
@@ -314,6 +350,24 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = S3CsvSourceUnmarshaller.Instance;
                     unmarshalledObject.S3CsvSource = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3DeltaCatalogTarget", targetDepth))
+                {
+                    var unmarshaller = S3DeltaCatalogTargetUnmarshaller.Instance;
+                    unmarshalledObject.S3DeltaCatalogTarget = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3DeltaDirectTarget", targetDepth))
+                {
+                    var unmarshaller = S3DeltaDirectTargetUnmarshaller.Instance;
+                    unmarshalledObject.S3DeltaDirectTarget = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("S3DeltaSource", targetDepth))
+                {
+                    var unmarshaller = S3DeltaSourceUnmarshaller.Instance;
+                    unmarshalledObject.S3DeltaSource = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("S3DirectTarget", targetDepth))

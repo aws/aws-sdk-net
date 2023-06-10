@@ -39,7 +39,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The UNIX datetime of the end of the time range.
+        /// The Unix timestamp for the end of the time range.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -57,7 +57,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The UNIX datetime of the beginning of the time range.
+        /// The Unix timestamp for the beginning of the time range.
         /// </para>
         /// </summary>
         public DateTime StartTime

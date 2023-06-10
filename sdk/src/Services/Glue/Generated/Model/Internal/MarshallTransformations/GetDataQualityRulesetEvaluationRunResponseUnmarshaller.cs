@@ -51,6 +51,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("AdditionalDataSources", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, DataSource, StringUnmarshaller, DataSourceUnmarshaller>(StringUnmarshaller.Instance, DataSourceUnmarshaller.Instance);
+                    response.AdditionalDataSources = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AdditionalRunOptions", targetDepth))
                 {
                     var unmarshaller = DataQualityEvaluationRunAdditionalRunOptionsUnmarshaller.Instance;

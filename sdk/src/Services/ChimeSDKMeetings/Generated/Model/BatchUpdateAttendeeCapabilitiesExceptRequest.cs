@@ -62,7 +62,7 @@ namespace Amazon.ChimeSDKMeetings.Model
     /// <para>
     /// When you change a <code>video</code> or <code>content</code> capability from <code>None</code>
     /// or <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-    /// the attendee turned on their video or content streams, remote attendess can receive
+    /// the attendee turned on their video or content streams, remote attendees can receive
     /// those streams, but only after media renegotiation between the client and the Amazon
     /// Chime back-end server.
     /// </para>

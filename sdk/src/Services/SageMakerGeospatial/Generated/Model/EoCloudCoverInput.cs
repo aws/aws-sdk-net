@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// The structure representing the EoCloudCover filter.
     /// </summary>
     public partial class EoCloudCoverInput
     {
@@ -37,7 +37,10 @@ namespace Amazon.SageMakerGeospatial.Model
         private float? _upperBound;
 
         /// <summary>
-        /// Gets and sets the property LowerBound.
+        /// Gets and sets the property LowerBound. 
+        /// <para>
+        /// Lower bound for EoCloudCover.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public float LowerBound
@@ -53,7 +56,10 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UpperBound.
+        /// Gets and sets the property UpperBound. 
+        /// <para>
+        /// Upper bound for EoCloudCover.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public float UpperBound

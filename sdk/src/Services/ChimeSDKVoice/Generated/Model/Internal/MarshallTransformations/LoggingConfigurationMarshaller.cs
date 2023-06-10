@@ -45,6 +45,12 @@ namespace Amazon.ChimeSDKVoice.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(LoggingConfiguration requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetEnableMediaMetricLogs())
+            {
+                context.Writer.WritePropertyName("EnableMediaMetricLogs");
+                context.Writer.Write(requestObject.EnableMediaMetricLogs);
+            }
+
             if(requestObject.IsSetEnableSIPLogs())
             {
                 context.Writer.WritePropertyName("EnableSIPLogs");

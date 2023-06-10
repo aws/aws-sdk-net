@@ -32,7 +32,8 @@ namespace Amazon.SageMaker.Model
     /// Container for the parameters to the DeleteTrialComponent operation.
     /// Deletes the specified trial component. A trial component must be disassociated from
     /// all trials before the trial component can be deleted. To disassociate a trial component
-    /// from a trial, call the <a>DisassociateTrialComponent</a> API.
+    /// from a trial, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisassociateTrialComponent.html">DisassociateTrialComponent</a>
+    /// API.
     /// </summary>
     public partial class DeleteTrialComponentRequest : AmazonSageMakerRequest
     {

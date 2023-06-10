@@ -81,14 +81,14 @@ namespace Amazon.QLDB.Model
         /// <summary>
         /// Gets and sets the property DeletionProtection. 
         /// <para>
-        /// The flag that prevents a ledger from being deleted by any user. If not provided on
-        /// ledger creation, this feature is enabled (<code>true</code>) by default.
+        /// Specifies whether the ledger is protected from being deleted by any user. If not defined
+        /// during ledger creation, this feature is enabled (<code>true</code>) by default.
         /// </para>
         ///  
         /// <para>
         /// If deletion protection is enabled, you must first disable it before you can delete
         /// the ledger. You can disable it by calling the <code>UpdateLedger</code> operation
-        /// to set the flag to <code>false</code>.
+        /// to set this parameter to <code>false</code>.
         /// </para>
         /// </summary>
         public bool DeletionProtection

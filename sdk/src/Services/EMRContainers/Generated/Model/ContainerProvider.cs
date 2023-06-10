@@ -77,7 +77,7 @@ namespace Amazon.EMRContainers.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The type of the container provider. EKS is the only supported type as of now.
+        /// The type of the container provider. Amazon EKS is the only supported type as of now.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

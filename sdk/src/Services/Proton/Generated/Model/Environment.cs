@@ -168,6 +168,7 @@ namespace Amazon.Proton.Model
         /// An environment deployment status message.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string DeploymentStatusMessage
         {
             get { return this._deploymentStatusMessage; }
@@ -186,7 +187,7 @@ namespace Amazon.Proton.Model
         /// The description of the environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -338,7 +339,7 @@ namespace Amazon.Proton.Model
         /// <para>
         /// The linked repository that you use to host your rendered infrastructure templates
         /// for self-managed provisioning. A linked repository is a repository that has been registered
-        /// with Proton. For more information, see <a>CreateRepository</a>.
+        /// with Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.
         /// </para>
         /// </summary>
         public RepositoryBranch ProvisioningRepository
@@ -359,7 +360,7 @@ namespace Amazon.Proton.Model
         /// The environment spec.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string Spec
         {
             get { return this._spec; }

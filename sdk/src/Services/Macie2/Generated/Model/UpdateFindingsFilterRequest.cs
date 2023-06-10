@@ -88,8 +88,8 @@ namespace Amazon.Macie2.Model
         ///  
         /// <para>
         /// We strongly recommend that you avoid including any sensitive data in the description
-        /// of a filter. Other users might be able to see this description, depending on the actions
-        /// that they're allowed to perform in Amazon Macie.
+        /// of a filter. Other users of your account might be able to see this description, depending
+        /// on the actions that they're allowed to perform in Amazon Macie.
         /// </para>
         /// </summary>
         public string Description
@@ -150,8 +150,8 @@ namespace Amazon.Macie2.Model
         ///  
         /// <para>
         /// We strongly recommend that you avoid including any sensitive data in the name of a
-        /// filter. Other users might be able to see this name, depending on the actions that
-        /// they're allowed to perform in Amazon Macie.
+        /// filter. Other users of your account might be able to see this name, depending on the
+        /// actions that they're allowed to perform in Amazon Macie.
         /// </para>
         /// </summary>
         public string Name

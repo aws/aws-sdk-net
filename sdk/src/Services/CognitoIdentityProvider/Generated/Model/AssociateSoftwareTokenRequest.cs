@@ -65,6 +65,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// want to generate.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string AccessToken
         {
             get { return this._accessToken; }

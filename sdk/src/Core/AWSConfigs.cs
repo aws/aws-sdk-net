@@ -165,7 +165,7 @@ namespace Amazon
         /// This setting can be configured through the App.config. For example:
         /// <code>
         /// &lt;configSections&gt;
-        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK.Core"/&gt;
         /// &lt;/configSections&gt;
         /// &lt;aws region="us-west-2" /&gt;
         /// </code>
@@ -359,7 +359,7 @@ namespace Amazon
         /// Configures if the SDK should use a custom configuration file that defines the regions and endpoints.
         /// <code>
         /// &lt;configSections&gt;
-        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK.Core"/&gt;
         /// &lt;/configSections&gt;
         /// &lt;aws endpointDefinition="c:\config\endpoints.json" /&gt;
         /// </code>
@@ -384,7 +384,7 @@ namespace Amazon
         /// Configures if the SDK Cache should be used, the default value is true.
         /// <code>
         /// &lt;configSections&gt;
-        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK.Core"/&gt;
         /// &lt;/configSections&gt;
         /// &lt;aws useSdkCache="true" /&gt;
         /// </code>
@@ -406,7 +406,7 @@ namespace Amazon
         /// Example section:
         /// <code>
         /// &lt;configSections&gt;
-        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK.Core"/&gt;
         /// &lt;/configSections&gt;
         /// &lt;aws&gt;
         ///   &lt;logging logTo="Log4Net, SystemDiagnostics" logResponses="Always" logMetrics="true" /&gt;
@@ -422,7 +422,7 @@ namespace Amazon
         /// Example section:
         /// <code>
         /// &lt;configSections&gt;
-        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK.Core"/&gt;
         /// &lt;/configSections&gt;
         /// &lt;aws&gt;
         ///   &lt;proxy host="localhost" port="8888" username="1" password="1" bypassList="addressexpr1;addressexpr2;..." bypassOnLocal="true" /&gt;
@@ -452,7 +452,7 @@ namespace Amazon
         /// Example section:
         /// <code>
         /// &lt;configSections&gt;
-        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK"/&gt;
+        ///   &lt;section name="aws" type="Amazon.AWSSection, AWSSDK.Core"/&gt;
         /// &lt;/configSections&gt;
         /// &lt;aws region="us-west-2" /&gt;
         /// </code>

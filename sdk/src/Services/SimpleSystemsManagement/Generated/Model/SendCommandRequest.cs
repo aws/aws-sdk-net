@@ -399,6 +399,7 @@ namespace Amazon.SimpleSystemsManagement.Model
         /// The required and optional parameters specified in the document being run.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Dictionary<string, List<string>> Parameters
         {
             get { return this._parameters; }

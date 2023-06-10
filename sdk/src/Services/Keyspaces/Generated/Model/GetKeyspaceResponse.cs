@@ -34,6 +34,8 @@ namespace Amazon.Keyspaces.Model
     public partial class GetKeyspaceResponse : AmazonWebServiceResponse
     {
         private string _keyspaceName;
+        private List<string> _replicationRegions = new List<string>();
+        private Rs _replicationStrategy;
         private string _resourceArn;
 
         /// <summary>
@@ -56,9 +58,49 @@ namespace Amazon.Keyspaces.Model
         }
 
         /// <summary>
+        /// Gets and sets the property ReplicationRegions. 
+        /// <para>
+        ///  If the <code>replicationStrategy</code> of the keyspace is <code>MULTI_REGION</code>,
+        /// a list of replication Regions is returned. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=2, Max=6)]
+        public List<string> ReplicationRegions
+        {
+            get { return this._replicationRegions; }
+            set { this._replicationRegions = value; }
+        }
+
+        // Check to see if ReplicationRegions property is set
+        internal bool IsSetReplicationRegions()
+        {
+            return this._replicationRegions != null && this._replicationRegions.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ReplicationStrategy. 
+        /// <para>
+        ///  Returns the replication strategy of the keyspace. The options are <code>SINGLE_REGION</code>
+        /// or <code>MULTI_REGION</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true, Min=1, Max=20)]
+        public Rs ReplicationStrategy
+        {
+            get { return this._replicationStrategy; }
+            set { this._replicationStrategy = value; }
+        }
+
+        // Check to see if ReplicationStrategy property is set
+        internal bool IsSetReplicationStrategy()
+        {
+            return this._replicationStrategy != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property ResourceArn. 
         /// <para>
-        /// The ARN of the keyspace.
+        /// Returns the ARN of the keyspace.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=20, Max=1000)]

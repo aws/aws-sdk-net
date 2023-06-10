@@ -29,14 +29,13 @@ using Amazon.Runtime.Internal;
 namespace Amazon.VoiceID.Model
 {
     /// <summary>
-    /// The configuration defining the action to take when a speaker is flagged by the fraud
-    /// detection system during a batch speaker enrollment job, and the risk threshold to
-    /// use for identification.
+    /// The fraud detection configuration to be used during the batch speaker enrollment job.
     /// </summary>
     public partial class EnrollmentJobFraudDetectionConfig
     {
         private FraudDetectionAction _fraudDetectionAction;
         private int? _riskThreshold;
+        private List<string> _watchlistIds = new List<string>();
 
         /// <summary>
         /// Gets and sets the property FraudDetectionAction. 
@@ -78,6 +77,25 @@ namespace Amazon.VoiceID.Model
         internal bool IsSetRiskThreshold()
         {
             return this._riskThreshold.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WatchlistIds. 
+        /// <para>
+        /// The identifier of watchlists against which fraud detection is performed. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1)]
+        public List<string> WatchlistIds
+        {
+            get { return this._watchlistIds; }
+            set { this._watchlistIds = value; }
+        }
+
+        // Check to see if WatchlistIds property is set
+        internal bool IsSetWatchlistIds()
+        {
+            return this._watchlistIds != null && this._watchlistIds.Count > 0; 
         }
 
     }

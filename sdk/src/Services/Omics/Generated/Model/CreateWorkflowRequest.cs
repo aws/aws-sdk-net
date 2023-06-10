@@ -25,6 +25,7 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Omics.Model
 {
@@ -34,6 +35,7 @@ namespace Amazon.Omics.Model
     /// </summary>
     public partial class CreateWorkflowRequest : AmazonOmicsRequest
     {
+        private Accelerators _accelerators;
         private string _definitionUri;
         private MemoryStream _definitionZip;
         private string _description;
@@ -44,6 +46,25 @@ namespace Amazon.Omics.Model
         private string _requestId;
         private int? _storageCapacity;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
+
+        /// <summary>
+        /// Gets and sets the property Accelerators. 
+        /// <para>
+        ///  The computational accelerator specified to run the workflow. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public Accelerators Accelerators
+        {
+            get { return this._accelerators; }
+            set { this._accelerators = value; }
+        }
+
+        // Check to see if Accelerators property is set
+        internal bool IsSetAccelerators()
+        {
+            return this._accelerators != null;
+        }
 
         /// <summary>
         /// Gets and sets the property DefinitionUri. 
@@ -180,7 +201,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property RequestId. 
         /// <para>
-        /// A request ID for the workflow.
+        /// To ensure that requests don't run multiple times, specify a unique ID for each request.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -199,7 +220,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property StorageCapacity. 
         /// <para>
-        /// A storage capacity for the workflow.
+        /// A storage capacity for the workflow in gigabytes.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100000)]
@@ -233,5 +254,13 @@ namespace Amazon.Omics.Model
             return this._tags != null && this._tags.Count > 0; 
         }
 
+        /// <summary>
+        /// Get the signer to use for this request.
+        /// </summary>
+        /// <returns>A signer for this request.</returns>
+        override protected AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
     }
 }

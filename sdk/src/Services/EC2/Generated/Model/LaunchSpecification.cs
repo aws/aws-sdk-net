@@ -71,9 +71,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllSecurityGroups. 
         /// <para>
-        /// One or more security groups. When requesting instances in a VPC, you must specify
-        /// the IDs of the security groups. When requesting instances in EC2-Classic, you can
-        /// specify the names or the IDs of the security groups.
+        /// The IDs of the security groups.
         /// </para>
         /// </summary>
         public List<GroupIdentifier> AllSecurityGroups
@@ -91,7 +89,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property BlockDeviceMappings. 
         /// <para>
-        /// One or more block device mapping entries.
+        /// The block device mapping entries.
         /// </para>
         /// </summary>
         public List<BlockDeviceMapping> BlockDeviceMappings
@@ -239,8 +237,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property NetworkInterfaces. 
         /// <para>
-        /// One or more network interfaces. If you specify a network interface, you must specify
-        /// subnet IDs and security group IDs using the network interface.
+        /// The network interfaces. If you specify a network interface, you must specify subnet
+        /// IDs and security group IDs using the network interface.
         /// </para>
         /// </summary>
         public List<InstanceNetworkInterfaceSpecification> NetworkInterfaces
@@ -330,9 +328,11 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property UserData. 
         /// <para>
-        /// The Base64-encoded user data for the instance.
+        /// The base64-encoded user data that instances use when starting up. User data is limited
+        /// to 16 KB.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string UserData
         {
             get { return this._userData; }

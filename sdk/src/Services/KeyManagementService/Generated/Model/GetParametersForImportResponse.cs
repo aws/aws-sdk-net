@@ -104,7 +104,7 @@ namespace Amazon.KeyManagementService.Model
         /// The public key to use to encrypt the key material before importing it with <a>ImportKeyMaterial</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=1, Max=4096)]
         public MemoryStream PublicKey
         {
             get { return this._publicKey; }

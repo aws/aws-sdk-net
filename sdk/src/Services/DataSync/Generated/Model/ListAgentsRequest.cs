@@ -30,21 +30,23 @@ namespace Amazon.DataSync.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAgents operation.
-    /// Returns a list of agents owned by an Amazon Web Services account in the Amazon Web
-    /// Services Region specified in the request. The returned list is ordered by agent Amazon
-    /// Resource Name (ARN).
+    /// Returns a list of DataSync agents that belong to an Amazon Web Services account in
+    /// the Amazon Web Services Region specified in the request.
     /// 
     ///  
     /// <para>
-    /// By default, this operation returns a maximum of 100 agents. This operation supports
-    /// pagination that enables you to optionally reduce the number of agents returned in
-    /// a response.
+    /// With pagination, you can reduce the number of agents returned in a response. If you
+    /// get a truncated list of agents in a response, the response contains a marker that
+    /// you can specify in your next request to fetch the next page of agents.
     /// </para>
     ///  
     /// <para>
-    /// If you have more agents than are returned in a response (that is, the response returns
-    /// only a truncated list of your agents), the response contains a marker that you can
-    /// specify in your next request to fetch the next page of agents.
+    ///  <code>ListAgents</code> is eventually consistent. This means the result of running
+    /// the operation might not reflect that you just created or deleted an agent. For example,
+    /// if you create an agent with <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateAgent.html">CreateAgent</a>
+    /// and then immediately run <code>ListAgents</code>, that agent might not show up in
+    /// the list right away. In situations like this, you can always confirm whether an agent
+    /// has been created (or deleted) by using <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_DescribeAgent.html">DescribeAgent</a>.
     /// </para>
     /// </summary>
     public partial class ListAgentsRequest : AmazonDataSyncRequest
@@ -55,7 +57,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property MaxResults. 
         /// <para>
-        /// The maximum number of agents to list.
+        /// Specifies the maximum number of DataSync agents to list in a response. By default,
+        /// a response shows a maximum of 100 agents.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=100)]
@@ -74,7 +77,8 @@ namespace Amazon.DataSync.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// An opaque string that indicates the position at which to begin the next list of agents.
+        /// Specifies an opaque string that indicates the position to begin the next list of results
+        /// in the response.
         /// </para>
         /// </summary>
         [AWSProperty(Max=65535)]

@@ -42,7 +42,7 @@ namespace Amazon.GlueDataBrew.Model
         /// A system-generated identifier for the session.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Sensitive=true, Min=1, Max=255)]
         public string ClientSessionId
         {
             get { return this._clientSessionId; }

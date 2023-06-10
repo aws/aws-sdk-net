@@ -34,11 +34,35 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class StartRestoreJobRequest : AmazonBackupRequest
     {
+        private bool? _copySourceTagsToRestoredResource;
         private string _iamRoleArn;
         private string _idempotencyToken;
         private Dictionary<string, string> _metadata = new Dictionary<string, string>();
         private string _recoveryPointArn;
         private string _resourceType;
+
+        /// <summary>
+        /// Gets and sets the property CopySourceTagsToRestoredResource. 
+        /// <para>
+        /// This is an optional parameter. If this equals <code>True</code>, tags included in
+        /// the backup will be copied to the restored resource.
+        /// </para>
+        ///  
+        /// <para>
+        /// This can only be applied to backups created through Backup.
+        /// </para>
+        /// </summary>
+        public bool CopySourceTagsToRestoredResource
+        {
+            get { return this._copySourceTagsToRestoredResource.GetValueOrDefault(); }
+            set { this._copySourceTagsToRestoredResource = value; }
+        }
+
+        // Check to see if CopySourceTagsToRestoredResource property is set
+        internal bool IsSetCopySourceTagsToRestoredResource()
+        {
+            return this._copySourceTagsToRestoredResource.HasValue; 
+        }
 
         /// <summary>
         /// Gets and sets the property IamRoleArn. 
@@ -138,7 +162,7 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public Dictionary<string, string> Metadata
         {
             get { return this._metadata; }
@@ -185,6 +209,10 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>CloudFormation</code> for CloudFormation
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>DynamoDB</code> for Amazon DynamoDB
         /// </para>
         ///  </li> <li> 
@@ -213,11 +241,19 @@ namespace Amazon.Backup.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>Redshift</code> for Amazon Redshift
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>Storage Gateway</code> for Storage Gateway
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>S3</code> for Amazon S3
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>Timestream</code> for Amazon Timestream
         /// </para>
         ///  </li> <li> 
         /// <para>

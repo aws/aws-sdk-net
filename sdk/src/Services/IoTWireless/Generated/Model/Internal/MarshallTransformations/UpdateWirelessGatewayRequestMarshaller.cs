@@ -90,6 +90,12 @@ namespace Amazon.IoTWireless.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetMaxEirp())
+                {
+                    context.Writer.WritePropertyName("MaxEirp");
+                    context.Writer.Write(publicRequest.MaxEirp);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("Name");

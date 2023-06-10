@@ -85,6 +85,17 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.Description);
                 }
 
+                if(publicRequest.IsSetDestinationPackageVersions())
+                {
+                    context.Writer.WritePropertyName("destinationPackageVersions");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestDestinationPackageVersionsListValue in publicRequest.DestinationPackageVersions)
+                    {
+                            context.Writer.Write(publicRequestDestinationPackageVersionsListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetDocument())
                 {
                     context.Writer.WritePropertyName("document");
@@ -123,6 +134,22 @@ namespace Amazon.IoT.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.JobExecutionsRolloutConfig, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetMaintenanceWindows())
+                {
+                    context.Writer.WritePropertyName("maintenanceWindows");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestMaintenanceWindowsListValue in publicRequest.MaintenanceWindows)
+                    {
+                        context.Writer.WriteObjectStart();
+
+                        var marshaller = MaintenanceWindowMarshaller.Instance;
+                        marshaller.Marshall(publicRequestMaintenanceWindowsListValue, context);
+
+                        context.Writer.WriteObjectEnd();
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 if(publicRequest.IsSetPresignedUrlConfig())

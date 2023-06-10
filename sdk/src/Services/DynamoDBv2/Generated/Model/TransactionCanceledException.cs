@@ -209,7 +209,7 @@ namespace Amazon.DynamoDBv2.Model
     /// </para>
     ///  <note> 
     /// <para>
-    /// This message is returned when when writes get throttled on an On-Demand GSI as DynamoDB
+    /// This message is returned when writes get throttled on an On-Demand GSI as DynamoDB
     /// is automatically scaling the GSI.
     /// </para>
     ///  </note> </li> </ul> </li> </ul> </li> <li> 

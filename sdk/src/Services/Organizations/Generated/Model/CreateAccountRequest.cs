@@ -136,7 +136,7 @@ namespace Amazon.Organizations.Model
         /// The friendly name of the member account.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]
         public string AccountName
         {
             get { return this._accountName; }
@@ -204,7 +204,7 @@ namespace Amazon.Organizations.Model
         /// with an invalid email address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=6, Max=64)]
+        [AWSProperty(Required=true, Sensitive=true, Min=6, Max=64)]
         public string Email
         {
             get { return this._email; }
@@ -306,8 +306,8 @@ namespace Amazon.Organizations.Model
         /// </para>
         ///  <note> 
         /// <para>
-        /// If any one of the tags is invalid or if you exceed the maximum allowed number of tags
-        /// for an account, then the entire request fails and the account is not created.
+        /// If any one of the tags is not valid or if you exceed the maximum allowed number of
+        /// tags for an account, then the entire request fails and the account is not created.
         /// </para>
         ///  </note>
         /// </summary>

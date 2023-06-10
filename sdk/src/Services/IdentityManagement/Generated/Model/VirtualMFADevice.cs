@@ -44,9 +44,10 @@ namespace Amazon.IdentityManagement.Model
         /// Gets and sets the property Base32StringSeed. 
         /// <para>
         ///  The base32 seed defined as specified in <a href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>.
-        /// The <code>Base32StringSeed</code> is base64-encoded. 
+        /// The <code>Base32StringSeed</code> is base32-encoded. 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public MemoryStream Base32StringSeed
         {
             get { return this._base32StringSeed; }
@@ -87,6 +88,7 @@ namespace Amazon.IdentityManagement.Model
         /// 
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public MemoryStream QRCodePNG
         {
             get { return this._qrCodePNG; }

@@ -30,10 +30,10 @@ namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportWorkspaceImage operation.
-    /// Imports the specified Windows 10 Bring Your Own License (BYOL) or Windows Server 2016
-    /// BYOL image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2
-    /// image that is in your Amazon Web Services account, and you must own the image. For
-    /// more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
+    /// Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon
+    /// WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your
+    /// Amazon Web Services account, and you must own the image. For more information about
+    /// creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
     /// Bring Your Own Windows Desktop Licenses</a>.
     /// </summary>
     public partial class ImportWorkspaceImageRequest : AmazonWorkSpacesRequest
@@ -49,15 +49,19 @@ namespace Amazon.WorkSpaces.Model
         /// Gets and sets the property Applications. 
         /// <para>
         /// If specified, the version of Microsoft Office to subscribe to. Valid only for Windows
-        /// 10 BYOL images. For more information about subscribing to Office for BYOL images,
+        /// 10 and 11 BYOL images. For more information about subscribing to Office for BYOL images,
         /// see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
         /// Bring Your Own Windows Desktop Licenses</a>.
         /// </para>
-        ///  <note> 
+        ///  <note> <ul> <li> 
         /// <para>
         /// Although this parameter is an array, only one item is allowed at this time.
         /// </para>
-        ///  </note>
+        ///  </li> <li> 
+        /// <para>
+        /// Windows 11 only supports <code>Microsoft_Office_2019</code>.
+        /// </para>
+        ///  </li> </ul> </note>
         /// </summary>
         [AWSProperty(Min=1, Max=5)]
         public List<string> Applications

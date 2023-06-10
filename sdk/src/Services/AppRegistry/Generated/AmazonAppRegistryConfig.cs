@@ -32,7 +32,7 @@ namespace Amazon.AppRegistry
     public partial class AmazonAppRegistryConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.42");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.44");
 
         private string _userAgent = UserAgentString;
 

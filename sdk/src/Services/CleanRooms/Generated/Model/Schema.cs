@@ -221,7 +221,7 @@ namespace Amazon.CleanRooms.Model
         /// <summary>
         /// Gets and sets the property PartitionKeys. 
         /// <para>
-        /// The partition keys for the data set underlying this schema.
+        /// The partition keys for the dataset underlying this schema.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

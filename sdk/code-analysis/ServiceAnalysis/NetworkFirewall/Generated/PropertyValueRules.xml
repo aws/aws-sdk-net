@@ -147,6 +147,23 @@
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateTLSInspectionConfigurationRequest.Description</property>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateTLSInspectionConfigurationRequest.TLSInspectionConfigurationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.CreateTLSInspectionConfigurationResponse.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DeleteFirewallRequest.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -184,6 +201,18 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DeleteRuleGroupRequest.RuleGroupName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DeleteTLSInspectionConfigurationRequest.TLSInspectionConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DeleteTLSInspectionConfigurationRequest.TLSInspectionConfigurationName</property>
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-]+$</pattern>
@@ -302,6 +331,24 @@
     <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeTLSInspectionConfigurationRequest.TLSInspectionConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeTLSInspectionConfigurationRequest.TLSInspectionConfigurationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.DescribeTLSInspectionConfigurationResponse.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.DisassociateSubnetsRequest.FirewallArn</property>
     <min>1</min>
     <max>256</max>
@@ -407,6 +454,23 @@
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.ListTagsForResourceResponse.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListTLSInspectionConfigurationsRequest.MaxResults</property>
+    <min>1</min>
+    <max>100</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListTLSInspectionConfigurationsRequest.NextToken</property>
+    <min>1</min>
+    <max>2048</max>
+    <pattern>[0-9A-Za-z:\/+=]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ListTLSInspectionConfigurationsResponse.NextToken</property>
     <min>1</min>
     <max>2048</max>
     <pattern>[0-9A-Za-z:\/+=]+$</pattern>
@@ -713,6 +777,35 @@
     <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateTLSInspectionConfigurationRequest.Description</property>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateTLSInspectionConfigurationRequest.TLSInspectionConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateTLSInspectionConfigurationRequest.TLSInspectionConfigurationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateTLSInspectionConfigurationRequest.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.UpdateTLSInspectionConfigurationResponse.UpdateToken</property>
+    <min>1</min>
+    <max>1024</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.Address.AddressDefinition</property>
     <min>1</min>
     <max>255</max>
@@ -798,6 +891,12 @@
     <min>1</min>
     <max>128</max>
     <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.FirewallPolicy.TLSInspectionConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.FirewallPolicyMetadata.Arn</property>
@@ -944,6 +1043,12 @@
     <max>2000000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.ServerCertificate.ResourceArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.NetworkFirewall.Model.SourceMetadata.SourceArn</property>
     <min>1</min>
     <max>256</max>
@@ -993,5 +1098,52 @@
     <min>0</min>
     <max>256</max>
     <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.TlsCertificateData.CertificateArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.TlsCertificateData.StatusMessage</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z0-9- ]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.TLSInspectionConfigurationMetadata.Arn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.TLSInspectionConfigurationMetadata.Name</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.TLSInspectionConfigurationResponse.Description</property>
+    <max>512</max>
+    <pattern>^.*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.TLSInspectionConfigurationResponse.TLSInspectionConfigurationArn</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^arn:aws.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.TLSInspectionConfigurationResponse.TLSInspectionConfigurationId</property>
+    <min>36</min>
+    <max>36</max>
+    <pattern>^([0-9a-f]{8})-([0-9a-f]{4}-){3}([0-9a-f]{12})$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.NetworkFirewall.Model.TLSInspectionConfigurationResponse.TLSInspectionConfigurationName</property>
+    <min>1</min>
+    <max>128</max>
+    <pattern>^[a-zA-Z0-9-]+$</pattern>
   </property-value-rule>
 </property-value-rules>

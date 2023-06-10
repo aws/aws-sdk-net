@@ -68,6 +68,7 @@ namespace Amazon.QuickSight.Model
         /// The configuration for a <code>CategoryFilter</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Required=true)]
         public CategoryFilterConfiguration Configuration
         {
             get { return this._configuration; }

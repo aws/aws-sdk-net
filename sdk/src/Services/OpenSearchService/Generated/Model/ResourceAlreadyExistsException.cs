@@ -29,8 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// An exception for creating a resource that already exists. Gives http status code of
-    /// 400.
+    /// An exception for creating a resource that already exists.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

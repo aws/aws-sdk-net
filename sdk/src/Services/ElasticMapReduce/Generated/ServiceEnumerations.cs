@@ -1665,6 +1665,52 @@ namespace Amazon.ElasticMapReduce
 
 
     /// <summary>
+    /// Constants used for properties of type OutputNotebookFormat.
+    /// </summary>
+    public class OutputNotebookFormat : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HTML for OutputNotebookFormat
+        /// </summary>
+        public static readonly OutputNotebookFormat HTML = new OutputNotebookFormat("HTML");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public OutputNotebookFormat(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static OutputNotebookFormat FindValue(string value)
+        {
+            return FindValue<OutputNotebookFormat>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator OutputNotebookFormat(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type PlacementGroupStrategy.
     /// </summary>
     public class PlacementGroupStrategy : ConstantClass
@@ -1882,6 +1928,18 @@ namespace Amazon.ElasticMapReduce
         /// Constant CapacityOptimized for SpotProvisioningAllocationStrategy
         /// </summary>
         public static readonly SpotProvisioningAllocationStrategy CapacityOptimized = new SpotProvisioningAllocationStrategy("capacity-optimized");
+        /// <summary>
+        /// Constant Diversified for SpotProvisioningAllocationStrategy
+        /// </summary>
+        public static readonly SpotProvisioningAllocationStrategy Diversified = new SpotProvisioningAllocationStrategy("diversified");
+        /// <summary>
+        /// Constant LowestPrice for SpotProvisioningAllocationStrategy
+        /// </summary>
+        public static readonly SpotProvisioningAllocationStrategy LowestPrice = new SpotProvisioningAllocationStrategy("lowest-price");
+        /// <summary>
+        /// Constant PriceCapacityOptimized for SpotProvisioningAllocationStrategy
+        /// </summary>
+        public static readonly SpotProvisioningAllocationStrategy PriceCapacityOptimized = new SpotProvisioningAllocationStrategy("price-capacity-optimized");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

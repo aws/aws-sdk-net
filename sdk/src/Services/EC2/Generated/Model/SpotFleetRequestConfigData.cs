@@ -163,8 +163,12 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ExcessCapacityTerminationPolicy. 
         /// <para>
-        /// Indicates whether running Spot Instances should be terminated if you decrease the
-        /// target capacity of the Spot Fleet request below the current size of the Spot Fleet.
+        /// Indicates whether running instances should be terminated if you decrease the target
+        /// capacity of the Spot Fleet request below the current size of the Spot Fleet.
+        /// </para>
+        ///  
+        /// <para>
+        /// Supported only for fleets of type <code>maintain</code>.
         /// </para>
         /// </summary>
         public ExcessCapacityTerminationPolicy ExcessCapacityTerminationPolicy

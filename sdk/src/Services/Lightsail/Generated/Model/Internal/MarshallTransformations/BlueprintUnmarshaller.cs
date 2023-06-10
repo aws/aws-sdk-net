@@ -64,6 +64,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("appCategory", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.AppCategory = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("blueprintId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

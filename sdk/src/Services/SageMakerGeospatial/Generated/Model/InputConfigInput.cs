@@ -33,27 +33,8 @@ namespace Amazon.SageMakerGeospatial.Model
     /// </summary>
     public partial class InputConfigInput
     {
-        private EojDataSourceConfigInput _dataSourceConfig;
         private string _previousEarthObservationJobArn;
         private RasterDataCollectionQueryInput _rasterDataCollectionQuery;
-
-        /// <summary>
-        /// Gets and sets the property DataSourceConfig. 
-        /// <para>
-        /// The location of the input data.&gt;
-        /// </para>
-        /// </summary>
-        public EojDataSourceConfigInput DataSourceConfig
-        {
-            get { return this._dataSourceConfig; }
-            set { this._dataSourceConfig = value; }
-        }
-
-        // Check to see if DataSourceConfig property is set
-        internal bool IsSetDataSourceConfig()
-        {
-            return this._dataSourceConfig != null;
-        }
 
         /// <summary>
         /// Gets and sets the property PreviousEarthObservationJobArn. 
@@ -74,7 +55,11 @@ namespace Amazon.SageMakerGeospatial.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RasterDataCollectionQuery.
+        /// Gets and sets the property RasterDataCollectionQuery. 
+        /// <para>
+        /// The structure representing the RasterDataCollection Query consisting of the Area of
+        /// Interest, RasterDataCollectionArn,TimeRange and Property Filters.
+        /// </para>
         /// </summary>
         public RasterDataCollectionQueryInput RasterDataCollectionQuery
         {

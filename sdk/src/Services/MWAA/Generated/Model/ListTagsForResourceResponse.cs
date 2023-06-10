@@ -38,8 +38,9 @@ namespace Amazon.MWAA.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// The key-value tag pairs associated to your environment. To learn more, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
-        /// Amazon Web Services resources</a>.
+        /// The key-value tag pairs associated to your environment. For more information, see
+        /// <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon
+        /// Web Services resources</a>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=50)]

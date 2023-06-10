@@ -87,11 +87,6 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>modification-result.target-configuration.platform</code> - The network platform
-        /// of the new Reserved Instances (<code>EC2-Classic</code> | <code>EC2-VPC</code>).
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>reserved-instances-id</code> - The ID of the Reserved Instances modified.
         /// </para>
         ///  </li> <li> 

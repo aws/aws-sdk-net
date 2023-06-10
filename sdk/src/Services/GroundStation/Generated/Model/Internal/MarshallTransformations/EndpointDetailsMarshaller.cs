@@ -45,6 +45,17 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(EndpointDetails requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetAwsGroundStationAgentEndpoint())
+            {
+                context.Writer.WritePropertyName("awsGroundStationAgentEndpoint");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = AwsGroundStationAgentEndpointMarshaller.Instance;
+                marshaller.Marshall(requestObject.AwsGroundStationAgentEndpoint, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetEndpoint())
             {
                 context.Writer.WritePropertyName("endpoint");
@@ -54,6 +65,23 @@ namespace Amazon.GroundStation.Model.Internal.MarshallTransformations
                 marshaller.Marshall(requestObject.Endpoint, context);
 
                 context.Writer.WriteObjectEnd();
+            }
+
+            if(requestObject.IsSetHealthReasons())
+            {
+                context.Writer.WritePropertyName("healthReasons");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectHealthReasonsListValue in requestObject.HealthReasons)
+                {
+                        context.Writer.Write(requestObjectHealthReasonsListValue);
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetHealthStatus())
+            {
+                context.Writer.WritePropertyName("healthStatus");
+                context.Writer.Write(requestObject.HealthStatus);
             }
 
             if(requestObject.IsSetSecurityDetails())

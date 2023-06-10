@@ -68,6 +68,11 @@ namespace Amazon.CloudFormation.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
+        ///  <code>SKIPPED_SUSPENDED_ACCOUNT</code>: The operation in the specified account and
+        /// Region has been skipped because the account was suspended at the time of the operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
         ///  <code>SUCCEEDED</code>: The operation in the specified account and Region completed
         /// successfully.
         /// </para>

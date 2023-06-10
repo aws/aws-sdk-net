@@ -32,15 +32,15 @@ namespace Amazon.S3Control.Model
     /// Container for the parameters to the GetBucketVersioning operation.
     /// <note> 
     /// <para>
-    /// This operation returns the versioning state only for S3 on Outposts buckets. To return
+    /// This operation returns the versioning state for S3 on Outposts buckets only. To return
     /// the versioning state for an S3 bucket, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>
     /// in the <i>Amazon S3 API Reference</i>. 
     /// </para>
     ///  </note> 
     /// <para>
-    /// Returns the versioning state for an S3 on Outposts bucket. With versioning, you can
-    /// save multiple distinct copies of your data and recover from unintended user actions
-    /// and application failures.
+    /// Returns the versioning state for an S3 on Outposts bucket. With S3 Versioning, you
+    /// can save multiple distinct copies of your objects and recover from unintended user
+    /// actions and application failures.
     /// </para>
     ///  
     /// <para>

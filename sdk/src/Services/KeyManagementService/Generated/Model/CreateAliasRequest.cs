@@ -125,7 +125,12 @@ namespace Amazon.KeyManagementService.Model
         /// Specifies the alias name. This value must begin with <code>alias/</code> followed
         /// by a name, such as <code>alias/ExampleAlias</code>. 
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// The <code>AliasName</code> value must be string of 1-256 characters. It can contain
         /// only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-).

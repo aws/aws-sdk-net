@@ -100,6 +100,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.ReplicatedDisks = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("stagingAvailabilityZone", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.StagingAvailabilityZone = unmarshaller.Unmarshall(context);
+                    continue;
+                }
             }
           
             return unmarshalledObject;

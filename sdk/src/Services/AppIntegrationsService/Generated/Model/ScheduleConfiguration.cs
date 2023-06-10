@@ -40,7 +40,8 @@ namespace Amazon.AppIntegrationsService.Model
         /// <summary>
         /// Gets and sets the property FirstExecutionFrom. 
         /// <para>
-        /// The start date for objects to import in the first flow run.
+        /// The start date for objects to import in the first flow run as an Unix/epoch timestamp
+        /// in milliseconds or in ISO-8601 format.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=255)]
@@ -81,7 +82,7 @@ namespace Amazon.AppIntegrationsService.Model
         /// How often the data should be pulled from data source.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=255)]
+        [AWSProperty(Required=true, Min=1, Max=255)]
         public string ScheduleExpression
         {
             get { return this._scheduleExpression; }

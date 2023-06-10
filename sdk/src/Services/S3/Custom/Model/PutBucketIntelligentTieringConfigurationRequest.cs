@@ -72,42 +72,32 @@ namespace Amazon.S3.Model
     /// move objects stored in the S3 Intelligent-Tiering storage class to the Archive Access
     /// or Deep Archive Access tier.
     /// </para>
-    ///  </note> <p class="title"> <b>Special Errors</b> 
+    ///  </note> 
+    /// <para>
+    ///  <code>PutBucketIntelligentTieringConfiguration</code> has the following special errors:
     /// </para>
-    ///  <ul> <li> <p class="title"> <b>HTTP 400 Bad Request Error</b> 
-    /// </para>
-    ///  <ul> <li> 
+    ///  <dl> <dt>HTTP 400 Bad Request Error</dt> <dd> 
     /// <para>
     ///  <i>Code:</i> InvalidArgument
     /// </para>
-    ///  </li> <li> 
     /// <para>
     ///  <i>Cause:</i> Invalid Argument
     /// </para>
-    ///  </li> </ul> </li> <li> <p class="title"> <b>HTTP 400 Bad Request Error</b> 
-    /// </para>
-    ///  <ul> <li> 
+    ///  </dd> <dt>HTTP 400 Bad Request Error</dt> <dd> 
     /// <para>
     ///  <i>Code:</i> TooManyConfigurations
     /// </para>
-    ///  </li> <li> 
     /// <para>
     ///  <i>Cause:</i> You are attempting to create a new configuration but have already reached
     /// the 1,000-configuration limit. 
     /// </para>
-    ///  </li> </ul> </li> <li> <p class="title"> <b>HTTP 403 Forbidden Error</b> 
-    /// </para>
-    ///  <ul> <li> 
-    /// <para>
-    ///  <i>Code:</i> AccessDenied
-    /// </para>
-    ///  </li> <li> 
+    ///  </dd> <dt>HTTP 403 Forbidden Error</dt> <dd> 
     /// <para>
     ///  <i>Cause:</i> You are not the owner of the specified bucket, or you do not have the
     /// <code>s3:PutIntelligentTieringConfiguration</code> bucket permission to set the configuration
     /// on the bucket. 
     /// </para>
-    ///  </li> </ul> </li> </ul>
+    ///  </dd> </dl>
     /// </summary>
     public partial class PutBucketIntelligentTieringConfigurationRequest : AmazonWebServiceRequest
     {

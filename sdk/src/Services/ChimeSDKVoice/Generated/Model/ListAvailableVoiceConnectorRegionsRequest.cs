@@ -30,7 +30,8 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the ListAvailableVoiceConnectorRegions operation.
-    /// 
+    /// Lists the available AWS Regions in which you can create an Amazon Chime SDK Voice
+    /// Connector.
     /// </summary>
     public partial class ListAvailableVoiceConnectorRegionsRequest : AmazonChimeSDKVoiceRequest
     {

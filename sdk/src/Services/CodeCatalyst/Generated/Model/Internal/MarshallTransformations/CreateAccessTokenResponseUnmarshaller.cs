@@ -51,6 +51,12 @@ namespace Amazon.CodeCatalyst.Model.Internal.MarshallTransformations
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("accessTokenId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AccessTokenId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("expiresTime", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

@@ -30,9 +30,9 @@ namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
     /// Container for the parameters to the ImportCrl operation.
-    /// Imports the certificate revocation list (CRL). CRl is a list of certificates that
+    /// Imports the certificate revocation list (CRL). A CRL is a list of certificates that
     /// have been revoked by the issuing certificate Authority (CA). IAM Roles Anywhere validates
-    /// against the crl list before issuing credentials. 
+    /// against the CRL before issuing credentials. 
     /// 
     ///  
     /// <para>
@@ -50,7 +50,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property CrlData. 
         /// <para>
-        /// The x509 v3 specified certificate revocation list
+        /// The x509 v3 specified certificate revocation list (CRL).
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=300000)]
@@ -109,7 +109,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// A list of tags to attach to the certificate revocation list (CRL).
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

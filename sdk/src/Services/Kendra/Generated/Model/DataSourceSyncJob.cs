@@ -65,7 +65,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property EndTime. 
         /// <para>
-        /// The UNIX datetime that the synchronization job completed.
+        /// The Unix timestamp when the synchronization job completed.
         /// </para>
         /// </summary>
         public DateTime EndTime
@@ -160,7 +160,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property StartTime. 
         /// <para>
-        /// The UNIX datetime that the synchronization job started.
+        /// The Unix timestamp when the synchronization job started.
         /// </para>
         /// </summary>
         public DateTime StartTime

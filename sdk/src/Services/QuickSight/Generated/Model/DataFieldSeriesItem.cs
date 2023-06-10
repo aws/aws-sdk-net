@@ -82,6 +82,7 @@ namespace Amazon.QuickSight.Model
         /// The field value of the field that you are setting the axis binding to.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string FieldValue
         {
             get { return this._fieldValue; }

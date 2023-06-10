@@ -30,7 +30,8 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the UpdateSipMediaApplicationCall operation.
-    /// 
+    /// Invokes the AWS Lambda function associated with the SIP media application and transaction
+    /// ID in an update request. The Lambda function can then return a new set of actions.
     /// </summary>
     public partial class UpdateSipMediaApplicationCallRequest : AmazonChimeSDKVoiceRequest
     {
@@ -39,7 +40,11 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _transactionId;
 
         /// <summary>
-        /// Gets and sets the property Arguments.
+        /// Gets and sets the property Arguments. 
+        /// <para>
+        /// Arguments made available to the Lambda function as part of the <code>CALL_UPDATE_REQUESTED</code>
+        /// event. Can contain 0-20 key-value pairs.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=20)]
         public Dictionary<string, string> Arguments
@@ -55,7 +60,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SipMediaApplicationId.
+        /// Gets and sets the property SipMediaApplicationId. 
+        /// <para>
+        /// The ID of the SIP media application handling the call.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string SipMediaApplicationId
@@ -71,7 +79,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TransactionId.
+        /// Gets and sets the property TransactionId. 
+        /// <para>
+        /// The ID of the call transaction.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string TransactionId

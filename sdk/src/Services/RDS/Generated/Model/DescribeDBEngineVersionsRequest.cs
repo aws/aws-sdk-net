@@ -107,15 +107,15 @@ namespace Amazon.RDS.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>aurora</code> (for MySQL 5.6-compatible Aurora)
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL 8.0-compatible Aurora)
+        ///  <code>aurora-mysql</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>aurora-postgresql</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>custom-oracle-ee</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

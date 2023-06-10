@@ -56,10 +56,22 @@ namespace Amazon.IoTFleetWise.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetComment())
+            {
+                context.Writer.WritePropertyName("comment");
+                context.Writer.Write(requestObject.Comment);
+            }
+
             if(requestObject.IsSetDataType())
             {
                 context.Writer.WritePropertyName("dataType");
                 context.Writer.Write(requestObject.DataType);
+            }
+
+            if(requestObject.IsSetDeprecationMessage())
+            {
+                context.Writer.WritePropertyName("deprecationMessage");
+                context.Writer.Write(requestObject.DeprecationMessage);
             }
 
             if(requestObject.IsSetDescription())

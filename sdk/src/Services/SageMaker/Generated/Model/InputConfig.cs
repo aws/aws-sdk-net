@@ -43,8 +43,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property DataInputConfig. 
         /// <para>
         /// Specifies the name and shape of the expected data inputs for your trained model with
-        /// a JSON dictionary form. The data inputs are <a>InputConfig$Framework</a> specific.
-        /// 
+        /// a JSON dictionary form. The data inputs are <code>Framework</code> specific. 
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -190,7 +189,7 @@ namespace Amazon.SageMaker.Model
         ///  </li> </ul> 
         /// <para>
         ///  <code>DataInputConfig</code> supports the following parameters for <code>CoreML</code>
-        /// <a>OutputConfig$TargetDevice</a> (ML Model format):
+        /// <code>TargetDevice</code> (ML Model format):
         /// </para>
         ///  <ul> <li> 
         /// <para>
@@ -232,8 +231,9 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  </li> </ul> 
         /// <para>
-        /// CoreML <code>ClassifierConfig</code> parameters can be specified using <a>OutputConfig$CompilerOptions</a>.
-        /// CoreML converter supports Tensorflow and PyTorch models. CoreML conversion examples:
+        /// CoreML <code>ClassifierConfig</code> parameters can be specified using <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+        /// <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch models.
+        /// CoreML conversion examples:
         /// </para>
         ///  <ul> <li> 
         /// <para>

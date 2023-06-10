@@ -42,7 +42,7 @@ namespace Amazon.Translate.Model
         /// <summary>
         /// Gets and sets the property AppliedSettings. 
         /// <para>
-        /// Settings that configure the translation output.
+        /// Optional settings that modify the translation output.
         /// </para>
         /// </summary>
         public TranslationSettings AppliedSettings

@@ -61,7 +61,7 @@ namespace Amazon.VoiceID.Model
         /// Gets and sets the property MaxResults. 
         /// <para>
         /// The maximum number of results that are returned per call. You can use <code>NextToken</code>
-        /// to obtain further pages of results. The default is 100; the maximum allowed page size
+        /// to obtain more pages of results. The default is 100; the maximum allowed page size
         /// is also 100. 
         /// </para>
         /// </summary>
@@ -84,7 +84,7 @@ namespace Amazon.VoiceID.Model
         /// If <code>NextToken</code> is returned, there are more results available. The value
         /// of <code>NextToken</code> is a unique pagination token for each page. Make the call
         /// again using the returned token to retrieve the next page. Keep all other arguments
-        /// unchanged. Each pagination token expires after 24 hours. 
+        /// unchanged. Each pagination token expires after 24 hours.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=8192)]

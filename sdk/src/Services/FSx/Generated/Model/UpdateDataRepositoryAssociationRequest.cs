@@ -31,8 +31,8 @@ namespace Amazon.FSx.Model
     /// <summary>
     /// Container for the parameters to the UpdateDataRepositoryAssociation operation.
     /// Updates the configuration of an existing data repository association on an Amazon
-    /// FSx for Lustre file system. Data repository associations are supported only for file
-    /// systems with the <code>Persistent_2</code> deployment type.
+    /// FSx for Lustre file system. Data repository associations are supported for all file
+    /// systems except for <code>Scratch_1</code> deployment type.
     /// </summary>
     public partial class UpdateDataRepositoryAssociationRequest : AmazonFSxRequest
     {

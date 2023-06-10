@@ -49,6 +49,8 @@ namespace Amazon.AppConfig.Model
         private int? _finalBakeTimeInMinutes;
         private float? _growthFactor;
         private GrowthType _growthType;
+        private string _kmsKeyArn;
+        private string _kmsKeyIdentifier;
         private float? _percentageComplete;
         private DateTime? _startedAt;
         private DeploymentState _state;
@@ -350,6 +352,48 @@ namespace Amazon.AppConfig.Model
         internal bool IsSetGrowthType()
         {
             return this._growthType != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyArn. 
+        /// <para>
+        /// The Amazon Resource Name of the Key Management Service key used to encrypt configuration
+        /// data. You can encrypt secrets stored in Secrets Manager, Amazon Simple Storage Service
+        /// (Amazon S3) objects encrypted with SSE-KMS, or secure string parameters stored in
+        /// Amazon Web Services Systems Manager Parameter Store. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string KmsKeyArn
+        {
+            get { return this._kmsKeyArn; }
+            set { this._kmsKeyArn = value; }
+        }
+
+        // Check to see if KmsKeyArn property is set
+        internal bool IsSetKmsKeyArn()
+        {
+            return this._kmsKeyArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property KmsKeyIdentifier. 
+        /// <para>
+        /// The KMS key identifier (key ID, key alias, or key ARN). AppConfig uses this ID to
+        /// encrypt the configuration data using a customer managed key. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string KmsKeyIdentifier
+        {
+            get { return this._kmsKeyIdentifier; }
+            set { this._kmsKeyIdentifier = value; }
+        }
+
+        // Check to see if KmsKeyIdentifier property is set
+        internal bool IsSetKmsKeyIdentifier()
+        {
+            return this._kmsKeyIdentifier != null;
         }
 
         /// <summary>

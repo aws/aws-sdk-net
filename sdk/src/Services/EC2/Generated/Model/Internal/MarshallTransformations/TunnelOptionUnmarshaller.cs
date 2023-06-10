@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.DpdTimeoutSeconds = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("enableTunnelLifecycleControl", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.EnableTunnelLifecycleControl = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ikeVersionSet/item", targetDepth))
                     {
                         var unmarshaller = IKEVersionsListValueUnmarshaller.Instance;

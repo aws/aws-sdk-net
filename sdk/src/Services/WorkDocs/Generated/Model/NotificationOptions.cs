@@ -42,7 +42,7 @@ namespace Amazon.WorkDocs.Model
         /// Text value to be included in the email body.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string EmailMessage
         {
             get { return this._emailMessage; }
@@ -58,7 +58,7 @@ namespace Amazon.WorkDocs.Model
         /// <summary>
         /// Gets and sets the property SendEmail. 
         /// <para>
-        /// Boolean value to indicate an email notification should be sent to the receipients.
+        /// Boolean value to indicate an email notification should be sent to the recipients.
         /// </para>
         /// </summary>
         public bool SendEmail

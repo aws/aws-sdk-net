@@ -77,7 +77,7 @@ namespace Amazon.KeyManagementService.Model
     ///  
     /// <para>
     /// To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value
-    /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>. The
+    /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>16</code>. The
     /// symmetric encryption key used in China Regions to encrypt your data key is an SM4
     /// encryption key.
     /// </para>
@@ -151,7 +151,12 @@ namespace Amazon.KeyManagementService.Model
         /// <para>
         /// Specifies the encryption context that will be used when encrypting the data key.
         /// </para>
-        ///  
+        ///  <important> 
+        /// <para>
+        /// Do not include confidential or sensitive information in this field. This field may
+        /// be displayed in plaintext in CloudTrail logs and other output.
+        /// </para>
+        ///  </important> 
         /// <para>
         /// An <i>encryption context</i> is a collection of non-secret key-value pairs that represent
         /// additional authenticated data. When you use an encryption context to encrypt data,

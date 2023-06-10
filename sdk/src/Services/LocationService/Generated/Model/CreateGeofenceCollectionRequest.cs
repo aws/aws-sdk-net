@@ -100,8 +100,9 @@ namespace Amazon.LocationService.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">AWS
-        /// KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or alias ARN. 
+        /// A key identifier for an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/create-keys.html">Amazon
+        /// Web Services KMS customer managed key</a>. Enter a key ID, key ARN, alias name, or
+        /// alias ARN. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=2048)]

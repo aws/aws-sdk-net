@@ -25,12 +25,14 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Omics.Model
 {
     /// <summary>
     /// Container for the parameters to the StartReadSetActivationJob operation.
-    /// Starts a read set activation job.
+    /// Activates an archived read set. To reduce storage charges, Amazon Omics archives unused
+    /// read sets after 30 days.
     /// </summary>
     public partial class StartReadSetActivationJobRequest : AmazonOmicsRequest
     {
@@ -79,7 +81,7 @@ namespace Amazon.Omics.Model
         /// <summary>
         /// Gets and sets the property Sources. 
         /// <para>
-        /// The job's sources.
+        /// The job's source files.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=20)]
@@ -95,5 +97,13 @@ namespace Amazon.Omics.Model
             return this._sources != null && this._sources.Count > 0; 
         }
 
+        /// <summary>
+        /// Get the signer to use for this request.
+        /// </summary>
+        /// <returns>A signer for this request.</returns>
+        override protected AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
     }
 }

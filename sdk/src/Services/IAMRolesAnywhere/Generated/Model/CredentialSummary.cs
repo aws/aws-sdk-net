@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
-    /// A record of a presented X509 credential to <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>.
+    /// A record of a presented X509 credential from a temporary credential request.
     /// </summary>
     public partial class CredentialSummary
     {
@@ -61,8 +61,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property Failed. 
         /// <para>
-        /// Indicates whether the <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-        /// operation was successful. 
+        /// Indicates whether the temporary credential request was successful. 
         /// </para>
         /// </summary>
         public bool Failed
@@ -99,8 +98,8 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// <summary>
         /// Gets and sets the property SeenAt. 
         /// <para>
-        /// The ISO-8601 time stamp of when the certificate was last used in a <a href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-        /// operation.
+        /// The ISO-8601 time stamp of when the certificate was last used in a temporary credential
+        /// request.
         /// </para>
         /// </summary>
         public DateTime SeenAt

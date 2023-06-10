@@ -29,14 +29,17 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// Input object defining the custom BandMath indices to compute.
     /// </summary>
     public partial class CustomIndicesInput
     {
         private List<Operation> _operations = new List<Operation>();
 
         /// <summary>
-        /// Gets and sets the property Operations.
+        /// Gets and sets the property Operations. 
+        /// <para>
+        /// A list of BandMath indices to compute.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1)]
         public List<Operation> Operations

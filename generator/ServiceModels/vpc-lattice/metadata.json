@@ -1,0 +1,5 @@
+{
+  "active": true,
+  "synopsis": "General Availability (GA) release of Amazon VPC Lattice",
+  "generate-client-constructors": true
+}

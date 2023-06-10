@@ -62,7 +62,7 @@ namespace Amazon.Chime.Model
         /// The token passed by previous API requests until you reach the maximum number of <code>AppInstance</code>s.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

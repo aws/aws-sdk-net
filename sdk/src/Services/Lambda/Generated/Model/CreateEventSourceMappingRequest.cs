@@ -68,6 +68,11 @@ namespace Amazon.Lambda.Model
     ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache Kafka</a>
     /// 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon
+    /// DocumentDB</a> 
+    /// </para>
     ///  </li> </ul> 
     /// <para>
     /// The following error handling options are available only for stream sources (DynamoDB
@@ -134,6 +139,11 @@ namespace Amazon.Lambda.Model
     ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms">
     /// Apache Kafka</a> 
     /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration">
+    /// Amazon DocumentDB</a> 
+    /// </para>
     ///  </li> </ul>
     /// </summary>
     public partial class CreateEventSourceMappingRequest : AmazonLambdaRequest
@@ -142,6 +152,7 @@ namespace Amazon.Lambda.Model
         private int? _batchSize;
         private bool? _bisectBatchOnFunctionError;
         private DestinationConfig _destinationConfig;
+        private DocumentDBEventSourceConfig _documentDBEventSourceConfig;
         private bool? _enabled;
         private string _eventSourceArn;
         private FilterCriteria _filterCriteria;
@@ -213,6 +224,10 @@ namespace Amazon.Lambda.Model
         /// <para>
         ///  <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> – Default 100. Max 10,000.
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>DocumentDB</b> – Default 100. Max 10,000.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Min=1, Max=10000)]
@@ -231,7 +246,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property BisectBatchOnFunctionError. 
         /// <para>
-        /// (Streams only) If the function returns an error, split the batch in two and retry.
+        /// (Kinesis and DynamoDB Streams only) If the function returns an error, split the batch
+        /// in two and retry.
         /// </para>
         /// </summary>
         public bool BisectBatchOnFunctionError
@@ -249,7 +265,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property DestinationConfig. 
         /// <para>
-        /// (Streams only) An Amazon SQS queue or Amazon SNS topic destination for discarded records.
+        /// (Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard Amazon
+        /// SNS topic destination for discarded records.
         /// </para>
         /// </summary>
         public DestinationConfig DestinationConfig
@@ -262,6 +279,24 @@ namespace Amazon.Lambda.Model
         internal bool IsSetDestinationConfig()
         {
             return this._destinationConfig != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DocumentDBEventSourceConfig. 
+        /// <para>
+        /// Specific configuration settings for a DocumentDB event source.
+        /// </para>
+        /// </summary>
+        public DocumentDBEventSourceConfig DocumentDBEventSourceConfig
+        {
+            get { return this._documentDBEventSourceConfig; }
+            set { this._documentDBEventSourceConfig = value; }
+        }
+
+        // Check to see if DocumentDBEventSourceConfig property is set
+        internal bool IsSetDocumentDBEventSourceConfig()
+        {
+            return this._documentDBEventSourceConfig != null;
         }
 
         /// <summary>
@@ -311,6 +346,10 @@ namespace Amazon.Lambda.Model
         ///  </li> <li> 
         /// <para>
         ///  <b>Amazon MQ</b> – The ARN of the broker.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -391,8 +430,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property FunctionResponseTypes. 
         /// <para>
-        /// (Streams and Amazon SQS) A list of current response type enums applied to the event
-        /// source mapping.
+        /// (Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type enums
+        /// applied to the event source mapping.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=1)]
@@ -418,8 +457,8 @@ namespace Amazon.Lambda.Model
         ///  
         /// <para>
         /// For streams and Amazon SQS event sources, the default batching window is 0 seconds.
-        /// For Amazon MSK, Self-managed Apache Kafka, and Amazon MQ event sources, the default
-        /// batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code>
+        /// For Amazon MSK, Self-managed Apache Kafka, Amazon MQ, and DocumentDB event sources,
+        /// the default batching window is 500 ms. Note that because you can only change <code>MaximumBatchingWindowInSeconds</code>
         /// in increments of seconds, you cannot revert back to the 500 ms default batching window
         /// after you have changed it. To restore the default batching window, you must create
         /// a new event source mapping.
@@ -447,8 +486,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRecordAgeInSeconds. 
         /// <para>
-        /// (Streams only) Discard records older than the specified age. The default value is
-        /// infinite (-1).
+        /// (Kinesis and DynamoDB Streams only) Discard records older than the specified age.
+        /// The default value is infinite (-1).
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=604800)]
@@ -467,9 +506,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property MaximumRetryAttempts. 
         /// <para>
-        /// (Streams only) Discard records after the specified number of retries. The default
-        /// value is infinite (-1). When set to infinite (-1), failed records are retried until
-        /// the record expires.
+        /// (Kinesis and DynamoDB Streams only) Discard records after the specified number of
+        /// retries. The default value is infinite (-1). When set to infinite (-1), failed records
+        /// are retried until the record expires.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-1, Max=10000)]
@@ -488,7 +527,8 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property ParallelizationFactor. 
         /// <para>
-        /// (Streams only) The number of batches to process from each shard concurrently.
+        /// (Kinesis and DynamoDB Streams only) The number of batches to process from each shard
+        /// concurrently.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=10)]
@@ -604,7 +644,7 @@ namespace Amazon.Lambda.Model
         /// <para>
         /// The position in a stream from which to start reading. Required for Amazon Kinesis,
         /// Amazon DynamoDB, and Amazon MSK Streams sources. <code>AT_TIMESTAMP</code> is supported
-        /// only for Amazon Kinesis streams.
+        /// only for Amazon Kinesis streams and Amazon DocumentDB.
         /// </para>
         /// </summary>
         public EventSourcePosition StartingPosition
@@ -660,8 +700,9 @@ namespace Amazon.Lambda.Model
         /// <summary>
         /// Gets and sets the property TumblingWindowInSeconds. 
         /// <para>
-        /// (Streams only) The duration in seconds of a processing window. The range is between
-        /// 1 second and 900 seconds.
+        /// (Kinesis and DynamoDB Streams only) The duration in seconds of a processing window
+        /// for DynamoDB and Kinesis Streams event sources. A value of 0 seconds indicates no
+        /// tumbling window.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=900)]

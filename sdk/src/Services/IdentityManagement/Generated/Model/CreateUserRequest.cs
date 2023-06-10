@@ -94,7 +94,21 @@ namespace Amazon.IdentityManagement.Model
         /// <summary>
         /// Gets and sets the property PermissionsBoundary. 
         /// <para>
-        /// The ARN of the policy that is used to set the permissions boundary for the user.
+        /// The ARN of the managed policy that is used to set the permissions boundary for the
+        /// user.
+        /// </para>
+        ///  
+        /// <para>
+        /// A permissions boundary policy defines the maximum permissions that identity-based
+        /// policies can grant to an entity, but does not grant permissions. Permissions boundaries
+        /// do not define the maximum permissions that a resource-based policy can grant to an
+        /// entity. To learn more, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_boundaries.html">Permissions
+        /// boundaries for IAM entities</a> in the <i>IAM User Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about policy types, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies.html#access_policy-types">Policy
+        /// types </a> in the <i>IAM User Guide</i>.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

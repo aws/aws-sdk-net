@@ -25,6 +25,7 @@ using System.Net;
 
 using Amazon.Runtime;
 using Amazon.Runtime.Internal;
+using Amazon.Runtime.Internal.Auth;
 
 namespace Amazon.Omics.Model
 {
@@ -38,6 +39,7 @@ namespace Amazon.Omics.Model
         private string _name;
         private string _runGroupId;
         private string _startingToken;
+        private RunStatus _status;
 
         /// <summary>
         /// Gets and sets the property MaxResults. 
@@ -116,5 +118,32 @@ namespace Amazon.Omics.Model
             return this._startingToken != null;
         }
 
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        ///  The status of a run. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=64)]
+        public RunStatus Status
+        {
+            get { return this._status; }
+            set { this._status = value; }
+        }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
+        /// <summary>
+        /// Get the signer to use for this request.
+        /// </summary>
+        /// <returns>A signer for this request.</returns>
+        override protected AbstractAWSSigner CreateSigner()
+        {
+            return new AWS4Signer();
+        }
     }
 }

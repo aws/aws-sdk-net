@@ -82,7 +82,7 @@ namespace Amazon.KafkaConnect.Model
         /// Base64 encoded contents of connect-distributed.properties file.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string PropertiesFileContent
         {
             get { return this._propertiesFileContent; }

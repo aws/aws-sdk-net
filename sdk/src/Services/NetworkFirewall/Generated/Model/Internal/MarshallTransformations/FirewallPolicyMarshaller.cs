@@ -45,6 +45,17 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public void Marshall(FirewallPolicy requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetPolicyVariables())
+            {
+                context.Writer.WritePropertyName("PolicyVariables");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = PolicyVariablesMarshaller.Instance;
+                marshaller.Marshall(requestObject.PolicyVariables, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetStatefulDefaultActions())
             {
                 context.Writer.WritePropertyName("StatefulDefaultActions");
@@ -135,6 +146,12 @@ namespace Amazon.NetworkFirewall.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
                 context.Writer.WriteArrayEnd();
+            }
+
+            if(requestObject.IsSetTLSInspectionConfigurationArn())
+            {
+                context.Writer.WritePropertyName("TLSInspectionConfigurationArn");
+                context.Writer.Write(requestObject.TLSInspectionConfigurationArn);
             }
 
         }

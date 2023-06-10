@@ -49,7 +49,7 @@ namespace Amazon.DataSync.Model
         /// storage system.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=200)]
+        [AWSProperty(Min=1, Max=200)]
         public string AccessKey
         {
             get { return this._accessKey; }

@@ -249,6 +249,10 @@ namespace Amazon.ApplicationAutoScaling
         /// </summary>
         public static readonly MetricType ECSServiceAverageMemoryUtilization = new MetricType("ECSServiceAverageMemoryUtilization");
         /// <summary>
+        /// Constant ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage for MetricType
+        /// </summary>
+        public static readonly MetricType ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage = new MetricType("ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage");
+        /// <summary>
         /// Constant ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage for MetricType
         /// </summary>
         public static readonly MetricType ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage = new MetricType("ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage");
@@ -284,6 +288,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant SageMakerVariantInvocationsPerInstance for MetricType
         /// </summary>
         public static readonly MetricType SageMakerVariantInvocationsPerInstance = new MetricType("SageMakerVariantInvocationsPerInstance");
+        /// <summary>
+        /// Constant SageMakerVariantProvisionedConcurrencyUtilization for MetricType
+        /// </summary>
+        public static readonly MetricType SageMakerVariantProvisionedConcurrencyUtilization = new MetricType("SageMakerVariantProvisionedConcurrencyUtilization");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -456,6 +464,10 @@ namespace Amazon.ApplicationAutoScaling
         /// Constant SagemakerVariantDesiredInstanceCount for ScalableDimension
         /// </summary>
         public static readonly ScalableDimension SagemakerVariantDesiredInstanceCount = new ScalableDimension("sagemaker:variant:DesiredInstanceCount");
+        /// <summary>
+        /// Constant SagemakerVariantDesiredProvisionedConcurrency for ScalableDimension
+        /// </summary>
+        public static readonly ScalableDimension SagemakerVariantDesiredProvisionedConcurrency = new ScalableDimension("sagemaker:variant:DesiredProvisionedConcurrency");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

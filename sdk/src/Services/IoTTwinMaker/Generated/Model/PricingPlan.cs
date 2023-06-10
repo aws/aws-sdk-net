@@ -136,7 +136,7 @@ namespace Amazon.IoTTwinMaker.Model
         /// <summary>
         /// Gets and sets the property UpdateReason. 
         /// <para>
-        /// The update reason, for changing a pricing plan.
+        /// The update reason for changing a pricing plan.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

@@ -76,6 +76,12 @@ namespace Amazon.CodePipeline.Model.Internal.MarshallTransformations
                     unmarshalledObject.PipelineArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("pollingDisabledAt", targetDepth))
+                {
+                    var unmarshaller = DateTimeUnmarshaller.Instance;
+                    unmarshalledObject.PollingDisabledAt = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("updated", targetDepth))
                 {
                     var unmarshaller = DateTimeUnmarshaller.Instance;

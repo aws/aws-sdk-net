@@ -76,6 +76,36 @@
         {"shape":"LimitExceededException"}
       ]
     },
+    "BatchGetSecurityControls":{
+      "name":"BatchGetSecurityControls",
+      "http":{
+        "method":"POST",
+        "requestUri":"/securityControls/batchGet"
+      },
+      "input":{"shape":"BatchGetSecurityControlsRequest"},
+      "output":{"shape":"BatchGetSecurityControlsResponse"},
+      "errors":[
+        {"shape":"InternalException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InvalidAccessException"},
+        {"shape":"InvalidInputException"}
+      ]
+    },
+    "BatchGetStandardsControlAssociations":{
+      "name":"BatchGetStandardsControlAssociations",
+      "http":{
+        "method":"POST",
+        "requestUri":"/associations/batchGet"
+      },
+      "input":{"shape":"BatchGetStandardsControlAssociationsRequest"},
+      "output":{"shape":"BatchGetStandardsControlAssociationsResponse"},
+      "errors":[
+        {"shape":"InternalException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InvalidAccessException"},
+        {"shape":"InvalidInputException"}
+      ]
+    },
     "BatchImportFindings":{
       "name":"BatchImportFindings",
       "http":{
@@ -104,6 +134,21 @@
         {"shape":"InvalidInputException"},
         {"shape":"LimitExceededException"},
         {"shape":"InvalidAccessException"}
+      ]
+    },
+    "BatchUpdateStandardsControlAssociations":{
+      "name":"BatchUpdateStandardsControlAssociations",
+      "http":{
+        "method":"PATCH",
+        "requestUri":"/associations"
+      },
+      "input":{"shape":"BatchUpdateStandardsControlAssociationsRequest"},
+      "output":{"shape":"BatchUpdateStandardsControlAssociationsResponse"},
+      "errors":[
+        {"shape":"InternalException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InvalidAccessException"},
+        {"shape":"InvalidInputException"}
       ]
     },
     "CreateActionTarget":{
@@ -546,6 +591,21 @@
         {"shape":"ResourceNotFoundException"}
       ]
     },
+    "GetFindingHistory":{
+      "name":"GetFindingHistory",
+      "http":{
+        "method":"POST",
+        "requestUri":"/findingHistory/get"
+      },
+      "input":{"shape":"GetFindingHistoryRequest"},
+      "output":{"shape":"GetFindingHistoryResponse"},
+      "errors":[
+        {"shape":"InternalException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InvalidAccessException"},
+        {"shape":"LimitExceededException"}
+      ]
+    },
     "GetFindings":{
       "name":"GetFindings",
       "http":{
@@ -731,6 +791,36 @@
         {"shape":"InvalidInputException"},
         {"shape":"InvalidAccessException"},
         {"shape":"LimitExceededException"}
+      ]
+    },
+    "ListSecurityControlDefinitions":{
+      "name":"ListSecurityControlDefinitions",
+      "http":{
+        "method":"GET",
+        "requestUri":"/securityControls/definitions"
+      },
+      "input":{"shape":"ListSecurityControlDefinitionsRequest"},
+      "output":{"shape":"ListSecurityControlDefinitionsResponse"},
+      "errors":[
+        {"shape":"InternalException"},
+        {"shape":"InvalidInputException"},
+        {"shape":"InvalidAccessException"},
+        {"shape":"LimitExceededException"}
+      ]
+    },
+    "ListStandardsControlAssociations":{
+      "name":"ListStandardsControlAssociations",
+      "http":{
+        "method":"GET",
+        "requestUri":"/associations"
+      },
+      "input":{"shape":"ListStandardsControlAssociationsRequest"},
+      "output":{"shape":"ListStandardsControlAssociationsResponse"},
+      "errors":[
+        {"shape":"InternalException"},
+        {"shape":"LimitExceededException"},
+        {"shape":"InvalidAccessException"},
+        {"shape":"InvalidInputException"}
       ]
     },
     "ListTagsForResource":{
@@ -1041,6 +1131,45 @@
       "type":"list",
       "member":{"shape":"NonEmptyString"}
     },
+    "AssociatedStandard":{
+      "type":"structure",
+      "members":{
+        "StandardsId":{"shape":"NonEmptyString"}
+      }
+    },
+    "AssociatedStandardsList":{
+      "type":"list",
+      "member":{"shape":"AssociatedStandard"}
+    },
+    "AssociationSetDetails":{
+      "type":"structure",
+      "members":{
+        "AssociationState":{"shape":"AssociationStateDetails"},
+        "GatewayId":{"shape":"NonEmptyString"},
+        "Main":{"shape":"Boolean"},
+        "RouteTableAssociationId":{"shape":"NonEmptyString"},
+        "RouteTableId":{"shape":"NonEmptyString"},
+        "SubnetId":{"shape":"NonEmptyString"}
+      }
+    },
+    "AssociationSetList":{
+      "type":"list",
+      "member":{"shape":"AssociationSetDetails"}
+    },
+    "AssociationStateDetails":{
+      "type":"structure",
+      "members":{
+        "State":{"shape":"NonEmptyString"},
+        "StatusMessage":{"shape":"NonEmptyString"}
+      }
+    },
+    "AssociationStatus":{
+      "type":"string",
+      "enum":[
+        "ENABLED",
+        "DISABLED"
+      ]
+    },
     "AutoEnableStandards":{
       "type":"string",
       "enum":[
@@ -1058,6 +1187,87 @@
     "AvailabilityZones":{
       "type":"list",
       "member":{"shape":"AvailabilityZone"}
+    },
+    "AwsAmazonMqBrokerDetails":{
+      "type":"structure",
+      "members":{
+        "AuthenticationStrategy":{"shape":"NonEmptyString"},
+        "AutoMinorVersionUpgrade":{"shape":"Boolean"},
+        "BrokerArn":{"shape":"NonEmptyString"},
+        "BrokerName":{"shape":"NonEmptyString"},
+        "DeploymentMode":{"shape":"NonEmptyString"},
+        "EncryptionOptions":{"shape":"AwsAmazonMqBrokerEncryptionOptionsDetails"},
+        "EngineType":{"shape":"NonEmptyString"},
+        "EngineVersion":{"shape":"NonEmptyString"},
+        "HostInstanceType":{"shape":"NonEmptyString"},
+        "BrokerId":{"shape":"NonEmptyString"},
+        "LdapServerMetadata":{"shape":"AwsAmazonMqBrokerLdapServerMetadataDetails"},
+        "Logs":{"shape":"AwsAmazonMqBrokerLogsDetails"},
+        "MaintenanceWindowStartTime":{"shape":"AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails"},
+        "PubliclyAccessible":{"shape":"Boolean"},
+        "SecurityGroups":{"shape":"StringList"},
+        "StorageType":{"shape":"NonEmptyString"},
+        "SubnetIds":{"shape":"StringList"},
+        "Users":{"shape":"AwsAmazonMqBrokerUsersList"}
+      }
+    },
+    "AwsAmazonMqBrokerEncryptionOptionsDetails":{
+      "type":"structure",
+      "members":{
+        "KmsKeyId":{"shape":"NonEmptyString"},
+        "UseAwsOwnedKey":{"shape":"Boolean"}
+      }
+    },
+    "AwsAmazonMqBrokerLdapServerMetadataDetails":{
+      "type":"structure",
+      "members":{
+        "Hosts":{"shape":"StringList"},
+        "RoleBase":{"shape":"NonEmptyString"},
+        "RoleName":{"shape":"NonEmptyString"},
+        "RoleSearchMatching":{"shape":"NonEmptyString"},
+        "RoleSearchSubtree":{"shape":"Boolean"},
+        "ServiceAccountUsername":{"shape":"NonEmptyString"},
+        "UserBase":{"shape":"NonEmptyString"},
+        "UserRoleName":{"shape":"NonEmptyString"},
+        "UserSearchMatching":{"shape":"NonEmptyString"},
+        "UserSearchSubtree":{"shape":"Boolean"}
+      }
+    },
+    "AwsAmazonMqBrokerLogsDetails":{
+      "type":"structure",
+      "members":{
+        "Audit":{"shape":"Boolean"},
+        "General":{"shape":"Boolean"},
+        "AuditLogGroup":{"shape":"NonEmptyString"},
+        "GeneralLogGroup":{"shape":"NonEmptyString"},
+        "Pending":{"shape":"AwsAmazonMqBrokerLogsPendingDetails"}
+      }
+    },
+    "AwsAmazonMqBrokerLogsPendingDetails":{
+      "type":"structure",
+      "members":{
+        "Audit":{"shape":"Boolean"},
+        "General":{"shape":"Boolean"}
+      }
+    },
+    "AwsAmazonMqBrokerMaintenanceWindowStartTimeDetails":{
+      "type":"structure",
+      "members":{
+        "DayOfWeek":{"shape":"NonEmptyString"},
+        "TimeOfDay":{"shape":"NonEmptyString"},
+        "TimeZone":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsAmazonMqBrokerUsersDetails":{
+      "type":"structure",
+      "members":{
+        "PendingChange":{"shape":"NonEmptyString"},
+        "Username":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsAmazonMqBrokerUsersList":{
+      "type":"list",
+      "member":{"shape":"AwsAmazonMqBrokerUsersDetails"}
     },
     "AwsApiCallAction":{
       "type":"structure",
@@ -1197,6 +1407,70 @@
         "AutoDeploy":{"shape":"Boolean"},
         "LastDeploymentStatusMessage":{"shape":"NonEmptyString"},
         "ApiGatewayManaged":{"shape":"Boolean"}
+      }
+    },
+    "AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails":{
+      "type":"structure",
+      "members":{
+        "AuthenticationType":{"shape":"NonEmptyString"},
+        "LambdaAuthorizerConfig":{"shape":"AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails"},
+        "OpenIdConnectConfig":{"shape":"AwsAppSyncGraphQlApiOpenIdConnectConfigDetails"},
+        "UserPoolConfig":{"shape":"AwsAppSyncGraphQlApiUserPoolConfigDetails"}
+      }
+    },
+    "AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersList":{
+      "type":"list",
+      "member":{"shape":"AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersDetails"}
+    },
+    "AwsAppSyncGraphQlApiDetails":{
+      "type":"structure",
+      "members":{
+        "ApiId":{"shape":"NonEmptyString"},
+        "Id":{"shape":"NonEmptyString"},
+        "OpenIdConnectConfig":{"shape":"AwsAppSyncGraphQlApiOpenIdConnectConfigDetails"},
+        "Name":{"shape":"NonEmptyString"},
+        "LambdaAuthorizerConfig":{"shape":"AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails"},
+        "XrayEnabled":{"shape":"Boolean"},
+        "Arn":{"shape":"NonEmptyString"},
+        "UserPoolConfig":{"shape":"AwsAppSyncGraphQlApiUserPoolConfigDetails"},
+        "AuthenticationType":{"shape":"NonEmptyString"},
+        "LogConfig":{"shape":"AwsAppSyncGraphQlApiLogConfigDetails"},
+        "AdditionalAuthenticationProviders":{"shape":"AwsAppSyncGraphQlApiAdditionalAuthenticationProvidersList"},
+        "WafWebAclArn":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsAppSyncGraphQlApiLambdaAuthorizerConfigDetails":{
+      "type":"structure",
+      "members":{
+        "AuthorizerResultTtlInSeconds":{"shape":"Integer"},
+        "AuthorizerUri":{"shape":"NonEmptyString"},
+        "IdentityValidationExpression":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsAppSyncGraphQlApiLogConfigDetails":{
+      "type":"structure",
+      "members":{
+        "CloudWatchLogsRoleArn":{"shape":"NonEmptyString"},
+        "ExcludeVerboseContent":{"shape":"Boolean"},
+        "FieldLogLevel":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsAppSyncGraphQlApiOpenIdConnectConfigDetails":{
+      "type":"structure",
+      "members":{
+        "AuthTtL":{"shape":"Long"},
+        "ClientId":{"shape":"NonEmptyString"},
+        "IatTtL":{"shape":"Long"},
+        "Issuer":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsAppSyncGraphQlApiUserPoolConfigDetails":{
+      "type":"structure",
+      "members":{
+        "AppIdClientRegex":{"shape":"NonEmptyString"},
+        "AwsRegion":{"shape":"NonEmptyString"},
+        "DefaultAction":{"shape":"NonEmptyString"},
+        "UserPoolId":{"shape":"NonEmptyString"}
       }
     },
     "AwsAutoScalingAutoScalingGroupAvailabilityZonesList":{
@@ -2085,7 +2359,8 @@
         "LaunchedAt":{"shape":"NonEmptyString"},
         "NetworkInterfaces":{"shape":"AwsEc2InstanceNetworkInterfacesList"},
         "VirtualizationType":{"shape":"NonEmptyString"},
-        "MetadataOptions":{"shape":"AwsEc2InstanceMetadataOptions"}
+        "MetadataOptions":{"shape":"AwsEc2InstanceMetadataOptions"},
+        "Monitoring":{"shape":"AwsEc2InstanceMonitoringDetails"}
       }
     },
     "AwsEc2InstanceMetadataOptions":{
@@ -2096,6 +2371,12 @@
         "HttpPutResponseHopLimit":{"shape":"Integer"},
         "HttpTokens":{"shape":"NonEmptyString"},
         "InstanceMetadataTags":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsEc2InstanceMonitoringDetails":{
+      "type":"structure",
+      "members":{
+        "State":{"shape":"NonEmptyString"}
       }
     },
     "AwsEc2InstanceNetworkInterfacesDetails":{
@@ -2563,6 +2844,17 @@
     "AwsEc2NetworkInterfaceSecurityGroupList":{
       "type":"list",
       "member":{"shape":"AwsEc2NetworkInterfaceSecurityGroup"}
+    },
+    "AwsEc2RouteTableDetails":{
+      "type":"structure",
+      "members":{
+        "AssociationSet":{"shape":"AssociationSetList"},
+        "OwnerId":{"shape":"NonEmptyString"},
+        "PropagatingVgwSet":{"shape":"PropagatingVgwSetList"},
+        "RouteTableId":{"shape":"NonEmptyString"},
+        "RouteSet":{"shape":"RouteSetList"},
+        "VpcId":{"shape":"NonEmptyString"}
+      }
     },
     "AwsEc2SecurityGroupDetails":{
       "type":"structure",
@@ -3533,7 +3825,8 @@
       "type":"structure",
       "members":{
         "SecurityGroupIds":{"shape":"NonEmptyStringList"},
-        "SubnetIds":{"shape":"NonEmptyStringList"}
+        "SubnetIds":{"shape":"NonEmptyStringList"},
+        "EndpointPublicAccess":{"shape":"Boolean"}
       }
     },
     "AwsElasticBeanstalkEnvironmentDetails":{
@@ -3867,6 +4160,102 @@
         "VpcId":{"shape":"NonEmptyString"},
         "LoadBalancerAttributes":{"shape":"AwsElbv2LoadBalancerAttributes"}
       }
+    },
+    "AwsEventSchemasRegistryDetails":{
+      "type":"structure",
+      "members":{
+        "Description":{"shape":"NonEmptyString"},
+        "RegistryArn":{"shape":"NonEmptyString"},
+        "RegistryName":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsGuardDutyDetectorDataSourcesCloudTrailDetails":{
+      "type":"structure",
+      "members":{
+        "Status":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsGuardDutyDetectorDataSourcesDetails":{
+      "type":"structure",
+      "members":{
+        "CloudTrail":{"shape":"AwsGuardDutyDetectorDataSourcesCloudTrailDetails"},
+        "DnsLogs":{"shape":"AwsGuardDutyDetectorDataSourcesDnsLogsDetails"},
+        "FlowLogs":{"shape":"AwsGuardDutyDetectorDataSourcesFlowLogsDetails"},
+        "Kubernetes":{"shape":"AwsGuardDutyDetectorDataSourcesKubernetesDetails"},
+        "MalwareProtection":{"shape":"AwsGuardDutyDetectorDataSourcesMalwareProtectionDetails"},
+        "S3Logs":{"shape":"AwsGuardDutyDetectorDataSourcesS3LogsDetails"}
+      }
+    },
+    "AwsGuardDutyDetectorDataSourcesDnsLogsDetails":{
+      "type":"structure",
+      "members":{
+        "Status":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsGuardDutyDetectorDataSourcesFlowLogsDetails":{
+      "type":"structure",
+      "members":{
+        "Status":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails":{
+      "type":"structure",
+      "members":{
+        "Status":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsGuardDutyDetectorDataSourcesKubernetesDetails":{
+      "type":"structure",
+      "members":{
+        "AuditLogs":{"shape":"AwsGuardDutyDetectorDataSourcesKubernetesAuditLogsDetails"}
+      }
+    },
+    "AwsGuardDutyDetectorDataSourcesMalwareProtectionDetails":{
+      "type":"structure",
+      "members":{
+        "ScanEc2InstanceWithFindings":{"shape":"AwsGuardDutyDetectorDataSourcesMalwareProtectionScanEc2InstanceWithFindingsDetails"},
+        "ServiceRole":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsGuardDutyDetectorDataSourcesMalwareProtectionScanEc2InstanceWithFindingsDetails":{
+      "type":"structure",
+      "members":{
+        "EbsVolumes":{"shape":"AwsGuardDutyDetectorDataSourcesMalwareProtectionScanEc2InstanceWithFindingsEbsVolumesDetails"}
+      }
+    },
+    "AwsGuardDutyDetectorDataSourcesMalwareProtectionScanEc2InstanceWithFindingsEbsVolumesDetails":{
+      "type":"structure",
+      "members":{
+        "Reason":{"shape":"NonEmptyString"},
+        "Status":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsGuardDutyDetectorDataSourcesS3LogsDetails":{
+      "type":"structure",
+      "members":{
+        "Status":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsGuardDutyDetectorDetails":{
+      "type":"structure",
+      "members":{
+        "DataSources":{"shape":"AwsGuardDutyDetectorDataSourcesDetails"},
+        "Features":{"shape":"AwsGuardDutyDetectorFeaturesList"},
+        "FindingPublishingFrequency":{"shape":"NonEmptyString"},
+        "ServiceRole":{"shape":"NonEmptyString"},
+        "Status":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsGuardDutyDetectorFeaturesDetails":{
+      "type":"structure",
+      "members":{
+        "Name":{"shape":"NonEmptyString"},
+        "Status":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsGuardDutyDetectorFeaturesList":{
+      "type":"list",
+      "member":{"shape":"AwsGuardDutyDetectorFeaturesDetails"}
     },
     "AwsIamAccessKeyDetails":{
       "type":"structure",
@@ -5082,7 +5471,8 @@
         "BucketLoggingConfiguration":{"shape":"AwsS3BucketLoggingConfiguration"},
         "BucketWebsiteConfiguration":{"shape":"AwsS3BucketWebsiteConfiguration"},
         "BucketNotificationConfiguration":{"shape":"AwsS3BucketNotificationConfiguration"},
-        "BucketVersioningConfiguration":{"shape":"AwsS3BucketBucketVersioningConfiguration"}
+        "BucketVersioningConfiguration":{"shape":"AwsS3BucketBucketVersioningConfiguration"},
+        "ObjectLockConfiguration":{"shape":"AwsS3BucketObjectLockConfiguration"}
       }
     },
     "AwsS3BucketLoggingConfiguration":{
@@ -5144,6 +5534,27 @@
     "AwsS3BucketNotificationConfigurationS3KeyFilterRules":{
       "type":"list",
       "member":{"shape":"AwsS3BucketNotificationConfigurationS3KeyFilterRule"}
+    },
+    "AwsS3BucketObjectLockConfiguration":{
+      "type":"structure",
+      "members":{
+        "ObjectLockEnabled":{"shape":"NonEmptyString"},
+        "Rule":{"shape":"AwsS3BucketObjectLockConfigurationRuleDetails"}
+      }
+    },
+    "AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails":{
+      "type":"structure",
+      "members":{
+        "Days":{"shape":"Integer"},
+        "Mode":{"shape":"NonEmptyString"},
+        "Years":{"shape":"Integer"}
+      }
+    },
+    "AwsS3BucketObjectLockConfigurationRuleDetails":{
+      "type":"structure",
+      "members":{
+        "DefaultRetention":{"shape":"AwsS3BucketObjectLockConfigurationRuleDefaultRetentionDetails"}
+      }
     },
     "AwsS3BucketServerSideEncryptionByDefault":{
       "type":"structure",
@@ -5444,7 +5855,9 @@
         "FindingProviderFieldsSeverityLabel":{"shape":"StringFilterList"},
         "FindingProviderFieldsSeverityOriginal":{"shape":"StringFilterList"},
         "FindingProviderFieldsTypes":{"shape":"StringFilterList"},
-        "Sample":{"shape":"BooleanFilterList"}
+        "Sample":{"shape":"BooleanFilterList"},
+        "ComplianceSecurityControlId":{"shape":"StringFilterList"},
+        "ComplianceAssociatedStandardsId":{"shape":"StringFilterList"}
       }
     },
     "AwsSecurityFindingIdentifier":{
@@ -5535,6 +5948,49 @@
       "type":"structure",
       "members":{
         "Patch":{"shape":"AwsSsmPatch"}
+      }
+    },
+    "AwsStepFunctionStateMachineDetails":{
+      "type":"structure",
+      "members":{
+        "Label":{"shape":"NonEmptyString"},
+        "LoggingConfiguration":{"shape":"AwsStepFunctionStateMachineLoggingConfigurationDetails"},
+        "Name":{"shape":"NonEmptyString"},
+        "RoleArn":{"shape":"NonEmptyString"},
+        "StateMachineArn":{"shape":"NonEmptyString"},
+        "Status":{"shape":"NonEmptyString"},
+        "TracingConfiguration":{"shape":"AwsStepFunctionStateMachineTracingConfigurationDetails"},
+        "Type":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails":{
+      "type":"structure",
+      "members":{
+        "LogGroupArn":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails":{
+      "type":"structure",
+      "members":{
+        "CloudWatchLogsLogGroup":{"shape":"AwsStepFunctionStateMachineLoggingConfigurationDestinationsCloudWatchLogsLogGroupDetails"}
+      }
+    },
+    "AwsStepFunctionStateMachineLoggingConfigurationDestinationsList":{
+      "type":"list",
+      "member":{"shape":"AwsStepFunctionStateMachineLoggingConfigurationDestinationsDetails"}
+    },
+    "AwsStepFunctionStateMachineLoggingConfigurationDetails":{
+      "type":"structure",
+      "members":{
+        "Destinations":{"shape":"AwsStepFunctionStateMachineLoggingConfigurationDestinationsList"},
+        "IncludeExecutionData":{"shape":"Boolean"},
+        "Level":{"shape":"NonEmptyString"}
+      }
+    },
+    "AwsStepFunctionStateMachineTracingConfigurationDetails":{
+      "type":"structure",
+      "members":{
+        "Enabled":{"shape":"Boolean"}
       }
     },
     "AwsWafRateBasedRuleDetails":{
@@ -5902,6 +6358,36 @@
         "StandardsSubscriptions":{"shape":"StandardsSubscriptions"}
       }
     },
+    "BatchGetSecurityControlsRequest":{
+      "type":"structure",
+      "required":["SecurityControlIds"],
+      "members":{
+        "SecurityControlIds":{"shape":"StringList"}
+      }
+    },
+    "BatchGetSecurityControlsResponse":{
+      "type":"structure",
+      "required":["SecurityControls"],
+      "members":{
+        "SecurityControls":{"shape":"SecurityControls"},
+        "UnprocessedIds":{"shape":"UnprocessedSecurityControls"}
+      }
+    },
+    "BatchGetStandardsControlAssociationsRequest":{
+      "type":"structure",
+      "required":["StandardsControlAssociationIds"],
+      "members":{
+        "StandardsControlAssociationIds":{"shape":"StandardsControlAssociationIds"}
+      }
+    },
+    "BatchGetStandardsControlAssociationsResponse":{
+      "type":"structure",
+      "required":["StandardsControlAssociationDetails"],
+      "members":{
+        "StandardsControlAssociationDetails":{"shape":"StandardsControlAssociationDetails"},
+        "UnprocessedAssociations":{"shape":"UnprocessedStandardsControlAssociations"}
+      }
+    },
     "BatchImportFindingsRequest":{
       "type":"structure",
       "required":["Findings"],
@@ -5970,6 +6456,19 @@
     "BatchUpdateFindingsUnprocessedFindingsList":{
       "type":"list",
       "member":{"shape":"BatchUpdateFindingsUnprocessedFinding"}
+    },
+    "BatchUpdateStandardsControlAssociationsRequest":{
+      "type":"structure",
+      "required":["StandardsControlAssociationUpdates"],
+      "members":{
+        "StandardsControlAssociationUpdates":{"shape":"StandardsControlAssociationUpdates"}
+      }
+    },
+    "BatchUpdateStandardsControlAssociationsResponse":{
+      "type":"structure",
+      "members":{
+        "UnprocessedAssociationUpdates":{"shape":"UnprocessedStandardsControlAssociationUpdates"}
+      }
     },
     "Boolean":{"type":"boolean"},
     "BooleanFilter":{
@@ -6040,7 +6539,9 @@
       "members":{
         "Status":{"shape":"ComplianceStatus"},
         "RelatedRequirements":{"shape":"RelatedRequirementsList"},
-        "StatusReasons":{"shape":"StatusReasonsList"}
+        "StatusReasons":{"shape":"StatusReasonsList"},
+        "SecurityControlId":{"shape":"NonEmptyString"},
+        "AssociatedStandards":{"shape":"AssociatedStandardsList"}
       }
     },
     "ComplianceStatus":{
@@ -6063,6 +6564,13 @@
         "VolumeMounts":{"shape":"VolumeMountList"},
         "Privileged":{"shape":"Boolean"}
       }
+    },
+    "ControlFindingGenerator":{
+      "type":"string",
+      "enum":[
+        "STANDARD_CONTROL",
+        "SECURITY_CONTROL"
+      ]
     },
     "ControlStatus":{
       "type":"string",
@@ -6339,7 +6847,8 @@
       "members":{
         "HubArn":{"shape":"NonEmptyString"},
         "SubscribedAt":{"shape":"NonEmptyString"},
-        "AutoEnableControls":{"shape":"Boolean"}
+        "AutoEnableControls":{"shape":"Boolean"},
+        "ControlFindingGenerator":{"shape":"ControlFindingGenerator"}
       }
     },
     "DescribeOrganizationConfigurationRequest":{
@@ -6541,7 +7050,8 @@
       "type":"structure",
       "members":{
         "Tags":{"shape":"TagMap"},
-        "EnableDefaultStandards":{"shape":"Boolean"}
+        "EnableDefaultStandards":{"shape":"Boolean"},
+        "ControlFindingGenerator":{"shape":"ControlFindingGenerator"}
       }
     },
     "EnableSecurityHubResponse":{
@@ -6576,6 +7086,47 @@
     "FindingAggregatorList":{
       "type":"list",
       "member":{"shape":"FindingAggregator"}
+    },
+    "FindingHistoryRecord":{
+      "type":"structure",
+      "members":{
+        "FindingIdentifier":{"shape":"AwsSecurityFindingIdentifier"},
+        "UpdateTime":{"shape":"Timestamp"},
+        "FindingCreated":{"shape":"Boolean"},
+        "UpdateSource":{"shape":"FindingHistoryUpdateSource"},
+        "Updates":{"shape":"FindingHistoryUpdatesList"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "FindingHistoryRecordList":{
+      "type":"list",
+      "member":{"shape":"FindingHistoryRecord"}
+    },
+    "FindingHistoryUpdate":{
+      "type":"structure",
+      "members":{
+        "UpdatedField":{"shape":"NonEmptyString"},
+        "OldValue":{"shape":"NonEmptyString"},
+        "NewValue":{"shape":"NonEmptyString"}
+      }
+    },
+    "FindingHistoryUpdateSource":{
+      "type":"structure",
+      "members":{
+        "Type":{"shape":"FindingHistoryUpdateSourceType"},
+        "Identity":{"shape":"NonEmptyString"}
+      }
+    },
+    "FindingHistoryUpdateSourceType":{
+      "type":"string",
+      "enum":[
+        "BATCH_UPDATE_FINDINGS",
+        "BATCH_IMPORT_FINDINGS"
+      ]
+    },
+    "FindingHistoryUpdatesList":{
+      "type":"list",
+      "member":{"shape":"FindingHistoryUpdate"}
     },
     "FindingProviderFields":{
       "type":"structure",
@@ -6687,6 +7238,24 @@
         "FindingAggregationRegion":{"shape":"NonEmptyString"},
         "RegionLinkingMode":{"shape":"NonEmptyString"},
         "Regions":{"shape":"StringList"}
+      }
+    },
+    "GetFindingHistoryRequest":{
+      "type":"structure",
+      "required":["FindingIdentifier"],
+      "members":{
+        "FindingIdentifier":{"shape":"AwsSecurityFindingIdentifier"},
+        "StartTime":{"shape":"Timestamp"},
+        "EndTime":{"shape":"Timestamp"},
+        "NextToken":{"shape":"NextToken"},
+        "MaxResults":{"shape":"MaxResults"}
+      }
+    },
+    "GetFindingHistoryResponse":{
+      "type":"structure",
+      "members":{
+        "Records":{"shape":"FindingHistoryRecordList"},
+        "NextToken":{"shape":"NextToken"}
       }
     },
     "GetFindingsRequest":{
@@ -7082,6 +7651,63 @@
         "NextToken":{"shape":"NextToken"}
       }
     },
+    "ListSecurityControlDefinitionsRequest":{
+      "type":"structure",
+      "members":{
+        "StandardsArn":{
+          "shape":"NonEmptyString",
+          "location":"querystring",
+          "locationName":"StandardsArn"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"NextToken"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"MaxResults"
+        }
+      }
+    },
+    "ListSecurityControlDefinitionsResponse":{
+      "type":"structure",
+      "required":["SecurityControlDefinitions"],
+      "members":{
+        "SecurityControlDefinitions":{"shape":"SecurityControlDefinitions"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
+    "ListStandardsControlAssociationsRequest":{
+      "type":"structure",
+      "required":["SecurityControlId"],
+      "members":{
+        "SecurityControlId":{
+          "shape":"NonEmptyString",
+          "location":"querystring",
+          "locationName":"SecurityControlId"
+        },
+        "NextToken":{
+          "shape":"NextToken",
+          "location":"querystring",
+          "locationName":"NextToken"
+        },
+        "MaxResults":{
+          "shape":"MaxResults",
+          "location":"querystring",
+          "locationName":"MaxResults"
+        }
+      }
+    },
+    "ListStandardsControlAssociationsResponse":{
+      "type":"structure",
+      "required":["StandardsControlAssociationSummaries"],
+      "members":{
+        "StandardsControlAssociationSummaries":{"shape":"StandardsControlAssociationSummaries"},
+        "NextToken":{"shape":"NextToken"}
+      }
+    },
     "ListTagsForResourceRequest":{
       "type":"structure",
       "required":["ResourceArn"],
@@ -7419,6 +8045,16 @@
       "type":"list",
       "member":{"shape":"Product"}
     },
+    "PropagatingVgwSetDetails":{
+      "type":"structure",
+      "members":{
+        "GatewayId":{"shape":"NonEmptyString"}
+      }
+    },
+    "PropagatingVgwSetList":{
+      "type":"list",
+      "member":{"shape":"PropagatingVgwSetDetails"}
+    },
     "Range":{
       "type":"structure",
       "members":{
@@ -7460,6 +8096,13 @@
     "Records":{
       "type":"list",
       "member":{"shape":"Record"}
+    },
+    "RegionAvailabilityStatus":{
+      "type":"string",
+      "enum":[
+        "AVAILABLE",
+        "UNAVAILABLE"
+      ]
     },
     "RelatedFinding":{
       "type":"structure",
@@ -7601,7 +8244,13 @@
         "AwsEc2LaunchTemplate":{"shape":"AwsEc2LaunchTemplateDetails"},
         "AwsSageMakerNotebookInstance":{"shape":"AwsSageMakerNotebookInstanceDetails"},
         "AwsWafv2WebAcl":{"shape":"AwsWafv2WebAclDetails"},
-        "AwsWafv2RuleGroup":{"shape":"AwsWafv2RuleGroupDetails"}
+        "AwsWafv2RuleGroup":{"shape":"AwsWafv2RuleGroupDetails"},
+        "AwsEc2RouteTable":{"shape":"AwsEc2RouteTableDetails"},
+        "AwsAmazonMqBroker":{"shape":"AwsAmazonMqBrokerDetails"},
+        "AwsAppSyncGraphQlApi":{"shape":"AwsAppSyncGraphQlApiDetails"},
+        "AwsEventSchemasRegistry":{"shape":"AwsEventSchemasRegistryDetails"},
+        "AwsGuardDutyDetector":{"shape":"AwsGuardDutyDetectorDetails"},
+        "AwsStepFunctionStateMachine":{"shape":"AwsStepFunctionStateMachineDetails"}
       }
     },
     "ResourceList":{
@@ -7627,6 +8276,31 @@
     "ResultList":{
       "type":"list",
       "member":{"shape":"Result"}
+    },
+    "RouteSetDetails":{
+      "type":"structure",
+      "members":{
+        "CarrierGatewayId":{"shape":"NonEmptyString"},
+        "CoreNetworkArn":{"shape":"NonEmptyString"},
+        "DestinationCidrBlock":{"shape":"NonEmptyString"},
+        "DestinationIpv6CidrBlock":{"shape":"NonEmptyString"},
+        "DestinationPrefixListId":{"shape":"NonEmptyString"},
+        "EgressOnlyInternetGatewayId":{"shape":"NonEmptyString"},
+        "GatewayId":{"shape":"NonEmptyString"},
+        "InstanceId":{"shape":"NonEmptyString"},
+        "InstanceOwnerId":{"shape":"NonEmptyString"},
+        "LocalGatewayId":{"shape":"NonEmptyString"},
+        "NatGatewayId":{"shape":"NonEmptyString"},
+        "NetworkInterfaceId":{"shape":"NonEmptyString"},
+        "Origin":{"shape":"NonEmptyString"},
+        "State":{"shape":"NonEmptyString"},
+        "TransitGatewayId":{"shape":"NonEmptyString"},
+        "VpcPeeringConnectionId":{"shape":"NonEmptyString"}
+      }
+    },
+    "RouteSetList":{
+      "type":"list",
+      "member":{"shape":"RouteSetDetails"}
     },
     "RuleGroupDetails":{
       "type":"structure",
@@ -7813,6 +8487,54 @@
         "Definition":{"shape":"NonEmptyStringList"}
       }
     },
+    "SecurityControl":{
+      "type":"structure",
+      "required":[
+        "SecurityControlId",
+        "SecurityControlArn",
+        "Title",
+        "Description",
+        "RemediationUrl",
+        "SeverityRating",
+        "SecurityControlStatus"
+      ],
+      "members":{
+        "SecurityControlId":{"shape":"NonEmptyString"},
+        "SecurityControlArn":{"shape":"NonEmptyString"},
+        "Title":{"shape":"NonEmptyString"},
+        "Description":{"shape":"NonEmptyString"},
+        "RemediationUrl":{"shape":"NonEmptyString"},
+        "SeverityRating":{"shape":"SeverityRating"},
+        "SecurityControlStatus":{"shape":"ControlStatus"}
+      }
+    },
+    "SecurityControlDefinition":{
+      "type":"structure",
+      "required":[
+        "SecurityControlId",
+        "Title",
+        "Description",
+        "RemediationUrl",
+        "SeverityRating",
+        "CurrentRegionAvailability"
+      ],
+      "members":{
+        "SecurityControlId":{"shape":"NonEmptyString"},
+        "Title":{"shape":"NonEmptyString"},
+        "Description":{"shape":"NonEmptyString"},
+        "RemediationUrl":{"shape":"NonEmptyString"},
+        "SeverityRating":{"shape":"SeverityRating"},
+        "CurrentRegionAvailability":{"shape":"RegionAvailabilityStatus"}
+      }
+    },
+    "SecurityControlDefinitions":{
+      "type":"list",
+      "member":{"shape":"SecurityControlDefinition"}
+    },
+    "SecurityControls":{
+      "type":"list",
+      "member":{"shape":"SecurityControl"}
+    },
     "SecurityGroups":{
       "type":"list",
       "member":{"shape":"NonEmptyString"}
@@ -7944,6 +8666,92 @@
         "SeverityRating":{"shape":"SeverityRating"},
         "RelatedRequirements":{"shape":"RelatedRequirementsList"}
       }
+    },
+    "StandardsControlArnList":{
+      "type":"list",
+      "member":{"shape":"NonEmptyString"}
+    },
+    "StandardsControlAssociationDetail":{
+      "type":"structure",
+      "required":[
+        "StandardsArn",
+        "SecurityControlId",
+        "SecurityControlArn",
+        "AssociationStatus"
+      ],
+      "members":{
+        "StandardsArn":{"shape":"NonEmptyString"},
+        "SecurityControlId":{"shape":"NonEmptyString"},
+        "SecurityControlArn":{"shape":"NonEmptyString"},
+        "AssociationStatus":{"shape":"AssociationStatus"},
+        "RelatedRequirements":{"shape":"RelatedRequirementsList"},
+        "UpdatedAt":{"shape":"Timestamp"},
+        "UpdatedReason":{"shape":"NonEmptyString"},
+        "StandardsControlTitle":{"shape":"NonEmptyString"},
+        "StandardsControlDescription":{"shape":"NonEmptyString"},
+        "StandardsControlArns":{"shape":"StandardsControlArnList"}
+      }
+    },
+    "StandardsControlAssociationDetails":{
+      "type":"list",
+      "member":{"shape":"StandardsControlAssociationDetail"}
+    },
+    "StandardsControlAssociationId":{
+      "type":"structure",
+      "required":[
+        "SecurityControlId",
+        "StandardsArn"
+      ],
+      "members":{
+        "SecurityControlId":{"shape":"NonEmptyString"},
+        "StandardsArn":{"shape":"NonEmptyString"}
+      }
+    },
+    "StandardsControlAssociationIds":{
+      "type":"list",
+      "member":{"shape":"StandardsControlAssociationId"}
+    },
+    "StandardsControlAssociationSummaries":{
+      "type":"list",
+      "member":{"shape":"StandardsControlAssociationSummary"}
+    },
+    "StandardsControlAssociationSummary":{
+      "type":"structure",
+      "required":[
+        "StandardsArn",
+        "SecurityControlId",
+        "SecurityControlArn",
+        "AssociationStatus"
+      ],
+      "members":{
+        "StandardsArn":{"shape":"NonEmptyString"},
+        "SecurityControlId":{"shape":"NonEmptyString"},
+        "SecurityControlArn":{"shape":"NonEmptyString"},
+        "AssociationStatus":{"shape":"AssociationStatus"},
+        "RelatedRequirements":{"shape":"RelatedRequirementsList"},
+        "UpdatedAt":{"shape":"Timestamp"},
+        "UpdatedReason":{"shape":"NonEmptyString"},
+        "StandardsControlTitle":{"shape":"NonEmptyString"},
+        "StandardsControlDescription":{"shape":"NonEmptyString"}
+      }
+    },
+    "StandardsControlAssociationUpdate":{
+      "type":"structure",
+      "required":[
+        "StandardsArn",
+        "SecurityControlId",
+        "AssociationStatus"
+      ],
+      "members":{
+        "StandardsArn":{"shape":"NonEmptyString"},
+        "SecurityControlId":{"shape":"NonEmptyString"},
+        "AssociationStatus":{"shape":"AssociationStatus"},
+        "UpdatedReason":{"shape":"NonEmptyString"}
+      }
+    },
+    "StandardsControlAssociationUpdates":{
+      "type":"list",
+      "member":{"shape":"StandardsControlAssociationUpdate"}
     },
     "StandardsControls":{
       "type":"list",
@@ -8189,6 +8997,63 @@
       "type":"list",
       "member":{"shape":"NonEmptyString"}
     },
+    "UnprocessedErrorCode":{
+      "type":"string",
+      "enum":[
+        "INVALID_INPUT",
+        "ACCESS_DENIED",
+        "NOT_FOUND",
+        "LIMIT_EXCEEDED"
+      ]
+    },
+    "UnprocessedSecurityControl":{
+      "type":"structure",
+      "required":[
+        "SecurityControlId",
+        "ErrorCode"
+      ],
+      "members":{
+        "SecurityControlId":{"shape":"NonEmptyString"},
+        "ErrorCode":{"shape":"UnprocessedErrorCode"},
+        "ErrorReason":{"shape":"NonEmptyString"}
+      }
+    },
+    "UnprocessedSecurityControls":{
+      "type":"list",
+      "member":{"shape":"UnprocessedSecurityControl"}
+    },
+    "UnprocessedStandardsControlAssociation":{
+      "type":"structure",
+      "required":[
+        "StandardsControlAssociationId",
+        "ErrorCode"
+      ],
+      "members":{
+        "StandardsControlAssociationId":{"shape":"StandardsControlAssociationId"},
+        "ErrorCode":{"shape":"UnprocessedErrorCode"},
+        "ErrorReason":{"shape":"NonEmptyString"}
+      }
+    },
+    "UnprocessedStandardsControlAssociationUpdate":{
+      "type":"structure",
+      "required":[
+        "StandardsControlAssociationUpdate",
+        "ErrorCode"
+      ],
+      "members":{
+        "StandardsControlAssociationUpdate":{"shape":"StandardsControlAssociationUpdate"},
+        "ErrorCode":{"shape":"UnprocessedErrorCode"},
+        "ErrorReason":{"shape":"NonEmptyString"}
+      }
+    },
+    "UnprocessedStandardsControlAssociationUpdates":{
+      "type":"list",
+      "member":{"shape":"UnprocessedStandardsControlAssociationUpdate"}
+    },
+    "UnprocessedStandardsControlAssociations":{
+      "type":"list",
+      "member":{"shape":"UnprocessedStandardsControlAssociation"}
+    },
     "UntagResourceRequest":{
       "type":"structure",
       "required":[
@@ -8301,7 +9166,8 @@
     "UpdateSecurityHubConfigurationRequest":{
       "type":"structure",
       "members":{
-        "AutoEnableControls":{"shape":"Boolean"}
+        "AutoEnableControls":{"shape":"Boolean"},
+        "ControlFindingGenerator":{"shape":"ControlFindingGenerator"}
       }
     },
     "UpdateSecurityHubConfigurationResponse":{

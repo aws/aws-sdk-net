@@ -76,6 +76,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                     unmarshalledObject.PythonVersion = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("Runtime", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.Runtime = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ScriptLocation", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

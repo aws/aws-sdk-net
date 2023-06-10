@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// A required input parameter is missing.
+    /// The operation failed because a required input parameter is missing.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

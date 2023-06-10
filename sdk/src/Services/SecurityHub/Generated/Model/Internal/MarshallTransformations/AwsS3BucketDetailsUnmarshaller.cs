@@ -106,6 +106,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                     unmarshalledObject.CreatedAt = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ObjectLockConfiguration", targetDepth))
+                {
+                    var unmarshaller = AwsS3BucketObjectLockConfigurationUnmarshaller.Instance;
+                    unmarshalledObject.ObjectLockConfiguration = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("OwnerAccountId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

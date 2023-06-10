@@ -105,7 +105,7 @@ namespace Amazon.ConnectWisdomService.Model
         /// The text to search for.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string QueryText
         {
             get { return this._queryText; }

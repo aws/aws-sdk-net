@@ -105,8 +105,15 @@ namespace Amazon.SageMaker.Model
         /// provided by SageMaker, the inference code must meet SageMaker requirements. SageMaker
         /// supports both <code>registry/repository[:tag]</code> and <code>registry/repository[@digest]</code>
         /// image path formats. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
-        /// Your Own Algorithms with Amazon SageMaker</a> 
+        /// Your Own Algorithms with Amazon SageMaker</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The model artifacts in an Amazon S3 bucket and the Docker image for inference container
+        /// in Amazon EC2 Container Registry must be in the same region as the model or endpoint
+        /// you are creating.
+        /// </para>
+        ///  </note>
         /// </summary>
         [AWSProperty(Max=255)]
         public string Image
@@ -127,8 +134,15 @@ namespace Amazon.SageMaker.Model
         /// Specifies whether the model container is in Amazon ECR or a private Docker registry
         /// accessible from your Amazon Virtual Private Cloud (VPC). For information about storing
         /// containers in a private Docker registry, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
-        /// a Private Docker Registry for Real-Time Inference Containers</a> 
+        /// a Private Docker Registry for Real-Time Inference Containers</a>. 
         /// </para>
+        ///  <note> 
+        /// <para>
+        /// The model artifacts in an Amazon S3 bucket and the Docker image for inference container
+        /// in Amazon EC2 Container Registry must be in the same region as the model or endpoint
+        /// you are creating.
+        /// </para>
+        ///  </note>
         /// </summary>
         public ImageConfig ImageConfig
         {
@@ -197,9 +211,9 @@ namespace Amazon.SageMaker.Model
         /// <para>
         /// If you provide a value for this parameter, SageMaker uses Amazon Web Services Security
         /// Token Service to download model artifacts from the S3 path you provide. Amazon Web
-        /// Services STS is activated in your IAM user account by default. If you previously deactivated
-        /// Amazon Web Services STS for a region, you need to reactivate Amazon Web Services STS
-        /// for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+        /// Services STS is activated in your Amazon Web Services account by default. If you previously
+        /// deactivated Amazon Web Services STS for a region, you need to reactivate Amazon Web
+        /// Services STS for that region. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
         /// and Deactivating Amazon Web Services STS in an Amazon Web Services Region</a> in the
         /// <i>Amazon Web Services Identity and Access Management User Guide</i>.
         /// </para>

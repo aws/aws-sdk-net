@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.RAM.Model
 {
     /// <summary>
-    /// You exceeded the rate at which you are allowed to perform this operation. Please try
-    /// again later.
+    /// The operation failed because it exceeded the rate at which you are allowed to perform
+    /// this operation. Please try again later.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

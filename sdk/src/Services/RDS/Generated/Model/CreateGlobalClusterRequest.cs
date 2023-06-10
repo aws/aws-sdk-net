@@ -135,7 +135,8 @@ namespace Amazon.RDS.Model
         /// <summary>
         /// Gets and sets the property GlobalClusterIdentifier. 
         /// <para>
-        /// The cluster identifier of the new global database cluster.
+        /// The cluster identifier of the new global database cluster. This parameter is stored
+        /// as a lowercase string.
         /// </para>
         /// </summary>
         public string GlobalClusterIdentifier

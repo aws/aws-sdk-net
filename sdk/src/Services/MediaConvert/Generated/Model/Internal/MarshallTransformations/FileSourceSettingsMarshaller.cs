@@ -51,6 +51,12 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Convert608To708);
             }
 
+            if(requestObject.IsSetConvertPaintToPop())
+            {
+                context.Writer.WritePropertyName("convertPaintToPop");
+                context.Writer.Write(requestObject.ConvertPaintToPop);
+            }
+
             if(requestObject.IsSetFramerate())
             {
                 context.Writer.WritePropertyName("framerate");

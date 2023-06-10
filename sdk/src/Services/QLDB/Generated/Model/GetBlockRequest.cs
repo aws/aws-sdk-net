@@ -69,7 +69,7 @@ namespace Amazon.QLDB.Model
         /// For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:14}</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public ValueHolder BlockAddress
         {
             get { return this._blockAddress; }
@@ -93,6 +93,7 @@ namespace Amazon.QLDB.Model
         /// For example: <code>{strandId:"BlFTjlSXze9BIh1KOszcE3",sequenceNo:49}</code>.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public ValueHolder DigestTipAddress
         {
             get { return this._digestTipAddress; }

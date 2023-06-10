@@ -72,7 +72,7 @@ namespace Amazon.PersonalizeEvents.Model
         /// For example, <code>\"Horror|Action\"</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=24262)]
+        [AWSProperty(Sensitive=true, Min=1, Max=24262)]
         public string Properties
         {
             get { return this._properties; }

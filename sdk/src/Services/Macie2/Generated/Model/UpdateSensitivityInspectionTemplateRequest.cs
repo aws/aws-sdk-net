@@ -42,7 +42,7 @@ namespace Amazon.Macie2.Model
         /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
-        /// A custom description of the template.
+        /// A custom description of the template. The description can contain as many as 200 characters.
         /// </para>
         /// </summary>
         public string Description

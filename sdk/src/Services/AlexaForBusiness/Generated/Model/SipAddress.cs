@@ -42,7 +42,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The type of the SIP address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public SipType Type
         {
             get { return this._type; }
@@ -61,7 +61,7 @@ namespace Amazon.AlexaForBusiness.Model
         /// The URI for the SIP address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Uri
         {
             get { return this._uri; }

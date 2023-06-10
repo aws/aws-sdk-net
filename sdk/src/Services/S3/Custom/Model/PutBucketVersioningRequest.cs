@@ -65,7 +65,9 @@ namespace Amazon.S3.Model
     /// versions.) For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-and-other-bucket-config">Lifecycle
     /// and Versioning</a>.
     /// </para>
-    ///  </important> <p class="title"> <b>Related Resources</b> 
+    ///  </important> 
+    /// <para>
+    /// The following operations are related to <code>PutBucketVersioning</code>:
     /// </para>
     ///  <ul> <li> 
     /// <para>

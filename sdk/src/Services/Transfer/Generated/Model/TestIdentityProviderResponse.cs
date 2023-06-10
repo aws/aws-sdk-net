@@ -65,7 +65,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property Response. 
         /// <para>
-        /// The response that is returned from your API Gateway.
+        /// The response that is returned from your API Gateway or your Lambda function.
         /// </para>
         /// </summary>
         public string Response
@@ -83,7 +83,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// The HTTP status code that is the response from your API Gateway.
+        /// The HTTP status code that is the response from your API Gateway or your Lambda function.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

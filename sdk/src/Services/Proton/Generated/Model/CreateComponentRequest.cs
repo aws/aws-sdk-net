@@ -41,6 +41,7 @@ namespace Amazon.Proton.Model
     /// </summary>
     public partial class CreateComponentRequest : AmazonProtonRequest
     {
+        private string _clientToken;
         private string _description;
         private string _environmentName;
         private string _manifest;
@@ -52,12 +53,31 @@ namespace Amazon.Proton.Model
         private string _templateFile;
 
         /// <summary>
+        /// Gets and sets the property ClientToken. 
+        /// <para>
+        /// The client token for the created component.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=64)]
+        public string ClientToken
+        {
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
+        }
+
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
+        {
+            return this._clientToken != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Description. 
         /// <para>
         /// An optional customer-provided description of the component.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=500)]
+        [AWSProperty(Sensitive=true, Min=0, Max=500)]
         public string Description
         {
             get { return this._description; }
@@ -98,7 +118,7 @@ namespace Amazon.Proton.Model
         /// language, and rendering engine for infrastructure that a custom component provisions.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string Manifest
         {
             get { return this._manifest; }
@@ -179,7 +199,7 @@ namespace Amazon.Proton.Model
         /// this only when you attach the component to a service instance.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=51200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=51200)]
         public string ServiceSpec
         {
             get { return this._serviceSpec; }
@@ -229,7 +249,7 @@ namespace Amazon.Proton.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=51200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=51200)]
         public string TemplateFile
         {
             get { return this._templateFile; }

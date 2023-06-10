@@ -46,6 +46,7 @@ namespace Amazon.NimbleStudio.Model
         /// The endpoint of the shared file system that is accessed by the studio component resource.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string Endpoint
         {
             get { return this._endpoint; }
@@ -82,7 +83,7 @@ namespace Amazon.NimbleStudio.Model
         /// The mount location for a shared file system on a Linux virtual workstation.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=128)]
+        [AWSProperty(Sensitive=true, Min=0, Max=128)]
         public string LinuxMountPoint
         {
             get { return this._linuxMountPoint; }
@@ -101,6 +102,7 @@ namespace Amazon.NimbleStudio.Model
         /// The name of the file share.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string ShareName
         {
             get { return this._shareName; }

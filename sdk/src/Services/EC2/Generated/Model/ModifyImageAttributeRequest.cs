@@ -31,9 +31,14 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the ModifyImageAttribute operation.
     /// Modifies the specified attribute of the specified AMI. You can specify only one attribute
-    /// at a time. You can use the <code>Attribute</code> parameter to specify the attribute
-    /// or one of the following parameters: <code>Description</code> or <code>LaunchPermission</code>.
+    /// at a time.
     /// 
+    ///  
+    /// <para>
+    /// To specify the attribute, you can use the <code>Attribute</code> parameter, or one
+    /// of the following parameters: <code>Description</code>, <code>ImdsSupport</code>, or
+    /// <code>LaunchPermission</code>.
+    /// </para>
     ///  
     /// <para>
     /// Images with an Amazon Web Services Marketplace product code cannot be made public.
@@ -49,6 +54,7 @@ namespace Amazon.EC2.Model
         private string _attribute;
         private string _description;
         private string _imageId;
+        private string _imdsSupport;
         private LaunchPermissionModifications _launchPermission;
         private OperationType _operationType;
         private List<string> _organizationalUnitArns = new List<string>();
@@ -67,7 +73,7 @@ namespace Amazon.EC2.Model
         /// Instantiates ModifyImageAttributeRequest with the parameterized properties
         /// </summary>
         /// <param name="imageId">The ID of the AMI.</param>
-        /// <param name="attribute">The name of the attribute to modify. Valid values: <code>description</code> | <code>launchPermission</code> </param>
+        /// <param name="attribute">The name of the attribute to modify. Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code> </param>
         public ModifyImageAttributeRequest(string imageId, string attribute)
         {
             _imageId = imageId;
@@ -81,7 +87,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// Valid values: <code>description</code> | <code>launchPermission</code> 
+        /// Valid values: <code>description</code> | <code>imdsSupport</code> | <code>launchPermission</code>
+        /// 
         /// </para>
         /// </summary>
         public string Attribute
@@ -131,6 +138,36 @@ namespace Amazon.EC2.Model
         internal bool IsSetImageId()
         {
             return this._imageId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ImdsSupport. 
+        /// <para>
+        /// Set to <code>v2.0</code> to indicate that IMDSv2 is specified in the AMI. Instances
+        /// launched from this AMI will have <code>HttpTokens</code> automatically set to <code>required</code>
+        /// so that, by default, the instance requires that IMDSv2 is used when requesting instance
+        /// metadata. In addition, <code>HttpPutResponseHopLimit</code> is set to <code>2</code>.
+        /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configuring-IMDS-new-instances.html#configure-IMDS-new-instances-ami-configuration">Configure
+        /// the AMI</a> in the <i>Amazon EC2 User Guide</i>.
+        /// </para>
+        ///  <important> 
+        /// <para>
+        /// Do not use this parameter unless your AMI software supports IMDSv2. After you set
+        /// the value to <code>v2.0</code>, you can't undo it. The only way to “reset” your AMI
+        /// is to create a new AMI from the underlying snapshot.
+        /// </para>
+        ///  </important>
+        /// </summary>
+        public string ImdsSupport
+        {
+            get { return this._imdsSupport; }
+            set { this._imdsSupport = value; }
+        }
+
+        // Check to see if ImdsSupport property is set
+        internal bool IsSetImdsSupport()
+        {
+            return this._imdsSupport != null;
         }
 
         /// <summary>
@@ -268,7 +305,7 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property Value. 
         /// <para>
         /// The value of the attribute being modified. This parameter can be used only when the
-        /// <code>Attribute</code> parameter is <code>description</code>.
+        /// <code>Attribute</code> parameter is <code>description</code> or <code>imdsSupport</code>.
         /// </para>
         /// </summary>
         public string Value

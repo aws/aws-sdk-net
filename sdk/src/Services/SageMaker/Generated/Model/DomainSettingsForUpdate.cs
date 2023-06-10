@@ -62,6 +62,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property RStudioServerProDomainSettingsForUpdate. 
         /// <para>
         /// A collection of <code>RStudioServerPro</code> Domain-level app settings to update.
+        /// A single <code>RStudioServerPro</code> application is created for a domain.
         /// </para>
         /// </summary>
         public RStudioServerProDomainSettingsForUpdate RStudioServerProDomainSettingsForUpdate

@@ -47,7 +47,7 @@ namespace Amazon.SSMContacts.Model
         /// Gets and sets the property Alias. 
         /// <para>
         /// The short name to quickly identify a contact or escalation plan. The contact alias
-        /// must be unique and identifiable. 
+        /// must be unique and identifiable.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
@@ -66,7 +66,7 @@ namespace Amazon.SSMContacts.Model
         /// <summary>
         /// Gets and sets the property DisplayName. 
         /// <para>
-        /// The full name of the contact or escalation plan. 
+        /// The full name of the contact or escalation plan.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=255)]
@@ -106,7 +106,6 @@ namespace Amazon.SSMContacts.Model
         /// <para>
         /// A list of stages. A contact has an engagement plan with stages that contact specified
         /// contact channels. An escalation plan uses stages that contact specified contacts.
-        /// 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -126,7 +125,7 @@ namespace Amazon.SSMContacts.Model
         /// Gets and sets the property Tags. 
         /// <para>
         /// Adds a tag to the target. You can only tag resources created in the first Region of
-        /// your replication set. 
+        /// your replication set.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=50)]

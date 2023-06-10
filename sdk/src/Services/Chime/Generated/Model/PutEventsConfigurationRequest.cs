@@ -85,6 +85,7 @@ namespace Amazon.Chime.Model
         /// Lambda function ARN that allows the bot to receive outgoing events.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string LambdaFunctionArn
         {
             get { return this._lambdaFunctionArn; }
@@ -103,6 +104,7 @@ namespace Amazon.Chime.Model
         /// HTTPS endpoint that allows the bot to receive outgoing events.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string OutboundEventsHTTPSEndpoint
         {
             get { return this._outboundEventsHTTPSEndpoint; }

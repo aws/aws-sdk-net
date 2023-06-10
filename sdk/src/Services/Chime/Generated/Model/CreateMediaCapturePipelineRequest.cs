@@ -63,10 +63,11 @@ namespace Amazon.Chime.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken. 
         /// <para>
-        /// The token assigned to the client making the pipeline request.
+        /// The unique identifier for the client request. The token makes the API request idempotent.
+        /// Use a different token for different media pipeline requests.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=2, Max=64)]
+        [AWSProperty(Sensitive=true, Min=2, Max=64)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -85,7 +86,7 @@ namespace Amazon.Chime.Model
         /// The ARN of the sink type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string SinkArn
         {
             get { return this._sinkArn; }
@@ -124,7 +125,7 @@ namespace Amazon.Chime.Model
         /// ARN of the source from which the media artifacts are captured.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=1024)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=1024)]
         public string SourceArn
         {
             get { return this._sourceArn; }

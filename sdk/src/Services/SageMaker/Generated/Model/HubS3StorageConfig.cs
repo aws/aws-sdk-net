@@ -38,7 +38,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property S3OutputPath. 
         /// <para>
-        /// The Amazon S3 output path for the hub.
+        /// The Amazon S3 bucket prefix for hosting hub content.
         /// </para>
         /// </summary>
         [AWSProperty(Max=1024)]

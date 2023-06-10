@@ -66,7 +66,7 @@ namespace Amazon.StepFunctions.Model
         /// apply to the payload size, and are expressed as bytes in UTF-8 encoding.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=0, Max=262144)]
+        [AWSProperty(Required=true, Sensitive=true, Min=0, Max=262144)]
         public string Parameters
         {
             get { return this._parameters; }

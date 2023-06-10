@@ -59,76 +59,24 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "POST";
 
-            request.ResourcePath = "/v1/logsources/aws/delete";
+            request.ResourcePath = "/v1/datalake/logsources/aws/delete";
             using (StringWriter stringWriter = new StringWriter(CultureInfo.InvariantCulture))
             {
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
-                if(publicRequest.IsSetDisableAllDimensions())
+                if(publicRequest.IsSetSources())
                 {
-                    context.Writer.WritePropertyName("disableAllDimensions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestDisableAllDimensionsKvp in publicRequest.DisableAllDimensions)
+                    context.Writer.WritePropertyName("sources");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSourcesListValue in publicRequest.Sources)
                     {
-                        context.Writer.WritePropertyName(publicRequestDisableAllDimensionsKvp.Key);
-                        var publicRequestDisableAllDimensionsValue = publicRequestDisableAllDimensionsKvp.Value;
-
                         context.Writer.WriteObjectStart();
-                        foreach (var publicRequestDisableAllDimensionsValueKvp in publicRequestDisableAllDimensionsValue)
-                        {
-                            context.Writer.WritePropertyName(publicRequestDisableAllDimensionsValueKvp.Key);
-                            var publicRequestDisableAllDimensionsValueValue = publicRequestDisableAllDimensionsValueKvp.Value;
 
-                            context.Writer.WriteArrayStart();
-                            foreach(var publicRequestDisableAllDimensionsValueValueListValue in publicRequestDisableAllDimensionsValueValue)
-                            {
-                                    context.Writer.Write(publicRequestDisableAllDimensionsValueValueListValue);
-                            }
-                            context.Writer.WriteArrayEnd();
-                        }
+                        var marshaller = AwsLogSourceConfigurationMarshaller.Instance;
+                        marshaller.Marshall(publicRequestSourcesListValue, context);
+
                         context.Writer.WriteObjectEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetDisableSingleDimension())
-                {
-                    context.Writer.WritePropertyName("disableSingleDimension");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestDisableSingleDimensionListValue in publicRequest.DisableSingleDimension)
-                    {
-                            context.Writer.Write(publicRequestDisableSingleDimensionListValue);
-                    }
-                    context.Writer.WriteArrayEnd();
-                }
-
-                if(publicRequest.IsSetDisableTwoDimensions())
-                {
-                    context.Writer.WritePropertyName("disableTwoDimensions");
-                    context.Writer.WriteObjectStart();
-                    foreach (var publicRequestDisableTwoDimensionsKvp in publicRequest.DisableTwoDimensions)
-                    {
-                        context.Writer.WritePropertyName(publicRequestDisableTwoDimensionsKvp.Key);
-                        var publicRequestDisableTwoDimensionsValue = publicRequestDisableTwoDimensionsKvp.Value;
-
-                        context.Writer.WriteArrayStart();
-                        foreach(var publicRequestDisableTwoDimensionsValueListValue in publicRequestDisableTwoDimensionsValue)
-                        {
-                                context.Writer.Write(publicRequestDisableTwoDimensionsValueListValue);
-                        }
-                        context.Writer.WriteArrayEnd();
-                    }
-                    context.Writer.WriteObjectEnd();
-                }
-
-                if(publicRequest.IsSetInputOrder())
-                {
-                    context.Writer.WritePropertyName("inputOrder");
-                    context.Writer.WriteArrayStart();
-                    foreach(var publicRequestInputOrderListValue in publicRequest.InputOrder)
-                    {
-                            context.Writer.Write(publicRequestInputOrderListValue);
                     }
                     context.Writer.WriteArrayEnd();
                 }

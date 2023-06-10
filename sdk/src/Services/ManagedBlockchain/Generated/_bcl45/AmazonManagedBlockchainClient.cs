@@ -285,18 +285,8 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// The token based access feature is in preview release for Ethereum on Amazon Managed
-        /// Blockchain and is subject to change. We recommend that you use this feature only with
-        /// test scenarios, and not in production environments.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor
-        /// object is a container that has the information required for token based access to
-        /// your Ethereum nodes.
-        /// </para>
+        /// contains information required for token based access to your Ethereum nodes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessor service method.</param>
         /// 
@@ -323,6 +313,9 @@ namespace Amazon.ManagedBlockchain
         /// service limit for this resource type. Request a limit increase or delete unused resources
         /// if possible.
         /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
+        /// 
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor">REST API Reference for CreateAccessor Operation</seealso>
         public virtual CreateAccessorResponse CreateAccessor(CreateAccessorRequest request)
         {
@@ -335,18 +328,8 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// The token based access feature is in preview release for Ethereum on Amazon Managed
-        /// Blockchain and is subject to change. We recommend that you use this feature only with
-        /// test scenarios, and not in production environments.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor
-        /// object is a container that has the information required for token based access to
-        /// your Ethereum nodes.
-        /// </para>
+        /// contains information required for token based access to your Ethereum nodes.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateAccessor service method.</param>
         /// <param name="cancellationToken">
@@ -375,6 +358,9 @@ namespace Amazon.ManagedBlockchain
         /// The most common source of throttling errors is creating resources that exceed your
         /// service limit for this resource type. Request a limit increase or delete unused resources
         /// if possible.
+        /// </exception>
+        /// <exception cref="Amazon.ManagedBlockchain.Model.TooManyTagsException">
+        /// 
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/CreateAccessor">REST API Reference for CreateAccessor Operation</seealso>
         public virtual Task<CreateAccessorResponse> CreateAccessorAsync(CreateAccessorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -822,14 +808,6 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// The token based access feature is in preview release for Ethereum on Amazon Managed
-        /// Blockchain and is subject to change. We recommend that you use this feature only with
-        /// test scenarios, and not in production environments.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Deletes an accessor that your Amazon Web Services account owns. An accessor object
         /// is a container that has the information required for token based access to your Ethereum
         /// nodes including, the <code>BILLING_TOKEN</code>. After an accessor is deleted, the
@@ -838,7 +816,6 @@ namespace Amazon.ManagedBlockchain
         /// requests or HTTP requests. However, WebSocket connections that were initiated while
         /// the accessor was in the <code>AVAILABLE</code> state remain open until they expire
         /// (up to 2 hours).
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessor service method.</param>
         /// 
@@ -873,14 +850,6 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// The token based access feature is in preview release for Ethereum on Amazon Managed
-        /// Blockchain and is subject to change. We recommend that you use this feature only with
-        /// test scenarios, and not in production environments.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Deletes an accessor that your Amazon Web Services account owns. An accessor object
         /// is a container that has the information required for token based access to your Ethereum
         /// nodes including, the <code>BILLING_TOKEN</code>. After an accessor is deleted, the
@@ -889,7 +858,6 @@ namespace Amazon.ManagedBlockchain
         /// requests or HTTP requests. However, WebSocket connections that were initiated while
         /// the accessor was in the <code>AVAILABLE</code> state remain open until they expire
         /// (up to 2 hours).
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteAccessor service method.</param>
         /// <param name="cancellationToken">
@@ -1131,17 +1099,8 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// The token based access feature is in preview release for Ethereum on Amazon Managed
-        /// Blockchain and is subject to change. We recommend that you use this feature only with
-        /// test scenarios, and not in production environments.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Returns detailed information about an accessor. An accessor object is a container
         /// that has the information required for token based access to your Ethereum nodes.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessor service method.</param>
         /// 
@@ -1176,17 +1135,8 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// The token based access feature is in preview release for Ethereum on Amazon Managed
-        /// Blockchain and is subject to change. We recommend that you use this feature only with
-        /// test scenarios, and not in production environments.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Returns detailed information about an accessor. An accessor object is a container
         /// that has the information required for token based access to your Ethereum nodes.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccessor service method.</param>
         /// <param name="cancellationToken">
@@ -1576,17 +1526,8 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// The token based access feature is in preview release for Ethereum on Amazon Managed
-        /// Blockchain and is subject to change. We recommend that you use this feature only with
-        /// test scenarios, and not in production environments.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Returns a list of the accessors and their properties. Accessor objects are containers
         /// that have the information required for token based access to your Ethereum nodes.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessors service method.</param>
         /// 
@@ -1618,17 +1559,8 @@ namespace Amazon.ManagedBlockchain
 
 
         /// <summary>
-        /// <important> 
-        /// <para>
-        /// The token based access feature is in preview release for Ethereum on Amazon Managed
-        /// Blockchain and is subject to change. We recommend that you use this feature only with
-        /// test scenarios, and not in production environments.
-        /// </para>
-        ///  </important> 
-        /// <para>
         /// Returns a list of the accessors and their properties. Accessor objects are containers
         /// that have the information required for token based access to your Ethereum nodes.
-        /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListAccessors service method.</param>
         /// <param name="cancellationToken">

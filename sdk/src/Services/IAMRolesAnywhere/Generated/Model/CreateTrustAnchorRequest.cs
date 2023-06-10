@@ -30,12 +30,11 @@ namespace Amazon.IAMRolesAnywhere.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateTrustAnchor operation.
-    /// Creates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate
-    /// authority (CA) by configuring a trust anchor. A Trust Anchor is defined either as
-    /// a reference to a AWS Certificate Manager Private Certificate Authority (ACM PCA),
-    /// or by uploading a Certificate Authority (CA) certificate. Your AWS workloads can authenticate
-    /// with the trust anchor using certificates issued by the trusted Certificate Authority
-    /// (CA) in exchange for temporary AWS credentials.
+    /// Creates a trust anchor to establish trust between IAM Roles Anywhere and your certificate
+    /// authority (CA). You can define a trust anchor as a reference to an Private Certificate
+    /// Authority (Private CA) or by uploading a CA certificate. Your Amazon Web Services
+    /// workloads can authenticate with the trust anchor using certificates issued by the
+    /// CA in exchange for temporary Amazon Web Services credentials.
     /// 
     ///  
     /// <para>
@@ -46,6 +45,7 @@ namespace Amazon.IAMRolesAnywhere.Model
     {
         private bool? _enabled;
         private string _name;
+        private List<NotificationSetting> _notificationSettings = new List<NotificationSetting>();
         private Source _source;
         private List<Tag> _tags = new List<Tag>();
 
@@ -87,6 +87,25 @@ namespace Amazon.IAMRolesAnywhere.Model
         }
 
         /// <summary>
+        /// Gets and sets the property NotificationSettings. 
+        /// <para>
+        /// A list of notification settings to be associated to the trust anchor.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=50)]
+        public List<NotificationSetting> NotificationSettings
+        {
+            get { return this._notificationSettings; }
+            set { this._notificationSettings = value; }
+        }
+
+        // Check to see if NotificationSettings property is set
+        internal bool IsSetNotificationSettings()
+        {
+            return this._notificationSettings != null && this._notificationSettings.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property Source. 
         /// <para>
         /// The trust anchor type and its related certificate data.
@@ -111,7 +130,7 @@ namespace Amazon.IAMRolesAnywhere.Model
         /// The tags to attach to the trust anchor.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=50)]
+        [AWSProperty(Min=0, Max=200)]
         public List<Tag> Tags
         {
             get { return this._tags; }

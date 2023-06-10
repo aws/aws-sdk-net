@@ -67,6 +67,17 @@ namespace Amazon.GameLift.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetFilterOption())
+                {
+                    context.Writer.WritePropertyName("FilterOption");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = ClaimFilterOptionMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.FilterOption, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetGameServerData())
                 {
                     context.Writer.WritePropertyName("GameServerData");

@@ -38,6 +38,7 @@ namespace Amazon.IoT.Model
         private DateTime? _completedAt;
         private DateTime? _createdAt;
         private string _description;
+        private List<string> _destinationPackageVersions = new List<string>();
         private Dictionary<string, string> _documentParameters = new Dictionary<string, string>();
         private bool? _forceCanceled;
         private bool? _isConcurrent;
@@ -51,6 +52,7 @@ namespace Amazon.IoT.Model
         private string _namespaceId;
         private PresignedUrlConfig _presignedUrlConfig;
         private string _reasonCode;
+        private List<ScheduledJobRollout> _scheduledJobRollouts = new List<ScheduledJobRollout>();
         private SchedulingConfig _schedulingConfig;
         private JobStatus _status;
         private List<string> _targets = new List<string>();
@@ -147,6 +149,30 @@ namespace Amazon.IoT.Model
         internal bool IsSetDescription()
         {
             return this._description != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property DestinationPackageVersions. 
+        /// <para>
+        /// The package version Amazon Resource Names (ARNs) that are installed on the device
+        /// when the job successfully completes. 
+        /// </para>
+        ///  
+        /// <para>
+        ///  <b>Note:</b>The following Length Constraints relates to a single string. Up to five
+        /// strings are allowed.
+        /// </para>
+        /// </summary>
+        public List<string> DestinationPackageVersions
+        {
+            get { return this._destinationPackageVersions; }
+            set { this._destinationPackageVersions = value; }
+        }
+
+        // Check to see if DestinationPackageVersions property is set
+        internal bool IsSetDestinationPackageVersions()
+        {
+            return this._destinationPackageVersions != null && this._destinationPackageVersions.Count > 0; 
         }
 
         /// <summary>
@@ -410,6 +436,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetReasonCode()
         {
             return this._reasonCode != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ScheduledJobRollouts. 
+        /// <para>
+        /// Displays the next seven maintenance window occurrences and their start times.
+        /// </para>
+        /// </summary>
+        public List<ScheduledJobRollout> ScheduledJobRollouts
+        {
+            get { return this._scheduledJobRollouts; }
+            set { this._scheduledJobRollouts = value; }
+        }
+
+        // Check to see if ScheduledJobRollouts property is set
+        internal bool IsSetScheduledJobRollouts()
+        {
+            return this._scheduledJobRollouts != null && this._scheduledJobRollouts.Count > 0; 
         }
 
         /// <summary>

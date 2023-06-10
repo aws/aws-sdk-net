@@ -3643,6 +3643,64 @@ namespace Amazon.SimpleEmailV2
 
         #endregion
         
+        #region  PutDedicatedIpPoolScalingAttributes
+
+
+        /// <summary>
+        /// Used to convert a dedicated IP pool to a different scaling mode.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <code>MANAGED</code> pools cannot be converted to <code>STANDARD</code> scaling mode.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PutDedicatedIpPoolScalingAttributes service method.</param>
+        /// 
+        /// <returns>The response from the PutDedicatedIpPoolScalingAttributes service method, as returned by SimpleEmailServiceV2.</returns>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.BadRequestException">
+        /// The input you provided is invalid.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.ConcurrentModificationException">
+        /// The resource is being modified by another operation or thread.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.NotFoundException">
+        /// The resource you attempted to access doesn't exist.
+        /// </exception>
+        /// <exception cref="Amazon.SimpleEmailV2.Model.TooManyRequestsException">
+        /// Too many requests have been made to the operation.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpPoolScalingAttributes">REST API Reference for PutDedicatedIpPoolScalingAttributes Operation</seealso>
+        PutDedicatedIpPoolScalingAttributesResponse PutDedicatedIpPoolScalingAttributes(PutDedicatedIpPoolScalingAttributesRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the PutDedicatedIpPoolScalingAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the PutDedicatedIpPoolScalingAttributes operation on AmazonSimpleEmailServiceV2Client.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndPutDedicatedIpPoolScalingAttributes
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpPoolScalingAttributes">REST API Reference for PutDedicatedIpPoolScalingAttributes Operation</seealso>
+        IAsyncResult BeginPutDedicatedIpPoolScalingAttributes(PutDedicatedIpPoolScalingAttributesRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  PutDedicatedIpPoolScalingAttributes operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginPutDedicatedIpPoolScalingAttributes.</param>
+        /// 
+        /// <returns>Returns a  PutDedicatedIpPoolScalingAttributesResult from SimpleEmailServiceV2.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpPoolScalingAttributes">REST API Reference for PutDedicatedIpPoolScalingAttributes Operation</seealso>
+        PutDedicatedIpPoolScalingAttributesResponse EndPutDedicatedIpPoolScalingAttributes(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  PutDedicatedIpWarmupAttributes
 
 

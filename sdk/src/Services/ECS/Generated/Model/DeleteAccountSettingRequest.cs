@@ -30,8 +30,7 @@ namespace Amazon.ECS.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteAccountSetting operation.
-    /// Disables an account setting for a specified IAM user, IAM role, or the root user for
-    /// an account.
+    /// Disables an account setting for a specified user, role, or the root user for an account.
     /// </summary>
     public partial class DeleteAccountSettingRequest : AmazonECSRequest
     {
@@ -65,11 +64,11 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property PrincipalArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of the principal. It can be an IAM user, IAM role,
-        /// or the root user. If you specify the root user, it disables the account setting for
-        /// all IAM users, IAM roles, and the root user of the account unless an IAM user or role
-        /// explicitly overrides these settings. If this field is omitted, the setting is changed
-        /// only for the authenticated user.
+        /// The Amazon Resource Name (ARN) of the principal. It can be an user, role, or the root
+        /// user. If you specify the root user, it disables the account setting for all users,
+        /// roles, and the root user of the account unless a user or role explicitly overrides
+        /// these settings. If this field is omitted, the setting is changed only for the authenticated
+        /// user.
         /// </para>
         /// </summary>
         public string PrincipalArn

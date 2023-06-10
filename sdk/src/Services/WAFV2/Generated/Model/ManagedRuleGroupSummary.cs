@@ -32,9 +32,9 @@ namespace Amazon.WAFV2.Model
     /// High-level information about a managed rule group, returned by <a>ListAvailableManagedRuleGroups</a>.
     /// This provides information like the name and vendor name, that you provide when you
     /// add a <a>ManagedRuleGroupStatement</a> to a web ACL. Managed rule groups include Amazon
-    /// Web Services Managed Rules rule groups, which are free of charge to WAF customers,
-    /// and Amazon Web Services Marketplace managed rule groups, which you can subscribe to
-    /// through Amazon Web Services Marketplace.
+    /// Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed
+    /// rule groups. To use any Amazon Web Services Marketplace managed rule group, first
+    /// subscribe to the rule group through Amazon Web Services Marketplace.
     /// </summary>
     public partial class ManagedRuleGroupSummary
     {
@@ -87,7 +87,7 @@ namespace Amazon.WAFV2.Model
         /// Gets and sets the property VendorName. 
         /// <para>
         /// The name of the managed rule group vendor. You use this, along with the rule group
-        /// name, to identify the rule group.
+        /// name, to identify a rule group.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]

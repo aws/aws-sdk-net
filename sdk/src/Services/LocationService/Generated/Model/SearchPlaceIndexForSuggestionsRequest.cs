@@ -82,7 +82,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=2, Max=2)]
+        [AWSProperty(Sensitive=true, Min=2, Max=2)]
         public List<double> BiasPosition
         {
             get { return this._biasPosition; }
@@ -122,7 +122,7 @@ namespace Amazon.LocationService.Model
         /// </para>
         ///  </note>
         /// </summary>
-        [AWSProperty(Min=4, Max=4)]
+        [AWSProperty(Sensitive=true, Min=4, Max=4)]
         public List<double> FilterBBox
         {
             get { return this._filterBBox; }
@@ -252,7 +252,7 @@ namespace Amazon.LocationService.Model
         /// tow</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=200)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=200)]
         public string Text
         {
             get { return this._text; }

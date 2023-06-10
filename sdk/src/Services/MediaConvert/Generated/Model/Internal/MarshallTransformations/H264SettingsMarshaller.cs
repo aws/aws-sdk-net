@@ -51,6 +51,17 @@ namespace Amazon.MediaConvert.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AdaptiveQuantization);
             }
 
+            if(requestObject.IsSetBandwidthReductionFilter())
+            {
+                context.Writer.WritePropertyName("bandwidthReductionFilter");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = BandwidthReductionFilterMarshaller.Instance;
+                marshaller.Marshall(requestObject.BandwidthReductionFilter, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetBitrate())
             {
                 context.Writer.WritePropertyName("bitrate");

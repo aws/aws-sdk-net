@@ -32,8 +32,7 @@ namespace Amazon.Route53Resolver.Model
     /// In the response to a <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverEndpoint.html">CreateResolverEndpoint</a>,
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_DeleteResolverEndpoint.html">DeleteResolverEndpoint</a>,
     /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_GetResolverEndpoint.html">GetResolverEndpoint</a>,
-    /// <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_ListResolverEndpoints.html">ListResolverEndpoints</a>,
-    /// or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a>
+    /// Updates the name, or ResolverEndpointType for an endpoint, or <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_UpdateResolverEndpoint.html">UpdateResolverEndpoint</a>
     /// request, a complex type that contains settings for an existing inbound or outbound
     /// Resolver endpoint.
     /// </summary>
@@ -48,6 +47,7 @@ namespace Amazon.Route53Resolver.Model
         private int? _ipAddressCount;
         private string _modificationTime;
         private string _name;
+        private ResolverEndpointType _resolverEndpointType;
         private List<string> _securityGroupIds = new List<string>();
         private ResolverEndpointStatus _status;
         private string _statusMessage;
@@ -233,6 +233,24 @@ namespace Amazon.Route53Resolver.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResolverEndpointType. 
+        /// <para>
+        ///  The Resolver endpoint IP address type. 
+        /// </para>
+        /// </summary>
+        public ResolverEndpointType ResolverEndpointType
+        {
+            get { return this._resolverEndpointType; }
+            set { this._resolverEndpointType = value; }
+        }
+
+        // Check to see if ResolverEndpointType property is set
+        internal bool IsSetResolverEndpointType()
+        {
+            return this._resolverEndpointType != null;
         }
 
         /// <summary>

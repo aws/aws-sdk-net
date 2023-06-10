@@ -65,7 +65,7 @@ namespace Amazon.IoTWireless.Model
         /// <summary>
         /// Gets and sets the property BaseLng. 
         /// <para>
-        /// CDMA base station longtitude in degrees.
+        /// CDMA base station longitude in degrees.
         /// </para>
         /// </summary>
         [AWSProperty(Min=-180, Max=180)]

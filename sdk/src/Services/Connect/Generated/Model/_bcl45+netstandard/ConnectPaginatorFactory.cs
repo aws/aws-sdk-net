@@ -60,6 +60,14 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for GetMetricDataV2 operation
+        ///</summary>
+        public IGetMetricDataV2Paginator GetMetricDataV2(GetMetricDataV2Request request) 
+        {
+            return new GetMetricDataV2Paginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListAgentStatuses operation
         ///</summary>
         public IListAgentStatusesPaginator ListAgentStatuses(ListAgentStatusesRequest request) 
@@ -81,6 +89,14 @@ namespace Amazon.Connect.Model
         public IListBotsPaginator ListBots(ListBotsRequest request) 
         {
             return new ListBotsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListContactEvaluations operation
+        ///</summary>
+        public IListContactEvaluationsPaginator ListContactEvaluations(ListContactEvaluationsRequest request) 
+        {
+            return new ListContactEvaluationsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -113,6 +129,22 @@ namespace Amazon.Connect.Model
         public IListDefaultVocabulariesPaginator ListDefaultVocabularies(ListDefaultVocabulariesRequest request) 
         {
             return new ListDefaultVocabulariesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEvaluationForms operation
+        ///</summary>
+        public IListEvaluationFormsPaginator ListEvaluationForms(ListEvaluationFormsRequest request) 
+        {
+            return new ListEvaluationFormsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListEvaluationFormVersions operation
+        ///</summary>
+        public IListEvaluationFormVersionsPaginator ListEvaluationFormVersions(ListEvaluationFormVersionsRequest request) 
+        {
+            return new ListEvaluationFormVersionsPaginator(this.client, request);
         }
 
         /// <summary>
@@ -316,11 +348,35 @@ namespace Amazon.Connect.Model
         }
 
         /// <summary>
+        /// Paginator for SearchHoursOfOperations operation
+        ///</summary>
+        public ISearchHoursOfOperationsPaginator SearchHoursOfOperations(SearchHoursOfOperationsRequest request) 
+        {
+            return new SearchHoursOfOperationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchPrompts operation
+        ///</summary>
+        public ISearchPromptsPaginator SearchPrompts(SearchPromptsRequest request) 
+        {
+            return new SearchPromptsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for SearchQueues operation
         ///</summary>
         public ISearchQueuesPaginator SearchQueues(SearchQueuesRequest request) 
         {
             return new SearchQueuesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for SearchQuickConnects operation
+        ///</summary>
+        public ISearchQuickConnectsPaginator SearchQuickConnects(SearchQuickConnectsRequest request) 
+        {
+            return new SearchQuickConnectsPaginator(this.client, request);
         }
 
         /// <summary>

@@ -30,14 +30,18 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the DeleteVoiceConnector operation.
-    /// 
+    /// Deletes an Amazon Chime SDK Voice Connector. Any phone numbers associated with the
+    /// Amazon Chime SDK Voice Connector must be disassociated from it before it can be deleted.
     /// </summary>
     public partial class DeleteVoiceConnectorRequest : AmazonChimeSDKVoiceRequest
     {
         private string _voiceConnectorId;
 
         /// <summary>
-        /// Gets and sets the property VoiceConnectorId.
+        /// Gets and sets the property VoiceConnectorId. 
+        /// <para>
+        /// The Voice Connector ID.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public string VoiceConnectorId

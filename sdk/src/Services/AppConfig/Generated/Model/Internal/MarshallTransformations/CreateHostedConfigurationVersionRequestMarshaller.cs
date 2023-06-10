@@ -89,6 +89,11 @@ namespace Amazon.AppConfig.Model.Internal.MarshallTransformations
             {
                 request.Headers["Latest-Version-Number"] = StringUtils.FromInt(publicRequest.LatestVersionNumber);
             }
+        
+            if (publicRequest.IsSetVersionLabel()) 
+            {
+                request.Headers["VersionLabel"] = publicRequest.VersionLabel;
+            }
 
             return request;
         }

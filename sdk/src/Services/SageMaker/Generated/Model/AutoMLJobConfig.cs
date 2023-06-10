@@ -120,8 +120,8 @@ namespace Amazon.SageMaker.Model
         ///  
         /// <para>
         /// The <code>HYPERPARAMETER_TUNING</code> (HPO) mode uses the best hyperparameters to
-        /// train the best version of a model. HPO will automatically select an algorithm for
-        /// the type of problem you want to solve. Then HPO finds the best hyperparameters according
+        /// train the best version of a model. HPO automatically selects an algorithm for the
+        /// type of problem you want to solve. Then HPO finds the best hyperparameters according
         /// to your objective metric. See <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-suppprt">Autopilot
         /// algorithm support</a> for a list of algorithms supported by <code>HYPERPARAMETER_TUNING</code>
         /// mode.

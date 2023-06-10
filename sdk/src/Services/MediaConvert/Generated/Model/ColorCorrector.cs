@@ -38,6 +38,7 @@ namespace Amazon.MediaConvert.Model
         private ColorSpaceConversion _colorSpaceConversion;
         private int? _contrast;
         private Hdr10Metadata _hdr10Metadata;
+        private HDRToSDRToneMapper _hdrToSdrToneMapper;
         private int? _hue;
         private SampleRangeConversion _sampleRangeConversion;
         private int? _saturation;
@@ -80,10 +81,13 @@ namespace Amazon.MediaConvert.Model
         /// for this output. The service supports conversion between HDR formats, between SDR
         /// formats, from SDR to HDR, and from HDR to SDR. SDR to HDR conversion doesn't upgrade
         /// the dynamic range. The converted video has an HDR format, but visually appears the
-        /// same as an unconverted output. HDR to SDR conversion uses Elemental tone mapping technology
-        /// to approximate the outcome of manually regrading from HDR to SDR. Select Force P3D65
-        /// (SDR) to set the output color space metadata to the following: * Color primaries:
-        /// Display P3 * Transfer characteristics: SMPTE 428M * Matrix coefficients: BT.709
+        /// same as an unconverted output. HDR to SDR conversion uses tone mapping to approximate
+        /// the outcome of manually regrading from HDR to SDR. When you specify an output color
+        /// space, MediaConvert uses the following color space metadata, which includes color
+        /// primaries, transfer characteristics, and matrix coefficients:  * HDR 10: BT.2020,
+        /// PQ, BT.2020 non-constant  * HLG 2020: BT.2020, HLG, BT.2020 non-constant  * P3DCI
+        /// (Theater): DCIP3, SMPTE 428M, BT.709  * P3D65 (SDR): Display P3, sRGB, BT.709  * P3D65
+        /// (HDR): Display P3, PQ, BT.709
         /// </summary>
         public ColorSpaceConversion ColorSpaceConversion
         {
@@ -136,6 +140,31 @@ namespace Amazon.MediaConvert.Model
         internal bool IsSetHdr10Metadata()
         {
             return this._hdr10Metadata != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HdrToSdrToneMapper. Specify how MediaConvert maps brightness
+        /// and colors from your HDR input to your SDR output. The mode that you select represents
+        /// a creative choice, with different tradeoffs in the details and tones of your output.
+        /// To maintain details in bright or saturated areas of your output: Choose Preserve details.
+        /// For some sources, your SDR output may look less bright and less saturated when compared
+        /// to your HDR source. MediaConvert automatically applies this mode for HLG sources,
+        /// regardless of your choice. For a bright and saturated output: Choose Vibrant. We recommend
+        /// that you choose this mode when any of your source content is HDR10, and for the best
+        /// results when it is mastered for 1000 nits. You may notice loss of details in bright
+        /// or saturated areas of your output. HDR to SDR tone mapping has no effect when your
+        /// input is SDR.
+        /// </summary>
+        public HDRToSDRToneMapper HdrToSdrToneMapper
+        {
+            get { return this._hdrToSdrToneMapper; }
+            set { this._hdrToSdrToneMapper = value; }
+        }
+
+        // Check to see if HdrToSdrToneMapper property is set
+        internal bool IsSetHdrToSdrToneMapper()
+        {
+            return this._hdrToSdrToneMapper != null;
         }
 
         /// <summary>

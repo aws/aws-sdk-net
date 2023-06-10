@@ -211,7 +211,7 @@ namespace Amazon.IoTWireless.Model
         /// The PingSlotPeriod value.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=128, Max=4096)]
+        [AWSProperty(Min=32, Max=4096)]
         public int PingSlotPeriod
         {
             get { return this._pingSlotPeriod.GetValueOrDefault(); }

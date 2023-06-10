@@ -99,7 +99,7 @@ namespace Amazon.FSx.Model
         /// Enter a new SvmAdminPassword if you are updating it.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=8, Max=50)]
+        [AWSProperty(Sensitive=true, Min=8, Max=50)]
         public string SvmAdminPassword
         {
             get { return this._svmAdminPassword; }

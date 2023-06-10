@@ -57,8 +57,8 @@ namespace Amazon.Comprehend.Model
     ///  
     /// <para>
     ///  For image files and PDF documents, you can override these default actions using the
-    /// fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/detecting-cer.html#detecting-cer-pdf">
-    /// Setting text extraction options</a>. 
+    /// fields listed below. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html">
+    /// Setting text extraction options</a> in the Comprehend Developer Guide. 
     /// </para>
     /// </summary>
     public partial class DocumentReaderConfig

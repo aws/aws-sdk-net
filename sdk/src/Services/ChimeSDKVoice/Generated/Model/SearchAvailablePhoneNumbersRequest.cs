@@ -30,7 +30,7 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the SearchAvailablePhoneNumbers operation.
-    /// 
+    /// Searches the provisioned phone numbers in an organization.
     /// </summary>
     public partial class SearchAvailablePhoneNumbersRequest : AmazonChimeSDKVoiceRequest
     {
@@ -44,7 +44,10 @@ namespace Amazon.ChimeSDKVoice.Model
         private string _tollFreePrefix;
 
         /// <summary>
-        /// Gets and sets the property AreaCode.
+        /// Gets and sets the property AreaCode. 
+        /// <para>
+        /// Confines a search to just the phone numbers associated with the specified area code.
+        /// </para>
         /// </summary>
         public string AreaCode
         {
@@ -59,7 +62,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property City.
+        /// Gets and sets the property City. 
+        /// <para>
+        /// Confines a search to just the phone numbers associated with the specified city.
+        /// </para>
         /// </summary>
         public string City
         {
@@ -74,7 +80,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Country.
+        /// Gets and sets the property Country. 
+        /// <para>
+        /// Confines a search to just the phone numbers associated with the specified country.
+        /// </para>
         /// </summary>
         public string Country
         {
@@ -89,7 +98,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property MaxResults.
+        /// Gets and sets the property MaxResults. 
+        /// <para>
+        /// The maximum number of results to return.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=500)]
         public int MaxResults
@@ -105,7 +117,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property NextToken.
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token used to return the next page of results.
+        /// </para>
         /// </summary>
         public string NextToken
         {
@@ -120,7 +135,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PhoneNumberType.
+        /// Gets and sets the property PhoneNumberType. 
+        /// <para>
+        /// Confines a search to just the phone numbers associated with the specified phone number
+        /// type, either <b>local</b> or <b>toll-free</b>.
+        /// </para>
         /// </summary>
         public PhoneNumberType PhoneNumberType
         {
@@ -135,7 +154,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property State.
+        /// Gets and sets the property State. 
+        /// <para>
+        /// Confines a search to just the phone numbers associated with the specified state.
+        /// </para>
         /// </summary>
         public string State
         {
@@ -150,7 +172,11 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TollFreePrefix.
+        /// Gets and sets the property TollFreePrefix. 
+        /// <para>
+        /// Confines a search to just the phone numbers associated with the specified toll-free
+        /// prefix.
+        /// </para>
         /// </summary>
         [AWSProperty(Min=3, Max=3)]
         public string TollFreePrefix

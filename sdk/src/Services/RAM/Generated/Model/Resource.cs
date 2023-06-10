@@ -47,7 +47,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property Arn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource.
+        /// Resource Name (ARN)</a> of the resource.
         /// </para>
         /// </summary>
         public string Arn
@@ -83,7 +83,8 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property LastUpdatedTime. 
         /// <para>
-        /// The date an time when the association was last updated.
+        /// The date an time when the association between the resource and the resource share
+        /// was last updated.
         /// </para>
         /// </summary>
         public DateTime LastUpdatedTime
@@ -102,7 +103,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceGroupArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource group. This value is available only if the
+        /// Resource Name (ARN)</a> of the resource group. This value is available only if the
         /// resource is part of a resource group.
         /// </para>
         /// </summary>
@@ -150,7 +151,7 @@ namespace Amazon.RAM.Model
         /// Gets and sets the property ResourceShareArn. 
         /// <para>
         /// The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-        /// Resoure Name (ARN)</a> of the resource share this resource is associated with.
+        /// Resource Name (ARN)</a> of the resource share this resource is associated with.
         /// </para>
         /// </summary>
         public string ResourceShareArn
@@ -204,8 +205,9 @@ namespace Amazon.RAM.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>
-        /// 
+        /// The resource type. This takes the form of: <code>service-code</code>:<code>resource-code</code>,
+        /// and is case-insensitive. For example, an Amazon EC2 Subnet would be represented by
+        /// the string <code>ec2:subnet</code>.
         /// </para>
         /// </summary>
         public string Type

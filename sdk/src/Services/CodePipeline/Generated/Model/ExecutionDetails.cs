@@ -42,7 +42,7 @@ namespace Amazon.CodePipeline.Model
         /// Gets and sets the property ExternalExecutionId. 
         /// <para>
         /// The system-generated unique ID of this action used to identify this job worker in
-        /// any external systems, such as AWS CodeDeploy.
+        /// any external systems, such as CodeDeploy.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1500)]

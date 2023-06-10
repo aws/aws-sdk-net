@@ -71,7 +71,7 @@ namespace Amazon.IVS.Model
         /// to the recommended value in video-encoder settings.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=5, Max=60)]
+        [AWSProperty(Min=1, Max=60)]
         public long TargetIntervalSeconds
         {
             get { return this._targetIntervalSeconds.GetValueOrDefault(); }

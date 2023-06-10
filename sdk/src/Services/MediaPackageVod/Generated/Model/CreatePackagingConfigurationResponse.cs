@@ -35,6 +35,7 @@ namespace Amazon.MediaPackageVod.Model
     {
         private string _arn;
         private CmafPackage _cmafPackage;
+        private string _createdAt;
         private DashPackage _dashPackage;
         private HlsPackage _hlsPackage;
         private string _id;
@@ -70,6 +71,21 @@ namespace Amazon.MediaPackageVod.Model
         internal bool IsSetCmafPackage()
         {
             return this._cmafPackage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. The time the PackagingConfiguration was created.
+        /// </summary>
+        public string CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt != null;
         }
 
         /// <summary>

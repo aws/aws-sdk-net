@@ -42,7 +42,7 @@ namespace Amazon.CodeCatalyst.Model
         /// The URL used to send commands to and from the Dev Environment.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string StreamUrl
         {
             get { return this._streamUrl; }
@@ -62,7 +62,7 @@ namespace Amazon.CodeCatalyst.Model
         /// the connection.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string TokenValue
         {
             get { return this._tokenValue; }

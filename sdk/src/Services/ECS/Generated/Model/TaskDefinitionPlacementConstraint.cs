@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ECS.Model
 {
     /// <summary>
-    /// An object representing a constraint on task placement in the task definition. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
+    /// The constraint on task placement in the task definition. For more information, see
+    /// <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
     /// placement constraints</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
     /// 
     ///  <note> 

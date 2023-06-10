@@ -60,7 +60,7 @@ namespace Amazon.Private5G.Model
         ///  The network site tags. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public Dictionary<string, string> Tags
         {
             get { return this._tags; }

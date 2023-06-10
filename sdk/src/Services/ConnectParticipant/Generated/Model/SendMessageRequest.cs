@@ -105,6 +105,11 @@ namespace Amazon.ConnectParticipant.Model
         /// For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum
         /// of 12000. 
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the
+        /// Length Constraints are Minimum of 1, Maximum of 12288.
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=16384)]
@@ -124,7 +129,7 @@ namespace Amazon.ConnectParticipant.Model
         /// Gets and sets the property ContentType. 
         /// <para>
         /// The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>,
-        /// and <code>application/json</code>.
+        /// <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=100)]

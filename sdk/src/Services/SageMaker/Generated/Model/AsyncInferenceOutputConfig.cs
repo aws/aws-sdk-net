@@ -35,6 +35,7 @@ namespace Amazon.SageMaker.Model
     {
         private string _kmsKeyId;
         private AsyncInferenceNotificationConfig _notificationConfig;
+        private string _s3FailurePath;
         private string _s3OutputPath;
 
         /// <summary>
@@ -77,12 +78,31 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property S3FailurePath. 
+        /// <para>
+        /// The Amazon S3 location to upload failure inference responses to.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=512)]
+        public string S3FailurePath
+        {
+            get { return this._s3FailurePath; }
+            set { this._s3FailurePath = value; }
+        }
+
+        // Check to see if S3FailurePath property is set
+        internal bool IsSetS3FailurePath()
+        {
+            return this._s3FailurePath != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property S3OutputPath. 
         /// <para>
         /// The Amazon S3 location to upload inference responses to.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=512)]
+        [AWSProperty(Max=512)]
         public string S3OutputPath
         {
             get { return this._s3OutputPath; }

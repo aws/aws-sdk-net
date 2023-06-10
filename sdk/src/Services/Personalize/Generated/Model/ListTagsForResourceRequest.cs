@@ -30,7 +30,7 @@ namespace Amazon.Personalize.Model
 {
     /// <summary>
     /// Container for the parameters to the ListTagsForResource operation.
-    /// Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+    /// Get a list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
     /// attached to a resource.
     /// </summary>
     public partial class ListTagsForResourceRequest : AmazonPersonalizeRequest

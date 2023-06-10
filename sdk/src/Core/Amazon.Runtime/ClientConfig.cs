@@ -910,9 +910,8 @@ namespace Amazon.Runtime
         /// <summary>
         /// If CacheHttpClient is set to true then HttpClientCacheSize controls the number of HttpClients cached.
         /// <para>
-        /// On Windows the default value is 1 since the underlying native implementation does not have throttling constraints
-        /// like the non Windows Curl based implementation. For non Windows based platforms the default is the value return from 
-        /// System.Environment.ProcessorCount.
+        /// The default value is 1 which is suitable for Windows and for all other platforms that have HttpClient
+        /// implementations using <see cref="System.Net.Http.SocketsHttpHandler"/> (.NET Core 2.1 and higher).
         /// </para>
         /// </summary>
         public int HttpClientCacheSize
@@ -924,7 +923,13 @@ namespace Amazon.Runtime
                     return _httpClientCacheSize.Value;
                 }
 
+// Use both NETCOREAPP3_1 and NETCOREAPP3_1_OR_GREATER because currently the build server only has .NET Core 3.1 SDK installed
+// which predates the OR_GREATER preprocessor statements. The NETCOREAPP3_1_OR_GREATER is used for future proofing.
+#if NETCOREAPP3_1 || NETCOREAPP3_1_OR_GREATER
+                return 1;
+#else
                 return RuntimeInformation.IsOSPlatform(OSPlatform.Windows) ? 1 : Environment.ProcessorCount;
+#endif
             }
             set => _httpClientCacheSize = value;
         }

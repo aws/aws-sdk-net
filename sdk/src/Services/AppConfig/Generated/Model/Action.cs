@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AppConfig.Model
 {
     /// <summary>
-    /// An action defines the tasks the extension performs during the AppConfig workflow.
+    /// An action defines the tasks that the extension performs during the AppConfig workflow.
     /// Each action includes an action point such as <code>ON_CREATE_HOSTED_CONFIGURATION</code>,
     /// <code>PRE_DEPLOYMENT</code>, or <code>ON_DEPLOYMENT</code>. Each action also includes
     /// a name, a URI to an Lambda function, and an Amazon Resource Name (ARN) for an Identity

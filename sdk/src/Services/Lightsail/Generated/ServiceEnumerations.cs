@@ -192,6 +192,10 @@ namespace Amazon.Lightsail
         /// Constant AutoSnapshot for AddOnType
         /// </summary>
         public static readonly AddOnType AutoSnapshot = new AddOnType("AutoSnapshot");
+        /// <summary>
+        /// Constant StopInstanceOnIdle for AddOnType
+        /// </summary>
+        public static readonly AddOnType StopInstanceOnIdle = new AddOnType("StopInstanceOnIdle");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -276,6 +280,110 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator AlarmState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AppCategory.
+    /// </summary>
+    public class AppCategory : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant LfR for AppCategory
+        /// </summary>
+        public static readonly AppCategory LfR = new AppCategory("LfR");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AppCategory(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AppCategory FindValue(string value)
+        {
+            return FindValue<AppCategory>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AppCategory(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type AutoMountStatus.
+    /// </summary>
+    public class AutoMountStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Failed for AutoMountStatus
+        /// </summary>
+        public static readonly AutoMountStatus Failed = new AutoMountStatus("Failed");
+        /// <summary>
+        /// Constant Mounted for AutoMountStatus
+        /// </summary>
+        public static readonly AutoMountStatus Mounted = new AutoMountStatus("Mounted");
+        /// <summary>
+        /// Constant NotMounted for AutoMountStatus
+        /// </summary>
+        public static readonly AutoMountStatus NotMounted = new AutoMountStatus("NotMounted");
+        /// <summary>
+        /// Constant Pending for AutoMountStatus
+        /// </summary>
+        public static readonly AutoMountStatus Pending = new AutoMountStatus("Pending");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutoMountStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutoMountStatus FindValue(string value)
+        {
+            return FindValue<AutoMountStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutoMountStatus(string value)
         {
             return FindValue(value);
         }
@@ -1300,6 +1408,52 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ContainerServiceStateDetailCode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Currency.
+    /// </summary>
+    public class Currency : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant USD for Currency
+        /// </summary>
+        public static readonly Currency USD = new Currency("USD");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Currency(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Currency FindValue(string value)
+        {
+            return FindValue<Currency>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Currency(string value)
         {
             return FindValue(value);
         }
@@ -3833,6 +3987,10 @@ namespace Amazon.Lightsail
         /// </summary>
         public static readonly OperationType SetResourceAccessForBucket = new OperationType("SetResourceAccessForBucket");
         /// <summary>
+        /// Constant StartGUISession for OperationType
+        /// </summary>
+        public static readonly OperationType StartGUISession = new OperationType("StartGUISession");
+        /// <summary>
         /// Constant StartInstance for OperationType
         /// </summary>
         public static readonly OperationType StartInstance = new OperationType("StartInstance");
@@ -3840,6 +3998,10 @@ namespace Amazon.Lightsail
         /// Constant StartRelationalDatabase for OperationType
         /// </summary>
         public static readonly OperationType StartRelationalDatabase = new OperationType("StartRelationalDatabase");
+        /// <summary>
+        /// Constant StopGUISession for OperationType
+        /// </summary>
+        public static readonly OperationType StopGUISession = new OperationType("StopGUISession");
         /// <summary>
         /// Constant StopInstance for OperationType
         /// </summary>
@@ -4130,6 +4292,68 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator PortState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type PricingUnit.
+    /// </summary>
+    public class PricingUnit : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Bundles for PricingUnit
+        /// </summary>
+        public static readonly PricingUnit Bundles = new PricingUnit("Bundles");
+        /// <summary>
+        /// Constant GB for PricingUnit
+        /// </summary>
+        public static readonly PricingUnit GB = new PricingUnit("GB");
+        /// <summary>
+        /// Constant GBMo for PricingUnit
+        /// </summary>
+        public static readonly PricingUnit GBMo = new PricingUnit("GB-Mo");
+        /// <summary>
+        /// Constant Hrs for PricingUnit
+        /// </summary>
+        public static readonly PricingUnit Hrs = new PricingUnit("Hrs");
+        /// <summary>
+        /// Constant Queries for PricingUnit
+        /// </summary>
+        public static readonly PricingUnit Queries = new PricingUnit("Queries");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public PricingUnit(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static PricingUnit FindValue(string value)
+        {
+            return FindValue<PricingUnit>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator PricingUnit(string value)
         {
             return FindValue(value);
         }
@@ -4740,6 +4964,88 @@ namespace Amazon.Lightsail
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ResourceType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type Status.
+    /// </summary>
+    public class Status : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FailedInstanceCreation for Status
+        /// </summary>
+        public static readonly Status FailedInstanceCreation = new Status("failedInstanceCreation");
+        /// <summary>
+        /// Constant FailedStartingGUISession for Status
+        /// </summary>
+        public static readonly Status FailedStartingGUISession = new Status("failedStartingGUISession");
+        /// <summary>
+        /// Constant FailedStoppingGUISession for Status
+        /// </summary>
+        public static readonly Status FailedStoppingGUISession = new Status("failedStoppingGUISession");
+        /// <summary>
+        /// Constant NotStarted for Status
+        /// </summary>
+        public static readonly Status NotStarted = new Status("notStarted");
+        /// <summary>
+        /// Constant SettingUpInstance for Status
+        /// </summary>
+        public static readonly Status SettingUpInstance = new Status("settingUpInstance");
+        /// <summary>
+        /// Constant Started for Status
+        /// </summary>
+        public static readonly Status Started = new Status("started");
+        /// <summary>
+        /// Constant StartExpired for Status
+        /// </summary>
+        public static readonly Status StartExpired = new Status("startExpired");
+        /// <summary>
+        /// Constant Starting for Status
+        /// </summary>
+        public static readonly Status Starting = new Status("starting");
+        /// <summary>
+        /// Constant Stopped for Status
+        /// </summary>
+        public static readonly Status Stopped = new Status("stopped");
+        /// <summary>
+        /// Constant Stopping for Status
+        /// </summary>
+        public static readonly Status Stopping = new Status("stopping");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Status(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Status FindValue(string value)
+        {
+            return FindValue<Status>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Status(string value)
         {
             return FindValue(value);
         }

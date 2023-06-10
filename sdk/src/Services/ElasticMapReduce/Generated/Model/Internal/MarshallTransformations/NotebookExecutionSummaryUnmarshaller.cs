@@ -76,6 +76,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ExecutionEngineId", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExecutionEngineId = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("NotebookExecutionId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -86,6 +92,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NotebookExecutionName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NotebookS3Location", targetDepth))
+                {
+                    var unmarshaller = NotebookS3LocationForOutputUnmarshaller.Instance;
+                    unmarshalledObject.NotebookS3Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("StartTime", targetDepth))

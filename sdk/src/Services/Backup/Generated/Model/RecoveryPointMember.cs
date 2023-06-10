@@ -35,7 +35,28 @@ namespace Amazon.Backup.Model
     /// </summary>
     public partial class RecoveryPointMember
     {
+        private string _backupVaultName;
         private string _recoveryPointArn;
+        private string _resourceArn;
+        private string _resourceType;
+
+        /// <summary>
+        /// Gets and sets the property BackupVaultName. 
+        /// <para>
+        /// This is the name of the backup vault (the logical container in which backups are stored).
+        /// </para>
+        /// </summary>
+        public string BackupVaultName
+        {
+            get { return this._backupVaultName; }
+            set { this._backupVaultName = value; }
+        }
+
+        // Check to see if BackupVaultName property is set
+        internal bool IsSetBackupVaultName()
+        {
+            return this._backupVaultName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property RecoveryPointArn. 
@@ -53,6 +74,42 @@ namespace Amazon.Backup.Model
         internal bool IsSetRecoveryPointArn()
         {
             return this._recoveryPointArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceArn. 
+        /// <para>
+        /// This is the Amazon Resource Name (ARN) that uniquely identifies a saved resource.
+        /// </para>
+        /// </summary>
+        public string ResourceArn
+        {
+            get { return this._resourceArn; }
+            set { this._resourceArn = value; }
+        }
+
+        // Check to see if ResourceArn property is set
+        internal bool IsSetResourceArn()
+        {
+            return this._resourceArn != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ResourceType. 
+        /// <para>
+        /// This is the Amazon Web Services resource type that is saved as a recovery point.
+        /// </para>
+        /// </summary>
+        public string ResourceType
+        {
+            get { return this._resourceType; }
+            set { this._resourceType = value; }
+        }
+
+        // Check to see if ResourceType property is set
+        internal bool IsSetResourceType()
+        {
+            return this._resourceType != null;
         }
 
     }

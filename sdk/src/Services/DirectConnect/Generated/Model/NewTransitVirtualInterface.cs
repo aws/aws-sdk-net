@@ -179,7 +179,7 @@ namespace Amazon.DirectConnect.Model
         /// <summary>
         /// Gets and sets the property Mtu. 
         /// <para>
-        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 9001.
+        /// The maximum transmission unit (MTU), in bytes. The supported values are 1500 and 8500.
         /// The default value is 1500.
         /// </para>
         /// </summary>

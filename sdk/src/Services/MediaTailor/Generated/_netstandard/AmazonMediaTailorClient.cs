@@ -280,6 +280,40 @@ namespace Amazon.MediaTailor
         #endregion
 
 
+        #region  ConfigureLogsForChannel
+
+        internal virtual ConfigureLogsForChannelResponse ConfigureLogsForChannel(ConfigureLogsForChannelRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfigureLogsForChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfigureLogsForChannelResponseUnmarshaller.Instance;
+
+            return Invoke<ConfigureLogsForChannelResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Configures Amazon CloudWatch log settings for a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ConfigureLogsForChannel service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ConfigureLogsForChannel service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/ConfigureLogsForChannel">REST API Reference for ConfigureLogsForChannel Operation</seealso>
+        public virtual Task<ConfigureLogsForChannelResponse> ConfigureLogsForChannelAsync(ConfigureLogsForChannelRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ConfigureLogsForChannelRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ConfigureLogsForChannelResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ConfigureLogsForChannelResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  ConfigureLogsForPlaybackConfiguration
 
         internal virtual ConfigureLogsForPlaybackConfigurationResponse ConfigureLogsForPlaybackConfiguration(ConfigureLogsForPlaybackConfigurationRequest request)
@@ -1690,6 +1724,40 @@ namespace Amazon.MediaTailor
             options.ResponseUnmarshaller = UpdateLiveSourceResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateLiveSourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateProgram
+
+        internal virtual UpdateProgramResponse UpdateProgram(UpdateProgramRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProgramResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProgramResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates a program within a channel.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProgram service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateProgram service method, as returned by MediaTailor.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mediatailor-2018-04-23/UpdateProgram">REST API Reference for UpdateProgram Operation</seealso>
+        public virtual Task<UpdateProgramResponse> UpdateProgramAsync(UpdateProgramRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProgramRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProgramResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateProgramResponse>(request, options, cancellationToken);
         }
 
         #endregion

@@ -41,7 +41,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreArn. 
         /// <para>
-        /// The datastore ARN is generated during the creation of the Data Store and can be found
+        /// The Data Store ARN is generated during the creation of the Data Store and can be found
         /// in the output from the initial Data Store creation call.
         /// </para>
         /// </summary>
@@ -61,8 +61,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property DatastoreEndpoint. 
         /// <para>
-        /// The AWS endpoint for the created Data Store. For preview, only US-east-1 endpoints
-        /// are supported.
+        /// The AWS endpoint for the created Data Store. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5000)]

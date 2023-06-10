@@ -33,11 +33,12 @@ namespace Amazon.ElasticMapReduce.Model
     /// Provides summaries of all notebook executions. You can filter the list based on multiple
     /// criteria such as status, time range, and editor id. Returns a maximum of 50 notebook
     /// executions and a marker to track the paging of a longer notebook execution list across
-    /// multiple <code>ListNotebookExecution</code> calls.
+    /// multiple <code>ListNotebookExecutions</code> calls.
     /// </summary>
     public partial class ListNotebookExecutionsRequest : AmazonElasticMapReduceRequest
     {
         private string _editorId;
+        private string _executionEngineId;
         private DateTime? _from;
         private string _marker;
         private NotebookExecutionStatus _status;
@@ -60,6 +61,25 @@ namespace Amazon.ElasticMapReduce.Model
         internal bool IsSetEditorId()
         {
             return this._editorId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ExecutionEngineId. 
+        /// <para>
+        /// The unique ID of the execution engine.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0, Max=10280)]
+        public string ExecutionEngineId
+        {
+            get { return this._executionEngineId; }
+            set { this._executionEngineId = value; }
+        }
+
+        // Check to see if ExecutionEngineId property is set
+        internal bool IsSetExecutionEngineId()
+        {
+            return this._executionEngineId != null;
         }
 
         /// <summary>

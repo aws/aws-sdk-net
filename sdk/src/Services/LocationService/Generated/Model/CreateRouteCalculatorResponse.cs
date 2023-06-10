@@ -41,7 +41,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property CalculatorArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the route calculator resource. Use the ARN when
-        /// you specify a resource across all AWS.
+        /// you specify a resource across all Amazon Web Services.
         /// </para>
         ///  <ul> <li> 
         /// <para>

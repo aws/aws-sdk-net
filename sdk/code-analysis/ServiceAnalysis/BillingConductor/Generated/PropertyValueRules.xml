@@ -601,6 +601,10 @@
     <max>10000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BillingConductor.Model.CustomLineItemVersionListElement.Arn</property>
+    <pattern>(arn:aws(-cn)?:billingconductor::[0-9]{12}:customlineitem/)?[a-zA-Z0-9]{10}</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BillingConductor.Model.CustomLineItemVersionListElement.AssociationSize</property>
     <min>0</min>
   </property-value-rule>
@@ -721,10 +725,22 @@
     <pattern>[a-zA-Z0-9_\+=\.\-@]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.BillingConductor.Model.PricingRuleListElement.Operation</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\S+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.BillingConductor.Model.PricingRuleListElement.Service</property>
     <min>1</min>
     <max>128</max>
     <pattern>[a-zA-Z0-9]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.BillingConductor.Model.PricingRuleListElement.UsageType</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>\S+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.BillingConductor.Model.UpdateCustomLineItemFlatChargeDetails.ChargeValue</property>

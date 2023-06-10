@@ -99,6 +99,17 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetEventBridgeConfig())
+                {
+                    context.Writer.WritePropertyName("eventBridgeConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = EventBridgeDataSourceConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.EventBridgeConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetHttpConfig())
                 {
                     context.Writer.WritePropertyName("httpConfig");

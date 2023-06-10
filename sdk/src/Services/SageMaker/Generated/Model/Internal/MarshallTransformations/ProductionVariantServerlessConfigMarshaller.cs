@@ -57,6 +57,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.MemorySizeInMB);
             }
 
+            if(requestObject.IsSetProvisionedConcurrency())
+            {
+                context.Writer.WritePropertyName("ProvisionedConcurrency");
+                context.Writer.Write(requestObject.ProvisionedConcurrency);
+            }
+
         }
 
         /// <summary>

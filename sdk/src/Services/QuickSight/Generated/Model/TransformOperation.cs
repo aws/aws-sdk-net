@@ -37,6 +37,7 @@ namespace Amazon.QuickSight.Model
         private CastColumnTypeOperation _castColumnTypeOperation;
         private CreateColumnsOperation _createColumnsOperation;
         private FilterOperation _filterOperation;
+        private OverrideDatasetParameterOperation _overrideDatasetParameterOperation;
         private ProjectOperation _projectOperation;
         private RenameColumnOperation _renameColumnOperation;
         private TagColumnOperation _tagColumnOperation;
@@ -95,6 +96,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetFilterOperation()
         {
             return this._filterOperation != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property OverrideDatasetParameterOperation.
+        /// </summary>
+        public OverrideDatasetParameterOperation OverrideDatasetParameterOperation
+        {
+            get { return this._overrideDatasetParameterOperation; }
+            set { this._overrideDatasetParameterOperation = value; }
+        }
+
+        // Check to see if OverrideDatasetParameterOperation property is set
+        internal bool IsSetOverrideDatasetParameterOperation()
+        {
+            return this._overrideDatasetParameterOperation != null;
         }
 
         /// <summary>

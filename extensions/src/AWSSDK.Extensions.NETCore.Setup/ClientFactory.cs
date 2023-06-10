@@ -16,6 +16,7 @@ using System;
 using System.Reflection;
 using Amazon.Runtime;
 using Amazon.Runtime.CredentialManagement;
+
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
@@ -79,6 +80,12 @@ namespace Amazon.Extensions.NETCore.Setup
         {
             PerformGlobalConfig(logger, options);
             var credentials = CreateCredentials(logger, options);
+
+            if (!string.IsNullOrEmpty(options?.SessionRoleArn))
+            {
+                credentials = new AssumeRoleAWSCredentials(credentials, options.SessionRoleArn, options.SessionName);
+            }
+
             var config = CreateConfig(serviceInterfaceType, options);
             var client = CreateClient(serviceInterfaceType, credentials, config);
             return client as IAmazonService;
@@ -212,39 +219,37 @@ namespace Amazon.Extensions.NETCore.Setup
             }
 
             var defaultConfig = options.DefaultClientConfig;
-            if (options.IsDefaultClientConfigSet)
+            var emptyArray = new object[0];
+            var singleArray = new object[1];
+
+            var clientConfigTypeInfo = options.DefaultClientConfig.GetType();
+            var properties = clientConfigTypeInfo.GetProperties(BindingFlags.Public | BindingFlags.Instance);
+            foreach (var property in properties)
             {
-                var emptyArray = new object[0];
-                var singleArray = new object[1];
-
-                var clientConfigTypeInfo = typeof(ClientConfig).GetTypeInfo();
-                foreach (var property in clientConfigTypeInfo.DeclaredProperties)
+                if (property.GetMethod != null && property.SetMethod != null)
                 {
-                    if (property.GetMethod != null && property.SetMethod != null)
+                    // Skip RegionEndpoint because it is set below and calling the get method on the
+                    // property triggers the default region fallback mechanism.
+                    if (string.Equals(property.Name, "RegionEndpoint", StringComparison.Ordinal))
+                        continue;
+
+                    // DefaultConfigurationMode is skipped from the DefaultClientConfig because it is expected to be set
+                    // at the top level of AWSOptions which is done before this loop.
+                    if (string.Equals(property.Name, "DefaultConfigurationMode", StringComparison.Ordinal))
+                        continue;
+
+                    // Skip setting RetryMode if it is set to legacy but the DefaultConfigurationMode is not legacy.
+                    // This will allow the retry mode to be configured from the DefaultConfiguration.
+                    // This is a workaround to handle the inability to tell if RetryMode was explicitly set.
+                    if (string.Equals(property.Name, "RetryMode", StringComparison.Ordinal) && 
+                        defaultConfig.RetryMode == RequestRetryMode.Legacy && 
+                        config.DefaultConfigurationMode != DefaultConfigurationMode.Legacy)
+                        continue;
+
+                    singleArray[0] = property.GetMethod.Invoke(defaultConfig, emptyArray);
+                    if (singleArray[0] != null)
                     {
-                        // Skip RegionEndpoint because it is set below and calling the get method on the
-                        // property triggers the default region fallback mechanism.
-                        if (string.Equals(property.Name, "RegionEndpoint", StringComparison.Ordinal))
-                            continue;
-
-                        // DefaultConfigurationMode is skipped from the DefaultClientConfig because it is expected to be set
-                        // at the top level of AWSOptions which is done before this loop.
-                        if (string.Equals(property.Name, "DefaultConfigurationMode", StringComparison.Ordinal))
-                            continue;
-
-                        // Skip setting RetryMode if it is set to legacy but the DefaultConfigurationMode is not legacy.
-                        // This will allow the retry mode to be configured from the DefaultConfiguration.
-                        // This is a workaround to handle the inability to tell if RetryMode was explicitly set.
-                        if (string.Equals(property.Name, "RetryMode", StringComparison.Ordinal) && 
-                            defaultConfig.RetryMode == RequestRetryMode.Legacy && 
-                            config.DefaultConfigurationMode != DefaultConfigurationMode.Legacy)
-                            continue;
-
-                        singleArray[0] = property.GetMethod.Invoke(defaultConfig, emptyArray);
-                        if (singleArray[0] != null)
-                        {
-                            property.SetMethod.Invoke(config, singleArray);
-                        }
+                        property.SetMethod.Invoke(config, singleArray);
                     }
                 }
             }

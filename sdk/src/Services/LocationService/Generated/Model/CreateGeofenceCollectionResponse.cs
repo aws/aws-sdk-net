@@ -41,7 +41,7 @@ namespace Amazon.LocationService.Model
         /// Gets and sets the property CollectionArn. 
         /// <para>
         /// The Amazon Resource Name (ARN) for the geofence collection resource. Used when you
-        /// need to specify a resource across all AWS. 
+        /// need to specify a resource across all Amazon Web Services. 
         /// </para>
         ///  <ul> <li> 
         /// <para>

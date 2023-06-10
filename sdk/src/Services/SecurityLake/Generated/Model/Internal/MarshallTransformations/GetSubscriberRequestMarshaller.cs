@@ -58,10 +58,10 @@ namespace Amazon.SecurityLake.Model.Internal.MarshallTransformations
             request.Headers[Amazon.Util.HeaderKeys.XAmzApiVersion] = "2018-05-10";
             request.HttpMethod = "GET";
 
-            if (!publicRequest.IsSetId())
-                throw new AmazonSecurityLakeException("Request object does not have required field Id set");
-            request.AddPathResource("{id}", StringUtils.FromString(publicRequest.Id));
-            request.ResourcePath = "/v1/subscribers/{id}";
+            if (!publicRequest.IsSetSubscriberId())
+                throw new AmazonSecurityLakeException("Request object does not have required field SubscriberId set");
+            request.AddPathResource("{subscriberId}", StringUtils.FromString(publicRequest.SubscriberId));
+            request.ResourcePath = "/v1/subscribers/{subscriberId}";
 
             return request;
         }

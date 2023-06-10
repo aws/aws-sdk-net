@@ -30,7 +30,12 @@ namespace Amazon.Glue.Model
 {
     /// <summary>
     /// Container for the parameters to the GetUnfilteredPartitionMetadata operation.
+    /// Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.
     /// 
+    ///  
+    /// <para>
+    /// For IAM authorization, the public IAM action associated with this API is <code>glue:GetPartition</code>.
+    /// </para>
     /// </summary>
     public partial class GetUnfilteredPartitionMetadataRequest : AmazonGlueRequest
     {
@@ -42,7 +47,10 @@ namespace Amazon.Glue.Model
         private string _tableName;
 
         /// <summary>
-        /// Gets and sets the property AuditContext.
+        /// Gets and sets the property AuditContext. 
+        /// <para>
+        /// A structure containing Lake Formation audit context information.
+        /// </para>
         /// </summary>
         public AuditContext AuditContext
         {
@@ -57,7 +65,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property CatalogId.
+        /// Gets and sets the property CatalogId. 
+        /// <para>
+        /// The catalog ID where the partition resides.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string CatalogId
@@ -73,7 +84,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DatabaseName.
+        /// Gets and sets the property DatabaseName. 
+        /// <para>
+        /// (Required) Specifies the name of a database that contains the partition.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string DatabaseName
@@ -89,7 +103,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property PartitionValues.
+        /// Gets and sets the property PartitionValues. 
+        /// <para>
+        /// (Required) A list of partition key values.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public List<string> PartitionValues
@@ -105,7 +122,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property SupportedPermissionTypes.
+        /// Gets and sets the property SupportedPermissionTypes. 
+        /// <para>
+        /// (Required) A list of supported permission types. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public List<string> SupportedPermissionTypes
@@ -121,7 +141,10 @@ namespace Amazon.Glue.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TableName.
+        /// Gets and sets the property TableName. 
+        /// <para>
+        /// (Required) Specifies the name of a table that contains the partition.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=255)]
         public string TableName

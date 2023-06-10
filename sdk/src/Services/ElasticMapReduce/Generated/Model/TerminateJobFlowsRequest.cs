@@ -31,9 +31,9 @@ namespace Amazon.ElasticMapReduce.Model
     /// <summary>
     /// Container for the parameters to the TerminateJobFlows operation.
     /// TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut
-    /// down, any step not yet completed is canceled and the EC2 instances on which the cluster
-    /// is running are stopped. Any log files not already saved are uploaded to Amazon S3
-    /// if a LogUri was specified when the cluster was created.
+    /// down, any step not yet completed is canceled and the Amazon EC2 instances on which
+    /// the cluster is running are stopped. Any log files not already saved are uploaded to
+    /// Amazon S3 if a LogUri was specified when the cluster was created.
     /// 
     ///  
     /// <para>

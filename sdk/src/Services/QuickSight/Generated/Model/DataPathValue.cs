@@ -61,7 +61,7 @@ namespace Amazon.QuickSight.Model
         /// The actual value of the field that needs to be sorted.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2048)]
+        [AWSProperty(Required=true, Sensitive=true, Max=2048)]
         public string FieldValue
         {
             get { return this._fieldValue; }

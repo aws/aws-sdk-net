@@ -101,6 +101,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.TrainingImage);
             }
 
+            if(requestObject.IsSetTrainingImageConfig())
+            {
+                context.Writer.WritePropertyName("TrainingImageConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TrainingImageConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TrainingImageConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTrainingInputMode())
             {
                 context.Writer.WritePropertyName("TrainingInputMode");

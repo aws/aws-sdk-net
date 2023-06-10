@@ -41,7 +41,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon KMS key required to decrypt the contents of the grammar, if any.
+        /// The KMS key required to decrypt the contents of the grammar, if any.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]
@@ -60,7 +60,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property S3BucketName. 
         /// <para>
-        /// The name of the S3 bucket that contains the grammar source.
+        /// The name of the Amazon S3 bucket that contains the grammar source.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=63)]
@@ -79,7 +79,7 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property S3ObjectKey. 
         /// <para>
-        /// The path to the grammar in the S3 bucket.
+        /// The path to the grammar in the Amazon S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=1024)]

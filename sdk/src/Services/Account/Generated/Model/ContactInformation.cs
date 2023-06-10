@@ -53,7 +53,7 @@ namespace Amazon.Account.Model
         /// The first line of the primary contact address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=60)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=60)]
         public string AddressLine1
         {
             get { return this._addressLine1; }
@@ -72,7 +72,7 @@ namespace Amazon.Account.Model
         /// The second line of the primary contact address, if any.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=60)]
+        [AWSProperty(Sensitive=true, Min=1, Max=60)]
         public string AddressLine2
         {
             get { return this._addressLine2; }
@@ -91,7 +91,7 @@ namespace Amazon.Account.Model
         /// The third line of the primary contact address, if any.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=60)]
+        [AWSProperty(Sensitive=true, Min=1, Max=60)]
         public string AddressLine3
         {
             get { return this._addressLine3; }
@@ -110,7 +110,7 @@ namespace Amazon.Account.Model
         /// The city of the primary contact address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]
         public string City
         {
             get { return this._city; }
@@ -129,7 +129,7 @@ namespace Amazon.Account.Model
         /// The name of the company associated with the primary contact information, if any.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public string CompanyName
         {
             get { return this._companyName; }
@@ -148,7 +148,7 @@ namespace Amazon.Account.Model
         /// The ISO-3166 two-letter country code for the primary contact address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=2, Max=2)]
+        [AWSProperty(Required=true, Sensitive=true, Min=2, Max=2)]
         public string CountryCode
         {
             get { return this._countryCode; }
@@ -167,7 +167,7 @@ namespace Amazon.Account.Model
         /// The district or county of the primary contact address, if any.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public string DistrictOrCounty
         {
             get { return this._districtOrCounty; }
@@ -186,7 +186,7 @@ namespace Amazon.Account.Model
         /// The full name of the primary contact address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=50)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=50)]
         public string FullName
         {
             get { return this._fullName; }
@@ -206,7 +206,7 @@ namespace Amazon.Account.Model
         /// and, in some countries, checked for activation.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=20)]
         public string PhoneNumber
         {
             get { return this._phoneNumber; }
@@ -225,7 +225,7 @@ namespace Amazon.Account.Model
         /// The postal code of the primary contact address.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=20)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=20)]
         public string PostalCode
         {
             get { return this._postalCode; }
@@ -245,7 +245,7 @@ namespace Amazon.Account.Model
         /// countries.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=50)]
+        [AWSProperty(Sensitive=true, Min=1, Max=50)]
         public string StateOrRegion
         {
             get { return this._stateOrRegion; }
@@ -264,7 +264,7 @@ namespace Amazon.Account.Model
         /// The URL of the website associated with the primary contact information, if any.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=256)]
+        [AWSProperty(Sensitive=true, Min=1, Max=256)]
         public string WebsiteUrl
         {
             get { return this._websiteUrl; }

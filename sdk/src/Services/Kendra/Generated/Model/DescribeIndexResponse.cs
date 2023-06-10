@@ -76,7 +76,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The Unix datetime that the index was created.
+        /// The Unix timestamp when the index was created.
         /// </para>
         /// </summary>
         public DateTime CreatedAt
@@ -289,7 +289,7 @@ namespace Amazon.Kendra.Model
         /// <summary>
         /// Gets and sets the property UpdatedAt. 
         /// <para>
-        /// The Unix datetime that the index was last updated.
+        /// The Unix when the index was last updated.
         /// </para>
         /// </summary>
         public DateTime UpdatedAt

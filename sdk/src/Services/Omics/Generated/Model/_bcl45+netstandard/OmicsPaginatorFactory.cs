@@ -52,6 +52,14 @@ namespace Amazon.Omics.Model
         }
 
         /// <summary>
+        /// Paginator for ListMultipartReadSetUploads operation
+        ///</summary>
+        public IListMultipartReadSetUploadsPaginator ListMultipartReadSetUploads(ListMultipartReadSetUploadsRequest request) 
+        {
+            return new ListMultipartReadSetUploadsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListReadSetActivationJobs operation
         ///</summary>
         public IListReadSetActivationJobsPaginator ListReadSetActivationJobs(ListReadSetActivationJobsRequest request) 
@@ -81,6 +89,14 @@ namespace Amazon.Omics.Model
         public IListReadSetsPaginator ListReadSets(ListReadSetsRequest request) 
         {
             return new ListReadSetsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListReadSetUploadParts operation
+        ///</summary>
+        public IListReadSetUploadPartsPaginator ListReadSetUploadParts(ListReadSetUploadPartsRequest request) 
+        {
+            return new ListReadSetUploadPartsPaginator(this.client, request);
         }
 
         /// <summary>

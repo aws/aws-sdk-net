@@ -826,7 +826,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Deletes the host key that's specified in the <code>HoskKeyId</code> parameter.
+        /// Deletes the host key that's specified in the <code>HostKeyId</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHostKey service method.</param>
         /// 
@@ -855,7 +855,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Deletes the host key that's specified in the <code>HoskKeyId</code> parameter.
+        /// Deletes the host key that's specified in the <code>HostKeyId</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteHostKey service method.</param>
         /// <param name="cancellationToken">
@@ -1476,6 +1476,18 @@ namespace Amazon.Transfer
         /// <summary>
         /// You can use <code>DescribeExecution</code> to check the details of the execution of
         /// the specified workflow.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API call only returns details for in-progress workflows.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you provide an ID for an execution that is not in progress, or if the execution
+        /// doesn't match the specified workflow ID, you receive a <code>ResourceNotFound</code>
+        /// exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
         /// 
@@ -1503,6 +1515,18 @@ namespace Amazon.Transfer
         /// <summary>
         /// You can use <code>DescribeExecution</code> to check the details of the execution of
         /// the specified workflow.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// This API call only returns details for in-progress workflows.
+        /// </para>
+        ///  
+        /// <para>
+        ///  If you provide an ID for an execution that is not in progress, or if the execution
+        /// doesn't match the specified workflow ID, you receive a <code>ResourceNotFound</code>
+        /// exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeExecution service method.</param>
         /// <param name="cancellationToken">
@@ -2048,7 +2072,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code>
+        /// Adds a Secure Shell (SSH) public key to a Transfer Family user identified by a <code>UserName</code>
         /// value assigned to the specific file transfer protocol-enabled server, identified by
         /// <code>ServerId</code>.
         /// 
@@ -2088,7 +2112,7 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Adds a Secure Shell (SSH) public key to a user account identified by a <code>UserName</code>
+        /// Adds a Secure Shell (SSH) public key to a Transfer Family user identified by a <code>UserName</code>
         /// value assigned to the specific file transfer protocol-enabled server, identified by
         /// <code>ServerId</code>.
         /// 
@@ -2406,7 +2430,14 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists all executions for the specified workflow.
+        /// Lists all in-progress executions for the specified workflow.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the specified workflow ID cannot be found, <code>ListExecutions</code> returns
+        /// a <code>ResourceNotFound</code> exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
         /// 
@@ -2435,7 +2466,14 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists all executions for the specified workflow.
+        /// Lists all in-progress executions for the specified workflow.
+        /// 
+        ///  <note> 
+        /// <para>
+        /// If the specified workflow ID cannot be found, <code>ListExecutions</code> returns
+        /// a <code>ResourceNotFound</code> exception.
+        /// </para>
+        ///  </note>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListExecutions service method.</param>
         /// <param name="cancellationToken">
@@ -2846,7 +2884,8 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists all of your workflows.
+        /// Lists all workflows associated with your Amazon Web Services account for your current
+        /// region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
         /// 
@@ -2871,7 +2910,8 @@ namespace Amazon.Transfer
 
 
         /// <summary>
-        /// Lists all of your workflows.
+        /// Lists all workflows associated with your Amazon Web Services account for your current
+        /// region.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListWorkflows service method.</param>
         /// <param name="cancellationToken">
@@ -3327,12 +3367,25 @@ namespace Amazon.Transfer
         /// <code>ServerProtocol</code>, <code>SourceIp</code>, and <code>UserPassword</code>
         /// are all optional. 
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// Note the following:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  You cannot use <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code>
-        /// of your server is <code>SERVICE_MANAGED</code>. 
+        /// of your server is <code>SERVICE_MANAGED</code>.
         /// </para>
-        ///  </note> <ul> <li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TestIdentityProvider</code> does not work with keys: it only accepts passwords.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TestIdentityProvider</code> can test the password operation for a custom Identity
+        /// Provider that handles keys and passwords.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  If you provide any incorrect values for any parameters, the <code>Response</code>
         /// field is empty. 
@@ -3355,7 +3408,13 @@ namespace Amazon.Transfer
         ///  
         /// <para>
         ///  <code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider
-        /// operation: Unknown server</code> 
+        /// operation: Unknown server</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// It is possible your sever is in a different region. You can specify a region by adding
+        /// the following: <code>--region region-code</code>, such as <code>--region us-east-2</code>
+        /// to specify a server in <b>US East (Ohio)</b>.
         /// </para>
         ///  </li> </ul>
         /// </summary>
@@ -3396,12 +3455,25 @@ namespace Amazon.Transfer
         /// <code>ServerProtocol</code>, <code>SourceIp</code>, and <code>UserPassword</code>
         /// are all optional. 
         /// </para>
-        ///  <note> 
+        ///  
+        /// <para>
+        /// Note the following:
+        /// </para>
+        ///  <ul> <li> 
         /// <para>
         ///  You cannot use <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code>
-        /// of your server is <code>SERVICE_MANAGED</code>. 
+        /// of your server is <code>SERVICE_MANAGED</code>.
         /// </para>
-        ///  </note> <ul> <li> 
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TestIdentityProvider</code> does not work with keys: it only accepts passwords.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>TestIdentityProvider</code> can test the password operation for a custom Identity
+        /// Provider that handles keys and passwords.
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         ///  If you provide any incorrect values for any parameters, the <code>Response</code>
         /// field is empty. 
@@ -3424,7 +3496,13 @@ namespace Amazon.Transfer
         ///  
         /// <para>
         ///  <code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider
-        /// operation: Unknown server</code> 
+        /// operation: Unknown server</code>. 
+        /// </para>
+        ///  
+        /// <para>
+        /// It is possible your sever is in a different region. You can specify a region by adding
+        /// the following: <code>--region region-code</code>, such as <code>--region us-east-2</code>
+        /// to specify a server in <b>US East (Ohio)</b>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

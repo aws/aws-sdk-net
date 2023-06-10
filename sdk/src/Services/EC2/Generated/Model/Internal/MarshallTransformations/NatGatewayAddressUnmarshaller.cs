@@ -60,6 +60,24 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllocationId = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("associationId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AssociationId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("failureMessage", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.FailureMessage = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("isPrimary", targetDepth))
+                    {
+                        var unmarshaller = BoolUnmarshaller.Instance;
+                        unmarshalledObject.IsPrimary = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("networkInterfaceId", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
@@ -76,6 +94,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                     {
                         var unmarshaller = StringUnmarshaller.Instance;
                         unmarshalledObject.PublicIp = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
+                    if (context.TestExpression("status", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.Status = unmarshaller.Unmarshall(context);
                         continue;
                     }
                 }

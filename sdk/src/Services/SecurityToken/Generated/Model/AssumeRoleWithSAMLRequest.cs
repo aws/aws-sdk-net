@@ -392,7 +392,7 @@ namespace Amazon.SecurityToken.Model
         /// a Relying Party and Adding Claims</a> in the <i>IAM User Guide</i>. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=4, Max=100000)]
+        [AWSProperty(Required=true, Sensitive=true, Min=4, Max=100000)]
         public string SAMLAssertion
         {
             get { return this._samlAssertion; }

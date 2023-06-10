@@ -30,8 +30,8 @@ namespace Amazon.AutoScaling.Model
 {
     /// <summary>
     /// Container for the parameters to the StartInstanceRefresh operation.
-    /// Starts a new instance refresh operation. An instance refresh performs a rolling replacement
-    /// of all or some instances in an Auto Scaling group. Each instance is terminated first
+    /// Starts an instance refresh. During an instance refresh, Amazon EC2 Auto Scaling performs
+    /// a rolling update of instances in an Auto Scaling group. Instances are terminated first
     /// and then replaced, which temporarily reduces the capacity available within your Auto
     /// Scaling group.
     /// 
@@ -46,11 +46,27 @@ namespace Amazon.AutoScaling.Model
     /// </para>
     ///  
     /// <para>
-    /// If the call succeeds, it creates a new instance refresh request with a unique ID that
-    /// you can use to track its progress. To query its status, call the <a>DescribeInstanceRefreshes</a>
+    /// If successful, the request's response contains a unique ID that you can use to track
+    /// the progress of the instance refresh. To query its status, call the <a>DescribeInstanceRefreshes</a>
     /// API. To describe the instance refreshes that have already run, call the <a>DescribeInstanceRefreshes</a>
-    /// API. To cancel an instance refresh operation in progress, use the <a>CancelInstanceRefresh</a>
+    /// API. To cancel an instance refresh that is in progress, use the <a>CancelInstanceRefresh</a>
     /// API. 
+    /// </para>
+    ///  
+    /// <para>
+    /// An instance refresh might fail for several reasons, such as EC2 launch failures, misconfigured
+    /// health checks, or not ignoring or allowing the termination of instances that are in
+    /// <code>Standby</code> state or protected from scale in. You can monitor for failed
+    /// EC2 launches using the scaling activities. To find the scaling activities, call the
+    /// <a>DescribeScalingActivities</a> API.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you enable auto rollback, your Auto Scaling group will be rolled back automatically
+    /// when the instance refresh fails. You can enable this feature before starting an instance
+    /// refresh by specifying the <code>AutoRollback</code> property in the instance refresh
+    /// preferences. Otherwise, to roll back an instance refresh before it finishes, use the
+    /// <a>RollbackInstanceRefresh</a> API. 
     /// </para>
     /// </summary>
     public partial class StartInstanceRefreshRequest : AmazonAutoScalingRequest
@@ -95,8 +111,8 @@ namespace Amazon.AutoScaling.Model
         /// When you specify a new launch template or a new version of the current launch template
         /// for your desired configuration, consider enabling the <code>SkipMatching</code> property
         /// in preferences. If it's enabled, Amazon EC2 Auto Scaling skips replacing instances
-        /// that already use the specified launch template and version. This can help you reduce
-        /// the number of replacements that are required to apply updates. 
+        /// that already use the specified launch template and instance types. This can help you
+        /// reduce the number of replacements that are required to apply updates. 
         /// </para>
         ///  </note>
         /// </summary>
@@ -115,9 +131,25 @@ namespace Amazon.AutoScaling.Model
         /// <summary>
         /// Gets and sets the property Preferences. 
         /// <para>
-        /// Set of preferences associated with the instance refresh request. If not provided,
-        /// the default values are used.
+        /// Sets your preferences for the instance refresh so that it performs as expected when
+        /// you start it. Includes the instance warmup time, the minimum healthy percentage, and
+        /// the behaviors that you want Amazon EC2 Auto Scaling to use if instances that are in
+        /// <code>Standby</code> state or protected from scale in are found. You can also choose
+        /// to enable additional features, such as the following:
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Auto rollback
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Checkpoints
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Skip matching
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         public RefreshPreferences Preferences
         {
@@ -135,13 +167,6 @@ namespace Amazon.AutoScaling.Model
         /// Gets and sets the property Strategy. 
         /// <para>
         /// The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// A rolling update helps you update your instances gradually. A rolling update can fail
-        /// due to failed health checks or if instances are on standby or are protected from scale
-        /// in. If the rolling update process fails, any instances that are replaced are not rolled
-        /// back to their previous configuration. 
         /// </para>
         /// </summary>
         public RefreshStrategy Strategy

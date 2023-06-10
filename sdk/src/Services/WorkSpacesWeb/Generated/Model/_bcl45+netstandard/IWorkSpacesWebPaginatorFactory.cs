@@ -36,6 +36,11 @@ namespace Amazon.WorkSpacesWeb.Model
         IListIdentityProvidersPaginator ListIdentityProviders(ListIdentityProvidersRequest request);
 
         /// <summary>
+        /// Paginator for ListIpAccessSettings operation
+        ///</summary>
+        IListIpAccessSettingsPaginator ListIpAccessSettings(ListIpAccessSettingsRequest request);
+
+        /// <summary>
         /// Paginator for ListNetworkSettings operation
         ///</summary>
         IListNetworkSettingsPaginator ListNetworkSettings(ListNetworkSettingsRequest request);

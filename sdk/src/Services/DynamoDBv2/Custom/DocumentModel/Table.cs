@@ -952,7 +952,7 @@ namespace Amazon.DynamoDBv2.DocumentModel
 #endif
 
         // Checks if key attributes have been updated
-        private bool HaveKeysChanged(Document doc)
+        internal bool HaveKeysChanged(Document doc)
         {
             foreach (var keyName in this.KeyNames)
             {
@@ -1253,6 +1253,36 @@ namespace Amazon.DynamoDBv2.DocumentModel
         public DocumentBatchWrite CreateBatchWrite()
         {
             return new DocumentBatchWrite(this);
+        }
+
+        #endregion
+
+
+        #region TransactGet
+
+        /// <summary>
+        /// Creates a DocumentTransactGet object for the current table, allowing
+        /// a transactional get operation against DynamoDB.
+        /// </summary>
+        /// <returns>Empty DocumentTransactGet object.</returns>
+        public DocumentTransactGet CreateTransactGet()
+        {
+            return new DocumentTransactGet(this);
+        }
+
+        #endregion
+
+
+        #region TransactWrite
+
+        /// <summary>
+        /// Creates a DocumentTransactWrite object for the current table, allowing
+        /// a transactional condition-check/put/update/delete operation against DynamoDB.
+        /// </summary>
+        /// <returns>Empty DocumentTransactWrite object.</returns>
+        public DocumentTransactWrite CreateTransactWrite()
+        {
+            return new DocumentTransactWrite(this);
         }
 
         #endregion

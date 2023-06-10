@@ -38,6 +38,7 @@ namespace Amazon.LexModelsV2.Model
         private BotExportSpecification _botExportSpecification;
         private BotLocaleExportSpecification _botLocaleExportSpecification;
         private CustomVocabularyExportSpecification _customVocabularyExportSpecification;
+        private TestSetExportSpecification _testSetExportSpecification;
 
         /// <summary>
         /// Gets and sets the property BotExportSpecification. 
@@ -91,6 +92,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetCustomVocabularyExportSpecification()
         {
             return this._customVocabularyExportSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestSetExportSpecification. 
+        /// <para>
+        /// Specifications for the test set that is exported as a resource.
+        /// </para>
+        /// </summary>
+        public TestSetExportSpecification TestSetExportSpecification
+        {
+            get { return this._testSetExportSpecification; }
+            set { this._testSetExportSpecification = value; }
+        }
+
+        // Check to see if TestSetExportSpecification property is set
+        internal bool IsSetTestSetExportSpecification()
+        {
+            return this._testSetExportSpecification != null;
         }
 
     }

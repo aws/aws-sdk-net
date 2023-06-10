@@ -81,7 +81,7 @@ namespace Amazon.FinSpaceData.Model
         ///  The secret access key that can be used to sign requests.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
         public string SecretAccessKey
         {
             get { return this._secretAccessKey; }
@@ -100,7 +100,7 @@ namespace Amazon.FinSpaceData.Model
         ///  The token that users must pass to use the credentials.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=1000)]
         public string SessionToken
         {
             get { return this._sessionToken; }

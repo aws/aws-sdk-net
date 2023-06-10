@@ -44,7 +44,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The ARN of the <code>AppInstanceUser</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=5, Max=1600)]
+        [AWSProperty(Required=true, Sensitive=true, Min=5, Max=1600)]
         public string AppInstanceUserArn
         {
             get { return this._appInstanceUserArn; }
@@ -82,7 +82,7 @@ namespace Amazon.ChimeSDKIdentity.Model
         /// The token passed by previous API calls until all requested endpoints are returned.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=0, Max=2048)]
         public string NextToken
         {
             get { return this._nextToken; }

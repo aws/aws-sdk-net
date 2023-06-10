@@ -283,6 +283,11 @@ namespace Amazon.Inspector2
 
         /// <summary>
         /// Associates an Amazon Web Services account with an Amazon Inspector delegated administrator.
+        /// An HTTP 200 response indicates the association was successfully started, but doesn’t
+        /// indicate whether it was completed. You can check if the association completed by using
+        /// <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a>
+        /// for multiple accounts or <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html">GetMembers</a>
+        /// for a single account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the AssociateMember service method.</param>
         /// <param name="cancellationToken">
@@ -414,6 +419,104 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  BatchGetMemberEc2DeepInspectionStatus
+
+        internal virtual BatchGetMemberEc2DeepInspectionStatusResponse BatchGetMemberEc2DeepInspectionStatus(BatchGetMemberEc2DeepInspectionStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetMemberEc2DeepInspectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetMemberEc2DeepInspectionStatusResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetMemberEc2DeepInspectionStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves Amazon Inspector deep inspection activation status of multiple member accounts
+        /// within your organization. You must be the delegated administrator of an organization
+        /// in Amazon Inspector to use this API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetMemberEc2DeepInspectionStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchGetMemberEc2DeepInspectionStatus service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetMemberEc2DeepInspectionStatus">REST API Reference for BatchGetMemberEc2DeepInspectionStatus Operation</seealso>
+        public virtual Task<BatchGetMemberEc2DeepInspectionStatusResponse> BatchGetMemberEc2DeepInspectionStatusAsync(BatchGetMemberEc2DeepInspectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetMemberEc2DeepInspectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetMemberEc2DeepInspectionStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchGetMemberEc2DeepInspectionStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  BatchUpdateMemberEc2DeepInspectionStatus
+
+        internal virtual BatchUpdateMemberEc2DeepInspectionStatusResponse BatchUpdateMemberEc2DeepInspectionStatus(BatchUpdateMemberEc2DeepInspectionStatusRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateMemberEc2DeepInspectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateMemberEc2DeepInspectionStatusResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateMemberEc2DeepInspectionStatusResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Activates or deactivates Amazon Inspector deep inspection for the provided member
+        /// accounts in your organization. You must be the delegated administrator of an organization
+        /// in Amazon Inspector to use this API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateMemberEc2DeepInspectionStatus service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the BatchUpdateMemberEc2DeepInspectionStatus service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchUpdateMemberEc2DeepInspectionStatus">REST API Reference for BatchUpdateMemberEc2DeepInspectionStatus Operation</seealso>
+        public virtual Task<BatchUpdateMemberEc2DeepInspectionStatusResponse> BatchUpdateMemberEc2DeepInspectionStatusAsync(BatchUpdateMemberEc2DeepInspectionStatusRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateMemberEc2DeepInspectionStatusRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateMemberEc2DeepInspectionStatusResponseUnmarshaller.Instance;
+
+            return InvokeAsync<BatchUpdateMemberEc2DeepInspectionStatusResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CancelFindingsReport
 
         internal virtual CancelFindingsReportResponse CancelFindingsReport(CancelFindingsReportRequest request)
@@ -533,7 +636,9 @@ namespace Amazon.Inspector2
 
 
         /// <summary>
-        /// Creates a finding report.
+        /// Creates a finding report. By default only <code>ACTIVE</code> findings are returned
+        /// in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must
+        /// specify a value for the <code>findingStatus</code> filter criteria.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateFindingsReport service method.</param>
         /// <param name="cancellationToken">
@@ -1018,6 +1123,54 @@ namespace Amazon.Inspector2
             options.ResponseUnmarshaller = GetDelegatedAdminAccountResponseUnmarshaller.Instance;
 
             return InvokeAsync<GetDelegatedAdminAccountResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetEc2DeepInspectionConfiguration
+
+        internal virtual GetEc2DeepInspectionConfigurationResponse GetEc2DeepInspectionConfiguration(GetEc2DeepInspectionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEc2DeepInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<GetEc2DeepInspectionConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Retrieves the activation status of Amazon Inspector deep inspection and custom paths
+        /// associated with your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEc2DeepInspectionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetEc2DeepInspectionConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ResourceNotFoundException">
+        /// The operation tried to access an invalid resource. Make sure the resource is specified
+        /// correctly.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEc2DeepInspectionConfiguration">REST API Reference for GetEc2DeepInspectionConfiguration Operation</seealso>
+        public virtual Task<GetEc2DeepInspectionConfigurationResponse> GetEc2DeepInspectionConfigurationAsync(GetEc2DeepInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEc2DeepInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<GetEc2DeepInspectionConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1584,6 +1737,53 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  SearchVulnerabilities
+
+        internal virtual SearchVulnerabilitiesResponse SearchVulnerabilities(SearchVulnerabilitiesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchVulnerabilitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchVulnerabilitiesResponseUnmarshaller.Instance;
+
+            return Invoke<SearchVulnerabilitiesResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Lists Amazon Inspector coverage details for a specific vulnerability.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the SearchVulnerabilities service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the SearchVulnerabilities service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SearchVulnerabilities">REST API Reference for SearchVulnerabilities Operation</seealso>
+        public virtual Task<SearchVulnerabilitiesResponse> SearchVulnerabilitiesAsync(SearchVulnerabilitiesRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = SearchVulnerabilitiesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = SearchVulnerabilitiesResponseUnmarshaller.Instance;
+
+            return InvokeAsync<SearchVulnerabilitiesResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  TagResource
 
         internal virtual TagResourceResponse TagResource(TagResourceRequest request)
@@ -1732,6 +1932,54 @@ namespace Amazon.Inspector2
 
         #endregion
         
+        #region  UpdateEc2DeepInspectionConfiguration
+
+        internal virtual UpdateEc2DeepInspectionConfigurationResponse UpdateEc2DeepInspectionConfiguration(UpdateEc2DeepInspectionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEc2DeepInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateEc2DeepInspectionConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Activates, deactivates Amazon Inspector deep inspection, or updates custom paths for
+        /// your account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateEc2DeepInspectionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateEc2DeepInspectionConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEc2DeepInspectionConfiguration">REST API Reference for UpdateEc2DeepInspectionConfiguration Operation</seealso>
+        public virtual Task<UpdateEc2DeepInspectionConfigurationResponse> UpdateEc2DeepInspectionConfigurationAsync(UpdateEc2DeepInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateEc2DeepInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateEc2DeepInspectionConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  UpdateFilter
 
         internal virtual UpdateFilterResponse UpdateFilter(UpdateFilterRequest request)
@@ -1826,6 +2074,54 @@ namespace Amazon.Inspector2
             options.ResponseUnmarshaller = UpdateOrganizationConfigurationResponseUnmarshaller.Instance;
 
             return InvokeAsync<UpdateOrganizationConfigurationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  UpdateOrgEc2DeepInspectionConfiguration
+
+        internal virtual UpdateOrgEc2DeepInspectionConfigurationResponse UpdateOrgEc2DeepInspectionConfiguration(UpdateOrgEc2DeepInspectionConfigurationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOrgEc2DeepInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOrgEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateOrgEc2DeepInspectionConfigurationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Updates the Amazon Inspector deep inspection custom paths for your organization. You
+        /// must be an Amazon Inspector delegated administrator to use this API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateOrgEc2DeepInspectionConfiguration service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the UpdateOrgEc2DeepInspectionConfiguration service method, as returned by Inspector2.</returns>
+        /// <exception cref="Amazon.Inspector2.Model.AccessDeniedException">
+        /// You do not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.InternalServerException">
+        /// The request has failed due to an internal failure of the Amazon Inspector service.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ThrottlingException">
+        /// The limit on the number of requests per second was exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.Inspector2.Model.ValidationException">
+        /// The request has failed validation due to missing required fields or having invalid
+        /// inputs.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateOrgEc2DeepInspectionConfiguration">REST API Reference for UpdateOrgEc2DeepInspectionConfiguration Operation</seealso>
+        public virtual Task<UpdateOrgEc2DeepInspectionConfigurationResponse> UpdateOrgEc2DeepInspectionConfigurationAsync(UpdateOrgEc2DeepInspectionConfigurationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateOrgEc2DeepInspectionConfigurationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateOrgEc2DeepInspectionConfigurationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<UpdateOrgEc2DeepInspectionConfigurationResponse>(request, options, cancellationToken);
         }
 
         #endregion

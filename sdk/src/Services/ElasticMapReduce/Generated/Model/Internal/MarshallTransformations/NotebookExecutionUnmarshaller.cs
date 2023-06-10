@@ -82,6 +82,12 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     unmarshalledObject.EndTime = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("EnvironmentVariables", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.EnvironmentVariables = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ExecutionEngine", targetDepth))
                 {
                     var unmarshaller = ExecutionEngineConfigUnmarshaller.Instance;
@@ -116,6 +122,24 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
                     unmarshalledObject.NotebookParams = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("NotebookS3Location", targetDepth))
+                {
+                    var unmarshaller = NotebookS3LocationForOutputUnmarshaller.Instance;
+                    unmarshalledObject.NotebookS3Location = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OutputNotebookFormat", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.OutputNotebookFormat = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("OutputNotebookS3Location", targetDepth))
+                {
+                    var unmarshaller = OutputNotebookS3LocationForOutputUnmarshaller.Instance;
+                    unmarshalledObject.OutputNotebookS3Location = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("OutputNotebookURI", targetDepth))

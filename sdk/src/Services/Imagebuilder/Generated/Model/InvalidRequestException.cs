@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.Imagebuilder.Model
 {
     /// <summary>
-    /// You have made a request for an action that is not supported by the service.
+    /// You have requested an action that that the service doesn't support.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

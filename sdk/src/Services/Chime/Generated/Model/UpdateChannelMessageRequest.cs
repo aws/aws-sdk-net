@@ -91,7 +91,7 @@ namespace Amazon.Chime.Model
         /// The content of the message being updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4096)]
+        [AWSProperty(Sensitive=true, Min=0, Max=4096)]
         public string Content
         {
             get { return this._content; }
@@ -129,7 +129,7 @@ namespace Amazon.Chime.Model
         /// The metadata of the message being updated.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=1024)]
+        [AWSProperty(Sensitive=true, Min=0, Max=1024)]
         public string Metadata
         {
             get { return this._metadata; }

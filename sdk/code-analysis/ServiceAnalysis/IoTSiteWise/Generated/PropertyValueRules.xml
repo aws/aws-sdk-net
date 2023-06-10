@@ -856,6 +856,12 @@
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.DescribeTimeSeriesResponse.TimeSeriesArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.DescribeTimeSeriesResponse.TimeSeriesId</property>
     <min>36</min>
     <max>73</max>
@@ -916,7 +922,6 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyAggregatesRequest.MaxResults</property>
     <min>1</min>
-    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyAggregatesRequest.NextToken</property>
@@ -939,8 +944,8 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyAggregatesRequest.Resolution</property>
     <min>2</min>
-    <max>2</max>
-    <pattern>1m|1h|1d</pattern>
+    <max>3</max>
+    <pattern>1m|15m|1h|1d</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyAggregatesResponse.NextToken</property>
@@ -975,7 +980,6 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyValueHistoryRequest.MaxResults</property>
     <min>1</min>
-    <max>250</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.GetAssetPropertyValueHistoryRequest.NextToken</property>
@@ -2022,8 +2026,8 @@
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.BatchGetAssetPropertyAggregatesEntry.Resolution</property>
     <min>2</min>
-    <max>2</max>
-    <pattern>1m|1h|1d</pattern>
+    <max>3</max>
+    <pattern>1m|15m|1h|1d</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.BatchGetAssetPropertyAggregatesErrorEntry.EntryId</property>
@@ -2427,6 +2431,12 @@
     <min>36</min>
     <max>36</max>
     <pattern>^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.IoTSiteWise.Model.TimeSeriesSummary.TimeSeriesArn</property>
+    <min>1</min>
+    <max>1600</max>
+    <pattern>.*</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.IoTSiteWise.Model.TimeSeriesSummary.TimeSeriesId</property>

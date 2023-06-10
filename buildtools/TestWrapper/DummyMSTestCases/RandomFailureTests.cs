@@ -1,9 +1,8 @@
 ﻿using System;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
+using NUnit.Framework;
 
 namespace TestCases
 {
-    [TestClass]
     public class RandomFailureTests
     {
         private static readonly Random random = new Random();
@@ -17,159 +16,158 @@ namespace TestCases
             "x-amz-trailer-signature:5e9fae6e80d8cb558e2c43d228a8c36d6b36b5f6f8b86fb8f6596111f3f229a1\r\n" +
             "\r\n";
 
-        [TestMethod]
+        [Test]
         public void TestMethod01()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod02()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod03()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod04()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod05()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod06()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod07()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod08()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod09()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod10()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod11()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod12()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod13()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod14()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod15()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod16()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod17()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod18()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod19()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod20()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod21()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod22()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod23()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod24()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [TestMethod]
+        [Test]
         public void TestMethod25()
         {
             Assert.IsFalse(random.Next(100) < FREQUENCY);
         }
 
-        [DataTestMethod]
-        [DataRow(SAMPLE_S3_MULTILINE_STRING)]
-        [DataRow("another multiline\r\n string\r\n")]
+        [TestCase(SAMPLE_S3_MULTILINE_STRING)]
+        [TestCase("another multiline\r\n string\r\n")]
         public void TestMethod26(string input)
         {
             Assert.IsTrue(input.Contains("\r\n"));

@@ -25,6 +25,180 @@ namespace Amazon.OpenSearchService
 {
 
     /// <summary>
+    /// Constants used for properties of type ActionSeverity.
+    /// </summary>
+    public class ActionSeverity : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant HIGH for ActionSeverity
+        /// </summary>
+        public static readonly ActionSeverity HIGH = new ActionSeverity("HIGH");
+        /// <summary>
+        /// Constant LOW for ActionSeverity
+        /// </summary>
+        public static readonly ActionSeverity LOW = new ActionSeverity("LOW");
+        /// <summary>
+        /// Constant MEDIUM for ActionSeverity
+        /// </summary>
+        public static readonly ActionSeverity MEDIUM = new ActionSeverity("MEDIUM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionSeverity(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionSeverity FindValue(string value)
+        {
+            return FindValue<ActionSeverity>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionSeverity(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ActionStatus.
+    /// </summary>
+    public class ActionStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant COMPLETED for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus COMPLETED = new ActionStatus("COMPLETED");
+        /// <summary>
+        /// Constant ELIGIBLE for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus ELIGIBLE = new ActionStatus("ELIGIBLE");
+        /// <summary>
+        /// Constant FAILED for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus FAILED = new ActionStatus("FAILED");
+        /// <summary>
+        /// Constant IN_PROGRESS for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus IN_PROGRESS = new ActionStatus("IN_PROGRESS");
+        /// <summary>
+        /// Constant NOT_ELIGIBLE for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus NOT_ELIGIBLE = new ActionStatus("NOT_ELIGIBLE");
+        /// <summary>
+        /// Constant PENDING_UPDATE for ActionStatus
+        /// </summary>
+        public static readonly ActionStatus PENDING_UPDATE = new ActionStatus("PENDING_UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionStatus FindValue(string value)
+        {
+            return FindValue<ActionStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ActionType.
+    /// </summary>
+    public class ActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant JVM_HEAP_SIZE_TUNING for ActionType
+        /// </summary>
+        public static readonly ActionType JVM_HEAP_SIZE_TUNING = new ActionType("JVM_HEAP_SIZE_TUNING");
+        /// <summary>
+        /// Constant JVM_YOUNG_GEN_TUNING for ActionType
+        /// </summary>
+        public static readonly ActionType JVM_YOUNG_GEN_TUNING = new ActionType("JVM_YOUNG_GEN_TUNING");
+        /// <summary>
+        /// Constant SERVICE_SOFTWARE_UPDATE for ActionType
+        /// </summary>
+        public static readonly ActionType SERVICE_SOFTWARE_UPDATE = new ActionType("SERVICE_SOFTWARE_UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ActionType FindValue(string value)
+        {
+            return FindValue<ActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AutoTuneDesiredState.
     /// </summary>
     public class AutoTuneDesiredState : ConstantClass
@@ -199,6 +373,56 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type ConnectionMode.
+    /// </summary>
+    public class ConnectionMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DIRECT for ConnectionMode
+        /// </summary>
+        public static readonly ConnectionMode DIRECT = new ConnectionMode("DIRECT");
+        /// <summary>
+        /// Constant VPC_ENDPOINT for ConnectionMode
+        /// </summary>
+        public static readonly ConnectionMode VPC_ENDPOINT = new ConnectionMode("VPC_ENDPOINT");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ConnectionMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ConnectionMode FindValue(string value)
+        {
+            return FindValue<ConnectionMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ConnectionMode(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DeploymentStatus.
     /// </summary>
     public class DeploymentStatus : ConstantClass
@@ -315,6 +539,64 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type DomainHealth.
+    /// </summary>
+    public class DomainHealth : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Green for DomainHealth
+        /// </summary>
+        public static readonly DomainHealth Green = new DomainHealth("Green");
+        /// <summary>
+        /// Constant NotAvailable for DomainHealth
+        /// </summary>
+        public static readonly DomainHealth NotAvailable = new DomainHealth("NotAvailable");
+        /// <summary>
+        /// Constant Red for DomainHealth
+        /// </summary>
+        public static readonly DomainHealth Red = new DomainHealth("Red");
+        /// <summary>
+        /// Constant Yellow for DomainHealth
+        /// </summary>
+        public static readonly DomainHealth Yellow = new DomainHealth("Yellow");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainHealth(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainHealth FindValue(string value)
+        {
+            return FindValue<DomainHealth>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainHealth(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type DomainPackageStatus.
     /// </summary>
     public class DomainPackageStatus : ConstantClass
@@ -370,6 +652,60 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator DomainPackageStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type DomainState.
+    /// </summary>
+    public class DomainState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for DomainState
+        /// </summary>
+        public static readonly DomainState Active = new DomainState("Active");
+        /// <summary>
+        /// Constant NotAvailable for DomainState
+        /// </summary>
+        public static readonly DomainState NotAvailable = new DomainState("NotAvailable");
+        /// <summary>
+        /// Constant Processing for DomainState
+        /// </summary>
+        public static readonly DomainState Processing = new DomainState("Processing");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public DomainState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static DomainState FindValue(string value)
+        {
+            return FindValue<DomainState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator DomainState(string value)
         {
             return FindValue(value);
         }
@@ -602,6 +938,164 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator LogType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type MasterNodeStatus.
+    /// </summary>
+    public class MasterNodeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Available for MasterNodeStatus
+        /// </summary>
+        public static readonly MasterNodeStatus Available = new MasterNodeStatus("Available");
+        /// <summary>
+        /// Constant UnAvailable for MasterNodeStatus
+        /// </summary>
+        public static readonly MasterNodeStatus UnAvailable = new MasterNodeStatus("UnAvailable");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public MasterNodeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static MasterNodeStatus FindValue(string value)
+        {
+            return FindValue<MasterNodeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator MasterNodeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeStatus.
+    /// </summary>
+    public class NodeStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for NodeStatus
+        /// </summary>
+        public static readonly NodeStatus Active = new NodeStatus("Active");
+        /// <summary>
+        /// Constant NotAvailable for NodeStatus
+        /// </summary>
+        public static readonly NodeStatus NotAvailable = new NodeStatus("NotAvailable");
+        /// <summary>
+        /// Constant StandBy for NodeStatus
+        /// </summary>
+        public static readonly NodeStatus StandBy = new NodeStatus("StandBy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeStatus FindValue(string value)
+        {
+            return FindValue<NodeStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type NodeType.
+    /// </summary>
+    public class NodeType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Data for NodeType
+        /// </summary>
+        public static readonly NodeType Data = new NodeType("Data");
+        /// <summary>
+        /// Constant Master for NodeType
+        /// </summary>
+        public static readonly NodeType Master = new NodeType("Master");
+        /// <summary>
+        /// Constant Ultrawarm for NodeType
+        /// </summary>
+        public static readonly NodeType Ultrawarm = new NodeType("Ultrawarm");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public NodeType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static NodeType FindValue(string value)
+        {
+            return FindValue<NodeType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator NodeType(string value)
         {
             return FindValue(value);
         }
@@ -1553,6 +2047,60 @@ namespace Amazon.OpenSearchService
 
 
     /// <summary>
+    /// Constants used for properties of type ScheduleAt.
+    /// </summary>
+    public class ScheduleAt : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant NOW for ScheduleAt
+        /// </summary>
+        public static readonly ScheduleAt NOW = new ScheduleAt("NOW");
+        /// <summary>
+        /// Constant OFF_PEAK_WINDOW for ScheduleAt
+        /// </summary>
+        public static readonly ScheduleAt OFF_PEAK_WINDOW = new ScheduleAt("OFF_PEAK_WINDOW");
+        /// <summary>
+        /// Constant TIMESTAMP for ScheduleAt
+        /// </summary>
+        public static readonly ScheduleAt TIMESTAMP = new ScheduleAt("TIMESTAMP");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduleAt(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduleAt FindValue(string value)
+        {
+            return FindValue<ScheduleAt>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduleAt(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ScheduledAutoTuneActionType.
     /// </summary>
     public class ScheduledAutoTuneActionType : ConstantClass
@@ -1650,6 +2198,56 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator ScheduledAutoTuneSeverityType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ScheduledBy.
+    /// </summary>
+    public class ScheduledBy : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CUSTOMER for ScheduledBy
+        /// </summary>
+        public static readonly ScheduledBy CUSTOMER = new ScheduledBy("CUSTOMER");
+        /// <summary>
+        /// Constant SYSTEM for ScheduledBy
+        /// </summary>
+        public static readonly ScheduledBy SYSTEM = new ScheduledBy("SYSTEM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ScheduledBy(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ScheduledBy FindValue(string value)
+        {
+            return FindValue<ScheduledBy>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ScheduledBy(string value)
         {
             return FindValue(value);
         }
@@ -2036,6 +2634,60 @@ namespace Amazon.OpenSearchService
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator VpcEndpointStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type ZoneStatus.
+    /// </summary>
+    public class ZoneStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Active for ZoneStatus
+        /// </summary>
+        public static readonly ZoneStatus Active = new ZoneStatus("Active");
+        /// <summary>
+        /// Constant NotAvailable for ZoneStatus
+        /// </summary>
+        public static readonly ZoneStatus NotAvailable = new ZoneStatus("NotAvailable");
+        /// <summary>
+        /// Constant StandBy for ZoneStatus
+        /// </summary>
+        public static readonly ZoneStatus StandBy = new ZoneStatus("StandBy");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ZoneStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ZoneStatus FindValue(string value)
+        {
+            return FindValue<ZoneStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ZoneStatus(string value)
         {
             return FindValue(value);
         }

@@ -73,8 +73,10 @@ namespace Amazon.Rekognition.Model
         private BoundingBox _boundingBox;
         private float? _confidence;
         private List<Emotion> _emotions = new List<Emotion>();
+        private EyeDirection _eyeDirection;
         private Eyeglasses _eyeglasses;
         private EyeOpen _eyesOpen;
+        private FaceOccluded _faceOccluded;
         private Gender _gender;
         private List<Landmark> _landmarks = new List<Landmark>();
         private MouthOpen _mouthOpen;
@@ -182,6 +184,24 @@ namespace Amazon.Rekognition.Model
         }
 
         /// <summary>
+        /// Gets and sets the property EyeDirection. 
+        /// <para>
+        /// Indicates the direction the eyes are gazing in, as defined by pitch and yaw.
+        /// </para>
+        /// </summary>
+        public EyeDirection EyeDirection
+        {
+            get { return this._eyeDirection; }
+            set { this._eyeDirection = value; }
+        }
+
+        // Check to see if EyeDirection property is set
+        internal bool IsSetEyeDirection()
+        {
+            return this._eyeDirection != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Eyeglasses. 
         /// <para>
         /// Indicates whether or not the face is wearing eye glasses, and the confidence level
@@ -217,6 +237,29 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetEyesOpen()
         {
             return this._eyesOpen != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property FaceOccluded. 
+        /// <para>
+        ///  <code>FaceOccluded</code> should return "true" with a high confidence score if a
+        /// detected face’s eyes, nose, and mouth are partially captured or if they are covered
+        /// by masks, dark sunglasses, cell phones, hands, or other objects. <code>FaceOccluded</code>
+        /// should return "false" with a high confidence score if common occurrences that do not
+        /// impact face verification are detected, such as eye glasses, lightly tinted sunglasses,
+        /// strands of hair, and others. 
+        /// </para>
+        /// </summary>
+        public FaceOccluded FaceOccluded
+        {
+            get { return this._faceOccluded; }
+            set { this._faceOccluded = value; }
+        }
+
+        // Check to see if FaceOccluded property is set
+        internal bool IsSetFaceOccluded()
+        {
+            return this._faceOccluded != null;
         }
 
         /// <summary>

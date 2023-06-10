@@ -102,6 +102,12 @@ namespace Amazon.ElastiCache.Model.Internal.MarshallTransformations
                         unmarshalledObject.ClusterEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("ClusterMode", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.ClusterMode = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("ConfigurationEndpoint", targetDepth))
                     {
                         var unmarshaller = EndpointUnmarshaller.Instance;

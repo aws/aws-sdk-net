@@ -41,6 +41,7 @@ namespace Amazon.QuickSight.Model
     {
         private CustomValuesConfiguration _customValuesConfiguration;
         private SelectAllValueOptions _selectAllValueOptions;
+        private ColumnIdentifier _sourceColumn;
         private string _sourceField;
         private string _sourceParameterName;
 
@@ -78,6 +79,21 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetSelectAllValueOptions()
         {
             return this._selectAllValueOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SourceColumn.
+        /// </summary>
+        public ColumnIdentifier SourceColumn
+        {
+            get { return this._sourceColumn; }
+            set { this._sourceColumn = value; }
+        }
+
+        // Check to see if SourceColumn property is set
+        internal bool IsSetSourceColumn()
+        {
+            return this._sourceColumn != null;
         }
 
         /// <summary>

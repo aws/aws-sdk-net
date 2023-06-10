@@ -68,6 +68,7 @@ namespace Amazon.QuickSight.Model
         /// Currently, only credentials based on user name and password are supported.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public DataSourceCredentials Credentials
         {
             get { return this._credentials; }

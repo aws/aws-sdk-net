@@ -127,8 +127,8 @@ namespace Amazon.MediaConvert.Model
 
         /// <summary>
         /// Gets and sets the property MaxContentLightLevel. Maximum light level among all samples
-        /// in the coded video sequence, in units of candelas per square meter.  This setting
-        /// doesn't have a default value; you must specify a value that is suitable for the content.
+        /// in the coded video sequence, in units of candelas per square meter. This setting doesn't
+        /// have a default value; you must specify a value that is suitable for the content.
         /// </summary>
         [AWSProperty(Min=0, Max=65535)]
         public int MaxContentLightLevel

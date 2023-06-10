@@ -42,7 +42,7 @@ namespace Amazon.Kendra.Model
         /// The identifier of the KMS key. Amazon Kendra doesn't support asymmetric keys.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=2048)]
+        [AWSProperty(Sensitive=true, Min=1, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }

@@ -86,7 +86,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// A token that ensures that the operation is called only once with the specified details.
+        /// A token that ensures that a client calls the operation only once with the specified
+        /// details.
         /// </para>
         /// </summary>
         [AWSProperty(Min=0, Max=128)]
@@ -105,8 +106,8 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Impact. 
         /// <para>
-        /// Defines the impact of the incident to customers and applications. Providing an impact
-        /// overwrites the impact provided by the response plan.
+        /// Defines the impact of the incident to customers and applications. If you provide an
+        /// impact for an incident, it overwrites the impact provided by the response plan.
         /// </para>
         ///  <p class="title"> <b>Possible impacts:</b> 
         /// </para>
@@ -150,7 +151,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property NotificationTargets. 
         /// <para>
-        /// The Amazon SNS targets that are notified when updates are made to an incident.
+        /// The Amazon SNS targets that Incident Manager notifies when a client updates an incident.
         /// </para>
         ///  
         /// <para>
@@ -174,7 +175,7 @@ namespace Amazon.SSMIncidents.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// The status of the incident. An incident can be <code>Open</code> or <code>Resolved</code>.
+        /// The status of the incident. Possible statuses are <code>Open</code> or <code>Resolved</code>.
         /// </para>
         /// </summary>
         public IncidentRecordStatus Status
@@ -195,7 +196,7 @@ namespace Amazon.SSMIncidents.Model
         /// A longer description of what occurred during the incident.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=4000)]
+        [AWSProperty(Min=0, Max=8000)]
         public string Summary
         {
             get { return this._summary; }

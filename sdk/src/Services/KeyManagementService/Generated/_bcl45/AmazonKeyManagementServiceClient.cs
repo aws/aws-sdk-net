@@ -88,16 +88,15 @@ namespace Amazon.KeyManagementService
     /// </para>
     ///  
     /// <para>
-    /// Requests must be signed by using an access key ID and a secret access key. We strongly
-    /// recommend that you <i>do not</i> use your Amazon Web Services account (root) access
-    /// key ID and secret access key for everyday work with KMS. Instead, use the access key
-    /// ID and secret access key for an IAM user. You can also use the Amazon Web Services
-    /// Security Token Service to generate temporary security credentials that you can use
-    /// to sign requests.
+    /// Requests must be signed using an access key ID and a secret access key. We strongly
+    /// recommend that you do not use your Amazon Web Services account root access key ID
+    /// and secret access key for everyday work. You can use the access key ID and secret
+    /// access key for an IAM user or you can use the Security Token Service (STS) to generate
+    /// temporary security credentials and use those to sign requests. 
     /// </para>
     ///  
     /// <para>
-    /// All KMS operations require <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
+    /// All KMS requests must be signed with <a href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
     /// Version 4</a>.
     /// </para>
     ///  
@@ -1330,7 +1329,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.  The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
         /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// 
         /// <returns>The response from the CreateAlias service method, as returned by KeyManagementService.</returns>
@@ -1622,7 +1621,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.  The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
+        /// <param name="aliasName">Specifies the alias name. This value must begin with <code>alias/</code> followed by a name, such as <code>alias/ExampleAlias</code>.  <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important> The <code>AliasName</code> value must be string of 1-256 characters. It can contain only alphanumeric characters, forward slashes (/), underscores (_), and dashes (-). The alias name cannot begin with <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>.</param>
         /// <param name="targetKeyId">Associates the alias with the specified <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a>. The KMS key must be in the same Amazon Web Services Region.  A valid key ID is required. If you supply a null or empty string value, this operation returns an error. For help finding the key ID and ARN, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/viewing-keys.html#find-cmk-id-arn">Finding the Key ID and ARN</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -2805,14 +2804,6 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// HMAC KMS keys are not supported in all Amazon Web Services Regions. If you try to
-        /// create an HMAC KMS key in an Amazon Web Services Region in which HMAC keys are not
-        /// supported, the <code>CreateKey</code> operation returns an <code>UnsupportedOperationException</code>.
-        /// For a list of Regions in which HMAC KMS keys are supported, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
-        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
         ///  
         /// </para>
         ///  </dd> <dt>Multi-Region primary keys</dt> <dt>Imported key material</dt> <dd> 
@@ -2847,18 +2838,20 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </dd> <dd> 
         /// <para>
-        /// To import your own key material into a KMS key, begin by creating a symmetric encryption
-        /// KMS key with no key material. To do this, use the <code>Origin</code> parameter of
-        /// <code>CreateKey</code> with a value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a>
-        /// operation to get a public key and import token, and use the public key to encrypt
-        /// your key material. Then, use <a>ImportKeyMaterial</a> with your import token to import
+        /// To import your own key material into a KMS key, begin by creating a KMS key with no
+        /// key material. To do this, use the <code>Origin</code> parameter of <code>CreateKey</code>
+        /// with a value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a> operation
+        /// to get a public key and import token. Use the wrapping public key to encrypt your
+        /// key material. Then, use <a>ImportKeyMaterial</a> with your import token to import
         /// the key material. For step-by-step instructions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
         /// Key Material</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
-        /// This feature supports only symmetric encryption KMS keys, including multi-Region symmetric
-        /// encryption KMS keys. You cannot import key material into any other type of KMS key.
+        /// You can import key material into KMS keys of all supported KMS key types: symmetric
+        /// encryption KMS keys, HMAC KMS keys, asymmetric encryption KMS keys, and asymmetric
+        /// signing KMS keys. You can also create multi-Region keys with imported key material.
+        /// However, you can't import key material into a KMS key in a custom key store.
         /// </para>
         ///  
         /// <para>
@@ -3215,14 +3208,6 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// HMAC KMS keys are not supported in all Amazon Web Services Regions. If you try to
-        /// create an HMAC KMS key in an Amazon Web Services Region in which HMAC keys are not
-        /// supported, the <code>CreateKey</code> operation returns an <code>UnsupportedOperationException</code>.
-        /// For a list of Regions in which HMAC KMS keys are supported, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/hmac.html">HMAC
-        /// keys in KMS</a> in the <i>Key Management Service Developer Guide</i>.
-        /// </para>
-        ///  
-        /// <para>
         ///  
         /// </para>
         ///  </dd> <dt>Multi-Region primary keys</dt> <dt>Imported key material</dt> <dd> 
@@ -3257,18 +3242,20 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </dd> <dd> 
         /// <para>
-        /// To import your own key material into a KMS key, begin by creating a symmetric encryption
-        /// KMS key with no key material. To do this, use the <code>Origin</code> parameter of
-        /// <code>CreateKey</code> with a value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a>
-        /// operation to get a public key and import token, and use the public key to encrypt
-        /// your key material. Then, use <a>ImportKeyMaterial</a> with your import token to import
+        /// To import your own key material into a KMS key, begin by creating a KMS key with no
+        /// key material. To do this, use the <code>Origin</code> parameter of <code>CreateKey</code>
+        /// with a value of <code>EXTERNAL</code>. Next, use <a>GetParametersForImport</a> operation
+        /// to get a public key and import token. Use the wrapping public key to encrypt your
+        /// key material. Then, use <a>ImportKeyMaterial</a> with your import token to import
         /// the key material. For step-by-step instructions, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
         /// Key Material</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.
         /// </para>
         ///  
         /// <para>
-        /// This feature supports only symmetric encryption KMS keys, including multi-Region symmetric
-        /// encryption KMS keys. You cannot import key material into any other type of KMS key.
+        /// You can import key material into KMS keys of all supported KMS key types: symmetric
+        /// encryption KMS keys, HMAC KMS keys, asymmetric encryption KMS keys, and asymmetric
+        /// signing KMS keys. You can also create multi-Region keys with imported key material.
+        /// However, you can't import key material into a KMS key in a custom key store.
         /// </para>
         ///  
         /// <para>
@@ -3593,22 +3580,26 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Whenever possible, use key policies to give users permission to call the <code>Decrypt</code>
-        /// operation on a particular KMS key, instead of using IAM policies. Otherwise, you might
-        /// create an IAM user policy that gives the user <code>Decrypt</code> permission on all
-        /// KMS keys. This user could decrypt ciphertext that was encrypted by KMS keys in other
-        /// accounts if the key policy for the cross-account KMS key permits it. If you must use
-        /// an IAM policy for <code>Decrypt</code> permissions, limit the user to particular KMS
-        /// keys or particular trusted accounts. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices">Best
+        /// operation on a particular KMS key, instead of using &amp;IAM; policies. Otherwise,
+        /// you might create an &amp;IAM; policy that gives the user <code>Decrypt</code> permission
+        /// on all KMS keys. This user could decrypt ciphertext that was encrypted by KMS keys
+        /// in other accounts if the key policy for the cross-account KMS key permits it. If you
+        /// must use an IAM policy for <code>Decrypt</code> permissions, limit the user to particular
+        /// KMS keys or particular trusted accounts. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices">Best
         /// practices for IAM policies</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        ///  <code>Decrypt</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>Decrypt</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of the plaintext
+        /// data, the response includes the plaintext data encrypted with the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
         /// </para>
         ///  
         /// <para>
@@ -3618,9 +3609,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
-        /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
-        /// <code>KeyId</code> parameter. 
+        ///  <b>Cross-account use</b>: Yes. If you use the <code>KeyId</code> parameter to identify
+        /// a KMS key in a different Amazon Web Services account, specify the key ARN or the alias
+        /// ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -3807,22 +3798,26 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// Whenever possible, use key policies to give users permission to call the <code>Decrypt</code>
-        /// operation on a particular KMS key, instead of using IAM policies. Otherwise, you might
-        /// create an IAM user policy that gives the user <code>Decrypt</code> permission on all
-        /// KMS keys. This user could decrypt ciphertext that was encrypted by KMS keys in other
-        /// accounts if the key policy for the cross-account KMS key permits it. If you must use
-        /// an IAM policy for <code>Decrypt</code> permissions, limit the user to particular KMS
-        /// keys or particular trusted accounts. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices">Best
+        /// operation on a particular KMS key, instead of using &amp;IAM; policies. Otherwise,
+        /// you might create an &amp;IAM; policy that gives the user <code>Decrypt</code> permission
+        /// on all KMS keys. This user could decrypt ciphertext that was encrypted by KMS keys
+        /// in other accounts if the key policy for the cross-account KMS key permits it. If you
+        /// must use an IAM policy for <code>Decrypt</code> permissions, limit the user to particular
+        /// KMS keys or particular trusted accounts. For details, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices">Best
         /// practices for IAM policies</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        ///  <code>Decrypt</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>Decrypt</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of the plaintext
+        /// data, the response includes the plaintext data encrypted with the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
         /// </para>
         ///  
         /// <para>
@@ -3832,9 +3827,9 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        ///  <b>Cross-account use</b>: Yes. To perform this operation with a KMS key in a different
-        /// Amazon Web Services account, specify the key ARN or alias ARN in the value of the
-        /// <code>KeyId</code> parameter. 
+        ///  <b>Cross-account use</b>: Yes. If you use the <code>KeyId</code> parameter to identify
+        /// a KMS key in a different Amazon Web Services account, specify the key ARN or the alias
+        /// ARN of the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -4745,21 +4740,17 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Deletes key material that you previously imported. This operation makes the specified
-        /// KMS key unusable. For more information about importing key material into KMS, see
+        /// Deletes key material that was previously imported. This operation makes the specified
+        /// KMS key temporarily unusable. To restore the usability of the KMS key, reimport the
+        /// same key material. For more information about importing key material into KMS, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
         /// 
         ///  
         /// <para>
         /// When the specified KMS key is in the <code>PendingDeletion</code> state, this operation
         /// does not change the KMS key's state. Otherwise, it changes the KMS key's state to
         /// <code>PendingImport</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// After you delete key material, you can use <a>ImportKeyMaterial</a> to reimport the
-        /// same key material into the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -4850,21 +4841,17 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Deletes key material that you previously imported. This operation makes the specified
-        /// KMS key unusable. For more information about importing key material into KMS, see
+        /// Deletes key material that was previously imported. This operation makes the specified
+        /// KMS key temporarily unusable. To restore the usability of the KMS key, reimport the
+        /// same key material. For more information about importing key material into KMS, see
         /// <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>. 
+        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
         /// 
         ///  
         /// <para>
         /// When the specified KMS key is in the <code>PendingDeletion</code> state, this operation
         /// does not change the KMS key's state. Otherwise, it changes the KMS key's state to
         /// <code>PendingImport</code>.
-        /// </para>
-        ///  
-        /// <para>
-        /// After you delete key material, you can use <a>ImportKeyMaterial</a> to reimport the
-        /// same key material into the KMS key.
         /// </para>
         ///  
         /// <para>
@@ -8167,10 +8154,10 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value
-        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>. The
-        /// symmetric encryption key used in China Regions to encrypt your data key is an SM4
-        /// encryption key.
+        /// To generate a 128-bit SM4 data key (China Regions only), specify a <code>KeySpec</code>
+        /// value of <code>AES_128</code> or a <code>NumberOfBytes</code> value of <code>16</code>.
+        /// The symmetric encryption key used in China Regions to encrypt your data key is an
+        /// SM4 encryption key.
         /// </para>
         ///  
         /// <para>
@@ -8189,12 +8176,19 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
+        ///  <code>GenerateDataKey</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateDataKey</code> for an Amazon Web Services Nitro
+        /// enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. <code>GenerateDataKey</code>
+        /// returns a copy of the data key encrypted under the specified KMS key, as usual. But
+        /// instead of a plaintext copy of the data key, the response includes a copy of the data
+        /// key encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
         /// </para>
         ///  
         /// <para>
@@ -8391,10 +8385,10 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value
-        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>. The
-        /// symmetric encryption key used in China Regions to encrypt your data key is an SM4
-        /// encryption key.
+        /// To generate a 128-bit SM4 data key (China Regions only), specify a <code>KeySpec</code>
+        /// value of <code>AES_128</code> or a <code>NumberOfBytes</code> value of <code>16</code>.
+        /// The symmetric encryption key used in China Regions to encrypt your data key is an
+        /// SM4 encryption key.
         /// </para>
         ///  
         /// <para>
@@ -8413,12 +8407,19 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
+        ///  <code>GenerateDataKey</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateDataKey</code> for an Amazon Web Services Nitro
+        /// enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. <code>GenerateDataKey</code>
+        /// returns a copy of the data key encrypted under the specified KMS key, as usual. But
+        /// instead of a plaintext copy of the data key, the response includes a copy of the data
+        /// key encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
         /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
-        /// Guide</i>.
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
         /// </para>
         ///  
         /// <para>
@@ -8652,6 +8653,23 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
+        ///  <code>GenerateDataKeyPair</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateDataKeyPair</code> for an Amazon Web Services Nitro
+        /// enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. <code>GenerateDataKeyPair</code>
+        /// returns the public data key and a copy of the private data key encrypted under the
+        /// specified KMS key, as usual. But instead of a plaintext copy of the private data key
+        /// (<code>PrivateKeyPlaintext</code>), the response includes a copy of the private data
+        /// key encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
+        /// </para>
+        ///  
+        /// <para>
         /// You can use an optional encryption context to add additional security to the encryption
         /// operation. If you specify an <code>EncryptionContext</code>, you must specify the
         /// same encryption context (a case-sensitive exact match) when decrypting the encrypted
@@ -8840,6 +8858,23 @@ namespace Amazon.KeyManagementService
         /// as specified in <a href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private
         /// key is a DER-encoded PKCS8 PrivateKeyInfo, as specified in <a href="https://tools.ietf.org/html/rfc5958">RFC
         /// 5958</a>.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>GenerateDataKeyPair</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateDataKeyPair</code> for an Amazon Web Services Nitro
+        /// enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. <code>GenerateDataKeyPair</code>
+        /// returns the public data key and a copy of the private data key encrypted under the
+        /// specified KMS key, as usual. But instead of a plaintext copy of the private data key
+        /// (<code>PrivateKeyPlaintext</code>), the response includes a copy of the private data
+        /// key encrypted under the public key from the attestation document (<code>CiphertextForRecipient</code>).
+        /// For information about the interaction between KMS and Amazon Web Services Nitro Enclaves,
+        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
+        /// Guide</i>..
         /// </para>
         ///  
         /// <para>
@@ -9403,7 +9438,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value
-        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>. The
+        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>16</code>. The
         /// symmetric encryption key used in China Regions to encrypt your data key is an SM4
         /// encryption key.
         /// </para>
@@ -9598,7 +9633,7 @@ namespace Amazon.KeyManagementService
         ///  
         /// <para>
         /// To generate an SM4 data key (China Regions only), specify a <code>KeySpec</code> value
-        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>128</code>. The
+        /// of <code>AES_128</code> or <code>NumberOfBytes</code> value of <code>16</code>. The
         /// symmetric encryption key used in China Regions to encrypt your data key is an SM4
         /// encryption key.
         /// </para>
@@ -10033,11 +10068,15 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
+        ///  <code>GenerateRandom</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateRandom</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of plaintext
+        /// bytes, the response includes the plaintext bytes encrypted under the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
         /// Guide</i>.
         /// </para>
         ///  
@@ -10142,11 +10181,15 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
+        ///  <code>GenerateRandom</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateRandom</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of plaintext
+        /// bytes, the response includes the plaintext bytes encrypted under the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
         /// Guide</i>.
         /// </para>
         ///  
@@ -10253,11 +10296,15 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
+        ///  <code>GenerateRandom</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateRandom</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of plaintext
+        /// bytes, the response includes the plaintext bytes encrypted under the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
         /// Guide</i>.
         /// </para>
         ///  
@@ -10365,11 +10412,15 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// Applications in Amazon Web Services Nitro Enclaves can call this operation by using
-        /// the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services
-        /// Nitro Enclaves Development Kit</a>. For information about the supporting parameters,
-        /// see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-        /// Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service Developer
+        ///  <code>GenerateRandom</code> also supports <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+        /// Web Services Nitro Enclaves</a>, which provide an isolated compute environment in
+        /// Amazon EC2. To call <code>GenerateRandom</code> for a Nitro enclave, use the <a href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+        /// Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the <code>Recipient</code>
+        /// parameter to provide the attestation document for the enclave. Instead of plaintext
+        /// bytes, the response includes the plaintext bytes encrypted under the public key from
+        /// the attestation document (<code>CiphertextForRecipient</code>).For information about
+        /// the interaction between KMS and Amazon Web Services Nitro Enclaves, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+        /// Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service Developer
         /// Guide</i>.
         /// </para>
         ///  
@@ -11324,32 +11375,80 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Returns the items you need to import key material into a symmetric encryption KMS
-        /// key. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// Returns the public key and an import token you need to import or reimport key material
+        /// for a KMS key. 
         /// 
         ///  
         /// <para>
-        /// This operation returns a public key and an import token. Use the public key to encrypt
-        /// the symmetric key material. Store the import token to send with a subsequent <a>ImportKeyMaterial</a>
+        /// By default, KMS keys are created with key material that KMS generates. This operation
+        /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a>, an advanced feature that lets you generate and import the cryptographic
+        /// key material for a KMS key. For more information about importing key material into
+        /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before calling <code>GetParametersForImport</code>, use the <a>CreateKey</a> operation
+        /// with an <code>Origin</code> value of <code>EXTERNAL</code> to create a KMS key with
+        /// no key material. You can import key material for a symmetric encryption KMS key, HMAC
+        /// KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also
+        /// import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// key</a> of any supported type. However, you can't import key material into a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>. You can also use <code>GetParametersForImport</code> to get a public key
+        /// and import token to <a href="kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// the original key material</a> into a KMS key whose key material expired or was deleted.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>GetParametersForImport</code> returns the items that you need to import your
+        /// key material.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The public key (or "wrapping key") of an RSA key pair that KMS generates.
+        /// </para>
+        ///  
+        /// <para>
+        /// You will use this public key to encrypt ("wrap") your key material while it's in transit
+        /// to KMS. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A import token that ensures that KMS can decrypt your key material and associate it
+        /// with the correct KMS key.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The public key and its import token are permanently linked and must be used together.
+        /// Each public key and import token set is valid for 24 hours. The expiration date and
+        /// time appear in the <code>ParametersValidTo</code> field in the <code>GetParametersForImport</code>
+        /// response. You cannot use an expired public key or import token in an <a>ImportKeyMaterial</a>
+        /// request. If your key and token expire, send another <code>GetParametersForImport</code>
         /// request.
         /// </para>
         ///  
         /// <para>
-        /// You must specify the key ID of the symmetric encryption KMS key into which you will
-        /// import key material. The KMS key <code>Origin</code> must be <code>EXTERNAL</code>.
-        /// You must also specify the wrapping algorithm and type of wrapping key (public key)
-        /// that you will use to encrypt the key material. You cannot perform this operation on
-        /// an asymmetric KMS key, an HMAC KMS key, or on any KMS key in a different Amazon Web
-        /// Services account.
+        ///  <code>GetParametersForImport</code> requires the following information:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// To import key material, you must use the public key and import token from the same
-        /// response. These items are valid for 24 hours. The expiration date and time appear
-        /// in the <code>GetParametersForImport</code> response. You cannot use an expired token
-        /// in an <a>ImportKeyMaterial</a> request. If your key and token expire, send another
-        /// <code>GetParametersForImport</code> request.
+        /// The key ID of the KMS key for which you are importing the key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The key spec of the public key ("wrapping key") that you will use to encrypt your
+        /// key material during import.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The wrapping algorithm that you will use with the public key to encrypt your key material.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can use the same or a different public key spec and wrapping algorithm each time
+        /// you import or reimport the same key material. 
         /// </para>
         ///  
         /// <para>
@@ -11440,32 +11539,80 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Returns the items you need to import key material into a symmetric encryption KMS
-        /// key. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// Returns the public key and an import token you need to import or reimport key material
+        /// for a KMS key. 
         /// 
         ///  
         /// <para>
-        /// This operation returns a public key and an import token. Use the public key to encrypt
-        /// the symmetric key material. Store the import token to send with a subsequent <a>ImportKeyMaterial</a>
+        /// By default, KMS keys are created with key material that KMS generates. This operation
+        /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a>, an advanced feature that lets you generate and import the cryptographic
+        /// key material for a KMS key. For more information about importing key material into
+        /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// Before calling <code>GetParametersForImport</code>, use the <a>CreateKey</a> operation
+        /// with an <code>Origin</code> value of <code>EXTERNAL</code> to create a KMS key with
+        /// no key material. You can import key material for a symmetric encryption KMS key, HMAC
+        /// KMS key, asymmetric encryption KMS key, or asymmetric signing KMS key. You can also
+        /// import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// key</a> of any supported type. However, you can't import key material into a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>. You can also use <code>GetParametersForImport</code> to get a public key
+        /// and import token to <a href="kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// the original key material</a> into a KMS key whose key material expired or was deleted.
+        /// </para>
+        ///  
+        /// <para>
+        ///  <code>GetParametersForImport</code> returns the items that you need to import your
+        /// key material.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The public key (or "wrapping key") of an RSA key pair that KMS generates.
+        /// </para>
+        ///  
+        /// <para>
+        /// You will use this public key to encrypt ("wrap") your key material while it's in transit
+        /// to KMS. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// A import token that ensures that KMS can decrypt your key material and associate it
+        /// with the correct KMS key.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// The public key and its import token are permanently linked and must be used together.
+        /// Each public key and import token set is valid for 24 hours. The expiration date and
+        /// time appear in the <code>ParametersValidTo</code> field in the <code>GetParametersForImport</code>
+        /// response. You cannot use an expired public key or import token in an <a>ImportKeyMaterial</a>
+        /// request. If your key and token expire, send another <code>GetParametersForImport</code>
         /// request.
         /// </para>
         ///  
         /// <para>
-        /// You must specify the key ID of the symmetric encryption KMS key into which you will
-        /// import key material. The KMS key <code>Origin</code> must be <code>EXTERNAL</code>.
-        /// You must also specify the wrapping algorithm and type of wrapping key (public key)
-        /// that you will use to encrypt the key material. You cannot perform this operation on
-        /// an asymmetric KMS key, an HMAC KMS key, or on any KMS key in a different Amazon Web
-        /// Services account.
+        ///  <code>GetParametersForImport</code> requires the following information:
         /// </para>
-        ///  
+        ///  <ul> <li> 
         /// <para>
-        /// To import key material, you must use the public key and import token from the same
-        /// response. These items are valid for 24 hours. The expiration date and time appear
-        /// in the <code>GetParametersForImport</code> response. You cannot use an expired token
-        /// in an <a>ImportKeyMaterial</a> request. If your key and token expire, send another
-        /// <code>GetParametersForImport</code> request.
+        /// The key ID of the KMS key for which you are importing the key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The key spec of the public key ("wrapping key") that you will use to encrypt your
+        /// key material during import.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The wrapping algorithm that you will use with the public key to encrypt your key material.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// You can use the same or a different public key spec and wrapping algorithm each time
+        /// you import or reimport the same key material. 
         /// </para>
         ///  
         /// <para>
@@ -11910,44 +12057,96 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Imports key material into an existing symmetric encryption KMS key that was created
-        /// without key material. After you successfully import key material into a KMS key, you
-        /// can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// Imports or reimports key material into an existing KMS key that was created without
+        /// key material. <code>ImportKeyMaterial</code> also sets the expiration model and expiration
+        /// date of the imported key material.
+        /// 
+        ///  
+        /// <para>
+        /// By default, KMS keys are created with key material that KMS generates. This operation
+        /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a>, an advanced feature that lets you generate and import the cryptographic
+        /// key material for a KMS key. For more information about importing key material into
+        /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you successfully import key material into a KMS key, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
         /// the same key material</a> into that KMS key, but you cannot import different key material.
+        /// You might reimport key material to replace key material that expired or key material
+        /// that you deleted. You might also reimport key material to change the expiration model
+        /// or expiration date of the key material. Before reimporting key material, if necessary,
+        /// call <a>DeleteImportedKeyMaterial</a> to delete the current imported key material.
         /// 
-        /// 
-        ///  
-        /// <para>
-        /// You cannot perform this operation on an asymmetric KMS key, an HMAC KMS key, or on
-        /// any KMS key in a different Amazon Web Services account. For more information about
-        /// creating KMS keys with no key material and then importing key material, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Before using this operation, call <a>GetParametersForImport</a>. Its response includes
-        /// a public key and an import token. Use the public key to encrypt the key material.
-        /// Then, submit the import token from the same <code>GetParametersForImport</code> response.
+        /// Each time you import key material into KMS, you can determine whether (<code>ExpirationModel</code>)
+        /// and when (<code>ValidTo</code>) the key material expires. To change the expiration
+        /// of your key material, you must import it again, either by calling <code>ImportKeyMaterial</code>
+        /// or using the <a href="kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import
+        /// features</a> of the KMS console.
         /// </para>
         ///  
         /// <para>
-        /// When calling this operation, you must specify the following values:
+        /// Before calling <code>ImportKeyMaterial</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The key ID or key ARN of a KMS key with no key material. Its <code>Origin</code> must
-        /// be <code>EXTERNAL</code>.
+        /// Create or identify a KMS key with no key material. The KMS key must have an <code>Origin</code>
+        /// value of <code>EXTERNAL</code>, which indicates that the KMS key is designed for imported
+        /// key material. 
         /// </para>
         ///  
         /// <para>
-        /// To create a KMS key with no key material, call <a>CreateKey</a> and set the value
-        /// of its <code>Origin</code> parameter to <code>EXTERNAL</code>. To get the <code>Origin</code>
-        /// of a KMS key, call <a>DescribeKey</a>.)
+        /// To create an new KMS key for imported key material, call the <a>CreateKey</a> operation
+        /// with an <code>Origin</code> value of <code>EXTERNAL</code>. You can create a symmetric
+        /// encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing
+        /// KMS key. You can also import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// key</a> of any supported type. However, you can't import key material into a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The encrypted key material. To get the public key to encrypt the key material, call
-        /// <a>GetParametersForImport</a>.
+        /// Use the <a>DescribeKey</a> operation to verify that the <code>KeyState</code> of the
+        /// KMS key is <code>PendingImport</code>, which indicates that the KMS key has no key
+        /// material. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are reimporting the same key material into an existing KMS key, you might need
+        /// to call the <a>DeleteImportedKeyMaterial</a> to delete its existing key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call the <a>GetParametersForImport</a> operation to get a public key and import token
+        /// set for importing key material. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the public key in the <a>GetParametersForImport</a> response to encrypt your key
+        /// material.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  Then, in an <code>ImportKeyMaterial</code> request, you submit your encrypted key
+        /// material and import token. When calling this operation, you must specify the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key ID or key ARN of the KMS key to associate with the imported key material.
+        /// Its <code>Origin</code> must be <code>EXTERNAL</code> and its <code>KeyState</code>
+        /// must be <code>PendingImport</code>. You cannot perform this operation on a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>, or on a KMS key in a different Amazon Web Services account. To get the
+        /// <code>Origin</code> and <code>KeyState</code> of a KMS key, call <a>DescribeKey</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encrypted key material. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -11957,16 +12156,21 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// Whether the key material expires (<code>ExpirationModel</code>) and, if so, when (<code>ValidTo</code>).
-        /// If you set an expiration date, on the specified date, KMS deletes the key material
-        /// from the KMS key, making the KMS key unusable. To use the KMS key in cryptographic
-        /// operations again, you must reimport the same key material. The only way to change
-        /// the expiration model or expiration date is by reimporting the same key material and
-        /// specifying a new expiration date. 
+        /// For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting
+        /// an expiration time</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set an expiration date, KMS deletes the key material from the KMS key on the
+        /// specified date, making the KMS key unusable. To use the KMS key in cryptographic operations
+        /// again, you must reimport the same key material. However, you can delete and reimport
+        /// the key material at any time, including before the key material expires. Each time
+        /// you reimport, you can eliminate or reset the expiration time.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When this operation is successful, the key state of the KMS key changes from <code>PendingImport</code>
-        /// to <code>Enabled</code>, and you can use the KMS key.
+        /// to <code>Enabled</code>, and you can use the KMS key in cryptographic operations.
         /// </para>
         ///  
         /// <para>
@@ -12089,44 +12293,96 @@ namespace Amazon.KeyManagementService
 
 
         /// <summary>
-        /// Imports key material into an existing symmetric encryption KMS key that was created
-        /// without key material. After you successfully import key material into a KMS key, you
-        /// can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
+        /// Imports or reimports key material into an existing KMS key that was created without
+        /// key material. <code>ImportKeyMaterial</code> also sets the expiration model and expiration
+        /// date of the imported key material.
+        /// 
+        ///  
+        /// <para>
+        /// By default, KMS keys are created with key material that KMS generates. This operation
+        /// supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a>, an advanced feature that lets you generate and import the cryptographic
+        /// key material for a KMS key. For more information about importing key material into
+        /// KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
+        /// key material</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// After you successfully import key material into a KMS key, you can <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html#reimport-key-material">reimport
         /// the same key material</a> into that KMS key, but you cannot import different key material.
+        /// You might reimport key material to replace key material that expired or key material
+        /// that you deleted. You might also reimport key material to change the expiration model
+        /// or expiration date of the key material. Before reimporting key material, if necessary,
+        /// call <a>DeleteImportedKeyMaterial</a> to delete the current imported key material.
         /// 
-        /// 
-        ///  
-        /// <para>
-        /// You cannot perform this operation on an asymmetric KMS key, an HMAC KMS key, or on
-        /// any KMS key in a different Amazon Web Services account. For more information about
-        /// creating KMS keys with no key material and then importing key material, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing
-        /// Key Material</a> in the <i>Key Management Service Developer Guide</i>.
         /// </para>
         ///  
         /// <para>
-        /// Before using this operation, call <a>GetParametersForImport</a>. Its response includes
-        /// a public key and an import token. Use the public key to encrypt the key material.
-        /// Then, submit the import token from the same <code>GetParametersForImport</code> response.
+        /// Each time you import key material into KMS, you can determine whether (<code>ExpirationModel</code>)
+        /// and when (<code>ValidTo</code>) the key material expires. To change the expiration
+        /// of your key material, you must import it again, either by calling <code>ImportKeyMaterial</code>
+        /// or using the <a href="kms/latest/developerguide/importing-keys-import-key-material.html#importing-keys-import-key-material-console">import
+        /// features</a> of the KMS console.
         /// </para>
         ///  
         /// <para>
-        /// When calling this operation, you must specify the following values:
+        /// Before calling <code>ImportKeyMaterial</code>:
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The key ID or key ARN of a KMS key with no key material. Its <code>Origin</code> must
-        /// be <code>EXTERNAL</code>.
+        /// Create or identify a KMS key with no key material. The KMS key must have an <code>Origin</code>
+        /// value of <code>EXTERNAL</code>, which indicates that the KMS key is designed for imported
+        /// key material. 
         /// </para>
         ///  
         /// <para>
-        /// To create a KMS key with no key material, call <a>CreateKey</a> and set the value
-        /// of its <code>Origin</code> parameter to <code>EXTERNAL</code>. To get the <code>Origin</code>
-        /// of a KMS key, call <a>DescribeKey</a>.)
+        /// To create an new KMS key for imported key material, call the <a>CreateKey</a> operation
+        /// with an <code>Origin</code> value of <code>EXTERNAL</code>. You can create a symmetric
+        /// encryption KMS key, HMAC KMS key, asymmetric encryption KMS key, or asymmetric signing
+        /// KMS key. You can also import key material into a <a href="kms/latest/developerguide/multi-region-keys-overview.html">multi-Region
+        /// key</a> of any supported type. However, you can't import key material into a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// The encrypted key material. To get the public key to encrypt the key material, call
-        /// <a>GetParametersForImport</a>.
+        /// Use the <a>DescribeKey</a> operation to verify that the <code>KeyState</code> of the
+        /// KMS key is <code>PendingImport</code>, which indicates that the KMS key has no key
+        /// material. 
+        /// </para>
+        ///  
+        /// <para>
+        /// If you are reimporting the same key material into an existing KMS key, you might need
+        /// to call the <a>DeleteImportedKeyMaterial</a> to delete its existing key material.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Call the <a>GetParametersForImport</a> operation to get a public key and import token
+        /// set for importing key material. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Use the public key in the <a>GetParametersForImport</a> response to encrypt your key
+        /// material.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        ///  Then, in an <code>ImportKeyMaterial</code> request, you submit your encrypted key
+        /// material and import token. When calling this operation, you must specify the following
+        /// values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The key ID or key ARN of the KMS key to associate with the imported key material.
+        /// Its <code>Origin</code> must be <code>EXTERNAL</code> and its <code>KeyState</code>
+        /// must be <code>PendingImport</code>. You cannot perform this operation on a KMS key
+        /// in a <a href="kms/latest/developerguide/custom-key-store-overview.html">custom key
+        /// store</a>, or on a KMS key in a different Amazon Web Services account. To get the
+        /// <code>Origin</code> and <code>KeyState</code> of a KMS key, call <a>DescribeKey</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The encrypted key material. 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -12136,16 +12392,21 @@ namespace Amazon.KeyManagementService
         ///  </li> <li> 
         /// <para>
         /// Whether the key material expires (<code>ExpirationModel</code>) and, if so, when (<code>ValidTo</code>).
-        /// If you set an expiration date, on the specified date, KMS deletes the key material
-        /// from the KMS key, making the KMS key unusable. To use the KMS key in cryptographic
-        /// operations again, you must reimport the same key material. The only way to change
-        /// the expiration model or expiration date is by reimporting the same key material and
-        /// specifying a new expiration date. 
+        /// For help with this choice, see <a href="https://docs.aws.amazon.com/en_us/kms/latest/developerguide/importing-keys.html#importing-keys-expiration">Setting
+        /// an expiration time</a> in the <i>Key Management Service Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// If you set an expiration date, KMS deletes the key material from the KMS key on the
+        /// specified date, making the KMS key unusable. To use the KMS key in cryptographic operations
+        /// again, you must reimport the same key material. However, you can delete and reimport
+        /// the key material at any time, including before the key material expires. Each time
+        /// you reimport, you can eliminate or reset the expiration time.
         /// </para>
         ///  </li> </ul> 
         /// <para>
         /// When this operation is successful, the key state of the KMS key changes from <code>PendingImport</code>
-        /// to <code>Enabled</code>, and you can use the KMS key.
+        /// to <code>Enabled</code>, and you can use the KMS key in cryptographic operations.
         /// </para>
         ///  
         /// <para>
@@ -13205,7 +13466,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</param>
+        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// 
         /// <returns>The response from the ListRetirableGrants service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -13451,7 +13712,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid Amazon Web Services principals include Amazon Web Services accounts (root), IAM users, federated users, and assumed role users. For examples of the ARN syntax for specifying a principal, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arn-syntax-iam">Amazon Web Services Identity and Access Management (IAM)</a> in the Example ARNs section of the <i>Amazon Web Services General Reference</i>.</param>
+        /// <param name="retiringPrincipal">The retiring principal for which to list grants. Enter a principal in your Amazon Web Services account. To specify the retiring principal, use the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Name (ARN)</a> of an Amazon Web Services principal. Valid principals include Amazon Web Services accounts, IAM users, IAM roles, federated users, and assumed role users. For help with the ARN syntax for a principal, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM ARNs</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -13687,7 +13948,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document can include only the following characters: <ul> <li> Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range. </li> <li> Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>). </li> <li> The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters </li> </ul> For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
+        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.) </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document can include only the following characters: <ul> <li> Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range. </li> <li> Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>). </li> <li> The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters </li> </ul> For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// 
         /// <returns>The response from the PutKeyPolicy service method, as returned by KeyManagementService.</returns>
@@ -13879,7 +14140,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         /// </summary>
         /// <param name="keyId">Sets the key policy on the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> If you don't set <code>BypassPolicyLockoutSafetyCheck</code> to true, the key policy must allow the principal that is making the <code>PutKeyPolicy</code> request to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, refer to the scenario in the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html#key-policy-default-allow-root-enable-iam">Default Key Policy</a> section of the <i>Key Management Service Developer Guide</i>. </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal (for example, an IAM user or role), you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document can include only the following characters: <ul> <li> Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range. </li> <li> Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>). </li> <li> The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters </li> </ul> For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
+        /// <param name="policy">The key policy to attach to the KMS key. The key policy must meet the following criteria: <ul> <li> The key policy must allow the calling principal to make a subsequent <code>PutKeyPolicy</code> request on the KMS key. This reduces the risk that the KMS key becomes unmanageable. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policy-default.html#prevent-unmanageable-key">Default key policy</a> in the <i>Key Management Service Developer Guide</i>. (To omit this condition, set <code>BypassPolicyLockoutSafetyCheck</code> to true.) </li> <li> Each statement in the key policy must contain one or more principals. The principals in the key policy must exist and be visible to KMS. When you create a new Amazon Web Services principal, you might need to enforce a delay before including the new principal in a key policy because the new principal might not be immediately visible to KMS. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/troubleshoot_general.html#troubleshoot_general_eventual-consistency">Changes that I make are not always immediately visible</a> in the <i>Amazon Web Services Identity and Access Management User Guide</i>. </li> </ul> A key policy document can include only the following characters: <ul> <li> Printable ASCII characters from the space character (<code>\u0020</code>) through the end of the ASCII character range. </li> <li> Printable characters in the Basic Latin and Latin-1 Supplement character set (through <code>\u00FF</code>). </li> <li> The tab (<code>\u0009</code>), line feed (<code>\u000A</code>), and carriage return (<code>\u000D</code>) special characters </li> </ul> For information about key policies, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/key-policies.html">Key policies in KMS</a> in the <i>Key Management Service Developer Guide</i>.For help writing and formatting a JSON policy document, see the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies.html">IAM JSON Policy Reference</a> in the <i> <i>Identity and Access Management User Guide</i> </i>.</param>
         /// <param name="policyName">The name of the key policy. The only valid value is <code>default</code>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -15826,8 +16087,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -15954,8 +16217,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -16017,7 +16282,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul>
         /// </summary>
         /// <param name="keyId">The unique identifier of the KMS key to delete. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30.</param>
+        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</param>
         /// 
         /// <returns>The response from the ScheduleKeyDeletion service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -16084,8 +16349,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -16214,8 +16481,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -16345,8 +16614,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -16408,7 +16679,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul>
         /// </summary>
         /// <param name="keyId">The unique identifier of the KMS key to delete. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30.</param>
+        /// <param name="pendingWindowInDays">The waiting period, specified in number of days. After the waiting period ends, KMS deletes the KMS key. If the KMS key is a multi-Region primary key with replica keys, the waiting period begins when the last of its replica keys is deleted. Otherwise, the waiting period begins immediately. This value is optional. If you include a value, it must be between 7 and 30, inclusive. If you do not include a value, it defaults to 30. You can use the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/conditions-kms.html#conditions-pending-deletion-window"> <code>kms:ScheduleKeyDeletionPendingWindowInDays</code> </a> condition key to further constrain the values that principals can specify in the <code>PendingWindowInDays</code> parameter.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -16478,8 +16749,10 @@ namespace Amazon.KeyManagementService
         /// <para>
         /// Deleting a KMS key is a destructive and potentially dangerous operation. When a KMS
         /// key is deleted, all data that was encrypted under the KMS key is unrecoverable. (The
-        /// only exception is a multi-Region replica key.) To prevent the use of a KMS key without
-        /// deleting it, use <a>DisableKey</a>. 
+        /// only exception is a <a href="kms/latest/developerguide/multi-region-keys-delete.html">multi-Region
+        /// replica key</a>, or an asymmetric or HMAC KMS key with imported key material[BUGBUG-link
+        /// to importing-keys-managing.html#import-delete-key.) To prevent the use of a KMS key
+        /// without deleting it, use <a>DisableKey</a>. 
         /// </para>
         ///  </important> 
         /// <para>
@@ -17537,7 +17810,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</param>
+        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
         /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
         /// 
         /// <returns>The response from the UpdateAlias service method, as returned by KeyManagementService.</returns>
@@ -17817,7 +18090,7 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name.</param>
+        /// <param name="aliasName">Identifies the alias that is changing its KMS key. This value must begin with <code>alias/</code> followed by the alias name, such as <code>alias/ExampleAlias</code>. You cannot use <code>UpdateAlias</code> to change the alias name. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
         /// <param name="targetKeyId">Identifies the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> to associate with the alias. You don't have permission to associate an alias with an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>. The KMS key must be in the same Amazon Web Services account and Region as the alias. Also, the new target KMS key must be the same type as the current target KMS key (both symmetric or both asymmetric or both HMAC) and they must have the same key usage.  Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>. To verify that the alias is mapped to the correct KMS key, use <a>ListAliases</a>.</param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -18718,7 +18991,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul>
         /// </summary>
         /// <param name="keyId">Updates the description of the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="description">New description for the KMS key.</param>
+        /// <param name="description">New description for the KMS key. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
         /// 
         /// <returns>The response from the UpdateKeyDescription service method, as returned by KeyManagementService.</returns>
         /// <exception cref="Amazon.KeyManagementService.Model.DependencyTimeoutException">
@@ -18894,7 +19167,7 @@ namespace Amazon.KeyManagementService
         ///  </li> </ul>
         /// </summary>
         /// <param name="keyId">Updates the description of the specified KMS key. Specify the key ID or key ARN of the KMS key. For example: <ul> <li> Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> <li> Key ARN: <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>  </li> </ul> To get the key ID and key ARN for a KMS key, use <a>ListKeys</a> or <a>DescribeKey</a>.</param>
-        /// <param name="description">New description for the KMS key.</param>
+        /// <param name="description">New description for the KMS key. <important> Do not include confidential or sensitive information in this field. This field may be displayed in plaintext in CloudTrail logs and other output. </important></param>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
         /// </param>
@@ -19384,9 +19657,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// To verify a digital signature, you can use the <code>Verify</code> operation. Specify
-        /// the same asymmetric KMS key, message, and signing algorithm that were used to produce
-        /// the signature.
+        /// To use the <code>Verify</code> operation, specify the same asymmetric KMS key, message,
+        /// and signing algorithm that were used to produce the signature. The message type does
+        /// not need to be the same as the one used for signing, but it must indicate whether
+        /// the value of the <code>Message</code> parameter should be hashed as part of the verification
+        /// process.
         /// </para>
         ///  
         /// <para>
@@ -19538,9 +19813,11 @@ namespace Amazon.KeyManagementService
         /// </para>
         ///  
         /// <para>
-        /// To verify a digital signature, you can use the <code>Verify</code> operation. Specify
-        /// the same asymmetric KMS key, message, and signing algorithm that were used to produce
-        /// the signature.
+        /// To use the <code>Verify</code> operation, specify the same asymmetric KMS key, message,
+        /// and signing algorithm that were used to produce the signature. The message type does
+        /// not need to be the same as the one used for signing, but it must indicate whether
+        /// the value of the <code>Message</code> parameter should be hashed as part of the verification
+        /// process.
         /// </para>
         ///  
         /// <para>

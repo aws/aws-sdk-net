@@ -34,7 +34,46 @@ namespace Amazon.AmplifyUIBuilder.Model
     /// </summary>
     public partial class FormInputValueProperty
     {
+        private FormInputValuePropertyBindingProperties _bindingProperties;
+        private List<FormInputValueProperty> _concat = new List<FormInputValueProperty>();
         private string _value;
+
+        /// <summary>
+        /// Gets and sets the property BindingProperties. 
+        /// <para>
+        /// The information to bind fields to data at runtime.
+        /// </para>
+        /// </summary>
+        public FormInputValuePropertyBindingProperties BindingProperties
+        {
+            get { return this._bindingProperties; }
+            set { this._bindingProperties = value; }
+        }
+
+        // Check to see if BindingProperties property is set
+        internal bool IsSetBindingProperties()
+        {
+            return this._bindingProperties != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Concat. 
+        /// <para>
+        /// A list of form properties to concatenate to create the value to assign to this field
+        /// property.
+        /// </para>
+        /// </summary>
+        public List<FormInputValueProperty> Concat
+        {
+            get { return this._concat; }
+            set { this._concat = value; }
+        }
+
+        // Check to see if Concat property is set
+        internal bool IsSetConcat()
+        {
+            return this._concat != null && this._concat.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property Value. 

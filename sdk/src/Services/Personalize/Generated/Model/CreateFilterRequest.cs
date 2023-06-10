@@ -68,7 +68,7 @@ namespace Amazon.Personalize.Model
         /// expressions</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=2500)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=2500)]
         public string FilterExpression
         {
             get { return this._filterExpression; }
@@ -103,7 +103,7 @@ namespace Amazon.Personalize.Model
         /// <summary>
         /// Gets and sets the property Tags. 
         /// <para>
-        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+        /// A list of <a href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
         /// to apply to the filter.
         /// </para>
         /// </summary>

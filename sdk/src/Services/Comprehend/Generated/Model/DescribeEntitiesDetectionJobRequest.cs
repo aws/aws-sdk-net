@@ -40,8 +40,8 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property JobId. 
         /// <para>
-        /// The identifier that Amazon Comprehend generated for the job. The operation returns
-        /// this identifier in its response.
+        /// The identifier that Amazon Comprehend generated for the job. The <code>StartEntitiesDetectionJob</code>
+        /// operation returns this identifier in its response.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=32)]

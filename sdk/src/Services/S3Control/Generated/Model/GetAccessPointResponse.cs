@@ -163,7 +163,7 @@ namespace Amazon.S3Control.Model
         /// The name of the specified access point.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=3, Max=63)]
+        [AWSProperty(Min=3, Max=255)]
         public string Name
         {
             get { return this._name; }

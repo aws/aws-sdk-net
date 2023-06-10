@@ -36,14 +36,18 @@ namespace Amazon.RDS.Model
     /// 
     ///  
     /// <para>
+    /// If you're deleting a Multi-AZ DB cluster with read replicas, all cluster members are
+    /// terminated and read replicas are promoted to standalone instances.
+    /// </para>
+    ///  
+    /// <para>
     /// For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
     /// What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.
     /// </para>
     ///  
     /// <para>
     /// For more information on Multi-AZ DB clusters, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">
-    /// Multi-AZ deployments with two readable standby DB instances</a> in the <i>Amazon RDS
-    /// User Guide</i>.
+    /// Multi-AZ DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.
     /// </para>
     /// </summary>
     public partial class DeleteDBClusterRequest : AmazonRDSRequest

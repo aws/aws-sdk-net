@@ -81,6 +81,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetApiType())
+                {
+                    context.Writer.WritePropertyName("apiType");
+                    context.Writer.Write(publicRequest.ApiType);
+                }
+
                 if(publicRequest.IsSetAuthenticationType())
                 {
                     context.Writer.WritePropertyName("authenticationType");
@@ -109,6 +115,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMergedApiExecutionRoleArn())
+                {
+                    context.Writer.WritePropertyName("mergedApiExecutionRoleArn");
+                    context.Writer.Write(publicRequest.MergedApiExecutionRoleArn);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
@@ -124,6 +136,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.OpenIDConnectConfig, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOwnerContact())
+                {
+                    context.Writer.WritePropertyName("ownerContact");
+                    context.Writer.Write(publicRequest.OwnerContact);
                 }
 
                 if(publicRequest.IsSetTags())
@@ -149,6 +167,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.UserPoolConfig, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetVisibility())
+                {
+                    context.Writer.WritePropertyName("visibility");
+                    context.Writer.Write(publicRequest.Visibility);
                 }
 
                 if(publicRequest.IsSetXrayEnabled())

@@ -67,6 +67,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetAttributeSuggestionsConfig())
+                {
+                    context.Writer.WritePropertyName("AttributeSuggestionsConfig");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = AttributeSuggestionsGetConfigMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.AttributeSuggestionsConfig, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetIndexId())
                 {
                     context.Writer.WritePropertyName("IndexId");
@@ -83,6 +94,17 @@ namespace Amazon.Kendra.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("QueryText");
                     context.Writer.Write(publicRequest.QueryText);
+                }
+
+                if(publicRequest.IsSetSuggestionTypes())
+                {
+                    context.Writer.WritePropertyName("SuggestionTypes");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestSuggestionTypesListValue in publicRequest.SuggestionTypes)
+                    {
+                            context.Writer.Write(publicRequestSuggestionTypesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
                 }
 
                 writer.WriteObjectEnd();

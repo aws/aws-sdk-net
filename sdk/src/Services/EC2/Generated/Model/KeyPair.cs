@@ -70,6 +70,7 @@ namespace Amazon.EC2.Model
         /// An unencrypted PEM encoded RSA or ED25519 private key.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string KeyMaterial
         {
             get { return this._keyMaterial; }

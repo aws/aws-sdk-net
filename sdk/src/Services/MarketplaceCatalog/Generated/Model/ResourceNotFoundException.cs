@@ -30,6 +30,11 @@ namespace Amazon.MarketplaceCatalog.Model
 {
     /// <summary>
     /// The specified resource wasn't found.
+    /// 
+    ///  
+    /// <para>
+    /// HTTP status code: 404
+    /// </para>
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

@@ -43,7 +43,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property ChannelArn. 
         /// <para>
-        /// The ARN of the channel to which you're adding users.
+        /// The ARN of the channel to which you're adding members.
         /// </para>
         /// </summary>
         [AWSProperty(Min=5, Max=1600)]
@@ -117,7 +117,7 @@ namespace Amazon.ChimeSDKMessaging.Model
         /// <summary>
         /// Gets and sets the property Type. 
         /// <para>
-        /// The membership types set for the channel users.
+        /// The membership types set for the channel members.
         /// </para>
         /// </summary>
         public ChannelMembershipType Type

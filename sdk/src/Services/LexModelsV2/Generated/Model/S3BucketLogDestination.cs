@@ -40,8 +40,8 @@ namespace Amazon.LexModelsV2.Model
         /// <summary>
         /// Gets and sets the property KmsKeyArn. 
         /// <para>
-        /// The Amazon Resource Name (ARN) of an AWS Key Management Service (KMS) key for encrypting
-        /// audio log files stored in an S3 bucket.
+        /// The Amazon Resource Name (ARN) of an Amazon Web Services Key Management Service (KMS)
+        /// key for encrypting audio log files stored in an S3 bucket.
         /// </para>
         /// </summary>
         [AWSProperty(Min=20, Max=2048)]

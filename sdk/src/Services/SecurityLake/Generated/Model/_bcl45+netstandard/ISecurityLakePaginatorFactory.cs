@@ -26,14 +26,14 @@ namespace Amazon.SecurityLake.Model
     {
 
         /// <summary>
-        /// Paginator for GetDatalakeStatus operation
+        /// Paginator for GetDataLakeSources operation
         ///</summary>
-        IGetDatalakeStatusPaginator GetDatalakeStatus(GetDatalakeStatusRequest request);
+        IGetDataLakeSourcesPaginator GetDataLakeSources(GetDataLakeSourcesRequest request);
 
         /// <summary>
-        /// Paginator for ListDatalakeExceptions operation
+        /// Paginator for ListDataLakeExceptions operation
         ///</summary>
-        IListDatalakeExceptionsPaginator ListDatalakeExceptions(ListDatalakeExceptionsRequest request);
+        IListDataLakeExceptionsPaginator ListDataLakeExceptions(ListDataLakeExceptionsRequest request);
 
         /// <summary>
         /// Paginator for ListLogSources operation

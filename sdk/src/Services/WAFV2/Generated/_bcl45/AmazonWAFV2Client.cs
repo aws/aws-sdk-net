@@ -62,20 +62,20 @@ namespace Amazon.WAFV2
     ///  </note> 
     /// <para>
     /// WAF is a web application firewall that lets you monitor the HTTP and HTTPS requests
-    /// that are forwarded to Amazon CloudFront, an Amazon API Gateway REST API, an Application
-    /// Load Balancer, an AppSync GraphQL API, or an Amazon Cognito user pool. WAF also lets
-    /// you control access to your content. Based on conditions that you specify, such as
-    /// the IP addresses that requests originate from or the values of query strings, the
-    /// Amazon API Gateway REST API, CloudFront distribution, the Application Load Balancer,
-    /// the AppSync GraphQL API, or the Amazon Cognito user pool responds to requests either
-    /// with the requested content or with an HTTP 403 status code (Forbidden). You also can
-    /// configure CloudFront to return a custom error page when a request is blocked.
+    /// that are forwarded to an Amazon CloudFront distribution, Amazon API Gateway REST API,
+    /// Application Load Balancer, AppSync GraphQL API, Amazon Cognito user pool, App Runner
+    /// service, or Amazon Web Services Verified Access instance. WAF also lets you control
+    /// access to your content, to protect the Amazon Web Services resource that WAF is monitoring.
+    /// Based on conditions that you specify, such as the IP addresses that requests originate
+    /// from or the values of query strings, the protected resource responds to requests with
+    /// either the requested content, an HTTP 403 status code (Forbidden), or with a custom
+    /// response. 
     /// </para>
     ///  
     /// <para>
     /// This API guide is for developers who need detailed information about WAF API actions,
-    /// data types, and errors. For detailed information about WAF features and an overview
-    /// of how to use WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
+    /// data types, and errors. For detailed information about WAF features and guidance for
+    /// configuring and using WAF, see the <a href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
     /// Developer Guide</a>.
     /// </para>
     ///  
@@ -87,7 +87,8 @@ namespace Amazon.WAFV2
     /// <para>
     /// For regional applications, you can use any of the endpoints in the list. A regional
     /// application can be an Application Load Balancer (ALB), an Amazon API Gateway REST
-    /// API, an AppSync GraphQL API, or an Amazon Cognito user pool. 
+    /// API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or
+    /// an Amazon Web Services Verified Access instance. 
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -339,14 +340,16 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Associates a web ACL with a regional application resource, to protect the resource.
         /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
-        /// REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. 
+        /// REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service,
+        /// or an Amazon Web Services Verified Access instance. 
         /// 
         ///  
         /// <para>
         /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
         /// configuration. To associate a web ACL, in the CloudFront call <code>UpdateDistribution</code>,
         /// set the web ACL ID to the Amazon Resource Name (ARN) of the web ACL. For information,
-        /// see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
+        /// see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// in the <i>Amazon CloudFront Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -425,14 +428,16 @@ namespace Amazon.WAFV2
         /// <summary>
         /// Associates a web ACL with a regional application resource, to protect the resource.
         /// A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway
-        /// REST API, an AppSync GraphQL API, or an Amazon Cognito user pool. 
+        /// REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service,
+        /// or an Amazon Web Services Verified Access instance. 
         /// 
         ///  
         /// <para>
         /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
         /// configuration. To associate a web ACL, in the CloudFront call <code>UpdateDistribution</code>,
         /// set the web ACL ID to the Amazon Resource Name (ARN) of the web ACL. For information,
-        /// see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
+        /// see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// in the <i>Amazon CloudFront Developer Guide</i>. 
         /// </para>
         ///  
         /// <para>
@@ -527,7 +532,8 @@ namespace Amazon.WAFV2
         /// rule type, to reflect the relative cost of each rule. Simple rules that cost little
         /// to run use fewer WCUs than more complex rules that use more processing power. Rule
         /// group capacity is fixed at creation, which helps users plan their web ACL WCU usage
-        /// when they use a rule group. The WCU limit for web ACLs is 1,500. 
+        /// when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF
+        /// web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CheckCapacity service method.</param>
@@ -620,7 +626,8 @@ namespace Amazon.WAFV2
         /// rule type, to reflect the relative cost of each rule. Simple rules that cost little
         /// to run use fewer WCUs than more complex rules that use more processing power. Rule
         /// group capacity is fixed at creation, which helps users plan their web ACL WCU usage
-        /// when they use a rule group. The WCU limit for web ACLs is 1,500. 
+        /// when they use a rule group. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF
+        /// web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CheckCapacity service method.</param>
@@ -701,6 +708,151 @@ namespace Amazon.WAFV2
             options.ResponseUnmarshaller = CheckCapacityResponseUnmarshaller.Instance;
             
             return InvokeAsync<CheckCapacityResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  CreateAPIKey
+
+
+        /// <summary>
+        /// Creates an API key that contains a set of token domains.
+        /// 
+        ///  
+        /// <para>
+        /// API keys are required for the integration of the CAPTCHA API in your JavaScript client
+        /// applications. The API lets you customize the placement and characteristics of the
+        /// CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
+        /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use a single key for up to 5 domains. After you generate a key, you can copy
+        /// it for use in your JavaScript integration. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAPIKey service method.</param>
+        /// 
+        /// <returns>The response from the CreateAPIKey service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateAPIKey">REST API Reference for CreateAPIKey Operation</seealso>
+        public virtual CreateAPIKeyResponse CreateAPIKey(CreateAPIKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAPIKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAPIKeyResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAPIKeyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Creates an API key that contains a set of token domains.
+        /// 
+        ///  
+        /// <para>
+        /// API keys are required for the integration of the CAPTCHA API in your JavaScript client
+        /// applications. The API lets you customize the placement and characteristics of the
+        /// CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
+        /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        ///  
+        /// <para>
+        /// You can use a single key for up to 5 domains. After you generate a key, you can copy
+        /// it for use in your JavaScript integration. 
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAPIKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateAPIKey service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFLimitsExceededException">
+        /// WAF couldn’t perform the operation because you exceeded your resource limit. For example,
+        /// the maximum number of <code>WebACL</code> objects that you can create for an Amazon
+        /// Web Services account. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
+        /// quotas</a> in the <i>WAF Developer Guide</i>.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateAPIKey">REST API Reference for CreateAPIKey Operation</seealso>
+        public virtual Task<CreateAPIKeyResponse> CreateAPIKeyAsync(CreateAPIKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAPIKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAPIKeyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<CreateAPIKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1227,8 +1379,9 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
-        /// Cognito user pool. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
+        /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+        /// instance. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -1356,8 +1509,9 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
-        /// Cognito user pool. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
+        /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+        /// instance. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateWebACL service method.</param>
@@ -2340,7 +2494,8 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// For Amazon CloudFront distributions, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
-        /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>.
+        /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
+        /// in the <i>Amazon CloudFront API Reference</i>. 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -2353,7 +2508,8 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// For Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront
-        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
+        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// in the <i>Amazon CloudFront API Reference</i>. 
         /// </para>
         ///  </li> </ul> </li> </ul> </note>
         /// </summary>
@@ -2449,7 +2605,8 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// For Amazon CloudFront distributions, use the CloudFront call <code>ListDistributionsByWebACLId</code>.
-        /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>.
+        /// For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
+        /// in the <i>Amazon CloudFront API Reference</i>. 
         /// </para>
         ///  </li> </ul> </li> <li> 
         /// <para>
@@ -2462,7 +2619,8 @@ namespace Amazon.WAFV2
         ///  </li> <li> 
         /// <para>
         /// For Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront
-        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
+        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// in the <i>Amazon CloudFront API Reference</i>. 
         /// </para>
         ///  </li> </ul> </li> </ul> </note>
         /// </summary>
@@ -2534,6 +2692,168 @@ namespace Amazon.WAFV2
             options.ResponseUnmarshaller = DeleteWebACLResponseUnmarshaller.Instance;
             
             return InvokeAsync<DeleteWebACLResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeAllManagedProducts
+
+
+        /// <summary>
+        /// Provides high-level information for the Amazon Web Services Managed Rules rule groups
+        /// and Amazon Web Services Marketplace managed rule groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAllManagedProducts service method.</param>
+        /// 
+        /// <returns>The response from the DescribeAllManagedProducts service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeAllManagedProducts">REST API Reference for DescribeAllManagedProducts Operation</seealso>
+        public virtual DescribeAllManagedProductsResponse DescribeAllManagedProducts(DescribeAllManagedProductsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAllManagedProductsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAllManagedProductsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeAllManagedProductsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides high-level information for the Amazon Web Services Managed Rules rule groups
+        /// and Amazon Web Services Marketplace managed rule groups.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeAllManagedProducts service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeAllManagedProducts service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeAllManagedProducts">REST API Reference for DescribeAllManagedProducts Operation</seealso>
+        public virtual Task<DescribeAllManagedProductsResponse> DescribeAllManagedProductsAsync(DescribeAllManagedProductsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeAllManagedProductsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeAllManagedProductsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeAllManagedProductsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeManagedProductsByVendor
+
+
+        /// <summary>
+        /// Provides high-level information for the managed rule groups owned by a specific vendor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeManagedProductsByVendor service method.</param>
+        /// 
+        /// <returns>The response from the DescribeManagedProductsByVendor service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedProductsByVendor">REST API Reference for DescribeManagedProductsByVendor Operation</seealso>
+        public virtual DescribeManagedProductsByVendorResponse DescribeManagedProductsByVendor(DescribeManagedProductsByVendorRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeManagedProductsByVendorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeManagedProductsByVendorResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeManagedProductsByVendorResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Provides high-level information for the managed rule groups owned by a specific vendor.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeManagedProductsByVendor service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeManagedProductsByVendor service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DescribeManagedProductsByVendor">REST API Reference for DescribeManagedProductsByVendor Operation</seealso>
+        public virtual Task<DescribeManagedProductsByVendorResponse> DescribeManagedProductsByVendorAsync(DescribeManagedProductsByVendorRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeManagedProductsByVendorRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeManagedProductsByVendorResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<DescribeManagedProductsByVendorResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -2682,13 +3002,15 @@ namespace Amazon.WAFV2
         /// Disassociates the specified regional application resource from any existing web ACL
         /// association. A resource can have at most one web ACL association. A regional application
         /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
-        /// GraphQL API, or an Amazon Cognito user pool. 
+        /// GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web
+        /// Services Verified Access instance. 
         /// 
         ///  
         /// <para>
         /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
         /// configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront
-        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
+        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// in the <i>Amazon CloudFront API Reference</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateWebACL service method.</param>
@@ -2747,13 +3069,15 @@ namespace Amazon.WAFV2
         /// Disassociates the specified regional application resource from any existing web ACL
         /// association. A resource can have at most one web ACL association. A regional application
         /// can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync
-        /// GraphQL API, or an Amazon Cognito user pool. 
+        /// GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web
+        /// Services Verified Access instance. 
         /// 
         ///  
         /// <para>
         /// For Amazon CloudFront, don't use this call. Instead, use your CloudFront distribution
         /// configuration. To disassociate a web ACL, provide an empty web ACL ID in the CloudFront
-        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.
+        /// call <code>UpdateDistribution</code>. For information, see <a href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+        /// in the <i>Amazon CloudFront API Reference</i>. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DisassociateWebACL service method.</param>
@@ -2941,6 +3265,139 @@ namespace Amazon.WAFV2
             options.ResponseUnmarshaller = GenerateMobileSdkReleaseUrlResponseUnmarshaller.Instance;
             
             return InvokeAsync<GenerateMobileSdkReleaseUrlResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  GetDecryptedAPIKey
+
+
+        /// <summary>
+        /// Returns your API key in decrypted form. Use this to check the token domains that you
+        /// have defined for the key. 
+        /// 
+        ///  
+        /// <para>
+        /// API keys are required for the integration of the CAPTCHA API in your JavaScript client
+        /// applications. The API lets you customize the placement and characteristics of the
+        /// CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
+        /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDecryptedAPIKey service method.</param>
+        /// 
+        /// <returns>The response from the GetDecryptedAPIKey service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetDecryptedAPIKey">REST API Reference for GetDecryptedAPIKey Operation</seealso>
+        public virtual GetDecryptedAPIKeyResponse GetDecryptedAPIKey(GetDecryptedAPIKeyRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDecryptedAPIKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDecryptedAPIKeyResponseUnmarshaller.Instance;
+
+            return Invoke<GetDecryptedAPIKeyResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns your API key in decrypted form. Use this to check the token domains that you
+        /// have defined for the key. 
+        /// 
+        ///  
+        /// <para>
+        /// API keys are required for the integration of the CAPTCHA API in your JavaScript client
+        /// applications. The API lets you customize the placement and characteristics of the
+        /// CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
+        /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetDecryptedAPIKey service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetDecryptedAPIKey service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetDecryptedAPIKey">REST API Reference for GetDecryptedAPIKey Operation</seealso>
+        public virtual Task<GetDecryptedAPIKeyResponse> GetDecryptedAPIKeyAsync(GetDecryptedAPIKeyRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetDecryptedAPIKeyRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetDecryptedAPIKeyResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetDecryptedAPIKeyResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3582,11 +4039,16 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Retrieves the keys that are currently blocked by a rate-based rule instance. The maximum
-        /// number of managed keys that can be blocked for a single rate-based rule instance is
-        /// 10,000. If more than 10,000 addresses exceed the rate limit, those with the highest
-        /// rates are blocked.
+        /// Retrieves the IP addresses that are currently blocked by a rate-based rule instance.
+        /// This is only available for rate-based rules that aggregate solely on the IP address
+        /// or on the forwarded IP address. 
         /// 
+        ///  
+        /// <para>
+        /// The maximum number of addresses that can be blocked for a single rate-based rule instance
+        /// is 10,000. If more than 10,000 addresses exceed the rate limit, those with the highest
+        /// rates are blocked.
+        /// </para>
         ///  
         /// <para>
         /// For a rate-based rule that you've defined inside a rule group, provide the name of
@@ -3645,6 +4107,11 @@ namespace Amazon.WAFV2
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
         /// to propagate.
         /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFUnsupportedAggregateKeyTypeException">
+        /// The rule that you've named doesn't aggregate solely on the IP address or solely on
+        /// the forwarded IP address. This call is only available for rate-based rules with an
+        /// <code>AggregateKeyType</code> setting of <code>IP</code> or <code>FORWARDED_IP</code>.
+        /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">REST API Reference for GetRateBasedStatementManagedKeys Operation</seealso>
         public virtual GetRateBasedStatementManagedKeysResponse GetRateBasedStatementManagedKeys(GetRateBasedStatementManagedKeysRequest request)
         {
@@ -3657,11 +4124,16 @@ namespace Amazon.WAFV2
 
 
         /// <summary>
-        /// Retrieves the keys that are currently blocked by a rate-based rule instance. The maximum
-        /// number of managed keys that can be blocked for a single rate-based rule instance is
-        /// 10,000. If more than 10,000 addresses exceed the rate limit, those with the highest
-        /// rates are blocked.
+        /// Retrieves the IP addresses that are currently blocked by a rate-based rule instance.
+        /// This is only available for rate-based rules that aggregate solely on the IP address
+        /// or on the forwarded IP address. 
         /// 
+        ///  
+        /// <para>
+        /// The maximum number of addresses that can be blocked for a single rate-based rule instance
+        /// is 10,000. If more than 10,000 addresses exceed the rate limit, those with the highest
+        /// rates are blocked.
+        /// </para>
         ///  
         /// <para>
         /// For a rate-based rule that you've defined inside a rule group, provide the name of
@@ -3722,6 +4194,11 @@ namespace Amazon.WAFV2
         /// just created a resource that you're using in this operation, you might just need to
         /// wait a few minutes. It can take from a few seconds to a number of minutes for changes
         /// to propagate.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFUnsupportedAggregateKeyTypeException">
+        /// The rule that you've named doesn't aggregate solely on the IP address or solely on
+        /// the forwarded IP address. This call is only available for rate-based rules with an
+        /// <code>AggregateKeyType</code> setting of <code>IP</code> or <code>FORWARDED_IP</code>.
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetRateBasedStatementManagedKeys">REST API Reference for GetRateBasedStatementManagedKeys Operation</seealso>
         public virtual Task<GetRateBasedStatementManagedKeysResponse> GetRateBasedStatementManagedKeysAsync(GetRateBasedStatementManagedKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
@@ -4348,6 +4825,137 @@ namespace Amazon.WAFV2
             options.ResponseUnmarshaller = GetWebACLForResourceResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetWebACLForResourceResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListAPIKeys
+
+
+        /// <summary>
+        /// Retrieves a list of the API keys that you've defined for the specified scope. 
+        /// 
+        ///  
+        /// <para>
+        /// API keys are required for the integration of the CAPTCHA API in your JavaScript client
+        /// applications. The API lets you customize the placement and characteristics of the
+        /// CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
+        /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAPIKeys service method.</param>
+        /// 
+        /// <returns>The response from the ListAPIKeys service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAPIKeys">REST API Reference for ListAPIKeys Operation</seealso>
+        public virtual ListAPIKeysResponse ListAPIKeys(ListAPIKeysRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAPIKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAPIKeysResponseUnmarshaller.Instance;
+
+            return Invoke<ListAPIKeysResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of the API keys that you've defined for the specified scope. 
+        /// 
+        ///  
+        /// <para>
+        /// API keys are required for the integration of the CAPTCHA API in your JavaScript client
+        /// applications. The API lets you customize the placement and characteristics of the
+        /// CAPTCHA puzzle for your end users. For more information about the CAPTCHA JavaScript
+        /// integration, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// client application integration</a> in the <i>WAF Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAPIKeys service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListAPIKeys service method, as returned by WAFV2.</returns>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInternalErrorException">
+        /// Your request is valid, but WAF couldn’t perform the operation because of a system
+        /// problem. Retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidOperationException">
+        /// The operation isn't valid.
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidParameterException">
+        /// The operation failed because WAF didn't recognize a parameter in the request. For
+        /// example: 
+        /// 
+        ///  <ul> <li> 
+        /// <para>
+        /// You specified a parameter name or value that isn't valid.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your nested statement isn't valid. You might have tried to nest a statement that can’t
+        /// be nested. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// You tried to update a <code>WebACL</code> with a <code>DefaultAction</code> that isn't
+        /// among the types available at <a>DefaultAction</a>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Your request references an ARN that is malformed, or corresponds to a resource with
+        /// which a web ACL can't be associated.
+        /// </para>
+        ///  </li> </ul>
+        /// </exception>
+        /// <exception cref="Amazon.WAFV2.Model.WAFInvalidResourceException">
+        /// WAF couldn’t perform the operation because the resource that you requested isn’t valid.
+        /// Check the resource, and try again.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAPIKeys">REST API Reference for ListAPIKeys Operation</seealso>
+        public virtual Task<ListAPIKeysResponse> ListAPIKeysAsync(ListAPIKeysRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAPIKeysRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAPIKeysResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListAPIKeysResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -6188,7 +6796,7 @@ namespace Amazon.WAFV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+        /// The policy must be composed using IAM Policy version 2012-10-17.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -6303,7 +6911,7 @@ namespace Amazon.WAFV2
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// The policy must be composed using IAM Policy version 2012-10-17 or version 2015-01-01.
+        /// The policy must be composed using IAM Policy version 2012-10-17.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -7595,8 +8203,9 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
-        /// Cognito user pool. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
+        /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+        /// instance. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebACL service method.</param>
@@ -7753,8 +8362,9 @@ namespace Amazon.WAFV2
         /// can be a combination of the types <a>Rule</a>, <a>RuleGroup</a>, and managed rule
         /// group. You can associate a web ACL with one or more Amazon Web Services resources
         /// to protect. The resources can be an Amazon CloudFront distribution, an Amazon API
-        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, or an Amazon
-        /// Cognito user pool. 
+        /// Gateway REST API, an Application Load Balancer, an AppSync GraphQL API, an Amazon
+        /// Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access
+        /// instance. 
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the UpdateWebACL service method.</param>

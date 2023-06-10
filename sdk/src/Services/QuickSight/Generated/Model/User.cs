@@ -48,7 +48,7 @@ namespace Amazon.QuickSight.Model
         /// <summary>
         /// Gets and sets the property Active. 
         /// <para>
-        /// The active status of user. When you create an Amazon QuickSight user that’s not an
+        /// The active status of user. When you create an Amazon QuickSight user that's not an
         /// IAM user or an Active Directory user, that user is inactive until they sign in and
         /// provide a password.
         /// </para>

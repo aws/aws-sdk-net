@@ -409,6 +409,10 @@ namespace Amazon.Outposts
         /// </summary>
         public static readonly LineItemStatus PREPARING = new LineItemStatus("PREPARING");
         /// <summary>
+        /// Constant REPLACED for LineItemStatus
+        /// </summary>
+        public static readonly LineItemStatus REPLACED = new LineItemStatus("REPLACED");
+        /// <summary>
         /// Constant SHIPPED for LineItemStatus
         /// </summary>
         public static readonly LineItemStatus SHIPPED = new LineItemStatus("SHIPPED");

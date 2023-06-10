@@ -68,6 +68,14 @@ namespace Amazon.LocationService.Model
         }
 
         /// <summary>
+        /// Paginator for ListKeys operation
+        ///</summary>
+        public IListKeysPaginator ListKeys(ListKeysRequest request) 
+        {
+            return new ListKeysPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListMaps operation
         ///</summary>
         public IListMapsPaginator ListMaps(ListMapsRequest request) 

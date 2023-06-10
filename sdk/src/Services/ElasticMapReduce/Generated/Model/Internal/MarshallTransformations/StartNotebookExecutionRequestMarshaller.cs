@@ -73,6 +73,20 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.EditorId);
                 }
 
+                if(publicRequest.IsSetEnvironmentVariables())
+                {
+                    context.Writer.WritePropertyName("EnvironmentVariables");
+                    context.Writer.WriteObjectStart();
+                    foreach (var publicRequestEnvironmentVariablesKvp in publicRequest.EnvironmentVariables)
+                    {
+                        context.Writer.WritePropertyName(publicRequestEnvironmentVariablesKvp.Key);
+                        var publicRequestEnvironmentVariablesValue = publicRequestEnvironmentVariablesKvp.Value;
+
+                            context.Writer.Write(publicRequestEnvironmentVariablesValue);
+                    }
+                    context.Writer.WriteObjectEnd();
+                }
+
                 if(publicRequest.IsSetExecutionEngine())
                 {
                     context.Writer.WritePropertyName("ExecutionEngine");
@@ -100,6 +114,34 @@ namespace Amazon.ElasticMapReduce.Model.Internal.MarshallTransformations
                 {
                     context.Writer.WritePropertyName("NotebookParams");
                     context.Writer.Write(publicRequest.NotebookParams);
+                }
+
+                if(publicRequest.IsSetNotebookS3Location())
+                {
+                    context.Writer.WritePropertyName("NotebookS3Location");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = NotebookS3LocationFromInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.NotebookS3Location, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOutputNotebookFormat())
+                {
+                    context.Writer.WritePropertyName("OutputNotebookFormat");
+                    context.Writer.Write(publicRequest.OutputNotebookFormat);
+                }
+
+                if(publicRequest.IsSetOutputNotebookS3Location())
+                {
+                    context.Writer.WritePropertyName("OutputNotebookS3Location");
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = OutputNotebookS3LocationFromInputMarshaller.Instance;
+                    marshaller.Marshall(publicRequest.OutputNotebookS3Location, context);
+
+                    context.Writer.WriteObjectEnd();
                 }
 
                 if(publicRequest.IsSetRelativePath())

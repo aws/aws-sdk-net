@@ -46,6 +46,11 @@ namespace Amazon.SSMContacts.Model
         IListPageReceiptsPaginator ListPageReceipts(ListPageReceiptsRequest request);
 
         /// <summary>
+        /// Paginator for ListPageResolutions operation
+        ///</summary>
+        IListPageResolutionsPaginator ListPageResolutions(ListPageResolutionsRequest request);
+
+        /// <summary>
         /// Paginator for ListPagesByContact operation
         ///</summary>
         IListPagesByContactPaginator ListPagesByContact(ListPagesByContactRequest request);
@@ -54,5 +59,25 @@ namespace Amazon.SSMContacts.Model
         /// Paginator for ListPagesByEngagement operation
         ///</summary>
         IListPagesByEngagementPaginator ListPagesByEngagement(ListPagesByEngagementRequest request);
+
+        /// <summary>
+        /// Paginator for ListPreviewRotationShifts operation
+        ///</summary>
+        IListPreviewRotationShiftsPaginator ListPreviewRotationShifts(ListPreviewRotationShiftsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRotationOverrides operation
+        ///</summary>
+        IListRotationOverridesPaginator ListRotationOverrides(ListRotationOverridesRequest request);
+
+        /// <summary>
+        /// Paginator for ListRotations operation
+        ///</summary>
+        IListRotationsPaginator ListRotations(ListRotationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListRotationShifts operation
+        ///</summary>
+        IListRotationShiftsPaginator ListRotationShifts(ListRotationShiftsRequest request);
     }
 }

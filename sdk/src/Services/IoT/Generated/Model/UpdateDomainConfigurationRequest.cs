@@ -45,6 +45,7 @@ namespace Amazon.IoT.Model
         private string _domainConfigurationName;
         private DomainConfigurationStatus _domainConfigurationStatus;
         private bool? _removeAuthorizerConfig;
+        private TlsConfig _tlsConfig;
 
         /// <summary>
         /// Gets and sets the property AuthorizerConfig. 
@@ -117,6 +118,24 @@ namespace Amazon.IoT.Model
         internal bool IsSetRemoveAuthorizerConfig()
         {
             return this._removeAuthorizerConfig.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property TlsConfig. 
+        /// <para>
+        /// An object that specifies the TLS configuration for a domain.
+        /// </para>
+        /// </summary>
+        public TlsConfig TlsConfig
+        {
+            get { return this._tlsConfig; }
+            set { this._tlsConfig = value; }
+        }
+
+        // Check to see if TlsConfig property is set
+        internal bool IsSetTlsConfig()
+        {
+            return this._tlsConfig != null;
         }
 
     }

@@ -63,7 +63,7 @@ namespace Amazon.Lightsail.Model
         /// The ID of the access key.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=20, Max=20)]
+        [AWSProperty(Sensitive=true, Min=20, Max=20)]
         public string AccessKeyId
         {
             get { return this._accessKeyId; }

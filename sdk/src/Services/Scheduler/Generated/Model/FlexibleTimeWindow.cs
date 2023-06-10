@@ -44,9 +44,9 @@ namespace Amazon.Scheduler.Model
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1440)]
-        public int MaximumWindowInMinutes
+        public int? MaximumWindowInMinutes
         {
-            get { return this._maximumWindowInMinutes.GetValueOrDefault(); }
+            get { return this._maximumWindowInMinutes; }
             set { this._maximumWindowInMinutes = value; }
         }
 

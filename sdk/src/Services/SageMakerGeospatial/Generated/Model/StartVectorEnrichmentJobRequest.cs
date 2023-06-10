@@ -49,6 +49,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// A unique token that guarantees that the call to this API is idempotent.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=36, Max=64)]
         public string ClientToken
         {
             get { return this._clientToken; }
@@ -67,7 +68,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=20, Max=2048)]
         public string ExecutionRoleArn
         {
             get { return this._executionRoleArn; }
@@ -121,9 +122,10 @@ namespace Amazon.SageMakerGeospatial.Model
         /// <summary>
         /// Gets and sets the property KmsKeyId. 
         /// <para>
-        /// The Amazon Key Management Service (KMS) key ID for server-side encryption.
+        /// The Key Management Service key ID for server-side encryption.
         /// </para>
         /// </summary>
+        [AWSProperty(Min=0, Max=2048)]
         public string KmsKeyId
         {
             get { return this._kmsKeyId; }
@@ -142,7 +144,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// The name of the Vector Enrichment job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=0, Max=200)]
         public string Name
         {
             get { return this._name; }

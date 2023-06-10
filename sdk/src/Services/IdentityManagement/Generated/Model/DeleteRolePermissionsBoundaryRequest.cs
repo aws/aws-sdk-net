@@ -32,11 +32,15 @@ namespace Amazon.IdentityManagement.Model
     /// Container for the parameters to the DeleteRolePermissionsBoundary operation.
     /// Deletes the permissions boundary for the specified IAM role. 
     /// 
+    ///  
+    /// <para>
+    /// You cannot set the boundary for a service-linked role.
+    /// </para>
     ///  <important> 
     /// <para>
     /// Deleting the permissions boundary for a role might increase its permissions. For example,
     /// it might allow anyone who assumes the role to perform all the actions granted in its
-    /// permissions policies. 
+    /// permissions policies.
     /// </para>
     ///  </important>
     /// </summary>

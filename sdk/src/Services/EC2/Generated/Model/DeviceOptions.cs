@@ -29,7 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Options for an Amazon Web Services Verified Access device-identity based trust provider.
+    /// Describes the options for an Amazon Web Services Verified Access device-identity based
+    /// trust provider.
     /// </summary>
     public partial class DeviceOptions
     {

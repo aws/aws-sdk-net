@@ -54,11 +54,44 @@ namespace Amazon.TranscribeService.Model
     /// </summary>
     public partial class CreateVocabularyRequest : AmazonTranscribeServiceRequest
     {
+        private string _dataAccessRoleArn;
         private LanguageCode _languageCode;
         private List<string> _phrases = new List<string>();
         private List<Tag> _tags = new List<Tag>();
         private string _vocabularyFileUri;
         private string _vocabularyName;
+
+        /// <summary>
+        /// Gets and sets the property DataAccessRoleArn. 
+        /// <para>
+        /// The Amazon Resource Name (ARN) of an IAM role that has permissions to access the Amazon
+        /// S3 bucket that contains your input files (in this case, your custom vocabulary). If
+        /// the role that you specify doesn’t have the appropriate permissions to access the specified
+        /// Amazon S3 location, your request fails.
+        /// </para>
+        ///  
+        /// <para>
+        /// IAM role ARNs have the format <code>arn:partition:iam::account:role/role-name-with-path</code>.
+        /// For example: <code>arn:aws:iam::111122223333:role/Admin</code>.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html#identifiers-arns">IAM
+        /// ARNs</a>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=20, Max=2048)]
+        public string DataAccessRoleArn
+        {
+            get { return this._dataAccessRoleArn; }
+            set { this._dataAccessRoleArn = value; }
+        }
+
+        // Check to see if DataAccessRoleArn property is set
+        internal bool IsSetDataAccessRoleArn()
+        {
+            return this._dataAccessRoleArn != null;
+        }
 
         /// <summary>
         /// Gets and sets the property LanguageCode. 

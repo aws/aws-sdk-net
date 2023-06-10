@@ -57,7 +57,7 @@ namespace Amazon.Comprehend.Model
         /// <summary>
         /// Gets and sets the property NextToken. 
         /// <para>
-        /// The list entity recognizer summaries.
+        /// Identifies the next page of results to return.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1)]

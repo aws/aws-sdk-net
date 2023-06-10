@@ -43,9 +43,12 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property AdditionalResources. 
         /// <para>
-        /// The additional resources for a choice. A choice can have up to two additional resources:
-        /// one of type <code>HELPFUL_RESOURCE</code>, one of type <code>IMPROVEMENT_PLAN</code>,
-        /// or both.
+        /// The additional resources for a choice in a custom lens.
+        /// </para>
+        ///  
+        /// <para>
+        /// A choice can have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>,
+        /// one of type <code>IMPROVEMENT_PLAN</code>, or both.
         /// </para>
         /// </summary>
         public List<AdditionalResources> AdditionalResources
@@ -95,7 +98,11 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property HelpfulResource. 
         /// <para>
-        /// The choice level helpful resource.
+        /// The helpful resource (both text and URL) for a particular choice.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field only applies to custom lenses. Each choice can have only one helpful resource.
         /// </para>
         /// </summary>
         public ChoiceContent HelpfulResource
@@ -113,7 +120,12 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ImprovementPlan. 
         /// <para>
-        /// The choice level improvement plan.
+        /// The improvement plan (both text and URL) for a particular choice.
+        /// </para>
+        ///  
+        /// <para>
+        /// This field only applies to custom lenses. Each choice can have only one improvement
+        /// plan.
         /// </para>
         /// </summary>
         public ChoiceContent ImprovementPlan

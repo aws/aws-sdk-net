@@ -88,6 +88,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     unmarshalledObject.ElasticsearchConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eventBridgeConfig", targetDepth))
+                {
+                    var unmarshaller = EventBridgeDataSourceConfigUnmarshaller.Instance;
+                    unmarshalledObject.EventBridgeConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("httpConfig", targetDepth))
                 {
                     var unmarshaller = HttpDataSourceConfigUnmarshaller.Instance;

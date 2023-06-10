@@ -59,7 +59,7 @@ namespace Amazon.HealthLake.Model
         /// <summary>
         /// Gets and sets the property Value. 
         /// <para>
-        ///  The value portion of tag. Tag values are case sensitive. 
+        ///  The value portion of a tag. Tag values are case sensitive. 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=0, Max=256)]

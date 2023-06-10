@@ -103,7 +103,7 @@ namespace Amazon.DocDBElastic.Model
         /// </para>
         ///  </li> </ul>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Sensitive=true)]
         public string AdminUserPassword
         {
             get { return this._adminUserPassword; }

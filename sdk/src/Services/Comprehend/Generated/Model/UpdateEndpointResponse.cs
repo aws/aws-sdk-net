@@ -33,6 +33,26 @@ namespace Amazon.Comprehend.Model
     /// </summary>
     public partial class UpdateEndpointResponse : AmazonWebServiceResponse
     {
+        private string _desiredModelArn;
+
+        /// <summary>
+        /// Gets and sets the property DesiredModelArn. 
+        /// <para>
+        /// The Amazon Resource Number (ARN) of the new model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=256)]
+        public string DesiredModelArn
+        {
+            get { return this._desiredModelArn; }
+            set { this._desiredModelArn = value; }
+        }
+
+        // Check to see if DesiredModelArn property is set
+        internal bool IsSetDesiredModelArn()
+        {
+            return this._desiredModelArn != null;
+        }
 
     }
 }

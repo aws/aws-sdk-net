@@ -112,6 +112,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     context.Writer.WriteObjectEnd();
                 }
 
+                if(publicRequest.IsSetMergedApiExecutionRoleArn())
+                {
+                    context.Writer.WritePropertyName("mergedApiExecutionRoleArn");
+                    context.Writer.Write(publicRequest.MergedApiExecutionRoleArn);
+                }
+
                 if(publicRequest.IsSetName())
                 {
                     context.Writer.WritePropertyName("name");
@@ -127,6 +133,12 @@ namespace Amazon.AppSync.Model.Internal.MarshallTransformations
                     marshaller.Marshall(publicRequest.OpenIDConnectConfig, context);
 
                     context.Writer.WriteObjectEnd();
+                }
+
+                if(publicRequest.IsSetOwnerContact())
+                {
+                    context.Writer.WritePropertyName("ownerContact");
+                    context.Writer.Write(publicRequest.OwnerContact);
                 }
 
                 if(publicRequest.IsSetUserPoolConfig())

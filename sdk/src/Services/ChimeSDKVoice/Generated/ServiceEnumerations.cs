@@ -133,6 +133,56 @@ namespace Amazon.ChimeSDKVoice
 
 
     /// <summary>
+    /// Constants used for properties of type CallLegType.
+    /// </summary>
+    public class CallLegType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Callee for CallLegType
+        /// </summary>
+        public static readonly CallLegType Callee = new CallLegType("Callee");
+        /// <summary>
+        /// Constant Caller for CallLegType
+        /// </summary>
+        public static readonly CallLegType Caller = new CallLegType("Caller");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public CallLegType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static CallLegType FindValue(string value)
+        {
+            return FindValue<CallLegType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator CallLegType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Capability.
     /// </summary>
     public class Capability : ConstantClass
@@ -332,6 +382,52 @@ namespace Amazon.ChimeSDKVoice
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator GeoMatchLevel(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type LanguageCode.
+    /// </summary>
+    public class LanguageCode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant EnUS for LanguageCode
+        /// </summary>
+        public static readonly LanguageCode EnUS = new LanguageCode("en-US");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public LanguageCode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static LanguageCode FindValue(string value)
+        {
+            return FindValue<LanguageCode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator LanguageCode(string value)
         {
             return FindValue(value);
         }

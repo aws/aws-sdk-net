@@ -254,9 +254,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property IpAddress. 
         /// <para>
-        /// The IP address of the game session. To connect to a GameLift game server, an app needs
-        /// both the IP address and port number. This value is set once the new game session is
-        /// placed (placement status is <code>FULFILLED</code>). 
+        /// The IP address of the game session. To connect to a Amazon GameLift game server, an
+        /// app needs both the IP address and port number. This value is set once the new game
+        /// session is placed (placement status is <code>FULFILLED</code>). 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=128)]
@@ -377,9 +377,9 @@ namespace Amazon.GameLift.Model
         /// <summary>
         /// Gets and sets the property Port. 
         /// <para>
-        /// The port number for the game session. To connect to a GameLift game server, an app
-        /// needs both the IP address and port number. This value is set once the new game session
-        /// is placed (placement status is <code>FULFILLED</code>).
+        /// The port number for the game session. To connect to a Amazon GameLift game server,
+        /// an app needs both the IP address and port number. This value is set once the new game
+        /// session is placed (placement status is <code>FULFILLED</code>).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=60000)]
@@ -440,9 +440,9 @@ namespace Amazon.GameLift.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <b>FAILED</b> -- GameLift is not able to complete the process of placing the game
-        /// session. Common reasons are the game session terminated before the placement process
-        /// was completed, or an unexpected internal error.
+        ///  <b>FAILED</b> -- Amazon GameLift is not able to complete the process of placing the
+        /// game session. Common reasons are the game session terminated before the placement
+        /// process was completed, or an unexpected internal error.
         /// </para>
         ///  </li> </ul>
         /// </summary>

@@ -51,6 +51,11 @@ namespace Amazon.SecurityHub.Model
         IGetEnabledStandardsPaginator GetEnabledStandards(GetEnabledStandardsRequest request);
 
         /// <summary>
+        /// Paginator for GetFindingHistory operation
+        ///</summary>
+        IGetFindingHistoryPaginator GetFindingHistory(GetFindingHistoryRequest request);
+
+        /// <summary>
         /// Paginator for GetFindings operation
         ///</summary>
         IGetFindingsPaginator GetFindings(GetFindingsRequest request);
@@ -84,5 +89,15 @@ namespace Amazon.SecurityHub.Model
         /// Paginator for ListOrganizationAdminAccounts operation
         ///</summary>
         IListOrganizationAdminAccountsPaginator ListOrganizationAdminAccounts(ListOrganizationAdminAccountsRequest request);
+
+        /// <summary>
+        /// Paginator for ListSecurityControlDefinitions operation
+        ///</summary>
+        IListSecurityControlDefinitionsPaginator ListSecurityControlDefinitions(ListSecurityControlDefinitionsRequest request);
+
+        /// <summary>
+        /// Paginator for ListStandardsControlAssociations operation
+        ///</summary>
+        IListStandardsControlAssociationsPaginator ListStandardsControlAssociations(ListStandardsControlAssociationsRequest request);
     }
 }

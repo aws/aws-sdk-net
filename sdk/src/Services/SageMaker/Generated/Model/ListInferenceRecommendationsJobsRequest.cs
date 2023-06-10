@@ -39,6 +39,8 @@ namespace Amazon.SageMaker.Model
         private DateTime? _lastModifiedTimeAfter;
         private DateTime? _lastModifiedTimeBefore;
         private int? _maxResults;
+        private string _modelNameEquals;
+        private string _modelPackageVersionArnEquals;
         private string _nameContains;
         private string _nextToken;
         private ListInferenceRecommendationsJobsSortBy _sortBy;
@@ -135,6 +137,44 @@ namespace Amazon.SageMaker.Model
         internal bool IsSetMaxResults()
         {
             return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelNameEquals. 
+        /// <para>
+        /// A filter that returns only jobs that were created for this model.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=63)]
+        public string ModelNameEquals
+        {
+            get { return this._modelNameEquals; }
+            set { this._modelNameEquals = value; }
+        }
+
+        // Check to see if ModelNameEquals property is set
+        internal bool IsSetModelNameEquals()
+        {
+            return this._modelNameEquals != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModelPackageVersionArnEquals. 
+        /// <para>
+        /// A filter that returns only jobs that were created for this versioned model package.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
+        public string ModelPackageVersionArnEquals
+        {
+            get { return this._modelPackageVersionArnEquals; }
+            set { this._modelPackageVersionArnEquals = value; }
+        }
+
+        // Check to see if ModelPackageVersionArnEquals property is set
+        internal bool IsSetModelPackageVersionArnEquals()
+        {
+            return this._modelPackageVersionArnEquals != null;
         }
 
         /// <summary>

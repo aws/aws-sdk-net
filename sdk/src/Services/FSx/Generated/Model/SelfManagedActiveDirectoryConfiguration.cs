@@ -144,7 +144,7 @@ namespace Amazon.FSx.Model
         /// will use to join to your AD domain.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=256)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=256)]
         public string Password
         {
             get { return this._password; }

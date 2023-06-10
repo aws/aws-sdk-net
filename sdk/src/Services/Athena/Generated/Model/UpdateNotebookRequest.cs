@@ -109,7 +109,7 @@ namespace Amazon.Athena.Model
         /// <summary>
         /// Gets and sets the property SessionId. 
         /// <para>
-        /// The ID of the session in which the notebook will be updated.
+        /// The active notebook session ID. Required if the notebook has an active session.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

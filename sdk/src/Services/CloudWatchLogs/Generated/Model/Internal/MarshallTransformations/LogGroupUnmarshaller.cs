@@ -82,6 +82,12 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                     unmarshalledObject.DataProtectionStatus = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("inheritedProperties", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<string, StringUnmarshaller>(StringUnmarshaller.Instance);
+                    unmarshalledObject.InheritedProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("kmsKeyId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
@@ -102,7 +108,7 @@ namespace Amazon.CloudWatchLogs.Model.Internal.MarshallTransformations
                 }
                 if (context.TestExpression("retentionInDays", targetDepth))
                 {
-                    var unmarshaller = IntUnmarshaller.Instance;
+                    var unmarshaller = NullableIntUnmarshaller.Instance;
                     unmarshalledObject.RetentionInDays = unmarshaller.Unmarshall(context);
                     continue;
                 }

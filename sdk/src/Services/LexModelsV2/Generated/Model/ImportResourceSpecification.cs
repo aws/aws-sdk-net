@@ -38,6 +38,7 @@ namespace Amazon.LexModelsV2.Model
         private BotImportSpecification _botImportSpecification;
         private BotLocaleImportSpecification _botLocaleImportSpecification;
         private CustomVocabularyImportSpecification _customVocabularyImportSpecification;
+        private TestSetImportResourceSpecification _testSetImportResourceSpecification;
 
         /// <summary>
         /// Gets and sets the property BotImportSpecification. 
@@ -88,6 +89,24 @@ namespace Amazon.LexModelsV2.Model
         internal bool IsSetCustomVocabularyImportSpecification()
         {
             return this._customVocabularyImportSpecification != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TestSetImportResourceSpecification. 
+        /// <para>
+        /// Specifications for the test set that is imported.
+        /// </para>
+        /// </summary>
+        public TestSetImportResourceSpecification TestSetImportResourceSpecification
+        {
+            get { return this._testSetImportResourceSpecification; }
+            set { this._testSetImportResourceSpecification = value; }
+        }
+
+        // Check to see if TestSetImportResourceSpecification property is set
+        internal bool IsSetTestSetImportResourceSpecification()
+        {
+            return this._testSetImportResourceSpecification != null;
         }
 
     }

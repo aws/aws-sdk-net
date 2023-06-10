@@ -2192,6 +2192,243 @@ namespace Amazon.Mgn
 
         #endregion
         
+        #region  ListExportErrors
+
+        /// <summary>
+        /// List export errors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExportErrors service method.</param>
+        /// 
+        /// <returns>The response from the ListExportErrors service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">REST API Reference for ListExportErrors Operation</seealso>
+        public virtual ListExportErrorsResponse ListExportErrors(ListExportErrorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportErrorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportErrorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExportErrors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExportErrors operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExportErrors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">REST API Reference for ListExportErrors Operation</seealso>
+        public virtual IAsyncResult BeginListExportErrors(ListExportErrorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportErrorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExportErrors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExportErrors.</param>
+        /// 
+        /// <returns>Returns a  ListExportErrorsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExportErrors">REST API Reference for ListExportErrors Operation</seealso>
+        public virtual ListExportErrorsResponse EndListExportErrors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListExportErrorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListExports
+
+        /// <summary>
+        /// List exports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListExports service method.</param>
+        /// 
+        /// <returns>The response from the ListExports service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        public virtual ListExportsResponse ListExports(ListExportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListExportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListExports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListExports operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListExports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        public virtual IAsyncResult BeginListExports(ListExportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListExportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListExportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListExports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListExports.</param>
+        /// 
+        /// <returns>Returns a  ListExportsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListExports">REST API Reference for ListExports Operation</seealso>
+        public virtual ListExportsResponse EndListExports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListExportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListImportErrors
+
+        /// <summary>
+        /// List import errors.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImportErrors service method.</param>
+        /// 
+        /// <returns>The response from the ListImportErrors service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors">REST API Reference for ListImportErrors Operation</seealso>
+        public virtual ListImportErrorsResponse ListImportErrors(ListImportErrorsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportErrorsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportErrorsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImportErrors operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImportErrors operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImportErrors
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors">REST API Reference for ListImportErrors Operation</seealso>
+        public virtual IAsyncResult BeginListImportErrors(ListImportErrorsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportErrorsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportErrorsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImportErrors operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImportErrors.</param>
+        /// 
+        /// <returns>Returns a  ListImportErrorsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImportErrors">REST API Reference for ListImportErrors Operation</seealso>
+        public virtual ListImportErrorsResponse EndListImportErrors(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImportErrorsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListImports
+
+        /// <summary>
+        /// List imports.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListImports service method.</param>
+        /// 
+        /// <returns>The response from the ListImports service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual ListImportsResponse ListImports(ListImportsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return Invoke<ListImportsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListImports operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListImports
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual IAsyncResult BeginListImports(ListImportsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListImportsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListImportsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListImports operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListImports.</param>
+        /// 
+        /// <returns>Returns a  ListImportsResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ListImports">REST API Reference for ListImports Operation</seealso>
+        public virtual ListImportsResponse EndListImports(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListImportsResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListSourceServerActions
 
         /// <summary>
@@ -2893,6 +3130,139 @@ namespace Amazon.Mgn
         public virtual StartCutoverResponse EndStartCutover(IAsyncResult asyncResult)
         {
             return EndInvoke<StartCutoverResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartExport
+
+        /// <summary>
+        /// Start export.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartExport service method.</param>
+        /// 
+        /// <returns>The response from the StartExport service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport">REST API Reference for StartExport Operation</seealso>
+        public virtual StartExportResponse StartExport(StartExportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportResponseUnmarshaller.Instance;
+
+            return Invoke<StartExportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartExport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartExport operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartExport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport">REST API Reference for StartExport Operation</seealso>
+        public virtual IAsyncResult BeginStartExport(StartExportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartExportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartExportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartExport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartExport.</param>
+        /// 
+        /// <returns>Returns a  StartExportResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartExport">REST API Reference for StartExport Operation</seealso>
+        public virtual StartExportResponse EndStartExport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartExportResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartImport
+
+        /// <summary>
+        /// Start import.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartImport service method.</param>
+        /// 
+        /// <returns>The response from the StartImport service method, as returned by Mgn.</returns>
+        /// <exception cref="Amazon.Mgn.Model.ConflictException">
+        /// The request could not be completed due to a conflict with the current state of the
+        /// target resource.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ResourceNotFoundException">
+        /// Resource not found exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ServiceQuotaExceededException">
+        /// The request could not be completed because its exceeded the service quota.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.UninitializedAccountException">
+        /// Uninitialized account exception.
+        /// </exception>
+        /// <exception cref="Amazon.Mgn.Model.ValidationException">
+        /// Validate exception.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual StartImportResponse StartImport(StartImportRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return Invoke<StartImportResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartImport operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartImport operation on AmazonMgnClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartImport
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual IAsyncResult BeginStartImport(StartImportRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartImportRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartImportResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartImport operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartImport.</param>
+        /// 
+        /// <returns>Returns a  StartImportResult from Mgn.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/StartImport">REST API Reference for StartImport Operation</seealso>
+        public virtual StartImportResponse EndStartImport(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartImportResponse>(asyncResult);
         }
 
         #endregion

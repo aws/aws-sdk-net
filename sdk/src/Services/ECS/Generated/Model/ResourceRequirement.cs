@@ -75,8 +75,8 @@ namespace Amazon.ECS.Model
         ///  
         /// <para>
         /// If the <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-        /// the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a task
-        /// definition.
+        /// the <code>deviceName</code> for an <a href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
+        /// specified in a task definition.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]

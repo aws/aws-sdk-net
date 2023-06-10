@@ -43,7 +43,7 @@ namespace Amazon.ECS.Model
     ///  </li> <li> 
     /// <para>
     ///  There is an interface Amazon VPC endpoint for Amazon ECS, but there is not one for
-    /// for Systems Manager Session Manager
+    /// Systems Manager Session Manager
     /// </para>
     ///  </li> </ul> 
     /// <para>

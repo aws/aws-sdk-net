@@ -98,7 +98,7 @@ namespace Amazon.Amplify.Model
         /// credentials and provide them in the format <code>user:password</code>.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=2000)]
+        [AWSProperty(Sensitive=true, Max=2000)]
         public string BasicAuthCredentials
         {
             get { return this._basicAuthCredentials; }
@@ -136,7 +136,7 @@ namespace Amazon.Amplify.Model
         ///  The build specification (build spec) for the branch. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=25000)]
+        [AWSProperty(Sensitive=true, Min=1, Max=25000)]
         public string BuildSpec
         {
             get { return this._buildSpec; }

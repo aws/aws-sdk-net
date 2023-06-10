@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WorkSpaces.Model
 {
     /// <summary>
-    /// Information about the Standby WorkSpace.
+    /// Information about the standby WorkSpace.
     /// </summary>
     public partial class PendingCreateStandbyWorkspacesRequest
     {
@@ -41,7 +41,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property DirectoryId. 
         /// <para>
-        /// The identifier of the directory for the Standby WorkSpace.
+        /// The identifier of the directory for the standby WorkSpace.
         /// </para>
         /// </summary>
         [AWSProperty(Min=10, Max=65)]
@@ -60,7 +60,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property State. 
         /// <para>
-        /// The operational state of the Standby WorkSpace.
+        /// The operational state of the standby WorkSpace.
         /// </para>
         /// </summary>
         public WorkspaceState State
@@ -78,7 +78,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// Describes the Standby WorkSpace that was created.
+        /// Describes the standby WorkSpace that was created.
         /// </para>
         ///  
         /// <para>
@@ -104,7 +104,7 @@ namespace Amazon.WorkSpaces.Model
         /// <summary>
         /// Gets and sets the property WorkspaceId. 
         /// <para>
-        /// The identifier of the Standby WorkSpace.
+        /// The identifier of the standby WorkSpace.
         /// </para>
         /// </summary>
         public string WorkspaceId

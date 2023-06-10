@@ -30,7 +30,7 @@ namespace Amazon.CloudFormation.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeStackSetOperation operation.
-    /// Returns the description of the specified stack set operation.
+    /// Returns the description of the specified StackSet operation.
     /// </summary>
     public partial class DescribeStackSetOperationRequest : AmazonCloudFormationRequest
     {

@@ -43,12 +43,25 @@ namespace Amazon.Transfer.Model
     /// <code>ServerProtocol</code>, <code>SourceIp</code>, and <code>UserPassword</code>
     /// are all optional. 
     /// </para>
-    ///  <note> 
+    ///  
+    /// <para>
+    /// Note the following:
+    /// </para>
+    ///  <ul> <li> 
     /// <para>
     ///  You cannot use <code>TestIdentityProvider</code> if the <code>IdentityProviderType</code>
-    /// of your server is <code>SERVICE_MANAGED</code>. 
+    /// of your server is <code>SERVICE_MANAGED</code>.
     /// </para>
-    ///  </note> <ul> <li> 
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TestIdentityProvider</code> does not work with keys: it only accepts passwords.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>TestIdentityProvider</code> can test the password operation for a custom Identity
+    /// Provider that handles keys and passwords.
+    /// </para>
+    ///  </li> <li> 
     /// <para>
     ///  If you provide any incorrect values for any parameters, the <code>Response</code>
     /// field is empty. 
@@ -71,7 +84,13 @@ namespace Amazon.Transfer.Model
     ///  
     /// <para>
     ///  <code>An error occurred (ResourceNotFoundException) when calling the TestIdentityProvider
-    /// operation: Unknown server</code> 
+    /// operation: Unknown server</code>. 
+    /// </para>
+    ///  
+    /// <para>
+    /// It is possible your sever is in a different region. You can specify a region by adding
+    /// the following: <code>--region region-code</code>, such as <code>--region us-east-2</code>
+    /// to specify a server in <b>US East (Ohio)</b>.
     /// </para>
     ///  </li> </ul>
     /// </summary>
@@ -124,6 +143,10 @@ namespace Amazon.Transfer.Model
         /// <para>
         /// File Transfer Protocol (FTP)
         /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Applicability Statement 2 (AS2)
+        /// </para>
         ///  </li> </ul>
         /// </summary>
         public Protocol ServerProtocol
@@ -141,7 +164,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property SourceIp. 
         /// <para>
-        /// The source IP address of the user account to be tested.
+        /// The source IP address of the account to be tested.
         /// </para>
         /// </summary>
         [AWSProperty(Max=32)]
@@ -160,7 +183,7 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserName. 
         /// <para>
-        /// The name of the user account to be tested.
+        /// The name of the account to be tested.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=3, Max=100)]
@@ -179,10 +202,10 @@ namespace Amazon.Transfer.Model
         /// <summary>
         /// Gets and sets the property UserPassword. 
         /// <para>
-        /// The password of the user account to be tested.
+        /// The password of the account to be tested.
         /// </para>
         /// </summary>
-        [AWSProperty(Max=1024)]
+        [AWSProperty(Sensitive=true, Max=1024)]
         public string UserPassword
         {
             get { return this._userPassword; }

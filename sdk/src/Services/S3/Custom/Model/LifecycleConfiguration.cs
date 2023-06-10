@@ -20,7 +20,14 @@ using System.IO;
 
 namespace Amazon.S3.Model
 {
-    /// <summary>Lifecycle Configuration
+    /// <summary>
+    /// <para>
+    /// Container for lifecycle rules. You can add as many as 1000 rules.
+    /// </para>
+    /// <para>
+    /// For more information see, <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
+    /// your storage lifecycle</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
     /// </summary>
     public class LifecycleConfiguration
     {

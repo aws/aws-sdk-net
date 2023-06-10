@@ -188,9 +188,15 @@ namespace Amazon.Runtime.Credentials.Internal
                     }
                     catch (Exception ex)
                     {
-                        _logger.Error(ex,$"Refreshing SSOToken for [{options.StartUrl}] failed: {ex.Message}");
-
-                        if (!ssoToken.IsExpired())
+                        _logger.Error(ex, $"Refreshing SSOToken for [{options.StartUrl}] failed: {ex.Message}");
+                        //if refreshing the token failed that means the refresh token was expired.
+                        //if the refresh token is expired and access token is expired and if the user specifies a callback with 
+                        //option.SupportsGettingNewToken is true then we will generate a new token.
+                        if (ssoToken.IsExpired() && options.SupportsGettingNewToken)
+                        {
+                            return GenerateNewToken(options);
+                        }
+                        else if (!ssoToken.IsExpired())
                         {
                             var newInMemoryToken = new CacheState
                             {
@@ -371,8 +377,11 @@ namespace Amazon.Runtime.Credentials.Internal
                     catch (Exception ex)
                     {
                         _logger.Error(ex, $"Refreshing SSOToken for [{options.Session}] failed: {ex.Message}");
-
-                        if (!ssoToken.IsExpired())
+                        if (ssoToken.IsExpired() && options.SupportsGettingNewToken)
+                        {
+                            return await GenerateNewTokenAsync(options, cancellationToken).ConfigureAwait(false);
+                        }
+                        else if (!ssoToken.IsExpired())
                         {
                             var newInMemoryToken = new CacheState
                             {
@@ -425,7 +434,6 @@ namespace Amazon.Runtime.Credentials.Internal
                 throw new AmazonClientException("No valid SSO Token could be found.");
             }
         }
-        
         private async Task<SsoToken> GenerateNewTokenAsync(SSOTokenManagerGetTokenOptions options, CancellationToken cancellationToken = default)
         {
             if (string.IsNullOrEmpty(options.ClientName))

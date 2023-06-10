@@ -44,6 +44,7 @@ namespace Amazon.EBS.Model
         /// The data content of the block.
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public Stream BlockData
         {
             get { return this._blockData; }

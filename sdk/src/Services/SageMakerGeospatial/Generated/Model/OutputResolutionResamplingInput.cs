@@ -29,14 +29,19 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMakerGeospatial.Model
 {
     /// <summary>
-    /// 
+    /// OutputResolution Configuration indicating the target resolution for the output of
+    /// Resampling operation.
     /// </summary>
     public partial class OutputResolutionResamplingInput
     {
         private UserDefined _userDefined;
 
         /// <summary>
-        /// Gets and sets the property UserDefined.
+        /// Gets and sets the property UserDefined. 
+        /// <para>
+        /// User Defined Resolution for the output of Resampling operation defined by value and
+        /// unit.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public UserDefined UserDefined

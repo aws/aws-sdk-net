@@ -61,6 +61,17 @@ namespace Amazon.Batch.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetMetadata())
+            {
+                context.Writer.WritePropertyName("metadata");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = EksMetadataMarshaller.Instance;
+                marshaller.Marshall(requestObject.Metadata, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
         }
 
         /// <summary>

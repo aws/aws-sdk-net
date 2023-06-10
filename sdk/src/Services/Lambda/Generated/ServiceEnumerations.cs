@@ -225,6 +225,56 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type FullDocument.
+    /// </summary>
+    public class FullDocument : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant Default for FullDocument
+        /// </summary>
+        public static readonly FullDocument Default = new FullDocument("Default");
+        /// <summary>
+        /// Constant UpdateLookup for FullDocument
+        /// </summary>
+        public static readonly FullDocument UpdateLookup = new FullDocument("UpdateLookup");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public FullDocument(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static FullDocument FindValue(string value)
+        {
+            return FindValue<FullDocument>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator FullDocument(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FunctionResponseType.
     /// </summary>
     public class FunctionResponseType : ConstantClass
@@ -414,6 +464,56 @@ namespace Amazon.Lambda
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator InvocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type InvokeMode.
+    /// </summary>
+    public class InvokeMode : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant BUFFERED for InvokeMode
+        /// </summary>
+        public static readonly InvokeMode BUFFERED = new InvokeMode("BUFFERED");
+        /// <summary>
+        /// Constant RESPONSE_STREAM for InvokeMode
+        /// </summary>
+        public static readonly InvokeMode RESPONSE_STREAM = new InvokeMode("RESPONSE_STREAM");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public InvokeMode(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static InvokeMode FindValue(string value)
+        {
+            return FindValue<InvokeMode>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator InvokeMode(string value)
         {
             return FindValue(value);
         }
@@ -755,6 +855,56 @@ namespace Amazon.Lambda
 
 
     /// <summary>
+    /// Constants used for properties of type ResponseStreamingInvocationType.
+    /// </summary>
+    public class ResponseStreamingInvocationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DryRun for ResponseStreamingInvocationType
+        /// </summary>
+        public static readonly ResponseStreamingInvocationType DryRun = new ResponseStreamingInvocationType("DryRun");
+        /// <summary>
+        /// Constant RequestResponse for ResponseStreamingInvocationType
+        /// </summary>
+        public static readonly ResponseStreamingInvocationType RequestResponse = new ResponseStreamingInvocationType("RequestResponse");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ResponseStreamingInvocationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ResponseStreamingInvocationType FindValue(string value)
+        {
+            return FindValue<ResponseStreamingInvocationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ResponseStreamingInvocationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type Runtime.
     /// </summary>
     public class Runtime : ConstantClass
@@ -788,6 +938,10 @@ namespace Amazon.Lambda
         /// Constant Java11 for Runtime
         /// </summary>
         public static readonly Runtime Java11 = new Runtime("java11");
+        /// <summary>
+        /// Constant Java17 for Runtime
+        /// </summary>
+        public static readonly Runtime Java17 = new Runtime("java17");
         /// <summary>
         /// Constant Java8 for Runtime
         /// </summary>
@@ -849,6 +1003,10 @@ namespace Amazon.Lambda
         /// </summary>
         public static readonly Runtime Python27 = new Runtime("python2.7");
         /// <summary>
+        /// Constant Python310 for Runtime
+        /// </summary>
+        public static readonly Runtime Python310 = new Runtime("python3.10");
+        /// <summary>
         /// Constant Python36 for Runtime
         /// </summary>
         public static readonly Runtime Python36 = new Runtime("python3.6");
@@ -872,6 +1030,10 @@ namespace Amazon.Lambda
         /// Constant Ruby27 for Runtime
         /// </summary>
         public static readonly Runtime Ruby27 = new Runtime("ruby2.7");
+        /// <summary>
+        /// Constant Ruby32 for Runtime
+        /// </summary>
+        public static readonly Runtime Ruby32 = new Runtime("ruby3.2");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

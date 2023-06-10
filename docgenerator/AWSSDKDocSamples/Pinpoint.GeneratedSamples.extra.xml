@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<docs>
+    <doc>
+        <members>
+            <member name="M:Amazon.Pinpoint.IAmazonPinpoint.GetJourneyRunExecutionActivityMetrics(Amazon.Pinpoint.Model.GetJourneyRunExecutionActivityMetricsRequest)" />
+            <member name="M:Amazon.Pinpoint.AmazonPinpointClient.GetJourneyRunExecutionActivityMetrics(Amazon.Pinpoint.Model.GetJourneyRunExecutionActivityMetricsRequest)" />
+            <member name="T:Amazon.Pinpoint.Model.GetJourneyRunExecutionActivityMetricsRequest" />
+            <member name="T:Amazon.Pinpoint.Model.GetJourneyRunExecutionActivityMetricsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets activity execution metrics for a single run of a journey.
+                </para>
+                <code
+                    title="To get the activity execution metrics for a journey run"
+                    source=".\AWSSDKDocSamples\Pinpoint\Pinpoint.GeneratedSamples.cs"
+                    region="to-get-the-activity-execution-metrics-for-a-journey-run" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Pinpoint.IAmazonPinpoint.GetJourneyRunExecutionMetrics(Amazon.Pinpoint.Model.GetJourneyRunExecutionMetricsRequest)" />
+            <member name="M:Amazon.Pinpoint.AmazonPinpointClient.GetJourneyRunExecutionMetrics(Amazon.Pinpoint.Model.GetJourneyRunExecutionMetricsRequest)" />
+            <member name="T:Amazon.Pinpoint.Model.GetJourneyRunExecutionMetricsRequest" />
+            <member name="T:Amazon.Pinpoint.Model.GetJourneyRunExecutionMetricsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets execution metrics for a single run of a journey.
+                </para>
+                <code
+                    title="To get the execution metrics for a journey run"
+                    source=".\AWSSDKDocSamples\Pinpoint\Pinpoint.GeneratedSamples.cs"
+                    region="to-get-the-execution-metrics-for-a-journey-run" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.Pinpoint.IAmazonPinpoint.GetJourneyRuns(Amazon.Pinpoint.Model.GetJourneyRunsRequest)" />
+            <member name="M:Amazon.Pinpoint.AmazonPinpointClient.GetJourneyRuns(Amazon.Pinpoint.Model.GetJourneyRunsRequest)" />
+            <member name="T:Amazon.Pinpoint.Model.GetJourneyRunsRequest" />
+            <member name="T:Amazon.Pinpoint.Model.GetJourneyRunsResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example gets the runs of a journey.
+                </para>
+                <code
+                    title="To get the runs of a journey"
+                    source=".\AWSSDKDocSamples\Pinpoint\Pinpoint.GeneratedSamples.cs"
+                    region="to-get-the-runs-of-a-journey" />
+            </example>
+        </value>
+    </doc>
+</docs>

@@ -87,8 +87,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property FinalHyperParameterTuningJobObjectiveMetric. 
         /// <para>
-        /// The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies the value
-        /// of the objective metric of the tuning job that launched this training job.
+        /// The <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_FinalHyperParameterTuningJobObjectiveMetric.html">FinalHyperParameterTuningJobObjectiveMetric</a>
+        /// object that specifies the value of the objective metric of the tuning job that launched
+        /// this training job.
         /// </para>
         /// </summary>
         public FinalHyperParameterTuningJobObjectiveMetric FinalHyperParameterTuningJobObjectiveMetric

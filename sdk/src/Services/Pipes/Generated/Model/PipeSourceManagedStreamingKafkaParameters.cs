@@ -65,7 +65,7 @@ namespace Amazon.Pipes.Model
         /// The name of the destination queue to consume.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=200)]
+        [AWSProperty(Sensitive=true, Min=1, Max=200)]
         public string ConsumerGroupID
         {
             get { return this._consumerGroupID; }
@@ -139,7 +139,7 @@ namespace Amazon.Pipes.Model
         /// The name of the topic that the pipe will read from.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=249)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=249)]
         public string TopicName
         {
             get { return this._topicName; }

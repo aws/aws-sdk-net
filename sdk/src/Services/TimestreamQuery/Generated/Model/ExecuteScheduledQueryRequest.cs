@@ -44,7 +44,7 @@ namespace Amazon.TimestreamQuery.Model
         /// Not used. 
         /// </para>
         /// </summary>
-        [AWSProperty(Min=32, Max=128)]
+        [AWSProperty(Sensitive=true, Min=32, Max=128)]
         public string ClientToken
         {
             get { return this._clientToken; }

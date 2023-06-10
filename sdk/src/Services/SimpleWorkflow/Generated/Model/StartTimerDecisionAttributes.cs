@@ -118,10 +118,9 @@ namespace Amazon.SimpleWorkflow.Model
         /// </para>
         ///  
         /// <para>
-        /// The specified string must not start or end with whitespace. It must not contain a
-        /// <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or
-        /// any control characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>).
-        /// Also, it must not contain the literal string <code>arn</code>.
+        /// The specified string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+        /// <code>|</code> (vertical bar), or any control characters (<code>\u0000-\u001f</code>
+        /// | <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string <code>arn</code>.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]

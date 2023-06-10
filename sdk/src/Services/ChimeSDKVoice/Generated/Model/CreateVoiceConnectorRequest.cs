@@ -30,16 +30,24 @@ namespace Amazon.ChimeSDKVoice.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateVoiceConnector operation.
-    /// 
+    /// Creates an Amazon Chime SDK Voice Connector. For more information about Voice Connectors,
+    /// see <a href="https://docs.aws.amazon.com/chime-sdk/latest/ag/voice-connector-groups.html">Managing
+    /// Amazon Chime SDK Voice Connector groups</a> in the <i>Amazon Chime SDK Administrator
+    /// Guide</i>.
     /// </summary>
     public partial class CreateVoiceConnectorRequest : AmazonChimeSDKVoiceRequest
     {
         private VoiceConnectorAwsRegion _awsRegion;
         private string _name;
         private bool? _requireEncryption;
+        private List<Tag> _tags = new List<Tag>();
 
         /// <summary>
-        /// Gets and sets the property AwsRegion.
+        /// Gets and sets the property AwsRegion. 
+        /// <para>
+        /// The AWS Region in which the Amazon Chime SDK Voice Connector is created. Default value:
+        /// <code>us-east-1</code> .
+        /// </para>
         /// </summary>
         public VoiceConnectorAwsRegion AwsRegion
         {
@@ -54,7 +62,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Name.
+        /// Gets and sets the property Name. 
+        /// <para>
+        /// The name of the Voice Connector.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=256)]
         public string Name
@@ -70,7 +81,10 @@ namespace Amazon.ChimeSDKVoice.Model
         }
 
         /// <summary>
-        /// Gets and sets the property RequireEncryption.
+        /// Gets and sets the property RequireEncryption. 
+        /// <para>
+        /// Enables or disables encryption for the Voice Connector.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public bool RequireEncryption
@@ -83,6 +97,25 @@ namespace Amazon.ChimeSDKVoice.Model
         internal bool IsSetRequireEncryption()
         {
             return this._requireEncryption.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Tags. 
+        /// <para>
+        /// The tags assigned to the Voice Connector.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=50)]
+        public List<Tag> Tags
+        {
+            get { return this._tags; }
+            set { this._tags = value; }
+        }
+
+        // Check to see if Tags property is set
+        internal bool IsSetTags()
+        {
+            return this._tags != null && this._tags.Count > 0; 
         }
 
     }

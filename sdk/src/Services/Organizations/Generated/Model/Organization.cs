@@ -168,7 +168,7 @@ namespace Amazon.Organizations.Model
         /// designated as the management account for the organization.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=6, Max=64)]
+        [AWSProperty(Sensitive=true, Min=6, Max=64)]
         public string MasterAccountEmail
         {
             get { return this._masterAccountEmail; }

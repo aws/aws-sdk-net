@@ -64,7 +64,7 @@ namespace Amazon.DirectoryService.Model
         /// the conditional forwarder.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Max=1024)]
         public string RemoteDomainName
         {
             get { return this._remoteDomainName; }

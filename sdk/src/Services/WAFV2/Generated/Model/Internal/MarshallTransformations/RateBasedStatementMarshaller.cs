@@ -51,6 +51,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.AggregateKeyType);
             }
 
+            if(requestObject.IsSetCustomKeys())
+            {
+                context.Writer.WritePropertyName("CustomKeys");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectCustomKeysListValue in requestObject.CustomKeys)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = RateBasedStatementCustomKeyMarshaller.Instance;
+                    marshaller.Marshall(requestObjectCustomKeysListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetForwardedIPConfig())
             {
                 context.Writer.WritePropertyName("ForwardedIPConfig");

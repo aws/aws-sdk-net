@@ -619,9 +619,9 @@ namespace Amazon.ECS.Model
         /// <summary>
         /// Gets and sets the property RequiresCompatibilities. 
         /// <para>
-        /// The task launch types the task definition was validated against. To determine which
-        /// task launch types the task definition is validated for, see the <a>TaskDefinition$compatibilities</a>
-        /// parameter.
+        /// The task launch types the task definition was validated against. For more information,
+        /// see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+        /// ECS launch types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.
         /// </para>
         /// </summary>
         public List<string> RequiresCompatibilities

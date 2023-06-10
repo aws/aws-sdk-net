@@ -66,5 +66,13 @@ namespace Amazon.NetworkFirewall.Model
         {
             return new ListTagsForResourcePaginator(this.client, request);
         }
+
+        /// <summary>
+        /// Paginator for ListTLSInspectionConfigurations operation
+        ///</summary>
+        public IListTLSInspectionConfigurationsPaginator ListTLSInspectionConfigurations(ListTLSInspectionConfigurationsRequest request) 
+        {
+            return new ListTLSInspectionConfigurationsPaginator(this.client, request);
+        }
     }
 }

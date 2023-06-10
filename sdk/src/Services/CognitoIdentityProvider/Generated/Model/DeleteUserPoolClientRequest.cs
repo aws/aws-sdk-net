@@ -43,7 +43,7 @@ namespace Amazon.CognitoIdentityProvider.Model
         /// The app client ID of the app associated with the user pool.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=128)]
+        [AWSProperty(Required=true, Sensitive=true, Min=1, Max=128)]
         public string ClientId
         {
             get { return this._clientId; }

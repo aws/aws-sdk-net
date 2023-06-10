@@ -319,6 +319,12 @@ namespace Amazon.RDS.Model.Internal.MarshallTransformations
                         unmarshalledObject.IAMDatabaseAuthenticationEnabled = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("IOOptimizedNextAllowedModificationTime", targetDepth))
+                    {
+                        var unmarshaller = DateTimeUnmarshaller.Instance;
+                        unmarshalledObject.IOOptimizedNextAllowedModificationTime = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Iops", targetDepth))
                     {
                         var unmarshaller = IntUnmarshaller.Instance;

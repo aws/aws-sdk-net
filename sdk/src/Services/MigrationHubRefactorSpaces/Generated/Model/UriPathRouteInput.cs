@@ -34,6 +34,7 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
     public partial class UriPathRouteInput
     {
         private RouteActivationState _activationState;
+        private bool? _appendSourcePath;
         private bool? _includeChildPaths;
         private List<string> _methods = new List<string>();
         private string _sourcePath;
@@ -56,6 +57,25 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         internal bool IsSetActivationState()
         {
             return this._activationState != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AppendSourcePath. 
+        /// <para>
+        /// If set to <code>true</code>, this option appends the source path to the service URL
+        /// endpoint.
+        /// </para>
+        /// </summary>
+        public bool AppendSourcePath
+        {
+            get { return this._appendSourcePath.GetValueOrDefault(); }
+            set { this._appendSourcePath = value; }
+        }
+
+        // Check to see if AppendSourcePath property is set
+        internal bool IsSetAppendSourcePath()
+        {
+            return this._appendSourcePath.HasValue; 
         }
 
         /// <summary>
@@ -101,8 +121,10 @@ namespace Amazon.MigrationHubRefactorSpaces.Model
         /// <summary>
         /// Gets and sets the property SourcePath. 
         /// <para>
-        /// The path to use to match traffic. Paths must start with <code>/</code> and are relative
-        /// to the base of the application.
+        /// This is the path that Refactor Spaces uses to match traffic. Paths must start with
+        /// <code>/</code> and are relative to the base of the application. To use path parameters
+        /// in the source path, add a variable in curly braces. For example, the resource path
+        /// {user} represents a path parameter called 'user'.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

@@ -58,7 +58,10 @@ namespace Amazon.Chime.Model
         }
 
         /// <summary>
-        /// Gets and sets the property Member.
+        /// Gets and sets the property Member. 
+        /// <para>
+        /// The member details, such as email address, name, member ID, and member type.
+        /// </para>
         /// </summary>
         public Member Member
         {

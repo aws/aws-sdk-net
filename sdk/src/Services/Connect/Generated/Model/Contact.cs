@@ -48,6 +48,7 @@ namespace Amazon.Connect.Model
         private QueueInfo _queueInfo;
         private string _relatedContactId;
         private DateTime? _scheduledTimestamp;
+        private WisdomInfo _wisdomInfo;
 
         /// <summary>
         /// Gets and sets the property AgentInfo. 
@@ -203,7 +204,9 @@ namespace Amazon.Connect.Model
         /// this is when the contact arrived. For <code>OUTBOUND</code>, this is when the agent
         /// began dialing. For <code>CALLBACK</code>, this is when the callback contact was created.
         /// For <code>TRANSFER</code> and <code>QUEUE_TRANSFER</code>, this is when the transfer
-        /// was initiated. For <code>API</code>, this is when the request arrived.
+        /// was initiated. For <code>API</code>, this is when the request arrived. For <code>EXTERNAL_OUTBOUND</code>,
+        /// this is when the agent started dialing the external participant. For <code>MONITOR</code>,
+        /// this is when the supervisor started listening to a contact.
         /// </para>
         /// </summary>
         public DateTime InitiationTimestamp
@@ -329,6 +332,24 @@ namespace Amazon.Connect.Model
         internal bool IsSetScheduledTimestamp()
         {
             return this._scheduledTimestamp.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property WisdomInfo. 
+        /// <para>
+        /// Information about Amazon Connect Wisdom.
+        /// </para>
+        /// </summary>
+        public WisdomInfo WisdomInfo
+        {
+            get { return this._wisdomInfo; }
+            set { this._wisdomInfo = value; }
+        }
+
+        // Check to see if WisdomInfo property is set
+        internal bool IsSetWisdomInfo()
+        {
+            return this._wisdomInfo != null;
         }
 
     }

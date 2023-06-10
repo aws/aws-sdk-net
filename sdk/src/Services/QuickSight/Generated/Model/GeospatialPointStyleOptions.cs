@@ -34,6 +34,7 @@ namespace Amazon.QuickSight.Model
     public partial class GeospatialPointStyleOptions
     {
         private ClusterMarkerConfiguration _clusterMarkerConfiguration;
+        private GeospatialHeatmapConfiguration _heatmapConfiguration;
         private GeospatialSelectedPointStyle _selectedPointStyle;
 
         /// <summary>
@@ -52,6 +53,24 @@ namespace Amazon.QuickSight.Model
         internal bool IsSetClusterMarkerConfiguration()
         {
             return this._clusterMarkerConfiguration != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property HeatmapConfiguration. 
+        /// <para>
+        /// The heatmap configuration of the geospatial point style.
+        /// </para>
+        /// </summary>
+        public GeospatialHeatmapConfiguration HeatmapConfiguration
+        {
+            get { return this._heatmapConfiguration; }
+            set { this._heatmapConfiguration = value; }
+        }
+
+        // Check to see if HeatmapConfiguration property is set
+        internal bool IsSetHeatmapConfiguration()
+        {
+            return this._heatmapConfiguration != null;
         }
 
         /// <summary>

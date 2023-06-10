@@ -94,6 +94,12 @@ namespace Amazon.Omics.Model.Internal.MarshallTransformations
                     unmarshalledObject.MaxDuration = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("maxGpus", targetDepth))
+                {
+                    var unmarshaller = IntUnmarshaller.Instance;
+                    unmarshalledObject.MaxGpus = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("maxRuns", targetDepth))
                 {
                     var unmarshaller = IntUnmarshaller.Instance;

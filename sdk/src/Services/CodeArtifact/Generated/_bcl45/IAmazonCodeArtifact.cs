@@ -167,6 +167,10 @@ namespace Amazon.CodeArtifact
     /// </para>
     ///  </li> <li> 
     /// <para>
+    ///  <code>DeletePackage</code>: Deletes a package and all associated package versions.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
     ///  <code>DeletePackageVersions</code>: Deletes versions of a package. After a package
     /// has been deleted, it can be republished, but its assets and metadata cannot be restored
     /// because they have been permanently removed from storage.
@@ -290,6 +294,11 @@ namespace Amazon.CodeArtifact
     ///  </li> <li> 
     /// <para>
     ///  <code>ListRepositoriesInDomain</code>: Returns a list of the repositories in a domain.
+    /// </para>
+    ///  </li> <li> 
+    /// <para>
+    ///  <code>PublishPackageVersion</code>: Creates a new package version containing one
+    /// or more assets.
     /// </para>
     ///  </li> <li> 
     /// <para>
@@ -809,6 +818,78 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeleteDomainPermissionsPolicy">REST API Reference for DeleteDomainPermissionsPolicy Operation</seealso>
         Task<DeleteDomainPermissionsPolicyResponse> DeleteDomainPermissionsPolicyAsync(DeleteDomainPermissionsPolicyRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  DeletePackage
+
+
+        /// <summary>
+        /// Deletes a package and all associated package versions. A deleted package cannot be
+        /// restored. To delete one or more package versions, use the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html">DeletePackageVersions</a>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
+        /// 
+        /// <returns>The response from the DeletePackage service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        DeletePackageResponse DeletePackage(DeletePackageRequest request);
+
+
+
+        /// <summary>
+        /// Deletes a package and all associated package versions. A deleted package cannot be
+        /// restored. To delete one or more package versions, use the <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DeletePackageVersions.html">DeletePackageVersions</a>
+        /// API.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeletePackage service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeletePackage service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/DeletePackage">REST API Reference for DeletePackage Operation</seealso>
+        Task<DeletePackageResponse> DeletePackageAsync(DeletePackageRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         
@@ -2247,7 +2328,9 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-        /// objects for package versions in a repository that match the request parameters.
+        /// objects for package versions in a repository that match the request parameters. Package
+        /// versions of all statuses will be returned by default when calling <code>list-package-versions</code>
+        /// with no <code>--status</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions service method.</param>
         /// 
@@ -2276,7 +2359,9 @@ namespace Amazon.CodeArtifact
 
         /// <summary>
         /// Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionSummary.html">PackageVersionSummary</a>
-        /// objects for package versions in a repository that match the request parameters.
+        /// objects for package versions in a repository that match the request parameters. Package
+        /// versions of all statuses will be returned by default when calling <code>list-package-versions</code>
+        /// with no <code>--status</code> parameter.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ListPackageVersions service method.</param>
         /// <param name="cancellationToken">
@@ -2485,6 +2570,118 @@ namespace Amazon.CodeArtifact
         /// </exception>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/ListTagsForResource">REST API Reference for ListTagsForResource Operation</seealso>
         Task<ListTagsForResourceResponse> ListTagsForResourceAsync(ListTagsForResourceRequest request, CancellationToken cancellationToken = default(CancellationToken));
+
+        #endregion
+        
+        #region  PublishPackageVersion
+
+
+        /// <summary>
+        /// Creates a new package version containing one or more assets (or files).
+        /// 
+        ///  
+        /// <para>
+        /// The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code>
+        /// state until all of its assets have been uploaded (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
+        /// version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s
+        /// status to <code>Published</code>, omit the <code>unfinished</code> flag when uploading
+        /// the final asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
+        /// Once a package version’s status is set to <code>Published</code>, it cannot change
+        /// back to <code>Unfinished</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only generic packages can be published using this API. For more information, see <a
+        /// href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html">Using
+        /// generic packages</a> in the <i>CodeArtifact User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishPackageVersion service method.</param>
+        /// 
+        /// <returns>The response from the PublishPackageVersion service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PublishPackageVersion">REST API Reference for PublishPackageVersion Operation</seealso>
+        PublishPackageVersionResponse PublishPackageVersion(PublishPackageVersionRequest request);
+
+
+
+        /// <summary>
+        /// Creates a new package version containing one or more assets (or files).
+        /// 
+        ///  
+        /// <para>
+        /// The <code>unfinished</code> flag can be used to keep the package version in the <code>Unfinished</code>
+        /// state until all of its assets have been uploaded (see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/packages-overview.html#package-version-status.html#package-version-status">Package
+        /// version status</a> in the <i>CodeArtifact user guide</i>). To set the package version’s
+        /// status to <code>Published</code>, omit the <code>unfinished</code> flag when uploading
+        /// the final asset, or set the status using <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_UpdatePackageVersionsStatus.html">UpdatePackageVersionStatus</a>.
+        /// Once a package version’s status is set to <code>Published</code>, it cannot change
+        /// back to <code>Unfinished</code>.
+        /// </para>
+        ///  <note> 
+        /// <para>
+        /// Only generic packages can be published using this API. For more information, see <a
+        /// href="https://docs.aws.amazon.com/codeartifact/latest/ug/using-generic.html">Using
+        /// generic packages</a> in the <i>CodeArtifact User Guide</i>.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the PublishPackageVersion service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the PublishPackageVersion service method, as returned by CodeArtifact.</returns>
+        /// <exception cref="Amazon.CodeArtifact.Model.AccessDeniedException">
+        /// The operation did not succeed because of an unauthorized access attempt.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ConflictException">
+        /// The operation did not succeed because prerequisites are not met.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.InternalServerException">
+        /// The operation did not succeed because of an error that occurred inside CodeArtifact.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ResourceNotFoundException">
+        /// The operation did not succeed because the resource requested is not found in the
+        /// service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ServiceQuotaExceededException">
+        /// The operation did not succeed because it would have exceeded a service limit for
+        /// your account.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ThrottlingException">
+        /// The operation did not succeed because too many requests are sent to the service.
+        /// </exception>
+        /// <exception cref="Amazon.CodeArtifact.Model.ValidationException">
+        /// The operation did not succeed because a parameter in the request was sent with an
+        /// invalid value.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/codeartifact-2018-09-22/PublishPackageVersion">REST API Reference for PublishPackageVersion Operation</seealso>
+        Task<PublishPackageVersionResponse> PublishPackageVersionAsync(PublishPackageVersionRequest request, CancellationToken cancellationToken = default(CancellationToken));
 
         #endregion
         

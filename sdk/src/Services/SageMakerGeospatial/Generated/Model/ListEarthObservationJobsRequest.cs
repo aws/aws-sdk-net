@@ -67,7 +67,7 @@ namespace Amazon.SageMakerGeospatial.Model
         /// request to receive the next set of results.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=0, Max=8192)]
+        [AWSProperty(Sensitive=true, Min=0, Max=8192)]
         public string NextToken
         {
             get { return this._nextToken; }

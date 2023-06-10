@@ -2242,10 +2242,28 @@
     <pattern>^[0-9a-zA-Z._-]+</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.Chime.Model.EngineTranscribeSettings.LanguageOptions</property>
+    <min>1</min>
+    <max>200</max>
+    <pattern>^[a-zA-Z-,]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.Chime.Model.EngineTranscribeSettings.PiiEntityTypes</property>
     <min>1</min>
     <max>300</max>
     <pattern>^[A-Z_, ]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.EngineTranscribeSettings.VocabularyFilterNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.Chime.Model.EngineTranscribeSettings.VocabularyNames</property>
+    <min>1</min>
+    <max>3000</max>
+    <pattern>^[a-zA-Z0-9,-._]+</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.Chime.Model.GeoMatchParams.AreaCode</property>

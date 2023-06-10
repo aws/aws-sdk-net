@@ -53,9 +53,11 @@ namespace Amazon.OpenSearchService.Model
         private string _engineVersion;
         private Dictionary<string, LogPublishingOption> _logPublishingOptions = new Dictionary<string, LogPublishingOption>();
         private NodeToNodeEncryptionOptions _nodeToNodeEncryptionOptions;
+        private OffPeakWindowOptions _offPeakWindowOptions;
         private bool? _processing;
         private ServiceSoftwareOptions _serviceSoftwareOptions;
         private SnapshotOptions _snapshotOptions;
+        private SoftwareUpdateOptions _softwareUpdateOptions;
         private bool? _upgradeProcessing;
         private VPCDerivedInfo _vpcOptions;
 
@@ -436,6 +438,25 @@ namespace Amazon.OpenSearchService.Model
         }
 
         /// <summary>
+        /// Gets and sets the property OffPeakWindowOptions. 
+        /// <para>
+        /// Options that specify a custom 10-hour window during which OpenSearch Service can perform
+        /// configuration changes on the domain.
+        /// </para>
+        /// </summary>
+        public OffPeakWindowOptions OffPeakWindowOptions
+        {
+            get { return this._offPeakWindowOptions; }
+            set { this._offPeakWindowOptions = value; }
+        }
+
+        // Check to see if OffPeakWindowOptions property is set
+        internal bool IsSetOffPeakWindowOptions()
+        {
+            return this._offPeakWindowOptions != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property Processing. 
         /// <para>
         /// The status of the domain configuration. True if OpenSearch Service is processing configuration
@@ -489,6 +510,24 @@ namespace Amazon.OpenSearchService.Model
         internal bool IsSetSnapshotOptions()
         {
             return this._snapshotOptions != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SoftwareUpdateOptions. 
+        /// <para>
+        /// Service software update options for the domain.
+        /// </para>
+        /// </summary>
+        public SoftwareUpdateOptions SoftwareUpdateOptions
+        {
+            get { return this._softwareUpdateOptions; }
+            set { this._softwareUpdateOptions = value; }
+        }
+
+        // Check to see if SoftwareUpdateOptions property is set
+        internal bool IsSetSoftwareUpdateOptions()
+        {
+            return this._softwareUpdateOptions != null;
         }
 
         /// <summary>

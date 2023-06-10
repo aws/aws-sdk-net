@@ -37,6 +37,7 @@ namespace Amazon.MediaPackage.Model
         private Authorization _authorization;
         private string _channelId;
         private CmafPackage _cmafPackage;
+        private string _createdAt;
         private DashPackage _dashPackage;
         private string _description;
         private HlsPackage _hlsPackage;
@@ -109,6 +110,21 @@ namespace Amazon.MediaPackage.Model
         internal bool IsSetCmafPackage()
         {
             return this._cmafPackage != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CreatedAt. The date and time the OriginEndpoint was created.
+        /// </summary>
+        public string CreatedAt
+        {
+            get { return this._createdAt; }
+            set { this._createdAt = value; }
+        }
+
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
+        {
+            return this._createdAt != null;
         }
 
         /// <summary>

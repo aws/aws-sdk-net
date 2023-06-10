@@ -35,8 +35,8 @@ namespace Amazon.FMS.Model
     /// 
     ///  
     /// <para>
-    /// The <code>ListMemberAccounts</code> must be submitted by the account that is set as
-    /// the Firewall Manager administrator.
+    /// Either an Firewall Manager administrator or the organization's management account
+    /// can make this request.
     /// </para>
     /// </summary>
     public partial class ListMemberAccountsRequest : AmazonFMSRequest

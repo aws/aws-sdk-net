@@ -65,6 +65,12 @@ namespace Amazon.SecurityHub.Model.Internal.MarshallTransformations
                 JsonWriter writer = new JsonWriter(stringWriter);
                 writer.WriteObjectStart();
                 var context = new JsonMarshallerContext(request, writer);
+                if(publicRequest.IsSetControlFindingGenerator())
+                {
+                    context.Writer.WritePropertyName("ControlFindingGenerator");
+                    context.Writer.Write(publicRequest.ControlFindingGenerator);
+                }
+
                 if(publicRequest.IsSetEnableDefaultStandards())
                 {
                     context.Writer.WritePropertyName("EnableDefaultStandards");
