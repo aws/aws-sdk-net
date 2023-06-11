@@ -15,6 +15,7 @@ namespace TestWrapper
     {
         public bool WaitForDebugger { get; set; }
         public ITaskItem Categories { get; set; }
+        public ITaskItem CategoriesToIgnore { get; set; }
         public ITaskItem TestSuiteRunner { get; set; }
         public ITaskItem TestContainer { get; set; }
         public ITaskItem Configuration { get; set; }
@@ -32,6 +33,22 @@ namespace TestWrapper
                 {
                     array = Categories.ItemSpec
                         .Split(new char[] { ','}, StringSplitOptions.RemoveEmptyEntries)
+                        .Where(c => c != null && !string.IsNullOrEmpty(c.Trim()))
+                        .ToArray();
+                }
+
+                return array;
+            }
+        }
+        protected string[] CategoriesToIgnoreArray
+        {
+            get
+            {
+                string[] array = null;
+                if (CategoriesToIgnore != null && !string.IsNullOrEmpty(CategoriesToIgnore.ItemSpec))
+                {
+                    array = CategoriesToIgnore.ItemSpec
+                        .Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
                         .Where(c => c != null && !string.IsNullOrEmpty(c.Trim()))
                         .ToArray();
                 }

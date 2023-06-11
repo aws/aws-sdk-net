@@ -19,6 +19,8 @@ namespace TestWrapper
         {
             var msTestRunner = new MSTestRunner(TestSuiteRunnerFileInfo, TestContainerFileInfo, null);
             msTestRunner.Categories = CategoriesArray;
+            msTestRunner.CategoriesToIgnore = CategoriesToIgnoreArray;
+            msTestRunner.FrameworkCategoryAttribute = "TestCategory";
             msTestRunner.Configuration = Configuration == null ?
                 TestRunner.TestConfiguration.Release :
                 (TestRunner.TestConfiguration)Enum.Parse(typeof(TestRunner.TestConfiguration), Configuration.ItemSpec);
