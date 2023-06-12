@@ -37,6 +37,7 @@ namespace Amazon.Rekognition.Model
         private DateTime? _creationTimestamp;
         private long? _faceCount;
         private string _faceModelVersion;
+        private long? _userCount;
 
         /// <summary>
         /// Gets and sets the property CollectionARN. 
@@ -116,6 +117,25 @@ namespace Amazon.Rekognition.Model
         internal bool IsSetFaceModelVersion()
         {
             return this._faceModelVersion != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property UserCount. 
+        /// <para>
+        /// The number of UserIDs assigned to the specified colleciton.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=0)]
+        public long UserCount
+        {
+            get { return this._userCount.GetValueOrDefault(); }
+            set { this._userCount = value; }
+        }
+
+        // Check to see if UserCount property is set
+        internal bool IsSetUserCount()
+        {
+            return this._userCount.HasValue; 
         }
 
     }
