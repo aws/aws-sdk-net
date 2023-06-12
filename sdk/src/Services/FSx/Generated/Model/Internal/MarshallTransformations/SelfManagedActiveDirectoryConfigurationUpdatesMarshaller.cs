@@ -56,6 +56,24 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                 context.Writer.WriteArrayEnd();
             }
 
+            if(requestObject.IsSetDomainName())
+            {
+                context.Writer.WritePropertyName("DomainName");
+                context.Writer.Write(requestObject.DomainName);
+            }
+
+            if(requestObject.IsSetFileSystemAdministratorsGroup())
+            {
+                context.Writer.WritePropertyName("FileSystemAdministratorsGroup");
+                context.Writer.Write(requestObject.FileSystemAdministratorsGroup);
+            }
+
+            if(requestObject.IsSetOrganizationalUnitDistinguishedName())
+            {
+                context.Writer.WritePropertyName("OrganizationalUnitDistinguishedName");
+                context.Writer.Write(requestObject.OrganizationalUnitDistinguishedName);
+            }
+
             if(requestObject.IsSetPassword())
             {
                 context.Writer.WritePropertyName("Password");

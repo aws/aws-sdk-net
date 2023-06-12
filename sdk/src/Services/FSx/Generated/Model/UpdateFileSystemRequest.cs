@@ -258,7 +258,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property OpenZFSConfiguration. 
         /// <para>
-        /// The configuration updates for an Amazon FSx for OpenZFS file system.
+        /// The configuration updates for an FSx for OpenZFS file system.
         /// </para>
         /// </summary>
         public UpdateFileSystemOpenZFSConfiguration OpenZFSConfiguration
@@ -325,7 +325,7 @@ namespace Amazon.FSx.Model
         /// greater than the current storage capacity value. To increase storage capacity, the
         /// file system must have at least 16 MBps of throughput capacity. For more information,
         /// see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-storage-capacity.html">Managing
-        /// storage capacity</a> in the <i>Amazon FSx for Windows File Server User Guide</i>.
+        /// storage capacity</a> in the <i>Amazon FSxfor Windows File Server User Guide</i>.
         /// </para>
         ///  
         /// <para>

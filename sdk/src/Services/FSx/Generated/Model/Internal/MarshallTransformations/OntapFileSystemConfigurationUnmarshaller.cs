@@ -100,6 +100,12 @@ namespace Amazon.FSx.Model.Internal.MarshallTransformations
                     unmarshalledObject.Endpoints = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("FsxAdminPassword", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.FsxAdminPassword = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("PreferredSubnetId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

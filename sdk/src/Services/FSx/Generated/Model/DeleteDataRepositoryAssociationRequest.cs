@@ -34,8 +34,8 @@ namespace Amazon.FSx.Model
     /// the data repository association unlinks the file system from the Amazon S3 bucket.
     /// When deleting a data repository association, you have the option of deleting the data
     /// in the file system that corresponds to the data repository association. Data repository
-    /// associations are supported for all file systems except for <code>Scratch_1</code>
-    /// deployment type.
+    /// associations are supported on all FSx for Lustre 2.12 and newer file systems, excluding
+    /// <code>scratch_1</code> deployment type.
     /// </summary>
     public partial class DeleteDataRepositoryAssociationRequest : AmazonFSxRequest
     {

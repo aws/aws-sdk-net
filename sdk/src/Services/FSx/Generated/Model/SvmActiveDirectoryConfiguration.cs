@@ -29,9 +29,9 @@ using Amazon.Runtime.Internal;
 namespace Amazon.FSx.Model
 {
     /// <summary>
-    /// Describes the configuration of the Microsoft Active Directory (AD) directory to which
-    /// the Amazon FSx for ONTAP storage virtual machine (SVM) is joined. Pleae note, account
-    /// credentials are not returned in the response payload.
+    /// Describes the Microsoft Active Directory (AD) directory configuration to which the
+    /// FSx for ONTAP storage virtual machine (SVM) is joined. Note that account credentials
+    /// are not returned in the response payload.
     /// </summary>
     public partial class SvmActiveDirectoryConfiguration
     {
@@ -41,7 +41,7 @@ namespace Amazon.FSx.Model
         /// <summary>
         /// Gets and sets the property NetBiosName. 
         /// <para>
-        /// The NetBIOS name of the Active Directory computer object that is joined to your SVM.
+        /// The NetBIOS name of the AD computer object to which the SVM is joined.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=15)]
