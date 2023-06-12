@@ -1,0 +1,1 @@
+The changelogs have been moved to the changelogs folder. The changelogs folder contains yearly changelogs and a monolithic changelog.
