@@ -183,17 +183,21 @@ namespace Amazon.DynamoDBv2.DataModel
         #region Constructor
 
         internal BatchWrite(DynamoDBContext context, DynamoDBFlatConfig config)
+            : this(context, typeof(T), config)
+        {
+        }
+
+        internal BatchWrite(DynamoDBContext context, Type valuesType, DynamoDBFlatConfig config)
             : base(context, config)
         {
-            Type type = typeof(T);
-            StorageConfig = context.StorageConfigCache.GetConfig(type, config);
+            StorageConfig = context.StorageConfigCache.GetConfig(valuesType, config);
 
             if (StorageConfig.HasVersion)
             {
                 if (!Config.SkipVersionCheck.GetValueOrDefault(false))
                     throw new InvalidOperationException(string.Format(CultureInfo.InvariantCulture,
                         "Object {0} has a versioning field, which is not supported for this operation. To ignore versioning, use the DynamoDBContextConfig.SkipVersionCheck property.",
-                        type.Name));
+                        valuesType.Name));
             }
 
             Table table = Context.GetTargetTable(StorageConfig, Config);

@@ -52,6 +52,27 @@ namespace Amazon.DynamoDBv2.DataModel
         /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
         Task SaveAsync<T>(T value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken));
 
+        /// <summary>
+        /// Initiates the asynchronous execution of the Save operation.
+        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
+        /// </summary>
+        /// <param name="valueType">Type of the Object to save.</param>
+        /// <param name="value">Object to save.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task SaveAsync(Type valueType, object value, CancellationToken cancellationToken = default(CancellationToken));
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the Save operation.
+        /// <seealso cref="Amazon.DynamoDBv2.DataModel.DynamoDBContext.Save"/>
+        /// </summary>
+        /// <param name="valueType">Type of the Object to save.</param>
+        /// <param name="value">Object to save.</param>
+        /// <param name="operationConfig">Overriding configuration.</param>
+        /// <param name="cancellationToken">Token which can be used to cancel the task.</param>
+        /// <returns>A Task that can be used to poll or wait for results, or both.</returns>
+        Task SaveAsync(Type valueType, object value, DynamoDBOperationConfig operationConfig, CancellationToken cancellationToken = default(CancellationToken));
+
         #endregion
 
         #region Load async
