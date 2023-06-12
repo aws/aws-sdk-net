@@ -123,7 +123,7 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property PipelineName. 
         /// <para>
-        /// The name of the pipeline.
+        /// The name or Amazon Resource Name (ARN) of the pipeline.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=2048)]

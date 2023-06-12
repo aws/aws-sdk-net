@@ -13451,6 +13451,10 @@ namespace Amazon.SageMaker
         /// </summary>
         public static readonly TargetDevice Ml_inf1 = new TargetDevice("ml_inf1");
         /// <summary>
+        /// Constant Ml_inf2 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Ml_inf2 = new TargetDevice("ml_inf2");
+        /// <summary>
         /// Constant Ml_m4 for TargetDevice
         /// </summary>
         public static readonly TargetDevice Ml_m4 = new TargetDevice("ml_m4");
@@ -13466,6 +13470,10 @@ namespace Amazon.SageMaker
         /// Constant Ml_p3 for TargetDevice
         /// </summary>
         public static readonly TargetDevice Ml_p3 = new TargetDevice("ml_p3");
+        /// <summary>
+        /// Constant Ml_trn1 for TargetDevice
+        /// </summary>
+        public static readonly TargetDevice Ml_trn1 = new TargetDevice("ml_trn1");
         /// <summary>
         /// Constant Qcs603 for TargetDevice
         /// </summary>
