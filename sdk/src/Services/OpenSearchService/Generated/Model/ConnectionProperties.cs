@@ -33,12 +33,35 @@ namespace Amazon.OpenSearchService.Model
     /// </summary>
     public partial class ConnectionProperties
     {
+        private CrossClusterSearchConnectionProperties _crossClusterSearch;
         private string _endpoint;
 
         /// <summary>
-        /// Gets and sets the property Endpoint. 
+        /// Gets and sets the property CrossClusterSearch. 
         /// <para>
-        /// The endpoint of the remote domain.
+        /// The connection properties for cross cluster search.
+        /// </para>
+        /// </summary>
+        public CrossClusterSearchConnectionProperties CrossClusterSearch
+        {
+            get { return this._crossClusterSearch; }
+            set { this._crossClusterSearch = value; }
+        }
+
+        // Check to see if CrossClusterSearch property is set
+        internal bool IsSetCrossClusterSearch()
+        {
+            return this._crossClusterSearch != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Endpoint. <important> 
+        /// <para>
+        /// The Endpoint attribute cannot be modified. 
+        /// </para>
+        ///  </important> 
+        /// <para>
+        /// The endpoint of the remote domain. Applicable for VPC_ENDPOINT connection mode.
         /// </para>
         /// </summary>
         public string Endpoint

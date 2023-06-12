@@ -29,47 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.OpenSearchService.Model
 {
     /// <summary>
-    /// A filter to apply to the <code>DescribePackage</code> response.
+    /// Cross cluster search specific connection properties.
     /// </summary>
-    public partial class DescribePackagesFilter
+    public partial class CrossClusterSearchConnectionProperties
     {
-        private DescribePackagesFilterName _name;
-        private List<string> _value = new List<string>();
+        private SkipUnavailableStatus _skipUnavailable;
 
         /// <summary>
-        /// Gets and sets the property Name. 
+        /// Gets and sets the property SkipUnavailable. 
         /// <para>
-        /// Any field from <code>PackageDetails</code>.
+        /// Status of SkipUnavailable param for outbound connection.
         /// </para>
         /// </summary>
-        public DescribePackagesFilterName Name
+        public SkipUnavailableStatus SkipUnavailable
         {
-            get { return this._name; }
-            set { this._name = value; }
+            get { return this._skipUnavailable; }
+            set { this._skipUnavailable = value; }
         }
 
-        // Check to see if Name property is set
-        internal bool IsSetName()
+        // Check to see if SkipUnavailable property is set
+        internal bool IsSetSkipUnavailable()
         {
-            return this._name != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property Value. 
-        /// <para>
-        /// A non-empty list of values for the specified filter field.
-        /// </para>
-        /// </summary>
-        public List<string> Value
-        {
-            get { return this._value; }
-            set { this._value = value; }
-        }
-
-        // Check to see if Value property is set
-        internal bool IsSetValue()
-        {
-            return this._value != null && this._value.Count > 0; 
+            return this._skipUnavailable != null;
         }
 
     }

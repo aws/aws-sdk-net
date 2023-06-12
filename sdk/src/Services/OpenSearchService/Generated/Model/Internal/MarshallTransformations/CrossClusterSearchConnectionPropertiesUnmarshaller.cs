@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ConnectionProperties Object
+    /// Response Unmarshaller for CrossClusterSearchConnectionProperties Object
     /// </summary>  
-    public class ConnectionPropertiesUnmarshaller : IUnmarshaller<ConnectionProperties, XmlUnmarshallerContext>, IUnmarshaller<ConnectionProperties, JsonUnmarshallerContext>
+    public class CrossClusterSearchConnectionPropertiesUnmarshaller : IUnmarshaller<CrossClusterSearchConnectionProperties, XmlUnmarshallerContext>, IUnmarshaller<CrossClusterSearchConnectionProperties, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ConnectionProperties IUnmarshaller<ConnectionProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CrossClusterSearchConnectionProperties IUnmarshaller<CrossClusterSearchConnectionProperties, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,27 +53,21 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ConnectionProperties Unmarshall(JsonUnmarshallerContext context)
+        public CrossClusterSearchConnectionProperties Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ConnectionProperties unmarshalledObject = new ConnectionProperties();
+            CrossClusterSearchConnectionProperties unmarshalledObject = new CrossClusterSearchConnectionProperties();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("CrossClusterSearch", targetDepth))
-                {
-                    var unmarshaller = CrossClusterSearchConnectionPropertiesUnmarshaller.Instance;
-                    unmarshalledObject.CrossClusterSearch = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("Endpoint", targetDepth))
+                if (context.TestExpression("SkipUnavailable", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.Endpoint = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.SkipUnavailable = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -82,12 +76,12 @@ namespace Amazon.OpenSearchService.Model.Internal.MarshallTransformations
         }
 
 
-        private static ConnectionPropertiesUnmarshaller _instance = new ConnectionPropertiesUnmarshaller();        
+        private static CrossClusterSearchConnectionPropertiesUnmarshaller _instance = new CrossClusterSearchConnectionPropertiesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ConnectionPropertiesUnmarshaller Instance
+        public static CrossClusterSearchConnectionPropertiesUnmarshaller Instance
         {
             get
             {
