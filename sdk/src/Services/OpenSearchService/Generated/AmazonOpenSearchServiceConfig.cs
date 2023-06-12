@@ -32,7 +32,7 @@ namespace Amazon.OpenSearchService
     public partial class AmazonOpenSearchServiceConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.107.15");
+            InternalSDKUtils.BuildUserAgentString("3.7.108.0");
 
         private string _userAgent = UserAgentString;
 

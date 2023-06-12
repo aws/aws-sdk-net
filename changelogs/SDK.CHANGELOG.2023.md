@@ -1,3 +1,20 @@
+### 3.7.567.0 (2023-06-12 19:23 UTC)
+* AmplifyUIBuilder (3.7.102.0)
+	* AWS Amplify UIBuilder is launching Codegen UI, a new feature that enables you to generate your amplify uibuilder components and forms.
+* DynamoDBv2 (3.7.103.20)
+	* Documentation updates for DynamoDB
+* FSx (3.7.103.0)
+	* Amazon FSx for NetApp ONTAP now supports joining a storage virtual machine (SVM) to Active Directory after the SVM has been created.
+* OpenSearchService (3.7.108.0)
+	* This release adds support for SkipUnavailable connection property for cross cluster search
+* Rekognition (3.7.108.0)
+	* This release adds support for improved accuracy with user vector in Amazon Rekognition Face Search. Adds new APIs: AssociateFaces, CreateUser, DeleteUser, DisassociateFaces, ListUsers, SearchUsers, SearchUsersByImage. Also adds new face metadata that can be stored: user vector.
+* SageMaker (3.7.135.0)
+	* Sagemaker Neo now supports compilation for inferentia2 (ML_INF2) and Trainium1 (ML_TRN1) as available targets. With these devices, you can run your workloads at highest performance with lowest cost. inferentia2 (ML_INF2) is available in CMH and Trainium1 (ML_TRN1) is available in IAD currently
+* Core 3.7.107.5
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.566.0 (2023-06-09 18:22 UTC)
 * ACMPCA (3.7.102.94)
 	* Document-only update to refresh CLI  documentation for AWS Private CA. No change to the service.
