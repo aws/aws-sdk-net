@@ -352,7 +352,7 @@ namespace Amazon.AmplifyUIBuilder
 
 
         /// <summary>
-        /// Creates a new form for an Amplify app.
+        /// Creates a new form for an Amplify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateForm service method.</param>
         /// 
@@ -382,7 +382,7 @@ namespace Amazon.AmplifyUIBuilder
 
 
         /// <summary>
-        /// Creates a new form for an Amplify app.
+        /// Creates a new form for an Amplify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateForm service method.</param>
         /// <param name="cancellationToken">
@@ -867,6 +867,71 @@ namespace Amazon.AmplifyUIBuilder
 
         #endregion
         
+        #region  GetCodegenJob
+
+
+        /// <summary>
+        /// Returns an existing code generation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCodegenJob service method.</param>
+        /// 
+        /// <returns>The response from the GetCodegenJob service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob">REST API Reference for GetCodegenJob Operation</seealso>
+        public virtual GetCodegenJobResponse GetCodegenJob(GetCodegenJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCodegenJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCodegenJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetCodegenJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Returns an existing code generation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCodegenJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the GetCodegenJob service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob">REST API Reference for GetCodegenJob Operation</seealso>
+        public virtual Task<GetCodegenJobResponse> GetCodegenJobAsync(GetCodegenJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCodegenJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCodegenJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<GetCodegenJobResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  GetComponent
 
 
@@ -1093,6 +1158,65 @@ namespace Amazon.AmplifyUIBuilder
             options.ResponseUnmarshaller = GetThemeResponseUnmarshaller.Instance;
             
             return InvokeAsync<GetThemeResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ListCodegenJobs
+
+
+        /// <summary>
+        /// Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodegenJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListCodegenJobs service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs">REST API Reference for ListCodegenJobs Operation</seealso>
+        public virtual ListCodegenJobsResponse ListCodegenJobs(ListCodegenJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCodegenJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodegenJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCodegenJobsResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodegenJobs service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ListCodegenJobs service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs">REST API Reference for ListCodegenJobs Operation</seealso>
+        public virtual Task<ListCodegenJobsResponse> ListCodegenJobsAsync(ListCodegenJobsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCodegenJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodegenJobsResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<ListCodegenJobsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -1352,6 +1476,65 @@ namespace Amazon.AmplifyUIBuilder
             options.ResponseUnmarshaller = RefreshTokenResponseUnmarshaller.Instance;
             
             return InvokeAsync<RefreshTokenResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  StartCodegenJob
+
+
+        /// <summary>
+        /// Starts a code generation job for for a specified Amplify app and backend environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCodegenJob service method.</param>
+        /// 
+        /// <returns>The response from the StartCodegenJob service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">REST API Reference for StartCodegenJob Operation</seealso>
+        public virtual StartCodegenJobResponse StartCodegenJob(StartCodegenJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCodegenJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCodegenJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartCodegenJobResponse>(request, options);
+        }
+
+
+        /// <summary>
+        /// Starts a code generation job for for a specified Amplify app and backend environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCodegenJob service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the StartCodegenJob service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">REST API Reference for StartCodegenJob Operation</seealso>
+        public virtual Task<StartCodegenJobResponse> StartCodegenJobAsync(StartCodegenJobRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCodegenJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCodegenJobResponseUnmarshaller.Instance;
+            
+            return InvokeAsync<StartCodegenJobResponse>(request, options, cancellationToken);
         }
 
         #endregion

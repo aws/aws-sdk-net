@@ -29,23 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateForm operation.
-    /// Creates a new form for an Amplify.
+    /// Container for the parameters to the ListCodegenJobs operation.
+    /// Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
     /// </summary>
-    public partial class CreateFormRequest : AmazonAmplifyUIBuilderRequest
+    public partial class ListCodegenJobsRequest : AmazonAmplifyUIBuilderRequest
     {
         private string _appId;
-        private string _clientToken;
         private string _environmentName;
-        private CreateFormData _formToCreate;
+        private int? _maxResults;
+        private string _nextToken;
 
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// The unique ID of the Amplify app to associate with the form.
+        /// The unique ID for the Amplify app.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public string AppId
         {
             get { return this._appId; }
@@ -56,24 +56,6 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetAppId()
         {
             return this._appId != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property ClientToken. 
-        /// <para>
-        /// The unique client token.
-        /// </para>
-        /// </summary>
-        public string ClientToken
-        {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
-        }
-
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
-        {
-            return this._clientToken != null;
         }
 
         /// <summary>
@@ -96,22 +78,40 @@ namespace Amazon.AmplifyUIBuilder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FormToCreate. 
+        /// Gets and sets the property MaxResults. 
         /// <para>
-        /// Represents the configuration of the form to create.
+        /// The maximum number of jobs to retrieve.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public CreateFormData FormToCreate
+        [AWSProperty(Min=1, Max=100)]
+        public int MaxResults
         {
-            get { return this._formToCreate; }
-            set { this._formToCreate = value; }
+            get { return this._maxResults.GetValueOrDefault(); }
+            set { this._maxResults = value; }
         }
 
-        // Check to see if FormToCreate property is set
-        internal bool IsSetFormToCreate()
+        // Check to see if MaxResults property is set
+        internal bool IsSetMaxResults()
         {
-            return this._formToCreate != null;
+            return this._maxResults.HasValue; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property NextToken. 
+        /// <para>
+        /// The token to request the next page of results.
+        /// </para>
+        /// </summary>
+        public string NextToken
+        {
+            get { return this._nextToken; }
+            set { this._nextToken = value; }
+        }
+
+        // Check to see if NextToken property is set
+        internal bool IsSetNextToken()
+        {
+            return this._nextToken != null;
         }
 
     }

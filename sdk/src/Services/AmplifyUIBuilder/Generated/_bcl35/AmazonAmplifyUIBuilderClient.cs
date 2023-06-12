@@ -352,7 +352,7 @@ namespace Amazon.AmplifyUIBuilder
         #region  CreateForm
 
         /// <summary>
-        /// Creates a new form for an Amplify app.
+        /// Creates a new form for an Amplify.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the CreateForm service method.</param>
         /// 
@@ -910,6 +910,72 @@ namespace Amazon.AmplifyUIBuilder
 
         #endregion
         
+        #region  GetCodegenJob
+
+        /// <summary>
+        /// Returns an existing code generation job.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetCodegenJob service method.</param>
+        /// 
+        /// <returns>The response from the GetCodegenJob service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ResourceNotFoundException">
+        /// The requested resource does not exist, or access was denied.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob">REST API Reference for GetCodegenJob Operation</seealso>
+        public virtual GetCodegenJobResponse GetCodegenJob(GetCodegenJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCodegenJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCodegenJobResponseUnmarshaller.Instance;
+
+            return Invoke<GetCodegenJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetCodegenJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetCodegenJob operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetCodegenJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob">REST API Reference for GetCodegenJob Operation</seealso>
+        public virtual IAsyncResult BeginGetCodegenJob(GetCodegenJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetCodegenJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetCodegenJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetCodegenJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetCodegenJob.</param>
+        /// 
+        /// <returns>Returns a  GetCodegenJobResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/GetCodegenJob">REST API Reference for GetCodegenJob Operation</seealso>
+        public virtual GetCodegenJobResponse EndGetCodegenJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetCodegenJobResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetComponent
 
         /// <summary>
@@ -1155,6 +1221,69 @@ namespace Amazon.AmplifyUIBuilder
         public virtual GetThemeResponse EndGetTheme(IAsyncResult asyncResult)
         {
             return EndInvoke<GetThemeResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListCodegenJobs
+
+        /// <summary>
+        /// Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListCodegenJobs service method.</param>
+        /// 
+        /// <returns>The response from the ListCodegenJobs service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs">REST API Reference for ListCodegenJobs Operation</seealso>
+        public virtual ListCodegenJobsResponse ListCodegenJobs(ListCodegenJobsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCodegenJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodegenJobsResponseUnmarshaller.Instance;
+
+            return Invoke<ListCodegenJobsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListCodegenJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListCodegenJobs operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListCodegenJobs
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs">REST API Reference for ListCodegenJobs Operation</seealso>
+        public virtual IAsyncResult BeginListCodegenJobs(ListCodegenJobsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListCodegenJobsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListCodegenJobsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListCodegenJobs operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListCodegenJobs.</param>
+        /// 
+        /// <returns>Returns a  ListCodegenJobsResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/ListCodegenJobs">REST API Reference for ListCodegenJobs Operation</seealso>
+        public virtual ListCodegenJobsResponse EndListCodegenJobs(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListCodegenJobsResponse>(asyncResult);
         }
 
         #endregion
@@ -1452,6 +1581,69 @@ namespace Amazon.AmplifyUIBuilder
         public virtual RefreshTokenResponse EndRefreshToken(IAsyncResult asyncResult)
         {
             return EndInvoke<RefreshTokenResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  StartCodegenJob
+
+        /// <summary>
+        /// Starts a code generation job for for a specified Amplify app and backend environment.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the StartCodegenJob service method.</param>
+        /// 
+        /// <returns>The response from the StartCodegenJob service method, as returned by AmplifyUIBuilder.</returns>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InternalServerException">
+        /// An internal error has occurred. Please retry your request.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.InvalidParameterException">
+        /// An invalid or out-of-range value was supplied for the input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.AmplifyUIBuilder.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">REST API Reference for StartCodegenJob Operation</seealso>
+        public virtual StartCodegenJobResponse StartCodegenJob(StartCodegenJobRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCodegenJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCodegenJobResponseUnmarshaller.Instance;
+
+            return Invoke<StartCodegenJobResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the StartCodegenJob operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the StartCodegenJob operation on AmazonAmplifyUIBuilderClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndStartCodegenJob
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">REST API Reference for StartCodegenJob Operation</seealso>
+        public virtual IAsyncResult BeginStartCodegenJob(StartCodegenJobRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = StartCodegenJobRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = StartCodegenJobResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  StartCodegenJob operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginStartCodegenJob.</param>
+        /// 
+        /// <returns>Returns a  StartCodegenJobResult from AmplifyUIBuilder.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/StartCodegenJob">REST API Reference for StartCodegenJob Operation</seealso>
+        public virtual StartCodegenJobResponse EndStartCodegenJob(IAsyncResult asyncResult)
+        {
+            return EndInvoke<StartCodegenJobResponse>(asyncResult);
         }
 
         #endregion

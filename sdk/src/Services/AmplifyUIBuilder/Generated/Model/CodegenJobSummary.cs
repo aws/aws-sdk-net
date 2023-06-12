@@ -29,23 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateForm operation.
-    /// Creates a new form for an Amplify.
+    /// A summary of the basic information about the code generation job.
     /// </summary>
-    public partial class CreateFormRequest : AmazonAmplifyUIBuilderRequest
+    public partial class CodegenJobSummary
     {
         private string _appId;
-        private string _clientToken;
+        private DateTime? _createdAt;
         private string _environmentName;
-        private CreateFormData _formToCreate;
+        private string _id;
+        private DateTime? _modifiedAt;
 
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// The unique ID of the Amplify app to associate with the form.
+        /// The unique ID of the Amplify app associated with the code generation job.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public string AppId
         {
             get { return this._appId; }
@@ -59,27 +59,27 @@ namespace Amazon.AmplifyUIBuilder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ClientToken. 
+        /// Gets and sets the property CreatedAt. 
         /// <para>
-        /// The unique client token.
+        /// The time that the code generation job summary was created.
         /// </para>
         /// </summary>
-        public string ClientToken
+        public DateTime CreatedAt
         {
-            get { return this._clientToken; }
-            set { this._clientToken = value; }
+            get { return this._createdAt.GetValueOrDefault(); }
+            set { this._createdAt = value; }
         }
 
-        // Check to see if ClientToken property is set
-        internal bool IsSetClientToken()
+        // Check to see if CreatedAt property is set
+        internal bool IsSetCreatedAt()
         {
-            return this._clientToken != null;
+            return this._createdAt.HasValue; 
         }
 
         /// <summary>
         /// Gets and sets the property EnvironmentName. 
         /// <para>
-        /// The name of the backend environment that is a part of the Amplify app.
+        /// The name of the backend environment associated with the code generation job.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
@@ -96,22 +96,40 @@ namespace Amazon.AmplifyUIBuilder.Model
         }
 
         /// <summary>
-        /// Gets and sets the property FormToCreate. 
+        /// Gets and sets the property Id. 
         /// <para>
-        /// Represents the configuration of the form to create.
+        /// The unique ID for the code generation job summary.
         /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
-        public CreateFormData FormToCreate
+        public string Id
         {
-            get { return this._formToCreate; }
-            set { this._formToCreate = value; }
+            get { return this._id; }
+            set { this._id = value; }
         }
 
-        // Check to see if FormToCreate property is set
-        internal bool IsSetFormToCreate()
+        // Check to see if Id property is set
+        internal bool IsSetId()
         {
-            return this._formToCreate != null;
+            return this._id != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ModifiedAt. 
+        /// <para>
+        /// The time that the code generation job summary was modified.
+        /// </para>
+        /// </summary>
+        public DateTime ModifiedAt
+        {
+            get { return this._modifiedAt.GetValueOrDefault(); }
+            set { this._modifiedAt = value; }
+        }
+
+        // Check to see if ModifiedAt property is set
+        internal bool IsSetModifiedAt()
+        {
+            return this._modifiedAt.HasValue; 
         }
 
     }

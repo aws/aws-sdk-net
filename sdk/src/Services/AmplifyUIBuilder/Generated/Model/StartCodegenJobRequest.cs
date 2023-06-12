@@ -29,23 +29,23 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AmplifyUIBuilder.Model
 {
     /// <summary>
-    /// Container for the parameters to the CreateForm operation.
-    /// Creates a new form for an Amplify.
+    /// Container for the parameters to the StartCodegenJob operation.
+    /// Starts a code generation job for for a specified Amplify app and backend environment.
     /// </summary>
-    public partial class CreateFormRequest : AmazonAmplifyUIBuilderRequest
+    public partial class StartCodegenJobRequest : AmazonAmplifyUIBuilderRequest
     {
         private string _appId;
         private string _clientToken;
+        private StartCodegenJobData _codegenJobToCreate;
         private string _environmentName;
-        private CreateFormData _formToCreate;
 
         /// <summary>
         /// Gets and sets the property AppId. 
         /// <para>
-        /// The unique ID of the Amplify app to associate with the form.
+        /// The unique ID for the Amplify app.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
+        [AWSProperty(Required=true, Min=1, Max=20)]
         public string AppId
         {
             get { return this._appId; }
@@ -61,7 +61,8 @@ namespace Amazon.AmplifyUIBuilder.Model
         /// <summary>
         /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The unique client token.
+        /// The idempotency token used to ensure that the code generation job request completes
+        /// only once.
         /// </para>
         /// </summary>
         public string ClientToken
@@ -74,6 +75,25 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetClientToken()
         {
             return this._clientToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CodegenJobToCreate. 
+        /// <para>
+        /// The code generation job resource configuration.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Required=true)]
+        public StartCodegenJobData CodegenJobToCreate
+        {
+            get { return this._codegenJobToCreate; }
+            set { this._codegenJobToCreate = value; }
+        }
+
+        // Check to see if CodegenJobToCreate property is set
+        internal bool IsSetCodegenJobToCreate()
+        {
+            return this._codegenJobToCreate != null;
         }
 
         /// <summary>
@@ -93,25 +113,6 @@ namespace Amazon.AmplifyUIBuilder.Model
         internal bool IsSetEnvironmentName()
         {
             return this._environmentName != null;
-        }
-
-        /// <summary>
-        /// Gets and sets the property FormToCreate. 
-        /// <para>
-        /// Represents the configuration of the form to create.
-        /// </para>
-        /// </summary>
-        [AWSProperty(Required=true)]
-        public CreateFormData FormToCreate
-        {
-            get { return this._formToCreate; }
-            set { this._formToCreate = value; }
-        }
-
-        // Check to see if FormToCreate property is set
-        internal bool IsSetFormToCreate()
-        {
-            return this._formToCreate != null;
         }
 
     }
