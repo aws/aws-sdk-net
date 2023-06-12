@@ -16,7 +16,7 @@
     <licenseUrl><#=this.Session["licenseUrl"]#></licenseUrl>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud <#=this.Session["BaseName"]#> aws-sdk-v3<#=this.Session["ExtraTags"]#></tags>
-    <iconUrl>https://sdk-for-net.amazonwebservices.com/images/AWSLogo128x128.png</iconUrl>
+    <icon>images\AWSLogo.png</icon>
 <# 
     if (bool.Parse(this.Session["requireLicenseAcceptance"].ToString()))
 	{#>
@@ -69,7 +69,7 @@
     </dependencies>
   </metadata> 
   <files>
-
+    <file src="..\..\..\nuget-content\AWSLogo.png" target="images\" />
     <file src="..\..\..\code-analysis\ServiceAnalysis\\<#=this.Session["CodeAnalysisServiceFolder"]#>\bin\Release\*.dll" target="analyzers\dotnet\cs" exclude="**\Microsoft.CodeAnalysis.*;**\System.Collections.Immutable.*;**\System.Reflection.Metadata.*;**\System.Composition.*" />
     <file src="..\..\..\code-analysis\NuGetInstallScripts\*.ps1" target="tools\" />
 

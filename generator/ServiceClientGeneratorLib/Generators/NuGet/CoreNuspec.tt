@@ -10,10 +10,10 @@
     <authors>Amazon Web Services</authors>
     <description>The Amazon Web Services SDK for .NET - Core Runtime</description>
     <language>en-US</language>
-    <licenseUrl>http://aws.amazon.com/apache2.0/</licenseUrl>
+    <license type="expression">Apache-2.0</license>
     <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>
     <tags>AWS Amazon cloud aws-sdk-v3</tags>
-    <iconUrl>https://sdk-for-net.amazonwebservices.com/images/AWSLogo128x128.png</iconUrl>
+    <icon>images\AWSLogo.png</icon>
     <dependencies>
       <group targetFramework="net35">
       </group>
@@ -27,6 +27,7 @@
     </dependencies>
   </metadata> 
   <files>
+    <file src="..\..\nuget-content\AWSLogo.png" target="images\" />
     <file src="..\..\nuget-content\account-management.ps1" target="tools" />
 
     <file src=".\bin\Release\net35\AWSSDK.Core.dll" target="lib\net35" />
