@@ -37,12 +37,12 @@ namespace Amazon.DynamoDBv2.Model
     /// age exceeds this limit are subject to removal (trimming) from the stream. You might
     /// receive a TrimmedDataAccessException if:
     /// </para>
-    ///  <ul> <li>
+    ///  <ul> <li> 
     /// <para>
     /// You request a shard iterator with a sequence number older than the trim point (24
     /// hours).
     /// </para>
-    ///  </li> <li>
+    ///  </li> <li> 
     /// <para>
     /// You obtain a shard iterator, but before you use the iterator in a <code>GetRecords</code>
     /// request, a stream record in the shard exceeds the 24 hour period and is trimmed. This

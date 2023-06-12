@@ -129,8 +129,8 @@ namespace Amazon.DynamoDBv2.Model
         /// <summary>
         /// Gets and sets the property EventSource. 
         /// <para>
-        /// The AWS service from which the stream record originated. For DynamoDB Streams, this
-        /// is <code>aws:dynamodb</code>.
+        /// The Amazon Web Services service from which the stream record originated. For DynamoDB
+        /// Streams, this is <code>aws:dynamodb</code>.
         /// </para>
         /// </summary>
         public string EventSource

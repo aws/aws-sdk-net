@@ -161,7 +161,7 @@ namespace Amazon.DynamoDBv2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// the AWS customer ID.
+        /// the Amazon Web Services customer ID.
         /// </para>
         ///  </li> <li> 
         /// <para>
