@@ -63,15 +63,9 @@ namespace ServiceClientGenerator.Generators.NuGet
             
             #line default
             #line hidden
-            this.Write("</description>\r\n    <language>en-US</language>\r\n    <licenseUrl>");
-            
-            #line 16 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["licenseUrl"]));
-            
-            #line default
-            #line hidden
-            this.Write("</licenseUrl>\r\n    <projectUrl>https://github.com/aws/aws-sdk-net/</projectUrl>\r\n" +
-                    "    <tags>AWS Amazon cloud ");
+            this.Write("</description>\r\n    <language>en-US</language>\r\n    <license type=\"expression\">Ap" +
+                    "ache-2.0</license>\r\n    <projectUrl>https://github.com/aws/aws-sdk-net/</project" +
+                    "Url>\r\n    <tags>AWS Amazon cloud ");
             
             #line 18 "C:\Dev\Repos\AWSDotNetPublic\generator\ServiceClientGeneratorLib\Generators\NuGet\Nuspec.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.Session["BaseName"]));
