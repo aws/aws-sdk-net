@@ -774,6 +774,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* AWS Transfer for SFTP is a fully managed service that enables transfer of secure data over the internet into and out of Amazon S3. SFTP is deeply embedded in data exchange workflows across different industries such as financial services, healthcare, advertising, and retail, among others.
 * [AWSSDK.Translate](https://www.nuget.org/packages/AWSSDK.Translate/)
 	* Public preview release of Amazon Translate and the Amazon Translate Developer Guide. For more information, see the Amazon Translate Developer Guide.
+* [AWSSDK.VerifiedPermissions](https://www.nuget.org/packages/AWSSDK.VerifiedPermissions/)
+	* GA release of Amazon Verified Permissions.
 * [AWSSDK.VoiceID](https://www.nuget.org/packages/AWSSDK.VoiceID/)
 	* Released the Amazon Voice ID SDK, for usage with the Amazon Connect Voice ID feature released for Amazon Connect.
 * [AWSSDK.VPCLattice](https://www.nuget.org/packages/AWSSDK.VPCLattice/)
