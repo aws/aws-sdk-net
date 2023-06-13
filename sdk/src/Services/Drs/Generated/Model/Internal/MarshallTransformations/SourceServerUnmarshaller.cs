@@ -112,6 +112,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.SourceCloudProperties = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("sourceNetworkID", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.SourceNetworkID = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("sourceProperties", targetDepth))
                 {
                     var unmarshaller = SourcePropertiesUnmarshaller.Instance;

@@ -76,6 +76,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.ConversionServerID = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("eventResourceData", targetDepth))
+                {
+                    var unmarshaller = EventResourceDataUnmarshaller.Instance;
+                    unmarshalledObject.EventResourceData = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("rawError", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

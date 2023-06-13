@@ -77,6 +77,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.CopyTags);
                 }
 
+                if(publicRequest.IsSetExportBucketArn())
+                {
+                    context.Writer.WritePropertyName("exportBucketArn");
+                    context.Writer.Write(publicRequest.ExportBucketArn);
+                }
+
                 if(publicRequest.IsSetLaunchConfigurationTemplateID())
                 {
                     context.Writer.WritePropertyName("launchConfigurationTemplateID");

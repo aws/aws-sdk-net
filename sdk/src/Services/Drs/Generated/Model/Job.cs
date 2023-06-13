@@ -38,6 +38,7 @@ namespace Amazon.Drs.Model
         private string _endDateTime;
         private InitiatedBy _initiatedBy;
         private string _jobid;
+        private List<ParticipatingResource> _participatingResources = new List<ParticipatingResource>();
         private List<ParticipatingServer> _participatingServers = new List<ParticipatingServer>();
         private JobStatus _status;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
@@ -135,6 +136,24 @@ namespace Amazon.Drs.Model
         internal bool IsSetJobID()
         {
             return this._jobid != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ParticipatingResources. 
+        /// <para>
+        /// A list of resources that the Job is acting upon.
+        /// </para>
+        /// </summary>
+        public List<ParticipatingResource> ParticipatingResources
+        {
+            get { return this._participatingResources; }
+            set { this._participatingResources = value; }
+        }
+
+        // Check to see if ParticipatingResources property is set
+        internal bool IsSetParticipatingResources()
+        {
+            return this._participatingResources != null && this._participatingResources.Count > 0; 
         }
 
         /// <summary>

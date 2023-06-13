@@ -82,6 +82,12 @@ namespace Amazon.Drs.Model.Internal.MarshallTransformations
                     unmarshalledObject.CopyTags = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("exportBucketArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ExportBucketArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("launchConfigurationTemplateID", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
