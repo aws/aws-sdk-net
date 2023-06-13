@@ -62,6 +62,24 @@ namespace AWSSDK.UnitTests.RDS
             FallbackCredentialsFactory.CredentialsGenerators = originalFallbackList;
         }
 
+#if ASYNC_AWAIT
+        [TestMethod]
+        [TestCategory("RDS")]
+        public async System.Threading.Tasks.Task GenerateAuthTokenBasicAsync()
+        {
+            AssertAuthToken(await RDSAuthTokenGenerator.GenerateAuthTokenAsync(BasicCredentials,
+                AWSRegion, DBHost, DBPort, DBUser), AccessKey, AWSRegion);
+        }
+
+        [TestMethod]
+        [TestCategory("RDS")]
+        public async System.Threading.Tasks.Task GenerateAuthTokenSessionAsync()
+        {
+            AssertAuthToken(await RDSAuthTokenGenerator.GenerateAuthTokenAsync(SessionCredentials,
+                AWSRegion, DBHost, DBPort, DBUser), AccessKey, AWSRegion, true);
+        }
+#endif
+
         [TestMethod]
         [TestCategory("RDS")]
         public void GenerateAuthTokenBasic()
