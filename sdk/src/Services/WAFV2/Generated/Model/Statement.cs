@@ -226,9 +226,10 @@ namespace Amazon.WAFV2.Model
         ///  <note> 
         /// <para>
         /// You are charged additional fees when you use the WAF Bot Control managed rule group
-        /// <code>AWSManagedRulesBotControlRuleSet</code> or the WAF Fraud Control account takeover
-        /// prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>. For more
-        /// information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
+        /// <code>AWSManagedRulesBotControlRuleSet</code>, the WAF Fraud Control account takeover
+        /// prevention (ATP) managed rule group <code>AWSManagedRulesATPRuleSet</code>, or the
+        /// WAF Fraud Control account creation fraud prevention (ACFP) managed rule group <code>AWSManagedRulesACFPRuleSet</code>.
+        /// For more information, see <a href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.
         /// </para>
         ///  </note>
         /// </summary>

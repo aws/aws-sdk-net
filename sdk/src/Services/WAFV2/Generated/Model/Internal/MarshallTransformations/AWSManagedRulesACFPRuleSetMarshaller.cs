@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// AWSManagedRulesATPRuleSet Marshaller
+    /// AWSManagedRulesACFPRuleSet Marshaller
     /// </summary>
-    public class AWSManagedRulesATPRuleSetMarshaller : IRequestMarshaller<AWSManagedRulesATPRuleSet, JsonMarshallerContext> 
+    public class AWSManagedRulesACFPRuleSetMarshaller : IRequestMarshaller<AWSManagedRulesACFPRuleSet, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,18 +43,24 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(AWSManagedRulesATPRuleSet requestObject, JsonMarshallerContext context)
+        public void Marshall(AWSManagedRulesACFPRuleSet requestObject, JsonMarshallerContext context)
         {
+            if(requestObject.IsSetCreationPath())
+            {
+                context.Writer.WritePropertyName("CreationPath");
+                context.Writer.Write(requestObject.CreationPath);
+            }
+
             if(requestObject.IsSetEnableRegexInPath())
             {
                 context.Writer.WritePropertyName("EnableRegexInPath");
                 context.Writer.Write(requestObject.EnableRegexInPath);
             }
 
-            if(requestObject.IsSetLoginPath())
+            if(requestObject.IsSetRegistrationPagePath())
             {
-                context.Writer.WritePropertyName("LoginPath");
-                context.Writer.Write(requestObject.LoginPath);
+                context.Writer.WritePropertyName("RegistrationPagePath");
+                context.Writer.Write(requestObject.RegistrationPagePath);
             }
 
             if(requestObject.IsSetRequestInspection())
@@ -62,7 +68,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.WritePropertyName("RequestInspection");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = RequestInspectionMarshaller.Instance;
+                var marshaller = RequestInspectionACFPMarshaller.Instance;
                 marshaller.Marshall(requestObject.RequestInspection, context);
 
                 context.Writer.WriteObjectEnd();
@@ -84,7 +90,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static AWSManagedRulesATPRuleSetMarshaller Instance = new AWSManagedRulesATPRuleSetMarshaller();
+        public readonly static AWSManagedRulesACFPRuleSetMarshaller Instance = new AWSManagedRulesACFPRuleSetMarshaller();
 
     }
 }

@@ -29,23 +29,22 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The name of the field in the request payload that contains your customer's password.
+    /// The name of the field in the request payload that contains your customer's email.
     /// 
     /// 
     ///  
     /// <para>
-    /// This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code>
-    /// data types. 
+    /// This data type is used in the <code>RequestInspectionACFP</code> data type. 
     /// </para>
     /// </summary>
-    public partial class PasswordField
+    public partial class EmailField
     {
         private string _identifier;
 
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The name of the password field. 
+        /// The name of the email field. 
         /// </para>
         ///  
         /// <para>
@@ -60,8 +59,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>,
-        /// the password field specification is <code>/form/password</code>.
+        /// For example, for the JSON payload <code>{ "form": { "email": "THE_EMAIL" } }</code>,
+        /// the email field specification is <code>/form/email</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -69,8 +68,8 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with the input element named <code>password1</code>,
-        /// the password field specification is <code>password1</code>.
+        /// For example, for an HTML form with the input element named <code>email1</code>, the
+        /// email field specification is <code>email1</code>.
         /// </para>
         ///  </li> </ul>
         /// </summary>

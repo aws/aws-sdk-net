@@ -29,39 +29,40 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The name of the field in the request payload that contains your customer's password.
-    /// 
+    /// The name of a field in the request payload that contains part or all of your customer's
+    /// primary physical address. 
     /// 
     ///  
     /// <para>
-    /// This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code>
-    /// data types. 
+    /// This data type is used in the <code>RequestInspectionACFP</code> data type. 
     /// </para>
     /// </summary>
-    public partial class PasswordField
+    public partial class AddressField
     {
         private string _identifier;
 
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The name of the password field. 
+        /// The name of a single primary address field. 
         /// </para>
         ///  
         /// <para>
-        /// How you specify this depends on the request inspection payload type.
+        /// How you specify the address fields depends on the request inspection payload type.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For JSON payloads, specify the field name in JSON pointer syntax. For information
+        /// For JSON payloads, specify the field identifiers in JSON pointer syntax. For information
         /// about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation
         /// <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>,
-        /// the password field specification is <code>/form/password</code>.
+        /// For example, for the JSON payload <code>{ "form": { "primaryaddressline1": "THE_ADDRESS1",
+        /// "primaryaddressline2": "THE_ADDRESS2", "primaryaddressline3": "THE_ADDRESS3" } }</code>,
+        /// the address field idenfiers are <code>/form/primaryaddressline1</code>, <code>/form/primaryaddressline2</code>,
+        /// and <code>/form/primaryaddressline3</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -69,8 +70,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with the input element named <code>password1</code>,
-        /// the password field specification is <code>password1</code>.
+        /// For example, for an HTML form with input elements named <code>primaryaddressline1</code>,
+        /// <code>primaryaddressline2</code>, and <code>primaryaddressline3</code>, the address
+        /// fields identifiers are <code>primaryaddressline1</code>, <code>primaryaddressline2</code>,
+        /// and <code>primaryaddressline3</code>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

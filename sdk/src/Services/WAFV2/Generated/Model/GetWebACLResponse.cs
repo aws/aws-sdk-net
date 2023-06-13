@@ -42,9 +42,10 @@ namespace Amazon.WAFV2.Model
         /// <para>
         /// The URL to use in SDK integrations with Amazon Web Services managed rule groups. For
         /// example, you can use the integration SDKs with the account takeover prevention managed
-        /// rule group <code>AWSManagedRulesATPRuleSet</code>. This is only populated if you are
-        /// using a rule group in your web ACL that integrates with your applications in this
-        /// way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+        /// rule group <code>AWSManagedRulesATPRuleSet</code> and the account creation fraud prevention
+        /// managed rule group <code>AWSManagedRulesACFPRuleSet</code>. This is only populated
+        /// if you are using a rule group in your web ACL that integrates with your applications
+        /// in this way. For more information, see <a href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
         /// client application integration</a> in the <i>WAF Developer Guide</i>.
         /// </para>
         /// </summary>

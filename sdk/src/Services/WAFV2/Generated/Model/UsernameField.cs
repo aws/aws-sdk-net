@@ -29,8 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// Details about your login page username field for request inspection, used in the <code>AWSManagedRulesATPRuleSet</code>
-    /// <code>RequestInspection</code> configuration.
+    /// The name of the field in the request payload that contains your customer's username.
+    /// 
+    /// 
+    ///  
+    /// <para>
+    /// This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code>
+    /// data types. 
+    /// </para>
     /// </summary>
     public partial class UsernameField
     {
@@ -39,8 +45,34 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The name of the username field. For example <code>/form/username</code>.
+        /// The name of the username field. 
         /// </para>
+        ///  
+        /// <para>
+        /// How you specify this depends on the request inspection payload type.
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// For JSON payloads, specify the field name in JSON pointer syntax. For information
+        /// about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation
+        /// <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
+        /// 
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, for the JSON payload <code>{ "form": { "username": "THE_USERNAME" } }</code>,
+        /// the username field specification is <code>/form/username</code>. 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// For form encoded payload types, use the HTML form names.
+        /// </para>
+        ///  
+        /// <para>
+        /// For example, for an HTML form with the input element named <code>username1</code>,
+        /// the username field specification is <code>username1</code> 
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=512)]
         public string Identifier

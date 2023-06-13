@@ -31,7 +31,8 @@ namespace Amazon.WAFV2.Model
     /// <summary>
     /// Configures inspection of the response body. WAF can inspect the first 65,536 bytes
     /// (64 KB) of the response body. This is part of the <code>ResponseInspection</code>
-    /// configuration for <code>AWSManagedRulesATPRuleSet</code>. 
+    /// configuration for <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>.
+    /// 
     /// 
     ///  <note> 
     /// <para>
@@ -47,14 +48,14 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property FailureStrings. 
         /// <para>
-        /// Strings in the body of the response that indicate a failed login attempt. To be counted
-        /// as a failed login, the string can be anywhere in the body and must be an exact match,
-        /// including case. Each string must be unique among the success and failure strings.
-        /// 
+        /// Strings in the body of the response that indicate a failed login or account creation
+        /// attempt. To be counted as a failure, the string can be anywhere in the body and must
+        /// be an exact match, including case. Each string must be unique among the success and
+        /// failure strings. 
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"FailureStrings": [ "Login failed" ]</code> 
+        /// JSON example: <code>"FailureStrings": [ "Request failed" ]</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]
@@ -73,15 +74,15 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property SuccessStrings. 
         /// <para>
-        /// Strings in the body of the response that indicate a successful login attempt. To be
-        /// counted as a successful login, the string can be anywhere in the body and must be
-        /// an exact match, including case. Each string must be unique among the success and failure
-        /// strings. 
+        /// Strings in the body of the response that indicate a successful login or account creation
+        /// attempt. To be counted as a success, the string can be anywhere in the body and must
+        /// be an exact match, including case. Each string must be unique among the success and
+        /// failure strings. 
         /// </para>
         ///  
         /// <para>
-        /// JSON example: <code>"SuccessStrings": [ "Login successful", "Welcome to our site!"
-        /// ]</code> 
+        /// JSON examples: <code>"SuccessStrings": [ "Login successful" ]</code> and <code>"SuccessStrings":
+        /// [ "Account creation successful", "Welcome to our site!" ]</code> 
         /// </para>
         /// </summary>
         [AWSProperty(Required=true, Min=1, Max=5)]

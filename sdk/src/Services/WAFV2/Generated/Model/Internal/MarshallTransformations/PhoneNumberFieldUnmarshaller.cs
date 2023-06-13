@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AWSManagedRulesATPRuleSet Object
+    /// Response Unmarshaller for PhoneNumberField Object
     /// </summary>  
-    public class AWSManagedRulesATPRuleSetUnmarshaller : IUnmarshaller<AWSManagedRulesATPRuleSet, XmlUnmarshallerContext>, IUnmarshaller<AWSManagedRulesATPRuleSet, JsonUnmarshallerContext>
+    public class PhoneNumberFieldUnmarshaller : IUnmarshaller<PhoneNumberField, XmlUnmarshallerContext>, IUnmarshaller<PhoneNumberField, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AWSManagedRulesATPRuleSet IUnmarshaller<AWSManagedRulesATPRuleSet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        PhoneNumberField IUnmarshaller<PhoneNumberField, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,21 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AWSManagedRulesATPRuleSet Unmarshall(JsonUnmarshallerContext context)
+        public PhoneNumberField Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AWSManagedRulesATPRuleSet unmarshalledObject = new AWSManagedRulesATPRuleSet();
+            PhoneNumberField unmarshalledObject = new PhoneNumberField();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("EnableRegexInPath", targetDepth))
-                {
-                    var unmarshaller = BoolUnmarshaller.Instance;
-                    unmarshalledObject.EnableRegexInPath = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LoginPath", targetDepth))
+                if (context.TestExpression("Identifier", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LoginPath = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("RequestInspection", targetDepth))
-                {
-                    var unmarshaller = RequestInspectionUnmarshaller.Instance;
-                    unmarshalledObject.RequestInspection = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("ResponseInspection", targetDepth))
-                {
-                    var unmarshaller = ResponseInspectionUnmarshaller.Instance;
-                    unmarshalledObject.ResponseInspection = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Identifier = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -94,12 +76,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static AWSManagedRulesATPRuleSetUnmarshaller _instance = new AWSManagedRulesATPRuleSetUnmarshaller();        
+        private static PhoneNumberFieldUnmarshaller _instance = new PhoneNumberFieldUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AWSManagedRulesATPRuleSetUnmarshaller Instance
+        public static PhoneNumberFieldUnmarshaller Instance
         {
             get
             {

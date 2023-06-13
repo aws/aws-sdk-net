@@ -32,12 +32,7 @@ namespace Amazon.WAFV2.Model
     /// Inspect a string containing the list of the request's header names, ordered as they
     /// appear in the web request that WAF receives for inspection. WAF generates the string
     /// and then uses that as the field to match component in its inspection. WAF separates
-    /// the header names in the string using commas and no added spaces.
-    /// 
-    ///  
-    /// <para>
-    /// Matches against the header order string are case insensitive.
-    /// </para>
+    /// the header names in the string using colons and no added spaces, for example <code>host:user-agent:accept:authorization:referer</code>.
     /// </summary>
     public partial class HeaderOrder
     {

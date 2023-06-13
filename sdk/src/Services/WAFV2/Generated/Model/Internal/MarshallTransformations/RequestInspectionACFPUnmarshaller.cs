@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManagedRuleGroupConfig Object
+    /// Response Unmarshaller for RequestInspectionACFP Object
     /// </summary>  
-    public class ManagedRuleGroupConfigUnmarshaller : IUnmarshaller<ManagedRuleGroupConfig, XmlUnmarshallerContext>, IUnmarshaller<ManagedRuleGroupConfig, JsonUnmarshallerContext>
+    public class RequestInspectionACFPUnmarshaller : IUnmarshaller<RequestInspectionACFP, XmlUnmarshallerContext>, IUnmarshaller<RequestInspectionACFP, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ManagedRuleGroupConfig IUnmarshaller<ManagedRuleGroupConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        RequestInspectionACFP IUnmarshaller<RequestInspectionACFP, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,39 +53,27 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ManagedRuleGroupConfig Unmarshall(JsonUnmarshallerContext context)
+        public RequestInspectionACFP Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ManagedRuleGroupConfig unmarshalledObject = new ManagedRuleGroupConfig();
+            RequestInspectionACFP unmarshalledObject = new RequestInspectionACFP();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("AWSManagedRulesACFPRuleSet", targetDepth))
+                if (context.TestExpression("AddressFields", targetDepth))
                 {
-                    var unmarshaller = AWSManagedRulesACFPRuleSetUnmarshaller.Instance;
-                    unmarshalledObject.AWSManagedRulesACFPRuleSet = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AddressField, AddressFieldUnmarshaller>(AddressFieldUnmarshaller.Instance);
+                    unmarshalledObject.AddressFields = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("AWSManagedRulesATPRuleSet", targetDepth))
+                if (context.TestExpression("EmailField", targetDepth))
                 {
-                    var unmarshaller = AWSManagedRulesATPRuleSetUnmarshaller.Instance;
-                    unmarshalledObject.AWSManagedRulesATPRuleSet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("AWSManagedRulesBotControlRuleSet", targetDepth))
-                {
-                    var unmarshaller = AWSManagedRulesBotControlRuleSetUnmarshaller.Instance;
-                    unmarshalledObject.AWSManagedRulesBotControlRuleSet = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("LoginPath", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LoginPath = unmarshaller.Unmarshall(context);
+                    var unmarshaller = EmailFieldUnmarshaller.Instance;
+                    unmarshalledObject.EmailField = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("PasswordField", targetDepth))
@@ -100,6 +88,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                     unmarshalledObject.PayloadType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("PhoneNumberFields", targetDepth))
+                {
+                    var unmarshaller = new ListUnmarshaller<PhoneNumberField, PhoneNumberFieldUnmarshaller>(PhoneNumberFieldUnmarshaller.Instance);
+                    unmarshalledObject.PhoneNumberFields = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("UsernameField", targetDepth))
                 {
                     var unmarshaller = UsernameFieldUnmarshaller.Instance;
@@ -112,12 +106,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManagedRuleGroupConfigUnmarshaller _instance = new ManagedRuleGroupConfigUnmarshaller();        
+        private static RequestInspectionACFPUnmarshaller _instance = new RequestInspectionACFPUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManagedRuleGroupConfigUnmarshaller Instance
+        public static RequestInspectionACFPUnmarshaller Instance
         {
             get
             {

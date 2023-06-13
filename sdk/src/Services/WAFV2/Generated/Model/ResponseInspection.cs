@@ -29,29 +29,32 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The criteria for inspecting responses to login requests, used by the ATP rule group
-    /// to track login failure rates. 
+    /// The criteria for inspecting responses to login requests and account creation requests,
+    /// used by the ATP and ACFP rule groups to track login and account creation success and
+    /// failure rates. 
     /// 
-    ///  
-    /// <para>
-    /// The ATP rule group evaluates the responses that your protected resources send back
-    /// to client login attempts, keeping count of successful and failed attempts from each
-    /// IP address and client session. Using this information, the rule group labels and mitigates
-    /// requests from client sessions and IP addresses that submit too many failed login attempts
-    /// in a short amount of time. 
-    /// </para>
     ///  <note> 
     /// <para>
     /// Response inspection is available only in web ACLs that protect Amazon CloudFront distributions.
     /// </para>
     ///  </note> 
     /// <para>
-    /// This is part of the <code>AWSManagedRulesATPRuleSet</code> configuration in <code>ManagedRuleGroupConfig</code>.
+    /// The rule groups evaluates the responses that your protected resources send back to
+    /// client login and account creation attempts, keeping count of successful and failed
+    /// attempts from each IP address and client session. Using this information, the rule
+    /// group labels and mitigates requests from client sessions and IP addresses with too
+    /// much suspicious activity in a short amount of time. 
     /// </para>
     ///  
     /// <para>
-    /// Enable login response inspection by configuring exactly one component of the response
-    /// to inspect. You can't configure more than one. If you don't configure any of the response
+    /// This is part of the <code>AWSManagedRulesATPRuleSet</code> and <code>AWSManagedRulesACFPRuleSet</code>
+    /// configurations in <code>ManagedRuleGroupConfig</code>.
+    /// </para>
+    ///  
+    /// <para>
+    /// Enable response inspection by configuring exactly one component of the response to
+    /// inspect, for example, <code>Header</code> or <code>StatusCode</code>. You can't configure
+    /// more than one component for inspection. If you don't configure any of the response
     /// inspection options, response inspection is disabled. 
     /// </para>
     /// </summary>
@@ -65,8 +68,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property BodyContains. 
         /// <para>
-        /// Configures inspection of the response body. WAF can inspect the first 65,536 bytes
-        /// (64 KB) of the response body. 
+        /// Configures inspection of the response body for success and failure indicators. WAF
+        /// can inspect the first 65,536 bytes (64 KB) of the response body. 
         /// </para>
         /// </summary>
         public ResponseInspectionBodyContains BodyContains
@@ -84,7 +87,7 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Header. 
         /// <para>
-        /// Configures inspection of the response header. 
+        /// Configures inspection of the response header for success and failure indicators. 
         /// </para>
         /// </summary>
         public ResponseInspectionHeader Header
@@ -102,8 +105,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property Json. 
         /// <para>
-        /// Configures inspection of the response JSON. WAF can inspect the first 65,536 bytes
-        /// (64 KB) of the response JSON. 
+        /// Configures inspection of the response JSON for success and failure indicators. WAF
+        /// can inspect the first 65,536 bytes (64 KB) of the response JSON. 
         /// </para>
         /// </summary>
         public ResponseInspectionJson Json
@@ -121,7 +124,8 @@ namespace Amazon.WAFV2.Model
         /// <summary>
         /// Gets and sets the property StatusCode. 
         /// <para>
-        /// Configures inspection of the response status code. 
+        /// Configures inspection of the response status code for success and failure indicators.
+        /// 
         /// </para>
         /// </summary>
         public ResponseInspectionStatusCode StatusCode

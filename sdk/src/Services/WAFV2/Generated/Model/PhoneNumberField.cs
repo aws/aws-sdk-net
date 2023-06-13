@@ -29,39 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.WAFV2.Model
 {
     /// <summary>
-    /// The name of the field in the request payload that contains your customer's password.
-    /// 
+    /// The name of a field in the request payload that contains part or all of your customer's
+    /// primary phone number. 
     /// 
     ///  
     /// <para>
-    /// This data type is used in the <code>RequestInspection</code> and <code>RequestInspectionACFP</code>
-    /// data types. 
+    /// This data type is used in the <code>RequestInspectionACFP</code> data type. 
     /// </para>
     /// </summary>
-    public partial class PasswordField
+    public partial class PhoneNumberField
     {
         private string _identifier;
 
         /// <summary>
         /// Gets and sets the property Identifier. 
         /// <para>
-        /// The name of the password field. 
+        /// The name of a single primary phone number field. 
         /// </para>
         ///  
         /// <para>
-        /// How you specify this depends on the request inspection payload type.
+        /// How you specify the phone number fields depends on the request inspection payload
+        /// type.
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        /// For JSON payloads, specify the field name in JSON pointer syntax. For information
+        /// For JSON payloads, specify the field identifiers in JSON pointer syntax. For information
         /// about the JSON Pointer syntax, see the Internet Engineering Task Force (IETF) documentation
         /// <a href="https://tools.ietf.org/html/rfc6901">JavaScript Object Notation (JSON) Pointer</a>.
         /// 
         /// </para>
         ///  
         /// <para>
-        /// For example, for the JSON payload <code>{ "form": { "password": "THE_PASSWORD" } }</code>,
-        /// the password field specification is <code>/form/password</code>.
+        /// For example, for the JSON payload <code>{ "form": { "primaryphoneline1": "THE_PHONE1",
+        /// "primaryphoneline2": "THE_PHONE2", "primaryphoneline3": "THE_PHONE3" } }</code>, the
+        /// phone number field identifiers are <code>/form/primaryphoneline1</code>, <code>/form/primaryphoneline2</code>,
+        /// and <code>/form/primaryphoneline3</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -69,8 +71,10 @@ namespace Amazon.WAFV2.Model
         /// </para>
         ///  
         /// <para>
-        /// For example, for an HTML form with the input element named <code>password1</code>,
-        /// the password field specification is <code>password1</code>.
+        /// For example, for an HTML form with input elements named <code>primaryphoneline1</code>,
+        /// <code>primaryphoneline2</code>, and <code>primaryphoneline3</code>, the phone number
+        /// field identifiers are <code>primaryphoneline1</code>, <code>primaryphoneline2</code>,
+        /// and <code>primaryphoneline3</code>. 
         /// </para>
         ///  </li> </ul>
         /// </summary>

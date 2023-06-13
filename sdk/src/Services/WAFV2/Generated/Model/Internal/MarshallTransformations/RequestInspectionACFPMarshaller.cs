@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ManagedRuleGroupConfig Marshaller
+    /// RequestInspectionACFP Marshaller
     /// </summary>
-    public class ManagedRuleGroupConfigMarshaller : IRequestMarshaller<ManagedRuleGroupConfig, JsonMarshallerContext> 
+    public class RequestInspectionACFPMarshaller : IRequestMarshaller<RequestInspectionACFP, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,45 +43,33 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ManagedRuleGroupConfig requestObject, JsonMarshallerContext context)
+        public void Marshall(RequestInspectionACFP requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetAWSManagedRulesACFPRuleSet())
+            if(requestObject.IsSetAddressFields())
             {
-                context.Writer.WritePropertyName("AWSManagedRulesACFPRuleSet");
-                context.Writer.WriteObjectStart();
+                context.Writer.WritePropertyName("AddressFields");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectAddressFieldsListValue in requestObject.AddressFields)
+                {
+                    context.Writer.WriteObjectStart();
 
-                var marshaller = AWSManagedRulesACFPRuleSetMarshaller.Instance;
-                marshaller.Marshall(requestObject.AWSManagedRulesACFPRuleSet, context);
+                    var marshaller = AddressFieldMarshaller.Instance;
+                    marshaller.Marshall(requestObjectAddressFieldsListValue, context);
 
-                context.Writer.WriteObjectEnd();
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
             }
 
-            if(requestObject.IsSetAWSManagedRulesATPRuleSet())
+            if(requestObject.IsSetEmailField())
             {
-                context.Writer.WritePropertyName("AWSManagedRulesATPRuleSet");
+                context.Writer.WritePropertyName("EmailField");
                 context.Writer.WriteObjectStart();
 
-                var marshaller = AWSManagedRulesATPRuleSetMarshaller.Instance;
-                marshaller.Marshall(requestObject.AWSManagedRulesATPRuleSet, context);
+                var marshaller = EmailFieldMarshaller.Instance;
+                marshaller.Marshall(requestObject.EmailField, context);
 
                 context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetAWSManagedRulesBotControlRuleSet())
-            {
-                context.Writer.WritePropertyName("AWSManagedRulesBotControlRuleSet");
-                context.Writer.WriteObjectStart();
-
-                var marshaller = AWSManagedRulesBotControlRuleSetMarshaller.Instance;
-                marshaller.Marshall(requestObject.AWSManagedRulesBotControlRuleSet, context);
-
-                context.Writer.WriteObjectEnd();
-            }
-
-            if(requestObject.IsSetLoginPath())
-            {
-                context.Writer.WritePropertyName("LoginPath");
-                context.Writer.Write(requestObject.LoginPath);
             }
 
             if(requestObject.IsSetPasswordField())
@@ -101,6 +89,22 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.PayloadType);
             }
 
+            if(requestObject.IsSetPhoneNumberFields())
+            {
+                context.Writer.WritePropertyName("PhoneNumberFields");
+                context.Writer.WriteArrayStart();
+                foreach(var requestObjectPhoneNumberFieldsListValue in requestObject.PhoneNumberFields)
+                {
+                    context.Writer.WriteObjectStart();
+
+                    var marshaller = PhoneNumberFieldMarshaller.Instance;
+                    marshaller.Marshall(requestObjectPhoneNumberFieldsListValue, context);
+
+                    context.Writer.WriteObjectEnd();
+                }
+                context.Writer.WriteArrayEnd();
+            }
+
             if(requestObject.IsSetUsernameField())
             {
                 context.Writer.WritePropertyName("UsernameField");
@@ -117,7 +121,7 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ManagedRuleGroupConfigMarshaller Instance = new ManagedRuleGroupConfigMarshaller();
+        public readonly static RequestInspectionACFPMarshaller Instance = new RequestInspectionACFPMarshaller();
 
     }
 }

@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AWSManagedRulesATPRuleSet Object
+    /// Response Unmarshaller for AWSManagedRulesACFPRuleSet Object
     /// </summary>  
-    public class AWSManagedRulesATPRuleSetUnmarshaller : IUnmarshaller<AWSManagedRulesATPRuleSet, XmlUnmarshallerContext>, IUnmarshaller<AWSManagedRulesATPRuleSet, JsonUnmarshallerContext>
+    public class AWSManagedRulesACFPRuleSetUnmarshaller : IUnmarshaller<AWSManagedRulesACFPRuleSet, XmlUnmarshallerContext>, IUnmarshaller<AWSManagedRulesACFPRuleSet, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AWSManagedRulesATPRuleSet IUnmarshaller<AWSManagedRulesATPRuleSet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AWSManagedRulesACFPRuleSet IUnmarshaller<AWSManagedRulesACFPRuleSet, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,32 +53,38 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AWSManagedRulesATPRuleSet Unmarshall(JsonUnmarshallerContext context)
+        public AWSManagedRulesACFPRuleSet Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AWSManagedRulesATPRuleSet unmarshalledObject = new AWSManagedRulesATPRuleSet();
+            AWSManagedRulesACFPRuleSet unmarshalledObject = new AWSManagedRulesACFPRuleSet();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
+                if (context.TestExpression("CreationPath", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.CreationPath = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("EnableRegexInPath", targetDepth))
                 {
                     var unmarshaller = BoolUnmarshaller.Instance;
                     unmarshalledObject.EnableRegexInPath = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("LoginPath", targetDepth))
+                if (context.TestExpression("RegistrationPagePath", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.LoginPath = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.RegistrationPagePath = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RequestInspection", targetDepth))
                 {
-                    var unmarshaller = RequestInspectionUnmarshaller.Instance;
+                    var unmarshaller = RequestInspectionACFPUnmarshaller.Instance;
                     unmarshalledObject.RequestInspection = unmarshaller.Unmarshall(context);
                     continue;
                 }
@@ -94,12 +100,12 @@ namespace Amazon.WAFV2.Model.Internal.MarshallTransformations
         }
 
 
-        private static AWSManagedRulesATPRuleSetUnmarshaller _instance = new AWSManagedRulesATPRuleSetUnmarshaller();        
+        private static AWSManagedRulesACFPRuleSetUnmarshaller _instance = new AWSManagedRulesACFPRuleSetUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AWSManagedRulesATPRuleSetUnmarshaller Instance
+        public static AWSManagedRulesACFPRuleSetUnmarshaller Instance
         {
             get
             {
