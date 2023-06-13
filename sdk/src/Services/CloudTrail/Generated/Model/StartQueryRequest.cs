@@ -30,13 +30,23 @@ namespace Amazon.CloudTrail.Model
 {
     /// <summary>
     /// Container for the parameters to the StartQuery operation.
-    /// Starts a CloudTrail Lake query. The required <code>QueryStatement</code> parameter
-    /// provides your SQL query, enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code>
+    /// Starts a CloudTrail Lake query. Use the <code>QueryStatement</code> parameter to provide
+    /// your SQL query, enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code>
     /// parameter to deliver the query results to an S3 bucket.
+    /// 
+    ///  
+    /// <para>
+    ///  <code>StartQuery</code> requires you specify either the <code>QueryStatement</code>
+    /// parameter, or a <code>QueryAlias</code> and any <code>QueryParameters</code>. In the
+    /// current release, the <code>QueryAlias</code> and <code>QueryParameters</code> parameters
+    /// are used only for the queries that populate the CloudTrail Lake dashboards.
+    /// </para>
     /// </summary>
     public partial class StartQueryRequest : AmazonCloudTrailRequest
     {
         private string _deliveryS3Uri;
+        private string _queryAlias;
+        private List<string> _queryParameters = new List<string>();
         private string _queryStatement;
 
         /// <summary>
@@ -59,12 +69,50 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QueryAlias. 
+        /// <para>
+        ///  The alias that identifies a query template. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string QueryAlias
+        {
+            get { return this._queryAlias; }
+            set { this._queryAlias = value; }
+        }
+
+        // Check to see if QueryAlias property is set
+        internal bool IsSetQueryAlias()
+        {
+            return this._queryAlias != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property QueryParameters. 
+        /// <para>
+        ///  The query parameters for the specified <code>QueryAlias</code>. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> QueryParameters
+        {
+            get { return this._queryParameters; }
+            set { this._queryParameters = value; }
+        }
+
+        // Check to see if QueryParameters property is set
+        internal bool IsSetQueryParameters()
+        {
+            return this._queryParameters != null && this._queryParameters.Count > 0; 
+        }
+
+        /// <summary>
         /// Gets and sets the property QueryStatement. 
         /// <para>
         /// The SQL code of your query.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=10000)]
+        [AWSProperty(Min=1, Max=10000)]
         public string QueryStatement
         {
             get { return this._queryStatement; }

@@ -119,6 +119,12 @@
     <pattern>^[a-zA-Z0-9._/\-:]+$</pattern>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.CloudTrail.Model.DescribeQueryRequest.QueryAlias</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9._\-]*$</pattern>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.CloudTrail.Model.DescribeQueryRequest.QueryId</property>
     <min>36</min>
     <max>36</max>
@@ -451,6 +457,12 @@
     <property>Amazon.CloudTrail.Model.StartQueryRequest.DeliveryS3Uri</property>
     <max>1024</max>
     <pattern>s3://[a-z0-9][\.\-a-z0-9]{1,61}[a-z0-9](/.*)?</pattern>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.CloudTrail.Model.StartQueryRequest.QueryAlias</property>
+    <min>1</min>
+    <max>256</max>
+    <pattern>^[a-zA-Z][a-zA-Z0-9._\-]*$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.CloudTrail.Model.StartQueryRequest.QueryStatement</property>

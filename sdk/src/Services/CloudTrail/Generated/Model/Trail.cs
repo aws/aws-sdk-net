@@ -324,7 +324,7 @@ namespace Amazon.CloudTrail.Model
         /// <summary>
         /// Gets and sets the property SnsTopicName. 
         /// <para>
-        /// This field is no longer in use. Use SnsTopicARN.
+        /// This field is no longer in use. Use <code>SnsTopicARN</code>.
         /// </para>
         /// </summary>
         [Obsolete("This field is deprecated. Use SnsTopicARN.")]

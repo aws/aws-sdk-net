@@ -31,12 +31,20 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Container for the parameters to the DescribeQuery operation.
     /// Returns metadata about a query, including query run time in milliseconds, number of
-    /// events scanned and matched, and query status. You must specify an ARN for <code>EventDataStore</code>,
-    /// and a value for <code>QueryID</code>.
+    /// events scanned and matched, and query status. If the query results were delivered
+    /// to an S3 bucket, the response also provides the S3 URI and the delivery status.
+    /// 
+    ///  
+    /// <para>
+    /// You must specify either a <code>QueryID</code> or a <code>QueryAlias</code>. Specifying
+    /// the <code>QueryAlias</code> parameter returns information about the last query run
+    /// for the alias.
+    /// </para>
     /// </summary>
     public partial class DescribeQueryRequest : AmazonCloudTrailRequest
     {
         private string _eventDataStore;
+        private string _queryAlias;
         private string _queryId;
 
         /// <summary>
@@ -61,12 +69,31 @@ namespace Amazon.CloudTrail.Model
         }
 
         /// <summary>
+        /// Gets and sets the property QueryAlias. 
+        /// <para>
+        ///  The alias that identifies a query template. 
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=256)]
+        public string QueryAlias
+        {
+            get { return this._queryAlias; }
+            set { this._queryAlias = value; }
+        }
+
+        // Check to see if QueryAlias property is set
+        internal bool IsSetQueryAlias()
+        {
+            return this._queryAlias != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property QueryId. 
         /// <para>
         /// The query ID.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=36, Max=36)]
+        [AWSProperty(Min=36, Max=36)]
         public string QueryId
         {
             get { return this._queryId; }

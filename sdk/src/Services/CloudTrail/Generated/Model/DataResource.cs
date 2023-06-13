@@ -128,11 +128,15 @@ namespace Amazon.CloudTrail.Model
         /// The following resource types are also available through <i>advanced</i> event selectors.
         /// Basic event selector resource types are valid in advanced event selectors, but advanced
         /// event selector resource types are not valid in basic event selectors. For more information,
-        /// see <a>AdvancedFieldSelector$Field</a>.
+        /// see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/APIReference/API_AdvancedFieldSelector.html">AdvancedFieldSelector</a>.
         /// </para>
         ///  <ul> <li> 
         /// <para>
         ///  <code>AWS::CloudTrail::Channel</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::CodeWhisperer::Profile</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -145,6 +149,10 @@ namespace Amazon.CloudTrail.Model
         ///  </li> <li> 
         /// <para>
         ///  <code>AWS::EC2::Snapshot</code> 
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>AWS::EMRWAL::Workspace</code> 
         /// </para>
         ///  </li> <li> 
         /// <para>

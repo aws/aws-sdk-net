@@ -31,7 +31,7 @@ namespace Amazon.CloudTrail.Model
     /// <summary>
     /// Container for the parameters to the GetQueryResults operation.
     /// Gets event data results of a query. You must specify the <code>QueryID</code> value
-    /// returned by the <code>StartQuery</code> operation, and an ARN for <code>EventDataStore</code>.
+    /// returned by the <code>StartQuery</code> operation.
     /// </summary>
     public partial class GetQueryResultsRequest : AmazonCloudTrailRequest
     {
