@@ -41,6 +41,8 @@ namespace Amazon.WellArchitected.Model
         private string _nextToken;
         private string _notes;
         private List<PillarReviewSummary> _pillarReviewSummaries = new List<PillarReviewSummary>();
+        private Dictionary<string, int> _prioritizedRiskCounts = new Dictionary<string, int>();
+        private List<WorkloadProfile> _profiles = new List<WorkloadProfile>();
         private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
         private DateTime? _updatedAt;
 
@@ -175,6 +177,40 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetPillarReviewSummaries()
         {
             return this._pillarReviewSummaries != null && this._pillarReviewSummaries.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrioritizedRiskCounts.
+        /// </summary>
+        public Dictionary<string, int> PrioritizedRiskCounts
+        {
+            get { return this._prioritizedRiskCounts; }
+            set { this._prioritizedRiskCounts = value; }
+        }
+
+        // Check to see if PrioritizedRiskCounts property is set
+        internal bool IsSetPrioritizedRiskCounts()
+        {
+            return this._prioritizedRiskCounts != null && this._prioritizedRiskCounts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Profiles. 
+        /// <para>
+        /// The profiles associated with the workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<WorkloadProfile> Profiles
+        {
+            get { return this._profiles; }
+            set { this._profiles = value; }
+        }
+
+        // Check to see if Profiles property is set
+        internal bool IsSetProfiles()
+        {
+            return this._profiles != null && this._profiles.Count > 0; 
         }
 
         /// <summary>

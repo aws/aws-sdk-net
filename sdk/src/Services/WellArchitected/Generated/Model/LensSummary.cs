@@ -183,6 +183,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Owner.
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string Owner
         {
             get { return this._owner; }

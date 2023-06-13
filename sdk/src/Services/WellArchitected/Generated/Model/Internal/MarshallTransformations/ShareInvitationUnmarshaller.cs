@@ -76,6 +76,12 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.LensArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProfileArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("ShareInvitationId", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

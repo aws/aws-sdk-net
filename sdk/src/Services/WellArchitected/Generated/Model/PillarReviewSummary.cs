@@ -36,6 +36,7 @@ namespace Amazon.WellArchitected.Model
         private string _notes;
         private string _pillarId;
         private string _pillarName;
+        private Dictionary<string, int> _prioritizedRiskCounts = new Dictionary<string, int>();
         private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
 
         /// <summary>
@@ -84,6 +85,21 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetPillarName()
         {
             return this._pillarName != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrioritizedRiskCounts.
+        /// </summary>
+        public Dictionary<string, int> PrioritizedRiskCounts
+        {
+            get { return this._prioritizedRiskCounts; }
+            set { this._prioritizedRiskCounts = value; }
+        }
+
+        // Check to see if PrioritizedRiskCounts property is set
+        internal bool IsSetPrioritizedRiskCounts()
+        {
+            return this._prioritizedRiskCounts != null && this._prioritizedRiskCounts.Count > 0; 
         }
 
         /// <summary>

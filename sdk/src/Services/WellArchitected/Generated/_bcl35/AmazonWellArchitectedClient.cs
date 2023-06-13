@@ -362,6 +362,78 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  AssociateProfiles
+
+        /// <summary>
+        /// Associate a profile with a workload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the AssociateProfiles service method.</param>
+        /// 
+        /// <returns>The response from the AssociateProfiles service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AssociateProfiles">REST API Reference for AssociateProfiles Operation</seealso>
+        public virtual AssociateProfilesResponse AssociateProfiles(AssociateProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<AssociateProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the AssociateProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the AssociateProfiles operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndAssociateProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AssociateProfiles">REST API Reference for AssociateProfiles Operation</seealso>
+        public virtual IAsyncResult BeginAssociateProfiles(AssociateProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = AssociateProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = AssociateProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  AssociateProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginAssociateProfiles.</param>
+        /// 
+        /// <returns>Returns a  AssociateProfilesResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/AssociateProfiles">REST API Reference for AssociateProfiles Operation</seealso>
+        public virtual AssociateProfilesResponse EndAssociateProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<AssociateProfilesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  CreateLensShare
 
         /// <summary>
@@ -630,6 +702,153 @@ namespace Amazon.WellArchitected
         public virtual CreateMilestoneResponse EndCreateMilestone(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateMilestoneResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateProfile
+
+        /// <summary>
+        /// Create a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProfile service method.</param>
+        /// 
+        /// <returns>The response from the CreateProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        public virtual CreateProfileResponse CreateProfile(CreateProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProfile operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        public virtual IAsyncResult BeginCreateProfile(CreateProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProfile.</param>
+        /// 
+        /// <returns>Returns a  CreateProfileResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfile">REST API Reference for CreateProfile Operation</seealso>
+        public virtual CreateProfileResponse EndCreateProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateProfileShare
+
+        /// <summary>
+        /// Create a profile share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateProfileShare service method.</param>
+        /// 
+        /// <returns>The response from the CreateProfileShare service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ServiceQuotaExceededException">
+        /// The user has reached their resource quota.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfileShare">REST API Reference for CreateProfileShare Operation</seealso>
+        public virtual CreateProfileShareResponse CreateProfileShare(CreateProfileShareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProfileShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProfileShareResponseUnmarshaller.Instance;
+
+            return Invoke<CreateProfileShareResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateProfileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateProfileShare operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateProfileShare
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfileShare">REST API Reference for CreateProfileShare Operation</seealso>
+        public virtual IAsyncResult BeginCreateProfileShare(CreateProfileShareRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateProfileShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateProfileShareResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateProfileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateProfileShare.</param>
+        /// 
+        /// <returns>Returns a  CreateProfileShareResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateProfileShare">REST API Reference for CreateProfileShare Operation</seealso>
+        public virtual CreateProfileShareResponse EndCreateProfileShare(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateProfileShareResponse>(asyncResult);
         }
 
         #endregion
@@ -1008,6 +1227,164 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  DeleteProfile
+
+        /// <summary>
+        /// Delete a profile.
+        /// 
+        ///  <note> 
+        /// <para>
+        ///  <b>Disclaimer</b> 
+        /// </para>
+        ///  
+        /// <para>
+        /// By sharing your profile with other Amazon Web Services accounts, you acknowledge that
+        /// Amazon Web Services will make your profile available to those other accounts. Those
+        /// other accounts may continue to access and use your shared profile even if you delete
+        /// the profile from your own Amazon Web Services account or terminate your Amazon Web
+        /// Services account.
+        /// </para>
+        ///  </note>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProfile service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        public virtual DeleteProfileResponse DeleteProfile(DeleteProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProfile operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        public virtual IAsyncResult BeginDeleteProfile(DeleteProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProfile.</param>
+        /// 
+        /// <returns>Returns a  DeleteProfileResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfile">REST API Reference for DeleteProfile Operation</seealso>
+        public virtual DeleteProfileResponse EndDeleteProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DeleteProfileShare
+
+        /// <summary>
+        /// Delete a profile share.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProfileShare service method.</param>
+        /// 
+        /// <returns>The response from the DeleteProfileShare service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfileShare">REST API Reference for DeleteProfileShare Operation</seealso>
+        public virtual DeleteProfileShareResponse DeleteProfileShare(DeleteProfileShareRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProfileShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProfileShareResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteProfileShareResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteProfileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteProfileShare operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteProfileShare
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfileShare">REST API Reference for DeleteProfileShare Operation</seealso>
+        public virtual IAsyncResult BeginDeleteProfileShare(DeleteProfileShareRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteProfileShareRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteProfileShareResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteProfileShare operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteProfileShare.</param>
+        /// 
+        /// <returns>Returns a  DeleteProfileShareResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteProfileShare">REST API Reference for DeleteProfileShare Operation</seealso>
+        public virtual DeleteProfileShareResponse EndDeleteProfileShare(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DeleteProfileShareResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  DeleteWorkload
 
         /// <summary>
@@ -1231,6 +1608,78 @@ namespace Amazon.WellArchitected
         public virtual DisassociateLensesResponse EndDisassociateLenses(IAsyncResult asyncResult)
         {
             return EndInvoke<DisassociateLensesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  DisassociateProfiles
+
+        /// <summary>
+        /// Disassociate a profile from a workload.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateProfiles service method.</param>
+        /// 
+        /// <returns>The response from the DisassociateProfiles service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DisassociateProfiles">REST API Reference for DisassociateProfiles Operation</seealso>
+        public virtual DisassociateProfilesResponse DisassociateProfiles(DisassociateProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<DisassociateProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DisassociateProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DisassociateProfiles operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDisassociateProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DisassociateProfiles">REST API Reference for DisassociateProfiles Operation</seealso>
+        public virtual IAsyncResult BeginDisassociateProfiles(DisassociateProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DisassociateProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DisassociateProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DisassociateProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDisassociateProfiles.</param>
+        /// 
+        /// <returns>Returns a  DisassociateProfilesResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DisassociateProfiles">REST API Reference for DisassociateProfiles Operation</seealso>
+        public virtual DisassociateProfilesResponse EndDisassociateProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<DisassociateProfilesResponse>(asyncResult);
         }
 
         #endregion
@@ -1813,6 +2262,144 @@ namespace Amazon.WellArchitected
         public virtual GetMilestoneResponse EndGetMilestone(IAsyncResult asyncResult)
         {
             return EndInvoke<GetMilestoneResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetProfile
+
+        /// <summary>
+        /// Get profile information.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProfile service method.</param>
+        /// 
+        /// <returns>The response from the GetProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfile">REST API Reference for GetProfile Operation</seealso>
+        public virtual GetProfileResponse GetProfile(GetProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
+
+            return Invoke<GetProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProfile operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfile">REST API Reference for GetProfile Operation</seealso>
+        public virtual IAsyncResult BeginGetProfile(GetProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetProfile.</param>
+        /// 
+        /// <returns>Returns a  GetProfileResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfile">REST API Reference for GetProfile Operation</seealso>
+        public virtual GetProfileResponse EndGetProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetProfileResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  GetProfileTemplate
+
+        /// <summary>
+        /// Get profile template.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetProfileTemplate service method.</param>
+        /// 
+        /// <returns>The response from the GetProfileTemplate service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfileTemplate">REST API Reference for GetProfileTemplate Operation</seealso>
+        public virtual GetProfileTemplateResponse GetProfileTemplate(GetProfileTemplateRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProfileTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileTemplateResponseUnmarshaller.Instance;
+
+            return Invoke<GetProfileTemplateResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetProfileTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetProfileTemplate operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetProfileTemplate
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfileTemplate">REST API Reference for GetProfileTemplate Operation</seealso>
+        public virtual IAsyncResult BeginGetProfileTemplate(GetProfileTemplateRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetProfileTemplateRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetProfileTemplateResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetProfileTemplate operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetProfileTemplate.</param>
+        /// 
+        /// <returns>Returns a  GetProfileTemplateResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetProfileTemplate">REST API Reference for GetProfileTemplate Operation</seealso>
+        public virtual GetProfileTemplateResponse EndGetProfileTemplate(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetProfileTemplateResponse>(asyncResult);
         }
 
         #endregion
@@ -2611,6 +3198,207 @@ namespace Amazon.WellArchitected
 
         #endregion
         
+        #region  ListProfileNotifications
+
+        /// <summary>
+        /// List profile notifications.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfileNotifications service method.</param>
+        /// 
+        /// <returns>The response from the ListProfileNotifications service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileNotifications">REST API Reference for ListProfileNotifications Operation</seealso>
+        public virtual ListProfileNotificationsResponse ListProfileNotifications(ListProfileNotificationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProfileNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileNotificationsResponseUnmarshaller.Instance;
+
+            return Invoke<ListProfileNotificationsResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProfileNotifications operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProfileNotifications operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProfileNotifications
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileNotifications">REST API Reference for ListProfileNotifications Operation</seealso>
+        public virtual IAsyncResult BeginListProfileNotifications(ListProfileNotificationsRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProfileNotificationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileNotificationsResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProfileNotifications operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProfileNotifications.</param>
+        /// 
+        /// <returns>Returns a  ListProfileNotificationsResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileNotifications">REST API Reference for ListProfileNotifications Operation</seealso>
+        public virtual ListProfileNotificationsResponse EndListProfileNotifications(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProfileNotificationsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListProfiles
+
+        /// <summary>
+        /// List profiles.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfiles service method.</param>
+        /// 
+        /// <returns>The response from the ListProfiles service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
+        public virtual ListProfilesResponse ListProfiles(ListProfilesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
+
+            return Invoke<ListProfilesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProfiles operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProfiles
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
+        public virtual IAsyncResult BeginListProfiles(ListProfilesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProfilesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfilesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProfiles operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProfiles.</param>
+        /// 
+        /// <returns>Returns a  ListProfilesResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfiles">REST API Reference for ListProfiles Operation</seealso>
+        public virtual ListProfilesResponse EndListProfiles(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProfilesResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListProfileShares
+
+        /// <summary>
+        /// List profile shares.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListProfileShares service method.</param>
+        /// 
+        /// <returns>The response from the ListProfileShares service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileShares">REST API Reference for ListProfileShares Operation</seealso>
+        public virtual ListProfileSharesResponse ListProfileShares(ListProfileSharesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProfileSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileSharesResponseUnmarshaller.Instance;
+
+            return Invoke<ListProfileSharesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListProfileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListProfileShares operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListProfileShares
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileShares">REST API Reference for ListProfileShares Operation</seealso>
+        public virtual IAsyncResult BeginListProfileShares(ListProfileSharesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListProfileSharesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListProfileSharesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListProfileShares operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListProfileShares.</param>
+        /// 
+        /// <returns>Returns a  ListProfileSharesResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListProfileShares">REST API Reference for ListProfileShares Operation</seealso>
+        public virtual ListProfileSharesResponse EndListProfileShares(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListProfileSharesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  ListShareInvitations
 
         /// <summary>
@@ -2684,7 +3472,7 @@ namespace Amazon.WellArchitected
         /// 
         ///  <note> 
         /// <para>
-        /// The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2885,7 +3673,7 @@ namespace Amazon.WellArchitected
         /// 
         ///  <note> 
         /// <para>
-        /// The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.
         /// </para>
         ///  </note>
         /// </summary>
@@ -2951,7 +3739,7 @@ namespace Amazon.WellArchitected
         /// 
         ///  <note> 
         /// <para>
-        /// The WorkloadArn parameter can be either a workload ARN or a custom lens ARN.
+        /// The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.
         /// </para>
         ///  </note> 
         /// <para>
@@ -3227,6 +4015,78 @@ namespace Amazon.WellArchitected
         public virtual UpdateLensReviewResponse EndUpdateLensReview(IAsyncResult asyncResult)
         {
             return EndInvoke<UpdateLensReviewResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpdateProfile
+
+        /// <summary>
+        /// Update a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProfile service method.</param>
+        /// 
+        /// <returns>The response from the UpdateProfile service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        public virtual UpdateProfileResponse UpdateProfile(UpdateProfileRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
+
+            return Invoke<UpdateProfileResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpdateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpdateProfile operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpdateProfile
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        public virtual IAsyncResult BeginUpdateProfile(UpdateProfileRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpdateProfileRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpdateProfileResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpdateProfile operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpdateProfile.</param>
+        /// 
+        /// <returns>Returns a  UpdateProfileResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateProfile">REST API Reference for UpdateProfile Operation</seealso>
+        public virtual UpdateProfileResponse EndUpdateProfile(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpdateProfileResponse>(asyncResult);
         }
 
         #endregion
@@ -3522,6 +4382,78 @@ namespace Amazon.WellArchitected
         public virtual UpgradeLensReviewResponse EndUpgradeLensReview(IAsyncResult asyncResult)
         {
             return EndInvoke<UpgradeLensReviewResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  UpgradeProfileVersion
+
+        /// <summary>
+        /// Upgrade a profile.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeProfileVersion service method.</param>
+        /// 
+        /// <returns>The response from the UpgradeProfileVersion service method, as returned by WellArchitected.</returns>
+        /// <exception cref="Amazon.WellArchitected.Model.AccessDeniedException">
+        /// User does not have sufficient access to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ConflictException">
+        /// The resource has already been processed, was deleted, or is too large.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.InternalServerException">
+        /// There is a problem with the Well-Architected Tool API service.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ResourceNotFoundException">
+        /// The requested resource was not found.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ThrottlingException">
+        /// Request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.WellArchitected.Model.ValidationException">
+        /// The user input is not valid.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeProfileVersion">REST API Reference for UpgradeProfileVersion Operation</seealso>
+        public virtual UpgradeProfileVersionResponse UpgradeProfileVersion(UpgradeProfileVersionRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpgradeProfileVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpgradeProfileVersionResponseUnmarshaller.Instance;
+
+            return Invoke<UpgradeProfileVersionResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the UpgradeProfileVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the UpgradeProfileVersion operation on AmazonWellArchitectedClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndUpgradeProfileVersion
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeProfileVersion">REST API Reference for UpgradeProfileVersion Operation</seealso>
+        public virtual IAsyncResult BeginUpgradeProfileVersion(UpgradeProfileVersionRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = UpgradeProfileVersionRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = UpgradeProfileVersionResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  UpgradeProfileVersion operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginUpgradeProfileVersion.</param>
+        /// 
+        /// <returns>Returns a  UpgradeProfileVersionResult from WellArchitected.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeProfileVersion">REST API Reference for UpgradeProfileVersion Operation</seealso>
+        public virtual UpgradeProfileVersionResponse EndUpgradeProfileVersion(IAsyncResult asyncResult)
+        {
+            return EndInvoke<UpgradeProfileVersionResponse>(asyncResult);
         }
 
         #endregion

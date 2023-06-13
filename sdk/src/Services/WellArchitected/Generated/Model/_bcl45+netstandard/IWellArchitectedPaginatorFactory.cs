@@ -76,6 +76,21 @@ namespace Amazon.WellArchitected.Model
         IListNotificationsPaginator ListNotifications(ListNotificationsRequest request);
 
         /// <summary>
+        /// Paginator for ListProfileNotifications operation
+        ///</summary>
+        IListProfileNotificationsPaginator ListProfileNotifications(ListProfileNotificationsRequest request);
+
+        /// <summary>
+        /// Paginator for ListProfiles operation
+        ///</summary>
+        IListProfilesPaginator ListProfiles(ListProfilesRequest request);
+
+        /// <summary>
+        /// Paginator for ListProfileShares operation
+        ///</summary>
+        IListProfileSharesPaginator ListProfileShares(ListProfileSharesRequest request);
+
+        /// <summary>
         /// Paginator for ListShareInvitations operation
         ///</summary>
         IListShareInvitationsPaginator ListShareInvitations(ListShareInvitationsRequest request);

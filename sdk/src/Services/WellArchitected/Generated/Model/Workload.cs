@@ -49,6 +49,8 @@ namespace Amazon.WellArchitected.Model
         private string _notes;
         private string _owner;
         private List<string> _pillarPriorities = new List<string>();
+        private Dictionary<string, int> _prioritizedRiskCounts = new Dictionary<string, int>();
+        private List<WorkloadProfile> _profiles = new List<WorkloadProfile>();
         private string _reviewOwner;
         private DateTime? _reviewRestrictionDate;
         private Dictionary<string, int> _riskCounts = new Dictionary<string, int>();
@@ -296,6 +298,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property Owner.
         /// </summary>
+        [AWSProperty(Min=12, Max=12)]
         public string Owner
         {
             get { return this._owner; }
@@ -321,6 +324,40 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetPillarPriorities()
         {
             return this._pillarPriorities != null && this._pillarPriorities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property PrioritizedRiskCounts.
+        /// </summary>
+        public Dictionary<string, int> PrioritizedRiskCounts
+        {
+            get { return this._prioritizedRiskCounts; }
+            set { this._prioritizedRiskCounts = value; }
+        }
+
+        // Check to see if PrioritizedRiskCounts property is set
+        internal bool IsSetPrioritizedRiskCounts()
+        {
+            return this._prioritizedRiskCounts != null && this._prioritizedRiskCounts.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Profiles. 
+        /// <para>
+        /// Profile associated with a workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<WorkloadProfile> Profiles
+        {
+            get { return this._profiles; }
+            set { this._profiles = value; }
+        }
+
+        // Check to see if Profiles property is set
+        internal bool IsSetProfiles()
+        {
+            return this._profiles != null && this._profiles.Count > 0; 
         }
 
         /// <summary>
@@ -439,6 +476,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property WorkloadId.
         /// </summary>
+        [AWSProperty(Min=32, Max=32)]
         public string WorkloadId
         {
             get { return this._workloadId; }

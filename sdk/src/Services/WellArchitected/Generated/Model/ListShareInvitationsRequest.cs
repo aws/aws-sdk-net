@@ -37,6 +37,7 @@ namespace Amazon.WellArchitected.Model
         private string _lensNamePrefix;
         private int? _maxResults;
         private string _nextToken;
+        private string _profileNamePrefix;
         private ShareResourceType _shareResourceType;
         private string _workloadNamePrefix;
 
@@ -91,6 +92,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetNextToken()
         {
             return this._nextToken != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileNamePrefix. 
+        /// <para>
+        /// Profile name prefix.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=100)]
+        public string ProfileNamePrefix
+        {
+            get { return this._profileNamePrefix; }
+            set { this._profileNamePrefix = value; }
+        }
+
+        // Check to see if ProfileNamePrefix property is set
+        internal bool IsSetProfileNamePrefix()
+        {
+            return this._profileNamePrefix != null;
         }
 
         /// <summary>

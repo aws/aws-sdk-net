@@ -116,6 +116,30 @@ namespace Amazon.WellArchitected.Model
         }
 
         /// <summary>
+        /// Paginator for ListProfileNotifications operation
+        ///</summary>
+        public IListProfileNotificationsPaginator ListProfileNotifications(ListProfileNotificationsRequest request) 
+        {
+            return new ListProfileNotificationsPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProfiles operation
+        ///</summary>
+        public IListProfilesPaginator ListProfiles(ListProfilesRequest request) 
+        {
+            return new ListProfilesPaginator(this.client, request);
+        }
+
+        /// <summary>
+        /// Paginator for ListProfileShares operation
+        ///</summary>
+        public IListProfileSharesPaginator ListProfileShares(ListProfileSharesRequest request) 
+        {
+            return new ListProfileSharesPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for ListShareInvitations operation
         ///</summary>
         public IListShareInvitationsPaginator ListShareInvitations(ListShareInvitationsRequest request) 

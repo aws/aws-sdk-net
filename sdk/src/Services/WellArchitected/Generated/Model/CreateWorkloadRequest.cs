@@ -71,6 +71,7 @@ namespace Amazon.WellArchitected.Model
         private List<string> _nonAwsRegions = new List<string>();
         private string _notes;
         private List<string> _pillarPriorities = new List<string>();
+        private List<string> _profileArns = new List<string>();
         private string _reviewOwner;
         private Dictionary<string, string> _tags = new Dictionary<string, string>();
         private string _workloadName;
@@ -145,6 +146,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken.
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
@@ -300,6 +302,25 @@ namespace Amazon.WellArchitected.Model
         internal bool IsSetPillarPriorities()
         {
             return this._pillarPriorities != null && this._pillarPriorities.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property ProfileArns. 
+        /// <para>
+        /// The list of profile ARNs associated with the workload.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=1)]
+        public List<string> ProfileArns
+        {
+            get { return this._profileArns; }
+            set { this._profileArns = value; }
+        }
+
+        // Check to see if ProfileArns property is set
+        internal bool IsSetProfileArns()
+        {
+            return this._profileArns != null && this._profileArns.Count > 0; 
         }
 
         /// <summary>

@@ -82,6 +82,18 @@ namespace Amazon.WellArchitected.Model.Internal.MarshallTransformations
                     unmarshalledObject.PermissionType = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("ProfileArn", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileArn = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ProfileName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    unmarshalledObject.ProfileName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("SharedBy", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;

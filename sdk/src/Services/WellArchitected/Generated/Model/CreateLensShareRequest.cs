@@ -76,6 +76,7 @@ namespace Amazon.WellArchitected.Model
         /// <summary>
         /// Gets and sets the property ClientRequestToken.
         /// </summary>
+        [AWSProperty(Min=1, Max=2048)]
         public string ClientRequestToken
         {
             get { return this._clientRequestToken; }
