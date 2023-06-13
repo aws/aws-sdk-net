@@ -81,7 +81,7 @@
     <property>Amazon.SimSpaceWeaver.Model.DescribeSimulationResponse.Arn</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>^arn:(?:aws|aws-cn):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.DescribeSimulationResponse.Description</property>
@@ -109,7 +109,7 @@
     <property>Amazon.SimSpaceWeaver.Model.DescribeSimulationResponse.RoleArn</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>^arn:(?:aws|aws-cn):iam::(\d{12})?:role\/(.+)$</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov):iam::(\d{12})?:role\/(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.ListAppsRequest.Domain</property>
@@ -135,7 +135,7 @@
     <property>Amazon.SimSpaceWeaver.Model.ListTagsForResourceRequest.ResourceArn</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>^arn:(?:aws|aws-cn):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.StartAppRequest.ClientToken</property>
@@ -217,13 +217,13 @@
     <property>Amazon.SimSpaceWeaver.Model.StartSimulationRequest.RoleArn</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>^arn:(?:aws|aws-cn):iam::(\d{12})?:role\/(.+)$</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov):iam::(\d{12})?:role\/(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.StartSimulationResponse.Arn</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>^arn:(?:aws|aws-cn):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.StartSimulationResponse.ExecutionId</property>
@@ -264,19 +264,19 @@
     <property>Amazon.SimSpaceWeaver.Model.TagResourceRequest.ResourceArn</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>^arn:(?:aws|aws-cn):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.UntagResourceRequest.ResourceArn</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>^arn:(?:aws|aws-cn):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.CloudWatchLogsLogGroup.LogGroupArn</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>^arn:(?:aws|aws-cn):log-group:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:role\/(.+)$</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov):log-group:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:role\/(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.Domain.Name</property>
@@ -341,7 +341,7 @@
     <property>Amazon.SimSpaceWeaver.Model.SimulationMetadata.Arn</property>
     <min>0</min>
     <max>1600</max>
-    <pattern>^arn:(?:aws|aws-cn):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
+    <pattern>^arn:(?:aws|aws-cn|aws-us-gov):simspaceweaver:([a-z]{2}-[a-z]+-\d{1}):(\d{12})?:([a-z]+)\/(.+)$</pattern>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.SimSpaceWeaver.Model.SimulationMetadata.Name</property>

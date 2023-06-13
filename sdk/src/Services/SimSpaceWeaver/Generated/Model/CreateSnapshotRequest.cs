@@ -88,6 +88,10 @@ namespace Amazon.SimSpaceWeaver.Model
         /// The Amazon S3 bucket and optional folder (object key prefix) where SimSpace Weaver
         /// creates the snapshot file.
         /// </para>
+        ///  
+        /// <para>
+        /// The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public S3Destination Destination

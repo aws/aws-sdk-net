@@ -195,6 +195,10 @@ namespace Amazon.SimSpaceWeaver.Model
         /// </para>
         ///  
         /// <para>
+        /// The Amazon S3 bucket must be in the same Amazon Web Services Region as the simulation.
+        /// </para>
+        ///  
+        /// <para>
         /// If you provide a <code>SnapshotS3Location</code> then you can't provide a <code>SchemaS3Location</code>.
         /// </para>
         /// </summary>
