@@ -31,6 +31,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         private static string bucketName;
         private static string testContent = "This is the content body!";
         private static IAmazonS3 s3Client = null;
+        private static List<string> leftoverBuckets = new List<string>();
 
         private Random random = new Random();
 
@@ -63,6 +64,14 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
         [ClassCleanup]
         public static void ClassCleanup()
         {
+            if (leftoverBuckets.Any())
+            {
+                foreach (var bucket in leftoverBuckets)
+                {
+                    AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucket);
+                }
+            }
+
             AmazonS3Util.DeleteS3BucketWithObjects(s3Client, bucketName);
             s3Client.Dispose();
             BaseClean();
@@ -241,9 +250,10 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.S3
             {
                 client.DeleteBucket(newBucket);
             }
-            catch
+            catch (Exception ex)
             {
-                Console.WriteLine($"Failed to clean up new bucket {newBucket}. Ignore leftover bucket.");
+                Console.WriteLine($"Failed to clean up new bucket {newBucket}: {ex.Message}.");
+                leftoverBuckets.Add(newBucket);
             }
         }        
     }
