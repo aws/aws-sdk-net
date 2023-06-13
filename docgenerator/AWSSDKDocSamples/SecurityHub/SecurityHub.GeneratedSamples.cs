@@ -26,6 +26,25 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubBatchDeleteAutomationRules()
+        {
+            #region to-delete-one-or-more-automation-rules-1684769550318
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.BatchDeleteAutomationRules(new BatchDeleteAutomationRulesRequest 
+            {
+                AutomationRulesArns = new List<string> {
+                    "arn:aws:securityhub:us-east-1:123456789012:automation-rule/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                    "arn:aws:securityhub:us-east-1:123456789012:automation-rule/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222"
+                }
+            });
+
+            List<string> processedAutomationRules = response.ProcessedAutomationRules;
+            List<UnprocessedAutomationRule> unprocessedAutomationRules = response.UnprocessedAutomationRules;
+
+            #endregion
+        }
+
         public void SecurityHubBatchDisableStandards()
         {
             #region to-disable-one-or-more-security-standards-1674851507200
@@ -56,6 +75,24 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             });
 
             List<StandardsSubscription> standardsSubscriptions = response.StandardsSubscriptions;
+
+            #endregion
+        }
+
+        public void SecurityHubBatchGetAutomationRules()
+        {
+            #region to-update-one-ore-more-automation-rules-1684771025347
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.BatchGetAutomationRules(new BatchGetAutomationRulesRequest 
+            {
+                AutomationRulesArns = new List<string> {
+                    "arn:aws:securityhub:us-east-1:123456789012:automation-rule/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                    "arn:aws:securityhub:us-east-1:123456789012:automation-rule/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222"
+                }
+            });
+
+            List<AutomationRulesConfig> rules = response.Rules;
 
             #endregion
         }
@@ -148,6 +185,31 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             #endregion
         }
 
+        public void SecurityHubBatchUpdateAutomationRules()
+        {
+            #region to-update-one-ore-more-automation-rules-1684771025347
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.BatchUpdateAutomationRules(new BatchUpdateAutomationRulesRequest 
+            {
+                UpdateAutomationRulesRequestItems = new List<UpdateAutomationRulesRequestItem> {
+                    new UpdateAutomationRulesRequestItem {
+                        RuleArn = "arn:aws:securityhub:us-east-1:123456789012:automation-rule/a1b2c3d4-5678-90ab-cdef-EXAMPLE11111",
+                        RuleOrder = 15,
+                        RuleStatus = "ENABLED"
+                    },
+                    new UpdateAutomationRulesRequestItem {
+                        RuleArn = "arn:aws:securityhub:us-east-1:123456789012:automation-rule/a1b2c3d4-5678-90ab-cdef-EXAMPLE22222",
+                        RuleStatus = "DISABLED"
+                    }
+                }
+            });
+
+            List<string> processedAutomationRules = response.ProcessedAutomationRules;
+
+            #endregion
+        }
+
         public void SecurityHubBatchUpdateFindings()
         {
             #region to-update-security-hub-findings-1675183938248
@@ -235,6 +297,72 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             });
 
             string actionTargetArn = response.ActionTargetArn;
+
+            #endregion
+        }
+
+        public void SecurityHubCreateAutomationRule()
+        {
+            #region to-create-an-automation-rule-1684768393507
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.CreateAutomationRule(new CreateAutomationRuleRequest 
+            {
+                Actions = new List<AutomationRulesAction> {
+                    new AutomationRulesAction {
+                        FindingFieldsUpdate = new AutomationRulesFindingFieldsUpdate {
+                            Note = new NoteUpdate {
+                                Text = "This is a critical S3 bucket, please look into this ASAP",
+                                UpdatedBy = "test-user"
+                            },
+                            Severity = new SeverityUpdate { Label = "CRITICAL" }
+                        },
+                        Type = "FINDING_FIELDS_UPDATE"
+                    }
+                },
+                Criteria = new AutomationRulesFindingFilters {
+                    ComplianceStatus = new List<StringFilter> {
+                        new StringFilter {
+                            Comparison = "EQUALS",
+                            Value = "FAILED"
+                        }
+                    },
+                    ProductName = new List<StringFilter> {
+                        new StringFilter {
+                            Comparison = "EQUALS",
+                            Value = "Security Hub"
+                        }
+                    },
+                    RecordState = new List<StringFilter> {
+                        new StringFilter {
+                            Comparison = "EQUALS",
+                            Value = "ACTIVE"
+                        }
+                    },
+                    ResourceId = new List<StringFilter> {
+                        new StringFilter {
+                            Comparison = "EQUALS",
+                            Value = "arn:aws:s3:::examplebucket/developers/design_info.doc"
+                        }
+                    },
+                    WorkflowStatus = new List<StringFilter> {
+                        new StringFilter {
+                            Comparison = "EQUALS",
+                            Value = "NEW"
+                        }
+                    }
+                },
+                Description = "Elevate finding severity to Critical for important resources",
+                IsTerminal = false,
+                RuleName = "Elevate severity for important resources",
+                RuleOrder = 1,
+                RuleStatus = "ENABLED",
+                Tags = new Dictionary<string, string> {
+                    { "important-resources-rule", "s3-bucket" }
+                }
+            });
+
+            string ruleArn = response.RuleArn;
 
             #endregion
         }
@@ -794,6 +922,23 @@ namespace AWSSDKDocSamples.Amazon.SecurityHub.Generated
             });
 
             List<Result> unprocessedAccounts = response.UnprocessedAccounts;
+
+            #endregion
+        }
+
+        public void SecurityHubListAutomationRules()
+        {
+            #region to-list-automation-rules-1684770582059
+
+            var client = new AmazonSecurityHubClient();
+            var response = client.ListAutomationRules(new ListAutomationRulesRequest 
+            {
+                MaxResults = 2,
+                NextToken = "example-token"
+            });
+
+            List<AutomationRulesMetadata> automationRulesMetadata = response.AutomationRulesMetadata;
+            string nextToken = response.NextToken;
 
             #endregion
         }

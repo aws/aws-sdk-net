@@ -175,6 +175,52 @@ namespace Amazon.SecurityHub
 
 
     /// <summary>
+    /// Constants used for properties of type AutomationRulesActionType.
+    /// </summary>
+    public class AutomationRulesActionType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant FINDING_FIELDS_UPDATE for AutomationRulesActionType
+        /// </summary>
+        public static readonly AutomationRulesActionType FINDING_FIELDS_UPDATE = new AutomationRulesActionType("FINDING_FIELDS_UPDATE");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public AutomationRulesActionType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static AutomationRulesActionType FindValue(string value)
+        {
+            return FindValue<AutomationRulesActionType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator AutomationRulesActionType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type AwsIamAccessKeyStatus.
     /// </summary>
     public class AwsIamAccessKeyStatus : ConstantClass
@@ -986,6 +1032,56 @@ namespace Amazon.SecurityHub
         /// <param name="value">The string value to convert to the constant class.</param>
         /// <returns></returns>
         public static implicit operator RegionAvailabilityStatus(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
+    /// Constants used for properties of type RuleStatus.
+    /// </summary>
+    public class RuleStatus : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant DISABLED for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus DISABLED = new RuleStatus("DISABLED");
+        /// <summary>
+        /// Constant ENABLED for RuleStatus
+        /// </summary>
+        public static readonly RuleStatus ENABLED = new RuleStatus("ENABLED");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public RuleStatus(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static RuleStatus FindValue(string value)
+        {
+            return FindValue<RuleStatus>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator RuleStatus(string value)
         {
             return FindValue(value);
         }

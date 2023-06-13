@@ -21,6 +21,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchDeleteAutomationRules(Amazon.SecurityHub.Model.BatchDeleteAutomationRulesRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchDeleteAutomationRules(Amazon.SecurityHub.Model.BatchDeleteAutomationRulesRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchDeleteAutomationRulesRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchDeleteAutomationRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example deletes the specified automation rules.
+                </para>
+                <code
+                    title="To delete one or more automation rules"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-delete-one-or-more-automation-rules-1684769550318" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchDisableStandards(Amazon.SecurityHub.Model.BatchDisableStandardsRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchDisableStandards(Amazon.SecurityHub.Model.BatchDisableStandardsRequest)" />
             <member name="T:Amazon.SecurityHub.Model.BatchDisableStandardsRequest" />
@@ -54,6 +73,25 @@
                     title="To enable security standards"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
                     region="to-enable-security-standards-1683233792239" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchGetAutomationRules(Amazon.SecurityHub.Model.BatchGetAutomationRulesRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchGetAutomationRules(Amazon.SecurityHub.Model.BatchGetAutomationRulesRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetAutomationRulesRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchGetAutomationRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the specified automation rules.
+                </para>
+                <code
+                    title="To update one ore more automation rules"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-one-ore-more-automation-rules-1684771025347" />
             </example>
         </value>
     </doc>
@@ -116,6 +154,25 @@
     </doc>
     <doc>
         <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchUpdateAutomationRules(Amazon.SecurityHub.Model.BatchUpdateAutomationRulesRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchUpdateAutomationRules(Amazon.SecurityHub.Model.BatchUpdateAutomationRulesRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.BatchUpdateAutomationRulesRequest" />
+            <member name="T:Amazon.SecurityHub.Model.BatchUpdateAutomationRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example updates the specified automation rules.
+                </para>
+                <code
+                    title="To update one ore more automation rules"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-update-one-ore-more-automation-rules-1684771025347" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
             <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.BatchUpdateFindings(Amazon.SecurityHub.Model.BatchUpdateFindingsRequest)" />
             <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.BatchUpdateFindings(Amazon.SecurityHub.Model.BatchUpdateFindingsRequest)" />
             <member name="T:Amazon.SecurityHub.Model.BatchUpdateFindingsRequest" />
@@ -168,6 +225,25 @@
                     title="To create a custom action target"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
                     region="to-create-a-custom-action-target-1675184966299" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.CreateAutomationRule(Amazon.SecurityHub.Model.CreateAutomationRuleRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.CreateAutomationRule(Amazon.SecurityHub.Model.CreateAutomationRuleRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.CreateAutomationRuleRequest" />
+            <member name="T:Amazon.SecurityHub.Model.CreateAutomationRuleResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example creates an automation rule.
+                </para>
+                <code
+                    title="To create an automation rule"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-create-an-automation-rule-1684768393507" />
             </example>
         </value>
     </doc>
@@ -797,6 +873,25 @@
                     title="To invite accounts to become members"
                     source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
                     region="to-invite-accounts-to-become-members-1677775500860" />
+            </example>
+        </value>
+    </doc>
+    <doc>
+        <members>
+            <member name="M:Amazon.SecurityHub.IAmazonSecurityHub.ListAutomationRules(Amazon.SecurityHub.Model.ListAutomationRulesRequest)" />
+            <member name="M:Amazon.SecurityHub.AmazonSecurityHubClient.ListAutomationRules(Amazon.SecurityHub.Model.ListAutomationRulesRequest)" />
+            <member name="T:Amazon.SecurityHub.Model.ListAutomationRulesRequest" />
+            <member name="T:Amazon.SecurityHub.Model.ListAutomationRulesResponse" />
+        </members>
+        <value>
+            <example>
+                <para>
+                    The following example lists automation rules and rule metadata in the calling account.
+                </para>
+                <code
+                    title="To list automation rules"
+                    source=".\AWSSDKDocSamples\SecurityHub\SecurityHub.GeneratedSamples.cs"
+                    region="to-list-automation-rules-1684770582059" />
             </example>
         </value>
     </doc>

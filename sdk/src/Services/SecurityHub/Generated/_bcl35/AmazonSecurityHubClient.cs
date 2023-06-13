@@ -505,6 +505,78 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  BatchDeleteAutomationRules
+
+        /// <summary>
+        /// Deletes one or more automation rules.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the BatchDeleteAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDeleteAutomationRules">REST API Reference for BatchDeleteAutomationRules Operation</seealso>
+        public virtual BatchDeleteAutomationRulesResponse BatchDeleteAutomationRules(BatchDeleteAutomationRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteAutomationRulesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchDeleteAutomationRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchDeleteAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchDeleteAutomationRules operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchDeleteAutomationRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDeleteAutomationRules">REST API Reference for BatchDeleteAutomationRules Operation</seealso>
+        public virtual IAsyncResult BeginBatchDeleteAutomationRules(BatchDeleteAutomationRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchDeleteAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchDeleteAutomationRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchDeleteAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchDeleteAutomationRules.</param>
+        /// 
+        /// <returns>Returns a  BatchDeleteAutomationRulesResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchDeleteAutomationRules">REST API Reference for BatchDeleteAutomationRules Operation</seealso>
+        public virtual BatchDeleteAutomationRulesResponse EndBatchDeleteAutomationRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchDeleteAutomationRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchDisableStandards
 
         /// <summary>
@@ -652,6 +724,82 @@ namespace Amazon.SecurityHub
         public virtual BatchEnableStandardsResponse EndBatchEnableStandards(IAsyncResult asyncResult)
         {
             return EndInvoke<BatchEnableStandardsResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  BatchGetAutomationRules
+
+        /// <summary>
+        /// Retrieves a list of details for automation rules based on rule Amazon Resource Names
+        /// (ARNs).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the BatchGetAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetAutomationRules">REST API Reference for BatchGetAutomationRules Operation</seealso>
+        public virtual BatchGetAutomationRulesResponse BatchGetAutomationRules(BatchGetAutomationRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAutomationRulesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchGetAutomationRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchGetAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchGetAutomationRules operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchGetAutomationRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetAutomationRules">REST API Reference for BatchGetAutomationRules Operation</seealso>
+        public virtual IAsyncResult BeginBatchGetAutomationRules(BatchGetAutomationRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchGetAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchGetAutomationRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchGetAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchGetAutomationRules.</param>
+        /// 
+        /// <returns>Returns a  BatchGetAutomationRulesResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchGetAutomationRules">REST API Reference for BatchGetAutomationRules Operation</seealso>
+        public virtual BatchGetAutomationRulesResponse EndBatchGetAutomationRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchGetAutomationRulesResponse>(asyncResult);
         }
 
         #endregion
@@ -944,6 +1092,79 @@ namespace Amazon.SecurityHub
 
         #endregion
         
+        #region  BatchUpdateAutomationRules
+
+        /// <summary>
+        /// Updates one or more automation rules based on rule Amazon Resource Names (ARNs) and
+        /// input parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the BatchUpdateAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.ResourceNotFoundException">
+        /// The request was rejected because we can't find the specified resource.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateAutomationRules">REST API Reference for BatchUpdateAutomationRules Operation</seealso>
+        public virtual BatchUpdateAutomationRulesResponse BatchUpdateAutomationRules(BatchUpdateAutomationRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateAutomationRulesResponseUnmarshaller.Instance;
+
+            return Invoke<BatchUpdateAutomationRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the BatchUpdateAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the BatchUpdateAutomationRules operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndBatchUpdateAutomationRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateAutomationRules">REST API Reference for BatchUpdateAutomationRules Operation</seealso>
+        public virtual IAsyncResult BeginBatchUpdateAutomationRules(BatchUpdateAutomationRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = BatchUpdateAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = BatchUpdateAutomationRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  BatchUpdateAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginBatchUpdateAutomationRules.</param>
+        /// 
+        /// <returns>Returns a  BatchUpdateAutomationRulesResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/BatchUpdateAutomationRules">REST API Reference for BatchUpdateAutomationRules Operation</seealso>
+        public virtual BatchUpdateAutomationRulesResponse EndBatchUpdateAutomationRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<BatchUpdateAutomationRulesResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  BatchUpdateFindings
 
         /// <summary>
@@ -1214,6 +1435,78 @@ namespace Amazon.SecurityHub
         public virtual CreateActionTargetResponse EndCreateActionTarget(IAsyncResult asyncResult)
         {
             return EndInvoke<CreateActionTargetResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  CreateAutomationRule
+
+        /// <summary>
+        /// Creates an automation rule based on input parameters.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRule service method.</param>
+        /// 
+        /// <returns>The response from the CreateAutomationRule service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRule">REST API Reference for CreateAutomationRule Operation</seealso>
+        public virtual CreateAutomationRuleResponse CreateAutomationRule(CreateAutomationRuleRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutomationRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomationRuleResponseUnmarshaller.Instance;
+
+            return Invoke<CreateAutomationRuleResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateAutomationRule operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateAutomationRule operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateAutomationRule
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRule">REST API Reference for CreateAutomationRule Operation</seealso>
+        public virtual IAsyncResult BeginCreateAutomationRule(CreateAutomationRuleRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateAutomationRuleRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateAutomationRuleResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateAutomationRule operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateAutomationRule.</param>
+        /// 
+        /// <returns>Returns a  CreateAutomationRuleResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/CreateAutomationRule">REST API Reference for CreateAutomationRule Operation</seealso>
+        public virtual CreateAutomationRuleResponse EndCreateAutomationRule(IAsyncResult asyncResult)
+        {
+            return EndInvoke<CreateAutomationRuleResponse>(asyncResult);
         }
 
         #endregion
@@ -3999,6 +4292,78 @@ namespace Amazon.SecurityHub
         public virtual InviteMembersResponse EndInviteMembers(IAsyncResult asyncResult)
         {
             return EndInvoke<InviteMembersResponse>(asyncResult);
+        }
+
+        #endregion
+        
+        #region  ListAutomationRules
+
+        /// <summary>
+        /// A list of automation rules and their metadata for the calling account.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomationRules service method.</param>
+        /// 
+        /// <returns>The response from the ListAutomationRules service method, as returned by SecurityHub.</returns>
+        /// <exception cref="Amazon.SecurityHub.Model.AccessDeniedException">
+        /// You don't have permission to perform the action specified in the request.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InternalException">
+        /// Internal server error.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidAccessException">
+        /// The account doesn't have permission to perform this action.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.InvalidInputException">
+        /// The request was rejected because you supplied an invalid or out-of-range value for
+        /// an input parameter.
+        /// </exception>
+        /// <exception cref="Amazon.SecurityHub.Model.LimitExceededException">
+        /// The request was rejected because it attempted to create resources beyond the current
+        /// Amazon Web Services account or throttling limits. The error code describes the limit
+        /// exceeded.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRules">REST API Reference for ListAutomationRules Operation</seealso>
+        public virtual ListAutomationRulesResponse ListAutomationRules(ListAutomationRulesRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomationRulesResponseUnmarshaller.Instance;
+
+            return Invoke<ListAutomationRulesResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ListAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ListAutomationRules operation on AmazonSecurityHubClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndListAutomationRules
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRules">REST API Reference for ListAutomationRules Operation</seealso>
+        public virtual IAsyncResult BeginListAutomationRules(ListAutomationRulesRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ListAutomationRulesRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ListAutomationRulesResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ListAutomationRules operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginListAutomationRules.</param>
+        /// 
+        /// <returns>Returns a  ListAutomationRulesResult from SecurityHub.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/ListAutomationRules">REST API Reference for ListAutomationRules Operation</seealso>
+        public virtual ListAutomationRulesResponse EndListAutomationRules(IAsyncResult asyncResult)
+        {
+            return EndInvoke<ListAutomationRulesResponse>(asyncResult);
         }
 
         #endregion
