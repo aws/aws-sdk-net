@@ -90,6 +90,12 @@ namespace Amazon.Lightsail.Model.Internal.MarshallTransformations
                     context.Writer.Write(publicRequest.IncludeCertificateDetails);
                 }
 
+                if(publicRequest.IsSetPageToken())
+                {
+                    context.Writer.WritePropertyName("pageToken");
+                    context.Writer.Write(publicRequest.PageToken);
+                }
+
                 writer.WriteObjectEnd();
                 string snippet = stringWriter.ToString();
                 request.Content = System.Text.Encoding.UTF8.GetBytes(snippet);
