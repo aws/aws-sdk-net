@@ -336,6 +336,10 @@
       <Project>{F1A2D6CA-C586-40AA-8E90-697D715219D1}</Project>
       <Name>AWSSDK.CodeGuruReviewer.CodeAnalysis</Name>
     </ProjectReference>
+    <ProjectReference Include="../ServiceAnalysis/CodeGuruSecurity/AWSSDK.CodeGuruSecurity.CodeAnalysis.csproj">
+      <Project>{E0B96EC2-6E65-4A80-AC16-6B57C6434E30}</Project>
+      <Name>AWSSDK.CodeGuruSecurity.CodeAnalysis</Name>
+    </ProjectReference>
     <ProjectReference Include="../ServiceAnalysis/CodePipeline/AWSSDK.CodePipeline.CodeAnalysis.csproj">
       <Project>{ECDB9DA6-F184-479F-B658-1DAD5D9A5BE8}</Project>
       <Name>AWSSDK.CodePipeline.CodeAnalysis</Name>

@@ -246,6 +246,8 @@ Unit tests can be found in the **AWSSDK.UnitTests** project.
 	* (New Service) Amazon CodeGuru Profiler analyzes application CPU utilization and latency characteristics to show you where you are spending the most cycles in your application. This analysis is presented in an interactive flame graph that helps you easily understand which paths consume the most resources, verify that your application is performing as expected, and uncover areas that can be optimized further.
 * [AWSSDK.CodeGuruReviewer](https://www.nuget.org/packages/AWSSDK.CodeGuruReviewer/)
 	* This is the preview release of Amazon CodeGuru Reviewer.
+* [AWSSDK.CodeGuruSecurity](https://www.nuget.org/packages/AWSSDK.CodeGuruSecurity/)
+	* Initial release of Amazon CodeGuru Security APIs
 * [AWSSDK.CodePipeline](https://www.nuget.org/packages/AWSSDK.CodePipeline/)
 	* AWS CodePipeline is a continuous delivery service for fast and reliable application updates.
 * [AWSSDK.CodeStar](https://www.nuget.org/packages/AWSSDK.CodeStar/)
