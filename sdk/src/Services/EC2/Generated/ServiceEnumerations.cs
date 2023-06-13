@@ -4225,6 +4225,72 @@ namespace Amazon.EC2
 
 
     /// <summary>
+    /// Constants used for properties of type Ec2InstanceConnectEndpointState.
+    /// </summary>
+    public class Ec2InstanceConnectEndpointState : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant CreateComplete for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState CreateComplete = new Ec2InstanceConnectEndpointState("create-complete");
+        /// <summary>
+        /// Constant CreateFailed for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState CreateFailed = new Ec2InstanceConnectEndpointState("create-failed");
+        /// <summary>
+        /// Constant CreateInProgress for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState CreateInProgress = new Ec2InstanceConnectEndpointState("create-in-progress");
+        /// <summary>
+        /// Constant DeleteComplete for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState DeleteComplete = new Ec2InstanceConnectEndpointState("delete-complete");
+        /// <summary>
+        /// Constant DeleteFailed for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState DeleteFailed = new Ec2InstanceConnectEndpointState("delete-failed");
+        /// <summary>
+        /// Constant DeleteInProgress for Ec2InstanceConnectEndpointState
+        /// </summary>
+        public static readonly Ec2InstanceConnectEndpointState DeleteInProgress = new Ec2InstanceConnectEndpointState("delete-in-progress");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public Ec2InstanceConnectEndpointState(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static Ec2InstanceConnectEndpointState FindValue(string value)
+        {
+            return FindValue<Ec2InstanceConnectEndpointState>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator Ec2InstanceConnectEndpointState(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type ElasticGpuState.
     /// </summary>
     public class ElasticGpuState : ConstantClass
@@ -14786,6 +14852,10 @@ namespace Amazon.EC2
         /// Constant Instance for ResourceType
         /// </summary>
         public static readonly ResourceType Instance = new ResourceType("instance");
+        /// <summary>
+        /// Constant InstanceConnectEndpoint for ResourceType
+        /// </summary>
+        public static readonly ResourceType InstanceConnectEndpoint = new ResourceType("instance-connect-endpoint");
         /// <summary>
         /// Constant InstanceEventWindow for ResourceType
         /// </summary>

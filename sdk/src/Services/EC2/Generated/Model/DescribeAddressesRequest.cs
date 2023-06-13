@@ -31,20 +31,6 @@ namespace Amazon.EC2.Model
     /// <summary>
     /// Container for the parameters to the DescribeAddresses operation.
     /// Describes the specified Elastic IP addresses or all of your Elastic IP addresses.
-    /// 
-    ///  
-    /// <para>
-    /// An Elastic IP address is for use in either the EC2-Classic platform or in a VPC. For
-    /// more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
-    /// IP Addresses</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-    /// </para>
-    ///  <note> 
-    /// <para>
-    /// We are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-    /// For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-    /// from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.
-    /// </para>
-    ///  </note>
     /// </summary>
     public partial class DescribeAddressesRequest : AmazonEC2Request
     {
@@ -55,7 +41,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationIds. 
         /// <para>
-        /// [EC2-VPC] Information about the allocation IDs.
+        /// Information about the allocation IDs.
         /// </para>
         /// </summary>
         public List<string> AllocationIds
@@ -77,16 +63,11 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>allocation-id</code> - [EC2-VPC] The allocation ID for the address.
+        ///  <code>allocation-id</code> - The allocation ID for the address.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>association-id</code> - [EC2-VPC] The association ID for the address.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>domain</code> - Indicates whether the address is for use in EC2-Classic (<code>standard</code>)
-        /// or in a VPC (<code>vpc</code>).
+        ///  <code>association-id</code> - The association ID for the address.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -100,8 +81,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>network-interface-id</code> - [EC2-VPC] The ID of the network interface that
-        /// the address is associated with, if any.
+        ///  <code>network-interface-id</code> - The ID of the network interface that the address
+        /// is associated with, if any.
         /// </para>
         ///  </li> <li> 
         /// <para>
@@ -110,8 +91,8 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>private-ip-address</code> - [EC2-VPC] The private IP address associated with
-        /// the Elastic IP address.
+        ///  <code>private-ip-address</code> - The private IP address associated with the Elastic
+        /// IP address.
         /// </para>
         ///  </li> <li> 
         /// <para>

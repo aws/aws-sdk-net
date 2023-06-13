@@ -29,28 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// This is the response object from the AssociateAddress operation.
+    /// This is the response object from the DeleteInstanceConnectEndpoint operation.
     /// </summary>
-    public partial class AssociateAddressResponse : AmazonWebServiceResponse
+    public partial class DeleteInstanceConnectEndpointResponse : AmazonWebServiceResponse
     {
-        private string _associationId;
+        private Ec2InstanceConnectEndpoint _instanceConnectEndpoint;
 
         /// <summary>
-        /// Gets and sets the property AssociationId. 
+        /// Gets and sets the property InstanceConnectEndpoint. 
         /// <para>
-        /// The ID that represents the association of the Elastic IP address with an instance.
+        /// Information about the EC2 Instance Connect Endpoint.
         /// </para>
         /// </summary>
-        public string AssociationId
+        public Ec2InstanceConnectEndpoint InstanceConnectEndpoint
         {
-            get { return this._associationId; }
-            set { this._associationId = value; }
+            get { return this._instanceConnectEndpoint; }
+            set { this._instanceConnectEndpoint = value; }
         }
 
-        // Check to see if AssociationId property is set
-        internal bool IsSetAssociationId()
+        // Check to see if InstanceConnectEndpoint property is set
+        internal bool IsSetInstanceConnectEndpoint()
         {
-            return this._associationId != null;
+            return this._instanceConnectEndpoint != null;
         }
 
     }

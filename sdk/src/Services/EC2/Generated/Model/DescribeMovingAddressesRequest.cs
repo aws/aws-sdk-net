@@ -30,9 +30,16 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the DescribeMovingAddresses operation.
-    /// Describes your Elastic IP addresses that are being moved to the EC2-VPC platform,
-    /// or that are being restored to the EC2-Classic platform. This request does not return
-    /// information about any other Elastic IP addresses in your account.
+    /// <note> 
+    /// <para>
+    /// This action is deprecated.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// Describes your Elastic IP addresses that are being moved from or being restored to
+    /// the EC2-Classic platform. This request does not return information about any other
+    /// Elastic IP addresses in your account.
+    /// </para>
     /// </summary>
     public partial class DescribeMovingAddressesRequest : AmazonEC2Request
     {

@@ -45,8 +45,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property AllocationId. 
         /// <para>
-        /// [EC2-VPC] The ID that Amazon Web Services assigns to represent the allocation of the
-        /// Elastic IP address for use with instances in a VPC.
+        /// The ID that represents the allocation of the Elastic IP address.
         /// </para>
         /// </summary>
         public string AllocationId
@@ -64,8 +63,8 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property CarrierIp. 
         /// <para>
-        /// The carrier IP address. This option is only available for network interfaces which
-        /// reside in a subnet in a Wavelength Zone (for example an EC2 instance). 
+        /// The carrier IP address. This option is only available for network interfaces that
+        /// reside in a subnet in a Wavelength Zone.
         /// </para>
         /// </summary>
         public string CarrierIp
@@ -119,8 +118,7 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property Domain. 
         /// <para>
-        /// Indicates whether the Elastic IP address is for use with instances in a VPC (<code>vpc</code>)
-        /// or instances in EC2-Classic (<code>standard</code>).
+        /// The network (<code>vpc</code>).
         /// </para>
         /// </summary>
         public DomainType Domain

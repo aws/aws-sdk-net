@@ -30,7 +30,9 @@ namespace Amazon.EC2.Model
 {
     /// <summary>
     /// Container for the parameters to the GetIpamPoolAllocations operation.
-    /// Get a list of all the CIDR allocations in an IPAM pool.
+    /// Get a list of all the CIDR allocations in an IPAM pool. The Region you use should
+    /// be the IPAM pool locale. The locale is the Amazon Web Services Region where this IPAM
+    /// pool is available for allocations.
     /// 
     ///  <note> 
     /// <para>

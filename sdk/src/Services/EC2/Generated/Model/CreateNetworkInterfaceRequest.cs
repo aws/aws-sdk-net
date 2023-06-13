@@ -126,7 +126,7 @@ namespace Amazon.EC2.Model
         /// </para>
         ///  
         /// <para>
-        /// The only supported values are <code>efa</code> and <code>trunk</code>.
+        /// The only supported values are <code>interface</code>, <code>efa</code>, and <code>trunk</code>.
         /// </para>
         /// </summary>
         public NetworkInterfaceCreationType InterfaceType

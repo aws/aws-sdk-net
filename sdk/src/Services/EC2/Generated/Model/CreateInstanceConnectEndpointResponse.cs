@@ -29,54 +29,47 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// <note> 
-    /// <para>
-    /// This action is deprecated.
-    /// </para>
-    ///  </note> 
-    /// <para>
-    /// Describes the status of a moving Elastic IP address.
-    /// </para>
+    /// This is the response object from the CreateInstanceConnectEndpoint operation.
     /// </summary>
-    public partial class MovingAddressStatus
+    public partial class CreateInstanceConnectEndpointResponse : AmazonWebServiceResponse
     {
-        private MoveStatus _moveStatus;
-        private string _publicIp;
+        private string _clientToken;
+        private Ec2InstanceConnectEndpoint _instanceConnectEndpoint;
 
         /// <summary>
-        /// Gets and sets the property MoveStatus. 
+        /// Gets and sets the property ClientToken. 
         /// <para>
-        /// The status of the Elastic IP address that's being moved or restored.
+        /// Unique, case-sensitive idempotency token provided by the client in the the request.
         /// </para>
         /// </summary>
-        public MoveStatus MoveStatus
+        public string ClientToken
         {
-            get { return this._moveStatus; }
-            set { this._moveStatus = value; }
+            get { return this._clientToken; }
+            set { this._clientToken = value; }
         }
 
-        // Check to see if MoveStatus property is set
-        internal bool IsSetMoveStatus()
+        // Check to see if ClientToken property is set
+        internal bool IsSetClientToken()
         {
-            return this._moveStatus != null;
+            return this._clientToken != null;
         }
 
         /// <summary>
-        /// Gets and sets the property PublicIp. 
+        /// Gets and sets the property InstanceConnectEndpoint. 
         /// <para>
-        /// The Elastic IP address.
+        /// Information about the EC2 Instance Connect Endpoint.
         /// </para>
         /// </summary>
-        public string PublicIp
+        public Ec2InstanceConnectEndpoint InstanceConnectEndpoint
         {
-            get { return this._publicIp; }
-            set { this._publicIp = value; }
+            get { return this._instanceConnectEndpoint; }
+            set { this._instanceConnectEndpoint = value; }
         }
 
-        // Check to see if PublicIp property is set
-        internal bool IsSetPublicIp()
+        // Check to see if InstanceConnectEndpoint property is set
+        internal bool IsSetInstanceConnectEndpoint()
         {
-            return this._publicIp != null;
+            return this._instanceConnectEndpoint != null;
         }
 
     }

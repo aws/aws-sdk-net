@@ -268,6 +268,14 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeInstanceConnectEndpoints operation
+        ///</summary>
+        public IDescribeInstanceConnectEndpointsPaginator DescribeInstanceConnectEndpoints(DescribeInstanceConnectEndpointsRequest request) 
+        {
+            return new DescribeInstanceConnectEndpointsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeInstanceCreditSpecifications operation
         ///</summary>
         public IDescribeInstanceCreditSpecificationsPaginator DescribeInstanceCreditSpecifications(DescribeInstanceCreditSpecificationsRequest request) 

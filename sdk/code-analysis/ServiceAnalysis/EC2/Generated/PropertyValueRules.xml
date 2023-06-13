@@ -200,6 +200,11 @@
     <max>1000</max>
   </property-value-rule>
   <property-value-rule>
+    <property>Amazon.EC2.Model.DescribeInstanceConnectEndpointsRequest.MaxResults</property>
+    <min>1</min>
+    <max>50</max>
+  </property-value-rule>
+  <property-value-rule>
     <property>Amazon.EC2.Model.DescribeInstanceCreditSpecificationsRequest.MaxResults</property>
     <min>5</min>
     <max>1000</max>
@@ -759,6 +764,11 @@
     <property>Amazon.EC2.Model.CreateVerifiedAccessEndpointLoadBalancerOptions.Port</property>
     <min>1</min>
     <max>65535</max>
+  </property-value-rule>
+  <property-value-rule>
+    <property>Amazon.EC2.Model.Ec2InstanceConnectEndpoint.InstanceConnectEndpointArn</property>
+    <min>1</min>
+    <max>1283</max>
   </property-value-rule>
   <property-value-rule>
     <property>Amazon.EC2.Model.ElasticInferenceAccelerator.Count</property>
