@@ -52,7 +52,9 @@ namespace TestWrapper.TestRunners
         public string TestSuiteExecutable { get; private set; }
         public FileInfo TestContainer { get; private set; }
         public DirectoryInfo WorkingDirectory { get; private set; }
+        public string FrameworkCategoryAttribute { get; set; }
         public string[] Categories { get; set; }
+        public string[] CategoriesToIgnore { get; set; }
         public TestConfiguration Configuration { get; set; }
         public string TestExecutionProfile { get; set; }
 
@@ -371,6 +373,10 @@ namespace TestWrapper.TestRunners
             else if (Categories != null && Categories.Length > 0)
             {
                 filter = string.Join("|", Categories.Select(GetCategoryArg));
+            } 
+            else if (CategoriesToIgnore != null && CategoriesToIgnore.Length > 0)
+            {
+                filter = string.Join("|", CategoriesToIgnore.Select(GetCategoryToIgnoreArg));
             }
 
             if (!string.IsNullOrEmpty(filter))
@@ -405,7 +411,12 @@ namespace TestWrapper.TestRunners
 
         protected virtual string GetCategoryArg(string categoryName)
         {
-            return string.Format("Category={0}", categoryName);
+            return string.Format("{0}={1}", FrameworkCategoryAttribute, categoryName);
+        }
+
+        protected virtual string GetCategoryToIgnoreArg(string categoryName)
+        {
+            return string.Format("{0}!={1}", FrameworkCategoryAttribute, categoryName);
         }
 
         protected virtual string GetConfigArg(TestConfiguration config)

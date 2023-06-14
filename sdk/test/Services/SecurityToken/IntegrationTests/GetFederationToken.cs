@@ -10,6 +10,7 @@ using AWSSDK_DotNet.IntegrationTests.Utils;
 namespace AWSSDK_DotNet.IntegrationTests.Tests
 {
     [TestClass]
+    [TestCategory("RequiresIAMUser")]
     public class GetFederationTokenTest : TestBase<AmazonSecurityTokenServiceClient>
     {
 

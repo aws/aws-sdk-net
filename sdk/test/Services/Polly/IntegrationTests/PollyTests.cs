@@ -75,6 +75,7 @@ namespace AWSSDK_DotNet.IntegrationTests.Tests.Polly
 
         [TestMethod]
         [TestCategory("Polly")]
+        [TestCategory("RequiresIAMUser")]
         public void PresignedUrlWithSessionToken()
         {
             var stsClient = new AmazonSecurityTokenServiceClient(RegionEndpoint.USWest2);
