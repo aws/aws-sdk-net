@@ -1,3 +1,16 @@
+### 3.7.569.0 (2023-06-15 18:25 UTC)
+* AuditManager (3.7.104.0)
+	* This release introduces 2 Audit Manager features: CSV exports and new manual evidence options. You can now export your evidence finder results in CSV format. In addition, you can now add manual evidence to a control by entering free-form text or uploading a file from your browser.
+* ElasticFileSystem (3.7.102.24)
+	* Documentation updates for EFS.
+* GuardDuty (3.7.106.20)
+	* Updated descriptions for some APIs.
+* LocationService (3.7.104.0)
+	* Amazon Location Service adds categories to places, including filtering on those categories in searches. Also, you can now add metadata properties to your geofences.
+* Core 3.7.107.7
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.568.0 (2023-06-13 20:44 UTC)
 * CloudTrail (3.7.107.0)
 	* This feature allows users to view dashboards for CloudTrail Lake event data stores.

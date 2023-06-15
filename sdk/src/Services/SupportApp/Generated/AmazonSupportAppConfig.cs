@@ -32,7 +32,7 @@ namespace Amazon.SupportApp
     public partial class AmazonSupportAppConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.101.140");
+            InternalSDKUtils.BuildUserAgentString("3.7.101.141");
 
         private string _userAgent = UserAgentString;
 

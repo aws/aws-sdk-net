@@ -32,7 +32,7 @@ namespace Amazon.StepFunctions
     public partial class AmazonStepFunctionsConfig : ClientConfig
     {
         private static readonly string UserAgentString =
-            InternalSDKUtils.BuildUserAgentString("3.7.102.118");
+            InternalSDKUtils.BuildUserAgentString("3.7.102.119");
 
         private string _userAgent = UserAgentString;
 
