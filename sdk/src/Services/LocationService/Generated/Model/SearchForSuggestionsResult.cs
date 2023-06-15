@@ -34,14 +34,46 @@ namespace Amazon.LocationService.Model
     /// </summary>
     public partial class SearchForSuggestionsResult
     {
+        private List<string> _categories = new List<string>();
         private string _placeId;
+        private List<string> _supplementalCategories = new List<string>();
         private string _text;
+
+        /// <summary>
+        /// Gets and sets the property Categories. 
+        /// <para>
+        /// The Amazon Location categories that describe the Place.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using categories, including a list of Amazon Location categories,
+        /// see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+        /// and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> Categories
+        {
+            get { return this._categories; }
+            set { this._categories = value; }
+        }
+
+        // Check to see if Categories property is set
+        internal bool IsSetCategories()
+        {
+            return this._categories != null && this._categories.Count > 0; 
+        }
 
         /// <summary>
         /// Gets and sets the property PlaceId. 
         /// <para>
-        /// The unique identifier of the place. You can use this with the <code>GetPlace</code>
-        /// operation to find the place again later.
+        /// The unique identifier of the Place. You can use this with the <code>GetPlace</code>
+        /// operation to find the place again later, or to get full information for the Place.
+        /// </para>
+        ///  
+        /// <para>
+        /// The <code>GetPlace</code> request must use the same <code>PlaceIndex</code> resource
+        /// as the <code>SearchPlaceIndexForSuggestions</code> that generated the Place ID.
         /// </para>
         ///  <note> 
         /// <para>
@@ -60,6 +92,26 @@ namespace Amazon.LocationService.Model
         internal bool IsSetPlaceId()
         {
             return this._placeId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property SupplementalCategories. 
+        /// <para>
+        /// Categories from the data provider that describe the Place that are not mapped to any
+        /// Amazon Location categories.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=10)]
+        public List<string> SupplementalCategories
+        {
+            get { return this._supplementalCategories; }
+            set { this._supplementalCategories = value; }
+        }
+
+        // Check to see if SupplementalCategories property is set
+        internal bool IsSetSupplementalCategories()
+        {
+            return this._supplementalCategories != null && this._supplementalCategories.Count > 0; 
         }
 
         /// <summary>

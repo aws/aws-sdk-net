@@ -76,6 +76,12 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     unmarshalledObject.GeofenceId = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("GeofenceProperties", targetDepth))
+                {
+                    var unmarshaller = new DictionaryUnmarshaller<string, string, StringUnmarshaller, StringUnmarshaller>(StringUnmarshaller.Instance, StringUnmarshaller.Instance);
+                    unmarshalledObject.GeofenceProperties = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("Geometry", targetDepth))
                 {
                     var unmarshaller = GeofenceGeometryUnmarshaller.Instance;

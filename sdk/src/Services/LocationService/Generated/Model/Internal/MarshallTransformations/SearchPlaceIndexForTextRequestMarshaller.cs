@@ -90,6 +90,17 @@ namespace Amazon.LocationService.Model.Internal.MarshallTransformations
                     context.Writer.WriteArrayEnd();
                 }
 
+                if(publicRequest.IsSetFilterCategories())
+                {
+                    context.Writer.WritePropertyName("FilterCategories");
+                    context.Writer.WriteArrayStart();
+                    foreach(var publicRequestFilterCategoriesListValue in publicRequest.FilterCategories)
+                    {
+                            context.Writer.Write(publicRequestFilterCategoriesListValue);
+                    }
+                    context.Writer.WriteArrayEnd();
+                }
+
                 if(publicRequest.IsSetFilterCountries())
                 {
                     context.Writer.WritePropertyName("FilterCountries");

@@ -52,6 +52,7 @@ namespace Amazon.LocationService.Model
     {
         private List<double> _biasPosition = new List<double>();
         private List<double> _filterBBox = new List<double>();
+        private List<string> _filterCategories = new List<string>();
         private List<string> _filterCountries = new List<string>();
         private string _indexName;
         private string _language;
@@ -133,6 +134,33 @@ namespace Amazon.LocationService.Model
         internal bool IsSetFilterBBox()
         {
             return this._filterBBox != null && this._filterBBox.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property FilterCategories. 
+        /// <para>
+        /// A list of one or more Amazon Location categories to filter the returned places. If
+        /// you include more than one category, the results will include results that match <i>any</i>
+        /// of the categories listed.
+        /// </para>
+        ///  
+        /// <para>
+        /// For more information about using categories, including a list of Amazon Location categories,
+        /// see <a href="https://docs.aws.amazon.com/location/latest/developerguide/category-filtering.html">Categories
+        /// and filtering</a>, in the <i>Amazon Location Service Developer Guide</i>.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=5)]
+        public List<string> FilterCategories
+        {
+            get { return this._filterCategories; }
+            set { this._filterCategories = value; }
+        }
+
+        // Check to see if FilterCategories property is set
+        internal bool IsSetFilterCategories()
+        {
+            return this._filterCategories != null && this._filterCategories.Count > 0; 
         }
 
         /// <summary>

@@ -37,6 +37,7 @@ namespace Amazon.LocationService.Model
     {
         private string _collectionName;
         private string _geofenceId;
+        private Dictionary<string, string> _geofenceProperties = new Dictionary<string, string>();
         private GeofenceGeometry _geometry;
 
         /// <summary>
@@ -75,6 +76,26 @@ namespace Amazon.LocationService.Model
         internal bool IsSetGeofenceId()
         {
             return this._geofenceId != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property GeofenceProperties. 
+        /// <para>
+        /// Specifies additional user-defined properties to store with the Geofence. An array
+        /// of key-value pairs.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Sensitive=true, Min=0, Max=3)]
+        public Dictionary<string, string> GeofenceProperties
+        {
+            get { return this._geofenceProperties; }
+            set { this._geofenceProperties = value; }
+        }
+
+        // Check to see if GeofenceProperties property is set
+        internal bool IsSetGeofenceProperties()
+        {
+            return this._geofenceProperties != null && this._geofenceProperties.Count > 0; 
         }
 
         /// <summary>
