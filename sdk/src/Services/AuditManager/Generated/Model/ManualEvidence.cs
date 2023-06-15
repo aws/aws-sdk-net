@@ -29,16 +29,41 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// Evidence that's uploaded to Audit Manager manually.
+    /// Evidence that's manually added to a control in Audit Manager. <code>manualEvidence</code>
+    /// can be one of the following: <code>evidenceFileName</code>, <code>s3ResourcePath</code>,
+    /// or <code>textResponse</code>.
     /// </summary>
     public partial class ManualEvidence
     {
+        private string _evidenceFileName;
         private string _s3ResourcePath;
+        private string _textResponse;
+
+        /// <summary>
+        /// Gets and sets the property EvidenceFileName. 
+        /// <para>
+        /// The name of the file that's uploaded as manual evidence. This name is populated using
+        /// the <code>evidenceFileName</code> value from the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_GetEvidenceFileUploadUrl.html">
+        /// <code>GetEvidenceFileUploadUrl</code> </a> API response.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=300)]
+        public string EvidenceFileName
+        {
+            get { return this._evidenceFileName; }
+            set { this._evidenceFileName = value; }
+        }
+
+        // Check to see if EvidenceFileName property is set
+        internal bool IsSetEvidenceFileName()
+        {
+            return this._evidenceFileName != null;
+        }
 
         /// <summary>
         /// Gets and sets the property S3ResourcePath. 
         /// <para>
-        ///  The Amazon S3 URL that points to a manual evidence object. 
+        /// The S3 URL of the object that's imported as manual evidence. 
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -52,6 +77,25 @@ namespace Amazon.AuditManager.Model
         internal bool IsSetS3ResourcePath()
         {
             return this._s3ResourcePath != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property TextResponse. 
+        /// <para>
+        /// The plain text response that's entered and saved as manual evidence.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=1000)]
+        public string TextResponse
+        {
+            get { return this._textResponse; }
+            set { this._textResponse = value; }
+        }
+
+        // Check to see if TextResponse property is set
+        internal bool IsSetTextResponse()
+        {
+            return this._textResponse != null;
         }
 
     }

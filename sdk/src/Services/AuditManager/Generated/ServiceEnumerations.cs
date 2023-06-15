@@ -735,6 +735,52 @@ namespace Amazon.AuditManager
 
 
     /// <summary>
+    /// Constants used for properties of type ExportDestinationType.
+    /// </summary>
+    public class ExportDestinationType : ConstantClass
+    {
+
+        /// <summary>
+        /// Constant S3 for ExportDestinationType
+        /// </summary>
+        public static readonly ExportDestinationType S3 = new ExportDestinationType("S3");
+
+        /// <summary>
+        /// This constant constructor does not need to be called if the constant
+        /// you are attempting to use is already defined as a static instance of 
+        /// this class.
+        /// This constructor should be used to construct constants that are not
+        /// defined as statics, for instance if attempting to use a feature that is
+        /// newer than the current version of the SDK.
+        /// </summary>
+        public ExportDestinationType(string value)
+            : base(value)
+        {
+        }
+
+        /// <summary>
+        /// Finds the constant for the unique value.
+        /// </summary>
+        /// <param name="value">The unique value for the constant</param>
+        /// <returns>The constant for the unique value</returns>
+        public static ExportDestinationType FindValue(string value)
+        {
+            return FindValue<ExportDestinationType>(value);
+        }
+
+        /// <summary>
+        /// Utility method to convert strings to the constant class.
+        /// </summary>
+        /// <param name="value">The string value to convert to the constant class.</param>
+        /// <returns></returns>
+        public static implicit operator ExportDestinationType(string value)
+        {
+            return FindValue(value);
+        }
+    }
+
+
+    /// <summary>
     /// Constants used for properties of type FrameworkType.
     /// </summary>
     public class FrameworkType : ConstantClass
@@ -791,9 +837,17 @@ namespace Amazon.AuditManager
     {
 
         /// <summary>
+        /// Constant INPUT_TEXT for KeywordInputType
+        /// </summary>
+        public static readonly KeywordInputType INPUT_TEXT = new KeywordInputType("INPUT_TEXT");
+        /// <summary>
         /// Constant SELECT_FROM_LIST for KeywordInputType
         /// </summary>
         public static readonly KeywordInputType SELECT_FROM_LIST = new KeywordInputType("SELECT_FROM_LIST");
+        /// <summary>
+        /// Constant UPLOAD_FILE for KeywordInputType
+        /// </summary>
+        public static readonly KeywordInputType UPLOAD_FILE = new KeywordInputType("UPLOAD_FILE");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant
@@ -956,6 +1010,10 @@ namespace Amazon.AuditManager
         /// Constant DEFAULT_ASSESSMENT_REPORTS_DESTINATION for SettingAttribute
         /// </summary>
         public static readonly SettingAttribute DEFAULT_ASSESSMENT_REPORTS_DESTINATION = new SettingAttribute("DEFAULT_ASSESSMENT_REPORTS_DESTINATION");
+        /// <summary>
+        /// Constant DEFAULT_EXPORT_DESTINATION for SettingAttribute
+        /// </summary>
+        public static readonly SettingAttribute DEFAULT_EXPORT_DESTINATION = new SettingAttribute("DEFAULT_EXPORT_DESTINATION");
         /// <summary>
         /// Constant DEFAULT_PROCESS_OWNERS for SettingAttribute
         /// </summary>

@@ -654,22 +654,24 @@ namespace Amazon.AuditManager
         #region  BatchImportEvidenceToAssessmentControl
 
         /// <summary>
-        /// Uploads one or more pieces of evidence to a control in an Audit Manager assessment.
-        /// You can upload manual evidence from any Amazon Simple Storage Service (Amazon S3)
-        /// bucket by specifying the S3 URI of the evidence. 
+        /// Adds one or more pieces of evidence to a control in an Audit Manager assessment. 
         /// 
         ///  
         /// <para>
-        /// You must upload manual evidence to your S3 bucket before you can upload it to your
-        /// assessment. For instructions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
-        /// and <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
-        /// in the <i>Amazon Simple Storage Service API Reference.</i> 
+        /// You can import manual evidence from any S3 bucket by specifying the S3 URI of the
+        /// object. You can also upload a file from your browser, or enter plain text in response
+        /// to a risk assessment question. 
         /// </para>
         ///  
         /// <para>
         /// The following restrictions apply to this action:
         /// </para>
         ///  <ul> <li> 
+        /// <para>
+        ///  <code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>,
+        /// <code>s3ResourcePath</code>, or <code>textResponse</code> 
+        /// </para>
+        ///  </li> <li> 
         /// <para>
         /// Maximum size of an individual evidence file: 100 MB
         /// </para>
@@ -701,6 +703,9 @@ namespace Amazon.AuditManager
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ResourceNotFoundException">
         /// The resource that's specified in the request can't be found.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
         /// </exception>
         /// <exception cref="Amazon.AuditManager.Model.ValidationException">
         /// The request has invalid or missing parameters.
@@ -1352,7 +1357,16 @@ namespace Amazon.AuditManager
         #region  DeleteControl
 
         /// <summary>
-        /// Deletes a custom control in Audit Manager.
+        /// Deletes a custom control in Audit Manager. 
+        /// 
+        ///  <important> 
+        /// <para>
+        /// When you invoke this operation, the custom control is deleted from any frameworks
+        /// or assessments that it’s currently part of. As a result, Audit Manager will stop collecting
+        /// evidence for that custom control in all of your assessments. This includes assessments
+        /// that you previously created before you deleted the custom control.
+        /// </para>
+        ///  </important>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DeleteControl service method.</param>
         /// 
@@ -1719,7 +1733,7 @@ namespace Amazon.AuditManager
         #region  GetAccountStatus
 
         /// <summary>
-        /// Returns the registration status of an account in Audit Manager.
+        /// Gets the registration status of an account in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAccountStatus service method.</param>
         /// 
@@ -1777,7 +1791,7 @@ namespace Amazon.AuditManager
         #region  GetAssessment
 
         /// <summary>
-        /// Returns an assessment from Audit Manager.
+        /// Gets information about a specified assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessment service method.</param>
         /// 
@@ -1845,7 +1859,7 @@ namespace Amazon.AuditManager
         #region  GetAssessmentFramework
 
         /// <summary>
-        /// Returns a framework from Audit Manager.
+        /// Gets information about a specified framework.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessmentFramework service method.</param>
         /// 
@@ -1913,7 +1927,7 @@ namespace Amazon.AuditManager
         #region  GetAssessmentReportUrl
 
         /// <summary>
-        /// Returns the URL of an assessment report in Audit Manager.
+        /// Gets the URL of an assessment report in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetAssessmentReportUrl service method.</param>
         /// 
@@ -1981,7 +1995,7 @@ namespace Amazon.AuditManager
         #region  GetChangeLogs
 
         /// <summary>
-        /// Returns a list of changelogs from Audit Manager.
+        /// Gets a list of changelogs from Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetChangeLogs service method.</param>
         /// 
@@ -2049,7 +2063,7 @@ namespace Amazon.AuditManager
         #region  GetControl
 
         /// <summary>
-        /// Returns a control from Audit Manager.
+        /// Gets information about a specified control.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetControl service method.</param>
         /// 
@@ -2117,7 +2131,7 @@ namespace Amazon.AuditManager
         #region  GetDelegations
 
         /// <summary>
-        /// Returns a list of delegations from an audit owner to a delegate.
+        /// Gets a list of delegations from an audit owner to a delegate.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetDelegations service method.</param>
         /// 
@@ -2182,7 +2196,7 @@ namespace Amazon.AuditManager
         #region  GetEvidence
 
         /// <summary>
-        /// Returns evidence from Audit Manager.
+        /// Gets information about a specified evidence item.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidence service method.</param>
         /// 
@@ -2250,7 +2264,7 @@ namespace Amazon.AuditManager
         #region  GetEvidenceByEvidenceFolder
 
         /// <summary>
-        /// Returns all evidence from a specified evidence folder in Audit Manager.
+        /// Gets all evidence from a specified evidence folder in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceByEvidenceFolder service method.</param>
         /// 
@@ -2315,10 +2329,103 @@ namespace Amazon.AuditManager
 
         #endregion
         
+        #region  GetEvidenceFileUploadUrl
+
+        /// <summary>
+        /// Creates a presigned Amazon S3 URL that can be used to upload a file as manual evidence.
+        /// For instructions on how to use this operation, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files">Upload
+        /// a file from your browser </a> in the <i>Audit Manager User Guide</i>.
+        /// 
+        ///  
+        /// <para>
+        /// The following restrictions apply to this operation:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Maximum size of an individual evidence file: 100 MB
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Number of daily manual evidence uploads per control: 100
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported
+        /// file types for manual evidence</a> in the <i>Audit Manager User Guide</i> 
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas
+        /// and restrictions for Audit Manager</a>.
+        /// </para>
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFileUploadUrl service method.</param>
+        /// 
+        /// <returns>The response from the GetEvidenceFileUploadUrl service method, as returned by AuditManager.</returns>
+        /// <exception cref="Amazon.AuditManager.Model.AccessDeniedException">
+        /// Your account isn't registered with Audit Manager. Check the delegated administrator
+        /// setup on the Audit Manager settings page, and try again.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.InternalServerException">
+        /// An internal service error occurred during the processing of your request. Try again
+        /// later.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ThrottlingException">
+        /// The request was denied due to request throttling.
+        /// </exception>
+        /// <exception cref="Amazon.AuditManager.Model.ValidationException">
+        /// The request has invalid or missing parameters.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFileUploadUrl">REST API Reference for GetEvidenceFileUploadUrl Operation</seealso>
+        public virtual GetEvidenceFileUploadUrlResponse GetEvidenceFileUploadUrl(GetEvidenceFileUploadUrlRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEvidenceFileUploadUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEvidenceFileUploadUrlResponseUnmarshaller.Instance;
+
+            return Invoke<GetEvidenceFileUploadUrlResponse>(request, options);
+        }
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the GetEvidenceFileUploadUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFileUploadUrl operation on AmazonAuditManagerClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndGetEvidenceFileUploadUrl
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFileUploadUrl">REST API Reference for GetEvidenceFileUploadUrl Operation</seealso>
+        public virtual IAsyncResult BeginGetEvidenceFileUploadUrl(GetEvidenceFileUploadUrlRequest request, AsyncCallback callback, object state)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = GetEvidenceFileUploadUrlRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = GetEvidenceFileUploadUrlResponseUnmarshaller.Instance;
+
+            return BeginInvoke(request, options, callback, state);
+        }
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  GetEvidenceFileUploadUrl operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginGetEvidenceFileUploadUrl.</param>
+        /// 
+        /// <returns>Returns a  GetEvidenceFileUploadUrlResult from AuditManager.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/auditmanager-2017-07-25/GetEvidenceFileUploadUrl">REST API Reference for GetEvidenceFileUploadUrl Operation</seealso>
+        public virtual GetEvidenceFileUploadUrlResponse EndGetEvidenceFileUploadUrl(IAsyncResult asyncResult)
+        {
+            return EndInvoke<GetEvidenceFileUploadUrlResponse>(asyncResult);
+        }
+
+        #endregion
+        
         #region  GetEvidenceFolder
 
         /// <summary>
-        /// Returns an evidence folder from the specified assessment in Audit Manager.
+        /// Gets an evidence folder from a specified assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFolder service method.</param>
         /// 
@@ -2386,7 +2493,7 @@ namespace Amazon.AuditManager
         #region  GetEvidenceFoldersByAssessment
 
         /// <summary>
-        /// Returns the evidence folders from a specified assessment in Audit Manager.
+        /// Gets the evidence folders from a specified assessment in Audit Manager.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFoldersByAssessment service method.</param>
         /// 
@@ -2454,8 +2561,8 @@ namespace Amazon.AuditManager
         #region  GetEvidenceFoldersByAssessmentControl
 
         /// <summary>
-        /// Returns a list of evidence folders that are associated with a specified control in
-        /// an Audit Manager assessment.
+        /// Gets a list of evidence folders that are associated with a specified control in an
+        /// Audit Manager assessment.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetEvidenceFoldersByAssessmentControl service method.</param>
         /// 
@@ -2653,7 +2760,7 @@ namespace Amazon.AuditManager
         #region  GetOrganizationAdminAccount
 
         /// <summary>
-        /// Returns the name of the delegated Amazon Web Services administrator account for the
+        /// Gets the name of the delegated Amazon Web Services administrator account for a specified
         /// organization.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetOrganizationAdminAccount service method.</param>
@@ -2722,8 +2829,8 @@ namespace Amazon.AuditManager
         #region  GetServicesInScope
 
         /// <summary>
-        /// Returns a list of all of the Amazon Web Services that you can choose to include in
-        /// your assessment. When you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create
+        /// Gets a list of all of the Amazon Web Services that you can choose to include in your
+        /// assessment. When you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create
         /// an assessment</a>, specify which of these services you want to include to narrow the
         /// assessment's <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.
         /// </summary>
@@ -2790,7 +2897,7 @@ namespace Amazon.AuditManager
         #region  GetSettings
 
         /// <summary>
-        /// Returns the settings for the specified Amazon Web Services account.
+        /// Gets the settings for a specified Amazon Web Services account.
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the GetSettings service method.</param>
         /// 

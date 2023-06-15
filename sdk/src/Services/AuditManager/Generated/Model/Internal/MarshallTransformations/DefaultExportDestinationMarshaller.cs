@@ -33,9 +33,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// ManualEvidence Marshaller
+    /// DefaultExportDestination Marshaller
     /// </summary>
-    public class ManualEvidenceMarshaller : IRequestMarshaller<ManualEvidence, JsonMarshallerContext> 
+    public class DefaultExportDestinationMarshaller : IRequestMarshaller<DefaultExportDestination, JsonMarshallerContext> 
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -43,24 +43,18 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// <param name="requestObject"></param>
         /// <param name="context"></param>
         /// <returns></returns>
-        public void Marshall(ManualEvidence requestObject, JsonMarshallerContext context)
+        public void Marshall(DefaultExportDestination requestObject, JsonMarshallerContext context)
         {
-            if(requestObject.IsSetEvidenceFileName())
+            if(requestObject.IsSetDestination())
             {
-                context.Writer.WritePropertyName("evidenceFileName");
-                context.Writer.Write(requestObject.EvidenceFileName);
+                context.Writer.WritePropertyName("destination");
+                context.Writer.Write(requestObject.Destination);
             }
 
-            if(requestObject.IsSetS3ResourcePath())
+            if(requestObject.IsSetDestinationType())
             {
-                context.Writer.WritePropertyName("s3ResourcePath");
-                context.Writer.Write(requestObject.S3ResourcePath);
-            }
-
-            if(requestObject.IsSetTextResponse())
-            {
-                context.Writer.WritePropertyName("textResponse");
-                context.Writer.Write(requestObject.TextResponse);
+                context.Writer.WritePropertyName("destinationType");
+                context.Writer.Write(requestObject.DestinationType);
             }
 
         }
@@ -68,7 +62,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Singleton Marshaller.
         /// </summary>
-        public readonly static ManualEvidenceMarshaller Instance = new ManualEvidenceMarshaller();
+        public readonly static DefaultExportDestinationMarshaller Instance = new DefaultExportDestinationMarshaller();
 
     }
 }

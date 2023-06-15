@@ -30,7 +30,7 @@ namespace Amazon.AuditManager.Model
 {
     /// <summary>
     /// Container for the parameters to the GetAssessment operation.
-    /// Returns an assessment from Audit Manager.
+    /// Gets information about a specified assessment.
     /// </summary>
     public partial class GetAssessmentRequest : AmazonAuditManagerRequest
     {

@@ -70,6 +70,12 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                     unmarshalledObject.DefaultAssessmentReportsDestination = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("defaultExportDestination", targetDepth))
+                {
+                    var unmarshaller = DefaultExportDestinationUnmarshaller.Instance;
+                    unmarshalledObject.DefaultExportDestination = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("defaultProcessOwners", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<Role, RoleUnmarshaller>(RoleUnmarshaller.Instance);

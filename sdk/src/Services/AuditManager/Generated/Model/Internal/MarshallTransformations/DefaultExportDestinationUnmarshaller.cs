@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for ManualEvidence Object
+    /// Response Unmarshaller for DefaultExportDestination Object
     /// </summary>  
-    public class ManualEvidenceUnmarshaller : IUnmarshaller<ManualEvidence, XmlUnmarshallerContext>, IUnmarshaller<ManualEvidence, JsonUnmarshallerContext>
+    public class DefaultExportDestinationUnmarshaller : IUnmarshaller<DefaultExportDestination, XmlUnmarshallerContext>, IUnmarshaller<DefaultExportDestination, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        ManualEvidence IUnmarshaller<ManualEvidence, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        DefaultExportDestination IUnmarshaller<DefaultExportDestination, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,27 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public ManualEvidence Unmarshall(JsonUnmarshallerContext context)
+        public DefaultExportDestination Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            ManualEvidence unmarshalledObject = new ManualEvidence();
+            DefaultExportDestination unmarshalledObject = new DefaultExportDestination();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("evidenceFileName", targetDepth))
+                if (context.TestExpression("destination", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.EvidenceFileName = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.Destination = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("s3ResourcePath", targetDepth))
+                if (context.TestExpression("destinationType", targetDepth))
                 {
                     var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.S3ResourcePath = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("textResponse", targetDepth))
-                {
-                    var unmarshaller = StringUnmarshaller.Instance;
-                    unmarshalledObject.TextResponse = unmarshaller.Unmarshall(context);
+                    unmarshalledObject.DestinationType = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +82,12 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         }
 
 
-        private static ManualEvidenceUnmarshaller _instance = new ManualEvidenceUnmarshaller();        
+        private static DefaultExportDestinationUnmarshaller _instance = new DefaultExportDestinationUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static ManualEvidenceUnmarshaller Instance
+        public static DefaultExportDestinationUnmarshaller Instance
         {
             get
             {

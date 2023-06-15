@@ -34,9 +34,9 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for BatchImportEvidenceToAssessmentControl operation
+    /// Response Unmarshaller for GetEvidenceFileUploadUrl operation
     /// </summary>  
-    public class BatchImportEvidenceToAssessmentControlResponseUnmarshaller : JsonResponseUnmarshaller
+    public class GetEvidenceFileUploadUrlResponseUnmarshaller : JsonResponseUnmarshaller
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
@@ -45,16 +45,22 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public override AmazonWebServiceResponse Unmarshall(JsonUnmarshallerContext context)
         {
-            BatchImportEvidenceToAssessmentControlResponse response = new BatchImportEvidenceToAssessmentControlResponse();
+            GetEvidenceFileUploadUrlResponse response = new GetEvidenceFileUploadUrlResponse();
 
             context.Read();
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("errors", targetDepth))
+                if (context.TestExpression("evidenceFileName", targetDepth))
                 {
-                    var unmarshaller = new ListUnmarshaller<BatchImportEvidenceToAssessmentControlError, BatchImportEvidenceToAssessmentControlErrorUnmarshaller>(BatchImportEvidenceToAssessmentControlErrorUnmarshaller.Instance);
-                    response.Errors = unmarshaller.Unmarshall(context);
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.EvidenceFileName = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("uploadUrl", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.UploadUrl = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,10 +94,6 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
                 {
                     return InternalServerExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
                 }
-                if (errorResponse.Code != null && errorResponse.Code.Equals("ResourceNotFoundException"))
-                {
-                    return ResourceNotFoundExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
-                }
                 if (errorResponse.Code != null && errorResponse.Code.Equals("ThrottlingException"))
                 {
                     return ThrottlingExceptionUnmarshaller.Instance.Unmarshall(contextCopy, errorResponse);
@@ -104,9 +106,9 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
             return new AmazonAuditManagerException(errorResponse.Message, errorResponse.InnerException, errorResponse.Type, errorResponse.Code, errorResponse.RequestId, errorResponse.StatusCode);
         }
 
-        private static BatchImportEvidenceToAssessmentControlResponseUnmarshaller _instance = new BatchImportEvidenceToAssessmentControlResponseUnmarshaller();        
+        private static GetEvidenceFileUploadUrlResponseUnmarshaller _instance = new GetEvidenceFileUploadUrlResponseUnmarshaller();        
 
-        internal static BatchImportEvidenceToAssessmentControlResponseUnmarshaller GetInstance()
+        internal static GetEvidenceFileUploadUrlResponseUnmarshaller GetInstance()
         {
             return _instance;
         }
@@ -114,7 +116,7 @@ namespace Amazon.AuditManager.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static BatchImportEvidenceToAssessmentControlResponseUnmarshaller Instance
+        public static GetEvidenceFileUploadUrlResponseUnmarshaller Instance
         {
             get
             {

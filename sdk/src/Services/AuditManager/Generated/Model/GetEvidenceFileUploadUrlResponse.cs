@@ -29,48 +29,50 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The location where Audit Manager saves assessment reports for the given assessment.
+    /// This is the response object from the GetEvidenceFileUploadUrl operation.
     /// </summary>
-    public partial class AssessmentReportsDestination
+    public partial class GetEvidenceFileUploadUrlResponse : AmazonWebServiceResponse
     {
-        private string _destination;
-        private AssessmentReportDestinationType _destinationType;
+        private string _evidenceFileName;
+        private string _uploadUrl;
 
         /// <summary>
-        /// Gets and sets the property Destination. 
+        /// Gets and sets the property EvidenceFileName. 
         /// <para>
-        ///  The destination bucket where Audit Manager stores assessment reports. 
+        /// The name of the uploaded manual evidence file that the presigned URL was generated
+        /// for.
         /// </para>
         /// </summary>
-        [AWSProperty(Min=1, Max=1024)]
-        public string Destination
+        [AWSProperty(Min=1, Max=2048)]
+        public string EvidenceFileName
         {
-            get { return this._destination; }
-            set { this._destination = value; }
+            get { return this._evidenceFileName; }
+            set { this._evidenceFileName = value; }
         }
 
-        // Check to see if Destination property is set
-        internal bool IsSetDestination()
+        // Check to see if EvidenceFileName property is set
+        internal bool IsSetEvidenceFileName()
         {
-            return this._destination != null;
+            return this._evidenceFileName != null;
         }
 
         /// <summary>
-        /// Gets and sets the property DestinationType. 
+        /// Gets and sets the property UploadUrl. 
         /// <para>
-        ///  The destination type, such as Amazon S3. 
+        /// The presigned URL that was generated.
         /// </para>
         /// </summary>
-        public AssessmentReportDestinationType DestinationType
+        [AWSProperty(Min=1, Max=2048)]
+        public string UploadUrl
         {
-            get { return this._destinationType; }
-            set { this._destinationType = value; }
+            get { return this._uploadUrl; }
+            set { this._uploadUrl = value; }
         }
 
-        // Check to see if DestinationType property is set
-        internal bool IsSetDestinationType()
+        // Check to see if UploadUrl property is set
+        internal bool IsSetUploadUrl()
         {
-            return this._destinationType != null;
+            return this._uploadUrl != null;
         }
 
     }

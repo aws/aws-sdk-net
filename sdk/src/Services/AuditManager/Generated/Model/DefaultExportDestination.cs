@@ -29,17 +29,18 @@ using Amazon.Runtime.Internal;
 namespace Amazon.AuditManager.Model
 {
     /// <summary>
-    /// The location where Audit Manager saves assessment reports for the given assessment.
+    /// The default s3 bucket where Audit Manager saves the files that you export from evidence
+    /// finder.
     /// </summary>
-    public partial class AssessmentReportsDestination
+    public partial class DefaultExportDestination
     {
         private string _destination;
-        private AssessmentReportDestinationType _destinationType;
+        private ExportDestinationType _destinationType;
 
         /// <summary>
         /// Gets and sets the property Destination. 
         /// <para>
-        ///  The destination bucket where Audit Manager stores assessment reports. 
+        /// The destination bucket where Audit Manager stores exported files.
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=1024)]
@@ -58,10 +59,10 @@ namespace Amazon.AuditManager.Model
         /// <summary>
         /// Gets and sets the property DestinationType. 
         /// <para>
-        ///  The destination type, such as Amazon S3. 
+        /// The destination type, such as Amazon S3.
         /// </para>
         /// </summary>
-        public AssessmentReportDestinationType DestinationType
+        public ExportDestinationType DestinationType
         {
             get { return this._destinationType; }
             set { this._destinationType = value; }
