@@ -100,11 +100,26 @@ namespace Amazon.ElasticFileSystem.Model
         /// <summary>
         /// Gets and sets the property Status. 
         /// <para>
-        /// Describes the status of the destination Amazon EFS file system. If the status is <code>ERROR</code>,
-        /// the destination file system in the replication configuration is in a failed state
-        /// and is unrecoverable. To access the file system data, restore a backup of the failed
-        /// file system to a new file system.
+        /// Describes the status of the destination Amazon EFS file system.
         /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// The <code>Paused</code> state occurs as a result of opting out of the source or destination
+        /// Region after the replication configuration was created. To resume replication for
+        /// the file system, you need to again opt in to the Amazon Web Services Region. For more
+        /// information, see <a href="https://docs.aws.amazon.com/general/latest/gr/rande-manage.html#rande-manage-enable">Managing
+        /// Amazon Web Services Regions</a> in the <i>Amazon Web Services General Reference Guide</i>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// The <code>Error</code> state occurs when either the source or the destination file
+        /// system (or both) is in a failed state and is unrecoverable. For more information,
+        /// see <a href="https://docs.aws.amazon.com/efs/latest/ug/awsbackup.html#restoring-backup-efsmonitoring-replication-status.html">Monitoring
+        /// replication status</a> in the <i>Amazon EFS User Guide</i>. You must delete the replication
+        /// configuration, and then restore the most recent backup of the failed file system (either
+        /// the source or the destination) to a new file system.
+        /// </para>
+        ///  </li> </ul>
         /// </summary>
         [AWSProperty(Required=true)]
         public ReplicationStatus Status
