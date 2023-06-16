@@ -31,11 +31,11 @@ namespace Amazon.Connect.Model
     /// <summary>
     /// Container for the parameters to the ResumeContactRecording operation.
     /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
-    /// this API resumes recording the call.
+    /// this API resumes recording the call or screen.
     /// 
     ///  
     /// <para>
-    /// Only voice recordings are supported at this time.
+    /// Voice and screen recordings are supported.
     /// </para>
     /// </summary>
     public partial class ResumeContactRecordingRequest : AmazonConnectRequest

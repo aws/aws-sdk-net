@@ -1782,6 +1782,10 @@ namespace Amazon.Connect
         /// Constant SCHEDULED_REPORTS for InstanceStorageResourceType
         /// </summary>
         public static readonly InstanceStorageResourceType SCHEDULED_REPORTS = new InstanceStorageResourceType("SCHEDULED_REPORTS");
+        /// <summary>
+        /// Constant SCREEN_RECORDINGS for InstanceStorageResourceType
+        /// </summary>
+        public static readonly InstanceStorageResourceType SCREEN_RECORDINGS = new InstanceStorageResourceType("SCREEN_RECORDINGS");
 
         /// <summary>
         /// This constant constructor does not need to be called if the constant

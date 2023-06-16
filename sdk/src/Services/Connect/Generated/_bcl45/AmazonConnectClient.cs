@@ -10941,11 +10941,11 @@ namespace Amazon.Connect
 
         /// <summary>
         /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
-        /// this API resumes recording the call.
+        /// this API resumes recording the call or screen.
         /// 
         ///  
         /// <para>
-        /// Only voice recordings are supported at this time.
+        /// Voice and screen recordings are supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeContactRecording service method.</param>
@@ -10973,11 +10973,11 @@ namespace Amazon.Connect
 
         /// <summary>
         /// When a contact is being recorded, and the recording has been suspended using SuspendContactRecording,
-        /// this API resumes recording the call.
+        /// this API resumes recording the call or screen.
         /// 
         ///  
         /// <para>
-        /// Only voice recordings are supported at this time.
+        /// Voice and screen recordings are supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the ResumeContactRecording service method.</param>
@@ -12686,18 +12686,19 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// When a contact is being recorded, this API suspends recording the call. For example,
-        /// you might suspend the call recording while collecting sensitive information, such
-        /// as a credit card number. Then use ResumeContactRecording to restart recording. 
+        /// When a contact is being recorded, this API suspends recording the call or screen.
+        /// For example, you might suspend the call or screen recording while collecting sensitive
+        /// information, such as a credit card number. Then use ResumeContactRecording to restart
+        /// recording.
         /// 
         ///  
         /// <para>
         /// The period of time that the recording is suspended is filled with silence in the final
-        /// recording. 
+        /// recording.
         /// </para>
         ///  
         /// <para>
-        /// Only voice recordings are supported at this time.
+        /// Voice and screen recordings are supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendContactRecording service method.</param>
@@ -12724,18 +12725,19 @@ namespace Amazon.Connect
 
 
         /// <summary>
-        /// When a contact is being recorded, this API suspends recording the call. For example,
-        /// you might suspend the call recording while collecting sensitive information, such
-        /// as a credit card number. Then use ResumeContactRecording to restart recording. 
+        /// When a contact is being recorded, this API suspends recording the call or screen.
+        /// For example, you might suspend the call or screen recording while collecting sensitive
+        /// information, such as a credit card number. Then use ResumeContactRecording to restart
+        /// recording.
         /// 
         ///  
         /// <para>
         /// The period of time that the recording is suspended is filled with silence in the final
-        /// recording. 
+        /// recording.
         /// </para>
         ///  
         /// <para>
-        /// Only voice recordings are supported at this time.
+        /// Voice and screen recordings are supported.
         /// </para>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the SuspendContactRecording service method.</param>
