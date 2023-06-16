@@ -7085,8 +7085,24 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// IAM resource-listing operations return a subset of the available attributes for the
-        /// resource. For example, this operation does not return tags, even though they are an
-        /// attribute of the returned object. To view all of the information for a role, see <a>GetRole</a>.
+        /// resource. This operation does not return the following attributes, even though they
+        /// are an attribute of the returned object:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PermissionsBoundary
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RoleLastUsed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view all of the information for a role, see <a>GetRole</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7110,8 +7126,24 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// IAM resource-listing operations return a subset of the available attributes for the
-        /// resource. For example, this operation does not return tags, even though they are an
-        /// attribute of the returned object. To view all of the information for a role, see <a>GetRole</a>.
+        /// resource. This operation does not return the following attributes, even though they
+        /// are an attribute of the returned object:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PermissionsBoundary
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// RoleLastUsed
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view all of the information for a role, see <a>GetRole</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7770,8 +7802,20 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// IAM resource-listing operations return a subset of the available attributes for the
-        /// resource. For example, this operation does not return tags, even though they are an
-        /// attribute of the returned object. To view all of the information for a user, see <a>GetUser</a>.
+        /// resource. This operation does not return the following attributes, even though they
+        /// are an attribute of the returned object:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PermissionsBoundary
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view all of the information for a user, see <a>GetUser</a>.
         /// </para>
         ///  </note> 
         /// <para>
@@ -7795,8 +7839,20 @@ namespace Amazon.IdentityManagement
         ///  <note> 
         /// <para>
         /// IAM resource-listing operations return a subset of the available attributes for the
-        /// resource. For example, this operation does not return tags, even though they are an
-        /// attribute of the returned object. To view all of the information for a user, see <a>GetUser</a>.
+        /// resource. This operation does not return the following attributes, even though they
+        /// are an attribute of the returned object:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// PermissionsBoundary
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        /// Tags
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// To view all of the information for a user, see <a>GetUser</a>.
         /// </para>
         ///  </note> 
         /// <para>
