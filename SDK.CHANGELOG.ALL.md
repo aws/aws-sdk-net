@@ -1,3 +1,15 @@
+### 3.7.570.0 (2023-06-16 18:56 UTC)
+* Account (3.7.103.0)
+	* Improve pagination support for ListRegions
+* ApplicationDiscoveryService (3.7.102.0)
+	* Add Amazon EC2 instance recommendations export
+* Connect (3.7.128.0)
+	* Updates the *InstanceStorageConfig APIs to support a new ResourceType: SCREEN_RECORDINGS to enable screen recording and specify the storage configurations for publishing the recordings. Also updates DescribeInstance and ListInstances APIs to include InstanceAccessUrl attribute in the API response.
+* IdentityManagement (3.7.101.5)
+	* Documentation updates for AWS Identity and Access Management (IAM).
+* S3 (3.7.106.0)
+	* This release adds SDK support for request-payer request header and request-charged response header in the "GetBucketAccelerateConfiguration", "ListMultipartUploads", "ListObjects", "ListObjectsV2" and "ListObjectVersions" S3 APIs.
+
 ### 3.7.569.0 (2023-06-15 18:25 UTC)
 * AuditManager (3.7.104.0)
 	* This release introduces 2 Audit Manager features: CSV exports and new manual evidence options. You can now export your evidence finder results in CSV format. In addition, you can now add manual evidence to a control by entering free-form text or uploading a file from your browser.
