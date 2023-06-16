@@ -26,12 +26,13 @@ namespace Amazon.S3.Model
     /// </summary>
     public class ListMultipartUploadsResponse : AmazonWebServiceResponse
     {
-        private string bucketName;
+        private string _bucketName;
         private string keyMarker;
         private string uploadIdMarker;
         private string nextKeyMarker;
         private string nextUploadIdMarker;
         private int? maxUploads;
+        private RequestCharged _requestCharged;
         private bool? isTruncated;
 
         private List<MultipartUpload> multipartUploads;
@@ -48,14 +49,14 @@ namespace Amazon.S3.Model
         /// </summary>
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
         // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return this.bucketName != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
@@ -76,7 +77,6 @@ namespace Amazon.S3.Model
 
         /// <summary>
         /// Upload ID after which listing began.
-        ///  
         /// </summary>
         public string UploadIdMarker
         {
@@ -182,6 +182,21 @@ namespace Amazon.S3.Model
         {
             get { return this.prefix; }
             set { this.prefix = value; }
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestCharged.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this._requestCharged; }
+            set { this._requestCharged = value; }
+        }
+
+        // Check to see if RequestCharged property is set
+        internal bool IsSetRequestCharged()
+        {
+            return this._requestCharged != null;
         }
 
         /// <summary>

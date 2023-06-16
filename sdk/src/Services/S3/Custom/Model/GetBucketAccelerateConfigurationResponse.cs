@@ -28,16 +28,41 @@ namespace Amazon.S3.Model
     /// </summary>
     public partial class GetBucketAccelerateConfigurationResponse : AmazonWebServiceResponse
     {
-        private BucketAccelerateStatus status;
-        
+        private RequestCharged _requestCharged;
+        private BucketAccelerateStatus _status;
+
         /// <summary>
-        /// The accelerate status of the bucket.
+        /// Gets and sets the property RequestCharged.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this._requestCharged; }
+            set { this._requestCharged = value; }
+        }
+
+        // Check to see if RequestCharged property is set
+        internal bool IsSetRequestCharged()
+        {
+            return this._requestCharged != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Status. 
+        /// <para>
+        /// The accelerate configuration of the bucket.
+        /// </para>
         /// </summary>
         public BucketAccelerateStatus Status
         {
-            get { return this.status; }
-            set { this.status = value; }
+            get { return this._status; }
+            set { this._status = value; }
         }
+
+        // Check to see if Status property is set
+        internal bool IsSetStatus()
+        {
+            return this._status != null;
+        }
+
     }
 }
-    

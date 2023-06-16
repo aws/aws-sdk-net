@@ -43,6 +43,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(listMultipartUploadsRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "ListMultipartUploadsRequest.BucketName");
 
+            if (listMultipartUploadsRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(listMultipartUploadsRequest.RequestPayer));
+
             request.ResourcePath = "/";
 
             request.AddSubResource("uploads");

@@ -37,6 +37,7 @@ namespace Amazon.S3.Model
         private string name;
         private string nextContinuationToken;
         private string prefix;
+        private RequestCharged _requestCharged;
         private string startAfter;
 
         /// <summary>
@@ -287,7 +288,21 @@ namespace Amazon.S3.Model
         {
             return this.prefix != null;
         }
-        
+
+        /// <summary>
+        /// Gets and sets the property RequestCharged.
+        /// </summary>
+        public RequestCharged RequestCharged
+        {
+            get { return this._requestCharged; }
+            set { this._requestCharged = value; }
+        }
+
+        // Check to see if RequestCharged property is set
+        internal bool IsSetRequestCharged()
+        {
+            return this._requestCharged != null;
+        }
         /// <summary>
         /// Gets and sets the property StartAfter. 
         /// <para>

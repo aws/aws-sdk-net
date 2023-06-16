@@ -43,6 +43,9 @@ namespace Amazon.S3.Model.Internal.MarshallTransformations
             if (string.IsNullOrEmpty(listVersionsRequest.BucketName))
                 throw new System.ArgumentException("BucketName is a required property and must be set before making this call.", "ListVersionsRequest.BucketName");
 
+            if (listVersionsRequest.IsSetRequestPayer())
+                request.Headers.Add(S3Constants.AmzHeaderRequestPayer, S3Transforms.ToStringValue(listVersionsRequest.RequestPayer));
+
             request.ResourcePath = "/";
 
             request.AddSubResource("versions");

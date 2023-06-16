@@ -1407,6 +1407,1046 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
         [TestCategory("UnitTest")]
         [TestCategory("Endpoints")]
         [TestCategory("S3")]
+        [Description("non-bucket endpoint with FIPS: TODO(descriptive)")]
+        public void Nonbucket_endpoint_with_FIPS_TODOdescriptive_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["Endpoint"] = "http://beta.example.com:1234/path";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://beta.example.com:1234/path", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("FIPS + dualstack + custom endpoint TODO(descriptive)")]
+        public void FIPS_dualstack_custom_endpoint_TODOdescriptive_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["Endpoint"] = "http://beta.example.com:1234/path";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://beta.example.com:1234/path", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("dualstack + custom endpoint TODO(descriptive)")]
+        public void Dualstack_custom_endpoint_TODOdescriptive_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["Endpoint"] = "http://beta.example.com:1234/path";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://beta.example.com:1234/path", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("custom endpoint without FIPS/dualstack")]
+        public void Custom_endpoint_without_FIPSdualstack_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["Endpoint"] = "http://beta.example.com:1234/path";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://beta.example.com:1234/path", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("s3 object lambda with access points disabled")]
+        [ExpectedException(typeof(AmazonClientException), @"Access points are not supported for this operation")]
+        public void S3_object_lambda_with_access_points_disabled_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["Bucket"] = "arn:aws:s3-object-lambda:us-west-2:123456789012:accesspoint:myendpoint";
+            parameters["DisableAccessPoints"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("non bucket + FIPS")]
+        public void Non_bucket_FIPS_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("standard non bucket endpoint")]
+        public void Standard_non_bucket_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("non bucket endpoint with FIPS + Dualstack")]
+        public void Non_bucket_endpoint_with_FIPS_Dualstack_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.dualstack.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("non bucket endpoint with dualstack")]
+        public void Non_bucket_endpoint_with_dualstack_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-west-2";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3.dualstack.us-west-2.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("use global endpoint + IP address endpoint override")]
+        public void Use_global_endpoint_IP_address_endpoint_override_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Endpoint"] = "http://127.0.0.1";
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://127.0.0.1/bucket", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("non-dns endpoint + global endpoint")]
+        public void Nondns_endpoint_global_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("endpoint override + use global endpoint")]
+        public void Endpoint_override_use_global_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["UseGlobalEndpoint"] = true;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("FIPS + dualstack + non-bucket endpoint")]
+        public void FIPS_dualstack_nonbucket_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.dualstack.us-east-1.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("FIPS + dualstack + non-DNS endpoint")]
+        public void FIPS_dualstack_nonDNS_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["ForcePathStyle"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.dualstack.us-east-1.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("endpoint override + FIPS + dualstack (BUG)")]
+        public void Endpoint_override_FIPS_dualstack_BUG_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["ForcePathStyle"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("endpoint override + non-dns bucket + FIPS (BUG)")]
+        public void Endpoint_override_nondns_bucket_FIPS_BUG_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("FIPS + bucket endpoint + force path style")]
+        public void FIPS_bucket_endpoint_force_path_style_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["ForcePathStyle"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.us-east-1.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("bucket + FIPS + force path style")]
+        public void Bucket_FIPS_force_path_style_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket";
+            parameters["ForcePathStyle"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.dualstack.us-east-1.amazonaws.com/bucket", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("FIPS + dualstack + use global endpoint")]
+        public void FIPS_dualstack_use_global_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://bucket.s3-fips.dualstack.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("URI encoded bucket + use global endpoint")]
+        public void URI_encoded_bucket_use_global_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseGlobalEndpoint"] = true;
+            parameters["Endpoint"] = "https://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://foo.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("FIPS + path based endpoint")]
+        public void FIPS_path_based_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.us-east-1.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("accelerate + dualstack + global endpoint")]
+        public void Accelerate_dualstack_global_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["Accelerate"] = true;
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://bucket.s3-accelerate.dualstack.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("dualstack + global endpoint + non URI safe bucket")]
+        public void Dualstack_global_endpoint_non_URI_safe_bucket_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["Accelerate"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3.dualstack.us-east-1.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("FIPS + uri encoded bucket")]
+        public void FIPS_uri_encoded_bucket_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["ForcePathStyle"] = true;
+            parameters["Accelerate"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.us-east-1.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("endpoint override + non-uri safe endpoint + force path style")]
+        public void Endpoint_override_nonuri_safe_endpoint_force_path_style_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["ForcePathStyle"] = true;
+            parameters["Accelerate"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Endpoint"] = "http://foo.com";
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("FIPS + Dualstack + global endpoint + non-dns bucket")]
+        public void FIPS_Dualstack_global_endpoint_nondns_bucket_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "bucket!";
+            parameters["Accelerate"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.dualstack.us-east-1.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("endpoint override + FIPS + dualstack (this is wrong—it's a bug in the UseGlobalEndpoint branch)")]
+        public void Endpoint_override_FIPS_dualstack_this_is_wrongits_a_bug_in_the_UseGlobalEndpoint_branch_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["UseGlobalEndpoint"] = true;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("non-bucket endpoint override + dualstack + global endpoint")]
+        public void Nonbucket_endpoint_override_dualstack_global_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = true;
+            parameters["UseGlobalEndpoint"] = true;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("Endpoint override + UseGlobalEndpoint + us-east-1")]
+        public void Endpoint_override_UseGlobalEndpoint_useast1_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseGlobalEndpoint"] = true;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("non-FIPS partition with FIPS set + custom endpoint")]
+        [ExpectedException(typeof(AmazonClientException), @"Partition does not support FIPS")]
+        public void NonFIPS_partition_with_FIPS_set_custom_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "cn-north-1";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = false;
+            parameters["UseGlobalEndpoint"] = true;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("aws-global signs as us-east-1")]
+        public void Awsglobal_signs_as_useast1_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseFIPS"] = true;
+            parameters["Accelerate"] = false;
+            parameters["UseDualStack"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.dualstack.us-east-1.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("aws-global signs as us-east-1")]
+        public void Awsglobal_signs_as_useast1_1_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Accelerate"] = false;
+            parameters["Endpoint"] = "https://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://bucket.foo.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("aws-global + dualstack + path-only bucket")]
+        public void Awsglobal_dualstack_pathonly_bucket_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Accelerate"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3.dualstack.us-east-1.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("aws-global + path-only bucket")]
+        public void Awsglobal_pathonly_bucket_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket!";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("aws-global + fips + custom endpoint (TODO: should be an error)")]
+        public void Awsglobal_fips_custom_endpoint_TODO_should_be_an_error_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = true;
+            parameters["Accelerate"] = false;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("aws-global, endpoint override & path only-bucket")]
+        public void Awsglobal_endpoint_override_path_onlybucket_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseDualStack"] = false;
+            parameters["UseFIPS"] = false;
+            parameters["Accelerate"] = false;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("aws-global + dualstack + custom endpoint (TODO: should be an error)")]
+        public void Awsglobal_dualstack_custom_endpoint_TODO_should_be_an_error_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Accelerate"] = false;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("accelerate, dualstack + aws-global")]
+        public void Accelerate_dualstack_awsglobal_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket";
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = false;
+            parameters["Accelerate"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://bucket.s3-accelerate.dualstack.us-east-1.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("FIPS + aws-global + path only bucket. TODO: this should be an error")]
+        public void FIPS_awsglobal_path_only_bucket_TODO_this_should_be_an_error_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket!";
+            parameters["ForcePathStyle"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Accelerate"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.dualstack.us-east-1.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("aws-global + FIPS + endpoint override. TODO: should this be an error?")]
+        public void Awsglobal_FIPS_endpoint_override_TODO_should_this_be_an_error_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["UseFIPS"] = true;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("force path style, aws-global & endpoint override")]
+        public void Force_path_style_awsglobal_endpoint_override_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket!";
+            parameters["ForcePathStyle"] = true;
+            parameters["UseFIPS"] = true;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("ip address causes path style to be forced")]
+        public void Ip_address_causes_path_style_to_be_forced_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket";
+            parameters["Endpoint"] = "http://192.168.1.1";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://192.168.1.1/bucket", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("endpoint override with aws-global region")]
+        public void Endpoint_override_with_awsglobal_region_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["UseFIPS"] = true;
+            parameters["UseDualStack"] = true;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("FIPS + path-only (TODO: consider making this an error)")]
+        public void FIPS_pathonly_TODO_consider_making_this_an_error_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "aws-global";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseFIPS"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3-fips.us-east-1.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("empty arn type")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: No ARN type specified")]
+        public void Empty_arn_type_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "arn:aws:not-s3:us-west-2:123456789012::myendpoint";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("path style can't be used with accelerate")]
+        [ExpectedException(typeof(AmazonClientException), @"Path-style addressing cannot be used with S3 Accelerate")]
+        public void Path_style_cant_be_used_with_accelerate_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "bucket!";
+            parameters["Accelerate"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid region: region was not a valid DNS name.")]
+        public void Invalid_region_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2!";
+            parameters["Bucket"] = "bucket.subdomain";
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid region: region was not a valid DNS name.")]
+        public void Invalid_region_1_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2!";
+            parameters["Bucket"] = "bucket";
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("empty arn type")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid Access Point Name")]
+        public void Empty_arn_type_1_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "arn:aws:s3::123456789012:accesspoint:my_endpoint";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("empty arn type")]
+        [ExpectedException(typeof(AmazonClientException), @"Client was configured for partition `aws` but ARN (`arn:aws:s3:cn-north-1:123456789012:accesspoint:my-endpoint`) has `aws-cn`")]
+        public void Empty_arn_type_2_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "arn:aws:s3:cn-north-1:123456789012:accesspoint:my-endpoint";
+            parameters["UseArnRegion"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid arn region")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid region in ARN: `us-east_2` (invalid DNS name)")]
+        public void Invalid_arn_region_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "arn:aws:s3-object-lambda:us-east_2:123456789012:accesspoint:my-endpoint";
+            parameters["UseArnRegion"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid ARN outpost")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The outpost Id may only contain a-z, A-Z, 0-9 and `-`. Found: `op_01234567890123456`")]
+        public void Invalid_ARN_outpost_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost/op_01234567890123456/accesspoint/reports";
+            parameters["UseArnRegion"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid ARN")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: expected an access point name")]
+        public void Invalid_ARN_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456/reports";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid ARN")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: Expected a 4-component resource")]
+        public void Invalid_ARN_1_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid outpost type")]
+        [ExpectedException(typeof(AmazonClientException), @"Expected an outpost type `accesspoint`, found not-accesspoint")]
+        public void Invalid_outpost_type_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:123456789012:outpost/op-01234567890123456/not-accesspoint/reports";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid outpost type")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid region in ARN: `us-east_1` (invalid DNS name)")]
+        public void Invalid_outpost_type_1_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "arn:aws:s3-outposts:us-east_1:123456789012:outpost/op-01234567890123456/not-accesspoint/reports";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid outpost type")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The account id may only contain a-z, A-Z, 0-9 and `-`. Found: `12345_789012`")]
+        public void Invalid_outpost_type_2_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:12345_789012:outpost/op-01234567890123456/not-accesspoint/reports";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid outpost type")]
+        [ExpectedException(typeof(AmazonClientException), @"Invalid ARN: The Outpost Id was not set")]
+        public void Invalid_outpost_type_3_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "arn:aws:s3-outposts:us-east-1:12345789012:outpost";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("use global endpoint virtual addressing")]
+        public void Use_global_endpoint_virtual_addressing_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "bucket";
+            parameters["Endpoint"] = "http://example.com";
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://bucket.example.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("global endpoint + ip address")]
+        public void Global_endpoint_ip_address_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "bucket";
+            parameters["Endpoint"] = "http://192.168.0.1";
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://192.168.0.1/bucket", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid outpost type")]
+        public void Invalid_outpost_type_4_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://s3.us-east-2.amazonaws.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("invalid outpost type")]
+        public void Invalid_outpost_type_5_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "bucket";
+            parameters["Accelerate"] = true;
+            parameters["UseGlobalEndpoint"] = true;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://bucket.s3-accelerate.amazonaws.com", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("use global endpoint + custom endpoint")]
+        public void Use_global_endpoint_custom_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseGlobalEndpoint"] = true;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("use global endpoint, not us-east-1, force path style")]
+        public void Use_global_endpoint_not_useast1_force_path_style_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-2";
+            parameters["Bucket"] = "bucket!";
+            parameters["UseGlobalEndpoint"] = true;
+            parameters["ForcePathStyle"] = true;
+            parameters["Endpoint"] = "http://foo.com";
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://foo.com/bucket%21", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
         [Description("vanilla virtual addressing@us-west-2")]
         public void Vanilla_virtual_addressinguswest2_Test()
         {
@@ -3724,6 +4764,94 @@ namespace AWSSDK_DotNet35.UnitTests.Endpoints
             parameters["UseDualStack"] = false;
             parameters["Accelerate"] = false;
             var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("S3 Outposts Abba - No endpoint set for beta")]
+        [ExpectedException(typeof(AmazonClientException), @"Expected a endpoint to be specified but no endpoint was found")]
+        public void S3_Outposts_Abba_No_endpoint_set_for_beta_1_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "us-east-1";
+            parameters["Bucket"] = "test-accessp-e0b1d075431d83bebde8xz5w8ijx1qzlbp3i3ebeta0--op-s3";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("S3 Snow with bucket")]
+        public void S3_Snow_with_bucket_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "snow";
+            parameters["Bucket"] = "bucketName";
+            parameters["Endpoint"] = "http://10.0.1.12:433";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://10.0.1.12:433/bucketName", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("S3 Snow without bucket")]
+        public void S3_Snow_without_bucket_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "snow";
+            parameters["Endpoint"] = "https://10.0.1.12:433";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://10.0.1.12:433", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("S3 Snow no port")]
+        public void S3_Snow_no_port_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "snow";
+            parameters["Bucket"] = "bucketName";
+            parameters["Endpoint"] = "http://10.0.1.12";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("http://10.0.1.12/bucketName", endpoint.URL);
+        }
+
+        [TestMethod]
+        [TestCategory("UnitTest")]
+        [TestCategory("Endpoints")]
+        [TestCategory("S3")]
+        [Description("S3 Snow dns endpoint")]
+        public void S3_Snow_dns_endpoint_Test()
+        {
+            var parameters = new S3EndpointParameters();
+            parameters["Region"] = "snow";
+            parameters["Bucket"] = "bucketName";
+            parameters["Endpoint"] = "https://amazonaws.com";
+            parameters["UseFIPS"] = false;
+            parameters["UseDualStack"] = false;
+            parameters["Accelerate"] = false;
+            var endpoint = new AmazonS3EndpointProvider().ResolveEndpoint(parameters);
+            Assert.AreEqual("https://amazonaws.com/bucketName", endpoint.URL);
         }
 
     }

@@ -25,35 +25,81 @@ namespace Amazon.S3.Model
 {
     /// <summary>
     /// Container for the parameters to the GetBucketAccelerateConfiguration operation.
+    /// This implementation of the GET action uses the <code>accelerate</code> subresource
+    /// to return the Transfer Acceleration state of a bucket, which is either <code>Enabled</code>
+    /// or <code>Suspended</code>. Amazon S3 Transfer Acceleration is a bucket-level feature
+    /// that enables you to perform faster data transfers to and from Amazon S3.
+    /// 
+    ///  
+    /// <para>
+    /// To use this operation, you must have permission to perform the <code>s3:GetAccelerateConfiguration</code>
+    /// action. The bucket owner has this permission by default. The bucket owner can grant
+    /// this permission to others. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+    /// Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+    /// Access Permissions to your Amazon S3 Resources</a> in the <i>Amazon S3 User Guide</i>.
+    /// </para>
+    ///  
+    /// <para>
+    /// You set the Transfer Acceleration state of an existing bucket to <code>Enabled</code>
+    /// or <code>Suspended</code> by using the <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
+    /// operation. 
+    /// </para>
+    ///  
+    /// <para>
+    /// A GET <code>accelerate</code> request does not return a state value for a bucket that
+    /// has no transfer acceleration state. A bucket has no Transfer Acceleration state if
+    /// a state has never been set on the bucket. 
+    /// </para>
+    ///  
+    /// <para>
+    /// For more information about transfer acceleration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
+    /// Acceleration</a> in the Amazon S3 User Guide.
+    /// </para>
+    ///  <p class="title"> <b>Related Resources</b> 
+    /// </para>
+    ///  <ul> <li> 
+    /// <para>
+    ///  <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
+    /// 
+    /// </para>
+    ///  </li> </ul>
     /// </summary>
     public partial class GetBucketAccelerateConfigurationRequest : AmazonWebServiceRequest
     {
-        private string bucketName;
-        private string expectedBucketOwner;
+        private string _bucketName;
+        private string _expectedBucketOwner;
+        private RequestPayer _requestPayer;
 
         /// <summary>
-        /// <para>The name of the bucket for which the accelerate configuration is retrieved.</para>
+        /// Gets and sets the property BucketName. 
+        /// <para>
+        /// The name of the bucket for which the accelerate configuration is retrieved.
+        /// </para>
         /// </summary>
         public string BucketName
         {
-            get { return this.bucketName; }
-            set { this.bucketName = value; }
+            get { return this._bucketName; }
+            set { this._bucketName = value; }
         }
 
         // Check to see if BucketName property is set
         internal bool IsSetBucketName()
         {
-            return this.BucketName != null;
+            return this._bucketName != null;
         }
 
         /// <summary>
-        /// The account ID of the expected bucket owner. 
-        /// If the bucket is owned by a different account, the request will fail with an HTTP 403 (Access Denied) error.
+        /// Gets and sets the property ExpectedBucketOwner. 
+        /// <para>
+        /// The account ID of the expected bucket owner. If the bucket is owned by a different
+        /// account, the request fails with the HTTP status code <code>403 Forbidden</code> (access
+        /// denied).
+        /// </para>
         /// </summary>
         public string ExpectedBucketOwner
         {
-            get { return this.expectedBucketOwner; }
-            set { this.expectedBucketOwner = value; }
+            get { return this._expectedBucketOwner; }
+            set { this._expectedBucketOwner = value; }
         }
 
         /// <summary>
@@ -62,7 +108,22 @@ namespace Amazon.S3.Model
         /// <returns>true, if ExpectedBucketOwner property is set.</returns>
         internal bool IsSetExpectedBucketOwner()
         {
-            return !String.IsNullOrEmpty(this.expectedBucketOwner);
+            return !String.IsNullOrEmpty(this._expectedBucketOwner);
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestPayer.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this._requestPayer; }
+            set { this._requestPayer = value; }
+        }
+
+        // Check to see if RequestPayer property is set
+        internal bool IsSetRequestPayer()
+        {
+            return this._requestPayer != null;
         }
     }
 }

@@ -96,6 +96,7 @@ namespace Amazon.S3.Model
         private string keyMarker;
         private int? maxUploads;
         private string prefix;
+        private RequestPayer _requestPayer;
         private string uploadIdMarker;
 
         /// <summary>
@@ -270,6 +271,21 @@ namespace Amazon.S3.Model
         internal bool IsSetPrefix()
         {
             return this.prefix != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property RequestPayer.
+        /// </summary>
+        public RequestPayer RequestPayer
+        {
+            get { return this._requestPayer; }
+            set { this._requestPayer = value; }
+        }
+
+        // Check to see if RequestPayer property is set
+        internal bool IsSetRequestPayer()
+        {
+            return this._requestPayer != null;
         }
 
         /// <summary>
