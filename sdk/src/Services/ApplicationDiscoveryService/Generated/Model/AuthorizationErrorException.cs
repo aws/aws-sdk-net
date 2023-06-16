@@ -29,8 +29,8 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// The Amazon Web Services user account does not have permission to perform the action.
-    /// Check the IAM policy associated with this account.
+    /// The user does not have permission to perform the action. Check the IAM policy associated
+    /// with this user.
     /// </summary>
     #if !NETSTANDARD
     [Serializable]

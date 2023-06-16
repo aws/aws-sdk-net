@@ -29,30 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Container for the parameters to the StopDataCollectionByAgentIds operation.
-    /// Instructs the specified agents to stop collecting data.
+    /// Indicates the type of data that is being exported. Only one <code>ExportPreferences</code>
+    /// can be enabled for a <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_StartExportTask.html">StartExportTask</a>
+    /// action.
     /// </summary>
-    public partial class StopDataCollectionByAgentIdsRequest : AmazonApplicationDiscoveryServiceRequest
+    public partial class ExportPreferences
     {
-        private List<string> _agentIds = new List<string>();
+        private Ec2RecommendationsExportPreferences _ec2RecommendationsPreferences;
 
         /// <summary>
-        /// Gets and sets the property AgentIds. 
+        /// Gets and sets the property Ec2RecommendationsPreferences. 
         /// <para>
-        /// The IDs of the agents from which to stop collecting data.
+        ///  If enabled, exported data includes EC2 instance type matches for on-premises servers
+        /// discovered through Amazon Web Services Application Discovery Service. 
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true)]
-        public List<string> AgentIds
+        public Ec2RecommendationsExportPreferences Ec2RecommendationsPreferences
         {
-            get { return this._agentIds; }
-            set { this._agentIds = value; }
+            get { return this._ec2RecommendationsPreferences; }
+            set { this._ec2RecommendationsPreferences = value; }
         }
 
-        // Check to see if AgentIds property is set
-        internal bool IsSetAgentIds()
+        // Check to see if Ec2RecommendationsPreferences property is set
+        internal bool IsSetEc2RecommendationsPreferences()
         {
-            return this._agentIds != null && this._agentIds.Count > 0; 
+            return this._ec2RecommendationsPreferences != null;
         }
 
     }

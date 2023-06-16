@@ -30,22 +30,38 @@ namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
     /// Container for the parameters to the StartExportTask operation.
-    /// Begins the export of discovered data to an S3 bucket.
+    /// Begins the export of a discovered data report to an Amazon S3 bucket managed by Amazon
+    /// Web Services.
     /// 
-    ///  
+    ///  <note> 
     /// <para>
-    ///  If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours
-    /// of detailed data collected by the identified Application Discovery Agent, including
-    /// network, process, and performance details. A time range for exported agent data may
-    /// be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed
-    /// agent data is limited to five concurrently running exports. 
+    /// Exports might provide an estimate of fees and savings based on certain information
+    /// that you provide. Fee estimates do not include any taxes that might apply. Your actual
+    /// fees and savings depend on a variety of factors, including your actual usage of Amazon
+    /// Web Services services, which might vary from the estimates provided in this report.
+    /// </para>
+    ///  </note> 
+    /// <para>
+    /// If you do not specify <code>preferences</code> or <code>agentIds</code> in the filter,
+    /// a summary of all servers, applications, tags, and performance is generated. This data
+    /// is an aggregation of all server data collected through on-premises tooling, file import,
+    /// application grouping and applying tags.
     /// </para>
     ///  
     /// <para>
-    ///  If you do not include an <code>agentIds</code> filter, summary data is exported that
-    /// includes both Amazon Web Services Agentless Discovery Connector data and summary data
-    /// from Amazon Web Services Discovery Agents. Export of summary data is limited to two
-    /// exports per day. 
+    /// If you specify <code>agentIds</code> in a filter, the task exports up to 72 hours
+    /// of detailed data collected by the identified Application Discovery Agent, including
+    /// network, process, and performance details. A time range for exported agent data may
+    /// be set by using <code>startTime</code> and <code>endTime</code>. Export of detailed
+    /// agent data is limited to five concurrently running exports. Export of detailed agent
+    /// data is limited to two exports per day.
+    /// </para>
+    ///  
+    /// <para>
+    /// If you enable <code>ec2RecommendationsPreferences</code> in <code>preferences</code>
+    /// , an Amazon EC2 instance matching the characteristics of each server in Application
+    /// Discovery Service is generated. Changing the attributes of the <code>ec2RecommendationsPreferences</code>
+    /// changes the criteria of the recommendation.
     /// </para>
     /// </summary>
     public partial class StartExportTaskRequest : AmazonApplicationDiscoveryServiceRequest
@@ -53,6 +69,7 @@ namespace Amazon.ApplicationDiscoveryService.Model
         private DateTime? _endTime;
         private List<string> _exportDataFormat = new List<string>();
         private List<ExportFilter> _filters = new List<ExportFilter>();
+        private ExportPreferences _preferences;
         private DateTime? _startTime;
 
         /// <summary>
@@ -101,8 +118,8 @@ namespace Amazon.ApplicationDiscoveryService.Model
         /// Discovery Agent for which data is exported. The <code>agentId</code> can be found
         /// in the results of the <code>DescribeAgents</code> API or CLI. If no filter is present,
         /// <code>startTime</code> and <code>endTime</code> are ignored and exported data includes
-        /// both Agentless Discovery Connector data and summary data from Application Discovery
-        /// agents. 
+        /// both Amazon Web Services Application Discovery Service Agentless Collector collectors
+        /// data and summary data from Application Discovery Agent agents. 
         /// </para>
         /// </summary>
         public List<ExportFilter> Filters
@@ -115,6 +132,25 @@ namespace Amazon.ApplicationDiscoveryService.Model
         internal bool IsSetFilters()
         {
             return this._filters != null && this._filters.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property Preferences. 
+        /// <para>
+        ///  Indicates the type of data that needs to be exported. Only one <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_ExportPreferences.html">ExportPreferences</a>
+        /// can be enabled at any time. 
+        /// </para>
+        /// </summary>
+        public ExportPreferences Preferences
+        {
+            get { return this._preferences; }
+            set { this._preferences = value; }
+        }
+
+        // Check to see if Preferences property is set
+        internal bool IsSetPreferences()
+        {
+            return this._preferences != null;
         }
 
         /// <summary>

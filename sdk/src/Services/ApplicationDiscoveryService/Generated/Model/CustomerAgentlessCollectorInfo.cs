@@ -29,7 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// 
+    /// The inventory data for installed Agentless Collector collectors.
     /// </summary>
     public partial class CustomerAgentlessCollectorInfo
     {
@@ -42,7 +42,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         private int? _unknownAgentlessCollectors;
 
         /// <summary>
-        /// Gets and sets the property ActiveAgentlessCollectors.
+        /// Gets and sets the property ActiveAgentlessCollectors. 
+        /// <para>
+        /// The number of active Agentless Collector collectors. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int ActiveAgentlessCollectors
@@ -58,7 +61,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property DenyListedAgentlessCollectors.
+        /// Gets and sets the property DenyListedAgentlessCollectors. 
+        /// <para>
+        /// The number of deny-listed Agentless Collector collectors. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int DenyListedAgentlessCollectors
@@ -74,7 +80,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property HealthyAgentlessCollectors.
+        /// Gets and sets the property HealthyAgentlessCollectors. 
+        /// <para>
+        /// The number of healthy Agentless Collector collectors. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int HealthyAgentlessCollectors
@@ -90,7 +99,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property ShutdownAgentlessCollectors.
+        /// Gets and sets the property ShutdownAgentlessCollectors. 
+        /// <para>
+        /// The number of Agentless Collector collectors with <code>SHUTDOWN</code> status. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int ShutdownAgentlessCollectors
@@ -106,7 +118,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property TotalAgentlessCollectors.
+        /// Gets and sets the property TotalAgentlessCollectors. 
+        /// <para>
+        ///  The total number of Agentless Collector collectors. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int TotalAgentlessCollectors
@@ -122,7 +137,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UnhealthyAgentlessCollectors.
+        /// Gets and sets the property UnhealthyAgentlessCollectors. 
+        /// <para>
+        ///  The number of unhealthy Agentless Collector collectors. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int UnhealthyAgentlessCollectors
@@ -138,7 +156,10 @@ namespace Amazon.ApplicationDiscoveryService.Model
         }
 
         /// <summary>
-        /// Gets and sets the property UnknownAgentlessCollectors.
+        /// Gets and sets the property UnknownAgentlessCollectors. 
+        /// <para>
+        ///  The number of unknown Agentless Collector collectors. 
+        /// </para>
         /// </summary>
         [AWSProperty(Required=true)]
         public int UnknownAgentlessCollectors

@@ -29,49 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.ApplicationDiscoveryService.Model
 {
     /// <summary>
-    /// Network details about the host where the agent/collector resides.
+    /// Specifies the performance metrics to use for the server that is used for recommendations.
     /// </summary>
-    public partial class AgentNetworkInfo
+    public partial class UsageMetricBasis
     {
-        private string _ipAddress;
-        private string _macAddress;
+        private string _name;
+        private double? _percentageAdjust;
 
         /// <summary>
-        /// Gets and sets the property IpAddress. 
+        /// Gets and sets the property Name. 
         /// <para>
-        /// The IP address for the host where the agent/collector resides.
+        ///  A utilization metric that is used by the recommendations. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10000)]
-        public string IpAddress
+        public string Name
         {
-            get { return this._ipAddress; }
-            set { this._ipAddress = value; }
+            get { return this._name; }
+            set { this._name = value; }
         }
 
-        // Check to see if IpAddress property is set
-        internal bool IsSetIpAddress()
+        // Check to see if Name property is set
+        internal bool IsSetName()
         {
-            return this._ipAddress != null;
+            return this._name != null;
         }
 
         /// <summary>
-        /// Gets and sets the property MacAddress. 
+        /// Gets and sets the property PercentageAdjust. 
         /// <para>
-        /// The MAC address for the host where the agent/collector resides.
+        ///  Specifies the percentage of the specified utilization metric that is used by the
+        /// recommendations. 
         /// </para>
         /// </summary>
-        [AWSProperty(Max=10000)]
-        public string MacAddress
+        [AWSProperty(Min=0, Max=100)]
+        public double PercentageAdjust
         {
-            get { return this._macAddress; }
-            set { this._macAddress = value; }
+            get { return this._percentageAdjust.GetValueOrDefault(); }
+            set { this._percentageAdjust = value; }
         }
 
-        // Check to see if MacAddress property is set
-        internal bool IsSetMacAddress()
+        // Check to see if PercentageAdjust property is set
+        internal bool IsSetPercentageAdjust()
         {
-            return this._macAddress != null;
+            return this._percentageAdjust.HasValue; 
         }
 
     }
