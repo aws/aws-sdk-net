@@ -13082,11 +13082,6 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>supported-platforms</code>: Indicates whether your account can launch instances
-        /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
         /// </para>
         ///  </li> <li> 
@@ -13098,26 +13093,24 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
-        /// groups that you can assign to a network interface.
+        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        /// can allocate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
-        /// can allocate for use with EC2-Classic. 
+        ///  <code>supported-platforms</code>: This attribute is deprecated.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-        /// you can allocate for use with EC2-VPC.
+        /// you can allocate.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        /// groups that you can assign to a network interface.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// 
         /// <returns>The response from the DescribeAccountAttributes service method, as returned by EC2.</returns>
@@ -13134,11 +13127,6 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>supported-platforms</code>: Indicates whether your account can launch instances
-        /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
         /// </para>
         ///  </li> <li> 
@@ -13150,26 +13138,24 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
-        /// groups that you can assign to a network interface.
+        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        /// can allocate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
-        /// can allocate for use with EC2-Classic. 
+        ///  <code>supported-platforms</code>: This attribute is deprecated.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-        /// you can allocate for use with EC2-VPC.
+        /// you can allocate.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        /// groups that you can assign to a network interface.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// 
@@ -13191,11 +13177,6 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>supported-platforms</code>: Indicates whether your account can launch instances
-        /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
         /// </para>
         ///  </li> <li> 
@@ -13207,26 +13188,24 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
-        /// groups that you can assign to a network interface.
+        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        /// can allocate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
-        /// can allocate for use with EC2-Classic. 
+        ///  <code>supported-platforms</code>: This attribute is deprecated.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-        /// you can allocate for use with EC2-VPC.
+        /// you can allocate.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        /// groups that you can assign to a network interface.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="cancellationToken">
         ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
@@ -13245,11 +13224,6 @@ namespace Amazon.EC2
         /// 
         ///  <ul> <li> 
         /// <para>
-        ///  <code>supported-platforms</code>: Indicates whether your account can launch instances
-        /// into EC2-Classic and EC2-VPC, or only into EC2-VPC.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
         ///  <code>default-vpc</code>: The ID of the default VPC for your account, or <code>none</code>.
         /// </para>
         ///  </li> <li> 
@@ -13261,26 +13235,24 @@ namespace Amazon.EC2
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
-        /// groups that you can assign to a network interface.
+        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
+        /// can allocate.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>max-elastic-ips</code>: The maximum number of Elastic IP addresses that you
-        /// can allocate for use with EC2-Classic. 
+        ///  <code>supported-platforms</code>: This attribute is deprecated.
         /// </para>
         ///  </li> <li> 
         /// <para>
         ///  <code>vpc-max-elastic-ips</code>: The maximum number of Elastic IP addresses that
-        /// you can allocate for use with EC2-VPC.
+        /// you can allocate.
         /// </para>
-        ///  </li> </ul> <note> 
+        ///  </li> <li> 
         /// <para>
-        /// We are retiring EC2-Classic on August 15, 2022. We recommend that you migrate from
-        /// EC2-Classic to a VPC. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-        /// from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.
+        ///  <code>vpc-max-security-groups-per-interface</code>: The maximum number of security
+        /// groups that you can assign to a network interface.
         /// </para>
-        ///  </note>
+        ///  </li> </ul>
         /// </summary>
         /// <param name="request">Container for the necessary parameters to execute the DescribeAccountAttributes service method.</param>
         /// <param name="cancellationToken">

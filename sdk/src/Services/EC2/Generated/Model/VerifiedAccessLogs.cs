@@ -29,12 +29,14 @@ using Amazon.Runtime.Internal;
 namespace Amazon.EC2.Model
 {
     /// <summary>
-    /// Describes the destinations for Verified Access logs.
+    /// Describes the options for Verified Access logs.
     /// </summary>
     public partial class VerifiedAccessLogs
     {
         private VerifiedAccessLogCloudWatchLogsDestination _cloudWatchLogs;
+        private bool? _includeTrustContext;
         private VerifiedAccessLogKinesisDataFirehoseDestination _kinesisDataFirehose;
+        private string _logVersion;
         private VerifiedAccessLogS3Destination _s3;
 
         /// <summary>
@@ -56,6 +58,24 @@ namespace Amazon.EC2.Model
         }
 
         /// <summary>
+        /// Gets and sets the property IncludeTrustContext. 
+        /// <para>
+        ///  Describes current setting for including trust data into the logs. 
+        /// </para>
+        /// </summary>
+        public bool IncludeTrustContext
+        {
+            get { return this._includeTrustContext.GetValueOrDefault(); }
+            set { this._includeTrustContext = value; }
+        }
+
+        // Check to see if IncludeTrustContext property is set
+        internal bool IsSetIncludeTrustContext()
+        {
+            return this._includeTrustContext.HasValue; 
+        }
+
+        /// <summary>
         /// Gets and sets the property KinesisDataFirehose. 
         /// <para>
         /// Kinesis logging destination.
@@ -71,6 +91,24 @@ namespace Amazon.EC2.Model
         internal bool IsSetKinesisDataFirehose()
         {
             return this._kinesisDataFirehose != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property LogVersion. 
+        /// <para>
+        ///  Describes current setting for the logging version. 
+        /// </para>
+        /// </summary>
+        public string LogVersion
+        {
+            get { return this._logVersion; }
+            set { this._logVersion = value; }
+        }
+
+        // Check to see if LogVersion property is set
+        internal bool IsSetLogVersion()
+        {
+            return this._logVersion != null;
         }
 
         /// <summary>

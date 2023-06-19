@@ -71,6 +71,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                             request.Parameters.Add("AccessLogs" + "." + "CloudWatchLogs" + "." + "LogGroup", StringUtils.FromString(publicRequest.AccessLogs.CloudWatchLogs.LogGroup));
                         }
                     }
+                    if(publicRequest.AccessLogs.IsSetIncludeTrustContext())
+                    {
+                        request.Parameters.Add("AccessLogs" + "." + "IncludeTrustContext", StringUtils.FromBool(publicRequest.AccessLogs.IncludeTrustContext));
+                    }
                     if(publicRequest.AccessLogs.IsSetKinesisDataFirehose())
                     {
                         if(publicRequest.AccessLogs.KinesisDataFirehose.IsSetDeliveryStream())
@@ -81,6 +85,10 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         {
                             request.Parameters.Add("AccessLogs" + "." + "KinesisDataFirehose" + "." + "Enabled", StringUtils.FromBool(publicRequest.AccessLogs.KinesisDataFirehose.Enabled));
                         }
+                    }
+                    if(publicRequest.AccessLogs.IsSetLogVersion())
+                    {
+                        request.Parameters.Add("AccessLogs" + "." + "LogVersion", StringUtils.FromString(publicRequest.AccessLogs.LogVersion));
                     }
                     if(publicRequest.AccessLogs.IsSetS3())
                     {
