@@ -578,31 +578,7 @@ namespace Amazon.Route53Domains.Model
         /// <para>
         ///  <code>TOWNSHIP</code> 
         /// </para>
-        ///  </li> </ul> </li> </ul> </dd> <dt>.fr</dt> <dd> <ul> <li> 
-        /// <para>
-        ///  <code>BIRTH_CITY</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BIRTH_COUNTRY</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BIRTH_DATE_IN_YYYY_MM_DD</code> 
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BIRTH_DEPARTMENT</code>: Specify the INSEE code that corresponds with the department
-        /// where the contact was born. If the contact was born somewhere other than France or
-        /// its overseas departments, specify <code>99</code>. For more information, including
-        /// a list of departments and the corresponding INSEE numbers, see the Wikipedia entry
-        /// <a href="https://en.wikipedia.org/wiki/Departments_of_France">Departments of France</a>.
-        /// </para>
-        ///  </li> <li> 
-        /// <para>
-        ///  <code>BRAND_NUMBER</code> 
-        /// </para>
-        ///  </li> </ul> </dd> <dt>.it</dt> <dd> <ul> <li> 
+        ///  </li> </ul> </li> </ul> </dd> <dt>.it</dt> <dd> <ul> <li> 
         /// <para>
         ///  <code>IT_NATIONALITY</code> 
         /// </para>

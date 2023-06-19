@@ -1382,9 +1382,8 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// This operation registers a domain. Domains are registered either by Amazon Registrar
-        /// (for .com, .net, and .org domains) or by our registrar associate, Gandi (for all other
-        /// domains). For some top-level domains (TLDs), this operation requires extra parameters.
+        /// This operation registers a domain. For some top-level domains (TLDs), this operation
+        /// requires extra parameters.
         /// 
         ///  
         /// <para>
@@ -1404,16 +1403,15 @@ namespace Amazon.Route53Domains
         /// </para>
         ///  </li> <li> 
         /// <para>
-        /// Optionally enables privacy protection, so WHOIS queries return contact information
-        /// either for Amazon Registrar (for .com, .net, and .org domains) or for our registrar
-        /// associate, Gandi (for all other TLDs). If you don't enable privacy protection, WHOIS
-        /// queries return the information that you entered for the administrative, registrant,
-        /// and technical contacts.
+        /// Optionally enables privacy protection, so WHOIS queries return contact for the registrar
+        /// or the phrase "REDACTED FOR PRIVACY", or "On behalf of &lt;domain name&gt; owner."
+        /// If you don't enable privacy protection, WHOIS queries return the information that
+        /// you entered for the administrative, registrant, and technical contacts.
         /// </para>
         ///  <note> 
         /// <para>
-        /// You must specify the same privacy setting for the administrative, registrant, and
-        /// technical contacts.
+        /// While some domains may allow different privacy settings per contact, we recommend
+        /// specifying the same privacy setting for all contacts.
         /// </para>
         ///  </note> </li> <li> 
         /// <para>
@@ -1770,9 +1768,7 @@ namespace Amazon.Route53Domains
 
 
         /// <summary>
-        /// Transfers a domain from another registrar to Amazon Route 53. When the transfer is
-        /// complete, the domain is registered either with Amazon Registrar (for .com, .net, and
-        /// .org domains) or with our registrar associate, Gandi (for all other TLDs).
+        /// Transfers a domain from another registrar to Amazon Route 53. 
         /// 
         ///  
         /// <para>
@@ -2038,14 +2034,14 @@ namespace Amazon.Route53Domains
 
         /// <summary>
         /// This operation updates the specified domain contact's privacy setting. When privacy
-        /// protection is enabled, contact information such as email address is replaced either
-        /// with contact information for Amazon Registrar (for .com, .net, and .org domains) or
-        /// with contact information for our registrar associate, Gandi.
+        /// protection is enabled, your contact information is replaced with contact information
+        /// for the registrar or with the phrase "REDACTED FOR PRIVACY", or "On behalf of &lt;domain
+        /// name&gt; owner."
         /// 
         ///  <note> 
         /// <para>
-        /// You must specify the same privacy setting for the administrative, registrant, and
-        /// technical contacts.
+        /// While some domains may allow different privacy settings per contact, we recommend
+        /// specifying the same privacy setting for all contacts.
         /// </para>
         ///  </note> 
         /// <para>
