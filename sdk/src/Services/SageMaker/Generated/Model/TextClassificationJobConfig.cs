@@ -30,7 +30,7 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Stores the configuration information for the text classification problem of an AutoML
-    /// job using the V2 API.
+    /// job V2.
     /// </summary>
     public partial class TextClassificationJobConfig
     {
@@ -60,7 +60,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property ContentColumn. 
         /// <para>
         /// The name of the column used to provide the sentences to be classified. It should not
-        /// be the same as the target column.
+        /// be the same as the target column (Required).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]
@@ -80,7 +80,7 @@ namespace Amazon.SageMaker.Model
         /// Gets and sets the property TargetLabelColumn. 
         /// <para>
         /// The name of the column used to provide the class labels. It should not be same as
-        /// the content column.
+        /// the content column (Required).
         /// </para>
         /// </summary>
         [AWSProperty(Min=1, Max=256)]

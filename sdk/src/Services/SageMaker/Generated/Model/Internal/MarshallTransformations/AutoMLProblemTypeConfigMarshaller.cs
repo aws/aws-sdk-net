@@ -56,6 +56,17 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 context.Writer.WriteObjectEnd();
             }
 
+            if(requestObject.IsSetTabularJobConfig())
+            {
+                context.Writer.WritePropertyName("TabularJobConfig");
+                context.Writer.WriteObjectStart();
+
+                var marshaller = TabularJobConfigMarshaller.Instance;
+                marshaller.Marshall(requestObject.TabularJobConfig, context);
+
+                context.Writer.WriteObjectEnd();
+            }
+
             if(requestObject.IsSetTextClassificationJobConfig())
             {
                 context.Writer.WritePropertyName("TextClassificationJobConfig");

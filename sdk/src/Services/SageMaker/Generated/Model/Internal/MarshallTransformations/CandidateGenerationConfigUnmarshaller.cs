@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoMLProblemTypeConfig Object
+    /// Response Unmarshaller for CandidateGenerationConfig Object
     /// </summary>  
-    public class AutoMLProblemTypeConfigUnmarshaller : IUnmarshaller<AutoMLProblemTypeConfig, XmlUnmarshallerContext>, IUnmarshaller<AutoMLProblemTypeConfig, JsonUnmarshallerContext>
+    public class CandidateGenerationConfigUnmarshaller : IUnmarshaller<CandidateGenerationConfig, XmlUnmarshallerContext>, IUnmarshaller<CandidateGenerationConfig, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoMLProblemTypeConfig IUnmarshaller<AutoMLProblemTypeConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        CandidateGenerationConfig IUnmarshaller<CandidateGenerationConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutoMLProblemTypeConfig Unmarshall(JsonUnmarshallerContext context)
+        public CandidateGenerationConfig Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutoMLProblemTypeConfig unmarshalledObject = new AutoMLProblemTypeConfig();
+            CandidateGenerationConfig unmarshalledObject = new CandidateGenerationConfig();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ImageClassificationJobConfig", targetDepth))
+                if (context.TestExpression("AlgorithmsConfig", targetDepth))
                 {
-                    var unmarshaller = ImageClassificationJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.ImageClassificationJobConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TabularJobConfig", targetDepth))
-                {
-                    var unmarshaller = TabularJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TabularJobConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TextClassificationJobConfig", targetDepth))
-                {
-                    var unmarshaller = TextClassificationJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TextClassificationJobConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = new ListUnmarshaller<AutoMLAlgorithmConfig, AutoMLAlgorithmConfigUnmarshaller>(AutoMLAlgorithmConfigUnmarshaller.Instance);
+                    unmarshalledObject.AlgorithmsConfig = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoMLProblemTypeConfigUnmarshaller _instance = new AutoMLProblemTypeConfigUnmarshaller();        
+        private static CandidateGenerationConfigUnmarshaller _instance = new CandidateGenerationConfigUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoMLProblemTypeConfigUnmarshaller Instance
+        public static CandidateGenerationConfigUnmarshaller Instance
         {
             get
             {

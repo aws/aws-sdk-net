@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoMLProblemTypeConfig Object
+    /// Response Unmarshaller for AutoMLResolvedAttributes Object
     /// </summary>  
-    public class AutoMLProblemTypeConfigUnmarshaller : IUnmarshaller<AutoMLProblemTypeConfig, XmlUnmarshallerContext>, IUnmarshaller<AutoMLProblemTypeConfig, JsonUnmarshallerContext>
+    public class AutoMLResolvedAttributesUnmarshaller : IUnmarshaller<AutoMLResolvedAttributes, XmlUnmarshallerContext>, IUnmarshaller<AutoMLResolvedAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoMLProblemTypeConfig IUnmarshaller<AutoMLProblemTypeConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutoMLResolvedAttributes IUnmarshaller<AutoMLResolvedAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,33 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutoMLProblemTypeConfig Unmarshall(JsonUnmarshallerContext context)
+        public AutoMLResolvedAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutoMLProblemTypeConfig unmarshalledObject = new AutoMLProblemTypeConfig();
+            AutoMLResolvedAttributes unmarshalledObject = new AutoMLResolvedAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ImageClassificationJobConfig", targetDepth))
+                if (context.TestExpression("AutoMLJobObjective", targetDepth))
                 {
-                    var unmarshaller = ImageClassificationJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.ImageClassificationJobConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AutoMLJobObjectiveUnmarshaller.Instance;
+                    unmarshalledObject.AutoMLJobObjective = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TabularJobConfig", targetDepth))
+                if (context.TestExpression("AutoMLProblemTypeResolvedAttributes", targetDepth))
                 {
-                    var unmarshaller = TabularJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TabularJobConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AutoMLProblemTypeResolvedAttributesUnmarshaller.Instance;
+                    unmarshalledObject.AutoMLProblemTypeResolvedAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
-                if (context.TestExpression("TextClassificationJobConfig", targetDepth))
+                if (context.TestExpression("CompletionCriteria", targetDepth))
                 {
-                    var unmarshaller = TextClassificationJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TextClassificationJobConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = AutoMLJobCompletionCriteriaUnmarshaller.Instance;
+                    unmarshalledObject.CompletionCriteria = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +88,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoMLProblemTypeConfigUnmarshaller _instance = new AutoMLProblemTypeConfigUnmarshaller();        
+        private static AutoMLResolvedAttributesUnmarshaller _instance = new AutoMLResolvedAttributesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoMLProblemTypeConfigUnmarshaller Instance
+        public static AutoMLResolvedAttributesUnmarshaller Instance
         {
             get
             {

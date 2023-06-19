@@ -57,6 +57,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                     response.AutoMLJobArn = unmarshaller.Unmarshall(context);
                     continue;
                 }
+                if (context.TestExpression("AutoMLJobArtifacts", targetDepth))
+                {
+                    var unmarshaller = AutoMLJobArtifactsUnmarshaller.Instance;
+                    response.AutoMLJobArtifacts = unmarshaller.Unmarshall(context);
+                    continue;
+                }
                 if (context.TestExpression("AutoMLJobInputDataConfig", targetDepth))
                 {
                     var unmarshaller = new ListUnmarshaller<AutoMLJobChannel, AutoMLJobChannelUnmarshaller>(AutoMLJobChannelUnmarshaller.Instance);
@@ -91,6 +97,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = AutoMLProblemTypeConfigUnmarshaller.Instance;
                     response.AutoMLProblemTypeConfig = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("AutoMLProblemTypeConfigName", targetDepth))
+                {
+                    var unmarshaller = StringUnmarshaller.Instance;
+                    response.AutoMLProblemTypeConfigName = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("BestCandidate", targetDepth))
@@ -151,6 +163,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
                 {
                     var unmarshaller = new ListUnmarshaller<AutoMLPartialFailureReason, AutoMLPartialFailureReasonUnmarshaller>(AutoMLPartialFailureReasonUnmarshaller.Instance);
                     response.PartialFailureReasons = unmarshaller.Unmarshall(context);
+                    continue;
+                }
+                if (context.TestExpression("ResolvedAttributes", targetDepth))
+                {
+                    var unmarshaller = AutoMLResolvedAttributesUnmarshaller.Instance;
+                    response.ResolvedAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
                 if (context.TestExpression("RoleArn", targetDepth))

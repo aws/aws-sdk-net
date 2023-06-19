@@ -34,16 +34,16 @@ using ThirdParty.Json.LitJson;
 namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// Response Unmarshaller for AutoMLProblemTypeConfig Object
+    /// Response Unmarshaller for AutoMLProblemTypeResolvedAttributes Object
     /// </summary>  
-    public class AutoMLProblemTypeConfigUnmarshaller : IUnmarshaller<AutoMLProblemTypeConfig, XmlUnmarshallerContext>, IUnmarshaller<AutoMLProblemTypeConfig, JsonUnmarshallerContext>
+    public class AutoMLProblemTypeResolvedAttributesUnmarshaller : IUnmarshaller<AutoMLProblemTypeResolvedAttributes, XmlUnmarshallerContext>, IUnmarshaller<AutoMLProblemTypeResolvedAttributes, JsonUnmarshallerContext>
     {
         /// <summary>
         /// Unmarshaller the response from the service to the response class.
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        AutoMLProblemTypeConfig IUnmarshaller<AutoMLProblemTypeConfig, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
+        AutoMLProblemTypeResolvedAttributes IUnmarshaller<AutoMLProblemTypeResolvedAttributes, XmlUnmarshallerContext>.Unmarshall(XmlUnmarshallerContext context)
         {
             throw new NotImplementedException();
         }
@@ -53,33 +53,21 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="context"></param>
         /// <returns></returns>
-        public AutoMLProblemTypeConfig Unmarshall(JsonUnmarshallerContext context)
+        public AutoMLProblemTypeResolvedAttributes Unmarshall(JsonUnmarshallerContext context)
         {
             context.Read();
             if (context.CurrentTokenType == JsonToken.Null) 
                 return null;
 
-            AutoMLProblemTypeConfig unmarshalledObject = new AutoMLProblemTypeConfig();
+            AutoMLProblemTypeResolvedAttributes unmarshalledObject = new AutoMLProblemTypeResolvedAttributes();
         
             int targetDepth = context.CurrentDepth;
             while (context.ReadAtDepth(targetDepth))
             {
-                if (context.TestExpression("ImageClassificationJobConfig", targetDepth))
+                if (context.TestExpression("TabularResolvedAttributes", targetDepth))
                 {
-                    var unmarshaller = ImageClassificationJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.ImageClassificationJobConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TabularJobConfig", targetDepth))
-                {
-                    var unmarshaller = TabularJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TabularJobConfig = unmarshaller.Unmarshall(context);
-                    continue;
-                }
-                if (context.TestExpression("TextClassificationJobConfig", targetDepth))
-                {
-                    var unmarshaller = TextClassificationJobConfigUnmarshaller.Instance;
-                    unmarshalledObject.TextClassificationJobConfig = unmarshaller.Unmarshall(context);
+                    var unmarshaller = TabularResolvedAttributesUnmarshaller.Instance;
+                    unmarshalledObject.TabularResolvedAttributes = unmarshaller.Unmarshall(context);
                     continue;
                 }
             }
@@ -88,12 +76,12 @@ namespace Amazon.SageMaker.Model.Internal.MarshallTransformations
         }
 
 
-        private static AutoMLProblemTypeConfigUnmarshaller _instance = new AutoMLProblemTypeConfigUnmarshaller();        
+        private static AutoMLProblemTypeResolvedAttributesUnmarshaller _instance = new AutoMLProblemTypeResolvedAttributesUnmarshaller();        
 
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static AutoMLProblemTypeConfigUnmarshaller Instance
+        public static AutoMLProblemTypeResolvedAttributesUnmarshaller Instance
         {
             get
             {

@@ -29,18 +29,49 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Stores the configuration information for the image classification problem of an AutoML
-    /// job V2.
+    /// The resolved attributes used to configure an AutoML job V2.
     /// </summary>
-    public partial class ImageClassificationJobConfig
+    public partial class AutoMLResolvedAttributes
     {
+        private AutoMLJobObjective _autoMLJobObjective;
+        private AutoMLProblemTypeResolvedAttributes _autoMLProblemTypeResolvedAttributes;
         private AutoMLJobCompletionCriteria _completionCriteria;
 
         /// <summary>
-        /// Gets and sets the property CompletionCriteria. 
+        /// Gets and sets the property AutoMLJobObjective.
+        /// </summary>
+        public AutoMLJobObjective AutoMLJobObjective
+        {
+            get { return this._autoMLJobObjective; }
+            set { this._autoMLJobObjective = value; }
+        }
+
+        // Check to see if AutoMLJobObjective property is set
+        internal bool IsSetAutoMLJobObjective()
+        {
+            return this._autoMLJobObjective != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property AutoMLProblemTypeResolvedAttributes. 
         /// <para>
-        /// How long a job is allowed to run, or how many candidates a job is allowed to generate.
+        /// Defines the resolved attributes specific to a problem type.
         /// </para>
+        /// </summary>
+        public AutoMLProblemTypeResolvedAttributes AutoMLProblemTypeResolvedAttributes
+        {
+            get { return this._autoMLProblemTypeResolvedAttributes; }
+            set { this._autoMLProblemTypeResolvedAttributes = value; }
+        }
+
+        // Check to see if AutoMLProblemTypeResolvedAttributes property is set
+        internal bool IsSetAutoMLProblemTypeResolvedAttributes()
+        {
+            return this._autoMLProblemTypeResolvedAttributes != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CompletionCriteria.
         /// </summary>
         public AutoMLJobCompletionCriteria CompletionCriteria
         {

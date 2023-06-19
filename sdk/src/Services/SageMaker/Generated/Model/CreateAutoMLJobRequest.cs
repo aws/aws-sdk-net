@@ -30,17 +30,28 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// Container for the parameters to the CreateAutoMLJob operation.
-    /// Creates an Autopilot job.
+    /// Creates an Autopilot job also referred to as Autopilot experiment or AutoML job.
     /// 
     ///  
     /// <para>
-    /// Find the best-performing model after you run an Autopilot job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.
+    /// Find the best-performing model after you run an AutoML job by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJobV2.html">DescribeAutoMLJobV2</a>
+    /// (recommended) or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeAutoMLJob.html">DescribeAutoMLJob</a>.
+    /// </para>
+    ///  <note> 
+    /// <para>
+    ///  <code>CreateAutoMLJob</code> only accepts tabular input data. We recommend using
+    /// <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+    /// for all problem types. <code>CreateAutoMLJobV2</code> can process the same tabular
+    /// data as its previous version <code>CreateAutoMLJob</code>, as well as non-tabular
+    /// data for problem types such as image or text classification.
     /// </para>
     ///  
     /// <para>
-    /// For information about how to use Autopilot, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development.html">Automate
-    /// Model Development with Amazon SageMaker Autopilot</a>.
+    /// Find guidelines about how to migrate <code>CreateAutoMLJob</code> to <code>CreateAutoMLJobV2</code>
+    /// in <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-automate-model-development-create-experiment-api.html#autopilot-create-experiment-api-migrate-v1-v2">Migrate
+    /// a CreateAutoMLJob to CreateAutoMLJobV2</a>.
     /// </para>
+    ///  </note>
     /// </summary>
     public partial class CreateAutoMLJobRequest : AmazonSageMakerRequest
     {
@@ -95,10 +106,9 @@ namespace Amazon.SageMaker.Model
         /// <summary>
         /// Gets and sets the property AutoMLJobObjective. 
         /// <para>
-        /// Defines the objective metric used to measure the predictive quality of an AutoML job.
-        /// You provide an <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-        /// and Autopilot infers whether to minimize or maximize it. For <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
-        /// only <code>Accuracy</code> is supported.
+        /// Specifies a metric to minimize or maximize as the objective of a job. If not specified,
+        /// the default objective metric depends on the problem type. See <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective</a>
+        /// for the default values.
         /// </para>
         /// </summary>
         public AutoMLJobObjective AutoMLJobObjective

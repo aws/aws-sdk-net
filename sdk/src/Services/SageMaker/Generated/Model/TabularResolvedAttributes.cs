@@ -29,30 +29,31 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeAutoMLJobV2 operation.
-    /// Returns information about an AutoML job V2 created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>.
+    /// The resolved attributes specific to the <code>TABULAR</code> problem type.
     /// </summary>
-    public partial class DescribeAutoMLJobV2Request : AmazonSageMakerRequest
+    public partial class TabularResolvedAttributes
     {
-        private string _autoMLJobName;
+        private ProblemType _problemType;
 
         /// <summary>
-        /// Gets and sets the property AutoMLJobName. 
+        /// Gets and sets the property ProblemType. 
         /// <para>
-        /// Requests information about an AutoML job V2 using its unique name.
+        /// The type of supervised learning problem available for the model candidates of the
+        /// AutoML job V2 (Binary Classification, Multiclass Classification, Regression). For
+        /// more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-datasets-problem-types.html#autopilot-problem-types">
+        /// Amazon SageMaker Autopilot problem types</a>.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string AutoMLJobName
+        public ProblemType ProblemType
         {
-            get { return this._autoMLJobName; }
-            set { this._autoMLJobName = value; }
+            get { return this._problemType; }
+            set { this._problemType = value; }
         }
 
-        // Check to see if AutoMLJobName property is set
-        internal bool IsSetAutoMLJobName()
+        // Check to see if ProblemType property is set
+        internal bool IsSetProblemType()
         {
-            return this._autoMLJobName != null;
+            return this._problemType != null;
         }
 
     }

@@ -29,9 +29,7 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Specifies a metric to minimize or maximize as the objective of a job. V2 API jobs
-    /// (for example jobs created by calling <code>CreateAutoMLJobV2</code>), support <code>Accuracy</code>
-    /// only.
+    /// Specifies a metric to minimize or maximize as the objective of a job.
     /// </summary>
     public partial class AutoMLJobObjective
     {
@@ -57,15 +55,23 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  <ul> <li> 
         /// <para>
-        ///  <code>MSE</code>: for regression.
+        /// For tabular problem types:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        /// Regression: <code>MSE</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>F1</code>: for binary classification
+        /// Binary classification: <code>F1</code>.
         /// </para>
         ///  </li> <li> 
         /// <para>
-        ///  <code>Accuracy</code>: for multiclass classification.
+        /// Multiclass classification: <code>Accuracy</code>.
+        /// </para>
+        ///  </li> </ul> </li> <li> 
+        /// <para>
+        /// For image or text classification problem types: <code>Accuracy</code> 
         /// </para>
         ///  </li> </ul>
         /// </summary>

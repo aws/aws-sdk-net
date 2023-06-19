@@ -33,11 +33,9 @@ namespace Amazon.SageMaker.Model
     /// 
     ///  
     /// <para>
-    /// If you are using the V1 API (for example <code>CreateAutoMLJob</code>) or the V2 API
-    /// for Natural Language Processing problems (for example <code>CreateAutoMLJobV2</code>
-    /// with a <code>TextClassificationJobConfig</code> problem type), the validation and
-    /// training datasets must contain the same headers. Also, for V1 API jobs, the validation
-    /// dataset must be less than 2 GB in size.
+    /// The validation and training datasets must contain the same headers. For jobs created
+    /// by calling <code>CreateAutoMLJob</code>, the validation dataset must be less than
+    /// 2 GB in size.
     /// </para>
     /// </summary>
     public partial class AutoMLDataSplitConfig

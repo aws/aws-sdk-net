@@ -29,30 +29,28 @@ using Amazon.Runtime.Internal;
 namespace Amazon.SageMaker.Model
 {
     /// <summary>
-    /// Container for the parameters to the DescribeAutoMLJobV2 operation.
-    /// Returns information about an AutoML job V2 created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>.
+    /// The resolved attributes specific to the problem type of an AutoML job V2.
     /// </summary>
-    public partial class DescribeAutoMLJobV2Request : AmazonSageMakerRequest
+    public partial class AutoMLProblemTypeResolvedAttributes
     {
-        private string _autoMLJobName;
+        private TabularResolvedAttributes _tabularResolvedAttributes;
 
         /// <summary>
-        /// Gets and sets the property AutoMLJobName. 
+        /// Gets and sets the property TabularResolvedAttributes. 
         /// <para>
-        /// Requests information about an AutoML job V2 using its unique name.
+        /// Defines the resolved attributes for the <code>TABULAR</code> problem type.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Min=1, Max=32)]
-        public string AutoMLJobName
+        public TabularResolvedAttributes TabularResolvedAttributes
         {
-            get { return this._autoMLJobName; }
-            set { this._autoMLJobName = value; }
+            get { return this._tabularResolvedAttributes; }
+            set { this._tabularResolvedAttributes = value; }
         }
 
-        // Check to see if AutoMLJobName property is set
-        internal bool IsSetAutoMLJobName()
+        // Check to see if TabularResolvedAttributes property is set
+        internal bool IsSetTabularResolvedAttributes()
         {
-            return this._autoMLJobName != null;
+            return this._tabularResolvedAttributes != null;
         }
 
     }

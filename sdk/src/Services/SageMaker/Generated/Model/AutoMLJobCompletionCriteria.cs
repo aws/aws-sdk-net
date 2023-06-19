@@ -70,7 +70,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
+        /// For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), the supported
         /// value is 1.
         /// </para>
         /// </summary>
@@ -98,7 +98,7 @@ namespace Amazon.SageMaker.Model
         /// </para>
         ///  
         /// <para>
-        /// For V2 jobs (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls
+        /// For job V2s (jobs created by calling <code>CreateAutoMLJobV2</code>), this field controls
         /// the runtime of the job candidate.
         /// </para>
         /// </summary>

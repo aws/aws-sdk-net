@@ -30,18 +30,18 @@ namespace Amazon.SageMaker.Model
 {
     /// <summary>
     /// A collection of settings specific to the problem type used to configure an AutoML
-    /// job using the V2 API. There must be one and only one config of the following type.
+    /// job V2. There must be one and only one config of the following type.
     /// </summary>
     public partial class AutoMLProblemTypeConfig
     {
         private ImageClassificationJobConfig _imageClassificationJobConfig;
+        private TabularJobConfig _tabularJobConfig;
         private TextClassificationJobConfig _textClassificationJobConfig;
 
         /// <summary>
         /// Gets and sets the property ImageClassificationJobConfig. 
         /// <para>
-        /// Settings used to configure an AutoML job using the V2 API for the image classification
-        /// problem type.
+        /// Settings used to configure an AutoML job V2 for the image classification problem type.
         /// </para>
         /// </summary>
         public ImageClassificationJobConfig ImageClassificationJobConfig
@@ -57,10 +57,28 @@ namespace Amazon.SageMaker.Model
         }
 
         /// <summary>
+        /// Gets and sets the property TabularJobConfig. 
+        /// <para>
+        /// Settings used to configure an AutoML job V2 for a tabular problem type (regression,
+        /// classification).
+        /// </para>
+        /// </summary>
+        public TabularJobConfig TabularJobConfig
+        {
+            get { return this._tabularJobConfig; }
+            set { this._tabularJobConfig = value; }
+        }
+
+        // Check to see if TabularJobConfig property is set
+        internal bool IsSetTabularJobConfig()
+        {
+            return this._tabularJobConfig != null;
+        }
+
+        /// <summary>
         /// Gets and sets the property TextClassificationJobConfig. 
         /// <para>
-        /// Settings used to configure an AutoML job using the V2 API for the text classification
-        /// problem type.
+        /// Settings used to configure an AutoML job V2 for the text classification problem type.
         /// </para>
         /// </summary>
         public TextClassificationJobConfig TextClassificationJobConfig
