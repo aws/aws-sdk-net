@@ -144,6 +144,12 @@ namespace Amazon.CloudFormation.Model.Internal.MarshallTransformations
                         response.NotificationARNs.Add(item);
                         continue;
                     }
+                    if (context.TestExpression("OnStackFailure", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        response.OnStackFailure = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("Parameters/member", targetDepth))
                     {
                         var unmarshaller = ParameterUnmarshaller.Instance;

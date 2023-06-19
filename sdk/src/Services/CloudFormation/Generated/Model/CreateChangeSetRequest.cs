@@ -71,6 +71,7 @@ namespace Amazon.CloudFormation.Model
         private string _description;
         private bool? _includeNestedStacks;
         private List<string> _notificationARNs = new List<string>();
+        private OnStackFailure _onStackFailure;
         private List<Parameter> _parameters = new List<Parameter>();
         private List<ResourceToImport> _resourcesToImport = new List<ResourceToImport>();
         private List<string> _resourceTypes = new List<string>();
@@ -346,6 +347,52 @@ namespace Amazon.CloudFormation.Model
         internal bool IsSetNotificationARNs()
         {
             return this._notificationARNs != null && this._notificationARNs.Count > 0; 
+        }
+
+        /// <summary>
+        /// Gets and sets the property OnStackFailure. 
+        /// <para>
+        /// Determines what action will be taken if stack creation fails. If this parameter is
+        /// specified, the <code>DisableRollback</code> parameter to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation must not be specified. This must be one of these values:
+        /// </para>
+        ///  <ul> <li> 
+        /// <para>
+        ///  <code>DELETE</code> - Deletes the change set if the stack creation fails. This is
+        /// only valid when the <code>ChangeSetType</code> parameter is set to <code>CREATE</code>.
+        /// If the deletion of the stack fails, the status of the stack is <code>DELETE_FAILED</code>.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>DO_NOTHING</code> - if the stack creation fails, do nothing. This is equivalent
+        /// to specifying <code>true</code> for the <code>DisableRollback</code> parameter to
+        /// the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation.
+        /// </para>
+        ///  </li> <li> 
+        /// <para>
+        ///  <code>ROLLBACK</code> - if the stack creation fails, roll back the stack. This is
+        /// equivalent to specifying <code>false</code> for the <code>DisableRollback</code> parameter
+        /// to the <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/APIReference/API_ExecuteChangeSet.html">ExecuteChangeSet</a>
+        /// API operation.
+        /// </para>
+        ///  </li> </ul> 
+        /// <para>
+        /// For nested stacks, when the <code>OnStackFailure</code> parameter is set to <code>DELETE</code>
+        /// for the change set for the parent stack, any failure in a child stack will cause the
+        /// parent stack creation to fail and all stacks to be deleted.
+        /// </para>
+        /// </summary>
+        public OnStackFailure OnStackFailure
+        {
+            get { return this._onStackFailure; }
+            set { this._onStackFailure = value; }
+        }
+
+        // Check to see if OnStackFailure property is set
+        internal bool IsSetOnStackFailure()
+        {
+            return this._onStackFailure != null;
         }
 
         /// <summary>
