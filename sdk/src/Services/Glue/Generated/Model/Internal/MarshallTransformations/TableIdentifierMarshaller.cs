@@ -63,6 +63,12 @@ namespace Amazon.Glue.Model.Internal.MarshallTransformations
                 context.Writer.Write(requestObject.Name);
             }
 
+            if(requestObject.IsSetRegion())
+            {
+                context.Writer.WritePropertyName("Region");
+                context.Writer.Write(requestObject.Region);
+            }
+
         }
 
         /// <summary>

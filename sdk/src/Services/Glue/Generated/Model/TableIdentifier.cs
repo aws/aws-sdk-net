@@ -36,6 +36,7 @@ namespace Amazon.Glue.Model
         private string _catalogId;
         private string _databaseName;
         private string _name;
+        private string _region;
 
         /// <summary>
         /// Gets and sets the property CatalogId. 
@@ -92,6 +93,25 @@ namespace Amazon.Glue.Model
         internal bool IsSetName()
         {
             return this._name != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property Region. 
+        /// <para>
+        /// Region of the target table.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Min=1, Max=255)]
+        public string Region
+        {
+            get { return this._region; }
+            set { this._region = value; }
+        }
+
+        // Check to see if Region property is set
+        internal bool IsSetRegion()
+        {
+            return this._region != null;
         }
 
     }
