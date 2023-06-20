@@ -3599,6 +3599,10 @@ namespace Amazon.Lambda
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
         /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
@@ -3776,6 +3780,10 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
@@ -4000,6 +4008,10 @@ namespace Amazon.Lambda
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
         /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
+        /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
         /// For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">Lambda
@@ -4134,6 +4146,10 @@ namespace Amazon.Lambda
         /// <exception cref="Amazon.Lambda.Model.KMSNotFoundException">
         /// Lambda couldn't decrypt the environment variables because the KMS key was not found.
         /// Check the function's KMS key settings.
+        /// </exception>
+        /// <exception cref="Amazon.Lambda.Model.RecursiveInvocationException">
+        /// Lambda has detected your function being invoked in a recursive loop with other Amazon
+        /// Web Services resources and stopped your function's invocation.
         /// </exception>
         /// <exception cref="Amazon.Lambda.Model.RequestTooLargeException">
         /// The request payload exceeded the <code>Invoke</code> request body JSON input quota.
