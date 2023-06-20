@@ -66,6 +66,12 @@ namespace Amazon.EC2.Model.Internal.MarshallTransformations
                         unmarshalledObject.AllowsMultipleInstanceTypes = unmarshaller.Unmarshall(context);
                         continue;
                     }
+                    if (context.TestExpression("assetId", targetDepth))
+                    {
+                        var unmarshaller = StringUnmarshaller.Instance;
+                        unmarshalledObject.AssetId = unmarshaller.Unmarshall(context);
+                        continue;
+                    }
                     if (context.TestExpression("autoPlacement", targetDepth))
                     {
                         var unmarshaller = StringUnmarshaller.Instance;

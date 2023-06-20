@@ -64,8 +64,9 @@ namespace Amazon.EC2.Model
         /// <summary>
         /// Gets and sets the property ImageId. 
         /// <para>
-        /// The ID of the AMI. An AMI is required to launch an instance. The AMI ID must be specified
-        /// here or in the launch template.
+        /// The ID of the AMI. An AMI is required to launch an instance. This parameter is only
+        /// available for fleets of type <code>instant</code>. For fleets of type <code>maintain</code>
+        /// and <code>request</code>, you must specify the AMI ID in the launch template.
         /// </para>
         /// </summary>
         public string ImageId

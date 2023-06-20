@@ -42,7 +42,8 @@ namespace Amazon.EC2.Model
         /// Gets and sets the property AmdSevSnp. 
         /// <para>
         /// Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is supported
-        /// with M6a, R6a, and C6a instance types only.
+        /// with M6a, R6a, and C6a instance types only. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/sev-snp.html">AMD
+        /// SEV-SNP</a>.
         /// </para>
         /// </summary>
         public AmdSevSnpSpecification AmdSevSnp

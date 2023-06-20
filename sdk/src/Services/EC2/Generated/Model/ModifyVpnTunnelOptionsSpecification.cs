@@ -376,6 +376,7 @@ namespace Amazon.EC2.Model
         /// (_). Must be between 8 and 64 characters in length and cannot start with zero (0).
         /// </para>
         /// </summary>
+        [AWSProperty(Sensitive=true)]
         public string PreSharedKey
         {
             get { return this._preSharedKey; }
