@@ -1172,6 +1172,57 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateCustomDomainAssociation
+
+
+        /// <summary>
+        /// Used to create a custom domain name for a cluster. Properties include the custom domain
+        /// name, the cluster the custom domain is associated with, and the certificate Amazon
+        /// Resource Name (ARN).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDomainAssociation service method.</param>
+        /// 
+        /// <returns>The response from the CreateCustomDomainAssociation service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
+        CreateCustomDomainAssociationResponse CreateCustomDomainAssociation(CreateCustomDomainAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the CreateCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDomainAssociation operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndCreateCustomDomainAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
+        IAsyncResult BeginCreateCustomDomainAssociation(CreateCustomDomainAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  CreateCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginCreateCustomDomainAssociation.</param>
+        /// 
+        /// <returns>Returns a  CreateCustomDomainAssociationResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
+        CreateCustomDomainAssociationResponse EndCreateCustomDomainAssociation(IAsyncResult asyncResult);
+
+        #endregion
+        
         #region  CreateEndpointAccess
 
 
@@ -2177,6 +2228,55 @@ namespace Amazon.Redshift
         /// <returns>Returns a  DeleteClusterSubnetGroupResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteClusterSubnetGroup">REST API Reference for DeleteClusterSubnetGroup Operation</seealso>
         DeleteClusterSubnetGroupResponse EndDeleteClusterSubnetGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DeleteCustomDomainAssociation
+
+
+        /// <summary>
+        /// Contains information about deleting a custom domain association for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDomainAssociation service method.</param>
+        /// 
+        /// <returns>The response from the DeleteCustomDomainAssociation service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
+        DeleteCustomDomainAssociationResponse DeleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DeleteCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDomainAssociation operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDeleteCustomDomainAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
+        IAsyncResult BeginDeleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DeleteCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDeleteCustomDomainAssociation.</param>
+        /// 
+        /// <returns>Returns a  DeleteCustomDomainAssociationResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
+        DeleteCustomDomainAssociationResponse EndDeleteCustomDomainAssociation(IAsyncResult asyncResult);
 
         #endregion
         
@@ -3452,6 +3552,52 @@ namespace Amazon.Redshift
         /// <returns>Returns a  DescribeClusterVersionsResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeClusterVersions">REST API Reference for DescribeClusterVersions Operation</seealso>
         DescribeClusterVersionsResponse EndDescribeClusterVersions(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  DescribeCustomDomainAssociations
+
+
+        /// <summary>
+        /// Contains information for custom domain associations for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomDomainAssociations service method.</param>
+        /// 
+        /// <returns>The response from the DescribeCustomDomainAssociations service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.CustomDomainAssociationNotFoundException">
+        /// An error occurred. The custom domain name couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeCustomDomainAssociations">REST API Reference for DescribeCustomDomainAssociations Operation</seealso>
+        DescribeCustomDomainAssociationsResponse DescribeCustomDomainAssociations(DescribeCustomDomainAssociationsRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the DescribeCustomDomainAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomDomainAssociations operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndDescribeCustomDomainAssociations
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeCustomDomainAssociations">REST API Reference for DescribeCustomDomainAssociations Operation</seealso>
+        IAsyncResult BeginDescribeCustomDomainAssociations(DescribeCustomDomainAssociationsRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  DescribeCustomDomainAssociations operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginDescribeCustomDomainAssociations.</param>
+        /// 
+        /// <returns>Returns a  DescribeCustomDomainAssociationsResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeCustomDomainAssociations">REST API Reference for DescribeCustomDomainAssociations Operation</seealso>
+        DescribeCustomDomainAssociationsResponse EndDescribeCustomDomainAssociations(IAsyncResult asyncResult);
 
         #endregion
         
@@ -5661,6 +5807,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
         /// The request cannot be completed because a dependent service is throttling requests
         /// made by Amazon Redshift on your behalf. Wait and retry the request.
@@ -5711,6 +5860,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOptionException">
         /// A request option was specified that is not supported.
@@ -6119,6 +6271,55 @@ namespace Amazon.Redshift
         /// <returns>Returns a  ModifyClusterSubnetGroupResult from Redshift.</returns>
         /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyClusterSubnetGroup">REST API Reference for ModifyClusterSubnetGroup Operation</seealso>
         ModifyClusterSubnetGroupResponse EndModifyClusterSubnetGroup(IAsyncResult asyncResult);
+
+        #endregion
+        
+        #region  ModifyCustomDomainAssociation
+
+
+        /// <summary>
+        /// Contains information for changing a custom domain association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCustomDomainAssociation service method.</param>
+        /// 
+        /// <returns>The response from the ModifyCustomDomainAssociation service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCustomDomainAssociation">REST API Reference for ModifyCustomDomainAssociation Operation</seealso>
+        ModifyCustomDomainAssociationResponse ModifyCustomDomainAssociation(ModifyCustomDomainAssociationRequest request);
+
+        /// <summary>
+        /// Initiates the asynchronous execution of the ModifyCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCustomDomainAssociation operation on AmazonRedshiftClient.</param>
+        /// <param name="callback">An AsyncCallback delegate that is invoked when the operation completes.</param>
+        /// <param name="state">A user-defined state object that is passed to the callback procedure. Retrieve this object from within the callback
+        ///          procedure using the AsyncState property.</param>
+        /// 
+        /// <returns>An IAsyncResult that can be used to poll or wait for results, or both; this value is also needed when invoking EndModifyCustomDomainAssociation
+        ///         operation.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCustomDomainAssociation">REST API Reference for ModifyCustomDomainAssociation Operation</seealso>
+        IAsyncResult BeginModifyCustomDomainAssociation(ModifyCustomDomainAssociationRequest request, AsyncCallback callback, object state);
+
+
+
+        /// <summary>
+        /// Finishes the asynchronous execution of the  ModifyCustomDomainAssociation operation.
+        /// </summary>
+        /// 
+        /// <param name="asyncResult">The IAsyncResult returned by the call to BeginModifyCustomDomainAssociation.</param>
+        /// 
+        /// <returns>Returns a  ModifyCustomDomainAssociationResult from Redshift.</returns>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCustomDomainAssociation">REST API Reference for ModifyCustomDomainAssociation Operation</seealso>
+        ModifyCustomDomainAssociationResponse EndModifyCustomDomainAssociation(IAsyncResult asyncResult);
 
         #endregion
         

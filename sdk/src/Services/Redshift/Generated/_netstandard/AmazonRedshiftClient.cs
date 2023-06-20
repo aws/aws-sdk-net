@@ -1293,6 +1293,51 @@ namespace Amazon.Redshift
 
         #endregion
         
+        #region  CreateCustomDomainAssociation
+
+        internal virtual CreateCustomDomainAssociationResponse CreateCustomDomainAssociation(CreateCustomDomainAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<CreateCustomDomainAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Used to create a custom domain name for a cluster. Properties include the custom domain
+        /// name, the cluster the custom domain is associated with, and the certificate Amazon
+        /// Resource Name (ARN).
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the CreateCustomDomainAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the CreateCustomDomainAssociation service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/CreateCustomDomainAssociation">REST API Reference for CreateCustomDomainAssociation Operation</seealso>
+        public virtual Task<CreateCustomDomainAssociationResponse> CreateCustomDomainAssociationAsync(CreateCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = CreateCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = CreateCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<CreateCustomDomainAssociationResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
         #region  CreateEndpointAccess
 
         internal virtual CreateEndpointAccessResponse CreateEndpointAccess(CreateEndpointAccessRequest request)
@@ -2201,6 +2246,49 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DeleteClusterSubnetGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<DeleteClusterSubnetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DeleteCustomDomainAssociation
+
+        internal virtual DeleteCustomDomainAssociationResponse DeleteCustomDomainAssociation(DeleteCustomDomainAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<DeleteCustomDomainAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Contains information about deleting a custom domain association for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DeleteCustomDomainAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DeleteCustomDomainAssociation service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DeleteCustomDomainAssociation">REST API Reference for DeleteCustomDomainAssociation Operation</seealso>
+        public virtual Task<DeleteCustomDomainAssociationResponse> DeleteCustomDomainAssociationAsync(DeleteCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DeleteCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DeleteCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DeleteCustomDomainAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -3416,6 +3504,46 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = DescribeClusterVersionsResponseUnmarshaller.Instance;
 
             return InvokeAsync<DescribeClusterVersionsResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  DescribeCustomDomainAssociations
+
+        internal virtual DescribeCustomDomainAssociationsResponse DescribeCustomDomainAssociations(DescribeCustomDomainAssociationsRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomDomainAssociationsResponseUnmarshaller.Instance;
+
+            return Invoke<DescribeCustomDomainAssociationsResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Contains information for custom domain associations for a cluster.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the DescribeCustomDomainAssociations service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the DescribeCustomDomainAssociations service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.CustomDomainAssociationNotFoundException">
+        /// An error occurred. The custom domain name couldn't be found.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/DescribeCustomDomainAssociations">REST API Reference for DescribeCustomDomainAssociations Operation</seealso>
+        public virtual Task<DescribeCustomDomainAssociationsResponse> DescribeCustomDomainAssociationsAsync(DescribeCustomDomainAssociationsRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = DescribeCustomDomainAssociationsRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = DescribeCustomDomainAssociationsResponseUnmarshaller.Instance;
+
+            return InvokeAsync<DescribeCustomDomainAssociationsResponse>(request, options, cancellationToken);
         }
 
         #endregion
@@ -5505,6 +5633,9 @@ namespace Amazon.Redshift
         /// <exception cref="Amazon.Redshift.Model.ClusterSecurityGroupNotFoundException">
         /// The cluster security group name does not refer to an existing cluster security group.
         /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
         /// <exception cref="Amazon.Redshift.Model.DependentServiceRequestThrottlingException">
         /// The request cannot be completed because a dependent service is throttling requests
         /// made by Amazon Redshift on your behalf. Wait and retry the request.
@@ -5555,6 +5686,9 @@ namespace Amazon.Redshift
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnauthorizedOperationException">
         /// Your account is not authorized to perform the requested operation.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
         /// </exception>
         /// <exception cref="Amazon.Redshift.Model.UnsupportedOptionException">
         /// A request option was specified that is not supported.
@@ -5901,6 +6035,49 @@ namespace Amazon.Redshift
             options.ResponseUnmarshaller = ModifyClusterSubnetGroupResponseUnmarshaller.Instance;
 
             return InvokeAsync<ModifyClusterSubnetGroupResponse>(request, options, cancellationToken);
+        }
+
+        #endregion
+        
+        #region  ModifyCustomDomainAssociation
+
+        internal virtual ModifyCustomDomainAssociationResponse ModifyCustomDomainAssociation(ModifyCustomDomainAssociationRequest request)
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return Invoke<ModifyCustomDomainAssociationResponse>(request, options);
+        }
+
+
+
+        /// <summary>
+        /// Contains information for changing a custom domain association.
+        /// </summary>
+        /// <param name="request">Container for the necessary parameters to execute the ModifyCustomDomainAssociation service method.</param>
+        /// <param name="cancellationToken">
+        ///     A cancellation token that can be used by other objects or threads to receive notice of cancellation.
+        /// </param>
+        /// 
+        /// <returns>The response from the ModifyCustomDomainAssociation service method, as returned by Redshift.</returns>
+        /// <exception cref="Amazon.Redshift.Model.ClusterNotFoundException">
+        /// The <code>ClusterIdentifier</code> parameter does not refer to an existing cluster.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.CustomCnameAssociationException">
+        /// An error occurred when an attempt was made to change the custom domain association.
+        /// </exception>
+        /// <exception cref="Amazon.Redshift.Model.UnsupportedOperationException">
+        /// The requested operation isn't supported.
+        /// </exception>
+        /// <seealso href="http://docs.aws.amazon.com/goto/WebAPI/redshift-2012-12-01/ModifyCustomDomainAssociation">REST API Reference for ModifyCustomDomainAssociation Operation</seealso>
+        public virtual Task<ModifyCustomDomainAssociationResponse> ModifyCustomDomainAssociationAsync(ModifyCustomDomainAssociationRequest request, System.Threading.CancellationToken cancellationToken = default(CancellationToken))
+        {
+            var options = new InvokeOptions();
+            options.RequestMarshaller = ModifyCustomDomainAssociationRequestMarshaller.Instance;
+            options.ResponseUnmarshaller = ModifyCustomDomainAssociationResponseUnmarshaller.Instance;
+
+            return InvokeAsync<ModifyCustomDomainAssociationResponse>(request, options, cancellationToken);
         }
 
         #endregion

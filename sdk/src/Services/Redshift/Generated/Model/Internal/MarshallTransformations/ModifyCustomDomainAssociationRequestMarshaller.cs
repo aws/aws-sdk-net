@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetClusterCredentialsWithIAM Request Marshaller
+    /// ModifyCustomDomainAssociation Request Marshaller
     /// </summary>       
-    public class GetClusterCredentialsWithIAMRequestMarshaller : IMarshaller<IRequest, GetClusterCredentialsWithIAMRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class ModifyCustomDomainAssociationRequestMarshaller : IMarshaller<IRequest, ModifyCustomDomainAssociationRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetClusterCredentialsWithIAMRequest)input);
+            return this.Marshall((ModifyCustomDomainAssociationRequest)input);
         }
     
         /// <summary>
@@ -50,10 +50,10 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetClusterCredentialsWithIAMRequest publicRequest)
+        public IRequest Marshall(ModifyCustomDomainAssociationRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
-            request.Parameters.Add("Action", "GetClusterCredentialsWithIAM");
+            request.Parameters.Add("Action", "ModifyCustomDomainAssociation");
             request.Parameters.Add("Version", "2012-12-01");
 
             if(publicRequest != null)
@@ -62,24 +62,20 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
                 {
                     request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
                 }
+                if(publicRequest.IsSetCustomDomainCertificateArn())
+                {
+                    request.Parameters.Add("CustomDomainCertificateArn", StringUtils.FromString(publicRequest.CustomDomainCertificateArn));
+                }
                 if(publicRequest.IsSetCustomDomainName())
                 {
                     request.Parameters.Add("CustomDomainName", StringUtils.FromString(publicRequest.CustomDomainName));
                 }
-                if(publicRequest.IsSetDbName())
-                {
-                    request.Parameters.Add("DbName", StringUtils.FromString(publicRequest.DbName));
-                }
-                if(publicRequest.IsSetDurationSeconds())
-                {
-                    request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
-                }
             }
             return request;
         }
-                    private static GetClusterCredentialsWithIAMRequestMarshaller _instance = new GetClusterCredentialsWithIAMRequestMarshaller();        
+                    private static ModifyCustomDomainAssociationRequestMarshaller _instance = new ModifyCustomDomainAssociationRequestMarshaller();        
 
-        internal static GetClusterCredentialsWithIAMRequestMarshaller GetInstance()
+        internal static ModifyCustomDomainAssociationRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -87,7 +83,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetClusterCredentialsWithIAMRequestMarshaller Instance
+        public static ModifyCustomDomainAssociationRequestMarshaller Instance
         {
             get
             {

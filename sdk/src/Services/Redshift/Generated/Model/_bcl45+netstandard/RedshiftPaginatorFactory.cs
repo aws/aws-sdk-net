@@ -108,6 +108,14 @@ namespace Amazon.Redshift.Model
         }
 
         /// <summary>
+        /// Paginator for DescribeCustomDomainAssociations operation
+        ///</summary>
+        public IDescribeCustomDomainAssociationsPaginator DescribeCustomDomainAssociations(DescribeCustomDomainAssociationsRequest request) 
+        {
+            return new DescribeCustomDomainAssociationsPaginator(this.client, request);
+        }
+
+        /// <summary>
         /// Paginator for DescribeDataShares operation
         ///</summary>
         public IDescribeDataSharesPaginator DescribeDataShares(DescribeDataSharesRequest request) 

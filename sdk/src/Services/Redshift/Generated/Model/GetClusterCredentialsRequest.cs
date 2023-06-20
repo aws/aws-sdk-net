@@ -68,6 +68,7 @@ namespace Amazon.Redshift.Model
     {
         private bool? _autoCreate;
         private string _clusterIdentifier;
+        private string _customDomainName;
         private List<string> _dbGroups = new List<string>();
         private string _dbName;
         private string _dbUser;
@@ -99,7 +100,7 @@ namespace Amazon.Redshift.Model
         /// requesting credentials. This parameter is case sensitive.
         /// </para>
         /// </summary>
-        [AWSProperty(Required=true, Max=2147483647)]
+        [AWSProperty(Max=2147483647)]
         public string ClusterIdentifier
         {
             get { return this._clusterIdentifier; }
@@ -110,6 +111,25 @@ namespace Amazon.Redshift.Model
         internal bool IsSetClusterIdentifier()
         {
             return this._clusterIdentifier != null;
+        }
+
+        /// <summary>
+        /// Gets and sets the property CustomDomainName. 
+        /// <para>
+        /// The custom domain name for the cluster credentials.
+        /// </para>
+        /// </summary>
+        [AWSProperty(Max=2147483647)]
+        public string CustomDomainName
+        {
+            get { return this._customDomainName; }
+            set { this._customDomainName = value; }
+        }
+
+        // Check to see if CustomDomainName property is set
+        internal bool IsSetCustomDomainName()
+        {
+            return this._customDomainName != null;
         }
 
         /// <summary>

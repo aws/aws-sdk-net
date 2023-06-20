@@ -31,9 +31,9 @@ using Amazon.Runtime.Internal.Util;
 namespace Amazon.Redshift.Model.Internal.MarshallTransformations
 {
     /// <summary>
-    /// GetClusterCredentialsWithIAM Request Marshaller
+    /// DescribeCustomDomainAssociations Request Marshaller
     /// </summary>       
-    public class GetClusterCredentialsWithIAMRequestMarshaller : IMarshaller<IRequest, GetClusterCredentialsWithIAMRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
+    public class DescribeCustomDomainAssociationsRequestMarshaller : IMarshaller<IRequest, DescribeCustomDomainAssociationsRequest> , IMarshaller<IRequest,AmazonWebServiceRequest>
     {
         /// <summary>
         /// Marshaller the request object to the HTTP request.
@@ -42,7 +42,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <returns></returns>
         public IRequest Marshall(AmazonWebServiceRequest input)
         {
-            return this.Marshall((GetClusterCredentialsWithIAMRequest)input);
+            return this.Marshall((DescribeCustomDomainAssociationsRequest)input);
         }
     
         /// <summary>
@@ -50,36 +50,36 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// </summary>  
         /// <param name="publicRequest"></param>
         /// <returns></returns>
-        public IRequest Marshall(GetClusterCredentialsWithIAMRequest publicRequest)
+        public IRequest Marshall(DescribeCustomDomainAssociationsRequest publicRequest)
         {
             IRequest request = new DefaultRequest(publicRequest, "Amazon.Redshift");
-            request.Parameters.Add("Action", "GetClusterCredentialsWithIAM");
+            request.Parameters.Add("Action", "DescribeCustomDomainAssociations");
             request.Parameters.Add("Version", "2012-12-01");
 
             if(publicRequest != null)
             {
-                if(publicRequest.IsSetClusterIdentifier())
+                if(publicRequest.IsSetCustomDomainCertificateArn())
                 {
-                    request.Parameters.Add("ClusterIdentifier", StringUtils.FromString(publicRequest.ClusterIdentifier));
+                    request.Parameters.Add("CustomDomainCertificateArn", StringUtils.FromString(publicRequest.CustomDomainCertificateArn));
                 }
                 if(publicRequest.IsSetCustomDomainName())
                 {
                     request.Parameters.Add("CustomDomainName", StringUtils.FromString(publicRequest.CustomDomainName));
                 }
-                if(publicRequest.IsSetDbName())
+                if(publicRequest.IsSetMarker())
                 {
-                    request.Parameters.Add("DbName", StringUtils.FromString(publicRequest.DbName));
+                    request.Parameters.Add("Marker", StringUtils.FromString(publicRequest.Marker));
                 }
-                if(publicRequest.IsSetDurationSeconds())
+                if(publicRequest.IsSetMaxRecords())
                 {
-                    request.Parameters.Add("DurationSeconds", StringUtils.FromInt(publicRequest.DurationSeconds));
+                    request.Parameters.Add("MaxRecords", StringUtils.FromInt(publicRequest.MaxRecords));
                 }
             }
             return request;
         }
-                    private static GetClusterCredentialsWithIAMRequestMarshaller _instance = new GetClusterCredentialsWithIAMRequestMarshaller();        
+                    private static DescribeCustomDomainAssociationsRequestMarshaller _instance = new DescribeCustomDomainAssociationsRequestMarshaller();        
 
-        internal static GetClusterCredentialsWithIAMRequestMarshaller GetInstance()
+        internal static DescribeCustomDomainAssociationsRequestMarshaller GetInstance()
         {
             return _instance;
         }
@@ -87,7 +87,7 @@ namespace Amazon.Redshift.Model.Internal.MarshallTransformations
         /// <summary>
         /// Gets the singleton.
         /// </summary>  
-        public static GetClusterCredentialsWithIAMRequestMarshaller Instance
+        public static DescribeCustomDomainAssociationsRequestMarshaller Instance
         {
             get
             {
