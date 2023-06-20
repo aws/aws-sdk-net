@@ -1751,6 +1751,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSAmazonMQBroker = new ResourceType("AWS::AmazonMQ::Broker");
         /// <summary>
+        /// Constant AWSAmplifyApp for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAmplifyApp = new ResourceType("AWS::Amplify::App");
+        /// <summary>
         /// Constant AWSApiGatewayRestApi for ResourceType
         /// </summary>
         public static readonly ResourceType AWSApiGatewayRestApi = new ResourceType("AWS::ApiGateway::RestApi");
@@ -1786,6 +1790,22 @@ namespace Amazon.ConfigService
         /// Constant AWSAppFlowFlow for ResourceType
         /// </summary>
         public static readonly ResourceType AWSAppFlowFlow = new ResourceType("AWS::AppFlow::Flow");
+        /// <summary>
+        /// Constant AWSAppMeshVirtualNode for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAppMeshVirtualNode = new ResourceType("AWS::AppMesh::VirtualNode");
+        /// <summary>
+        /// Constant AWSAppMeshVirtualService for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAppMeshVirtualService = new ResourceType("AWS::AppMesh::VirtualService");
+        /// <summary>
+        /// Constant AWSAppRunnerVpcConnector for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAppRunnerVpcConnector = new ResourceType("AWS::AppRunner::VpcConnector");
+        /// <summary>
+        /// Constant AWSAppStreamApplication for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSAppStreamApplication = new ResourceType("AWS::AppStream::Application");
         /// <summary>
         /// Constant AWSAppStreamDirectoryConfig for ResourceType
         /// </summary>
@@ -1859,6 +1879,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSBudgetsBudgetsAction = new ResourceType("AWS::Budgets::BudgetsAction");
         /// <summary>
+        /// Constant AWSCassandraKeyspace for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCassandraKeyspace = new ResourceType("AWS::Cassandra::Keyspace");
+        /// <summary>
         /// Constant AWSCloud9EnvironmentEC2 for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloud9EnvironmentEC2 = new ResourceType("AWS::Cloud9::EnvironmentEC2");
@@ -1886,6 +1910,10 @@ namespace Amazon.ConfigService
         /// Constant AWSCloudWatchMetricStream for ResourceType
         /// </summary>
         public static readonly ResourceType AWSCloudWatchMetricStream = new ResourceType("AWS::CloudWatch::MetricStream");
+        /// <summary>
+        /// Constant AWSCodeArtifactRepository for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSCodeArtifactRepository = new ResourceType("AWS::CodeArtifact::Repository");
         /// <summary>
         /// Constant AWSCodeBuildProject for ResourceType
         /// </summary>
@@ -2059,6 +2087,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEC2NetworkInterface = new ResourceType("AWS::EC2::NetworkInterface");
         /// <summary>
+        /// Constant AWSEC2PrefixList for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2PrefixList = new ResourceType("AWS::EC2::PrefixList");
+        /// <summary>
         /// Constant AWSEC2RegisteredHAInstance for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2RegisteredHAInstance = new ResourceType("AWS::EC2::RegisteredHAInstance");
@@ -2070,6 +2102,10 @@ namespace Amazon.ConfigService
         /// Constant AWSEC2SecurityGroup for ResourceType
         /// </summary>
         public static readonly ResourceType AWSEC2SecurityGroup = new ResourceType("AWS::EC2::SecurityGroup");
+        /// <summary>
+        /// Constant AWSEC2SpotFleet for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEC2SpotFleet = new ResourceType("AWS::EC2::SpotFleet");
         /// <summary>
         /// Constant AWSEC2Subnet for ResourceType
         /// </summary>
@@ -2158,6 +2194,10 @@ namespace Amazon.ConfigService
         /// Constant AWSECSTaskDefinition for ResourceType
         /// </summary>
         public static readonly ResourceType AWSECSTaskDefinition = new ResourceType("AWS::ECS::TaskDefinition");
+        /// <summary>
+        /// Constant AWSECSTaskSet for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSECSTaskSet = new ResourceType("AWS::ECS::TaskSet");
         /// <summary>
         /// Constant AWSEFSAccessPoint for ResourceType
         /// </summary>
@@ -2255,9 +2295,17 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSEventsRule = new ResourceType("AWS::Events::Rule");
         /// <summary>
+        /// Constant AWSEvidentlyProject for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSEvidentlyProject = new ResourceType("AWS::Evidently::Project");
+        /// <summary>
         /// Constant AWSFISExperimentTemplate for ResourceType
         /// </summary>
         public static readonly ResourceType AWSFISExperimentTemplate = new ResourceType("AWS::FIS::ExperimentTemplate");
+        /// <summary>
+        /// Constant AWSForecastDataset for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSForecastDataset = new ResourceType("AWS::Forecast::Dataset");
         /// <summary>
         /// Constant AWSFraudDetectorEntityType for ResourceType
         /// </summary>
@@ -2334,6 +2382,14 @@ namespace Amazon.ConfigService
         /// Constant AWSIAMRole for ResourceType
         /// </summary>
         public static readonly ResourceType AWSIAMRole = new ResourceType("AWS::IAM::Role");
+        /// <summary>
+        /// Constant AWSIAMSAMLProvider for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSIAMSAMLProvider = new ResourceType("AWS::IAM::SAMLProvider");
+        /// <summary>
+        /// Constant AWSIAMServerCertificate for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSIAMServerCertificate = new ResourceType("AWS::IAM::ServerCertificate");
         /// <summary>
         /// Constant AWSIAMUser for ResourceType
         /// </summary>
@@ -2475,6 +2531,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSKinesisAnalyticsV2Application = new ResourceType("AWS::KinesisAnalyticsV2::Application");
         /// <summary>
+        /// Constant AWSKinesisFirehoseDeliveryStream for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSKinesisFirehoseDeliveryStream = new ResourceType("AWS::KinesisFirehose::DeliveryStream");
+        /// <summary>
         /// Constant AWSKinesisStream for ResourceType
         /// </summary>
         public static readonly ResourceType AWSKinesisStream = new ResourceType("AWS::Kinesis::Stream");
@@ -2586,6 +2646,14 @@ namespace Amazon.ConfigService
         /// Constant AWSPinpointApplicationSettings for ResourceType
         /// </summary>
         public static readonly ResourceType AWSPinpointApplicationSettings = new ResourceType("AWS::Pinpoint::ApplicationSettings");
+        /// <summary>
+        /// Constant AWSPinpointCampaign for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSPinpointCampaign = new ResourceType("AWS::Pinpoint::Campaign");
+        /// <summary>
+        /// Constant AWSPinpointInAppTemplate for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSPinpointInAppTemplate = new ResourceType("AWS::Pinpoint::InAppTemplate");
         /// <summary>
         /// Constant AWSPinpointSegment for ResourceType
         /// </summary>
@@ -2755,6 +2823,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSSageMakerCodeRepository = new ResourceType("AWS::SageMaker::CodeRepository");
         /// <summary>
+        /// Constant AWSSageMakerDomain for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSageMakerDomain = new ResourceType("AWS::SageMaker::Domain");
+        /// <summary>
         /// Constant AWSSageMakerImage for ResourceType
         /// </summary>
         public static readonly ResourceType AWSSageMakerImage = new ResourceType("AWS::SageMaker::Image");
@@ -2827,6 +2899,10 @@ namespace Amazon.ConfigService
         /// </summary>
         public static readonly ResourceType AWSShieldRegionalProtection = new ResourceType("AWS::ShieldRegional::Protection");
         /// <summary>
+        /// Constant AWSSignerSigningProfile for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSSignerSigningProfile = new ResourceType("AWS::Signer::SigningProfile");
+        /// <summary>
         /// Constant AWSSNSTopic for ResourceType
         /// </summary>
         public static readonly ResourceType AWSSNSTopic = new ResourceType("AWS::SNS::Topic");
@@ -2858,6 +2934,14 @@ namespace Amazon.ConfigService
         /// Constant AWSStepFunctionsStateMachine for ResourceType
         /// </summary>
         public static readonly ResourceType AWSStepFunctionsStateMachine = new ResourceType("AWS::StepFunctions::StateMachine");
+        /// <summary>
+        /// Constant AWSTransferAgreement for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSTransferAgreement = new ResourceType("AWS::Transfer::Agreement");
+        /// <summary>
+        /// Constant AWSTransferConnector for ResourceType
+        /// </summary>
+        public static readonly ResourceType AWSTransferConnector = new ResourceType("AWS::Transfer::Connector");
         /// <summary>
         /// Constant AWSTransferWorkflow for ResourceType
         /// </summary>
