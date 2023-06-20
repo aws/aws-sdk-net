@@ -1,3 +1,18 @@
+### 3.7.572.0 (2023-06-20 19:58 UTC)
+* Appflow (3.7.112.0)
+	* This release adds new API to reset connector metadata cache
+* ConfigService (3.7.106.0)
+	* Updated ResourceType enum with new resource types onboarded by AWS Config in May 2023.
+* EC2 (3.7.139.0)
+	* Adds support for targeting Dedicated Host allocations by assetIds in AWS Outposts
+* Lambda (3.7.112.0)
+	* This release adds RecursiveInvocationException to the Invoke API and InvokeWithResponseStream API.
+* Redshift (3.7.102.0)
+	* Added support for custom domain names for Redshift Provisioned clusters. This feature enables customers to create a custom domain name and use ACM to generate fully secure connections to it.
+* Core 3.7.107.8
+	* Updating endpoints.json file.
+	* All services packages updated to require new Core
+
 ### 3.7.571.0 (2023-06-19 18:23 UTC)
 * CloudFormation (3.7.108.0)
 	* Specify desired CloudFormation behavior in the event of ChangeSet execution failure using the CreateChangeSet OnStackFailure parameter
